@@ -1,0 +1,43 @@
+<EDCHARAKTER Alter="100" Augenf="?" Geschlecht="w" Gewicht="50" Groesse="20" Haarf="?" Hautf="?" Rasse="Obsidianer" bezeichnung="Hugo" xmlns="http://earthdawn.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.de earthdawncharakter.xsd">
+  <ATTRIBUT name="Charisma" steig="0" wert="1"/>
+  <ATTRIBUT name="Geschicklichkeit" steig="2" wert="17"/>
+  <ATTRIBUT name="Stärke" steig="0" wert="21"/>
+  <ATTRIBUT name="Wahrnehmung" steig="0" wert="3"/>
+  <ATTRIBUT name="Willenskraft" steig="0" wert="13"/>
+  <ATTRIBUT name="Zähigkeit" steig="2" wert="19"/>
+  <AUSRUESTUNG ort="selbst">
+    <GEGENSTAND bezeichnung="" gewicht="0"/>
+  </AUSRUESTUNG>
+  <BEMERKUNG/>
+  <BEWEGEN flug_kampf="0" flug_normal="0" laufen_kampf="33" laufen_normal="65"/>
+  <DISZIPLIN Kreis="1" bezeichnung="Dieb" nr="1"/>
+  <DISZIPLIN Kreis="0" bezeichnung="Schütze" nr="2"/>
+  <FERTIGKEITEN>
+    <FERTIGKEIT aktion="n" attributstufe="7" bezeichnung="Akrobatik" rang="5" ueberanstrengung="0"/>
+  </FERTIGKEITEN>
+  <GELD Erde="34" Feuer="234" Gold="1000" Kupfer="1" Luft="342" Orichalcum="2342" Silber="120" Wasser="234"/>
+  <GEWICHT hebelimit="735" traglast="360"/>
+  <INITIATIVE wert="7"/>
+  <KARMA aktuell="11" kosten="10" max="20" stufe="3"/>
+  <LEGENDENPUNKTE>
+    <LP bemerkung="Karnickel erschlagen" lp="100" typ="-" zeit=""/>
+    <LP bemerkung="" lp="0" typ="+" zeit=""/>
+  </LEGENDENPUNKTE>
+  <RUESTUNG aktiv="j" behinderung="0" bezeichnung="Natürliche Rüstung" bruchschwelle="0" gewicht="0" mystisch="1" ort="-" physikalisch="0"/>
+  <SCHADEN blut="4" schaden="0" wunden="1"/>
+  <TALENTE disziplin="Mensch">
+    <TALENT aktion="-" attributstufe="0" bezeichnung="Vielseitigkeit" disziplintalent="n" karma="n" kreis="1" rang="2" ueberanstrengung="0"/>
+  </TALENTE>
+  <TALENTE disziplin="Dieb">
+    <TALENT aktion="j" attributstufe="7" bezeichnung="Dietrich" disziplintalent="j" karma="n" kreis="1" rang="2" ueberanstrengung="0"/>
+    <TALENT aktion="j" attributstufe="7" bezeichnung="Klettern" disziplintalent="n" karma="n" kreis="1" rang="1" ueberanstrengung="0"/>
+    <TALENT aktion="n" attributstufe="7" bezeichnung="Lautloser Gang" disziplintalent="j" karma="n" kreis="1" rang="11" ueberanstrengung="0"/>
+    <TALENT aktion="j" attributstufe="7" bezeichnung="Taschendiebstahl" disziplintalent="j" karma="n" kreis="1" rang="11" ueberanstrengung="0"/>
+  </TALENTE>
+  <TOD bewustlschwelle="35" erholproben="3" todschwelle="43" verwundschwelle="15"/>
+
+  <WAFFEN>
+    <WAFFE bezeichnung="Katapult" mittel="10000" nah="10000" schaden="20" weit="10000"/>
+  </WAFFEN>
+  <WIDERSTANDSKRAFT körperlich="9" magisch="3" sozial="2"/>
+</EDCHARAKTER>
