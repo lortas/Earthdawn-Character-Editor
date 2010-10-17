@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="WIDERSTANDSKRAFT_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="körperlich" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="kï¿½rperlich" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="magisch" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="sozial" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
@@ -39,34 +39,34 @@ import javax.xml.bind.annotation.XmlType;
 public class WIDERSTANDSKRAFTType {
 
     @XmlAttribute(required = true)
-    protected BigInteger körperlich;
+    protected BigInteger kÃ¶rperlich;
     @XmlAttribute(required = true)
     protected BigInteger magisch;
     @XmlAttribute(required = true)
     protected BigInteger sozial;
 
     /**
-     * Gets the value of the körperlich property.
+     * Gets the value of the kï¿½rperlich property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getKörperlich() {
-        return körperlich;
+    public BigInteger getKÃ¶rperlich() {
+        return kÃ¶rperlich;
     }
 
     /**
-     * Sets the value of the körperlich property.
+     * Sets the value of the kï¿½rperlich property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setKörperlich(BigInteger value) {
-        this.körperlich = value;
+    public void setKÃ¶rperlich(BigInteger value) {
+        this.kÃ¶rperlich = value;
     }
 
     /**
