@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="WIDERSTANDSKRAFT_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="k�rperlich" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="körperlich" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="magisch" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="sozial" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
@@ -46,7 +46,7 @@ public class WIDERSTANDSKRAFTType {
     protected BigInteger sozial;
 
     /**
-     * Gets the value of the k�rperlich property.
+     * Gets the value of the körperlich property.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class WIDERSTANDSKRAFTType {
     }
 
     /**
-     * Sets the value of the k�rperlich property.
+     * Sets the value of the körperlich property.
      * 
      * @param value
      *     allowed object is
