@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<NAMES>
+ <ATTRIBUTS lang="de">
+  <ATTRIBUT id="a" name="Geschicklichkeit" />
+  <ATTRIBUT id="b" name="Stärke" />
+  <ATTRIBUT id="c" name="Zähigkeit" />
+  <ATTRIBUT id="d" name="Wahrnehmung" />
+  <ATTRIBUT id="e" name="Willenskraft" />
+  <ATTRIBUT id="f" name="Charisma" />
+ </ATTRIBUTS>
+ <RACES lang="de">
+  <RACE id="0" name="Elf" />
+  <RACE id="1" name="Mensch" />
+  <RACE id="2" name="Obsidianer" />
+  <RACE id="3" name="Ork" />
+  <RACE id="4" name="T'skrang" />
+  <RACE id="5" name="Troll" />
+  <RACE id="6" name="Windling" />
+  <RACE id="7" name="Zwerg" />
+ </RACES>
+ <DURABILITY name="Unempfindlichkeit" lang="de" />
+ <VERSATILITY name="Vielseitigkeit" lang="de" />
+</NAMES>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<DISZIPLIN label="Journeyman01" lang="de">
+  <racelimit>Elf</racelimit>
+  <racelimit>Zwerg</racelimit>
+  <racelimit>Windling</racelimit>
+  <racelimit>Tskrang</racelimit>
+  <racelimit>Ork</racelimit>
+  <racelimit>Obsidianer</racelimit>
+  <racelimit>Troll</racelimit>
+  <crafts>alle</crafts>
+  <circle nr="1">
+    <TALENT label="Blattschuss"/>
+    <TALENT label="Karmaritual"/>
+    <TALENT label="Spruchzauberei" disziplin="1"/>
+    <TALENT label="Zauberbücher Verstehen"/>
+    <TALENT label="Hieb Ausweichen" disziplin="1"/>
+    <TALENT label="Lautloser Gang" disziplin="1"/>
+  </circle>
+  <circle nr="2">
+    <TALENT label="Fadenweben (Illusion)" disziplin="1"/>
+    <TALENT label="Unempfindlichkeit (5/6)"/>
+    <TALENT label="Zaubermatrix (Illusionsmatrix)"/>
+  </circle>
+  <circle nr="3">
+    <TALENT label="Zaubermatrix (Illusionsmatrix)"/>
+    <TALENT label="Brandpfeil" disziplin="1"/>
+  </circle>
+  <circle nr="4">
+    <TALENT label="Dietrich"/>
+    <TALENT label="Fadenweben (Gesellenweben)" disziplin="1"/>
+  </circle>
+  <circle nr="5">
+    <TALENT label="Erster Eindruck" disziplin="1"/>
+    <TALENT label="Willensstärke"/>
+  </circle>
+  <circle nr="6">
+    <TALENT label="Erweiterte Matrix (Illusionsmatrix)"/>
+    <TALENT label="Starrsinn" disziplin="1"/>
+  </circle>
+  <circle nr="7">
+    <TALENT label="Ablenkung"/>
+    <TALENT label="Erweiterte Matrix"/>
+    <extra text="Darf für jede Aktion, die nur Geschicklichkeit erfordert, einen Karmapunkt einsetzen"/>
+  </circle>
+  <circle nr="8">
+    <TALENT label="Gedankenwelle"/>
+    <TALENT label="Untrüglicher Blick"/>
+    <extra>&amp;1</extra>
+  </circle>
+  <circle nr="9">
+    <TALENT label="Bildgedächtnis"/>
+    <TALENT label="Falschheit Erkennen"/>
+    <TALENT label="Gepanzerte Matrix"/>
+    <extra>&amp;2</extra>
+    <extra>&amp;2</extra>
+  </circle>
+  <circle nr="10">
+    <TALENT label="Gedanken Verbergen"/>
+    <TALENT label="Projektilwaffen"/>
+    <extra text="Willenskraft/Willensstärkeproben mit Karma möglich"/>
+  </circle>
+  <circle nr="11">
+    <TALENT label="Gepanzerte Matrix"/>
+    <TALENT label="Nachdenkliche Miene"/>
+    <extra>&amp;4</extra>
+    <extra text="Erholungsproben mit Karma möglich"/>
+  </circle>
+  <circle nr="12">
+    <TALENT label="Matrixschlag"/>
+    <TALENT label="Starrsinn"/>
+    <extra text="Matrix verbergen (2Überanstrengung)"/>
+  </circle>
+  <circle nr="13">
+    <TALENT label="Astralsicht"/>
+    <TALENT label="Summenmatrix"/>
+    <extra>&amp;2</extra>
+    <extra>&amp;2</extra>
+    <extra>&amp;5</extra>
+  </circle>
+  <circle nr="14">
+    <TALENT label="Schnelles Weben"/>
+    <TALENT label="Summenmatrix"/>
+    <extra>&amp;1</extra>
+    <extra>&amp;1</extra>
+    <extra>&amp;2</extra>
+  </circle>
+  <circle nr="15">
+    <TALENT label="Summenmatrix"/>
+    <TALENT label="Zweite Chance"/>
+    <extra>&amp;2</extra>
+    <extra>&amp;6</extra>
+    <extra>&amp;6</extra>
+  </circle>
+</DISZIPLIN>

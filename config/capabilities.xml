@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<CAPABILITIES lang="de">
+  <SKILL name="Ablenkung" action="1" rank="r+f" strain="1" />
+  <SKILL name="Abrichten" action="1" rank="r+f" />
+  <SKILL name="Akrobatik" rank="r+a" />
+  <SKILL name="Analysis" action="1" rank="r+d" />
+  <SKILL name="Angst Einfl&#246;ssen" action="1" rank="r+e" />
+  <SKILL name="Arkanes Gefasel" action="1" rank="r+e" />
+  <SKILL name="Arzt" action="1" rank="r+d" />
+  <SKILL name="Bestechung" action="1" rank="r+f" />
+  <SKILL name="Beweisanalyse" action="1" rank="r+d" strain="1" />
+  <SKILL name="Copyright Hinweis" action="na" rank="r" />
+  <SKILL name="Entwaffnen" action="1" rank="r+a" strain="1" />
+  <SKILL name="Erster Eindruck" action="1" rank="r+f" strain="2" />
+  <SKILL name="Etikette" action="1" rank="r+f" />
+  <SKILL name="Fallen Entdecken" action="1" rank="r+d" strain="1" />
+  <SKILL name="Fallen Entsch&#228;rfen" action="1" rank="r+d" strain="1" />
+  <SKILL name="Feilschen" action="1" rank="r+f" />
+  <SKILL name="Fischen" action="1" rank="r+d" />
+  <SKILL name="Flirten" action="1" rank="r+f" />
+  <SKILL name="Forschen" action="1" rank="r+d" />
+  <SKILL name="Fremdsprachen" action="na" rank="r+d" />
+  <SKILL name="F&#228;lschen" action="1" rank="r+a" />
+  <SKILL name="Gassenwissen" action="1" rank="r+d" />
+  <SKILL name="Geistesgegenwart" action="1" rank="r+a" strain="1(2s.u.)" />
+  <SKILL name="Gleiten" action="1" rank="r+a" />
+  <SKILL name="Handeln" action="1" rank="r+f" />
+  <SKILL name="Handwerker" action="1" rank="r+a" />
+  <SKILL name="Handwerker:Goldschmied" action="1" rank="r+a" />
+  <SKILL name="Handwerker:Zimmermann" action="1" rank="r+a" />
+  <SKILL name="Hehlerei" action="1" rank="r+f" />
+  <SKILL name="Herzliches Lachen" action="1" rank="r+f" />
+  <SKILL name="Kampfsinn" rank="r+d" strain="1" />
+  <SKILL name="Klettern" action="1" rank="r+a" />
+  <SKILL name="Kunsthandwerk:Holzschnitzen" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:K&#246;rpermalerei" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Lederarbeiten" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Lufttanzen" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:PfeileBefiedern" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Robebesticken" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Runenschnitzen" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Schauspielerei" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Steinbearbeitung" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:Steinmetz" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:T&#228;towieren" action="1" rank="r+f" />
+  <SKILL name="Kunsthandwerk:T&#246;pfern" action="1" rank="r+f" />
+  <SKILL name="Kunstreiten" rank="r+a" strain="1" />
+  <SKILL name="K&#252;nstler:T&#228;nzer" action="1" rank="r+f" />
+  <SKILL name="Lautloser Gang" rank="r+a" strain="1" />
+  <SKILL name="Lesen/Schreiben" action="1" rank="r+d" />
+  <SKILL name="Lippenlesen" action="1" rank="r+f" strain="2" />
+  <SKILL name="Man&#246;vrieren" action="1" rank="r+a" />
+  <SKILL name="Nahkampfwaffen" action="1" rank="r+a" />
+  <SKILL name="Navigation" action="1" rank="r+d" />
+  <SKILL name="Parade" rank="r+a" strain="2" />
+  <SKILL name="Pfeile herstellen" action="1" rank="r+a" />
+  <SKILL name="Process Metals" action="1" rank="r+a" />
+  <SKILL name="Process Organic Material" action="1" rank="r+a" />
+  <SKILL name="Projektilwaffen" action="1" rank="r+a" />
+  <SKILL name="Schl&#246;sser &#214;ffnen" action="1" rank="r+a" />
+  <SKILL name="Schwimmen" action="1" rank="r+b" />
+  <SKILL name="Schwimmen T'skrang" action="1" rank="r+b+3" />
+  <SKILL name="Schwungvoller Angriff" rank="r+a" strain="1" />
+  <SKILL name="Segeln" action="1" rank="r+a" />
+  <SKILL name="Spektakul&#228;rer Angriff" action="1" rank="r+a" />
+  <SKILL name="Sprint" rank="r+a" strain="1" />
+  <SKILL name="Spruchzauberei" action="1" rank="r+d" />
+  <SKILL name="Spurenlesen" action="1" rank="r+d" />
+  <SKILL name="Standhaftigkeit" rank="r+b" />
+  <SKILL name="Sturmangriff" rank="r+b" />
+  <SKILL name="Taktik" action="1" rank="r+d" />
+  <SKILL name="Taschendiebstahl" action="1" rank="r+a" />
+  <SKILL name="Tierfreundschaft" action="1" rank="r+f" />
+  <SKILL name="Totstellen" rank="r+e" />
+  <SKILL name="Verf&#252;hrung" action="1" rank="r+f" />
+  <SKILL name="Verkleiden" action="1" rank="r+d" />
+  <SKILL name="Verspotten" action="1" rank="r+f" />
+  <SKILL name="Verstecken" action="1" rank="r+a" strain="1" />
+  <SKILL name="Waffe Entdecken" action="1" rank="r+d" strain="1" />
+  <SKILL name="Waffenloser Kampf" action="1" rank="r+a" />
+  <SKILL name="Weitsprung" action="1" rank="r+b+3" />
+  <SKILL name="Wissen:Alchemie und Tr&#228;nke" action="1" rank="r+d" />
+  <SKILL name="Wissen:Altert&#252;mliche Waffen" action="1" rank="r+d" />
+  <SKILL name="Wissen:Backen" action="1" rank="r+d" />
+  <SKILL name="Wissen:Barsaivische Geschichte" action="1" rank="r+d" />
+  <SKILL name="Wissen:Barsaivische Milit&#228;rgeschichte" action="1" rank="r+d" />
+  <SKILL name="Wissen:Botanik" action="1" rank="r+d" />
+  <SKILL name="Wissen:Die D&#228;monen" action="1" rank="r+d" />
+  <SKILL name="Wissen:Edelsteinkunde" action="1" rank="r+d" />
+  <SKILL name="Wissen:Geschichte der Plage" action="1" rank="r+d" />
+  <SKILL name="Wissen:Gesetze Barsaives" action="1" rank="r+d" />
+  <SKILL name="Wissen:H&#246;fische T&#228;nze" action="1" rank="r+d" />
+  <SKILL name="Wissen:Kr&#228;uterkunde" action="1" rank="r+d" />
+  <SKILL name="Wissen:Landwirtschaft" action="1" rank="r+d" />
+  <SKILL name="Wissen:Legenden und Helden" action="1" rank="r+d" />
+  <SKILL name="Wissen:Lufthandelsrouten" action="1" rank="r+d" />
+  <SKILL name="Wissen:Milit&#228;rgeschichte" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Elfe" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Mensch" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Obsidianer" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Ork" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde T'Skrang" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Troll" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Windling" action="1" rank="r+d" />
+  <SKILL name="Wissen:Rassenkunde Zwerg" action="1" rank="r+d" />
+  <SKILL name="Wissen:Theranische Geschichte" action="1" rank="r+d" />
+  <SKILL name="Wissen:Theranische Politik" action="1" rank="r+d" />
+  <SKILL name="Wissen:Tierkunde" action="1" rank="r+d" />
+  <SKILL name="Wissen:Trollgeschichte" action="1" rank="r+d" />
+  <SKILL name="Wissen:Wilde Tiere" action="1" rank="r+d" />
+  <SKILL name="Wissen:Zwergische Milit&#228;rorganisation" action="1" rank="r+d" />
+  <SKILL name="Wurfwaffen" action="1" rank="r+a" />
+  <SKILL name="Wurfwaffen:Bolas+Netze" action="1" rank="r+a" />
+  <SKILL name="Wurfwaffen:Falkenklauen+Wurfaexte" action="1" rank="r+a" />
+  <SKILL name="Wurfwaffen:Messer+Dolche" action="1" rank="r+a" />
+  <SKILL name="Wurfwaffen:Steine+Baelle+Flaschen" action="1" rank="r+a" />
+  <SKILL name="Wurfwaffen:Wurfpfeile+Speere" action="1" rank="r+a" />
+  <SKILL name="Zauberb&#252;cher verstehen" action="1" rank="r+d" />
+  <SKILL name="Zechen" action="1" rank="r+c" />
+  <SKILL name="Zielansage" action="1" rank="r+a" strain="1" />
+  <SKILL name="Zweiter Angriff" rank="r+a" strain="1" />
+  <SKILL name="Zweitwaffe" rank="r+a" strain="1" />
+  <SKILL name="&#220;berleben" action="1" rank="r+d" />
+  <SKILL name="&#220;berraschungsangriff:Streitaxt" action="1" rank="r+a" strain="1" />
+  <TALENT name="Ablenkung" action="1" rank="r+f" strain="1" />
+  <TALENT name="Abrichten" action="1" rank="r+f" />
+  <TALENT name="Abwehrkreis" rank="r+a" strain="1" />
+  <TALENT name="Adlerauge" rank="r+d" />
+  <TALENT name="Angst Einfl&#246;&#223;en" action="1" needkarma="1" rank="r+e" />
+  <TALENT name="Arkanes Gefasel" action="1" needkarma="1" rank="r+e" />
+  <TALENT name="Artefaktgeschichte" action="andauernd" needkarma="1" rank="r+d" />
+  <TALENT name="Astralangriff" action="1" rank="r+e" strain="1" />
+  <TALENT name="Astralsicht" rank="r+d" strain="1" />
+  <TALENT name="Bannmarkierung" action="andauernd" rank="r+f" strain="1" />
+  <TALENT name="Beeindruckender Schuss" action="1" rank="r+a" strain="1" />
+  <TALENT name="Beweisanalyse" action="1" rank="r+d" strain="1" />
+  <TALENT name="Blattschuss" action="1" needkarma="1" rank="r+a" />
+  <TALENT name="Bleibender Eindruck" needkarma="1" rank="r+f" />
+  <TALENT name="Blitzwurf" action="1" rank="r+a" strain="*" />
+  <TALENT name="Blutige Krallen" action="1" needkarma="1" rank="r+a" strain="1" />
+  <TALENT name="Brandpfeil" needkarma="1" rank="r+e+3" strain="2" />
+  <TALENT name="B&#252;cherged&#228;chtnis" action="andauernd" needkarma="1" rank="r+e" />
+  <TALENT name="Dakapo" needkarma="1" rank="r+f" strain="1" />
+  <TALENT name="Diebeszunge" action="1" rank="-" strain="1" />
+  <TALENT name="Dietrich" action="1" rank="r+a" />
+  <TALENT name="Eiserner Wille" rank="r+e" strain="1" />
+  <TALENT name="Eleganter Abgang" action="1" rank="r+f" />
+  <TALENT name="Elementarbann" action="1" rank="r+e" strain="1" />
+  <TALENT name="Elementarsprachen" rank="r+d" />
+  <TALENT name="Empathie Reittier" rank="r+e" />
+  <TALENT name="Empathische Wahrnehmung" rank="r+f" />
+  <TALENT name="Entwaffnen" action="1" rank="r+a" strain="1" />
+  <TALENT name="Erdhaut" action="1" rank="r" strain="1" />
+  <TALENT name="Erster Eindruck" action="1" needkarma="1" rank="r+f" />
+  <TALENT name="Erweiterte Matrix" rank="r" />
+  <TALENT name="Faden Halten" rank="r+e" />
+  <TALENT name="Fadenweben" action="1" rank="r+d" />
+  <TALENT name="Fallen Entdecken" action="1" rank="r+d" strain="1" />
+  <TALENT name="Fallen Entsch&#228;rfen" action="1" rank="r+a" strain="1" />
+  <TALENT name="Feilschen" action="andauernd" rank="r+f" />
+  <TALENT name="Fetisch Erschaffen" action="1" rank="r+d" />
+  <TALENT name="Fetischzauber" action="na" rank="r" />
+  <TALENT name="Feuerblut" action="1" rank="r+c" />
+  <TALENT name="Flinke Hand" action="1" needkarma="1" rank="r+d" />
+  <TALENT name="Fluch Aufheben" action="1" rank="r+e" strain="1" />
+  <TALENT name="Fremdsprachen" action="1" needkarma="1" rank="r+d" strain="1" />
+  <TALENT name="Froschsprung" needkarma="1" rank="r+b" />
+  <TALENT name="Furchterregender Angriff" rank="r+e" strain="2" />
+  <TALENT name="Gassenwissen" action="1" needkarma="1" rank="r+d" />
+  <TALENT name="Gedankenwelle" action="1" rank="r+e+5" strain="1" />
+  <TALENT name="Gef&#252;hlsmelodie" action="1" rank="r+f" />
+  <TALENT name="Geisterbann" action="1" rank="r+e+5" strain="1" />
+  <TALENT name="Geisterpferd" action="1" rank="r+e" strain="1" />
+  <TALENT name="Geistersprache" rank="r+d" />
+  <TALENT name="Geistesgegenwart" action="1" rank="r+a" strain="1" />
+  <TALENT name="Geruch Identifizieren" rank="r+d" />
+  <TALENT name="Gewinnendes L&#228;cheln" action="1" rank="r+f" />
+  <TALENT name="Gezielter Querschl&#228;ger" action="1" rank="r+a" strain="1" />
+  <TALENT name="Gift Ersp&#252;ren" rank="r+d" strain="1" />
+  <TALENT name="Gift Erstellen" action="1" rank="r+d" />
+  <TALENT name="Giftresistenz" rank="r+c" />
+  <TALENT name="Hammerschlag" needkarma="1" rank="r+b" />
+  <TALENT name="Heilendes Feuer" action="1" rank="r+e" />
+  <TALENT name="Herzliches Lachen" action="1" needkarma="1" rank="r+f" />
+  <TALENT name="Hieb Ausweichen" rank="r+a" strain="1" />
+  <TALENT name="Holzhaut" action="1" rank="r+c" />
+  <TALENT name="Hypnotisieren" action="andauernd" rank="r+d" />
+  <TALENT name="Illusionsverst&#228;rkung" rank="r+d" strain="1" />
+  <TALENT name="Kampfgebr&#252;ll" rank="r+f" strain="1" />
+  <TALENT name="Kampfsinn" rank="r+d" strain="1" />
+  <TALENT name="Karmaritual" action="na" rank="r" />
+  <TALENT name="Katzenpfote" rank="r+a" strain="1" />
+  <TALENT name="Klettern" action="1" rank="r+a" />
+  <TALENT name="Klinge Verbessern" action="andauernd" rank="r+e" />
+  <TALENT name="Kobrastoss" rank="r+a" strain="1" />
+  <TALENT name="Kompasspfeil" action="1" rank="r+d" strain="4" />
+  <TALENT name="Krallenhand" needkarma="1" rank="r+b+3" />
+  <TALENT name="Kreisender Spion" action="andauernd" needkarma="1" rank="r+d" />
+  <TALENT name="Kunstreiten" rank="r+a" strain="1" />
+  <TALENT name="K&#228;lte Ertragen" rank="r+c" />
+  <TALENT name="Lautloser Gang" rank="r+a" />
+  <TALENT name="Lebensblick" action="1" rank="r+d" strain="1" />
+  <TALENT name="Lesen/schreiben" action="1" rank="r+d" />
+  <TALENT name="Letzte Rettung" rank="r+c" />
+  <TALENT name="Luftgleiten" rank="r+a" strain="1" />
+  <TALENT name="Luftschifffahrt" action="andauernd" rank="r+e" />
+  <TALENT name="Luftspuren Lesen" action="1" rank="r+d" strain="1" />
+  <TALENT name="Lufttanz" rank="r+a" strain="1" />
+  <TALENT name="L&#246;wenherz" rank="r+e" />
+  <TALENT name="Magische Klinge" action="1" rank="r+d" />
+  <TALENT name="Magische Markierung" action="1" rank="r+d" strain="1" />
+  <TALENT name="Magische Maske" action="1" needkarma="1" rank="r+d" />
+  <TALENT name="Magische R&#252;stung" action="andauernd" rank="r+d" />
+  <TALENT name="Magisches Spurenlesen" action="1" rank="r+d" strain="1" />
+  <TALENT name="Man&#246;vrieren" action="1" rank="r+a" />
+  <TALENT name="Mentale Tierkontrolle" action="1" rank="r+e" strain="2" />
+  <TALENT name="Metallbann" action="1" rank="r+d+5" strain="2" />
+  <TALENT name="Mob Aufwiegeln" action="andauernd" rank="r+e" strain="1" />
+  <TALENT name="Nachtreten" rank="r+a" strain="1" />
+  <TALENT name="Nahkampfwaffen" action="1" rank="r+a" />
+  <TALENT name="Parade" needkarma="1" rank="r+a+3" strain="1" />
+  <TALENT name="Pfeile Einsammeln" action="1" rank="r+d" />
+  <TALENT name="Projektil Ablenken" action="1" rank="r+d" strain="1" />
+  <TALENT name="Projektile Abwehren" needkarma="1" rank="r+e" />
+  <TALENT name="Projektilwaffen" action="1" rank="r+a" />
+  <TALENT name="Reinigende K&#228;lte" action="1" rank="r+e" />
+  <TALENT name="Reittierangriff" rank="r+bnzahldesreittiers" strain="1" />
+  <TALENT name="Riposte" needkarma="1" rank="r+a+3" strain="1" />
+  <TALENT name="Schadensverteilung" action="1" rank="r+c" />
+  <TALENT name="Schildangriff" action="1" rank="r+b" strain="1" />
+  <TALENT name="Schlachtruf" rank="r+f" strain="1" />
+  <TALENT name="Schmetterschlag" rank="r+b+3" strain="1" />
+  <TALENT name="Schutzgeist" rank="r+d" strain="1" />
+  <TALENT name="Schwachstelle Erkennen" rank="r+d" strain="2" />
+  <TALENT name="Schwenkangriff" action="1" needkarma="1" rank="r+a" />
+  <TALENT name="Schwungvoller Angriff" rank="r+a" strain="1" />
+  <TALENT name="Sicherer Pfad" action="1" needkarma="1" rank="r+d" />
+  <TALENT name="Sicherer Reitsitz" rank="r+b" />
+  <TALENT name="Spektakul&#228;rer Angriff" action="1" rank="r+a" />
+  <TALENT name="Sprint" rank="r" strain="1" />
+  <TALENT name="Spruchzauberei" action="1" rank="r+d" />
+  <TALENT name="Stampede" action="1" rank="r+e" strain="1" />
+  <TALENT name="Standhaftigkeit" rank="r+b" />
+  <TALENT name="Starrsinn" rank="r+e" strain="1" />
+  <TALENT name="Stimmen Imitieren" action="1" rank="r+d" />
+  <TALENT name="Sturmangriff" rank="r" />
+  <TALENT name="Sturzflug" action="1" needkarma="1" rank="r+a" strain="1" />
+  <TALENT name="St&#228;hlerner Blick" action="1" rank="r+f" strain="1" />
+  <TALENT name="Taschendiebstahl" action="1" rank="r+a" />
+  <TALENT name="Temperatur" action="1" rank="r+e" strain="1" />
+  <TALENT name="Tieranalyse" action="1" rank="r+d" strain="1" />
+  <TALENT name="Tiere B&#228;ndigen" action="1" rank="r+f" strain="1" />
+  <TALENT name="Tiere Heilen" action="1" rank="r+c" />
+  <TALENT name="Tiere Verschrecken" action="1" needkarma="1" rank="r+f" />
+  <TALENT name="Tierfreundschaft" action="1" rank="r+f" />
+  <TALENT name="Tierische Sinne" action="1" rank="r+e" strain="1" />
+  <TALENT name="Tigersprung" rank="r" strain="1" />
+  <TALENT name="Totstellen" rank="r+e" />
+  <TALENT name="Trugbild" action="1" needkarma="1" rank="r+e" strain="2" />
+  <TALENT name="Unempfindlichkeit" action="na" rank="r" />
+  <TALENT name="Unempfindlichkeit Reittier" action="na" rank="r" />
+  <TALENT name="Unersch&#252;tterliche Erde" rank="r+b+5" strain="1" />
+  <TALENT name="Untr&#252;glicher Blick" rank="r+d" strain="1" />
+  <TALENT name="Verformung" action="1" rank="r+e" strain="2" />
+  <TALENT name="Verspotten" action="1" rank="r+f" />
+  <TALENT name="Vielseitigkeit" action="na" rank="r" />
+  <TALENT name="Waffe Verbergen" action="1" rank="r+d" strain="1" />
+  <TALENT name="Waffen Entdecken" action="1" rank="r+d" strain="1" />
+  <TALENT name="Waffenloser Kampf" action="1" rank="r+a" />
+  <TALENT name="Weitsprung" rank="r+a" />
+  <TALENT name="Willensst&#228;rke" action="na" rank="r+e" />
+  <TALENT name="Windkissen" action="1" rank="r+e" />
+  <TALENT name="Wurfwaffen" action="1" rank="r+a" />
+  <TALENT name="Zauber Lernen" action="1" rank="r+d" />
+  <TALENT name="Zauberb&#252;cher Verstehen" action="1" rank="r+d" />
+  <TALENT name="Zaubermatrix" action="na" rank="r" />
+  <TALENT name="Zweiter Angriff" needkarma="1" rank="r+a" strain="1" />
+  <TALENT name="Zweitschuss" rank="r+a" strain="2" />
+  <TALENT name="Zweitwaffe" rank="r+a" strain="1" />
+  <TALENT name="&#196;therhaut" action="andauernd" rank="r+e" />
+  <TALENT name="&#196;therhaut Andere" action="andauernd" rank="r+e" />
+  <TALENT name="&#220;berraschungsangriff" action="1" needkarma="1" rank="r+a" />
+</CAPABILITIES>

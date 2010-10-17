@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<DISZIPLIN label="Magier" lang="de">
+  <majorattribut>d</majorattribut>
+  <majorattribut>e</majorattribut>
+  <racelimit>Obsidianer</racelimit>
+  <crafts>Roben Besticken</crafts>
+  <circle nr="1">
+    <TALENT label="Fadenweben (Magie)"/>
+    <TALENT label="Karmaritual"/>
+    <TALENT label="Spruchzauberei"/>
+    <TALENT label="Zauberbücher Verstehen"/>
+    <TALENT label="Zaubermatrix"/>
+    <TALENT label="Zaubermatrix"/>
+  </circle>
+  <circle nr="2">
+    <TALENT label="Beweisanalyse"/>
+    <TALENT label="Unempfindlichkeit (3/4)"/>
+    <TALENT label="Zaubermatrix"/>
+  </circle>
+  <circle nr="3">
+    <TALENT label="Büchergedächtnis"/>
+    <TALENT label="Lesen/Schreiben"/>
+  </circle>
+  <circle nr="4">
+    <TALENT label="Arkanes Gefasel"/>
+    <TALENT label="Zaubermatrix"/>
+    <extra>Darf für jede Aktion, die nur Charisma erfordert, einen Karmapunkt einsetzen</extra>
+  </circle>
+  <circle nr="5">
+    <TALENT label="Astralsicht"/>
+    <TALENT label="Willensstärke"/>
+    <extra>&amp;2</extra>
+  </circle>
+  <circle nr="6">
+    <TALENT label="Erweiterte Matrix"/>
+    <TALENT label="Fremdsprachen"/>
+    <extra>&amp;3</extra>
+  </circle>
+  <circle nr="7">
+    <TALENT label="Faden Halten"/>
+    <TALENT label="Artefaktgeschichte"/>
+    <extra>Darf für jede Aktion, die nur Willenskraft oder Willensstärkeproben erfordert, einen Karmapunkt einsetzen</extra>
+  </circle>
+  <circle nr="8">
+    <TALENT label="Erweiterte Matrix"/>
+    <TALENT label="Starrsinn"/>
+    <extra>&amp;3</extra>
+  </circle>
+  <circle nr="9">
+    <TALENT label="Bildgedächtnis"/>
+    <TALENT label="Falschheit Erkennen"/>
+    <TALENT label="Gepanzerte Matrix"/>
+  </circle>
+  <circle nr="10">
+    <TALENT label="Gedanken Verbergen"/>
+    <TALENT label="Projektilwaffen"/>
+  </circle>
+  <circle nr="11">
+    <TALENT label="Gepanzerte Matrix"/>
+    <TALENT label="Nachdenkliche Miene"/>
+  </circle>
+  <circle nr="12">
+    <TALENT label="Matrixschlag"/>
+    <TALENT label="Starrsinn"/>
+  </circle>
+  <circle nr="13">
+    <TALENT label="Astralsicht"/>
+    <TALENT label="Summenmatrix"/>
+  </circle>
+  <circle nr="14">
+    <TALENT label="Schnelles Weben"/>
+    <TALENT label="Summenmatrix"/>
+  </circle>
+  <circle nr="15">
+    <TALENT label="Summenmatrix"/>
+    <TALENT label="Zweite Chance"/>
+  </circle>
+</DISZIPLIN>

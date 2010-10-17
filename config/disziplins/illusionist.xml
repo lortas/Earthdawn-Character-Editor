@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-15" ?>
+<DISZIPLIN label="Illusionist" lang="de">
+  <majorattribut>d</majorattribut>
+  <majorattribut>e</majorattribut>
+  <crafts>Roben Besticken</crafts>
+  <circle nr="1">
+    <TALENT label="Fadenweben (Illusion)"/>
+    <TALENT label="Karmaritual"/>
+    <TALENT label="Spruchzauberei"/>
+    <TALENT label="Zauberbücher Verstehen"/>
+    <TALENT label="Zaubermatrix"/>
+    <TALENT label="Zaubermatrix"/>
+    <SPELL label="Abbild Versetzen" threads="1" wavedifficulty="7" speedadjust="15">
+      <range>kontakt</range>
+      <duration>Rang + 7 Runden</duration>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+      <effect>Willensstärke +4, Illusion</effect>
+    </SPELL>
+    <SPELL label="Beruhigende Berührung" threads="0" wavedifficulty="0" speedadjust="7">
+      <range>kontakt</range>
+      <duration>Rang + 12 Runden</duration>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+      <effect>+3 Stufen gegen Angst</effect>
+    </SPELL>
+    <SPELL label="Bettlerbörse" threads="0" wavedifficulty="0" speedadjust="7">
+      <range>kontakt</range>
+      <duration>Rang + 1 Minuten</duration>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+      <effect>Willensstärke +4, Illusion</effect>
+    </SPELL>
+    <SPELL label="Falsches Gesicht" threads="2" wavedifficulty="5" speedadjust="14">
+      <range>kontakt</range>
+      <duration>Rang + 8 Minuten</duration>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+      <effect>Charisma +5, Illusion</effect>
+    </SPELL>
+    <SPELL label="Licht" threads="1" wavedifficulty="6" speedadjust="14">
+      <range>10 Schritte</range>
+      <duration>Willensstärkeprobe + 5 Minuten</duration>
+      <effect>Beschwört Licht</effect>
+      <wavedifficulty>2 (siehe Text)</wavedifficulty>
+    </SPELL>
+    <SPELL label="Metalle Tarnen" threads="1" wavedifficulty="7" speedadjust="14">
+      <range>kontakt</range>
+      <duration>Willensstärkeprobe + 7 Minuten</duration>
+      <effect>Verändert das Aussehen von Metall, Illusion</effect>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+    </SPELL>
+    <SPELL label="Seiltrick" threads="0" wavedifficulty="0" speedadjust="7">
+      <range>25 Schritte</range>
+      <duration>Rang + 3 Runden</duration>
+      <effect>Willensstärke + 4</effect>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+    </SPELL>
+    <SPELL label="Unsichtbare Stimmen" threads="0" wavedifficulty="0" speedadjust="7">
+      <range>40 Schritte</range>
+      <duration>Rang + 15 Runden</duration>
+      <effect>Willensstärke +5, Illusion</effect>
+      <wavedifficulty>Magische Widerstandskraft des Ziels</wavedifficulty>
+    </SPELL>
+  </circle>
+  <circle nr="2">
+    <TALENT label="Magische Maske"/>
+    <TALENT label="Unempfindlichkeit (3/4)"/>
+    <TALENT label="Zaubermatrix"/>
+  </circle>
+  <circle nr="3">
+    <TALENT label="Fremdsprachen"/>
+    <TALENT label="Totstellen"/>
+  </circle>
+  <circle nr="4">
+    <TALENT label="Illusionsverstärkung"/>
+    <TALENT label="Zaubermatrix"/>
+    <extra text="Darf für jede Aktion, die nur Wahrnehmung erfordert, einen Karmapunkt einsetzen"/>
+  </circle>
+  <circle nr="5">
+    <TALENT label="Trugbild"/>
+    <TALENT label="Willensstärke"/>
+    <extra>&amp;2</extra>
+  </circle>
+  <circle nr="6">
+    <TALENT label="Erweiterte Matrix"/>
+    <TALENT label="Flinke Hand"/>
+    <extra>&amp;3</extra>
+  </circle>
+  <circle nr="7">
+    <TALENT label="Ablenkung"/>
+    <TALENT label="Erweiterte Matrix"/>
+    <extra text="Darf für jede Aktion, die nur Geschicklichkeit erfordert, einen Karmapunkt einsetzen"/>
+  </circle>
+  <circle nr="8">
+    <TALENT label="Gedankenwelle"/>
+    <TALENT label="Untrüglicher Blick"/>
+    <extra>&amp;1</extra>
+  </circle>
+  <circle nr="9">
+    <TALENT label="Bildgedächtnis"/>
+    <TALENT label="Falschheit Erkennen"/>
+    <TALENT label="Gepanzerte Matrix"/>
+    <extra>&amp;2</extra>
+    <extra>&amp;2</extra>
+  </circle>
+  <circle nr="10">
+    <TALENT label="Gedanken Verbergen"/>
+    <TALENT label="Projektilwaffen"/>
+    <extra text="Willenskraft/Willensstärkeproben mit Karma möglich"/>
+  </circle>
+  <circle nr="11">
+    <TALENT label="Gepanzerte Matrix"/>
+    <TALENT label="Nachdenkliche Miene"/>
+    <extra>&amp;4</extra>
+    <extra text="Erholungsproben mit Karma möglich"/>
+  </circle>
+  <circle nr="12">
+    <TALENT label="Matrixschlag"/>
+    <TALENT label="Starrsinn"/>
+    <extra text="Matrix verbergen (2Überanstrengung)"/>
+  </circle>
+  <circle nr="13">
+    <TALENT label="Astralsicht"/>
+    <TALENT label="Summenmatrix"/>
+    <extra>&amp;2</extra>
+    <extra>&amp;2</extra>
+    <extra>&amp;5</extra>
+  </circle>
+  <circle nr="14">
+    <TALENT label="Schnelles Weben"/>
+    <TALENT label="Summenmatrix"/>
+    <extra>&amp;1</extra>
+    <extra>&amp;1</extra>
+    <extra>&amp;2</extra>
+  </circle>
+  <circle nr="15">
+    <TALENT label="Summenmatrix"/>
+    <TALENT label="Zweite Chance"/>
+    <extra>&amp;2</extra>
+    <extra>&amp;6</extra>
+    <extra>&amp;6</extra>
+  </circle>
+</DISZIPLIN>
