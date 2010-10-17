@@ -2,12 +2,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://earthdawn.de" targetNamespace="http://earthdawn.de" elementFormDefault="qualified">
 	<xs:simpleType name="ATTRIBUT_name_type">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Charisma"/>
-			<xs:enumeration value="Geschicklichkeit"/>
-			<xs:enumeration value="Stärke"/>
-			<xs:enumeration value="Wahrnehmung"/>
-			<xs:enumeration value="Willenskraft"/>
-			<xs:enumeration value="Zähigkeit"/>
+			<xs:enumeration value="CHA"/>
+			<xs:enumeration value="DEX"/>
+			<xs:enumeration value="STR"/>
+			<xs:enumeration value="PER"/>
+			<xs:enumeration value="WIL"/>
+			<xs:enumeration value="TOU"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="plusminus_type">
@@ -31,33 +31,13 @@
 			<xs:enumeration value="-"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="disziplinlist_type">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Alchemist"/>
-			<xs:enumeration value="Assasine"/>
-			<xs:enumeration value="Dieb"/>
-			<xs:enumeration value="Elementarist"/>
-			<xs:enumeration value="Illusionist"/>
-			<xs:enumeration value="Krieger"/>
-			<xs:enumeration value="Läuterer"/>
-			<xs:enumeration value="Luftpirat"/>
-			<xs:enumeration value="Magier"/>
-			<xs:enumeration value="OldWalker"/>
-			<xs:enumeration value="Schütze"/>
-			<xs:enumeration value="Schwertmeister"/>
-			<xs:enumeration value="Steppenreiter"/>
-			<xs:enumeration value="Windmeister"/>
-			<xs:enumeration value="Windscout"/>
-			<xs:enumeration value="NichtAdept"/>
-			<xs:enumeration value="Schamane"/>
-			<xs:enumeration value="Tiermeister"/>
-			<xs:enumeration value="Geisterbeschwörer"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:complexType name="ATTRIBUT_type">
 		<xs:attribute name="name" type="ATTRIBUT_name_type" use="required"/>
-		<xs:attribute name="steig" type="xs:integer" use="required"/>
-		<xs:attribute name="wert" type="xs:integer" use="required"/>
+		<xs:attribute name="startwert" type="xs:integer" use="required"/>
+		<xs:attribute name="stepup" type="xs:integer" use="required"/>
+		<xs:attribute name="wert" type="xs:integer"/>
+		<xs:attribute name="stufe" type="xs:integer"/>
+		<xs:attribute name="wuerfel" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="GEGENSTAND_type">
 		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
@@ -77,7 +57,7 @@
 	</xs:complexType>
 	<xs:complexType name="DISZIPLIN_type">
 		<xs:attribute name="Kreis" type="xs:integer" use="required"/>
-		<xs:attribute name="bezeichnung" type="disziplinlist_type" use="required"/>
+		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
 		<xs:attribute name="nr" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="GELD_type">
@@ -103,6 +83,7 @@
 		<xs:attribute name="kosten" type="xs:integer" use="required"/>
 		<xs:attribute name="max" type="xs:integer" use="required"/>
 		<xs:attribute name="stufe" type="xs:integer" use="required"/>
+		<xs:attribute name="wuerfel" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="LP_type">
 		<xs:attribute name="bemerkung" type="xs:string" use="required"/>
@@ -111,6 +92,8 @@
 		<xs:attribute name="zeit" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="LEGENDENPUNKTE_type">
+		<xs:attribute name="aktuellelp" type="xs:integer" use="required"/>
+		<xs:attribute name="gesamtlp" type="xs:integer" use="required"/>
 		<xs:choice maxOccurs="unbounded">
 			<xs:element name="LP" type="LP_type" maxOccurs="unbounded"/>
 		</xs:choice>
@@ -150,7 +133,7 @@
 		<xs:choice maxOccurs="unbounded">
 			<xs:element name="TALENT" type="TALENT_type" maxOccurs="unbounded"/>
 		</xs:choice>
-		<xs:attribute name="disziplin" type="disziplinlist_type" use="required"/>
+		<xs:attribute name="disziplin" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="FERTIGKEITEN_type">
 		<xs:choice maxOccurs="unbounded">
@@ -196,7 +179,7 @@
 		<xs:choice maxOccurs="unbounded">
 			<xs:element name="ZAUBER" type="ZAUBER_type" maxOccurs="unbounded"/>
 		</xs:choice>
-		<xs:attribute name="disziplin" type="disziplinlist_type" use="required"/>
+		<xs:attribute name="disziplin" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:element name="EDCHARAKTER">
 		<xs:complexType>
