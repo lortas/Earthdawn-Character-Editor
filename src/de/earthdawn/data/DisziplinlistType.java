@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="Elementarist"/>
  *     &lt;enumeration value="Illusionist"/>
  *     &lt;enumeration value="Krieger"/>
- *     &lt;enumeration value="Läuterer"/>
+ *     &lt;enumeration value="Lï¿½uterer"/>
  *     &lt;enumeration value="Luftpirat"/>
  *     &lt;enumeration value="Magier"/>
  *     &lt;enumeration value="OldWalker"/>
- *     &lt;enumeration value="Schütze"/>
+ *     &lt;enumeration value="Schï¿½tze"/>
  *     &lt;enumeration value="Schwertmeister"/>
  *     &lt;enumeration value="Steppenreiter"/>
  *     &lt;enumeration value="Windmeister"/>
@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="NichtAdept"/>
  *     &lt;enumeration value="Schamane"/>
  *     &lt;enumeration value="Tiermeister"/>
- *     &lt;enumeration value="Geisterbeschwörer"/>
+ *     &lt;enumeration value="Geisterbeschwï¿½rer"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -86,7 +86,7 @@ public enum DisziplinlistType {
     @XmlEnumValue("Tiermeister")
     TIERMEISTER("Tiermeister"),
     @XmlEnumValue("Geisterbeschw\u00f6rer")
-    GEISTERBESCHWÖRER("Geisterbeschw\u00f6rer");
+    GEISTERBESCHWÃ–RER("Geisterbeschw\u00f6rer");
     private final String value;
 
     DisziplinlistType(String v) {
