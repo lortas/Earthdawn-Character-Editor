@@ -63,6 +63,8 @@ public class ApplicationProperties {
 			CAPABILITIES_CONFIG.setValidating(false);
 			CAPABILITIES_CONFIG.load(new File("./config/capabilities.xml"));
 			
+			// disziplinen laden
+			
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...
 			throw new RuntimeException(e);
