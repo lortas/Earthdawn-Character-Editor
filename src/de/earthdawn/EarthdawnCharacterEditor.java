@@ -11,7 +11,7 @@ import de.earthdawn.data.EDCHARAKTER;
 import de.earthdawn.ui.EDFrame;
 
 
-public class EarthdawnCharacterGenerator {
+public class EarthdawnCharacterEditor {
 
 	/**
 	 * Main-Funktion. 
@@ -28,7 +28,7 @@ public class EarthdawnCharacterGenerator {
 				
 				// Verarbeiten
 				System.out.println("Verarbeite Charaker");
-				EDCHARAKTER ecOut = new ECGWorker().verarbeiteCharakter(ec);
+				EDCHARAKTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
 				
 				// Ausgabe
 				System.out.println("Speichere Charakter in " + args[1]);
