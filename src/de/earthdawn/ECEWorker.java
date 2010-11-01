@@ -7,7 +7,7 @@ import de.earthdawn.data.EDCHARAKTER;
  * 
  * @author lortas
  */
-public class ECGWorker {
+public class ECEWorker {
 
 	/**
 	 * Verabeiten eines Charakters.
@@ -15,7 +15,7 @@ public class ECGWorker {
 	public EDCHARAKTER verarbeiteCharakter(EDCHARAKTER charakter) {
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		// rasse=config.getRassen(charakter.getRasse());
-		
+
 		// Pro Atributt des Charakters werden nun dessen Werte, Stufe, und Würfel bestimmt.
 		// for i in DEX, STR, TOU, PER, WIL, CHA
 		// do
