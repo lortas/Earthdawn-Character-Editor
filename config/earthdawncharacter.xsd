@@ -92,11 +92,11 @@
 		<xs:attribute name="zeit" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="LEGENDENPUNKTE_type">
-		<xs:attribute name="aktuellelp" type="xs:integer" use="required"/>
-		<xs:attribute name="gesamtlp" type="xs:integer" use="required"/>
 		<xs:choice maxOccurs="unbounded">
 			<xs:element name="LP" type="LP_type" maxOccurs="unbounded"/>
 		</xs:choice>
+        <xs:attribute name="aktuellelp" type="xs:integer" use="required"/>
+        <xs:attribute name="gesamtlp" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="RUESTUNG_type">
 		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>

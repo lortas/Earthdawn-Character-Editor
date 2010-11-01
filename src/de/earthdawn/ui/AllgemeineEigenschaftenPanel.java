@@ -11,7 +11,6 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 
-import de.earthdawn.data.DisziplinlistType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -19,6 +18,7 @@ import de.earthdawn.data.EDCHARAKTER;
  * 
  * @author mh
  */
+@SuppressWarnings("serial")
 public class AllgemeineEigenschaftenPanel extends JPanel {
 
 	/** Textfeld zur Anzeige/Eingabe des Charakternamens. */
@@ -67,9 +67,11 @@ public class AllgemeineEigenschaftenPanel extends JPanel {
 		
 		// --- 1. Disziplin
 		this.comboErsteDisziplinBezeichnung = new JComboBox();
+/* TODO: Read values from config-file
 		for (DisziplinlistType disziplin : DisziplinlistType.values()) {
 			this.comboErsteDisziplinBezeichnung.addItem(disziplin.value());
 		}
+*/
 		this.spinErsteDisziplinNr = new JSpinner();
 		SpinnerNumberModel model = new SpinnerNumberModel(1, 1, 15, 1);
 		this.spinErsteDisziplinNr.setModel(model);
@@ -85,9 +87,11 @@ public class AllgemeineEigenschaftenPanel extends JPanel {
 		
 		// --- 2. Disziplin
 		this.comboZweiteDisziplinBezeichnung = new JComboBox();
+/* TODO: Read values from config-file
 		for (DisziplinlistType disziplin : DisziplinlistType.values()) {
 			this.comboZweiteDisziplinBezeichnung.addItem(disziplin.value());
 		}
+*/
 		this.spinZweiteDisziplinNr = new JSpinner();
 		model = new SpinnerNumberModel(1, 1, 15, 1);
 		this.spinZweiteDisziplinNr.setModel(model);

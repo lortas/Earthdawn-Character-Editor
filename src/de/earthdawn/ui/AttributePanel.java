@@ -8,7 +8,6 @@ import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import de.earthdawn.data.ATTRIBUTNameType;
 import de.earthdawn.data.ATTRIBUTType;
 import de.earthdawn.data.EDCHARAKTER;
 
@@ -17,6 +16,7 @@ import de.earthdawn.data.EDCHARAKTER;
  * 
  * @author mh
  */
+@SuppressWarnings("serial")
 public class AttributePanel extends JPanel {
 	
 	/** Map zur Verwaltung der Attribute. */
@@ -34,12 +34,14 @@ public class AttributePanel extends JPanel {
 		GridBagConstraintsBuilder gbcb = new GridBagConstraintsBuilder();
 
 		// --- Geschicklichkeit
+/* TODO: Parse values from config files
 		createAttribut(gbcb, new UIAttribut(ATTRIBUTNameType.GESCHICKLICHKEIT.value()));
 		createAttribut(gbcb, new UIAttribut(ATTRIBUTNameType.STAERKE.value()));
 		createAttribut(gbcb, new UIAttribut(ATTRIBUTNameType.CHARISMA.value()));
 		createAttribut(gbcb, new UIAttribut(ATTRIBUTNameType.WAHRNEHMUNG.value()));
 		createAttribut(gbcb, new UIAttribut(ATTRIBUTNameType.ZAEHIGKEIT.value()));
 		createAttribut(gbcb, new UIAttribut(ATTRIBUTNameType.WILLENSKRAFT.value()));
+*/
 	}
 
 	private void createAttribut(GridBagConstraintsBuilder gbcb, UIAttribut attribut) {
@@ -63,7 +65,7 @@ public class AttributePanel extends JPanel {
 		UIAttribut uiAttribut = this.attribute.get(attribut.getName().value());
 		if (uiAttribut != null) {
 			uiAttribut.getSpinWert().setValue(new Integer(attribut.getWert().intValue()));
-			uiAttribut.getSpinSteig().setValue(new Integer(attribut.getSteig().intValue()));
+			// uiAttribut.getSpinSteig().setValue(new Integer(attribut.getSteig().intValue()));
 		}
 		else {
 			// TODO: Unbekanntes Attribut? -> Höchstwahrscheinlich ein Konfigurationsproblem

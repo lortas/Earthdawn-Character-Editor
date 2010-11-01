@@ -24,6 +24,7 @@ import de.earthdawn.data.EDCHARAKTER;
 /**
  * Hauptfenster des Earthdawn-Character-Generators. 
  */
+@SuppressWarnings("serial")
 public class EDFrame extends JFrame implements ActionListener {
 
     /** Action-Command: Character erstellen */
