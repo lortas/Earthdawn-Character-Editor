@@ -17,6 +17,7 @@ import de.earthdawn.data.EDCHARAKTER;
 /**
  * Anzeigeelement für einen Earthdawn Charakter. 
  */
+@SuppressWarnings("serial")
 public class EDComponent extends JComponent implements ActionListener {
 
 	private static final String ACTION_RASSE_GEWAEHLT = "__RASSE_GEWAEHLT";

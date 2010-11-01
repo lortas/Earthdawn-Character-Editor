@@ -66,7 +66,7 @@ public class UIAttribut {
 				ATTRIBUTType attribut = (ATTRIBUTType) o;
 				if (attribut.getName().value().equals(getName())) {
 					attribut.setWert(new BigInteger(getSpinWert().getValue().toString()));
-					attribut.setSteig(new BigInteger(getSpinWert().getValue().toString()));
+//					attribut.setSteig(new BigInteger(getSpinWert().getValue().toString()));
 				}
 			}
 		}
