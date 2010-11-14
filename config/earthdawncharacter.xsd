@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-15"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://earthdawn.de" targetNamespace="http://earthdawn.de" elementFormDefault="qualified">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://earthdawn.de" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://earthdawn.de">
 	<xs:simpleType name="ATTRIBUT_name_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CHA"/>
@@ -45,7 +45,7 @@
 	</xs:complexType>
 	<xs:complexType name="AUSRUESTUNG_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element name="GEGENSTAND" type="GEGENSTAND_type" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" name="GEGENSTAND" type="GEGENSTAND_type"/>
 		</xs:choice>
 		<xs:attribute name="ort" type="xs:string" use="required"/>
 	</xs:complexType>
@@ -61,7 +61,7 @@
 		<xs:attribute name="nr" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="GELD_type">
-		<xs:attribute name="ort" type="xs:string" use="optional" default="selbst"/>
+		<xs:attribute default="selbst" name="ort" type="xs:string" use="optional"/>
 		<xs:attribute name="Kupfer" type="xs:integer"/>
 		<xs:attribute name="Silber" type="xs:integer"/>
 		<xs:attribute name="Gold" type="xs:integer"/>
@@ -93,10 +93,10 @@
 	</xs:complexType>
 	<xs:complexType name="LEGENDENPUNKTE_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element name="LP" type="LP_type" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" name="LP" type="LP_type"/>
 		</xs:choice>
-        <xs:attribute name="aktuellelp" type="xs:integer" use="required"/>
-        <xs:attribute name="gesamtlp" type="xs:integer" use="required"/>
+		<xs:attribute name="aktuellelp" type="xs:integer" use="required"/>
+		<xs:attribute name="gesamtlp" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="RUESTUNG_type">
 		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
@@ -131,13 +131,13 @@
 	</xs:complexType>
 	<xs:complexType name="TALENTE_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element name="TALENT" type="TALENT_type" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" name="TALENT" type="TALENT_type"/>
 		</xs:choice>
 		<xs:attribute name="disziplin" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="FERTIGKEITEN_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element name="FERTIGKEIT" type="FERTIGKEIT_type" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" name="FERTIGKEIT" type="FERTIGKEIT_type"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="TOD_type">
@@ -157,11 +157,11 @@
 	</xs:complexType>
 	<xs:complexType name="WAFFEN_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element name="WAFFE" type="WAFFE_type" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" name="WAFFE" type="WAFFE_type"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="WIDERSTANDSKRAFT_type">
-		<xs:attribute name="körperlich" type="xs:integer" use="required"/>
+		<xs:attribute name="koerperlich" type="xs:integer" use="required"/>
 		<xs:attribute name="magisch" type="xs:integer" use="required"/>
 		<xs:attribute name="sozial" type="xs:integer" use="required"/>
 	</xs:complexType>
@@ -177,31 +177,31 @@
 	</xs:complexType>
 	<xs:complexType name="ZAUBERLISTE_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element name="ZAUBER" type="ZAUBER_type" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" name="ZAUBER" type="ZAUBER_type"/>
 		</xs:choice>
 		<xs:attribute name="disziplin" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:element name="EDCHARAKTER">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
-				<xs:element name="ATTRIBUT" type="ATTRIBUT_type" maxOccurs="unbounded"/>
-				<xs:element name="AUSRUESTUNG" type="AUSRUESTUNG_type" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" name="ATTRIBUT" type="ATTRIBUT_type"/>
+				<xs:element maxOccurs="unbounded" name="AUSRUESTUNG" type="AUSRUESTUNG_type"/>
 				<xs:element name="BEMERKUNG" type="xs:string"/>
 				<xs:element name="BEWEGEN" type="BEWEGEN_type"/>
-				<xs:element name="DISZIPLIN" type="DISZIPLIN_type" maxOccurs="3"/>
-				<xs:element name="FERTIGKEITEN" type="FERTIGKEITEN_type" maxOccurs="unbounded"/>
-				<xs:element name="GELD" type="GELD_type" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="3" name="DISZIPLIN" type="DISZIPLIN_type"/>
+				<xs:element maxOccurs="unbounded" name="FERTIGKEITEN" type="FERTIGKEITEN_type"/>
+				<xs:element maxOccurs="unbounded" name="GELD" type="GELD_type"/>
 				<xs:element name="GEWICHT" type="GEWICHT_type"/>
 				<xs:element name="INITIATIVE" type="INITIATIVE_type"/>
 				<xs:element name="KARMA" type="KARMA_type"/>
 				<xs:element name="LEGENDENPUNKTE" type="LEGENDENPUNKTE_type"/>
-				<xs:element name="RUESTUNG" type="RUESTUNG_type" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" name="RUESTUNG" type="RUESTUNG_type"/>
 				<xs:element name="SCHADEN" type="SCHADEN_type"/>
-				<xs:element name="TALENTE" type="TALENTE_type" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" name="TALENTE" type="TALENTE_type"/>
 				<xs:element name="TOD" type="TOD_type"/>
-				<xs:element name="WAFFEN" type="WAFFEN_type" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" name="WAFFEN" type="WAFFEN_type"/>
 				<xs:element name="WIDERSTANDSKRAFT" type="WIDERSTANDSKRAFT_type"/>
-				<xs:element name="ZAUBERLISTE" type="ZAUBERLISTE_type" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" name="ZAUBERLISTE" type="ZAUBERLISTE_type"/>
 			</xs:choice>
 			<xs:attribute name="Alter" type="xs:integer" use="required"/>
 			<xs:attribute name="Augenf" type="xs:string" use="required"/>
