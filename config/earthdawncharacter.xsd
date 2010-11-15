@@ -16,7 +16,7 @@
 			<xs:enumeration value="-"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="janein_type">
+	<xs:simpleType name="yesno_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="j"/>
 			<xs:enumeration value="n"/>
@@ -55,10 +55,10 @@
 		<xs:attribute name="laufen_kampf" type="xs:integer" use="required"/>
 		<xs:attribute name="laufen_normal" type="xs:integer" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="DISZIPLIN_type">
-		<xs:attribute name="Kreis" type="xs:integer" use="required"/>
-		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
-		<xs:attribute name="nr" type="xs:integer" use="required"/>
+	<xs:complexType name="DISCIPLINE_type">
+		<xs:attribute name="Circle" type="xs:integer" use="required"/>
+		<xs:attribute name="Label" type="xs:string" use="required"/>
+		<xs:attribute name="Nr" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="GELD_type">
 		<xs:attribute default="selbst" name="ort" type="xs:string" use="optional"/>
@@ -76,14 +76,15 @@
 		<xs:attribute name="traglast" type="xs:integer"/>
 	</xs:complexType>
 	<xs:complexType name="INITIATIVE_type">
-		<xs:attribute name="wert" type="xs:integer" use="required"/>
+		<xs:attribute name="step" type="xs:integer" use="required"/>
+		<xs:attribute name="dice" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="KARMA_type">
-		<xs:attribute name="aktuell" type="xs:integer" use="required"/>
-		<xs:attribute name="kosten" type="xs:integer" use="required"/>
+		<xs:attribute name="current" type="xs:integer" use="required"/>
+		<xs:attribute name="cost" type="xs:integer" use="required"/>
 		<xs:attribute name="max" type="xs:integer" use="required"/>
-		<xs:attribute name="stufe" type="xs:integer" use="required"/>
-		<xs:attribute name="wuerfel" type="xs:string" use="required"/>
+		<xs:attribute name="step" type="xs:integer" use="required"/>
+		<xs:attribute name="dice" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="LP_type">
 		<xs:attribute name="bemerkung" type="xs:string" use="required"/>
@@ -98,10 +99,10 @@
 		<xs:attribute name="aktuellelp" type="xs:integer" use="required"/>
 		<xs:attribute name="gesamtlp" type="xs:integer" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="RUESTUNG_type">
+	<xs:complexType name="ARMOR_type">
 		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
 		<xs:attribute name="gewicht" type="xs:decimal" use="required"/>
-		<xs:attribute name="aktiv" type="janein_type" use="required"/>
+		<xs:attribute name="aktiv" type="yesno_type" use="required"/>
 		<xs:attribute name="behinderung" type="xs:integer" use="required"/>
 		<xs:attribute name="bruchschwelle" type="xs:integer" use="required"/>
 		<xs:attribute name="mystisch" type="xs:integer" use="required"/>
@@ -113,31 +114,33 @@
 		<xs:attribute name="schaden" type="xs:integer" use="required"/>
 		<xs:attribute name="wunden" type="xs:integer" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="FERTIGKEIT_type">
-		<xs:attribute name="aktion" type="janein_type" use="required"/>
-		<xs:attribute name="attributstufe" type="xs:integer" use="required"/>
-		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
-		<xs:attribute name="rang" type="xs:integer" use="required"/>
-		<xs:attribute name="ueberanstrengung" type="xs:integer" use="required"/>
+	<xs:complexType name="SKILL_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="action" type="yesno_type" use="required"/>
+		<xs:attribute name="strain" type="xs:integer" use="required"/>
+		<xs:attribute name="attribute" type="xs:integer" use="required"/>
+		<xs:attribute name="rank" type="xs:integer" use="required"/>
+		<xs:attribute name="step" type="xs:integer" use="required"/>
+		<xs:attribute name="dice" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="TALENT_type">
 		<xs:complexContent>
-			<xs:extension base="FERTIGKEIT_type">
-				<xs:attribute name="karma" type="janein_type" use="required"/>
-				<xs:attribute name="disziplintalent" type="janein_type" use="required"/>
-				<xs:attribute name="kreis" type="xs:integer" use="required"/>
+			<xs:extension base="SKILL_type">
+				<xs:attribute name="karma" type="yesno_type" use="required"/>
+				<xs:attribute name="discipline" type="yesno_type" use="required"/>
+				<xs:attribute name="circle" type="xs:integer" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="TALENTE_type">
+	<xs:complexType name="TALENTS_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" name="TALENT" type="TALENT_type"/>
+			<xs:element maxOccurs="unbounded" name="talent" type="TALENT_type"/>
 		</xs:choice>
-		<xs:attribute name="disziplin" type="xs:string" use="required"/>
+		<xs:attribute name="discipline" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="FERTIGKEITEN_type">
+	<xs:complexType name="SKILLS_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" name="FERTIGKEIT" type="FERTIGKEIT_type"/>
+			<xs:element maxOccurs="unbounded" name="skill" type="SKILL_type"/>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="TOD_type">
@@ -160,24 +163,26 @@
 			<xs:element maxOccurs="unbounded" name="WAFFE" type="WAFFE_type"/>
 		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="WIDERSTANDSKRAFT_type">
-		<xs:attribute name="koerperlich" type="xs:integer" use="required"/>
-		<xs:attribute name="magisch" type="xs:integer" use="required"/>
-		<xs:attribute name="sozial" type="xs:integer" use="required"/>
+	<xs:complexType name="DEFENSE_type">
+		<xs:attribute name="physical" type="xs:integer" use="required"/>
+		<xs:attribute name="spell" type="xs:integer" use="required"/>
+		<xs:attribute name="social" type="xs:integer" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="ZAUBER_type">
-		<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
-		<xs:attribute name="effekt" type="xs:string" use="required"/>
-		<xs:attribute name="faeden" type="xs:integer" use="required"/>
-		<xs:attribute name="kreis" type="xs:integer" use="required"/>
-		<xs:attribute name="reichweite" type="xs:string" use="required"/>
-		<xs:attribute name="webschwierigkeit" type="xs:string" use="required"/>
-		<xs:attribute name="wirkschwierigkeit" type="xs:string" use="required"/>
-		<xs:attribute name="wirkungsdauer" type="xs:string" use="required"/>
+	<xs:complexType name="SPELL_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="inmatrix" type="yesno_type" use="required"/>
+		<xs:attribute name="type" type="xs:integer" use="required"/>
+		<xs:attribute name="circle" type="xs:integer" use="required"/>
+		<xs:attribute name="threads" type="xs:integer" use="required"/>
+		<xs:attribute name="weavingdifficulty" type="xs:string" use="required"/>
+		<xs:attribute name="castingdifficulty" type="xs:string" use="required"/>
+		<xs:attribute name="range" type="xs:string" use="required"/>
+		<xs:attribute name="duration" type="xs:string" use="required"/>
+		<xs:attribute name="effect" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="ZAUBERLISTE_type">
+	<xs:complexType name="SPELLS_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" name="ZAUBER" type="ZAUBER_type"/>
+			<xs:element maxOccurs="unbounded" name="SPELL" type="SPELL_type"/>
 		</xs:choice>
 		<xs:attribute name="disziplin" type="xs:string" use="required"/>
 	</xs:complexType>
@@ -188,30 +193,30 @@
 				<xs:element maxOccurs="unbounded" name="AUSRUESTUNG" type="AUSRUESTUNG_type"/>
 				<xs:element name="BEMERKUNG" type="xs:string"/>
 				<xs:element name="BEWEGEN" type="BEWEGEN_type"/>
-				<xs:element maxOccurs="3" name="DISZIPLIN" type="DISZIPLIN_type"/>
-				<xs:element maxOccurs="unbounded" name="FERTIGKEITEN" type="FERTIGKEITEN_type"/>
+				<xs:element maxOccurs="3" name="DISCIPLINE" type="DISCIPLINE_type"/>
+				<xs:element maxOccurs="unbounded" name="SKILLS" type="SKILLS_type"/>
 				<xs:element maxOccurs="unbounded" name="GELD" type="GELD_type"/>
 				<xs:element name="GEWICHT" type="GEWICHT_type"/>
 				<xs:element name="INITIATIVE" type="INITIATIVE_type"/>
 				<xs:element name="KARMA" type="KARMA_type"/>
 				<xs:element name="LEGENDENPUNKTE" type="LEGENDENPUNKTE_type"/>
-				<xs:element maxOccurs="unbounded" name="RUESTUNG" type="RUESTUNG_type"/>
+				<xs:element maxOccurs="unbounded" name="ARMOR" type="ARMOR_type"/>
 				<xs:element name="SCHADEN" type="SCHADEN_type"/>
-				<xs:element maxOccurs="unbounded" name="TALENTE" type="TALENTE_type"/>
+				<xs:element maxOccurs="unbounded" name="TALENTS" type="TALENTS_type"/>
 				<xs:element name="TOD" type="TOD_type"/>
 				<xs:element maxOccurs="unbounded" name="WAFFEN" type="WAFFEN_type"/>
-				<xs:element name="WIDERSTANDSKRAFT" type="WIDERSTANDSKRAFT_type"/>
-				<xs:element maxOccurs="unbounded" name="ZAUBERLISTE" type="ZAUBERLISTE_type"/>
+				<xs:element name="DEFENSE" type="DEFENSE_type"/>
+				<xs:element maxOccurs="unbounded" name="SPELLS" type="SPELLS_type"/>
 			</xs:choice>
-			<xs:attribute name="Alter" type="xs:integer" use="required"/>
-			<xs:attribute name="Augenf" type="xs:string" use="required"/>
-			<xs:attribute name="Geschlecht" type="geschlecht_type" use="required"/>
-			<xs:attribute name="Gewicht" type="xs:integer" use="required"/>
-			<xs:attribute name="Groesse" type="xs:integer" use="required"/>
-			<xs:attribute name="Haarf" type="xs:string" use="required"/>
-			<xs:attribute name="Hautf" type="xs:string" use="required"/>
-			<xs:attribute name="Rasse" type="xs:string" use="required"/>
-			<xs:attribute name="bezeichnung" type="xs:string" use="required"/>
+			<xs:attribute name="age" type="xs:integer" use="required"/>
+			<xs:attribute name="eyes" type="xs:string" use="required"/>
+			<xs:attribute name="gender" type="geschlecht_type" use="required"/>
+			<xs:attribute name="weight" type="xs:integer" use="required"/>
+			<xs:attribute name="height" type="xs:integer" use="required"/>
+			<xs:attribute name="hair" type="xs:string" use="required"/>
+			<xs:attribute name="skin" type="xs:string" use="required"/>
+			<xs:attribute name="race" type="xs:string" use="required"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
