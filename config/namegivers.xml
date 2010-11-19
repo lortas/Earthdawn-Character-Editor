@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NAMEGIVERS>
-  <NAMEGIVER name="Elve">
+  <NAMEGIVER name="Dwarf">
+    <ATTR_START id="DEX" value="10" />
+    <ATTR_START id="STR" value="10" />
+    <ATTR_START id="TOU" value="10" />
+    <ATTR_START id="PER" value="10" />
+    <ATTR_START id="WIL" value="10" />
+    <ATTR_START id="CHA" value="10" />
+    <MOVEMENT type="ground">8 10 12 16 20 24 28 32 36</MOVEMENT>
+    <KARMA modifier="4" />
+    <ABILITIES>Heat Sight</ABILITIES>
+  </NAMEGIVER>
+  <NAMEGIVER name="Elf">
     <ATTR_START id="DEX" value="10" />
     <ATTR_START id="STR" value="10" />
     <ATTR_START id="TOU" value="10" />
@@ -9,6 +20,7 @@
     <ATTR_START id="CHA" value="10" />
     <MOVEMENT type="ground">2 4 6 8 10 14 18 22 26</MOVEMENT>
     <KARMA modifier="4" />
+    <ABILITIES>Low-Light Vision</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Human">
     <ATTR_START id="DEX" value="10" />
@@ -39,16 +51,7 @@
     <ATTR_START id="CHA" value="10" />
     <MOVEMENT typ="ground">7 9 11 13 17 21 25 29 33</MOVEMENT>
     <KARMA modifier="5" />
-  </NAMEGIVER>
-  <NAMEGIVER name="T'skrang">
-    <ATTR_START id="DEX" value="10" />
-    <ATTR_START id="STR" value="10" />
-    <ATTR_START id="TOU" value="10" />
-    <ATTR_START id="PER" value="10" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="10" />
-    <MOVEMENT type="ground">4 6 8 10 14 18 22 26 30</MOVEMENT>
-    <KARMA modifier="4" />
+    <ABILITIES>Versatility</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Troll">
     <ATTR_START id="DEX" value="10" />
@@ -59,6 +62,18 @@
     <ATTR_START id="CHA" value="10" />
     <MOVEMENT type="ground">6 8 10 12 14 18 22 26 30</MOVEMENT>
     <KARMA modifier="3" />
+    <ABILITIES>Heat Sight</ABILITIES>
+  </NAMEGIVER>
+  <NAMEGIVER name="T'skrang">
+    <ATTR_START id="DEX" value="10" />
+    <ATTR_START id="STR" value="10" />
+    <ATTR_START id="TOU" value="10" />
+    <ATTR_START id="PER" value="10" />
+    <ATTR_START id="WIL" value="10" />
+    <ATTR_START id="CHA" value="10" />
+    <MOVEMENT type="ground">4 6 8 10 14 18 22 26 30</MOVEMENT>
+    <KARMA modifier="4" />
+    <ABILITIES>Tail Attack</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Windling">
     <ATTR_START id="DEX" value="10" />
@@ -70,15 +85,7 @@
     <MOVEMENT type="flight">0 0 0 0 2 4 8 12 16</MOVEMENT>
     <MOVEMENT type="ground">4 8 12 16 20 24 28 32 36</MOVEMENT>
     <KARMA modifier="6" />
+    <ABILITIES>Astral-Sensitive Sight</ABILITIES>
   </NAMEGIVER>
-  <NAMEGIVER name="Dwarf">
-    <ATTR_START id="DEX" value="10" />
-    <ATTR_START id="STR" value="10" />
-    <ATTR_START id="TOU" value="10" />
-    <ATTR_START id="PER" value="10" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="10" />
-    <MOVEMENT type="ground">8 10 12 16 20 24 28 32 36</MOVEMENT>
-    <KARMA modifier="4" />
   </NAMEGIVER>
  </NAMEGIVERS>
