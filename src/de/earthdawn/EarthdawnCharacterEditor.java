@@ -31,12 +31,15 @@ public class EarthdawnCharacterEditor {
 				EDCHARAKTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
 				
 				// Ausgabe
-				System.out.println("Speichere Charakter in " + args[1]);
+				File outFile = new File(args[1]);
+                System.out.println("Speichere Charakter in " + outFile);
 				Marshaller m = jc.createMarshaller();
 				m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.marshal(ecOut,new FileWriter( new File(args[1])));
-				
+				m.marshal(ecOut,new FileWriter( outFile));
+
+				// Ausgabe (PDF)
+				new ECEPdfExporter().export(ecOut, new File(outFile.getParentFile(), outFile.getName() + ".pdf"));				
 			} else {
 				// Anzeigen des Hauptdialogs.
 				new EDFrame().setVisible(true);
