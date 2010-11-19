@@ -53,6 +53,7 @@
 		<xs:attribute name="currentvalue" type="xs:integer"/>
 		<xs:attribute name="step" type="xs:integer"/>
 		<xs:attribute name="dice" type="xs:string"/>
+		<xs:attribute name="cost" type="xs:integer"/>
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
