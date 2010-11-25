@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
-import de.earthdawn.data.ATTRIBUTType;
+import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -61,11 +61,11 @@ public class UIAttribut {
 	}
 
 	public void addToCharakter(EDCHARAKTER charakter) {
-		for (Object o : charakter.getATTRIBUTOrAUSRUESTUNGOrBEMERKUNG()) {
-			if (o instanceof ATTRIBUTType) {
-				ATTRIBUTType attribut = (ATTRIBUTType) o;
+		for (Object o : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (o instanceof ATTRIBUTEType) {
+				ATTRIBUTEType attribut = (ATTRIBUTEType) o;
 				if (attribut.getName().value().equals(getName())) {
-					attribut.setWert(new BigInteger(getSpinWert().getValue().toString()));
+					attribut.setCurrentvalue(new BigInteger(getSpinWert().getValue().toString()));
 //					attribut.setSteig(new BigInteger(getSpinWert().getValue().toString()));
 				}
 			}

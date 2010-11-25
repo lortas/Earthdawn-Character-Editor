@@ -28,7 +28,7 @@ public class ECEPdfExporter {
 //            System.out.println( fieldName );
 //        }
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        acroFields.setField( "Name", edCharakter.getBezeichnung());    
+        // acroFields.setField( "Name", edCharakter.getBezeichnung());    
         stamper.close();
     }
 }

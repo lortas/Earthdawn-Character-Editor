@@ -10,28 +10,16 @@
                 <jaxb:typesafeEnumMember value="-" name="MINUS" />
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
-        <jaxb:bindings node="//xs:simpleType[@name='janein_type']">
+        <jaxb:bindings node="//xs:simpleType[@name='yesno_type']">
             <jaxb:typesafeEnumClass>
                 <jaxb:typesafeEnumMember value="-" name="MINUS" />
                 <jaxb:typesafeEnumMember value="*" name="STERN" />
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
-        <jaxb:bindings node="//xs:simpleType[@name='geschlecht_type']">
+        <jaxb:bindings node="//xs:simpleType[@name='gender_type']">
             <jaxb:typesafeEnumClass>
                 <jaxb:typesafeEnumMember value="-" name="MINUS" />
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
-        <jaxb:bindings node="//xs:simpleType[@name='ATTRIBUT_name_type']">
-            <jaxb:typesafeEnumClass>
-                <jaxb:typesafeEnumMember value="Stärke" name="STAERKE" />
-                <jaxb:typesafeEnumMember value="Zähigkeit" name="ZAEHIGKEIT" />
-            </jaxb:typesafeEnumClass>
-        </jaxb:bindings>
-        <!-- jaxb:bindings node="//xs:simpleType[@name='disziplinlist_type']">
-            <jaxb:typesafeEnumClass>
-                <jaxb:typesafeEnumMember value="Läuterer" name="LAEUTERER" />
-                <jaxb:typesafeEnumMember value="Schütze" name="SCHUETZE" />
-            </jaxb:typesafeEnumClass>
-        </jaxb:bindings-->
     </jaxb:bindings>
 </jaxb:bindings>

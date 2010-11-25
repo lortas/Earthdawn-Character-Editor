@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import de.earthdawn.data.ATTRIBUTType;
+import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -61,10 +61,10 @@ public class AttributePanel extends JPanel {
 		this.attribute.put(attribut.getName(), attribut);
 	}
 
-	public void attributAnzeigen(ATTRIBUTType attribut) {
+	public void attributAnzeigen(ATTRIBUTEType attribut) {
 		UIAttribut uiAttribut = this.attribute.get(attribut.getName().value());
 		if (uiAttribut != null) {
-			uiAttribut.getSpinWert().setValue(new Integer(attribut.getWert().intValue()));
+			uiAttribut.getSpinWert().setValue(new Integer(attribut.getBasevalue().intValue()));
 			// uiAttribut.getSpinSteig().setValue(new Integer(attribut.getSteig().intValue()));
 		}
 		else {

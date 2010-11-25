@@ -16,18 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for INITIATIVE_type complex type.
+ * <p>Java class for RECOVERY_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="INITIATIVE_type">
+ * &lt;complexType name="RECOVERY_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="base" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="modification" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="testsperday" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="step" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="dice" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="dice" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,64 +35,38 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "INITIATIVE_type")
-public class INITIATIVEType {
+@XmlType(name = "RECOVERY_type")
+public class RECOVERYType {
 
     @XmlAttribute(required = true)
-    protected BigInteger base;
-    @XmlAttribute(required = true)
-    protected BigInteger modification;
+    protected BigInteger testsperday;
     @XmlAttribute(required = true)
     protected BigInteger step;
-    @XmlAttribute(required = true)
-    protected BigInteger dice;
+    @XmlAttribute
+    protected String dice;
 
     /**
-     * Gets the value of the base property.
+     * Gets the value of the testsperday property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getBase() {
-        return base;
+    public BigInteger getTestsperday() {
+        return testsperday;
     }
 
     /**
-     * Sets the value of the base property.
+     * Sets the value of the testsperday property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setBase(BigInteger value) {
-        this.base = value;
-    }
-
-    /**
-     * Gets the value of the modification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getModification() {
-        return modification;
-    }
-
-    /**
-     * Sets the value of the modification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setModification(BigInteger value) {
-        this.modification = value;
+    public void setTestsperday(BigInteger value) {
+        this.testsperday = value;
     }
 
     /**
@@ -125,10 +98,10 @@ public class INITIATIVEType {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public BigInteger getDice() {
+    public String getDice() {
         return dice;
     }
 
@@ -137,10 +110,10 @@ public class INITIATIVEType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public void setDice(BigInteger value) {
+    public void setDice(String value) {
         this.dice = value;
     }
 

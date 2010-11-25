@@ -1,5 +1,12 @@
 package de.earthdawn;
 
+import java.math.BigInteger;
+import java.util.List;
+
+import org.apache.commons.configuration.SubnodeConfiguration;
+
+import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -14,14 +21,26 @@ public class ECEWorker {
 	 */
 	public EDCHARAKTER verarbeiteCharakter(EDCHARAKTER charakter) {
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
-		// rasse=config.getRassen(charakter.getRasse());
+		String race = JAXBHelper.getRace(charakter);
+
+		if (race == null) {
+			// XXX: Konfigurationsproblem?
+			//return charakter;
+			race = "Dwarf";
+		}
 
 		// Pro Atributt des Charakters werden nun dessen Werte, Stufe, und Würfel bestimmt.
-		// for i in DEX, STR, TOU, PER, WIL, CHA
-		// do
-		//   v=rasse.Attributbasis(i)+charakter.getAttribut(i,"startwert") + charakter.getAttribut(i,"stepup");
-		//   charakter.setAttribut("wert",v);
-		// done
+		List<?> properties = ApplicationProperties.create().getNamegivers().configurationsAt(String.format("/NAMEGIVER[@name='%s']/ATTR_START", race));
+		for (Object property : properties) {			
+			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
+			String id = subnode.getString("/@id");
+			int attributbasis = subnode.getInt("/@value");
+			
+			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, id);		
+			int v = attributbasis + attribute.getBasevalue().intValue() + attribute.getStep().intValue();
+			attribute.setCurrentvalue(BigInteger.valueOf(v));
+		}
+		
 		// charakter.setWiederstandskraft.koerperlich(berechneWiederstandskraft(charakter.getAttribut("DEX","wert")));
 		// charakter.setWiederstandskraft.magisch(berechneWiederstandskraft(charakter.getAttribut("PER","wert")));
 		// charakter.setWiederstandskraft.sozial(berechneWiederstandskraft(charakter.getAttribut("CHA","wert")));

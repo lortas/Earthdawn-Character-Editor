@@ -10,8 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 
-import de.earthdawn.data.ATTRIBUTType;
-import de.earthdawn.data.AUSRUESTUNGType;
+import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -63,13 +62,13 @@ public class EDComponent extends JComponent implements ActionListener {
 		// TODO: Ist Bezeichung der Name?
 		this.allgemeineEigenschaftenPanel.charakterAnzeigen(this.charakter);
 		
-		for (Object o : this.charakter.getATTRIBUTOrAUSRUESTUNGOrBEMERKUNG()) {
-			if (o instanceof ATTRIBUTType) {
-				this.attributePanel.attributAnzeigen((ATTRIBUTType) o);
+		for (Object o : this.charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (o instanceof ATTRIBUTEType) {
+				this.attributePanel.attributAnzeigen((ATTRIBUTEType) o);
 			}
-			else if (o instanceof AUSRUESTUNGType) {
+			/*else if (o instanceof AUSRUESTUNGType) {
 				// TODO ...
-			}
+			}*/
 			
 			// TODO weitere Merkmale anzeigen ...
 		}
