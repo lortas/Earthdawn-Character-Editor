@@ -16,18 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for INITIATIVE_type complex type.
+ * <p>Java class for DEATH_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="INITIATIVE_type">
+ * &lt;complexType name="DEATH_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="base" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="modification" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="step" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="dice" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="adjustment" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,17 +35,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "INITIATIVE_type")
-public class INITIATIVEType {
+@XmlType(name = "DEATH_type")
+public class DEATHType {
 
     @XmlAttribute(required = true)
     protected BigInteger base;
     @XmlAttribute(required = true)
-    protected BigInteger modification;
-    @XmlAttribute(required = true)
-    protected BigInteger step;
-    @XmlAttribute(required = true)
-    protected BigInteger dice;
+    protected BigInteger adjustment;
+    @XmlAttribute
+    protected BigInteger value;
 
     /**
      * Gets the value of the base property.
@@ -73,75 +70,51 @@ public class INITIATIVEType {
     }
 
     /**
-     * Gets the value of the modification property.
+     * Gets the value of the adjustment property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getModification() {
-        return modification;
+    public BigInteger getAdjustment() {
+        return adjustment;
     }
 
     /**
-     * Sets the value of the modification property.
+     * Sets the value of the adjustment property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setModification(BigInteger value) {
-        this.modification = value;
+    public void setAdjustment(BigInteger value) {
+        this.adjustment = value;
     }
 
     /**
-     * Gets the value of the step property.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getStep() {
-        return step;
+    public BigInteger getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the step property.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setStep(BigInteger value) {
-        this.step = value;
-    }
-
-    /**
-     * Gets the value of the dice property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getDice() {
-        return dice;
-    }
-
-    /**
-     * Sets the value of the dice property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setDice(BigInteger value) {
-        this.dice = value;
+    public void setValue(BigInteger value) {
+        this.value = value;
     }
 
 }

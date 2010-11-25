@@ -122,23 +122,23 @@ public class AllgemeineEigenschaftenPanel extends JPanel {
 	}
 
 	public void charakterAnzeigen(EDCHARAKTER charakter) {
-		this.tfCharaktername.setText(charakter.getBezeichnung());
-		this.comboRasse.setSelectedItem(charakter.getRasse());
-	
-		// TODO: Disziplinen
-		
-		this.tfAlter.setText(charakter.getAlter().toString(10));
-		this.tfGroesse.setText(charakter.getGroesse().toString(10));
+//		this.tfCharaktername.setText(charakter.get());
+//		this.comboRasse.setSelectedItem(charakter.getRasse());
+//	
+//		// TODO: Disziplinen
+//		
+//		this.tfAlter.setText(charakter.getAlter().toString(10));
+//		this.tfGroesse.setText(charakter.getGroesse().toString(10));
 	}
 
 	public void addToCharakter(EDCHARAKTER charakter) {
-		charakter.setBezeichnung(this.tfCharaktername.getText());
-		charakter.setRasse((String) this.comboRasse.getSelectedItem());
+//		charakter.setBezeichnung(this.tfCharaktername.getText());
+//		charakter.setRasse((String) this.comboRasse.getSelectedItem());
 		
 		// TODO: Disziplinen
 		
-		charakter.setAlter(new BigInteger(this.tfAlter.getText(), 10));
-		charakter.setGroesse(new BigInteger(this.tfGroesse.getText(), 10));
+//		charakter.setAlter(new BigInteger(this.tfAlter.getText(), 10));
+//		charakter.setGroesse(new BigInteger(this.tfGroesse.getText(), 10));
 	}
 	
 	public JComboBox getComboRasse() {

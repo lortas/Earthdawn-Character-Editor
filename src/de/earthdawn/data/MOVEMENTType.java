@@ -16,18 +16,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for INITIATIVE_type complex type.
+ * <p>Java class for MOVEMENT_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="INITIATIVE_type">
+ * &lt;complexType name="MOVEMENT_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="base" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="modification" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="step" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="dice" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="flight_fight" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="flight_full" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="ground_fight" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="ground_full" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,112 +36,112 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "INITIATIVE_type")
-public class INITIATIVEType {
+@XmlType(name = "MOVEMENT_type")
+public class MOVEMENTType {
 
-    @XmlAttribute(required = true)
-    protected BigInteger base;
-    @XmlAttribute(required = true)
-    protected BigInteger modification;
-    @XmlAttribute(required = true)
-    protected BigInteger step;
-    @XmlAttribute(required = true)
-    protected BigInteger dice;
+    @XmlAttribute(name = "flight_fight", required = true)
+    protected BigInteger flightFight;
+    @XmlAttribute(name = "flight_full", required = true)
+    protected BigInteger flightFull;
+    @XmlAttribute(name = "ground_fight", required = true)
+    protected BigInteger groundFight;
+    @XmlAttribute(name = "ground_full", required = true)
+    protected BigInteger groundFull;
 
     /**
-     * Gets the value of the base property.
+     * Gets the value of the flightFight property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getBase() {
-        return base;
+    public BigInteger getFlightFight() {
+        return flightFight;
     }
 
     /**
-     * Sets the value of the base property.
+     * Sets the value of the flightFight property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setBase(BigInteger value) {
-        this.base = value;
+    public void setFlightFight(BigInteger value) {
+        this.flightFight = value;
     }
 
     /**
-     * Gets the value of the modification property.
+     * Gets the value of the flightFull property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getModification() {
-        return modification;
+    public BigInteger getFlightFull() {
+        return flightFull;
     }
 
     /**
-     * Sets the value of the modification property.
+     * Sets the value of the flightFull property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setModification(BigInteger value) {
-        this.modification = value;
+    public void setFlightFull(BigInteger value) {
+        this.flightFull = value;
     }
 
     /**
-     * Gets the value of the step property.
+     * Gets the value of the groundFight property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getStep() {
-        return step;
+    public BigInteger getGroundFight() {
+        return groundFight;
     }
 
     /**
-     * Sets the value of the step property.
+     * Sets the value of the groundFight property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setStep(BigInteger value) {
-        this.step = value;
+    public void setGroundFight(BigInteger value) {
+        this.groundFight = value;
     }
 
     /**
-     * Gets the value of the dice property.
+     * Gets the value of the groundFull property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getDice() {
-        return dice;
+    public BigInteger getGroundFull() {
+        return groundFull;
     }
 
     /**
-     * Sets the value of the dice property.
+     * Sets the value of the groundFull property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setDice(BigInteger value) {
-        this.dice = value;
+    public void setGroundFull(BigInteger value) {
+        this.groundFull = value;
     }
 
 }

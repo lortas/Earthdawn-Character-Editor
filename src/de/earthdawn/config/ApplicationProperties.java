@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import java.util.TreeMap;
 
 import org.apache.commons.configuration.XMLConfiguration;
+import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 
 /** 
  * Klasse mit Konfigurations-Parametern 
@@ -29,6 +30,9 @@ public class ApplicationProperties {
     /** Anzeigetexte (Charakterattribute). */
     private static final XMLConfiguration NAMES = new XMLConfiguration();
 
+    /** Konfiguration fï¿½r die einzelnen Races. */
+    private static final XMLConfiguration NAMEGIVERS = new XMLConfiguration();
+    
     /** Disziplinen (Name Label geordnet) */
     private static final Map<String, XMLConfiguration> DISZIPLINES = new TreeMap<String, XMLConfiguration>();
 
@@ -50,7 +54,7 @@ public class ApplicationProperties {
 	}
 
 	/**
-	 * Gibt internationalisierten Text zu <code>key</code> zurück.
+	 * Gibt internationalisierten Text zu <code>key</code> zurï¿½ck.
 	 */
 	public String getMessage(String key) {
 		return MESSAGES.getString(key);
@@ -60,6 +64,10 @@ public class ApplicationProperties {
 		return DISZIPLINES.get(name);
 	}
 
+	public XMLConfiguration getNamegivers() {
+		return NAMEGIVERS;
+	}
+	
 	private void init() {
 		try {
 			// globale konfiguration einlesen
@@ -74,6 +82,11 @@ public class ApplicationProperties {
 			// anzeigetexte (charakterattribute).
 			NAMES.setValidating(false);
 			NAMES.load(new File("./config/names.xml"));
+			
+			// Konfiguration fï¿½r die RACES alsen.
+			NAMEGIVERS.setValidating(false);
+			NAMEGIVERS.load(new File("./config/namegivers.xml"));
+			NAMEGIVERS.setExpressionEngine(new XPathExpressionEngine());
 
 			// capabilities laden
 			CAPABILITIES_CONFIG.setValidating(false);
@@ -82,7 +95,6 @@ public class ApplicationProperties {
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disziplins'
 			File[] files = new File("./config/disziplins").listFiles(new FilenameFilter() {
-				@Override
 				public boolean accept(File dir, String name) {
 					return name != null && name.endsWith(".xml");
 				}
