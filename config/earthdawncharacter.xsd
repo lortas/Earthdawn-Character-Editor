@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://earthdawn.de" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://earthdawn.de">
+<xs:schema xmlns="http://earthdawn.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://earthdawn.com">
 	<xs:simpleType name="ATTRIBUTE_name_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CHA"/>
@@ -228,6 +228,15 @@
 		</xs:choice>
 		<xs:attribute name="discipline" type="xs:string" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="PROTECTION_type">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ARMOR" type="ARMOR_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="SHIELD" type="SHIELD_type"/>
+		</xs:choice>
+		<xs:attribute name="physicalarmor" type="xs:integer" use="required"/>
+		<xs:attribute name="mysticamor" type="xs:integer" use="required"/>
+		<xs:attribute name="penalty" type="xs:integer" use="required"/>
+	</xs:complexType>
 	<xs:element name="EDCHARAKTER">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -240,16 +249,15 @@
 				<xs:element name="KARMA" type="KARMA_type"/>
 				<xs:element name="EXPERIENCE" type="EXPERIENCE_type"/>
 				<xs:element maxOccurs="3" name="DISCIPLINE" type="DISCIPLINE_type"/>
+				<xs:element name="PROTECTION" type="PROTECTION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENTS" type="TALENTS_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELLS" type="SPELLS_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILL" type="SKILL_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="ARMOR" type="ARMOR_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="WEAPON" type="WEAPON_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SHIELD" type="SHIELD_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="MAGICITEM" type="MAGICITEM_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="PATTERNITEM" type="PATTERNITEM_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="ITEM" type="ITEM_type"/>
-				<xs:element maxOccurs="unbounded" name="COINS" type="COINS_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="COINS" type="COINS_type"/>
 				<xs:element name="KARMARITUAL" type="xs:string"/>
 				<xs:element name="DESCRIPTION" type="xs:string"/>
 				<xs:element name="RACEABILITES" type="xs:string"/>
