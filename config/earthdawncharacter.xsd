@@ -237,6 +237,16 @@
 		<xs:attribute name="mysticamor" type="xs:integer" use="required"/>
 		<xs:attribute name="penalty" type="xs:integer" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="APPEARANCE_type">
+		<xs:attribute name="gender" type="gender_type" use="required"/>
+		<xs:attribute name="age" type="xs:integer" use="required"/>
+		<xs:attribute name="height" type="xs:integer" use="required"/>
+		<xs:attribute name="weight" type="xs:integer" use="required"/>
+		<xs:attribute name="eyes" type="xs:string" use="required"/>
+		<xs:attribute name="hair" type="xs:string" use="required"/>
+		<xs:attribute name="skin" type="xs:string" use="required"/>
+		<xs:attribute name="race" type="xs:string" use="required"/>
+	</xs:complexType>
 	<xs:element name="EDCHARAKTER">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -263,6 +273,7 @@
 				<xs:element name="RACEABILITES" type="xs:string"/>
 				<xs:element name="COMMENT" type="xs:string"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="PORTRAIT" type="xs:base64Binary"/>
+				<xs:element name="APPEARANCE" type="APPEARANCE_type"/>
 			</xs:choice>
     </xs:complexType>
   </xs:element>
