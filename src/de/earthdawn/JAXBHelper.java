@@ -2,9 +2,9 @@ package de.earthdawn;
 
 import javax.xml.bind.JAXBElement;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.AttributeType;
-
+import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -14,14 +14,29 @@ import de.earthdawn.data.EDCHARAKTER;
  */
 public class JAXBHelper {
 
+	public static final String DEFENSE = "DEFENSE";
+	
+	public static final String APPEARANCE = "APPEARANCE";
+	
 	public static final String RACEABILITES = "RACEABILITES";
 	
 	public static final String ATTRIBUTE = "ATTRIBUTE";
 
-	public static String getRace(EDCHARAKTER charakter) {
+	public static APPEARANCEType getAppearance(EDCHARAKTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().equals(RACEABILITES)) {
-				return (String) element.getValue();
+			if (APPEARANCE.equals(element.getName())) {
+				return (APPEARANCEType) element.getValue();
+			}
+		}
+
+		// Not found
+		return null;
+	}
+
+	public static DEFENSEType getDefence(EDCHARAKTER charakter) {
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (DEFENSE.equals(element.getName())) {
+				return (DEFENSEType) element.getValue();
 			}
 		}
 
@@ -31,8 +46,8 @@ public class JAXBHelper {
 
 	public static ATTRIBUTEType getAttribute(EDCHARAKTER charakter, String id) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().equals(ATTRIBUTE)) {
-				
+			if (ATTRIBUTE.equals(element.getName())) {
+
 				ATTRIBUTEType attribute = (ATTRIBUTEType) element.getValue();
 				if (attribute.getName().value().equals(id)) {
 					return attribute;

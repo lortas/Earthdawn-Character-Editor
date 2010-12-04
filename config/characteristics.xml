@@ -2,7 +2,7 @@
 <CHARACTERISTICS>
   <DEFENSERAITING>2 3 3 4 4 4 5 5 6 6 7 7 7 8 8 9 9 10 10 10 11 11 12 12 13 13 13 14 14 15 15 16 16 16 17 17 18 18 19 19 19</DEFENSERAITING>
   <ENCUMBRANCE>5 10 15 20 25 30 40 50 60 70 80 95 110 125 140 160 180 200 230 260 290 330 370 410 460 510 560 620 680 740</ENCUMBRANCE>
-  <MYSTICAMROR>0 0 0 0 0 0 0 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7</MYSTICARMOR>
+  <MYSTICAMROR>0 0 0 0 0 0 0 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7</MYSTICAMROR>
   <HEALTHRATING  value="1" death="19" unconsciousness="10"  wound="3" recovery="0.5" />
   <HEALTHRATING  value="2" death="20" unconsciousness="11"  wound="4" recovery="0.5" />
   <HEALTHRATING  value="3" death="22" unconsciousness="13"  wound="4" recovery="1" />

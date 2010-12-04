@@ -7,6 +7,7 @@ import org.apache.commons.configuration.SubnodeConfiguration;
 
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
@@ -21,7 +22,7 @@ public class ECEWorker {
 	 */
 	public EDCHARAKTER verarbeiteCharakter(EDCHARAKTER charakter) {
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
-		String race = JAXBHelper.getRace(charakter);
+		String race = JAXBHelper.getAppearance(charakter).getRace();
 
 		if (race == null) {
 			// XXX: Konfigurationsproblem?
@@ -35,29 +36,36 @@ public class ECEWorker {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
 			String id = subnode.getString("/@name");
 			int attributbasis = subnode.getInt("/@value");
-			
+
 			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, id);		
 			int v = attributbasis + attribute.getBasevalue().intValue() + attribute.getStep().intValue();
 			attribute.setCurrentvalue(BigInteger.valueOf(v));
 		}
-		// EDCHARAKTER/DEFENSE/physical = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue());
+
+		DEFENSEType defense = JAXBHelper.getDefence(charakter);
+		defense.setPhysical(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue()));
+
 		// EDCHARAKTER/DEFENSE/spell = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "PER").getCurrentvalue());
 		// EDCHARAKTER/DEFENSE/social = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue());
 		// int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue())
 		// EDCHARAKTER/CARRYING/carrying= tmp;
 		// EDCHARAKTER/CARRYING/lifting = tmp *2;
 		// EDCHARAKTER/HEALTH = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue())
+
 		return charakter;
 	}
-	public int berechneWiederstandskraft (BigInteger wert) {
+	public BigInteger berechneWiederstandskraft(BigInteger wert) {
 		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
-		List<?> defensrating = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/DEFENSERAITING"));
+		List<?> defensrating = ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/DEFENSERAITING");
 		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-		if ( wert < 1) {
+		if ( wert.intValue() < 1) {
 			// wenn Wert kleiner 1, dann keine Fehlermedung, sondern nur den Wert korrigieren 
-			wert = 1;
+			wert = BigInteger.ONE;
 		}
-		return defensrating.get(wert);
+
+		int actualRating = Integer.parseInt((String )defensrating.get(wert.intValue()));
+
+		return BigInteger.valueOf(actualRating);
 	}	
 	public int berechneTraglast (BigInteger wert) {
 		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
@@ -77,4 +85,5 @@ public class ECEWorker {
 		}
 		return ApplicationProperties.create().getHealthraiting().configurationsAt(String.format("/CHARACTERISTICS/HEALTHRATING[@value='%d']",wert));
 	}	
-};
+}
+

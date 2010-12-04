@@ -33,6 +33,9 @@ public class ApplicationProperties {
     /** Konfiguration für die einzelnen Races. */
     private static final XMLConfiguration NAMEGIVERS = new XMLConfiguration();
     
+    /** Konfiguration für die einzelnen Races. */
+    private static final XMLConfiguration CHARACTERISTICS = new XMLConfiguration();
+
     /** Disziplinen (Name Label geordnet) */
     private static final Map<String, XMLConfiguration> DISZIPLINES = new TreeMap<String, XMLConfiguration>();
 
@@ -68,6 +71,10 @@ public class ApplicationProperties {
 		return NAMEGIVERS;
 	}
 	
+	public XMLConfiguration getCharacteristics() {
+		return CHARACTERISTICS;
+	}
+	
 	private void init() {
 		try {
 			// globale konfiguration einlesen
@@ -87,6 +94,10 @@ public class ApplicationProperties {
 			NAMEGIVERS.setValidating(false);
 			NAMEGIVERS.load(new File("./config/namegivers.xml"));
 			NAMEGIVERS.setExpressionEngine(new XPathExpressionEngine());
+			
+			// Konfiguration für die RACES einlesen.
+			CHARACTERISTICS.setValidating(false);
+			CHARACTERISTICS.load(new File("./config/characteristics.xml"));
 
 			// capabilities laden
 			CAPABILITIES_CONFIG.setValidating(false);
