@@ -30,7 +30,7 @@ public class ApplicationProperties {
     /** Anzeigetexte (Charakterattribute). */
     private static final XMLConfiguration NAMES = new XMLConfiguration();
 
-    /** Konfiguration f�r die einzelnen Races. */
+    /** Konfiguration für die einzelnen Races. */
     private static final XMLConfiguration NAMEGIVERS = new XMLConfiguration();
     
     /** Disziplinen (Name Label geordnet) */
@@ -83,7 +83,7 @@ public class ApplicationProperties {
 			NAMES.setValidating(false);
 			NAMES.load(new File("./config/names.xml"));
 			
-			// Konfiguration f�r die RACES alsen.
+			// Konfiguration für die RACES einlesen.
 			NAMEGIVERS.setValidating(false);
 			NAMEGIVERS.load(new File("./config/namegivers.xml"));
 			NAMEGIVERS.setExpressionEngine(new XPathExpressionEngine());
