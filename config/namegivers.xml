@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NAMEGIVERS>
   <NAMEGIVER name="Dwarf">
-    <ATTR_START id="DEX" value="10" />
-    <ATTR_START id="STR" value="12" />
-    <ATTR_START id="TOU" value="13" />
-    <ATTR_START id="PER" value="10" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="8" />
+    <ATTR_START name="DEX" value="10" />
+    <ATTR_START name="STR" value="12" />
+    <ATTR_START name="TOU" value="13" />
+    <ATTR_START name="PER" value="10" />
+    <ATTR_START name="WIL" value="10" />
+    <ATTR_START name="CHA" value="8" />
     <MOVEMENT type="ground">5</MOVEMENT>
     <KARMA modifier="4" />
     <ABILITIES>Heat Sight</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Elf">
-    <ATTR_START id="DEX" value="12" />
-    <ATTR_START id="STR" value="10" />
-    <ATTR_START id="TOU" value="8" />
-    <ATTR_START id="PER" value="11" />
-    <ATTR_START id="WIL" value="11" />
-    <ATTR_START id="CHA" value="11" />
+    <ATTR_START name="DEX" value="12" />
+    <ATTR_START name="STR" value="10" />
+    <ATTR_START name="TOU" value="8" />
+    <ATTR_START name="PER" value="11" />
+    <ATTR_START name="WIL" value="11" />
+    <ATTR_START name="CHA" value="11" />
     <MOVEMENT type="ground">7</MOVEMENT>
     <KARMA modifier="4" />
     <ABILITIES>Low-Light Vision</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Human">
-    <ATTR_START id="DEX" value="10" />
-    <ATTR_START id="STR" value="10" />
-    <ATTR_START id="TOU" value="10" />
-    <ATTR_START id="PER" value="10" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="10" />
+    <ATTR_START name="DEX" value="10" />
+    <ATTR_START name="STR" value="10" />
+    <ATTR_START name="TOU" value="10" />
+    <ATTR_START name="PER" value="10" />
+    <ATTR_START name="WIL" value="10" />
+    <ATTR_START name="CHA" value="10" />
     <MOVEMENT type="ground">6</MOVEMENT>
     <KARMA modifier="5" />
     <ABILITIES>Optional Talent Versatility</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Obsidiman">
-    <ATTR_START id="DEX" value="8" />
-    <ATTR_START id="STR" value="18" />
-    <ATTR_START id="TOU" value="13" />
-    <ATTR_START id="PER" value="9" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="9" />
+    <ATTR_START name="DEX" value="8" />
+    <ATTR_START name="STR" value="18" />
+    <ATTR_START name="TOU" value="13" />
+    <ATTR_START name="PER" value="9" />
+    <ATTR_START name="WIL" value="10" />
+    <ATTR_START name="CHA" value="9" />
     <MOVEMENT type="ground">5</MOVEMENT>
     <KARMA modifier="3" />
     <ABILITIES>Wound Threshold +3</ABILITIES>
@@ -47,46 +47,46 @@
     <ABILITIES>Can only wear Living Armor</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Orc">
-    <ATTR_START id="DEX" value="10" />
-    <ATTR_START id="STR" value="13" />
-    <ATTR_START id="TOU" value="11" />
-    <ATTR_START id="PER" value="10" />
-    <ATTR_START id="WIL" value="8" />
-    <ATTR_START id="CHA" value="9" />
+    <ATTR_START name="DEX" value="10" />
+    <ATTR_START name="STR" value="13" />
+    <ATTR_START name="TOU" value="11" />
+    <ATTR_START name="PER" value="10" />
+    <ATTR_START name="WIL" value="8" />
+    <ATTR_START name="CHA" value="9" />
     <MOVEMENT typ="ground">6</MOVEMENT>
     <KARMA modifier="5" />
     <ABILITIES>Gahad</ABILITIES>
     <ABILITIES>Low-Light Vision</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Troll">
-    <ATTR_START id="DEX" value="10" />
-    <ATTR_START id="STR" value="14" />
-    <ATTR_START id="TOU" value="12" />
-    <ATTR_START id="PER" value="9" />
-    <ATTR_START id="WIL" value="11" />
-    <ATTR_START id="CHA" value="10" />
+    <ATTR_START name="DEX" value="10" />
+    <ATTR_START name="STR" value="14" />
+    <ATTR_START name="TOU" value="12" />
+    <ATTR_START name="PER" value="9" />
+    <ATTR_START name="WIL" value="11" />
+    <ATTR_START name="CHA" value="10" />
     <MOVEMENT type="ground">7</MOVEMENT>
     <KARMA modifier="3" />
     <ABILITIES>Heat Sight</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="T'skrang">
-    <ATTR_START id="DEX" value="11" />
-    <ATTR_START id="STR" value="10" />
-    <ATTR_START id="TOU" value="11" />
-    <ATTR_START id="PER" value="10" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="11" />
+    <ATTR_START name="DEX" value="11" />
+    <ATTR_START name="STR" value="10" />
+    <ATTR_START name="TOU" value="11" />
+    <ATTR_START name="PER" value="10" />
+    <ATTR_START name="WIL" value="10" />
+    <ATTR_START name="CHA" value="11" />
     <MOVEMENT type="ground">6</MOVEMENT>
     <KARMA modifier="4" />
     <ABILITIES>Tail Combat</ABILITIES>
   </NAMEGIVER>
   <NAMEGIVER name="Windling">
-    <ATTR_START id="DEX" value="11" />
-    <ATTR_START id="STR" value="4" />
-    <ATTR_START id="TOU" value="8" />
-    <ATTR_START id="PER" value="11" />
-    <ATTR_START id="WIL" value="10" />
-    <ATTR_START id="CHA" value="12" />
+    <ATTR_START name="DEX" value="11" />
+    <ATTR_START name="STR" value="4" />
+    <ATTR_START name="TOU" value="8" />
+    <ATTR_START name="PER" value="11" />
+    <ATTR_START name="WIL" value="10" />
+    <ATTR_START name="CHA" value="12" />
     <MOVEMENT type="ground">3</MOVEMENT>
     <MOVEMENT type="flight">8</MOVEMENT>
     <KARMA modifier="6" />

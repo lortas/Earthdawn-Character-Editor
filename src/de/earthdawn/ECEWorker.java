@@ -33,35 +33,48 @@ public class ECEWorker {
 		List<?> properties = ApplicationProperties.create().getNamegivers().configurationsAt(String.format("/NAMEGIVER[@name='%s']/ATTR_START", race));
 		for (Object property : properties) {			
 			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
-			String id = subnode.getString("/@id");
+			String id = subnode.getString("/@name");
 			int attributbasis = subnode.getInt("/@value");
 			
 			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, id);		
 			int v = attributbasis + attribute.getBasevalue().intValue() + attribute.getStep().intValue();
 			attribute.setCurrentvalue(BigInteger.valueOf(v));
 		}
-		
-		// charakter.setWiederstandskraft.koerperlich(berechneWiederstandskraft(charakter.getAttribut("DEX","wert")));
-		// charakter.setWiederstandskraft.magisch(berechneWiederstandskraft(charakter.getAttribut("PER","wert")));
-		// charakter.setWiederstandskraft.sozial(berechneWiederstandskraft(charakter.getAttribut("CHA","wert")));
-		// charakter.setTraglast(berechneTraglast(charakter.getAttribut("STR","wert")))
-		// charakter.setHebelimit(berechneHebelimit(charakter.getAttribut("STR","wert")))
+		// EDCHARAKTER/DEFENSE/physical = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue());
+		// EDCHARAKTER/DEFENSE/spell = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "PER").getCurrentvalue());
+		// EDCHARAKTER/DEFENSE/social = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue());
+		// int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue())
+		// EDCHARAKTER/CARRYING/carrying= tmp;
+		// EDCHARAKTER/CARRYING/lifting = tmp *2;
+		// EDCHARAKTER/HEALTH = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue())
 		return charakter;
 	}
-	public int berechneWiederstandskraft (int wert) {
-		int[] array = {2,3,3,4,4,4,5,5,6,6,7,7,7,8,8,9,9,10,10,10,11,11,12,12,13,13,13,14,14,15};
-		// TODO: prüfe ob wert im wertebereich liegt
-		return array[wert];
+	public int berechneWiederstandskraft (BigInteger wert) {
+		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
+		List<?> defensrating = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/DEFENSERAITING"));
+		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
+		if ( wert < 1) {
+			// wenn Wert kleiner 1, dann keine Fehlermedung, sondern nur den Wert korrigieren 
+			wert = 1;
+		}
+		return defensrating.get(wert);
 	}	
-	public int berechneTraglast (int wert) {
-		int[] array = {10,15,20,25,30,35,40,50,60,70,80,90,105,125,145,165,200,230,270,315,360,430,500,580,675,790,920,1075,1200,1450};
-		// TODO: prüfe ob wert im wertebereich liegt
-		return array[wert];
+	public int berechneTraglast (BigInteger wert) {
+		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
+		List<?> encumbrance = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/ENCUMBRANCE"));
+		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
+		if ( wert < 1) {
+			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
+			wert = 1;
+		}
+		return encumbrance.get(wert);
 	}	
-	public int berechneHebelimit (int wert) {
-		int[] array = {20,30,40,50,65,75,85,100,115,135,160,185,210,250,290,310,400,460,540,630,735,860,1000,1160,1350,1580,1840,2150,2500,2900};
-		// TODO: prüfe ob wert im wertebereich liegt
-		return array[wert];
+	public health bestimmeHealth (BigInteger wert) {
+		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
+		if ( wert < 1) {
+			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
+			wert = 1;
+		}
+		return ApplicationProperties.create().getHealthraiting().configurationsAt(String.format("/CHARACTERISTICS/HEALTHRATING[@value='%d']",wert));
 	}	
 };
-
