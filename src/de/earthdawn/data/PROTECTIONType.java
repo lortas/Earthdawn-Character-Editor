@@ -9,27 +9,33 @@
 package de.earthdawn.data;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ARMOR_type complex type.
+ * <p>Java class for PROTECTION_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ARMOR_type">
+ * &lt;complexType name="PROTECTION_type">
  *   &lt;complexContent>
- *     &lt;extension base="{http://earthdawn.com}ITEM_type">
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;choice maxOccurs="unbounded">
+ *         &lt;element name="ARMOR" type="{http://earthdawn.com}ARMOR_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="SHIELD" type="{http://earthdawn.com}SHIELD_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/choice>
  *       &lt;attribute name="physicalarmor" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="mysticamor" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="penalty" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="edn" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *     &lt;/extension>
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -37,22 +43,52 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ARMOR_type")
-@XmlSeeAlso({
-    SHIELDType.class
+@XmlType(name = "PROTECTION_type", propOrder = {
+    "armorOrSHIELD"
 })
-public class ARMORType
-    extends ITEMType
-{
+public class PROTECTIONType {
 
+    @XmlElements({
+        @XmlElement(name = "SHIELD", type = SHIELDType.class),
+        @XmlElement(name = "ARMOR")
+    })
+    protected List<ARMORType> armorOrSHIELD;
     @XmlAttribute(required = true)
     protected BigInteger physicalarmor;
     @XmlAttribute(required = true)
     protected BigInteger mysticamor;
     @XmlAttribute(required = true)
     protected BigInteger penalty;
-    @XmlAttribute(required = true)
-    protected BigInteger edn;
+
+    /**
+     * Gets the value of the armorOrSHIELD property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the armorOrSHIELD property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getARMOROrSHIELD().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SHIELDType }
+     * {@link ARMORType }
+     * 
+     * 
+     */
+    public List<ARMORType> getARMOROrSHIELD() {
+        if (armorOrSHIELD == null) {
+            armorOrSHIELD = new ArrayList<ARMORType>();
+        }
+        return this.armorOrSHIELD;
+    }
 
     /**
      * Gets the value of the physicalarmor property.
@@ -124,30 +160,6 @@ public class ARMORType
      */
     public void setPenalty(BigInteger value) {
         this.penalty = value;
-    }
-
-    /**
-     * Gets the value of the edn property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getEdn() {
-        return edn;
-    }
-
-    /**
-     * Sets the value of the edn property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setEdn(BigInteger value) {
-        this.edn = value;
     }
 
 }

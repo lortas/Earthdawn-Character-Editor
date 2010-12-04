@@ -14,31 +14,37 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for plusminus_type.
+ * <p>Java class for action_type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="plusminus_type">
+ * &lt;simpleType name="action_type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="+"/>
- *     &lt;enumeration value="-"/>
+ *     &lt;enumeration value="standard"/>
+ *     &lt;enumeration value="simple"/>
+ *     &lt;enumeration value="free"/>
+ *     &lt;enumeration value="na"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "plusminus_type")
+@XmlType(name = "action_type")
 @XmlEnum
-public enum PlusminusType {
+public enum ActionType {
 
-    @XmlEnumValue("+")
-    PLUS("+"),
-    @XmlEnumValue("-")
-    MINUS("-");
+    @XmlEnumValue("standard")
+    STANDARD("standard"),
+    @XmlEnumValue("simple")
+    SIMPLE("simple"),
+    @XmlEnumValue("free")
+    FREE("free"),
+    @XmlEnumValue("na")
+    NA("na");
     private final String value;
 
-    PlusminusType(String v) {
+    ActionType(String v) {
         value = v;
     }
 
@@ -46,8 +52,8 @@ public enum PlusminusType {
         return value;
     }
 
-    public static PlusminusType fromValue(String v) {
-        for (PlusminusType c: PlusminusType.values()) {
+    public static ActionType fromValue(String v) {
+        for (ActionType c: ActionType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
