@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CHARACTERISTICS>
   <DEFENSERAITING>2 3 3 4 4 4 5 5 6 6 7 7 7 8 8 9 9 10 10 10 11 11 12 12 13 13 13 14 14 15 15 16 16 16 17 17 18 18 19 19 19</DEFENSERAITING>
-  <INITATIVE>2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 10 10 10 11 11 11 12 12 12 13 13 13 14 14 14 15 15 15</INITATIVE>
   <ENCUMBRANCE>5 10 15 20 25 30 40 50 60 70 80 95 110 125 140 160 180 200 230 260 290 330 370 410 460 510 560 620 680 740</ENCUMBRANCE>
+  <MYSTICAMROR>0 0 0 0 0 0 0 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7</MYSTICARMOR>
+  <HEALTHRATING  value="1" death="19" unconsciousness="10"  wound="3" recovery="0.5" />
+  <HEALTHRATING  value="2" death="20" unconsciousness="11"  wound="4" recovery="0.5" />
+  <HEALTHRATING  value="3" death="22" unconsciousness="13"  wound="4" recovery="1" />
+  <HEALTHRATING  value="4" death="23" unconsciousness="14"  wound="5" recovery="1" />
+  <HEALTHRATING  value="5" death="24" unconsciousness="15"  wound="5" recovery="1" />
+  <HEALTHRATING  value="6" death="26" unconsciousness="17"  wound="6" recovery="1" />
+  <HEALTHRATING  value="7" death="27" unconsciousness="18"  wound="6" recovery="1" />
+  <HEALTHRATING  value="8" death="28" unconsciousness="19"  wound="7" recovery="2" />
+  <HEALTHRATING  value="9" death="30" unconsciousness="21"  wound="7" recovery="2" />
+  <HEALTHRATING value="10" death="31" unconsciousness="22"  wound="8" recovery="2" />
+  <HEALTHRATING value="11" death="32" unconsciousness="24"  wound="8" recovery="2" />
+  <HEALTHRATING value="12" death="34" unconsciousness="26"  wound="9" recovery="2" />
+  <HEALTHRATING value="13" death="35" unconsciousness="27"  wound="9" recovery="2" />
+  <HEALTHRATING value="14" death="36" unconsciousness="28" wound="10" recovery="3" />
+  <HEALTHRATING value="15" death="38" unconsciousness="30" wound="10" recovery="3" />
+  <HEALTHRATING value="16" death="39" unconsciousness="31" wound="11" recovery="3" />
+  <HEALTHRATING value="17" death="40" unconsciousness="32" wound="11" recovery="3" />
+  <HEALTHRATING value="18" death="42" unconsciousness="34" wound="12" recovery="3" />
+  <HEALTHRATING value="19" death="43" unconsciousness="35" wound="12" recovery="3" />
+  <HEALTHRATING value="20" death="44" unconsciousness="36" wound="13" recovery="4" />
+  <HEALTHRATING value="21" death="46" unconsciousness="39" wound="13" recovery="4" />
+  <HEALTHRATING value="22" death="47" unconsciousness="40" wound="13" recovery="4" />
+  <HEALTHRATING value="23" death="48" unconsciousness="41" wound="14" recovery="4" />
+  <HEALTHRATING value="24" death="50" unconsciousness="43" wound="14" recovery="4" />
+  <HEALTHRATING value="25" death="51" unconsciousness="44" wound="15" recovery="4" />
+  <HEALTHRATING value="26" death="52" unconsciousness="45" wound="15" recovery="5" />
+  <HEALTHRATING value="27" death="54" unconsciousness="47" wound="15" recovery="5" />
+  <HEALTHRATING value="28" death="55" unconsciousness="48" wound="16" recovery="5" />
+  <HEALTHRATING value="29" death="56" unconsciousness="49" wound="16" recovery="5" />
+  <HEALTHRATING value="30" death="58" unconsciousness="51" wound="17" recovery="5" />
+  <ATTRIBUTECOST>-1 -2 1 2 3 5 7 9 12 15</ATTRIBUTECOST>
+  <DICETABLE>
+   d6-3 d6-2 d6-1 d6 d8 d10 d12
+         2d6      d8+d6      2d8      d10+d8      2d10  d12+d10 2d12
+     d12+2d6  d12+d8+d6  d12+2d8  d12+d10+d8  d12+2d10 2d12+d10 3d12
+    2d12+2d6 2d12+d8+d6 2d12+2d8 2d12+d10+d8 2d12+2d10 3d12+d10 4d12
+    3d12+2d6 3d12+d8+d6 3d12+2d8 3d12+d10+d8 3d12+2d10 4d12+d10 5d12
+    5d12+2d6 5d12+d8+d6 5d12+2d8 5d12+d10+d8 5d12+2d10
+  </DICETABLE>
+  <STEP>2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 10 10 10 11 11 11 12 12 12 13 13 13 14 14 14 15 15 15</STEP>
 </CHARACTERISTICS>

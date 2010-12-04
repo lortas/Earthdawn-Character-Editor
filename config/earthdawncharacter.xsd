@@ -24,6 +24,14 @@
 			<xs:enumeration value="*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="action_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="standard"/>
+			<xs:enumeration value="simple"/>
+			<xs:enumeration value="free"/>
+			<xs:enumeration value="na"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="gender_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="male"/>
@@ -161,7 +169,7 @@
 	</xs:complexType>
 	<xs:complexType name="SKILL_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="action" type="yesno_type" use="required"/>
+		<xs:attribute name="action" type="action_type" use="required"/>
 		<xs:attribute name="strain" type="xs:integer" use="required"/>
 		<xs:attribute name="attribute" type="xs:integer" use="required"/>
 		<xs:attribute name="rank" type="xs:integer" use="required"/>
@@ -172,14 +180,14 @@
 		<xs:complexContent>
 			<xs:extension base="SKILL_type">
 				<xs:attribute name="karma" type="yesno_type" use="required"/>
-				<xs:attribute name="discipline" type="yesno_type" use="required"/>
 				<xs:attribute name="circle" type="xs:integer" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="TALENTS_type">
 		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" name="talent" type="TALENT_type"/>
+			<xs:element maxOccurs="unbounded" name="DISZIPLINETALENT" type="TALENT_type"/>
+			<xs:element maxOccurs="unbounded" name="OPTIONALTALENT" type="TALENT_type"/>
 		</xs:choice>
 		<xs:attribute name="discipline" type="xs:string" use="required"/>
 	</xs:complexType>
