@@ -70,8 +70,8 @@
 		<xs:attribute default="self" name="location" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
-		<xs:attribute name="flight_fight" type="xs:integer" use="required"/>
-		<xs:attribute name="flight_full" type="xs:integer" use="required"/>
+		<xs:attribute name="flight_fight" type="xs:integer"/>
+		<xs:attribute name="flight_full" type="xs:integer"/>
 		<xs:attribute name="ground_fight" type="xs:integer" use="required"/>
 		<xs:attribute name="ground_full" type="xs:integer" use="required"/>
 	</xs:complexType>
@@ -283,6 +283,7 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="PORTRAIT" type="xs:base64Binary"/>
 				<xs:element name="APPEARANCE" type="APPEARANCE_type"/>
 			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>
