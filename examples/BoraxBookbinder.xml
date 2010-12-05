@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EDCHARAKTER  name="Borax Bookbinder" xmlns="http://earthdawn.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com earthdawncharakter.xsd">
+	<APPEARANCE gender="male" age="87" eyes="blau" height=143 weight="83" hair="schwarz,lang" skin="dunkel" race="Dwarf"/>
+	<ATTRIBUTE name="DEX" basevalue="1" lpincrease="0" currentvalue="11" step="5" dice="" cost="" />
+	<ATTRIBUTE name="STR" basevalue="1" lpincrease="0" currentvalue="13" step="6" dice="" cost="" />
+	<ATTRIBUTE name="TOU" basevalue="1" lpincrease="0" currentvalue="14" step="6" dice="" cost="" />
+	<ATTRIBUTE name="PER" basevalue="6" lpincrease="2" currentvalue="18" step="7" dice="" cost="" />
+	<ATTRIBUTE name="WIL" basevalue="6" lpincrease="1" currentvalue="16" step="7" dice="" cost="" />
+	<ATTRIBUTE name="CHA" basevalue="3" lpincrease="0" currentvalue="11" step="5" dice="" cost="" />
+	<MOVEMENT type="ground">5</MOVEMENT>
+	<KARMA current="20" cost="10" max="40" />
+	<RACEABILITES>Heat Sight</RACEABILITES>
+	<DEFENSE physical="" spell="" social="" />
+	<HEALTH damage="0">
+		<RECOVERY testsperday="" step="" dice="" />
+		<UNCONSCIOUSNESS base="" adjustment="" value="" />
+		<DEATH base="" adjustment="" value="" />
+		<WOUNDS threshold="" count="" penalties="" />
+	</HEALTH>
+	<MOVEMENT ground_fight="5" ground_full=10"/>
+	<INITIATIVE base="" modification="" current="" step="" dice="" />
+	<CARRYING carrying="" lifting="" />
+	<EXPERIENCE totallegendpoints="" currentlegendpoints="" renown="" reputation="">
+		<LEGENDPOINTS comment="" legendpoints="" type="" when="" />
+	</EXPERIENCE>
+	<DISCIPLINE order="1" name="Magican" circle="5" />
+	<PROTECTION physicalarmor="0" mysticamor="0" penalty="0">
+		<ARMOR name="" weight="" used="yes" location="self" physicalarmor="" mysticamor="" penalty="" edn="" />
+		<SHIELD name="" weight="" used="yes" location="self" physicalarmor="" mysticamor="" penalty="" edn="" shatterthreshold="" />
+	</PROTECTION>
+	<TALENTS discipline="Magican">
+		<DISZIPLINETALENT name="" action="" strain="" attribute="" rank="" step="" dice="" karma="" circle="" />
+		<OPTIONALTALENT name="" action="" strain="" attribute="" rank="" step="" dice="" karma="" circle="" />
+	<TALENTS/>
+	<SPELLS discipline="Magican">
+		<SPELL name="" inmatrix="" type="" circle="" threads="" weavingdifficulty="" castingdifficulty="" range="" duration="" effect="" />
+	</SPELLS>
+	<SKILL name="" action="" strain="" attribute="" rank="" step="" dice="" />
+	<WEAPON name="" weight="" used="yes" location="self" damagestep="" strengthmin="" size="" timesforged="" shortrange="" mediumrange="" longrange="" />
+	<KARMARITUAL>auführliche beschreibung des Karmarituals</KARMARITUAL>
+	<DESCRIPTION>etwas bla bla zum Char</DESCRIPTION>
+	<COMMENT>hier kommt ein Kommentar</COMMENT>
+</EDCHARAKTER>
