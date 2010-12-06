@@ -71,19 +71,23 @@ public class ECEWorker {
 		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
 		List<?> encumbrance = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/ENCUMBRANCE"));
 		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-		if ( wert < 1) {
-			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
-			wert = 1;
-		}
-		return encumbrance.get(wert);
+//		if ( wert < 1) {
+//			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
+//			wert = 1;
+//		}
+//		return encumbrance.get(wert);
+		
+		return 0;
 	}	
-	public health bestimmeHealth (BigInteger wert) {
+	public int bestimmeHealth (BigInteger wert) {
 		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-		if ( wert < 1) {
-			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
-			wert = 1;
-		}
-		return ApplicationProperties.create().getHealthraiting().configurationsAt(String.format("/CHARACTERISTICS/HEALTHRATING[@value='%d']",wert));
+//		if ( wert < 1) {
+//			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
+//			wert = 1;
+//		}
+//		return ApplicationProperties.create().getHealthraiting().configurationsAt(String.format("/CHARACTERISTICS/HEALTHRATING[@value='%d']",wert));
+		
+		return 0;
 	}	
 }
 
