@@ -8,12 +8,14 @@
 			<xs:enumeration value="PER"/>
 			<xs:enumeration value="WIL"/>
 			<xs:enumeration value="TOU"/>
+			<xs:enumeration value="na"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="plusminus_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="+"/>
 			<xs:enumeration value="-"/>
+			<xs:enumeration value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="yesno_type">
@@ -26,6 +28,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="action_type">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="sustained"/>
 			<xs:enumeration value="standard"/>
 			<xs:enumeration value="simple"/>
 			<xs:enumeration value="free"/>
@@ -39,10 +42,42 @@
 			<xs:enumeration value="-"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="spelltype_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="elemental"/>
+			<xs:enumeration value="nether"/>
+			<xs:enumeration value="illusion"/>
+			<xs:enumeration value="wizard"/>
+			<xs:enumeration value="shamane"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dice_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="d6-3"/>
+			<xs:enumeration value="d6-2"/>
+			<xs:enumeration value="d6-1"/>
+			<xs:enumeration value="d6"/>
+			<xs:enumeration value="d8"/>
+			<xs:enumeration value="d10"/>
+			<xs:enumeration value="d12"/>
+			<xs:enumeration value="2d6"/>
+			<xs:enumeration value="d10+d8"/>
+			<xs:enumeration value="2d10"/>
+			<xs:enumeration value="d12+d10"/>
+			<xs:enumeration value="2d12"/>
+			<xs:enumeration value="d12+2d6"/>
+			<xs:enumeration value="d12+d8+d6"/>
+			<xs:enumeration value="d12+2d8"/>
+			<xs:enumeration value="d12+d10+d8"/>
+			<xs:enumeration value="d12+2d10"/>
+			<xs:enumeration value="2d12+d10"/>
+			<xs:enumeration value="3d12"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="RECOVERY_type">
 		<xs:attribute name="testsperday" type="xs:integer" use="required"/>
 		<xs:attribute name="step" type="xs:integer" use="required"/>
-		<xs:attribute name="dice" type="xs:string"/>
+		<xs:attribute name="dice" type="dice_type"/>
 	</xs:complexType>
 	<xs:complexType name="WOUND_type">
 		<xs:attribute name="threshold" type="xs:integer" use="required"/>
@@ -60,7 +95,7 @@
 		<xs:attribute name="lpincrease" type="xs:integer" use="required"/>
 		<xs:attribute name="currentvalue" type="xs:integer"/>
 		<xs:attribute name="step" type="xs:integer"/>
-		<xs:attribute name="dice" type="xs:string"/>
+		<xs:attribute name="dice" type="dice_type"/>
 		<xs:attribute name="cost" type="xs:integer"/>
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
@@ -70,10 +105,8 @@
 		<xs:attribute default="self" name="location" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
-		<xs:attribute name="flight_fight" type="xs:integer"/>
-		<xs:attribute name="flight_full" type="xs:integer"/>
-		<xs:attribute name="ground_fight" type="xs:integer" use="required"/>
-		<xs:attribute name="ground_full" type="xs:integer" use="required"/>
+		<xs:attribute name="flight" type="xs:integer"/>
+		<xs:attribute name="ground" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="DISCIPLINE_type">
 		<xs:attribute name="order" type="xs:integer" use="required"/>
@@ -102,11 +135,10 @@
 		<xs:attribute name="base" type="xs:integer" use="required"/>
 		<xs:attribute name="modification" type="xs:integer" use="required"/>
 		<xs:attribute name="step" type="xs:integer" use="required"/>
-		<xs:attribute name="dice" type="xs:integer" use="required"/>
+		<xs:attribute name="dice" type="dice_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="KARMA_type">
 		<xs:attribute name="current" type="xs:integer" use="required"/>
-		<xs:attribute name="cost" type="xs:integer" use="required"/>
 		<xs:attribute name="max" type="xs:integer" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="LEGENDPOINTS_type">
@@ -170,16 +202,18 @@
 	<xs:complexType name="SKILL_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="action" type="action_type" use="required"/>
-		<xs:attribute name="strain" type="xs:integer" use="required"/>
-		<xs:attribute name="attribute" type="xs:integer" use="required"/>
+		<xs:attribute default="0" name="strain" type="xs:integer"/>
+		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
+		<xs:attribute default="0" name="bonus" type="xs:integer"/>
 		<xs:attribute name="rank" type="xs:integer" use="required"/>
 		<xs:attribute name="step" type="xs:integer" use="required"/>
-		<xs:attribute name="dice" type="xs:string" use="required"/>
+		<xs:attribute name="dice" type="dice_type" use="required"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="TALENT_type">
 		<xs:complexContent>
 			<xs:extension base="SKILL_type">
-				<xs:attribute name="karma" type="yesno_type" use="required"/>
+				<xs:attribute name="karma" type="yesno_type" default="no"/>
 				<xs:attribute name="circle" type="xs:integer" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -206,10 +240,10 @@
 				<xs:attribute name="damagestep" type="xs:integer" use="required"/>
 				<xs:attribute name="strengthmin" type="xs:integer" use="required"/>
 				<xs:attribute name="size" type="xs:integer" use="required"/>
-				<xs:attribute name="timesforged" type="xs:integer" use="required"/>
-				<xs:attribute name="shortrange" type="xs:integer"/>
-				<xs:attribute name="mediumrange" type="xs:integer"/>
-				<xs:attribute name="longrange" type="xs:integer"/>
+				<xs:attribute name="timesforged" type="xs:integer" default="0" />
+				<xs:attribute name="shortrange" type="xs:integer" default="0" />
+				<xs:attribute name="mediumrange" type="xs:integer" default="0" />
+				<xs:attribute name="longrange" type="xs:integer" default="0" />
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -221,7 +255,7 @@
 	<xs:complexType name="SPELL_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="inmatrix" type="yesno_type" use="required"/>
-		<xs:attribute name="type" type="xs:integer" use="required"/>
+		<xs:attribute name="type" type="spelltype_type" use="required"/>
 		<xs:attribute name="circle" type="xs:integer" use="required"/>
 		<xs:attribute name="threads" type="xs:integer" use="required"/>
 		<xs:attribute name="weavingdifficulty" type="xs:string" use="required"/>
