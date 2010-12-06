@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<EDCHARAKTER  name="Borax Bookbinder" xmlns="http://earthdawn.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com earthdawncharakter.xsd">
+<EDCHARAKTER  name="Borax Bookbinder" xmlns="http://earthdawn.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com ../config/earthdawncharacter.xsd">
 	<APPEARANCE gender="male" age="87" eyes="blau" height=143 weight="83" hair="schwarz,lang" skin="dunkel" race="Dwarf"/>
 	<ATTRIBUTE name="DEX" basevalue="1" lpincrease="0" currentvalue="11" step="5" dice="" cost="" />
 	<ATTRIBUTE name="STR" basevalue="1" lpincrease="0" currentvalue="13" step="6" dice="" cost="" />
