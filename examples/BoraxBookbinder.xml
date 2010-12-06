@@ -17,7 +17,7 @@
 		<DEATH base="" adjustment="" value="" />
 		<WOUNDS threshold="" count="" penalties="" />
 	</HEALTH>
-	<MOVEMENT ground_fight="5" ground_full=10"/>
+	<MOVEMENT ground_fight="5" ground_full="10"/>
 	<INITIATIVE base="" modification="" current="" step="" dice="" />
 	<CARRYING carrying="" lifting="" />
 	<EXPERIENCE totallegendpoints="" currentlegendpoints="" renown="" reputation="">
