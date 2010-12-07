@@ -14,40 +14,40 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ATTRIBUTE_name_type.
+ * <p>Java class for spelltype_type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ATTRIBUTE_name_type">
+ * &lt;simpleType name="spelltype_type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CHA"/>
- *     &lt;enumeration value="DEX"/>
- *     &lt;enumeration value="STR"/>
- *     &lt;enumeration value="PER"/>
- *     &lt;enumeration value="WIL"/>
- *     &lt;enumeration value="TOU"/>
- *     &lt;enumeration value="na"/>
+ *     &lt;enumeration value="elemental"/>
+ *     &lt;enumeration value="nether"/>
+ *     &lt;enumeration value="illusion"/>
+ *     &lt;enumeration value="wizard"/>
+ *     &lt;enumeration value="shamane"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "ATTRIBUTE_name_type")
+@XmlType(name = "spelltype_type")
 @XmlEnum
-public enum ATTRIBUTENameType {
+public enum SpelltypeType {
 
-    CHA("CHA"),
-    DEX("DEX"),
-    STR("STR"),
-    PER("PER"),
-    WIL("WIL"),
-    TOU("TOU"),
-    @XmlEnumValue("na")
-    NA("na");
+    @XmlEnumValue("elemental")
+    ELEMENTAL("elemental"),
+    @XmlEnumValue("nether")
+    NETHER("nether"),
+    @XmlEnumValue("illusion")
+    ILLUSION("illusion"),
+    @XmlEnumValue("wizard")
+    WIZARD("wizard"),
+    @XmlEnumValue("shamane")
+    SHAMANE("shamane");
     private final String value;
 
-    ATTRIBUTENameType(String v) {
+    SpelltypeType(String v) {
         value = v;
     }
 
@@ -55,8 +55,8 @@ public enum ATTRIBUTENameType {
         return value;
     }
 
-    public static ATTRIBUTENameType fromValue(String v) {
-        for (ATTRIBUTENameType c: ATTRIBUTENameType.values()) {
+    public static SpelltypeType fromValue(String v) {
+        for (SpelltypeType c: SpelltypeType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

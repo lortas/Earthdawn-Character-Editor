@@ -24,7 +24,7 @@ public class JAXBHelper {
 
 	public static APPEARANCEType getAppearance(EDCHARAKTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (APPEARANCE.equals(element.getName())) {
+			if (APPEARANCE.equals(element.getName().getLocalPart())) {
 				return (APPEARANCEType) element.getValue();
 			}
 		}
@@ -35,7 +35,7 @@ public class JAXBHelper {
 
 	public static DEFENSEType getDefence(EDCHARAKTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (DEFENSE.equals(element.getName())) {
+			if (DEFENSE.equals(element.getName().getLocalPart())) {
 				return (DEFENSEType) element.getValue();
 			}
 		}
@@ -46,7 +46,7 @@ public class JAXBHelper {
 
 	public static ATTRIBUTEType getAttribute(EDCHARAKTER charakter, String id) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (ATTRIBUTE.equals(element.getName())) {
+			if (ATTRIBUTE.equals(element.getName().getLocalPart())) {
 
 				ATTRIBUTEType attribute = (ATTRIBUTEType) element.getValue();
 				if (attribute.getName().value().equals(id)) {

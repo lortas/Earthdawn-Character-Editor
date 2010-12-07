@@ -98,6 +98,7 @@ public class ApplicationProperties {
 			// Konfiguration für die RACES einlesen.
 			CHARACTERISTICS.setValidating(false);
 			CHARACTERISTICS.load(new File("./config/characteristics.xml"));
+			CHARACTERISTICS.setExpressionEngine(new XPathExpressionEngine());
 
 			// capabilities laden
 			CAPABILITIES_CONFIG.setValidating(false);

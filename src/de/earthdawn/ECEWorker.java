@@ -27,11 +27,11 @@ public class ECEWorker {
 		if (race == null) {
 			// XXX: Konfigurationsproblem?
 			//return charakter;
-			race = "Dwarf";
 		}
 
 		// Pro Atributt des Charakters werden nun dessen Werte, Stufe, und Würfel bestimmt.
-		List<?> properties = ApplicationProperties.create().getNamegivers().configurationsAt(String.format("/NAMEGIVER[@name='%s']/ATTR_START", race));
+		String query = String.format("/NAMEGIVER[@name='%s']/ATTR_START", race);
+		List<?> properties = ApplicationProperties.create().getNamegivers().configurationsAt(query);
 		for (Object property : properties) {			
 			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
 			String id = subnode.getString("/@name");
@@ -55,21 +55,21 @@ public class ECEWorker {
 		return charakter;
 	}
 	public BigInteger berechneWiederstandskraft(BigInteger wert) {
-		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
-		List<?> defensrating = ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/DEFENSERAITING");
-		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-		if ( wert.intValue() < 1) {
+		if (wert.intValue() < 1) {
 			// wenn Wert kleiner 1, dann keine Fehlermedung, sondern nur den Wert korrigieren 
 			wert = BigInteger.ONE;
 		}
 
-		int actualRating = Integer.parseInt((String )defensrating.get(wert.intValue()));
+		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
 
-		return BigInteger.valueOf(actualRating);
+		String query = String.format("/DEFENSERAITING[@defense='%d']/@attribute", wert.intValue());
+		int actualRaiting = ApplicationProperties.create().getCharacteristics().getInt(query);
+		
+		return BigInteger.valueOf(actualRaiting);
 	}	
 	public int berechneTraglast (BigInteger wert) {
 		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
-		List<?> encumbrance = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/ENCUMBRANCE"));
+//		List<?> encumbrance = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/ENCUMBRANCE"));
 		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
 //		if ( wert < 1) {
 //			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
