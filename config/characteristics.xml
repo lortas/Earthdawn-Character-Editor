@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CHARACTERISTICS>
-  <ENCUMBRANCE>5,10,15,20,25,30,40,50,60,70,80,95,110,125,140,160,180,200,230,260,290,330,370,410,460,510,560,620,680,740</ENCUMBRANCE>
+  <ENCUMBRANCE attribute="0" carrying="0"/>
+  <ENCUMBRANCE attribute="1" carrying="5"/>
+  <ENCUMBRANCE attribute="2" carrying="10"/>
+  <ENCUMBRANCE attribute="3" carrying="15"/>
+  <ENCUMBRANCE attribute="4" carrying="20"/>
+  <ENCUMBRANCE attribute="5" carrying="25"/>
+  <ENCUMBRANCE attribute="6" carrying="30"/>
+  <ENCUMBRANCE attribute="7" carrying="40"/>
+  <ENCUMBRANCE attribute="8" carrying="50"/>
+  <ENCUMBRANCE attribute="9" carrying="60"/>
+  <ENCUMBRANCE attribute="10" carrying="70"/>
+  <ENCUMBRANCE attribute="11" carrying="80"/>
+  <ENCUMBRANCE attribute="12" carrying="95"/>
+  <ENCUMBRANCE attribute="13" carrying="110"/>
+  <ENCUMBRANCE attribute="14" carrying="125"/>
+  <ENCUMBRANCE attribute="15" carrying="140"/>
+  <ENCUMBRANCE attribute="16" carrying="160"/>
+  <ENCUMBRANCE attribute="17" carrying="180"/>
+  <ENCUMBRANCE attribute="18" carrying="200"/>
+  <ENCUMBRANCE attribute="19" carrying="230"/>
+  <ENCUMBRANCE attribute="20" carrying="260"/>
+  <ENCUMBRANCE attribute="21" carrying="290"/>
+  <ENCUMBRANCE attribute="22" carrying="330"/>
+  <ENCUMBRANCE attribute="23" carrying="370"/>
+  <ENCUMBRANCE attribute="24" carrying="410"/>
+  <ENCUMBRANCE attribute="25" carrying="460"/>
+  <ENCUMBRANCE attribute="26" carrying="510"/>
+  <ENCUMBRANCE attribute="27" carrying="560"/>
+  <ENCUMBRANCE attribute="28" carrying="620"/>
+  <ENCUMBRANCE attribute="29" carrying="680"/>
+  <ENCUMBRANCE attribute="30" carrying="740"/>
   <DEFENSERAITING attribute="0" defense="1" />
   <DEFENSERAITING attribute="1" defense="2" />
   <DEFENSERAITING attribute="3" defense="3" />
@@ -21,19 +51,19 @@
   <DEFENSERAITING attribute="38" defense="18" />
   <DEFENSERAITING attribute="41" defense="19" />
   <DEFENSERAITING attribute="42" defense="20" />
-  <MYSTICAMROR attribute="0" armor="0" />
-  <MYSTICAMROR attribute="11" armor="1" />
-  <MYSTICAMROR attribute="14" armor="2" />
-  <MYSTICAMROR attribute="17" armor="3" />
-  <MYSTICAMROR attribute="20" armor="4" />
-  <MYSTICAMROR attribute="23" armor="5" />
-  <MYSTICAMROR attribute="26" armor="6" />
-  <MYSTICAMROR attribute="29" armor="7" />
-  <MYSTICAMROR attribute="32" armor="8" />
-  <MYSTICAMROR attribute="35" armor="9" />
-  <MYSTICAMROR attribute="38" armor="10" />
-  <MYSTICAMROR attribute="41" armor="11" />
-  <MYSTICAMROR attribute="44" armor="12" />
+  <MYSTICARMOR attribute="0" armor="0" />
+  <MYSTICARMOR attribute="11" armor="1" />
+  <MYSTICARMOR attribute="14" armor="2" />
+  <MYSTICARMOR attribute="17" armor="3" />
+  <MYSTICARMOR attribute="20" armor="4" />
+  <MYSTICARMOR attribute="23" armor="5" />
+  <MYSTICARMOR attribute="26" armor="6" />
+  <MYSTICARMOR attribute="29" armor="7" />
+  <MYSTICARMOR attribute="32" armor="8" />
+  <MYSTICARMOR attribute="35" armor="9" />
+  <MYSTICARMOR attribute="38" armor="10" />
+  <MYSTICARMOR attribute="41" armor="11" />
+  <MYSTICARMOR attribute="44" armor="12" />
   <ATTRIBUTECOST modifier="-1" cost="-1" />
   <ATTRIBUTECOST modifier="-2" cost="-2" />
   <ATTRIBUTECOST modifier="1" cost="1" />

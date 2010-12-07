@@ -24,7 +24,7 @@
 	</EXPERIENCE>
 	<DISCIPLINE order="1" name="Schamane" circle="1" />
 	<PROTECTION physicalarmor="0" mysticamor="0" penalty="0">
-		<ARMOR name="natural armor" weight="0" used="yes" location="self" physicalarmor="0" mysticamor="2" penalty="0" edn="0" />
+		<ARMOR name="natural armor" weight="0" mysticarmor="2" penalty="0" edn="0" />
 	</PROTECTION>
 	<TALENTS discipline="Magican">
 		<DISZIPLINETALENT name="Create Fetisch" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
