@@ -45,15 +45,18 @@ public class ECEWorker {
 		List<?> properties = ApplicationProperties.create().getNamegivers().configurationsAt(query);
 		for (Object property : properties) {			
 			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
-			String id = subnode.getString("/@name");
-			int attributbasis = subnode.getInt("/@value");
 
+			String id = subnode.getString("/@name");
 			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, id);
-			int v = attributbasis + attribute.getBasevalue().intValue() + attribute.getStep().intValue();
-			attribute.setCurrentvalue(BigInteger.valueOf(v));
-			StepDice stepdice=attribute2StepAndDice(v);
+			int value = attribute.getBasevalue().intValue() + attribute.getLpincrease().intValue();
+			attribute.setCurrentvalue(BigInteger.valueOf(value));
+			StepDice stepdice=attribute2StepAndDice(value);
 			attribute.setDice(DiceType.valueOf(stepdice.getdice()));
 			attribute.setStep(BigInteger.valueOf(stepdice.getstep()));
+
+			int attributbasis = subnode.getInt("/@value");
+			int modifier = attribute.getBasevalue().intValue()-attributbasis;
+			attribute.setCost(berechneAttriubteCost(modifier));
 		}
 
 		DEFENSEType defense = JAXBHelper.getDefence(charakter);
@@ -128,6 +131,20 @@ public class ECEWorker {
 		int carrying = ApplicationProperties.create().getCharacteristics().getInt(query);
 		return BigInteger.valueOf(carrying);
 	}	
+
+	public BigInteger berechneAttriubteCost (int modifier) {
+		if ( modifier < -1 ) {
+			// TODO Warnung ausgeben, aber weiter machen
+			modifier = -1;
+		}
+		if ( modifier > 8 ) {
+			// TODO Warnung ausgeben, aber weiter machen
+			modifier = 8;
+		}
+		String query = String.format("/ATTRIBUTECOST[@modifier='%d']/@cost", modifier);
+		int cost = ApplicationProperties.create().getCharacteristics().getInt(query);
+		return BigInteger.valueOf(cost);
+	}
 
 	public List<Integer> bestimmeHealth (BigInteger wert) {
 		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
