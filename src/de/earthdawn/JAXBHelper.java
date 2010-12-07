@@ -18,6 +18,8 @@ public class JAXBHelper {
 	
 	public static final String APPEARANCE = "APPEARANCE";
 	
+	public static final String CARRYING = "CARRYING";
+	public static final String HEALTH = "HEALTH";
 	public static final String RACEABILITES = "RACEABILITES";
 	
 	public static final String ATTRIBUTE = "ATTRIBUTE";
@@ -40,6 +42,25 @@ public class JAXBHelper {
 			}
 		}
 
+		// Not found
+		return null;
+	}
+
+	public static CARRYINGType getCarrying(EDCHARAKTER charakter) {
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (CARRYING.equals(element.getName())) {
+				return (CARRYINGType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+	public static HEALTHType getHealth(EDCHARAKTER charakter) {
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (HEALTH.equals(element.getName())) {
+				return (HEALTHType) element.getValue();
+			}
+		}
 		// Not found
 		return null;
 	}
