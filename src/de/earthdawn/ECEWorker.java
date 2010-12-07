@@ -3,12 +3,16 @@ package de.earthdawn;
 import java.math.BigInteger;
 import java.util.List;
 
+import javax.xml.bind.JAXBElement;
 import org.apache.commons.configuration.SubnodeConfiguration;
 
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.CARRYINGType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.HEALTHType;
 
 /**
  * Hilfsklasse zur Verarbeitung eines Earthdawn-Charakters. 
@@ -44,50 +48,62 @@ public class ECEWorker {
 
 		DEFENSEType defense = JAXBHelper.getDefence(charakter);
 		defense.setPhysical(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue()));
+		defense.setSpell(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "PER").getCurrentvalue()));
+		defense.setSocial(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue()));
 
-		// EDCHARAKTER/DEFENSE/spell = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "PER").getCurrentvalue());
-		// EDCHARAKTER/DEFENSE/social = berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue());
-		// int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue())
-		// EDCHARAKTER/CARRYING/carrying= tmp;
-		// EDCHARAKTER/CARRYING/lifting = tmp *2;
-		// EDCHARAKTER/HEALTH = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue())
-
+		CARRYINGType carrying = JAXBHelper.getCarrying(charakter);
+		BigInteger tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue());
+		carrying.setCarrying(tmp);
+		carrying.setLifting(tmp.multiply(BigInteger.valueOf(2)));
+		HEALTHType health = JAXBHelper.getHealth(charakter);
+		List<?> newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
+		//TODO:
+		health.setDeath(newhealth.get(0));
+		health.setunconsciousness(newhealth.get(1));
+		health.setwound(newhealth.get(2));
+		health.setrecovery(newhealth.get(3));
 		return charakter;
 	}
-	public BigInteger berechneWiederstandskraft(BigInteger wert) {
-		if (wert.intValue() < 1) {
-			// wenn Wert kleiner 1, dann keine Fehlermedung, sondern nur den Wert korrigieren 
-			wert = BigInteger.ONE;
+	public BigInteger berechneWiederstandskraft(BigInteger value) {
+		int actualRating=0;
+		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/DEFENSERAITING")) {
+			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
+			int attribute = subnode.getInt("/@attribute");
+			int defense = subnode.getInt("/@defense");
+			if( (value.intValue() <= attribute) && (actualRating<defense) ) {
+				actualRating=defense;
+			}
 		}
-
-		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-
-		String query = String.format("/DEFENSERAITING[@defense='%d']/@attribute", wert.intValue());
-		int actualRaiting = ApplicationProperties.create().getCharacteristics().getInt(query);
-		
-		return BigInteger.valueOf(actualRaiting);
+		return BigInteger.valueOf(actualRating);
 	}	
-	public int berechneTraglast (BigInteger wert) {
+
+	public BigInteger berechneTraglast (BigInteger value) {
 		// TODO: getDefensraiting zerlegt die Leerzeichen separierte Liste in ein Array (oder Liste?)
-//		List<?> encumbrance = ApplicationProperties.create().getDefensraiting().configurationsAt(String.format("/CHARACTERISTICS/ENCUMBRANCE"));
+		List<?> encumbrance = ApplicationProperties.create().getCharacteristics().configurationsAt(String.format("/CHARACTERISTICS/ENCUMBRANCE"));
 		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-//		if ( wert < 1) {
-//			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
-//			wert = 1;
-//		}
-//		return encumbrance.get(wert);
+		if ( value.intValue()< 1) {
+			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
+			value = BigInteger.ONE;
+		}
+		return encumbrance.get(value.intValue());
 		
-		return 0;
 	}	
-	public int bestimmeHealth (BigInteger wert) {
-		// TODO: Fehlermeldung, wenn wert größer als Elemete in der Tabelle DEFENSERAITING
-//		if ( wert < 1) {
-//			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
-//			wert = 1;
-//		}
-//		return ApplicationProperties.create().getHealthraiting().configurationsAt(String.format("/CHARACTERISTICS/HEALTHRATING[@value='%d']",wert));
-		
-		return 0;
+
+	public List<?> bestimmeHealth (BigInteger wert) {
+		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
+			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
+			int value = subnode.getInt("/@value");
+			if( wert.intValue() == value) {
+				List<?> health;
+				health.add(subnode.getInt("/@death"));
+				health.add(subnode.getInt("/@unconsciousness"));
+				health.add(subnode.getInt("/@wound"));
+				health.add(subnode.getInt("/@recovery"));
+				return health;
+			}
+		}
+		// not found
+		return null;
 	}	
 }
 
