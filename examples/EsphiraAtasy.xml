@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <EDCHARAKTER  name="Esphira Atasy" xmlns="http://earthdawn.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com ../config/earthdawncharacter.xsd">
 	<APPEARANCE gender="female" age="34" eyes="" height="23" weight="83" hair="schwarz,lang" skin="dunkel" race="Windling"/>
-	<ATTRIBUTE name="DEX" basevalue="3" lpincrease="0" currentvalue="14" step="6" dice="d10" cost="3" />
-	<ATTRIBUTE name="STR" basevalue="3" lpincrease="0" currentvalue="07" step="4" dice="d6" cost="3" />
-	<ATTRIBUTE name="TOU" basevalue="4" lpincrease="0" currentvalue="12" step="5" dice="d8" cost="5" />
-	<ATTRIBUTE name="PER" basevalue="7" lpincrease="2" currentvalue="16" step="7" dice="d12" cost="12" />
-	<ATTRIBUTE name="WIL" basevalue="4" lpincrease="1" currentvalue="14" step="6" dice="d10" cost="5" />
-	<ATTRIBUTE name="CHA" basevalue="2" lpincrease="0" currentvalue="14" step="6" dice="d10" cost="2" />
+	<ATTRIBUTE name="DEX" basevalue="14" currentvalue="14" step="6" dice="d10" cost="3" />
+	<ATTRIBUTE name="STR" basevalue="7"  currentvalue="7"  step="4" dice="d6"  cost="3" />
+	<ATTRIBUTE name="TOU" basevalue="12" currentvalue="12" step="5" dice="d8"  cost="5" />
+	<ATTRIBUTE name="PER" basevalue="16" currentvalue="16" step="7" dice="d12" cost="12" />
+	<ATTRIBUTE name="WIL" basevalue="14" currentvalue="14" step="6" dice="d10" cost="5" />
+	<ATTRIBUTE name="CHA" basevalue="14" currentvalue="14" step="6" dice="d10" cost="2" />
 	<MOVEMENT ground="3" flight="8" />
 	<KARMA current="20" max="6" />
 	<RACEABILITES>Optional Talent Astral Sight, Physical Defense +2, Flight</RACEABILITES>
