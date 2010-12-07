@@ -3,23 +3,23 @@
   <ENCUMBRANCE>5,10,15,20,25,30,40,50,60,70,80,95,110,125,140,160,180,200,230,260,290,330,370,410,460,510,560,620,680,740</ENCUMBRANCE>
   <DEFENSERAITING attribute="0" defense="1" />
   <DEFENSERAITING attribute="1" defense="2" />
-  <DEFENSERAITING attribute="2" defense="3" />
-  <DEFENSERAITING attribute="4" defense="4" />
-  <DEFENSERAITING attribute="7" defense="5" />
-  <DEFENSERAITING attribute="9" defense="6" />
-  <DEFENSERAITING attribute="11" defense="7" />
-  <DEFENSERAITING attribute="14" defense="8" />
-  <DEFENSERAITING attribute="16" defense="9" />
-  <DEFENSERAITING attribute="18" defense="10" />
-  <DEFENSERAITING attribute="21" defense="11" />
-  <DEFENSERAITING attribute="23" defense="12" />
-  <DEFENSERAITING attribute="25" defense="13" />
-  <DEFENSERAITING attribute="28" defense="14" />
-  <DEFENSERAITING attribute="30" defense="15" />
-  <DEFENSERAITING attribute="32" defense="16" />
-  <DEFENSERAITING attribute="35" defense="17" />
-  <DEFENSERAITING attribute="37" defense="18" />
-  <DEFENSERAITING attribute="39" defense="19" />
+  <DEFENSERAITING attribute="3" defense="3" />
+  <DEFENSERAITING attribute="6" defense="4" />
+  <DEFENSERAITING attribute="8" defense="5" />
+  <DEFENSERAITING attribute="10" defense="6" />
+  <DEFENSERAITING attribute="13" defense="7" />
+  <DEFENSERAITING attribute="15" defense="8" />
+  <DEFENSERAITING attribute="17" defense="9" />
+  <DEFENSERAITING attribute="20" defense="10" />
+  <DEFENSERAITING attribute="22" defense="11" />
+  <DEFENSERAITING attribute="24" defense="12" />
+  <DEFENSERAITING attribute="27" defense="13" />
+  <DEFENSERAITING attribute="29" defense="14" />
+  <DEFENSERAITING attribute="31" defense="15" />
+  <DEFENSERAITING attribute="34" defense="16" />
+  <DEFENSERAITING attribute="36" defense="17" />
+  <DEFENSERAITING attribute="38" defense="18" />
+  <DEFENSERAITING attribute="41" defense="19" />
   <DEFENSERAITING attribute="42" defense="20" />
   <MYSTICAMROR attribute="0" armor="0" />
   <MYSTICAMROR attribute="11" armor="1" />
