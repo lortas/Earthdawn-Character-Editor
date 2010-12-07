@@ -27,7 +27,7 @@ public class EarthdawnCharacterEditor {
 				EDCHARAKTER ec =(EDCHARAKTER)u.unmarshal(new File(args[0]));
 				
 				// Verarbeiten
-				System.out.println("Verarbeite Charaker");
+				System.out.println("Verarbeite Charaker: '" + ec.getName() + "'");
 				EDCHARAKTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
 				
 				// Ausgabe
