@@ -4,8 +4,10 @@ import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.CARRYINGType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.HEALTHType;
 
 /**
  * Hilfsklasse zur einfacheren Verarbeitung des JAXB-Baumes
@@ -19,7 +21,9 @@ public class JAXBHelper {
 	public static final String APPEARANCE = "APPEARANCE";
 	
 	public static final String CARRYING = "CARRYING";
+	
 	public static final String HEALTH = "HEALTH";
+	
 	public static final String RACEABILITES = "RACEABILITES";
 	
 	public static final String ATTRIBUTE = "ATTRIBUTE";
@@ -48,7 +52,7 @@ public class JAXBHelper {
 
 	public static CARRYINGType getCarrying(EDCHARAKTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (CARRYING.equals(element.getName())) {
+			if (CARRYING.equals(element.getName().getLocalPart())) {
 				return (CARRYINGType) element.getValue();
 			}
 		}
@@ -57,7 +61,7 @@ public class JAXBHelper {
 	}
 	public static HEALTHType getHealth(EDCHARAKTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (HEALTH.equals(element.getName())) {
+			if (HEALTH.equals(element.getName().getLocalPart())) {
 				return (HEALTHType) element.getValue();
 			}
 		}

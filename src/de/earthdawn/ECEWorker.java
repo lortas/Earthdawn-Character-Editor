@@ -1,18 +1,22 @@
 package de.earthdawn;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
+
 import org.apache.commons.configuration.SubnodeConfiguration;
 
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.CARRYINGType;
+import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.EDCHARAKTER;
 import de.earthdawn.data.HEALTHType;
+import de.earthdawn.data.RECOVERYType;
+import de.earthdawn.data.WOUNDType;
 
 /**
  * Hilfsklasse zur Verarbeitung eines Earthdawn-Charakters. 
@@ -56,16 +60,30 @@ public class ECEWorker {
 		carrying.setCarrying(tmp);
 		carrying.setLifting(tmp.multiply(BigInteger.valueOf(2)));
 		HEALTHType health = JAXBHelper.getHealth(charakter);
-		List<?> newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
+		List<Integer> newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
 		//TODO:
-		health.setDeath(newhealth.get(0));
-		health.setunconsciousness(newhealth.get(1));
-		health.setwound(newhealth.get(2));
-		health.setrecovery(newhealth.get(3));
+		
+		for (JAXBElement<?> elem : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
+			if (elem.getName().getLocalPart().equals("DEATH")) {
+				((DEATHType)elem.getValue()).setValue(BigInteger.valueOf(newhealth.get(0)));
+			} else if (elem.getName().getLocalPart().equals("UNCONSCIOUSNESS")) {
+				((DEATHType)elem.getValue()).setValue(BigInteger.valueOf(newhealth.get(1)));
+			} else if (elem.getName().getLocalPart().equals("WOUNDS")) {
+				((WOUNDType)elem.getValue()).setPenalties(BigInteger.valueOf(newhealth.get(2)));
+			} else if (elem.getName().getLocalPart().equals("RECOVERY")) {
+				((RECOVERYType)elem.getValue()).setStep(BigInteger.valueOf(newhealth.get(3)));
+			}
+		}
+		
 		return charakter;
 	}
 	public BigInteger berechneWiederstandskraft(BigInteger value) {
 		int actualRating=0;
+
+		// TODO:  Vielleicht übersichtlichere Variante:
+//		String query = String.format("/DEFENSERAITING[@defense='%d']/@attribute", wert.intValue());
+//		int actualRaiting = ApplicationProperties.create().getCharacteristics().getInt(query);
+
 		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/DEFENSERAITING")) {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
 			int attribute = subnode.getInt("/@attribute");
@@ -85,20 +103,23 @@ public class ECEWorker {
 			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
 			value = BigInteger.ONE;
 		}
-		return encumbrance.get(value.intValue());
+//		return encumbrance.get(value.intValue());
+		
+		return null;
 		
 	}	
 
-	public List<?> bestimmeHealth (BigInteger wert) {
+	public List<Integer> bestimmeHealth (BigInteger wert) {
 		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
 			int value = subnode.getInt("/@value");
 			if( wert.intValue() == value) {
-				List<?> health;
+				List<Integer> health = new ArrayList<Integer>();
 				health.add(subnode.getInt("/@death"));
 				health.add(subnode.getInt("/@unconsciousness"));
 				health.add(subnode.getInt("/@wound"));
 				health.add(subnode.getInt("/@recovery"));
+
 				return health;
 			}
 		}
