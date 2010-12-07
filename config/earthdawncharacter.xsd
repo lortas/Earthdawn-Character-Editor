@@ -159,17 +159,17 @@
 	<xs:complexType name="ARMOR_type">
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
-				<xs:attribute name="physicalarmor" type="xs:integer" use="required"/>
-				<xs:attribute name="mysticamor" type="xs:integer" use="required"/>
-				<xs:attribute name="penalty" type="xs:integer" use="required"/>
-				<xs:attribute name="edn" type="xs:integer" use="required"/>
+				<xs:attribute name="physicalarmor" type="xs:integer" default="0"/>
+				<xs:attribute name="mysticarmor" type="xs:integer" default="0"/>
+				<xs:attribute name="penalty" type="xs:integer" default="0"/>
+				<xs:attribute name="edn" type="xs:integer" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="SHIELD_type">
 		<xs:complexContent>
 			<xs:extension base="ARMOR_type">
-				<xs:attribute name="shatterthreshold" type="xs:integer" use="required"/>
+				<xs:attribute name="shatterthreshold" type="xs:integer" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
