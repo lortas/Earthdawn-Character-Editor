@@ -1,8 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CHARACTERISTICS>
-  <DEFENSERAITING>2 3 3 4 4 4 5 5 6 6 7 7 7 8 8 9 9 10 10 10 11 11 12 12 13 13 13 14 14 15 15 16 16 16 17 17 18 18 19 19 19</DEFENSERAITING>
-  <ENCUMBRANCE>5 10 15 20 25 30 40 50 60 70 80 95 110 125 140 160 180 200 230 260 290 330 370 410 460 510 560 620 680 740</ENCUMBRANCE>
-  <MYSTICAMROR>0 0 0 0 0 0 0 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7</MYSTICAMROR>
+  <ENCUMBRANCE>5,10,15,20,25,30,40,50,60,70,80,95,110,125,140,160,180,200,230,260,290,330,370,410,460,510,560,620,680,740</ENCUMBRANCE>
+  <DEFENSERAITING attribute="0" defense="1" />
+  <DEFENSERAITING attribute="1" defense="2" />
+  <DEFENSERAITING attribute="2" defense="3" />
+  <DEFENSERAITING attribute="4" defense="4" />
+  <DEFENSERAITING attribute="7" defense="5" />
+  <DEFENSERAITING attribute="9" defense="6" />
+  <DEFENSERAITING attribute="11" defense="7" />
+  <DEFENSERAITING attribute="14" defense="8" />
+  <DEFENSERAITING attribute="16" defense="9" />
+  <DEFENSERAITING attribute="18" defense="10" />
+  <DEFENSERAITING attribute="21" defense="11" />
+  <DEFENSERAITING attribute="23" defense="12" />
+  <DEFENSERAITING attribute="25" defense="13" />
+  <DEFENSERAITING attribute="28" defense="14" />
+  <DEFENSERAITING attribute="30" defense="15" />
+  <DEFENSERAITING attribute="32" defense="16" />
+  <DEFENSERAITING attribute="35" defense="17" />
+  <DEFENSERAITING attribute="37" defense="18" />
+  <DEFENSERAITING attribute="39" defense="19" />
+  <DEFENSERAITING attribute="42" defense="20" />
+  <MYSTICAMROR attribute="0" armor="0" />
+  <MYSTICAMROR attribute="11" armor="1" />
+  <MYSTICAMROR attribute="14" armor="2" />
+  <MYSTICAMROR attribute="17" armor="3" />
+  <MYSTICAMROR attribute="20" armor="4" />
+  <MYSTICAMROR attribute="23" armor="5" />
+  <MYSTICAMROR attribute="26" armor="6" />
+  <MYSTICAMROR attribute="29" armor="7" />
+  <MYSTICAMROR attribute="32" armor="8" />
+  <MYSTICAMROR attribute="35" armor="9" />
+  <MYSTICAMROR attribute="38" armor="10" />
+  <MYSTICAMROR attribute="41" armor="11" />
+  <MYSTICAMROR attribute="44" armor="12" />
+  <ATTRIBUTECOST modifier="-1" cost="-1" />
+  <ATTRIBUTECOST modifier="-2" cost="-2" />
+  <ATTRIBUTECOST modifier="1" cost="1" />
+  <ATTRIBUTECOST modifier="2" cost="2" />
+  <ATTRIBUTECOST modifier="3" cost="3" />
+  <ATTRIBUTECOST modifier="4" cost="5" />
+  <ATTRIBUTECOST modifier="5" cost="7" />
+  <ATTRIBUTECOST modifier="6" cost="9" />
+  <ATTRIBUTECOST modifier="7" cost="12" />
+  <ATTRIBUTECOST modifier="8" cost="15" />
   <HEALTHRATING  value="1" death="19" unconsciousness="10"  wound="3" recovery="0.5" />
   <HEALTHRATING  value="2" death="20" unconsciousness="11"  wound="4" recovery="0.5" />
   <HEALTHRATING  value="3" death="22" unconsciousness="13"  wound="4" recovery="1" />
@@ -33,14 +74,44 @@
   <HEALTHRATING value="28" death="55" unconsciousness="48" wound="16" recovery="5" />
   <HEALTHRATING value="29" death="56" unconsciousness="49" wound="16" recovery="5" />
   <HEALTHRATING value="30" death="58" unconsciousness="51" wound="17" recovery="5" />
-  <ATTRIBUTECOST>-1 -2 1 2 3 5 7 9 12 15</ATTRIBUTECOST>
-  <DICETABLE>
-   d6-3 d6-2 d6-1 d6 d8 d10 d12
-         2d6      d8+d6      2d8      d10+d8      2d10  d12+d10 2d12
-     d12+2d6  d12+d8+d6  d12+2d8  d12+d10+d8  d12+2d10 2d12+d10 3d12
-    2d12+2d6 2d12+d8+d6 2d12+2d8 2d12+d10+d8 2d12+2d10 3d12+d10 4d12
-    3d12+2d6 3d12+d8+d6 3d12+2d8 3d12+d10+d8 3d12+2d10 4d12+d10 5d12
-    5d12+2d6 5d12+d8+d6 5d12+2d8 5d12+d10+d8 5d12+2d10
-  </DICETABLE>
-  <STEP>2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 10 10 10 11 11 11 12 12 12 13 13 13 14 14 14 15 15 15</STEP>
+  <STEPDICETABLE attribute="0" step="1" dice="d6-3" />
+  <STEPDICETABLE attribute="1" step="2" dice="d6-2" />
+  <STEPDICETABLE attribute="4" step="3" dice="d6-1" />
+  <STEPDICETABLE attribute="7" step="4" dice="d6" />
+  <STEPDICETABLE attribute="10" step="5" dice="d8" />
+  <STEPDICETABLE attribute="13" step="6" dice="d10" />
+  <STEPDICETABLE attribute="16" step="7" dice="d12" />
+  <STEPDICETABLE attribute="19" step="8" dice="2d6" />
+  <STEPDICETABLE attribute="22" step="9" dice="d8+d6" />
+  <STEPDICETABLE attribute="25" step="10" dice="2d8" />
+  <STEPDICETABLE attribute="28" step="11" dice="d10+d8" />
+  <STEPDICETABLE attribute="31" step="12" dice="2d10" />
+  <STEPDICETABLE attribute="34" step="13" dice="d12+d10" />
+  <STEPDICETABLE attribute="37" step="14" dice="2d12" />
+  <STEPDICETABLE attribute="40" step="15" dice="d12+2d6" />
+  <STEPDICETABLE attribute="43" step="16" dice="d12+d8+d6" />
+  <STEPDICETABLE attribute="46" step="17" dice="d12+2d8" />
+  <STEPDICETABLE attribute="49" step="18" dice="d12+d10+d8" />
+  <STEPDICETABLE attribute="52" step="19" dice="d12+2d10" />
+  <STEPDICETABLE attribute="55" step="20" dice="2d12+d10" />
+  <STEPDICETABLE attribute="58" step="21" dice="3d12" />
+  <STEPDICETABLE attribute="61" step="22" dice="2d12+2d6" />
+  <STEPDICETABLE attribute="64" step="23" dice="2d12+d8+d6" />
+  <STEPDICETABLE attribute="67" step="24" dice="2d12+2d8" />
+  <STEPDICETABLE attribute="70" step="25" dice="2d12+d10+d8" />
+  <STEPDICETABLE attribute="73" step="26" dice="2d12+2d10" />
+  <STEPDICETABLE attribute="76" step="27" dice="3d12+d10" />
+  <STEPDICETABLE attribute="79" step="28" dice="4d12" />
+  <STEPDICETABLE attribute="82" step="29" dice="3d12+2d6" />
+  <STEPDICETABLE attribute="85" step="30" dice="3d12+d8+d6" />
+  <STEPDICETABLE attribute="88" step="31" dice="3d12+2d8" />
+  <STEPDICETABLE attribute="91" step="32" dice="3d12+d10+d8" />
+  <STEPDICETABLE attribute="94" step="33" dice="3d12+2d10" />
+  <STEPDICETABLE attribute="97" step="34" dice="4d12+d10" />
+  <STEPDICETABLE attribute="100" step="35" dice="5d12" />
+  <STEPDICETABLE attribute="103" step="36" dice="4d12+2d6" />
+  <STEPDICETABLE attribute="106" step="37" dice="4d12+d8+d6" />
+  <STEPDICETABLE attribute="109" step="38" dice="4d12+2d8" />
+  <STEPDICETABLE attribute="112" step="39" dice="4d12+d10+d8" />
+  <STEPDICETABLE attribute="115" step="40" dice="4d12+2d10" />
 </CHARACTERISTICS>
