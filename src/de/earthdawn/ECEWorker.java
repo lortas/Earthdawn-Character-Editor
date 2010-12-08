@@ -190,6 +190,6 @@ public class ECEWorker {
 				actualDice = dice;
 			}
 		}
-		return StepDice.new(actualStep,actualDice);
+		return new StepDice(actualStep,actualDice);
 	}	
 }
