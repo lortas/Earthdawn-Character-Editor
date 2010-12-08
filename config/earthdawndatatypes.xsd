@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/datatypes" xmlns="http://earthdawn.com/datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="ATTRIBUTE_name_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CHA"/>
+			<xs:enumeration value="DEX"/>
+			<xs:enumeration value="STR"/>
+			<xs:enumeration value="PER"/>
+			<xs:enumeration value="WIL"/>
+			<xs:enumeration value="TOU"/>
+			<xs:enumeration value="na"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="lpincrease_type">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="-2"/>
+			<xs:maxInclusive value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="attcost_type">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="-2"/>
+			<xs:maxInclusive value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="circle_type">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="unsigned_int">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="plusminus_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="+"/>
+			<xs:enumeration value="-"/>
+			<xs:enumeration value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yesno_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+			<xs:enumeration value="-"/>
+			<xs:enumeration value="*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="action_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sustained"/>
+			<xs:enumeration value="standard"/>
+			<xs:enumeration value="simple"/>
+			<xs:enumeration value="free"/>
+			<xs:enumeration value="na"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gender_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="male"/>
+			<xs:enumeration value="female"/>
+			<xs:enumeration value="-"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="spelltype_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="elemental"/>
+			<xs:enumeration value="nether"/>
+			<xs:enumeration value="illusion"/>
+			<xs:enumeration value="wizard"/>
+			<xs:enumeration value="shamane"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dice_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="d6-3"/>
+			<xs:enumeration value="d6-2"/>
+			<xs:enumeration value="d6-1"/>
+			<xs:enumeration value="d6"/>
+			<xs:enumeration value="d8"/>
+			<xs:enumeration value="d10"/>
+			<xs:enumeration value="d12"/>
+			<xs:enumeration value="2d6"/>
+			<xs:enumeration value="d10+d8"/>
+			<xs:enumeration value="2d10"/>
+			<xs:enumeration value="d12+d10"/>
+			<xs:enumeration value="2d12"/>
+			<xs:enumeration value="d12+2d6"/>
+			<xs:enumeration value="d12+d8+d6"/>
+			<xs:enumeration value="d12+2d8"/>
+			<xs:enumeration value="d12+d10+d8"/>
+			<xs:enumeration value="d12+2d10"/>
+			<xs:enumeration value="2d12+d10"/>
+			<xs:enumeration value="3d12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="RECOVERY_type">
+		<xs:attribute name="testsperday" type="unsigned_int" use="required"/>
+		<xs:attribute name="step" type="unsigned_int" use="required"/>
+		<xs:attribute name="dice" type="dice_type"/>
+	</xs:complexType>
+	<xs:complexType name="WOUND_type">
+		<xs:attribute name="threshold" type="unsigned_int" use="required"/>
+		<xs:attribute name="count" type="unsigned_int"/>
+		<xs:attribute name="penalties" type="unsigned_int"/>
+	</xs:complexType>
+	<xs:complexType name="DEATH_type">
+		<xs:attribute name="base" type="unsigned_int" use="required"/>
+		<xs:attribute name="adjustment" type="xs:int" use="required"/>
+		<xs:attribute name="value" type="unsigned_int"/>
+	</xs:complexType>
+	<xs:complexType name="ATTRIBUTE_type">
+		<xs:attribute name="name" type="ATTRIBUTE_name_type" use="required"/>
+		<xs:attribute name="basevalue" type="unsigned_int" use="required"/>
+		<xs:attribute name="lpincrease" type="lpincrease_type" default="0"/>
+		<xs:attribute name="currentvalue" type="unsigned_int"/>
+		<xs:attribute name="step" type="unsigned_int"/>
+		<xs:attribute name="dice" type="dice_type"/>
+		<xs:attribute name="cost" type="attcost_type"/>
+	</xs:complexType>
+	<xs:complexType name="ITEM_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="weight" type="xs:decimal" use="required"/>
+		<xs:attribute default="yes" name="used" type="yesno_type"/>
+		<xs:attribute default="self" name="location" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="MOVEMENT_type">
+		<xs:attribute name="flight" type="unsigned_int"/>
+		<xs:attribute name="ground" type="unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DISCIPLINE_type">
+		<xs:attribute name="order" type="unsigned_int" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="circle" type="circle_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="COINS_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:attribute name="copper" type="xs:int"/>
+				<xs:attribute name="silver" type="xs:int"/>
+				<xs:attribute name="gold" type="xs:int"/>
+				<xs:attribute name="earth" type="xs:int"/>
+				<xs:attribute name="water" type="xs:int"/>
+				<xs:attribute name="fire" type="xs:int"/>
+				<xs:attribute name="air" type="xs:int"/>
+				<xs:attribute name="orichalcum" type="xs:int"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CARRYING_type">
+		<xs:attribute name="lifting" type="unsigned_int"/>
+		<xs:attribute name="carrying" type="unsigned_int"/>
+	</xs:complexType>
+	<xs:complexType name="INITIATIVE_type">
+		<xs:attribute name="base" type="unsigned_int" use="required"/>
+		<xs:attribute name="modification" type="xs:int" use="required"/>
+		<xs:attribute name="step" type="unsigned_int" use="required"/>
+		<xs:attribute name="dice" type="dice_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="KARMA_type">
+		<xs:attribute name="current" type="unsigned_int" use="required"/>
+		<xs:attribute name="max" type="unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="LEGENDPOINTS_type">
+		<xs:attribute name="comment" type="xs:string" use="required"/>
+		<xs:attribute name="legendpoints" type="unsigned_int" use="required"/>
+		<xs:attribute name="type" type="plusminus_type" use="required"/>
+		<xs:attribute name="when" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="EXPERIENCE_type">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element maxOccurs="unbounded" name="LEGENDPOINTS" type="LEGENDPOINTS_type"/>
+		</xs:choice>
+		<xs:attribute name="totallegendpoints" type="unsigned_int" use="required"/>
+		<xs:attribute name="currentlegendpoints" type="xs:int" use="required"/>
+		<xs:attribute name="renown" type="xs:int" use="required"/>
+		<xs:attribute name="reputation" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ARMOR_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:attribute name="physicalarmor" type="unsigned_int" default="0"/>
+				<xs:attribute name="mysticarmor" type="unsigned_int" default="0"/>
+				<xs:attribute name="penalty" type="unsigned_int" default="0"/>
+				<xs:attribute name="edn" type="unsigned_int" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SHIELD_type">
+		<xs:complexContent>
+			<xs:extension base="ARMOR_type">
+				<xs:attribute name="shatterthreshold" type="unsigned_int" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="THREADRANK_type">
+		<xs:attribute name="rank" type="unsigned_int" use="required"/>
+		<xs:attribute name="keyknowledge" type="yesno_type" use="required"/>
+		<xs:attribute name="lpcost" type="unsigned_int" use="required"/>
+		<xs:attribute name="attribute" type="ATTRIBUTE_name_type" use="required"/>
+		<xs:attribute name="effect" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="MAGICITEM_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:choice maxOccurs="unbounded">
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
+				</xs:choice>
+				<xs:attribute name="maxthreads" type="unsigned_int" use="required"/>
+				<xs:attribute name="spelldefense" type="unsigned_int" use="required"/>
+				<xs:attribute name="description" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PATTERNITEM_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:attribute name="type" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SKILL_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="action" type="action_type" use="required"/>
+		<xs:attribute default="0" name="strain" type="unsigned_int"/>
+		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
+		<xs:attribute default="0" name="bonus" type="xs:int"/>
+		<xs:attribute name="rank" type="unsigned_int" use="required"/>
+		<xs:attribute name="step" type="unsigned_int" use="required"/>
+		<xs:attribute name="dice" type="dice_type" use="required"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
+	</xs:complexType>
+	<xs:complexType name="TALENT_type">
+		<xs:complexContent>
+			<xs:extension base="SKILL_type">
+				<xs:attribute name="karma" type="yesno_type" default="no"/>
+				<xs:attribute name="circle" type="circle_type" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HEALTH_type">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element maxOccurs="1" minOccurs="1" name="RECOVERY" type="RECOVERY_type"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="UNCONSCIOUSNESS" type="DEATH_type"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="DEATH" type="DEATH_type"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="WOUNDS" type="WOUND_type"/>
+		</xs:choice>
+		<xs:attribute name="damage" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="WEAPON_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:attribute name="damagestep" type="unsigned_int" use="required"/>
+				<xs:attribute name="strengthmin" type="unsigned_int" use="required"/>
+				<xs:attribute name="size" type="xs:int" use="required"/>
+				<xs:attribute name="timesforged" type="unsigned_int" default="0" />
+				<xs:attribute name="shortrange" type="unsigned_int" default="0" />
+				<xs:attribute name="mediumrange" type="unsigned_int" default="0" />
+				<xs:attribute name="longrange" type="unsigned_int" default="0" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DEFENSE_type">
+		<xs:attribute name="physical" type="unsigned_int" use="required"/>
+		<xs:attribute name="spell" type="unsigned_int" use="required"/>
+		<xs:attribute name="social" type="unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="SPELL_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="inmatrix" type="yesno_type" use="required"/>
+		<xs:attribute name="type" type="spelltype_type" use="required"/>
+		<xs:attribute name="circle" type="circle_type" use="required"/>
+		<xs:attribute name="threads" type="unsigned_int" use="required"/>
+		<xs:attribute name="weavingdifficulty" type="unsigned_int" use="required"/>
+		<xs:attribute name="castingdifficulty" type="unsigned_int" use="required"/>
+		<xs:attribute name="range" type="xs:string" use="required"/>
+		<xs:attribute name="duration" type="xs:string" use="required"/>
+		<xs:attribute name="effect" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="PROTECTION_type">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ARMOR" type="ARMOR_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="SHIELD" type="SHIELD_type"/>
+		</xs:choice>
+		<xs:attribute name="physicalarmor" type="unsigned_int" use="required"/>
+		<xs:attribute name="mysticamor" type="unsigned_int" use="required"/>
+		<xs:attribute name="penalty" type="unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="APPEARANCE_type">
+		<xs:attribute name="gender" type="gender_type" use="required"/>
+		<xs:attribute name="age" type="unsigned_int" use="required"/>
+		<xs:attribute name="height" type="unsigned_int" use="required"/>
+		<xs:attribute name="weight" type="unsigned_int" use="required"/>
+		<xs:attribute name="eyes" type="xs:string" use="required"/>
+		<xs:attribute name="hair" type="xs:string" use="required"/>
+		<xs:attribute name="skin" type="xs:string" use="required"/>
+		<xs:attribute name="race" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>
