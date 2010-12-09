@@ -282,7 +282,8 @@
 		<xs:attribute name="circle" type="circle_type" use="required"/>
 		<xs:attribute name="threads" type="unsigned_int" use="required"/>
 		<xs:attribute name="weavingdifficulty" type="unsigned_int" use="required"/>
-		<xs:attribute name="castingdifficulty" type="unsigned_int" use="required"/>
+		<xs:attribute name="reattuningdifficulty" type="unsigned_int" use="required"/>
+		<xs:attribute name="castingdifficulty" type="xs:string" use="required"/>
 		<xs:attribute name="range" type="xs:string" use="required"/>
 		<xs:attribute name="duration" type="xs:string" use="required"/>
 		<xs:attribute name="effect" type="xs:string" use="required"/>
