@@ -12,19 +12,19 @@
 	<RACEABILITES>Optional Talent Astral Sight, Physical Defense +2, Flight</RACEABILITES>
 	<DEFENSE physical="10" spell="9" social="8" />
 	<HEALTH damage="0">
-		<RECOVERY testsperday="2" step="5" dice="d8" />
-		<UNCONSCIOUSNESS base="26" adjustment="0" value="26" />
-		<DEATH base="34" adjustment="0" value="34" />
-		<WOUNDS threshold="9" count="0" penalties="0" />
+		<edt:RECOVERY testsperday="2" step="5" dice="d8" />
+		<edt:UNCONSCIOUSNESS base="26" adjustment="0" value="26" />
+		<edt:DEATH base="34" adjustment="0" value="34" />
+		<edt:WOUNDS threshold="9" count="0" penalties="0" />
 	</HEALTH>
 	<INITIATIVE base="6" modification="0" step="6" dice="d10" />
 	<CARRYING carrying="40" lifting="80" />
 	<EXPERIENCE totallegendpoints="0" currentlegendpoints="0" renown="0" reputation="0">
-		<LEGENDPOINTS comment="charakter generation" legendpoints="0" type="0" when="" />
+		<edt:LEGENDPOINTS comment="charakter generation" legendpoints="0" type="0" when="" />
 	</EXPERIENCE>
 	<DISCIPLINE order="1" name="Schamane" circle="1" />
 	<PROTECTION physicalarmor="0" mysticamor="0" penalty="0">
-		<ARMOR name="natural armor" weight="0" mysticarmor="2" penalty="0" edn="0" />
+		<edt:ARMOR name="natural armor" weight="0" mysticarmor="2" penalty="0" edn="0" />
 	</PROTECTION>
 	<TALENTS discipline="Magican">
 		<DISZIPLINETALENT name="Create Fetisch" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
