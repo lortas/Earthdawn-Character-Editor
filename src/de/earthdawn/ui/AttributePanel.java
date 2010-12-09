@@ -52,7 +52,7 @@ public class AttributePanel extends JPanel {
 		add(new JLabel("+"), gbcb.nextCell(1, 0));
 		add(attribut.getLbExt1(), gbcb.nextCell(1, 0));
 
-		// TODO: Linksbündig ... 
+		// TODO: Linksbï¿½ndig ... 
 		GridBagConstraints cell = gbcb.nextCell(1, 10);		
 		add(attribut.getLbExt2(), cell);
 
@@ -64,11 +64,11 @@ public class AttributePanel extends JPanel {
 	public void attributAnzeigen(ATTRIBUTEType attribut) {
 		UIAttribut uiAttribut = this.attribute.get(attribut.getName().value());
 		if (uiAttribut != null) {
-			uiAttribut.getSpinWert().setValue(new Integer(attribut.getBasevalue().intValue()));
+			uiAttribut.getSpinWert().setValue(attribut.getBasevalue());
 			// uiAttribut.getSpinSteig().setValue(new Integer(attribut.getSteig().intValue()));
 		}
 		else {
-			// TODO: Unbekanntes Attribut? -> Höchstwahrscheinlich ein Konfigurationsproblem
+			// TODO: Unbekanntes Attribut? -> Hï¿½chstwahrscheinlich ein Konfigurationsproblem
 		}
 	}
 

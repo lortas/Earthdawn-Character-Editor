@@ -10,7 +10,7 @@ import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.EDCHARAKTER;
 
 /**
- * Hilfsklasse zur Anzeite eines {@link ATTRIBUTType} in der Oberfläche.
+ * Hilfsklasse zur Anzeite eines {@link ATTRIBUTType} in der Oberflï¿½che.
  */
 public class UIAttribut {
 	
@@ -32,7 +32,7 @@ public class UIAttribut {
 		this.lbExt1 = new JLabel("0");
 		this.lbExt2 = new JLabel("6 w11");
 
-		// Wertebereiche für die Spinner festlegen
+		// Wertebereiche fï¿½r die Spinner festlegen
 		SpinnerNumberModel model = new SpinnerNumberModel(30, 0, 30, 1);
 		spinWert.setModel(model);
 		
@@ -65,7 +65,7 @@ public class UIAttribut {
 			if (o instanceof ATTRIBUTEType) {
 				ATTRIBUTEType attribut = (ATTRIBUTEType) o;
 				if (attribut.getName().value().equals(getName())) {
-					attribut.setCurrentvalue(new BigInteger(getSpinWert().getValue().toString()));
+//					attribut.setCurrentvalue(getSpinWert().getValue());
 //					attribut.setSteig(new BigInteger(getSpinWert().getValue().toString()));
 				}
 			}
