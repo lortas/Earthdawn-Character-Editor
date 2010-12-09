@@ -2,17 +2,8 @@
 <jaxb:bindings version="2.0"
                xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <jaxb:bindings schemaLocation="earthdawncharacter.xsd">
+    <jaxb:bindings schemaLocation="earthdawndatatypes.xsd">
         <jaxb:globalBindings typesafeEnumMemberName="generateError" />
-        <jaxb:bindings node="//xs:complexType[@name='EDCHARAKTER']">
-            <jxb:bindings node=".//xs:element[@name='name']">
-            <jxb:property name="toName"/>
-        </jxb:bindings>
-
-  <jxb:bindings node=".//xs:element[@name='zip']">
-    <jxb:property name="zipCode"/>
-  </jxb:bindings>
-        </jaxb:bindings> 
         <jaxb:bindings node="//xs:simpleType[@name='plusminus_type']">
             <jaxb:typesafeEnumClass>
                 <jaxb:typesafeEnumMember value="+" name="PLUS" />

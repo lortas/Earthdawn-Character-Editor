@@ -48,14 +48,14 @@ public class ECEWorker {
 
 			String id = subnode.getString("/@name");
 			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, id);
-			int value = attribute.getBasevalue().intValue() + attribute.getLpincrease().intValue();
-			attribute.setCurrentvalue(BigInteger.valueOf(value));
+			int value = attribute.getBasevalue() + attribute.getLpincrease();
+			attribute.setCurrentvalue(value);
 			StepDice stepdice=attribute2StepAndDice(value);
 			attribute.setDice(DiceType.valueOf(stepdice.getdice()));
 			attribute.setStep(BigInteger.valueOf(stepdice.getstep()));
 
 			int attributbasis = subnode.getInt("/@value");
-			int modifier = attribute.getBasevalue().intValue()-attributbasis;
+			int modifier = attribute.getBasevalue()-attributbasis;
 			attribute.setCost(berechneAttriubteCost(modifier));
 		}
 
@@ -65,20 +65,20 @@ public class ECEWorker {
 		defense.setSocial(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue()));
 
 		CARRYINGType carrying = JAXBHelper.getCarrying(charakter);
-		BigInteger tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue());
+		int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue());
 		carrying.setCarrying(tmp);
-		carrying.setLifting(tmp.multiply(BigInteger.valueOf(2)));
+		carrying.setLifting(tmp *2);
 		HEALTHType health = JAXBHelper.getHealth(charakter);
 		List<Integer> newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
 		for (JAXBElement<?> elem : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
 			if (elem.getName().getLocalPart().equals("DEATH")) {
-				((DEATHType)elem.getValue()).setValue(BigInteger.valueOf(newhealth.get(0)));
+				((DEATHType)elem.getValue()).setValue(newhealth.get(0));
 			} else if (elem.getName().getLocalPart().equals("UNCONSCIOUSNESS")) {
-				((DEATHType)elem.getValue()).setValue(BigInteger.valueOf(newhealth.get(1)));
+				((DEATHType)elem.getValue()).setValue(newhealth.get(1));
 			} else if (elem.getName().getLocalPart().equals("WOUNDS")) {
-				((WOUNDType)elem.getValue()).setPenalties(BigInteger.valueOf(newhealth.get(2)));
+				((WOUNDType)elem.getValue()).setPenalties(newhealth.get(2));
 			} else if (elem.getName().getLocalPart().equals("RECOVERY")) {
-				((RECOVERYType)elem.getValue()).setStep(BigInteger.valueOf(newhealth.get(3)));
+				((RECOVERYType)elem.getValue()).setStep(newhealth.get(3));
 			}
 		}
 
@@ -104,7 +104,7 @@ public class ECEWorker {
 		
 		return charakter;
 	}
-	public BigInteger berechneWiederstandskraft(BigInteger value) {
+	public int berechneWiederstandskraft(Integer value) {
 		int actualRating=0;
 		// TODO: übersichtliche Alternative, funktioniert aber wahrscheinlich nicht
 //		String query = String.format("/DEFENSERAITING[@defense='%d']/@attribute", value.intValue());
@@ -118,21 +118,21 @@ public class ECEWorker {
 				actualRating=defense;
 			}
 		}
-		return BigInteger.valueOf(actualRating);
+		return actualRating;
 	}	
 
-	public BigInteger berechneTraglast (BigInteger value) {
+	public int berechneTraglast (Integer value) {
 		if ( value.intValue()< 1) {
 			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
-			value = BigInteger.ONE;
+			value = 1;
 		}
 		String query = String.format("/ENCUMBRANCE[@attribute='%d']/@carrying", value.intValue());
 		// TODO: Fehlermeldung, wenn "value" größer als es Elemente in der Tabelle ENCUMBRANCE gibt.
 		int carrying = ApplicationProperties.create().getCharacteristics().getInt(query);
-		return BigInteger.valueOf(carrying);
+		return carrying;
 	}	
 
-	public BigInteger berechneAttriubteCost (int modifier) {
+	public int berechneAttriubteCost(int modifier) {
 		if ( modifier < -1 ) {
 			// TODO Warnung ausgeben, aber weiter machen
 			modifier = -1;
@@ -143,14 +143,14 @@ public class ECEWorker {
 		}
 		String query = String.format("/ATTRIBUTECOST[@modifier='%d']/@cost", modifier);
 		int cost = ApplicationProperties.create().getCharacteristics().getInt(query);
-		return BigInteger.valueOf(cost);
+		return cost;
 	}
 
-	public List<Integer> bestimmeHealth (BigInteger wert) {
+	public List<Integer> bestimmeHealth (int wert) {
 		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
 			int value = subnode.getInt("/@value");
-			if( wert.intValue() == value) {
+			if (wert== value) {
 				List<Integer> health = new ArrayList<Integer>();
 				health.add(subnode.getInt("/@death"));
 				health.add(subnode.getInt("/@unconsciousness"));
@@ -164,17 +164,17 @@ public class ECEWorker {
 		return null;
 	}	
 
-	public BigInteger berechneMysticArmor(BigInteger value) {
+	public int berechneMysticArmor(int value) {
 		int actualArmor=0;
 		for (Object mysticarmor : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/MYSTICARMOR")) {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) mysticarmor;
 			int attribute = subnode.getInt("/@attribute");
 			int armor = subnode.getInt("/@armor");
-			if( (value.intValue() <= attribute) && (actualArmor<armor) ) {
+			if( (value <= attribute) && (actualArmor<armor) ) {
 				actualArmor=armor;
 			}
 		}
-		return BigInteger.valueOf(actualArmor);
+		return actualArmor;
 	}	
 
 	public StepDice attribute2StepAndDice(BigInteger value) {
