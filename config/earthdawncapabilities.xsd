@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/capability" xmlns="http://earthdawn.com/capability" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:element name="CAPABILITIES">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILL" type="edt:CAPABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="edt:CAPABILITY_type"/>
+			</xs:choice>
+			<xs:attribute name="lang" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
