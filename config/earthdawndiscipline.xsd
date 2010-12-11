@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/discipline" xmlns="http://earthdawn.com/discipline" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
-	<xs:complexType name="ABILITY_type">
+	<xs:complexType name="CIRCLENAME_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="INITIATIVE_type">
+	<xs:complexType name="CIRCLE_type">
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="TALENT_type">
@@ -27,9 +27,12 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISZIPLINETALENT" type="TALENT_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="TALENT_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMA" type="KARMA_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="ABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="CIRCLENAME_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="DEFENSE_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="INITIATIVE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="CIRCLE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="RECOVERYTEST" type="CIRCLE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMASTEP" type="CIRCLE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="CIRCLENAME_type"/>
 			</xs:choice>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="name" type="xs:string" use="required"/>
