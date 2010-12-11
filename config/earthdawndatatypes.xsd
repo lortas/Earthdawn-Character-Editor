@@ -41,6 +41,12 @@
 			<xs:enumeration value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="language_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="de"/>
+			<xs:enumeration value="en"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="yesno_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="yes"/>
@@ -65,13 +71,20 @@
 			<xs:enumeration value="-"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="spelltype_type">
+	<xs:simpleType name="spellkind_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="elemental"/>
 			<xs:enumeration value="nether"/>
 			<xs:enumeration value="illusion"/>
 			<xs:enumeration value="wizard"/>
 			<xs:enumeration value="shamane"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="defensekind_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="physical"/>
+			<xs:enumeration value="spell"/>
+			<xs:enumeration value="social"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dice_type">
@@ -163,6 +176,7 @@
 	<xs:complexType name="KARMA_type">
 		<xs:attribute name="current" type="unsigned_int" use="required"/>
 		<xs:attribute name="max" type="unsigned_int" use="required"/>
+		<xs:attribute name="maxmodificator" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="LEGENDPOINTS_type">
 		<xs:attribute name="comment" type="xs:string" use="required"/>
@@ -278,7 +292,7 @@
 	<xs:complexType name="SPELL_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="inmatrix" type="yesno_type" use="required"/>
-		<xs:attribute name="type" type="spelltype_type" use="required"/>
+		<xs:attribute name="type" type="spellkind_type" use="required"/>
 		<xs:attribute name="circle" type="circle_type" use="required"/>
 		<xs:attribute name="threads" type="unsigned_int" use="required"/>
 		<xs:attribute name="weavingdifficulty" type="unsigned_int" use="required"/>
