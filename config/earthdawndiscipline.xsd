@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/discipline" xmlns="http://earthdawn.com/discipline" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="ABILITY_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="INITIATIVE_type">
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="TALENT_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
+	</xs:complexType>
+	<xs:complexType name="KARMA_type">
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="spend" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DEFENSE_type">
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="kind" type="edt:defensekind_type" default="physical"/>
+	</xs:complexType>
+	<xs:element name="DISCIPLINE">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISZIPLINETALENT" type="TALENT_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="TALENT_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMA" type="KARMA_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="ABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="DEFENSE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="INITIATIVE_type"/>
+			</xs:choice>
+			<xs:attribute name="lang" type="edt:language_type" use="required"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
