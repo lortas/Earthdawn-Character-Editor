@@ -11,10 +11,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 
 import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 
 /**
- * Anzeigeelement für einen Earthdawn Charakter. 
+ * Anzeigeelement fï¿½r einen Earthdawn Charakter. 
  */
 @SuppressWarnings("serial")
 public class EDComponent extends JComponent implements ActionListener {
@@ -22,7 +22,7 @@ public class EDComponent extends JComponent implements ActionListener {
 	private static final String ACTION_RASSE_GEWAEHLT = "__RASSE_GEWAEHLT";
 
 	/** Instanz des aktuellen Charakters. */
-	private EDCHARAKTER charakter;
+	private EDCHARACTER charakter;
 
 	/** Panel zur Anzeige der Attribute eines Charakters. */
 	private AttributePanel attributePanel;
@@ -35,22 +35,22 @@ public class EDComponent extends JComponent implements ActionListener {
 	 */
 	public EDComponent() {
 		// Default: Leerer Charakter
-		this.charakter = new EDCHARAKTER();
+		this.charakter = new EDCHARACTER();
 		initComponents();
 	}
 
-	public void setEDCHARAKTER(EDCHARAKTER charakter) {
+	public void setEDCHARACTER(EDCHARACTER charakter) {
 		this.charakter = charakter;
 		charakterAnzeigen();
 	}
 
-	public EDCHARAKTER getEDCHARAKTER() {
+	public EDCHARACTER getEDCHARACTER() {
 		charakterDatenUebernehemen();
 		return this.charakter;
 	}
 
 	/**
-	 * Benarichtigung durch AWT, dass ein Event für diese Component ausgelöst wurde.
+	 * Benarichtigung durch AWT, dass ein Event fï¿½r diese Component ausgelï¿½st wurde.
 	 */
 	public void actionPerformed(ActionEvent ae) {
 		if (ACTION_RASSE_GEWAEHLT.equals(ae.getActionCommand())) {
@@ -75,16 +75,16 @@ public class EDComponent extends JComponent implements ActionListener {
 	}
 
 	private void charakterDatenUebernehemen() {
-		// Allgemeine Eigenschaften übernehmen
+		// Allgemeine Eigenschaften ï¿½bernehmen
 		this.allgemeineEigenschaftenPanel.addToCharakter(this.charakter);
 		
-		// Übernehmen der Attribute
+		// ï¿½bernehmen der Attribute
 		this.attributePanel.addToCharakter(this.charakter);
 	}
 	
 	private void rasseItemGewaehlt() {
-		// TODO: Hier müssen dann die Talente, Zauber usw. entsprechend angepasst werden ...
-		JOptionPane.showMessageDialog(this, "Rasse gewählt: " + 
+		// TODO: Hier mï¿½ssen dann die Talente, Zauber usw. entsprechend angepasst werden ...
+		JOptionPane.showMessageDialog(this, "Rasse gewï¿½hlt: " + 
 				this.allgemeineEigenschaftenPanel.getComboRasse().getSelectedItem());
 	}
 
@@ -99,7 +99,7 @@ public class EDComponent extends JComponent implements ActionListener {
 		tabbedPane.setTabPlacement(SwingConstants.LEFT);
 		
 		this.allgemeineEigenschaftenPanel = new AllgemeineEigenschaftenPanel();
-		// Darauf reagieren, wenn eine andere Rasse ausgewählt wird.
+		// Darauf reagieren, wenn eine andere Rasse ausgewï¿½hlt wird.
 		this.allgemeineEigenschaftenPanel.getComboRasse().setActionCommand(ACTION_RASSE_GEWAEHLT);
 		this.allgemeineEigenschaftenPanel.getComboRasse().addActionListener(this);
 

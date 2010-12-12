@@ -15,17 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for CARRYING_type complex type.
+ * <p>Java class for RANK_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="CARRYING_type">
+ * &lt;complexType name="RANK_type">
  *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="lifting" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="carrying" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *     &lt;/restriction>
+ *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
+ *       &lt;attribute name="rank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="lpcost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -33,60 +33,70 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CARRYING_type")
-public class CARRYINGType {
+@XmlType(name = "RANK_type")
+public class RANKType
+    extends STEPDICEType
+{
 
     @XmlAttribute
-    protected Integer lifting;
+    protected Integer rank;
     @XmlAttribute
-    protected Integer carrying;
+    protected Integer lpcost;
 
     /**
-     * Gets the value of the lifting property.
+     * Gets the value of the rank property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public Integer getLifting() {
-        return lifting;
+    public int getRank() {
+        if (rank == null) {
+            return  0;
+        } else {
+            return rank;
+        }
     }
 
     /**
-     * Sets the value of the lifting property.
+     * Sets the value of the rank property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setLifting(Integer value) {
-        this.lifting = value;
+    public void setRank(Integer value) {
+        this.rank = value;
     }
 
     /**
-     * Gets the value of the carrying property.
+     * Gets the value of the lpcost property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public Integer getCarrying() {
-        return carrying;
+    public int getLpcost() {
+        if (lpcost == null) {
+            return  0;
+        } else {
+            return lpcost;
+        }
     }
 
     /**
-     * Sets the value of the carrying property.
+     * Sets the value of the lpcost property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setCarrying(Integer value) {
-        this.carrying = value;
+    public void setLpcost(Integer value) {
+        this.lpcost = value;
     }
 
 }

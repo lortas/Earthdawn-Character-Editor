@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;;
 
 /**
  * Panel zur Anzeige der Attribute des Charakters.
@@ -64,7 +64,7 @@ public class AttributePanel extends JPanel {
 	public void attributAnzeigen(ATTRIBUTEType attribut) {
 		UIAttribut uiAttribut = this.attribute.get(attribut.getName().value());
 		if (uiAttribut != null) {
-			uiAttribut.getSpinWert().setValue(attribut.getBasevalue());
+//			uiAttribut.getSpinWert().setValue(attribut.getBasevalue());
 			// uiAttribut.getSpinSteig().setValue(new Integer(attribut.getSteig().intValue()));
 		}
 		else {
@@ -72,7 +72,7 @@ public class AttributePanel extends JPanel {
 		}
 	}
 
-	public void addToCharakter(EDCHARAKTER charakter) {
+	public void addToCharakter(EDCHARACTER charakter) {
 		for (UIAttribut uiAttribut : this.attribute.values()) {
 			uiAttribut.addToCharakter(charakter);
 		}

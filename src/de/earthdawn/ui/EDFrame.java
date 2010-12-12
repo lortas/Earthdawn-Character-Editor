@@ -19,7 +19,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 
 /**
  * Hauptfenster des Earthdawn-Character-Generators. 
@@ -31,7 +31,7 @@ public class EDFrame extends JFrame implements ActionListener {
     public static final String ACTION_NEW 
         = ApplicationProperties.create().getMessage("main.new");
 	
-    /** Action-Command: Character Öffnen */
+    /** Action-Command: Character ï¿½ffnen */
     public static final String ACTION_OPEN 
         = ApplicationProperties.create().getMessage("main.open");
 
@@ -54,12 +54,12 @@ public class EDFrame extends JFrame implements ActionListener {
 	public EDFrame() {
 		super("EarthdawnCharacterGenerator v0.1");
 		
-		// Steuerelement der Oberfläche initialisieren.
+		// Steuerelement der Oberflï¿½che initialisieren.
 		initComponents();
 	}
 
 	/**
-	 * Wird durch AWT aufgerufen, wenn ein Event für dieses Fenster ausgelöst wurde.
+	 * Wird durch AWT aufgerufen, wenn ein Event fï¿½r dieses Fenster ausgelï¿½st wurde.
 	 */
 	public void actionPerformed(ActionEvent ae) {
 		try {
@@ -89,8 +89,8 @@ public class EDFrame extends JFrame implements ActionListener {
 		int state = jfc.showOpenDialog(this);
 		if (JFileChooser.APPROVE_OPTION == state) {
 			File inFile = jfc.getSelectedFile();
-			EDCHARAKTER ec =(EDCHARAKTER)u.unmarshal(inFile);
-			this.edComponent.setEDCHARAKTER(ec);
+			EDCHARACTER ec =(EDCHARACTER)u.unmarshal(inFile);
+			this.edComponent.setEDCHARACTER(ec);
 		}
 	}
 
@@ -122,11 +122,11 @@ public class EDFrame extends JFrame implements ActionListener {
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-		m.marshal(this.edComponent.getEDCHARAKTER(), this.ausgabedatei);
+		m.marshal(this.edComponent.getEDCHARACTER(), this.ausgabedatei);
 	} 
 
 	protected void exit() {
-		// TODO Hier kann nochmal rückgefragt werden, wenn es noch ungespeicherte Änderungen gibt ...
+		// TODO Hier kann nochmal rï¿½ckgefragt werden, wenn es noch ungespeicherte ï¿½nderungen gibt ...
 	}
 
 	private void handleException(Exception e) {
@@ -141,15 +141,15 @@ public class EDFrame extends JFrame implements ActionListener {
 		// Anwendung beenden, wenn das Fenster geschlossen wird.
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		// Menu hinzufügen
+		// Menu hinzufï¿½gen
 		createMenuBar();
 		
-		// Hinzufügen des Anzeigelementes für den Charakter.
+		// Hinzufï¿½gen des Anzeigelementes fï¿½r den Charakter.
 		this.edComponent = new EDComponent();
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(this.edComponent);
 		
-		// Layout des Dialogs und damit auch aller seine Steuerlement anstoßen.
+		// Layout des Dialogs und damit auch aller seine Steuerlement anstoï¿½en.
 		pack();
 
 		setMinimumSize(new Dimension(300, 280));
