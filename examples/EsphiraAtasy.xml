@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <EDCHARACTER  name="Esphira Atasy" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
 	<APPEARANCE gender="female" age="34" eyes="" height="23" weight="83" hair="schwarz,lang" skin="dunkel" race="Windling"/>
-	<ATTRIBUTE name="DEX" basevalue="14" currentvalue="14" step="6" dice="d10" cost="3" />
-	<ATTRIBUTE name="STR" basevalue="7"  currentvalue="7"  step="4" dice="d6"  cost="3" />
-	<ATTRIBUTE name="TOU" basevalue="12" currentvalue="12" step="5" dice="d8"  cost="5" />
-	<ATTRIBUTE name="PER" basevalue="16" currentvalue="16" step="7" dice="d12" cost="12" />
-	<ATTRIBUTE name="WIL" basevalue="14" currentvalue="14" step="6" dice="d10" cost="5" />
-	<ATTRIBUTE name="CHA" basevalue="14" currentvalue="14" step="6" dice="d10" cost="2" />
+	<ATTRIBUTE name="DEX" racevalue="11" generationvalue="3" currentvalue="14" step="6" dice="d10" cost="3"/>
+	<ATTRIBUTE name="STR" racevalue="4"  generationvalue="3" currentvalue="7"  step="4" dice="d6"  cost="3" />
+	<ATTRIBUTE name="TOU" racevalue="8"  generationvalue="4" currentvalue="12" step="5" dice="d8"  cost="5" />
+	<ATTRIBUTE name="PER" racevalue="11" generationvalue="5" currentvalue="16" step="7" dice="d12" cost="12" />
+	<ATTRIBUTE name="WIL" racevalue="10" generationvalue="4" currentvalue="14" step="6" dice="d10" cost="5" />
+	<ATTRIBUTE name="CHA" racevalue="12" generationvalue="2" currentvalue="14" step="6" dice="d10" cost="2" />
 	<MOVEMENT ground="3" flight="8" />
 	<KARMA current="20" max="6" />
 	<RACEABILITES>Optional Talent Astral Sight, Physical Defense +2, Flight</RACEABILITES>
@@ -22,34 +22,34 @@
 	<EXPERIENCE totallegendpoints="0" currentlegendpoints="0" renown="0" reputation="0">
 		<edt:LEGENDPOINTS comment="charakter generation" legendpoints="0" type="0" when="" />
 	</EXPERIENCE>
-	<DISCIPLINE order="1" name="Schamane" circle="1" />
+	<DISCIPLINE order="1" name="Schaman" circle="1" />
 	<PROTECTION physicalarmor="0" mysticamor="0" penalty="0">
 		<edt:ARMOR name="natural armor" weight="0" mysticarmor="2" penalty="0" edn="0" />
 	</PROTECTION>
-	<TALENTS discipline="Magican">
-		<DISZIPLINETALENT name="Create Fetisch" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
-		<DISZIPLINETALENT name="Karma Ritual" action="na" attribute="na" rank="1" step="8" dice="2d6" circle="1" />
-		<DISZIPLINETALENT name="Spellcasting" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
-		<DISZIPLINETALENT name="Spell Fetish" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
-		<DISZIPLINETALENT name="Thread Weaving" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
-		<DISZIPLINETALENT name="Wilderness Survivel" action="standard" attribute="PER" rank="1" step="8" dice="2d6" circle="1" />
-		<OPTIONALTALENT name="Silent Walk" action="standard" strain="0" attribute="DEX" rank="2" step="8" dice="2d6" circle="1" />
+	<TALENTS discipline="Schaman">
+		<DISZIPLINETALENT name="Create Fetisch" action="standard" attribute="PER" circle="1"><edt:RANK rank="1" step="8" dice="2d6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT name="Karma Ritual" action="na" attribute="na" circle="1"><edt:RANK rank="1" step="8" dice="2d6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT name="Spellcasting" action="standard" attribute="PER" circle="1"><edt:RANK rank="1" step="8" dice="2d6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT name="Spell Fetish" action="standard" attribute="PER" circle="1"><edt:RANK rank="1" step="8" dice="2d6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT name="Thread Weaving" action="standard" attribute="PER" circle="1"><edt:RANK rank="1" step="8" dice="2d6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT name="Wilderness Survivel" action="standard" attribute="PER" circle="1"><edt:RANK rank="1" step="8" dice="2d6"/></DISZIPLINETALENT>
+		<OPTIONALTALENT name="Silent Walk" action="standard" strain="0" attribute="DEX" circle="1"><edt:RANK rank="2" step="8" dice="2d6"/></OPTIONALTALENT>
 	</TALENTS>
-	<SPELLS discipline="Shamane">
-		<SPELL name="blub" inmatrix="yes" type="shamane" circle="1" threads="0" weavingdifficulty="7" castingdifficulty="TSD" range="30" duration="1rd" effect="blub" />
+	<SPELLS discipline="Shaman">
+		<SPELL name="blub" inmatrix="yes" type="shamane" circle="1" threads="0" weavingdifficulty="7" castingdifficulty="TSD" range="30" duration="1rd" effect="blub" reattuningdifficulty="17"/>
 	</SPELLS>
-	<SKILL name="Knowledge" limitation="Botanik" action="standard" attribute="PER" rank="1" step="8" dice="2d6" />
-	<SKILL name="Knowledge" limitation="Geographie Barsaive" action="standard" attribute="PER" rank="1" step="8" dice="2d6" />
-	<SKILL name="Speak Language" limitation="Dwarf" action="standard" attribute="PER" rank="6" step="13" dice="2d6" />
-	<SKILL name="Speak Language" limitation="Windling" action="standard" attribute="PER" rank="5" step="12" dice="2d6" />
-	<SKILL name="Read/Write Language" limitation="Dwarf" action="standard" attribute="PER" rank="6" step="13" dice="2d6" />
-	<SKILL name="Artisan" limitation="Wood Carving" action="sustained" attribute="CHA" rank="1" step="7" dice="d12" />
-	<SKILL name="Lip Reading" action="standard" attribute="CHA" rank="1" step="7" dice="d12" />
-	<SKILL name="Melee Weapons" action="standard" attribute="DEX" rank="1" step="7" dice="d12" />
-	<SKILL name="Animal Bond" action="standard" attribute="CHA" rank="1" step="7" dice="d12" />
-	<SKILL name="Animal Training" action="sustained" attribute="CHA" rank="1" step="7" dice="d12" />
-	<SKILL name="Picking Pockets" action="standard" attribute="DEX" rank="1" step="7" dice="d12" />
-	<SKILL name="Mapmaking" action="standard" attribute="PER" rank="1" step="8" dice="2d6" />
+	<SKILL name="Knowledge" limitation="Botanik" action="standard" attribute="PER"><edt:RANK rank="1" step="8" dice="2d6"/></SKILL>
+	<SKILL name="Knowledge" limitation="Geographie Barsaive" action="standard" attribute="PER"><edt:RANK rank="1" step="8" dice="2d6" /></SKILL>
+	<SKILL name="Speak Language" limitation="Dwarf" action="standard" attribute="PER"><edt:RANK rank="6" step="13" dice="2d6" /></SKILL>
+	<SKILL name="Speak Language" limitation="Windling" action="standard" attribute="PER"><edt:RANK rank="5" step="12" dice="2d6" /></SKILL>
+	<SKILL name="Read/Write Language" limitation="Dwarf" action="standard" attribute="PER"><edt:RANK rank="6" step="13" dice="2d6" /></SKILL>
+	<SKILL name="Artisan" limitation="Wood Carving" action="sustained" attribute="CHA"><edt:RANK rank="1" step="7" dice="d12" /></SKILL>
+	<SKILL name="Lip Reading" action="standard" attribute="CHA"><edt:RANK rank="1" step="7" dice="d12" /></SKILL>
+	<SKILL name="Melee Weapons" action="standard" attribute="DEX"><edt:RANK rank="1" step="7" dice="d12" /></SKILL>
+	<SKILL name="Animal Bond" action="standard" attribute="CHA"><edt:RANK rank="1" step="7" dice="d12" /></SKILL>
+	<SKILL name="Animal Training" action="sustained" attribute="CHA"><edt:RANK rank="1" step="7" dice="d12" /></SKILL>
+	<SKILL name="Picking Pockets" action="standard" attribute="DEX"><edt:RANK rank="1" step="7" dice="d12" /></SKILL>
+	<SKILL name="Mapmaking" action="standard" attribute="PER"><edt:RANK rank="1" step="8" dice="2d6" /></SKILL>
 	<WEAPON name="knife" weight="0" used="yes" location="self" damagestep="1" strengthmin="3" size="1" />
 	<KARMARITUAL>auführliche beschreibung des Karmarituals</KARMARITUAL>
 	<DESCRIPTION>etwas bla bla zum Char</DESCRIPTION>
