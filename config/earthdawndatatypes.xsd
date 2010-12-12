@@ -110,10 +110,63 @@
 			<xs:enumeration value="3d12"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="RECOVERY_type">
-		<xs:attribute name="testsperday" type="unsigned_int" use="required"/>
+	<xs:complexType name="STEPDICE_type">
 		<xs:attribute name="step" type="unsigned_int" use="required"/>
 		<xs:attribute name="dice" type="dice_type"/>
+	</xs:complexType>
+	<xs:complexType name="ATTRIBUTE_type">
+		<xs:complexContent>
+			<xs:extension base="STEPDICE_type">
+				<xs:attribute name="name" type="ATTRIBUTE_name_type" use="required"/>
+				<xs:attribute name="racevalue" type="unsigned_int" use="required"/>
+				<xs:attribute name="generationvalue" type="unsigned_int" default="0"/>
+				<xs:attribute name="lpincrease" type="lpincrease_type" default="0"/>
+				<xs:attribute name="currentvalue" type="unsigned_int" use="required"/>
+				<xs:attribute name="cost" type="attcost_type" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RECOVERY_type">
+		<xs:complexContent>
+			<xs:extension base="STEPDICE_type">
+				<xs:attribute name="testsperday" type="unsigned_int" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="INITIATIVE_type">
+		<xs:complexContent>
+			<xs:extension base="STEPDICE_type">
+				<xs:attribute name="base" type="unsigned_int" use="required"/>
+				<xs:attribute name="modification" type="xs:int" use="required"/>
+		</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RANK_type">
+		<xs:complexContent>
+			<xs:extension base="STEPDICE_type">
+				<xs:attribute name="rank" type="unsigned_int" default="0"/>
+				<xs:attribute name="lpcost" type="unsigned_int" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CAPABILITY_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="action" type="action_type" default="standard"/>
+		<xs:attribute default="0" name="strain" type="unsigned_int"/>
+		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
+		<xs:attribute default="0" name="bonus" type="xs:int"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
+		<xs:attribute name="karma" type="yesno_type" default="no"/>
+		<xs:attribute name="default" type="yesno_type" default="no"/>
+	</xs:complexType>
+	<xs:complexType name="SKILL_type">
+		<xs:complexContent>
+			<xs:extension base="CAPABILITY_type">
+				<xs:sequence>
+					<xs:element name="RANK" type="RANK_type" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="WOUND_type">
 		<xs:attribute name="threshold" type="unsigned_int" use="required"/>
@@ -124,15 +177,6 @@
 		<xs:attribute name="base" type="unsigned_int" use="required"/>
 		<xs:attribute name="adjustment" type="xs:int" use="required"/>
 		<xs:attribute name="value" type="unsigned_int"/>
-	</xs:complexType>
-	<xs:complexType name="ATTRIBUTE_type">
-		<xs:attribute name="name" type="ATTRIBUTE_name_type" use="required"/>
-		<xs:attribute name="basevalue" type="unsigned_int" use="required"/>
-		<xs:attribute name="lpincrease" type="lpincrease_type" default="0"/>
-		<xs:attribute name="currentvalue" type="unsigned_int"/>
-		<xs:attribute name="step" type="unsigned_int"/>
-		<xs:attribute name="dice" type="dice_type"/>
-		<xs:attribute name="cost" type="attcost_type"/>
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -152,26 +196,20 @@
 	<xs:complexType name="COINS_type">
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
-				<xs:attribute name="copper" type="xs:int"/>
-				<xs:attribute name="silver" type="xs:int"/>
-				<xs:attribute name="gold" type="xs:int"/>
-				<xs:attribute name="earth" type="xs:int"/>
-				<xs:attribute name="water" type="xs:int"/>
-				<xs:attribute name="fire" type="xs:int"/>
-				<xs:attribute name="air" type="xs:int"/>
-				<xs:attribute name="orichalcum" type="xs:int"/>
+				<xs:attribute name="copper" type="unsigned_int" default="0"/>
+				<xs:attribute name="silver" type="unsigned_int" default="0"/>
+				<xs:attribute name="gold" type="unsigned_int" default="0"/>
+				<xs:attribute name="earth" type="unsigned_int" default="0"/>
+				<xs:attribute name="water" type="unsigned_int" default="0"/>
+				<xs:attribute name="fire" type="unsigned_int" default="0"/>
+				<xs:attribute name="air" type="unsigned_int" default="0"/>
+				<xs:attribute name="orichalcum" type="unsigned_int" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="CARRYING_type">
 		<xs:attribute name="lifting" type="unsigned_int"/>
 		<xs:attribute name="carrying" type="unsigned_int"/>
-	</xs:complexType>
-	<xs:complexType name="INITIATIVE_type">
-		<xs:attribute name="base" type="unsigned_int" use="required"/>
-		<xs:attribute name="modification" type="xs:int" use="required"/>
-		<xs:attribute name="step" type="unsigned_int" use="required"/>
-		<xs:attribute name="dice" type="dice_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="KARMA_type">
 		<xs:attribute name="current" type="unsigned_int" use="required"/>
@@ -233,25 +271,6 @@
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
 				<xs:attribute name="type" type="xs:string" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="CAPABILITY_type">
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="action" type="action_type" default="standard"/>
-		<xs:attribute default="0" name="strain" type="unsigned_int"/>
-		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
-		<xs:attribute default="0" name="bonus" type="xs:int"/>
-		<xs:attribute name="limitation" type="xs:string" default=""/>
-		<xs:attribute name="karma" type="yesno_type" default="no"/>
-		<xs:attribute name="default" type="yesno_type" default="no"/>
-	</xs:complexType>
-	<xs:complexType name="SKILL_type">
-		<xs:complexContent>
-			<xs:extension base="CAPABILITY_type">
-				<xs:attribute name="rank" type="unsigned_int" use="required"/>
-				<xs:attribute name="step" type="unsigned_int" use="required"/>
-				<xs:attribute name="dice" type="dice_type" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
