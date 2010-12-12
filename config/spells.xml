@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell earthdawnspells.xsd">
+	<SPELL name="Air Armor" threads="0" weavingdifficulty="0" reattuningdifficulty="10" castingdifficulty="TSD" range="Touch" duration="R+5min" effect="+3 Physical Armor, +3 Fatigue Test vs. heat"/>
+	<SPELL name="Air Blast" threads="1" weavingdifficulty="10" reattuningdifficulty="16" castingdifficulty="TSD*" range="24yards(12hexes)" duration="1rnd" effect="WIL+9"/>
+	<SPELL name="Air Mattress" threads="1" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="Touch" duration="10hrs" effect="+2 Recovery Test bonus"/>
+</SPELLS>

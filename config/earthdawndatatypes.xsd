@@ -289,11 +289,8 @@
 		<xs:attribute name="spell" type="unsigned_int" use="required"/>
 		<xs:attribute name="social" type="unsigned_int" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="SPELL_type">
+	<xs:complexType name="SPELLDEF_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="inmatrix" type="yesno_type" use="required"/>
-		<xs:attribute name="type" type="spellkind_type" use="required"/>
-		<xs:attribute name="circle" type="circle_type" use="required"/>
 		<xs:attribute name="threads" type="unsigned_int" use="required"/>
 		<xs:attribute name="weavingdifficulty" type="unsigned_int" use="required"/>
 		<xs:attribute name="reattuningdifficulty" type="unsigned_int" use="required"/>
@@ -301,6 +298,15 @@
 		<xs:attribute name="range" type="xs:string" use="required"/>
 		<xs:attribute name="duration" type="xs:string" use="required"/>
 		<xs:attribute name="effect" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="SPELL_type">
+		<xs:complexContent>
+			<xs:extension base="SPELLDEF_type">
+				<xs:attribute name="inmatrix" type="yesno_type" default="no"/>
+				<xs:attribute name="type" type="spellkind_type" use="required"/>
+				<xs:attribute name="circle" type="circle_type" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="PROTECTION_type">
 		<xs:choice maxOccurs="unbounded">
