@@ -7,7 +7,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.ui.EDFrame;
 
 
@@ -24,11 +24,11 @@ public class EarthdawnCharacterEditor {
 				// Einlesen des Charakters
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Unmarshaller u = jc.createUnmarshaller();			
-				EDCHARAKTER ec =(EDCHARAKTER)u.unmarshal(new File(args[0]));
+				EDCHARACTER ec =(EDCHARACTER)u.unmarshal(new File(args[0]));
 				
 				// Verarbeiten
 				System.out.println("Verarbeite Charaker: '" + ec.getName() + "'");
-				EDCHARAKTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
+				EDCHARACTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
 				
 				// Ausgabe
 				File outFile = new File(args[1]);

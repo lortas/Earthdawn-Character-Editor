@@ -14,7 +14,7 @@ import de.earthdawn.data.CARRYINGType;
 import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.DiceType;
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.HEALTHType;
 import de.earthdawn.data.RECOVERYType;
 import de.earthdawn.data.WOUNDType;
@@ -30,7 +30,7 @@ public class ECEWorker {
 	/**
 	 * Verabeiten eines Charakters.
 	 */
-	public EDCHARAKTER verarbeiteCharakter(EDCHARAKTER charakter) {
+	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		String race = JAXBHelper.getAppearance(charakter).getRace();
 
@@ -84,22 +84,22 @@ public class ECEWorker {
 
 		
 		//TODO:
-		// EDCHARAKTER/INITIATIVE/base=JAXBHelper.getAttribute(charakter, "DEX").getStep();
-		// EDCHARAKTER/INITIATIVE/step=JAXBHelper.getAttribute(charakter, "DEX").getStep();
-		// EDCHARAKTER/INITIATIVE/modification=0;
-		// EDCHARAKTER/INITIATIVE/dice=JAXBHelper.getAttribute(charakter, "DEX").getDice();
+		// EDCHARACTER/INITIATIVE/base=JAXBHelper.getAttribute(charakter, "DEX").getStep();
+		// EDCHARACTER/INITIATIVE/step=JAXBHelper.getAttribute(charakter, "DEX").getStep();
+		// EDCHARACTER/INITIATIVE/modification=0;
+		// EDCHARACTER/INITIATIVE/dice=JAXBHelper.getAttribute(charakter, "DEX").getDice();
 		//
-		// EDCHARAKTER/PROTECTION/physicalarmor=0;
-		// EDCHARAKTER/PROTECTION/mysticarmor=0;
-		// EDCHARAKTER/PROTECTION/penalty=0;
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/weight=0;
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/used=yes;
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/location="self";
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/physicalarmor=0;
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/penalty0;
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/edn=0;
-		// EDCHARAKTER/PROTECTION/ARMOR[name="natural armor"]/mysticarmor=berechneMysticArmor(JAXBHelper.getAttribute(charakter, "WIL").getCurrentvalue());
-		// EDCHARAKTER/KARMA/max=JAXBHelper.getKarmaritualRank(charakter) *  ( "/NAMEGIVER[@name='%s']/KARMA/modifier",race ) + AttributeCostPool;
+		// EDCHARACTER/PROTECTION/physicalarmor=0;
+		// EDCHARACTER/PROTECTION/mysticarmor=0;
+		// EDCHARACTER/PROTECTION/penalty=0;
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/weight=0;
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/used=yes;
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/location="self";
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/physicalarmor=0;
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/penalty0;
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/edn=0;
+		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/mysticarmor=berechneMysticArmor(JAXBHelper.getAttribute(charakter, "WIL").getCurrentvalue());
+		// EDCHARACTER/KARMA/max=JAXBHelper.getKarmaritualRank(charakter) *  ( "/NAMEGIVER[@name='%s']/KARMA/modifier",race ) + AttributeCostPool;
 
 		
 		return charakter;

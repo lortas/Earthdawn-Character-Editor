@@ -14,37 +14,34 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for yesno_type.
+ * <p>Java class for defensekind_type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="yesno_type">
+ * &lt;simpleType name="defensekind_type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="yes"/>
- *     &lt;enumeration value="no"/>
- *     &lt;enumeration value="na"/>
- *     &lt;enumeration value="depends"/>
+ *     &lt;enumeration value="physical"/>
+ *     &lt;enumeration value="spell"/>
+ *     &lt;enumeration value="social"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "yesno_type")
+@XmlType(name = "defensekind_type")
 @XmlEnum
-public enum YesnoType {
+public enum DefensekindType {
 
-    @XmlEnumValue("yes")
-    YES("yes"),
-    @XmlEnumValue("no")
-    NO("no"),
-    @XmlEnumValue("na")
-    NA("na"),
-    @XmlEnumValue("depends")
-    DEPENDS("depends");
+    @XmlEnumValue("physical")
+    PHYSICAL("physical"),
+    @XmlEnumValue("spell")
+    SPELL("spell"),
+    @XmlEnumValue("social")
+    SOCIAL("social");
     private final String value;
 
-    YesnoType(String v) {
+    DefensekindType(String v) {
         value = v;
     }
 
@@ -52,8 +49,8 @@ public enum YesnoType {
         return value;
     }
 
-    public static YesnoType fromValue(String v) {
-        for (YesnoType c: YesnoType.values()) {
+    public static DefensekindType fromValue(String v) {
+        for (DefensekindType c: DefensekindType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

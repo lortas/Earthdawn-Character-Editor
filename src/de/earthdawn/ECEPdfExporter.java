@@ -10,11 +10,11 @@ import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 
 public class ECEPdfExporter {
 
-    public void export(EDCHARAKTER edCharakter, File outFile) throws DocumentException, IOException {
+    public void export(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
 //        PdfReader reader = new PdfReader(new FileInputStream(new File("./config/ed3_character_sheet.pdf")));
             PdfReader reader = new PdfReader(new FileInputStream(new File("./config/ed3_extended_character_sheet.pdf")));
         PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));

@@ -1,13 +1,11 @@
 package de.earthdawn.ui;
 
-import java.math.BigInteger;
-
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
 import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 
 /**
  * Hilfsklasse zur Anzeite eines {@link ATTRIBUTType} in der Oberfl�che.
@@ -60,7 +58,7 @@ public class UIAttribut {
 		return lbExt2;
 	}
 
-	public void addToCharakter(EDCHARAKTER charakter) {
+	public void addToCharakter(EDCHARACTER charakter) {
 		for (Object o : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if (o instanceof ATTRIBUTEType) {
 				ATTRIBUTEType attribut = (ATTRIBUTEType) o;

@@ -2,7 +2,6 @@ package de.earthdawn.ui;
 
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
-import java.math.BigInteger;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -11,7 +10,7 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 
-import de.earthdawn.data.EDCHARAKTER;
+import de.earthdawn.data.EDCHARACTER;
 
 /**
  * Panel zur Anzeige der allgemeinen Eigenschaften eines Charakters.
@@ -57,7 +56,7 @@ public class AllgemeineEigenschaftenPanel extends JPanel {
 		
 		// --- Rasse
 		this.comboRasse = new JComboBox();		
-		// TODO: Die Auswahlmöglichkeiten aus Konfigurationsdatei übernehmen ...
+		// TODO: Die Auswahlmï¿½glichkeiten aus Konfigurationsdatei ï¿½bernehmen ...
 		this.comboRasse.addItem("Elf");
 		this.comboRasse.addItem("Mensch");
 		this.comboRasse.addItem("Obsidianer");		
@@ -115,13 +114,13 @@ public class AllgemeineEigenschaftenPanel extends JPanel {
 		
 		// --- Alter
 		this.tfGroesse = new JTextField();
-		add(new JLabel("Größe:"), gbcb.nextCell(1, 0));
+		add(new JLabel("Grï¿½ï¿½e:"), gbcb.nextCell(1, 0));
 		add(this.tfGroesse, gbcb.nextCell(2, 10));
 		add(new JLabel("cm"), gbcb.nextCell(1, 0));
 		
 	}
 
-	public void charakterAnzeigen(EDCHARAKTER charakter) {
+	public void charakterAnzeigen(EDCHARACTER charakter) {
 //		this.tfCharaktername.setText(charakter.get());
 //		this.comboRasse.setSelectedItem(charakter.getRasse());
 //	
@@ -131,7 +130,7 @@ public class AllgemeineEigenschaftenPanel extends JPanel {
 //		this.tfGroesse.setText(charakter.getGroesse().toString(10));
 	}
 
-	public void addToCharakter(EDCHARAKTER charakter) {
+	public void addToCharakter(EDCHARACTER charakter) {
 //		charakter.setBezeichnung(this.tfCharaktername.getText());
 //		charakter.setRasse((String) this.comboRasse.getSelectedItem());
 		

@@ -14,37 +14,31 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for yesno_type.
+ * <p>Java class for language_type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="yesno_type">
+ * &lt;simpleType name="language_type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="yes"/>
- *     &lt;enumeration value="no"/>
- *     &lt;enumeration value="na"/>
- *     &lt;enumeration value="depends"/>
+ *     &lt;enumeration value="de"/>
+ *     &lt;enumeration value="en"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "yesno_type")
+@XmlType(name = "language_type")
 @XmlEnum
-public enum YesnoType {
+public enum LanguageType {
 
-    @XmlEnumValue("yes")
-    YES("yes"),
-    @XmlEnumValue("no")
-    NO("no"),
-    @XmlEnumValue("na")
-    NA("na"),
-    @XmlEnumValue("depends")
-    DEPENDS("depends");
+    @XmlEnumValue("de")
+    DE("de"),
+    @XmlEnumValue("en")
+    EN("en");
     private final String value;
 
-    YesnoType(String v) {
+    LanguageType(String v) {
         value = v;
     }
 
@@ -52,8 +46,8 @@ public enum YesnoType {
         return value;
     }
 
-    public static YesnoType fromValue(String v) {
-        for (YesnoType c: YesnoType.values()) {
+    public static LanguageType fromValue(String v) {
+        for (LanguageType c: LanguageType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
