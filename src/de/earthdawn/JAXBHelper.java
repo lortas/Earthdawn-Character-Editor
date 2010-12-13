@@ -8,6 +8,11 @@ import de.earthdawn.data.CARRYINGType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.HEALTHType;
+import de.earthdawn.data.INITIATIVEType;
+import de.earthdawn.data.KARMAType;
+import de.earthdawn.data.MOVEMENTType;
+import de.earthdawn.data.PROTECTIONType;
+import de.earthdawn.data.TALENTType;
 
 /**
  * Hilfsklasse zur einfacheren Verarbeitung des JAXB-Baumes
@@ -27,6 +32,10 @@ public class JAXBHelper {
 	public static final String RACEABILITES = "RACEABILITES";
 	
 	public static final String ATTRIBUTE = "ATTRIBUTE";
+
+	public static final String INITIATIVE = "INITIATIVE";
+
+	public static final String MOVEMENT = "MOVEMENT";
 
 	public static APPEARANCEType getAppearance(EDCHARACTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
@@ -81,6 +90,39 @@ public class JAXBHelper {
 		}
 
 		// Not found
+		return null;
+	}
+	public static INITIATIVEType getInitiative(EDCHARACTER charakter) {
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (INITIATIVE.equals(element.getName().getLocalPart())) {
+				return (INITIATIVEType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+	public static MOVEMENTType getMovement(EDCHARACTER charakter) {
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (MOVEMENT.equals(element.getName().getLocalPart())) {
+				return (MOVEMENTType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	public static TALENTType getKarmaritual(EDCHARACTER charakter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static KARMAType getKarma(EDCHARACTER charakter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static PROTECTIONType getProtection(EDCHARACTER charakter) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }
