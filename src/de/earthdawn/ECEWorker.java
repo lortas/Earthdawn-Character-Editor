@@ -17,6 +17,7 @@ import de.earthdawn.data.DiceType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.HEALTHType;
 import de.earthdawn.data.RECOVERYType;
+import de.earthdawn.data.STEPDICEType;
 import de.earthdawn.data.WOUNDType;
 
 
@@ -48,15 +49,13 @@ public class ECEWorker {
 
 			String id = subnode.getString("/@name");
 			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, id);
-			int value = attribute.getBasevalue() + attribute.getLpincrease();
+			attribute.setRacevalue(subnode.getInt("/@value"));
+			int value = attribute.getRacevalue() + attribute.getGenerationvalue() + attribute.getLpincrease();
 			attribute.setCurrentvalue(value);
-			StepDice stepdice=attribute2StepAndDice(value);
-			attribute.setDice(DiceType.valueOf(stepdice.getdice()));
-			attribute.setStep(BigInteger.valueOf(stepdice.getstep()));
-
-			int attributbasis = subnode.getInt("/@value");
-			int modifier = attribute.getBasevalue()-attributbasis;
-			attribute.setCost(berechneAttriubteCost(modifier));
+			attribute.setCost(berechneAttriubteCost(attribute.getLpincrease()));
+			STEPDICEType stepdice=attribute2StepAndDice(value);
+			attribute.setDice(stepdice.getDice());
+			attribute.setStep(stepdice.getStep());
 		}
 
 		DEFENSEType defense = JAXBHelper.getDefence(charakter);
@@ -177,7 +176,7 @@ public class ECEWorker {
 		return actualArmor;
 	}	
 
-	public StepDice attribute2StepAndDice(BigInteger value) {
+	public STEPDICEType attribute2StepAndDice(int value) {
 		int actualStep=0;
 		String actualDice="";
 		for (Object stepdice : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/STEPDICETABLE")) {
@@ -185,11 +184,11 @@ public class ECEWorker {
 			int attribute = subnode.getInt("/@attribute");
 			int step = subnode.getInt("/@step");
 			String dice = subnode.getString("/@dice");
-			if( (value.intValue() <= attribute) && (actualStep<step) ) {
+			if( (value <= attribute) && (actualStep<step) ) {
 				actualStep = step;
 				actualDice = dice;
 			}
 		}
-		return new StepDice(actualStep,actualDice);
+		return new STEPDICEType(actualStep,actualDice);
 	}	
 }
