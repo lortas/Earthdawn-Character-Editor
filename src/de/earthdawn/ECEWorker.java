@@ -1,6 +1,5 @@
 package de.earthdawn;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,7 @@ import javax.xml.bind.JAXBElement;
 import org.apache.commons.configuration.SubnodeConfiguration;
 
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.APPEARANCEType;
+import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.CARRYINGType;
 import de.earthdawn.data.DEATHType;
@@ -16,8 +15,13 @@ import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.DiceType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.HEALTHType;
+import de.earthdawn.data.INITIATIVEType;
+import de.earthdawn.data.KARMAType;
+import de.earthdawn.data.MOVEMENTType;
+import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.RECOVERYType;
 import de.earthdawn.data.STEPDICEType;
+import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.WOUNDType;
 
 
@@ -40,11 +44,13 @@ public class ECEWorker {
 			//return charakter;
 		}
 
-		int attributepoints =25; // TODO: = /OPTIONALRULES/ATTRIBUTE/points
-		// Pro Atributt des Charakters werden nun dessen Werte, Stufe, und Würfel bestimmt.
+		// **ATTRIBUTE**
+		int karmaMaxBonus =25; // TODO: = /OPTIONALRULES/ATTRIBUTE/points
+		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		String query = String.format("/NAMEGIVER[@name='%s']/ATTR_START", race);
 		List<?> properties = ApplicationProperties.create().getNamegivers().configurationsAt(query);
-		for (Object property : properties) {			
+		for (Object property : properties) {
+			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
 			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
 
 			String id = subnode.getString("/@name");
@@ -56,17 +62,28 @@ public class ECEWorker {
 			STEPDICEType stepdice=attribute2StepAndDice(value);
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
+			karmaMaxBonus-=attribute.getCost();
+		}
+		if( karmaMaxBonus <0 ) {
+			// TODO: Warnung ausgeben
 		}
 
+		// **DEFENSE**
 		DEFENSEType defense = JAXBHelper.getDefence(charakter);
 		defense.setPhysical(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue()));
 		defense.setSpell(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "PER").getCurrentvalue()));
 		defense.setSocial(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue()));
 
-		CARRYINGType carrying = JAXBHelper.getCarrying(charakter);
-		int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue());
-		carrying.setCarrying(tmp);
-		carrying.setLifting(tmp *2);
+		// **INITIATIVE**
+		STEPDICEType initiativeStepdice=attribute2StepAndDice(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue());
+		INITIATIVEType initiative = JAXBHelper.getInitiative(charakter);
+		// Setze alle Initiative Modifikatoren zurück, da diese im folgenden neu bestimmt werden.
+		initiative.setModification(0);
+		initiative.setBase(initiativeStepdice.getStep());
+		initiative.setStep(initiativeStepdice.getStep());
+		initiative.setDice(initiativeStepdice.getDice());
+
+		// **HEALTH**
 		HEALTHType health = JAXBHelper.getHealth(charakter);
 		List<Integer> newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
 		for (JAXBElement<?> elem : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
@@ -81,34 +98,66 @@ public class ECEWorker {
 			}
 		}
 
+		// **KARMA**
+		query = String.format("/NAMEGIVER[@name='%s']/KARMA/@modifier", race);
+		int maxkarma = ApplicationProperties.create().getNamegivers().getInt(query);
+		TALENTType karmaritual=JAXBHelper.getKarmaritual(charakter);
+		maxkarma *= karmaritual.getRANK().getRank();
+		KARMAType karma=JAXBHelper.getKarma(charakter);
+		karma.setMaxmodificator(karmaMaxBonus);
+		// Die Übriggebliebenen Kaufpunkte erhöhen das maximale Karma
+		maxkarma += karmaMaxBonus;
+		karma.setMax(maxkarma);
 		
-		//TODO:
-		// EDCHARACTER/INITIATIVE/base=JAXBHelper.getAttribute(charakter, "DEX").getStep();
-		// EDCHARACTER/INITIATIVE/step=JAXBHelper.getAttribute(charakter, "DEX").getStep();
-		// EDCHARACTER/INITIATIVE/modification=0;
-		// EDCHARACTER/INITIATIVE/dice=JAXBHelper.getAttribute(charakter, "DEX").getDice();
-		//
-		// EDCHARACTER/PROTECTION/physicalarmor=0;
-		// EDCHARACTER/PROTECTION/mysticarmor=0;
-		// EDCHARACTER/PROTECTION/penalty=0;
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/weight=0;
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/used=yes;
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/location="self";
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/physicalarmor=0;
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/penalty0;
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/edn=0;
-		// EDCHARACTER/PROTECTION/ARMOR[name="natural armor"]/mysticarmor=berechneMysticArmor(JAXBHelper.getAttribute(charakter, "WIL").getCurrentvalue());
-		// EDCHARACTER/KARMA/max=JAXBHelper.getKarmaritualRank(charakter) *  ( "/NAMEGIVER[@name='%s']/KARMA/modifier",race ) + AttributeCostPool;
+		// **MOVEMENT**
+		MOVEMENTType movement = JAXBHelper.getMovement(charakter);
+		movement.setFlight(0);
+		movement.setGround(0);
+		query = String.format("/NAMEGIVER[@name='%s']/MOVEMENT", race);
+		properties = ApplicationProperties.create().getNamegivers().configurationsAt(query);
+		for (Object property : properties) {
+			SubnodeConfiguration subnode = (SubnodeConfiguration) property;
+			String id = subnode.getString("/@type");
+			if( id.equals("ground") ) {
+				movement.setGround(subnode.getInt("/@value"));
+			} else if( id.equals("flight") ) {
+				movement.setFlight(subnode.getInt("/@value"));
+			} else {
+				// TODO: Warning ausgeben, Konfiguration Datei hat einen Fehler
+			}
+		}
 
-		
+		// **CARRYING**
+		CARRYINGType carrying = JAXBHelper.getCarrying(charakter);
+		int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue());
+		carrying.setCarrying(tmp);
+		carrying.setLifting(tmp *2);
+
+		int naturalMysticArmor = berechneMysticArmor(JAXBHelper.getAttribute(charakter, "WIL").getCurrentvalue());
+		int naturalPhysicalArmor = 0;
+		// TODO: Rasseneigenschaft beachten, zB Physische Rüstung bei Obsidimen
+		PROTECTIONType protection = JAXBHelper.getProtection(charakter);
+		int mysticalarmor=0;
+		int pysicalarmor=0;
+		int protectionpenalty=0;
+		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
+			if( armor.getName().equals("natural armor")) {
+				armor.setPenalty(0);
+				armor.setPhysicalarmor(naturalPhysicalArmor);
+				armor.setMysticarmor(naturalMysticArmor);
+			}
+			mysticalarmor+=armor.getMysticarmor();
+			pysicalarmor+=armor.getPhysicalarmor();
+			protectionpenalty+=armor.getPenalty();
+		}
+		protection.setMysticamor(mysticalarmor);
+		protection.setPenalty(protectionpenalty);
+		protection.setPhysicalarmor(pysicalarmor);
+
 		return charakter;
 	}
 	public int berechneWiederstandskraft(Integer value) {
 		int actualRating=0;
-		// TODO: übersichtliche Alternative, funktioniert aber wahrscheinlich nicht
-//		String query = String.format("/DEFENSERAITING[@defense='%d']/@attribute", value.intValue());
-//		int actualRaiting = ApplicationProperties.create().getCharacteristics().getInt(query);
-
 		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/DEFENSERAITING")) {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
 			int attribute = subnode.getInt("/@attribute");
@@ -177,18 +226,19 @@ public class ECEWorker {
 	}	
 
 	public STEPDICEType attribute2StepAndDice(int value) {
-		int actualStep=0;
-		String actualDice="";
+		STEPDICEType tmp = new STEPDICEType();
+		tmp.setStep(0);
+		tmp.setDice(DiceType.D_6);
 		for (Object stepdice : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/STEPDICETABLE")) {
 			SubnodeConfiguration subnode = (SubnodeConfiguration) stepdice;
 			int attribute = subnode.getInt("/@attribute");
 			int step = subnode.getInt("/@step");
 			String dice = subnode.getString("/@dice");
-			if( (value <= attribute) && (actualStep<step) ) {
-				actualStep = step;
-				actualDice = dice;
+			if( (value <= attribute) && (tmp.getStep()<step) ) {
+				tmp.setStep(step);
+				tmp.setDice(DiceType.valueOf(dice));
 			}
 		}
-		return new STEPDICEType(actualStep,actualDice);
+		return tmp;
 	}	
 }

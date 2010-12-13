@@ -144,6 +144,7 @@
 	<xs:complexType name="RANK_type">
 		<xs:complexContent>
 			<xs:extension base="STEPDICE_type">
+				<xs:attribute name="startrank" type="unsigned_int" default="0"/>
 				<xs:attribute name="rank" type="unsigned_int" default="0"/>
 				<xs:attribute name="lpcost" type="unsigned_int" default="0"/>
 			</xs:extension>
@@ -165,6 +166,13 @@
 				<xs:sequence>
 					<xs:element name="RANK" type="RANK_type" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TALENT_type">
+		<xs:complexContent>
+			<xs:extension base="SKILL_type">
+				<xs:attribute name="circle" type="circle_type" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -274,13 +282,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="TALENT_type">
-		<xs:complexContent>
-			<xs:extension base="SKILL_type">
-				<xs:attribute name="circle" type="circle_type" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 	<xs:complexType name="HEALTH_type">
 		<xs:choice maxOccurs="unbounded">
 			<xs:element maxOccurs="1" minOccurs="1" name="RECOVERY" type="RECOVERY_type"/>
@@ -333,7 +334,7 @@
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="SHIELD" type="SHIELD_type"/>
 		</xs:choice>
 		<xs:attribute name="physicalarmor" type="unsigned_int" use="required"/>
-		<xs:attribute name="mysticamor" type="unsigned_int" use="required"/>
+		<xs:attribute name="mysticarmor" type="unsigned_int" use="required"/>
 		<xs:attribute name="penalty" type="unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="APPEARANCE_type">

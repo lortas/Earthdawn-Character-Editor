@@ -7,7 +7,7 @@
     <ATTR_START name="PER" value="10" />
     <ATTR_START name="WIL" value="10" />
     <ATTR_START name="CHA" value="8" />
-    <MOVEMENT type="ground">5</MOVEMENT>
+    <MOVEMENT type="ground" value="5"/>
     <KARMA modifier="4" />
     <ABILITIES>Heat Sight</ABILITIES>
   </NAMEGIVER>
@@ -18,7 +18,7 @@
     <ATTR_START name="PER" value="11" />
     <ATTR_START name="WIL" value="11" />
     <ATTR_START name="CHA" value="11" />
-    <MOVEMENT type="ground">7</MOVEMENT>
+    <MOVEMENT type="ground" value="7"/>
     <KARMA modifier="4" />
     <ABILITIES>Low-Light Vision</ABILITIES>
   </NAMEGIVER>
@@ -29,7 +29,7 @@
     <ATTR_START name="PER" value="10" />
     <ATTR_START name="WIL" value="10" />
     <ATTR_START name="CHA" value="10" />
-    <MOVEMENT type="ground">6</MOVEMENT>
+    <MOVEMENT type="ground" value="6"/>
     <KARMA modifier="5" />
     <ABILITIES>Optional Talent Versatility</ABILITIES>
   </NAMEGIVER>
@@ -40,7 +40,7 @@
     <ATTR_START name="PER" value="9" />
     <ATTR_START name="WIL" value="10" />
     <ATTR_START name="CHA" value="9" />
-    <MOVEMENT type="ground">5</MOVEMENT>
+    <MOVEMENT type="ground" value="5"/>
     <KARMA modifier="3" />
     <ABILITIES>Wound Threshold +3</ABILITIES>
     <ABILITIES>Physical Armor +3</ABILITIES>
@@ -53,7 +53,7 @@
     <ATTR_START name="PER" value="10" />
     <ATTR_START name="WIL" value="8" />
     <ATTR_START name="CHA" value="9" />
-    <MOVEMENT typ="ground">6</MOVEMENT>
+    <MOVEMENT typ="ground" value="6"/>
     <KARMA modifier="5" />
     <ABILITIES>Gahad</ABILITIES>
     <ABILITIES>Low-Light Vision</ABILITIES>
@@ -65,7 +65,7 @@
     <ATTR_START name="PER" value="9" />
     <ATTR_START name="WIL" value="11" />
     <ATTR_START name="CHA" value="10" />
-    <MOVEMENT type="ground">7</MOVEMENT>
+    <MOVEMENT type="ground" value="7"/>
     <KARMA modifier="3" />
     <ABILITIES>Heat Sight</ABILITIES>
   </NAMEGIVER>
@@ -76,7 +76,7 @@
     <ATTR_START name="PER" value="10" />
     <ATTR_START name="WIL" value="10" />
     <ATTR_START name="CHA" value="11" />
-    <MOVEMENT type="ground">6</MOVEMENT>
+    <MOVEMENT type="ground" value="6"/>
     <KARMA modifier="4" />
     <ABILITIES>Tail Combat</ABILITIES>
   </NAMEGIVER>
@@ -87,8 +87,8 @@
     <ATTR_START name="PER" value="11" />
     <ATTR_START name="WIL" value="10" />
     <ATTR_START name="CHA" value="12" />
-    <MOVEMENT type="ground">3</MOVEMENT>
-    <MOVEMENT type="flight">8</MOVEMENT>
+    <MOVEMENT type="ground" value="3"/>
+    <MOVEMENT type="flight" value="8"/>
     <KARMA modifier="6" />
     <ABILITIES>Optional Talent Astral Sight</ABILITIES>
     <ABILITIES>Physical Defense +2</ABILITIES>
