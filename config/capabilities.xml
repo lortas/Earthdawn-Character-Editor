@@ -1,8 +1,368 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/capability earthdawncapabilities.xsd">
-	<SKILL name="Acrobatic Strike" attribute="DEX" action="simple" strain="1"/>
-	<SKILL name="Acting" action="sustained" attribute="CHA"/>
-	<TALENT name="Abate Curse" action="standard" attribute="WIL" strain="1"/>
-	<TALENT name="Acrobatic Strike" attribute="DEX" action="simple" strain="1"/>
-	<TALENT name="Air Dance" attribute="DEX" action="free" strain="1"/>
+	<SKILL name="Acrobatic Strike" attribute="DEX" default="no" action="simple" strain="1"/>
+	<SKILL name="Acting" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Air Sailing" attribute="WIL" default="no" action="sustained" strain="0"/>
+	<SKILL name="Alchemy" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Animal Bond" attribute="CHA" default="no" action="standard" strain="0"/>
+	<SKILL name="Animal Handling" attribute="WIL" default="yes" action="standard" strain="0"/>
+	<SKILL name="Animal Training" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Arcane Mutterings" attribute="CHA" default="no" action="standard" strain="1"/>
+	<SKILL name="Artisan" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Artist" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Avoid Blow" attribute="DEX" default="yes" action="free" strain="1"/>
+	<SKILL name="Battle Bellow" attribute="CHA" default="no" action="simple" strain="2"/>
+	<SKILL name="Battle Shout" attribute="CHA" default="no" action="simple" strain="1"/>
+	<SKILL name="Blade Juggle" attribute="DEX" default="no" action="standard" strain="-1"/>
+	<SKILL name="Bribery" attribute="CHA" default="yes" action="standard" strain="0"/>
+	<SKILL name="Charge" attribute="STR" default="no" action="free" strain="0"/>
+	<SKILL name="Climbing" attribute="DEX" default="yes" action="standard" strain="0"/>
+	<SKILL name="Conceal Object" attribute="DEX" default="no" action="standard" strain="1"/>
+	<SKILL name="Conversation" attribute="CHA" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Craft Armor" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Craftsman" attribute="DEX" default="no" action="sustained" strain="0"/>
+	<SKILL name="Craft Weapon" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Dead Fall" attribute="WIL" default="no" action="simple" strain="1"/>
+	<SKILL name="Detect Trap" attribute="PER" default="no" action="standard" strain="1"/>
+	<SKILL name="Detect Weapon" attribute="PER" default="yes" action="standard" strain="1"/>
+	<SKILL name="Diplomacy" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Disarm" attribute="DEX" default="no" action="standard" strain="1"/>
+	<SKILL name="Disarm Trap" attribute="DEX" default="no" action="sustained" strain="1"/>
+	<SKILL name="Disguise" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Distract" attribute="CHA" default="yes" action="standard" strain="1"/>
+	<SKILL name="Down Strike" attribute="STR" default="no" action="free" strain="1"/>
+	<SKILL name="Emotion Song" attribute="CHA" default="no" action="sustained" strain="1"/>
+	<SKILL name="Engaging Banter" attribute="CHA" default="no" action="standard" strain="1"/>
+	<SKILL name="Entertainer" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Etiquette" attribute="CHA" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Fast Hand" attribute="DEX" default="no" action="standard" strain="1"/>
+	<SKILL name="First Impression" attribute="CHA" default="no" action="standard" strain="0"/>
+	<SKILL name="Fishing" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Flirting" attribute="CHA" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Forgery" attribute="DEX" default="no" action="sustained" strain="0"/>
+	<SKILL name="Graceful Exit" attribute="CHA" default="no" action="standard" strain="0"/>
+	<SKILL name="Great Leap" attribute="DEX" default="no" action="free" strain="1"/>
+	<SKILL name="Haggle" attribute="CHA" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Heartening Laugh" attribute="CHA" default="no" action="standard" strain="1"/>
+	<SKILL name="Hunting" attribute="DEX" default="no" action="sustained" strain="0"/>
+	<SKILL name="Hypnotize" attribute="CHA" default="no" action="sustained" strain="1"/>
+	<SKILL name="Impress" attribute="CHA" default="no" action="sustained" strain="1"/>
+	<SKILL name="Knowledge" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Lip Reading" attribute="CHA" default="no" action="standard" strain="2"/>
+	<SKILL name="Lock Picking" attribute="DEX" default="no" action="sustained" strain="0"/>
+	<SKILL name="Maneuver" attribute="DEX" default="no" action="standard" strain="0"/>
+	<SKILL name="Mapmaking" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Melee Weapons" attribute="DEX" default="yes" action="standard" strain="0"/>
+	<SKILL name="Mimic Voice" attribute="PER" default="no" action="simple" strain="0"/>
+	<SKILL name="Missile Weapons" attribute="DEX" default="yes" action="standard" strain="0"/>
+	<SKILL name="Momentum Attack" attribute="DEX" default="no" action="simple" strain="1"/>
+	<SKILL name="Mount Attack" attribute="na" default="no" action="simple" strain="1"/>
+	<SKILL name="Navigation" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Parry" attribute="DEX" default="yes" action="free" strain="1"/>
+	<SKILL name="Performance" attribute="CHA" default="no" action="simple" strain="2"/>
+	<SKILL name="Physician" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Picking Pockets" attribute="DEX" default="no" action="standard" strain="0"/>
+	<SKILL name="Pilot Boat" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Read/Write Language" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Magic" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read River" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Research" attribute="PER" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Resist Taunt" attribute="WIL" default="yes" action="free" strain="1"/>
+	<SKILL name="Rhetoric" attribute="PER" default="no" action="sustained" strain="0"/>
+	<SKILL name="Riposte" attribute="DEX" default="no" action="free" strain="2"/>
+	<SKILL name="Sailing" attribute="DEX" default="no" action="sustained" strain="0"/>
+	<SKILL name="Search" attribute="PER" default="no" action="standard" strain="1"/>
+	<SKILL name="Second Attack" attribute="DEX" default="no" action="simple" strain="2"/>
+	<SKILL name="Second Shot" attribute="DEX" default="no" action="simple" strain="2"/>
+	<SKILL name="Second Weapon" attribute="DEX" default="no" action="simple" strain="1"/>
+	<SKILL name="Seduction" attribute="CHA" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Shield Charge" attribute="STR" default="no" action="free" strain="1"/>
+	<SKILL name="Silent Walk" attribute="DEX" default="no" action="standard" strain="0"/>
+	<SKILL name="Slough Blame" attribute="CHA" default="yes" action="standard" strain="2"/>
+	<SKILL name="Speak Language" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Sprint" attribute="na" default="no" action="simple" strain="3"/>
+	<SKILL name="Streetwise" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Sure Mount" attribute="STR" default="no" action="free" strain="0"/>
+	<SKILL name="Surprise Strike" attribute="STR" default="no" action="free" strain="1"/>
+	<SKILL name="Swift Kick" attribute="DEX" default="no" action="free" strain="1"/>
+	<SKILL name="Swimming" attribute="STR" default="yes" action="standard" strain="0"/>
+	<SKILL name="Tactics" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Taunt" attribute="CHA" default="no" action="standard" strain="1"/>
+	<SKILL name="Throwing Weapons" attribute="DEX" default="yes" action="standard" strain="0"/>
+	<SKILL name="Tracking" attribute="PER" default="yes" action="standard" strain="1"/>
+	<SKILL name="Trap Initiative" attribute="DEX" default="no" action="free" strain="1"/>
+	<SKILL name="Trick Riding" attribute="DEX" default="no" action="simple" strain="1"/>
+	<SKILL name="Unarmed Combat" attribute="DEX" default="yes" action="standard" strain="0"/>
+	<SKILL name="Wheeling Attack" attribute="DEX" default="no" action="standard" strain="2"/>
+	<SKILL name="Wheeling Defense" attribute="DEX" default="no" action="simple" strain="1"/>
+	<SKILL name="Wilderness Survival" attribute="PER" default="yes" action="sustained" strain="0"/>
+	<SKILL name="Wound Balance" attribute="STR" default="no" action="free" strain="0"/>
+	<TALENT name="Abate Curse" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Acrobatic Strike" attribute="DEX" action="simple" karma="no" strain="1"/>
+	<TALENT name="Air Dance" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Air Sailing" attribute="WIL" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Air Speaking" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Animal Bond" attribute="CHA" action="standard" karma="no" strain="0"/>
+	<TALENT name="Animal Companion Durability" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Animal Possession" attribute="WIL" action="standard" karma="no" strain="2"/>
+	<TALENT name="Animal Talk" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Animal Training" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Anticipate Blow" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Arcane Mutterings" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Armor Mount" attribute="WIL" action="simple" karma="no" strain="1"/>
+	<TALENT name="Astral Sight" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Avoid Blow" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Bank Shot" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Battle Bellow" attribute="CHA" action="simple" karma="no" strain="1"/>
+	<TALENT name="Battle Shout" attribute="CHA" action="simple" karma="no" strain="1"/>
+	<TALENT name="Blade Juggle" attribute="DEX" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Blood Share" attribute="TOU" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Book Memory" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Book Recall" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Borrow Sense" attribute="WIL" action="standard" karma="no" strain="0"/>
+	<TALENT name="Call Animal Companion" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Call Missile" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Charge" attribute="STR" action="free" karma="no" strain="0"/>
+	<TALENT name="Claw Shape" attribute="STR" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Climbing" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Cobra Strike" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Cold Purify" attribute="WIL" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Conceal Object" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Conversation" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Creature Analysis" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Crushing Blow" attribute="STR" action="free" karma="yes" strain="1"/>
+	<TALENT name="Dead Fall" attribute="WIL" action="simple" karma="no" strain="1"/>
+	<TALENT name="Detect Trap" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Detect Weapon" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Diplomacy" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Direction Arrow" attribute="PER" action="standard" karma="yes" strain="2"/>
+	<TALENT name="Direction Sense" attribute="PER" action="standard" karma="yes" strain="2"/>
+	<TALENT name="Disarm" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Disarm Trap" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Disguise Self" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Distract" attribute="CHA" action="standard" karma="no" strain="0"/>
+	<TALENT name="Dominate Beast" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Double-Charge" attribute="DEX" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Down Strike" attribute="STR" action="free" karma="no" strain="1"/>
+	<TALENT name="Durability" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Earth Skin" attribute="TOU" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Elemental Hold" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Elemental Tongues" attribute="PER" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Emotion Song" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Empathic Command" attribute="WIL" action="free" karma="no" strain="0"/>
+	<TALENT name="Empathic Sense" attribute="CHA" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Engaging Banter" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Enhanced Matrix" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Etiquette" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Evaluate" attribute="PER" action="standard" karma="no" strain="0"/>
+	<TALENT name="Evidence Analysis" attribute="PER" action="sustained" karma="no" strain="1"/>
+	<TALENT name="False Sight" attribute="na" action="simple" karma="no" strain="1"/>
+	<TALENT name="Familiar Durability" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Fast Hand" attribute="DEX" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Fearsome Charge" attribute="CHA" action="simple" karma="no" strain="2"/>
+	<TALENT name="Fireblood" attribute="TOU" action="standard" karma="no" strain="0"/>
+	<TALENT name="Fire Heal" attribute="WIL" action="sustained" karma="no" strain="0"/>
+	<TALENT name="First Impression" attribute="CHA" action="standard" karma="no" strain="0"/>
+	<TALENT name="Flame Arrow" attribute="WIL" action="free" karma="yes" strain="1"/>
+	<TALENT name="Forge Armor" attribute="PER" action="sustained" karma="no" strain="2"/>
+	<TALENT name="Forge Weapon" attribute="PER" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Frenzy" attribute="DEX" action="standard" karma="yes" strain="-1"/>
+	<TALENT name="Frighten" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Frighten Animals" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Gliding Stride" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Graceful Exit" attribute="CHA" action="standard" karma="no" strain="0"/>
+	<TALENT name="Great Leap" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Haggle" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Heal Animal Companion" attribute="TOU" action="standard" karma="no" strain="0"/>
+	<TALENT name="Heartening Laugh" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Hold Thread" attribute="WIL" action="simple" karma="no" strain="1"/>
+	<TALENT name="Hypnotize" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Impress" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Impressive Shot" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Inspire Others" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Item History" attribute="PER" action="sustained" karma="yes" strain="0"/>
+	<TALENT name="Karma Ritual" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Lasting Impression" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Leadership" attribute="CHA" action="sustained" karma="yes" strain="0"/>
+	<TALENT name="Life Check" attribute="TOU" action="free" karma="no" strain="0"/>
+	<TALENT name="Lifesight" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Lion Heart" attribute="WIL" action="free" karma="no" strain="0"/>
+	<TALENT name="Lip Reading" attribute="CHA" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Lock Picking" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Long Shot" attribute="PER" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Maneuver" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Melee Weapons" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Mimic Voice" attribute="CHA" action="simple" karma="no" strain="0"/>
+	<TALENT name="Missile Weapons" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Momentum Attack" attribute="DEX" action="simple" karma="no" strain="1"/>
+	<TALENT name="Mount Attack" attribute="na" action="simple" karma="no" strain="1"/>
+	<TALENT name="Mount Durability" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Mystic Aim" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Navigation" attribute="PER" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Orbiting Spy" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Parry" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Performance" attribute="CHA" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Picking Pockets" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Poison Resistance" attribute="TOU" action="free" karma="no" strain="0"/>
+	<TALENT name="Power Mask" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Read/Write Language" attribute="PER" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Read/Write Magic" attribute="PER" action="standard" karma="no" strain="0"/>
+	<TALENT name="Research" attribute="PER" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Resist Taunt" attribute="WIL" action="free" karma="no" strain="1"/>
+	<TALENT name="Riposte" attribute="DEX" action="free" karma="no" strain="2"/>
+	<TALENT name="Safe Path" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Search" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Second Attack" attribute="DEX" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Second Shot" attribute="DEX" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Second Weapon" attribute="DEX" action="simple" karma="no" strain="1"/>
+	<TALENT name="Sense Danger" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Sense Poison" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Shield Charge" attribute="STR" action="free" karma="no" strain="1"/>
+	<TALENT name="Silent Walk" attribute="DEX" action="simple" karma="no" strain="0"/>
+	<TALENT name="Slough Blame" attribute="CHA" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Speak Language" attribute="PER" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Spell Matrix" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Spellcasting" attribute="PER" action="standard" karma="no" strain="0"/>
+	<TALENT name="Spirit Dodge" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Spirit Hold" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Spirit Mount" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Spirit Talk" attribute="PER" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Spot Armor Flaw" attribute="PER" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Sprint" attribute="na" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Steel Thought" attribute="WIL" action="simple" karma="no" strain="1"/>
+	<TALENT name="Steely Stare" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Stopping Aim" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Summon" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Sure Mount" attribute="STR" action="free" karma="no" strain="0"/>
+	<TALENT name="Surprise Strike" attribute="STR" action="free" karma="no" strain="1"/>
+	<TALENT name="Swift Kick" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Swing Attack" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Tactics" attribute="PER" action="standard" karma="no" strain="0"/>
+	<TALENT name="Taunt" attribute="CHA" action="simple" karma="no" strain="1"/>
+	<TALENT name="Temper Other" attribute="WIL" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Temper Self" attribute="WIL" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Temperature" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Thought Link" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Thread Weaving" attribute="PER" action="standard" karma="no" strain="0"/>
+	<TALENT name="Throwing Weapons" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Tiger Spring" attribute="na" action="free" karma="no" strain="1"/>
+	<TALENT name="Tracking" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Trap Initiative" attribute="DEX" action="free" karma="no" strain="1"/>
+	<TALENT name="Trick Riding" attribute="DEX" action="simple" karma="no" strain="1"/>
+	<TALENT name="True Shot" attribute="DEX" action="standard" karma="yes" strain="0"/>
+	<TALENT name="True Sight" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Unarmed Combat" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Versatility" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Wheeling Attack" attribute="DEX" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Wheeling Defense" attribute="na" action="simple" karma="no" strain="1"/>
+	<TALENT name="Wilderness Survival" attribute="PER" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Willforce" attribute="WIL" action="free" karma="no" strain="1"/>
+	<TALENT name="Wind Catcher" attribute="WIL" action="standard" karma="no" strain="0"/>
+	<TALENT name="Winning Smile" attribute="CHA" action="standard" karma="no" strain="0"/>
+	<TALENT name="Wood Skin" attribute="TOU" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Wound Balance" attribute="STR" action="free" karma="no" strain="0"/>
+	<TALENT name="Animal Leadership" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Animate Object" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Armored Matrix" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Astral Pocket" attribute="PER" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Astral Web" attribute="STR" action="standard" karma="no" strain="3"/>
+	<TALENT name="Aura Armor" attribute="WIL" action="standard" karma="no" strain="2"/>
+	<TALENT name="Bardic Voice" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Bargain With Summoned Creature" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Bestial Resilience" attribute="TOU" action="na" karma="no" strain="0"/>
+	<TALENT name="Bestial Toughness" attribute="TOU" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Blind Fire" attribute="PER" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Blood Guilt Weapon" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Body Blade" attribute="STR" action="free" karma="yes" strain="0"/>
+	<TALENT name="Bone Compass" attribute="PER" action="standard" karma="yes" strain="2"/>
+	<TALENT name="Call Mount" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Casting Pattern" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Chameleon" attribute="WIL" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Champion Challenge" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Confront Horror" attribute="CHA" action="standard" karma="yes" strain="5"/>
+	<TALENT name="Critical Hit" attribute="na" action="free" karma="yes" strain="0"/>
+	<TALENT name="Defense" attribute="DEX" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Detect Falsehood" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Detect Influence" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Develop Animal Sense" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Dominate Arrow" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Eagle Eye" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Earth Armor" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Echo Location" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Effect Pattern" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Elemental Walk" attribute="WIL" action="standard" karma="yes" strain="2"/>
+	<TALENT name="Endure Cold" attribute="TOU" action="free" karma="no" strain="0"/>
+	<TALENT name="Enduring Art" attribute="PER" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Escape Divination" attribute="PER" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Ethereal Weapon" attribute="DEX" action="standard" karma="no" strain="2"/>
+	<TALENT name="First Ring of Perfection" attribute="PER" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Gain Surprise" attribute="WIL" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Gold Sense" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Howl" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Impossible Hide" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Impressive Strike" attribute="DEX" action="standard" karma="no" strain="1"/>
+	<TALENT name="Incite Mob" attribute="WIL" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Incite Stampede" attribute="WIL" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Infuse Armor" attribute="PER" action="standard" karma="yes" strain="2"/>
+	<TALENT name="Infuse Blade" attribute="PER" action="standard" karma="yes" strain="2"/>
+	<TALENT name="Infuse Weapon" attribute="PER" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Lion Spirit" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Matrix Strike" attribute="WIL" action="simple" karma="no" strain="1"/>
+	<TALENT name="Memorize Image" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Metal Ward" attribute="PER" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Mind Armor" attribute="na" action="standard" karma="no" strain="1"/>
+	<TALENT name="Mind Blade" attribute="na" action="standard" karma="no" strain="1"/>
+	<TALENT name="Mind Wave" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Missile Twister" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Moving Earth" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Multi-Charge" attribute="DEX" action="standard" karma="yes" strain="-1"/>
+	<TALENT name="Multi-Shot" attribute="DEX" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Multi-Strike" attribute="DEX" action="standard" karma="yes" strain="-1"/>
+	<TALENT name="Multi-Tongue" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Multi-Weaving" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Netherwalk" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Pin" attribute="DEX" action="standard" karma="no" strain="0"/>
+	<TALENT name="Plant Shelter" attribute="CHA" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Questor" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Quick Shot" attribute="DEX" action="standard" karma="yes" strain="-1"/>
+	<TALENT name="Rally" attribute="CHA" action="standard" karma="yes" strain="-1"/>
+	<TALENT name="Range Pattern" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Reshape Object" attribute="WIL" action="standard" karma="no" strain="2"/>
+	<TALENT name="Resist Pain" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Rushing Attack" attribute="na" action="simple" karma="yes" strain="-1"/>
+	<TALENT name="Safe Thought" attribute="WIL" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Scent Identifier" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Screaming Arrow" attribute="CHA" action="simple" karma="no" strain="1"/>
+	<TALENT name="Second Chance" attribute="WIL" action="simple" karma="no" strain="1"/>
+	<TALENT name="Sense Magic Item" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Shackle Shrug" attribute="DEX" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Shared Matrix" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Shield Beater" attribute="na" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Show Armor Flaw" attribute="PER" action="standard" karma="no" strain="2"/>
+	<TALENT name="Soften Blade" attribute="WIL" action="standard" karma="no" strain="0"/>
+	<TALENT name="Song of Deflection" attribute="WIL" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Soul Shatter" attribute="WIL" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Spell Crystal Lock" attribute="PER" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Spirit Strike" attribute="WIL" action="standard" karma="no" strain="1"/>
+	<TALENT name="Stone Skin" attribute="TOU" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Storm Shield" attribute="WIL" action="standard" karma="no" strain="2"/>
+	<TALENT name="Summoning Circle" attribute="WIL" action="sustained" karma="yes" strain="0"/>
+	<TALENT name="Tame Mount" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Thoughtful Expression" attribute="PER" action="standard" karma="no" strain="0"/>
+	<TALENT name="Thunder Axe" attribute="STR" action="free" karma="no" strain="1"/>
+	<TALENT name="Trace Missile" attribute="PER" action="simple" karma="no" strain="1"/>
+	<TALENT name="Trample" attribute="na" action="free" karma="no" strain="1"/>
+	<TALENT name="Truth Skit" attribute="PER" action="sustained" karma="yes" strain="0"/>
+	<TALENT name="Unmount" attribute="STR" action="simple" karma="no" strain="0"/>
+	<TALENT name="Venom" attribute="TOU" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Vital Strike" attribute="PER" action="simple" karma="yes" strain="1"/>
+	<TALENT name="Vitality" attribute="TOU" action="sustained" karma="yes" strain="0"/>
+	<TALENT name="Warning Shot" attribute="CHA" action="free" karma="no" strain="0"/>
+	<TALENT name="Warp Missile" attribute="PER" action="standard" karma="no" strain="1"/>
+	<TALENT name="Water Dancing" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Weapon Breaker" attribute="STR" action="simple" karma="yes" strain="0"/>
+	<TALENT name="Weapon Ward" attribute="WIL" action="standard" karma="yes" strain="1"/>
+	<TALENT name="Whirlwind" attribute="DEX" action="standard" karma="no" strain="2"/>
+	<TALENT name="Wind Bow" attribute="na" action="standard" karma="no" strain="1"/>
+	<TALENT name="Wound Transfer" attribute="WIL" action="standard" karma="yes" strain="0"/>
 </CAPABILITIES>
