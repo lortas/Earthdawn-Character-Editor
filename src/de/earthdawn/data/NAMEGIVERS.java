@@ -10,12 +10,10 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -29,11 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="SKILLKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TALENTKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/choice>
- *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;sequence>
+ *         &lt;element name="NAMEGIVER" type="{http://earthdawn.com/namegiver}NAMEGIVERABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/sequence>
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -43,47 +40,43 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "skillknackOrTALENTKNACK"
+    "namegiver"
 })
-@XmlRootElement(name = "KNACKS", namespace = "http://earthdawn.com/knack")
-public class KNACKS {
+@XmlRootElement(name = "NAMEGIVERS", namespace = "http://earthdawn.com/namegiver")
+public class NAMEGIVERS {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class),
-        @XmlElementRef(name = "SKILLKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<KNACKBASEType>> skillknackOrTALENTKNACK;
+    @XmlElement(name = "NAMEGIVER", namespace = "http://earthdawn.com/namegiver")
+    protected List<NAMEGIVERABILITYType> namegiver;
     @XmlAttribute(required = true)
-    protected String lang;
+    protected LanguageType lang;
 
     /**
-     * Gets the value of the skillknackOrTALENTKNACK property.
+     * Gets the value of the namegiver property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the skillknackOrTALENTKNACK property.
+     * This is why there is not a <CODE>set</CODE> method for the namegiver property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSKILLKNACKOrTALENTKNACK().add(newItem);
+     *    getNAMEGIVER().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}
-     * {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}
+     * {@link NAMEGIVERABILITYType }
      * 
      * 
      */
-    public List<JAXBElement<KNACKBASEType>> getSKILLKNACKOrTALENTKNACK() {
-        if (skillknackOrTALENTKNACK == null) {
-            skillknackOrTALENTKNACK = new ArrayList<JAXBElement<KNACKBASEType>>();
+    public List<NAMEGIVERABILITYType> getNAMEGIVER() {
+        if (namegiver == null) {
+            namegiver = new ArrayList<NAMEGIVERABILITYType>();
         }
-        return this.skillknackOrTALENTKNACK;
+        return this.namegiver;
     }
 
     /**
@@ -91,10 +84,10 @@ public class KNACKS {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public String getLang() {
+    public LanguageType getLang() {
         return lang;
     }
 
@@ -103,10 +96,10 @@ public class KNACKS {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public void setLang(String value) {
+    public void setLang(LanguageType value) {
         this.lang = value;
     }
 

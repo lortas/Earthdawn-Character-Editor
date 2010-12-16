@@ -16,6 +16,7 @@ import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.KNACKS;
+import de.earthdawn.data.NAMEGIVERS;
 import de.earthdawn.data.SPELLS;
 
 /** 
@@ -29,6 +30,7 @@ public class ApplicationProperties {
     private static CAPABILITYType CAPABILITIES = new CAPABILITYType();
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
+    private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
     
     /** Singleton-Instanz dieser Klasse. */
     private static ApplicationProperties theProps = null;
@@ -39,9 +41,6 @@ public class ApplicationProperties {
     /** Anzeigetexte (Charakterattribute). */
     private static final XMLConfiguration NAMES = new XMLConfiguration();
 
-    /** Konfiguration für die einzelnen Races. */
-    private static final XMLConfiguration NAMEGIVERS = new XMLConfiguration();
-    
     /** Konfiguration für die einzelnen Races. */
     private static final XMLConfiguration CHARACTERISTICS = new XMLConfiguration();
 
@@ -76,7 +75,7 @@ public class ApplicationProperties {
 		return DISCIPLINES.get(name);
 	}
 
-	public XMLConfiguration getNamegivers() {
+	public NAMEGIVERS getNamegivers() {
 		return NAMEGIVERS;
 	}
 	
@@ -115,11 +114,6 @@ public class ApplicationProperties {
 			NAMES.load(new File("./config/names.xml"));
 			
 			// Konfiguration für die RACES einlesen.
-			NAMEGIVERS.setValidating(false);
-			NAMEGIVERS.load(new File("./config/namegivers.xml"));
-			NAMEGIVERS.setExpressionEngine(new XPathExpressionEngine());
-			
-			// Konfiguration für die RACES einlesen.
 			CHARACTERISTICS.setValidating(false);
 			CHARACTERISTICS.load(new File("./config/characteristics.xml"));
 			CHARACTERISTICS.setExpressionEngine(new XPathExpressionEngine());
@@ -140,6 +134,7 @@ public class ApplicationProperties {
 			CAPABILITIES = (CAPABILITYType) u.unmarshal(new File("./config/capabilities.xml"));
 			KNACKS = (KNACKS) u.unmarshal(new File("./config/knacks.xml"));
 			SPELLS = (SPELLS) u.unmarshal(new File("./config/spells.xml"));
+			NAMEGIVERS = (NAMEGIVERS) u.unmarshal(new File("./config/namegivers.xml"));
 
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...

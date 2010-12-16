@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for CIRCLENAME_type complex type.
+ * <p>Java class for NAMEVALUE_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="CIRCLENAME_type">
+ * &lt;complexType name="NAMEVALUE_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="value" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -33,13 +33,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CIRCLENAME_type")
-public class CIRCLENAMEType {
+@XmlType(name = "NAMEVALUE_type", namespace = "http://earthdawn.com/namegiver")
+public class NAMEVALUEType {
 
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
-    protected int circle;
+    protected int value;
 
     /**
      * Gets the value of the name property.
@@ -66,19 +66,19 @@ public class CIRCLENAMEType {
     }
 
     /**
-     * Gets the value of the circle property.
+     * Gets the value of the value property.
      * 
      */
-    public int getCircle() {
-        return circle;
+    public int getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the circle property.
+     * Sets the value of the value property.
      * 
      */
-    public void setCircle(int value) {
-        this.circle = value;
+    public void setValue(int value) {
+        this.value = value;
     }
 
 }

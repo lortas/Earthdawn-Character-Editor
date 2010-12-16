@@ -1,97 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<NAMEGIVERS>
-  <NAMEGIVER name="Dwarf">
-    <ATTR_START name="DEX" value="10" />
-    <ATTR_START name="STR" value="12" />
-    <ATTR_START name="TOU" value="13" />
-    <ATTR_START name="PER" value="10" />
-    <ATTR_START name="WIL" value="10" />
-    <ATTR_START name="CHA" value="8" />
-    <MOVEMENT type="ground" value="5"/>
-    <KARMA modifier="4" />
-    <ABILITIES>Heat Sight</ABILITIES>
+<NAMEGIVERS  lang="en" xmlns="http://earthdawn.com/namegiver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/namegiver earthdawnnamegivers.xsd">
+  <NAMEGIVER name="Dwarf" karmamodifier="4" movement_ground="5">
+    <ATTRIBUTE name="DEX" value="10" />
+    <ATTRIBUTE name="STR" value="12" />
+    <ATTRIBUTE name="TOU" value="13" />
+    <ATTRIBUTE name="PER" value="10" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="8" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Heat Sight</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Elf">
-    <ATTR_START name="DEX" value="12" />
-    <ATTR_START name="STR" value="10" />
-    <ATTR_START name="TOU" value="8" />
-    <ATTR_START name="PER" value="11" />
-    <ATTR_START name="WIL" value="11" />
-    <ATTR_START name="CHA" value="11" />
-    <MOVEMENT type="ground" value="7"/>
-    <KARMA modifier="4" />
-    <ABILITIES>Low-Light Vision</ABILITIES>
+  <NAMEGIVER name="Elf" karmamodifier="4" movement_ground="7">
+    <ATTRIBUTE name="DEX" value="12" />
+    <ATTRIBUTE name="STR" value="10" />
+    <ATTRIBUTE name="TOU" value="8" />
+    <ATTRIBUTE name="PER" value="11" />
+    <ATTRIBUTE name="WIL" value="11" />
+    <ATTRIBUTE name="CHA" value="11" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Human">
-    <ATTR_START name="DEX" value="10" />
-    <ATTR_START name="STR" value="10" />
-    <ATTR_START name="TOU" value="10" />
-    <ATTR_START name="PER" value="10" />
-    <ATTR_START name="WIL" value="10" />
-    <ATTR_START name="CHA" value="10" />
-    <MOVEMENT type="ground" value="6"/>
-    <KARMA modifier="5" />
-    <ABILITIES>Optional Talent Versatility</ABILITIES>
+  <NAMEGIVER name="Human" karmamodifier="5" movement_ground="6">
+    <ATTRIBUTE name="DEX" value="10" />
+    <ATTRIBUTE name="STR" value="10" />
+    <ATTRIBUTE name="TOU" value="10" />
+    <ATTRIBUTE name="PER" value="10" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="10" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <TALENT name="Versatility" circle="0"/>
   </NAMEGIVER>
-  <NAMEGIVER name="Obsidiman">
-    <ATTR_START name="DEX" value="8" />
-    <ATTR_START name="STR" value="18" />
-    <ATTR_START name="TOU" value="13" />
-    <ATTR_START name="PER" value="9" />
-    <ATTR_START name="WIL" value="10" />
-    <ATTR_START name="CHA" value="9" />
-    <MOVEMENT type="ground" value="5"/>
-    <KARMA modifier="3" />
-    <ABILITIES>Wound Threshold +3</ABILITIES>
-    <ABILITIES>Physical Armor +3</ABILITIES>
-    <ABILITIES>Can only wear Living Armor</ABILITIES>
+  <NAMEGIVER name="Obsidiman" karmamodifier="3" movement_ground="5">
+    <ATTRIBUTE name="DEX" value="8" />
+    <ATTRIBUTE name="STR" value="18" />
+    <ATTRIBUTE name="TOU" value="13" />
+    <ATTRIBUTE name="PER" value="9" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="9" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self" physicalarmor="3"/>
+    <WOUND threshold="3"/>
+    <ABILITY>Can only wear Living Armor</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Orc">
-    <ATTR_START name="DEX" value="10" />
-    <ATTR_START name="STR" value="13" />
-    <ATTR_START name="TOU" value="11" />
-    <ATTR_START name="PER" value="10" />
-    <ATTR_START name="WIL" value="8" />
-    <ATTR_START name="CHA" value="9" />
-    <MOVEMENT typ="ground" value="6"/>
-    <KARMA modifier="5" />
-    <ABILITIES>Gahad</ABILITIES>
-    <ABILITIES>Low-Light Vision</ABILITIES>
+  <NAMEGIVER name="Orc" karmamodifier="5" movement_ground="6">
+    <ATTRIBUTE name="DEX" value="10" />
+    <ATTRIBUTE name="STR" value="13" />
+    <ATTRIBUTE name="TOU" value="11" />
+    <ATTRIBUTE name="PER" value="10" />
+    <ATTRIBUTE name="WIL" value="8" />
+    <ATTRIBUTE name="CHA" value="9" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Gahad</ABILITY>
+    <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Troll">
-    <ATTR_START name="DEX" value="10" />
-    <ATTR_START name="STR" value="14" />
-    <ATTR_START name="TOU" value="12" />
-    <ATTR_START name="PER" value="9" />
-    <ATTR_START name="WIL" value="11" />
-    <ATTR_START name="CHA" value="10" />
-    <MOVEMENT type="ground" value="7"/>
-    <KARMA modifier="3" />
-    <ABILITIES>Heat Sight</ABILITIES>
+  <NAMEGIVER name="Troll" karmamodifier="3" movement_ground="7">
+    <ATTRIBUTE name="DEX" value="10" />
+    <ATTRIBUTE name="STR" value="14" />
+    <ATTRIBUTE name="TOU" value="12" />
+    <ATTRIBUTE name="PER" value="9" />
+    <ATTRIBUTE name="WIL" value="11" />
+    <ATTRIBUTE name="CHA" value="10" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Heat Sight</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="T'skrang">
-    <ATTR_START name="DEX" value="11" />
-    <ATTR_START name="STR" value="10" />
-    <ATTR_START name="TOU" value="11" />
-    <ATTR_START name="PER" value="10" />
-    <ATTR_START name="WIL" value="10" />
-    <ATTR_START name="CHA" value="11" />
-    <MOVEMENT type="ground" value="6"/>
-    <KARMA modifier="4" />
-    <ABILITIES>Tail Combat</ABILITIES>
+  <NAMEGIVER name="T'skrang" karmamodifier="4" movement_ground="6">
+    <ATTRIBUTE name="DEX" value="11" />
+    <ATTRIBUTE name="STR" value="10" />
+    <ATTRIBUTE name="TOU" value="11" />
+    <ATTRIBUTE name="PER" value="10" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="11" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Tail Combat</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Windling">
-    <ATTR_START name="DEX" value="11" />
-    <ATTR_START name="STR" value="4" />
-    <ATTR_START name="TOU" value="8" />
-    <ATTR_START name="PER" value="11" />
-    <ATTR_START name="WIL" value="10" />
-    <ATTR_START name="CHA" value="12" />
-    <MOVEMENT type="ground" value="3"/>
-    <MOVEMENT type="flight" value="8"/>
-    <KARMA modifier="6" />
-    <ABILITIES>Optional Talent Astral Sight</ABILITIES>
-    <ABILITIES>Physical Defense +2</ABILITIES>
-    <ABILITIES>Flight</ABILITIES>
+  <NAMEGIVER name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8">
+    <ATTRIBUTE name="DEX" value="11" />
+    <ATTRIBUTE name="STR" value="4" />
+    <ATTRIBUTE name="TOU" value="8" />
+    <ATTRIBUTE name="PER" value="11" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="12" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <DEFENSE circle="0" kind="physical"/>
+    <DEFENSE circle="0" kind="physical"/>
+    <TALENT name="Astral Sight" circle="0"/>
+    <ABILITY>Flight</ABILITY>
   </NAMEGIVER>
  </NAMEGIVERS>

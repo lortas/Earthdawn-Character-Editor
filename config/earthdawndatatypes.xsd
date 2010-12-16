@@ -191,8 +191,8 @@
 	</xs:complexType>
 	<xs:complexType name="WOUND_type">
 		<xs:attribute name="threshold" type="unsigned_int" use="required"/>
-		<xs:attribute name="count" type="unsigned_int"/>
-		<xs:attribute name="penalties" type="unsigned_int"/>
+		<xs:attribute name="count" type="unsigned_int" default="0"/>
+		<xs:attribute name="penalties" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="DEATH_type">
 		<xs:attribute name="base" type="unsigned_int" use="required"/>
@@ -359,5 +359,25 @@
 		<xs:attribute name="hair" type="xs:string" use="required"/>
 		<xs:attribute name="skin" type="xs:string" use="required"/>
 		<xs:attribute name="race" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CIRCLENAME_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DISZIPINABILITY_type">
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="TALENTABILITY_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
+	</xs:complexType>
+	<xs:complexType name="KARMAABILITY_type">
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="spend" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DEFENSEABILITY_type">
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
 	</xs:complexType>
 </xs:schema>
