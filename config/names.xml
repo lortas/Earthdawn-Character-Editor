@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="ISO-8859-15" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <NAMES>
- <ATTRIBUTS lang="de">
-  <ATTRIBUT id="DEX" name="Geschicklichkeit" />
-  <ATTRIBUT id="STR" name="Stärke" />
-  <ATTRIBUT id="TOU" name="Zähigkeit" />
-  <ATTRIBUT id="PER" name="Wahrnehmung" />
-  <ATTRIBUT id="WIL" name="Willenskraft" />
-  <ATTRIBUT id="CHA" name="Charisma" />
- </ATTRIBUTS>
- <DURABILITY name="Unempfindlichkeit" lang="de" />
- <VERSATILITY name="Vielseitigkeit" lang="de" />
+	<ATTRIBUTS lang="de">
+		<ATTRIBUT id="DEX" name="Geschicklichkeit" />
+		<ATTRIBUT id="STR" name="StÃ€rke" />
+		<ATTRIBUT id="TOU" name="ZÃ€higkeit" />
+		<ATTRIBUT id="PER" name="Wahrnehmung" />
+		<ATTRIBUT id="WIL" name="Willenskraft" />
+		<ATTRIBUT id="CHA" name="Charisma" />
+	</ATTRIBUTS>
+	<DURABILITY name="Unempfindlichkeit" lang="de" />
+	<VERSATILITY name="Vielseitigkeit" lang="de" />
+	<VERSATILITY name="Versatility" lang="en" />
+	<KARMARUTUAL name="Karma Ritual" lang="en"/>
+	<DURABILITY name="Durability" lang="en" />
 </NAMES>

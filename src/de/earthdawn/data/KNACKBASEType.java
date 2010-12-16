@@ -15,15 +15,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SHIELD_type complex type.
+ * <p>Java class for KNACKBASE_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SHIELD_type">
+ * &lt;complexType name="KNACKBASE_type">
  *   &lt;complexContent>
- *     &lt;extension base="{http://earthdawn.com/datatypes}ARMOR_type">
- *       &lt;attribute name="shatterthreshold" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *     &lt;extension base="{http://earthdawn.com/datatypes}KNACK_type">
+ *       &lt;attribute name="basename" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -32,40 +32,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SHIELD_type")
-public class SHIELDType
-    extends ARMORType
+@XmlType(name = "KNACKBASE_type", namespace = "http://earthdawn.com/knack")
+public class KNACKBASEType
+    extends KNACKType
 {
 
-    @XmlAttribute
-    protected Integer shatterthreshold;
+    @XmlAttribute(required = true)
+    protected String basename;
 
     /**
-     * Gets the value of the shatterthreshold property.
+     * Gets the value of the basename property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public int getShatterthreshold() {
-        if (shatterthreshold == null) {
-            return  0;
-        } else {
-            return shatterthreshold;
-        }
+    public String getBasename() {
+        return basename;
     }
 
     /**
-     * Sets the value of the shatterthreshold property.
+     * Sets the value of the basename property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setShatterthreshold(Integer value) {
-        this.shatterthreshold = value;
+    public void setBasename(String value) {
+        this.basename = value;
     }
 
 }

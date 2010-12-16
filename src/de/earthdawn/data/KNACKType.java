@@ -8,7 +8,6 @@
 
 package de.earthdawn.data;
 
-import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -17,18 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ITEM_type complex type.
+ * <p>Java class for KNACK_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ITEM_type">
+ * &lt;complexType name="KNACK_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}decimal" />
- *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
- *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
+ *       &lt;attribute name="strain" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -37,24 +35,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ITEM_type")
+@XmlType(name = "KNACK_type")
 @XmlSeeAlso({
-    MAGICITEMType.class,
-    PATTERNITEMType.class,
-    COINSType.class,
-    WEAPONType.class,
-    ARMORType.class
+    KNACKBASEType.class
 })
-public class ITEMType {
+public class KNACKType {
 
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
-    protected BigDecimal weight;
+    protected String strain;
     @XmlAttribute
-    protected YesnoType used;
-    @XmlAttribute
-    protected String location;
+    protected Integer minrank;
 
     /**
      * Gets the value of the name property.
@@ -81,83 +73,55 @@ public class ITEMType {
     }
 
     /**
-     * Gets the value of the weight property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getWeight() {
-        return weight;
-    }
-
-    /**
-     * Sets the value of the weight property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setWeight(BigDecimal value) {
-        this.weight = value;
-    }
-
-    /**
-     * Gets the value of the used property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link YesnoType }
-     *     
-     */
-    public YesnoType getUsed() {
-        if (used == null) {
-            return YesnoType.YES;
-        } else {
-            return used;
-        }
-    }
-
-    /**
-     * Sets the value of the used property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link YesnoType }
-     *     
-     */
-    public void setUsed(YesnoType value) {
-        this.used = value;
-    }
-
-    /**
-     * Gets the value of the location property.
+     * Gets the value of the strain property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLocation() {
-        if (location == null) {
-            return "self";
-        } else {
-            return location;
-        }
+    public String getStrain() {
+        return strain;
     }
 
     /**
-     * Sets the value of the location property.
+     * Sets the value of the strain property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLocation(String value) {
-        this.location = value;
+    public void setStrain(String value) {
+        this.strain = value;
+    }
+
+    /**
+     * Gets the value of the minrank property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getMinrank() {
+        if (minrank == null) {
+            return  0;
+        } else {
+            return minrank;
+        }
+    }
+
+    /**
+     * Sets the value of the minrank property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setMinrank(Integer value) {
+        this.minrank = value;
     }
 
 }

@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TALENT_type complex type.
+ * <p>Java class for DISZIPINABILITY_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TALENT_type">
+ * &lt;complexType name="DISZIPINABILITY_type">
  *   &lt;complexContent>
- *     &lt;extension base="{http://earthdawn.com/datatypes}SKILL_type">
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
- *     &lt;/extension>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -32,10 +32,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TALENT_type")
-public class TALENTType
-    extends SKILLType
-{
+@XmlType(name = "DISZIPINABILITY_type", namespace = "http://earthdawn.com/discipline")
+public class DISZIPINABILITYType {
 
     @XmlAttribute(required = true)
     protected int circle;

@@ -15,17 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for DISCIPLINE_type complex type.
+ * <p>Java class for TALENTABILITY_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="DISCIPLINE_type">
+ * &lt;complexType name="TALENTABILITY_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="order" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
+ *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,31 +34,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DISCIPLINE_type")
-public class DISCIPLINEType {
+@XmlType(name = "TALENTABILITY_type", namespace = "http://earthdawn.com/discipline")
+public class TALENTABILITYType {
 
-    @XmlAttribute(required = true)
-    protected int order;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
     protected int circle;
-
-    /**
-     * Gets the value of the order property.
-     * 
-     */
-    public int getOrder() {
-        return order;
-    }
-
-    /**
-     * Sets the value of the order property.
-     * 
-     */
-    public void setOrder(int value) {
-        this.order = value;
-    }
+    @XmlAttribute
+    protected String limitation;
 
     /**
      * Gets the value of the name property.
@@ -98,6 +82,34 @@ public class DISCIPLINEType {
      */
     public void setCircle(int value) {
         this.circle = value;
+    }
+
+    /**
+     * Gets the value of the limitation property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLimitation() {
+        if (limitation == null) {
+            return "";
+        } else {
+            return limitation;
+        }
+    }
+
+    /**
+     * Sets the value of the limitation property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLimitation(String value) {
+        this.limitation = value;
     }
 
 }

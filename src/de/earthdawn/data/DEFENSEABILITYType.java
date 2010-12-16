@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for CARRYING_type complex type.
+ * <p>Java class for DEFENSEABILITY_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="CARRYING_type">
+ * &lt;complexType name="DEFENSEABILITY_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="lifting" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="carrying" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}defensekind_type" default="physical" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -33,60 +33,56 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CARRYING_type")
-public class CARRYINGType {
+@XmlType(name = "DEFENSEABILITY_type", namespace = "http://earthdawn.com/discipline")
+public class DEFENSEABILITYType {
 
+    @XmlAttribute(required = true)
+    protected int circle;
     @XmlAttribute
-    protected Integer lifting;
-    @XmlAttribute
-    protected Integer carrying;
+    protected DefensekindType kind;
 
     /**
-     * Gets the value of the lifting property.
+     * Gets the value of the circle property.
+     * 
+     */
+    public int getCircle() {
+        return circle;
+    }
+
+    /**
+     * Sets the value of the circle property.
+     * 
+     */
+    public void setCircle(int value) {
+        this.circle = value;
+    }
+
+    /**
+     * Gets the value of the kind property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link DefensekindType }
      *     
      */
-    public Integer getLifting() {
-        return lifting;
+    public DefensekindType getKind() {
+        if (kind == null) {
+            return DefensekindType.PHYSICAL;
+        } else {
+            return kind;
+        }
     }
 
     /**
-     * Sets the value of the lifting property.
+     * Sets the value of the kind property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link DefensekindType }
      *     
      */
-    public void setLifting(Integer value) {
-        this.lifting = value;
-    }
-
-    /**
-     * Gets the value of the carrying property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getCarrying() {
-        return carrying;
-    }
-
-    /**
-     * Sets the value of the carrying property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setCarrying(Integer value) {
-        this.carrying = value;
+    public void setKind(DefensekindType value) {
+        this.kind = value;
     }
 
 }

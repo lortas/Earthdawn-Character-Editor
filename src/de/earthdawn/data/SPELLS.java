@@ -14,22 +14,23 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SPELLS_type complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SPELLS_type">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}SPELL_type" maxOccurs="unbounded"/>
+ *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}SPELLDEF_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
- *       &lt;attribute name="discipline" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -38,15 +39,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SPELLS_type", namespace = "http://earthdawn.com/character", propOrder = {
+@XmlType(name = "", propOrder = {
     "spell"
 })
-public class SPELLSType {
+@XmlRootElement(name = "SPELLS", namespace = "http://earthdawn.com/spell")
+public class SPELLS {
 
-    @XmlElement(name = "SPELL")
-    protected List<SPELLType> spell;
+    @XmlElement(name = "SPELL", namespace = "http://earthdawn.com/spell")
+    protected List<SPELLDEFType> spell;
     @XmlAttribute(required = true)
-    protected String discipline;
+    protected String lang;
 
     /**
      * Gets the value of the spell property.
@@ -66,39 +68,39 @@ public class SPELLSType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SPELLType }
+     * {@link SPELLDEFType }
      * 
      * 
      */
-    public List<SPELLType> getSPELL() {
+    public List<SPELLDEFType> getSPELL() {
         if (spell == null) {
-            spell = new ArrayList<SPELLType>();
+            spell = new ArrayList<SPELLDEFType>();
         }
         return this.spell;
     }
 
     /**
-     * Gets the value of the discipline property.
+     * Gets the value of the lang property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDiscipline() {
-        return discipline;
+    public String getLang() {
+        return lang;
     }
 
     /**
-     * Sets the value of the discipline property.
+     * Sets the value of the lang property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDiscipline(String value) {
-        this.discipline = value;
+    public void setLang(String value) {
+        this.lang = value;
     }
 
 }

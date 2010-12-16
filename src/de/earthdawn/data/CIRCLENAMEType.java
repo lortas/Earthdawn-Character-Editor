@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for CARRYING_type complex type.
+ * <p>Java class for CIRCLENAME_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="CARRYING_type">
+ * &lt;complexType name="CIRCLENAME_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="lifting" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="carrying" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -33,60 +33,52 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CARRYING_type")
-public class CARRYINGType {
+@XmlType(name = "CIRCLENAME_type", namespace = "http://earthdawn.com/discipline")
+public class CIRCLENAMEType {
 
-    @XmlAttribute
-    protected Integer lifting;
-    @XmlAttribute
-    protected Integer carrying;
+    @XmlAttribute(required = true)
+    protected String name;
+    @XmlAttribute(required = true)
+    protected int circle;
 
     /**
-     * Gets the value of the lifting property.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public Integer getLifting() {
-        return lifting;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the value of the lifting property.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setLifting(Integer value) {
-        this.lifting = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
     /**
-     * Gets the value of the carrying property.
+     * Gets the value of the circle property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
      */
-    public Integer getCarrying() {
-        return carrying;
+    public int getCircle() {
+        return circle;
     }
 
     /**
-     * Sets the value of the carrying property.
+     * Sets the value of the circle property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
      */
-    public void setCarrying(Integer value) {
-        this.carrying = value;
+    public void setCircle(int value) {
+        this.circle = value;
     }
 
 }

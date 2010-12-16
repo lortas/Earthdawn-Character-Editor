@@ -5,34 +5,34 @@
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="CIRCLE_type">
+	<xs:complexType name="DISZIPINABILITY_type">
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="TALENT_type">
+	<xs:complexType name="TALENTABILITY_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 		<xs:attribute name="limitation" type="xs:string" default=""/>
 	</xs:complexType>
-	<xs:complexType name="KARMA_type">
+	<xs:complexType name="KARMAABILITY_type">
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 		<xs:attribute name="spend" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="DEFENSE_type">
+	<xs:complexType name="DEFENSEABILITY_type">
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 		<xs:attribute name="kind" type="edt:defensekind_type" default="physical"/>
 	</xs:complexType>
 	<xs:element name="DISCIPLINE">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISZIPLINETALENT" type="TALENT_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="TALENT_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMA" type="KARMA_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="CIRCLENAME_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="DEFENSE_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="CIRCLE_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="RECOVERYTEST" type="CIRCLE_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMASTEP" type="CIRCLE_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="CIRCLENAME_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISZIPLINETALENT" type="TALENTABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="TALENTABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMA" type="KARMAABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="DISZIPINABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="DEFENSEABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="DISZIPINABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="RECOVERYTEST" type="DISZIPINABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMASTEP" type="DISZIPINABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="DISZIPINABILITY_type"/>
 			</xs:choice>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="name" type="xs:string" use="required"/>
