@@ -35,12 +35,12 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="ITEM" type="edt:ITEM_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="COINS" type="edt:COINS_type"/>
-				<xs:element name="KARMARITUAL" type="xs:string"/>
-				<xs:element name="DESCRIPTION" type="xs:string"/>
-				<xs:element name="RACEABILITES" type="xs:string"/>
-				<xs:element name="COMMENT" type="xs:string"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="KARMARITUAL" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="DESCRIPTION" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="RACEABILITES" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="COMMENT" type="xs:string"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="PORTRAIT" type="xs:base64Binary"/>
-				<xs:element name="APPEARANCE" type="edt:APPEARANCE_type"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="APPEARANCE" type="edt:APPEARANCE_type"/>
 			</xs:choice>
 			<xs:attribute name="name" type="xs:string" use="required"/>
     </xs:complexType>

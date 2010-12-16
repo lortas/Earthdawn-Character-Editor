@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DISZIPINABILITY_type", namespace = "http://earthdawn.com/discipline")
+@XmlType(name = "DISZIPINABILITY_type")
 public class DISZIPINABILITYType {
 
     @XmlAttribute(required = true)

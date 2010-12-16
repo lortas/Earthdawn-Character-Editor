@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "KARMAABILITY_type", namespace = "http://earthdawn.com/discipline")
+@XmlType(name = "KARMAABILITY_type")
 public class KARMAABILITYType {
 
     @XmlAttribute(required = true)

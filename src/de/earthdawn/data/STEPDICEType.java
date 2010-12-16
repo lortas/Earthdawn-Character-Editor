@@ -36,10 +36,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "STEPDICE_type")
 @XmlSeeAlso({
-    RANKType.class,
     ATTRIBUTEType.class,
     INITIATIVEType.class,
-    RECOVERYType.class
+    RECOVERYType.class,
+    RANKType.class
 })
 public class STEPDICEType {
 

@@ -5,12 +5,12 @@
 	<OPTIONALTALENT name="Speak Language" circle="1"/>
 	<OPTIONALTALENT name="Spell Fetish" circle="1"/>
 	<OPTIONALTALENT name="Tracking" circle="1"/>
-	<DISZIPLINETALENT name="Create Fetish" circle="1"/>
-	<DISZIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISZIPLINETALENT name="Spellcasting" circle="1"/>
-	<DISZIPLINETALENT name="Spell Fetish" circle="1"/>
-	<DISZIPLINETALENT name="Thread Weaving" circle="1" limitation="Shamanism"/>
-	<DISZIPLINETALENT name="Wilderness Survival" circle="1"/>
+	<DISCIPLINETALENT name="Create Fetish" circle="1"/>
+	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
+	<DISCIPLINETALENT name="Spellcasting" circle="1"/>
+	<DISCIPLINETALENT name="Spell Fetish" circle="1"/>
+	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Shamanism"/>
+	<DISCIPLINETALENT name="Wilderness Survival" circle="1"/>
 	<SPELL name="Air Armor" circle="1"/>
 	<SPELL name="Assuring Touch" circle="1"/>
 	<SPELL name="Bone Dance" circle="1"/>
@@ -34,15 +34,15 @@
 	<OPTIONALTALENT name="Spell Fetish" circle="2"/>
 	<OPTIONALTALENT name="Spell Fetish" circle="2"/>
 	<DEFENSE kind="spell" circle="2"/>
-	<DISZIPLINETALENT name="Astral Sight" circle="2"/>
+	<DISCIPLINETALENT name="Astral Sight" circle="2"/>
 	<SPELL name="Gadfly" circle="2"/>
 	<SPELL name="Gills" circle="2"/>
 	<SPELL name="Hunter's Sense" circle="2"/>
 	<SPELL name="Icy Surface" circle="2"/>
 	<SPELL name="Path Home" circle="2"/>
-	<DISZIPLINETALENT name="Spirit Talk" circle="3"/>
+	<DISCIPLINETALENT name="Spirit Talk" circle="3"/>
 	<KARMA spend="Willpower-only Test" circle="4"/>
-	<DISZIPLINETALENT name="Spirit Hold" circle="4"/>
+	<DISCIPLINETALENT name="Spirit Hold" circle="4"/>
 	<OPTIONALTALENT name="Cold Purify" circle="5"/>
 	<OPTIONALTALENT name="" circle="5"/>
 	<OPTIONALTALENT name="" circle="5"/>
@@ -52,13 +52,13 @@
 	<OPTIONALTALENT name="" circle="5"/>
 	<OPTIONALTALENT name="" circle="5"/>
 	<ABILITY name="Land and Sea" circle="5"/>
-	<DISZIPLINETALENT name="Summon" circle="5" limitation="Nature Spirits"/>
+	<DISCIPLINETALENT name="Summon" circle="5" limitation="Nature Spirits"/>
 	<KARMA spend="Perception-ony Test" circle="6"/>
-	<DISZIPLINETALENT name="Blood Share" circle="6"/>
+	<DISCIPLINETALENT name="Blood Share" circle="6"/>
 	<KARMA spend="Spell Effect Test" circle="7"/>
-	<DISZIPLINETALENT name="Leadership" circle="7"/>
+	<DISCIPLINETALENT name="Leadership" circle="7"/>
 	<DEFENSE kind="spell" circle="8"/>
-	<DISZIPLINETALENT name="Safe Path" circle="8"/>
+	<DISCIPLINETALENT name="Safe Path" circle="8"/>
 	<OPTIONALTALENT name="Armored Fetish" circle="9"/>
 	<OPTIONALTALENT name="Armored Fetish" circle="9"/>
 	<OPTIONALTALENT name="Bestial Toughness" circle="9"/>
@@ -69,17 +69,17 @@
 	<OPTIONALTALENT name="Spirit Dodge" circle="9"/>
 	<ABILITY name="Cloak of Sky and Water" circle="9"/>
 	<KARMA spend="Recovery Test" circle="9"/>
-	<DISZIPLINETALENT name="Bargain with Summoned Creature" circle="9"/>
+	<DISCIPLINETALENT name="Bargain with Summoned Creature" circle="9"/>
 	<DEFENSE kind="spell" circle="10"/>
 	<KARMA spend="Action Test by a spirit or creature under control" circle="10"/>
-	<DISZIPLINETALENT name="Summoning Circle" circle="10"/>
+	<DISCIPLINETALENT name="Summoning Circle" circle="10"/>
 	<DEFENSE kind="physical" circle="11"/>
 	<DEFENSE kind="social" circle="11"/>
 	<KARMA spend="Charisma-only Test" circle="11"/>
-	<DISZIPLINETALENT name="Plant Shelter" circle="11"/>
+	<DISCIPLINETALENT name="Plant Shelter" circle="11"/>
 	<DEFENSE kind="spell" circle="12"/>
 	<RECOVERYTEST circle="12"/>
-	<DISZIPLINETALENT name="Animate Object" circle="12"/>
+	<DISCIPLINETALENT name="Animate Object" circle="12"/>
 	<OPTIONALTALENT name="Bestial Resilience" circle="13"/>
 	<OPTIONALTALENT name="Chameleon" circle="13"/>
 	<OPTIONALTALENT name="Elemental Walk" circle="13"/>
@@ -89,12 +89,12 @@
 	<ABILITY name="Pinnacle of Comprehension" circle="13"/>
 	<DEFENSE kind="social" circle="13"/>
 	<KARMASTEP circle="13"/>
-	<DISZIPLINETALENT name="Wounde Transfer" circle="13"/>
+	<DISCIPLINETALENT name="Wounde Transfer" circle="13"/>
 	<DEFENSE kind="spell" circle="14"/>
 	<RECOVERYTEST circle="14"/>
-	<DISZIPLINETALENT name="Netherwalk" circle="14"/>
+	<DISCIPLINETALENT name="Netherwalk" circle="14"/>
 	<DEFENSE kind="physical" circle="15"/>
 	<DEFENSE kind="social" circle="15"/>
 	<INITIATIVE circle="15"/>
-	<DISZIPLINETALENT name="Multi-Weaving" circle="15"/>
+	<DISCIPLINETALENT name="Multi-Weaving" circle="15"/>
 </DISCIPLINE>

@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="threshold" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="count" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="penalties" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="count" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="penalties" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -68,8 +68,12 @@ public class WOUNDType {
      *     {@link Integer }
      *     
      */
-    public Integer getCount() {
-        return count;
+    public int getCount() {
+        if (count == null) {
+            return  0;
+        } else {
+            return count;
+        }
     }
 
     /**
@@ -92,8 +96,12 @@ public class WOUNDType {
      *     {@link Integer }
      *     
      */
-    public Integer getPenalties() {
-        return penalties;
+    public int getPenalties() {
+        if (penalties == null) {
+            return  0;
+        } else {
+            return penalties;
+        }
     }
 
     /**
