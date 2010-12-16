@@ -7,19 +7,28 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
+
+import de.earthdawn.data.CAPABILITYType;
+import de.earthdawn.data.DISCIPLINEType;
+import de.earthdawn.data.KNACKS;
+import de.earthdawn.data.SPELLS;
 
 /** 
  * Klasse mit Konfigurations-Parametern 
  */
 public class ApplicationProperties {
-	
+
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
     private static final XMLConfiguration GLOBAL_CONFIG = new XMLConfiguration();
 
-    /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
-    private static final XMLConfiguration CAPABILITIES_CONFIG = new XMLConfiguration();
+    private static CAPABILITYType CAPABILITIES = new CAPABILITYType();
+    private static KNACKS KNACKS = new KNACKS();
+    private static SPELLS SPELLS = new SPELLS();
     
     /** Singleton-Instanz dieser Klasse. */
     private static ApplicationProperties theProps = null;
@@ -37,7 +46,7 @@ public class ApplicationProperties {
     private static final XMLConfiguration CHARACTERISTICS = new XMLConfiguration();
 
     /** Disziplinen (Name Label geordnet) */
-    private static final Map<String, XMLConfiguration> DISZIPLINES = new TreeMap<String, XMLConfiguration>();
+    private static final Map<String, DISCIPLINEType> DISCIPLINES = new TreeMap<String, DISCIPLINEType>();
 
     private ApplicationProperties() {
     	init();
@@ -63,8 +72,8 @@ public class ApplicationProperties {
 		return MESSAGES.getString(key);
 	}
 	
-	public XMLConfiguration getDisziplin(String name) {
-		return DISZIPLINES.get(name);
+	public DISCIPLINEType getDisziplin(String name) {
+		return DISCIPLINES.get(name);
 	}
 
 	public XMLConfiguration getNamegivers() {
@@ -75,8 +84,23 @@ public class ApplicationProperties {
 		return CHARACTERISTICS;
 	}
 	
+	public static CAPABILITYType getCapabilities() {
+		return CAPABILITIES;
+	}
+
+	public static KNACKS getKnacks() {
+		return KNACKS;
+	}
+
+	public static SPELLS getSpells() {
+		return SPELLS;
+	}
+
 	private void init() {
 		try {
+			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+			Unmarshaller u = jc.createUnmarshaller();
+
 			// globale konfiguration einlesen
 			GLOBAL_CONFIG.setValidating(false);
 			GLOBAL_CONFIG.load(new File("./config/application.xml"));
@@ -100,25 +124,23 @@ public class ApplicationProperties {
 			CHARACTERISTICS.load(new File("./config/characteristics.xml"));
 			CHARACTERISTICS.setExpressionEngine(new XPathExpressionEngine());
 
-			// capabilities laden
-			CAPABILITIES_CONFIG.setValidating(false);
-			CAPABILITIES_CONFIG.load(new File("./config/capabilities.xml"));
-
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disziplins'
-			File[] files = new File("./config/disziplins").listFiles(new FilenameFilter() {
+			File[] files = new File("./config/disciplines").listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
 					return name != null && name.endsWith(".xml");
 				}
 			});
 			// --- Einlesen der Dateien
 			for(File disConfigFile : files) {
-				XMLConfiguration configuration = new XMLConfiguration();
-				configuration.setValidating(false);
-				configuration.load(disConfigFile);
-				String label = configuration.getString("[@label]");
-				DISZIPLINES.put(label, configuration);
+				DISCIPLINEType dis = (DISCIPLINEType) u.unmarshal(disConfigFile);
+				DISCIPLINES.put(dis.getName(), dis);
 			}
+
+			CAPABILITIES = (CAPABILITYType) u.unmarshal(new File("./config/capabilities.xml"));
+			KNACKS = (KNACKS) u.unmarshal(new File("./config/knacks.xml"));
+			SPELLS = (SPELLS) u.unmarshal(new File("./config/spells.xml"));
+
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...
 			throw new RuntimeException(e);
