@@ -16,23 +16,24 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TALENTS_type complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TALENTS_type">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="DISZIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded"/>
- *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded"/>
+ *         &lt;element name="SKILLKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="TALENTKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
- *       &lt;attribute name="discipline" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -41,71 +42,72 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TALENTS_type", namespace = "http://earthdawn.com/character", propOrder = {
-    "disziplinetalentOrOPTIONALTALENT"
+@XmlType(name = "", propOrder = {
+    "skillknackOrTALENTKNACK"
 })
-public class TALENTSType {
+@XmlRootElement(name = "KNACKS", namespace = "http://earthdawn.com/knack")
+public class KNACKS {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "DISZIPLINETALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class)
+        @XmlElementRef(name = "SKILLKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class),
+        @XmlElementRef(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class)
     })
-    protected List<JAXBElement<TALENTType>> disziplinetalentOrOPTIONALTALENT;
+    protected List<JAXBElement<KNACKBASEType>> skillknackOrTALENTKNACK;
     @XmlAttribute(required = true)
-    protected String discipline;
+    protected String lang;
 
     /**
-     * Gets the value of the disziplinetalentOrOPTIONALTALENT property.
+     * Gets the value of the skillknackOrTALENTKNACK property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the disziplinetalentOrOPTIONALTALENT property.
+     * This is why there is not a <CODE>set</CODE> method for the skillknackOrTALENTKNACK property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDISZIPLINETALENTOrOPTIONALTALENT().add(newItem);
+     *    getSKILLKNACKOrTALENTKNACK().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link TALENTType }{@code >}
-     * {@link JAXBElement }{@code <}{@link TALENTType }{@code >}
+     * {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}
      * 
      * 
      */
-    public List<JAXBElement<TALENTType>> getDISZIPLINETALENTOrOPTIONALTALENT() {
-        if (disziplinetalentOrOPTIONALTALENT == null) {
-            disziplinetalentOrOPTIONALTALENT = new ArrayList<JAXBElement<TALENTType>>();
+    public List<JAXBElement<KNACKBASEType>> getSKILLKNACKOrTALENTKNACK() {
+        if (skillknackOrTALENTKNACK == null) {
+            skillknackOrTALENTKNACK = new ArrayList<JAXBElement<KNACKBASEType>>();
         }
-        return this.disziplinetalentOrOPTIONALTALENT;
+        return this.skillknackOrTALENTKNACK;
     }
 
     /**
-     * Gets the value of the discipline property.
+     * Gets the value of the lang property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDiscipline() {
-        return discipline;
+    public String getLang() {
+        return lang;
     }
 
     /**
-     * Sets the value of the discipline property.
+     * Sets the value of the lang property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDiscipline(String value) {
-        this.discipline = value;
+    public void setLang(String value) {
+        this.lang = value;
     }
 
 }

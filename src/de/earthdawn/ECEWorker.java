@@ -150,7 +150,7 @@ public class ECEWorker {
 			pysicalarmor+=armor.getPhysicalarmor();
 			protectionpenalty+=armor.getPenalty();
 		}
-		protection.setMysticamor(mysticalarmor);
+		protection.setMysticarmor(mysticalarmor);
 		protection.setPenalty(protectionpenalty);
 		protection.setPhysicalarmor(pysicalarmor);
 

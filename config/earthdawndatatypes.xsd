@@ -155,7 +155,15 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="KNACK_type">
+		<xs:attribute name="name"  type="xs:string" use="required"/>
+		<xs:attribute name="strain" type="xs:string" use="required"/>
+		<xs:attribute name="minrank" type="unsigned_int" default="0"/>
+	</xs:complexType>
 	<xs:complexType name="CAPABILITY_type">
+		<xs:sequence>
+			<xs:element name="KNACK" type="KNACK_type" minOccurs="0"/>
+		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="action" type="action_type" default="standard"/>
 		<xs:attribute default="0" name="strain" type="unsigned_intplus"/>
