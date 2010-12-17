@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
+
 import org.apache.commons.configuration.SubnodeConfiguration;
 
 import de.earthdawn.config.ApplicationProperties;
@@ -13,7 +14,6 @@ import de.earthdawn.data.CARRYINGType;
 import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.DEFENSEType;
-import de.earthdawn.data.DefensekindType;
 import de.earthdawn.data.DiceType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.HEALTHType;
@@ -47,7 +47,7 @@ public class ECEWorker {
 			// XXX: Konfigurationsproblem?
 			//return charakter;
 		}
-		NAMEGIVERABILITYType namegiver;
+		NAMEGIVERABILITYType namegiver = null;
 		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers().getNAMEGIVER()) {
 			if( n.getName().equals(race)) {
 				namegiver = n;
@@ -82,9 +82,9 @@ public class ECEWorker {
 		
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
-			case DefensekindType.PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
-			case DefensekindType.SPELL: defense.setSpell(defense.getSpell()+1); break;
-			case DefensekindType.SOCIAL: defense.setSocial(defense.getSocial()+1); break;
+			case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
+			case SPELL: defense.setSpell(defense.getSpell()+1); break;
+			case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
 			}
 		}
 
@@ -143,7 +143,7 @@ public class ECEWorker {
 		int mysticalarmor=naturalArmor.getMysticarmor();
 		int pysicalarmor=naturalArmor.getPhysicalarmor();
 		int protectionpenalty=naturalArmor.getPenalty();
-		List <ARMORType> newarmor;
+		List <ARMORType> newarmor = new ArrayList<ARMORType>();
 		newarmor.add(naturalArmor);
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
 			if( ! armor.getName().equals("natural armor")) {
@@ -160,7 +160,7 @@ public class ECEWorker {
 		protection.getARMOROrSHIELD().addAll(newarmor);
 
 		String abilities = JAXBHelper.getAbilities(charakter);
-		abilities.replaceAll(".", ""); // String leeren um ihn neu zu füllen
+		abilities = abilities.replaceAll(".", ""); // String leeren um ihn neu zu füllen
 		for ( String s : namegiver.getABILITY() ) {
 			abilities.concat(s);
 			abilities.concat(", ");
