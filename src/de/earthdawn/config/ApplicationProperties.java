@@ -13,8 +13,8 @@ import javax.xml.bind.Unmarshaller;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 
-import de.earthdawn.data.CAPABILITYType;
-import de.earthdawn.data.DISCIPLINEType;
+import de.earthdawn.data.CAPABILITIES;
+import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.KNACKS;
 import de.earthdawn.data.NAMEGIVERS;
 import de.earthdawn.data.SPELLS;
@@ -27,7 +27,7 @@ public class ApplicationProperties {
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
     private static final XMLConfiguration GLOBAL_CONFIG = new XMLConfiguration();
 
-    private static CAPABILITYType CAPABILITIES = new CAPABILITYType();
+    private static CAPABILITIES CAPABILITIES = new CAPABILITIES();
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
@@ -45,7 +45,7 @@ public class ApplicationProperties {
     private static final XMLConfiguration CHARACTERISTICS = new XMLConfiguration();
 
     /** Disziplinen (Name Label geordnet) */
-    private static final Map<String, DISCIPLINEType> DISCIPLINES = new TreeMap<String, DISCIPLINEType>();
+    private static final Map<String, DISCIPLINE> DISCIPLINES = new TreeMap<String, DISCIPLINE>();
 
     private ApplicationProperties() {
     	init();
@@ -71,7 +71,7 @@ public class ApplicationProperties {
 		return MESSAGES.getString(key);
 	}
 	
-	public DISCIPLINEType getDisziplin(String name) {
+	public DISCIPLINE getDisziplin(String name) {
 		return DISCIPLINES.get(name);
 	}
 
@@ -83,7 +83,7 @@ public class ApplicationProperties {
 		return CHARACTERISTICS;
 	}
 	
-	public static CAPABILITYType getCapabilities() {
+	public static CAPABILITIES getCapabilities() {
 		return CAPABILITIES;
 	}
 
@@ -99,10 +99,13 @@ public class ApplicationProperties {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 			Unmarshaller u = jc.createUnmarshaller();
+			String filename="";
 
 			// globale konfiguration einlesen
+			filename="./config/application.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			GLOBAL_CONFIG.setValidating(false);
-			GLOBAL_CONFIG.load(new File("./config/application.xml"));
+			GLOBAL_CONFIG.load(new File(filename));
 
 			// anzeigetexte (steuerlemente)
 			String language = GLOBAL_CONFIG.getString("config.language");
@@ -110,12 +113,16 @@ public class ApplicationProperties {
 			MESSAGES = ResourceBundle.getBundle("de.earthdawn.config.messages", new Locale(language, country));
 			
 			// anzeigetexte (charakterattribute).
+			filename="./config/names.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMES.setValidating(false);
-			NAMES.load(new File("./config/names.xml"));
+			NAMES.load(new File(filename));
 			
 			// Konfiguration für die RACES einlesen.
+			filename="./config/characteristics.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			CHARACTERISTICS.setValidating(false);
-			CHARACTERISTICS.load(new File("./config/characteristics.xml"));
+			CHARACTERISTICS.load(new File(filename));
 			CHARACTERISTICS.setExpressionEngine(new XPathExpressionEngine());
 
 			// disziplinen laden
@@ -127,14 +134,24 @@ public class ApplicationProperties {
 			});
 			// --- Einlesen der Dateien
 			for(File disConfigFile : files) {
-				DISCIPLINEType dis = (DISCIPLINEType) u.unmarshal(disConfigFile);
+				System.out.println("Lese Konfigurationsdatei: '" + disConfigFile.getCanonicalPath() + "'");
+				DISCIPLINE dis = (DISCIPLINE) u.unmarshal(disConfigFile);
 				DISCIPLINES.put(dis.getName(), dis);
 			}
 
-			CAPABILITIES = (CAPABILITYType) u.unmarshal(new File("./config/capabilities.xml"));
-			KNACKS = (KNACKS) u.unmarshal(new File("./config/knacks.xml"));
-			SPELLS = (SPELLS) u.unmarshal(new File("./config/spells.xml"));
-			NAMEGIVERS = (NAMEGIVERS) u.unmarshal(new File("./config/namegivers.xml"));
+			filename="./config/capabilities.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			CAPABILITIES = (CAPABILITIES) u.unmarshal(new File(filename));
+			filename="./config/knacks.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			KNACKS = (KNACKS) u.unmarshal(new File(filename));
+			filename="./config/spells.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			SPELLS = (SPELLS) u.unmarshal(new File(filename));
+
+			filename="./config/namegivers.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			NAMEGIVERS = (NAMEGIVERS) u.unmarshal(new File(filename));
 
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...
