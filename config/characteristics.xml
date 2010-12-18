@@ -64,8 +64,9 @@
   <MYSTICARMOR attribute="38" armor="10" />
   <MYSTICARMOR attribute="41" armor="11" />
   <MYSTICARMOR attribute="44" armor="12" />
-  <ATTRIBUTECOST modifier="-1" cost="-1" />
   <ATTRIBUTECOST modifier="-2" cost="-2" />
+  <ATTRIBUTECOST modifier="-1" cost="-1" />
+  <ATTRIBUTECOST modifier="0" cost="0" />
   <ATTRIBUTECOST modifier="1" cost="1" />
   <ATTRIBUTECOST modifier="2" cost="2" />
   <ATTRIBUTECOST modifier="3" cost="3" />

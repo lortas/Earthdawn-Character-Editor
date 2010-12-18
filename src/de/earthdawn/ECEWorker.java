@@ -208,10 +208,10 @@ public class ECEWorker {
 	}
 
 	public List<Integer> bestimmeHealth (int wert) {
-		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
-			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
+		for (Object healthrating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
+			SubnodeConfiguration subnode = (SubnodeConfiguration) healthrating;
 			int value = subnode.getInt("/@value");
-			if (wert== value) {
+			if (wert == value) {
 				List<Integer> health = new ArrayList<Integer>();
 				health.add(subnode.getInt("/@death"));
 				health.add(subnode.getInt("/@unconsciousness"));
@@ -220,8 +220,10 @@ public class ECEWorker {
 				return health;
 			}
 		}
-		// not found
-		return null;
+		List<Integer> health = new ArrayList<Integer>();
+		health.add(0);health.add(0);health.add(0);health.add(0);
+		//TODO: Warnung ausgeben
+		return health;
 	}	
 
 	public int berechneMysticArmor(int value) {
