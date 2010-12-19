@@ -10,10 +10,11 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -34,6 +35,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ATTRIBUTECOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_ATTRIBUTECOST" maxOccurs="unbounded"/>
  *         &lt;element name="HEALTHRATING" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_HEALTHRATING" maxOccurs="unbounded"/>
  *         &lt;element name="STEPDICETABLE" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_STEPDICETABLE" maxOccurs="unbounded"/>
+ *         &lt;element name="TALENTLPCOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_INCREASECOSTCIRCLE" maxOccurs="unbounded"/>
+ *         &lt;element name="SKILLLPCOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_INCREASECOST" maxOccurs="unbounded"/>
+ *         &lt;element name="ATTRIBUTELPCOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_INCREASECOST" maxOccurs="unbounded"/>
  *       &lt;/choice>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -49,15 +53,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "CHARACTERISTICS", namespace = "http://earthdawn.com/characteristics")
 public class CHARACTERISTICS {
 
-    @XmlElements({
-        @XmlElement(name = "DEFENSERAITING", namespace = "http://earthdawn.com/characteristics", type = CHARACTERISTICSDEFENSERAITING.class),
-        @XmlElement(name = "MYSTICARMOR", namespace = "http://earthdawn.com/characteristics", type = CHARACTERISTICSMYSTICARMOR.class),
-        @XmlElement(name = "STEPDICETABLE", namespace = "http://earthdawn.com/characteristics", type = CHARACTERISTICSSTEPDICETABLE.class),
-        @XmlElement(name = "ENCUMBRANCE", namespace = "http://earthdawn.com/characteristics", type = CHARACTERISTICSENCUMBRANCE.class),
-        @XmlElement(name = "HEALTHRATING", namespace = "http://earthdawn.com/characteristics", type = CHARACTERISTICSHEALTHRATING.class),
-        @XmlElement(name = "ATTRIBUTECOST", namespace = "http://earthdawn.com/characteristics", type = CHARACTERISTICSATTRIBUTECOST.class)
+    @XmlElementRefs({
+        @XmlElementRef(name = "ENCUMBRANCE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "ATTRIBUTECOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "MYSTICARMOR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "HEALTHRATING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "SKILLLPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "DEFENSERAITING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "STEPDICETABLE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "ATTRIBUTELPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "TALENTLPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class)
     })
-    protected List<Object> encumbranceOrDEFENSERAITINGOrMYSTICARMOR;
+    protected List<JAXBElement<?>> encumbranceOrDEFENSERAITINGOrMYSTICARMOR;
 
     /**
      * Gets the value of the encumbranceOrDEFENSERAITINGOrMYSTICARMOR property.
@@ -77,18 +84,21 @@ public class CHARACTERISTICS {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CHARACTERISTICSDEFENSERAITING }
-     * {@link CHARACTERISTICSMYSTICARMOR }
-     * {@link CHARACTERISTICSSTEPDICETABLE }
-     * {@link CHARACTERISTICSENCUMBRANCE }
-     * {@link CHARACTERISTICSHEALTHRATING }
-     * {@link CHARACTERISTICSATTRIBUTECOST }
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSATTRIBUTECOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSINCREASECOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSHEALTHRATING }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSINCREASECOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSINCREASECOSTCIRCLE }{@code >}
      * 
      * 
      */
-    public List<Object> getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR() {
+    public List<JAXBElement<?>> getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR() {
         if (encumbranceOrDEFENSERAITINGOrMYSTICARMOR == null) {
-            encumbranceOrDEFENSERAITINGOrMYSTICARMOR = new ArrayList<Object>();
+            encumbranceOrDEFENSERAITINGOrMYSTICARMOR = new ArrayList<JAXBElement<?>>();
         }
         return this.encumbranceOrDEFENSERAITINGOrMYSTICARMOR;
     }
