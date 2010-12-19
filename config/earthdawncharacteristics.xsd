@@ -31,6 +31,17 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_INCREASECOST">
+		<xs:attribute name="increase" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="cost" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_INCREASECOSTCIRCLE">
+		<xs:complexContent>
+			<xs:extension base="CHARACTERISTICS_INCREASECOST">
+				<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
 	<xs:element name="CHARACTERISTICS">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -40,6 +51,9 @@
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTECOST" type="CHARACTERISTICS_ATTRIBUTECOST"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="HEALTHRATING" type="CHARACTERISTICS_HEALTHRATING"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="STEPDICETABLE" type="CHARACTERISTICS_STEPDICETABLE"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="TALENTLPCOST" type="CHARACTERISTICS_INCREASECOSTCIRCLE"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="SKILLLPCOST" type="CHARACTERISTICS_INCREASECOST"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTELPCOST" type="CHARACTERISTICS_INCREASECOST"/>
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>

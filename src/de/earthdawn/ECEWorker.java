@@ -7,28 +7,7 @@ import java.util.List;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.CARRYINGType;
-import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
-import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
-import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
-import de.earthdawn.data.DEATHType;
-import de.earthdawn.data.DEFENSEABILITYType;
-import de.earthdawn.data.DEFENSEType;
-import de.earthdawn.data.DiceType;
-import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.data.HEALTHType;
-import de.earthdawn.data.INITIATIVEType;
-import de.earthdawn.data.KARMAType;
-import de.earthdawn.data.MOVEMENTType;
-import de.earthdawn.data.NAMEGIVERABILITYType;
-import de.earthdawn.data.NAMEVALUEType;
-import de.earthdawn.data.PROTECTIONType;
-import de.earthdawn.data.RECOVERYType;
-import de.earthdawn.data.STEPDICEType;
-import de.earthdawn.data.TALENTType;
-import de.earthdawn.data.WOUNDType;
+import de.earthdawn.data.*;
 
 
 /**
@@ -56,8 +35,9 @@ public class ECEWorker {
 			}
 		}
 
+		
 		// **ATTRIBUTE**
-		int karmaMaxBonus =25; // TODO: = /OPTIONALRULES/ATTRIBUTE/points
+		int karmaMaxBonus =ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
@@ -121,13 +101,18 @@ public class ECEWorker {
 		}
 
 		// **KARMA**
-		TALENTType karmaritual=JAXBHelper.getKarmaritual(charakter);
-		int maxkarma = namegiver.getKarmamodifier() * karmaritual.getRANK().getRank();
 		KARMAType karma=JAXBHelper.getKarma(charakter);
 		karma.setMaxmodificator(karmaMaxBonus);
-		// Die Übriggebliebenen Kaufpunkte erhöhen das maximale Karma
-		maxkarma += karmaMaxBonus;
-		karma.setMax(maxkarma);
+		String KARMARUTUAL = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "KARMARUTUAL", LanguageType.EN);
+		if( KARMARUTUAL == null ) {
+			System.err.println("Karmaritual in names.xml not defined for selected language. Skipping MaxKarma calculation");
+		} else {
+			TALENTType karmaritual=JAXBHelper.getTalentByName(charakter,KARMARUTUAL);
+			int maxkarma = namegiver.getKarmamodifier() * karmaritual.getRANK().getRank();
+			// Die Übriggebliebenen Kaufpunkte erhöhen das maximale Karma
+			maxkarma += karmaMaxBonus;
+			karma.setMax(maxkarma);
+		}
 		
 		// **MOVEMENT**
 		MOVEMENTType movement = JAXBHelper.getMovement(charakter);
@@ -149,12 +134,12 @@ public class ECEWorker {
 		List <ARMORType> newarmor = new ArrayList<ARMORType>();
 		newarmor.add(naturalArmor);
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
-			if( ! armor.getName().equals("natural armor")) {
+			if( ! armor.getName().equals(naturalArmor.getName())) {
 				newarmor.add(armor);
+				mysticalarmor+=armor.getMysticarmor();
+				pysicalarmor+=armor.getPhysicalarmor();
+				protectionpenalty+=armor.getPenalty();
 			}
-			mysticalarmor+=armor.getMysticarmor();
-			pysicalarmor+=armor.getPhysicalarmor();
-			protectionpenalty+=armor.getPenalty();
 		}
 		protection.setMysticarmor(mysticalarmor);
 		protection.setPenalty(protectionpenalty);
@@ -164,12 +149,31 @@ public class ECEWorker {
 
 		String abilities = "";
 		for ( String s : namegiver.getABILITY() ) {
-			abilities.concat(s);
-			abilities.concat(", ");
+			if( ! abilities.isEmpty() ) {
+				abilities +=", ";
+			}
+			abilities +=s;
 		}
 		JAXBHelper.setAbilities(charakter,abilities);
+
+		HashMap<Integer,TALENTSType> allTalents = JAXBHelper.getAllTalents(charakter);
+		for( Integer disciplinenumber : allTalents.keySet() ) {
+			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
+				TALENTType talent = element.getValue();
+				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getRank());
+				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
+				talent.getRANK().setLpcost(lpcostfull-lpcoststart);
+			}
+		}
 		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
 		// Dabei aber sicher stellen, das sie nicht doppelt enthalten sind
+		
+		for( SKILLType skill : JAXBHelper.getSkills(charakter) ) {
+			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
+			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
+			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
+		}
+		
 		return charakter;
 	}
 

@@ -1,22 +1,12 @@
 package de.earthdawn;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
 
-import de.earthdawn.data.APPEARANCEType;
-import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.CARRYINGType;
-import de.earthdawn.data.DEFENSEType;
-import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.data.HEALTHType;
-import de.earthdawn.data.INITIATIVEType;
-import de.earthdawn.data.KARMAType;
-import de.earthdawn.data.MOVEMENTType;
-import de.earthdawn.data.ObjectFactory;
-import de.earthdawn.data.PROTECTIONType;
-import de.earthdawn.data.TALENTSType;
-import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.*;
 
 /**
  * Hilfsklasse zur einfacheren Verarbeitung des JAXB-Baumes
@@ -36,6 +26,8 @@ public class JAXBHelper {
 	public static final String TALENTS = "TALENTS";
 	public static final String KARMA = "KARMA";
 	public static final String PROTECTION = "PROTECTION";
+	public static final String DISCIPLINE = "DISCIPLINE";
+	public static final String SKILL = "SKILL";
 
 	public static APPEARANCEType getAppearance(EDCHARACTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
@@ -108,12 +100,42 @@ public class JAXBHelper {
 		return null;
 	}
 
-	public static TALENTType getKarmaritual(EDCHARACTER charakter) {
+	public static List<SKILLType> getSkills(EDCHARACTER charakter) {
+		List<SKILLType> skills = new ArrayList<SKILLType>();
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (SKILL.equals(element.getName().getLocalPart())) {
+				skills.add((SKILLType)element.getValue());
+			}
+		}
+		return skills;
+	}
+
+	public static HashMap<Integer,TALENTSType> getAllTalents(EDCHARACTER charakter) {
+		// Erstelle zu erst eine Liste von Disziplinen
+		HashMap<String,DISCIPLINEType> alldisciplines = new HashMap<String,DISCIPLINEType>();
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (DISCIPLINE.equals(element.getName().getLocalPart())) {
+				DISCIPLINEType discipline = (DISCIPLINEType)element.getValue();
+				alldisciplines.put(discipline.getName(),discipline);
+			}
+		}
+		// Hole nun alle TalentListen und speichere sie in der Diszipline Reihnfolge in eine HashMap.
+		HashMap<Integer,TALENTSType> alltalents = new HashMap<Integer,TALENTSType>();
+		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (TALENTS.equals(element.getName().getLocalPart())) {
+				TALENTSType talents = (TALENTSType)element.getValue();
+				alltalents.put(alldisciplines.get(talents.getDiscipline()).getOrder(),talents);
+			}
+		}
+		return alltalents;
+	}
+
+	public static TALENTType getTalentByName(EDCHARACTER charakter, String searchTalent) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if (TALENTS.equals(element.getName().getLocalPart())) {
 				for (JAXBElement<TALENTType> talent : ((TALENTSType)element.getValue()).getDISZIPLINETALENTOrOPTIONALTALENT()) {
 					TALENTType t = (TALENTType)talent.getValue();
-					if ( t.getName().equals("Karma Ritual")) { // TODO: String "Karma Ritual" aus names.xml auslesen
+					if ( t.getName().equals(searchTalent)) {
 						return t;
 					}
 				}
@@ -167,5 +189,18 @@ public class JAXBHelper {
 		list.add(new ObjectFactory().createEDCHARACTERRACEABILITES(newValue));
 		
 		return;
+	}
+
+	public static String getNameLang(NAMES names, String name, LanguageType lang) {
+		for( JAXBElement<?> element : names.getATTRIBUTESOrDURABILITYOrVERSATILITY() ) {
+			if( name.equals(element.getName().getLocalPart()) ) {
+				NAMELANGType tmp = (NAMELANGType)element.getValue();
+				if( lang.equals(tmp.getLang()) ) {
+					return tmp.getName();
+				}
+			}
+		}
+		// not found
+		return null;
 	}
 }

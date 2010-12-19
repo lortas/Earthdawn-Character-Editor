@@ -1,16 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<NAMES>
-	<ATTRIBUTS lang="de">
-		<ATTRIBUT id="DEX" name="Geschicklichkeit" />
-		<ATTRIBUT id="STR" name="Stärke" />
-		<ATTRIBUT id="TOU" name="Zähigkeit" />
-		<ATTRIBUT id="PER" name="Wahrnehmung" />
-		<ATTRIBUT id="WIL" name="Willenskraft" />
-		<ATTRIBUT id="CHA" name="Charisma" />
-	</ATTRIBUTS>
-	<DURABILITY name="Unempfindlichkeit" lang="de" />
-	<VERSATILITY name="Vielseitigkeit" lang="de" />
-	<VERSATILITY name="Versatility" lang="en" />
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NAMES xmlns="http://earthdawn.com/names" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/names earthdawnnames.xsd">
+	<ATTRIBUTES lang="de">
+		<ATTRIBUTE attribute="DEX" name="Geschicklichkeit"/>
+		<ATTRIBUTE attribute="STR" name="Stärke"/>
+		<ATTRIBUTE attribute="TOU" name="Zähigkeit"/>
+		<ATTRIBUTE attribute="PER" name="Wahrnehmung"/>
+		<ATTRIBUTE attribute="WIL" name="Willenskraft"/>
+		<ATTRIBUTE attribute="CHA" name="Charisma"/>
+	</ATTRIBUTES>
+	<ATTRIBUTES lang="en">
+		<ATTRIBUTE attribute="DEX" name="Dextarity"/>
+		<ATTRIBUTE attribute="STR" name="Strength"/>
+		<ATTRIBUTE attribute="TOU" name="Toughness"/>
+		<ATTRIBUTE attribute="PER" name="Perception"/>
+		<ATTRIBUTE attribute="WIL" name="Willenpower"/>
+		<ATTRIBUTE attribute="CHA" name="Charisma"/>
+	</ATTRIBUTES>
+	<DURABILITY name="Unempfindlichkeit" lang="de"/>
+	<DURABILITY name="Durability" lang="en"/>
+	<VERSATILITY name="Vielseitigkeit" lang="de"/>
+	<VERSATILITY name="Versatility" lang="en"/>
+	<KARMARUTUAL name="Karma Ritual" lang="de"/>
 	<KARMARUTUAL name="Karma Ritual" lang="en"/>
-	<DURABILITY name="Durability" lang="en" />
 </NAMES>

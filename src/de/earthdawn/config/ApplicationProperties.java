@@ -12,12 +12,7 @@ import javax.xml.bind.Unmarshaller;
 
 import org.apache.commons.configuration.XMLConfiguration;
 
-import de.earthdawn.data.CAPABILITIES;
-import de.earthdawn.data.CHARACTERISTICS;
-import de.earthdawn.data.DISCIPLINE;
-import de.earthdawn.data.KNACKS;
-import de.earthdawn.data.NAMEGIVERS;
-import de.earthdawn.data.SPELLS;
+import de.earthdawn.data.*;
 
 /** 
  * Klasse mit Konfigurations-Parametern 
@@ -31,6 +26,8 @@ public class ApplicationProperties {
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
+    private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
+    private static NAMES NAMES = new NAMES();
     private ECECharacteristics CHARACTERISTICS = null;
     
     /** Singleton-Instanz dieser Klasse. */
@@ -38,9 +35,6 @@ public class ApplicationProperties {
 
     /** Anzeigetexte (Steuerelemente) */
     private ResourceBundle MESSAGES = null;
-
-    /** Anzeigetexte (Charakterattribute). */
-    private static final XMLConfiguration NAMES = new XMLConfiguration();
 
     /** Disziplinen (Name Label geordnet) */
     private static final Map<String, DISCIPLINE> DISCIPLINES = new TreeMap<String, DISCIPLINE>();
@@ -93,6 +87,14 @@ public class ApplicationProperties {
 		return SPELLS;
 	}
 
+	public OPTIONALRULES getOptionalRules() {
+		return OPTIONALRULES;
+	}
+
+	public NAMES getNames() {
+		return NAMES;
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -109,12 +111,6 @@ public class ApplicationProperties {
 			String language = GLOBAL_CONFIG.getString("config.language");
 			String country = GLOBAL_CONFIG.getString("config.country");
 			MESSAGES = ResourceBundle.getBundle("de.earthdawn.config.messages", new Locale(language, country));
-			
-			// anzeigetexte (charakterattribute).
-			filename="./config/names.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			NAMES.setValidating(false);
-			NAMES.load(new File(filename));
 			
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disziplins'
@@ -145,6 +141,12 @@ public class ApplicationProperties {
 			filename="./config/namegivers.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMEGIVERS = (NAMEGIVERS) u.unmarshal(new File(filename));
+			filename="./config/optionalrules.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			OPTIONALRULES = (OPTIONALRULES) u.unmarshal(new File(filename));
+			filename="./config/names.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			NAMES = (NAMES) u.unmarshal(new File(filename));
 
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...

@@ -145,4 +145,77 @@
   <STEPDICETABLE attribute="109" step="38" dice="4d12+2d8" />
   <STEPDICETABLE attribute="112" step="39" dice="4d12+d10+d8" />
   <STEPDICETABLE attribute="115" step="40" dice="4d12+2d10" />
+  <TALENTLPCOST increase="1" cost="100" circle="1"/>
+  <TALENTLPCOST increase="2" cost="200" circle="1"/>
+  <TALENTLPCOST increase="3" cost="300" circle="1"/>
+  <TALENTLPCOST increase="4" cost="500" circle="1"/>
+  <TALENTLPCOST increase="5" cost="800" circle="1"/>
+  <TALENTLPCOST increase="6" cost="1300" circle="1"/>
+  <TALENTLPCOST increase="7" cost="2100" circle="1"/>
+  <TALENTLPCOST increase="8" cost="3400" circle="1"/>
+  <TALENTLPCOST increase="9" cost="5500" circle="1"/>
+  <TALENTLPCOST increase="10" cost="8900" circle="1"/>
+  <TALENTLPCOST increase="11" cost="14400" circle="1"/>
+  <TALENTLPCOST increase="12" cost="23300" circle="1"/>
+  <TALENTLPCOST increase="13" cost="37700" circle="1"/>
+  <TALENTLPCOST increase="14" cost="61000" circle="1"/>
+  <TALENTLPCOST increase="15" cost="98700" circle="1"/>
+  <TALENTLPCOST increase="1" cost="200" circle="5"/>
+  <TALENTLPCOST increase="2" cost="300" circle="5"/>
+  <TALENTLPCOST increase="3" cost="500" circle="5"/>
+  <TALENTLPCOST increase="4" cost="800" circle="5"/>
+  <TALENTLPCOST increase="5" cost="1300" circle="5"/>
+  <TALENTLPCOST increase="6" cost="2100" circle="5"/>
+  <TALENTLPCOST increase="7" cost="3400" circle="5"/>
+  <TALENTLPCOST increase="8" cost="5500" circle="5"/>
+  <TALENTLPCOST increase="9" cost="8900" circle="5"/>
+  <TALENTLPCOST increase="10" cost="14400" circle="5"/>
+  <TALENTLPCOST increase="11" cost="23300" circle="5"/>
+  <TALENTLPCOST increase="12" cost="37700" circle="5"/>
+  <TALENTLPCOST increase="13" cost="61000" circle="5"/>
+  <TALENTLPCOST increase="14" cost="98700" circle="5"/>
+  <TALENTLPCOST increase="15" cost="159700" circle="5"/>
+  <TALENTLPCOST increase="1" cost="300" circle="9"/>
+  <TALENTLPCOST increase="2" cost="500" circle="9"/>
+  <TALENTLPCOST increase="3" cost="800" circle="9"/>
+  <TALENTLPCOST increase="4" cost="1300" circle="9"/>
+  <TALENTLPCOST increase="5" cost="2100" circle="9"/>
+  <TALENTLPCOST increase="6" cost="3400" circle="9"/>
+  <TALENTLPCOST increase="7" cost="5500" circle="9"/>
+  <TALENTLPCOST increase="8" cost="8900" circle="9"/>
+  <TALENTLPCOST increase="9" cost="14400" circle="9"/>
+  <TALENTLPCOST increase="10" cost="23300" circle="9"/>
+  <TALENTLPCOST increase="11" cost="37700" circle="9"/>
+  <TALENTLPCOST increase="12" cost="61000" circle="9"/>
+  <TALENTLPCOST increase="13" cost="98700" circle="9"/>
+  <TALENTLPCOST increase="14" cost="159700" circle="9"/>
+  <TALENTLPCOST increase="15" cost="258400" circle="9"/>
+  <TALENTLPCOST increase="1" cost="500" circle="13"/>
+  <TALENTLPCOST increase="2" cost="800" circle="13"/>
+  <TALENTLPCOST increase="3" cost="1300" circle="13"/>
+  <TALENTLPCOST increase="4" cost="2100" circle="13"/>
+  <TALENTLPCOST increase="5" cost="3400" circle="13"/>
+  <TALENTLPCOST increase="6" cost="5500" circle="13"/>
+  <TALENTLPCOST increase="7" cost="8900" circle="13"/>
+  <TALENTLPCOST increase="8" cost="14400" circle="13"/>
+  <TALENTLPCOST increase="9" cost="23300" circle="13"/>
+  <TALENTLPCOST increase="10" cost="37700" circle="13"/>
+  <TALENTLPCOST increase="11" cost="61000" circle="13"/>
+  <TALENTLPCOST increase="12" cost="98700" circle="13"/>
+  <TALENTLPCOST increase="13" cost="159700" circle="13"/>
+  <TALENTLPCOST increase="14" cost="258400" circle="13"/>
+  <TALENTLPCOST increase="15" cost="418100" circle="13"/>
+  <SKILLLPCOST increase="1" cost="200"/>
+  <SKILLLPCOST increase="2" cost="300"/>
+  <SKILLLPCOST increase="3" cost="500"/>
+  <SKILLLPCOST increase="4" cost="800"/>
+  <SKILLLPCOST increase="5" cost="1300"/>
+  <SKILLLPCOST increase="6" cost="2100"/>
+  <SKILLLPCOST increase="7" cost="3400"/>
+  <SKILLLPCOST increase="8" cost="5500"/>
+  <SKILLLPCOST increase="9" cost="8900"/>
+  <SKILLLPCOST increase="10" cost="14400"/>
+  <ATTRIBUTELPCOST increase="1" cost="800"/> 
+  <ATTRIBUTELPCOST increase="2" cost="1300"/> 
+  <ATTRIBUTELPCOST increase="3" cost="2100"/> 
 </CHARACTERISTICS>
