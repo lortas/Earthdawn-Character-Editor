@@ -1,5 +1,7 @@
 package de.earthdawn;
 
+import java.util.List;
+
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.APPEARANCEType;
@@ -148,5 +150,18 @@ public class JAXBHelper {
 		}
 		// Not found
 		return null;
+	}
+
+	public static void setAbilities(EDCHARACTER charakter, String newvalue) {
+		List<JAXBElement<?>> list = charakter.getATTRIBUTEOrDEFENSEOrHEALTH();
+		for (JAXBElement<?> element : list ) {
+			if (RACEABILITES.equals(element.getName().getLocalPart())) {
+				// TODO: newvalue als neuen Wert im Element setzen
+				return;
+			}
+		}
+		// TODO: Wenn das Element nicht gefunden wird, dann soll es der Liste angehängt werden
+		// list.add();
+		return;
 	}
 }
