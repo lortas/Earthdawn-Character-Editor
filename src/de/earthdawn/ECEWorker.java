@@ -208,18 +208,18 @@ public class ECEWorker {
 	}
 
 	public List<Integer> bestimmeHealth (int wert) {
-		for (Object healthrating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/HEALTHRATING")) {
-			SubnodeConfiguration subnode = (SubnodeConfiguration) healthrating;
-			int value = subnode.getInt("/@value");
-			if (wert == value) {
-				List<Integer> health = new ArrayList<Integer>();
-				health.add(subnode.getInt("/@death"));
-				health.add(subnode.getInt("/@unconsciousness"));
-				health.add(subnode.getInt("/@wound"));
-				health.add(subnode.getInt("/@recovery"));
-				return health;
-			}
+		SubnodeConfiguration subnode = ApplicationProperties.create().getCharacteristics().configurationAt(String.format("/HEALTHRATING[@value='%d']", new Integer(wert)));
+
+		if (subnode != null) {
+			List<Integer> health = new ArrayList<Integer>();
+			health.add(subnode.getInt("/@death"));
+			health.add(subnode.getInt("/@unconsciousness"));
+			health.add(subnode.getInt("/@wound"));
+			health.add(subnode.getInt("/@recovery"));
+
+			return health;
 		}
+		
 		List<Integer> health = new ArrayList<Integer>();
 		health.add(0);health.add(0);health.add(0);health.add(0);
 		//TODO: Warnung ausgeben
