@@ -13,6 +13,7 @@ import de.earthdawn.data.HEALTHType;
 import de.earthdawn.data.INITIATIVEType;
 import de.earthdawn.data.KARMAType;
 import de.earthdawn.data.MOVEMENTType;
+import de.earthdawn.data.ObjectFactory;
 import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
@@ -152,16 +153,19 @@ public class JAXBHelper {
 		return null;
 	}
 
-	public static void setAbilities(EDCHARACTER charakter, String newvalue) {
+	public static void setAbilities(EDCHARACTER charakter, String newValue) {
 		List<JAXBElement<?>> list = charakter.getATTRIBUTEOrDEFENSEOrHEALTH();
 		for (JAXBElement<?> element : list ) {
 			if (RACEABILITES.equals(element.getName().getLocalPart())) {
-				// TODO: newvalue als neuen Wert im Element setzen
+				((JAXBElement<String>)element).setValue(newValue);
+
 				return;
 			}
 		}
-		// TODO: Wenn das Element nicht gefunden wird, dann soll es der Liste angehängt werden
-		// list.add();
+
+		// Wenn das Element nicht gefunden wird, dann soll es der Liste angehängt werden
+		list.add(new ObjectFactory().createEDCHARACTERRACEABILITES(newValue));
+		
 		return;
 	}
 }
