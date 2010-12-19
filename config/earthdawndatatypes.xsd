@@ -102,6 +102,8 @@
 			<xs:enumeration value="d10"/>
 			<xs:enumeration value="d12"/>
 			<xs:enumeration value="2d6"/>
+			<xs:enumeration value="d8+d6"/>
+			<xs:enumeration value="2d8"/>
 			<xs:enumeration value="d10+d8"/>
 			<xs:enumeration value="2d10"/>
 			<xs:enumeration value="d12+d10"/>
@@ -113,6 +115,25 @@
 			<xs:enumeration value="d12+2d10"/>
 			<xs:enumeration value="2d12+d10"/>
 			<xs:enumeration value="3d12"/>
+			<xs:enumeration value="2d12+2d6" />
+			<xs:enumeration value="2d12+d8+d6" />
+			<xs:enumeration value="2d12+2d8" />
+			<xs:enumeration value="2d12+d10+d8" />
+			<xs:enumeration value="2d12+2d10" />
+			<xs:enumeration value="3d12+d10" />
+			<xs:enumeration value="4d12" />
+			<xs:enumeration value="3d12+2d6" />
+			<xs:enumeration value="3d12+d8+d6" />
+			<xs:enumeration value="3d12+2d8" />
+			<xs:enumeration value="3d12+d10+d8" />
+			<xs:enumeration value="3d12+2d10" />
+			<xs:enumeration value="4d12+d10" />
+			<xs:enumeration value="5d12" />
+			<xs:enumeration value="4d12+2d6" />
+			<xs:enumeration value="4d12+d8+d6" />
+			<xs:enumeration value="4d12+2d8" />
+			<xs:enumeration value="4d12+d10+d8" />
+			<xs:enumeration value="4d12+2d10" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="STEPDICE_type">

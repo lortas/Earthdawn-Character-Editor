@@ -23,6 +23,7 @@
                 <jaxb:typesafeEnumMember value="d6-2" name="d6M2"/>
                 <jaxb:typesafeEnumMember value="d6-1" name="d6M1"/>
                 <jaxb:typesafeEnumMember value="2d6"  name="_2d6"/>
+                <jaxb:typesafeEnumMember value="2d8"  name="_2d8"/>
                 <jaxb:typesafeEnumMember value="d10+d8" name="d10Pd8"/>
                 <jaxb:typesafeEnumMember value="2d10" name="_2d10"/>
                 <jaxb:typesafeEnumMember value="d12+d10" name="d23Pd10"/>
@@ -34,6 +35,25 @@
                 <jaxb:typesafeEnumMember value="d12+2d10" name="d12P2d10"/>
                 <jaxb:typesafeEnumMember value="2d12+d10" name="_2d12Pd10"/>
                 <jaxb:typesafeEnumMember value="3d12" name="_3d12"/>
+                <jaxb:typesafeEnumMember value="2d12+2d6" name="_2d12P2d6"/>
+                <jaxb:typesafeEnumMember value="2d12+d8+d6" name="_2d12Pd8Pd6"/>
+                <jaxb:typesafeEnumMember value="2d12+2d8" name="_2d12P2d8"/>
+                <jaxb:typesafeEnumMember value="2d12+d10+d8" name="_2d12Pd10Pd8"/>
+                <jaxb:typesafeEnumMember value="2d12+2d10" name="_2d12P2d10"/>
+                <jaxb:typesafeEnumMember value="3d12+d10" name="_3d12Pd10"/>
+                <jaxb:typesafeEnumMember value="4d12" name="_4d12"/>
+                <jaxb:typesafeEnumMember value="3d12+2d6" name="_3d12P2d6"/>
+                <jaxb:typesafeEnumMember value="3d12+d8+d6" name="_3d12Pd8Pd6"/>
+                <jaxb:typesafeEnumMember value="3d12+2d8" name="_3d12P2d8"/>
+                <jaxb:typesafeEnumMember value="3d12+d10+d8" name="_3d12Pd10Pd8"/>
+                <jaxb:typesafeEnumMember value="3d12+2d10" name="_3d12P2d10"/>
+                <jaxb:typesafeEnumMember value="4d12+d10" name="_4d12Pd10"/>
+                <jaxb:typesafeEnumMember value="5d12" name="_5d12"/>
+                <jaxb:typesafeEnumMember value="4d12+2d6" name="_4d12P2d6"/>
+                <jaxb:typesafeEnumMember value="4d12+d8+d6" name="_4d12Pd8Pd6"/>
+                <jaxb:typesafeEnumMember value="4d12+2d8" name="_4d12P2d8"/>
+                <jaxb:typesafeEnumMember value="4d12+d10+d8" name="_4d12Pd10Pd8"/>
+                <jaxb:typesafeEnumMember value="4d12+2d10" name="_4d12P2d10"/>
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
         <jaxb:bindings node="//xs:simpleType[@name='gender_type']">

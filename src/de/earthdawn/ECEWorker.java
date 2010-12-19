@@ -1,16 +1,18 @@
 package de.earthdawn;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
-
-import org.apache.commons.configuration.SubnodeConfiguration;
 
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.CARRYINGType;
+import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
+import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
+import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
 import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.DEFENSEType;
@@ -64,7 +66,7 @@ public class ECEWorker {
 			attribute.setRacevalue(raceattribute.getValue());
 			int value = attribute.getRacevalue() + attribute.getGenerationvalue() + attribute.getLpincrease();
 			attribute.setCurrentvalue(value);
-			attribute.setCost(berechneAttriubteCost(attribute.getLpincrease()));
+			attribute.setCost(berechneAttriubteCost(attribute.getGenerationvalue()));
 			STEPDICEType stepdice=attribute2StepAndDice(value);
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
@@ -99,21 +101,21 @@ public class ECEWorker {
 
 		// **HEALTH**
 		HEALTHType health = JAXBHelper.getHealth(charakter);
-		List<Integer> newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
+		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
 		for (JAXBElement<?> elem : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
 			if (elem.getName().getLocalPart().equals("DEATH")) {
-				((DEATHType)elem.getValue()).setValue(newhealth.get(0));
-				((DEATHType)elem.getValue()).setBase(newhealth.get(0));
+				((DEATHType)elem.getValue()).setValue(newhealth.getDeath());
+				((DEATHType)elem.getValue()).setBase(newhealth.getDeath());
 				((DEATHType)elem.getValue()).setAdjustment(0);
 			} else if (elem.getName().getLocalPart().equals("UNCONSCIOUSNESS")) {
-				((DEATHType)elem.getValue()).setValue(newhealth.get(1));
-				((DEATHType)elem.getValue()).setBase(newhealth.get(1));
+				((DEATHType)elem.getValue()).setValue(newhealth.getUnconsciousness());
+				((DEATHType)elem.getValue()).setBase(newhealth.getUnconsciousness());
 				((DEATHType)elem.getValue()).setAdjustment(0);
 			} else if (elem.getName().getLocalPart().equals("WOUNDS")) {
-				((WOUNDType)elem.getValue()).setThreshold(newhealth.get(2)+namegiver.getWOUND().getThreshold());
+				((WOUNDType)elem.getValue()).setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
 			} else if (elem.getName().getLocalPart().equals("RECOVERY")) {
-				((RECOVERYType)elem.getValue()).setStep(newhealth.get(3));
-				((RECOVERYType)elem.getValue()).setDice(step2Dice(newhealth.get(3)));
+				((RECOVERYType)elem.getValue()).setStep(newhealth.getRecovery());
+				((RECOVERYType)elem.getValue()).setDice(step2Dice(newhealth.getRecovery()));
 			}
 		}
 
@@ -169,103 +171,65 @@ public class ECEWorker {
 		// Dabei aber sicher stellen, das sie nicht doppelt enthalten sind
 		return charakter;
 	}
-	public int berechneWiederstandskraft(Integer value) {
-		int actualRating=0;
-		for (Object defenserating : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/DEFENSERAITING")) {
-			SubnodeConfiguration subnode = (SubnodeConfiguration) defenserating;
-			int attribute = subnode.getInt("/@attribute");
-			int defense = subnode.getInt("/@defense");
-			if( (value.intValue() <= attribute) && (actualRating<defense) ) {
-				actualRating=defense;
+
+	public int berechneWiederstandskraft(int value) {
+		int defense=0;
+		for (CHARACTERISTICSDEFENSERAITING defenserating : ApplicationProperties.create().getCharacteristics().getDEFENSERAITING() ) {
+			if( (value <= defenserating.getAttribute()) && (defense<defenserating.getDefense()) ) {
+				defense=defenserating.getDefense();
 			}
 		}
-		return actualRating;
-	}	
+		return defense;
+	}
 
-	public int berechneTraglast (Integer value) {
-		if ( value.intValue()< 1) {
+	public int berechneTraglast (int value) {
+		List<Integer> encumbrance = ApplicationProperties.create().getCharacteristics().getENCUMBRANCE();
+		if( value< 1) {
 			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
 			value = 1;
 		}
-		String query = String.format("/ENCUMBRANCE[@attribute='%d']/@carrying", value.intValue());
-		// TODO: Fehlermeldung, wenn "value" größer als es Elemente in der Tabelle ENCUMBRANCE gibt.
-		int carrying = ApplicationProperties.create().getCharacteristics().getInt(query);
-		return carrying;
-	}	
+		if( value > encumbrance.size()) {
+			// TODO Warnung ausgeben, aber weiter machen
+			value = encumbrance.size();
+		}
+		return encumbrance.get(value);
+	}
 
 	public int berechneAttriubteCost(int modifier) {
-		if ( modifier < -1 ) {
+		if ( modifier < -2 ) {
 			// TODO Warnung ausgeben, aber weiter machen
-			modifier = -1;
+			modifier = -2;
 		}
 		if ( modifier > 8 ) {
 			// TODO Warnung ausgeben, aber weiter machen
 			modifier = 8;
 		}
-		String query = String.format("/ATTRIBUTECOST[@modifier='%d']/@cost", modifier);
-		int cost = ApplicationProperties.create().getCharacteristics().getInt(query);
-		return cost;
+		HashMap<Integer,Integer> attributecost = ApplicationProperties.create().getCharacteristics().getATTRIBUTECOST();
+		return attributecost.get(modifier);
 	}
 
-	public List<Integer> bestimmeHealth (int wert) {
-		SubnodeConfiguration subnode = ApplicationProperties.create().getCharacteristics().configurationAt(String.format("/HEALTHRATING[@value='%d']", new Integer(wert)));
-
-		if (subnode != null) {
-			List<Integer> health = new ArrayList<Integer>();
-			health.add(subnode.getInt("/@death"));
-			health.add(subnode.getInt("/@unconsciousness"));
-			health.add(subnode.getInt("/@wound"));
-			health.add(subnode.getInt("/@recovery"));
-
-			return health;
-		}
-		
-		List<Integer> health = new ArrayList<Integer>();
-		health.add(0);health.add(0);health.add(0);health.add(0);
-		//TODO: Warnung ausgeben
-		return health;
-	}	
+	public CHARACTERISTICSHEALTHRATING bestimmeHealth (int value) {
+		HashMap<Integer,CHARACTERISTICSHEALTHRATING> healthrating = ApplicationProperties.create().getCharacteristics().getHEALTHRATING();
+		return healthrating.get(value);
+	}
 
 	public int berechneMysticArmor(int value) {
-		int actualArmor=0;
-		for (Object mysticarmor : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/MYSTICARMOR")) {
-			SubnodeConfiguration subnode = (SubnodeConfiguration) mysticarmor;
-			int attribute = subnode.getInt("/@attribute");
-			int armor = subnode.getInt("/@armor");
-			if( (value <= attribute) && (actualArmor<armor) ) {
-				actualArmor=armor;
-			}
-		}
-		return actualArmor;
-	}	
+		return ApplicationProperties.create().getCharacteristics().getMYSTICARMOR().indexOf(value);
+	}
 
 	public STEPDICEType attribute2StepAndDice(int value) {
-		STEPDICEType tmp = new STEPDICEType();
-		tmp.setStep(0);
-		tmp.setDice(DiceType.D_6);
-		for (Object stepdice : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/STEPDICETABLE")) {
-			SubnodeConfiguration subnode = (SubnodeConfiguration) stepdice;
-			int attribute = subnode.getInt("/@attribute");
-			int step = subnode.getInt("/@step");
-			String dice = subnode.getString("/@dice");
-			if( (value <= attribute) && (tmp.getStep()<step) ) {
-				tmp.setStep(step);
-				tmp.setDice(DiceType.valueOf(dice));
+		while( value >= 0 ) {
+			CHARACTERISTICSSTEPDICETABLE result = ApplicationProperties.create().getCharacteristics().getSTEPDICEbyAttribute(value);
+			if( result != null ) {
+				return result;
 			}
-		}
-		return tmp;
-	}	
-
-	public DiceType step2Dice(int value) {
-		for (Object stepdice : ApplicationProperties.create().getCharacteristics().getList("/CHARACTERISTICS/STEPDICETABLE")) {
-			SubnodeConfiguration subnode = (SubnodeConfiguration) stepdice;
-			int step = subnode.getInt("/@step");
-			String dice = subnode.getString("/@dice");
-			if( value == step ) {
-				return DiceType.valueOf(dice);
-			}
+			value--;
 		}
 		// Not found
 		return null;
-	}	
+	}
+
+	public DiceType step2Dice(int value) {
+		return ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(value).getDice();
+	}
 }

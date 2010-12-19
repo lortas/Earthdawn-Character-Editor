@@ -11,9 +11,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
 import org.apache.commons.configuration.XMLConfiguration;
-import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 
 import de.earthdawn.data.CAPABILITIES;
+import de.earthdawn.data.CHARACTERISTICS;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.KNACKS;
 import de.earthdawn.data.NAMEGIVERS;
@@ -31,6 +31,7 @@ public class ApplicationProperties {
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
+    private ECECharacteristics CHARACTERISTICS = null;
     
     /** Singleton-Instanz dieser Klasse. */
     private static ApplicationProperties theProps = null;
@@ -40,9 +41,6 @@ public class ApplicationProperties {
 
     /** Anzeigetexte (Charakterattribute). */
     private static final XMLConfiguration NAMES = new XMLConfiguration();
-
-    /** Konfiguration für die einzelnen Races. */
-    private static final XMLConfiguration CHARACTERISTICS = new XMLConfiguration();
 
     /** Disziplinen (Name Label geordnet) */
     private static final Map<String, DISCIPLINE> DISCIPLINES = new TreeMap<String, DISCIPLINE>();
@@ -79,7 +77,7 @@ public class ApplicationProperties {
 		return NAMEGIVERS;
 	}
 	
-	public XMLConfiguration getCharacteristics() {
+	public ECECharacteristics getCharacteristics() {
 		return CHARACTERISTICS;
 	}
 	
@@ -118,13 +116,6 @@ public class ApplicationProperties {
 			NAMES.setValidating(false);
 			NAMES.load(new File(filename));
 			
-			// Konfiguration für die RACES einlesen.
-			filename="./config/characteristics.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			CHARACTERISTICS.setValidating(false);
-			CHARACTERISTICS.load(new File(filename));
-			CHARACTERISTICS.setExpressionEngine(new XPathExpressionEngine());
-
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disziplins'
 			File[] files = new File("./config/disciplines").listFiles(new FilenameFilter() {
@@ -139,6 +130,9 @@ public class ApplicationProperties {
 				DISCIPLINES.put(dis.getName(), dis);
 			}
 
+			filename="./config/characteristics.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) u.unmarshal(new File(filename)));
 			filename="./config/capabilities.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			CAPABILITIES = (CAPABILITIES) u.unmarshal(new File(filename));
@@ -148,7 +142,6 @@ public class ApplicationProperties {
 			filename="./config/spells.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			SPELLS = (SPELLS) u.unmarshal(new File(filename));
-
 			filename="./config/namegivers.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMEGIVERS = (NAMEGIVERS) u.unmarshal(new File(filename));

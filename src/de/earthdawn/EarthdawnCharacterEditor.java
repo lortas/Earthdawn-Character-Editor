@@ -32,11 +32,11 @@ public class EarthdawnCharacterEditor {
 				
 				// Ausgabe
 				File outFile = new File(args[1]);
-                System.out.println("Speichere Charakter in " + outFile);
+				System.out.println("Speichere Charakter in " + outFile);
 				Marshaller m = jc.createMarshaller();
 				m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.marshal(ecOut,new FileWriter( outFile));
+				m.marshal(ecOut,new FileWriter(outFile));
 
 				// Ausgabe (PDF)
 				new ECEPdfExporter().export(ecOut, new File(outFile.getParentFile(), outFile.getName() + ".pdf"));				
