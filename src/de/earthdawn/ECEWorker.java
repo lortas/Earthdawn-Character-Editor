@@ -114,8 +114,9 @@ public class ECEWorker {
 			} else if (elem.getName().getLocalPart().equals("WOUNDS")) {
 				((WOUNDType)elem.getValue()).setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
 			} else if (elem.getName().getLocalPart().equals("RECOVERY")) {
-				((RECOVERYType)elem.getValue()).setStep(newhealth.getRecovery());
-				((RECOVERYType)elem.getValue()).setDice(step2Dice(newhealth.getRecovery()));
+				((RECOVERYType)elem.getValue()).setTestsperday(newhealth.getRecovery());
+				((RECOVERYType)elem.getValue()).setStep(JAXBHelper.getAttribute(charakter, "TOU").getStep());
+				((RECOVERYType)elem.getValue()).setDice(JAXBHelper.getAttribute(charakter, "TOU").getDice());
 			}
 		}
 
@@ -161,12 +162,12 @@ public class ECEWorker {
 		protection.getARMOROrSHIELD().clear();
 		protection.getARMOROrSHIELD().addAll(newarmor);
 
-		String abilities = JAXBHelper.getAbilities(charakter);
-		abilities = abilities.replaceAll(".", ""); // String leeren um ihn neu zu füllen
+		String abilities = "";
 		for ( String s : namegiver.getABILITY() ) {
 			abilities.concat(s);
 			abilities.concat(", ");
 		}
+		JAXBHelper.setAbilities(charakter,abilities);
 		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
 		// Dabei aber sicher stellen, das sie nicht doppelt enthalten sind
 		return charakter;
@@ -175,7 +176,8 @@ public class ECEWorker {
 	public int berechneWiederstandskraft(int value) {
 		int defense=0;
 		for (CHARACTERISTICSDEFENSERAITING defenserating : ApplicationProperties.create().getCharacteristics().getDEFENSERAITING() ) {
-			if( (value <= defenserating.getAttribute()) && (defense<defenserating.getDefense()) ) {
+			// System.err.println("berechneWiederstandskraft value "+value+" defense "+defense+" defenserating "+defenserating.getAttribute());
+			if( (value >= defenserating.getAttribute()) && (defense<defenserating.getDefense()) ) {
 				defense=defenserating.getDefense();
 			}
 		}
