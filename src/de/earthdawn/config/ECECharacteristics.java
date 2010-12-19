@@ -148,4 +148,18 @@ public class ECECharacteristics {
 		}
 		return sum;
 	}
+
+	public int getAttributeTotalLP(int lpincrease) {
+		// Summiere alle LegendenPunkte
+		int sum=0;
+		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
+			if( element.getName().getLocalPart().equals("ATTRIBUTELPCOST") ) {
+				CHARACTERISTICSINCREASECOST tmp = ((CHARACTERISTICSINCREASECOST)element.getValue());
+				if( tmp.getIncrease() <= lpincrease ) {
+					sum += tmp.getCost();
+				}
+			}
+		}
+		return sum;
+	}
 }

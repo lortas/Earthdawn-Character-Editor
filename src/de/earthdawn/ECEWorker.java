@@ -21,6 +21,8 @@ public class ECEWorker {
 	 * Verabeiten eines Charakters.
 	 */
 	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
+		int totalCalculatedLPSpend=0;
+
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		String race = JAXBHelper.getAppearance(charakter).getRace();
 
@@ -51,6 +53,7 @@ public class ECEWorker {
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
 			karmaMaxBonus-=attribute.getCost();
+			totalCalculatedLPSpend+=ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease());
 		}
 		if( karmaMaxBonus <0 ) {
 			// TODO: Warnung ausgeben
@@ -163,6 +166,7 @@ public class ECEWorker {
 				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getRank());
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
 				talent.getRANK().setLpcost(lpcostfull-lpcoststart);
+				totalCalculatedLPSpend += talent.getRANK().getLpcost();
 			}
 		}
 		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
@@ -172,8 +176,12 @@ public class ECEWorker {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
 			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
+			totalCalculatedLPSpend += skill.getRANK().getLpcost();
 		}
-		
+
+		// TODO: Spells
+		// TODO: MagicItems
+		System.out.println("Berechnete verbrauchte LPs: "+totalCalculatedLPSpend);
 		return charakter;
 	}
 
