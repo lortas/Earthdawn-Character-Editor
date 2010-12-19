@@ -29,6 +29,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="d10"/>
  *     &lt;enumeration value="d12"/>
  *     &lt;enumeration value="2d6"/>
+ *     &lt;enumeration value="d8+d6"/>
+ *     &lt;enumeration value="2d8"/>
  *     &lt;enumeration value="d10+d8"/>
  *     &lt;enumeration value="2d10"/>
  *     &lt;enumeration value="d12+d10"/>
@@ -40,6 +42,25 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="d12+2d10"/>
  *     &lt;enumeration value="2d12+d10"/>
  *     &lt;enumeration value="3d12"/>
+ *     &lt;enumeration value="2d12+2d6"/>
+ *     &lt;enumeration value="2d12+d8+d6"/>
+ *     &lt;enumeration value="2d12+2d8"/>
+ *     &lt;enumeration value="2d12+d10+d8"/>
+ *     &lt;enumeration value="2d12+2d10"/>
+ *     &lt;enumeration value="3d12+d10"/>
+ *     &lt;enumeration value="4d12"/>
+ *     &lt;enumeration value="3d12+2d6"/>
+ *     &lt;enumeration value="3d12+d8+d6"/>
+ *     &lt;enumeration value="3d12+2d8"/>
+ *     &lt;enumeration value="3d12+d10+d8"/>
+ *     &lt;enumeration value="3d12+2d10"/>
+ *     &lt;enumeration value="4d12+d10"/>
+ *     &lt;enumeration value="5d12"/>
+ *     &lt;enumeration value="4d12+2d6"/>
+ *     &lt;enumeration value="4d12+d8+d6"/>
+ *     &lt;enumeration value="4d12+2d8"/>
+ *     &lt;enumeration value="4d12+d10+d8"/>
+ *     &lt;enumeration value="4d12+2d10"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -65,6 +86,10 @@ public enum DiceType {
     D_12("d12"),
     @XmlEnumValue("2d6")
     _2d6("2d6"),
+    @XmlEnumValue("d8+d6")
+    D_8_D_6("d8+d6"),
+    @XmlEnumValue("2d8")
+    _2d8("2d8"),
     @XmlEnumValue("d10+d8")
     d10Pd8("d10+d8"),
     @XmlEnumValue("2d10")
@@ -86,7 +111,45 @@ public enum DiceType {
     @XmlEnumValue("2d12+d10")
     _2d12Pd10("2d12+d10"),
     @XmlEnumValue("3d12")
-    _3d12("3d12");
+    _3d12("3d12"),
+    @XmlEnumValue("2d12+2d6")
+    _2d12P2d6("2d12+2d6"),
+    @XmlEnumValue("2d12+d8+d6")
+    _2d12Pd8Pd6("2d12+d8+d6"),
+    @XmlEnumValue("2d12+2d8")
+    _2d12P2d8("2d12+2d8"),
+    @XmlEnumValue("2d12+d10+d8")
+    _2d12Pd10Pd8("2d12+d10+d8"),
+    @XmlEnumValue("2d12+2d10")
+    _2d12P2d10("2d12+2d10"),
+    @XmlEnumValue("3d12+d10")
+    _3d12Pd10("3d12+d10"),
+    @XmlEnumValue("4d12")
+    _4d12("4d12"),
+    @XmlEnumValue("3d12+2d6")
+    _3d12P2d6("3d12+2d6"),
+    @XmlEnumValue("3d12+d8+d6")
+    _3d12Pd8Pd6("3d12+d8+d6"),
+    @XmlEnumValue("3d12+2d8")
+    _3d12P2d8("3d12+2d8"),
+    @XmlEnumValue("3d12+d10+d8")
+    _3d12Pd10Pd8("3d12+d10+d8"),
+    @XmlEnumValue("3d12+2d10")
+    _3d12P2d10("3d12+2d10"),
+    @XmlEnumValue("4d12+d10")
+    _4d12Pd10("4d12+d10"),
+    @XmlEnumValue("5d12")
+    _5d12("5d12"),
+    @XmlEnumValue("4d12+2d6")
+    _4d12P2d6("4d12+2d6"),
+    @XmlEnumValue("4d12+d8+d6")
+    _4d12Pd8Pd6("4d12+d8+d6"),
+    @XmlEnumValue("4d12+2d8")
+    _4d12P2d8("4d12+2d8"),
+    @XmlEnumValue("4d12+d10+d8")
+    _4d12Pd10Pd8("4d12+d10+d8"),
+    @XmlEnumValue("4d12+2d10")
+    _4d12P2d10("4d12+2d10");
     private final String value;
 
     DiceType(String v) {

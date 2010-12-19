@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/characteristics" xmlns="http://earthdawn.com/characteristics" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="CHARACTERISTICS_ENCUMBRANCE">
+		<xs:attribute name="attribute" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="carrying" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_DEFENSERAITING">
+		<xs:attribute name="attribute" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="defense" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_MYSTICARMOR">
+		<xs:attribute name="attribute" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="armor" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_ATTRIBUTECOST">
+		<xs:attribute name="modifier" type="xs:int" use="required"/>
+		<xs:attribute name="cost" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_HEALTHRATING">
+		<xs:attribute name="value" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="death" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="unconsciousness" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="wound" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="recovery" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_STEPDICETABLE">
+		<xs:complexContent>
+			<xs:extension base="edt:STEPDICE_type">
+				<xs:attribute name="attribute" type="edt:unsigned_int" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CHARACTERISTICS">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="ENCUMBRANCE" type="CHARACTERISTICS_ENCUMBRANCE"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="DEFENSERAITING" type="CHARACTERISTICS_DEFENSERAITING" />
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="MYSTICARMOR" type="CHARACTERISTICS_MYSTICARMOR"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTECOST" type="CHARACTERISTICS_ATTRIBUTECOST"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="HEALTHRATING" type="CHARACTERISTICS_HEALTHRATING"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="STEPDICETABLE" type="CHARACTERISTICS_STEPDICETABLE"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

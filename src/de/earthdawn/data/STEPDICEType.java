@@ -39,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
     ATTRIBUTEType.class,
     INITIATIVEType.class,
     RECOVERYType.class,
-    RANKType.class
+    RANKType.class,
+    CHARACTERISTICSSTEPDICETABLE.class
 })
 public class STEPDICEType {
 
