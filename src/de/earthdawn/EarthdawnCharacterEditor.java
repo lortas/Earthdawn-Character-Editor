@@ -39,7 +39,7 @@ public class EarthdawnCharacterEditor {
 				m.marshal(ecOut,new FileWriter(outFile));
 
 				// Ausgabe (PDF)
-				new ECEPdfExporter().export(ecOut, new File(outFile.getParentFile(), outFile.getName() + ".pdf"));				
+				new ECEPdfExporter().export(ecOut, new File(outFile.getParentFile(), outFile.getName() + ".pdf"));
 			} else {
 				// Anzeigen des Hauptdialogs.
 				new EDFrame().setVisible(true);
