@@ -21,10 +21,11 @@ public class ECEWorker {
 	 * Verabeiten eines Charakters.
 	 */
 	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
+		CharacterContainer character = new CharacterContainer(charakter);
 		int totalCalculatedLPSpend=0;
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
-		String race = JAXBHelper.getAppearance(charakter).getRace();
+		String race = character.getAppearance().getRace();
 
 		if (race == null) {
 			// XXX: Konfigurationsproblem?
@@ -44,7 +45,7 @@ public class ECEWorker {
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
 
-			ATTRIBUTEType attribute = JAXBHelper.getAttribute(charakter, raceattribute.getName());
+			ATTRIBUTEType attribute = character.getAttributes().get(raceattribute.getName());
 			attribute.setRacevalue(raceattribute.getValue());
 			int value = attribute.getRacevalue() + attribute.getGenerationvalue() + attribute.getLpincrease();
 			attribute.setCurrentvalue(value);
@@ -60,10 +61,10 @@ public class ECEWorker {
 		}
 
 		// **DEFENSE**
-		DEFENSEType defense = JAXBHelper.getDefence(charakter);
-		defense.setPhysical(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue()));
-		defense.setSpell(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "PER").getCurrentvalue()));
-		defense.setSocial(berechneWiederstandskraft(JAXBHelper.getAttribute(charakter, "CHA").getCurrentvalue()));
+		DEFENSEType defense = character.getDefence();
+		defense.setPhysical(berechneWiederstandskraft(character.getAttributes().get("DEX").getCurrentvalue()));
+		defense.setSpell(berechneWiederstandskraft(character.getAttributes().get("PER").getCurrentvalue()));
+		defense.setSocial(berechneWiederstandskraft(character.getAttributes().get("CHA").getCurrentvalue()));
 		
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
@@ -74,7 +75,7 @@ public class ECEWorker {
 		}
 
 		// **INITIATIVE**
-		STEPDICEType initiativeStepdice=attribute2StepAndDice(JAXBHelper.getAttribute(charakter, "DEX").getCurrentvalue());
+		STEPDICEType initiativeStepdice=attribute2StepAndDice(character.getAttributes().get("DEX").getCurrentvalue());
 		INITIATIVEType initiative = JAXBHelper.getInitiative(charakter);
 		// Setze alle Initiative Modifikatoren zurück, da diese im folgenden neu bestimmt werden.
 		initiative.setModification(0);
@@ -84,7 +85,7 @@ public class ECEWorker {
 
 		// **HEALTH**
 		HEALTHType health = JAXBHelper.getHealth(charakter);
-		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(JAXBHelper.getAttribute(charakter, "TOU").getCurrentvalue());
+		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(character.getAttributes().get("TOU").getCurrentvalue());
 		for (JAXBElement<?> elem : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
 			if (elem.getName().getLocalPart().equals("DEATH")) {
 				((DEATHType)elem.getValue()).setValue(newhealth.getDeath());
@@ -98,8 +99,8 @@ public class ECEWorker {
 				((WOUNDType)elem.getValue()).setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
 			} else if (elem.getName().getLocalPart().equals("RECOVERY")) {
 				((RECOVERYType)elem.getValue()).setTestsperday(newhealth.getRecovery());
-				((RECOVERYType)elem.getValue()).setStep(JAXBHelper.getAttribute(charakter, "TOU").getStep());
-				((RECOVERYType)elem.getValue()).setDice(JAXBHelper.getAttribute(charakter, "TOU").getDice());
+				((RECOVERYType)elem.getValue()).setStep(character.getAttributes().get("TOU").getStep());
+				((RECOVERYType)elem.getValue()).setDice(character.getAttributes().get("TOU").getDice());
 			}
 		}
 
@@ -124,12 +125,12 @@ public class ECEWorker {
 
 		// **CARRYING**
 		CARRYINGType carrying = JAXBHelper.getCarrying(charakter);
-		int tmp=berechneTraglast(JAXBHelper.getAttribute(charakter, "STR").getCurrentvalue());
+		int tmp=berechneTraglast(character.getAttributes().get("STR").getCurrentvalue());
 		carrying.setCarrying(tmp);
 		carrying.setLifting(tmp *2);
 
 		ARMORType naturalArmor = namegiver.getARMOR();
-		naturalArmor.setMysticarmor(berechneMysticArmor(JAXBHelper.getAttribute(charakter, "WIL").getCurrentvalue()));
+		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
 		PROTECTIONType protection = JAXBHelper.getProtection(charakter);
 		int mysticalarmor=naturalArmor.getMysticarmor();
 		int pysicalarmor=naturalArmor.getPhysicalarmor();

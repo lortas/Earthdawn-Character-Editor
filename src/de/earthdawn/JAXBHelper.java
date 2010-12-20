@@ -29,26 +29,6 @@ public class JAXBHelper {
 	public static final String DISCIPLINE = "DISCIPLINE";
 	public static final String SKILL = "SKILL";
 
-	public static APPEARANCEType getAppearance(EDCHARACTER charakter) {
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (APPEARANCE.equals(element.getName().getLocalPart())) {
-				return (APPEARANCEType) element.getValue();
-			}
-		}
-		// Not found
-		return null;
-	}
-
-	public static DEFENSEType getDefence(EDCHARACTER charakter) {
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (DEFENSE.equals(element.getName().getLocalPart())) {
-				return (DEFENSEType) element.getValue();
-			}
-		}
-		// Not found
-		return null;
-	}
-
 	public static CARRYINGType getCarrying(EDCHARACTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if (CARRYING.equals(element.getName().getLocalPart())) {
@@ -68,19 +48,6 @@ public class JAXBHelper {
 		return null;
 	}
 
-	public static ATTRIBUTEType getAttribute(EDCHARACTER charakter, String id) {
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (ATTRIBUTE.equals(element.getName().getLocalPart())) {
-
-				ATTRIBUTEType attribute = (ATTRIBUTEType) element.getValue();
-				if (attribute.getName().value().equals(id)) {
-					return attribute;
-				}
-			}
-		}
-		// Not found
-		return null;
-	}
 	public static INITIATIVEType getInitiative(EDCHARACTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if (INITIATIVE.equals(element.getName().getLocalPart())) {
