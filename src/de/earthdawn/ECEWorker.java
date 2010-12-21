@@ -76,7 +76,7 @@ public class ECEWorker {
 
 		// **INITIATIVE**
 		STEPDICEType initiativeStepdice=attribute2StepAndDice(character.getAttributes().get("DEX").getCurrentvalue());
-		INITIATIVEType initiative = JAXBHelper.getInitiative(charakter);
+		INITIATIVEType initiative = character.getInitiative();
 		// Setze alle Initiative Modifikatoren zurück, da diese im folgenden neu bestimmt werden.
 		initiative.setModification(0);
 		initiative.setBase(initiativeStepdice.getStep());
@@ -84,28 +84,23 @@ public class ECEWorker {
 		initiative.setDice(initiativeStepdice.getDice());
 
 		// **HEALTH**
-		HEALTHType health = JAXBHelper.getHealth(charakter);
 		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(character.getAttributes().get("TOU").getCurrentvalue());
-		for (JAXBElement<?> elem : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
-			if (elem.getName().getLocalPart().equals("DEATH")) {
-				((DEATHType)elem.getValue()).setValue(newhealth.getDeath());
-				((DEATHType)elem.getValue()).setBase(newhealth.getDeath());
-				((DEATHType)elem.getValue()).setAdjustment(0);
-			} else if (elem.getName().getLocalPart().equals("UNCONSCIOUSNESS")) {
-				((DEATHType)elem.getValue()).setValue(newhealth.getUnconsciousness());
-				((DEATHType)elem.getValue()).setBase(newhealth.getUnconsciousness());
-				((DEATHType)elem.getValue()).setAdjustment(0);
-			} else if (elem.getName().getLocalPart().equals("WOUNDS")) {
-				((WOUNDType)elem.getValue()).setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
-			} else if (elem.getName().getLocalPart().equals("RECOVERY")) {
-				((RECOVERYType)elem.getValue()).setTestsperday(newhealth.getRecovery());
-				((RECOVERYType)elem.getValue()).setStep(character.getAttributes().get("TOU").getStep());
-				((RECOVERYType)elem.getValue()).setDice(character.getAttributes().get("TOU").getDice());
-			}
-		}
+		DEATHType death=character.getDeath();
+		death.setValue(newhealth.getDeath());
+		death.setBase(newhealth.getDeath());
+		death.setAdjustment(0);
+		DEATHType unconsciousness=character.getUnconsciousness();
+		unconsciousness.setValue(newhealth.getUnconsciousness());
+		unconsciousness.setBase(newhealth.getUnconsciousness());
+		unconsciousness.setAdjustment(0);
+		character.getWound().setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
+		RECOVERYType recovery = character.getRecovery();
+		recovery.setTestsperday(newhealth.getRecovery());
+		recovery.setStep(character.getAttributes().get("TOU").getStep());
+		recovery.setDice(character.getAttributes().get("TOU").getDice());
 
 		// **KARMA**
-		KARMAType karma=JAXBHelper.getKarma(charakter);
+		KARMAType karma=character.getKarma();
 		karma.setMaxmodificator(karmaMaxBonus);
 		String KARMARUTUAL = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "KARMARUTUAL", LanguageType.EN);
 		if( KARMARUTUAL == null ) {
