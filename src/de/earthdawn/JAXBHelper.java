@@ -38,25 +38,7 @@ public class JAXBHelper {
 		// Not found
 		return null;
 	}
-	public static HEALTHType getHealth(EDCHARACTER charakter) {
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (HEALTH.equals(element.getName().getLocalPart())) {
-				return (HEALTHType) element.getValue();
-			}
-		}
-		// Not found
-		return null;
-	}
 
-	public static INITIATIVEType getInitiative(EDCHARACTER charakter) {
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (INITIATIVE.equals(element.getName().getLocalPart())) {
-				return (INITIATIVEType) element.getValue();
-			}
-		}
-		// Not found
-		return null;
-	}
 	public static MOVEMENTType getMovement(EDCHARACTER charakter) {
 		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if (MOVEMENT.equals(element.getName().getLocalPart())) {
@@ -106,16 +88,6 @@ public class JAXBHelper {
 						return t;
 					}
 				}
-			}
-		}
-		// Not found
-		return null;
-	}
-
-	public static KARMAType getKarma(EDCHARACTER charakter) {
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (KARMA.equals(element.getName().getLocalPart())) {
-				return (KARMAType) element.getValue();
 			}
 		}
 		// Not found
