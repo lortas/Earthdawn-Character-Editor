@@ -1,6 +1,8 @@
 package de.earthdawn;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.xml.bind.JAXBElement;
 
@@ -135,6 +137,104 @@ public class CharacterContainer {
 		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if (element.getName().getLocalPart().equals("KARMA")) {
 				return (KARMAType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	public MOVEMENTType getMovement() {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("MOVEMENT")) {
+				return (MOVEMENTType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	public CARRYINGType getCarrying() {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("CARRYING")) {
+				return (CARRYINGType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	public PROTECTIONType getProtection() {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("PROTECTION")) {
+				return (PROTECTIONType) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	public String getAbilities() {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("RACEABILITES")) {
+				return (String) element.getValue();
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	public HashMap<Integer,DISCIPLINEType> getAllDiciplinesByOrder() {
+		HashMap<Integer,DISCIPLINEType> alldisciplines = new HashMap<Integer,DISCIPLINEType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("DISCIPLINE")) {
+				DISCIPLINEType discipline = (DISCIPLINEType)element.getValue();
+				alldisciplines.put(discipline.getOrder(),discipline);
+			}
+		}
+		return alldisciplines;
+	}
+
+	public HashMap<String,DISCIPLINEType> getAllDiciplinesByName() {
+		HashMap<String,DISCIPLINEType> alldisciplines = new HashMap<String,DISCIPLINEType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("DISCIPLINE")) {
+				DISCIPLINEType discipline = (DISCIPLINEType)element.getValue();
+				alldisciplines.put(discipline.getName(),discipline);
+			}
+		}
+		return alldisciplines;
+	}
+
+	public List<TALENTSType> getAllTalents() {
+		List<TALENTSType> alltalents = new ArrayList<TALENTSType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("TALENTS")) {
+				alltalents.add((TALENTSType)element.getValue());
+			}
+		}
+		return alltalents;
+	}
+
+	public HashMap<Integer,TALENTSType> getAllTalentsByDisziplinOrder() {
+		// Erstelle zu erst eine Liste von Disziplinen
+		HashMap<String,DISCIPLINEType> alldisciplines = getAllDiciplinesByName();
+		// Hole nun alle TalentListen und speichere sie in der Diszipline Reihnfolge in eine HashMap.
+		HashMap<Integer,TALENTSType> alltalents = new HashMap<Integer,TALENTSType>();
+		for (TALENTSType talents : getAllTalents() ) {
+			alltalents.put(alldisciplines.get(talents.getDiscipline()).getOrder(),talents);
+		}
+		return alltalents;
+	}
+
+	public TALENTType getTalentByName(String searchTalent) {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("TALENTS")) {
+				for (JAXBElement<TALENTType> talent : ((TALENTSType)element.getValue()).getDISZIPLINETALENTOrOPTIONALTALENT()) {
+					TALENTType t = (TALENTType)talent.getValue();
+					if ( t.getName().equals(searchTalent)) {
+						return t;
+					}
+				}
 			}
 		}
 		// Not found

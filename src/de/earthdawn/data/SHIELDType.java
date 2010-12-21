@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}ARMOR_type">
  *       &lt;attribute name="shatterthreshold" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="deflectionbonus" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,6 +40,8 @@ public class SHIELDType
 
     @XmlAttribute
     protected Integer shatterthreshold;
+    @XmlAttribute
+    protected String deflectionbonus;
 
     /**
      * Gets the value of the shatterthreshold property.
@@ -66,6 +69,34 @@ public class SHIELDType
      */
     public void setShatterthreshold(Integer value) {
         this.shatterthreshold = value;
+    }
+
+    /**
+     * Gets the value of the deflectionbonus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDeflectionbonus() {
+        if (deflectionbonus == null) {
+            return "";
+        } else {
+            return deflectionbonus;
+        }
+    }
+
+    /**
+     * Sets the value of the deflectionbonus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDeflectionbonus(String value) {
+        this.deflectionbonus = value;
     }
 
 }

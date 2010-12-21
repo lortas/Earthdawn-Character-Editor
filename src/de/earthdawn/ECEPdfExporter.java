@@ -4,13 +4,26 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.TreeSet;
+
+import javax.xml.bind.JAXBElement;
 
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
+import de.earthdawn.data.ARMORType;
+import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.MOVEMENTType;
+import de.earthdawn.data.PROTECTIONType;
+import de.earthdawn.data.SHIELDType;
+import de.earthdawn.data.TALENTSType;
+import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.YesnoType;
 
 public class ECEPdfExporter {
 
@@ -31,11 +44,11 @@ public class ECEPdfExporter {
 		acroFields.setField( "Race" , character.getAppearance().getRace() );
 		acroFields.setField( "Age" , String.valueOf(character.getAppearance().getAge()) );
 		acroFields.setField( "Eyes" , character.getAppearance().getEyes() );
-		acroFields.setField( "Gender" , character.getAppearance().getGender().toString() );
+		acroFields.setField( "Gender" , character.getAppearance().getGender().value() );
 		acroFields.setField( "Hair" , character.getAppearance().getHair() );
 		acroFields.setField( "Height" , String.valueOf(character.getAppearance().getHeight()) );
 		acroFields.setField( "Skin" , character.getAppearance().getSkin() );
-		acroFields.setField( "Weight.0.0" , String.valueOf(character.getAppearance().getWeight()) ); // TODO: Falsches Feld
+		acroFields.setField( "CharacterWeight" , String.valueOf(character.getAppearance().getWeight()) );
 		acroFields.setField( "AttributeBase.0", String.valueOf(character.getAttributes().get("DEX").getCurrentvalue()-character.getAttributes().get("DEX").getLpincrease()) );
 		acroFields.setField( "AttributeBase.1", String.valueOf(character.getAttributes().get("STR").getCurrentvalue()-character.getAttributes().get("STR").getLpincrease()) );
 		acroFields.setField( "AttributeBase.2", String.valueOf(character.getAttributes().get("TOU").getCurrentvalue()-character.getAttributes().get("TOU").getLpincrease()) );
@@ -83,22 +96,116 @@ public class ECEPdfExporter {
 		acroFields.setField( "WoundThreshold" , String.valueOf(character.getWound().getThreshold()) );
 		acroFields.setField( "KarmaCurrent" , String.valueOf(character.getKarma().getCurrent()) );
 		acroFields.setField( "KarmaMax" , String.valueOf(character.getKarma().getMax()) );
-		acroFields.setField( "MovementRate" ,  "" );
-		acroFields.setField( "Armor" , "" );
-		acroFields.setField( "CarryingCapacity" ,  "" );
-		acroFields.setField( "CharacterWeight" ,  "" );
-		acroFields.setField( "Circle" ,  "" );
+		MOVEMENTType movement = character.getMovement();
+		if( movement.getFlight()>0 ) {
+			acroFields.setField( "MovementRate" , movement.getGround() +"/"+ movement.getFlight() );
+		} else {
+			acroFields.setField( "MovementRate" , String.valueOf(movement.getGround()) );
+		}
+		acroFields.setField( "CarryingCapacity" , String.valueOf(character.getCarrying().getCarrying()) );
+		PROTECTIONType protection = character.getProtection();
+		acroFields.setField( "Mystic Armor" , String.valueOf(protection.getMysticarmor()) );
+		acroFields.setField( "Physical Armor" , String.valueOf(protection.getPhysicalarmor()) );
+		int armor_max=0;
+		int shield_max=0;
+		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
+			if( ! armor.getUsed().equals(YesnoType.YES) ) { continue; }
+			if( armor.getClass().getSimpleName().equals("ARMORType") ) {
+				if( armor.getPhysicalarmor()>armor_max ) {
+					armor_max=armor.getPhysicalarmor();
+					acroFields.setField( "Armor" , armor.getName() );
+				}
+			} else if( armor.getClass().getSimpleName().equals("SHIELDType") ) {
+				if( armor.getPhysicalarmor()>shield_max ) {
+					shield_max=armor.getPhysicalarmor();
+					acroFields.setField( "Shield" , armor.getName() );
+					acroFields.setField( "ShieldDeflectionBonus" , ((SHIELDType)armor).getDeflectionbonus() );
+				}
+			} else {
+				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
+			}
+		}
+		acroFields.setField( "RacialAbilities.0" , character.getAbilities() );
+		HashMap<Integer,DISCIPLINEType> diciplines = character.getAllDiciplinesByOrder();
+		String disciplinecircle = null;
+		String disciplinename = null;
+		Set<Integer> disciplineOrder = diciplines.keySet();
+		disciplineOrder = new TreeSet<Integer>(disciplineOrder);
+		int numberOfFristDiszipline=0;
+		for( int order : disciplineOrder ) {
+			if( disciplinename == null ) {
+				disciplinename = "";
+				disciplinecircle = "";
+				numberOfFristDiszipline=order;
+			} else {
+				disciplinename += " / ";
+				disciplinecircle += " / ";
+			}
+			disciplinename += diciplines.get(order).getName();
+			disciplinecircle += String.valueOf(diciplines.get(order).getCircle());
+		}
+		acroFields.setField( "Discipline" , disciplinename );
+		acroFields.setField( "Circle" , disciplinecircle );
+		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
+		TALENTSType talents = allTalents.get(numberOfFristDiszipline);
+		if( talents != null ) {
+			int counterDisciplinetalent_novice=0;
+			int counterDisciplinetalent_journayman=9;
+			int counterDisciplinetalent_warden=13;
+			int counterDisciplinetalent_master=17;
+			int counterOthertalent_novice=20;
+			int counterOthertalent_journayman=23;
+			int counterOthertalent_warden=25;
+			int counterOthertalent_master=27;
+			for( JAXBElement<TALENTType> element : talents.getDISZIPLINETALENTOrOPTIONALTALENT() ) {
+				TALENTType talent = element.getValue();
+				int counter = 66;
+				if( element.getName().getLocalPart().equals("DISZIPLINETALENT") ) {
+					if( talent.getCircle()>12 ) {
+						counter = counterDisciplinetalent_master++;
+					} else if( talent.getCircle()>8 ) {
+						counter = counterDisciplinetalent_warden++;
+					} else if( talent.getCircle()>4 ) {
+						counter = counterDisciplinetalent_journayman++;
+					} else {
+						counter = counterDisciplinetalent_novice++;
+					}
+				} else if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
+					if( talent.getCircle()>12 ) {
+						counter = counterOthertalent_master++;
+					} else if( talent.getCircle()>8 ) {
+						counter = counterOthertalent_warden++;
+					} else if( talent.getCircle()>4 ) {
+						counter = counterOthertalent_journayman++;
+					} else {
+						counter = counterOthertalent_novice++;
+					}
+				} else {
+					System.err.println( "Unbekannte Talentstyp: "+element.getName().getLocalPart() );
+				}
+				acroFields.setField( "Talent."+counter , talent.getName() );
+				acroFields.setField( "Action."+counter , talent.getAction().value() );
+				acroFields.setField( "ActionDice."+counter , talent.getRANK().getDice().value() );
+				acroFields.setField( "Attribute."+counter , talent.getAttribute().value() );
+				acroFields.setField( "Step."+counter , String.valueOf(talent.getRANK().getStep()) );
+				acroFields.setField( "Rank."+counter , String.valueOf(talent.getRANK().getRank()) );
+				acroFields.setField( "Strain."+counter , String.valueOf(talent.getStrain()) );
+				if( counter > 20) {
+					if( talent.getKarma().equals(YesnoType.YES)) {
+						acroFields.setField( "KarmaRequired."+(counter-20) , "1" ); //TODO: Richtigen zu setzender Wert ermitteln
+					} else {
+						acroFields.setField( "KarmaRequired."+(counter-20) , "" );
+					}
+				}
+			}
+		}
+		
 		acroFields.setField( "CopperPieces" ,  "" );
 		acroFields.setField( "CurrentDamage" ,  "" );
 		acroFields.setField( "CurrentLegendPoints" ,  "" );
-		acroFields.setField( "Discipline" ,  "" );
 		acroFields.setField( "GoldPieces" ,  "" );
-		acroFields.setField( "Mystic Armor" ,  "" );
-		acroFields.setField( "Physical Armor" ,  "" );
 		acroFields.setField( "Renown" ,  "" );
 		acroFields.setField( "Reputation" ,  "" );
-		acroFields.setField( "Shield" ,  "" );
-		acroFields.setField( "ShieldDeflectionBonus" ,  "" );
 		acroFields.setField( "SilverPieces" ,  "" );
 		acroFields.setField( "TotalLegendPoints" ,  "" );
 
