@@ -287,6 +287,7 @@
 		<xs:complexContent>
 			<xs:extension base="ARMOR_type">
 				<xs:attribute name="shatterthreshold" type="unsigned_int" default="0"/>
+				<xs:attribute name="deflectionbonus" type="xs:string" default=""/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <EDCHARACTER  name="Esphira Atasy" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
-	<APPEARANCE race="Windling" skin="dunkel" hair="schwarz,lang" eyes="" weight="83" height="23" age="34" gender="female"/>
+	<APPEARANCE race="Windling" skin="hell" hair="blond, dreadlocks" eyes="" weight="83" height="23" age="34" gender="female"/>
 	<ATTRIBUTE cost="3" currentvalue="14" generationvalue="3" racevalue="11" name="DEX" dice="d10" step="6"/>
 	<ATTRIBUTE cost="3" currentvalue="7" generationvalue="3" racevalue="4" name="STR" dice="d6" step="4"/>
 	<ATTRIBUTE cost="5" currentvalue="12" generationvalue="4" racevalue="8" name="TOU" dice="d8" step="5"/>
@@ -23,8 +23,11 @@
 		<edt:LEGENDPOINTS when="" type="0" legendpoints="0" comment="charakter generation"/>
 	</EXPERIENCE>
 	<DISCIPLINE circle="1" name="Schaman" order="1"/>
+	<DISCIPLINE circle="5" name="Warrior" order="2"/>
 	<PROTECTION penalty="0" mysticarmor="2" physicalarmor="0">
-		<edt:ARMOR mysticarmor="2" location="self" used="yes" weight="0" name="natural Armor"/>
+		<edt:ARMOR mysticarmor="4" location="self" used="yes" weight="0" name="Panzer" physicalarmor="5"/>
+		<edt:SHIELD name="PSchild" weight="0" physicalarmor="2" used="yes" deflectionbonus="+1/+2"/>
+		<edt:SHIELD name="PS" weight="0" physicalarmor="6" used="no" deflectionbonus="+4/+2"/>
 	</PROTECTION>
 	<TALENTS discipline="Schaman">
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Create Fetisch">

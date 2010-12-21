@@ -106,7 +106,7 @@ public class ECEWorker {
 		if( KARMARUTUAL == null ) {
 			System.err.println("Karmaritual in names.xml not defined for selected language. Skipping MaxKarma calculation");
 		} else {
-			TALENTType karmaritual=JAXBHelper.getTalentByName(charakter,KARMARUTUAL);
+			TALENTType karmaritual=character.getTalentByName(KARMARUTUAL);
 			int maxkarma = namegiver.getKarmamodifier() * karmaritual.getRANK().getRank();
 			// Die Übriggebliebenen Kaufpunkte erhöhen das maximale Karma
 			maxkarma += karmaMaxBonus;
@@ -114,19 +114,19 @@ public class ECEWorker {
 		}
 		
 		// **MOVEMENT**
-		MOVEMENTType movement = JAXBHelper.getMovement(charakter);
+		MOVEMENTType movement = character.getMovement();
 		movement.setFlight(namegiver.getMovementFlight());
 		movement.setGround(namegiver.getMovementGround());
 
 		// **CARRYING**
-		CARRYINGType carrying = JAXBHelper.getCarrying(charakter);
+		CARRYINGType carrying = character.getCarrying();
 		int tmp=berechneTraglast(character.getAttributes().get("STR").getCurrentvalue());
 		carrying.setCarrying(tmp);
 		carrying.setLifting(tmp *2);
 
 		ARMORType naturalArmor = namegiver.getARMOR();
 		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
-		PROTECTIONType protection = JAXBHelper.getProtection(charakter);
+		PROTECTIONType protection = character.getProtection();
 		int mysticalarmor=naturalArmor.getMysticarmor();
 		int pysicalarmor=naturalArmor.getPhysicalarmor();
 		int protectionpenalty=naturalArmor.getPenalty();
@@ -135,9 +135,11 @@ public class ECEWorker {
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
 			if( ! armor.getName().equals(naturalArmor.getName())) {
 				newarmor.add(armor);
-				mysticalarmor+=armor.getMysticarmor();
-				pysicalarmor+=armor.getPhysicalarmor();
-				protectionpenalty+=armor.getPenalty();
+				if( armor.getUsed().equals(YesnoType.YES) ) {
+					mysticalarmor+=armor.getMysticarmor();
+					pysicalarmor+=armor.getPhysicalarmor();
+					protectionpenalty+=armor.getPenalty();
+				}
 			}
 		}
 		protection.setMysticarmor(mysticalarmor);
@@ -155,7 +157,7 @@ public class ECEWorker {
 		}
 		JAXBHelper.setAbilities(charakter,abilities);
 
-		HashMap<Integer,TALENTSType> allTalents = JAXBHelper.getAllTalents(charakter);
+		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
 				TALENTType talent = element.getValue();
