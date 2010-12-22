@@ -8,7 +8,7 @@
 	<SKILL name="Animal Handling" attribute="WIL" default="yes" action="standard" strain="0"/>
 	<SKILL name="Animal Training" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Arcane Mutterings" attribute="CHA" default="no" action="standard" strain="1"/>
-	<SKILL name="Artisan" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Artisan" limitation="Wood Carving" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Artist" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Avoid Blow" attribute="DEX" default="yes" action="free" strain="1"/>
 	<SKILL name="Battle Bellow" attribute="CHA" default="no" action="simple" strain="2"/>
@@ -65,6 +65,14 @@
 	<SKILL name="Picking Pockets" attribute="DEX" default="no" action="standard" strain="0"/>
 	<SKILL name="Pilot Boat" attribute="PER" default="no" action="sustained" strain="0"/>
 	<SKILL name="Read/Write Language" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Dwarf" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Sperethiel" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Human" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Obsidiman" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Or'zet" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Troll" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="T'skrang" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Read/Write Language" limitation="Windling" attribute="PER" default="no" action="standard" strain="0"/>
 	<SKILL name="Read/Write Magic" attribute="PER" default="no" action="standard" strain="0"/>
 	<SKILL name="Read River" attribute="PER" default="no" action="sustained" strain="0"/>
 	<SKILL name="Research" attribute="PER" default="yes" action="sustained" strain="0"/>
@@ -81,6 +89,14 @@
 	<SKILL name="Silent Walk" attribute="DEX" default="no" action="standard" strain="0"/>
 	<SKILL name="Slough Blame" attribute="CHA" default="yes" action="standard" strain="2"/>
 	<SKILL name="Speak Language" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Dwarf" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Sperethiel" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Human" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Obsidiman" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Or'zet" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Troll" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="T'skrang" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Speak Language" limitation="Windling" attribute="PER" default="no" action="standard" strain="0"/>
 	<SKILL name="Sprint" attribute="na" default="no" action="simple" strain="3"/>
 	<SKILL name="Streetwise" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Sure Mount" attribute="STR" default="no" action="free" strain="0"/>

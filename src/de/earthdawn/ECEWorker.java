@@ -180,7 +180,7 @@ public class ECEWorker {
 			}
 		}
 		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
-		// Dabei aber sicher stellen, das sie nicht doppelt enthalten sind
+		// Dabei aber sicherstellen, das sie nicht doppelt enthalten sind
 		
 		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
