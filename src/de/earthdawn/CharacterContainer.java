@@ -240,4 +240,14 @@ public class CharacterContainer {
 		// Not found
 		return null;
 	}
+
+	public List<SKILLType> getSkills() {
+		List<SKILLType> skills = new ArrayList<SKILLType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("SKILL")) {
+				skills.add((SKILLType)element.getValue());
+			}
+		}
+		return skills;
+	}
 }

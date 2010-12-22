@@ -47,7 +47,8 @@
 	<SKILL name="Hunting" attribute="DEX" default="no" action="sustained" strain="0"/>
 	<SKILL name="Hypnotize" attribute="CHA" default="no" action="sustained" strain="1"/>
 	<SKILL name="Impress" attribute="CHA" default="no" action="sustained" strain="1"/>
-	<SKILL name="Knowledge" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Knowledge" limitation="Botany" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Knowledge" limitation="Geography Barsaive" attribute="PER" default="no" action="standard" strain="0"/>
 	<SKILL name="Lip Reading" attribute="CHA" default="no" action="standard" strain="2"/>
 	<SKILL name="Lock Picking" attribute="DEX" default="no" action="sustained" strain="0"/>
 	<SKILL name="Maneuver" attribute="DEX" default="no" action="standard" strain="0"/>
@@ -129,6 +130,7 @@
 	<TALENT name="Cold Purify" attribute="WIL" action="sustained" karma="no" strain="0"/>
 	<TALENT name="Conceal Object" attribute="DEX" action="standard" karma="no" strain="1"/>
 	<TALENT name="Conversation" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Create Fetisch" attribute="PER" action="standard" karma="no" strain="0"/>
 	<TALENT name="Creature Analysis" attribute="PER" action="standard" karma="no" strain="1"/>
 	<TALENT name="Crushing Blow" attribute="STR" action="free" karma="yes" strain="1"/>
 	<TALENT name="Dead Fall" attribute="WIL" action="simple" karma="no" strain="1"/>
@@ -221,6 +223,7 @@
 	<TALENT name="Silent Walk" attribute="DEX" action="simple" karma="no" strain="0"/>
 	<TALENT name="Slough Blame" attribute="CHA" action="standard" karma="yes" strain="1"/>
 	<TALENT name="Speak Language" attribute="PER" action="standard" karma="no" strain="-1"/>
+	<TALENT name="Spell Fetish" attribute="PER" action="standard" karma="no" strain="0"/>
 	<TALENT name="Spell Matrix" attribute="na" action="na" karma="no" strain="0"/>
 	<TALENT name="Spellcasting" attribute="PER" action="standard" karma="no" strain="0"/>
 	<TALENT name="Spirit Dodge" attribute="PER" action="standard" karma="no" strain="1"/>
