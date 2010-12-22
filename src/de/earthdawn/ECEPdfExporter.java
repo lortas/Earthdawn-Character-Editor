@@ -214,7 +214,7 @@ public class ECEPdfExporter {
 		if( skills != null ) {
 			int counter = 0;
 			for( SKILLType skill : skills ) {
-				acroFields.setField( "Skill."+counter, skill.getName() );
+				acroFields.setField( "Skill."+counter, skill.getName()+" "+skill.getLimitation());
 				acroFields.setField( "SkillActionDice."+counter, skill.getRANK().getDice().value() );
 				acroFields.setField( "SkillAttribute."+counter, skill.getAttribute().value() );
 				acroFields.setField( "SkillStep."+counter, String.valueOf(skill.getRANK().getStep()) );
@@ -230,13 +230,13 @@ public class ECEPdfExporter {
 			}
 		}
 
-		acroFields.setField( "CopperPieces",  "" );
+		acroFields.setField( "TotalLegendPoints",  "" );
 		acroFields.setField( "CurrentLegendPoints",  "" );
-		acroFields.setField( "GoldPieces",  "" );
 		acroFields.setField( "Renown",  "" );
 		acroFields.setField( "Reputation",  "" );
+		acroFields.setField( "CopperPieces",  "" );
+		acroFields.setField( "GoldPieces",  "" );
 		acroFields.setField( "SilverPieces",  "" );
-		acroFields.setField( "TotalLegendPoints",  "" );
 
 		stamper.close();
 	}

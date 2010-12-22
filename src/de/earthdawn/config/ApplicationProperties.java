@@ -75,7 +75,7 @@ public class ApplicationProperties {
 		return CHARACTERISTICS;
 	}
 	
-	public static CAPABILITIES getCapabilities() {
+	public CAPABILITIES getCapabilities() {
 		return CAPABILITIES;
 	}
 
