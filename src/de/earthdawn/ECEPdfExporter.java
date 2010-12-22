@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -15,12 +16,15 @@ import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ARMORType;
+import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.MOVEMENTType;
 import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.SHIELDType;
+import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
@@ -41,71 +45,73 @@ public class ECEPdfExporter {
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		acroFields.setField( "Name", character.getName());
-		acroFields.setField( "Race" , character.getAppearance().getRace() );
-		acroFields.setField( "Age" , String.valueOf(character.getAppearance().getAge()) );
-		acroFields.setField( "Eyes" , character.getAppearance().getEyes() );
-		acroFields.setField( "Gender" , character.getAppearance().getGender().value() );
-		acroFields.setField( "Hair" , character.getAppearance().getHair() );
-		acroFields.setField( "Height" , String.valueOf(character.getAppearance().getHeight()) );
-		acroFields.setField( "Skin" , character.getAppearance().getSkin() );
+		acroFields.setField( "Race", character.getAppearance().getRace() );
+		acroFields.setField( "Age", String.valueOf(character.getAppearance().getAge()) );
+		acroFields.setField( "Eyes", character.getAppearance().getEyes() );
+		acroFields.setField( "Gender", character.getAppearance().getGender().value() );
+		acroFields.setField( "Hair", character.getAppearance().getHair() );
+		acroFields.setField( "Height", String.valueOf(character.getAppearance().getHeight()) );
+		acroFields.setField( "Skin", character.getAppearance().getSkin() );
 		acroFields.setField( "CharacterWeight" , String.valueOf(character.getAppearance().getWeight()) );
-		acroFields.setField( "AttributeBase.0", String.valueOf(character.getAttributes().get("DEX").getCurrentvalue()-character.getAttributes().get("DEX").getLpincrease()) );
-		acroFields.setField( "AttributeBase.1", String.valueOf(character.getAttributes().get("STR").getCurrentvalue()-character.getAttributes().get("STR").getLpincrease()) );
-		acroFields.setField( "AttributeBase.2", String.valueOf(character.getAttributes().get("TOU").getCurrentvalue()-character.getAttributes().get("TOU").getLpincrease()) );
-		acroFields.setField( "AttributeBase.3", String.valueOf(character.getAttributes().get("PER").getCurrentvalue()-character.getAttributes().get("PER").getLpincrease()) );
-		acroFields.setField( "AttributeBase.4", String.valueOf(character.getAttributes().get("WIL").getCurrentvalue()-character.getAttributes().get("WIL").getLpincrease()) );
-		acroFields.setField( "AttributeBase.5", String.valueOf(character.getAttributes().get("CHA").getCurrentvalue()-character.getAttributes().get("CHA").getLpincrease()) );
-		acroFields.setField( "LPIncrease.0", String.valueOf(character.getAttributes().get("DEX").getLpincrease()) );
-		acroFields.setField( "LPIncrease.1", String.valueOf(character.getAttributes().get("STR").getLpincrease()) );
-		acroFields.setField( "LPIncrease.2", String.valueOf(character.getAttributes().get("TOU").getLpincrease()) );
-		acroFields.setField( "LPIncrease.3", String.valueOf(character.getAttributes().get("PER").getLpincrease()) );
-		acroFields.setField( "LPIncrease.4", String.valueOf(character.getAttributes().get("WIL").getLpincrease()) );
-		acroFields.setField( "LPIncrease.5", String.valueOf(character.getAttributes().get("CHA").getLpincrease()) );
-		acroFields.setField( "AttributeCurrent.0", String.valueOf(character.getAttributes().get("DEX").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.1", String.valueOf(character.getAttributes().get("STR").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.2", String.valueOf(character.getAttributes().get("TOU").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.3", String.valueOf(character.getAttributes().get("PER").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.4", String.valueOf(character.getAttributes().get("WIL").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.5", String.valueOf(character.getAttributes().get("CHA").getCurrentvalue()) );
-		acroFields.setField( "AttributeStep.0", String.valueOf(character.getAttributes().get("DEX").getStep()) );
-		acroFields.setField( "AttributeStep.1", String.valueOf(character.getAttributes().get("STR").getStep()) );
-		acroFields.setField( "AttributeStep.2", String.valueOf(character.getAttributes().get("TOU").getStep()) );
-		acroFields.setField( "AttributeStep.3", String.valueOf(character.getAttributes().get("PER").getStep()) );
-		acroFields.setField( "AttributeStep.4", String.valueOf(character.getAttributes().get("WIL").getStep()) );
-		acroFields.setField( "AttributeStep.5", String.valueOf(character.getAttributes().get("CHA").getStep()) );
-		acroFields.setField( "AttributeDice.0", character.getAttributes().get("DEX").getDice().value() );
-		acroFields.setField( "AttributeDice.1", character.getAttributes().get("STR").getDice().value() );
-		acroFields.setField( "AttributeDice.2", character.getAttributes().get("TOU").getDice().value() );
-		acroFields.setField( "AttributeDice.3", character.getAttributes().get("PER").getDice().value() );
-		acroFields.setField( "AttributeDice.4", character.getAttributes().get("WIL").getDice().value() );
-		acroFields.setField( "AttributeDice.5", character.getAttributes().get("CHA").getDice().value() );
-		acroFields.setField( "DefensePhysical" , String.valueOf(character.getDefence().getPhysical()) );
-		acroFields.setField( "DefenseSocial" , String.valueOf(character.getDefence().getSocial()) );
-		acroFields.setField( "DefenseSpell" , String.valueOf(character.getDefence().getSpell()) );
-		acroFields.setField( "InitiativeDice" , character.getInitiative().getDice().value() );
-		acroFields.setField( "InitiativeStep" , String.valueOf(character.getInitiative().getStep()) );
-		acroFields.setField( "DeathAdjustment" , String.valueOf(character.getDeath().getAdjustment()) );
-		acroFields.setField( "DeathBase" , String.valueOf(character.getDeath().getBase()) );
-		acroFields.setField( "DeathValue" , String.valueOf(character.getDeath().getValue()) );
-		acroFields.setField( "UnconsciousnessAdjustment" , String.valueOf(character.getUnconsciousness().getAdjustment()) );
-		acroFields.setField( "UnconsciousnessBase" , String.valueOf(character.getUnconsciousness().getBase()) );
-		acroFields.setField( "UnconsciousnessValue" , String.valueOf(character.getUnconsciousness().getValue()) );
-		acroFields.setField( "Recovery Step" , String.valueOf(character.getRecovery().getStep()) );
-		acroFields.setField( "RecoveryDice" , character.getRecovery().getDice().value() );
-		acroFields.setField( "RecoveryTestsPerDay" ,  String.valueOf(character.getRecovery().getTestsperday()) );
-		acroFields.setField( "WoundThreshold" , String.valueOf(character.getWound().getThreshold()) );
-		acroFields.setField( "KarmaCurrent" , String.valueOf(character.getKarma().getCurrent()) );
-		acroFields.setField( "KarmaMax" , String.valueOf(character.getKarma().getMax()) );
+		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get("DEX").getCurrentvalue()-attributes.get("DEX").getLpincrease()) );
+		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get("STR").getCurrentvalue()-attributes.get("STR").getLpincrease()) );
+		acroFields.setField( "AttributeBase.2", String.valueOf(attributes.get("TOU").getCurrentvalue()-attributes.get("TOU").getLpincrease()) );
+		acroFields.setField( "AttributeBase.3", String.valueOf(attributes.get("PER").getCurrentvalue()-attributes.get("PER").getLpincrease()) );
+		acroFields.setField( "AttributeBase.4", String.valueOf(attributes.get("WIL").getCurrentvalue()-attributes.get("WIL").getLpincrease()) );
+		acroFields.setField( "AttributeBase.5", String.valueOf(attributes.get("CHA").getCurrentvalue()-attributes.get("CHA").getLpincrease()) );
+		acroFields.setField( "LPIncrease.0", String.valueOf(attributes.get("DEX").getLpincrease()) );
+		acroFields.setField( "LPIncrease.1", String.valueOf(attributes.get("STR").getLpincrease()) );
+		acroFields.setField( "LPIncrease.2", String.valueOf(attributes.get("TOU").getLpincrease()) );
+		acroFields.setField( "LPIncrease.3", String.valueOf(attributes.get("PER").getLpincrease()) );
+		acroFields.setField( "LPIncrease.4", String.valueOf(attributes.get("WIL").getLpincrease()) );
+		acroFields.setField( "LPIncrease.5", String.valueOf(attributes.get("CHA").getLpincrease()) );
+		acroFields.setField( "AttributeCurrent.0", String.valueOf(attributes.get("DEX").getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.1", String.valueOf(attributes.get("STR").getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.2", String.valueOf(attributes.get("TOU").getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.3", String.valueOf(attributes.get("PER").getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.4", String.valueOf(attributes.get("WIL").getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.5", String.valueOf(attributes.get("CHA").getCurrentvalue()) );
+		acroFields.setField( "AttributeStep.0", String.valueOf(attributes.get("DEX").getStep()) );
+		acroFields.setField( "AttributeStep.1", String.valueOf(attributes.get("STR").getStep()) );
+		acroFields.setField( "AttributeStep.2", String.valueOf(attributes.get("TOU").getStep()) );
+		acroFields.setField( "AttributeStep.3", String.valueOf(attributes.get("PER").getStep()) );
+		acroFields.setField( "AttributeStep.4", String.valueOf(attributes.get("WIL").getStep()) );
+		acroFields.setField( "AttributeStep.5", String.valueOf(attributes.get("CHA").getStep()) );
+		acroFields.setField( "AttributeDice.0", attributes.get("DEX").getDice().value() );
+		acroFields.setField( "AttributeDice.1", attributes.get("STR").getDice().value() );
+		acroFields.setField( "AttributeDice.2", attributes.get("TOU").getDice().value() );
+		acroFields.setField( "AttributeDice.3", attributes.get("PER").getDice().value() );
+		acroFields.setField( "AttributeDice.4", attributes.get("WIL").getDice().value() );
+		acroFields.setField( "AttributeDice.5", attributes.get("CHA").getDice().value() );
+		acroFields.setField( "DefensePhysical", String.valueOf(character.getDefence().getPhysical()) );
+		acroFields.setField( "DefenseSocial", String.valueOf(character.getDefence().getSocial()) );
+		acroFields.setField( "DefenseSpell", String.valueOf(character.getDefence().getSpell()) );
+		acroFields.setField( "InitiativeDice", character.getInitiative().getDice().value() );
+		acroFields.setField( "InitiativeStep", String.valueOf(character.getInitiative().getStep()) );
+		acroFields.setField( "DeathAdjustment", String.valueOf(character.getDeath().getAdjustment()) );
+		acroFields.setField( "DeathBase", String.valueOf(character.getDeath().getBase()) );
+		acroFields.setField( "DeathValue", String.valueOf(character.getDeath().getValue()) );
+		acroFields.setField( "UnconsciousnessAdjustment", String.valueOf(character.getUnconsciousness().getAdjustment()) );
+		acroFields.setField( "UnconsciousnessBase", String.valueOf(character.getUnconsciousness().getBase()) );
+		acroFields.setField( "UnconsciousnessValue", String.valueOf(character.getUnconsciousness().getValue()) );
+		acroFields.setField( "Recovery Step", String.valueOf(character.getRecovery().getStep()) );
+		acroFields.setField( "RecoveryDice", character.getRecovery().getDice().value() );
+		acroFields.setField( "RecoveryTestsPerDay",  String.valueOf(character.getRecovery().getTestsperday()) );
+		acroFields.setField( "WoundThreshold", String.valueOf(character.getWound().getThreshold()) );
+		acroFields.setField( "CurrentDamage",  "" );
+		acroFields.setField( "KarmaCurrent", String.valueOf(character.getKarma().getCurrent()) );
+		acroFields.setField( "KarmaMax", String.valueOf(character.getKarma().getMax()) );
 		MOVEMENTType movement = character.getMovement();
 		if( movement.getFlight()>0 ) {
-			acroFields.setField( "MovementRate" , movement.getGround() +"/"+ movement.getFlight() );
+			acroFields.setField( "MovementRate", movement.getGround() +"/"+ movement.getFlight() );
 		} else {
-			acroFields.setField( "MovementRate" , String.valueOf(movement.getGround()) );
+			acroFields.setField( "MovementRate", String.valueOf(movement.getGround()) );
 		}
-		acroFields.setField( "CarryingCapacity" , String.valueOf(character.getCarrying().getCarrying()) );
+		acroFields.setField( "CarryingCapacity", String.valueOf(character.getCarrying().getCarrying()) );
 		PROTECTIONType protection = character.getProtection();
-		acroFields.setField( "Mystic Armor" , String.valueOf(protection.getMysticarmor()) );
-		acroFields.setField( "Physical Armor" , String.valueOf(protection.getPhysicalarmor()) );
+		acroFields.setField( "Mystic Armor", String.valueOf(protection.getMysticarmor()) );
+		acroFields.setField( "Physical Armor", String.valueOf(protection.getPhysicalarmor()) );
 		int armor_max=0;
 		int shield_max=0;
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
@@ -118,14 +124,14 @@ public class ECEPdfExporter {
 			} else if( armor.getClass().getSimpleName().equals("SHIELDType") ) {
 				if( armor.getPhysicalarmor()>shield_max ) {
 					shield_max=armor.getPhysicalarmor();
-					acroFields.setField( "Shield" , armor.getName() );
-					acroFields.setField( "ShieldDeflectionBonus" , ((SHIELDType)armor).getDeflectionbonus() );
+					acroFields.setField( "Shield", armor.getName() );
+					acroFields.setField( "ShieldDeflectionBonus", ((SHIELDType)armor).getDeflectionbonus() );
 				}
 			} else {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
 			}
 		}
-		acroFields.setField( "RacialAbilities.0" , character.getAbilities() );
+		acroFields.setField( "RacialAbilities.0", character.getAbilities() );
 		HashMap<Integer,DISCIPLINEType> diciplines = character.getAllDiciplinesByOrder();
 		String disciplinecircle = null;
 		String disciplinename = null;
@@ -144,8 +150,8 @@ public class ECEPdfExporter {
 			disciplinename += diciplines.get(order).getName();
 			disciplinecircle += String.valueOf(diciplines.get(order).getCircle());
 		}
-		acroFields.setField( "Discipline" , disciplinename );
-		acroFields.setField( "Circle" , disciplinecircle );
+		acroFields.setField( "Discipline", disciplinename );
+		acroFields.setField( "Circle", disciplinecircle );
 		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
 		TALENTSType talents = allTalents.get(numberOfFristDiszipline);
 		if( talents != null ) {
@@ -183,31 +189,54 @@ public class ECEPdfExporter {
 				} else {
 					System.err.println( "Unbekannte Talentstyp: "+element.getName().getLocalPart() );
 				}
-				acroFields.setField( "Talent."+counter , talent.getName() );
-				acroFields.setField( "Action."+counter , talent.getAction().value() );
-				acroFields.setField( "ActionDice."+counter , talent.getRANK().getDice().value() );
-				acroFields.setField( "Attribute."+counter , talent.getAttribute().value() );
-				acroFields.setField( "Step."+counter , String.valueOf(talent.getRANK().getStep()) );
-				acroFields.setField( "Rank."+counter , String.valueOf(talent.getRANK().getRank()) );
-				acroFields.setField( "Strain."+counter , String.valueOf(talent.getStrain()) );
+				acroFields.setField( "Talent."+counter, talent.getName() );
+				acroFields.setField( "ActionDice."+counter, talent.getRANK().getDice().value() );
+				acroFields.setField( "Attribute."+counter, talent.getAttribute().value() );
+				acroFields.setField( "Step."+counter, String.valueOf(talent.getRANK().getStep()) );
+				acroFields.setField( "Rank."+counter, String.valueOf(talent.getRANK().getRank()) );
+				acroFields.setField( "Strain."+counter, String.valueOf(talent.getStrain()) );
+				switch( talent.getAction() ) {
+				case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
+				case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;
+				case SUSTAINED : acroFields.setField( "Action."+counter, "sstnd" ); break;
+				default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
+				}
 				if( counter > 20) {
 					if( talent.getKarma().equals(YesnoType.YES)) {
-						acroFields.setField( "KarmaRequired."+(counter-20) , "1" ); //TODO: Richtigen zu setzender Wert ermitteln
+						acroFields.setField( "KarmaRequired."+(counter-20), "Yes" );
 					} else {
-						acroFields.setField( "KarmaRequired."+(counter-20) , "" );
+						acroFields.setField( "KarmaRequired."+(counter-20), "" );
 					}
 				}
 			}
 		}
-		
-		acroFields.setField( "CopperPieces" ,  "" );
-		acroFields.setField( "CurrentDamage" ,  "" );
-		acroFields.setField( "CurrentLegendPoints" ,  "" );
-		acroFields.setField( "GoldPieces" ,  "" );
-		acroFields.setField( "Renown" ,  "" );
-		acroFields.setField( "Reputation" ,  "" );
-		acroFields.setField( "SilverPieces" ,  "" );
-		acroFields.setField( "TotalLegendPoints" ,  "" );
+		List<SKILLType> skills = character.getSkills();
+		if( skills != null ) {
+			int counter = 0;
+			for( SKILLType skill : skills ) {
+				acroFields.setField( "Skill."+counter, skill.getName() );
+				acroFields.setField( "SkillActionDice."+counter, skill.getRANK().getDice().value() );
+				acroFields.setField( "SkillAttribute."+counter, skill.getAttribute().value() );
+				acroFields.setField( "SkillStep."+counter, String.valueOf(skill.getRANK().getStep()) );
+				acroFields.setField( "SkillRank."+counter, String.valueOf(skill.getRANK().getRank()) );
+				acroFields.setField( "SkillStrain."+counter, String.valueOf(skill.getStrain()) );
+				switch( skill.getAction() ) {
+				case STANDARD  : acroFields.setField( "SkillAction."+counter, "std" ); break;
+				case SIMPLE    : acroFields.setField( "SkillAction."+counter, "smpl" ); break;
+				case SUSTAINED : acroFields.setField( "SkillAction."+counter, "sstnd" ); break;
+				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
+				}
+				counter++;
+			}
+		}
+
+		acroFields.setField( "CopperPieces",  "" );
+		acroFields.setField( "CurrentLegendPoints",  "" );
+		acroFields.setField( "GoldPieces",  "" );
+		acroFields.setField( "Renown",  "" );
+		acroFields.setField( "Reputation",  "" );
+		acroFields.setField( "SilverPieces",  "" );
+		acroFields.setField( "TotalLegendPoints",  "" );
 
 		stamper.close();
 	}

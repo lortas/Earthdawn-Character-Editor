@@ -29,16 +29,6 @@ public class JAXBHelper {
 	public static final String DISCIPLINE = "DISCIPLINE";
 	public static final String SKILL = "SKILL";
 
-	public static List<SKILLType> getSkills(EDCHARACTER charakter) {
-		List<SKILLType> skills = new ArrayList<SKILLType>();
-		for (JAXBElement<?> element : charakter.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (SKILL.equals(element.getName().getLocalPart())) {
-				skills.add((SKILLType)element.getValue());
-			}
-		}
-		return skills;
-	}
-
 	public static void setAbilities(EDCHARACTER charakter, String newValue) {
 		List<JAXBElement<?>> list = charakter.getATTRIBUTEOrDEFENSEOrHEALTH();
 		for (JAXBElement<?> element : list ) {

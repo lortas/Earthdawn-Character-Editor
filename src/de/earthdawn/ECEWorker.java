@@ -7,6 +7,7 @@ import java.util.List;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.*;
 
 
@@ -157,6 +158,7 @@ public class ECEWorker {
 		}
 		JAXBHelper.setAbilities(charakter,abilities);
 
+		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
@@ -165,16 +167,36 @@ public class ECEWorker {
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
 				talent.getRANK().setLpcost(lpcostfull-lpcoststart);
 				totalCalculatedLPSpend += talent.getRANK().getLpcost();
+				CAPABILITYType replacment = capabilities.getTalent(talent.getName(),talent.getLimitation());
+				if( replacment == null ) {
+					System.err.println("Talent not found in list : "+talent.getName()+" ## "+talent.getLimitation());
+				} else {
+					talent.setAction(replacment.getAction());
+					talent.setAttribute(replacment.getAttribute());
+					talent.setBonus(replacment.getBonus());
+					talent.setKarma(replacment.getKarma());
+					talent.setStrain(replacment.getStrain());
+				}
 			}
 		}
 		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
 		// Dabei aber sicher stellen, das sie nicht doppelt enthalten sind
 		
-		for( SKILLType skill : JAXBHelper.getSkills(charakter) ) {
+		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
 			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
 			totalCalculatedLPSpend += skill.getRANK().getLpcost();
+			CAPABILITYType replacment = capabilities.getSkill(skill.getName(),skill.getLimitation());
+			if( replacment == null ) {
+				System.err.println("Skill not found in list : "+skill.getName()+" ## "+skill.getLimitation());
+			} else {
+				skill.setAction(replacment.getAction());
+				skill.setAttribute(replacment.getAttribute());
+				skill.setBonus(replacment.getBonus());
+				skill.setKarma(replacment.getKarma());
+				skill.setStrain(replacment.getStrain());
+			}
 		}
 
 		// TODO: Spells
