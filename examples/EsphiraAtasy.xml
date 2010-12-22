@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <EDCHARACTER  name="Esphira Atasy" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
 	<APPEARANCE race="Windling" skin="hell" hair="blond, dreadlocks" eyes="" weight="83" height="23" age="34" gender="female"/>
-	<ATTRIBUTE cost="3" currentvalue="14" generationvalue="3" racevalue="11" name="DEX" dice="d10" step="6"/>
-	<ATTRIBUTE cost="3" currentvalue="7" generationvalue="3" racevalue="4" name="STR" dice="d6" step="4"/>
-	<ATTRIBUTE cost="5" currentvalue="12" generationvalue="4" racevalue="8" name="TOU" dice="d8" step="5"/>
-	<ATTRIBUTE cost="7" currentvalue="16" generationvalue="5" racevalue="11" name="PER" dice="d12" step="7"/>
-	<ATTRIBUTE cost="5" currentvalue="14" generationvalue="4" racevalue="10" name="WIL" dice="d10" step="6"/>
-	<ATTRIBUTE cost="2" currentvalue="14" generationvalue="2" racevalue="12" name="CHA" dice="d10" step="6"/>
+	<ATTRIBUTE cost="3" currentvalue="14" generationvalue="3" racevalue="11" name="DEX" dice="d10" step="6" lpincrease="0"/>
+	<ATTRIBUTE cost="3" currentvalue="7" generationvalue="3" racevalue="4" name="STR" dice="d6" step="4" lpincrease="0"/>
+	<ATTRIBUTE cost="5" currentvalue="12" generationvalue="4" racevalue="8" name="TOU" dice="d8" step="5" lpincrease="2"/>
+	<ATTRIBUTE cost="7" currentvalue="16" generationvalue="5" racevalue="11" name="PER" dice="d12" step="7" lpincrease="1"/>
+	<ATTRIBUTE cost="5" currentvalue="14" generationvalue="4" racevalue="10" name="WIL" dice="d10" step="6" lpincrease="2"/>
+	<ATTRIBUTE cost="2" currentvalue="14" generationvalue="2" racevalue="12" name="CHA" dice="d10" step="6" lpincrease="0"/>
 	<MOVEMENT ground="3" flight="8"/>
 	<KARMA maxmodificator="0" max="6" current="20"/>
 	<RACEABILITES>Flight</RACEABILITES>
@@ -22,33 +22,61 @@
 	<EXPERIENCE reputation="0" renown="0" currentlegendpoints="0" totallegendpoints="0">
 		<edt:LEGENDPOINTS when="" type="0" legendpoints="0" comment="charakter generation"/>
 	</EXPERIENCE>
-	<DISCIPLINE circle="1" name="Schaman" order="1"/>
+	<DISCIPLINE circle="6" name="Schaman" order="1"/>
 	<PROTECTION penalty="0" mysticarmor="2" physicalarmor="0">
-		<edt:ARMOR mysticarmor="4" location="self" used="yes" weight="0" name="Panzer" physicalarmor="5"/>
-		<edt:SHIELD name="PSchild" weight="0" physicalarmor="2" used="yes" deflectionbonus="+1/+2"/>
-		<edt:SHIELD name="PS" weight="0" physicalarmor="6" used="no" deflectionbonus="+4/+2"/>
+		<edt:ARMOR mysticarmor="3" location="self" used="yes" weight="3" name="Fernweave" physicalarmor="2" edn="13" penalty="0"/>
 	</PROTECTION>
 	<TALENTS discipline="Schaman">
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Create Fetisch">
-			<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="na" action="na" name="Karma Ritual">
-			<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Spellcasting">
-			<edt:RANK lpcost="0" startrank="1" rank="1" dice="2d6" step="8"/>
+			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Spell Fetish">
-			<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Thread Weaving">
-			<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Thread Weaving" limitation="Shamanism">
+			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Wilderness Survival">
-			<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="2" attribute="PER" action="standard" name="Astral Sight">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="3" attribute="PER" action="standard" name="Spirit Talk">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="4" attribute="WIL" action="standard" name="Spirit Hold">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="5" attribute="WIL" action="standard" name="Summon" limitation="Nature Spirits">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="6" attribute="WIL" action="standard" name="Blood Share">
+			<edt:RANK lpcost="0" rank="3" startrank="0" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
 		<OPTIONALTALENT circle="1" attribute="DEX" strain="0" action="standard" name="Silent Walk">
-			<edt:RANK lpcost="0" rank="2" startrank="2" dice="2d6" step="8"/>
+			<edt:RANK lpcost="0" rank="6" startrank="2" dice="2d6" step="8"/>
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="2" attribute="DEX" strain="0" action="standard" name="Durability">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="3" attribute="DEX" strain="0" action="standard" name="Spell Fetish">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="4" attribute="DEX" strain="0" action="standard" name="Spell Fetish">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="5" attribute="WIL" strain="0" action="standard" name="Willforce">
+			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="6" attribute="WIL" strain="0" action="standard" name="Enhanced Fetish">
+			<edt:RANK lpcost="0" rank="3" startrank="2" dice="2d6" step="8"/>
 		</OPTIONALTALENT>
 	</TALENTS>
 	<SPELLS discipline="Shaman">
@@ -66,26 +94,35 @@
 	<SKILL name="Speak Language" limitation="Windling" action="standard" attribute="PER">
 		<edt:RANK lpcost="0" rank="5" startrank="5" dice="2d6" step="12"/>
 	</SKILL>
+	<SKILL name="Speak Language" limitation="T'skrang" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="3" startrank="0" dice="2d6" step="12"/>
+	</SKILL>
 	<SKILL name="Read/Write Language" limitation="Dwarf" action="standard" attribute="PER">
 		<edt:RANK lpcost="0" rank="6" startrank="6" dice="2d6" step="13"/>
+	</SKILL>
+	<SKILL name="Read/Write Language" limitation="T'skrang" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="1" startrank="0" dice="2d6" step="13"/>
 	</SKILL>
 	<SKILL name="Artisan" limitation="Wood Carving" action="sustained" attribute="CHA">
 		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Lip Reading" action="standard" attribute="CHA">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="2" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Melee Weapons" action="standard" attribute="DEX">
 		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Animal Bond" action="standard" attribute="CHA">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="3" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Animal Training" action="sustained" attribute="CHA">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="3" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Picking Pockets" action="standard" attribute="DEX">
 		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Swimming" action="standard" attribute="DEX">
+		<edt:RANK lpcost="0" rank="2" startrank="0" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Mapmaking" action="standard" attribute="PER">
 		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>

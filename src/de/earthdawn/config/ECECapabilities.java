@@ -21,11 +21,11 @@ public class ECECapabilities {
 			if (element.getName().getLocalPart().equals("TALENT")) {
 				CAPABILITYType talent = (CAPABILITYType)element.getValue();
 				talentList.add(talent);
-				talentMap.put(talent.getName()+" ## "+talent.getLimitation(), talent);
+				talentMap.put(talent.getName(), talent);
 			} else if (element.getName().getLocalPart().equals("SKILL")) {
 				CAPABILITYType skill = (CAPABILITYType)element.getValue();
 				skillList.add(skill);
-				skillMap.put(skill.getName()+" ## "+skill.getLimitation(),skill);
+				skillMap.put(skill.getName(),skill);
 			} else {
 				System.err.println( "Unknown capabilities type: "+element.getName().getLocalPart() );
 			}
@@ -50,11 +50,11 @@ public class ECECapabilities {
 		return defaultSkills;
 	}
 
-	public CAPABILITYType getTalent(String name, String limitation) {
-		return talentMap.get(name+" ## "+limitation);
+	public CAPABILITYType getTalent(String name) {
+		return talentMap.get(name);
 	}
 
-	public CAPABILITYType getSkill(String name, String limitation) {
-		return skillMap.get(name+" ## "+limitation);
+	public CAPABILITYType getSkill(String name) {
+		return skillMap.get(name);
 	}
 }

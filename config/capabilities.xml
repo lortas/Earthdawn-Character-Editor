@@ -8,7 +8,7 @@
 	<SKILL name="Animal Handling" attribute="WIL" default="yes" action="standard" strain="0"/>
 	<SKILL name="Animal Training" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Arcane Mutterings" attribute="CHA" default="no" action="standard" strain="1"/>
-	<SKILL name="Artisan" limitation="Wood Carving" attribute="CHA" default="no" action="sustained" strain="0"/>
+	<SKILL name="Artisan" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Artist" attribute="CHA" default="no" action="sustained" strain="0"/>
 	<SKILL name="Avoid Blow" attribute="DEX" default="yes" action="free" strain="1"/>
 	<SKILL name="Battle Bellow" attribute="CHA" default="no" action="simple" strain="2"/>
@@ -47,8 +47,7 @@
 	<SKILL name="Hunting" attribute="DEX" default="no" action="sustained" strain="0"/>
 	<SKILL name="Hypnotize" attribute="CHA" default="no" action="sustained" strain="1"/>
 	<SKILL name="Impress" attribute="CHA" default="no" action="sustained" strain="1"/>
-	<SKILL name="Knowledge" limitation="Botany" attribute="PER" default="no" action="standard" strain="0"/>
-	<SKILL name="Knowledge" limitation="Geography Barsaive" attribute="PER" default="no" action="standard" strain="0"/>
+	<SKILL name="Knowledge" attribute="PER" default="no" action="standard" strain="0"/>
 	<SKILL name="Lip Reading" attribute="CHA" default="no" action="standard" strain="2"/>
 	<SKILL name="Lock Picking" attribute="DEX" default="no" action="sustained" strain="0"/>
 	<SKILL name="Maneuver" attribute="DEX" default="no" action="standard" strain="0"/>
@@ -171,6 +170,7 @@
 	<TALENT name="Empathic Sense" attribute="CHA" action="standard" karma="no" strain="-1"/>
 	<TALENT name="Engaging Banter" attribute="CHA" action="standard" karma="no" strain="1"/>
 	<TALENT name="Enhanced Matrix" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Enhanced Fetish" attribute="na" action="na" karma="no" strain="0"/>
 	<TALENT name="Etiquette" attribute="CHA" action="sustained" karma="no" strain="0"/>
 	<TALENT name="Evaluate" attribute="PER" action="standard" karma="no" strain="0"/>
 	<TALENT name="Evidence Analysis" attribute="PER" action="sustained" karma="no" strain="1"/>
