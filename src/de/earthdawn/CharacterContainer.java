@@ -250,4 +250,8 @@ public class CharacterContainer {
 		}
 		return skills;
 	}
+
+	public void insertOptionalTalent(Integer disciplinenumber, TALENTType talent) {
+		// TODO: talent als Optionales Talent der Disziplin mit der Nummer disciplinenumber zufügen
+	}
 }

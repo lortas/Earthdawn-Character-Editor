@@ -38,7 +38,6 @@ public class ECEWorker {
 				namegiver = n;
 			}
 		}
-
 		
 		// **ATTRIBUTE**
 		int karmaMaxBonus =ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
@@ -140,6 +139,9 @@ public class ECEWorker {
 					mysticalarmor+=armor.getMysticarmor();
 					pysicalarmor+=armor.getPhysicalarmor();
 					protectionpenalty+=armor.getPenalty();
+					initiative.setModification(initiative.getModification()-armor.getPenalty());
+					initiative.setStep(initiative.getBase()+initiative.getModification());
+					initiative.setDice(step2Dice(initiative.getStep()));
 				}
 			}
 		}
@@ -160,23 +162,31 @@ public class ECEWorker {
 
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
+		HashMap<String, ATTRIBUTEType> attribute = character.getAttributes();
+		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
+		for( TALENTABILITYType t : namegiver.getTALENT() ) {
+			namegivertalents.put(t.getName(), t);
+		}
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
 				TALENTType talent = element.getValue();
+				enforceCapabilityParams(talent,capabilities);
 				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getRank());
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
 				talent.getRANK().setLpcost(lpcostfull-lpcoststart);
 				totalCalculatedLPSpend += talent.getRANK().getLpcost();
-				CAPABILITYType replacment = capabilities.getTalent(talent.getName(),talent.getLimitation());
-				if( replacment == null ) {
-					System.err.println("Talent not found in list : "+talent.getName()+" ## "+talent.getLimitation());
-				} else {
-					talent.setAction(replacment.getAction());
-					talent.setAttribute(replacment.getAttribute());
-					talent.setBonus(replacment.getBonus());
-					talent.setKarma(replacment.getKarma());
-					talent.setStrain(replacment.getStrain());
+				calculateCapabilityRank(talent.getRANK(),attribute.get(talent.getAttribute().value()));
+				if( namegivertalents.containsKey(talent.getName()) ) {
+					namegivertalents.remove(talent.getName());
 				}
+			}
+			for( String t : namegivertalents.keySet() ) {
+				TALENTType talent = new TALENTType();
+				talent.setName(namegivertalents.get(t).getName());
+				talent.setLimitation(namegivertalents.get(t).getLimitation());
+				talent.setCircle(namegivertalents.get(t).getCircle());
+				enforceCapabilityParams(talent,capabilities);
+				character.insertOptionalTalent(disciplinenumber, talent);
 			}
 		}
 		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
@@ -187,16 +197,8 @@ public class ECEWorker {
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
 			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
 			totalCalculatedLPSpend += skill.getRANK().getLpcost();
-			CAPABILITYType replacment = capabilities.getSkill(skill.getName(),skill.getLimitation());
-			if( replacment == null ) {
-				System.err.println("Skill not found in list : "+skill.getName()+" ## "+skill.getLimitation());
-			} else {
-				skill.setAction(replacment.getAction());
-				skill.setAttribute(replacment.getAttribute());
-				skill.setBonus(replacment.getBonus());
-				skill.setKarma(replacment.getKarma());
-				skill.setStrain(replacment.getStrain());
-			}
+			enforceCapabilityParams(skill,capabilities);
+			calculateCapabilityRank(skill.getRANK(),attribute.get(skill.getAttribute().value()));
 		}
 
 		// TODO: Spells
@@ -265,5 +267,29 @@ public class ECEWorker {
 
 	public DiceType step2Dice(int value) {
 		return ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(value).getDice();
+	}
+
+	public void calculateCapabilityRank(RANKType talentRank, ATTRIBUTEType attr) {
+		if( attr == null ) {
+			talentRank.setStep(talentRank.getRank());
+		} else {
+			talentRank.setStep(talentRank.getRank()+attr.getStep());
+		}
+		talentRank.setDice(step2Dice(talentRank.getStep()));
+		
+	}
+
+	private void enforceCapabilityParams(CAPABILITYType capability, ECECapabilities capabilities) {
+		// TODO: Instanzprüfen!
+		CAPABILITYType replacment = capabilities.getTalent(capability.getName());
+		if( replacment == null ) {
+			System.err.println("Capability "+capability.getClass().getSimpleName()+" not found in list : "+capability.getName());
+		} else {
+			capability.setAction(replacment.getAction());
+			capability.setAttribute(replacment.getAttribute());
+			capability.setBonus(replacment.getBonus());
+			capability.setKarma(replacment.getKarma());
+			capability.setStrain(replacment.getStrain());
+		}
 	}
 }

@@ -16,7 +16,6 @@ import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
-import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.DISCIPLINEType;
@@ -189,7 +188,12 @@ public class ECEPdfExporter {
 				} else {
 					System.err.println( "Unbekannte Talentstyp: "+element.getName().getLocalPart() );
 				}
-				acroFields.setField( "Talent."+counter, talent.getName() );
+				if ( talent.getLimitation().isEmpty() ) {
+					acroFields.setField( "Talent."+counter, talent.getName());
+				} else {
+					acroFields.setField( "Talent."+counter, talent.getName()+": "+talent.getLimitation());
+					
+				}
 				acroFields.setField( "ActionDice."+counter, talent.getRANK().getDice().value() );
 				acroFields.setField( "Attribute."+counter, talent.getAttribute().value() );
 				acroFields.setField( "Step."+counter, String.valueOf(talent.getRANK().getStep()) );
@@ -214,7 +218,11 @@ public class ECEPdfExporter {
 		if( skills != null ) {
 			int counter = 0;
 			for( SKILLType skill : skills ) {
-				acroFields.setField( "Skill."+counter, skill.getName()+" "+skill.getLimitation());
+				if( skill.getLimitation().isEmpty() ) {
+					acroFields.setField( "Skill."+counter, skill.getName());
+				} else {
+					acroFields.setField( "Skill."+counter, skill.getName()+": "+skill.getLimitation());
+				}
 				acroFields.setField( "SkillActionDice."+counter, skill.getRANK().getDice().value() );
 				acroFields.setField( "SkillAttribute."+counter, skill.getAttribute().value() );
 				acroFields.setField( "SkillStep."+counter, String.valueOf(skill.getRANK().getStep()) );

@@ -3,17 +3,17 @@
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:element name="DISCIPLINE">
 		<xs:complexType>
-			<xs:choice maxOccurs="unbounded">
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
+			<xs:sequence maxOccurs="unbounded" minOccurs="1">
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMA" type="edt:KARMAABILITY_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="edt:CIRCLENAME_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="RECOVERYTEST" type="edt:DISZIPINABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMA" type="edt:KARMAABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="KARMASTEP" type="edt:DISZIPINABILITY_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
-			</xs:choice>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="edt:CIRCLENAME_type"/>
+			</xs:sequence>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="name" type="xs:string" use="required"/>
 		</xs:complexType>

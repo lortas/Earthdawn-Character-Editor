@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/datatypes}ATTRIBUTE_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/datatypes}ATTRIBUTE_type" maxOccurs="6" minOccurs="6"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSE_type"/>
  *         &lt;element name="HEALTH" type="{http://earthdawn.com/datatypes}HEALTH_type"/>
  *         &lt;element name="MOVEMENT" type="{http://earthdawn.com/datatypes}MOVEMENT_type"/>
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="CARRYING" type="{http://earthdawn.com/datatypes}CARRYING_type"/>
  *         &lt;element name="KARMA" type="{http://earthdawn.com/datatypes}KARMA_type"/>
  *         &lt;element name="EXPERIENCE" type="{http://earthdawn.com/datatypes}EXPERIENCE_type"/>
- *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/datatypes}DISCIPLINE_type" maxOccurs="3"/>
+ *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/datatypes}DISCIPLINE_type" maxOccurs="3" minOccurs="0"/>
  *         &lt;element name="PROTECTION" type="{http://earthdawn.com/datatypes}PROTECTION_type"/>
  *         &lt;element name="TALENTS" type="{http://earthdawn.com/character}TALENTS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELLS" type="{http://earthdawn.com/character}SPELLS_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -71,30 +71,30 @@ import javax.xml.bind.annotation.XmlType;
 public class EDCHARACTER {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "CARRYING", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "ATTRIBUTE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "DESCRIPTION", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "PATTERNITEM", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "KARMARITUAL", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "APPEARANCE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "RACEABILITES", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "WEAPON", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "PORTRAIT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "COINS", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "ITEM", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "PROTECTION", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "COMMENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "SPELLS", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "DISCIPLINE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "HEALTH", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
         @XmlElementRef(name = "MOVEMENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
         @XmlElementRef(name = "EXPERIENCE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "INITIATIVE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "KARMARITUAL", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "APPEARANCE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "DEFENSE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "RACEABILITES", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "SPELLS", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "DESCRIPTION", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "COINS", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "PORTRAIT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "CARRYING", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "HEALTH", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "COMMENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "DISCIPLINE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "PATTERNITEM", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "ITEM", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "WEAPON", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "ATTRIBUTE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
         @XmlElementRef(name = "MAGICITEM", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
         @XmlElementRef(name = "KARMA", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "INITIATIVE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "DEFENSE", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "TALENTS", namespace = "http://earthdawn.com/character", type = JAXBElement.class)
+        @XmlElementRef(name = "TALENTS", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "PROTECTION", namespace = "http://earthdawn.com/character", type = JAXBElement.class)
     })
     protected List<JAXBElement<?>> attributeOrDEFENSEOrHEALTH;
     @XmlAttribute(required = true)
@@ -118,30 +118,30 @@ public class EDCHARACTER {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link ATTRIBUTEType }{@code >}
-     * {@link JAXBElement }{@code <}{@link CARRYINGType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link PATTERNITEMType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link WEAPONType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link APPEARANCEType }{@code >}
-     * {@link JAXBElement }{@code <}{@link COINSType }{@code >}
-     * {@link JAXBElement }{@code <}{@link byte[]}{@code >}
-     * {@link JAXBElement }{@code <}{@link PROTECTIONType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ITEMType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link SPELLSType }{@code >}
-     * {@link JAXBElement }{@code <}{@link SKILLType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DISCIPLINEType }{@code >}
-     * {@link JAXBElement }{@code <}{@link HEALTHType }{@code >}
      * {@link JAXBElement }{@code <}{@link EXPERIENCEType }{@code >}
      * {@link JAXBElement }{@code <}{@link MOVEMENTType }{@code >}
+     * {@link JAXBElement }{@code <}{@link INITIATIVEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link APPEARANCEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link SPELLSType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link DEFENSEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link COINSType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link CARRYINGType }{@code >}
+     * {@link JAXBElement }{@code <}{@link byte[]}{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link HEALTHType }{@code >}
+     * {@link JAXBElement }{@code <}{@link PATTERNITEMType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DISCIPLINEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link ITEMType }{@code >}
+     * {@link JAXBElement }{@code <}{@link SKILLType }{@code >}
+     * {@link JAXBElement }{@code <}{@link ATTRIBUTEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link WEAPONType }{@code >}
      * {@link JAXBElement }{@code <}{@link MAGICITEMType }{@code >}
      * {@link JAXBElement }{@code <}{@link KARMAType }{@code >}
-     * {@link JAXBElement }{@code <}{@link INITIATIVEType }{@code >}
      * {@link JAXBElement }{@code <}{@link TALENTSType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DEFENSEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link PROTECTIONType }{@code >}
      * 
      * 
      */
