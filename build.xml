@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+    Datei: build.xml
+    Beschreibung: Build-File für den Earthdawn Character Editor
+-->
+<project name="Earthdawn Character Editor" default="compile" basedir=".">
+
+    <!--
+      konstanten
+    -->
+    <property name="temp" value="./temp" />
+    <property name="build" value="${temp}/bin/" />
+    <property name="lib" value="./lib/" />
+    <property name="log" value="${temp}/log/" />
+    <property name="config" value="./config/" />
+    <property name="dist" value="${temp}/dist/" />
+    <property name="jar.dir" value="${temp}/jar/" />
+    <property name="jar.file" value="${jar.dir}/edchar.jar" />
+    <property environment="env" />
+    <property file="./config/application.properties"/>
+
+    <!--  
+      classpath 
+    -->
+    <path id="classpath.compile">
+        <pathelement location="${build}"/>
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- ================================= 
+          target: init              
+         ================================= -->
+    <target name="init" description="--> Projekt aufsetzen">
+        <mkdir dir="${build}" />
+        <mkdir dir="${temp}" />
+    </target>
+    
+    <!-- ================================= 
+          target: clean              
+         ================================= -->
+    <target name="clean" description="--> Aufräumen">
+        <delete dir="${build}"/>
+        <delete dir="${dist}" />
+        <delete dir="${log}" />
+        <delete dir="${jar.dir}" />
+    </target>
+    
+    <!-- ================================= 
+          target: compile              
+         ================================= -->
+    <target name="compile" depends="init" description="--> Projekt übersetzen">
+        <javac srcdir="./src" destdir="${build}" debug="on"> 
+            <classpath refid="classpath.compile" />
+        </javac>
+    </target>
+	
+    <!-- ================================= 
+          target: jar              
+         ================================= -->
+    <target name="jar" depends="compile" description="--> jar erzeugen">
+        <tstamp>
+          <format property="cur.date" pattern="yyyy.MM.dd-hh:mm:ss" locale="de,DE"/>
+        </tstamp>
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.file}">
+            <fileset dir="${build}" includes="de/**" />
+            <manifest>
+                <section name="common">
+                    <attribute name="Build-By" value="${imp.build}"/>
+                    <attribute name="Build-Date" value="${cur.date}"/> 
+                    <attribute name="Implementation-Title" value="${imp.title}"/>
+                    <attribute name="Implementation-Version" value="${imp.version}"/> 
+                </section>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- ================================= 
+          target: dist              
+         ================================= -->
+    <target name="dist" depends="jar" description="--> Distribution erzeugen">
+        <!-- TODO -->
+    	
+    </target>
+    
+</project>
+
