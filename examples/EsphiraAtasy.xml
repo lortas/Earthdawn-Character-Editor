@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <EDCHARACTER  name="Esphira Atasy" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
-	<APPEARANCE race="Windling" skin="hell" hair="blond, dreadlocks" eyes="" weight="83" height="23" age="34" gender="female"/>
+	<APPEARANCE race="Windling" skin="hell" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
 	<ATTRIBUTE cost="3" currentvalue="14" generationvalue="3" racevalue="11" name="DEX" dice="d10" step="6" lpincrease="0"/>
 	<ATTRIBUTE cost="3" currentvalue="7" generationvalue="3" racevalue="4" name="STR" dice="d6" step="4" lpincrease="0"/>
 	<ATTRIBUTE cost="5" currentvalue="12" generationvalue="4" racevalue="8" name="TOU" dice="d8" step="5" lpincrease="2"/>
@@ -128,6 +128,7 @@
 		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
 	</SKILL>
 	<WEAPON name="knife" weight="0" used="yes" location="self" damagestep="1" strengthmin="3" size="1" />
+	<WEAPON name="blowgun" weight="1" used="yes" location="self" damagestep="1" strengthmin="3" size="1" longrange="16" shortrange="8"/>
 	<KARMARITUAL>auführliche beschreibung des Karmarituals</KARMARITUAL>
 	<DESCRIPTION>etwas bla bla zum Char</DESCRIPTION>
 	<COMMENT>hier kommt ein Kommentar</COMMENT>

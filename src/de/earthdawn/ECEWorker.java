@@ -33,7 +33,7 @@ public class ECEWorker {
 				namegiver = n;
 			}
 		}
-		
+
 		// **ATTRIBUTE**
 		int karmaMaxBonus =ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
@@ -201,6 +201,8 @@ public class ECEWorker {
 				unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*durabilityTalent.getRANK().getRank()));
 				durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
 			}
+			List<DISCIPLINEBONUSType> bonuses = JAXBHelper.getDisciplineBonuses(allDisciplines.get(disciplinenumber));
+			character.addDisciplineBonuses(bonuses,allDisciplines.get(disciplinenumber).getCircle());
 		}
 
 		for( SKILLType skill : character.getSkills() ) {

@@ -43,4 +43,26 @@ public class JAXBHelper {
 		}
 		return durability;
 	}
+
+	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {
+		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
+		for(JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT()) {
+			if (element.getName().getLocalPart().equals("KARMA")) {
+				KARMAABILITYType karma = ((KARMAABILITYType)element.getValue());
+				if( karma.getCircle() > discipline.getCircle() ) continue;
+				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
+				bonus.setCircle(karma.getCircle());
+				bonus.setBonus("Can spend Karma for "+karma.getSpend());
+				bonuses.add(bonus);
+			} else if (element.getName().getLocalPart().equals("ABILITY")) {
+				CIRCLENAMEType ability = ((CIRCLENAMEType)element.getValue());
+				if( ability.getCircle() > discipline.getCircle() ) continue;
+				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
+				bonus.setCircle(ability.getCircle());
+				bonus.setBonus("Ability: "+ability.getName());
+				bonuses.add(bonus);
+			}
+		}
+		return bonuses;
+	}
 }
