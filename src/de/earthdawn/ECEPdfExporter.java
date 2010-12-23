@@ -159,9 +159,8 @@ public class ECEPdfExporter {
 			int counterDisciplinetalent_warden=13;
 			int counterDisciplinetalent_master=17;
 			int counterOthertalent_novice=20;
-			int counterOthertalent_journayman=23;
-			int counterOthertalent_warden=25;
-			int counterOthertalent_master=27;
+			int counterOthertalent_journayman=27;
+			int counterOthertalent_warden=33;
 			for( JAXBElement<TALENTType> element : talents.getDISZIPLINETALENTOrOPTIONALTALENT() ) {
 				TALENTType talent = element.getValue();
 				int counter = 66;
@@ -176,9 +175,7 @@ public class ECEPdfExporter {
 						counter = counterDisciplinetalent_novice++;
 					}
 				} else if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
-					if( talent.getCircle()>12 ) {
-						counter = counterOthertalent_master++;
-					} else if( talent.getCircle()>8 ) {
+					if( talent.getCircle()>8 ) {
 						counter = counterOthertalent_warden++;
 					} else if( talent.getCircle()>4 ) {
 						counter = counterOthertalent_journayman++;
@@ -238,8 +235,8 @@ public class ECEPdfExporter {
 			}
 		}
 
-		acroFields.setField( "TotalLegendPoints",  "" );
-		acroFields.setField( "CurrentLegendPoints",  "" );
+		acroFields.setField( "TotalLegendPoints", String.valueOf(character.getLegendPoints().getTotallegendpoints()) );
+		acroFields.setField( "CurrentLegendPoints", String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
 		acroFields.setField( "Renown",  "" );
 		acroFields.setField( "Reputation",  "" );
 		acroFields.setField( "CopperPieces",  "" );

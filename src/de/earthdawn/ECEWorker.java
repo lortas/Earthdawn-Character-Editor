@@ -186,11 +186,13 @@ public class ECEWorker {
 				talent.setLimitation(namegivertalents.get(t).getLimitation());
 				talent.setCircle(namegivertalents.get(t).getCircle());
 				enforceCapabilityParams(talent,capabilities);
-				character.insertOptionalTalent(disciplinenumber, talent);
+				RANKType rank = new RANKType();
+				rank.setRank(0);
+				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
+				talent.setRANK(rank);
+				allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
 			}
 		}
-		// TODO: NAMEGIVER Talente in die Talentliste des Chars aufnehmen.
-		// Dabei aber sicherstellen, das sie nicht doppelt enthalten sind
 		
 		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
@@ -200,6 +202,20 @@ public class ECEWorker {
 			enforceCapabilityParams(skill,capabilities);
 			calculateCapabilityRank(skill.getRANK(),attribute.get(skill.getAttribute().value()));
 		}
+
+		EXPERIENCEType legendpoints = character.getLegendPoints();
+		int legendpointsPLUS = 0;
+		int legendpointsMINUS = 0;
+		int legendpointsZERO = 0;
+		for( LEGENDPOINTSType lp : legendpoints.getLEGENDPOINTS() ) {
+			switch( lp.getType() ) {
+			case PLUS:  legendpointsPLUS  += lp.getLegendpoints(); break;
+			case MINUS: legendpointsMINUS += lp.getLegendpoints(); break;
+			case ZERO:  legendpointsZERO  += lp.getLegendpoints(); break;
+			}
+		}
+		legendpoints.setCurrentlegendpoints(legendpointsPLUS-legendpointsMINUS);
+		legendpoints.setTotallegendpoints(legendpointsPLUS);
 
 		// TODO: Spells
 		// TODO: MagicItems
@@ -280,10 +296,14 @@ public class ECEWorker {
 	}
 
 	private void enforceCapabilityParams(CAPABILITYType capability, ECECapabilities capabilities) {
-		// TODO: Instanzprüfen!
-		CAPABILITYType replacment = capabilities.getTalent(capability.getName());
+		CAPABILITYType replacment = null;
+		if( capability instanceof TALENTType ) {
+			replacment=capabilities.getTalent(capability.getName());
+		} else {
+			replacment=capabilities.getSkill(capability.getName());
+		}
 		if( replacment == null ) {
-			System.err.println("Capability "+capability.getClass().getSimpleName()+" not found in list : "+capability.getName());
+			System.err.println("Capability '"+capability.getName()+"' not found : "+capability.getClass().getSimpleName());
 		} else {
 			capability.setAction(replacment.getAction());
 			capability.setAttribute(replacment.getAttribute());
