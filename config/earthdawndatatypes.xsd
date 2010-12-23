@@ -402,4 +402,8 @@
 		<xs:attribute name="circle" type="unsigned_int" use="required"/>
 		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
 	</xs:complexType>
+	<xs:complexType name="DISCIPLINEBONUS_type">
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="bonus" type="xs:string"  use="required"/>
+	</xs:complexType>
 </xs:schema>

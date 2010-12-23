@@ -293,4 +293,35 @@ public class CharacterContainer {
 		experience.getValue().setTotallegendpoints(0);
 		return experience.getValue();
 	}
+
+	public List<WEAPONType> getWeapons() {
+		List<WEAPONType> weapons = new ArrayList<WEAPONType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("WEAPON")) {
+				weapons.add((WEAPONType)element.getValue());
+			}
+		}
+		return weapons;
+	}
+
+	public List<DISCIPLINEBONUSType> getDisciplineBonuses() {
+		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("DISCIPLINEBONUS")) {
+				bonuses.add((DISCIPLINEBONUSType)element.getValue());
+			}
+		}
+		return bonuses;
+	}
+
+	public void addDisciplineBonuses(List<DISCIPLINEBONUSType> bonuses, int circle) {
+		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
+		for( DISCIPLINEBONUSType bonus : bonuses ) {
+			if( bonus.getCircle() > circle ) continue;
+			DISCIPLINEBONUSType newValue = new DISCIPLINEBONUSType();
+			newValue.setBonus(bonus.getBonus());
+			newValue.setCircle(bonus.getCircle());
+			list.add(new ObjectFactory().createEDCHARACTERDISCIPLINEBONUS(newValue));
+		}
+	}
 }

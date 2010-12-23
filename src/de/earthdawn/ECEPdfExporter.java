@@ -18,6 +18,7 @@ import com.itextpdf.text.pdf.PdfStamper;
 
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.DISCIPLINEBONUSType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.MOVEMENTType;
@@ -26,6 +27,7 @@ import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.YesnoType;
 
 public class ECEPdfExporter {
@@ -111,6 +113,8 @@ public class ECEPdfExporter {
 		PROTECTIONType protection = character.getProtection();
 		acroFields.setField( "Mystic Armor", String.valueOf(protection.getMysticarmor()) );
 		acroFields.setField( "Physical Armor", String.valueOf(protection.getPhysicalarmor()) );
+		acroFields.setField( "Shield", "none" );
+		acroFields.setField( "ShieldDeflectionBonus", "na" );
 		int armor_max=0;
 		int shield_max=0;
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
@@ -199,7 +203,7 @@ public class ECEPdfExporter {
 				switch( talent.getAction() ) {
 				case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
 				case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;
-				case SUSTAINED : acroFields.setField( "Action."+counter, "sstnd" ); break;
+				case SUSTAINED : acroFields.setField( "Action."+counter, "sust" ); break;
 				default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
 				}
 				if( counter > 20) {
@@ -234,11 +238,45 @@ public class ECEPdfExporter {
 				counter++;
 			}
 		}
+		List<WEAPONType> weapons = character.getWeapons();
+		if( weapons != null ) {
+			int counter_melee = 0;
+			int counter_range = 0;
+			for( WEAPONType weapon : weapons ) {
+				if( weapon.getShortrange() > 0 ) {
+					acroFields.setField( "RangedWeapon."+counter_range, weapon.getName() );
+					// TODO: Bug im PDF: Position "3" hat ein Leerzeichen "Ranged Weapon.3"
+					acroFields.setField( "RangedWeaponDmgStep."+counter_range, String.valueOf(weapon.getDamagestep()) );
+					acroFields.setField( "RangedWeapon Size."+counter_range, String.valueOf(weapon.getSize()) );
+					acroFields.setField( "RangedWeaponTimesForged."+counter_range, String.valueOf(weapon.getTimesforged()) );
+					acroFields.setField( "WeaponShortRange."+counter_range, String.valueOf(weapon.getShortrange()) );
+					acroFields.setField( "Weapon Long Range."+counter_range, String.valueOf(weapon.getLongrange()) );
+					counter_range++;
+				} else {
+					acroFields.setField( "Weapon."+counter_melee, weapon.getName() );
+					acroFields.setField( "WeaponDmgStep."+counter_melee, String.valueOf(weapon.getDamagestep()) );
+					acroFields.setField( "Weapon Size."+counter_melee, String.valueOf(weapon.getSize()) );
+					acroFields.setField( "WeaponTimesForged."+counter_melee, String.valueOf(weapon.getTimesforged()) );
+					counter_melee++;
+				}
+			}
+		}
 
 		acroFields.setField( "TotalLegendPoints", String.valueOf(character.getLegendPoints().getTotallegendpoints()) );
 		acroFields.setField( "CurrentLegendPoints", String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
 		acroFields.setField( "Renown", String.valueOf(character.getLegendPoints().getRenown()) );
 		acroFields.setField( "Reputation", character.getLegendPoints().getReputation() );
+
+		List<DISCIPLINEBONUSType> bonuses = character.getDisciplineBonuses();
+		if( bonuses != null ) {
+			int counter=0;
+			for( DISCIPLINEBONUSType bonus : bonuses ) {
+				acroFields.setField("DiscBonusAbility."+counter, bonus.getBonus() );
+				acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
+				counter++;
+			}
+		}
+		
 		acroFields.setField( "CopperPieces",  "" );
 		acroFields.setField( "GoldPieces",  "" );
 		acroFields.setField( "SilverPieces",  "" );
