@@ -20,7 +20,7 @@
 	<INITIATIVE modification="0" base="6" dice="d10" step="6"/>
 	<CARRYING carrying="40" lifting="80"/>
 	<EXPERIENCE reputation="0" renown="0" currentlegendpoints="0" totallegendpoints="0">
-		<edt:LEGENDPOINTS when="" type="0" legendpoints="0" comment="charakter generation"/>
+		<edt:LEGENDPOINTS when="" type="+" legendpoints="100" comment="charakter generation"/>
 	</EXPERIENCE>
 	<DISCIPLINE circle="6" name="Schaman" order="1"/>
 	<PROTECTION penalty="0" mysticarmor="2" physicalarmor="0">

@@ -1,7 +1,5 @@
 package de.earthdawn;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
@@ -15,24 +13,10 @@ import de.earthdawn.data.*;
  */
 public class JAXBHelper {
 
-	public static final String DEFENSE = "DEFENSE";
-	public static final String APPEARANCE = "APPEARANCE";
-	public static final String CARRYING = "CARRYING";
-	public static final String HEALTH = "HEALTH";
-	public static final String RACEABILITES = "RACEABILITES";
-	public static final String ATTRIBUTE = "ATTRIBUTE";
-	public static final String INITIATIVE = "INITIATIVE";
-	public static final String MOVEMENT = "MOVEMENT";
-	public static final String TALENTS = "TALENTS";
-	public static final String KARMA = "KARMA";
-	public static final String PROTECTION = "PROTECTION";
-	public static final String DISCIPLINE = "DISCIPLINE";
-	public static final String SKILL = "SKILL";
-
 	public static void setAbilities(EDCHARACTER charakter, String newValue) {
 		List<JAXBElement<?>> list = charakter.getATTRIBUTEOrDEFENSEOrHEALTH();
 		for (JAXBElement<?> element : list ) {
-			if (RACEABILITES.equals(element.getName().getLocalPart())) {
+			if (element.getName().getLocalPart().equals("RACEABILITES")) {
 				((JAXBElement<String>)element).setValue(newValue);
 
 				return;

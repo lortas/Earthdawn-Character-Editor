@@ -169,8 +169,9 @@ public class CharacterContainer {
 				return (PROTECTIONType) element.getValue();
 			}
 		}
-		// Not found
-		return null;
+		JAXBElement<PROTECTIONType> protection = new ObjectFactory().createEDCHARACTERPROTECTION(new PROTECTIONType());
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(protection);
+		return protection.getValue();
 	}
 
 	public String getAbilities() {
@@ -251,7 +252,16 @@ public class CharacterContainer {
 		return skills;
 	}
 
-	public void insertOptionalTalent(Integer disciplinenumber, TALENTType talent) {
-		// TODO: talent als Optionales Talent der Disziplin mit der Nummer disciplinenumber zufügen
+	public EXPERIENCEType getLegendPoints() {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("EXPERIENCE")) {
+				return (EXPERIENCEType)element.getValue();
+			}
+		}
+		JAXBElement<EXPERIENCEType> experience = new ObjectFactory().createEDCHARACTEREXPERIENCE(new EXPERIENCEType());
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(experience);
+		experience.getValue().setCurrentlegendpoints(0);
+		experience.getValue().setTotallegendpoints(0);
+		return experience.getValue();
 	}
 }
