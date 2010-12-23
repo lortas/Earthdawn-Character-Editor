@@ -271,7 +271,7 @@
 		<xs:attribute name="totallegendpoints" type="unsigned_int" use="required"/>
 		<xs:attribute name="currentlegendpoints" type="xs:int" use="required"/>
 		<xs:attribute name="renown" type="xs:int" use="required"/>
-		<xs:attribute name="reputation" type="xs:int" use="required"/>
+		<xs:attribute name="reputation" type="xs:string" default="na"/>
 	</xs:complexType>
 	<xs:complexType name="ARMOR_type">
 		<xs:complexContent>
