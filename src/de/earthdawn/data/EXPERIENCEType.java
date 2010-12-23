@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="totallegendpoints" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="currentlegendpoints" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="renown" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="reputation" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="reputation" type="{http://www.w3.org/2001/XMLSchema}string" default="na" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -54,8 +54,8 @@ public class EXPERIENCEType {
     protected int currentlegendpoints;
     @XmlAttribute(required = true)
     protected int renown;
-    @XmlAttribute(required = true)
-    protected int reputation;
+    @XmlAttribute
+    protected String reputation;
 
     /**
      * Gets the value of the legendpoints property.
@@ -137,16 +137,28 @@ public class EXPERIENCEType {
     /**
      * Gets the value of the reputation property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getReputation() {
-        return reputation;
+    public String getReputation() {
+        if (reputation == null) {
+            return "na";
+        } else {
+            return reputation;
+        }
     }
 
     /**
      * Sets the value of the reputation property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setReputation(int value) {
+    public void setReputation(String value) {
         this.reputation = value;
     }
 

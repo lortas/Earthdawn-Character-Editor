@@ -216,6 +216,10 @@ public class ECEWorker {
 		}
 		legendpoints.setCurrentlegendpoints(legendpointsPLUS-legendpointsMINUS);
 		legendpoints.setTotallegendpoints(legendpointsPLUS);
+		// TODO: Max Circle ermitteln;
+		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(6);
+		legendpoints.setRenown(legendstatus.getReown());
+		legendpoints.setReputation(legendstatus.getReputation());
 
 		// TODO: Spells
 		// TODO: MagicItems

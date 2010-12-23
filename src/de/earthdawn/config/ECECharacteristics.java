@@ -13,6 +13,7 @@ import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
 import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
 import de.earthdawn.data.CHARACTERISTICSINCREASECOST;
 import de.earthdawn.data.CHARACTERISTICSINCREASECOSTCIRCLE;
+import de.earthdawn.data.CHARACTERISTICSLEGENDARYSTATUS;
 import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
 
@@ -161,5 +162,23 @@ public class ECECharacteristics {
 			}
 		}
 		return sum;
+	}
+
+	public CHARACTERISTICSLEGENDARYSTATUS getLegendaystatus(int circle) {
+		HashMap<Integer,CHARACTERISTICSLEGENDARYSTATUS> status = new HashMap<Integer,CHARACTERISTICSLEGENDARYSTATUS>();
+		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
+			if( element.getName().getLocalPart().equals("LEGENDARYSTATUS") ) {
+				CHARACTERISTICSLEGENDARYSTATUS st = (CHARACTERISTICSLEGENDARYSTATUS)element.getValue();
+				status.put(st.getCircle(),st);
+			}
+		}
+		while( circle >= 0 ) {
+			if( status.containsKey(circle)) {
+				return status.get(circle);
+			}
+			circle--;
+		}
+		// Not found
+		return null;
 	}
 }

@@ -237,8 +237,8 @@ public class ECEPdfExporter {
 
 		acroFields.setField( "TotalLegendPoints", String.valueOf(character.getLegendPoints().getTotallegendpoints()) );
 		acroFields.setField( "CurrentLegendPoints", String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
-		acroFields.setField( "Renown",  "" );
-		acroFields.setField( "Reputation",  "" );
+		acroFields.setField( "Renown", String.valueOf(character.getLegendPoints().getRenown()) );
+		acroFields.setField( "Reputation", character.getLegendPoints().getReputation() );
 		acroFields.setField( "CopperPieces",  "" );
 		acroFields.setField( "GoldPieces",  "" );
 		acroFields.setField( "SilverPieces",  "" );
