@@ -22,11 +22,11 @@
 	<EXPERIENCE reputation="0" renown="0" currentlegendpoints="0" totallegendpoints="0">
 		<edt:LEGENDPOINTS when="" type="+" legendpoints="100" comment="charakter generation"/>
 	</EXPERIENCE>
-	<DISCIPLINE circle="6" name="Schaman" order="1"/>
+	<DISCIPLINE circle="6" name="Shaman" order="1"/>
 	<PROTECTION penalty="0" mysticarmor="2" physicalarmor="0">
 		<edt:ARMOR mysticarmor="3" location="self" used="yes" weight="3" name="Fernweave" physicalarmor="2" edn="13" penalty="0"/>
 	</PROTECTION>
-	<TALENTS discipline="Schaman">
+	<TALENTS discipline="Shaman">
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Create Fetisch">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>

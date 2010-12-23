@@ -64,7 +64,11 @@ public class ApplicationProperties {
 	}
 	
 	public DISCIPLINE getDisziplin(String name) {
-		return DISCIPLINES.get(name);
+		DISCIPLINE discipline = DISCIPLINES.get(name);
+		if( discipline == null ) {
+			System.err.println("Dicipline '"+name+"' does not exist.");
+		}
+		return discipline;
 	}
 
 	public NAMEGIVERS getNamegivers() {

@@ -184,6 +184,19 @@ public class CharacterContainer {
 		return null;
 	}
 
+	public void setAbilities(String newValue) {
+		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
+		List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
+		for (JAXBElement<?> element : list ) {
+			if (element.getName().getLocalPart().equals("RACEABILITES")) {
+				removelist.add(element);
+			}
+		}
+		list.removeAll(removelist);
+		list.add(new ObjectFactory().createEDCHARACTERRACEABILITES(newValue));
+		return;
+	}
+
 	public HashMap<Integer,DISCIPLINEType> getAllDiciplinesByOrder() {
 		HashMap<Integer,DISCIPLINEType> alldisciplines = new HashMap<Integer,DISCIPLINEType>();
 		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
@@ -204,6 +217,22 @@ public class CharacterContainer {
 			}
 		}
 		return alldisciplines;
+	}
+
+	public DISCIPLINEType getDiciplineMaxCircle() {
+		DISCIPLINEType discipline = new DISCIPLINEType();
+		discipline.setCircle(0);
+		discipline.setName("na");
+		discipline.setOrder(1);
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("DISCIPLINE")) {
+				DISCIPLINEType d = (DISCIPLINEType)element.getValue();
+				if( d.getCircle() > discipline.getCircle() ) {
+					discipline=d;
+				}
+			}
+		}
+		return discipline;
 	}
 
 	public List<TALENTSType> getAllTalents() {
