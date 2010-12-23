@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE name="Shaman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="4" unconsciousness="3"/>
 	<OPTIONALTALENT name="Creature Analysis" circle="1"/>
 	<OPTIONALTALENT name="Creature Analysis" circle="1"/>
 	<OPTIONALTALENT name="Silent Walk" circle="1"/>
@@ -88,8 +89,8 @@
 	<OPTIONALTALENT name="Shared Fetish" circle="13"/>
 	<OPTIONALTALENT name="Shared Fetish" circle="13"/>
 	<DISCIPLINETALENT name="Wounde Transfer" circle="13"/>
-	<KARMASTEP circle="13"/>
 	<DEFENSE kind="social" circle="13"/>
+	<KARMASTEP circle="13"/>
 	<ABILITY name="Pinnacle of Comprehension" circle="13"/>
 	<DISCIPLINETALENT name="Netherwalk" circle="14"/>
 	<DEFENSE kind="spell" circle="14"/>

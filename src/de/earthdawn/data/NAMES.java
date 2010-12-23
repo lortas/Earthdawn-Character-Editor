@@ -49,10 +49,10 @@ import javax.xml.bind.annotation.XmlType;
 public class NAMES {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "KARMARUTUAL", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
-        @XmlElementRef(name = "VERSATILITY", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
         @XmlElementRef(name = "DURABILITY", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
-        @XmlElementRef(name = "ATTRIBUTES", namespace = "http://earthdawn.com/names", type = JAXBElement.class)
+        @XmlElementRef(name = "KARMARUTUAL", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
+        @XmlElementRef(name = "ATTRIBUTES", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
+        @XmlElementRef(name = "VERSATILITY", namespace = "http://earthdawn.com/names", type = JAXBElement.class)
     })
     protected List<JAXBElement<?>> attributesOrDURABILITYOrVERSATILITY;
 

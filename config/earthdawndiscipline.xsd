@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/discipline" xmlns="http://earthdawn.com/discipline" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="DISCIPLINEDURABILITY_type">
+		<xs:attribute name="death" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="unconsciousness" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="circle" type="edt:unsigned_int" default="0"/>
+	</xs:complexType>
 	<xs:element name="DISCIPLINE">
 		<xs:complexType>
 			<xs:sequence maxOccurs="unbounded" minOccurs="1">
+				<xs:element maxOccurs="1" minOccurs="0" name="DURABILITY" type="DISCIPLINEDURABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>

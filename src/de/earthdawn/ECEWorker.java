@@ -26,13 +26,8 @@ public class ECEWorker {
 		int totalCalculatedLPSpend=0;
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
-		String race = character.getAppearance().getRace();
-
-		if (race == null) {
-			// XXX: Konfigurationsproblem?
-			//return charakter;
-		}
 		NAMEGIVERABILITYType namegiver = null;
+		String race = character.getAppearance().getRace();
 		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers().getNAMEGIVER()) {
 			if( n.getName().equals(race)) {
 				namegiver = n;
@@ -57,7 +52,7 @@ public class ECEWorker {
 			totalCalculatedLPSpend+=ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease());
 		}
 		if( karmaMaxBonus <0 ) {
-			// TODO: Warnung ausgeben
+			System.err.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
 		}
 
 		// **DEFENSE**
@@ -86,11 +81,9 @@ public class ECEWorker {
 		// **HEALTH**
 		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(character.getAttributes().get("TOU").getCurrentvalue());
 		DEATHType death=character.getDeath();
-		death.setValue(newhealth.getDeath());
+		DEATHType unconsciousness=character.getUnconsciousness();
 		death.setBase(newhealth.getDeath());
 		death.setAdjustment(0);
-		DEATHType unconsciousness=character.getUnconsciousness();
-		unconsciousness.setValue(newhealth.getUnconsciousness());
 		unconsciousness.setBase(newhealth.getUnconsciousness());
 		unconsciousness.setAdjustment(0);
 		character.getWound().setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
@@ -158,16 +151,23 @@ public class ECEWorker {
 			}
 			abilities +=s;
 		}
-		JAXBHelper.setAbilities(charakter,abilities);
+		character.setAbilities(abilities);
 
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
 		HashMap<String, ATTRIBUTEType> attribute = character.getAttributes();
 		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
+		HashMap<Integer, DISCIPLINEType> allDisciplines = character.getAllDiciplinesByOrder();
+		String durabilityTalentName = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "DURABILITY", LanguageType.EN);
+		if( durabilityTalentName == null ) {
+			System.err.println("Durability in names.xml not defined for selected language. Skipping Health enhancment");
+			durabilityTalentName="";
+		}
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			namegivertalents.put(t.getName(), t);
 		}
 		for( Integer disciplinenumber : allTalents.keySet() ) {
+			TALENTType durabilityTalent = null;
 			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
 				TALENTType talent = element.getValue();
 				enforceCapabilityParams(talent,capabilities);
@@ -178,6 +178,9 @@ public class ECEWorker {
 				calculateCapabilityRank(talent.getRANK(),attribute.get(talent.getAttribute().value()));
 				if( namegivertalents.containsKey(talent.getName()) ) {
 					namegivertalents.remove(talent.getName());
+				}
+				if( talent.getName().equals(durabilityTalentName)) {
+					durabilityTalent=talent;
 				}
 			}
 			for( String t : namegivertalents.keySet() ) {
@@ -192,8 +195,14 @@ public class ECEWorker {
 				talent.setRANK(rank);
 				allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
 			}
+			if( durabilityTalent != null ) {
+				DISCIPLINEDURABILITYType durability = JAXBHelper.getDisciplineDurability(allDisciplines.get(disciplinenumber));
+				death.setAdjustment(death.getAdjustment()+(durability.getDeath()*durabilityTalent.getRANK().getRank()));
+				unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*durabilityTalent.getRANK().getRank()));
+				durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
+			}
 		}
-		
+
 		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
@@ -216,13 +225,17 @@ public class ECEWorker {
 		}
 		legendpoints.setCurrentlegendpoints(legendpointsPLUS-legendpointsMINUS);
 		legendpoints.setTotallegendpoints(legendpointsPLUS);
-		// TODO: Max Circle ermitteln;
-		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(6);
+		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(character.getDiciplineMaxCircle().getCircle());
 		legendpoints.setRenown(legendstatus.getReown());
 		legendpoints.setReputation(legendstatus.getReputation());
 
 		// TODO: Spells
 		// TODO: MagicItems
+
+		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden
+		death.setValue(death.getBase()+death.getAdjustment());
+		unconsciousness.setValue(unconsciousness.getBase()+unconsciousness.getAdjustment());
+
 		System.out.println("Berechnete verbrauchte LPs: "+totalCalculatedLPSpend);
 		return charakter;
 	}
@@ -245,19 +258,19 @@ public class ECEWorker {
 			value = 1;
 		}
 		if( value > encumbrance.size()) {
-			// TODO Warnung ausgeben, aber weiter machen
 			value = encumbrance.size();
+			System.err.println("The strength attribute was out of range. The carrying value will now base on: "+value);
 		}
 		return encumbrance.get(value);
 	}
 
 	public int berechneAttriubteCost(int modifier) {
 		if ( modifier < -2 ) {
-			// TODO Warnung ausgeben, aber weiter machen
+			System.err.println("The generation attribute value was to low. Value will increased to -2.");
 			modifier = -2;
 		}
 		if ( modifier > 8 ) {
-			// TODO Warnung ausgeben, aber weiter machen
+			System.err.println("The generation attribute value was to high. Value will be lower down to 8.");
 			modifier = 8;
 		}
 		HashMap<Integer,Integer> attributecost = ApplicationProperties.create().getCharacteristics().getATTRIBUTECOST();
