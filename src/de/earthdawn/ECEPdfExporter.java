@@ -272,7 +272,11 @@ public class ECEPdfExporter {
 			int counter=0;
 			for( DISCIPLINEBONUSType bonus : bonuses ) {
 				acroFields.setField("DiscBonusAbility."+counter, bonus.getBonus() );
-				acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
+				if( bonus.getCircle() > 1 ) {
+					acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
+				} else {
+					acroFields.setField("DiscBonusCircle."+counter, "-" );
+				}
 				counter++;
 			}
 		}

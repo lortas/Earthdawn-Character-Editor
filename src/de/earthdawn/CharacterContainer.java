@@ -25,6 +25,18 @@ public class CharacterContainer {
 	public String getName() {
 		return character.getName();
 	}
+
+	public void clearATTRIBUTEOrDEFENSEOrHEALTH(String tagname) {
+		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
+		List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
+		for (JAXBElement<?> element : list ) {
+			if (element.getName().getLocalPart().equals(tagname)) {
+				removelist.add(element);
+			}
+		}
+		list.removeAll(removelist);
+	}
+
 	public APPEARANCEType getAppearance() {
 		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
 			if( element.getName().getLocalPart().equals("APPEARANCE") ) {
@@ -185,15 +197,8 @@ public class CharacterContainer {
 	}
 
 	public void setAbilities(String newValue) {
-		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
-		List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
-		for (JAXBElement<?> element : list ) {
-			if (element.getName().getLocalPart().equals("RACEABILITES")) {
-				removelist.add(element);
-			}
-		}
-		list.removeAll(removelist);
-		list.add(new ObjectFactory().createEDCHARACTERRACEABILITES(newValue));
+		clearATTRIBUTEOrDEFENSEOrHEALTH("RACEABILITES");
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERRACEABILITES(newValue));
 		return;
 	}
 
@@ -314,6 +319,10 @@ public class CharacterContainer {
 		return bonuses;
 	}
 
+	public void clearDisciplineBonuses() {
+		clearATTRIBUTEOrDEFENSEOrHEALTH("DISCIPLINEBONUS");
+	}
+
 	public void addDisciplineBonuses(List<DISCIPLINEBONUSType> bonuses, int circle) {
 		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
 		for( DISCIPLINEBONUSType bonus : bonuses ) {
@@ -323,5 +332,13 @@ public class CharacterContainer {
 			newValue.setCircle(bonus.getCircle());
 			list.add(new ObjectFactory().createEDCHARACTERDISCIPLINEBONUS(newValue));
 		}
+	}
+
+	public void addDisciplineKarmaStepBonus(int disciplineKarmaStepBonus) {
+		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
+		DISCIPLINEBONUSType newValue = new DISCIPLINEBONUSType();
+		newValue.setBonus("Karma Step + "+disciplineKarmaStepBonus);
+		newValue.setCircle(0);
+		list.add(new ObjectFactory().createEDCHARACTERDISCIPLINEBONUS(newValue));
 	}
 }
