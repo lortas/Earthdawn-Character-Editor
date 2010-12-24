@@ -153,19 +153,27 @@ public class ECEWorker {
 		}
 		character.setAbilities(abilities);
 
+		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
+		character.clearDisciplineBonuses();
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
 		HashMap<String, ATTRIBUTEType> attribute = character.getAttributes();
-		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
 		HashMap<Integer, DISCIPLINEType> allDisciplines = character.getAllDiciplinesByOrder();
+		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
+		// Finde das DURABILITY Talent aus der Talentliste
 		String durabilityTalentName = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "DURABILITY", LanguageType.EN);
 		if( durabilityTalentName == null ) {
 			System.err.println("Durability in names.xml not defined for selected language. Skipping Health enhancment");
 			durabilityTalentName="";
 		}
+		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
+		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			namegivertalents.put(t.getName(), t);
 		}
+		// Zwei Schleifen:
+		// - äußere Schleife über alle Disziplinen und
+		// - innere Schleife über alle Talente der Disziplin
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			TALENTType durabilityTalent = null;
 			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
@@ -183,6 +191,8 @@ public class ECEWorker {
 					durabilityTalent=talent;
 				}
 			}
+			// Alle Dizipline Talente die bis jetzt noch nicht enthalten waren,
+			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
 				TALENTType talent = new TALENTType();
 				talent.setName(namegivertalents.get(t).getName());
@@ -195,14 +205,18 @@ public class ECEWorker {
 				talent.setRANK(rank);
 				allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
 			}
+			// Wenn ein Durability-Talent gefunden wurde berechnen aus dessen Rank
+			// dier Erhöhung von Todes- und Bewustlosigkeitsschwelle
+			DISCIPLINEType discipline = allDisciplines.get(disciplinenumber);
 			if( durabilityTalent != null ) {
-				DISCIPLINEDURABILITYType durability = JAXBHelper.getDisciplineDurability(allDisciplines.get(disciplinenumber));
+				DISCIPLINEDURABILITYType durability = JAXBHelper.getDisciplineDurability(discipline);
 				death.setAdjustment(death.getAdjustment()+(durability.getDeath()*durabilityTalent.getRANK().getRank()));
 				unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*durabilityTalent.getRANK().getRank()));
 				durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
 			}
-			List<DISCIPLINEBONUSType> bonuses = JAXBHelper.getDisciplineBonuses(allDisciplines.get(disciplinenumber));
-			character.addDisciplineBonuses(bonuses,allDisciplines.get(disciplinenumber).getCircle());
+			diciplineCircle.put(discipline.getName(), discipline.getCircle());
+			List<DISCIPLINEBONUSType> bonuses = JAXBHelper.getDisciplineBonuses(discipline);
+			character.addDisciplineBonuses(bonuses,discipline.getCircle());
 		}
 
 		for( SKILLType skill : character.getSkills() ) {
@@ -213,6 +227,20 @@ public class ECEWorker {
 			enforceCapabilityParams(skill,capabilities);
 			calculateCapabilityRank(skill.getRANK(),attribute.get(skill.getAttribute().value()));
 		}
+
+		DEFENSEType disciplineDefense = getDisciplineDefense(diciplineCircle);
+		defense.setPhysical(defense.getPhysical()+disciplineDefense.getPhysical());
+		defense.setSocial(defense.getSocial()+disciplineDefense.getSocial());
+		defense.setSpell(defense.getSpell()+disciplineDefense.getSpell());
+
+		initiative.setModification(initiative.getModification()+getDisciplineInitiative(diciplineCircle));
+		initiative.setStep(initiative.getBase()+initiative.getModification());
+		initiative.setDice(step2Dice(initiative.getStep()));
+
+		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
+		recovery.setDice(step2Dice(recovery.getStep()));
+		
+		character.addDisciplineKarmaStepBonus(getDisciplineKarmaStepBonus(diciplineCircle));
 
 		EXPERIENCEType legendpoints = character.getLegendPoints();
 		int legendpointsPLUS = 0;
@@ -240,6 +268,88 @@ public class ECEWorker {
 
 		System.out.println("Berechnete verbrauchte LPs: "+totalCalculatedLPSpend);
 		return charakter;
+	}
+
+	private int getDisciplineKarmaStepBonus(HashMap<String,Integer> diciplineCircle) {
+		int result = 0;
+		for( String discipline : diciplineCircle.keySet() ) {
+			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			int tmp = 0;
+			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+				if( element.getName().getLocalPart().equals("KARMASTEP")) {
+					DISZIPINABILITYType karmastep = (DISZIPINABILITYType)element.getValue();
+					if( karmastep.getCircle() > diciplineCircle.get(discipline) ) continue;
+					tmp++;
+				}
+			}
+			if( tmp > result ) result=tmp;
+		}
+		return result;
+	}
+
+	private int getDisciplineRecoveryTestBonus(HashMap<String,Integer> diciplineCircle) {
+		int result = 0;
+		for( String discipline : diciplineCircle.keySet() ) {
+			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			int tmp = 0;
+			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+				if( element.getName().getLocalPart().equals("RECOVERYTEST")) {
+					DISZIPINABILITYType recoverytest = (DISZIPINABILITYType)element.getValue();
+					if( recoverytest.getCircle() > diciplineCircle.get(discipline) ) continue;
+					tmp++;
+				}
+			}
+			if( tmp > result ) result=tmp;
+		}
+		return result;
+	}
+
+	private int getDisciplineInitiative(HashMap<String,Integer> diciplineCircle) {
+		int result = 0;
+		for( String discipline : diciplineCircle.keySet() ) {
+			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			int tmp = 0;
+			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+				if( element.getName().getLocalPart().equals("INITIATIVE")) {
+					DISZIPINABILITYType initiative = (DISZIPINABILITYType)element.getValue();
+					if( initiative.getCircle() > diciplineCircle.get(discipline) ) continue;
+					tmp++;
+				}
+			}
+			if( tmp > result ) result=tmp;
+		}
+		return result;
+	}
+
+	// Der Defense Bonus wird nicht über Alle Disziplinen addiert, sondern
+	// der Character erhält von des Disziplinen nur den jeweils höchsten DefenseBonus
+	private DEFENSEType getDisciplineDefense(HashMap<String,Integer> diciplineCircle) {
+		DEFENSEType result = new DEFENSEType();
+		result.setPhysical(0);
+		result.setSocial(0);
+		result.setSpell(0);
+		for( String discipline : diciplineCircle.keySet() ) {
+			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			DEFENSEType tmp = new DEFENSEType();
+			tmp.setPhysical(0);
+			tmp.setSocial(0);
+			tmp.setSpell(0);
+			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+				if( element.getName().getLocalPart().equals("DEFENSE")) {
+					DEFENSEABILITYType defense = (DEFENSEABILITYType)element.getValue();
+					if( defense.getCircle() > diciplineCircle.get(discipline) ) continue;
+					switch( defense.getKind() ) {
+					case PHYSICAL: tmp.setPhysical(tmp.getPhysical()+1); break;
+					case SOCIAL:   tmp.setSocial(tmp.getSocial()+1); break;
+					case SPELL:    tmp.setSpell(tmp.getSpell()+1); break;
+					}
+				}
+			}
+			if( tmp.getPhysical() > result.getPhysical() ) result.setPhysical(tmp.getPhysical());
+			if( tmp.getSocial()   > result.getSocial()   ) result.setSocial(tmp.getSocial());
+			if( tmp.getSpell()    > result.getSpell()    ) result.setSpell(tmp.getSpell());
+		}
+		return result;
 	}
 
 	public int berechneWiederstandskraft(int value) {
