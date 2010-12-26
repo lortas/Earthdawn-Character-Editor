@@ -43,8 +43,18 @@ public class CharacterContainer {
 				return (APPEARANCEType) element.getValue();
 			}
 		}
-		// Not found
-		return null;
+		// If not found: create
+		APPEARANCEType appearance = new APPEARANCEType();
+		appearance.setRace("Human");
+		appearance.setGender(GenderType.MALE);
+		appearance.setEyes("blue");
+		appearance.setAge(20);
+		appearance.setHair("blond");
+		appearance.setHeight(170);
+		appearance.setSkin("blond");
+		appearance.setWeight(80);
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERAPPEARANCE(appearance));
+		return appearance;
 	}
 
 	public HashMap<String, ATTRIBUTEType> getAttributes() {
@@ -68,7 +78,10 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		ATTRIBUTEType attribute = new ATTRIBUTEType();
+		attribute.setName(ATTRIBUTENameType.valueOf(name));
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERATTRIBUTE(attribute));
+		return attribute;
 	}
 
 	public DEFENSEType getDefence() {
@@ -78,7 +91,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		DEFENSEType defense = new DEFENSEType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERDEFENSE(defense));
+		return defense;
 	}
 
 	public INITIATIVEType getInitiative() {
@@ -88,7 +103,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		INITIATIVEType initiative = new INITIATIVEType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERINITIATIVE(initiative));
+		return initiative;
 	}
 
 	public HEALTHType getHealth() {
@@ -98,7 +115,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		HEALTHType health = new HEALTHType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERHEALTH(health));
+		return health;
 	}
 
 	public DEATHType getDeath() {
@@ -109,7 +128,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		DEATHType death = new DEATHType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeDEATH(death));
+		return death;
 	}
 
 	public DEATHType getUnconsciousness() {
@@ -120,7 +141,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		DEATHType unconsciousness = new DEATHType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeUNCONSCIOUSNESS(unconsciousness));
+		return unconsciousness;
 	}
 
 	public WOUNDType getWound() {
@@ -131,7 +154,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		WOUNDType wound = new WOUNDType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeWOUNDS(wound));
+		return wound;
 	}
 
 	public RECOVERYType getRecovery() {
@@ -142,7 +167,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		RECOVERYType recovery = new RECOVERYType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeRECOVERY(recovery));
+		return recovery;
 	}
 
 	public KARMAType getKarma() {
@@ -152,7 +179,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		KARMAType karma = new KARMAType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERKARMA(karma));
+		return karma;
 	}
 
 	public MOVEMENTType getMovement() {
@@ -162,7 +191,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		MOVEMENTType movment = new MOVEMENTType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERMOVEMENT(movment));
+		return movment;
 	}
 
 	public CARRYINGType getCarrying() {
@@ -172,7 +203,9 @@ public class CharacterContainer {
 			}
 		}
 		// Not found
-		return null;
+		CARRYINGType carrying = new CARRYINGType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERCARRYING(carrying));
+		return carrying;
 	}
 
 	public PROTECTIONType getProtection() {
@@ -335,6 +368,7 @@ public class CharacterContainer {
 	}
 
 	public void addDisciplineKarmaStepBonus(int disciplineKarmaStepBonus) {
+		if( disciplineKarmaStepBonus == 0 ) return;
 		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
 		DISCIPLINEBONUSType newValue = new DISCIPLINEBONUSType();
 		newValue.setBonus("Karma Step + "+disciplineKarmaStepBonus);
