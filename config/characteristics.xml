@@ -218,6 +218,7 @@
   <ATTRIBUTELPCOST increase="1" cost="800"/> 
   <ATTRIBUTELPCOST increase="2" cost="1300"/> 
   <ATTRIBUTELPCOST increase="3" cost="2100"/> 
+  <LEGENDARYSTATUS circle="0" reown="37" reputation="na"/>
   <LEGENDARYSTATUS circle="1" reown="21" reputation="na"/>
   <LEGENDARYSTATUS circle="2" reown="15" reputation="+1"/>
   <LEGENDARYSTATUS circle="5" reown="11" reputation="+2"/>

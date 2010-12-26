@@ -253,25 +253,28 @@
 		<xs:attribute name="lifting" type="unsigned_int"/>
 		<xs:attribute name="carrying" type="unsigned_int"/>
 	</xs:complexType>
-	<xs:complexType name="KARMA_type">
-		<xs:attribute name="current" type="unsigned_int" use="required"/>
-		<xs:attribute name="max" type="unsigned_int" use="required"/>
-		<xs:attribute name="maxmodificator" type="xs:int" default="0"/>
-	</xs:complexType>
-	<xs:complexType name="LEGENDPOINTS_type">
-		<xs:attribute name="comment" type="xs:string" use="required"/>
-		<xs:attribute name="legendpoints" type="unsigned_int" use="required"/>
+	<xs:complexType name="ACCOUNTING_type">
 		<xs:attribute name="type" type="plusminus_type" use="required"/>
+		<xs:attribute name="value" type="unsigned_int" use="required"/>
+		<xs:attribute name="comment" type="xs:string" use="required"/>
 		<xs:attribute name="when" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="EXPERIENCE_type">
-		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" name="LEGENDPOINTS" type="LEGENDPOINTS_type"/>
-		</xs:choice>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="LEGENDPOINTS" type="ACCOUNTING_type"/>
+		</xs:sequence>
 		<xs:attribute name="totallegendpoints" type="unsigned_int" use="required"/>
 		<xs:attribute name="currentlegendpoints" type="xs:int" use="required"/>
 		<xs:attribute name="renown" type="xs:int" use="required"/>
 		<xs:attribute name="reputation" type="xs:string" default="na"/>
+	</xs:complexType>
+	<xs:complexType name="KARMA_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="KARMAPOINTS" type="ACCOUNTING_type"/>
+		</xs:sequence>
+		<xs:attribute name="current" type="unsigned_int" use="required"/>
+		<xs:attribute name="max" type="unsigned_int" use="required"/>
+		<xs:attribute name="maxmodificator" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="ARMOR_type">
 		<xs:complexContent>

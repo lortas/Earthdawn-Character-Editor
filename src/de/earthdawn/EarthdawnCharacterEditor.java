@@ -25,6 +25,7 @@ public class EarthdawnCharacterEditor {
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Unmarshaller u = jc.createUnmarshaller();			
 				EDCHARACTER ec =(EDCHARACTER)u.unmarshal(new File(args[0]));
+				// ec = new EDCHARACTER(); // Test ob auch ein Leerer Bogen verarbeitet werden kann.
 				
 				// Verarbeiten
 				System.out.println("Verarbeite Charaker: '" + ec.getName() + "'");

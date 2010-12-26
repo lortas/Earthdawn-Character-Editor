@@ -8,9 +8,12 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -23,6 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="KARMA_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="KARMAPOINTS" type="{http://earthdawn.com/datatypes}ACCOUNTING_type" maxOccurs="unbounded"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="current" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="max" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="maxmodificator" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
@@ -34,15 +40,48 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "KARMA_type")
+@XmlType(name = "KARMA_type", propOrder = {
+    "karmapoints"
+})
 public class KARMAType {
 
+    @XmlElement(name = "KARMAPOINTS", required = true)
+    protected List<ACCOUNTINGType> karmapoints;
     @XmlAttribute(required = true)
     protected int current;
     @XmlAttribute(required = true)
     protected int max;
     @XmlAttribute
     protected Integer maxmodificator;
+
+    /**
+     * Gets the value of the karmapoints property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the karmapoints property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKARMAPOINTS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ACCOUNTINGType }
+     * 
+     * 
+     */
+    public List<ACCOUNTINGType> getKARMAPOINTS() {
+        if (karmapoints == null) {
+            karmapoints = new ArrayList<ACCOUNTINGType>();
+        }
+        return this.karmapoints;
+    }
 
     /**
      * Gets the value of the current property.

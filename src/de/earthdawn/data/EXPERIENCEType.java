@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="EXPERIENCE_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="LEGENDPOINTS" type="{http://earthdawn.com/datatypes}LEGENDPOINTS_type" maxOccurs="unbounded"/>
- *       &lt;/choice>
+ *       &lt;sequence>
+ *         &lt;element name="LEGENDPOINTS" type="{http://earthdawn.com/datatypes}ACCOUNTING_type" maxOccurs="unbounded"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="totallegendpoints" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="currentlegendpoints" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="renown" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
@@ -46,8 +46,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class EXPERIENCEType {
 
-    @XmlElement(name = "LEGENDPOINTS")
-    protected List<LEGENDPOINTSType> legendpoints;
+    @XmlElement(name = "LEGENDPOINTS", required = true)
+    protected List<ACCOUNTINGType> legendpoints;
     @XmlAttribute(required = true)
     protected int totallegendpoints;
     @XmlAttribute(required = true)
@@ -75,13 +75,13 @@ public class EXPERIENCEType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link LEGENDPOINTSType }
+     * {@link ACCOUNTINGType }
      * 
      * 
      */
-    public List<LEGENDPOINTSType> getLEGENDPOINTS() {
+    public List<ACCOUNTINGType> getLEGENDPOINTS() {
         if (legendpoints == null) {
-            legendpoints = new ArrayList<LEGENDPOINTSType>();
+            legendpoints = new ArrayList<ACCOUNTINGType>();
         }
         return this.legendpoints;
     }

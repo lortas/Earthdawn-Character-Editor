@@ -8,7 +8,10 @@
 	<ATTRIBUTE cost="5" currentvalue="14" generationvalue="4" racevalue="10" name="WIL" dice="d10" step="6" lpincrease="2"/>
 	<ATTRIBUTE cost="2" currentvalue="14" generationvalue="2" racevalue="12" name="CHA" dice="d10" step="6" lpincrease="0"/>
 	<MOVEMENT ground="3" flight="8"/>
-	<KARMA maxmodificator="0" max="6" current="20"/>
+	<KARMA maxmodificator="0" max="6" current="20">
+		<edt:KARMAPOINTS when="" type="+" value="100" comment="doing karmarituals"/>
+		<edt:KARMAPOINTS when="" type="-" value="89" comment="spend during adventures"/>
+	</KARMA>
 	<RACEABILITES>Flight</RACEABILITES>
 	<DEFENSE social="8" spell="9" physical="10"/>
 	<HEALTH damage="0">
@@ -20,7 +23,24 @@
 	<INITIATIVE modification="0" base="6" dice="d10" step="6"/>
 	<CARRYING carrying="40" lifting="80"/>
 	<EXPERIENCE reputation="0" renown="0" currentlegendpoints="0" totallegendpoints="0">
-		<edt:LEGENDPOINTS when="" type="+" legendpoints="100" comment="charakter generation"/>
+		<edt:LEGENDPOINTS comment="Start LP" value="37000" type="+" when="12.6.10"/>
+		<edt:LEGENDPOINTS comment="Kreis 6 Charakter" value="34100" type="+" when=""/>
+		<edt:LEGENDPOINTS comment="Abo's letztes Abenteuer -10%" value="1578" type="+" when=""/>
+		<edt:LEGENDPOINTS comment="" value="1500" type="+" when="17.6.10"/>
+		<edt:LEGENDPOINTS comment="zu sp&#228;t Bonus" value="18" type="+" when="17.6.10"/>
+		<edt:LEGENDPOINTS comment="" value="1340" type="+" when="29.7.10"/>
+		<edt:LEGENDPOINTS comment="SchreiberBonus" value="94" type="+" when="29.7.10"/>
+		<edt:LEGENDPOINTS comment="" value="1200" type="+" when="26.8.10"/>
+		<edt:LEGENDPOINTS comment="SchreiberBonus" value="60" type="+" when="26.8.10"/>
+		<edt:LEGENDPOINTS comment="zu sp&#228;t Bonus" value="26" type="+" when="26.8.10"/>
+		<edt:LEGENDPOINTS comment="" value="1400" type="+" when="2.9.10"/>
+		<edt:LEGENDPOINTS comment="SchreiberBonus" value="84" type="+" when="2.9.10"/>
+		<edt:LEGENDPOINTS comment="zu sp&#228;t Bonus" value="12" type="+" when="2.9.10"/>
+		<edt:LEGENDPOINTS comment="" value="2500" type="+" when="9.9.10"/>
+		<edt:LEGENDPOINTS comment="SchreiberBonus" value="75" type="+" when="9.9.10"/>
+		<edt:LEGENDPOINTS comment="" value="2800" type="+" when="23.9.10"/>
+		<edt:LEGENDPOINTS comment="zu sp&#228;t Bonus" value="124" type="+" when="23.9.10"/>
+		<edt:LEGENDPOINTS comment="SchreiberBonus" value="84" type="+" when="23.9.10"/>
 	</EXPERIENCE>
 	<DISCIPLINE circle="6" name="Shaman" order="1"/>
 	<PROTECTION penalty="0" mysticarmor="2" physicalarmor="0">
