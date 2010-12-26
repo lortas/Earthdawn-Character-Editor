@@ -18,6 +18,7 @@ import com.itextpdf.text.pdf.PdfStamper;
 
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DISCIPLINEBONUSType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
@@ -284,10 +285,18 @@ public class ECEPdfExporter {
 				counter++;
 			}
 		}
-		
-		acroFields.setField( "CopperPieces",  "" );
-		acroFields.setField( "GoldPieces",  "" );
-		acroFields.setField( "SilverPieces",  "" );
+
+		int copperPieces = 0;
+		int goldPieces = 0;
+		int silverPieces = 0;
+		for( COINSType coin : character.getAllCoins() ) {
+			copperPieces += coin.getCopper();
+			silverPieces += coin.getSilver();
+			goldPieces += coin.getGold();
+		}
+		acroFields.setField( "CopperPieces", String.valueOf(copperPieces) );
+		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
+		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
 		stamper.close();
 	}

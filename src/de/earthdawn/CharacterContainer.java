@@ -394,4 +394,22 @@ public class CharacterContainer {
 		newValue.setCircle(0);
 		list.add(new ObjectFactory().createEDCHARACTERDISCIPLINEBONUS(newValue));
 	}
+	
+	public List<COINSType> getAllCoins() {
+		List<COINSType> allCoins = new ArrayList<COINSType>();
+		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
+		for (JAXBElement<?> element : list) {
+			if (element.getName().getLocalPart().equals("COINS")) {
+				allCoins.add((COINSType)element.getValue());
+			}
+		}
+		if( allCoins.isEmpty() ) {
+			COINSType coins = new COINSType();
+			coins.setLocation("self");
+			coins.setUsed(YesnoType.YES);
+			allCoins.add(coins);
+			list.add(new ObjectFactory().createEDCHARACTERCOINS(coins));
+		}
+		return allCoins;
+	}
 }
