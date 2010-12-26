@@ -23,7 +23,7 @@ public class ECEWorker {
 	 */
 	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
 		CharacterContainer character = new CharacterContainer(charakter);
-		int totalCalculatedLPSpend=0;
+		CALCULATEDLEGENDPOINTSType calculatedLP = character.getCalculatedLegendpoints();
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		NAMEGIVERABILITYType namegiver = null;
@@ -49,7 +49,7 @@ public class ECEWorker {
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
 			karmaMaxBonus-=attribute.getCost();
-			totalCalculatedLPSpend+=ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease());
+			calculatedLP.setAttributes(calculatedLP.getAttributes()+ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
 		}
 		if( karmaMaxBonus <0 ) {
 			System.err.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
@@ -95,12 +95,27 @@ public class ECEWorker {
 		// **KARMA**
 		KARMAType karma=character.getKarma();
 		karma.setMaxmodificator(karmaMaxBonus);
+		int karmapointsPLUS = 0;
+		int karmapointsMINUS = 0;
+		int karmapointsZERO = 0;
+		for( ACCOUNTINGType lp : karma.getKARMAPOINTS() ) {
+			switch( lp.getType() ) {
+			case PLUS:  karmapointsPLUS  += lp.getValue(); break;
+			case MINUS: karmapointsMINUS += lp.getValue(); break;
+			case ZERO:  karmapointsZERO  += lp.getValue(); break;
+			}
+		}
+		karma.setCurrent(karmapointsPLUS-karmapointsMINUS);
+		calculatedLP.setKarma(calculatedLP.getKarma()+(karmapointsPLUS*10));
 		String KARMARUTUAL = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "KARMARUTUAL", LanguageType.EN);
 		if( KARMARUTUAL == null ) {
 			System.err.println("Karmaritual in names.xml not defined for selected language. Skipping MaxKarma calculation");
 		} else {
+			int maxkarma = 0;
 			TALENTType karmaritual=character.getTalentByName(KARMARUTUAL);
-			int maxkarma = namegiver.getKarmamodifier() * karmaritual.getRANK().getRank();
+			if( karmaritual != null ) {
+				maxkarma += namegiver.getKarmamodifier() * karmaritual.getRANK().getRank();
+			}
 			// Die Übriggebliebenen Kaufpunkte erhöhen das maximale Karma
 			maxkarma += karmaMaxBonus;
 			karma.setMax(maxkarma);
@@ -182,7 +197,11 @@ public class ECEWorker {
 				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getRank());
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
 				talent.getRANK().setLpcost(lpcostfull-lpcoststart);
-				totalCalculatedLPSpend += talent.getRANK().getLpcost();
+				if( element.getName().getLocalPart().equals("DISZIPLINETALENT")) {
+					calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+talent.getRANK().getLpcost());
+				} else {
+					calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+talent.getRANK().getLpcost());
+				}
 				calculateCapabilityRank(talent.getRANK(),attribute.get(talent.getAttribute().value()));
 				if( namegivertalents.containsKey(talent.getName()) ) {
 					namegivertalents.remove(talent.getName());
@@ -223,7 +242,7 @@ public class ECEWorker {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
 			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
-			totalCalculatedLPSpend += skill.getRANK().getLpcost();
+			calculatedLP.setSkills(calculatedLP.getSkills()+skill.getRANK().getLpcost());
 			enforceCapabilityParams(skill,capabilities);
 			calculateCapabilityRank(skill.getRANK(),attribute.get(skill.getAttribute().value()));
 		}
@@ -246,11 +265,11 @@ public class ECEWorker {
 		int legendpointsPLUS = 0;
 		int legendpointsMINUS = 0;
 		int legendpointsZERO = 0;
-		for( LEGENDPOINTSType lp : legendpoints.getLEGENDPOINTS() ) {
+		for( ACCOUNTINGType lp : legendpoints.getLEGENDPOINTS() ) {
 			switch( lp.getType() ) {
-			case PLUS:  legendpointsPLUS  += lp.getLegendpoints(); break;
-			case MINUS: legendpointsMINUS += lp.getLegendpoints(); break;
-			case ZERO:  legendpointsZERO  += lp.getLegendpoints(); break;
+			case PLUS:  legendpointsPLUS  += lp.getValue(); break;
+			case MINUS: legendpointsMINUS += lp.getValue(); break;
+			case ZERO:  legendpointsZERO  += lp.getValue(); break;
 			}
 		}
 		legendpoints.setCurrentlegendpoints(legendpointsPLUS-legendpointsMINUS);
@@ -266,7 +285,10 @@ public class ECEWorker {
 		death.setValue(death.getBase()+death.getAdjustment());
 		unconsciousness.setValue(unconsciousness.getBase()+unconsciousness.getAdjustment());
 
-		System.out.println("Berechnete verbrauchte LPs: "+totalCalculatedLPSpend);
+		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
+				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
+				calculatedLP.getSkills());
+		System.out.println("Berechnete verbrauchte LPs: "+calculatedLP.getTotal());
 		return charakter;
 	}
 

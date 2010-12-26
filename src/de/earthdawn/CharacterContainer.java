@@ -65,6 +65,13 @@ public class CharacterContainer {
 				attributes.put(attribute.getName().value(), attribute);
 			}
 		}
+		for( ATTRIBUTENameType name : ATTRIBUTENameType.values() ) {
+			if( attributes.containsKey(name.value())) continue;
+			ATTRIBUTEType attribute = new ATTRIBUTEType();
+			attribute.setName(name);
+			character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERATTRIBUTE(attribute));
+			attributes.put(name.value(), attribute);
+		}
 		return attributes;
 	}
 
@@ -94,6 +101,18 @@ public class CharacterContainer {
 		DEFENSEType defense = new DEFENSEType();
 		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERDEFENSE(defense));
 		return defense;
+	}
+
+	public CALCULATEDLEGENDPOINTSType getCalculatedLegendpoints() {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("CALCULATEDLEGENDPOINTS")) {
+				return (CALCULATEDLEGENDPOINTSType) element.getValue();
+			}
+		}
+		// Not found
+		CALCULATEDLEGENDPOINTSType calculatedLegendpoints = new CALCULATEDLEGENDPOINTSType();
+		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERCALCULATEDLEGENDPOINTS(calculatedLegendpoints));
+		return calculatedLegendpoints;
 	}
 
 	public INITIATIVEType getInitiative() {
@@ -129,7 +148,7 @@ public class CharacterContainer {
 		}
 		// Not found
 		DEATHType death = new DEATHType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeDEATH(death));
+		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeDEATH(death));
 		return death;
 	}
 
@@ -142,7 +161,7 @@ public class CharacterContainer {
 		}
 		// Not found
 		DEATHType unconsciousness = new DEATHType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeUNCONSCIOUSNESS(unconsciousness));
+		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeUNCONSCIOUSNESS(unconsciousness));
 		return unconsciousness;
 	}
 
@@ -155,7 +174,7 @@ public class CharacterContainer {
 		}
 		// Not found
 		WOUNDType wound = new WOUNDType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeWOUNDS(wound));
+		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeWOUNDS(wound));
 		return wound;
 	}
 
@@ -168,7 +187,7 @@ public class CharacterContainer {
 		}
 		// Not found
 		RECOVERYType recovery = new RECOVERYType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createHEALTHTypeRECOVERY(recovery));
+		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeRECOVERY(recovery));
 		return recovery;
 	}
 

@@ -100,7 +100,11 @@ public class ECEPdfExporter {
 		acroFields.setField( "RecoveryDice", character.getRecovery().getDice().value() );
 		acroFields.setField( "RecoveryTestsPerDay",  String.valueOf(character.getRecovery().getTestsperday()) );
 		acroFields.setField( "WoundThreshold", String.valueOf(character.getWound().getThreshold()) );
-		acroFields.setField( "CurrentDamage",  "" );
+		if( character.getHealth().getDamage() > 0 ) {
+			acroFields.setField( "CurrentDamage", String.valueOf(character.getHealth().getDamage()) );
+		} else {
+			acroFields.setField( "CurrentDamage",  "" );
+		}
 		acroFields.setField( "KarmaCurrent", String.valueOf(character.getKarma().getCurrent()) );
 		acroFields.setField( "KarmaMax", String.valueOf(character.getKarma().getMax()) );
 		MOVEMENTType movement = character.getMovement();
@@ -118,7 +122,7 @@ public class ECEPdfExporter {
 		int armor_max=0;
 		int shield_max=0;
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
-			if( ! armor.getUsed().equals(YesnoType.YES) ) { continue; }
+			if( ! armor.getUsed().equals(YesnoType.YES) ) continue;
 			if( armor.getClass().getSimpleName().equals("ARMORType") ) {
 				if( armor.getPhysicalarmor()>armor_max ) {
 					armor_max=armor.getPhysicalarmor();

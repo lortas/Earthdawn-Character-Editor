@@ -14,6 +14,15 @@
 		</xs:choice>
 		<xs:attribute name="discipline" type="xs:string" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="CALCULATEDLEGENDPOINTS_type">
+		<xs:attribute name="attributes" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="disciplinetalents" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="optionaltalents" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="skills" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="karma" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="magicitems" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="total" type="edt:unsigned_int" default="0"/>
+	</xs:complexType>
 	<xs:element name="EDCHARACTER">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -25,6 +34,7 @@
 				<xs:element maxOccurs="1" minOccurs="1" name="CARRYING" type="edt:CARRYING_type"/>
 				<xs:element maxOccurs="1" minOccurs="1" name="KARMA" type="edt:KARMA_type"/>
 				<xs:element maxOccurs="1" minOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
 				<xs:element maxOccurs="3" minOccurs="0" name="DISCIPLINE" type="edt:DISCIPLINE_type"/>
 				<xs:element maxOccurs="1" minOccurs="1" name="PROTECTION" type="edt:PROTECTION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENTS" type="TALENTS_type"/>
