@@ -48,8 +48,8 @@ import javax.xml.bind.annotation.XmlType;
 public class PROTECTIONType {
 
     @XmlElements({
-        @XmlElement(name = "SHIELD", type = SHIELDType.class),
-        @XmlElement(name = "ARMOR")
+        @XmlElement(name = "ARMOR"),
+        @XmlElement(name = "SHIELD", type = SHIELDType.class)
     })
     protected List<ARMORType> armorOrSHIELD;
     @XmlAttribute(required = true)
@@ -77,8 +77,8 @@ public class PROTECTIONType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SHIELDType }
      * {@link ARMORType }
+     * {@link SHIELDType }
      * 
      * 
      */

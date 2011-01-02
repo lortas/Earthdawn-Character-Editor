@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="OPTIONALRULE_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" />
+ *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -47,7 +47,11 @@ public class OPTIONALRULEType {
      *     
      */
     public YesnoType getUsed() {
-        return used;
+        if (used == null) {
+            return YesnoType.NO;
+        } else {
+            return used;
+        }
     }
 
     /**

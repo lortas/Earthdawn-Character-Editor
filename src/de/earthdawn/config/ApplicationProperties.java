@@ -2,6 +2,7 @@ package de.earthdawn.config;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -87,8 +88,12 @@ public class ApplicationProperties {
 		return KNACKS;
 	}
 
-	public static SPELLS getSpells() {
-		return SPELLS;
+	public HashMap<String,SPELLDEFType> getSpells() {
+		HashMap<String,SPELLDEFType> spellmap = new HashMap<String,SPELLDEFType>();
+		for( SPELLDEFType spell : SPELLS.getSPELL() ) {
+			spellmap.put(spell.getName(), spell);
+		}
+		return spellmap;
 	}
 
 	public OPTIONALRULES getOptionalRules() {

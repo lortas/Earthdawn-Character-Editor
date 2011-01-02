@@ -19,6 +19,7 @@
 		<xs:attribute name="disciplinetalents" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="optionaltalents" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="skills" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="spells" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="karma" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="magicitems" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="total" type="edt:unsigned_int" default="0"/>

@@ -24,9 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
+ *       &lt;sequence>
  *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_ATTRIBUTE"/>
- *       &lt;/choice>
+ *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,13 +37,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "attribute"
+    "attribute",
+    "spelllegendpointcost"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
 public class OPTIONALRULES {
 
-    @XmlElement(name = "ATTRIBUTE", namespace = "http://earthdawn.com/optionalrules")
+    @XmlElement(name = "ATTRIBUTE", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULESATTRIBUTE attribute;
+    @XmlElement(name = "SPELLLEGENDPOINTCOST", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType spelllegendpointcost;
 
     /**
      * Gets the value of the attribute property.
@@ -66,6 +70,30 @@ public class OPTIONALRULES {
      */
     public void setATTRIBUTE(OPTIONALRULESATTRIBUTE value) {
         this.attribute = value;
+    }
+
+    /**
+     * Gets the value of the spelllegendpointcost property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getSPELLLEGENDPOINTCOST() {
+        return spelllegendpointcost;
+    }
+
+    /**
+     * Sets the value of the spelllegendpointcost property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setSPELLLEGENDPOINTCOST(OPTIONALRULEType value) {
+        this.spelllegendpointcost = value;
     }
 
 }
