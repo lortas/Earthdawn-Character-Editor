@@ -2,7 +2,7 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/optionalrules" xmlns="http://earthdawn.com/optionalrules" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:complexType name="OPTIONALRULE_type">
-		<xs:attribute name="used" type="edt:yesno_type"/>
+		<xs:attribute name="used" type="edt:yesno_type" default="no"/>
 	</xs:complexType>
 	<xs:complexType name="OPTIONALRULES_ATTRIBUTE">
 		<xs:attribute name="points" type="xs:int" />
@@ -10,9 +10,10 @@
 	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
-			<xs:choice>
+			<xs:sequence>
 				<xs:element maxOccurs="1" minOccurs="1" name="ATTRIBUTE" type="OPTIONALRULES_ATTRIBUTE"/>
-			</xs:choice>
+				<xs:element maxOccurs="1" minOccurs="1" name="SPELLLEGENDPOINTCOST" type="OPTIONALRULE_type"/>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

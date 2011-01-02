@@ -25,13 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="threads" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="weavingdifficulty" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="reattuningdifficulty" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="castingdifficulty" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="range" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="duration" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="effect" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="threads" type="{http://earthdawn.com/datatypes}unsigned_intplus" default="0" />
+ *       &lt;attribute name="weavingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="na" />
+ *       &lt;attribute name="reattuningdifficulty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="castingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="TSD" />
+ *       &lt;attribute name="range" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
+ *       &lt;attribute name="duration" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
+ *       &lt;attribute name="effect" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
+ *       &lt;attribute name="effectarea" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -48,20 +49,22 @@ public class SPELLDEFType {
 
     @XmlAttribute(required = true)
     protected String name;
-    @XmlAttribute(required = true)
-    protected int threads;
-    @XmlAttribute(required = true)
-    protected int weavingdifficulty;
-    @XmlAttribute(required = true)
-    protected int reattuningdifficulty;
-    @XmlAttribute(required = true)
+    @XmlAttribute
+    protected Integer threads;
+    @XmlAttribute
+    protected String weavingdifficulty;
+    @XmlAttribute
+    protected Integer reattuningdifficulty;
+    @XmlAttribute
     protected String castingdifficulty;
-    @XmlAttribute(required = true)
+    @XmlAttribute
     protected String range;
-    @XmlAttribute(required = true)
+    @XmlAttribute
     protected String duration;
-    @XmlAttribute(required = true)
+    @XmlAttribute
     protected String effect;
+    @XmlAttribute
+    protected String effectarea;
 
     /**
      * Gets the value of the name property.
@@ -90,48 +93,84 @@ public class SPELLDEFType {
     /**
      * Gets the value of the threads property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getThreads() {
-        return threads;
+        if (threads == null) {
+            return  0;
+        } else {
+            return threads;
+        }
     }
 
     /**
      * Sets the value of the threads property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setThreads(int value) {
+    public void setThreads(Integer value) {
         this.threads = value;
     }
 
     /**
      * Gets the value of the weavingdifficulty property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getWeavingdifficulty() {
-        return weavingdifficulty;
+    public String getWeavingdifficulty() {
+        if (weavingdifficulty == null) {
+            return "na";
+        } else {
+            return weavingdifficulty;
+        }
     }
 
     /**
      * Sets the value of the weavingdifficulty property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setWeavingdifficulty(int value) {
+    public void setWeavingdifficulty(String value) {
         this.weavingdifficulty = value;
     }
 
     /**
      * Gets the value of the reattuningdifficulty property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getReattuningdifficulty() {
-        return reattuningdifficulty;
+        if (reattuningdifficulty == null) {
+            return  0;
+        } else {
+            return reattuningdifficulty;
+        }
     }
 
     /**
      * Sets the value of the reattuningdifficulty property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setReattuningdifficulty(int value) {
+    public void setReattuningdifficulty(Integer value) {
         this.reattuningdifficulty = value;
     }
 
@@ -144,7 +183,11 @@ public class SPELLDEFType {
      *     
      */
     public String getCastingdifficulty() {
-        return castingdifficulty;
+        if (castingdifficulty == null) {
+            return "TSD";
+        } else {
+            return castingdifficulty;
+        }
     }
 
     /**
@@ -168,7 +211,11 @@ public class SPELLDEFType {
      *     
      */
     public String getRange() {
-        return range;
+        if (range == null) {
+            return "s. text";
+        } else {
+            return range;
+        }
     }
 
     /**
@@ -192,7 +239,11 @@ public class SPELLDEFType {
      *     
      */
     public String getDuration() {
-        return duration;
+        if (duration == null) {
+            return "s. text";
+        } else {
+            return duration;
+        }
     }
 
     /**
@@ -216,7 +267,11 @@ public class SPELLDEFType {
      *     
      */
     public String getEffect() {
-        return effect;
+        if (effect == null) {
+            return "s. text";
+        } else {
+            return effect;
+        }
     }
 
     /**
@@ -229,6 +284,34 @@ public class SPELLDEFType {
      */
     public void setEffect(String value) {
         this.effect = value;
+    }
+
+    /**
+     * Gets the value of the effectarea property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEffectarea() {
+        if (effectarea == null) {
+            return "s. text";
+        } else {
+            return effectarea;
+        }
+    }
+
+    /**
+     * Sets the value of the effectarea property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEffectarea(String value) {
+        this.effectarea = value;
     }
 
 }

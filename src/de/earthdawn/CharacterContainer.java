@@ -412,4 +412,24 @@ public class CharacterContainer {
 		}
 		return allCoins;
 	}
+
+	public List<SPELLSType> getAllSpells() {
+		List<SPELLSType> allspells = new ArrayList<SPELLSType>();
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("SPELLS")) {
+				allspells.add((SPELLSType)element.getValue());
+			}
+		}
+		return allspells;
+	}
+	public HashMap<Integer,SPELLSType> getAllSpellsByDisziplinOrder() {
+		// Erstelle zu erst eine Liste von Disziplinen
+		HashMap<String,DISCIPLINEType> alldisciplines = getAllDiciplinesByName();
+		// Hole nun alle TalentListen und speichere sie in der Diszipline Reihnfolge in eine HashMap.
+		HashMap<Integer,SPELLSType> allspells = new HashMap<Integer,SPELLSType>();
+		for (SPELLSType spells : getAllSpells() ) {
+			allspells.put(alldisciplines.get(spells.getDiscipline()).getOrder(),spells);
+		}
+		return allspells;
+	}
 }

@@ -100,7 +100,25 @@
 		</OPTIONALTALENT>
 	</TALENTS>
 	<SPELLS discipline="Shaman">
-		<SPELL circle="1" type="shamane" inmatrix="yes" effect="blub" duration="1rd" range="30" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="7" threads="0" name="blub"/>
+		<SPELL name="Air Armor" circle="1" type="shamane"/>
+		<SPELL name="Assuring Touch" circle="1" type="shamane"/>
+		<SPELL name="Bone Dance" circle="1" type="shamane"/>
+		<SPELL name="Catseyes" circle="1" type="shamane"/>
+		<SPELL name="Crunch Climb" circle="1" type="shamane"/>
+		<SPELL name="Earth Blend" circle="1" type="shamane"/>
+		<SPELL name="Earth Darts" circle="1" type="shamane"/>
+		<SPELL name="Insect Repellent" circle="1" type="shamane"/>
+		<SPELL name="Moonglow" circle="1" type="shamane"/>
+		<SPELL name="Plant Talk" circle="1" type="shamane"/>
+		<SPELL name="Purify Earth" circle="1" type="shamane"/>
+		<SPELL name="Purify Water" circle="1" type="shamane"/>
+		<SPELL name="Quicken Pace" circle="1" type="shamane"/>
+		<SPELL name="Resist Cold" circle="1" type="shamane"/>
+		<SPELL name="Gadfly" circle="2" type="shamane"/>
+		<SPELL name="Gills" circle="2" type="shamane"/>
+		<SPELL name="Hunter's Sense" circle="2" type="shamane"/>
+		<SPELL name="Icy Surface" circle="2" type="shamane"/>
+		<SPELL name="Path Home" circle="2" type="shamane"/>
 	</SPELLS>
 	<SKILL name="Knowledge" limitation="Botany" action="standard" attribute="PER">
 		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>

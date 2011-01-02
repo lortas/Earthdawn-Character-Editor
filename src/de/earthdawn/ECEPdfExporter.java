@@ -26,6 +26,8 @@ import de.earthdawn.data.MOVEMENTType;
 import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.SKILLType;
+import de.earthdawn.data.SPELLSType;
+import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.WEAPONType;
@@ -298,6 +300,37 @@ public class ECEPdfExporter {
 		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
 		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
+		int conterSpells=0;
+		for( SPELLSType spells : character.getAllSpells() ) {
+			for( SPELLType spell : spells.getSPELL() ) {
+				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
+				if( spell.getInmatrix().equals(YesnoType.YES)) {
+					acroFields.setField( "InMatrix."+conterSpells, "Yes" );
+				} else {
+					acroFields.setField( "InMatrix."+conterSpells, "" );
+				}
+				switch( spell.getType() ) {
+				case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
+				case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
+				case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
+				case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
+				case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
+				default:   acroFields.setField( "SpellType."+conterSpells, "" ); break;
+				}
+				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
+				if( spell.getThreads() >= 0 ) {
+					acroFields.setField( "SpellThreads."+conterSpells, String.valueOf(spell.getThreads()) );
+				} else {
+					acroFields.setField( "SpellThreads."+conterSpells, "s. text" );
+				}
+				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
+				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
+				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
+				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
+				acroFields.setField( "Effect."+conterSpells, spell.getEffect() );
+				conterSpells++;
+			}
+		}
 		stamper.close();
 	}
 }

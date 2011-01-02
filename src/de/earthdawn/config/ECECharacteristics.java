@@ -164,6 +164,19 @@ public class ECECharacteristics {
 		return sum;
 	}
 
+	public int getSpellLP(int circle) {
+		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
+			if( element.getName().getLocalPart().equals("TALENTLPCOST") ) {
+				CHARACTERISTICSINCREASECOSTCIRCLE tmp = ((CHARACTERISTICSINCREASECOSTCIRCLE)element.getValue());
+				if( (tmp.getCircle()==1) && (tmp.getIncrease() == circle) ) {
+					return tmp.getCost();
+				}
+			}
+		}
+		// Not found
+		return 0;
+	}
+
 	public CHARACTERISTICSLEGENDARYSTATUS getLegendaystatus(int circle) {
 		HashMap<Integer,CHARACTERISTICSLEGENDARYSTATUS> status = new HashMap<Integer,CHARACTERISTICSLEGENDARYSTATUS>();
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {

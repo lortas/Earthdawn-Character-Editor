@@ -278,7 +278,39 @@ public class ECEWorker {
 		legendpoints.setRenown(legendstatus.getReown());
 		legendpoints.setReputation(legendstatus.getReputation());
 
-		// TODO: Spells
+		// ** SPELLS **
+		OPTIONALRULEType OptinalRule_SpellLegendPointCost = ApplicationProperties.create().getOptionalRules().getSPELLLEGENDPOINTCOST();
+		if( OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
+			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
+			ATTRIBUTEType per = character.getAttributes().get("PER");
+			calculatedLP.setSpells(-100 * attribute2StepAndDice(per.getCurrentvalue()-per.getLpincrease()).getStep());
+		} else {
+			calculatedLP.setSpells(0);
+		}
+		HashMap<String, SPELLDEFType> spelllist = ApplicationProperties.create().getSpells();
+		for( SPELLSType spells : character.getAllSpells() ) {
+			for( SPELLType spell : spells.getSPELL() ) {
+				SPELLDEFType spelldef = spelllist.get(spell.getName());
+				if( spelldef == null ) {
+					System.err.println("Unknown Spell '"+spell.getName()+"' in grimour found. Spell is left unmodified in grimour.");
+				} else {
+					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+					spell.setDuration(spelldef.getDuration());
+					spell.setEffect(spelldef.getEffect());
+					spell.setEffectarea(spelldef.getEffectarea());
+					spell.setRange(spelldef.getRange());
+					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+					spell.setThreads(spelldef.getThreads());
+					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+				}
+				if( OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
+					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle
+					int lpcost=ApplicationProperties.create().getCharacteristics().getSpellLP(spell.getCircle());
+					calculatedLP.setSpells(calculatedLP.getSpells()+lpcost);
+				}
+			}
+		}
+
 		// TODO: MagicItems
 
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden
@@ -287,8 +319,8 @@ public class ECEWorker {
 
 		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
 				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
-				calculatedLP.getSkills());
-		System.out.println("Berechnete verbrauchte LPs: "+calculatedLP.getTotal());
+				calculatedLP.getSkills()+calculatedLP.getSpells());
+		System.out.println("Berechnete verbrauchte LPs gesamt: "+calculatedLP.getTotal());
 		return charakter;
 	}
 
