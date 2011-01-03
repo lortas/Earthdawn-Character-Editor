@@ -13,6 +13,7 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELLABILITY" type="edt:DISZIPINABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="RECOVERYTEST" type="edt:DISZIPINABILITY_type"/>

@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DISCIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}CIRCLENAME_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="SPELLABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="RECOVERYTEST" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -58,16 +59,17 @@ import javax.xml.bind.annotation.XmlType;
 public class DISCIPLINE {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "DEFENSE", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "DURABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "RECOVERYTEST", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "KARMASTEP", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "KARMA", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "DISCIPLINETALENT", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "INITIATIVE", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "RECOVERYTEST", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "DEFENSE", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "SPELLABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "KARMA", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "SPELL", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "ABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class)
+        @XmlElementRef(name = "DISCIPLINETALENT", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "DURABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "ABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "KARMASTEP", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class)
     })
     protected List<JAXBElement<?>> durabilityAndOPTIONALTALENTAndDISCIPLINETALENT;
     @XmlAttribute(required = true)
@@ -93,16 +95,17 @@ public class DISCIPLINE {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link DEFENSEABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DISCIPLINEDURABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DEFENSEABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link KARMAABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DISCIPLINEDURABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}
-     * {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}
      * 
      * 
      */

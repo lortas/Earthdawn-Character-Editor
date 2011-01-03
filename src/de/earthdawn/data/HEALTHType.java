@@ -50,8 +50,8 @@ public class HEALTHType {
 
     @XmlElementRefs({
         @XmlElementRef(name = "WOUNDS", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
-        @XmlElementRef(name = "RECOVERY", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
         @XmlElementRef(name = "DEATH", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
+        @XmlElementRef(name = "RECOVERY", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
         @XmlElementRef(name = "UNCONSCIOUSNESS", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class)
     })
     protected List<JAXBElement<?>> recoveryOrUNCONSCIOUSNESSOrDEATH;
@@ -76,8 +76,8 @@ public class HEALTHType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link WOUNDType }{@code >}
      * {@link JAXBElement }{@code <}{@link RECOVERYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link WOUNDType }{@code >}
      * {@link JAXBElement }{@code <}{@link DEATHType }{@code >}
      * {@link JAXBElement }{@code <}{@link DEATHType }{@code >}
      * 
