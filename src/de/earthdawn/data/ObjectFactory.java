@@ -31,9 +31,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
     private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
     private final static QName _CHARACTERISTICSSTEPDICETABLE_QNAME = new QName("http://earthdawn.com/characteristics", "STEPDICETABLE");
+    private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
     private final static QName _CHARACTERISTICSHEALTHRATING_QNAME = new QName("http://earthdawn.com/characteristics", "HEALTHRATING");
     private final static QName _CHARACTERISTICSLEGENDARYSTATUS_QNAME = new QName("http://earthdawn.com/characteristics", "LEGENDARYSTATUS");
     private final static QName _CHARACTERISTICSATTRIBUTELPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTELPCOST");
@@ -43,6 +43,12 @@ public class ObjectFactory {
     private final static QName _CHARACTERISTICSTALENTLPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "TALENTLPCOST");
     private final static QName _TALENTSTypeOPTIONALTALENT_QNAME = new QName("http://earthdawn.com/character", "OPTIONALTALENT");
     private final static QName _TALENTSTypeDISZIPLINETALENT_QNAME = new QName("http://earthdawn.com/character", "DISZIPLINETALENT");
+    private final static QName _NAMESDURABILITY_QNAME = new QName("http://earthdawn.com/names", "DURABILITY");
+    private final static QName _NAMESKARMARUTUAL_QNAME = new QName("http://earthdawn.com/names", "KARMARUTUAL");
+    private final static QName _NAMESVERSATILITY_QNAME = new QName("http://earthdawn.com/names", "VERSATILITY");
+    private final static QName _NAMESATTRIBUTES_QNAME = new QName("http://earthdawn.com/names", "ATTRIBUTES");
+    private final static QName _KNACKSSKILLKNACK_QNAME = new QName("http://earthdawn.com/knack", "SKILLKNACK");
+    private final static QName _KNACKSTALENTKNACK_QNAME = new QName("http://earthdawn.com/knack", "TALENTKNACK");
     private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
     private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
     private final static QName _EDCHARACTERHEALTH_QNAME = new QName("http://earthdawn.com/character", "HEALTH");
@@ -60,171 +66,38 @@ public class ObjectFactory {
     private final static QName _EDCHARACTERPROTECTION_QNAME = new QName("http://earthdawn.com/character", "PROTECTION");
     private final static QName _EDCHARACTERCALCULATEDLEGENDPOINTS_QNAME = new QName("http://earthdawn.com/character", "CALCULATEDLEGENDPOINTS");
     private final static QName _EDCHARACTERMAGICITEM_QNAME = new QName("http://earthdawn.com/character", "MAGICITEM");
-    private final static QName _EDCHARACTERKARMA_QNAME = new QName("http://earthdawn.com/character", "KARMA");
     private final static QName _EDCHARACTERCOINS_QNAME = new QName("http://earthdawn.com/character", "COINS");
+    private final static QName _EDCHARACTERKARMA_QNAME = new QName("http://earthdawn.com/character", "KARMA");
     private final static QName _EDCHARACTERATTRIBUTE_QNAME = new QName("http://earthdawn.com/character", "ATTRIBUTE");
-    private final static QName _EDCHARACTERPORTRAIT_QNAME = new QName("http://earthdawn.com/character", "PORTRAIT");
     private final static QName _EDCHARACTERPATTERNITEM_QNAME = new QName("http://earthdawn.com/character", "PATTERNITEM");
+    private final static QName _EDCHARACTERPORTRAIT_QNAME = new QName("http://earthdawn.com/character", "PORTRAIT");
     private final static QName _EDCHARACTERITEM_QNAME = new QName("http://earthdawn.com/character", "ITEM");
     private final static QName _EDCHARACTERINITIATIVE_QNAME = new QName("http://earthdawn.com/character", "INITIATIVE");
     private final static QName _EDCHARACTERRACEABILITES_QNAME = new QName("http://earthdawn.com/character", "RACEABILITES");
     private final static QName _EDCHARACTERSPELLS_QNAME = new QName("http://earthdawn.com/character", "SPELLS");
     private final static QName _EDCHARACTERKARMARITUAL_QNAME = new QName("http://earthdawn.com/character", "KARMARITUAL");
     private final static QName _EDCHARACTERSKILL_QNAME = new QName("http://earthdawn.com/character", "SKILL");
-    private final static QName _NAMESDURABILITY_QNAME = new QName("http://earthdawn.com/names", "DURABILITY");
-    private final static QName _NAMESKARMARUTUAL_QNAME = new QName("http://earthdawn.com/names", "KARMARUTUAL");
-    private final static QName _NAMESVERSATILITY_QNAME = new QName("http://earthdawn.com/names", "VERSATILITY");
-    private final static QName _NAMESATTRIBUTES_QNAME = new QName("http://earthdawn.com/names", "ATTRIBUTES");
     private final static QName _HEALTHTypeRECOVERY_QNAME = new QName("http://earthdawn.com/datatypes", "RECOVERY");
     private final static QName _HEALTHTypeWOUNDS_QNAME = new QName("http://earthdawn.com/datatypes", "WOUNDS");
     private final static QName _HEALTHTypeDEATH_QNAME = new QName("http://earthdawn.com/datatypes", "DEATH");
     private final static QName _HEALTHTypeUNCONSCIOUSNESS_QNAME = new QName("http://earthdawn.com/datatypes", "UNCONSCIOUSNESS");
     private final static QName _DISCIPLINEKARMASTEP_QNAME = new QName("http://earthdawn.com/discipline", "KARMASTEP");
-    private final static QName _DISCIPLINEDISCIPLINETALENT_QNAME = new QName("http://earthdawn.com/discipline", "DISCIPLINETALENT");
     private final static QName _DISCIPLINEDEFENSE_QNAME = new QName("http://earthdawn.com/discipline", "DEFENSE");
+    private final static QName _DISCIPLINEDISCIPLINETALENT_QNAME = new QName("http://earthdawn.com/discipline", "DISCIPLINETALENT");
     private final static QName _DISCIPLINERECOVERYTEST_QNAME = new QName("http://earthdawn.com/discipline", "RECOVERYTEST");
     private final static QName _DISCIPLINESPELL_QNAME = new QName("http://earthdawn.com/discipline", "SPELL");
-    private final static QName _DISCIPLINEINITIATIVE_QNAME = new QName("http://earthdawn.com/discipline", "INITIATIVE");
     private final static QName _DISCIPLINEKARMA_QNAME = new QName("http://earthdawn.com/discipline", "KARMA");
-    private final static QName _DISCIPLINEABILITY_QNAME = new QName("http://earthdawn.com/discipline", "ABILITY");
+    private final static QName _DISCIPLINEINITIATIVE_QNAME = new QName("http://earthdawn.com/discipline", "INITIATIVE");
+    private final static QName _DISCIPLINESPELLABILITY_QNAME = new QName("http://earthdawn.com/discipline", "SPELLABILITY");
     private final static QName _DISCIPLINEOPTIONALTALENT_QNAME = new QName("http://earthdawn.com/discipline", "OPTIONALTALENT");
+    private final static QName _DISCIPLINEABILITY_QNAME = new QName("http://earthdawn.com/discipline", "ABILITY");
     private final static QName _DISCIPLINEDURABILITY_QNAME = new QName("http://earthdawn.com/discipline", "DURABILITY");
-    private final static QName _KNACKSSKILLKNACK_QNAME = new QName("http://earthdawn.com/knack", "SKILLKNACK");
-    private final static QName _KNACKSTALENTKNACK_QNAME = new QName("http://earthdawn.com/knack", "TALENTKNACK");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.earthdawn.data
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link SKILLType }
-     * 
-     */
-    public SKILLType createSKILLType() {
-        return new SKILLType();
-    }
-
-    /**
-     * Create an instance of {@link TALENTABILITYType }
-     * 
-     */
-    public TALENTABILITYType createTALENTABILITYType() {
-        return new TALENTABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link RECOVERYType }
-     * 
-     */
-    public RECOVERYType createRECOVERYType() {
-        return new RECOVERYType();
-    }
-
-    /**
-     * Create an instance of {@link MOVEMENTType }
-     * 
-     */
-    public MOVEMENTType createMOVEMENTType() {
-        return new MOVEMENTType();
-    }
-
-    /**
-     * Create an instance of {@link CIRCLENAMEType }
-     * 
-     */
-    public CIRCLENAMEType createCIRCLENAMEType() {
-        return new CIRCLENAMEType();
-    }
-
-    /**
-     * Create an instance of {@link SPELLType }
-     * 
-     */
-    public SPELLType createSPELLType() {
-        return new SPELLType();
-    }
-
-    /**
-     * Create an instance of {@link ARMORType }
-     * 
-     */
-    public ARMORType createARMORType() {
-        return new ARMORType();
-    }
-
-    /**
-     * Create an instance of {@link NAMEGIVERMOVEMENTType }
-     * 
-     */
-    public NAMEGIVERMOVEMENTType createNAMEGIVERMOVEMENTType() {
-        return new NAMEGIVERMOVEMENTType();
-    }
-
-    /**
-     * Create an instance of {@link EDCHARACTER }
-     * 
-     */
-    public EDCHARACTER createEDCHARACTER() {
-        return new EDCHARACTER();
-    }
-
-    /**
-     * Create an instance of {@link CAPABILITYType }
-     * 
-     */
-    public CAPABILITYType createCAPABILITYType() {
-        return new CAPABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINEBONUSType }
-     * 
-     */
-    public DISCIPLINEBONUSType createDISCIPLINEBONUSType() {
-        return new DISCIPLINEBONUSType();
-    }
-
-    /**
-     * Create an instance of {@link ACCOUNTINGType }
-     * 
-     */
-    public ACCOUNTINGType createACCOUNTINGType() {
-        return new ACCOUNTINGType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSINCREASECOSTCIRCLE }
-     * 
-     */
-    public CHARACTERISTICSINCREASECOSTCIRCLE createCHARACTERISTICSINCREASECOSTCIRCLE() {
-        return new CHARACTERISTICSINCREASECOSTCIRCLE();
-    }
-
-    /**
-     * Create an instance of {@link KARMAType }
-     * 
-     */
-    public KARMAType createKARMAType() {
-        return new KARMAType();
-    }
-
-    /**
-     * Create an instance of {@link DISZIPINABILITYType }
-     * 
-     */
-    public DISZIPINABILITYType createDISZIPINABILITYType() {
-        return new DISZIPINABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link KNACKBASEType }
-     * 
-     */
-    public KNACKBASEType createKNACKBASEType() {
-        return new KNACKBASEType();
     }
 
     /**
@@ -236,27 +109,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RANKType }
+     * Create an instance of {@link KNACKType }
      * 
      */
-    public RANKType createRANKType() {
-        return new RANKType();
+    public KNACKType createKNACKType() {
+        return new KNACKType();
     }
 
     /**
-     * Create an instance of {@link CARRYINGType }
+     * Create an instance of {@link EXPERIENCEType }
      * 
      */
-    public CARRYINGType createCARRYINGType() {
-        return new CARRYINGType();
+    public EXPERIENCEType createEXPERIENCEType() {
+        return new EXPERIENCEType();
     }
 
     /**
-     * Create an instance of {@link OPTIONALRULES }
+     * Create an instance of {@link TALENTABILITYType }
      * 
      */
-    public OPTIONALRULES createOPTIONALRULES() {
-        return new OPTIONALRULES();
+    public TALENTABILITYType createTALENTABILITYType() {
+        return new TALENTABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKS }
+     * 
+     */
+    public KNACKS createKNACKS() {
+        return new KNACKS();
     }
 
     /**
@@ -268,86 +149,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HEALTHType }
-     * 
-     */
-    public HEALTHType createHEALTHType() {
-        return new HEALTHType();
-    }
-
-    /**
-     * Create an instance of {@link ITEMType }
-     * 
-     */
-    public ITEMType createITEMType() {
-        return new ITEMType();
-    }
-
-    /**
-     * Create an instance of {@link DEFENSEABILITYType }
-     * 
-     */
-    public DEFENSEABILITYType createDEFENSEABILITYType() {
-        return new DEFENSEABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link DEATHType }
-     * 
-     */
-    public DEATHType createDEATHType() {
-        return new DEATHType();
-    }
-
-    /**
-     * Create an instance of {@link KNACKType }
-     * 
-     */
-    public KNACKType createKNACKType() {
-        return new KNACKType();
-    }
-
-    /**
-     * Create an instance of {@link SHIELDType }
-     * 
-     */
-    public SHIELDType createSHIELDType() {
-        return new SHIELDType();
-    }
-
-    /**
-     * Create an instance of {@link CALCULATEDLEGENDPOINTSType }
-     * 
-     */
-    public CALCULATEDLEGENDPOINTSType createCALCULATEDLEGENDPOINTSType() {
-        return new CALCULATEDLEGENDPOINTSType();
-    }
-
-    /**
-     * Create an instance of {@link ATTRIBUTEType }
-     * 
-     */
-    public ATTRIBUTEType createATTRIBUTEType() {
-        return new ATTRIBUTEType();
-    }
-
-    /**
-     * Create an instance of {@link NAMELANGType }
-     * 
-     */
-    public NAMELANGType createNAMELANGType() {
-        return new NAMELANGType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICS }
-     * 
-     */
-    public CHARACTERISTICS createCHARACTERISTICS() {
-        return new CHARACTERISTICS();
-    }
-
-    /**
      * Create an instance of {@link CHARACTERISTICSENCUMBRANCE }
      * 
      */
@@ -356,83 +157,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SPELLS }
+     * Create an instance of {@link NAMESATTRIBUTEType }
      * 
      */
-    public SPELLS createSPELLS() {
-        return new SPELLS();
+    public NAMESATTRIBUTEType createNAMESATTRIBUTEType() {
+        return new NAMESATTRIBUTEType();
     }
 
     /**
-     * Create an instance of {@link CHARACTERISTICSDEFENSERAITING }
+     * Create an instance of {@link MOVEMENTType }
      * 
      */
-    public CHARACTERISTICSDEFENSERAITING createCHARACTERISTICSDEFENSERAITING() {
-        return new CHARACTERISTICSDEFENSERAITING();
+    public MOVEMENTType createMOVEMENTType() {
+        return new MOVEMENTType();
     }
 
     /**
-     * Create an instance of {@link NAMEGIVERABILITYType }
+     * Create an instance of {@link DISCIPLINE }
      * 
      */
-    public NAMEGIVERABILITYType createNAMEGIVERABILITYType() {
-        return new NAMEGIVERABILITYType();
+    public DISCIPLINE createDISCIPLINE() {
+        return new DISCIPLINE();
     }
 
     /**
-     * Create an instance of {@link DISCIPLINEDURABILITYType }
+     * Create an instance of {@link HEALTHType }
      * 
      */
-    public DISCIPLINEDURABILITYType createDISCIPLINEDURABILITYType() {
-        return new DISCIPLINEDURABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINEType }
-     * 
-     */
-    public DISCIPLINEType createDISCIPLINEType() {
-        return new DISCIPLINEType();
-    }
-
-    /**
-     * Create an instance of {@link WOUNDType }
-     * 
-     */
-    public WOUNDType createWOUNDType() {
-        return new WOUNDType();
-    }
-
-    /**
-     * Create an instance of {@link TALENTSType }
-     * 
-     */
-    public TALENTSType createTALENTSType() {
-        return new TALENTSType();
-    }
-
-    /**
-     * Create an instance of {@link NAMEVALUEType }
-     * 
-     */
-    public NAMEVALUEType createNAMEVALUEType() {
-        return new NAMEVALUEType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSINCREASECOST }
-     * 
-     */
-    public CHARACTERISTICSINCREASECOST createCHARACTERISTICSINCREASECOST() {
-        return new CHARACTERISTICSINCREASECOST();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSLEGENDARYSTATUS }
-     * 
-     */
-    public CHARACTERISTICSLEGENDARYSTATUS createCHARACTERISTICSLEGENDARYSTATUS() {
-        return new CHARACTERISTICSLEGENDARYSTATUS();
+    public HEALTHType createHEALTHType() {
+        return new HEALTHType();
     }
 
     /**
@@ -444,19 +197,115 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link KARMAABILITYType }
+     * Create an instance of {@link DISCIPLINEBONUSType }
      * 
      */
-    public KARMAABILITYType createKARMAABILITYType() {
-        return new KARMAABILITYType();
+    public DISCIPLINEBONUSType createDISCIPLINEBONUSType() {
+        return new DISCIPLINEBONUSType();
     }
 
     /**
-     * Create an instance of {@link WEAPONType }
+     * Create an instance of {@link CARRYINGType }
      * 
      */
-    public WEAPONType createWEAPONType() {
-        return new WEAPONType();
+    public CARRYINGType createCARRYINGType() {
+        return new CARRYINGType();
+    }
+
+    /**
+     * Create an instance of {@link WOUNDType }
+     * 
+     */
+    public WOUNDType createWOUNDType() {
+        return new WOUNDType();
+    }
+
+    /**
+     * Create an instance of {@link NAMELANGType }
+     * 
+     */
+    public NAMELANGType createNAMELANGType() {
+        return new NAMELANGType();
+    }
+
+    /**
+     * Create an instance of {@link DISCIPLINEDURABILITYType }
+     * 
+     */
+    public DISCIPLINEDURABILITYType createDISCIPLINEDURABILITYType() {
+        return new DISCIPLINEDURABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link PROTECTIONType }
+     * 
+     */
+    public PROTECTIONType createPROTECTIONType() {
+        return new PROTECTIONType();
+    }
+
+    /**
+     * Create an instance of {@link ACCOUNTINGType }
+     * 
+     */
+    public ACCOUNTINGType createACCOUNTINGType() {
+        return new ACCOUNTINGType();
+    }
+
+    /**
+     * Create an instance of {@link DEATHType }
+     * 
+     */
+    public DEATHType createDEATHType() {
+        return new DEATHType();
+    }
+
+    /**
+     * Create an instance of {@link NAMEGIVERMOVEMENTType }
+     * 
+     */
+    public NAMEGIVERMOVEMENTType createNAMEGIVERMOVEMENTType() {
+        return new NAMEGIVERMOVEMENTType();
+    }
+
+    /**
+     * Create an instance of {@link THREADRANKType }
+     * 
+     */
+    public THREADRANKType createTHREADRANKType() {
+        return new THREADRANKType();
+    }
+
+    /**
+     * Create an instance of {@link SPELLType }
+     * 
+     */
+    public SPELLType createSPELLType() {
+        return new SPELLType();
+    }
+
+    /**
+     * Create an instance of {@link SHIELDType }
+     * 
+     */
+    public SHIELDType createSHIELDType() {
+        return new SHIELDType();
+    }
+
+    /**
+     * Create an instance of {@link PATTERNITEMType }
+     * 
+     */
+    public PATTERNITEMType createPATTERNITEMType() {
+        return new PATTERNITEMType();
+    }
+
+    /**
+     * Create an instance of {@link RECOVERYType }
+     * 
+     */
+    public RECOVERYType createRECOVERYType() {
+        return new RECOVERYType();
     }
 
     /**
@@ -468,19 +317,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OPTIONALRULESATTRIBUTE }
+     * Create an instance of {@link SKILLType }
      * 
      */
-    public OPTIONALRULESATTRIBUTE createOPTIONALRULESATTRIBUTE() {
-        return new OPTIONALRULESATTRIBUTE();
+    public SKILLType createSKILLType() {
+        return new SKILLType();
     }
 
     /**
-     * Create an instance of {@link NAMESATTRIBUTEType }
+     * Create an instance of {@link CAPABILITIES }
      * 
      */
-    public NAMESATTRIBUTEType createNAMESATTRIBUTEType() {
-        return new NAMESATTRIBUTEType();
+    public CAPABILITIES createCAPABILITIES() {
+        return new CAPABILITIES();
+    }
+
+    /**
+     * Create an instance of {@link DISZIPINABILITYType }
+     * 
+     */
+    public DISZIPINABILITYType createDISZIPINABILITYType() {
+        return new DISZIPINABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link OPTIONALRULES }
+     * 
+     */
+    public OPTIONALRULES createOPTIONALRULES() {
+        return new OPTIONALRULES();
+    }
+
+    /**
+     * Create an instance of {@link DEFENSEABILITYType }
+     * 
+     */
+    public DEFENSEABILITYType createDEFENSEABILITYType() {
+        return new DEFENSEABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link SPELLDEFType }
+     * 
+     */
+    public SPELLDEFType createSPELLDEFType() {
+        return new SPELLDEFType();
+    }
+
+    /**
+     * Create an instance of {@link CALCULATEDLEGENDPOINTSType }
+     * 
+     */
+    public CALCULATEDLEGENDPOINTSType createCALCULATEDLEGENDPOINTSType() {
+        return new CALCULATEDLEGENDPOINTSType();
     }
 
     /**
@@ -500,94 +389,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PATTERNITEMType }
-     * 
-     */
-    public PATTERNITEMType createPATTERNITEMType() {
-        return new PATTERNITEMType();
-    }
-
-    /**
-     * Create an instance of {@link NAMES }
-     * 
-     */
-    public NAMES createNAMES() {
-        return new NAMES();
-    }
-
-    /**
-     * Create an instance of {@link PROTECTIONType }
-     * 
-     */
-    public PROTECTIONType createPROTECTIONType() {
-        return new PROTECTIONType();
-    }
-
-    /**
-     * Create an instance of {@link OPTIONALRULEType }
-     * 
-     */
-    public OPTIONALRULEType createOPTIONALRULEType() {
-        return new OPTIONALRULEType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSATTRIBUTECOST }
-     * 
-     */
-    public CHARACTERISTICSATTRIBUTECOST createCHARACTERISTICSATTRIBUTECOST() {
-        return new CHARACTERISTICSATTRIBUTECOST();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINE }
-     * 
-     */
-    public DISCIPLINE createDISCIPLINE() {
-        return new DISCIPLINE();
-    }
-
-    /**
-     * Create an instance of {@link KNACKS }
-     * 
-     */
-    public KNACKS createKNACKS() {
-        return new KNACKS();
-    }
-
-    /**
-     * Create an instance of {@link TALENTType }
-     * 
-     */
-    public TALENTType createTALENTType() {
-        return new TALENTType();
-    }
-
-    /**
-     * Create an instance of {@link EXPERIENCEType }
-     * 
-     */
-    public EXPERIENCEType createEXPERIENCEType() {
-        return new EXPERIENCEType();
-    }
-
-    /**
-     * Create an instance of {@link COINSType }
-     * 
-     */
-    public COINSType createCOINSType() {
-        return new COINSType();
-    }
-
-    /**
-     * Create an instance of {@link CAPABILITIES }
-     * 
-     */
-    public CAPABILITIES createCAPABILITIES() {
-        return new CAPABILITIES();
-    }
-
-    /**
      * Create an instance of {@link CHARACTERISTICSMYSTICARMOR }
      * 
      */
@@ -596,35 +397,43 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CHARACTERISTICSHEALTHRATING }
+     * Create an instance of {@link RANKType }
      * 
      */
-    public CHARACTERISTICSHEALTHRATING createCHARACTERISTICSHEALTHRATING() {
-        return new CHARACTERISTICSHEALTHRATING();
+    public RANKType createRANKType() {
+        return new RANKType();
     }
 
     /**
-     * Create an instance of {@link SPELLDEFType }
+     * Create an instance of {@link WEAPONType }
      * 
      */
-    public SPELLDEFType createSPELLDEFType() {
-        return new SPELLDEFType();
+    public WEAPONType createWEAPONType() {
+        return new WEAPONType();
     }
 
     /**
-     * Create an instance of {@link DEFENSEType }
+     * Create an instance of {@link SPELLS }
      * 
      */
-    public DEFENSEType createDEFENSEType() {
-        return new DEFENSEType();
+    public SPELLS createSPELLS() {
+        return new SPELLS();
     }
 
     /**
-     * Create an instance of {@link THREADRANKType }
+     * Create an instance of {@link KARMAType }
      * 
      */
-    public THREADRANKType createTHREADRANKType() {
-        return new THREADRANKType();
+    public KARMAType createKARMAType() {
+        return new KARMAType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSINCREASECOSTCIRCLE }
+     * 
+     */
+    public CHARACTERISTICSINCREASECOSTCIRCLE createCHARACTERISTICSINCREASECOSTCIRCLE() {
+        return new CHARACTERISTICSINCREASECOSTCIRCLE();
     }
 
     /**
@@ -636,6 +445,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NAMES }
+     * 
+     */
+    public NAMES createNAMES() {
+        return new NAMES();
+    }
+
+    /**
+     * Create an instance of {@link ATTRIBUTEType }
+     * 
+     */
+    public ATTRIBUTEType createATTRIBUTEType() {
+        return new ATTRIBUTEType();
+    }
+
+    /**
+     * Create an instance of {@link CAPABILITYType }
+     * 
+     */
+    public CAPABILITYType createCAPABILITYType() {
+        return new CAPABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSLEGENDARYSTATUS }
+     * 
+     */
+    public CHARACTERISTICSLEGENDARYSTATUS createCHARACTERISTICSLEGENDARYSTATUS() {
+        return new CHARACTERISTICSLEGENDARYSTATUS();
+    }
+
+    /**
+     * Create an instance of {@link KNACKBASEType }
+     * 
+     */
+    public KNACKBASEType createKNACKBASEType() {
+        return new KNACKBASEType();
+    }
+
+    /**
+     * Create an instance of {@link NAMEGIVERABILITYType }
+     * 
+     */
+    public NAMEGIVERABILITYType createNAMEGIVERABILITYType() {
+        return new NAMEGIVERABILITYType();
+    }
+
+    /**
      * Create an instance of {@link SPELLSType }
      * 
      */
@@ -644,12 +501,147 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}}
+     * Create an instance of {@link OPTIONALRULEType }
      * 
      */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ENCUMBRANCE", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSENCUMBRANCE> createCHARACTERISTICSENCUMBRANCE(CHARACTERISTICSENCUMBRANCE value) {
-        return new JAXBElement<CHARACTERISTICSENCUMBRANCE>(_CHARACTERISTICSENCUMBRANCE_QNAME, CHARACTERISTICSENCUMBRANCE.class, CHARACTERISTICS.class, value);
+    public OPTIONALRULEType createOPTIONALRULEType() {
+        return new OPTIONALRULEType();
+    }
+
+    /**
+     * Create an instance of {@link ITEMType }
+     * 
+     */
+    public ITEMType createITEMType() {
+        return new ITEMType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSDEFENSERAITING }
+     * 
+     */
+    public CHARACTERISTICSDEFENSERAITING createCHARACTERISTICSDEFENSERAITING() {
+        return new CHARACTERISTICSDEFENSERAITING();
+    }
+
+    /**
+     * Create an instance of {@link OPTIONALRULESATTRIBUTE }
+     * 
+     */
+    public OPTIONALRULESATTRIBUTE createOPTIONALRULESATTRIBUTE() {
+        return new OPTIONALRULESATTRIBUTE();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSINCREASECOST }
+     * 
+     */
+    public CHARACTERISTICSINCREASECOST createCHARACTERISTICSINCREASECOST() {
+        return new CHARACTERISTICSINCREASECOST();
+    }
+
+    /**
+     * Create an instance of {@link KARMAABILITYType }
+     * 
+     */
+    public KARMAABILITYType createKARMAABILITYType() {
+        return new KARMAABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICS }
+     * 
+     */
+    public CHARACTERISTICS createCHARACTERISTICS() {
+        return new CHARACTERISTICS();
+    }
+
+    /**
+     * Create an instance of {@link DEFENSEType }
+     * 
+     */
+    public DEFENSEType createDEFENSEType() {
+        return new DEFENSEType();
+    }
+
+    /**
+     * Create an instance of {@link NAMEVALUEType }
+     * 
+     */
+    public NAMEVALUEType createNAMEVALUEType() {
+        return new NAMEVALUEType();
+    }
+
+    /**
+     * Create an instance of {@link TALENTSType }
+     * 
+     */
+    public TALENTSType createTALENTSType() {
+        return new TALENTSType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSHEALTHRATING }
+     * 
+     */
+    public CHARACTERISTICSHEALTHRATING createCHARACTERISTICSHEALTHRATING() {
+        return new CHARACTERISTICSHEALTHRATING();
+    }
+
+    /**
+     * Create an instance of {@link DISCIPLINEType }
+     * 
+     */
+    public DISCIPLINEType createDISCIPLINEType() {
+        return new DISCIPLINEType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSATTRIBUTECOST }
+     * 
+     */
+    public CHARACTERISTICSATTRIBUTECOST createCHARACTERISTICSATTRIBUTECOST() {
+        return new CHARACTERISTICSATTRIBUTECOST();
+    }
+
+    /**
+     * Create an instance of {@link TALENTType }
+     * 
+     */
+    public TALENTType createTALENTType() {
+        return new TALENTType();
+    }
+
+    /**
+     * Create an instance of {@link EDCHARACTER }
+     * 
+     */
+    public EDCHARACTER createEDCHARACTER() {
+        return new EDCHARACTER();
+    }
+
+    /**
+     * Create an instance of {@link COINSType }
+     * 
+     */
+    public COINSType createCOINSType() {
+        return new COINSType();
+    }
+
+    /**
+     * Create an instance of {@link CIRCLENAMEType }
+     * 
+     */
+    public CIRCLENAMEType createCIRCLENAMEType() {
+        return new CIRCLENAMEType();
+    }
+
+    /**
+     * Create an instance of {@link ARMORType }
+     * 
+     */
+    public ARMORType createARMORType() {
+        return new ARMORType();
     }
 
     /**
@@ -668,6 +660,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "STEPDICETABLE", scope = CHARACTERISTICS.class)
     public JAXBElement<CHARACTERISTICSSTEPDICETABLE> createCHARACTERISTICSSTEPDICETABLE(CHARACTERISTICSSTEPDICETABLE value) {
         return new JAXBElement<CHARACTERISTICSSTEPDICETABLE>(_CHARACTERISTICSSTEPDICETABLE_QNAME, CHARACTERISTICSSTEPDICETABLE.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ENCUMBRANCE", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSENCUMBRANCE> createCHARACTERISTICSENCUMBRANCE(CHARACTERISTICSENCUMBRANCE value) {
+        return new JAXBElement<CHARACTERISTICSENCUMBRANCE>(_CHARACTERISTICSENCUMBRANCE_QNAME, CHARACTERISTICSENCUMBRANCE.class, CHARACTERISTICS.class, value);
     }
 
     /**
@@ -749,6 +750,60 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "DISZIPLINETALENT", scope = TALENTSType.class)
     public JAXBElement<TALENTType> createTALENTSTypeDISZIPLINETALENT(TALENTType value) {
         return new JAXBElement<TALENTType>(_TALENTSTypeDISZIPLINETALENT_QNAME, TALENTType.class, TALENTSType.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "DURABILITY", scope = NAMES.class)
+    public JAXBElement<NAMELANGType> createNAMESDURABILITY(NAMELANGType value) {
+        return new JAXBElement<NAMELANGType>(_NAMESDURABILITY_QNAME, NAMELANGType.class, NAMES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "KARMARUTUAL", scope = NAMES.class)
+    public JAXBElement<NAMELANGType> createNAMESKARMARUTUAL(NAMELANGType value) {
+        return new JAXBElement<NAMELANGType>(_NAMESKARMARUTUAL_QNAME, NAMELANGType.class, NAMES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "VERSATILITY", scope = NAMES.class)
+    public JAXBElement<NAMELANGType> createNAMESVERSATILITY(NAMELANGType value) {
+        return new JAXBElement<NAMELANGType>(_NAMESVERSATILITY_QNAME, NAMELANGType.class, NAMES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NAMESATTRIBUTESType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "ATTRIBUTES", scope = NAMES.class)
+    public JAXBElement<NAMESATTRIBUTESType> createNAMESATTRIBUTES(NAMESATTRIBUTESType value) {
+        return new JAXBElement<NAMESATTRIBUTESType>(_NAMESATTRIBUTES_QNAME, NAMESATTRIBUTESType.class, NAMES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/knack", name = "SKILLKNACK", scope = KNACKS.class)
+    public JAXBElement<KNACKBASEType> createKNACKSSKILLKNACK(KNACKBASEType value) {
+        return new JAXBElement<KNACKBASEType>(_KNACKSSKILLKNACK_QNAME, KNACKBASEType.class, KNACKS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/knack", name = "TALENTKNACK", scope = KNACKS.class)
+    public JAXBElement<KNACKBASEType> createKNACKSTALENTKNACK(KNACKBASEType value) {
+        return new JAXBElement<KNACKBASEType>(_KNACKSTALENTKNACK_QNAME, KNACKBASEType.class, KNACKS.class, value);
     }
 
     /**
@@ -905,21 +960,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link KARMAType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "KARMA", scope = EDCHARACTER.class)
-    public JAXBElement<KARMAType> createEDCHARACTERKARMA(KARMAType value) {
-        return new JAXBElement<KARMAType>(_EDCHARACTERKARMA_QNAME, KARMAType.class, EDCHARACTER.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link COINSType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "COINS", scope = EDCHARACTER.class)
     public JAXBElement<COINSType> createEDCHARACTERCOINS(COINSType value) {
         return new JAXBElement<COINSType>(_EDCHARACTERCOINS_QNAME, COINSType.class, EDCHARACTER.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link KARMAType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "KARMA", scope = EDCHARACTER.class)
+    public JAXBElement<KARMAType> createEDCHARACTERKARMA(KARMAType value) {
+        return new JAXBElement<KARMAType>(_EDCHARACTERKARMA_QNAME, KARMAType.class, EDCHARACTER.class, value);
     }
 
     /**
@@ -932,21 +987,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "PORTRAIT", scope = EDCHARACTER.class)
-    public JAXBElement<byte[]> createEDCHARACTERPORTRAIT(byte[] value) {
-        return new JAXBElement<byte[]>(_EDCHARACTERPORTRAIT_QNAME, byte[].class, EDCHARACTER.class, ((byte[]) value));
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link PATTERNITEMType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "PATTERNITEM", scope = EDCHARACTER.class)
     public JAXBElement<PATTERNITEMType> createEDCHARACTERPATTERNITEM(PATTERNITEMType value) {
         return new JAXBElement<PATTERNITEMType>(_EDCHARACTERPATTERNITEM_QNAME, PATTERNITEMType.class, EDCHARACTER.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/character", name = "PORTRAIT", scope = EDCHARACTER.class)
+    public JAXBElement<byte[]> createEDCHARACTERPORTRAIT(byte[] value) {
+        return new JAXBElement<byte[]>(_EDCHARACTERPORTRAIT_QNAME, byte[].class, EDCHARACTER.class, ((byte[]) value));
     }
 
     /**
@@ -1004,42 +1059,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "DURABILITY", scope = NAMES.class)
-    public JAXBElement<NAMELANGType> createNAMESDURABILITY(NAMELANGType value) {
-        return new JAXBElement<NAMELANGType>(_NAMESDURABILITY_QNAME, NAMELANGType.class, NAMES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "KARMARUTUAL", scope = NAMES.class)
-    public JAXBElement<NAMELANGType> createNAMESKARMARUTUAL(NAMELANGType value) {
-        return new JAXBElement<NAMELANGType>(_NAMESKARMARUTUAL_QNAME, NAMELANGType.class, NAMES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "VERSATILITY", scope = NAMES.class)
-    public JAXBElement<NAMELANGType> createNAMESVERSATILITY(NAMELANGType value) {
-        return new JAXBElement<NAMELANGType>(_NAMESVERSATILITY_QNAME, NAMELANGType.class, NAMES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NAMESATTRIBUTESType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/names", name = "ATTRIBUTES", scope = NAMES.class)
-    public JAXBElement<NAMESATTRIBUTESType> createNAMESATTRIBUTES(NAMESATTRIBUTESType value) {
-        return new JAXBElement<NAMESATTRIBUTESType>(_NAMESATTRIBUTES_QNAME, NAMESATTRIBUTESType.class, NAMES.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link RECOVERYType }{@code >}}
      * 
      */
@@ -1085,21 +1104,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "DISCIPLINETALENT", scope = DISCIPLINE.class)
-    public JAXBElement<TALENTABILITYType> createDISCIPLINEDISCIPLINETALENT(TALENTABILITYType value) {
-        return new JAXBElement<TALENTABILITYType>(_DISCIPLINEDISCIPLINETALENT_QNAME, TALENTABILITYType.class, DISCIPLINE.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DEFENSEABILITYType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "DEFENSE", scope = DISCIPLINE.class)
     public JAXBElement<DEFENSEABILITYType> createDISCIPLINEDEFENSE(DEFENSEABILITYType value) {
         return new JAXBElement<DEFENSEABILITYType>(_DISCIPLINEDEFENSE_QNAME, DEFENSEABILITYType.class, DISCIPLINE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "DISCIPLINETALENT", scope = DISCIPLINE.class)
+    public JAXBElement<TALENTABILITYType> createDISCIPLINEDISCIPLINETALENT(TALENTABILITYType value) {
+        return new JAXBElement<TALENTABILITYType>(_DISCIPLINEDISCIPLINETALENT_QNAME, TALENTABILITYType.class, DISCIPLINE.class, value);
     }
 
     /**
@@ -1121,15 +1140,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "INITIATIVE", scope = DISCIPLINE.class)
-    public JAXBElement<DISZIPINABILITYType> createDISCIPLINEINITIATIVE(DISZIPINABILITYType value) {
-        return new JAXBElement<DISZIPINABILITYType>(_DISCIPLINEINITIATIVE_QNAME, DISZIPINABILITYType.class, DISCIPLINE.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link KARMAABILITYType }{@code >}}
      * 
      */
@@ -1139,12 +1149,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "ABILITY", scope = DISCIPLINE.class)
-    public JAXBElement<CIRCLENAMEType> createDISCIPLINEABILITY(CIRCLENAMEType value) {
-        return new JAXBElement<CIRCLENAMEType>(_DISCIPLINEABILITY_QNAME, CIRCLENAMEType.class, DISCIPLINE.class, value);
+    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "INITIATIVE", scope = DISCIPLINE.class)
+    public JAXBElement<DISZIPINABILITYType> createDISCIPLINEINITIATIVE(DISZIPINABILITYType value) {
+        return new JAXBElement<DISZIPINABILITYType>(_DISCIPLINEINITIATIVE_QNAME, DISZIPINABILITYType.class, DISCIPLINE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "SPELLABILITY", scope = DISCIPLINE.class)
+    public JAXBElement<DISZIPINABILITYType> createDISCIPLINESPELLABILITY(DISZIPINABILITYType value) {
+        return new JAXBElement<DISZIPINABILITYType>(_DISCIPLINESPELLABILITY_QNAME, DISZIPINABILITYType.class, DISCIPLINE.class, value);
     }
 
     /**
@@ -1157,30 +1176,21 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "ABILITY", scope = DISCIPLINE.class)
+    public JAXBElement<CIRCLENAMEType> createDISCIPLINEABILITY(CIRCLENAMEType value) {
+        return new JAXBElement<CIRCLENAMEType>(_DISCIPLINEABILITY_QNAME, CIRCLENAMEType.class, DISCIPLINE.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DISCIPLINEDURABILITYType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://earthdawn.com/discipline", name = "DURABILITY", scope = DISCIPLINE.class)
     public JAXBElement<DISCIPLINEDURABILITYType> createDISCIPLINEDURABILITY(DISCIPLINEDURABILITYType value) {
         return new JAXBElement<DISCIPLINEDURABILITYType>(_DISCIPLINEDURABILITY_QNAME, DISCIPLINEDURABILITYType.class, DISCIPLINE.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/knack", name = "SKILLKNACK", scope = KNACKS.class)
-    public JAXBElement<KNACKBASEType> createKNACKSSKILLKNACK(KNACKBASEType value) {
-        return new JAXBElement<KNACKBASEType>(_KNACKSSKILLKNACK_QNAME, KNACKBASEType.class, KNACKS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/knack", name = "TALENTKNACK", scope = KNACKS.class)
-    public JAXBElement<KNACKBASEType> createKNACKSTALENTKNACK(KNACKBASEType value) {
-        return new JAXBElement<KNACKBASEType>(_KNACKSTALENTKNACK_QNAME, KNACKBASEType.class, KNACKS.class, value);
     }
 
 }

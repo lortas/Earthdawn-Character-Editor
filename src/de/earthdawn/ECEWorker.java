@@ -283,7 +283,11 @@ public class ECEWorker {
 		if( OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
 			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
 			ATTRIBUTEType per = character.getAttributes().get("PER");
-			calculatedLP.setSpells(-100 * attribute2StepAndDice(per.getCurrentvalue()-per.getLpincrease()).getStep());
+			int lpbonus = 100 * attribute2StepAndDice(per.getCurrentvalue()-per.getLpincrease()).getStep();
+			for( int spellability : getDisciplineSpellAbility(diciplineCircle) ) {
+				lpbonus += ApplicationProperties.create().getCharacteristics().getSpellLP(spellability);
+			}
+			calculatedLP.setSpells(-lpbonus);
 		} else {
 			calculatedLP.setSpells(0);
 		}
@@ -402,6 +406,21 @@ public class ECEWorker {
 			if( tmp.getPhysical() > result.getPhysical() ) result.setPhysical(tmp.getPhysical());
 			if( tmp.getSocial()   > result.getSocial()   ) result.setSocial(tmp.getSocial());
 			if( tmp.getSpell()    > result.getSpell()    ) result.setSpell(tmp.getSpell());
+		}
+		return result;
+	}
+
+	private List<Integer> getDisciplineSpellAbility(HashMap<String,Integer> diciplineCircle) {
+		List<Integer> result = new ArrayList<Integer>();
+		for( String discipline : diciplineCircle.keySet() ) {
+			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+				if( element.getName().getLocalPart().equals("SPELLABILITY")) {
+					DISZIPINABILITYType spell = (DISZIPINABILITYType)element.getValue();
+					if( spell.getCircle() > diciplineCircle.get(discipline) ) continue;
+					result.add(spell.getCircle());
+				}
+			}
 		}
 		return result;
 	}
