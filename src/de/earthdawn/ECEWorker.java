@@ -209,6 +209,14 @@ public class ECEWorker {
 				if( talent.getName().equals(durabilityTalentName)) {
 					durabilityTalent=talent;
 				}
+				for( KNACKType knack : talent.getKNACK() ) {
+					if( knack.getMinrank() > talent.getRANK().getRank() ) {
+						System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
+								+talent.getRANK().getRank()+" vs. "+knack.getMinrank());
+					}
+					int lp = ApplicationProperties.create().getCharacteristics().getTalentRankIncreaseLP(talent.getCircle(),knack.getMinrank());
+					calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
+				}
 			}
 			// Alle Dizipline Talente die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
@@ -323,7 +331,7 @@ public class ECEWorker {
 
 		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
 				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
-				calculatedLP.getSkills()+calculatedLP.getSpells());
+				calculatedLP.getSkills()+calculatedLP.getSpells()+calculatedLP.getKnacks());
 		System.out.println("Berechnete verbrauchte LPs gesamt: "+calculatedLP.getTotal());
 		return charakter;
 	}

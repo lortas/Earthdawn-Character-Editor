@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="attributes" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="disciplinetalents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="optionaltalents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="knacks" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="skills" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="spells" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="karma" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -48,6 +49,8 @@ public class CALCULATEDLEGENDPOINTSType {
     protected Integer disciplinetalents;
     @XmlAttribute
     protected Integer optionaltalents;
+    @XmlAttribute
+    protected Integer knacks;
     @XmlAttribute
     protected Integer skills;
     @XmlAttribute
@@ -141,6 +144,34 @@ public class CALCULATEDLEGENDPOINTSType {
      */
     public void setOptionaltalents(Integer value) {
         this.optionaltalents = value;
+    }
+
+    /**
+     * Gets the value of the knacks property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getKnacks() {
+        if (knacks == null) {
+            return  0;
+        } else {
+            return knacks;
+        }
+    }
+
+    /**
+     * Sets the value of the knacks property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setKnacks(Integer value) {
+        this.knacks = value;
     }
 
     /**

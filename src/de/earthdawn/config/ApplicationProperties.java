@@ -2,10 +2,12 @@ package de.earthdawn.config;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
 import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
@@ -70,6 +72,14 @@ public class ApplicationProperties {
 			System.err.println("Dicipline '"+name+"' does not exist.");
 		}
 		return discipline;
+	}
+
+	public Set<String> getAllDisziplinNames() {
+		return DISCIPLINES.keySet();
+	}
+
+	public Collection<DISCIPLINE> getAllDisziplines() {
+		return DISCIPLINES.values();
 	}
 
 	public NAMEGIVERS getNamegivers() {

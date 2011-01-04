@@ -129,7 +129,7 @@ public class ECECharacteristics {
 			if( resultByCircle.containsKey(circle) ) {
 				return resultByCircle.get(circle);
 			}
-			// Für den gesuchten Kreis gab es keine LP-Summe, damit schauen wir nach einem kleinern Kreisr
+			// Für den gesuchten Kreis gab es keine LP-Summe, damit schauen wir nach einem kleinern Kreis
 			circle--;
 		}
 		// Not found
@@ -164,17 +164,30 @@ public class ECECharacteristics {
 		return sum;
 	}
 
-	public int getSpellLP(int circle) {
+	public int getTalentRankIncreaseLP(int circle, int rank) {
+		HashMap<Integer,Integer> resultByCircle = new HashMap<Integer,Integer>();
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
 			if( element.getName().getLocalPart().equals("TALENTLPCOST") ) {
 				CHARACTERISTICSINCREASECOSTCIRCLE tmp = ((CHARACTERISTICSINCREASECOSTCIRCLE)element.getValue());
-				if( (tmp.getCircle()==1) && (tmp.getIncrease() == circle) ) {
-					return tmp.getCost();
+				if( tmp.getIncrease() == rank ) {
+					resultByCircle.put( tmp.getCircle() , tmp.getCost() );
 				}
 			}
 		}
+		// Wähle nun den richtigen Kreis aus
+		while( circle >= 0) {
+			if( resultByCircle.containsKey(circle) ) {
+				return resultByCircle.get(circle);
+			}
+			// Für den gesuchten Kreis gab es keine LP-Summe, damit schauen wir nach einem kleinern Kreis
+			circle--;
+		}
 		// Not found
 		return 0;
+	}
+
+	public int getSpellLP(int circle) {
+		return getTalentRankIncreaseLP(1, circle);
 	}
 
 	public CHARACTERISTICSLEGENDARYSTATUS getLegendaystatus(int circle) {
