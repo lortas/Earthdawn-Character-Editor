@@ -183,7 +183,7 @@
 	</xs:complexType>
 	<xs:complexType name="CAPABILITY_type">
 		<xs:sequence>
-			<xs:element name="KNACK" type="KNACK_type" minOccurs="0"/>
+			<xs:element name="KNACK" type="KNACK_type" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="action" type="action_type" default="standard"/>
