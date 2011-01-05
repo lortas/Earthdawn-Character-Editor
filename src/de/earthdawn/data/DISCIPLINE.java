@@ -59,16 +59,16 @@ import javax.xml.bind.annotation.XmlType;
 public class DISCIPLINE {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "INITIATIVE", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "RECOVERYTEST", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "ABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "SPELL", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "SPELLABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "DURABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "DEFENSE", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "SPELLABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "KARMA", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "SPELL", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
+        @XmlElementRef(name = "INITIATIVE", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "DISCIPLINETALENT", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "DURABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
-        @XmlElementRef(name = "ABILITY", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class),
         @XmlElementRef(name = "KARMASTEP", namespace = "http://earthdawn.com/discipline", type = JAXBElement.class)
     })
     protected List<JAXBElement<?>> durabilityAndOPTIONALTALENTAndDISCIPLINETALENT;
@@ -96,14 +96,14 @@ public class DISCIPLINE {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DEFENSEABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link KARMAABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}
      * {@link JAXBElement }{@code <}{@link CIRCLENAMEType }{@code >}
      * {@link JAXBElement }{@code <}{@link DISCIPLINEDURABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link KARMAABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DEFENSEABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link TALENTABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link DISZIPINABILITYType }{@code >}
      * 

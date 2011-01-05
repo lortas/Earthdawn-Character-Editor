@@ -26,12 +26,13 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="MAGICITEM_type">
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}ITEM_type">
- *       &lt;choice maxOccurs="unbounded">
+ *       &lt;sequence>
  *         &lt;element name="THREADRANK" type="{http://earthdawn.com/datatypes}THREADRANK_type" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/choice>
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="maxthreads" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="spelldefense" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="description" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lpcostgrowth" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -41,7 +42,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MAGICITEM_type", propOrder = {
-    "threadrank"
+    "threadrank",
+    "description"
 })
 public class MAGICITEMType
     extends ITEMType
@@ -49,12 +51,14 @@ public class MAGICITEMType
 
     @XmlElement(name = "THREADRANK")
     protected List<THREADRANKType> threadrank;
+    @XmlElement(required = true)
+    protected String description;
     @XmlAttribute(required = true)
     protected int maxthreads;
     @XmlAttribute(required = true)
     protected int spelldefense;
     @XmlAttribute(required = true)
-    protected String description;
+    protected int lpcostgrowth;
 
     /**
      * Gets the value of the threadrank property.
@@ -83,6 +87,30 @@ public class MAGICITEMType
             threadrank = new ArrayList<THREADRANKType>();
         }
         return this.threadrank;
+    }
+
+    /**
+     * Gets the value of the description property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Sets the value of the description property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
     }
 
     /**
@@ -118,27 +146,19 @@ public class MAGICITEMType
     }
 
     /**
-     * Gets the value of the description property.
+     * Gets the value of the lpcostgrowth property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getDescription() {
-        return description;
+    public int getLpcostgrowth() {
+        return lpcostgrowth;
     }
 
     /**
-     * Sets the value of the description property.
+     * Sets the value of the lpcostgrowth property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setDescription(String value) {
-        this.description = value;
+    public void setLpcostgrowth(int value) {
+        this.lpcostgrowth = value;
     }
 
 }
