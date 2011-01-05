@@ -144,10 +144,11 @@
 		<xs:complexContent>
 			<xs:extension base="STEPDICE_type">
 				<xs:attribute name="name" type="ATTRIBUTE_name_type" use="required"/>
-				<xs:attribute name="racevalue" type="unsigned_int" use="required"/>
+				<xs:attribute name="racevalue" type="unsigned_int" default="10"/>
 				<xs:attribute name="generationvalue" type="unsigned_int" default="0"/>
+				<xs:attribute name="basevalue" type="unsigned_int" default="0"/>
 				<xs:attribute name="lpincrease" type="lpincrease_type" default="0"/>
-				<xs:attribute name="currentvalue" type="unsigned_int" use="required"/>
+				<xs:attribute name="currentvalue" type="unsigned_int" default="10"/>
 				<xs:attribute name="cost" type="attcost_type" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -172,6 +173,7 @@
 			<xs:extension base="STEPDICE_type">
 				<xs:attribute name="startrank" type="unsigned_int" default="0"/>
 				<xs:attribute name="rank" type="unsigned_int" default="0"/>
+				<xs:attribute name="bonus" type="unsigned_int" default="0"/>
 				<xs:attribute name="lpcost" type="unsigned_int" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -308,15 +310,11 @@
 			</xs:element>
 			<xs:element minOccurs="0" maxOccurs="1" name="WOUND" type="WOUND_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFENSE" type="DEFENSEABILITY_type"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="TALENTABILITY_type">
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="TALENT" type="TALENTABILITY_type">
 				<xs:annotation>
-					<xs:documentation>Names a Talent which additionally can be learned as optional talent.</xs:documentation>
+					<xs:documentation>Names a Talent which receive a +1 rank bonus.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISCIPLINETALENT" type="TALENTABILITY_type">
-				<xs:annotation>
-					<xs:documentation>Names a Talent which additionally can be learned as discipline talent.</xs:documentation>
-				</xs:annotation></xs:element>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="CIRCLENAME_type">
 				<xs:annotation>
 					<xs:documentation>Names Spell which additionally can be learned.</xs:documentation>
