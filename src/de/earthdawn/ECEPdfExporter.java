@@ -24,6 +24,7 @@ import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.MOVEMENTType;
 import de.earthdawn.data.PROTECTIONType;
+import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.SPELLSType;
@@ -58,12 +59,12 @@ public class ECEPdfExporter {
 		acroFields.setField( "Skin", character.getAppearance().getSkin() );
 		acroFields.setField( "CharacterWeight" , String.valueOf(character.getAppearance().getWeight()) );
 		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
-		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get("DEX").getCurrentvalue()-attributes.get("DEX").getLpincrease()) );
-		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get("STR").getCurrentvalue()-attributes.get("STR").getLpincrease()) );
-		acroFields.setField( "AttributeBase.2", String.valueOf(attributes.get("TOU").getCurrentvalue()-attributes.get("TOU").getLpincrease()) );
-		acroFields.setField( "AttributeBase.3", String.valueOf(attributes.get("PER").getCurrentvalue()-attributes.get("PER").getLpincrease()) );
-		acroFields.setField( "AttributeBase.4", String.valueOf(attributes.get("WIL").getCurrentvalue()-attributes.get("WIL").getLpincrease()) );
-		acroFields.setField( "AttributeBase.5", String.valueOf(attributes.get("CHA").getCurrentvalue()-attributes.get("CHA").getLpincrease()) );
+		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get("DEX").getBasevalue()) );
+		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get("STR").getBasevalue()) );
+		acroFields.setField( "AttributeBase.2", String.valueOf(attributes.get("TOU").getBasevalue()) );
+		acroFields.setField( "AttributeBase.3", String.valueOf(attributes.get("PER").getBasevalue()) );
+		acroFields.setField( "AttributeBase.4", String.valueOf(attributes.get("WIL").getBasevalue()) );
+		acroFields.setField( "AttributeBase.5", String.valueOf(attributes.get("CHA").getBasevalue()) );
 		acroFields.setField( "LPIncrease.0", String.valueOf(attributes.get("DEX").getLpincrease()) );
 		acroFields.setField( "LPIncrease.1", String.valueOf(attributes.get("STR").getLpincrease()) );
 		acroFields.setField( "LPIncrease.2", String.valueOf(attributes.get("TOU").getLpincrease()) );
@@ -202,16 +203,21 @@ public class ECEPdfExporter {
 					acroFields.setField( "Talent."+counter, talent.getName()+": "+talent.getLimitation());
 					
 				}
-				acroFields.setField( "ActionDice."+counter, talent.getRANK().getDice().value() );
 				acroFields.setField( "Attribute."+counter, talent.getAttribute().value() );
-				acroFields.setField( "Step."+counter, String.valueOf(talent.getRANK().getStep()) );
-				acroFields.setField( "Rank."+counter, String.valueOf(talent.getRANK().getRank()) );
 				acroFields.setField( "Strain."+counter, String.valueOf(talent.getStrain()) );
 				switch( talent.getAction() ) {
 				case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
 				case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;
 				case SUSTAINED : acroFields.setField( "Action."+counter, "sust" ); break;
 				default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
+				}
+				RANKType talentrank = talent.getRANK();
+				acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
+				acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
+				if( talentrank.getBonus() == 0 ) {
+					acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
+				} else {
+					acroFields.setField( "Rank."+counter, talentrank.getRank()+"+"+talentrank.getBonus() );
 				}
 				if( counter > 20) {
 					if( talent.getKarma().equals(YesnoType.YES)) {
@@ -231,16 +237,21 @@ public class ECEPdfExporter {
 				} else {
 					acroFields.setField( "Skill."+counter, skill.getName()+": "+skill.getLimitation());
 				}
-				acroFields.setField( "SkillActionDice."+counter, skill.getRANK().getDice().value() );
 				acroFields.setField( "SkillAttribute."+counter, skill.getAttribute().value() );
-				acroFields.setField( "SkillStep."+counter, String.valueOf(skill.getRANK().getStep()) );
-				acroFields.setField( "SkillRank."+counter, String.valueOf(skill.getRANK().getRank()) );
 				acroFields.setField( "SkillStrain."+counter, String.valueOf(skill.getStrain()) );
 				switch( skill.getAction() ) {
 				case STANDARD  : acroFields.setField( "SkillAction."+counter, "std" ); break;
 				case SIMPLE    : acroFields.setField( "SkillAction."+counter, "smpl" ); break;
 				case SUSTAINED : acroFields.setField( "SkillAction."+counter, "sstnd" ); break;
 				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
+				}
+				RANKType skillrank = skill.getRANK();
+				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
+				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
+				if( skillrank.getBonus() == 0 ) {
+					acroFields.setField( "SkillRank."+counter, String.valueOf(skillrank.getRank()) );
+				} else {
+					acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
 				}
 				counter++;
 			}

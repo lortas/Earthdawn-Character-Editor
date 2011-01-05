@@ -42,9 +42,11 @@ public class ECEWorker {
 
 			ATTRIBUTEType attribute = character.getAttributes().get(raceattribute.getName());
 			attribute.setRacevalue(raceattribute.getValue());
-			int value = attribute.getRacevalue() + attribute.getGenerationvalue() + attribute.getLpincrease();
-			attribute.setCurrentvalue(value);
 			attribute.setCost(berechneAttriubteCost(attribute.getGenerationvalue()));
+			int value = attribute.getRacevalue() + attribute.getGenerationvalue();
+			attribute.setBasevalue(value);
+			value += attribute.getLpincrease();
+			attribute.setCurrentvalue(value);
 			STEPDICEType stepdice=attribute2StepAndDice(value);
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
@@ -193,6 +195,7 @@ public class ECEWorker {
 			TALENTType durabilityTalent = null;
 			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
 				TALENTType talent = element.getValue();
+				talent.getRANK().setBonus(0);
 				enforceCapabilityParams(talent,capabilities);
 				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getRank());
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
@@ -228,6 +231,7 @@ public class ECEWorker {
 				enforceCapabilityParams(talent,capabilities);
 				RANKType rank = new RANKType();
 				rank.setRank(0);
+				rank.setBonus(0);
 				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
 				allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
@@ -250,6 +254,7 @@ public class ECEWorker {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
 			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
+			skill.getRANK().setBonus(0);
 			calculatedLP.setSkills(calculatedLP.getSkills()+skill.getRANK().getLpcost());
 			enforceCapabilityParams(skill,capabilities);
 			calculateCapabilityRank(skill.getRANK(),attribute.get(skill.getAttribute().value()));
@@ -291,7 +296,7 @@ public class ECEWorker {
 		if( OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
 			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
 			ATTRIBUTEType per = character.getAttributes().get("PER");
-			int lpbonus = 100 * attribute2StepAndDice(per.getCurrentvalue()-per.getLpincrease()).getStep();
+			int lpbonus = 100 * attribute2StepAndDice(per.getBasevalue()).getStep();
 			for( int spellability : getDisciplineSpellAbility(diciplineCircle) ) {
 				lpbonus += ApplicationProperties.create().getCharacteristics().getSpellLP(spellability);
 			}
@@ -497,12 +502,11 @@ public class ECEWorker {
 
 	public void calculateCapabilityRank(RANKType talentRank, ATTRIBUTEType attr) {
 		if( attr == null ) {
-			talentRank.setStep(talentRank.getRank());
+			talentRank.setStep(talentRank.getRank()+talentRank.getBonus());
 		} else {
-			talentRank.setStep(talentRank.getRank()+attr.getStep());
+			talentRank.setStep(talentRank.getRank()+talentRank.getBonus()+attr.getStep());
 		}
 		talentRank.setDice(step2Dice(talentRank.getStep()));
-		
 	}
 
 	private void enforceCapabilityParams(CAPABILITYType capability, ECECapabilities capabilities) {

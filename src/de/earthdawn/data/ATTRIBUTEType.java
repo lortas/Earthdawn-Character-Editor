@@ -24,10 +24,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
  *       &lt;attribute name="name" use="required" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" />
- *       &lt;attribute name="racevalue" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="racevalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="10" />
  *       &lt;attribute name="generationvalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="basevalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="lpincrease" type="{http://earthdawn.com/datatypes}lpincrease_type" default="0" />
- *       &lt;attribute name="currentvalue" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="currentvalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="10" />
  *       &lt;attribute name="cost" type="{http://earthdawn.com/datatypes}attcost_type" default="0" />
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -44,14 +45,16 @@ public class ATTRIBUTEType
 
     @XmlAttribute(required = true)
     protected ATTRIBUTENameType name;
-    @XmlAttribute(required = true)
-    protected int racevalue;
+    @XmlAttribute
+    protected Integer racevalue;
     @XmlAttribute
     protected Integer generationvalue;
     @XmlAttribute
+    protected Integer basevalue;
+    @XmlAttribute
     protected Integer lpincrease;
-    @XmlAttribute(required = true)
-    protected int currentvalue;
+    @XmlAttribute
+    protected Integer currentvalue;
     @XmlAttribute
     protected Integer cost;
 
@@ -82,16 +85,28 @@ public class ATTRIBUTEType
     /**
      * Gets the value of the racevalue property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getRacevalue() {
-        return racevalue;
+        if (racevalue == null) {
+            return  10;
+        } else {
+            return racevalue;
+        }
     }
 
     /**
      * Sets the value of the racevalue property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setRacevalue(int value) {
+    public void setRacevalue(Integer value) {
         this.racevalue = value;
     }
 
@@ -121,6 +136,34 @@ public class ATTRIBUTEType
      */
     public void setGenerationvalue(Integer value) {
         this.generationvalue = value;
+    }
+
+    /**
+     * Gets the value of the basevalue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBasevalue() {
+        if (basevalue == null) {
+            return  0;
+        } else {
+            return basevalue;
+        }
+    }
+
+    /**
+     * Sets the value of the basevalue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBasevalue(Integer value) {
+        this.basevalue = value;
     }
 
     /**
@@ -154,16 +197,28 @@ public class ATTRIBUTEType
     /**
      * Gets the value of the currentvalue property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getCurrentvalue() {
-        return currentvalue;
+        if (currentvalue == null) {
+            return  10;
+        } else {
+            return currentvalue;
+        }
     }
 
     /**
      * Sets the value of the currentvalue property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setCurrentvalue(int value) {
+    public void setCurrentvalue(Integer value) {
         this.currentvalue = value;
     }
 

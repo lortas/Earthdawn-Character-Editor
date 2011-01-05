@@ -31,8 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" minOccurs="0"/>
  *         &lt;element name="WOUND" type="{http://earthdawn.com/datatypes}WOUND_type" minOccurs="0"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="DISCIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}CIRCLENAME_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELLABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -57,8 +56,7 @@ import javax.xml.bind.annotation.XmlType;
     "weapon",
     "wound",
     "defense",
-    "optionaltalent",
-    "disciplinetalent",
+    "talent",
     "spell",
     "spellability",
     "initiative",
@@ -76,10 +74,8 @@ public class THREADRANKType {
     protected WOUNDType wound;
     @XmlElement(name = "DEFENSE")
     protected List<DEFENSEABILITYType> defense;
-    @XmlElement(name = "OPTIONALTALENT")
-    protected List<TALENTABILITYType> optionaltalent;
-    @XmlElement(name = "DISCIPLINETALENT")
-    protected List<TALENTABILITYType> disciplinetalent;
+    @XmlElement(name = "TALENT")
+    protected List<TALENTABILITYType> talent;
     @XmlElement(name = "SPELL")
     protected List<CIRCLENAMEType> spell;
     @XmlElement(name = "SPELLABILITY")
@@ -203,18 +199,18 @@ public class THREADRANKType {
     }
 
     /**
-     * Gets the value of the optionaltalent property.
+     * Gets the value of the talent property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optionaltalent property.
+     * This is why there is not a <CODE>set</CODE> method for the talent property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOPTIONALTALENT().add(newItem);
+     *    getTALENT().add(newItem);
      * </pre>
      * 
      * 
@@ -224,40 +220,11 @@ public class THREADRANKType {
      * 
      * 
      */
-    public List<TALENTABILITYType> getOPTIONALTALENT() {
-        if (optionaltalent == null) {
-            optionaltalent = new ArrayList<TALENTABILITYType>();
+    public List<TALENTABILITYType> getTALENT() {
+        if (talent == null) {
+            talent = new ArrayList<TALENTABILITYType>();
         }
-        return this.optionaltalent;
-    }
-
-    /**
-     * Gets the value of the disciplinetalent property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the disciplinetalent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDISCIPLINETALENT().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TALENTABILITYType }
-     * 
-     * 
-     */
-    public List<TALENTABILITYType> getDISCIPLINETALENT() {
-        if (disciplinetalent == null) {
-            disciplinetalent = new ArrayList<TALENTABILITYType>();
-        }
-        return this.disciplinetalent;
+        return this.talent;
     }
 
     /**

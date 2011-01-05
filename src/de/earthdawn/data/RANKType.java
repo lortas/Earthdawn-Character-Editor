@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
  *       &lt;attribute name="startrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="rank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="lpcost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -43,6 +44,8 @@ public class RANKType
     protected Integer startrank;
     @XmlAttribute
     protected Integer rank;
+    @XmlAttribute
+    protected Integer bonus;
     @XmlAttribute
     protected Integer lpcost;
 
@@ -100,6 +103,34 @@ public class RANKType
      */
     public void setRank(Integer value) {
         this.rank = value;
+    }
+
+    /**
+     * Gets the value of the bonus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBonus() {
+        if (bonus == null) {
+            return  0;
+        } else {
+            return bonus;
+        }
+    }
+
+    /**
+     * Sets the value of the bonus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBonus(Integer value) {
+        this.bonus = value;
     }
 
     /**
