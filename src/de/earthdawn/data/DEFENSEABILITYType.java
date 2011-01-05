@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * Indicates which defense type will be increased by one.
+ * 
  * <p>Java class for DEFENSEABILITY_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

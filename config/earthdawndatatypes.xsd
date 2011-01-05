@@ -295,21 +295,82 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="THREADRANK_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="ARMOR" type="ARMOR_type">
+				<xs:annotation>
+					<xs:documentation>If the magic item is a armor the current armor values are named here. This will automatic update the armor inventory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="WEAPON" type="WEAPON_type">
+				<xs:annotation>
+					<xs:documentation>If the magic item is a weapon the current weapon values are named here. This will automatic update the weapn inventory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="1" name="WOUND" type="WOUND_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFENSE" type="DEFENSEABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="TALENTABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Names a Talent which additionally can be learned as optional talent.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISCIPLINETALENT" type="TALENTABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Names a Talent which additionally can be learned as discipline talent.</xs:documentation>
+				</xs:annotation></xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="CIRCLENAME_type">
+				<xs:annotation>
+					<xs:documentation>Names Spell which additionally can be learned.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELLABILITY" type="DISZIPINABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Indicates that one spell can be learned for free.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="INITIATIVE" type="DISZIPINABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Increased the initiative step by one.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTEST" type="DISZIPINABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Increased the recovery test step by one.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMASTEP" type="DISZIPINABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Increased the karma step by one.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>
+		</xs:sequence>
 		<xs:attribute name="rank" type="unsigned_int" use="required"/>
-		<xs:attribute name="keyknowledge" type="yesno_type" use="required"/>
-		<xs:attribute name="lpcost" type="unsigned_int" use="required"/>
-		<xs:attribute name="attribute" type="ATTRIBUTE_name_type" use="required"/>
+		<xs:attribute name="keyknowledge" type="yesno_type" use="required">
+			<xs:annotation>
+				<xs:documentation>Is the Key Knowledge is known by the character.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="lpcost" type="unsigned_int" use="required">
+			<xs:annotation>
+				<xs:documentation>Is calculated by the attribute lpcostgrowth.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="effect" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="MAGICITEM_type">
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
-				<xs:choice maxOccurs="unbounded">
+				<xs:sequence>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
-				</xs:choice>
+					<xs:element maxOccurs="1" minOccurs="1" name="description" type="xs:string"/>
+				</xs:sequence>
 				<xs:attribute name="maxthreads" type="unsigned_int" use="required"/>
 				<xs:attribute name="spelldefense" type="unsigned_int" use="required"/>
-				<xs:attribute name="description" type="xs:string" use="required"/>
+				<xs:attribute name="lpcostgrowth" type="unsigned_int" use="required">
+					<xs:annotation>
+						<xs:documentation>Determines the amount of legend points a character has to spend to waeve the individual thread ranks. These correlate to the cost for increasing talent ranks of talents with the named number as talent circle.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -403,7 +464,10 @@
 		<xs:attribute name="spend" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="DEFENSEABILITY_type">
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+        <xs:annotation>
+        	<xs:documentation>Indicates which defense type will be increased by one.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="circle" type="unsigned_int" use="required"/>
 		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
 	</xs:complexType>
 	<xs:complexType name="DISCIPLINEBONUS_type">

@@ -47,8 +47,8 @@ import javax.xml.bind.annotation.XmlType;
 public class TALENTSType {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "DISZIPLINETALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class)
+        @XmlElementRef(name = "DISZIPLINETALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
+        @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class)
     })
     protected List<JAXBElement<TALENTType>> disziplinetalentOrOPTIONALTALENT;
     @XmlAttribute(required = true)
