@@ -23,7 +23,17 @@ public class ECEWorker {
 	 */
 	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
 		CharacterContainer character = new CharacterContainer(charakter);
+
+		// Berechnete LP erstmal zurück setzen
 		CALCULATEDLEGENDPOINTSType calculatedLP = character.getCalculatedLegendpoints();
+		calculatedLP.setAttributes(0);
+		calculatedLP.setDisciplinetalents(0);
+		calculatedLP.setKarma(0);
+		calculatedLP.setMagicitems(0);
+		calculatedLP.setOptionaltalents(0);
+		calculatedLP.setSkills(0);
+		calculatedLP.setSpells(0);
+		calculatedLP.setKnacks(0);
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		NAMEGIVERABILITYType namegiver = null;
@@ -35,7 +45,7 @@ public class ECEWorker {
 		}
 
 		// **ATTRIBUTE**
-		int karmaMaxBonus =ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
+		int karmaMaxBonus = ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
