@@ -212,7 +212,11 @@ public class ECEPdfExporter {
 				default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
 				}
 				RANKType talentrank = talent.getRANK();
-				acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
+				if( talentrank.getDice() == null ) {
+					acroFields.setField( "ActionDice."+counter, "-" );
+				} else {
+					acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
+				}
 				acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
 				if( talentrank.getBonus() == 0 ) {
 					acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
