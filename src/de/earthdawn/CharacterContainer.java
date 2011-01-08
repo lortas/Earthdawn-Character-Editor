@@ -441,7 +441,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		return allspells;
 	}
-	public HashMap<String,List<TALENTType>> getOptionalTalents() {
+	public HashMap<String,List<TALENTType>> getUsedOptionalTalents() {
 		HashMap<String,List<TALENTType>> result = new HashMap<String,List<TALENTType>>();
 		for(TALENTSType talents : getAllTalents() ) {
 			List<TALENTType> list = new ArrayList<TALENTType>();
@@ -457,13 +457,36 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE discipline) {
+		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
+		List<TALENTType> usedOptionalTalents = getUsedOptionalTalents().get(discipline.getName());
+		int disciplineCircle = getAllDiciplinesByName().get(discipline.getName()).getCircle();
+		for( JAXBElement<?> element : discipline.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT()) {
+			if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
+				TALENTABILITYType talent = (TALENTABILITYType)element.getValue();
+				if( talent.getCircle() <= disciplineCircle ) {
+					Boolean found=false;
+					for( TALENTType usedTalent : usedOptionalTalents ) {
+						if( talent.getName().equals(usedTalent.getName()) ) {
+							found = true;
+							break;
+						}
+					}
+					if( ! found ) result.add( talent );
+				}
+			}
+		}
+		return result;
+	}
+
 	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
 		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
-		HashMap<String,List<TALENTType>> talentsMap = getOptionalTalents();
+		HashMap<String,List<TALENTType>> talentsMap = getUsedOptionalTalents();
 		for(String discipline : talentsMap.keySet() ) {
 			List<Integer> list = new ArrayList<Integer>();
 			List<TALENTType> talentsList = talentsMap.get(discipline);
-			for( int i=1; i<15; i++ ) {
+			int disciplineCircle = getAllDiciplinesByName().get(discipline).getCircle();
+			for( int i=1; i<=disciplineCircle; i++ ) {
 				if( talentsList.get(i) == null ) list.add( i );
 			}
 			result.put(discipline, list);

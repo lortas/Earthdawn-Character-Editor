@@ -47,7 +47,7 @@
 		<edt:ARMOR mysticarmor="3" location="self" used="yes" weight="3" name="Fernweave" physicalarmor="2" edn="13" penalty="0"/>
 	</PROTECTION>
 	<TALENTS discipline="Shaman">
-		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Create Fetisch">
+		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Create Fetish">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="na" action="na" name="Karma Ritual">
