@@ -145,4 +145,67 @@
 	<SPELL name="Wall of Bones" circle="8"/>
 	<SPELL name="Wither Away" circle="8"/>
 	<DEFENSE circle="8" kind="spell"/>
+	<OPTIONALTALENT name="Animate Object" circle="9"/>
+	<OPTIONALTALENT name="Armored Matrix" circle="9"/>
+	<OPTIONALTALENT name="Armored Matrix" circle="9"/>
+	<OPTIONALTALENT name="Atral Pocket" circle="9"/>
+	<OPTIONALTALENT name="Cold Purify" circle="9"/>
+	<OPTIONALTALENT name="Life Check" circle="9"/>
+	<OPTIONALTALENT name="Matrix Strike" circle="9"/>
+	<OPTIONALTALENT name="Steely Stare" circle="9"/>
+	<DISCIPLINETALENT name="Bargain with Summoned Creatured" circle="9"/>
+	<SPELL name="Create Life" circle="9"/>
+	<SPELL name="Dark Sword" circle="9"/>
+	<SPELL name="Disrupt Magic" circle="9"/>
+	<SPELL name="Mystic Vessel" circle="9"/>
+	<SPELL name="Shift Skin" circle="9"/>
+	<SPELL name="Silent Darkness" circle="9"/>
+	<SPELL name="Talent Shredder" circle="9"/>
+	<SPELL name="Void Wave" circle="9"/>
+	<SPELL name="Walking Dead" circle="9"/>
+	<KARMA spend="Recovery Tests" circle="9"/>
+	<ABILITY name="Otherworldly Control" circle="9"/>
+	<DISCIPLINETALENT name="Summoning Circle" circle="10"/>
+	<SPELL name="Animate Dead" circle="10"/>
+	<SPELL name="Atrale Slice" circle="10"/>
+	<SPELL name="Damage Transfer" circle="10"/>
+	<SPELL name="Fragile Pattern" circle="10"/>
+	<SPELL name="Gateway" circle="10"/>
+	<SPELL name="Soul Trap" circle="10"/>
+	<SPELL name="Spirit Tempest" circle="10"/>
+	<SPELL name="Strong Pattern" circle="10"/>
+	<SPELL name="Tap Horror Karma" circle="10"/>
+	<DEFENSE circle="10" kind="spell"/>
+	<KARMA spend="Action Tests made by a spirit or creature und his control" circle="10"/>
+	<DISCIPLINETALENT name="Netherwalk" circle="11"/>
+	<SPELL name="Alter Life" circle="11"/>
+	<SPELL name="Shatter Pattern" circle="11"/>
+	<SPELL name="Unnatural Life" circle="11"/>
+	<DEFENSE circle="11" kind="social"/>
+	<DEFENSE circle="11" kind="physical"/>
+	<DISCIPLINETALENT name="Bone Compass" circle="12"/>
+	<SPELL name="Forge Falsemen" circle="12"/>
+	<SPELL name="Pervert Emotion" circle="12"/>
+	<DEFENSE circle="12" kind="spell"/>
+	<RECOVERYTEST circle="12"/>
+	<OPTIONALTALENT name="Etherreal Weapon" circle="13"/>
+	<OPTIONALTALENT name="Second Chance" circle="13"/>
+	<OPTIONALTALENT name="Shared Matrix" circle="13"/>
+	<OPTIONALTALENT name="Shared Matrix" circle="13"/>
+	<OPTIONALTALENT name="Wound Transfer" circle="13"/>
+	<DISCIPLINETALENT name="Spell Crystal Lock" circle="13"/>
+	<SPELL name="Erease Horror Mark" circle="13"/>
+	<SPELL name="Eternal Youth" circle="13"/>
+	<DEFENSE circle="13" kind="social"/>
+	<KARMASTEP circle="13"/>
+	<ABILITY name="Astral Face" circle="13"/>
+	<DISCIPLINETALENT name="Multi-Weaving" circle="14"/>
+	<SPELL name="Call Foth the Army of Decay" circle="14"/>
+	<DEFENSE circle="14" kind="spell"/>
+	<RECOVERYTEST circle="14"/>
+	<DISCIPLINETALENT name="Soul Shatter" circle="15"/>
+	<DEFENSE circle="15" kind="social"/>
+	<DEFENSE circle="15" kind="physical"/>
+	<INITIATIVE circle="15"/>
+	<INITIATIVE circle="15"/>
 </DISCIPLINE>
