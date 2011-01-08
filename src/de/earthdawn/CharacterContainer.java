@@ -277,6 +277,16 @@ public class CharacterContainer extends CharChangeRefresh {
 		return alldisciplines;
 	}
 
+	public int getCircleOf(String discipline) {
+		DISCIPLINEType usedDiscipline = getAllDiciplinesByName().get(discipline);
+		if( usedDiscipline == null ) {
+			System.err.println("No discipline '"+discipline+"' is in use.");
+			return 0;
+		} else {
+			return usedDiscipline.getCircle();
+		}
+	}
+
 	public DISCIPLINEType getDiciplineMaxCircle() {
 		DISCIPLINEType discipline = new DISCIPLINEType();
 		discipline.setCircle(0);
@@ -460,7 +470,11 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE discipline) {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
 		List<TALENTType> usedOptionalTalents = getUsedOptionalTalents().get(discipline.getName());
-		int disciplineCircle = getAllDiciplinesByName().get(discipline.getName()).getCircle();
+		if( usedOptionalTalents == null ) {
+			usedOptionalTalents = new ArrayList<TALENTType>();
+			System.err.println("No Used Optinal Talents found for discipline '"+discipline.getName()+"'");
+		}
+		int disciplineCircle = getCircleOf(discipline.getName());
 		for( JAXBElement<?> element : discipline.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT()) {
 			if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
 				TALENTABILITYType talent = (TALENTABILITYType)element.getValue();
@@ -485,7 +499,11 @@ public class CharacterContainer extends CharChangeRefresh {
 		for(String discipline : talentsMap.keySet() ) {
 			List<Integer> list = new ArrayList<Integer>();
 			List<TALENTType> talentsList = talentsMap.get(discipline);
-			int disciplineCircle = getAllDiciplinesByName().get(discipline).getCircle();
+			if( talentsList == null ) {
+				talentsList = new ArrayList<TALENTType>();
+				System.err.println("A talent list for the discipline '"+discipline+"' could not be found.");
+			}
+			int disciplineCircle = getCircleOf(discipline);
 			for( int i=1; i<=disciplineCircle; i++ ) {
 				if( talentsList.get(i) == null ) list.add( i );
 			}
