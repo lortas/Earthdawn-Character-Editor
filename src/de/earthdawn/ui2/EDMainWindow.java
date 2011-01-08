@@ -1,5 +1,6 @@
 package de.earthdawn.ui2;
 
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -7,6 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.swing.BoxLayout;
@@ -28,6 +30,9 @@ import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.TALENTSType;
+import de.earthdawn.event.CharChangeEventListener;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -44,6 +49,7 @@ public class EDMainWindow {
 	private EDDisciplines panelEDDisciplines;
 	private EDTalents panelEDTalents;
 	private File file = null;
+	
 	
 	
 	/**
@@ -120,6 +126,11 @@ public class EDMainWindow {
 		mnFile.add(mntmSaveAs);
 		
 		JMenuItem mntmPrint = new JMenuItem(NLS.getString("EDMainWindow.mntmPrint.text")); //$NON-NLS-1$
+		mntmPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				addTalentsTabs();
+			}
+		});
 		mnFile.add(mntmPrint);
 		
 		JMenuItem mntmExport = new JMenuItem(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
@@ -145,19 +156,63 @@ public class EDMainWindow {
 		
 		panelERGeneral = new EDGeneral();
 		panelEDAttributes = new EDAttributes();
-		panelEDTalents = new EDTalents();
+		//panelEDTalents = new EDTalents(1);
 		panelEDDisciplines = new EDDisciplines();
 		
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
-		tabbedPane.addTab("Talents", null, panelEDTalents, null);
+		addTalentsTabs();
+		refreshTabs();
 		
-		panelERGeneral.setCharacter(character);
-		panelEDAttributes.setCharacter(character);
-		panelEDTalents.setCharacter(character);
-		panelEDDisciplines.setCharacter(character);
+		this.character.addCharChangeEventListener(new CharChangeEventListener() {
+			@Override
+			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
+				System.out.println("Test2");
+				addTalentsTabs();
+				refreshTabs();
+			}
+		});
+		
+		
+	}
 	
+	private void addTalentsTabs(){
+		
+		for(Component co  : tabbedPane.getComponents() )
+		{
+			if(co.getClass() == EDTalents.class){
+				System.out.println("Remove");
+				tabbedPane.remove(co);
+			}
+		}
+			
+		HashMap<Integer, DISCIPLINEType> allDicipines = character.getAllDiciplinesByOrder();
+		for(Integer key : allDicipines.keySet()){
+			System.out.println("Add");
+			String diciplinName = allDicipines.get(key).getName();
+			panelEDTalents = new EDTalents(diciplinName);
+			panelEDTalents.setCharacter(character);
+			tabbedPane.addTab("Talents (" + diciplinName + ")", null, panelEDTalents, null);	
+		}
+	}
+	
+	private void refreshTabs(){
+		for(Component co  : tabbedPane.getComponents() )
+		{
+			if(co.getClass() == EDTalents.class){
+				((EDTalents)co).setCharacter(character);
+			}
+			if(co.getClass() == EDGeneral.class){
+				((EDGeneral)co).setCharacter(character);
+			}
+			if(co.getClass() == EDAttributes.class){
+				((EDAttributes)co).setCharacter(character);
+			}
+			if(co.getClass() == EDDisciplines.class){
+				((EDDisciplines)co).setCharacter(character);
+			}
+		}	
 	}
 	
 	
@@ -223,8 +278,9 @@ public class EDMainWindow {
 			character = new CharacterContainer(ec);
 			panelERGeneral.setCharacter(character);
 			panelEDAttributes.setCharacter(character);
-			panelEDTalents.setCharacter(character);
+			//panelEDTalents.setCharacter(character);
 			panelEDDisciplines.setCharacter(character);
+			addTalentsTabs();
 		}
 	}
 	protected void do_mntmClose_actionPerformed(ActionEvent arg0) {

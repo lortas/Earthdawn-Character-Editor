@@ -149,14 +149,16 @@ public class EDDisciplines extends JPanel {
 						System.out.println(ta.getName());
 					}
 				}
-				character.refesh();
+				
 			}	
 			
 
 			
 		    worker.verarbeiteCharakter(character.getEDCHARACTER());
-			((DisciplinesTableModel)table.getModel()).setCharacter(character);
+		    ((DisciplinesTableModel)table.getModel()).setCharacter(character);
+		    character.refesh();
 		}
+		
 	}
 	
 	private static void addPopup(Component component, final JPopupMenu popup) {
