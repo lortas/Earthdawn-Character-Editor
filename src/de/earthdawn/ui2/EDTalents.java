@@ -1,8 +1,11 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.MenuItem;
 import java.util.HashMap;
+import java.util.List;
 
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -13,6 +16,11 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.event.CharChangeEventListener;
+import javax.swing.JToolBar;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JPopupMenu;
 
 public class EDTalents extends JPanel {
 	
@@ -20,19 +28,14 @@ public class EDTalents extends JPanel {
 	
 	private JScrollPane scrollPane;
 	private JTable table;
+	private String disciplin;
+	private JButton buttonAdd;
+	private JPopupMenu popupMenuCircle;
+	private JPopupMenu popupMenuTalent;
 	
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((TalentsTableModel)table.getModel()).setCharacter(character);
-		this.character.addCharChangeEventListener(new CharChangeEventListener() {
-			@Override
-			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
-				System.out.println("Test");
-				((TalentsTableModel)table.getModel()).setCharacter(character);
-
-			}
-		}
-		);
 	}
 
 	public CharacterContainer getCharacter() {
@@ -43,16 +46,48 @@ public class EDTalents extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public EDTalents() {
+	public EDTalents(String disciplin ) {
+		this.disciplin  = disciplin;
 		setLayout(new BorderLayout(0, 0));
 		
 		scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
 		
 		table = new JTable();
-		table.setModel(new TalentsTableModel(character));
+		table.setModel(new TalentsTableModel(character, disciplin));
 		scrollPane.setViewportView(table);
+		
+		JToolBar toolBar = new JToolBar();
+		toolBar.setFloatable(false);
+		add(toolBar, BorderLayout.NORTH);
+		
+		buttonAdd = new JButton("Add optional Talent");
+		buttonAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_buttonAdd_actionPerformed(arg0);
+			}
+		});
+		toolBar.add(buttonAdd);
+		
+		popupMenuTalent = new JPopupMenu();
+		toolBar.add(popupMenuTalent);
+		
+		popupMenuCircle = new JPopupMenu();
+		toolBar.add(popupMenuCircle);
 
+	}
+	
+	protected void do_buttonAdd_actionPerformed(ActionEvent arg0) {
+		popupMenuCircle.removeAll();
+		character.getO
+		List<Integer> l = character.getCircleOfMissingOptionalTalents().get(disciplin);
+		for(Integer c : l){
+			JMenuItem menuItem = new JMenuItem(String.valueOf(c));
+			popupMenuCircle.add(menuItem);	
+			
+		}
+		
+		popupMenuCircle.show(buttonAdd,buttonAdd.getX(), buttonAdd.getY()+ buttonAdd.getHeight());
 	}
 }
 
@@ -63,16 +98,30 @@ class TalentsTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-	private HashMap<Integer,TALENTSType> allTalents;
+	private TALENTSType talents;
     private String[] columnNames = {"Circle", "Talentname", "Strain", "Attribute", "Rank", "Step", "Action", "Dice", "Type"};
+    private String disciplin = "";
+    
+
+
+
+	public String getDisciplin() {
+		return disciplin;
+	}
+
+
+	public void setDisciplin(String diciplin) {
+		this.disciplin = diciplin;
+	}
 
 
 
 
-	public TalentsTableModel(CharacterContainer character) {
+	public TalentsTableModel(CharacterContainer character, String diciplin) {
 		super();
 		this.character = character;
-
+		this.disciplin = diciplin;
+		
 	}
 
 	
@@ -81,13 +130,10 @@ class TalentsTableModel extends AbstractTableModel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		if (character != null){
-			allTalents = character.getAllTalentsByDisziplinOrder();
+			talents =  character.getAllTalentsByDisziplinName().get(disciplin);
 		}
 		else{
-			allTalents = null;
-		}
-		for( Integer disciplinenumber : allTalents.keySet() ) {
-			System.out.println(disciplinenumber);
+			talents = null;
 		}
 		fireTableStructureChanged();
 	}
@@ -105,11 +151,10 @@ class TalentsTableModel extends AbstractTableModel {
         	System.out.println("character is null");
         	return 0;
         }
-        if (allTalents.size() == 0){
+        if (talents  == null){
         	return 0;
         }
-        System.out.println("Size" + allTalents.size());
-    	return allTalents.get(1).getDISZIPLINETALENTOrOPTIONALTALENT().size();
+        return talents.getDISZIPLINETALENTOrOPTIONALTALENT().size();
     }
 
     public String getColumnName(int col) {
@@ -117,7 +162,7 @@ class TalentsTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int col) {
-    	JAXBElement<TALENTType> element = allTalents.get(1).getDISZIPLINETALENTOrOPTIONALTALENT().get(row);
+    	JAXBElement<TALENTType> element = talents.getDISZIPLINETALENTOrOPTIONALTALENT().get(row);
     
     	Object result = new String("Error"); 
     	TALENTType talent = element.getValue();
