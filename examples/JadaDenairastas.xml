@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EDCHARACTER  name="Jada Denairastas" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
+	<APPEARANCE race="Denairastas" skin="hell" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
+	<ATTRIBUTE name="DEX" generationvalue="3" lpincrease="2"/>
+	<ATTRIBUTE name="STR" generationvalue="3" lpincrease="3"/>
+	<ATTRIBUTE name="TOU" generationvalue="3" lpincrease="3"/>
+	<ATTRIBUTE name="PER" generationvalue="4" lpincrease="3"/>
+	<ATTRIBUTE name="WIL" generationvalue="6" lpincrease="3"/>
+	<ATTRIBUTE name="CHA" generationvalue="2" lpincrease="2"/>
+	<KARMA maxmodificator="0" max="6" current="20">
+		<edt:KARMAPOINTS when="" type="+" value="100" comment="doing karmarituals"/>
+		<edt:KARMAPOINTS when="" type="-" value="89" comment="spend during adventures"/>
+	</KARMA>
+	<EXPERIENCE reputation="0" renown="0" currentlegendpoints="0" totallegendpoints="0">
+		<edt:LEGENDPOINTS comment="total" value="37000" type="+" when="past"/>
+	</EXPERIENCE>
+	<DISCIPLINE circle="11" name="Nethermancer" order="1"/>
+	<DISCIPLINE circle="6" name="Illusionist" order="2"/>
+	<TALENTS discipline="Nethermancer">
+		<DISZIPLINETALENT circle="1" name="Astral Sight"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="11" startrank="2"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Thread Weaving"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="2" name="Frighten"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="3" name="Spirit Talk"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="4" name="Spirit Hold"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="5" name="Summon"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="6" name="Lifesight"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="7" name="Spirit Dodge"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="8" name="Orbiting Spy"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="9" name="Bargain With Summoned Creature"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="10" name="Summoning Circle"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="11" name="Netherwalk"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<OPTIONALTALENT circle="1" name="Versatility"><edt:RANK rank="1" startrank="1"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="1" name="Read/Write Language"><edt:RANK rank="11" startrank="1"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="1" name="Spell Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="2" name="Durability"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="3" name="Spell Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="4" name="Spell Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="5" name="Willforce"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="6" name="Enhanced Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="7" name="Enhanced Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="8" name="Lion Heart"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="9" name="Armored Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="10" name="Armored Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="11" name="Life Check"><edt:RANK rank="11"/></OPTIONALTALENT>
+	</TALENTS>
+	<TALENTS discipline="Illusionist">
+		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="6" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="6" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Speak Language"><edt:RANK rank="6" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="6" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="6" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Illusionism"><edt:RANK rank="6" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="2" name="Disguise Self"><edt:RANK rank="6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="3" name="Dead Fall"><edt:RANK rank="6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="4" name="False Sight"><edt:RANK rank="6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="5" name="True Sight"><edt:RANK rank="6"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="6" name="Engaging Banter"><edt:RANK rank="6"/></DISZIPLINETALENT>
+		<OPTIONALTALENT circle="1" name="First Impression"><edt:RANK rank="6" startrank="1"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="2" name="Frighten"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="3" name="Spell Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="4" name="Spell Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="5" name="Enhanced Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="6" name="Enhanced Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
+	</TALENTS>
+	<SPELLS discipline="Nethermancer">
+		<SPELL name="Astral Spear" circle="1" type="nether"/>
+		<SPELL name="Bone Dance" circle="1" type="nether"/>
+		<SPELL name="Chilling Circle" circle="1" type="nether"/>
+		<SPELL name="Command Nightflyer" circle="1" type="nether"/>
+		<SPELL name="Detect Undead" circle="1" type="nether"/>
+		<SPELL name="Dry and Wet" circle="1" type="nether"/>
+		<SPELL name="Experience Death" circle="1" type="nether"/>
+		<SPELL name="Insect Repellent" circle="1" type="nether"/>
+		<SPELL name="Mount Scare" circle="1" type="nether"/>
+		<SPELL name="Putrefy" circle="1" type="nether"/>
+		<SPELL name="Spirit Dart" circle="1" type="nether"/>
+		<SPELL name="Spirit Grip" circle="1" type="nether"/>
+		<SPELL name="Undead Struggle" circle="1" type="nether"/>
+		<SPELL name="Bone Circle" circle="2" type="nether"/>
+		<SPELL name="Detect Nethermancy Magic" circle="2" type="nether"/>
+		<SPELL name="Ethereal Darkness" circle="2" type="nether"/>
+		<SPELL name="Fog Ghost" circle="2" type="nether"/>
+		<SPELL name="Life Circle of One" circle="2" type="nether"/>
+		<SPELL name="Pocket Guardian" circle="2" type="nether"/>
+		<SPELL name="Repel Animal" circle="2" type="nether"/>
+		<SPELL name="Shadow's Whisper" circle="2" type="nether"/>
+		<SPELL name="Shield Mist" circle="2" type="nether"/>
+	</SPELLS>
+	<SKILL name="Knowledge" limitation="Botany" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+	</SKILL>
+	<SKILL name="Knowledge" limitation="Geography Barsaive" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+	</SKILL>
+	<SKILL name="Artisan" limitation="Wood Carving" action="sustained" attribute="CHA">
+		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Lip Reading" action="standard" attribute="CHA">
+		<edt:RANK lpcost="0" rank="2" startrank="1" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Animal Bond" action="standard" attribute="CHA">
+		<edt:RANK lpcost="0" rank="3" startrank="1" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Animal Training" action="sustained" attribute="CHA">
+		<edt:RANK lpcost="0" rank="3" startrank="1" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Picking Pockets" action="standard" attribute="DEX">
+		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Swimming" action="standard" attribute="DEX">
+		<edt:RANK lpcost="0" rank="2" startrank="0" dice="d12" step="7"/>
+	</SKILL>
+	<SKILL name="Mapmaking" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+	</SKILL>
+	<WEAPON name="knife" weight="0" used="yes" location="self" damagestep="1" strengthmin="3" size="1" />
+	<WEAPON name="blowgun" weight="1" used="yes" location="self" damagestep="1" strengthmin="3" size="1" longrange="16" shortrange="8"/>
+	<KARMARITUAL>auführliche beschreibung des Karmarituals</KARMARITUAL>
+	<DESCRIPTION>etwas bla bla zum Char</DESCRIPTION>
+	<COMMENT>hier kommt ein Kommentar</COMMENT>
+</EDCHARACTER>

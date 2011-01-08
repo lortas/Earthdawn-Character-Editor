@@ -319,7 +319,12 @@ public class CharacterContainer extends CharChangeRefresh {
 		// Hole nun alle TalentListen und speichere sie in der Diszipline Reihnfolge in eine HashMap.
 		HashMap<Integer,TALENTSType> alltalents = new HashMap<Integer,TALENTSType>();
 		for (TALENTSType talents : getAllTalents() ) {
-			alltalents.put(alldisciplines.get(talents.getDiscipline()).getOrder(),talents);
+			DISCIPLINEType discipline = alldisciplines.get(talents.getDiscipline());
+			if( discipline == null ) {
+				System.err.println("Could not find a discipline entry for the talents of the discipline '"+talents.getDiscipline()+"'");
+			} else {
+				alltalents.put(discipline.getOrder(),talents);
+			}
 		}
 		return alltalents;
 	}

@@ -21,7 +21,7 @@
 	<SPELL name="Experience Death" circle="1"/>
 	<SPELL name="Insect Repellent" circle="1"/>
 	<SPELL name="Mount Scare" circle="1"/>
-	<SPELL name="Puterfy" circle="1"/>
+	<SPELL name="Putrefy" circle="1"/>
 	<SPELL name="Spirit Dart" circle="1"/>
 	<SPELL name="Spirit Grip" circle="1"/>
 	<SPELL name="Undead Struggle" circle="1"/>
@@ -34,9 +34,9 @@
 	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
 	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
 	<DISCIPLINETALENT name="Frighten" circle="2"/>
-	<SPELL name="Bone Cirlce" circle="2"/>
-	<SPELL name="Detect Nethermance Magic" circle="2"/>
-	<SPELL name="Etherreal Darkness" circle="2"/>
+	<SPELL name="Bone Circle" circle="2"/>
+	<SPELL name="Detect Nethermancy Magic" circle="2"/>
+	<SPELL name="Ethereal Darkness" circle="2"/>
 	<SPELL name="Fog Ghost" circle="2"/>
 	<SPELL name="Life Circle of One" circle="2"/>
 	<SPELL name="Pocket Guardian" circle="2"/>
@@ -148,12 +148,12 @@
 	<OPTIONALTALENT name="Animate Object" circle="9"/>
 	<OPTIONALTALENT name="Armored Matrix" circle="9"/>
 	<OPTIONALTALENT name="Armored Matrix" circle="9"/>
-	<OPTIONALTALENT name="Atral Pocket" circle="9"/>
+	<OPTIONALTALENT name="Astral Pocket" circle="9"/>
 	<OPTIONALTALENT name="Cold Purify" circle="9"/>
 	<OPTIONALTALENT name="Life Check" circle="9"/>
 	<OPTIONALTALENT name="Matrix Strike" circle="9"/>
 	<OPTIONALTALENT name="Steely Stare" circle="9"/>
-	<DISCIPLINETALENT name="Bargain with Summoned Creatured" circle="9"/>
+	<DISCIPLINETALENT name="Bargain With Summoned Creature" circle="9"/>
 	<SPELL name="Create Life" circle="9"/>
 	<SPELL name="Dark Sword" circle="9"/>
 	<SPELL name="Disrupt Magic" circle="9"/>

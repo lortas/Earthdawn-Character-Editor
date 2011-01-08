@@ -137,7 +137,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="STEPDICE_type">
-		<xs:attribute name="step" type="unsigned_int" use="required"/>
+		<xs:attribute name="step" type="unsigned_int" default="0"/>
 		<xs:attribute name="dice" type="dice_type"/>
 	</xs:complexType>
 	<xs:complexType name="ATTRIBUTE_type">

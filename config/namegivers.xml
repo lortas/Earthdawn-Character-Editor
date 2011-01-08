@@ -33,6 +33,17 @@
     <WOUND threshold="0"/>
     <TALENT name="Versatility" circle="0"/>
   </NAMEGIVER>
+  <NAMEGIVER name="Denairastas" karmamodifier="5" movement_ground="6">
+    <ATTRIBUTE name="DEX" value="10" />
+    <ATTRIBUTE name="STR" value="10" />
+    <ATTRIBUTE name="TOU" value="10" />
+    <ATTRIBUTE name="PER" value="12" />
+    <ATTRIBUTE name="WIL" value="12" />
+    <ATTRIBUTE name="CHA" value="11" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <TALENT name="Versatility" circle="0"/>
+  </NAMEGIVER>
   <NAMEGIVER name="Obsidiman" karmamodifier="3" movement_ground="5">
     <ATTRIBUTE name="DEX" value="8" />
     <ATTRIBUTE name="STR" value="18" />
