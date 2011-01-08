@@ -7,8 +7,9 @@ import java.util.List;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.*;
+import de.earthdawn.event.CharChangeRefresh;
 
-public class CharacterContainer {
+public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
 
 	public CharacterContainer( EDCHARACTER c) {
@@ -439,5 +440,34 @@ public class CharacterContainer {
 			allspells.put(alldisciplines.get(spells.getDiscipline()).getOrder(),spells);
 		}
 		return allspells;
+	}
+	public HashMap<String,List<TALENTType>> getOptionalTalents() {
+		HashMap<String,List<TALENTType>> result = new HashMap<String,List<TALENTType>>();
+		for(TALENTSType talents : getAllTalents() ) {
+			List<TALENTType> list = new ArrayList<TALENTType>();
+			for(int i=0;i<20;i++) list.add(null);
+			for( JAXBElement<TALENTType> element : talents.getDISZIPLINETALENTOrOPTIONALTALENT()) {
+				if (element.getName().getLocalPart().equals("OPTIONALTALENT")) {
+					TALENTType talent = element.getValue();
+					list.set(talent.getCircle(), talent);
+				}
+			}
+			result.put(talents.getDiscipline(), list);
+		}
+		return result;
+	}
+
+	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
+		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
+		HashMap<String,List<TALENTType>> talentsMap = getOptionalTalents();
+		for(String discipline : talentsMap.keySet() ) {
+			List<Integer> list = new ArrayList<Integer>();
+			List<TALENTType> talentsList = talentsMap.get(discipline);
+			for( int i=1; i<15; i++ ) {
+				if( talentsList.get(i) == null ) list.add( i );
+			}
+			result.put(discipline, list);
+		}
+		return result;
 	}
 }
