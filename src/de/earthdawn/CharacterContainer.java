@@ -7,8 +7,9 @@ import java.util.List;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.*;
+import de.earthdawn.event.CharChangeRefresh;
 
-public class CharacterContainer {
+public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
 
 	public CharacterContainer( EDCHARACTER c) {
