@@ -7,9 +7,8 @@ import java.util.List;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.*;
-import de.earthdawn.event.CharChangeRefresh;
 
-public class CharacterContainer extends CharChangeRefresh {
+public class CharacterContainer {
 	private EDCHARACTER character = null;
 
 	public CharacterContainer( EDCHARACTER c) {
@@ -310,6 +309,14 @@ public class CharacterContainer extends CharChangeRefresh {
 		HashMap<Integer,TALENTSType> alltalents = new HashMap<Integer,TALENTSType>();
 		for (TALENTSType talents : getAllTalents() ) {
 			alltalents.put(alldisciplines.get(talents.getDiscipline()).getOrder(),talents);
+		}
+		return alltalents;
+	}
+
+	public HashMap<String,TALENTSType> getAllTalentsByDisziplinName() {
+		HashMap<String,TALENTSType> alltalents = new HashMap<String,TALENTSType>();
+		for (TALENTSType talents : getAllTalents() ) {
+			alltalents.put(talents.getDiscipline(),talents);
 		}
 		return alltalents;
 	}
