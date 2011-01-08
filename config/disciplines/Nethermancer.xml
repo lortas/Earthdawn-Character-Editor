@@ -12,132 +12,137 @@
 	<DISCIPLINETALENT name="Spellcasting" circle="1"/>
 	<DISCIPLINETALENT name="Spell Matrix" circle="1"/>
 	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Nethermancy"/>
-	<SPELL name="Assuring Touch" circle="1"/>
-	<SPELL name="Bellow of the Thundras" circle="1"/>
-	<SPELL name="Best Face" circle="1"/>
-	<SPELL name="Blazing First of Rage" circle="1"/>
-	<SPELL name="Catseyes" circle="1"/>
-	<SPELL name="Disguise Metal" circle="1"/>
-	<SPELL name="Discplace Image" circle="1"/>
-	<SPELL name="Fun With Doors" circle="1"/>
-	<SPELL name="Light" circle="1"/>
-	<SPELL name="Pauper's Purse" circle="1"/>
-	<SPELL name="Robe Guide" circle="1"/>
-	<SPELL name="True Blazing First of Rage" circle="1"/>
-	<SPELL name="Unseen Voices" circle="1"/>
+	<SPELL name="Astral Spear" circle="1"/>
+	<SPELL name="Bone Dance" circle="1"/>
+	<SPELL name="Chilling Circle" circle="1"/>
+	<SPELL name="Command Nightflyer" circle="1"/>
+	<SPELL name="Detect Undead" circle="1"/>
+	<SPELL name="Dry and Wet" circle="1"/>
+	<SPELL name="Experience Death" circle="1"/>
+	<SPELL name="Insect Repellent" circle="1"/>
+	<SPELL name="Mount Scare" circle="1"/>
+	<SPELL name="Puterfy" circle="1"/>
+	<SPELL name="Spirit Dart" circle="1"/>
+	<SPELL name="Spirit Grip" circle="1"/>
+	<SPELL name="Undead Struggle" circle="1"/>
 	<OPTIONALTALENT name="Animal Possession" circle="2"/>
 	<OPTIONALTALENT name="Blood Share" circle="2"/>
 	<OPTIONALTALENT name="Creature Analysis" circle="2"/>
 	<OPTIONALTALENT name="Dominate Beast" circle="2"/>
 	<OPTIONALTALENT name="Durability" circle="2" limitation="4/3"/>
-	<OPTIONALTALENT name="" circle="2"/>
+	<OPTIONALTALENT name="Frighten Animals" circle="2"/>
 	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
 	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
-	<DISCIPLINETALENT name="Disguise Self" circle="2"/>
-	<SPELL name="Blindness" circle="2"/>
-	<SPELL name="Crafty Thought" circle="2"/>
-	<SPELL name="Disaster" circle="2"/>
-	<SPELL name="Encrypt" circle="2"/>
-	<SPELL name="Ephemeral Bold" circle="2"/>
-	<SPELL name="Impossible Knot" circle="2"/>
-	<SPELL name="Innocent Activitiy" circle="2"/>
-	<SPELL name="Monstrius Mantle" circle="2"/>
-	<SPELL name="Remove Shadow" circle="2"/>
-	<SPELL name="Send Message" circle="2"/>
-	<SPELL name="Tailor" circle="2"/>
-	<SPELL name="True Ephemeral Bolt" circle="2"/>
-	<SPELL name="Weather Cloak" circle="2"/>
-	<SPELL name="You Got Me" circle="2"/>
+	<DISCIPLINETALENT name="Frighten" circle="2"/>
+	<SPELL name="Bone Cirlce" circle="2"/>
+	<SPELL name="Detect Nethermance Magic" circle="2"/>
+	<SPELL name="Etherreal Darkness" circle="2"/>
+	<SPELL name="Fog Ghost" circle="2"/>
+	<SPELL name="Life Circle of One" circle="2"/>
+	<SPELL name="Pocket Guardian" circle="2"/>
+	<SPELL name="Repel Animal" circle="2"/>
+	<SPELL name="Shadow's Whisper" circle="2"/>
+	<SPELL name="Shield Mist" circle="2"/>
+	<SPELLABILITY circle="2"/>
 	<DEFENSE kind="spell" circle="2"/>
-	<DISCIPLINETALENT name="Dead Fall" circle="3"/>
-	<SPELL name="Alarm" circle="3"/>
-	<SPELL name="And Then I Woke Up" circle="3"/>
-	<SPELL name="Blinding Glare" circle="3"/>
-	<SPELL name="Dampen Karma" circle="3"/>
-	<SPELL name="Detect Illusionism Magic" circle="3"/>
-	<SPELL name="Dispel Illusionism Magic" circle="3"/>
-	<SPELL name="Flase Floor" circle="3"/>
-	<SPELL name="Impossible Lock" circle="3"/>
-	<SPELL name="Mind Fog" circle="3"/>
-	<SPELL name="Nobody Herr" circle="3"/>
-	<SPELL name="Phantom Warrior" circle="3"/>
-	<SPELL name="See the Unseen" circle="3"/>
-	<SPELL name="Soothe the Savage Beast" circle="3"/>
-	<SPELL name="Suffocation" circle="3"/>
+	<DISCIPLINETALENT name="Spirit Talk" circle="3"/>
+	<SPELL name="Arrow of Night" circle="3"/>
+	<SPELL name="Dark Messenger" circle="3"/>
+	<SPELL name="Death Trance" circle="3"/>
+	<SPELL name="Death's Head" circle="3"/>
+	<SPELL name="Dispel Nethermancy Magic" circle="3"/>
+	<SPELL name="Fog of Fear" circle="3"/>
+	<SPELL name="Grave Message" circle="3"/>
+	<SPELL name="Pack Bages" circle="3"/>
+	<SPELL name="Pain" circle="3"/>
+	<SPELL name="Preserve" circle="3"/>
+	<SPELL name="Shadow Meld" circle="3"/>
+	<SPELL name="Spirit Double" circle="3"/>
+	<SPELL name="Summon Bone Ghost" circle="3"/>
 	<SPELLABILITY circle="3"/>
-	<DISCIPLINETALENT name="False Sight" circle="4"/>
-	<SPELL name="Aura" circle="4"/>
-	<SPELL name="Bleeding Edge" circle="4"/>
-	<SPELL name="Circle of Well Being" circle="4"/>
-	<SPELL name="Clarion Call" circle="4"/>
-	<SPELL name="Conceal Traks" circle="4"/>
-	<SPELL name="Eyes Have It" circle="4"/>
-	<SPELL name="Great Weapon" circle="4"/>
-	<SPELL name="Hunger" circle="4"/>
-	<SPELL name="Imporved Alarm" circle="4"/>
-	<SPELL name="Memory Blank" circle="4"/>
-	<SPELL name="Multi-Missle" circle="4"/>
-	<SPELL name="Nightmare of Foreboding" circle="4"/>
-	<SPELL name="Stop Right There" circle="4"/>
-	<SPELL name="Unmask" circle="4"/>
+	<DISCIPLINETALENT name="Spirit Hold" circle="4"/>
+	<SPELL name="Animate Skeleton" circle="4"/>
+	<SPELL name="Astral Flare" circle="4"/>
+	<SPELL name="Blood Servitor" circle="4"/>
+	<SPELL name="Dark Spy" circle="4"/>
+	<SPELL name="Evil Eye" circle="4"/>
+	<SPELL name="Fatal Food" circle="4"/>
+	<SPELL name="Friend of Foe" circle="4"/>
+	<SPELL name="Last Chance" circle="4"/>
+	<SPELL name="Nightflyer's Cloak" circle="4"/>
+	<SPELL name="Spirit Servant" circle="4"/>
+	<SPELL name="Viewpoint" circle="4"/>
+	<SPELL name="Visions if Death" circle="4"/>
 	<SPELLABILITY circle="4"/>
-	<KARMA spend="Perception-ony Test" circle="4"/>
+	<KARMA spend="Willpower-ony Test" circle="4"/>
+	<OPTIONALTALENT name="Abate Curse" circle="5"/>
+	<OPTIONALTALENT name="Elemental Tongues" circle="5"/>
 	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
 	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
-	<OPTIONALTALENT name="Graceful Exit" circle="5"/>
-	<OPTIONALTALENT name="Hypnotzize" circle="5"/>
-	<OPTIONALTALENT name="Resist Taunt" circle="5"/>
-	<OPTIONALTALENT name="Slough Blame" circle="5"/>
+	<OPTIONALTALENT name="Item History" circle="5"/>
+	<OPTIONALTALENT name="Lion Heart" circle="5"/>
 	<OPTIONALTALENT name="Steel Thought" circle="5"/>
 	<OPTIONALTALENT name="Willforce" circle="5"/>
-	<DISCIPLINETALENT name="True Sight" circle="5"/>
-	<SPELL name="Awaken" circle="5"/>
-	<SPELL name="Bond of Silence" circle="5"/>
-	<SPELL name="Clothing Gone" circle="5"/>
-	<SPELL name="Enter and Exit" circle="5"/>
-	<SPELL name="Eye of Truth" circle="5"/>
-	<SPELL name="Flesh Eater" circle="5"/>
-	<SPELL name="Flying Carpet" circle="5"/>
-	<SPELL name="Illusion" circle="5"/>
-	<SPELL name="Improve Karma" circle="5"/>
-	<SPELL name="Noble Manner" circle="5"/>
-	<SPELL name="Phantom Fireball" circle="5"/>
-	<SPELL name="Pleasant Visions" circle="5"/>
-	<SPELL name="Switch" circle="5"/>
-	<SPELL name="Wall of Unfire" circle="5"/>
+	<DISCIPLINETALENT name="Summon" circle="5" limitation="Ally Spirits"/>
+	<SPELL name="Animate Spirti Object" circle="5"/>
+	<SPELL name="Astral Horror" circle="5"/>
+	<SPELL name="Astral Mount" circle="5"/>
+	<SPELL name="Astral Whisper" circle="5"/>
+	<SPELL name="Blind" circle="5"/>
+	<SPELL name="Circle of Atral Protection" circle="5"/>
+	<SPELL name="Incessant Talking" circle="5"/>
+	<SPELL name="Pass Ward" circle="5"/>
+	<SPELL name="Sculpt Darkness" circle="5"/>
+	<SPELL name="Sense Horror" circle="5"/>
+	<SPELL name="Shadow Hunter" circle="5"/>
+	<SPELL name="Spiritual Guidance" circle="5"/>
+	<SPELL name="Star Shower" circle="5"/>
+	<SPELL name="Target Portal" circle="5"/>
+	<SPELL name="Tears of the Scourge" circle="5"/>
+	<SPELL name="Whisper Through the Night" circle="5"/>
+	<SPELL name="Wither Limb" circle="5"/>
 	<SPELLABILITY circle="5"/>
-	<ABILITY name="Glamour" circle="5"/>
-	<DISCIPLINETALENT name="Engaging Banter" circle="6"/>
-	<SPELL name="Astral Shadow" circle="6"/>
-	<SPELL name="Bouncing Blaster" circle="6"/>
-	<SPELL name="Chosen Path" circle="6"/>
-	<SPELL name="Dancing Disks" circle="6"/>
-	<SPELL name="Foreseeing" circle="6"/>
-	<SPELL name="Illusory Missiles" circle="6"/>
-	<SPELL name="Memory Scribe" circle="6"/>
-	<SPELL name="Spotlight" circle="6"/>
-	<SPELL name="Stench" circle="6"/>
-	<KARMA spend="Willpower-only Test" circle="7"/>
-	<DISCIPLINETALENT name="Fast Hand" circle="7"/>
-	<SPELL name="Dream Sight" circle="7"/>
-	<SPELL name="Drunken Stagger" circle="7"/>
-	<SPELL name="False Enchantment" circle="7"/>
-	<SPELL name="Rebel Limb" circle="7"/>
-	<SPELL name="Resersal Passion" circle="7"/>
-	<SPELL name="Silent Stampede" circle="7"/>
-	<SPELL name="Stampede" circle="7"/>
-	<SPELL name="Time Flies" circle="7"/>
-	<SPELL name="Twister Tongues" circle="7"/>
-	<SPELL name="Vertigo" circle="7"/>
-	<SPELL name="Walk Through" circle="7"/>
+	<ABILITY name="Decay and Renewal" circle="5"/>
+	<DISCIPLINETALENT name="Lifesight" circle="6"/>
+	<SPELL name="Blessed Light" circle="6"/>
+	<SPELL name="Bone Puppet" circle="6"/>
+	<SPELL name="Bone Shatter" circle="6"/>
+	<SPELL name="Bone Walker" circle="6"/>
+	<SPELL name="Dust to Dust" circle="6"/>
+	<SPELL name="Foul Vapors" circle="6"/>
+	<SPELL name="Friendly Darkness" circle="6"/>
+	<SPELL name="Recovery" circle="6"/>
+	<SPELL name="Soul Armor" circle="6"/>
+	<SPELL name="Wall of Darkness" circle="6"/>
+	<SPELLABILITY circle="6"/>
+	<KARMA spend="Perseption-Only Tests" circle="6"/>
+	<DISCIPLINETALENT name="Spirit Dodge" circle="7"/>
+	<SPELL name="Astral Beacon" circle="7"/>
+	<SPELL name="Atral Maw" circle="7"/>
+	<SPELL name="Banquet of Dis" circle="7"/>
+	<SPELL name="Bone Pudding" circle="7"/>
+	<SPELL name="Cold Storage" circle="7"/>
+	<SPELL name="Constrict Heart" circle="7"/>
+	<SPELL name="Damage Shift" circle="7"/>
+	<SPELL name="Marathon Run" circle="7"/>
+	<SPELL name="Restrain Entity" circle="7"/>
+	<SPELL name="Reverse Withering" circle="7"/>
+	<SPELL name="Spirit Bold" circle="7"/>
+	<SPELL name="Spirit Portal" circle="7"/>
+	<SPELL name="Steal Strength" circle="7"/>
+	<SPELL name="Step Though Shadow" circle="7"/>
+	<SPELL name="Wit Friend" circle="7"/>
 	<KARMA spend="spell effect tests" circle="7"/>
-	<DISCIPLINETALENT name="Power Mask" circle="8"/>
-	<SPELL name="Astral Nightmare" circle="8"/>
-	<SPELL name="Dreamsend" circle="8"/>
-	<SPELL name="Form Exchange" circle="8"/>
-	<SPELL name="Leaping Lizards" circle="8"/>
-	<SPELL name="Massive Missles" circle="8"/>
-	<SPELL name="Other Place" circle="8"/>
-	<SPELL name="Shadow Spell" circle="8"/>
+	<DISCIPLINETALENT name="Orbiting Spy" circle="8"/>
+	<SPELL name="Control Being" circle="8"/>
+	<SPELL name="Globe of Silence" circle="8"/>
+	<SPELL name="Horror Call" circle="8"/>
+	<SPELL name="Netherblade" circle="8"/>
+	<SPELL name="Restrain Horror" circle="8"/>
+	<SPELL name="Shadow Tether" circle="8"/>
+	<SPELL name="Translator Spirit" circle="8"/>
+	<SPELL name="Visit Death" circle="8"/>
+	<SPELL name="Wall of Bones" circle="8"/>
+	<SPELL name="Wither Away" circle="8"/>
 	<DEFENSE circle="8" kind="spell"/>
 </DISCIPLINE>
