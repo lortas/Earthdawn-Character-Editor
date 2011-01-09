@@ -99,66 +99,45 @@ public class EDDisciplines extends JPanel {
 	}
 	
 	protected void addDiciplin(String name){
-		System.out.println("Allready in list: " +  character.getAllDiciplinesByOrder().containsKey(name));
-		if ((character.getAllDiciplinesByOrder().size() < 3) ){
+		
+		if ((character.getAllDiciplinesByOrder().size() < 3) && (character.getAllDiciplinesByName().get(name) == null)){
 			DISCIPLINEType value = new DISCIPLINEType();
 			value.setName(name);
-			value.setCircle(1);
+			value.setCircle(5);
 			value.setOrder(character.getAllDiciplinesByOrder().size() +1);
 			JAXBElement<DISCIPLINEType> dt = new ObjectFactory().createEDCHARACTERDISCIPLINE(value);
 			character.getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(dt);
-			DISCIPLINE d = ApplicationProperties.create().getDisziplin(name);
-			
-	
-		
-			
-			ECEWorker worker = new ECEWorker();
-			
-		    worker.verarbeiteCharakter(character.getEDCHARACTER());
-			((DisciplinesTableModel)table.getModel()).setCharacter(character);
-			
 			TALENTSType talents =  new TALENTSType();
 			talents.setDiscipline(name);
 			character.getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERTALENTS(talents));
-
-			
-			
-			HashMap<String, ATTRIBUTEType> attribute = character.getAttributes();
-			ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
-			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
-				//System.out.println(element.getName().getLocalPart());
-				if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
-					TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
-					
-					if(ta.getCircle() ==1){
-						TALENTType talent = new TALENTType();
-						talent.setName(ta.getName());
-						talent.setLimitation(ta.getLimitation());
-						talent.setCircle(1);
-						
-						
-		
-						RANKType rank = new RANKType();
-						rank.setRank(1);
-						rank.setBonus(1);
-						rank.setStep(1);
-						talent.setRANK(rank);
-						int order = character.getAllDiciplinesByName().get(name).getOrder();
-						
-						character.getAllTalentsByDisziplinOrder().get(order).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
-						System.out.println(ta.getName());
-					}
-				}
-				
-			}	
-			
-
-			
-		    worker.verarbeiteCharakter(character.getEDCHARACTER());
-		    ((DisciplinesTableModel)table.getModel()).setCharacter(character);
-		    character.refesh();
+			initDisciplinTalents(value.getName(),value.getCircle());
 		}
 		
+	}
+	
+	private void initDisciplinTalents(String disciplinname, int circle){
+		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinname);
+		for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
+				TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
+
+				if(ta.getCircle() <= circle){
+					TALENTType talent = new TALENTType();
+					talent.setName(ta.getName());
+					talent.setLimitation(ta.getLimitation());
+					talent.setCircle(ta.getCircle());
+					RANKType rank = new RANKType();
+					rank.setRank(1);
+					rank.setBonus(1);
+					rank.setStep(1);
+					talent.setRANK(rank);
+					if(character.getTalentByName(ta.getName()) == null){
+						character.getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
+					}
+				}
+			}
+			
+		}			
 	}
 	
 	private static void addPopup(Component component, final JPopupMenu popup) {
@@ -182,6 +161,9 @@ public class EDDisciplines extends JPanel {
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
 		System.out.println(((JMenuItem)arg0.getSource()).getText());
 		addDiciplin(((JMenuItem)arg0.getSource()).getText());
+        ECEWorker worker = new ECEWorker();
+        worker.verarbeiteCharakter(character.getEDCHARACTER());
+        character.refesh();
 	}
 }
 
