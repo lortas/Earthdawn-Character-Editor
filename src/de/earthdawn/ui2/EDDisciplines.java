@@ -38,13 +38,14 @@ public class EDDisciplines extends JPanel {
 	private JTable table;
 	private JToolBar toolBar;
 	private JButton btnAddDicipline;
-	private JPopupMenu popupMenu;
+	private JPopupMenu popupMenuCircle;
 	private JMenuItem menuItem;
 
 	
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
+		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0, 20));
 	}
 
 	public CharacterContainer getCharacter() {
@@ -63,7 +64,7 @@ public class EDDisciplines extends JPanel {
 		
 		table = new JTable();
 		table.setModel(new DisciplinesTableModel(character));
-		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0, 20));
+		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		scrollPane.setViewportView(table);
 		
 		toolBar = new JToolBar();
@@ -78,8 +79,8 @@ public class EDDisciplines extends JPanel {
 		});
 		toolBar.add(btnAddDicipline);
 		
-		popupMenu = new JPopupMenu();
-		addPopup(btnAddDicipline, popupMenu);
+		popupMenuCircle = new JPopupMenu();
+		//addPopup(btnAddDicipline, popupMenuCircle);
 		for (String n : ApplicationProperties.create().getAllDisziplinNames()) {
 			System.out.println(n);
 			menuItem = new JMenuItem(n);
@@ -88,36 +89,17 @@ public class EDDisciplines extends JPanel {
 					do_menuItem_actionPerformed(arg0);
 				}
 			});
-			popupMenu.add(menuItem);		
+			popupMenuCircle.add(menuItem);		
 		}
 
 
 	}
 	
 	protected void do_btnAddDicipline_actionPerformed(ActionEvent arg0) {
-		popupMenu.show(btnAddDicipline, btnAddDicipline.getX(), btnAddDicipline.getY()+ btnAddDicipline.getHeight());
+		popupMenuCircle.show(btnAddDicipline, btnAddDicipline.getX(), btnAddDicipline.getY()+ btnAddDicipline.getHeight());
 	}
-	
 	
 
-	
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-		});
-	}
 	
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
 		System.out.println(((JMenuItem)arg0.getSource()).getText());

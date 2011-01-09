@@ -1,7 +1,6 @@
 package de.earthdawn.ui2;
 
 import java.awt.Component;
-import java.awt.event.MouseEvent;
 import java.util.EventObject;
 
 import javax.swing.AbstractCellEditor;
@@ -14,16 +13,15 @@ import javax.swing.table.TableCellEditor;
 public class SpinnerEditor extends AbstractCellEditor implements TableCellEditor { 
 	final JSpinner spinner = new JSpinner(); 
 	
-	public SpinnerEditor() { 
-		System.out.println();
-	} 
+
 	// Initializes the spinner. 
 	public SpinnerEditor(String[] items) { 
-		spinner.setModel(new SpinnerListModel(java.util.Arrays.asList(items))); 
+		spinner.setModel(new SpinnerListModel(java.util.Arrays.asList(items)));
 	} 
 	
 	public SpinnerEditor(int min, int max) { 
 		spinner.setModel(new SpinnerNumberModel(0, min, max, 1)); 
+
 	} 
 	
 	// Prepares the spinner component and returns it. 
@@ -42,6 +40,7 @@ public class SpinnerEditor extends AbstractCellEditor implements TableCellEditor
 	// Returns the spinners current value. 
 	
 	public Object getCellEditorValue() { 
+		
 		return spinner.getValue(); 
 	} 
 }  
