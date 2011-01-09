@@ -332,9 +332,8 @@ public class EDMainWindow {
 		character = new CharacterContainer(ec);
 		ECEWorker worker = new ECEWorker();
 	    worker.verarbeiteCharakter(character.getEDCHARACTER());
-		panelERGeneral.setCharacter(character);
-		panelEDAttributes.setCharacter(character);
-		panelEDTalents.setCharacter(character);
-		panelEDDisciplines.setCharacter(character);
+
+		addTalentsTabs();
+		refreshTabs();
 	}
 }
