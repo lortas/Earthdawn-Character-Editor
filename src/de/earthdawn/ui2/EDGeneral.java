@@ -295,11 +295,11 @@ public class EDGeneral extends JPanel {
 		    if (((JRadioButton)arg0.getItem()).getModel().isSelected()) 
 		    {
 		    	character.getAppearance().setGender(GenderType.fromValue("female"));
-		    	System.out.println("female");
+
 		    }
 		    else{
 		    	character.getAppearance().setGender(GenderType.fromValue("male"));
-		    	System.out.println("male");
+
 		    }
 			ECEWorker worker = new ECEWorker();
 		    worker.verarbeiteCharakter(character.getEDCHARACTER());		
@@ -310,7 +310,6 @@ public class EDGeneral extends JPanel {
 
 	protected void do_textFieldName_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			System.out.println(textFieldName.getText());
 			character.getEDCHARACTER().setName(textFieldName.getText());
 		}
 	}

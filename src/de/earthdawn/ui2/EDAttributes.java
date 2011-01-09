@@ -34,7 +34,7 @@ public class EDAttributes extends JPanel {
 		table.setModel(new AttributesTableModel());
 		table.getColumnModel().getColumn(2).setCellEditor(new SpinnerEditor(-2, 8));
 		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
-
+		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		 
 				
 		scrollPane.setViewportView(table);
@@ -144,7 +144,7 @@ class AttributesTableModel extends AbstractTableModel {
         }
         ECEWorker worker = new ECEWorker();
         worker.verarbeiteCharakter(character.getEDCHARACTER());
-        
+        character.refesh();
         fireTableCellUpdated(row, col);
         fireTableCellUpdated(row, 4);
         fireTableCellUpdated(row, 5);
