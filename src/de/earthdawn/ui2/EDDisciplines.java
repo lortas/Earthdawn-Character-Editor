@@ -98,47 +98,8 @@ public class EDDisciplines extends JPanel {
 		popupMenu.show(btnAddDicipline, btnAddDicipline.getX(), btnAddDicipline.getY()+ btnAddDicipline.getHeight());
 	}
 	
-	protected void addDiciplin(String name){
-		
-		if ((character.getAllDiciplinesByOrder().size() < 3) && (character.getAllDiciplinesByName().get(name) == null)){
-			DISCIPLINEType value = new DISCIPLINEType();
-			value.setName(name);
-			value.setCircle(5);
-			value.setOrder(character.getAllDiciplinesByOrder().size() +1);
-			JAXBElement<DISCIPLINEType> dt = new ObjectFactory().createEDCHARACTERDISCIPLINE(value);
-			character.getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(dt);
-			TALENTSType talents =  new TALENTSType();
-			talents.setDiscipline(name);
-			character.getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERTALENTS(talents));
-			initDisciplinTalents(value.getName(),value.getCircle());
-		}
-		
-	}
 	
-	private void initDisciplinTalents(String disciplinname, int circle){
-		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinname);
-		for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
-			if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
-				TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
 
-				if(ta.getCircle() <= circle){
-					TALENTType talent = new TALENTType();
-					talent.setName(ta.getName());
-					talent.setLimitation(ta.getLimitation());
-					talent.setCircle(ta.getCircle());
-					RANKType rank = new RANKType();
-					rank.setRank(1);
-					rank.setBonus(1);
-					rank.setStep(1);
-					talent.setRANK(rank);
-					if(character.getTalentByName(ta.getName()) == null){
-						character.getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
-					}
-				}
-			}
-			
-		}			
-	}
 	
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
@@ -160,7 +121,7 @@ public class EDDisciplines extends JPanel {
 	
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
 		System.out.println(((JMenuItem)arg0.getSource()).getText());
-		addDiciplin(((JMenuItem)arg0.getSource()).getText());
+		character.addDiciplin(((JMenuItem)arg0.getSource()).getText());
         ECEWorker worker = new ECEWorker();
         worker.verarbeiteCharakter(character.getEDCHARACTER());
         character.refesh();
@@ -254,6 +215,9 @@ class DisciplinesTableModel extends AbstractTableModel {
      */
     public void setValueAt(Object value, int row, int col) {  
     	character.getAllDiciplinesByOrder().get(new Integer(row+1)).setCircle((Integer)value);
+    	
+    	character.initDisciplinTalents((String)getValueAt(row, 0), ((Integer) getValueAt(row, 1)).intValue());
+    	character.refesh();
         fireTableCellUpdated(row, col);
     }
 
