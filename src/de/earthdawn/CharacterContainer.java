@@ -504,9 +504,12 @@ public class CharacterContainer extends CharChangeRefresh {
 				if( talent.getCircle() <= disciplineCircle ) {
 					Boolean found=false;
 					for( TALENTType usedTalent : usedOptionalTalents ) {
-						if( talent.getName().equals(usedTalent.getName()) ) {
-							found = true;
-							break;
+						if(usedTalent != null){
+							if( talent.getName().equals(usedTalent.getName()) ) {
+								found = true;
+								usedOptionalTalents.remove(usedTalent);
+								break;
+							}
 						}
 					}
 					if( ! found ) result.add( talent );
@@ -564,7 +567,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					talent.setCircle(ta.getCircle());
 					RANKType rank = new RANKType();
 					rank.setRank(1);
-					rank.setBonus(1);
+					rank.setBonus(0);
 					rank.setStep(1);
 					talent.setRANK(rank);
 					
@@ -589,6 +592,21 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 			
 		}			
+	}
+	
+	public void addOptionalTalent(String discipline, int circle, TALENTABILITYType talenttype){
+		TALENTType talent = new TALENTType();
+		talent.setName(talenttype.getName());
+		talent.setLimitation(talenttype.getLimitation());
+		talent.setCircle(circle);
+		
+		RANKType rank = new RANKType();
+		rank.setRank(1);
+		rank.setBonus(0);
+		rank.setStep(1);
+		talent.setRANK(rank);
+		
+		getAllTalentsByDisziplinName().get(discipline).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
 	}
 	
 }
