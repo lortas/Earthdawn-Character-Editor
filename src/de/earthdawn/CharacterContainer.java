@@ -522,7 +522,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		if ((this.getAllDiciplinesByOrder().size() < 3) && (this.getAllDiciplinesByName().get(name) == null)){
 			DISCIPLINEType value = new DISCIPLINEType();
 			value.setName(name);
-			value.setCircle(5);
+			value.setCircle(1);
 			value.setOrder(getAllDiciplinesByOrder().size() +1);
 			JAXBElement<DISCIPLINEType> dt = new ObjectFactory().createEDCHARACTERDISCIPLINE(value);
 			getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(dt);
@@ -552,6 +552,20 @@ public class CharacterContainer extends CharChangeRefresh {
 					talent.setRANK(rank);
 					if(getTalentByName(ta.getName()) == null){
 						getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
+					}
+				}
+				else{
+					// Disciplin Talente die aus höheren Kreisen löschen
+					if(getTalentByName(ta.getName()) != null){
+						System.out.println("Remove Talent:" + ta.getName());
+						List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
+						for(JAXBElement<TALENTType> talent  : getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT()){
+							if(talent.getValue().getName().equals(ta.getName())){
+								removelist.add(talent);
+							}
+						}
+						getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().removeAll(removelist);
+						
 					}
 				}
 			}
