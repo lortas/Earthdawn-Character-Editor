@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.xml.bind.JAXBElement;
 
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.*;
 import de.earthdawn.event.CharChangeRefresh;
 
@@ -516,4 +517,46 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		return result;
 	}
+	
+	public void addDiciplin(String name){
+		if ((this.getAllDiciplinesByOrder().size() < 3) && (this.getAllDiciplinesByName().get(name) == null)){
+			DISCIPLINEType value = new DISCIPLINEType();
+			value.setName(name);
+			value.setCircle(5);
+			value.setOrder(getAllDiciplinesByOrder().size() +1);
+			JAXBElement<DISCIPLINEType> dt = new ObjectFactory().createEDCHARACTERDISCIPLINE(value);
+			getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(dt);
+			TALENTSType talents =  new TALENTSType();
+			talents.setDiscipline(name);
+			getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERTALENTS(talents));
+			initDisciplinTalents(value.getName(),value.getCircle());
+		}
+		
+	}
+	
+	public void initDisciplinTalents(String disciplinname, int circle){
+		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinname);
+		for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
+				TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
+
+				if(ta.getCircle() <= circle){
+					TALENTType talent = new TALENTType();
+					talent.setName(ta.getName());
+					talent.setLimitation(ta.getLimitation());
+					talent.setCircle(ta.getCircle());
+					RANKType rank = new RANKType();
+					rank.setRank(1);
+					rank.setBonus(1);
+					rank.setStep(1);
+					talent.setRANK(rank);
+					if(getTalentByName(ta.getName()) == null){
+						getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
+					}
+				}
+			}
+			
+		}			
+	}
+	
 }
