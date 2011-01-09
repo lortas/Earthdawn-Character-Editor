@@ -19,7 +19,6 @@ public class CharChangeRefresh {
 	
 	    // This methode  is used to fire the event
 	    void fireEvent(CharChangeEvent evt) {
-	    	System.out.println("Count: " + listenerList.getListenerCount());
 	        Object[] listeners = listenerList.getListenerList();
 	        // Each listener occupies two elements - the first is the listener class
 	        // and the second is the listener instance
@@ -31,7 +30,7 @@ public class CharChangeRefresh {
 	    }
 	    
 	    public void refesh(){
-	    	System.out.println("Refresh");
+
 	    	fireEvent(null);
 	    	
 	    }
