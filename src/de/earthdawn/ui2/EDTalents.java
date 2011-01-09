@@ -1,26 +1,23 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
-import java.awt.MenuItem;
-import java.util.HashMap;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
-import de.earthdawn.event.CharChangeEventListener;
-import javax.swing.JToolBar;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JPopupMenu;
 
 public class EDTalents extends JPanel {
 	
@@ -79,7 +76,7 @@ public class EDTalents extends JPanel {
 	
 	protected void do_buttonAdd_actionPerformed(ActionEvent arg0) {
 		popupMenuCircle.removeAll();
-		character.getO
+
 		List<Integer> l = character.getCircleOfMissingOptionalTalents().get(disciplin);
 		for(Integer c : l){
 			JMenuItem menuItem = new JMenuItem(String.valueOf(c));
@@ -172,7 +169,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getCircle();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
 	        case 1:  
@@ -180,7 +177,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getName();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
 	        case 2:
@@ -188,7 +185,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getStrain();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
 	        case 3: 
@@ -196,7 +193,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getAttribute().value();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
 	        case 4: 
@@ -212,7 +209,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getRANK().getStep();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
 	        case 6:
@@ -220,7 +217,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getAction().value();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;	 	        	
 	        case 7:
@@ -228,7 +225,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = talent.getRANK().getDice().value();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;	 	        	
 	        case 8:
@@ -236,7 +233,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		result = element.getName().getLocalPart();
 	        	}
 	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
+	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;	 	        	
 	        default: return new Integer(0);
