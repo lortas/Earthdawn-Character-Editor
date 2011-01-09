@@ -24,6 +24,7 @@
 	<SPELL name="Purify Water" circle="1"/>
 	<SPELL name="Resist Cold" circle="1"/>
 	<SPELL name="Resist Fire" circle="1"/>
+	<DEFENSE kind="spell" circle="2"/>
 	<OPTIONALTALENT name="Astral Sight" circle="2"/>
 	<OPTIONALTALENT name="Item History" circle="2"/>
 	<OPTIONALTALENT name="Parry" circle="2"/>
@@ -33,13 +34,12 @@
 	<OPTIONALTALENT name="Tracking" circle="2"/>
 	<OPTIONALTALENT name="Wind Catcher" circle="2"/>
 	<DISCIPLINETALENT name="Fire Heal" circle="2"/>
-	<SPELL name="Air Mattress" circle="2"/>
-	<SPELL name="Billowing Cloak" circle="2"/>
-	<SPELL name="Boil Water" circle="2"/>
-	<SPELL name="Detect Elementalism Magic" circle="2"/>
-	<SPELL name="Flame Strike" circle="2"/>
-	<DEFENSE kind="spell" circle="2"/>
-	<DISCIPLINETALENT name="Elemental Toungues" circle="3"/>
+	<SPELL name="Gadfly" circle="2"/>
+	<SPELL name="Gills" circle="2"/>
+	<SPELL name="Hunter's Sense" circle="2"/>
+	<SPELL name="Icy Surface" circle="2"/>
+	<SPELL name="Path Home" circle="2"/>
+	<DISCIPLINETALENT name="Elemental Tongues" circle="3"/>
 	<DISCIPLINETALENT name="Elemental Hold" circle="4"/>
 	<KARMA spend="Perception-only Test" circle="4"/>
 	<OPTIONALTALENT name="Detect Trap" circle="5"/>
