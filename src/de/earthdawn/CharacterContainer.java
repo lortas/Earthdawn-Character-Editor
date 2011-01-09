@@ -353,6 +353,23 @@ public class CharacterContainer extends CharChangeRefresh {
 		return null;
 	}
 
+	public TALENTType getTalentByDisciplinAndName(String disciplin, String searchTalent) {
+		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
+			if (element.getName().getLocalPart().equals("TALENTS")) {
+				if (((TALENTSType)element.getValue()).getDiscipline().equals(disciplin)){
+					for (JAXBElement<TALENTType> talent : ((TALENTSType)element.getValue()).getDISZIPLINETALENTOrOPTIONALTALENT()) {
+						TALENTType t = (TALENTType)talent.getValue();
+						if ( t.getName().equals(searchTalent)) {
+							return t;
+						}
+					}
+				}
+			}
+		}
+		// Not found
+		return null;
+	}	
+	
 	public List<SKILLType> getSkills() {
 		List<SKILLType> skills = new ArrayList<SKILLType>();
 		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
@@ -550,7 +567,8 @@ public class CharacterContainer extends CharChangeRefresh {
 					rank.setBonus(1);
 					rank.setStep(1);
 					talent.setRANK(rank);
-					if(getTalentByName(ta.getName()) == null){
+					
+					if(getTalentByDisciplinAndName(disciplinname, ta.getName()) == null){
 						getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
 					}
 				}
