@@ -15,7 +15,6 @@ import de.earthdawn.data.CHARACTERISTICSATTRIBUTECOST;
 import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
 import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
 import de.earthdawn.data.CHARACTERISTICSINCREASECOST;
-import de.earthdawn.data.CHARACTERISTICSINCREASECOSTCIRCLE;
 import de.earthdawn.data.CHARACTERISTICSLEGENDARYSTATUS;
 import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
@@ -114,32 +113,11 @@ public class ECECharacteristics {
 	}
 
 	public int getTalentRankTotalLP(int discipline, int circle, int rank) {
-		// Summiere alle LegendenPunkte bis einschließlich "rank" pro Kreis
-		if( discipline < 1 ) {
-			System.err.println("Discipline number was smaller than one. Increase number to one.");
-			discipline=1;
-		}
-		CHARACTERISTICSDISCIPLINENR disciplinenr = null;
-		for( JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR() ) {
-			if( element.getName().getLocalPart().equals("DISCIPLINENR") ) {
-				CHARACTERISTICSDISCIPLINENR tmp = (CHARACTERISTICSDISCIPLINENR)element.getValue();
-				if( tmp.getDisciplinenr() <= discipline ) disciplinenr = tmp;
-			}
-		}
-		if( disciplinenr == null ) {
-			System.err.println("Can not find LP for talents of discipline number "+discipline);
-			return 0;
-		}
-		CHARACTERISTICSCIRCLE circlenr = null;
-		for (CHARACTERISTICSCIRCLE tmp : disciplinenr.getCIRCLE()) {
-			if( tmp.getCircle() <= circle ) circlenr = tmp;
-		}
-		if( disciplinenr == null ) {
-			System.err.println("Can not find LP for talents of discipline number "+discipline+" and cirlce number "+circle);
-			return 0;
-		}
+		if( rank < 1 ) return 0;
+		List<CHARACTERISTICSCOST> costs = getTalentRankIncreaseLP(discipline,circle);
+		if( costs == null ) return 0;
 		int result = 0;
-		for( CHARACTERISTICSCOST talentcost : circlenr.getTALENTLPCOST() ) {
+		for( CHARACTERISTICSCOST talentcost : costs ) {
 			result += talentcost.getCost();
 			rank--;
 			if( rank < 1 ) break;
@@ -148,6 +126,7 @@ public class ECECharacteristics {
 	}
 
 	public int getSkillRankTotalLP(int rank) {
+		if( rank < 1 ) return 0;
 		// Summiere alle LegendenPunkte bis einschließlich "rank"
 		int sum=0;
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
@@ -173,34 +152,40 @@ public class ECECharacteristics {
 				if( lpincrease < 1 ) return sum;
 			}
 		}
-		System.err.println("The attribut value was increased "+lpincrease+" times to often.");
+		System.err.println("The attribute value was increased "+lpincrease+" times to often.");
 		return sum;
 	}
 
-	public int getTalentRankIncreaseLP(int circle, int rank) {
-		HashMap<Integer,Integer> resultByCircle = new HashMap<Integer,Integer>();
-		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
-			if( element.getName().getLocalPart().equals("TALENTLPCOST") ) {
-				CHARACTERISTICSINCREASECOSTCIRCLE tmp = ((CHARACTERISTICSINCREASECOSTCIRCLE)element.getValue());
-				if( tmp.getIncrease() == rank ) {
-					resultByCircle.put( tmp.getCircle() , tmp.getCost() );
-				}
+	public List<CHARACTERISTICSCOST> getTalentRankIncreaseLP(int discipline, int circle) {
+		if( discipline < 1 ) {
+			System.err.println("Discipline number was smaller than one. Increase number to one.");
+			discipline=1;
+		}
+		CHARACTERISTICSDISCIPLINENR disciplinenr = null;
+		for( JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR() ) {
+			if( element.getName().getLocalPart().equals("DISCIPLINENR") ) {
+				CHARACTERISTICSDISCIPLINENR tmp = (CHARACTERISTICSDISCIPLINENR)element.getValue();
+				if( tmp.getDisciplinenr() <= discipline ) disciplinenr = tmp;
 			}
 		}
-		// Wähle nun den richtigen Kreis aus
-		while( circle >= 0) {
-			if( resultByCircle.containsKey(circle) ) {
-				return resultByCircle.get(circle);
-			}
-			// Für den gesuchten Kreis gab es keine LP-Summe, damit schauen wir nach einem kleinern Kreis
-			circle--;
+		if( disciplinenr == null ) {
+			System.err.println("Can not find LP for talents of discipline number "+discipline);
+			return null;
 		}
-		// Not found
-		return 0;
+		CHARACTERISTICSCIRCLE circlenr = null;
+		for (CHARACTERISTICSCIRCLE tmp : disciplinenr.getCIRCLE()) {
+			if( tmp.getCircle() <= circle ) circlenr = tmp;
+		}
+		if( circlenr == null ) {
+			System.err.println("Can not find LP for talents of discipline number "+discipline+" and cirlce number "+circle);
+			return null;
+		}
+		return circlenr.getTALENTLPCOST();
 	}
 
 	public int getSpellLP(int circle) {
-		return getTalentRankIncreaseLP(1, circle);
+		if( circle < 1 ) return 0;
+		return getTalentRankIncreaseLP(1, 1).get(circle-1).getCost();
 	}
 
 	public CHARACTERISTICSLEGENDARYSTATUS getLegendaystatus(int circle) {
