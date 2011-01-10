@@ -31,16 +31,20 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="CHARACTERISTICS_INCREASECOST">
-		<xs:attribute name="increase" type="edt:unsigned_int" use="required"/>
+	<xs:complexType name="CHARACTERISTICS_COST">
 		<xs:attribute name="cost" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="CHARACTERISTICS_INCREASECOSTCIRCLE">
-		<xs:complexContent>
-			<xs:extension base="CHARACTERISTICS_INCREASECOST">
-				<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
-			</xs:extension>
-		</xs:complexContent>
+	<xs:complexType name="CHARACTERISTICS_CIRCLE">
+		<xs:sequence>
+			<xs:element name="TALENTLPCOST" type="CHARACTERISTICS_COST" minOccurs="15" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CHARACTERISTICS_DISCIPLINENR">
+		<xs:sequence>
+			<xs:element name="CIRCLE" type="CHARACTERISTICS_CIRCLE" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="disciplinenr" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="CHARACTERISTICS_LEGENDARYSTATUS">
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
@@ -56,9 +60,9 @@
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTECOST" type="CHARACTERISTICS_ATTRIBUTECOST"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="HEALTHRATING" type="CHARACTERISTICS_HEALTHRATING"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="STEPDICETABLE" type="CHARACTERISTICS_STEPDICETABLE"/>
-				<xs:element maxOccurs="unbounded" minOccurs="1" name="TALENTLPCOST" type="CHARACTERISTICS_INCREASECOSTCIRCLE"/>
-				<xs:element maxOccurs="unbounded" minOccurs="1" name="SKILLLPCOST" type="CHARACTERISTICS_INCREASECOST"/>
-				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTELPCOST" type="CHARACTERISTICS_INCREASECOST"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="DISCIPLINENR" type="CHARACTERISTICS_DISCIPLINENR"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="SKILLLPCOST" type="CHARACTERISTICS_COST"/>
+				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTELPCOST" type="CHARACTERISTICS_COST"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="LEGENDARYSTATUS" type="CHARACTERISTICS_LEGENDARYSTATUS"/>
 			</xs:choice>
 		</xs:complexType>
