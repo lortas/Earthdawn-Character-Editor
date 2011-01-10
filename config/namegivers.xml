@@ -42,7 +42,6 @@
     <ATTRIBUTE name="CHA" value="11" />
     <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
     <WOUND threshold="0"/>
-    <TALENT name="Versatility" circle="0"/>
   </NAMEGIVER>
   <NAMEGIVER name="Obsidiman" karmamodifier="3" movement_ground="5">
     <ATTRIBUTE name="DEX" value="8" />

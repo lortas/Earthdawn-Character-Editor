@@ -203,34 +203,43 @@ public class ECEWorker {
 		// - innere Schleife über alle Talente der Disziplin
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			TALENTType durabilityTalent = null;
-			for( JAXBElement<TALENTType> element : allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT() ) {
+			List <JAXBElement<TALENTType>> disTalents = allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT();
+			List <JAXBElement<TALENTType>> rankZeroTalents = new ArrayList <JAXBElement<TALENTType>>();
+			for( JAXBElement<TALENTType> element : disTalents ) {
 				TALENTType talent = element.getValue();
-				talent.getRANK().setBonus(0);
+				RANKType rank = talent.getRANK();
+				if( rank.getRank() < 1 ) {
+					rankZeroTalents.add(element);
+					continue;
+				}
+				rank.setBonus(0);
 				enforceCapabilityParams(talent,capabilities);
-				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getRank());
-				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),talent.getRANK().getStartrank());
-				talent.getRANK().setLpcost(lpcostfull-lpcoststart);
+				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),rank.getRank());
+				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),rank.getStartrank());
+				rank.setLpcost(lpcostfull-lpcoststart);
 				if( element.getName().getLocalPart().equals("DISZIPLINETALENT")) {
-					calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+talent.getRANK().getLpcost());
+					calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+rank.getLpcost());
 				} else {
-					calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+talent.getRANK().getLpcost());
+					calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+rank.getLpcost());
 				}
-				calculateCapabilityRank(talent.getRANK(),attribute.get(talent.getAttribute().value()));
-				if( namegivertalents.containsKey(talent.getName()) ) {
-					namegivertalents.remove(talent.getName());
-				}
+				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
 				if( talent.getName().equals(durabilityTalentName)) {
 					durabilityTalent=talent;
 				}
 				for( KNACKType knack : talent.getKNACK() ) {
-					if( knack.getMinrank() > talent.getRANK().getRank() ) {
+					if( knack.getMinrank() > rank.getRank() ) {
 						System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
-								+talent.getRANK().getRank()+" vs. "+knack.getMinrank());
+								+rank.getRank()+" vs. "+knack.getMinrank());
 					}
 					int lp = ApplicationProperties.create().getCharacteristics().getTalentRankIncreaseLP(talent.getCircle(),knack.getMinrank());
 					calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
 				}
+				if( namegivertalents.containsKey(talent.getName()) ) {
+					namegivertalents.remove(talent.getName());
+				}
 			}
+			// Talenete mit Rang == 0 werden entfernt.
+			disTalents.removeAll(rankZeroTalents);
 			// Alle Dizipline Talente die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
