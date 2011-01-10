@@ -28,25 +28,9 @@ public class JAXBHelper {
 		return null;
 	}
 
-	public static DISCIPLINEDURABILITYType getDisciplineDurability(DISCIPLINEType discipline) {
-		DISCIPLINEDURABILITYType durability = new DISCIPLINEDURABILITYType();
-		durability.setCircle(1);
-		durability.setDeath(1);
-		durability.setUnconsciousness(1);
-		for(JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT()) {
-			if (element.getName().getLocalPart().equals("DURABILITY")) {
-				DISCIPLINEDURABILITYType d = ((DISCIPLINEDURABILITYType)element.getValue());
-				if( d.getCircle() > discipline.getCircle() ) continue;
-				if( d.getDeath() < durability.getDeath() ) continue;
-				durability=d;
-			}
-		}
-		return durability;
-	}
-
 	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {
 		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
-		for(JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT()) {
+		for(JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
 			if (element.getName().getLocalPart().equals("KARMA")) {
 				KARMAABILITYType karma = ((KARMAABILITYType)element.getValue());
 				if( karma.getCircle() > discipline.getCircle() ) continue;

@@ -214,8 +214,8 @@ public class ECEWorker {
 				}
 				rank.setBonus(0);
 				enforceCapabilityParams(talent,capabilities);
-				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),rank.getRank());
-				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(talent.getCircle(),rank.getStartrank());
+				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
+				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 				rank.setLpcost(lpcostfull-lpcoststart);
 				if( element.getName().getLocalPart().equals("DISZIPLINETALENT")) {
 					calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+rank.getLpcost());
@@ -259,7 +259,7 @@ public class ECEWorker {
 			// dier Erhöhung von Todes- und Bewustlosigkeitsschwelle
 			DISCIPLINEType discipline = allDisciplines.get(disciplinenumber);
 			if( durabilityTalent != null ) {
-				DISCIPLINEDURABILITYType durability = JAXBHelper.getDisciplineDurability(discipline);
+				DISCIPLINEDURABILITYType durability = ApplicationProperties.create().getDisziplin(discipline.getName()).getDURABILITY();
 				death.setAdjustment(death.getAdjustment()+(durability.getDeath()*durabilityTalent.getRANK().getRank()));
 				unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*durabilityTalent.getRANK().getRank()));
 				durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
@@ -373,7 +373,7 @@ public class ECEWorker {
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			int tmp = 0;
-			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
 				if( element.getName().getLocalPart().equals("KARMASTEP")) {
 					DISZIPINABILITYType karmastep = (DISZIPINABILITYType)element.getValue();
 					if( karmastep.getCircle() > diciplineCircle.get(discipline) ) continue;
@@ -390,7 +390,7 @@ public class ECEWorker {
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			int tmp = 0;
-			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
 				if( element.getName().getLocalPart().equals("RECOVERYTEST")) {
 					DISZIPINABILITYType recoverytest = (DISZIPINABILITYType)element.getValue();
 					if( recoverytest.getCircle() > diciplineCircle.get(discipline) ) continue;
@@ -407,7 +407,7 @@ public class ECEWorker {
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			int tmp = 0;
-			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
 				if( element.getName().getLocalPart().equals("INITIATIVE")) {
 					DISZIPINABILITYType initiative = (DISZIPINABILITYType)element.getValue();
 					if( initiative.getCircle() > diciplineCircle.get(discipline) ) continue;
@@ -432,7 +432,7 @@ public class ECEWorker {
 			tmp.setPhysical(0);
 			tmp.setSocial(0);
 			tmp.setSpell(0);
-			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
 				if( element.getName().getLocalPart().equals("DEFENSE")) {
 					DEFENSEABILITYType defense = (DEFENSEABILITYType)element.getValue();
 					if( defense.getCircle() > diciplineCircle.get(discipline) ) continue;
@@ -454,7 +454,7 @@ public class ECEWorker {
 		List<Integer> result = new ArrayList<Integer>();
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
-			for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
 				if( element.getName().getLocalPart().equals("SPELLABILITY")) {
 					DISZIPINABILITYType spell = (DISZIPINABILITYType)element.getValue();
 					if( spell.getCircle() > diciplineCircle.get(discipline) ) continue;

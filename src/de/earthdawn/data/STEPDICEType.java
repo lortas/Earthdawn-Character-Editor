@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="STEPDICE_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="step" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="step" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="dice" type="{http://earthdawn.com/datatypes}dice_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,24 +44,36 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class STEPDICEType {
 
-    @XmlAttribute(required = true)
-    protected int step;
+    @XmlAttribute
+    protected Integer step;
     @XmlAttribute
     protected DiceType dice;
 
     /**
      * Gets the value of the step property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getStep() {
-        return step;
+        if (step == null) {
+            return  0;
+        } else {
+            return step;
+        }
     }
 
     /**
      * Sets the value of the step property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setStep(int value) {
+    public void setStep(Integer value) {
         this.step = value;
     }
 

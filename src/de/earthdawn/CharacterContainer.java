@@ -498,7 +498,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			System.err.println("No Used Optinal Talents found for discipline '"+discipline.getName()+"'");
 		}
 		int disciplineCircle = getCircleOf(discipline.getName());
-		for( JAXBElement<?> element : discipline.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT()) {
+		for( JAXBElement<?> element : discipline.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
 			if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
 				TALENTABILITYType talent = (TALENTABILITYType)element.getValue();
 				if( talent.getCircle() <= disciplineCircle ) {
@@ -556,7 +556,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	
 	public void initDisciplinTalents(String disciplinname, int circle){
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinname);
-		for( JAXBElement<?> element : d.getDURABILITYAndOPTIONALTALENTAndDISCIPLINETALENT() ) {
+		for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
 			if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
 				TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
 

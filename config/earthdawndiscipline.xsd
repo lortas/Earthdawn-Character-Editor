@@ -10,13 +10,10 @@
 		<xs:complexType>
 			<xs:sequence maxOccurs="1" minOccurs="1">
 				<xs:element maxOccurs="1" minOccurs="1" name="DURABILITY" type="DISCIPLINEDURABILITY_type"/>
-				<xs:element maxOccurs="8" minOccurs="5" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
-				<xs:element maxOccurs="8" minOccurs="5" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
 				<xs:choice maxOccurs="unbounded" minOccurs="1">
 					<xs:element maxOccurs="8" minOccurs="5" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
 					<xs:sequence maxOccurs="4" minOccurs="1">
-						<xs:element maxOccurs="1" minOccurs="1" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
+						<xs:element maxOccurs="8" minOccurs="0" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELLABILITY" type="edt:DISZIPINABILITY_type"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>

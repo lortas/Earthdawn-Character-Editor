@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/characteristics}CHARACTERISTICS_INCREASECOST">
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="discipline" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,6 +40,8 @@ public class CHARACTERISTICSINCREASECOSTCIRCLE
 
     @XmlAttribute(required = true)
     protected int circle;
+    @XmlAttribute(required = true)
+    protected int discipline;
 
     /**
      * Gets the value of the circle property.
@@ -54,6 +57,22 @@ public class CHARACTERISTICSINCREASECOSTCIRCLE
      */
     public void setCircle(int value) {
         this.circle = value;
+    }
+
+    /**
+     * Gets the value of the discipline property.
+     * 
+     */
+    public int getDiscipline() {
+        return discipline;
+    }
+
+    /**
+     * Sets the value of the discipline property.
+     * 
+     */
+    public void setDiscipline(int value) {
+        this.discipline = value;
     }
 
 }
