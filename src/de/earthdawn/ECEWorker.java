@@ -500,7 +500,13 @@ public class ECEWorker {
 	}
 
 	public int berechneMysticArmor(int value) {
-		return ApplicationProperties.create().getCharacteristics().getMYSTICARMOR().indexOf(value);
+		List<Integer> mysticArmorTable = ApplicationProperties.create().getCharacteristics().getMYSTICARMOR();
+		int mysticArmor=-1;
+		for( int attribute : mysticArmorTable ) {
+			if( attribute > value ) break;
+			mysticArmor++;
+		}
+		return mysticArmor;
 	}
 
 	public STEPDICEType attribute2StepAndDice(int value) {
