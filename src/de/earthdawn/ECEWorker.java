@@ -231,7 +231,7 @@ public class ECEWorker {
 						System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
 								+rank.getRank()+" vs. "+knack.getMinrank());
 					}
-					int lp = ApplicationProperties.create().getCharacteristics().getTalentRankIncreaseLP(talent.getCircle(),knack.getMinrank());
+					int lp = ApplicationProperties.create().getCharacteristics().getTalentRankIncreaseLP(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
 					calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
 				}
 				if( namegivertalents.containsKey(talent.getName()) ) {
