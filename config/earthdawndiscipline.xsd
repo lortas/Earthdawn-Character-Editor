@@ -6,6 +6,13 @@
 		<xs:attribute name="unconsciousness" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="circle" type="edt:unsigned_int" default="0"/>
 	</xs:complexType>
+	<xs:complexType name="DISCIPLINESPELL_type">
+		<xs:complexContent>
+			<xs:extension base="edt:CIRCLENAME_type">
+				<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="DISCIPLINE">
 		<xs:complexType>
 			<xs:sequence maxOccurs="1" minOccurs="1">
@@ -14,7 +21,7 @@
 					<xs:element maxOccurs="8" minOccurs="5" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
 					<xs:sequence maxOccurs="4" minOccurs="1">
 						<xs:element maxOccurs="8" minOccurs="0" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="edt:CIRCLENAME_type"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="DISCIPLINESPELL_type"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELLABILITY" type="edt:DISZIPINABILITY_type"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>

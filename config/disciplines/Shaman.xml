@@ -13,20 +13,20 @@
 	<DISCIPLINETALENT name="Spell Fetish" circle="1"/>
 	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Shamanism"/>
 	<DISCIPLINETALENT name="Wilderness Survival" circle="1"/>
-	<SPELL name="Air Armor" circle="1"/>
-	<SPELL name="Assuring Touch" circle="1"/>
-	<SPELL name="Bone Dance" circle="1"/>
-	<SPELL name="Catseyes" circle="1"/>
-	<SPELL name="Crunch Climb" circle="1"/>
-	<SPELL name="Earth Blend" circle="1"/>
-	<SPELL name="Earth Darts" circle="1"/>
-	<SPELL name="Insect Repellent" circle="1"/>
-	<SPELL name="Moonglow" circle="1"/>
-	<SPELL name="Plant Talk" circle="1"/>
-	<SPELL name="Purify Earth" circle="1"/>
-	<SPELL name="Purify Water" circle="1"/>
-	<SPELL name="Quicken Pace" circle="1"/>
-	<SPELL name="Resist Cold" circle="1"/>
+	<SPELL type="shamane" name="Air Armor" circle="1"/>
+	<SPELL type="shamane" name="Assuring Touch" circle="1"/>
+	<SPELL type="shamane" name="Bone Dance" circle="1"/>
+	<SPELL type="shamane" name="Catseyes" circle="1"/>
+	<SPELL type="shamane" name="Crunch Climb" circle="1"/>
+	<SPELL type="shamane" name="Earth Blend" circle="1"/>
+	<SPELL type="shamane" name="Earth Darts" circle="1"/>
+	<SPELL type="shamane" name="Insect Repellent" circle="1"/>
+	<SPELL type="shamane" name="Moonglow" circle="1"/>
+	<SPELL type="shamane" name="Plant Talk" circle="1"/>
+	<SPELL type="shamane" name="Purify Earth" circle="1"/>
+	<SPELL type="shamane" name="Purify Water" circle="1"/>
+	<SPELL type="shamane" name="Quicken Pace" circle="1"/>
+	<SPELL type="shamane" name="Resist Cold" circle="1"/>
 	<DEFENSE kind="spell" circle="2"/>
 	<OPTIONALTALENT name="Arcane Mutterings" circle="2"/>
 	<OPTIONALTALENT name="Borrow Sense" circle="2"/>
@@ -37,11 +37,11 @@
 	<OPTIONALTALENT name="Spell Fetish" circle="2"/>
 	<OPTIONALTALENT name="Spell Fetish" circle="2"/>
 	<DISCIPLINETALENT name="Astral Sight" circle="2"/>
-	<SPELL name="Gadfly" circle="2"/>
-	<SPELL name="Gills" circle="2"/>
-	<SPELL name="Hunter's Sense" circle="2"/>
-	<SPELL name="Icy Surface" circle="2"/>
-	<SPELL name="Path Home" circle="2"/>
+	<SPELL type="shamane" name="Gadfly" circle="2"/>
+	<SPELL type="shamane" name="Gills" circle="2"/>
+	<SPELL type="shamane" name="Hunter's Sense" circle="2"/>
+	<SPELL type="shamane" name="Icy Surface" circle="2"/>
+	<SPELL type="shamane" name="Path Home" circle="2"/>
 	<DISCIPLINETALENT name="Spirit Talk" circle="3"/>
 	<DISCIPLINETALENT name="Spirit Hold" circle="4"/>
 	<KARMA spend="Willpower-only Test" circle="4"/>
