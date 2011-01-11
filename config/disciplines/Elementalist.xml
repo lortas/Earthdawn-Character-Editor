@@ -12,18 +12,18 @@
 	<DISCIPLINETALENT name="Read/Write Magic" circle="1"/>
 	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Elementalism"/>
 	<DISCIPLINETALENT name="Spell Matrix" circle="1"/>
-	<SPELL name="Air Armor" circle="1"/>
-	<SPELL name="Crunch Climb" circle="1"/>
-	<SPELL name="Earth Blend" circle="1"/>
-	<SPELL name="Earth Darts" circle="1"/>
-	<SPELL name="Flameweapon" circle="1"/>
-	<SPELL name="Heat Food" circle="1"/>
-	<SPELL name="Moonglow" circle="1"/>
-	<SPELL name="Plant Talk" circle="1"/>
-	<SPELL name="Purify Earth" circle="1"/>
-	<SPELL name="Purify Water" circle="1"/>
-	<SPELL name="Resist Cold" circle="1"/>
-	<SPELL name="Resist Fire" circle="1"/>
+	<SPELL type="elemental" name="Air Armor" circle="1"/>
+	<SPELL type="elemental" name="Crunch Climb" circle="1"/>
+	<SPELL type="elemental" name="Earth Blend" circle="1"/>
+	<SPELL type="elemental" name="Earth Darts" circle="1"/>
+	<SPELL type="elemental" name="Flameweapon" circle="1"/>
+	<SPELL type="elemental" name="Heat Food" circle="1"/>
+	<SPELL type="elemental" name="Moonglow" circle="1"/>
+	<SPELL type="elemental" name="Plant Talk" circle="1"/>
+	<SPELL type="elemental" name="Purify Earth" circle="1"/>
+	<SPELL type="elemental" name="Purify Water" circle="1"/>
+	<SPELL type="elemental" name="Resist Cold" circle="1"/>
+	<SPELL type="elemental" name="Resist Fire" circle="1"/>
 	<DEFENSE kind="spell" circle="2"/>
 	<OPTIONALTALENT name="Astral Sight" circle="2"/>
 	<OPTIONALTALENT name="Item History" circle="2"/>
@@ -34,11 +34,11 @@
 	<OPTIONALTALENT name="Tracking" circle="2"/>
 	<OPTIONALTALENT name="Wind Catcher" circle="2"/>
 	<DISCIPLINETALENT name="Fire Heal" circle="2"/>
-	<SPELL name="Gadfly" circle="2"/>
-	<SPELL name="Gills" circle="2"/>
-	<SPELL name="Hunter's Sense" circle="2"/>
-	<SPELL name="Icy Surface" circle="2"/>
-	<SPELL name="Path Home" circle="2"/>
+	<SPELL type="elemental" name="Gadfly" circle="2"/>
+	<SPELL type="elemental" name="Gills" circle="2"/>
+	<SPELL type="elemental" name="Hunter's Sense" circle="2"/>
+	<SPELL type="elemental" name="Icy Surface" circle="2"/>
+	<SPELL type="elemental" name="Path Home" circle="2"/>
 	<DISCIPLINETALENT name="Elemental Tongues" circle="3"/>
 	<DISCIPLINETALENT name="Elemental Hold" circle="4"/>
 	<KARMA spend="Perception-only Test" circle="4"/>

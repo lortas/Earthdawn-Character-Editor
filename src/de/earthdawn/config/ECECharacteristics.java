@@ -14,7 +14,6 @@ import de.earthdawn.data.CHARACTERISTICSENCUMBRANCE;
 import de.earthdawn.data.CHARACTERISTICSATTRIBUTECOST;
 import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
 import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
-import de.earthdawn.data.CHARACTERISTICSINCREASECOST;
 import de.earthdawn.data.CHARACTERISTICSLEGENDARYSTATUS;
 import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
@@ -131,10 +130,10 @@ public class ECECharacteristics {
 		int sum=0;
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
 			if( element.getName().getLocalPart().equals("SKILLLPCOST") ) {
-				CHARACTERISTICSINCREASECOST tmp = ((CHARACTERISTICSINCREASECOST)element.getValue());
-				if( tmp.getIncrease() <= rank ) {
-					sum += tmp.getCost();
-				}
+				CHARACTERISTICSCOST tmp = ((CHARACTERISTICSCOST)element.getValue());
+				sum += tmp.getCost();
+				rank--;
+				if( rank < 1 ) break;
 			}
 		}
 		return sum;
