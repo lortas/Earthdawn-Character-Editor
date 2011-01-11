@@ -2,8 +2,10 @@ package de.earthdawn.config;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -11,6 +13,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Unmarshaller;
 
 import org.apache.commons.configuration.XMLConfiguration;
@@ -104,6 +107,34 @@ public class ApplicationProperties {
 			spellmap.put(spell.getName(), spell);
 		}
 		return spellmap;
+	}
+
+	public HashMap<String,List<DISCIPLINESPELLType>> getSpellsByDiscipline() {
+		HashMap<String,List<DISCIPLINESPELLType>> result = new HashMap<String,List<DISCIPLINESPELLType>>();
+		for(DISCIPLINE discipline : getAllDisziplines()){
+			List<DISCIPLINESPELLType> spells = new ArrayList<DISCIPLINESPELLType>();
+			for( JAXBElement<?> element : discipline.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
+				if( element.getName().getLocalPart().equals("SPELL") ) {
+					spells.add((DISCIPLINESPELLType)element.getValue());
+				}
+			}
+			if( ! spells.isEmpty() ) result.put(discipline.getName(), spells);
+		}
+		return result;
+	}
+
+	public List<SPELLType> getSpells4Grimoir() {
+		List<SPELLType> result = new ArrayList<SPELLType>();
+		HashMap<String, List<DISCIPLINESPELLType>> spellsByDiscipline = getSpellsByDiscipline();
+		HashMap<String, SPELLDEFType> spells = getSpells();
+		for( String discipline : spellsByDiscipline.keySet() ) {
+			for( DISCIPLINESPELLType s : spellsByDiscipline.get(discipline)) {
+				SPELLType spell = (SPELLType)spells.get(s.getName());
+				spell.setCircle(s.getCircle());
+				spell.setType(s.getType());
+			}
+		}
+		return result;
 	}
 
 	public OPTIONALRULES getOptionalRules() {
