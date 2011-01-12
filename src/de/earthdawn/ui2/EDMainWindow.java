@@ -51,6 +51,7 @@ public class EDMainWindow {
 	private EDGeneral panelERGeneral;
 	private EDAttributes panelEDAttributes;
 	private EDDisciplines panelEDDisciplines;
+	private EDSpells panelEDSpells;
 	private EDTalents panelEDTalents;
 	private File file = null;
 	private JSplitPane splitPane;
@@ -100,7 +101,7 @@ public class EDMainWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 550, 480);
+		frame.setBounds(100, 100, 620, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -179,10 +180,12 @@ public class EDMainWindow {
 		panelERGeneral.setMinimumSize(new Dimension(4, 220));
 		panelEDAttributes = new EDAttributes();
 		panelEDDisciplines = new EDDisciplines();
+		panelEDSpells	= new EDSpells();
 		
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
+		tabbedPane.addTab("Spells", null, panelEDSpells, null);
 		
 		panelEDStatus = new EDStatus();
 		splitPane.setRightComponent(panelEDStatus);
@@ -328,10 +331,6 @@ public class EDMainWindow {
 	protected String chopFilename(File f){
 		String choppedFilename;
 		String filename = f.getName();
-
-		// extension without the dot
-		String ext;
-
 		// where the last dot is. There may be more than one.
 		int dotPlace = filename.lastIndexOf ( '.' );
 
@@ -339,15 +338,11 @@ public class EDMainWindow {
 		   {
 		   // possibly empty
 		   choppedFilename = filename.substring( 0, dotPlace );
-
-		   // possibly empty
-		   ext = filename.substring( dotPlace + 1 );
 		   }
 		else
 		   {
 		   // was no extension
 		   choppedFilename = filename;
-		   ext = "";
 		   }	
 		return choppedFilename;
 	}
