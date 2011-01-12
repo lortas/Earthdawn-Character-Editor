@@ -51,6 +51,11 @@
           target: compile              
          ================================= -->
     <target name="compile" depends="init" description="--> Projekt übersetzen">
+	<unzip src="./lib/iText-5.0.1.jar" dest="${build}">
+		<patternset>
+			<include name="com/**"/>
+		</patternset>
+	</unzip>
         <javac srcdir="./src" destdir="${build}" debug="on"> 
             <classpath refid="classpath.compile" />
         </javac>
@@ -65,8 +70,9 @@
         </tstamp>
         <mkdir dir="${jar.dir}"/>
         <jar destfile="${jar.file}">
-            <fileset dir="${build}" includes="de/**" />
+            <fileset dir="${build}" includes="**" />
             <manifest>
+            	<attribute name="Main-Class" value="de.earthdawn.ui2.EDMainWindow"/>
                 <section name="common">
                     <attribute name="Build-By" value="${imp.build}"/>
                     <attribute name="Build-Date" value="${cur.date}"/> 
