@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -16,8 +15,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Unmarshaller;
 
-import org.apache.commons.configuration.XMLConfiguration;
-
 import de.earthdawn.data.*;
 
 /** 
@@ -26,8 +23,6 @@ import de.earthdawn.data.*;
 public class ApplicationProperties {
 
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
-    private static final XMLConfiguration GLOBAL_CONFIG = new XMLConfiguration();
-
     private static CAPABILITIES CAPABILITIES = new CAPABILITIES();
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
@@ -151,17 +146,6 @@ public class ApplicationProperties {
 			Unmarshaller u = jc.createUnmarshaller();
 			String filename="";
 
-			// globale konfiguration einlesen
-			filename="./config/application.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			GLOBAL_CONFIG.setValidating(false);
-			GLOBAL_CONFIG.load(new File(filename));
-
-			// anzeigetexte (steuerlemente)
-			String language = GLOBAL_CONFIG.getString("config.language");
-			String country = GLOBAL_CONFIG.getString("config.country");
-			MESSAGES = ResourceBundle.getBundle("de.earthdawn.config.messages", new Locale(language, country));
-			
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disziplins'
 			File[] files = new File("./config/disciplines").listFiles(new FilenameFilter() {

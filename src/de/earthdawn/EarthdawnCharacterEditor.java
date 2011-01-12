@@ -8,7 +8,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.ui.EDFrame;
+import de.earthdawn.ui2.EDMainWindow;
 
 
 public class EarthdawnCharacterEditor {
@@ -43,7 +43,7 @@ public class EarthdawnCharacterEditor {
 				new ECEPdfExporter().export(ecOut, new File(outFile.getParentFile(), outFile.getName() + ".pdf"));
 			} else {
 				// Anzeigen des Hauptdialogs.
-				new EDFrame().setVisible(true);
+				EDMainWindow.main(args);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
