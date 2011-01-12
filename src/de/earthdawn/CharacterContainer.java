@@ -609,4 +609,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		getAllTalentsByDisziplinName().get(discipline).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
 	}
 	
+	public void addSpell(SPELLType spell){
+		for( SPELLSType spellstype : getAllSpells()){
+						
+		}
+	}
+	
 }
