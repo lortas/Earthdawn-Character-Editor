@@ -93,7 +93,8 @@
 		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="true">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset dir="./config" prefix="config"/>
-			<zipfileset dir="./examples" prefix="examples"/>
+			<zipfileset file="./examples/EsphiraAtasy.xml" prefix="examples"/>
+			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>
 			<zipfileset dir="./cmd" />
 		</zip>
 	</target>
