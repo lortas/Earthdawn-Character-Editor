@@ -61,8 +61,8 @@
 		<DISZIPLINETALENT circle="6" name="Engaging Banter"><edt:RANK rank="6"/></DISZIPLINETALENT>
 		<OPTIONALTALENT circle="1" name="First Impression"><edt:RANK rank="6" startrank="1"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="2" name="Frighten"><edt:RANK rank="6"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="3" name="Spell Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="4" name="Spell Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="3" name="Haggle"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="4" name="Winning Smile"><edt:RANK rank="6"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="5" name="Enhanced Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="6" name="Enhanced Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
 	</TALENTS>
