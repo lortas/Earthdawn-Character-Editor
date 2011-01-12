@@ -1,43 +1,49 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<EDCHARACTER  name="Borax Bookbinder" xmlns="http://earthdawn.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com ../config/earthdawncharacter.xsd">
-	<APPEARANCE gender="male" age="87" eyes="blau" height=143 weight="83" hair="schwarz,lang" skin="dunkel" race="Dwarf"/>
-	<ATTRIBUTE name="DEX" basevalue="1" lpincrease="0" currentvalue="11" step="5" dice="" cost="" />
-	<ATTRIBUTE name="STR" basevalue="1" lpincrease="0" currentvalue="13" step="6" dice="" cost="" />
-	<ATTRIBUTE name="TOU" basevalue="1" lpincrease="0" currentvalue="14" step="6" dice="" cost="" />
-	<ATTRIBUTE name="PER" basevalue="6" lpincrease="2" currentvalue="18" step="7" dice="" cost="" />
-	<ATTRIBUTE name="WIL" basevalue="6" lpincrease="1" currentvalue="16" step="7" dice="" cost="" />
-	<ATTRIBUTE name="CHA" basevalue="3" lpincrease="0" currentvalue="11" step="5" dice="" cost="" />
-	<MOVEMENT type="ground">5</MOVEMENT>
-	<KARMA current="20" cost="10" max="40" />
-	<RACEABILITES>Heat Sight</RACEABILITES>
-	<DEFENSE physical="" spell="" social="" />
-	<HEALTH damage="0">
-		<RECOVERY testsperday="" step="" dice="" />
-		<UNCONSCIOUSNESS base="" adjustment="" value="" />
-		<DEATH base="" adjustment="" value="" />
-		<WOUNDS threshold="" count="" penalties="" />
-	</HEALTH>
-	<MOVEMENT ground_fight="5" ground_full="10"/>
-	<INITIATIVE base="" modification="" current="" step="" dice="" />
-	<CARRYING carrying="" lifting="" />
-	<EXPERIENCE totallegendpoints="" currentlegendpoints="" renown="" reputation="">
-		<LEGENDPOINTS comment="" legendpoints="" type="" when="" />
-	</EXPERIENCE>
-	<DISCIPLINE order="1" name="Magican" circle="5" />
-	<PROTECTION physicalarmor="0" mysticamor="0" penalty="0">
-		<ARMOR name="" weight="" used="yes" location="self" physicalarmor="" mysticamor="" penalty="" edn="" />
-		<SHIELD name="" weight="" used="yes" location="self" physicalarmor="" mysticamor="" penalty="" edn="" shatterthreshold="" />
-	</PROTECTION>
-	<TALENTS discipline="Magican">
-		<DISZIPLINETALENT name="" action="" strain="" attribute="" rank="" step="" dice="" karma="" circle="" />
-		<OPTIONALTALENT name="" action="" strain="" attribute="" rank="" step="" dice="" karma="" circle="" />
-	<TALENTS/>
-	<SPELLS discipline="Magican">
-		<SPELL name="" inmatrix="" type="" circle="" threads="" weavingdifficulty="" castingdifficulty="" range="" duration="" effect="" />
-	</SPELLS>
-	<SKILL name="" action="" strain="" attribute="" rank="" step="" dice="" />
-	<WEAPON name="" weight="" used="yes" location="self" damagestep="" strengthmin="" size="" timesforged="" shortrange="" mediumrange="" longrange="" />
-	<KARMARITUAL>auführliche beschreibung des Karmarituals</KARMARITUAL>
-	<DESCRIPTION>etwas bla bla zum Char</DESCRIPTION>
-	<COMMENT>hier kommt ein Kommentar</COMMENT>
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<EDCHARACTER name="Borax Bookbinder" xmlns:ns2="http://earthdawn.com/datatypes" xmlns="http://earthdawn.com/character" xmlns:ns4="http://earthdawn.com/capability" xmlns:ns3="http://earthdawn.com/characteristics" xmlns:ns9="http://earthdawn.com/optionalrules" xmlns:ns5="http://earthdawn.com/discipline" xmlns:ns6="http://earthdawn.com/names" xmlns:ns10="http://earthdawn.com/knack" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/spell">
+    <CALCULATEDLEGENDPOINTS total="2800" magicitems="0" karma="0" spells="-700" skills="0" knacks="0" optionaltalents="0" disciplinetalents="600" attributes="2900"/>
+    <APPEARANCE race="Dwarf" skin="dunkel" hair="black,long" eyes="blue" weight="80" height="170" age="20" gender="male"/>
+    <ATTRIBUTE cost="3" currentvalue="11" lpincrease="0" basevalue="11" generationvalue="3" racevalue="8" name="CHA" dice="d8" step="5"/>
+    <ATTRIBUTE cost="1" currentvalue="11" lpincrease="0" basevalue="11" generationvalue="1" racevalue="10" name="DEX" dice="d8" step="5"/>
+    <ATTRIBUTE cost="1" currentvalue="13" lpincrease="0" basevalue="13" generationvalue="1" racevalue="12" name="STR" dice="d10" step="6"/>
+    <ATTRIBUTE cost="9" currentvalue="18" lpincrease="2" basevalue="16" generationvalue="6" racevalue="10" name="PER" dice="d12" step="7"/>
+    <ATTRIBUTE cost="9" currentvalue="17" lpincrease="1" basevalue="16" generationvalue="6" racevalue="10" name="WIL" dice="d12" step="7"/>
+    <ATTRIBUTE cost="1" currentvalue="14" lpincrease="0" basevalue="14" generationvalue="1" racevalue="13" name="TOU" dice="d10" step="6"/>
+    <ATTRIBUTE name="na"/>
+    <DEFENSE social="7" spell="10" physical="7"/>
+    <INITIATIVE modification="0" base="5" dice="d8" step="5"/>
+    <HEALTH damage="0">
+        <ns2:DEATH value="36" adjustment="0" base="36"/>
+        <ns2:UNCONSCIOUSNESS value="28" adjustment="0" base="28"/>
+        <ns2:WOUNDS threshold="10"/>
+        <ns2:RECOVERY testsperday="3" dice="d10" step="6"/>
+    </HEALTH>
+    <KARMA maxmodificator="1" max="5" current="0"/>
+    <MOVEMENT ground="5" flight="0"/>
+    <CARRYING carrying="110" lifting="220"/>
+    <PROTECTION penalty="0" mysticarmor="3" physicalarmor="0">
+        <ns2:ARMOR mysticarmor="3" location="self" used="yes" weight="0" name="natural Armor"/>
+    </PROTECTION>
+    <EXPERIENCE reputation="na" renown="21" currentlegendpoints="0" totallegendpoints="0"/>
+    <DISCIPLINE circle="1" name="Elementalist" order="1"/>
+    <TALENTS discipline="Elementalist">
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Air Speaking">
+            <ns2:RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+            <ns2:RANK lpcost="100" bonus="0" rank="1" dice="d6-3" step="1"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
+            <ns2:RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
+            <ns2:RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="Elementalism" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+            <ns2:RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+            <ns2:RANK lpcost="100" bonus="0" rank="1" dice="d6-3" step="1"/>
+        </DISZIPLINETALENT>
+    </TALENTS>
+    <RACEABILITES>Heat Sight</RACEABILITES>
 </EDCHARACTER>
