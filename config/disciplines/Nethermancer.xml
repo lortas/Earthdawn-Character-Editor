@@ -53,7 +53,7 @@
 	<SPELL type="nether" name="Dispel Nethermancy Magic" circle="3"/>
 	<SPELL type="nether" name="Fog of Fear" circle="3"/>
 	<SPELL type="nether" name="Grave Message" circle="3"/>
-	<SPELL type="nether" name="Pack Bages" circle="3"/>
+	<SPELL type="nether" name="Pack Bags" circle="3"/>
 	<SPELL type="nether" name="Pain" circle="3"/>
 	<SPELL type="nether" name="Preserve" circle="3"/>
 	<SPELL type="nether" name="Shadow Meld" circle="3"/>
@@ -67,12 +67,12 @@
 	<SPELL type="nether" name="Dark Spy" circle="4"/>
 	<SPELL type="nether" name="Evil Eye" circle="4"/>
 	<SPELL type="nether" name="Fatal Food" circle="4"/>
-	<SPELL type="nether" name="Friend of Foe" circle="4"/>
+	<SPELL type="nether" name="Friend or Foe" circle="4"/>
 	<SPELL type="nether" name="Last Chance" circle="4"/>
 	<SPELL type="nether" name="Nightflyer's Cloak" circle="4"/>
 	<SPELL type="nether" name="Spirit Servant" circle="4"/>
 	<SPELL type="nether" name="Viewpoint" circle="4"/>
-	<SPELL type="nether" name="Visions if Death" circle="4"/>
+	<SPELL type="nether" name="Visions of Death" circle="4"/>
 	<SPELLABILITY circle="4"/>
 	<KARMA spend="Willpower-ony Test" circle="4"/>
 	<OPTIONALTALENT name="Abate Curse" circle="5"/>
@@ -84,12 +84,12 @@
 	<OPTIONALTALENT name="Steel Thought" circle="5"/>
 	<OPTIONALTALENT name="Willforce" circle="5"/>
 	<DISCIPLINETALENT name="Summon" circle="5" limitation="Ally Spirits"/>
-	<SPELL type="nether" name="Animate Spirti Object" circle="5"/>
+	<SPELL type="nether" name="Animate Spirit Object" circle="5"/>
 	<SPELL type="nether" name="Astral Horror" circle="5"/>
 	<SPELL type="nether" name="Astral Mount" circle="5"/>
 	<SPELL type="nether" name="Astral Whisper" circle="5"/>
 	<SPELL type="nether" name="Blind" circle="5"/>
-	<SPELL type="nether" name="Circle of Atral Protection" circle="5"/>
+	<SPELL type="nether" name="Circle of Astral Protection" circle="5"/>
 	<SPELL type="nether" name="Incessant Talking" circle="5"/>
 	<SPELL type="nether" name="Pass Ward" circle="5"/>
 	<SPELL type="nether" name="Sculpt Darkness" circle="5"/>
@@ -118,7 +118,7 @@
 	<KARMA spend="Perseption-Only Tests" circle="6"/>
 	<DISCIPLINETALENT name="Spirit Dodge" circle="7"/>
 	<SPELL type="nether" name="Astral Beacon" circle="7"/>
-	<SPELL type="nether" name="Atral Maw" circle="7"/>
+	<SPELL type="nether" name="Astral Maw" circle="7"/>
 	<SPELL type="nether" name="Banquet of Dis" circle="7"/>
 	<SPELL type="nether" name="Bone Pudding" circle="7"/>
 	<SPELL type="nether" name="Cold Storage" circle="7"/>
@@ -127,10 +127,10 @@
 	<SPELL type="nether" name="Marathon Run" circle="7"/>
 	<SPELL type="nether" name="Restrain Entity" circle="7"/>
 	<SPELL type="nether" name="Reverse Withering" circle="7"/>
-	<SPELL type="nether" name="Spirit Bold" circle="7"/>
+	<SPELL type="nether" name="Spirit Bolt" circle="7"/>
 	<SPELL type="nether" name="Spirit Portal" circle="7"/>
 	<SPELL type="nether" name="Steal Strength" circle="7"/>
-	<SPELL type="nether" name="Step Though Shadow" circle="7"/>
+	<SPELL type="nether" name="Step Through Shadow" circle="7"/>
 	<SPELL type="nether" name="Wit Friend" circle="7"/>
 	<KARMA spend="spell effect tests" circle="7"/>
 	<DISCIPLINETALENT name="Orbiting Spy" circle="8"/>
@@ -167,7 +167,7 @@
 	<ABILITY name="Otherworldly Control" circle="9"/>
 	<DISCIPLINETALENT name="Summoning Circle" circle="10"/>
 	<SPELL type="nether" name="Animate Dead" circle="10"/>
-	<SPELL type="nether" name="Atrale Slice" circle="10"/>
+	<SPELL type="nether" name="Astral Slice" circle="10"/>
 	<SPELL type="nether" name="Damage Transfer" circle="10"/>
 	<SPELL type="nether" name="Fragile Pattern" circle="10"/>
 	<SPELL type="nether" name="Gateway" circle="10"/>
@@ -194,13 +194,13 @@
 	<OPTIONALTALENT name="Shared Matrix" circle="13"/>
 	<OPTIONALTALENT name="Wound Transfer" circle="13"/>
 	<DISCIPLINETALENT name="Spell Crystal Lock" circle="13"/>
-	<SPELL type="nether" name="Erease Horror Mark" circle="13"/>
+	<SPELL type="nether" name="Erase Horror Mark" circle="13"/>
 	<SPELL type="nether" name="Eternal Youth" circle="13"/>
 	<DEFENSE circle="13" kind="social"/>
 	<KARMASTEP circle="13"/>
 	<ABILITY name="Astral Face" circle="13"/>
 	<DISCIPLINETALENT name="Multi-Weaving" circle="14"/>
-	<SPELL type="nether" name="Call Foth the Army of Decay" circle="14"/>
+	<SPELL type="nether" name="Call Forth the Army of Decay" circle="14"/>
 	<DEFENSE circle="14" kind="spell"/>
 	<RECOVERYTEST circle="14"/>
 	<DISCIPLINETALENT name="Soul Shatter" circle="15"/>

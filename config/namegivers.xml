@@ -31,7 +31,7 @@
     <ATTRIBUTE name="CHA" value="10" />
     <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
     <WOUND threshold="0"/>
-    <TALENT name="Versatility" circle="1"/>
+    <TALENT name="Versatility" circle="0"/>
   </NAMEGIVER>
   <NAMEGIVER name="Denairastas" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="10" />
@@ -99,7 +99,7 @@
     <WOUND threshold="0"/>
     <DEFENSE circle="1" kind="physical"/>
     <DEFENSE circle="1" kind="physical"/>
-    <TALENT name="Astral Sight" circle="1"/>
+    <TALENT name="Astral Sight" circle="0"/>
     <ABILITY>Flight</ABILITY>
   </NAMEGIVER>
  </NAMEGIVERS>

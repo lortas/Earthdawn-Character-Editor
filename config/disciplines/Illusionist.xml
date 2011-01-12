@@ -15,15 +15,15 @@
 	<SPELL type="illusion" name="Assuring Touch" circle="1"/>
 	<SPELL type="illusion" name="Bellow of the Thundras" circle="1"/>
 	<SPELL type="illusion" name="Best Face" circle="1"/>
-	<SPELL type="illusion" name="Blazing First of Rage" circle="1"/>
+	<SPELL type="illusion" name="Blazing Fists of Rage" circle="1"/>
 	<SPELL type="illusion" name="Catseyes" circle="1"/>
 	<SPELL type="illusion" name="Disguise Metal" circle="1"/>
-	<SPELL type="illusion" name="Discplace Image" circle="1"/>
+	<SPELL type="illusion" name="Displace Image" circle="1"/>
 	<SPELL type="illusion" name="Fun With Doors" circle="1"/>
 	<SPELL type="illusion" name="Light" circle="1"/>
 	<SPELL type="illusion" name="Pauper's Purse" circle="1"/>
-	<SPELL type="illusion" name="Robe Guide" circle="1"/>
-	<SPELL type="illusion" name="True Blazing First of Rage" circle="1"/>
+	<SPELL type="illusion" name="Rope Guide" circle="1"/>
+	<SPELL type="illusion" name="True Blazing Fists of Rage" circle="1"/>
 	<SPELL type="illusion" name="Unseen Voices" circle="1"/>
 	<OPTIONALTALENT name="Arcane Mutterings" circle="2"/>
 	<OPTIONALTALENT name="Durability" circle="2" limitation="4/3"/>
@@ -38,10 +38,10 @@
 	<SPELL type="illusion" name="Crafty Thought" circle="2"/>
 	<SPELL type="illusion" name="Disaster" circle="2"/>
 	<SPELL type="illusion" name="Encrypt" circle="2"/>
-	<SPELL type="illusion" name="Ephemeral Bold" circle="2"/>
+	<SPELL type="illusion" name="Ephemeral Bolt" circle="2"/>
 	<SPELL type="illusion" name="Impossible Knot" circle="2"/>
-	<SPELL type="illusion" name="Innocent Activitiy" circle="2"/>
-	<SPELL type="illusion" name="Monstrius Mantle" circle="2"/>
+	<SPELL type="illusion" name="Innocent Activity" circle="2"/>
+	<SPELL type="illusion" name="Monstrous Mantle" circle="2"/>
 	<SPELL type="illusion" name="Remove Shadow" circle="2"/>
 	<SPELL type="illusion" name="Send Message" circle="2"/>
 	<SPELL type="illusion" name="Tailor" circle="2"/>
@@ -56,10 +56,10 @@
 	<SPELL type="illusion" name="Dampen Karma" circle="3"/>
 	<SPELL type="illusion" name="Detect Illusionism Magic" circle="3"/>
 	<SPELL type="illusion" name="Dispel Illusionism Magic" circle="3"/>
-	<SPELL type="illusion" name="Flase Floor" circle="3"/>
+	<SPELL type="illusion" name="False Floor" circle="3"/>
 	<SPELL type="illusion" name="Impossible Lock" circle="3"/>
 	<SPELL type="illusion" name="Mind Fog" circle="3"/>
-	<SPELL type="illusion" name="Nobody Herr" circle="3"/>
+	<SPELL type="illusion" name="Nobody Here" circle="3"/>
 	<SPELL type="illusion" name="Phantom Warrior" circle="3"/>
 	<SPELL type="illusion" name="See the Unseen" circle="3"/>
 	<SPELL type="illusion" name="Soothe the Savage Beast" circle="3"/>
@@ -70,13 +70,13 @@
 	<SPELL type="illusion" name="Bleeding Edge" circle="4"/>
 	<SPELL type="illusion" name="Circle of Well Being" circle="4"/>
 	<SPELL type="illusion" name="Clarion Call" circle="4"/>
-	<SPELL type="illusion" name="Conceal Traks" circle="4"/>
+	<SPELL type="illusion" name="Conceal Tracks" circle="4"/>
 	<SPELL type="illusion" name="Eyes Have It" circle="4"/>
 	<SPELL type="illusion" name="Great Weapon" circle="4"/>
 	<SPELL type="illusion" name="Hunger" circle="4"/>
-	<SPELL type="illusion" name="Imporved Alarm" circle="4"/>
+	<SPELL type="illusion" name="Improved Alarm" circle="4"/>
 	<SPELL type="illusion" name="Memory Blank" circle="4"/>
-	<SPELL type="illusion" name="Multi-Missle" circle="4"/>
+	<SPELL type="illusion" name="Multi-Missile" circle="4"/>
 	<SPELL type="illusion" name="Nightmare of Foreboding" circle="4"/>
 	<SPELL type="illusion" name="Stop Right There" circle="4"/>
 	<SPELL type="illusion" name="Unmask" circle="4"/>
@@ -123,11 +123,11 @@
 	<SPELL type="illusion" name="Drunken Stagger" circle="7"/>
 	<SPELL type="illusion" name="False Enchantment" circle="7"/>
 	<SPELL type="illusion" name="Rebel Limb" circle="7"/>
-	<SPELL type="illusion" name="Resersal Passion" circle="7"/>
+	<SPELL type="illusion" name="Reversal of Passion" circle="7"/>
 	<SPELL type="illusion" name="Silent Stampede" circle="7"/>
 	<SPELL type="illusion" name="Stampede" circle="7"/>
 	<SPELL type="illusion" name="Time Flies" circle="7"/>
-	<SPELL type="illusion" name="Twister Tongues" circle="7"/>
+	<SPELL type="illusion" name="Twisted Tongues" circle="7"/>
 	<SPELL type="illusion" name="Vertigo" circle="7"/>
 	<SPELL type="illusion" name="Walk Through" circle="7"/>
 	<KARMA spend="spell effect tests" circle="7"/>
@@ -136,7 +136,7 @@
 	<SPELL type="illusion" name="Dreamsend" circle="8"/>
 	<SPELL type="illusion" name="Form Exchange" circle="8"/>
 	<SPELL type="illusion" name="Leaping Lizards" circle="8"/>
-	<SPELL type="illusion" name="Massive Missles" circle="8"/>
+	<SPELL type="illusion" name="Massive Missiles" circle="8"/>
 	<SPELL type="illusion" name="Other Place" circle="8"/>
 	<SPELL type="illusion" name="Shadow Spell" circle="8"/>
 	<DEFENSE circle="8" kind="spell"/>

@@ -285,8 +285,7 @@
 	<SPELL name="Mystic Net" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="self" duration="R+2 min" effect="WIL + 8" effectarea="16-yard (8-hex) radius from magician"/>
 	<SPELL name="Mystic Shock" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="2 hex" duration="1 rnd" effect="WIL + 10/Mystic"/>
 	<SPELL name="Mystic Vessel" threads="3" weavingdifficulty="15" reattuningdifficulty="23" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="WIL+10"/>
-	<SPELL name="MysticDeath Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation"/>
-	<SPELL name="MysticDeath Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation"/>
+	<SPELL name="Death Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation"/>
 	<SPELL name="Netherblade" threads="2" weavingdifficulty="14" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="WIL + 8/Mystic"/>
 	<SPELL name="Nightflyer's Cloak" threads="2" weavingdifficulty="7" reattuningdifficulty="17" range="self" duration="R+10 min" effect="Transforms caster into a nightflyer"/>
 	<SPELL name="Nightmare of Foreboding" threads="5" weavingdifficulty="10" reattuningdifficulty="17" range="10 hex" duration="R days" effect="-6 to target's Wound Threshold"/>
