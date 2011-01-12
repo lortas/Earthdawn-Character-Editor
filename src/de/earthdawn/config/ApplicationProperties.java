@@ -124,9 +124,28 @@ public class ApplicationProperties {
 		HashMap<String, SPELLDEFType> spells = getSpells();
 		for( String discipline : spellsByDiscipline.keySet() ) {
 			for( DISCIPLINESPELLType s : spellsByDiscipline.get(discipline)) {
-				SPELLType spell = (SPELLType)spells.get(s.getName());
-				spell.setCircle(s.getCircle());
-				spell.setType(s.getType());
+				SPELLDEFType spelldef = spells.get(s.getName());
+				if(spelldef != null) {
+					SPELLType spell = new SPELLType();
+					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+					spell.setCircle(s.getCircle());
+					spell.setDuration(spelldef.getDuration());
+					spell.setEffect(spelldef.getEffect());
+					spell.setEffectarea(spelldef.getEffectarea());
+					spell.setName(spelldef.getName());
+					spell.setRange(spelldef.getRange());
+					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+					spell.setThreads(spelldef.getThreads());
+					spell.setType(s.getType());
+					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+					
+					spell.setType(s.getType());
+					result.add(spell);
+				}
+				else{
+					System.err.println("Spell " + s.getName() + "(" + discipline +") not found!" );
+				}
+					
 			}
 		}
 		return result;
