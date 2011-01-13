@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -29,7 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="CIRCLE" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_CIRCLE" maxOccurs="unbounded"/>
  *       &lt;/sequence>
- *       &lt;attribute name="disciplinenr" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -45,8 +43,6 @@ public class CHARACTERISTICSDISCIPLINENR {
 
     @XmlElement(name = "CIRCLE", required = true)
     protected List<CHARACTERISTICSCIRCLE> circle;
-    @XmlAttribute(required = true)
-    protected int disciplinenr;
 
     /**
      * Gets the value of the circle property.
@@ -75,22 +71,6 @@ public class CHARACTERISTICSDISCIPLINENR {
             circle = new ArrayList<CHARACTERISTICSCIRCLE>();
         }
         return this.circle;
-    }
-
-    /**
-     * Gets the value of the disciplinenr property.
-     * 
-     */
-    public int getDisciplinenr() {
-        return disciplinenr;
-    }
-
-    /**
-     * Sets the value of the disciplinenr property.
-     * 
-     */
-    public void setDisciplinenr(int value) {
-        this.disciplinenr = value;
     }
 
 }

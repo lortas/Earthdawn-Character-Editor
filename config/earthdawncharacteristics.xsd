@@ -44,7 +44,6 @@
 		<xs:sequence>
 			<xs:element name="CIRCLE" type="CHARACTERISTICS_CIRCLE" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="disciplinenr" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="CHARACTERISTICS_LEGENDARYSTATUS">
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>

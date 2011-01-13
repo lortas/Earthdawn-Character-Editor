@@ -113,7 +113,7 @@ public class ECECharacteristics {
 
 	public int getTalentRankTotalLP(int discipline, int circle, int rank) {
 		if( rank < 1 ) return 0;
-		List<CHARACTERISTICSCOST> costs = getTalentRankIncreaseLP(discipline,circle);
+		List<CHARACTERISTICSCOST> costs = getTalentRankLPIncreaseTable(discipline,circle);
 		if( costs == null ) return 0;
 		int result = 0;
 		for( CHARACTERISTICSCOST talentcost : costs ) {
@@ -155,25 +155,29 @@ public class ECECharacteristics {
 		return sum;
 	}
 
-	public List<CHARACTERISTICSCOST> getTalentRankIncreaseLP(int discipline, int circle) {
+	public CHARACTERISTICSDISCIPLINENR getTalentRankLPIncreaseTable(int discipline) {
 		if( discipline < 1 ) {
 			System.err.println("Discipline number was smaller than one. Increase number to one.");
 			discipline=1;
 		}
-		CHARACTERISTICSDISCIPLINENR disciplinenr = null;
 		for( JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR() ) {
 			if( element.getName().getLocalPart().equals("DISCIPLINENR") ) {
-				CHARACTERISTICSDISCIPLINENR tmp = (CHARACTERISTICSDISCIPLINENR)element.getValue();
-				if( tmp.getDisciplinenr() <= discipline ) disciplinenr = tmp;
+				discipline--;
+				if( discipline == 0) return (CHARACTERISTICSDISCIPLINENR)element.getValue();
 			}
 		}
-		if( disciplinenr == null ) {
-			System.err.println("Can not find LP for talents of discipline number "+discipline);
-			return null;
-		}
+		//Not Found
+		System.err.println("Can not find LP for talents of discipline number "+discipline);
+		return null;
+	}
+
+	public List<CHARACTERISTICSCOST> getTalentRankLPIncreaseTable(int discipline, int circle) {
+		CHARACTERISTICSDISCIPLINENR disciplinenr = getTalentRankLPIncreaseTable(discipline);
+		if( disciplinenr == null ) return null;
 		CHARACTERISTICSCIRCLE circlenr = null;
 		for (CHARACTERISTICSCIRCLE tmp : disciplinenr.getCIRCLE()) {
-			if( tmp.getCircle() <= circle ) circlenr = tmp;
+			if( tmp.getCircle() > circle ) break;
+			circlenr = tmp;
 		}
 		if( circlenr == null ) {
 			System.err.println("Can not find LP for talents of discipline number "+discipline+" and cirlce number "+circle);
@@ -184,7 +188,7 @@ public class ECECharacteristics {
 
 	public int getSpellLP(int circle) {
 		if( circle < 1 ) return 0;
-		return getTalentRankIncreaseLP(1, 1).get(circle-1).getCost();
+		return getTalentRankLPIncreaseTable(1, 1).get(circle-1).getCost();
 	}
 
 	public CHARACTERISTICSLEGENDARYSTATUS getLegendaystatus(int circle) {
