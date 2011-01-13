@@ -59,7 +59,7 @@
 		</unzip>
 		<copy file="./src/de/earthdawn/ui2/NLS_de.properties" todir="${build}/de/earthdawn/ui2/"/>
 		<copy file="./src/de/earthdawn/ui2/NLS.properties" todir="${build}/de/earthdawn/ui2/"/>
-		<javac srcdir="./src" destdir="${build}" debug="on">
+		<javac srcdir="./src" destdir="${build}" debug="on" includeantruntime="false">
 			<classpath refid="classpath.compile" />
 		</javac>
 	</target>
