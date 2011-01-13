@@ -145,8 +145,8 @@
   <STEPDICETABLE attribute="109" step="38" dice="4d12+2d8" />
   <STEPDICETABLE attribute="112" step="39" dice="4d12+d10+d8" />
   <STEPDICETABLE attribute="115" step="40" dice="4d12+2d10" />
-	<DISCIPLINENR disciplinenr="1">
-			<CIRCLE circle="1">
+	<DISCIPLINENR>
+			<CIRCLE circle="0">
 			<TALENTLPCOST cost="100"/>
 			<TALENTLPCOST cost="200"/>
 			<TALENTLPCOST cost="300"/>
@@ -215,8 +215,8 @@
 			<TALENTLPCOST cost="418100"/>
 		</CIRCLE>
 	</DISCIPLINENR>
-	<DISCIPLINENR disciplinenr="2">
-		<CIRCLE circle="1">
+	<DISCIPLINENR>
+		<CIRCLE circle="0">
 			<TALENTLPCOST cost="200"/>
 			<TALENTLPCOST cost="300"/>
 			<TALENTLPCOST cost="500"/>
@@ -268,8 +268,8 @@
 			<TALENTLPCOST cost="418100"/>
 		</CIRCLE>
 	</DISCIPLINENR>
-	<DISCIPLINENR disciplinenr="3">
-		<CIRCLE circle="1">
+	<DISCIPLINENR>
+		<CIRCLE circle="0">
 			<TALENTLPCOST cost="300"/>
 			<TALENTLPCOST cost="500"/>
 			<TALENTLPCOST cost="800"/>
@@ -304,8 +304,8 @@
 			<TALENTLPCOST cost="418100"/>
 		</CIRCLE>
 	</DISCIPLINENR>
-	<DISCIPLINENR disciplinenr="4">
-		<CIRCLE circle="1">
+	<DISCIPLINENR>
+		<CIRCLE circle="0">
 			<TALENTLPCOST cost="500"/>
 			<TALENTLPCOST cost="800"/>
 			<TALENTLPCOST cost="1300"/>
