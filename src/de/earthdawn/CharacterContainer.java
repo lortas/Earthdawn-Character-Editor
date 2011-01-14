@@ -609,10 +609,66 @@ public class CharacterContainer extends CharChangeRefresh {
 		getAllTalentsByDisziplinName().get(discipline).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
 	}
 	
-	public void addSpell(SPELLType spell){
+	public void addSpell(String discipline, SPELLType spell){
+		boolean blnFound = false;
+		SPELLSType spells = null;
+		
 		for( SPELLSType spellstype : getAllSpells()){
-						
+			if(spellstype.getDiscipline().equals(discipline)){
+				blnFound = true;
+				spells = spellstype;
+				break;
+			}
 		}
+		if(!blnFound){
+			System.out.println("SPELLS not found, adding ...");
+			spells = new SPELLSType();
+			spells.setDiscipline(discipline);
+			character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERSPELLS(spells));
+		}
+		
+		spells.getSPELL().add(spell);
+		
+	}
+	
+	public void removeSpell(String discipline, SPELLType spell){
+		boolean blnFound = false;
+		SPELLSType spells = null;
+		SPELLType spelltoremove = null;
+ 		for( SPELLSType spellstype : getAllSpells()){
+			if(spellstype.getDiscipline().equals(discipline)){
+				blnFound = true;
+				spells = spellstype;
+				break;
+			}					
+		}
+		if(blnFound){
+			for(SPELLType currentspell : spells.getSPELL()){
+				if(currentspell.getName().equals(spell.getName())){
+					spelltoremove = currentspell;
+					break;
+				}
+			}
+			spells.getSPELL().remove(spelltoremove);
+		}
+		
+	}
+	
+	public boolean hasSpellLearned(String discipline, SPELLType spelltype){
+		List<SPELLSType> spellslist = getAllSpells();
+		boolean blnFound = false;
+		for(SPELLSType spells : spellslist){
+			if(spells.getDiscipline().equals(discipline)){
+				for(SPELLType spell : spells.getSPELL()){
+					if (spell.getName().equals(spelltype.getName())){
+						blnFound = true;
+					}
+				}
+				break;
+			}
+		}
+		
+		return blnFound;
 	}
 	
 }
