@@ -2,6 +2,7 @@ package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -21,6 +22,8 @@ import javax.swing.table.TableRowSorter;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.DISCIPLINESPELLType;
+import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
 
@@ -42,6 +45,7 @@ public class EDSpells extends JPanel {
 	}
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
+		((SpellsTableModel)table.getModel()).setCharacter(character);
 	}
 	/**
 	 * Create the panel.
@@ -84,8 +88,8 @@ public class EDSpells extends JPanel {
 		Set<String> disciplineset = ApplicationProperties.create().getAllDisziplinNames();
 		ArrayList<String> arrayList =  new ArrayList<String>();
 		
-		for ( SpellkindType spellkind : SpellkindType.values()){
-			arrayList.add(0, spellkind.name());
+		for ( String dis : disciplineset){
+			arrayList.add(dis);
 		}
 		arrayList.add(0, "All");
 		String[] disciplinearray =  (String[]) arrayList.toArray(new String[arrayList.size()]);
@@ -136,15 +140,49 @@ class SpellsTableModel extends AbstractTableModel {
     private String[] columnNames = {"Learned",  "Circle", "Discipline", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
 
     List<SPELLType> spelllist;
-
+    List<String> disciplinelist;
     
     
 
 	public SpellsTableModel(CharacterContainer character) {
 		super();
 		this.character = character;
-		spelllist =  ApplicationProperties.create().getSpells4Grimoir();
-
+		generateLists();
+	}
+	
+	public void generateLists(){
+		spelllist = new ArrayList<SPELLType>();
+		disciplinelist = new ArrayList<String>();
+		
+		HashMap<String, List<DISCIPLINESPELLType>> spellsByDiscipline = ApplicationProperties.create().getSpellsByDiscipline();
+		HashMap<String, SPELLDEFType> spells = ApplicationProperties.create().getSpells();
+		for( String discipline : spellsByDiscipline.keySet() ) {
+			for( DISCIPLINESPELLType s : spellsByDiscipline.get(discipline)) {
+				SPELLDEFType spelldef = spells.get(s.getName());
+				if(spelldef != null) {
+					SPELLType spell = new SPELLType();
+					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+					spell.setCircle(s.getCircle());
+					spell.setDuration(spelldef.getDuration());
+					spell.setEffect(spelldef.getEffect());
+					spell.setEffectarea(spelldef.getEffectarea());
+					spell.setName(spelldef.getName());
+					spell.setRange(spelldef.getRange());
+					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+					spell.setThreads(spelldef.getThreads());
+					spell.setType(s.getType());
+					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+					
+					spell.setType(s.getType());
+					spelllist.add(spell);
+					disciplinelist.add(discipline);
+				}
+				else{
+					System.err.println("Spell " + s.getName() + "(" + discipline +") not found!" );
+				}
+					
+			}
+		}		
 	}
 
     
@@ -172,9 +210,14 @@ class SpellsTableModel extends AbstractTableModel {
 
     public Object getValueAt(int row, int col) {
     	switch (col) {
-        	case 0: return new Boolean(false);
+        	case 0: if(character != null){ 
+        	        	return character.hasSpellLearned(disciplinelist.get(row), spelllist.get(row) );
+        			}
+        			else{
+        				return false;
+        			}
         	case 1: return spelllist.get(row).getCircle();
-        	case 2:	return spelllist.get(row).getType().name();
+        	case 2:	return disciplinelist.get(row);
         	case 3: return spelllist.get(row).getName();
         	case 4: return spelllist.get(row).getCastingdifficulty();
         	case 5: return spelllist.get(row).getThreads();
@@ -214,8 +257,15 @@ class SpellsTableModel extends AbstractTableModel {
      * data can change.
      */
     public void setValueAt(Object value, int row, int col) {   
-    	
-    	
+    	if(character != null){
+	    	if (character.hasSpellLearned(disciplinelist.get(row), spelllist.get(row) )){
+	    		character.removeSpell(disciplinelist.get(row), spelllist.get(row));
+	    	}
+	    	else{
+	    		character.addSpell(disciplinelist.get(row), spelllist.get(row));
+	    	}
+    	}
+    		
     	character.refesh();
     	
         fireTableCellUpdated(row, col);

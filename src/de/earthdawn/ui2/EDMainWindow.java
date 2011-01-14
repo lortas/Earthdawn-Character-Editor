@@ -237,6 +237,9 @@ public class EDMainWindow {
 			if(co.getClass() == EDStatus.class){
 				((EDStatus)co).setCharacter(character);
 			}
+			if(co.getClass() == EDSpells.class){
+				((EDSpells)co).setCharacter(character);
+			}			
 		}	
 	}
 	
