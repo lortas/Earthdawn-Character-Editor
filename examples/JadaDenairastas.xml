@@ -17,26 +17,26 @@
 	<DISCIPLINE circle="11" name="Nethermancer" order="1"/>
 	<DISCIPLINE circle="6" name="Illusionist" order="2"/>
 	<TALENTS discipline="Nethermancer">
-		<DISZIPLINETALENT circle="1" name="Astral Sight"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Astral Sight"><edt:RANK rank="12" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="12" startrank="1"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="11" startrank="2"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="14" startrank="2"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Thread Weaving"><edt:RANK rank="11" startrank="1"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Nethermancer"><edt:RANK rank="14" startrank="1"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="2" name="Frighten"><edt:RANK rank="11"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="3" name="Spirit Talk"><edt:RANK rank="11"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="4" name="Spirit Hold"><edt:RANK rank="11"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="5" name="Summon"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="3" name="Spirit Talk"><edt:RANK rank="12"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="4" name="Spirit Hold"><edt:RANK rank="12"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="5" name="Summon"><edt:RANK rank="12"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="6" name="Lifesight"><edt:RANK rank="11"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="7" name="Spirit Dodge"><edt:RANK rank="11"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="8" name="Orbiting Spy"><edt:RANK rank="11"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="9" name="Bargain With Summoned Creature"><edt:RANK rank="11"/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="10" name="Summoning Circle"><edt:RANK rank="11"/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="10" name="Summoning Circle"><edt:RANK rank="12"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="11" name="Netherwalk"><edt:RANK rank="11"/></DISZIPLINETALENT>
 		<OPTIONALTALENT circle="1" name="Versatility"><edt:RANK rank="1" startrank="1"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="1" name="Read/Write Language"><edt:RANK rank="11" startrank="1"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="1" name="Spell Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="2" name="Durability"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="2" name="Durability"><edt:RANK rank="14"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="3" name="Spell Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="4" name="Spell Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="5" name="Willforce"><edt:RANK rank="11"/></OPTIONALTALENT>
@@ -60,11 +60,11 @@
 		<DISZIPLINETALENT circle="5" name="True Sight"><edt:RANK rank="6"/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="6" name="Engaging Banter"><edt:RANK rank="6"/></DISZIPLINETALENT>
 		<OPTIONALTALENT circle="1" name="First Impression"><edt:RANK rank="6" startrank="1"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="2" name="Frighten"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="2" name="Frighten"><edt:RANK rank="12"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="3" name="Haggle"><edt:RANK rank="6"/></OPTIONALTALENT>
 		<OPTIONALTALENT circle="4" name="Winning Smile"><edt:RANK rank="6"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="5" name="Enhanced Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="6" name="Enhanced Matrix"><edt:RANK rank="6"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="5" name="Enhanced Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
+		<OPTIONALTALENT circle="6" name="Enhanced Matrix"><edt:RANK rank="11"/></OPTIONALTALENT>
 	</TALENTS>
 	<SPELLS discipline="Nethermancer">
 		<SPELL name="Astral Spear" circle="1" type="nether"/>

@@ -52,11 +52,6 @@
 	target: compile
 	-->
 	<target name="compile" depends="init" description="--> Projekt übersetzen">
-		<unzip src="${lib}/iText-5.0.1.jar" dest="${build}">
-			<patternset>
-				<include name="com/**" />
-			</patternset>
-		</unzip>
 		<copy file="./src/de/earthdawn/ui2/NLS_de.properties" todir="${build}/de/earthdawn/ui2/"/>
 		<copy file="./src/de/earthdawn/ui2/NLS.properties" todir="${build}/de/earthdawn/ui2/"/>
 		<javac srcdir="./src" destdir="${build}" debug="on" includeantruntime="false">
@@ -75,7 +70,8 @@
 		<jar destfile="${jar.file}">
 			<fileset dir="${build}" includes="**" />
 			<manifest>
-				<attribute name="Main-Class" value="de.earthdawn.ui2.EDMainWindow" />
+				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
+				<attribute name="Class-Path" value="${lib}/iText-5.0.1.jar"/>
 				<section name="common">
 					<attribute name="Build-By" value="${imp.build}" />
 					<attribute name="Build-Date" value="${cur.date}" />
@@ -93,6 +89,7 @@
 		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="true">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset dir="./config" prefix="config"/>
+			<zipfileset dir="./lib" prefix="lib"/>
 			<zipfileset file="./examples/EsphiraAtasy.xml" prefix="examples"/>
 			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>
 			<zipfileset dir="./cmd" />
