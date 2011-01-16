@@ -56,7 +56,7 @@
 	<DISCIPLINETALENT name="Summon" circle="5" limitation="Nature Spirits"/>
 	<ABILITY name="Land and Sea" circle="5"/>
 	<DISCIPLINETALENT name="Blood Share" circle="6"/>
-	<KARMA spend="Perception-ony Test" circle="6"/>
+	<KARMA spend="Perception-only Test" circle="6"/>
 	<DISCIPLINETALENT name="Leadership" circle="7"/>
 	<KARMA spend="Spell Effect Test" circle="7"/>
 	<DISCIPLINETALENT name="Safe Path" circle="8"/>
