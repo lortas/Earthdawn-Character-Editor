@@ -331,10 +331,15 @@ public class ECEWorker {
 
 		// ** SPELLS **
 		OPTIONALRULEType OptinalRule_SpellLegendPointCost = ApplicationProperties.create().getOptionalRules().getSPELLLEGENDPOINTCOST();
+		String firstDisciplineName = "";
+		DISCIPLINEType firstDiscipline = allDisciplines.get(1);
+		if( firstDiscipline != null ) firstDisciplineName=firstDiscipline.getName();
+		int startingSpellLegendPointCost = 0;
 		if( OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
 			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
 			ATTRIBUTEType per = character.getAttributes().get("PER");
-			int lpbonus = 100 * attribute2StepAndDice(per.getBasevalue()).getStep();
+			startingSpellLegendPointCost = 100 * attribute2StepAndDice(per.getBasevalue()).getStep();
+			int lpbonus = 0;
 			for( int spellability : getDisciplineSpellAbility(diciplineCircle) ) {
 				lpbonus += ApplicationProperties.create().getCharacteristics().getSpellLP(spellability);
 			}
@@ -344,6 +349,13 @@ public class ECEWorker {
 		}
 		HashMap<String, SPELLDEFType> spelllist = ApplicationProperties.create().getSpells();
 		for( SPELLSType spells : character.getAllSpells() ) {
+			if( spells.getDiscipline().equals(firstDisciplineName) && OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES) )  {
+				// Wenn die erste Disziplin eine Zauberdisciplin ist und die Optionale Regel, dass Zaubersprüche LP Kosten
+				// gewählt wurde, dann reduziere die ZauberLPKosten um die StartZauber
+				calculatedLP.setSpells(calculatedLP.getSpells()-startingSpellLegendPointCost);
+				// Es ist jetzt schon einmal abgezogen. Stelle nun sicher dass nicht noch ein zweites Mal abgezogen werden kann.
+				startingSpellLegendPointCost=0;
+			}
 			for( SPELLType spell : spells.getSPELL() ) {
 				SPELLDEFType spelldef = spelllist.get(spell.getName());
 				if( spelldef == null ) {
