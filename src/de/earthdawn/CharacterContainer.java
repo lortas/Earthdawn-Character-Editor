@@ -687,5 +687,14 @@ public class CharacterContainer extends CharChangeRefresh {
 		
 		return blnFound;
 	}
-	
+
+	public List<ITEMType> getItems() {
+		List<ITEMType> result = new ArrayList<ITEMType>();
+		for( JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH() ) {
+			if (element.getName().getLocalPart().equals("ITEM")) {
+				result.add((ITEMType)element.getValue());
+			}
+		}
+		return result;
+	}
 }

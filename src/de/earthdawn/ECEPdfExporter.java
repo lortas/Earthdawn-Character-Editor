@@ -39,6 +39,7 @@ import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DISCIPLINEBONUSType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.MOVEMENTType;
 import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.RANKType;
@@ -361,6 +362,20 @@ public class ECEPdfExporter {
 				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
 				acroFields.setField( "Effect."+conterSpells, spell.getEffect() );
 				conterSpells++;
+			}
+		}
+		int counterEquipment=0;
+		int rowEquipment=0;
+		for( ITEMType item : character.getItems() ) {
+			acroFields.setField( "Equipment."+counterEquipment+"."+rowEquipment, item.getName() );
+			acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, String.valueOf(item.getWeight()) );
+			if( counterEquipment > 33 ) {
+				counterEquipment=0;
+				if( rowEquipment == 1 ) {
+					break;
+				} else rowEquipment=1;
+			} else {
+				counterEquipment++;
 			}
 		}
 		stamper.close();
