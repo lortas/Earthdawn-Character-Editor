@@ -35,7 +35,7 @@
 	<DISCIPLINETALENT name="Temper Self" circle="5"/>
 	<ABILITY name="Batte Rites" circle="5"/>
 	<DISCIPLINETALENT name="Life Check" circle="6"/>
-	<KARMA spend="Dexterity-ony Test" circle="6"/>
+	<KARMA spend="Dexterity-only Test" circle="6"/>
 	<DISCIPLINETALENT name="Crushing Blow" circle="7"/>
 	<DEFENSE kind="physical" circle="8"/>
 	<KARMA spend="close combat Damage Test" circle="7"/>

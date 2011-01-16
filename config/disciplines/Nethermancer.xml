@@ -74,7 +74,7 @@
 	<SPELL type="nether" name="Viewpoint" circle="4"/>
 	<SPELL type="nether" name="Visions of Death" circle="4"/>
 	<SPELLABILITY circle="4"/>
-	<KARMA spend="Willpower-ony Test" circle="4"/>
+	<KARMA spend="Willpower-only Test" circle="4"/>
 	<OPTIONALTALENT name="Abate Curse" circle="5"/>
 	<OPTIONALTALENT name="Elemental Tongues" circle="5"/>
 	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>

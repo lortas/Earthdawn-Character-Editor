@@ -81,7 +81,7 @@
 	<SPELL type="illusion" name="Stop Right There" circle="4"/>
 	<SPELL type="illusion" name="Unmask" circle="4"/>
 	<SPELLABILITY circle="4"/>
-	<KARMA spend="Perception-ony Test" circle="4"/>
+	<KARMA spend="Perception-only Test" circle="4"/>
 	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
 	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
 	<OPTIONALTALENT name="Graceful Exit" circle="5"/>
