@@ -191,63 +191,29 @@ public class ECEPdfExporter {
 			int counterOthertalent_novice=20;
 			int counterOthertalent_journayman=27;
 			int counterOthertalent_warden=33;
-			for( JAXBElement<TALENTType> element : talents.getDISZIPLINETALENTOrOPTIONALTALENT() ) {
-				TALENTType talent = element.getValue();
+			for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
 				int counter = 66;
-				if( element.getName().getLocalPart().equals("DISZIPLINETALENT") ) {
-					if( talent.getCircle()>12 ) {
-						counter = counterDisciplinetalent_master++;
-					} else if( talent.getCircle()>8 ) {
-						counter = counterDisciplinetalent_warden++;
-					} else if( talent.getCircle()>4 ) {
-						counter = counterDisciplinetalent_journayman++;
-					} else {
-						counter = counterDisciplinetalent_novice++;
-					}
-				} else if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
-					if( talent.getCircle()>8 ) {
-						counter = counterOthertalent_warden++;
-					} else if( talent.getCircle()>4 ) {
-						counter = counterOthertalent_journayman++;
-					} else {
-						counter = counterOthertalent_novice++;
-					}
+				if( talent.getCircle()>12 ) {
+					counter = counterDisciplinetalent_master++;
+				} else if( talent.getCircle()>8 ) {
+					counter = counterDisciplinetalent_warden++;
+				} else if( talent.getCircle()>4 ) {
+					counter = counterDisciplinetalent_journayman++;
 				} else {
-					System.err.println( "Unbekannte Talentstyp: "+element.getName().getLocalPart() );
+					counter = counterDisciplinetalent_novice++;
 				}
-				if ( talent.getLimitation().isEmpty() ) {
-					acroFields.setField( "Talent."+counter, talent.getName());
+				setTalent(acroFields, counter, talent);
+			}
+			for( TALENTType talent : talents.getOPTIONALTALENT() ) {
+				int counter = 66;
+				if( talent.getCircle()>8 ) {
+					counter = counterOthertalent_warden++;
+				} else if( talent.getCircle()>4 ) {
+					counter = counterOthertalent_journayman++;
 				} else {
-					acroFields.setField( "Talent."+counter, talent.getName()+": "+talent.getLimitation());
-					
+					counter = counterOthertalent_novice++;
 				}
-				acroFields.setField( "Attribute."+counter, talent.getAttribute().value() );
-				acroFields.setField( "Strain."+counter, String.valueOf(talent.getStrain()) );
-				switch( talent.getAction() ) {
-				case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
-				case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;
-				case SUSTAINED : acroFields.setField( "Action."+counter, "sust" ); break;
-				default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
-				}
-				RANKType talentrank = talent.getRANK();
-				if( talentrank.getDice() == null ) {
-					acroFields.setField( "ActionDice."+counter, "-" );
-				} else {
-					acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
-				}
-				acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
-				if( talentrank.getBonus() == 0 ) {
-					acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
-				} else {
-					acroFields.setField( "Rank."+counter, talentrank.getRank()+"+"+talentrank.getBonus() );
-				}
-				if( counter > 20) {
-					if( talent.getKarma().equals(YesnoType.YES)) {
-						acroFields.setField( "KarmaRequired."+(counter-20), "Yes" );
-					} else {
-						acroFields.setField( "KarmaRequired."+(counter-20), "" );
-					}
-				}
+				setTalent(acroFields, counter, talent);
 			}
 		}
 		List<SKILLType> skills = character.getSkills();
@@ -379,5 +345,42 @@ public class ECEPdfExporter {
 			}
 		}
 		stamper.close();
+	}
+
+	private void setTalent(AcroFields acroFields, int counter, TALENTType talent) throws DocumentException, IOException {
+		if ( talent.getLimitation().isEmpty() ) {
+			acroFields.setField( "Talent."+counter, talent.getName());
+		} else {
+			acroFields.setField( "Talent."+counter, talent.getName()+": "+talent.getLimitation());
+			
+		}
+		acroFields.setField( "Attribute."+counter, talent.getAttribute().value() );
+		acroFields.setField( "Strain."+counter, String.valueOf(talent.getStrain()) );
+		switch( talent.getAction() ) {
+		case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
+		case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;
+		case SUSTAINED : acroFields.setField( "Action."+counter, "sust" ); break;
+		default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
+		}
+		RANKType talentrank = talent.getRANK();
+		if( talentrank.getDice() == null ) {
+			acroFields.setField( "ActionDice."+counter, "-" );
+		} else {
+			acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
+		}
+		acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
+		if( talentrank.getBonus() == 0 ) {
+			acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
+		} else {
+			acroFields.setField( "Rank."+counter, talentrank.getRank()+"+"+talentrank.getBonus() );
+		}
+		if( counter > 20) {
+			if( talent.getKarma().equals(YesnoType.YES)) {
+				acroFields.setField( "KarmaRequired."+(counter-20), "Yes" );
+			} else {
+				acroFields.setField( "KarmaRequired."+(counter-20), "" );
+			}
+		}
+
 	}
 }

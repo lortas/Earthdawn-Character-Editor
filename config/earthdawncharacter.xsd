@@ -2,10 +2,10 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/character" xmlns="http://earthdawn.com/character" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:complexType name="TALENTS_type">
-		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" name="DISZIPLINETALENT" type="edt:TALENT_type"/>
-			<xs:element maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENT_type"/>
-		</xs:choice>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISZIPLINETALENT" type="edt:TALENT_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENT_type"/>
+		</xs:sequence>
 		<xs:attribute name="discipline" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="SPELLS_type">
@@ -27,35 +27,33 @@
 	</xs:complexType>
 	<xs:element name="EDCHARACTER">
 		<xs:complexType>
-			<xs:choice maxOccurs="unbounded">
-				<xs:element maxOccurs="6" minOccurs="6" name="ATTRIBUTE" type="edt:ATTRIBUTE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="DEFENSE" type="edt:DEFENSE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="HEALTH" type="edt:HEALTH_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="MOVEMENT" type="edt:MOVEMENT_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="INITIATIVE" type="edt:INITIATIVE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="CARRYING" type="edt:CARRYING_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="KARMA" type="edt:KARMA_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
-				<xs:element maxOccurs="3" minOccurs="0" name="DISCIPLINE" type="edt:DISCIPLINE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="PROTECTION" type="edt:PROTECTION_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENTS" type="TALENTS_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELLS" type="SPELLS_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILL" type="edt:SKILL_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="WEAPON" type="edt:WEAPON_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="MAGICITEM" type="edt:MAGICITEM_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="ITEM" type="edt:ITEM_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="COINS" type="edt:COINS_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="1" name="KARMARITUAL" type="xs:string"/>
-				<xs:element maxOccurs="unbounded" minOccurs="1" name="DISCIPLINEBONUS" type="edt:DISCIPLINEBONUS_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="DESCRIPTION" type="xs:string"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="RACEABILITES" type="xs:string"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="COMMENT" type="xs:string"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="PORTRAIT" type="xs:base64Binary"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="APPEARANCE" type="edt:APPEARANCE_type"/>
-			</xs:choice>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" name="APPEARANCE" type="edt:APPEARANCE_type"/>
+				<xs:element minOccurs="6" maxOccurs="6" name="ATTRIBUTE" type="edt:ATTRIBUTE_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="DEFENSE" type="edt:DEFENSE_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="PROTECTION" type="edt:PROTECTION_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="HEALTH" type="edt:HEALTH_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="MOVEMENT" type="edt:MOVEMENT_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="INITIATIVE" type="edt:INITIATIVE_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="CARRYING" type="edt:CARRYING_type"/>
+				<xs:element minOccurs="0" maxOccurs="3" name="DISCIPLINE" type="edt:DISCIPLINE_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="TALENTS" type="TALENTS_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELLS" type="SPELLS_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="MAGICITEM" type="edt:MAGICITEM_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="COINS" type="edt:COINS_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="ITEM" type="edt:ITEM_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="KARMA" type="edt:KARMA_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="PORTRAIT" type="xs:base64Binary"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>
+			</xs:sequence>
 			<xs:attribute name="name" type="xs:string" use="required"/>
-    </xs:complexType>
-  </xs:element>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
