@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
  *       &lt;attribute name="name" use="required" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" />
  *       &lt;attribute name="racevalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="10" />
- *       &lt;attribute name="generationvalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="generationvalue" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *       &lt;attribute name="basevalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="lpincrease" type="{http://earthdawn.com/datatypes}lpincrease_type" default="0" />
  *       &lt;attribute name="currentvalue" type="{http://earthdawn.com/datatypes}unsigned_int" default="10" />

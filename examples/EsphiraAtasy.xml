@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<EDCHARACTER  name="Esphira Atasy" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
+<EDCHARACTER name="Esphira Atasy" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
 	<APPEARANCE race="Windling" skin="hell" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
 	<ATTRIBUTE cost="3" currentvalue="14" generationvalue="3" racevalue="11" name="DEX" dice="d10" step="6" lpincrease="0"/>
 	<ATTRIBUTE cost="3" currentvalue="7" generationvalue="3" racevalue="4" name="STR" dice="d6" step="4" lpincrease="0"/>
