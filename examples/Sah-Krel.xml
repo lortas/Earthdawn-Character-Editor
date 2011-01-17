@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<EDCHARACTER  name="Sah-Krel" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
+<EDCHARACTER name="Sah-Krel" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
     <APPEARANCE race="Windling" skin="blond" hair="blond" eyes="blue" weight="80" height="170" age="20" gender="male"/>
     <ATTRIBUTE cost="-2" currentvalue="10" lpincrease="0" basevalue="10" generationvalue="-2" racevalue="12" name="CHA" dice="d8" step="5"/>
     <ATTRIBUTE cost="7" currentvalue="16" basevalue="16" generationvalue="5" racevalue="11" name="DEX" dice="d12" step="7"/>
@@ -8,80 +8,82 @@
     <ATTRIBUTE cost="7" currentvalue="16" lpincrease="1" basevalue="15" generationvalue="5" racevalue="10" name="WIL" dice="d12" step="7"/>
     <ATTRIBUTE cost="5" currentvalue="12" lpincrease="0" basevalue="12" generationvalue="4" racevalue="8" name="TOU" dice="d8" step="5"/>
     <DEFENSE social="6" spell="11" physical="11"/>
-    <INITIATIVE modification="0" base="7" dice="d12" step="7"/>
-    <HEALTH damage="0">
-        <DEATH value="62" adjustment="28" base="34"/>
-        <UNCONSCIOUSNESS value="47" adjustment="21" base="26"/>
-        <WOUNDS threshold="9"/>
-        <RECOVERY testsperday="2" dice="d8" step="5"/>
-    </HEALTH>
-    <KARMA maxmodificator="1" max="31" current="0"/>
-    <MOVEMENT ground="3" flight="8"/>
-    <CARRYING carrying="20" lifting="40"/>
-    <PROTECTION penalty="0" mysticarmor="-1" physicalarmor="0">
-        <ARMOR mysticarmor="-1" location="self" used="yes" weight="0" name="natural Armor"/>
+    <PROTECTION penalty="0" mysticarmor="2" physicalarmor="0">
+        <edt:ARMOR mysticarmor="2" location="self" used="yes" weight="0" name="natural Armor"/>
     </PROTECTION>
-    <EXPERIENCE reputation="+2" renown="11" currentlegendpoints="0" totallegendpoints="0"/>
+    <HEALTH damage="0">
+        <edt:RECOVERY testsperday="2" dice="d8" step="5"/>
+        <edt:UNCONSCIOUSNESS value="47" adjustment="21" base="26"/>
+        <edt:DEATH value="62" adjustment="28" base="34"/>
+        <edt:WOUNDS threshold="9"/>
+    </HEALTH>
+    <MOVEMENT ground="3" flight="8"/>
+    <INITIATIVE modification="0" base="7" dice="d12" step="7"/>
+    <CARRYING carrying="20" lifting="40"/>
     <DISCIPLINE circle="6" name="Elementalist" order="1"/>
     <TALENTS discipline="Elementalist">
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Air Speaking">
-            <RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
+            <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
-            <RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
+            <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <edt:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
-            <RANK lpcost="100" bonus="0" rank="1" dice="d8+d6" step="9"/>
+            <edt:RANK lpcost="100" bonus="0" rank="1" dice="d8+d6" step="9"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="Elementalism" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <edt:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
-            <RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
+            <edt:RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
         </DISZIPLINETALENT>
-        <OPTIONALTALENT circle="0" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
-            <RANK lpcost="0" bonus="0" rank="2" dice="2d8" step="10"/>
-        </OPTIONALTALENT>
         <DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Fire Heal">
-            <RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
+            <edt:RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="3" karma="yes" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Elemental Tongues">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <edt:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="4" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="standard" name="Elemental Hold">
-            <RANK lpcost="1900" bonus="0" rank="5" dice="2d10" step="12"/>
+            <edt:RANK lpcost="1900" bonus="0" rank="5" dice="2d10" step="12"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="5" karma="yes" limitation="Elemental Spirits" bonus="0" attribute="PER" strain="0" action="standard" name="Summon">
-            <RANK lpcost="3100" bonus="0" rank="5" dice="d12+d10" step="13"/>
+            <edt:RANK lpcost="3100" bonus="0" rank="5" dice="d12+d10" step="13"/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Cold Purify">
-            <RANK lpcost="3100" bonus="0" rank="5" dice="2d10" step="12"/>
+            <edt:RANK lpcost="3100" bonus="0" rank="5" dice="2d10" step="12"/>
         </DISZIPLINETALENT>
+        <OPTIONALTALENT circle="0" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
+            <edt:RANK lpcost="0" bonus="0" rank="2" dice="2d8" step="10"/>
+        </OPTIONALTALENT>
         <OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
-            <RANK lpcost="1900" bonus="0" rank="5" dice="2d8" step="10"/>
+            <edt:RANK lpcost="1900" bonus="0" rank="5" dice="2d8" step="10"/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="2" karma="yes" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Item History">
-            <RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
+            <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="3" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
-            <RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
+            <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="4" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
+            <edt:RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
-            <RANK lpcost="5200" bonus="0" rank="6" dice="d12+d10" step="13"/>
+            <edt:RANK lpcost="5200" bonus="0" rank="6" dice="d12+d10" step="13"/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Enhanced Matrix">
-            <RANK lpcost="3100" bonus="0" rank="5" dice="d8" step="5"/>
+            <edt:RANK lpcost="3100" bonus="0" rank="5" dice="d8" step="5"/>
         </OPTIONALTALENT>
     </TALENTS>
+    <KARMA maxmodificator="1" max="31" current="0">
+        <edt:KARMAPOINTS when="" type="+" value="200" comment="geschätztes Karma durch Rituale"/>
+        <edt:KARMAPOINTS when="" type="-" value="180" comment="geschätzter Karma verbrauch"/>
+    </KARMA>
     <RACEABILITES>Flight</RACEABILITES>
-    <DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="4"/>
-    <DISCIPLINEBONUS bonus="Ability: Fire and Ice" circle="5"/>
-    <DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="6"/>
-    <CALCULATEDLEGENDPOINTS total="45900" magicitems="0" karma="0" spells="-700" skills="0" knacks="0" optionaltalents="19300" disciplinetalents="22300" attributes="5000"/>
+    <CALCULATEDLEGENDPOINTS total="45900" magicitems="0" karma="0" spells="0" skills="0" knacks="0" optionaltalents="19300" disciplinetalents="22300" attributes="5000"/>
+    <EXPERIENCE reputation="+2" renown="11" currentlegendpoints="0" totallegendpoints="0">
+        <edt:LEGENDPOINTS when="" type="+" value="0" comment=""/>
+    </EXPERIENCE>
 </EDCHARACTER>
