@@ -232,7 +232,15 @@
 		<xs:attribute name="flight" type="unsigned_int"/>
 		<xs:attribute name="ground" type="unsigned_int" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="DISCIPLINEBONUS_type">
+		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="bonus" type="xs:string"  use="required"/>
+	</xs:complexType>
 	<xs:complexType name="DISCIPLINE_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISCIPLINEBONUS" type="DISCIPLINEBONUS_type"/>
+			<xs:element minOccurs="0" maxOccurs="1" name="KARMARITUAL" type="xs:string"/>
+		</xs:sequence>
 		<xs:attribute name="order" type="unsigned_int" use="required"/>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="circle_type" use="required"/>
@@ -380,12 +388,12 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="HEALTH_type">
-		<xs:choice maxOccurs="unbounded">
+		<xs:sequence>
 			<xs:element maxOccurs="1" minOccurs="1" name="RECOVERY" type="RECOVERY_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="UNCONSCIOUSNESS" type="DEATH_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="DEATH" type="DEATH_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="WOUNDS" type="WOUND_type"/>
-		</xs:choice>
+		</xs:sequence>
 		<xs:attribute name="damage" type="xs:int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="WEAPON_type">
@@ -462,14 +470,10 @@
 		<xs:attribute name="spend" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="DEFENSEABILITY_type">
-        <xs:annotation>
-        	<xs:documentation>Indicates which defense type will be increased by one.</xs:documentation>
-        </xs:annotation>
-        <xs:attribute name="circle" type="unsigned_int" use="required"/>
-		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
-	</xs:complexType>
-	<xs:complexType name="DISCIPLINEBONUS_type">
+		<xs:annotation>
+			<xs:documentation>Indicates which defense type will be increased by one.</xs:documentation>
+		</xs:annotation>
 		<xs:attribute name="circle" type="unsigned_int" use="required"/>
-		<xs:attribute name="bonus" type="xs:string"  use="required"/>
+		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
 	</xs:complexType>
 </xs:schema>

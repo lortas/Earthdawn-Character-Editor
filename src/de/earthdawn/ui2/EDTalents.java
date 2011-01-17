@@ -214,20 +214,26 @@ class TalentsTableModel extends AbstractTableModel {
         if (talents  == null){
         	return 0;
         }
-        return talents.getDISZIPLINETALENTOrOPTIONALTALENT().size();
+        return talents.getDISZIPLINETALENT().size()+talents.getOPTIONALTALENT().size();
     }
 
     public String getColumnName(int col) {
         return columnNames[col];
     }
 
-    public Object getValueAt(int row, int col) {
-    	JAXBElement<TALENTType> element = talents.getDISZIPLINETALENTOrOPTIONALTALENT().get(row);
-    
-    	Object result = new String("Error"); 
-    	TALENTType talent = element.getValue();
-    	switch (col) {
-	        case 0:  
+	public Object getValueAt(int row, int col) {
+		TALENTType talent = null;
+		boolean isDisciplinTalent=true;
+		if(talents.getDISZIPLINETALENT().size() > row ) {
+			talent=talents.getDISZIPLINETALENT().get(row);
+			isDisciplinTalent=true;
+		} else {
+			talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
+			isDisciplinTalent=false;
+		}
+		Object result = new String("Error"); 
+		switch (col) {
+		case 0:
 	        	try{
 	        		result = talent.getCircle();
 	        	}
@@ -293,7 +299,12 @@ class TalentsTableModel extends AbstractTableModel {
 	        	break;	 	        	
 	        case 8:
 	        	try{
-	        		result = element.getName().getLocalPart();
+	        		if( isDisciplinTalent ) {
+	        			result="DisciplineTalent";
+	        		} else {
+	        			result="OptionalTalent";
+	        			
+	        		}
 	        	}
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
@@ -331,7 +342,13 @@ class TalentsTableModel extends AbstractTableModel {
      * data can change.
      */
     public void setValueAt(Object value, int row, int col) {   
-    	talents.getDISZIPLINETALENTOrOPTIONALTALENT().get(row).getValue().getRANK().setRank((Integer)value);
+		TALENTType talent = null;
+		if(talents.getDISZIPLINETALENT().size() > row ) {
+			talent=talents.getDISZIPLINETALENT().get(row);
+		} else {
+			talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
+		}
+    	talent.getRANK().setRank((Integer)value);
     	character.refesh();
         fireTableCellUpdated(row, col);
         fireTableCellUpdated(row, 5);

@@ -10,12 +10,10 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -28,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="TALENTS_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="DISZIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded"/>
- *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded"/>
- *       &lt;/choice>
+ *       &lt;sequence>
+ *         &lt;element name="DISZIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="discipline" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -42,46 +40,74 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TALENTS_type", namespace = "http://earthdawn.com/character", propOrder = {
-    "disziplinetalentOrOPTIONALTALENT"
+    "disziplinetalent",
+    "optionaltalent"
 })
 public class TALENTSType {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "OPTIONALTALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class),
-        @XmlElementRef(name = "DISZIPLINETALENT", namespace = "http://earthdawn.com/character", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<TALENTType>> disziplinetalentOrOPTIONALTALENT;
+    @XmlElement(name = "DISZIPLINETALENT")
+    protected List<TALENTType> disziplinetalent;
+    @XmlElement(name = "OPTIONALTALENT")
+    protected List<TALENTType> optionaltalent;
     @XmlAttribute(required = true)
     protected String discipline;
 
     /**
-     * Gets the value of the disziplinetalentOrOPTIONALTALENT property.
+     * Gets the value of the disziplinetalent property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the disziplinetalentOrOPTIONALTALENT property.
+     * This is why there is not a <CODE>set</CODE> method for the disziplinetalent property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDISZIPLINETALENTOrOPTIONALTALENT().add(newItem);
+     *    getDISZIPLINETALENT().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link TALENTType }{@code >}
-     * {@link JAXBElement }{@code <}{@link TALENTType }{@code >}
+     * {@link TALENTType }
      * 
      * 
      */
-    public List<JAXBElement<TALENTType>> getDISZIPLINETALENTOrOPTIONALTALENT() {
-        if (disziplinetalentOrOPTIONALTALENT == null) {
-            disziplinetalentOrOPTIONALTALENT = new ArrayList<JAXBElement<TALENTType>>();
+    public List<TALENTType> getDISZIPLINETALENT() {
+        if (disziplinetalent == null) {
+            disziplinetalent = new ArrayList<TALENTType>();
         }
-        return this.disziplinetalentOrOPTIONALTALENT;
+        return this.disziplinetalent;
+    }
+
+    /**
+     * Gets the value of the optionaltalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the optionaltalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOPTIONALTALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTType }
+     * 
+     * 
+     */
+    public List<TALENTType> getOPTIONALTALENT() {
+        if (optionaltalent == null) {
+            optionaltalent = new ArrayList<TALENTType>();
+        }
+        return this.optionaltalent;
     }
 
     /**

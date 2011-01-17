@@ -8,14 +8,10 @@
 
 package de.earthdawn.data;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -28,12 +24,12 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="HEALTH_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
+ *       &lt;sequence>
  *         &lt;element name="RECOVERY" type="{http://earthdawn.com/datatypes}RECOVERY_type"/>
  *         &lt;element name="UNCONSCIOUSNESS" type="{http://earthdawn.com/datatypes}DEATH_type"/>
  *         &lt;element name="DEATH" type="{http://earthdawn.com/datatypes}DEATH_type"/>
  *         &lt;element name="WOUNDS" type="{http://earthdawn.com/datatypes}WOUND_type"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *       &lt;attribute name="damage" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,50 +40,118 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "HEALTH_type", propOrder = {
-    "recoveryOrUNCONSCIOUSNESSOrDEATH"
+    "recovery",
+    "unconsciousness",
+    "death",
+    "wounds"
 })
 public class HEALTHType {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "RECOVERY", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
-        @XmlElementRef(name = "WOUNDS", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
-        @XmlElementRef(name = "UNCONSCIOUSNESS", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class),
-        @XmlElementRef(name = "DEATH", namespace = "http://earthdawn.com/datatypes", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<?>> recoveryOrUNCONSCIOUSNESSOrDEATH;
+    @XmlElement(name = "RECOVERY", required = true)
+    protected RECOVERYType recovery;
+    @XmlElement(name = "UNCONSCIOUSNESS", required = true)
+    protected DEATHType unconsciousness;
+    @XmlElement(name = "DEATH", required = true)
+    protected DEATHType death;
+    @XmlElement(name = "WOUNDS", required = true)
+    protected WOUNDType wounds;
     @XmlAttribute(required = true)
     protected int damage;
 
     /**
-     * Gets the value of the recoveryOrUNCONSCIOUSNESSOrDEATH property.
+     * Gets the value of the recovery property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the recoveryOrUNCONSCIOUSNESSOrDEATH property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link DEATHType }{@code >}
-     * {@link JAXBElement }{@code <}{@link RECOVERYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link WOUNDType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DEATHType }{@code >}
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link RECOVERYType }
+     *     
      */
-    public List<JAXBElement<?>> getRECOVERYOrUNCONSCIOUSNESSOrDEATH() {
-        if (recoveryOrUNCONSCIOUSNESSOrDEATH == null) {
-            recoveryOrUNCONSCIOUSNESSOrDEATH = new ArrayList<JAXBElement<?>>();
-        }
-        return this.recoveryOrUNCONSCIOUSNESSOrDEATH;
+    public RECOVERYType getRECOVERY() {
+        return recovery;
+    }
+
+    /**
+     * Sets the value of the recovery property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RECOVERYType }
+     *     
+     */
+    public void setRECOVERY(RECOVERYType value) {
+        this.recovery = value;
+    }
+
+    /**
+     * Gets the value of the unconsciousness property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DEATHType }
+     *     
+     */
+    public DEATHType getUNCONSCIOUSNESS() {
+        return unconsciousness;
+    }
+
+    /**
+     * Sets the value of the unconsciousness property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DEATHType }
+     *     
+     */
+    public void setUNCONSCIOUSNESS(DEATHType value) {
+        this.unconsciousness = value;
+    }
+
+    /**
+     * Gets the value of the death property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DEATHType }
+     *     
+     */
+    public DEATHType getDEATH() {
+        return death;
+    }
+
+    /**
+     * Sets the value of the death property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DEATHType }
+     *     
+     */
+    public void setDEATH(DEATHType value) {
+        this.death = value;
+    }
+
+    /**
+     * Gets the value of the wounds property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link WOUNDType }
+     *     
+     */
+    public WOUNDType getWOUNDS() {
+        return wounds;
+    }
+
+    /**
+     * Sets the value of the wounds property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link WOUNDType }
+     *     
+     */
+    public void setWOUNDS(WOUNDType value) {
+        this.wounds = value;
     }
 
     /**

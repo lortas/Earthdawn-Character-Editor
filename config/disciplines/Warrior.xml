@@ -37,9 +37,9 @@
 	<DISCIPLINETALENT name="Life Check" circle="6"/>
 	<KARMA spend="Dexterity-only Test" circle="6"/>
 	<DISCIPLINETALENT name="Crushing Blow" circle="7"/>
-	<DEFENSE kind="physical" circle="8"/>
 	<KARMA spend="close combat Damage Test" circle="7"/>
 	<DISCIPLINETALENT name="Second Attack" circle="8"/>
+	<DEFENSE kind="physical" circle="8"/>
 	<OPTIONALTALENT name="Battle Bellow" circle="9"/>
 	<OPTIONALTALENT name="Body Blade" circle="9"/>
 	<OPTIONALTALENT name="Critical Hit" circle="9"/>

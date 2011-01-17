@@ -215,18 +215,18 @@ public class ECEWorker {
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			namegivertalents.put(t.getName(), t);
 		}
+		int maxKarmaStepBonus=0;
 		// Zwei Schleifen:
 		// - äußere Schleife über alle Disziplinen und
 		// - innere Schleife über alle Talente der Disziplin
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			TALENTType durabilityTalent = null;
-			List <JAXBElement<TALENTType>> disTalents = allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT();
-			List <JAXBElement<TALENTType>> rankZeroTalents = new ArrayList <JAXBElement<TALENTType>>();
-			for( JAXBElement<TALENTType> element : disTalents ) {
-				TALENTType talent = element.getValue();
+			List<TALENTType> disTalents = allTalents.get(disciplinenumber).getDISZIPLINETALENT();
+			List<TALENTType> rankZeroTalents = new ArrayList<TALENTType>();
+			for( TALENTType talent : disTalents ) {
 				RANKType rank = talent.getRANK();
 				if( rank.getRank() < 1 ) {
-					rankZeroTalents.add(element);
+					rankZeroTalents.add(talent);
 					continue;
 				}
 				rank.setBonus(0);
@@ -234,29 +234,43 @@ public class ECEWorker {
 				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 				rank.setLpcost(lpcostfull-lpcoststart);
-				if( element.getName().getLocalPart().equals("DISZIPLINETALENT")) {
-					calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+rank.getLpcost());
-				} else {
-					calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+rank.getLpcost());
-				}
+				calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+rank.getLpcost());
 				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
 				if( talent.getName().equals(durabilityTalentName)) {
 					durabilityTalent=talent;
 				}
-				for( KNACKType knack : talent.getKNACK() ) {
-					if( knack.getMinrank() > rank.getRank() ) {
-						System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
-								+rank.getRank()+" vs. "+knack.getMinrank());
-					}
-					int lp = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
-					calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
-				}
+				calculateKnacks(calculatedLP, disciplinenumber, talent, rank.getRank());
 				if( namegivertalents.containsKey(talent.getName()) ) {
 					namegivertalents.remove(talent.getName());
 				}
 			}
 			// Talenete mit Rang == 0 werden entfernt.
 			disTalents.removeAll(rankZeroTalents);
+			rankZeroTalents.clear();
+			List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
+			for( TALENTType talent : optTalents ) {
+				RANKType rank = talent.getRANK();
+				if( rank.getRank() < 1 ) {
+					rankZeroTalents.add(talent);
+					continue;
+				}
+				rank.setBonus(0);
+				enforceCapabilityParams(talent,capabilities);
+				int lpcostfull= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
+				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
+				rank.setLpcost(lpcostfull-lpcoststart);
+				calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+rank.getLpcost());
+				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
+				if( talent.getName().equals(durabilityTalentName)) {
+					durabilityTalent=talent;
+				}
+				calculateKnacks(calculatedLP, disciplinenumber, talent, rank.getRank());
+				if( namegivertalents.containsKey(talent.getName()) ) {
+					namegivertalents.remove(talent.getName());
+				}
+			}
+			// Talenete mit Rang == 0 werden entfernt.
+			optTalents.removeAll(rankZeroTalents);
 			// Alle Dizipline Talente die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
@@ -270,7 +284,7 @@ public class ECEWorker {
 				rank.setBonus(0);
 				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
-				allTalents.get(disciplinenumber).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
+				allTalents.get(disciplinenumber).getOPTIONALTALENT().add(talent);
 			}
 			// Wenn ein Durability-Talent gefunden wurde berechnen aus dessen Rank
 			// dier Erhöhung von Todes- und Bewustlosigkeitsschwelle
@@ -282,8 +296,13 @@ public class ECEWorker {
 				durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
 			}
 			diciplineCircle.put(discipline.getName(), discipline.getCircle());
+			// Nur der höchtse Bonus wird gewertet.
+			int currentKarmaStepBonus = getDisciplineKarmaStepBonus(discipline);
+			if( currentKarmaStepBonus > maxKarmaStepBonus ) maxKarmaStepBonus = currentKarmaStepBonus;
 			List<DISCIPLINEBONUSType> bonuses = JAXBHelper.getDisciplineBonuses(discipline);
-			character.addDisciplineBonuses(bonuses,discipline.getCircle());
+			List<DISCIPLINEBONUSType> currentBonuses = discipline.getDISCIPLINEBONUS();
+			bonuses.clear();
+			bonuses.addAll(currentBonuses);
 		}
 
 		for( SKILLType skill : character.getSkills() ) {
@@ -310,8 +329,6 @@ public class ECEWorker {
 		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
 		recovery.setDice(step2Dice(recovery.getStep()));
 		
-		character.addDisciplineKarmaStepBonus(getDisciplineKarmaStepBonus(diciplineCircle));
-
 		EXPERIENCEType legendpoints = character.getLegendPoints();
 		int legendpointsPLUS = 0;
 		int legendpointsMINUS = 0;
@@ -400,19 +417,25 @@ public class ECEWorker {
 		return charakter;
 	}
 
-	private int getDisciplineKarmaStepBonus(HashMap<String,Integer> diciplineCircle) {
-		int result = 0;
-		for( String discipline : diciplineCircle.keySet() ) {
-			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
-			int tmp = 0;
-			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
-				if( element.getName().getLocalPart().equals("KARMASTEP")) {
-					DISZIPINABILITYType karmastep = (DISZIPINABILITYType)element.getValue();
-					if( karmastep.getCircle() > diciplineCircle.get(discipline) ) continue;
-					tmp++;
-				}
+	private void calculateKnacks(CALCULATEDLEGENDPOINTSType calculatedLP, Integer disciplinenumber, TALENTType talent, int rank) {
+		for( KNACKType knack : talent.getKNACK() ) {
+			if( knack.getMinrank() > rank ) {
+				System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
+						+rank+" vs. "+knack.getMinrank());
 			}
-			if( tmp > result ) result=tmp;
+			int lp = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
+			calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
+		}
+	}
+
+	private int getDisciplineKarmaStepBonus(DISCIPLINEType discipline) {
+		int result = 0;
+		for( JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
+			if( element.getName().getLocalPart().equals("KARMASTEP")) {
+				DISZIPINABILITYType karmastep = (DISZIPINABILITYType)element.getValue();
+				if( karmastep.getCircle() > discipline.getCircle() ) continue;
+				result++;
+			}
 		}
 		return result;
 	}
@@ -590,5 +613,18 @@ public class ECEWorker {
 			capability.setKarma(replacment.getKarma());
 			capability.setStrain(replacment.getStrain());
 		}
+	}
+
+	private TALENTType calculateTalents(
+			int disciplinenumber,
+			List<TALENTType> Talents,
+			ECECapabilities capabilities,
+			CALCULATEDLEGENDPOINTSType calculatedLP,
+			String durabilityTalentName,
+			HashMap<String, ATTRIBUTEType> attribute,
+			HashMap<String,TALENTABILITYType> namegivertalents)
+	{
+		TALENTType durabilityTalent = null;
+		return durabilityTalent;
 	}
 }

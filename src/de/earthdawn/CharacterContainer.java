@@ -45,8 +45,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getName();
 	}
 
-	public void clearATTRIBUTEOrDEFENSEOrHEALTH(String tagname) {
-		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
+	public void XXXclearATTRIBUTEOrDEFENSEOrHEALTH(String tagname) {
+		List<JAXBElement<?>> list = null; //character.getATTRIBUTEOrDEFENSEOrHEALTH();
 		List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
 		for (JAXBElement<?> element : list ) {
 			if (element.getName().getLocalPart().equals(tagname)) {
@@ -57,13 +57,10 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public APPEARANCEType getAppearance() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if( element.getName().getLocalPart().equals("APPEARANCE") ) {
-				return (APPEARANCEType) element.getValue();
-			}
-		}
+		APPEARANCEType appearance = character.getAPPEARANCE();
+		if( appearance != null ) return appearance;
 		// If not found: create
-		APPEARANCEType appearance = new APPEARANCEType();
+		appearance = new APPEARANCEType();
 		appearance.setRace("Human");
 		appearance.setGender(GenderType.MALE);
 		appearance.setEyes("blue");
@@ -72,225 +69,180 @@ public class CharacterContainer extends CharChangeRefresh {
 		appearance.setHeight(170);
 		appearance.setSkin("blond");
 		appearance.setWeight(80);
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERAPPEARANCE(appearance));
+		character.setAPPEARANCE(appearance);
 		return appearance;
 	}
 
 	public HashMap<String, ATTRIBUTEType> getAttributes() {
+		List<ATTRIBUTEType> attributelist = character.getATTRIBUTE();
 		HashMap<String,ATTRIBUTEType> attributes = new HashMap<String,ATTRIBUTEType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("ATTRIBUTE")) {
-				ATTRIBUTEType attribute = (ATTRIBUTEType) element.getValue();
-				attributes.put(attribute.getName().value(), attribute);
-			}
+		for (ATTRIBUTEType attribute : attributelist ) {
+			attributes.put(attribute.getName().value(), attribute);
 		}
 		for( ATTRIBUTENameType name : ATTRIBUTENameType.values() ) {
+			// Wenn das Attribut bereits exisitert, kein neues Setzen
 			if( attributes.containsKey(name.value())) continue;
+			// Das "Attribut" na soll nicht angefügt werden
+			if( name.equals(ATTRIBUTENameType.NA) ) continue;
 			ATTRIBUTEType attribute = new ATTRIBUTEType();
 			attribute.setName(name);
-			character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERATTRIBUTE(attribute));
-			attributes.put(name.value(), attribute);
+			attributelist.add(attribute);
+			attributes.put(attribute.getName().value(), attribute);
 		}
 		return attributes;
 	}
 
-	public ATTRIBUTEType getAttributeByName(String name) {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("ATTRIBUTE")) {
-				ATTRIBUTEType attribute = (ATTRIBUTEType) element.getValue();
-				if (attribute.getName().value().equals(name)) {
-					return attribute;
-				}
+	public ATTRIBUTEType XXXgetAttributeByName(String name) {
+		List<ATTRIBUTEType> attributes = character.getATTRIBUTE();
+		for (ATTRIBUTEType attribute : attributes ) {
+			if (attribute.getName().value().equals(name)) {
+				return attribute;
 			}
 		}
 		// Not found
 		ATTRIBUTEType attribute = new ATTRIBUTEType();
 		attribute.setName(ATTRIBUTENameType.valueOf(name));
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERATTRIBUTE(attribute));
+		attributes.add(attribute);
 		return attribute;
 	}
 
 	public DEFENSEType getDefence() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("DEFENSE")) {
-				return (DEFENSEType) element.getValue();
-			}
+		DEFENSEType defense = character.getDEFENSE();
+		if( defense == null ) {
+			defense = new DEFENSEType();
+			character.setDEFENSE(defense);
 		}
-		// Not found
-		DEFENSEType defense = new DEFENSEType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERDEFENSE(defense));
 		return defense;
 	}
 
 	public CALCULATEDLEGENDPOINTSType getCalculatedLegendpoints() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("CALCULATEDLEGENDPOINTS")) {
-				return (CALCULATEDLEGENDPOINTSType) element.getValue();
-			}
+		CALCULATEDLEGENDPOINTSType calculatedLegendpoints = character.getCALCULATEDLEGENDPOINTS();
+		if( calculatedLegendpoints == null ) {
+			calculatedLegendpoints = new CALCULATEDLEGENDPOINTSType();
+			character.setCALCULATEDLEGENDPOINTS(calculatedLegendpoints);
 		}
-		// Not found
-		CALCULATEDLEGENDPOINTSType calculatedLegendpoints = new CALCULATEDLEGENDPOINTSType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERCALCULATEDLEGENDPOINTS(calculatedLegendpoints));
 		return calculatedLegendpoints;
 	}
 
 	public INITIATIVEType getInitiative() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("INITIATIVE")) {
-				return (INITIATIVEType) element.getValue();
-			}
+		INITIATIVEType initiative = character.getINITIATIVE();
+		if( initiative == null ) {
+			initiative = new INITIATIVEType();
+			character.setINITIATIVE(initiative);
 		}
-		// Not found
-		INITIATIVEType initiative = new INITIATIVEType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERINITIATIVE(initiative));
 		return initiative;
 	}
 
 	public HEALTHType getHealth() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("HEALTH")) {
-				return (HEALTHType) element.getValue();
-			}
+		HEALTHType health = character.getHEALTH();
+		if( health == null ) {
+			health = new HEALTHType();
+			character.setHEALTH(health);
 		}
-		// Not found
-		HEALTHType health = new HEALTHType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERHEALTH(health));
 		return health;
 	}
 
 	public DEATHType getDeath() {
 		HEALTHType health = getHealth();
-		for (JAXBElement<?> element : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
-			if (element.getName().getLocalPart().equals("DEATH")) {
-				return (DEATHType) element.getValue();
-			}
+		DEATHType death = health.getDEATH();
+		if( death == null ) {
+			death = new DEATHType();
+			health.setDEATH(death);
 		}
-		// Not found
-		DEATHType death = new DEATHType();
-		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeDEATH(death));
 		return death;
 	}
 
 	public DEATHType getUnconsciousness() {
 		HEALTHType health = getHealth();
-		for (JAXBElement<?> element : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
-			if (element.getName().getLocalPart().equals("UNCONSCIOUSNESS")) {
-				return (DEATHType) element.getValue();
-			}
+		DEATHType unconsciousness = health.getUNCONSCIOUSNESS();
+		if( unconsciousness == null ) {
+			unconsciousness = new DEATHType();
+			health.setUNCONSCIOUSNESS(unconsciousness);
 		}
-		// Not found
-		DEATHType unconsciousness = new DEATHType();
-		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeUNCONSCIOUSNESS(unconsciousness));
 		return unconsciousness;
 	}
 
 	public WOUNDType getWound() {
 		HEALTHType health = getHealth();
-		for (JAXBElement<?> element : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
-			if (element.getName().getLocalPart().equals("WOUNDS")) {
-				return (WOUNDType) element.getValue();
-			}
+		WOUNDType wound = health.getWOUNDS();
+		if( wound == null ) {
+			wound = new WOUNDType();
+			health.setWOUNDS(wound);
 		}
-		// Not found
-		WOUNDType wound = new WOUNDType();
-		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeWOUNDS(wound));
 		return wound;
 	}
 
 	public RECOVERYType getRecovery() {
 		HEALTHType health = getHealth();
-		for (JAXBElement<?> element : health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH()) {
-			if (element.getName().getLocalPart().equals("RECOVERY")) {
-				return (RECOVERYType) element.getValue();
-			}
+		RECOVERYType recovery = health.getRECOVERY();
+		if( recovery == null ) {
+			recovery = new RECOVERYType();
+			health.setRECOVERY(recovery);
 		}
-		// Not found
-		RECOVERYType recovery = new RECOVERYType();
-		health.getRECOVERYOrUNCONSCIOUSNESSOrDEATH().add(new ObjectFactory().createHEALTHTypeRECOVERY(recovery));
 		return recovery;
 	}
 
 	public KARMAType getKarma() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("KARMA")) {
-				return (KARMAType) element.getValue();
-			}
+		KARMAType karma = character.getKARMA();
+		if( karma == null ) {
+			karma = new KARMAType();
+			character.setKARMA(karma);
 		}
-		// Not found
-		KARMAType karma = new KARMAType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERKARMA(karma));
 		return karma;
 	}
 
 	public MOVEMENTType getMovement() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("MOVEMENT")) {
-				return (MOVEMENTType) element.getValue();
-			}
+		MOVEMENTType movement = character.getMOVEMENT();
+		if( movement == null ) {
+			movement = new MOVEMENTType();
+			character.setMOVEMENT(movement);
 		}
-		// Not found
-		MOVEMENTType movment = new MOVEMENTType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERMOVEMENT(movment));
-		return movment;
+		return movement;
 	}
 
 	public CARRYINGType getCarrying() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("CARRYING")) {
-				return (CARRYINGType) element.getValue();
-			}
+		CARRYINGType carrying = character.getCARRYING();
+		if( carrying == null ) {
+			carrying = new CARRYINGType();
+			character.setCARRYING(carrying);
 		}
-		// Not found
-		CARRYINGType carrying = new CARRYINGType();
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERCARRYING(carrying));
 		return carrying;
 	}
 
 	public PROTECTIONType getProtection() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("PROTECTION")) {
-				return (PROTECTIONType) element.getValue();
-			}
+		PROTECTIONType protection = character.getPROTECTION();
+		if ( protection == null ) {
+			protection = new PROTECTIONType();
+			character.setPROTECTION(protection);
 		}
-		JAXBElement<PROTECTIONType> protection = new ObjectFactory().createEDCHARACTERPROTECTION(new PROTECTIONType());
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(protection);
-		return protection.getValue();
+		return protection;
 	}
 
 	public String getAbilities() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("RACEABILITES")) {
-				return (String) element.getValue();
-			}
+		String abilities = character.getRACEABILITES();
+		if( abilities == null ) {
+			abilities = "";
+			character.setRACEABILITES(abilities);
 		}
-		// Not found
-		return null;
+		return abilities;
 	}
 
 	public void setAbilities(String newValue) {
-		clearATTRIBUTEOrDEFENSEOrHEALTH("RACEABILITES");
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERRACEABILITES(newValue));
-		return;
+		character.setRACEABILITES(newValue);
 	}
 
 	public HashMap<Integer,DISCIPLINEType> getAllDiciplinesByOrder() {
 		HashMap<Integer,DISCIPLINEType> alldisciplines = new HashMap<Integer,DISCIPLINEType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("DISCIPLINE")) {
-				DISCIPLINEType discipline = (DISCIPLINEType)element.getValue();
-				alldisciplines.put(discipline.getOrder(),discipline);
-			}
+		for (DISCIPLINEType discipline : character.getDISCIPLINE()) {
+			alldisciplines.put(discipline.getOrder(),discipline);
 		}
 		return alldisciplines;
 	}
 
 	public HashMap<String,DISCIPLINEType> getAllDiciplinesByName() {
 		HashMap<String,DISCIPLINEType> alldisciplines = new HashMap<String,DISCIPLINEType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("DISCIPLINE")) {
-				DISCIPLINEType discipline = (DISCIPLINEType)element.getValue();
-				alldisciplines.put(discipline.getName(),discipline);
-			}
+		for (DISCIPLINEType discipline : character.getDISCIPLINE()) {
+			alldisciplines.put(discipline.getName(),discipline);
 		}
 		return alldisciplines;
 	}
@@ -310,25 +262,16 @@ public class CharacterContainer extends CharChangeRefresh {
 		discipline.setCircle(0);
 		discipline.setName("na");
 		discipline.setOrder(1);
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("DISCIPLINE")) {
-				DISCIPLINEType d = (DISCIPLINEType)element.getValue();
-				if( d.getCircle() > discipline.getCircle() ) {
-					discipline=d;
-				}
+		for (DISCIPLINEType d : character.getDISCIPLINE()) {
+			if( d.getCircle() > discipline.getCircle() ) {
+				discipline=d;
 			}
 		}
 		return discipline;
 	}
 
 	public List<TALENTSType> getAllTalents() {
-		List<TALENTSType> alltalents = new ArrayList<TALENTSType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("TALENTS")) {
-				alltalents.add((TALENTSType)element.getValue());
-			}
-		}
-		return alltalents;
+		return character.getTALENTS();
 	}
 
 	public HashMap<Integer,TALENTSType> getAllTalentsByDisziplinOrder() {
@@ -356,13 +299,15 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public TALENTType getTalentByName(String searchTalent) {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("TALENTS")) {
-				for (JAXBElement<TALENTType> talent : ((TALENTSType)element.getValue()).getDISZIPLINETALENTOrOPTIONALTALENT()) {
-					TALENTType t = (TALENTType)talent.getValue();
-					if ( t.getName().equals(searchTalent)) {
-						return t;
-					}
+		for (TALENTSType talents : character.getTALENTS()) {
+			for (TALENTType talent : talents.getDISZIPLINETALENT()) {
+				if ( talent.getName().equals(searchTalent)) {
+					return talent;
+				}
+			}
+			for (TALENTType talent : talents.getOPTIONALTALENT()) {
+				if ( talent.getName().equals(searchTalent)) {
+					return talent;
 				}
 			}
 		}
@@ -371,14 +316,16 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public TALENTType getTalentByDisciplinAndName(String disciplin, String searchTalent) {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("TALENTS")) {
-				if (((TALENTSType)element.getValue()).getDiscipline().equals(disciplin)){
-					for (JAXBElement<TALENTType> talent : ((TALENTSType)element.getValue()).getDISZIPLINETALENTOrOPTIONALTALENT()) {
-						TALENTType t = (TALENTType)talent.getValue();
-						if ( t.getName().equals(searchTalent)) {
-							return t;
-						}
+		for (TALENTSType talents : character.getTALENTS()) {
+			if (talents.getDiscipline().equals(disciplin)){
+				for (TALENTType talent : talents.getDISZIPLINETALENT()) {
+					if ( talent.getName().equals(searchTalent)) {
+						return talent;
+					}
+				}
+				for (TALENTType talent : talents.getOPTIONALTALENT()) {
+					if ( talent.getName().equals(searchTalent)) {
+						return talent;
 					}
 				}
 			}
@@ -388,98 +335,51 @@ public class CharacterContainer extends CharChangeRefresh {
 	}	
 	
 	public List<SKILLType> getSkills() {
-		List<SKILLType> skills = new ArrayList<SKILLType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("SKILL")) {
-				skills.add((SKILLType)element.getValue());
-			}
-		}
-		return skills;
+		return character.getSKILL();
 	}
 
 	public EXPERIENCEType getLegendPoints() {
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("EXPERIENCE")) {
-				return (EXPERIENCEType)element.getValue();
-			}
+		EXPERIENCEType experience = character.getEXPERIENCE();
+		if( experience == null ) {
+			experience = new EXPERIENCEType();
+			experience.setCurrentlegendpoints(0);
+			experience.setTotallegendpoints(0);
+			character.setEXPERIENCE(experience);
 		}
-		JAXBElement<EXPERIENCEType> experience = new ObjectFactory().createEDCHARACTEREXPERIENCE(new EXPERIENCEType());
-		character.getATTRIBUTEOrDEFENSEOrHEALTH().add(experience);
-		experience.getValue().setCurrentlegendpoints(0);
-		experience.getValue().setTotallegendpoints(0);
-		return experience.getValue();
+		return experience;
 	}
 
 	public List<WEAPONType> getWeapons() {
-		List<WEAPONType> weapons = new ArrayList<WEAPONType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("WEAPON")) {
-				weapons.add((WEAPONType)element.getValue());
-			}
-		}
-		return weapons;
+		return character.getWEAPON();
 	}
 
 	public List<DISCIPLINEBONUSType> getDisciplineBonuses() {
 		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("DISCIPLINEBONUS")) {
-				bonuses.add((DISCIPLINEBONUSType)element.getValue());
-			}
+		for( DISCIPLINEType discipline : character.getDISCIPLINE() ) {
+			bonuses.addAll(discipline.getDISCIPLINEBONUS());
 		}
 		return bonuses;
 	}
 
 	public void clearDisciplineBonuses() {
-		clearATTRIBUTEOrDEFENSEOrHEALTH("DISCIPLINEBONUS");
-	}
-
-	public void addDisciplineBonuses(List<DISCIPLINEBONUSType> bonuses, int circle) {
-		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
-		for( DISCIPLINEBONUSType bonus : bonuses ) {
-			if( bonus.getCircle() > circle ) continue;
-			DISCIPLINEBONUSType newValue = new DISCIPLINEBONUSType();
-			newValue.setBonus(bonus.getBonus());
-			newValue.setCircle(bonus.getCircle());
-			list.add(new ObjectFactory().createEDCHARACTERDISCIPLINEBONUS(newValue));
+		for( DISCIPLINEType discipline : character.getDISCIPLINE() ) {
+			discipline.getDISCIPLINEBONUS().clear();
 		}
 	}
 
-	public void addDisciplineKarmaStepBonus(int disciplineKarmaStepBonus) {
-		if( disciplineKarmaStepBonus == 0 ) return;
-		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
-		DISCIPLINEBONUSType newValue = new DISCIPLINEBONUSType();
-		newValue.setBonus("Karma Step + "+disciplineKarmaStepBonus);
-		newValue.setCircle(0);
-		list.add(new ObjectFactory().createEDCHARACTERDISCIPLINEBONUS(newValue));
-	}
-	
 	public List<COINSType> getAllCoins() {
-		List<COINSType> allCoins = new ArrayList<COINSType>();
-		List<JAXBElement<?>> list = character.getATTRIBUTEOrDEFENSEOrHEALTH();
-		for (JAXBElement<?> element : list) {
-			if (element.getName().getLocalPart().equals("COINS")) {
-				allCoins.add((COINSType)element.getValue());
-			}
-		}
+		List<COINSType> allCoins = character.getCOINS();
 		if( allCoins.isEmpty() ) {
 			COINSType coins = new COINSType();
 			coins.setLocation("self");
 			coins.setUsed(YesnoType.YES);
 			allCoins.add(coins);
-			list.add(new ObjectFactory().createEDCHARACTERCOINS(coins));
 		}
 		return allCoins;
 	}
 
 	public List<SPELLSType> getAllSpells() {
-		List<SPELLSType> allspells = new ArrayList<SPELLSType>();
-		for (JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH()) {
-			if (element.getName().getLocalPart().equals("SPELLS")) {
-				allspells.add((SPELLSType)element.getValue());
-			}
-		}
-		return allspells;
+		return character.getSPELLS();
 	}
 	public HashMap<Integer,SPELLSType> getAllSpellsByDisziplinOrder() {
 		// Erstelle zu erst eine Liste von Disziplinen
@@ -496,11 +396,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		for(TALENTSType talents : getAllTalents() ) {
 			List<TALENTType> list = new ArrayList<TALENTType>();
 			for(int i=0;i<20;i++) list.add(null);
-			for( JAXBElement<TALENTType> element : talents.getDISZIPLINETALENTOrOPTIONALTALENT()) {
-				if (element.getName().getLocalPart().equals("OPTIONALTALENT")) {
-					TALENTType talent = element.getValue();
-					list.set(talent.getCircle(), talent);
-				}
+			for( TALENTType talent : talents.getOPTIONALTALENT()) {
+				list.set(talent.getCircle(), talent);
 			}
 			result.put(talents.getDiscipline(), list);
 		}
@@ -556,17 +453,17 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 	
 	public void addDiciplin(String name){
-		if ((this.getAllDiciplinesByOrder().size() < 3) && (this.getAllDiciplinesByName().get(name) == null)){
-			DISCIPLINEType value = new DISCIPLINEType();
-			value.setName(name);
-			value.setCircle(1);
-			value.setOrder(getAllDiciplinesByOrder().size() +1);
-			JAXBElement<DISCIPLINEType> dt = new ObjectFactory().createEDCHARACTERDISCIPLINE(value);
-			getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(dt);
+		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
+		if( (disciplines.size() < 3) && (getAllDiciplinesByName().get(name) == null) ){
+			DISCIPLINEType discipline = new DISCIPLINEType();
+			discipline.setName(name);
+			discipline.setCircle(1);
+			discipline.setOrder(disciplines.size() +1);
+			disciplines.add(discipline);
 			TALENTSType talents =  new TALENTSType();
 			talents.setDiscipline(name);
-			getEDCHARACTER().getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERTALENTS(talents));
-			initDisciplinTalents(value.getName(),value.getCircle());
+			character.getTALENTS().add(talents);
+			initDisciplinTalents(name,1);
 		}
 		
 	}
@@ -577,6 +474,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
 				TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
 
+				TALENTSType talents = getAllTalentsByDisziplinName().get(disciplinname);
 				if(ta.getCircle() <= circle){
 					TALENTType talent = new TALENTType();
 					talent.setName(ta.getName());
@@ -588,21 +486,21 @@ public class CharacterContainer extends CharChangeRefresh {
 					rank.setStep(1);
 					talent.setRANK(rank);
 					
-					if(getTalentByDisciplinAndName(disciplinname, ta.getName()) == null){
-						getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeDISZIPLINETALENT(talent));
+					if(getTalentByDisciplinAndName(disciplinname, ta.getName()) == null) {
+						talents.getDISZIPLINETALENT().add(talent);
 					}
 				}
 				else{
 					// Disciplin Talente die aus höheren Kreisen löschen
 					if(getTalentByName(ta.getName()) != null){
 						System.out.println("Remove Talent:" + ta.getName());
-						List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
-						for(JAXBElement<TALENTType> talent  : getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT()){
-							if(talent.getValue().getName().equals(ta.getName())){
+						List<TALENTType> removelist = new ArrayList<TALENTType>();
+						for(TALENTType talent  : talents.getDISZIPLINETALENT()){
+							if(talent.getName().equals(ta.getName())){
 								removelist.add(talent);
 							}
 						}
-						getAllTalentsByDisziplinName().get(disciplinname).getDISZIPLINETALENTOrOPTIONALTALENT().removeAll(removelist);
+						talents.getDISZIPLINETALENT().removeAll(removelist);
 						
 					}
 				}
@@ -616,36 +514,31 @@ public class CharacterContainer extends CharChangeRefresh {
 		talent.setName(talenttype.getName());
 		talent.setLimitation(talenttype.getLimitation());
 		talent.setCircle(circle);
-		
+
 		RANKType rank = new RANKType();
 		rank.setRank(1);
 		rank.setBonus(0);
 		rank.setStep(1);
 		talent.setRANK(rank);
-		
-		getAllTalentsByDisziplinName().get(discipline).getDISZIPLINETALENTOrOPTIONALTALENT().add(new ObjectFactory().createTALENTSTypeOPTIONALTALENT(talent));
+
+		getAllTalentsByDisziplinName().get(discipline).getOPTIONALTALENT().add(talent);
 	}
 	
 	public void addSpell(String discipline, SPELLType spell){
-		boolean blnFound = false;
 		SPELLSType spells = null;
-		
 		for( SPELLSType spellstype : getAllSpells()){
 			if(spellstype.getDiscipline().equals(discipline)){
-				blnFound = true;
 				spells = spellstype;
 				break;
 			}
 		}
-		if(!blnFound){
+		if( spells == null ){
 			System.out.println("SPELLS not found, adding ...");
 			spells = new SPELLSType();
 			spells.setDiscipline(discipline);
-			character.getATTRIBUTEOrDEFENSEOrHEALTH().add(new ObjectFactory().createEDCHARACTERSPELLS(spells));
+			character.getSPELLS().add(spells);
 		}
-		
 		spells.getSPELL().add(spell);
-		
 	}
 	
 	public void removeSpell(String discipline, SPELLType spell){
@@ -657,7 +550,7 @@ public class CharacterContainer extends CharChangeRefresh {
 				blnFound = true;
 				spells = spellstype;
 				break;
-			}					
+			}
 		}
 		if(blnFound){
 			for(SPELLType currentspell : spells.getSPELL()){
@@ -689,12 +582,6 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public List<ITEMType> getItems() {
-		List<ITEMType> result = new ArrayList<ITEMType>();
-		for( JAXBElement<?> element : character.getATTRIBUTEOrDEFENSEOrHEALTH() ) {
-			if (element.getName().getLocalPart().equals("ITEM")) {
-				result.add((ITEMType)element.getValue());
-			}
-		}
-		return result;
+		return character.getITEM();
 	}
 }
