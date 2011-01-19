@@ -56,6 +56,7 @@ public class EDMainWindow {
 	private File file = null;
 	private JSplitPane splitPane;
 	private EDStatus panelEDStatus;
+	private EDSkills panelEDSkills;
 	
 	
 	
@@ -181,11 +182,13 @@ public class EDMainWindow {
 		panelEDAttributes = new EDAttributes();
 		panelEDDisciplines = new EDDisciplines();
 		panelEDSpells	= new EDSpells();
+		panelEDSkills = new EDSkills();
 		
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
 		tabbedPane.addTab("Spells", null, panelEDSpells, null);
+		tabbedPane.addTab("Skills", null, panelEDSkills, null);
 		
 		panelEDStatus = new EDStatus();
 		splitPane.setRightComponent(panelEDStatus);
@@ -239,6 +242,9 @@ public class EDMainWindow {
 			}
 			if(co.getClass() == EDSpells.class){
 				((EDSpells)co).setCharacter(character);
+			}	
+			if(co.getClass() == EDSkills.class){
+				((EDSkills)co).setCharacter(character);
 			}			
 		}	
 	}
