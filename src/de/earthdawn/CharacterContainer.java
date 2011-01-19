@@ -541,6 +541,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		spells.getSPELL().add(spell);
 	}
 	
+	
+	
 	public void removeSpell(String discipline, SPELLType spell){
 		boolean blnFound = false;
 		SPELLSType spells = null;
