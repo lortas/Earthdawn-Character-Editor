@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeMap;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -28,7 +29,7 @@ public class EDSkillSelectDialog extends JDialog {
 	private JList list;
 	
 	
-	private HashMap<String,CAPABILITYType> skillMap = new HashMap<String,CAPABILITYType>();
+	private TreeMap<String,CAPABILITYType> skillMap = new TreeMap<String,CAPABILITYType>();
 	private HashMap<String,CAPABILITYType> selectedSkillMap = new HashMap<String,CAPABILITYType>();
 
 	public HashMap<String, CAPABILITYType> getSelectedSkillMap() {
