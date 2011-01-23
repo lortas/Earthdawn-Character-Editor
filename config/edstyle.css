@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+.edBody {
+    font-family:Helvetica,Helv;
+    background-color: #B1B1B1;
+}
+
+.edHeader {
+    text-align: center;
+    font-size: 300%
+}
+
+.edKey {
+    font-weight: bolder;
+}
+
+.edValue {
+}
+
+.edPair {
+    display: block;
+}
