@@ -29,8 +29,7 @@
         
             <!-- Heading -->
             <div class="edHeader">Earthdawn Character Sheet</div>
-            
-            
+
             <!-- Miscellaneous -->
             <div class="edMiscellaneous">
                 <xsl:call-template name="miscellaneous" />
@@ -91,81 +90,55 @@
 
 <xsl:template name="miscellaneous">
     <!-- Name -->
-    <div class="edName">
-        <xsl:call-template name="keyValuePair">
-            <xsl:with-param name="key">Name</xsl:with-param>
-            <xsl:with-param name="value" select="/edc:EDCHARACTER/@name" />
-        </xsl:call-template>
-    </div>
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td colspan="5"><xsl:value-of select="/edc:EDCHARACTER/@name" /></td>
+        </tr>
     
-    <!-- Discipline -->
-    <div class="edDiscipline">
-        <xsl:call-template name="keyValuePair">
-            <xsl:with-param name="key">Discipline</xsl:with-param>
-            <xsl:with-param name="value" select="//edc:DISCIPLINE/@name">Name</xsl:with-param>
-        </xsl:call-template>
-
-        <xsl:call-template name="keyValuePair">
-            <xsl:with-param name="key">Circle</xsl:with-param>
-            <xsl:with-param name="value" select="//edc:DISCIPLINE/@circle"/>
-        </xsl:call-template>
-    </div>
-
-    <!-- Appearance -->
-    <div class="edAppearance">
-        <xsl:apply-templates select="//edc:APPEARANCE"/>
-    </div>
-    
-    <!-- TODO -->
-</xsl:template>
-
-<xsl:template match="//edc:APPEARANCE">
- 
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Race</xsl:with-param>
-        <xsl:with-param name="value" select="@race"></xsl:with-param>
-    </xsl:call-template>
-    
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Hair</xsl:with-param>
-        <xsl:with-param name="value" select="@hair" />
-    </xsl:call-template>
-    
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Skin</xsl:with-param>
-        <xsl:with-param name="value" select="@skin" />
-    </xsl:call-template>
+        <!-- Discipline -->
+        <tr>
+            <td>Discipline</td>
+            <td><xsl:value-of select="//edc:DISCIPLINE/@name" /></td>
             
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Age</xsl:with-param>
-        <xsl:with-param name="value" select="@age" />
-    </xsl:call-template>
-                
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Height</xsl:with-param>
-        <xsl:with-param name="value" select="@height" />
-    </xsl:call-template>
-                    
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Weight</xsl:with-param>
-        <xsl:with-param name="value" select="@weight" />
-    </xsl:call-template>
+            <td>Circle</td>
+            <td colspan="3"><xsl:value-of select="//edc:DISCIPLINE/@circle"/></td>
+        </tr>
 
-    <xsl:call-template name="keyValuePair">
-        <xsl:with-param name="key">Eyes</xsl:with-param>
-        <xsl:with-param name="value" select="@eyes" />
-    </xsl:call-template>
-    
+        <!-- Appearance -->
+        <xsl:apply-templates select="//edc:APPEARANCE"/>
+
+    </table>
+
 </xsl:template>
 
-<xsl:template name="keyValuePair">
-    <xsl:param name="key" />
-    <xsl:param name="value" />
+<xsl:template match="//edc:APPEARANCE"> 
+    <tr>
+        <td>Race</td>
+        <td><xsl:value-of select="@race" /></td>
+
+        <td>Hair</td>
+        <td><xsl:value-of select="@hair" /></td>
+
+        <td>Skin</td>
+        <td><xsl:value-of select="@skin" /></td>
+    </tr>
+            
+    <tr>
+        <td>Age</td>
+        <td><xsl:value-of select="@age" /></td>
+                
+        <td>Height</td>
+        <td><xsl:value-of select="@height" /></td>
+                    
+        <td>Weight</td>
+        <td><xsl:value-of select="@weight" /></td>
+    </tr>
     
-    <div class="edPair">
-        <span class="edKey"><xsl:value-of select="$key" />: </span>
-        <span class="edValue"><xsl:value-of select="$value" /></span>
-    </div>
+    <tr>
+        <td>Eyes</td>
+        <td><xsl:value-of select="@eyes" /></td>
+    </tr>
     
 </xsl:template>
   
