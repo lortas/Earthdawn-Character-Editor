@@ -189,7 +189,7 @@ public class ApplicationProperties {
 		return null;
 	}
 
-	public HashMap<SpellkindType,String> getSpellTypeMap() {
+	public HashMap<SpellkindType,String> getSpellKindMap() {
 		for( NAMESPELLWEAVINGType name : NAMES.getSPELLWEAVING() ) {
 			if( name.getLang().equals(LANGUAGE)) {
 				HashMap<SpellkindType,String> spellTypeMap = new HashMap<SpellkindType,String>();
