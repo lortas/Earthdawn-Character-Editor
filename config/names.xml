@@ -22,4 +22,11 @@
 	<VERSATILITY name="Versatility" lang="en"/>
 	<KARMARUTUAL name="Karma Ritual" lang="de"/>
 	<KARMARUTUAL name="Karma Ritual" lang="en"/>
+	<SPELLWEAVING lang="en">
+		<SPELLKIND type="elemental" weaving="Elementalism"/>
+		<SPELLKIND type="illusion" weaving="Illusionism"/>
+		<SPELLKIND type="nether" weaving="Nethermancy"/>
+		<SPELLKIND type="shamane" weaving="Shamanism"/>
+		<SPELLKIND type="wizard" weaving="Wizardism"/>
+	</SPELLWEAVING>
 </NAMES>

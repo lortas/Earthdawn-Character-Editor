@@ -10,11 +10,9 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -28,12 +26,13 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="ATTRIBUTES" type="{http://earthdawn.com/names}NAMES_ATTRIBUTES_type"/>
- *         &lt;element name="DURABILITY" type="{http://earthdawn.com/names}NAME_LANG_type"/>
- *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/names}NAME_LANG_type"/>
- *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/names}NAME_LANG_type"/>
- *       &lt;/choice>
+ *       &lt;sequence>
+ *         &lt;element name="ATTRIBUTES" type="{http://earthdawn.com/names}NAMES_ATTRIBUTES_type" maxOccurs="unbounded"/>
+ *         &lt;element name="DURABILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/names}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -43,49 +42,169 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "attributesOrDURABILITYOrVERSATILITY"
+    "attributes",
+    "durability",
+    "versatility",
+    "karmarutual",
+    "spellweaving"
 })
 @XmlRootElement(name = "NAMES", namespace = "http://earthdawn.com/names")
 public class NAMES {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "VERSATILITY", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
-        @XmlElementRef(name = "KARMARUTUAL", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
-        @XmlElementRef(name = "DURABILITY", namespace = "http://earthdawn.com/names", type = JAXBElement.class),
-        @XmlElementRef(name = "ATTRIBUTES", namespace = "http://earthdawn.com/names", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<?>> attributesOrDURABILITYOrVERSATILITY;
+    @XmlElement(name = "ATTRIBUTES", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESATTRIBUTESType> attributes;
+    @XmlElement(name = "DURABILITY", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMELANGType> durability;
+    @XmlElement(name = "VERSATILITY", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMELANGType> versatility;
+    @XmlElement(name = "KARMARUTUAL", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMELANGType> karmarutual;
+    @XmlElement(name = "SPELLWEAVING", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESPELLWEAVINGType> spellweaving;
 
     /**
-     * Gets the value of the attributesOrDURABILITYOrVERSATILITY property.
+     * Gets the value of the attributes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attributesOrDURABILITYOrVERSATILITY property.
+     * This is why there is not a <CODE>set</CODE> method for the attributes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getATTRIBUTESOrDURABILITYOrVERSATILITY().add(newItem);
+     *    getATTRIBUTES().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}
-     * {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}
-     * {@link JAXBElement }{@code <}{@link NAMELANGType }{@code >}
-     * {@link JAXBElement }{@code <}{@link NAMESATTRIBUTESType }{@code >}
+     * {@link NAMESATTRIBUTESType }
      * 
      * 
      */
-    public List<JAXBElement<?>> getATTRIBUTESOrDURABILITYOrVERSATILITY() {
-        if (attributesOrDURABILITYOrVERSATILITY == null) {
-            attributesOrDURABILITYOrVERSATILITY = new ArrayList<JAXBElement<?>>();
+    public List<NAMESATTRIBUTESType> getATTRIBUTES() {
+        if (attributes == null) {
+            attributes = new ArrayList<NAMESATTRIBUTESType>();
         }
-        return this.attributesOrDURABILITYOrVERSATILITY;
+        return this.attributes;
+    }
+
+    /**
+     * Gets the value of the durability property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the durability property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDURABILITY().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getDURABILITY() {
+        if (durability == null) {
+            durability = new ArrayList<NAMELANGType>();
+        }
+        return this.durability;
+    }
+
+    /**
+     * Gets the value of the versatility property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the versatility property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getVERSATILITY().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getVERSATILITY() {
+        if (versatility == null) {
+            versatility = new ArrayList<NAMELANGType>();
+        }
+        return this.versatility;
+    }
+
+    /**
+     * Gets the value of the karmarutual property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the karmarutual property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKARMARUTUAL().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getKARMARUTUAL() {
+        if (karmarutual == null) {
+            karmarutual = new ArrayList<NAMELANGType>();
+        }
+        return this.karmarutual;
+    }
+
+    /**
+     * Gets the value of the spellweaving property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spellweaving property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPELLWEAVING().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESPELLWEAVINGType }
+     * 
+     * 
+     */
+    public List<NAMESPELLWEAVINGType> getSPELLWEAVING() {
+        if (spellweaving == null) {
+            spellweaving = new ArrayList<NAMESPELLWEAVINGType>();
+        }
+        return this.spellweaving;
     }
 
 }

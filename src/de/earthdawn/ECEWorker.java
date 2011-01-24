@@ -136,7 +136,7 @@ public class ECEWorker {
 		}
 		karma.setCurrent(karmapointsPLUS-karmapointsMINUS);
 		calculatedLP.setKarma(calculatedLP.getKarma()+(karmapointsPLUS*10));
-		String KARMARUTUAL = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "KARMARUTUAL", LanguageType.EN);
+		String KARMARUTUAL = ApplicationProperties.create().getKarmaritualName(); 
 		if( KARMARUTUAL == null ) {
 			System.err.println("Karmaritual in names.xml not defined for selected language. Skipping MaxKarma calculation");
 		} else {
@@ -205,7 +205,7 @@ public class ECEWorker {
 		HashMap<Integer, DISCIPLINEType> allDisciplines = character.getAllDiciplinesByOrder();
 		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
 		// Finde das DURABILITY Talent aus der Talentliste
-		String durabilityTalentName = JAXBHelper.getNameLang(ApplicationProperties.create().getNames(), "DURABILITY", LanguageType.EN);
+		String durabilityTalentName = ApplicationProperties.create().getDurabilityName();
 		if( durabilityTalentName == null ) {
 			System.err.println("Durability in names.xml not defined for selected language. Skipping Health enhancment");
 			durabilityTalentName="";
@@ -613,18 +613,5 @@ public class ECEWorker {
 			capability.setKarma(replacment.getKarma());
 			capability.setStrain(replacment.getStrain());
 		}
-	}
-
-	private TALENTType calculateTalents(
-			int disciplinenumber,
-			List<TALENTType> Talents,
-			ECECapabilities capabilities,
-			CALCULATEDLEGENDPOINTSType calculatedLP,
-			String durabilityTalentName,
-			HashMap<String, ATTRIBUTEType> attribute,
-			HashMap<String,TALENTABILITYType> namegivertalents)
-	{
-		TALENTType durabilityTalent = null;
-		return durabilityTalent;
 	}
 }

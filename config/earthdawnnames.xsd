@@ -15,14 +15,25 @@
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="NAME_SPELLWEAVING_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLKIND" type="NAME_SPELLKIND_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_SPELLKIND_type">
+		<xs:attribute name="weaving" type="xs:string" use="required"/>
+		<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
+	</xs:complexType>
 	<xs:element name="NAMES">
 		<xs:complexType>
-			<xs:choice maxOccurs="unbounded" minOccurs="1">
-				<xs:element minOccurs="1" name="ATTRIBUTES" type="NAMES_ATTRIBUTES_type"/>
-				<xs:element minOccurs="1" name="DURABILITY" type="NAME_LANG_type"/>
-				<xs:element minOccurs="1" name="VERSATILITY" type="NAME_LANG_type"/>
-				<xs:element minOccurs="1" name="KARMARUTUAL" type="NAME_LANG_type"/>
-			</xs:choice>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ATTRIBUTES" type="NAMES_ATTRIBUTES_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="DURABILITY" type="NAME_LANG_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="VERSATILITY" type="NAME_LANG_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="KARMARUTUAL" type="NAME_LANG_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLWEAVING" type="NAME_SPELLWEAVING_type"/>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
