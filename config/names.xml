@@ -27,6 +27,6 @@
 		<SPELLKIND type="illusion" weaving="Illusionism"/>
 		<SPELLKIND type="nether" weaving="Nethermancy"/>
 		<SPELLKIND type="shamane" weaving="Shamanism"/>
-		<SPELLKIND type="wizard" weaving="Wizardism"/>
+		<SPELLKIND type="wizard" weaving="Wizardry"/>
 	</SPELLWEAVING>
 </NAMES>
