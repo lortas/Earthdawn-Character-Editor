@@ -46,6 +46,7 @@ public class ApplicationProperties {
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
     private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
     private static NAMES NAMES = new NAMES();
+    private static LanguageType LANGUAGE = LanguageType.EN;
     private ECECharacteristics CHARACTERISTICS = null;
     
     /** Singleton-Instanz dieser Klasse. */
@@ -172,10 +173,37 @@ public class ApplicationProperties {
 		return OPTIONALRULES;
 	}
 
-	public NAMES getNames() {
-		return NAMES;
+	public String getKarmaritualName() {
+		for( NAMELANGType name : NAMES.getKARMARUTUAL() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getName();
+		}
+		// Not found
+		return null;
 	}
 
+	public String getDurabilityName() {
+		for( NAMELANGType name : NAMES.getDURABILITY() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getName();
+		}
+		// Not found
+		return null;
+	}
+
+	public HashMap<SpellkindType,String> getSpellTypeMap() {
+		for( NAMESPELLWEAVINGType name : NAMES.getSPELLWEAVING() ) {
+			if( name.getLang().equals(LANGUAGE)) {
+				HashMap<SpellkindType,String> spellTypeMap = new HashMap<SpellkindType,String>();
+				for( NAMESPELLKINDType type : name.getSPELLKIND() ) {
+					spellTypeMap.put(type.getType(),type.getWeaving());
+				}
+				return spellTypeMap;
+			}
+		}
+		// Not found
+		return null;
+	}
+
+	
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");

@@ -32,19 +32,6 @@ import de.earthdawn.data.*;
  */
 public class JAXBHelper {
 
-	public static String getNameLang(NAMES names, String name, LanguageType lang) {
-		for( JAXBElement<?> element : names.getATTRIBUTESOrDURABILITYOrVERSATILITY() ) {
-			if( name.equals(element.getName().getLocalPart()) ) {
-				NAMELANGType tmp = (NAMELANGType)element.getValue();
-				if( lang.equals(tmp.getLang()) ) {
-					return tmp.getName();
-				}
-			}
-		}
-		// not found
-		return null;
-	}
-
 	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {
 		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
 		for(JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
