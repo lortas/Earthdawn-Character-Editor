@@ -4,7 +4,8 @@
     version = "1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:edc="http://earthdawn.com/character"
-    exclude-result-prefixes="edc"
+    xmlns:edt="http://earthdawn.com/datatypes"
+    exclude-result-prefixes="edc edt"
 >
 
 <xsl:output
@@ -36,10 +37,14 @@
             </div>
             
             <!-- Attributes -->
-            <div class="edAttributes"></div>
+            <div class="edAttributes">
+                <xsl:call-template name="attributes"/>
+            </div>
             
             <!-- Discipline Talents -->
-            <div class="edDisciplineTalents"></div>
+            <div class="edDisciplineTalents">
+                <xsl:call-template name="disziplintalents"/>
+            </div>
 
             <!-- Characteristics -->
             <div class="edCharacteristics"></div>
@@ -89,8 +94,11 @@
 </xsl:template>
 
 <xsl:template name="miscellaneous">
-    <!-- Name -->
+
+    <div class="subHeader">General Information</div>
+
     <table border="1">
+        <!-- Name -->
         <tr>
             <td>Name</td>
             <td colspan="5"><xsl:value-of select="/edc:EDCHARACTER/@name" /></td>
@@ -139,7 +147,68 @@
         <td>Eyes</td>
         <td><xsl:value-of select="@eyes" /></td>
     </tr>
+</xsl:template>
+  
+<xsl:template name="attributes">
+    <div class="subHeader">Attributes</div>
+    
+    <table border="1">
+        <tr>
+            <td><!-- Leer --></td>
+            <td>Base Value</td>
+            <td>LP Increase</td>
+            <td>Current Value</td>
+            <td>Step</td>
+            <td>Action Dice</td>
+        </tr>
+        
+        <xsl:apply-templates select="//edc:ATTRIBUTE"/>
+
+    </table>
     
 </xsl:template>
   
+<xsl:template match="//edc:ATTRIBUTE">
+    <tr>
+        <td><xsl:value-of select="@name"/></td>
+        <td><xsl:value-of select="@racevalue"/></td>
+        <td><xsl:value-of select="@lpincrease"/></td>
+        <td><xsl:value-of select="@currentvalue"/></td>
+        <td><xsl:value-of select="@step"/></td>
+        <td><xsl:value-of select="@dice"/></td>   
+    </tr>
+</xsl:template>
+
+
+<xsl:template name="disziplintalents">
+    <div class="subHeader">Discipline Talents</div>
+    
+    <table border="1">
+        <tr>
+            <td>Talentname</td>
+            <td>Action</td>
+            <td>Strain</td>
+            <td>Attibute</td>
+            <td>Rank</td>
+            <td>Step</td>
+            <td>Action Dice</td>
+            
+            <xsl:apply-templates select="//edc:DISZIPLINETALENT"/>
+            
+        </tr>
+    </table>
+</xsl:template>
+
+<xsl:template match="//edc:DISZIPLINETALENT">
+    <tr>
+        <td><xsl:value-of select="@name"/></td>
+        <td><xsl:value-of select="@action"/></td>
+        <td>TODO</td>
+        <td><xsl:value-of select="@attribute"/></td>
+        <td><xsl:value-of select="./edt:RANK/@rank"/></td>
+        <td><xsl:value-of select="./edt:RANK/@step"/></td>
+        <td><xsl:value-of select="./edt:RANK/@dice"/></td>   
+    </tr>
+</xsl:template>
+
 </xsl:stylesheet>
