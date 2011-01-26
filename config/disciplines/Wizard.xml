@@ -43,7 +43,7 @@
 	<SPELL type="wizard" name="Wake-Up Call" circle="2"/>
 	<SPELLABILITY circle="2"/>
 	<DEFENSE kind="spell" circle="2"/>
-	<DISCIPLINETALENT name="Book Memmory" circle="3"/>
+	<DISCIPLINETALENT name="Book Memory" circle="3"/>
 	<SPELL type="wizard" name="Aura Strike" circle="3"/>
 	<SPELL type="wizard" name="Catwalk" circle="3"/>
 	<SPELL type="wizard" name="Combat Fury" circle="3"/>

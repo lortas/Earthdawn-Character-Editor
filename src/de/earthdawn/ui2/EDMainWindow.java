@@ -257,7 +257,7 @@ public class EDMainWindow {
 			try{
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Marshaller m = jc.createMarshaller();
-				m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 				m.marshal(ec,new FileWriter(file));
 			}
@@ -278,7 +278,7 @@ public class EDMainWindow {
 			try{
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Marshaller m = jc.createMarshaller();
-				m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 				m.marshal(ec,new FileWriter(selFile));
 			}
