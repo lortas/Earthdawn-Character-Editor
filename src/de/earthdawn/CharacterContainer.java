@@ -45,17 +45,6 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getName();
 	}
 
-	public void XXXclearATTRIBUTEOrDEFENSEOrHEALTH(String tagname) {
-		List<JAXBElement<?>> list = null; //character.getATTRIBUTEOrDEFENSEOrHEALTH();
-		List<JAXBElement<?>> removelist = new ArrayList<JAXBElement<?>>();
-		for (JAXBElement<?> element : list ) {
-			if (element.getName().getLocalPart().equals(tagname)) {
-				removelist.add(element);
-			}
-		}
-		list.removeAll(removelist);
-	}
-
 	public APPEARANCEType getAppearance() {
 		APPEARANCEType appearance = character.getAPPEARANCE();
 		if( appearance != null ) return appearance;
@@ -92,18 +81,14 @@ public class CharacterContainer extends CharChangeRefresh {
 		return attributes;
 	}
 
-	public ATTRIBUTEType XXXgetAttributeByName(String name) {
-		List<ATTRIBUTEType> attributes = character.getATTRIBUTE();
-		for (ATTRIBUTEType attribute : attributes ) {
-			if (attribute.getName().value().equals(name)) {
-				return attribute;
-			}
+	public int getAttributesCost() {
+		int result = 0;
+		for (ATTRIBUTEType attribute : character.getATTRIBUTE() ) {
+			// Das "Attribut" na soll nicht beachtet werden
+			if( attribute.equals(ATTRIBUTENameType.NA) ) continue;
+			result += attribute.getCost();
 		}
-		// Not found
-		ATTRIBUTEType attribute = new ATTRIBUTEType();
-		attribute.setName(ATTRIBUTENameType.valueOf(name));
-		attributes.add(attribute);
-		return attribute;
+		return result;
 	}
 
 	public DEFENSEType getDefence() {
