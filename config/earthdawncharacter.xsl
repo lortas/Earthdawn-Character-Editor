@@ -47,7 +47,9 @@
             </div>
 
             <!-- Characteristics -->
-            <div class="edCharacteristics"></div>
+            <div class="edCharacteristics">
+                <xsl:call-template name="characteristics"/>
+            </div>
             
             <!-- Melee Weapons -->
             <div class="edMeleeWeapons"></div>
@@ -192,9 +194,9 @@
             <td>Rank</td>
             <td>Step</td>
             <td>Action Dice</td>
-            
+
             <xsl:apply-templates select="//edc:DISZIPLINETALENT"/>
-            
+
         </tr>
     </table>
 </xsl:template>
@@ -209,6 +211,73 @@
         <td><xsl:value-of select="./edt:RANK/@step"/></td>
         <td><xsl:value-of select="./edt:RANK/@dice"/></td>   
     </tr>
+</xsl:template>
+
+<xsl:template name="characteristics">
+    <div class="subHeader">Characteristics</div>
+    
+    <!-- Movement -->
+    <div class="edMovement">
+        <xsl:apply-templates select="//edc:MOVEMENT"/>    
+    </div>
+     
+    <!-- Karma -->
+    <div class="edKarma">
+        <xsl:apply-templates select="//edc:KARMA"/>    
+    </div>
+     
+    <!-- Initiative -->
+    <div class="edInitiative">
+        <xsl:apply-templates select="//edc:INITIATIVE"/>    
+    </div>
+     
+    <!-- Defense -->
+    <div class="edDefense">
+        <xsl:apply-templates select="//edc:DEFENSE"/>    
+    </div>
+    
+    <!-- Armor -->
+    <div class="edPROTECTION">
+        <xsl:apply-templates select="//edc:PROTECTION"/>    
+    </div>
+     
+</xsl:template>
+
+<xsl:template match="//edc:MOVEMENT">
+    <hr/>
+    Movement:<br/>
+    Ground=<xsl:value-of select="@ground" /><br/>
+    Flight=<xsl:value-of select="@flight" />
+    
+</xsl:template>
+
+<xsl:template match="//edc:KARMA">
+    <hr/>
+    Karma:<br/>
+    Step=<xsl:value-of select="@current" /><br/>
+    Dice=<xsl:value-of select="@max" />
+</xsl:template>
+
+<xsl:template match="//edc:INITIATIVE">
+    <hr/>
+    Initiative:<br/>
+    Karma Points=<xsl:value-of select="@step" /><br/>
+    Max=<xsl:value-of select="@dice" />
+</xsl:template>
+
+<xsl:template match="//edc:DEFENSE">
+    <hr/>
+    Defense Ratings:<br/>
+    Social Defense=<xsl:value-of select="@social" /><br/>
+    Spell Defense=<xsl:value-of select="@spell" /><br/>
+    Physical Defense=<xsl:value-of select="@physical" />
+</xsl:template>
+
+<xsl:template match="//edc:PROTECTION">
+    <hr/>
+    Armor Ratings:<br/>
+    Mystic Armor=<xsl:value-of select="@mysticarmor" /><br/>
+    Physical Armor=<xsl:value-of select="@physicalarmor" />
 </xsl:template>
 
 </xsl:stylesheet>

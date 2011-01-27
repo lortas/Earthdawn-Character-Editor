@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.edBody {
+    font-family:Helvetica,Helv;
+    background-color: #B1B1B1;
+}
+
+.edHeader {
+    text-align: center;
+    font-size: 300%
+}
+
+.edKey {
+    font-weight: bolder;
+}
+
+.edValue {
+	// NONE
+}
+
+.edPair {
+    display: block;
+}
+
+.edMiscellaneous,
+.edAttributes, 
+.edDisciplineTalents,
+.edCharacteristics {
+    border-width: 3px;
+    border-style: solid;
+    margin: 10px;
+}
