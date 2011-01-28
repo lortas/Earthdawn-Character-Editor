@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DISCIPLINE  name="Cavalryman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="9" unconsciousness="7"/>
+	<OPTIONALTALENT name="Animal Training" circle="1"/>
+	<OPTIONALTALENT name="Avoid Blow" circle="1"/>
+	<OPTIONALTALENT name="First Impression" circle="1"/>
+	<OPTIONALTALENT name="Haggle" circle="1"/>
+	<OPTIONALTALENT name="Unarmed Combat" circle="1"/>
+	<DISCIPLINETALENT name="Animal Bond" circle="1"/>
+	<DISCIPLINETALENT name="Charge" circle="1"/>
+	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
+	<DISCIPLINETALENT name="Melee Weapons" circle="1"/>
+	<DISCIPLINETALENT name="Trick Riding" circle="1"/>
+	<OPTIONALTALENT name="Blood Share" circle="2"/>
+	<OPTIONALTALENT name="Creature Analysis" circle="2"/>
+	<OPTIONALTALENT name="Dominate Beast" circle="2"/>
+	<OPTIONALTALENT name="Durability" circle="2"/>
+	<OPTIONALTALENT name="Speak Language" circle="2"/>
+	<OPTIONALTALENT name="Tactics" circle="2"/>
+	<OPTIONALTALENT name="Tracking" circle="2"/>
+	<OPTIONALTALENT name="Wilderness Survival" circle="2"/>
+	<DISCIPLINETALENT name="Empathic Command" circle="2"/>
+	<DEFENSE kind="physical" circle="2"/>
+	<DISCIPLINETALENT name="Sure Mount" circle="3"/>
+	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="Rider Weaving"/>
+	<KARMA spend="Charisma-only Test" circle="4"/>
+	<OPTIONALTALENT name="Fearsome Charge" circle="5"/>
+	<OPTIONALTALENT name="Frighten Animals" circle="5"/>
+	<OPTIONALTALENT name="Heal Animal Companion" circle="5"/>
+	<OPTIONALTALENT name="Hearting Laugh" circle="5"/>
+	<OPTIONALTALENT name="Leadership" circle="5"/>
+	<OPTIONALTALENT name="Mount Attack" circle="5"/>
+	<OPTIONALTALENT name="Mount Durability" circle="5" limitation="6/5"/>
+	<OPTIONALTALENT name="Spirit Mount" circle="5"/>
+	<DISCIPLINETALENT name="Wheeling Attack" circle="5"/>
+	<ABILITY name="Masterfull Horseman" circle="5"/>
+	<DISCIPLINETALENT name="Armor Mount" circle="6"/>
+	<KARMA spend="Dexterity-only Test" circle="6"/>
+	<DISCIPLINETALENT name="Wheeling Defense" circle="7"/>
+	<KARMA spend="mount's Attack and Damage Test" circle="7"/>
+	<DISCIPLINETALENT name="Double-Charge" circle="8"/>
+	<DEFENSE kind="physical" circle="8"/>
+</DISCIPLINE>
