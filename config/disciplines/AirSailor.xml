@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DISCIPLINE  name="Air Sailor" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="6" unconsciousness="5"/>
+	<OPTIONALTALENT name="Navigation" circle="1"/>
+	<OPTIONALTALENT name="Parry" circle="1"/>
+	<OPTIONALTALENT name="Speak Language" circle="1"/>
+	<OPTIONALTALENT name="Throwing Weapons" circle="1"/>
+	<OPTIONALTALENT name="Unarmed Combat" circle="1"/>
+	<DISCIPLINETALENT name="Air Sailing" circle="1"/>
+	<DISCIPLINETALENT name="Avoid Blow" circle="1"/>
+	<DISCIPLINETALENT name="Climbing" circle="1"/>
+	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
+	<DISCIPLINETALENT name="Melee Weapons" circle="1"/>
+	<OPTIONALTALENT name="Air Dance" circle="2"/>
+	<OPTIONALTALENT name="Durability" circle="2"/>
+	<OPTIONALTALENT name="Great Leap" circle="2"/>
+	<OPTIONALTALENT name="Haggle" circle="2"/>
+	<OPTIONALTALENT name="Hearting Laugh" circle="2"/>
+	<OPTIONALTALENT name="Missile Weapons" circle="2"/>
+	<OPTIONALTALENT name="Read/Write Language" circle="2"/>
+	<OPTIONALTALENT name="Wind Catcher" circle="2"/>
+	<DISCIPLINETALENT name="Distract" circle="2"/>
+	<DEFENSE kind="physical" circle="2"/>
+	<DISCIPLINETALENT name="Empathic Sense" circle="3"/>
+	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="Air Weaving"/>
+	<KARMA spend="Dexterity-only Test" circle="4"/>
+	<OPTIONALTALENT name="Acrobatic Strike" circle="5"/>
+	<OPTIONALTALENT name="Disarm" circle="5"/>
+	<OPTIONALTALENT name="Etiquette" circle="5"/>
+	<OPTIONALTALENT name="Lasting Implression" circle="5"/>
+	<OPTIONALTALENT name="Lion Heart" circle="5"/>
+	<OPTIONALTALENT name="Riposte" circle="5"/>
+	<OPTIONALTALENT name="Tactics" circle="5"/>
+	<OPTIONALTALENT name="Taunt" circle="5"/>
+	<DISCIPLINETALENT name="Swing Attack" circle="5"/>
+	<ABILITY name="Collaborate" circle="5"/>
+	<DISCIPLINETALENT name="Wound Balance" circle="6"/>
+	<KARMA spend="Charaisma-only Test" circle="6"/>
+	<DISCIPLINETALENT name="Resist Taunt" circle="7"/>
+	<KARMA spend="Action Test made on an airship" circle="7"/>
+	<DISCIPLINETALENT name="Leadership" circle="8"/>
+	<DEFENSE kind="physical" circle="8"/>
+</DISCIPLINE>

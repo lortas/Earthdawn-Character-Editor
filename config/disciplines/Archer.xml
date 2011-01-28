@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DISCIPLINE  name="Archer" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="6" unconsciousness="5"/>
+	<OPTIONALTALENT name="Avoid Blow" circle="1"/>
+	<OPTIONALTALENT name="Climbing" circle="1"/>
+	<OPTIONALTALENT name="Melee Weapons" circle="1"/>
+	<OPTIONALTALENT name="Silent Walk" circle="1"/>
+	<OPTIONALTALENT name="Tracking" circle="1"/>
+	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
+	<DISCIPLINETALENT name="Missile Weapons" circle="1"/>
+	<DISCIPLINETALENT name="Mystic Aim" circle="1"/>
+	<DISCIPLINETALENT name="Throwing Weapons" circle="1"/>
+	<DISCIPLINETALENT name="True Shot" circle="1"/>
+	<OPTIONALTALENT name="Detect Weapons" circle="2"/>
+	<OPTIONALTALENT name="Durability" circle="2"/>
+	<OPTIONALTALENT name="First Impression" circle="2"/>
+	<OPTIONALTALENT name="Flame Arrow" circle="2"/>
+	<OPTIONALTALENT name="Great Leap" circle="2"/>
+	<OPTIONALTALENT name="Long Shot" circle="2"/>
+	<OPTIONALTALENT name="Speak Language" circle="2"/>
+	<OPTIONALTALENT name="Sprint" circle="2"/>
+	<DISCIPLINETALENT name="Direction Arrow" circle="2"/>
+	<DEFENSE kind="physical" circle="2"/>
+	<DISCIPLINETALENT name="Anticipate Blow" circle="3"/>
+	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="Arrow Weaving"/>
+	<KARMA spend="Dexterity-only Test" circle="4"/>
+	<OPTIONALTALENT name="Call Misslile" circle="5"/>
+	<OPTIONALTALENT name="Conceal Object" circle="5"/>
+	<OPTIONALTALENT name="Creature Analysis" circle="5"/>
+	<OPTIONALTALENT name="Empathic Sense" circle="5"/>
+	<OPTIONALTALENT name="Evidence Analysis" circle="5"/>
+	<OPTIONALTALENT name="Heartening Laugh" circle="5"/>
+	<OPTIONALTALENT name="Lip Reading" circle="5"/>
+	<OPTIONALTALENT name="Steel Thought" circle="5"/>
+	<DISCIPLINETALENT name="Stopping Aim" circle="5"/>
+	<ABILITY name="Arrow's Eye View" circle="5"/>
+	<DISCIPLINETALENT name="Bank Shot" circle="6"/>
+	<KARMA spend="Perception-only Test" circle="6"/>
+	<DISCIPLINETALENT name="Impressive Shot" circle="7"/>
+	<KARMA spend="ranged combat Damage Test" circle="7"/>
+	<DISCIPLINETALENT name="Second Shot" circle="8"/>
+	<DEFENSE kind="physical" circle="8"/>
+</DISCIPLINE>
