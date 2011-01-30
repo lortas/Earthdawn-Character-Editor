@@ -465,6 +465,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					TALENTType talent = new TALENTType();
 					talent.setName(disciplinetalent.getName());
 					talent.setLimitation(disciplinetalent.getLimitation());
+					talent.setCircle(circlenr);
 					
 					RANKType rank = new RANKType();
 					rank.setRank(1);
@@ -475,16 +476,20 @@ public class CharacterContainer extends CharChangeRefresh {
 					talents.getDISZIPLINETALENT().add(talent);
 				}
 			}
+			List<TALENTType> remove = new ArrayList<TALENTType>();
 			for (TALENTType talent : talents.getDISZIPLINETALENT()) {
 				if ( talent.getCircle() > circle ) {
-					talents.getDISZIPLINETALENT().remove(talent);
+					remove.add(talent);
 				}
 			}
+			talents.getDISZIPLINETALENT().removeAll(remove);
+			remove.clear();
 			for (TALENTType talent : talents.getOPTIONALTALENT()) {
 				if ( talent.getCircle() > circle ) {
-					talents.getOPTIONALTALENT().remove(talent);
+					remove.add(talent);
 				}
 			}
+			talents.getOPTIONALTALENT().removeAll(remove);
 		}
 	}
 	
