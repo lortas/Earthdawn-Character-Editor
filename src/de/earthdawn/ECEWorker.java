@@ -277,7 +277,7 @@ public class ECEWorker {
 				TALENTType talent = new TALENTType();
 				talent.setName(namegivertalents.get(t).getName());
 				talent.setLimitation(namegivertalents.get(t).getLimitation());
-				talent.setCircle(namegivertalents.get(t).getCircle());
+				talent.setCircle(0);
 				enforceCapabilityParams(talent,capabilities);
 				RANKType rank = new RANKType();
 				rank.setRank(0);
@@ -430,11 +430,12 @@ public class ECEWorker {
 
 	private int getDisciplineKarmaStepBonus(DISCIPLINEType discipline) {
 		int result = 0;
-		for( JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
-			if( element.getName().getLocalPart().equals("KARMASTEP")) {
-				DISZIPINABILITYType karmastep = (DISZIPINABILITYType)element.getValue();
-				if( karmastep.getCircle() > discipline.getCircle() ) continue;
-				result++;
+		int circlenr=0;
+		for( DISCIPLINECIRCLEType circle : ApplicationProperties.create().getDisziplin(discipline.getName()).getCIRCLE()) {
+			circlenr++;
+			if( circlenr > discipline.getCircle() ) break;
+			for( DISZIPINABILITYType karmastep : circle.getKARMASTEP()) {
+				result += karmastep.getCount();
 			}
 		}
 		return result;
@@ -445,11 +446,12 @@ public class ECEWorker {
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			int tmp = 0;
-			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
-				if( element.getName().getLocalPart().equals("RECOVERYTEST")) {
-					DISZIPINABILITYType recoverytest = (DISZIPINABILITYType)element.getValue();
-					if( recoverytest.getCircle() > diciplineCircle.get(discipline) ) continue;
-					tmp++;
+			int circlenr=0;
+			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
+				circlenr++;
+				if( circlenr > diciplineCircle.get(discipline) ) break;
+				for( DISZIPINABILITYType recoverytest : circle.getRECOVERYTEST() ) {
+					tmp += recoverytest.getCount();
 				}
 			}
 			if( tmp > result ) result=tmp;
@@ -462,11 +464,12 @@ public class ECEWorker {
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			int tmp = 0;
-			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
-				if( element.getName().getLocalPart().equals("INITIATIVE")) {
-					DISZIPINABILITYType initiative = (DISZIPINABILITYType)element.getValue();
-					if( initiative.getCircle() > diciplineCircle.get(discipline) ) continue;
-					tmp++;
+			int circlenr=0;
+			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
+				circlenr++;
+				if( circlenr > diciplineCircle.get(discipline) ) break;
+				for( DISZIPINABILITYType initiative : circle.getINITIATIVE() ) {
+					tmp += initiative.getCount();
 				}
 			}
 			if( tmp > result ) result=tmp;
@@ -487,10 +490,11 @@ public class ECEWorker {
 			tmp.setPhysical(0);
 			tmp.setSocial(0);
 			tmp.setSpell(0);
-			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
-				if( element.getName().getLocalPart().equals("DEFENSE")) {
-					DEFENSEABILITYType defense = (DEFENSEABILITYType)element.getValue();
-					if( defense.getCircle() > diciplineCircle.get(discipline) ) continue;
+			int circlenr = 0;
+			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
+				circlenr++;
+				if( circlenr > diciplineCircle.get(discipline) ) break;
+				for( DEFENSEABILITYType defense : circle.getDEFENSE() ) {
 					switch( defense.getKind() ) {
 					case PHYSICAL: tmp.setPhysical(tmp.getPhysical()+1); break;
 					case SOCIAL:   tmp.setSocial(tmp.getSocial()+1); break;
@@ -509,11 +513,11 @@ public class ECEWorker {
 		List<Integer> result = new ArrayList<Integer>();
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
-			for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
-				if( element.getName().getLocalPart().equals("SPELLABILITY")) {
-					DISZIPINABILITYType spell = (DISZIPINABILITYType)element.getValue();
-					if( spell.getCircle() > diciplineCircle.get(discipline) ) continue;
-					result.add(spell.getCircle());
+			int circlenr = 0;
+			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
+				circlenr++;
+				for( DISZIPINABILITYType spell : circle.getSPELLABILITY() ) {
+					for(int i=0; i<spell.getCount(); i++) result.add(circlenr);
 				}
 			}
 		}

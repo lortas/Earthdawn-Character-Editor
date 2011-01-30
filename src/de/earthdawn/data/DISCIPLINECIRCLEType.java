@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -39,7 +38,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -85,8 +83,6 @@ public class DISCIPLINECIRCLEType {
     protected List<DISZIPINABILITYType> karmastep;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
-    @XmlAttribute(required = true)
-    protected int circle;
 
     /**
      * Gets the value of the optionaltalent property.
@@ -400,22 +396,6 @@ public class DISCIPLINECIRCLEType {
             ability = new ArrayList<String>();
         }
         return this.ability;
-    }
-
-    /**
-     * Gets the value of the circle property.
-     * 
-     */
-    public int getCircle() {
-        return circle;
-    }
-
-    /**
-     * Sets the value of the circle property.
-     * 
-     */
-    public void setCircle(int value) {
-        this.circle = value;
     }
 
 }
