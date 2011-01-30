@@ -113,19 +113,16 @@ public class EDTalents extends JPanel {
 		popupMenuTalent.removeAll();
 		final JMenuItem source = ((JMenuItem)arg0.getSource());
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplin);
-		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d);
+		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,Integer.valueOf(source.getText()));
 		for( TALENTABILITYType talent : talentlist){
 			if (talent != null){
-				// zeige nur talente die in diesem Level verfügbar sind!
-				if (talent.getCircle() <= Integer.valueOf(source.getText())){
-					JMenuItem menuItem = new JMenuItem(talent.getName());
-					menuItem.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent arg0) {
-							do_menuItemTalent_actionPerformed(arg0, source.getText());
-						}
-					});
-					popupMenuTalent.add(menuItem);
-				}
+				JMenuItem menuItem = new JMenuItem(talent.getName());
+				menuItem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						do_menuItemTalent_actionPerformed(arg0, source.getText());
+					}
+				});
+				popupMenuTalent.add(menuItem);
 			}
 		}
 		
@@ -136,7 +133,7 @@ public class EDTalents extends JPanel {
 	protected void do_menuItemTalent_actionPerformed(ActionEvent arg0, String circle) {
 		JMenuItem source = ((JMenuItem)arg0.getSource());
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplin);
-		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d);
+		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,Integer.valueOf(circle));
 		System.out.println(circle + " " + source.getText() );
 		for( TALENTABILITYType talent : talentlist){
 			if(talent.getName().equals( source.getText())) {

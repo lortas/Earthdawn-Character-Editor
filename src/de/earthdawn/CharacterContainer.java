@@ -376,33 +376,44 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		return allspells;
 	}
-	public HashMap<String,List<TALENTType>> getUsedOptionalTalents() {
-		HashMap<String,List<TALENTType>> result = new HashMap<String,List<TALENTType>>();
+	public HashMap<String,List<List<TALENTType>>> getUsedOptionalTalents() {
+		HashMap<String,List<List<TALENTType>>> result = new HashMap<String,List<List<TALENTType>>>();
 		for(TALENTSType talents : getAllTalents() ) {
-			List<TALENTType> list = new ArrayList<TALENTType>();
-			for(int i=0;i<20;i++) list.add(null);
+			List<List<TALENTType>> list = new ArrayList<List<TALENTType>>();
+			for(int i=0;i<20;i++) list.add(new ArrayList<TALENTType>());
 			for( TALENTType talent : talents.getOPTIONALTALENT()) {
-				list.set(talent.getCircle(), talent);
+				list.get(talent.getCircle()).add(talent);
 			}
 			result.put(talents.getDiscipline(), list);
 		}
 		return result;
 	}
 
-	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE discipline) {
+	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE discipline, int circle) {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
-		List<TALENTType> usedOptionalTalents = getUsedOptionalTalents().get(discipline.getName());
-		if( usedOptionalTalents == null ) {
-			usedOptionalTalents = new ArrayList<TALENTType>();
+		List<List<TALENTType>> usedOptionalTalentsList = getUsedOptionalTalents().get(discipline.getName());
+		if( usedOptionalTalentsList == null ) {
 			System.err.println("No Used Optinal Talents found for discipline '"+discipline.getName()+"'");
+			usedOptionalTalentsList = new ArrayList<List<TALENTType>>();
+			for(int i=0;i<20;i++) usedOptionalTalentsList.add(new ArrayList<TALENTType>());
 		}
-		int disciplineCircle = getCircleOf(discipline.getName());
-		for(int i = 0; i< discipline.getCIRCLE().size(); i++)
-		{
-			DISCIPLINECIRCLEType disciplincircle = discipline.getCIRCLE().get(i);
-			
-			for( TALENTABILITYType tallent :disciplincircle.getOPTIONALTALENT()) {
-				result.add(tallent);
+		int circlenr = 0;
+		for( DISCIPLINECIRCLEType disciplineCircle : discipline.getCIRCLE() ) {
+			circlenr++;
+			if( circlenr > circle ) break;
+			for( TALENTABILITYType talent :disciplineCircle.getOPTIONALTALENT()) {
+				boolean found=false;
+				for( List<TALENTType> usedOptionalTalents : usedOptionalTalentsList ) {
+					for( TALENTType usedOptionalTalent : usedOptionalTalents ) {
+						if( talent.getName().equals(usedOptionalTalent.getName()) ) {
+							found=true;
+							usedOptionalTalents.remove(usedOptionalTalent);
+							break;
+						}
+						if( found ) break;
+					}
+				}
+				if( ! found ) result.add(talent);
 			}
 		}
 		return result;
@@ -410,17 +421,18 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
 		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
-		HashMap<String,List<TALENTType>> talentsMap = getUsedOptionalTalents();
+		HashMap<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
 		for(String discipline : talentsMap.keySet() ) {
 			List<Integer> list = new ArrayList<Integer>();
-			List<TALENTType> talentsList = talentsMap.get(discipline);
+			List<List<TALENTType>> talentsList = talentsMap.get(discipline);
 			if( talentsList == null ) {
-				talentsList = new ArrayList<TALENTType>();
 				System.err.println("A talent list for the discipline '"+discipline+"' could not be found.");
+				talentsList = new ArrayList<List<TALENTType>>();
+				for(int i=0;i<20;i++) talentsList.add(new ArrayList<TALENTType>());
 			}
 			int disciplineCircle = getCircleOf(discipline);
 			for( int i=1; i<=disciplineCircle; i++ ) {
-				if( talentsList.get(i) == null ) list.add( i );
+				if( talentsList.get(i).size() == 0 ) list.add( i );
 			}
 			result.put(discipline, list);
 		}
