@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE  name="Beastmaster" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
-	<DURABILITY circle="1" death="7" unconsciousness="6"/>
-	<OPTIONALTALENT name="Avoid Blow" circle="1"/>
-	<OPTIONALTALENT name="Climbing" circle="1"/>
-	<OPTIONALTALENT name="Sense Danger" circle="1"/>
-	<OPTIONALTALENT name="Tracking" circle="1"/>
-	<OPTIONALTALENT name="Wilderness Survival" circle="1"/>
-	<DISCIPLINETALENT name="Animal Bond" circle="1"/>
-	<DISCIPLINETALENT name="Claw Shape" circle="1"/>
-	<DISCIPLINETALENT name="Creature Analysis" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Unarmed Combat" circle="1"/>
-	<OPTIONALTALENT name="Acrobatic Strike" circle="2"/>
-	<OPTIONALTALENT name="Borrow Sense" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2"/>
-	<OPTIONALTALENT name="Frighten Animals" circle="2"/>
-	<OPTIONALTALENT name="Great Leap" circle="2"/>
-	<OPTIONALTALENT name="Haggle" circle="2"/>
-	<OPTIONALTALENT name="Silent Walk" circle="2"/>
-	<OPTIONALTALENT name="Sprint" circle="2"/>
-	<DISCIPLINETALENT name="Dominate Beast" circle="2"/>
-	<DEFENSE kind="physical" circle="2"/>
-	<DISCIPLINETALENT name="Animal Training" circle="3"/>
-	<KARMA spend="Charisma-only Test" circle="4"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="Beast Weaving"/>
-	<OPTIONALTALENT name="Animal Companion Durability" limitation="6/5" circle="5"/>
-	<OPTIONALTALENT name="Blood Share" circle="5"/>
-	<OPTIONALTALENT name="Call Animal Companion" circle="5"/>
-	<OPTIONALTALENT name="Empathic Command" circle="5"/>
-	<OPTIONALTALENT name="Lion Heart" circle="5"/>
-	<OPTIONALTALENT name="Poison Resistance" circle="5"/>
-	<OPTIONALTALENT name="Search" circle="5"/>
-	<OPTIONALTALENT name="Tiger Spring" circle="5"/>
-	<DISCIPLINETALENT name="Heal Animal Companion" circle="5"/>
-	<ABILITY name="Primal Urges" circle="5"/>
-	<DISCIPLINETALENT name="Animal Talk" circle="6"/>
-	<KARMA spend="Willpower-only Test" circle="6"/>
-	<DISCIPLINETALENT name="Animal Possession" circle="7"/>
-	<KARMA spend="animal companion Action Test" circle="7"/>
-	<DISCIPLINETALENT name="Frenzy" circle="8"/>
-	<DEFENSE kind="physical" circle="8"/>
+	<DURABILITY death="7" unconsciousness="6"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Animal Bond"/>
+		<DISCIPLINETALENT name="Claw Shape"/>
+		<DISCIPLINETALENT name="Creature Analysis"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Unarmed Combat"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Frighten Animals"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<DISCIPLINETALENT name="Dominate Beast"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Animal Training"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Beast Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Companion Durability" limitation="6/5"/>
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Call Animal Companion"/>
+		<OPTIONALTALENT name="Empathic Command"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Heal Animal Companion"/>
+		<TALENTABILITY/>
+		<ABILITY>Primal Urges</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Animal Talk"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Animal Possession"/>
+		<TALENTABILITY/>
+		<KARMA spend="animal companion Action Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Frenzy"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
 </DISCIPLINE>
