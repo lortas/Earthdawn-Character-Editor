@@ -1,121 +1,142 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE name="Elementalist" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
-	<DURABILITY circle="2" death="4" unconsciousness="3"/>
-	<OPTIONALTALENT name="Arcane Mutterings" circle="1"/>
-	<OPTIONALTALENT name="Haggle" circle="1"/>
-	<OPTIONALTALENT name="Read/Write Language" circle="1"/>
-	<OPTIONALTALENT name="Speak Language" circle="1"/>
-	<OPTIONALTALENT name="Spell Matrix" circle="1"/>
-	<DISCIPLINETALENT name="Air Speaking" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Spellcasting" circle="1"/>
-	<DISCIPLINETALENT name="Read/Write Magic" circle="1"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Elementalism"/>
-	<DISCIPLINETALENT name="Spell Matrix" circle="1"/>
-	<SPELL type="elemental" name="Air Armor" circle="1"/>
-	<SPELL type="elemental" name="Crunch Climb" circle="1"/>
-	<SPELL type="elemental" name="Earth Blend" circle="1"/>
-	<SPELL type="elemental" name="Earth Darts" circle="1"/>
-	<SPELL type="elemental" name="Flameweapon" circle="1"/>
-	<SPELL type="elemental" name="Heat Food" circle="1"/>
-	<SPELL type="elemental" name="Moonglow" circle="1"/>
-	<SPELL type="elemental" name="Plant Talk" circle="1"/>
-	<SPELL type="elemental" name="Purify Earth" circle="1"/>
-	<SPELL type="elemental" name="Purify Water" circle="1"/>
-	<SPELL type="elemental" name="Resist Cold" circle="1"/>
-	<SPELL type="elemental" name="Resist Fire" circle="1"/>
-	<DEFENSE kind="spell" circle="2"/>
-	<OPTIONALTALENT name="Astral Sight" circle="2"/>
-	<OPTIONALTALENT name="Item History" circle="2"/>
-	<OPTIONALTALENT name="Parry" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2" limitation="4/3"/>
-	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
-	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
-	<OPTIONALTALENT name="Tracking" circle="2"/>
-	<OPTIONALTALENT name="Wind Catcher" circle="2"/>
-	<DISCIPLINETALENT name="Fire Heal" circle="2"/>
-	<SPELL type="elemental" name="Air Mattress" circle="2"/>
-	<SPELL type="elemental" name="Billowing Cloak" circle="2"/>
-	<SPELL type="elemental" name="Boil Water" circle="2"/>
-	<SPELL type="elemental" name="Detect Elementalism Magic" circle="2"/>
-	<SPELL type="elemental" name="Flame Strike" circle="2"/>
-	<SPELL type="elemental" name="Grills" circle="2"/>
-	<SPELL type="elemental" name="Hunter's Sense" circle="2"/>
-	<SPELL type="elemental" name="Ice Spear" circle="2"/>
-	<SPELL type="elemental" name="Icy Surface" circle="2"/>
-	<SPELL type="elemental" name="Path Home" circle="2"/>
-	<SPELL type="elemental" name="Shield Willow" circle="2"/>
-	<SPELL type="elemental" name="Slow Metal Weapon" circle="2"/>
-	<SPELL type="elemental" name="Small Slayer" circle="2"/>
-	<SPELL type="elemental" name="Sterilize Object" circle="2"/>
-	<SPELL type="elemental" name="Stick Together" circle="2"/>
-	<DISCIPLINETALENT name="Elemental Tongues" circle="3"/>
-	<SPELL type="elemental" name="Behind Eye" circle="3"/>
-	<SPELL type="elemental" name="Dispel Elementalism Magic" circle="3"/>
-	<SPELL type="elemental" name="Fingers of Wind" circle="3"/>
-	<SPELL type="elemental" name="Fuel Flame" circle="3"/>
-	<SPELL type="elemental" name="Grounding" circle="3"/>
-	<SPELL type="elemental" name="Ice Mace and Chain" circle="3"/>
-	<SPELL type="elemental" name="Lightning Bolt" circle="3"/>
-	<SPELL type="elemental" name="Plant Feast" circle="3"/>
-	<SPELL type="elemental" name="Porter" circle="3"/>
-	<SPELL type="elemental" name="Puddle Deep" circle="3"/>
-	<SPELL type="elemental" name="Repair" circle="3"/>
-	<SPELL type="elemental" name="Rust" circle="3"/>
-	<SPELL type="elemental" name="Sky Lattice" circle="3"/>	
-	<SPELL type="elemental" name="Smoke Cloud" circle="3"/>
-	<SPELL type="elemental" name="Snuff" circle="3"/>
-	<SPELL type="elemental" name="Sunlight" circle="3"/>
-	<SPELL type="elemental" name="Thrive" circle="3"/>
-	<SPELL type="elemental" name="Throne of Air" circle="3"/>
-	<SPELL type="elemental" name="Winds of Deflection" circle="3"/>
-	<DISCIPLINETALENT name="Elemental Hold" circle="4"/>
-	<SPELL type="elemental" name="Air Blast" circle="4"/>
-	<SPELL type="elemental" name="Blizzard Sphere" circle="4"/>
-	<SPELL type="elemental" name="[Element] Spear" circle="4"/>
-	<SPELL type="elemental" name="Falcon's Cloak" circle="4"/>
-	<SPELL type="elemental" name="Fire Whip" circle="4"/>
-	<SPELL type="elemental" name="Great Sticky Vines" circle="4"/>
-	<SPELL type="elemental" name="Lighten Load" circle="4"/>		
-	<SPELL type="elemental" name="Lightning Shield" circle="4"/>
-	<SPELL type="elemental" name="Lightning Step" circle="4"/>
-	<SPELL type="elemental" name="Liquid Arrow" circle="4"/>
-	<SPELL type="elemental" name="Lodestone's Touch" circle="4"/>
-	<SPELL type="elemental" name="Root Trap" circle="4"/>
-	<SPELL type="elemental" name="Shield of Warping" circle="4"/>
-	<SPELL type="elemental" name="Spirits of Death's Sea" circle="4"/>
-	<SPELL type="elemental" name="Suffocating Paste" circle="4"/>
-	<SPELL type="elemental" name="Uneven Ground" circle="4"/>
-	<SPELL type="elemental" name="Weapon Back" circle="4"/>
-	<KARMA spend="Perception-only Test" circle="4"/>
-	<OPTIONALTALENT name="Detect Trap" circle="5"/>
-	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
-	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
-	<OPTIONALTALENT name="Gliding Stride" circle="5"/>
-	<OPTIONALTALENT name="Spot Armor Flaw" circle="5"/>
-	<OPTIONALTALENT name="Steal Thought" circle="5"/>
-	<OPTIONALTALENT name="Willforce" circle="5"/>
-	<OPTIONALTALENT name="Wood Skin" circle="5"/>
-	<DISCIPLINETALENT name="Summon" circle="5" limitation="Elemental Spirits"/>
-	<SPELL type="elemental" name="Balloons of Mist" circle="5"/>
-	<SPELL type="elemental" name="Earth Staff" circle="5"/>
-	<SPELL type="elemental" name="Fireball" circle="5"/>
-	<SPELL type="elemental" name="Inflame Self" circle="5"/>
-	<SPELL type="elemental" name="Ironwood" circle="5"/>
-	<SPELL type="elemental" name="Metal Scream" circle="5"/>
-	<SPELL type="elemental" name="Metal Wings" circle="5"/>
-	<SPELL type="elemental" name="Nutritious Earth" circle="5"/>	
-	<SPELL type="elemental" name="Resist Poison" circle="5"/>
-	<SPELL type="elemental" name="Shattering Stone" circle="5"/>
-	<SPELL type="elemental" name="Stone Cage" circle="5"/>
-	<ABILITY name="Fire and Ice" circle="5"/>
-	<DISCIPLINETALENT name="Cold Purify" circle="6"/>
-	<KARMA spend="Willpower-only Test" circle="6"/>
-	<DISCIPLINETALENT name="Earth Skin" circle="7"/>
-	<KARMA spend="Spell Effect Test" circle="7"/>
-	<DISCIPLINETALENT name="Temperature" circle="8"/>
-	<DEFENSE kind="spell" circle="8"/>
-	
-	
-	
+	<DURABILITY death="4" unconsciousness="3"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Read/Write Language"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Air Speaking"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Read/Write Magic"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Elementalism"/>
+		<DISCIPLINETALENT name="Spell Matrix"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Armor"/>
+		<SPELL type="elemental" name="Crunch Climb"/>
+		<SPELL type="elemental" name="Earth Blend"/>
+		<SPELL type="elemental" name="Earth Darts"/>
+		<SPELL type="elemental" name="Flameweapon"/>
+		<SPELL type="elemental" name="Heat Food"/>
+		<SPELL type="elemental" name="Moonglow"/>
+		<SPELL type="elemental" name="Plant Talk"/>
+		<SPELL type="elemental" name="Purify Earth"/>
+		<SPELL type="elemental" name="Purify Water"/>
+		<SPELL type="elemental" name="Resist Cold"/>
+		<SPELL type="elemental" name="Resist Fire"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Wind Catcher"/>
+		<DISCIPLINETALENT name="Fire Heal"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Mattress"/>
+		<SPELL type="elemental" name="Billowing Cloak"/>
+		<SPELL type="elemental" name="Boil Water"/>
+		<SPELL type="elemental" name="Detect Elementalism Magic"/>
+		<SPELL type="elemental" name="Flame Strike"/>
+		<SPELL type="elemental" name="Grills"/>
+		<SPELL type="elemental" name="Hunter's Sense"/>
+		<SPELL type="elemental" name="Ice Spear"/>
+		<SPELL type="elemental" name="Icy Surface"/>
+		<SPELL type="elemental" name="Path Home"/>
+		<SPELL type="elemental" name="Shield Willow"/>
+		<SPELL type="elemental" name="Slow Metal Weapon"/>
+		<SPELL type="elemental" name="Small Slayer"/>
+		<SPELL type="elemental" name="Sterilize Object"/>
+		<SPELL type="elemental" name="Stick Together"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Elemental Tongues"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Behind Eye"/>
+		<SPELL type="elemental" name="Dispel Elementalism Magic"/>
+		<SPELL type="elemental" name="Fingers of Wind"/>
+		<SPELL type="elemental" name="Fuel Flame"/>
+		<SPELL type="elemental" name="Grounding"/>
+		<SPELL type="elemental" name="Ice Mace and Chain"/>
+		<SPELL type="elemental" name="Lightning Bolt"/>
+		<SPELL type="elemental" name="Plant Feast"/>
+		<SPELL type="elemental" name="Porter"/>
+		<SPELL type="elemental" name="Puddle Deep"/>
+		<SPELL type="elemental" name="Repair"/>
+		<SPELL type="elemental" name="Rust"/>
+		<SPELL type="elemental" name="Sky Lattice"/>	
+		<SPELL type="elemental" name="Smoke Cloud"/>
+		<SPELL type="elemental" name="Snuff"/>
+		<SPELL type="elemental" name="Sunlight"/>
+		<SPELL type="elemental" name="Thrive"/>
+		<SPELL type="elemental" name="Throne of Air"/>
+		<SPELL type="elemental" name="Winds of Deflection"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Elemental Hold"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Blast"/>
+		<SPELL type="elemental" name="Blizzard Sphere"/>
+		<SPELL type="elemental" name="[Element] Spear"/>
+		<SPELL type="elemental" name="Falcon's Cloak"/>
+		<SPELL type="elemental" name="Fire Whip"/>
+		<SPELL type="elemental" name="Great Sticky Vines"/>
+		<SPELL type="elemental" name="Lighten Load"/>		
+		<SPELL type="elemental" name="Lightning Shield"/>
+		<SPELL type="elemental" name="Lightning Step"/>
+		<SPELL type="elemental" name="Liquid Arrow"/>
+		<SPELL type="elemental" name="Lodestone's Touch"/>
+		<SPELL type="elemental" name="Root Trap"/>
+		<SPELL type="elemental" name="Shield of Warping"/>
+		<SPELL type="elemental" name="Spirits of Death's Sea"/>
+		<SPELL type="elemental" name="Suffocating Paste"/>
+		<SPELL type="elemental" name="Uneven Ground"/>
+		<SPELL type="elemental" name="Weapon Back"/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Gliding Stride"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Steal Thought"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<OPTIONALTALENT name="Wood Skin"/>
+		<DISCIPLINETALENT name="Summon" limitation="Elemental Spirits"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Balloons of Mist"/>
+		<SPELL type="elemental" name="Earth Staff"/>
+		<SPELL type="elemental" name="Fireball"/>
+		<SPELL type="elemental" name="Inflame Self"/>
+		<SPELL type="elemental" name="Ironwood"/>
+		<SPELL type="elemental" name="Metal Scream"/>
+		<SPELL type="elemental" name="Metal Wings"/>
+		<SPELL type="elemental" name="Nutritious Earth"/>	
+		<SPELL type="elemental" name="Resist Poison"/>
+		<SPELL type="elemental" name="Shattering Stone"/>
+		<SPELL type="elemental" name="Stone Cage"/>
+		<ABILITY>Fire and Ice</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Cold Purify"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Earth Skin"/>
+		<TALENTABILITY/>
+		<KARMA spend="Spell Effect Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Temperature"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
 </DISCIPLINE>
