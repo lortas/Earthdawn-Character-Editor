@@ -21,8 +21,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
-
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.*;
@@ -299,7 +297,7 @@ public class ECEWorker {
 			// Nur der höchtse Bonus wird gewertet.
 			int currentKarmaStepBonus = getDisciplineKarmaStepBonus(discipline);
 			if( currentKarmaStepBonus > maxKarmaStepBonus ) maxKarmaStepBonus = currentKarmaStepBonus;
-			List<DISCIPLINEBONUSType> bonuses = JAXBHelper.getDisciplineBonuses(discipline);
+			List<DISCIPLINEBONUSType> bonuses = getDisciplineBonuses(discipline);
 			List<DISCIPLINEBONUSType> currentBonuses = discipline.getDISCIPLINEBONUS();
 			bonuses.clear();
 			bonuses.addAll(currentBonuses);
@@ -617,5 +615,27 @@ public class ECEWorker {
 			capability.setKarma(replacment.getKarma());
 			capability.setStrain(replacment.getStrain());
 		}
+	}
+
+	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {
+		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
+		int circlenr=0;
+		for(DISCIPLINECIRCLEType circle : ApplicationProperties.create().getDisziplin(discipline.getName()).getCIRCLE()) {
+			circlenr++;
+			if( circlenr > discipline.getCircle() ) break;
+			for( KARMAABILITYType karma : circle.getKARMA() ) {
+				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
+				bonus.setCircle(circlenr);
+				bonus.setBonus("Can spend Karma for "+karma.getSpend());
+				bonuses.add(bonus);
+			}
+			for( String ability : circle.getABILITY() ) {
+				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
+				bonus.setCircle(circlenr);
+				bonus.setBonus("Ability: "+ability);
+				bonuses.add(bonus);
+			}
+		}
+		return bonuses;
 	}
 }

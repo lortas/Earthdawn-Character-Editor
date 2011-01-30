@@ -17,14 +17,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.bind.JAXBElement;
-
-import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.*;
-
 /**
  * Hilfsklasse zur einfacheren Verarbeitung des JAXB-Baumes
  *
@@ -32,25 +24,4 @@ import de.earthdawn.data.*;
  */
 public class JAXBHelper {
 
-	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {
-		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
-		for(JAXBElement<?> element : ApplicationProperties.create().getDisziplin(discipline.getName()).getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
-			if (element.getName().getLocalPart().equals("KARMA")) {
-				KARMAABILITYType karma = ((KARMAABILITYType)element.getValue());
-				if( karma.getCircle() > discipline.getCircle() ) continue;
-				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
-				bonus.setCircle(karma.getCircle());
-				bonus.setBonus("Can spend Karma for "+karma.getSpend());
-				bonuses.add(bonus);
-			} else if (element.getName().getLocalPart().equals("ABILITY")) {
-				CIRCLENAMEType ability = ((CIRCLENAMEType)element.getValue());
-				if( ability.getCircle() > discipline.getCircle() ) continue;
-				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
-				bonus.setCircle(ability.getCircle());
-				bonus.setBonus("Ability: "+ability.getName());
-				bonuses.add(bonus);
-			}
-		}
-		return bonuses;
-	}
 }

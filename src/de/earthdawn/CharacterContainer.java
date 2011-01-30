@@ -21,8 +21,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
-
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.*;
 import de.earthdawn.event.CharChangeRefresh;
