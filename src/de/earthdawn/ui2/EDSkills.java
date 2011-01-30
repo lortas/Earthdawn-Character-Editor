@@ -12,6 +12,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 import javax.swing.BoxLayout;
+import javax.swing.KeyStroke;
+
 import java.awt.BorderLayout;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
@@ -21,11 +23,15 @@ import javax.xml.bind.JAXBElement;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JPopupMenu;
 import java.awt.Dimension;
+import javax.swing.ListSelectionModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class EDSkills extends JPanel {
 
@@ -64,8 +70,14 @@ public class EDSkills extends JPanel {
 		add(scrollPane, BorderLayout.CENTER);
 		
 		table = new JTable();
+		InputMapUtil.setupInputMap(table);	
+		
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new SkillsTableModel(character));
+		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
 		scrollPane.setViewportView(table);
+		table.setRowSelectionAllowed(false);
+		
 	}
 	
 
@@ -74,6 +86,7 @@ public class EDSkills extends JPanel {
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((SkillsTableModel)table.getModel()).setCharacter(character);
+		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
 	}
 
 	public CharacterContainer getCharacter() {
@@ -110,6 +123,8 @@ public class EDSkills extends JPanel {
 		character.getSkills().removeAll(skillsForRemoval);
 		character.refesh();
 	}
+	
+
 }
 
 class SkillsTableModel extends AbstractTableModel {
@@ -165,7 +180,7 @@ class SkillsTableModel extends AbstractTableModel {
 	    		case 0: return character.getSkills().get(row).getName();
 	    		case 1: return character.getSkills().get(row).getLimitation();
 	    		case 2: return character.getSkills().get(row).getAttribute();
-	    		case 3: return character.getSkills().get(row).getRANK().getRank();
+	    		case 3: return new Integer(character.getSkills().get(row).getRANK().getRank());
 	    		case 4: return character.getSkills().get(row).getStrain();
 	    		case 5: return character.getSkills().get(row).getAction().value();
 	    		case 6: return character.getSkills().get(row).getRANK().getStep();
@@ -203,11 +218,14 @@ class SkillsTableModel extends AbstractTableModel {
      * Don't need to implement this method unless your table's
      * data can change.
      */
+    
+    
     public void setValueAt(Object value, int row, int col) {   	
     	if(col == 3){
     		character.getSkills().get(row).getRANK().setRank((Integer) value);
     	}
     	character.refesh();	
+    	
     	fireTableCellUpdated(row, 6);
     	fireTableCellUpdated(row, 7);
         fireTableCellUpdated(row, col);
