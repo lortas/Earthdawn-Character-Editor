@@ -1,211 +1,256 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE name="Nethermancer" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
-	<DURABILITY circle="1" death="4" unconsciousness="3"/>
-	<OPTIONALTALENT name="Acarne Mutterings" circle="1"/>
-	<OPTIONALTALENT name="Read/Write Language" circle="1"/>
-	<OPTIONALTALENT name="Silent Walk" circle="1"/>
-	<OPTIONALTALENT name="Speak Language" circle="1"/>
-	<OPTIONALTALENT name="Spell Matrix" circle="1"/>
-	<DISCIPLINETALENT name="Astral Sight" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Read/Write Magic" circle="1"/>
-	<DISCIPLINETALENT name="Spellcasting" circle="1"/>
-	<DISCIPLINETALENT name="Spell Matrix" circle="1"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Nethermancy"/>
-	<SPELL type="nether" name="Astral Spear" circle="1"/>
-	<SPELL type="nether" name="Bone Dance" circle="1"/>
-	<SPELL type="nether" name="Chilling Circle" circle="1"/>
-	<SPELL type="nether" name="Command Nightflyer" circle="1"/>
-	<SPELL type="nether" name="Detect Undead" circle="1"/>
-	<SPELL type="nether" name="Dry and Wet" circle="1"/>
-	<SPELL type="nether" name="Experience Death" circle="1"/>
-	<SPELL type="nether" name="Insect Repellent" circle="1"/>
-	<SPELL type="nether" name="Mount Scare" circle="1"/>
-	<SPELL type="nether" name="Putrefy" circle="1"/>
-	<SPELL type="nether" name="Spirit Dart" circle="1"/>
-	<SPELL type="nether" name="Spirit Grip" circle="1"/>
-	<SPELL type="nether" name="Undead Struggle" circle="1"/>
-	<OPTIONALTALENT name="Animal Possession" circle="2"/>
-	<OPTIONALTALENT name="Blood Share" circle="2"/>
-	<OPTIONALTALENT name="Creature Analysis" circle="2"/>
-	<OPTIONALTALENT name="Dominate Beast" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2" limitation="4/3"/>
-	<OPTIONALTALENT name="Frighten Animals" circle="2"/>
-	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
-	<OPTIONALTALENT name="Spell Matrix" circle="2"/>
-	<DISCIPLINETALENT name="Frighten" circle="2"/>
-	<SPELL type="nether" name="Bone Circle" circle="2"/>
-	<SPELL type="nether" name="Detect Nethermancy Magic" circle="2"/>
-	<SPELL type="nether" name="Ethereal Darkness" circle="2"/>
-	<SPELL type="nether" name="Fog Ghost" circle="2"/>
-	<SPELL type="nether" name="Life Circle of One" circle="2"/>
-	<SPELL type="nether" name="Pocket Guardian" circle="2"/>
-	<SPELL type="nether" name="Repel Animal" circle="2"/>
-	<SPELL type="nether" name="Shadow's Whisper" circle="2"/>
-	<SPELL type="nether" name="Shield Mist" circle="2"/>
-	<SPELLABILITY circle="2"/>
-	<DEFENSE kind="spell" circle="2"/>
-	<DISCIPLINETALENT name="Spirit Talk" circle="3"/>
-	<SPELL type="nether" name="Arrow of Night" circle="3"/>
-	<SPELL type="nether" name="Dark Messenger" circle="3"/>
-	<SPELL type="nether" name="Death Trance" circle="3"/>
-	<SPELL type="nether" name="Death's Head" circle="3"/>
-	<SPELL type="nether" name="Dispel Nethermancy Magic" circle="3"/>
-	<SPELL type="nether" name="Fog of Fear" circle="3"/>
-	<SPELL type="nether" name="Grave Message" circle="3"/>
-	<SPELL type="nether" name="Pack Bags" circle="3"/>
-	<SPELL type="nether" name="Pain" circle="3"/>
-	<SPELL type="nether" name="Preserve" circle="3"/>
-	<SPELL type="nether" name="Shadow Meld" circle="3"/>
-	<SPELL type="nether" name="Spirit Double" circle="3"/>
-	<SPELL type="nether" name="Summon Bone Ghost" circle="3"/>
-	<SPELLABILITY circle="3"/>
-	<DISCIPLINETALENT name="Spirit Hold" circle="4"/>
-	<SPELL type="nether" name="Animate Skeleton" circle="4"/>
-	<SPELL type="nether" name="Astral Flare" circle="4"/>
-	<SPELL type="nether" name="Blood Servitor" circle="4"/>
-	<SPELL type="nether" name="Dark Spy" circle="4"/>
-	<SPELL type="nether" name="Evil Eye" circle="4"/>
-	<SPELL type="nether" name="Fatal Food" circle="4"/>
-	<SPELL type="nether" name="Friend or Foe" circle="4"/>
-	<SPELL type="nether" name="Last Chance" circle="4"/>
-	<SPELL type="nether" name="Nightflyer's Cloak" circle="4"/>
-	<SPELL type="nether" name="Spirit Servant" circle="4"/>
-	<SPELL type="nether" name="Viewpoint" circle="4"/>
-	<SPELL type="nether" name="Visions of Death" circle="4"/>
-	<SPELLABILITY circle="4"/>
-	<KARMA spend="Willpower-only Test" circle="4"/>
-	<OPTIONALTALENT name="Abate Curse" circle="5"/>
-	<OPTIONALTALENT name="Elemental Tongues" circle="5"/>
-	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
-	<OPTIONALTALENT name="Enhanced Matrix" circle="5"/>
-	<OPTIONALTALENT name="Item History" circle="5"/>
-	<OPTIONALTALENT name="Lion Heart" circle="5"/>
-	<OPTIONALTALENT name="Steel Thought" circle="5"/>
-	<OPTIONALTALENT name="Willforce" circle="5"/>
-	<DISCIPLINETALENT name="Summon" circle="5" limitation="Ally Spirits"/>
-	<SPELL type="nether" name="Animate Spirit Object" circle="5"/>
-	<SPELL type="nether" name="Astral Horror" circle="5"/>
-	<SPELL type="nether" name="Astral Mount" circle="5"/>
-	<SPELL type="nether" name="Astral Whisper" circle="5"/>
-	<SPELL type="nether" name="Blind" circle="5"/>
-	<SPELL type="nether" name="Circle of Astral Protection" circle="5"/>
-	<SPELL type="nether" name="Incessant Talking" circle="5"/>
-	<SPELL type="nether" name="Pass Ward" circle="5"/>
-	<SPELL type="nether" name="Sculpt Darkness" circle="5"/>
-	<SPELL type="nether" name="Sense Horror" circle="5"/>
-	<SPELL type="nether" name="Shadow Hunter" circle="5"/>
-	<SPELL type="nether" name="Spiritual Guidance" circle="5"/>
-	<SPELL type="nether" name="Star Shower" circle="5"/>
-	<SPELL type="nether" name="Target Portal" circle="5"/>
-	<SPELL type="nether" name="Tears of the Scourge" circle="5"/>
-	<SPELL type="nether" name="Whisper Through the Night" circle="5"/>
-	<SPELL type="nether" name="Wither Limb" circle="5"/>
-	<SPELLABILITY circle="5"/>
-	<ABILITY name="Decay and Renewal" circle="5"/>
-	<DISCIPLINETALENT name="Lifesight" circle="6"/>
-	<SPELL type="nether" name="Blessed Light" circle="6"/>
-	<SPELL type="nether" name="Bone Puppet" circle="6"/>
-	<SPELL type="nether" name="Bone Shatter" circle="6"/>
-	<SPELL type="nether" name="Bone Walker" circle="6"/>
-	<SPELL type="nether" name="Dust to Dust" circle="6"/>
-	<SPELL type="nether" name="Foul Vapors" circle="6"/>
-	<SPELL type="nether" name="Friendly Darkness" circle="6"/>
-	<SPELL type="nether" name="Recovery" circle="6"/>
-	<SPELL type="nether" name="Soul Armor" circle="6"/>
-	<SPELL type="nether" name="Wall of Darkness" circle="6"/>
-	<SPELLABILITY circle="6"/>
-	<KARMA spend="Perseption-Only Tests" circle="6"/>
-	<DISCIPLINETALENT name="Spirit Dodge" circle="7"/>
-	<SPELL type="nether" name="Astral Beacon" circle="7"/>
-	<SPELL type="nether" name="Astral Maw" circle="7"/>
-	<SPELL type="nether" name="Banquet of Dis" circle="7"/>
-	<SPELL type="nether" name="Bone Pudding" circle="7"/>
-	<SPELL type="nether" name="Cold Storage" circle="7"/>
-	<SPELL type="nether" name="Constrict Heart" circle="7"/>
-	<SPELL type="nether" name="Damage Shift" circle="7"/>
-	<SPELL type="nether" name="Marathon Run" circle="7"/>
-	<SPELL type="nether" name="Restrain Entity" circle="7"/>
-	<SPELL type="nether" name="Reverse Withering" circle="7"/>
-	<SPELL type="nether" name="Spirit Bolt" circle="7"/>
-	<SPELL type="nether" name="Spirit Portal" circle="7"/>
-	<SPELL type="nether" name="Steal Strength" circle="7"/>
-	<SPELL type="nether" name="Step Through Shadow" circle="7"/>
-	<SPELL type="nether" name="Wit Friend" circle="7"/>
-	<KARMA spend="spell effect tests" circle="7"/>
-	<DISCIPLINETALENT name="Orbiting Spy" circle="8"/>
-	<SPELL type="nether" name="Control Being" circle="8"/>
-	<SPELL type="nether" name="Globe of Silence" circle="8"/>
-	<SPELL type="nether" name="Horror Call" circle="8"/>
-	<SPELL type="nether" name="Netherblade" circle="8"/>
-	<SPELL type="nether" name="Restrain Horror" circle="8"/>
-	<SPELL type="nether" name="Shadow Tether" circle="8"/>
-	<SPELL type="nether" name="Translator Spirit" circle="8"/>
-	<SPELL type="nether" name="Visit Death" circle="8"/>
-	<SPELL type="nether" name="Wall of Bones" circle="8"/>
-	<SPELL type="nether" name="Wither Away" circle="8"/>
-	<DEFENSE circle="8" kind="spell"/>
-	<OPTIONALTALENT name="Animate Object" circle="9"/>
-	<OPTIONALTALENT name="Armored Matrix" circle="9"/>
-	<OPTIONALTALENT name="Armored Matrix" circle="9"/>
-	<OPTIONALTALENT name="Astral Pocket" circle="9"/>
-	<OPTIONALTALENT name="Cold Purify" circle="9"/>
-	<OPTIONALTALENT name="Life Check" circle="9"/>
-	<OPTIONALTALENT name="Matrix Strike" circle="9"/>
-	<OPTIONALTALENT name="Steely Stare" circle="9"/>
-	<DISCIPLINETALENT name="Bargain With Summoned Creature" circle="9"/>
-	<SPELL type="nether" name="Create Life" circle="9"/>
-	<SPELL type="nether" name="Dark Sword" circle="9"/>
-	<SPELL type="nether" name="Disrupt Magic" circle="9"/>
-	<SPELL type="nether" name="Mystic Vessel" circle="9"/>
-	<SPELL type="nether" name="Shift Skin" circle="9"/>
-	<SPELL type="nether" name="Silent Darkness" circle="9"/>
-	<SPELL type="nether" name="Talent Shredder" circle="9"/>
-	<SPELL type="nether" name="Void Wave" circle="9"/>
-	<SPELL type="nether" name="Walking Dead" circle="9"/>
-	<KARMA spend="Recovery Tests" circle="9"/>
-	<ABILITY name="Otherworldly Control" circle="9"/>
-	<DISCIPLINETALENT name="Summoning Circle" circle="10"/>
-	<SPELL type="nether" name="Animate Dead" circle="10"/>
-	<SPELL type="nether" name="Astral Slice" circle="10"/>
-	<SPELL type="nether" name="Damage Transfer" circle="10"/>
-	<SPELL type="nether" name="Fragile Pattern" circle="10"/>
-	<SPELL type="nether" name="Gateway" circle="10"/>
-	<SPELL type="nether" name="Soul Trap" circle="10"/>
-	<SPELL type="nether" name="Spirit Tempest" circle="10"/>
-	<SPELL type="nether" name="Strong Pattern" circle="10"/>
-	<SPELL type="nether" name="Tap Horror Karma" circle="10"/>
-	<DEFENSE circle="10" kind="spell"/>
-	<KARMA spend="Action Tests made by a spirit or creature und his control" circle="10"/>
-	<DISCIPLINETALENT name="Netherwalk" circle="11"/>
-	<SPELL type="nether" name="Alter Life" circle="11"/>
-	<SPELL type="nether" name="Shatter Pattern" circle="11"/>
-	<SPELL type="nether" name="Unnatural Life" circle="11"/>
-	<DEFENSE circle="11" kind="social"/>
-	<DEFENSE circle="11" kind="physical"/>
-	<DISCIPLINETALENT name="Bone Compass" circle="12"/>
-	<SPELL type="nether" name="Forge Falsemen" circle="12"/>
-	<SPELL type="nether" name="Pervert Emotion" circle="12"/>
-	<DEFENSE circle="12" kind="spell"/>
-	<RECOVERYTEST circle="12"/>
-	<OPTIONALTALENT name="Etherreal Weapon" circle="13"/>
-	<OPTIONALTALENT name="Second Chance" circle="13"/>
-	<OPTIONALTALENT name="Shared Matrix" circle="13"/>
-	<OPTIONALTALENT name="Shared Matrix" circle="13"/>
-	<OPTIONALTALENT name="Wound Transfer" circle="13"/>
-	<DISCIPLINETALENT name="Spell Crystal Lock" circle="13"/>
-	<SPELL type="nether" name="Erase Horror Mark" circle="13"/>
-	<SPELL type="nether" name="Eternal Youth" circle="13"/>
-	<DEFENSE circle="13" kind="social"/>
-	<KARMASTEP circle="13"/>
-	<ABILITY name="Astral Face" circle="13"/>
-	<DISCIPLINETALENT name="Multi-Weaving" circle="14"/>
-	<SPELL type="nether" name="Call Forth the Army of Decay" circle="14"/>
-	<DEFENSE circle="14" kind="spell"/>
-	<RECOVERYTEST circle="14"/>
-	<DISCIPLINETALENT name="Soul Shatter" circle="15"/>
-	<DEFENSE circle="15" kind="social"/>
-	<DEFENSE circle="15" kind="physical"/>
-	<INITIATIVE circle="15"/>
-	<INITIATIVE circle="15"/>
+	<DURABILITY death="4" unconsciousness="3"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acarne Mutterings"/>
+		<OPTIONALTALENT name="Read/Write Language"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Read/Write Magic"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Nethermancy"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Astral Spear"/>
+		<SPELL type="nether" name="Bone Dance"/>
+		<SPELL type="nether" name="Chilling Circle"/>
+		<SPELL type="nether" name="Command Nightflyer"/>
+		<SPELL type="nether" name="Detect Undead"/>
+		<SPELL type="nether" name="Dry and Wet"/>
+		<SPELL type="nether" name="Experience Death"/>
+		<SPELL type="nether" name="Insect Repellent"/>
+		<SPELL type="nether" name="Mount Scare"/>
+		<SPELL type="nether" name="Putrefy"/>
+		<SPELL type="nether" name="Spirit Dart"/>
+		<SPELL type="nether" name="Spirit Grip"/>
+		<SPELL type="nether" name="Undead Struggle"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Animal Possession"/>
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Dominate Beast"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Frighten Animals"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Frighten"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Bone Circle"/>
+		<SPELL type="nether" name="Detect Nethermancy Magic"/>
+		<SPELL type="nether" name="Ethereal Darkness"/>
+		<SPELL type="nether" name="Fog Ghost"/>
+		<SPELL type="nether" name="Life Circle of One"/>
+		<SPELL type="nether" name="Pocket Guardian"/>
+		<SPELL type="nether" name="Repel Animal"/>
+		<SPELL type="nether" name="Shadow's Whisper"/>
+		<SPELL type="nether" name="Shield Mist"/>
+		<SPELLABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Spirit Talk"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Arrow of Night"/>
+		<SPELL type="nether" name="Dark Messenger"/>
+		<SPELL type="nether" name="Death Trance"/>
+		<SPELL type="nether" name="Death's Head"/>
+		<SPELL type="nether" name="Dispel Nethermancy Magic"/>
+		<SPELL type="nether" name="Fog of Fear"/>
+		<SPELL type="nether" name="Grave Message"/>
+		<SPELL type="nether" name="Pack Bags"/>
+		<SPELL type="nether" name="Pain"/>
+		<SPELL type="nether" name="Preserve"/>
+		<SPELL type="nether" name="Shadow Meld"/>
+		<SPELL type="nether" name="Spirit Double"/>
+		<SPELL type="nether" name="Summon Bone Ghost"/>
+		<SPELLABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Spirit Hold"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Animate Skeleton"/>
+		<SPELL type="nether" name="Astral Flare"/>
+		<SPELL type="nether" name="Blood Servitor"/>
+		<SPELL type="nether" name="Dark Spy"/>
+		<SPELL type="nether" name="Evil Eye"/>
+		<SPELL type="nether" name="Fatal Food"/>
+		<SPELL type="nether" name="Friend or Foe"/>
+		<SPELL type="nether" name="Last Chance"/>
+		<SPELL type="nether" name="Nightflyer's Cloak"/>
+		<SPELL type="nether" name="Spirit Servant"/>
+		<SPELL type="nether" name="Viewpoint"/>
+		<SPELL type="nether" name="Visions of Death"/>
+		<SPELLABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Elemental Tongues"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<DISCIPLINETALENT name="Summon" limitation="Ally Spirits"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Animate Spirit Object"/>
+		<SPELL type="nether" name="Astral Horror"/>
+		<SPELL type="nether" name="Astral Mount"/>
+		<SPELL type="nether" name="Astral Whisper"/>
+		<SPELL type="nether" name="Blind"/>
+		<SPELL type="nether" name="Circle of Astral Protection"/>
+		<SPELL type="nether" name="Incessant Talking"/>
+		<SPELL type="nether" name="Pass Ward"/>
+		<SPELL type="nether" name="Sculpt Darkness"/>
+		<SPELL type="nether" name="Sense Horror"/>
+		<SPELL type="nether" name="Shadow Hunter"/>
+		<SPELL type="nether" name="Spiritual Guidance"/>
+		<SPELL type="nether" name="Star Shower"/>
+		<SPELL type="nether" name="Target Portal"/>
+		<SPELL type="nether" name="Tears of the Scourge"/>
+		<SPELL type="nether" name="Whisper Through the Night"/>
+		<SPELL type="nether" name="Wither Limb"/>
+		<SPELLABILITY/>
+		<ABILITY>Decay and Renewal</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Lifesight"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Blessed Light"/>
+		<SPELL type="nether" name="Bone Puppet"/>
+		<SPELL type="nether" name="Bone Shatter"/>
+		<SPELL type="nether" name="Bone Walker"/>
+		<SPELL type="nether" name="Dust to Dust"/>
+		<SPELL type="nether" name="Foul Vapors"/>
+		<SPELL type="nether" name="Friendly Darkness"/>
+		<SPELL type="nether" name="Recovery"/>
+		<SPELL type="nether" name="Soul Armor"/>
+		<SPELL type="nether" name="Wall of Darkness"/>
+		<SPELLABILITY/>
+		<KARMA spend="Perseption-Only Tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Spirit Dodge"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Astral Beacon"/>
+		<SPELL type="nether" name="Astral Maw"/>
+		<SPELL type="nether" name="Banquet of Dis"/>
+		<SPELL type="nether" name="Bone Pudding"/>
+		<SPELL type="nether" name="Cold Storage"/>
+		<SPELL type="nether" name="Constrict Heart"/>
+		<SPELL type="nether" name="Damage Shift"/>
+		<SPELL type="nether" name="Marathon Run"/>
+		<SPELL type="nether" name="Restrain Entity"/>
+		<SPELL type="nether" name="Reverse Withering"/>
+		<SPELL type="nether" name="Spirit Bolt"/>
+		<SPELL type="nether" name="Spirit Portal"/>
+		<SPELL type="nether" name="Steal Strength"/>
+		<SPELL type="nether" name="Step Through Shadow"/>
+		<SPELL type="nether" name="Wit Friend"/>
+		<KARMA spend="spell effect tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Orbiting Spy"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Control Being"/>
+		<SPELL type="nether" name="Globe of Silence"/>
+		<SPELL type="nether" name="Horror Call"/>
+		<SPELL type="nether" name="Netherblade"/>
+		<SPELL type="nether" name="Restrain Horror"/>
+		<SPELL type="nether" name="Shadow Tether"/>
+		<SPELL type="nether" name="Translator Spirit"/>
+		<SPELL type="nether" name="Visit Death"/>
+		<SPELL type="nether" name="Wall of Bones"/>
+		<SPELL type="nether" name="Wither Away"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Animate Object"/>
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Astral Pocket"/>
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Matrix Strike"/>
+		<OPTIONALTALENT name="Steely Stare"/>
+		<DISCIPLINETALENT name="Bargain With Summoned Creature"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Create Life"/>
+		<SPELL type="nether" name="Dark Sword"/>
+		<SPELL type="nether" name="Disrupt Magic"/>
+		<SPELL type="nether" name="Mystic Vessel"/>
+		<SPELL type="nether" name="Shift Skin"/>
+		<SPELL type="nether" name="Silent Darkness"/>
+		<SPELL type="nether" name="Talent Shredder"/>
+		<SPELL type="nether" name="Void Wave"/>
+		<SPELL type="nether" name="Walking Dead"/>
+		<KARMA spend="Recovery Tests"/>
+		<ABILITY>Otherworldly Control</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Summoning Circle"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Animate Dead"/>
+		<SPELL type="nether" name="Astral Slice"/>
+		<SPELL type="nether" name="Damage Transfer"/>
+		<SPELL type="nether" name="Fragile Pattern"/>
+		<SPELL type="nether" name="Gateway"/>
+		<SPELL type="nether" name="Soul Trap"/>
+		<SPELL type="nether" name="Spirit Tempest"/>
+		<SPELL type="nether" name="Strong Pattern"/>
+		<SPELL type="nether" name="Tap Horror Karma"/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Action Tests made by a spirit or creature und his control"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Netherwalk"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Alter Life"/>
+		<SPELL type="nether" name="Shatter Pattern"/>
+		<SPELL type="nether" name="Unnatural Life"/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Bone Compass"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Forge Falsemen"/>
+		<SPELL type="nether" name="Pervert Emotion"/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Etherreal Weapon"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Wound Transfer"/>
+		<DISCIPLINETALENT name="Spell Crystal Lock"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Erase Horror Mark"/>
+		<SPELL type="nether" name="Eternal Youth"/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Astral Face</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Multi-Weaving"/>
+		<TALENTABILITY/>
+		<SPELL type="nether" name="Call Forth the Army of Decay"/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Soul Shatter"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+		<INITIATIVE/>
+	</CIRCLE>
 </DISCIPLINE>

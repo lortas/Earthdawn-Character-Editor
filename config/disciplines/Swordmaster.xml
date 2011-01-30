@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE  name="Swordmaster" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
-	<DURABILITY circle="1" death="7" unconsciousness="6"/>
-	<OPTIONALTALENT name="Acrobatic Strike" circle="1"/>
-	<OPTIONALTALENT name="Avoid Blow" circle="1"/>
-	<OPTIONALTALENT name="First Impression" circle="1"/>
-	<OPTIONALTALENT name="Speak Language" circle="1"/>
-	<OPTIONALTALENT name="Wound Balance" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Maneuver" circle="1"/>
-	<DISCIPLINETALENT name="Melee Weapons" circle="1"/>
-	<DISCIPLINETALENT name="Parry" circle="1"/>
-	<DISCIPLINETALENT name="Taunt" circle="1"/>
-	<OPTIONALTALENT name="Anticipate Blow" circle="2"/>
-	<OPTIONALTALENT name="Detect Weapon" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2"/>
-	<OPTIONALTALENT name="Haggle" circle="2"/>
-	<OPTIONALTALENT name="Sprint" circle="2"/>
-	<OPTIONALTALENT name="Throwing Weapons" circle="2"/>
-	<OPTIONALTALENT name="Unarmed Combat" circle="2"/>
-	<OPTIONALTALENT name="Winning Smile" circle="2"/>
-	<DISCIPLINETALENT name="Heartening Laugh" circle="2"/>
-	<DEFENSE kind="social" circle="2"/>
-	<DISCIPLINETALENT name="Riposte" circle="3"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="Weapon Weaving"/>
-	<KARMA spend="Dexterity-only Test" circle="4"/>
-	<OPTIONALTALENT name="Conceal Object" circle="5"/>
-	<OPTIONALTALENT name="Etiquette" circle="5"/>
-	<OPTIONALTALENT name="Greaceful Exit" circle="5"/>
-	<OPTIONALTALENT name="Lasting Impression" circle="5"/>
-	<OPTIONALTALENT name="Lion Heart" circle="5"/>
-	<OPTIONALTALENT name="Suprise Strike" circle="5"/>
-	<OPTIONALTALENT name="Swift Kick" circle="5"/>
-	<OPTIONALTALENT name="Tiger Spring" circle="5"/>
-	<DISCIPLINETALENT name="Second Weapon" circle="5"/>
-	<ABILITY name="Flourish" circle="5"/>
-	<DISCIPLINETALENT name="Disarm" circle="6"/>
-	<KARMA spend="Charaisma-only Test" circle="6"/>
-	<DISCIPLINETALENT name="Resist Taunt" circle="7"/>
-	<KARMA spend="mele weapon Damage Test" circle="7"/>
-	<DISCIPLINETALENT name="Second Attack" circle="8"/>
-	<DEFENSE kind="social" circle="8"/>
+	<DURABILITY death="7" unconsciousness="6"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Maneuver"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Parry"/>
+		<DISCIPLINETALENT name="Taunt"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<OPTIONALTALENT name="Winning Smile"/>
+		<DISCIPLINETALENT name="Heartening Laugh"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Riposte"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Weapon Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Greaceful Exit"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Suprise Strike"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Second Weapon"/>
+		<TALENTABILITY/>
+		<ABILITY>Flourish</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Disarm"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charaisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<KARMA spend="mele weapon Damage Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Second Attack"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
 </DISCIPLINE>

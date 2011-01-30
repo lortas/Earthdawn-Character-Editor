@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE  name="Sky Raider" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="8" unconsciousness="6"/>
-	<OPTIONALTALENT name="Climbing" circle="1"/>
-	<OPTIONALTALENT name="Navigation" circle="1"/>
-	<OPTIONALTALENT name="Parry" circle="1"/>
-	<OPTIONALTALENT name="Throwing Weapons" circle="1"/>
-	<OPTIONALTALENT name="Unarmed Combat" circle="1"/>
-	<DISCIPLINETALENT name="Air Sailing" circle="1"/>
-	<DISCIPLINETALENT name="Battle Shout" circle="1"/>
-	<DISCIPLINETALENT name="Fireblood" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Melee Weapons" circle="1"/>
-	<OPTIONALTALENT name="Air Speaking" circle="2"/>
-	<OPTIONALTALENT name="Detact Weapons" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2"/>
-	<OPTIONALTALENT name="Missile Weapons" circle="2"/>
-	<OPTIONALTALENT name="Swift Kick" circle="2"/>
-	<OPTIONALTALENT name="Wilderness Survival" circle="2"/>
-	<OPTIONALTALENT name="Wind Catcher" circle="2"/>
-	<OPTIONALTALENT name="Wound Balance" circle="2"/>
-	<DISCIPLINETALENT name="Great Leap" circle="2"/>
-	<DEFENSE kind="physical" circle="2"/>
-	<DISCIPLINETALENT name="Shield Charge" circle="3"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="Sky Weaving"/>
-	<KARMA spend="Toughness-only Test" circle="4"/>
-	<OPTIONALTALENT name="Blood Share" circle="5"/>
-	<OPTIONALTALENT name="Cold Purify" circle="5"/>
-	<OPTIONALTALENT name="Lasting Implression" circle="5"/>
-	<OPTIONALTALENT name="Leadership" circle="5"/>
-	<OPTIONALTALENT name="Lion Heart" circle="5"/>
-	<OPTIONALTALENT name="Suprise Strike" circle="5"/>
-	<OPTIONALTALENT name="Tactics" circle="5"/>
-	<OPTIONALTALENT name="Tiger Spring" circle="5"/>
-	<DISCIPLINETALENT name="Battle Bellow" circle="5"/>
-	<ABILITY name="Strike Without Warning" circle="5"/>
-	<DISCIPLINETALENT name="Steely Stare" circle="6"/>
-	<KARMA spend="Dexterity-only Test" circle="6"/>
-	<DISCIPLINETALENT name="Momentum Attack" circle="7"/>
-	<KARMA spend="melee weapon Damage Test" circle="7"/>
-	<DISCIPLINETALENT name="Down Strike" circle="8"/>
-	<DEFENSE kind="physical" circle="8"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Air Sailing"/>
+		<DISCIPLINETALENT name="Battle Shout"/>
+		<DISCIPLINETALENT name="Fireblood"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Detact Weapons"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<OPTIONALTALENT name="Wind Catcher"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Great Leap"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Shield Charge"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Sky Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Toughness-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Lasting Implression"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Suprise Strike"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Battle Bellow"/>
+		<TALENTABILITY/>
+		<ABILITY>Strike Without Warning</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Steely Stare"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Momentum Attack"/>
+		<TALENTABILITY/>
+		<KARMA spend="melee weapon Damage Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Down Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
 </DISCIPLINE>
