@@ -29,7 +29,6 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Unmarshaller;
 
 import de.earthdawn.data.*;
@@ -122,14 +121,12 @@ public class ApplicationProperties {
 		return spellmap;
 	}
 
-	public HashMap<String,List<DISCIPLINESPELLType>> getSpellsByDiscipline() {
-		HashMap<String,List<DISCIPLINESPELLType>> result = new HashMap<String,List<DISCIPLINESPELLType>>();
+	public HashMap<String,List<List<DISCIPLINESPELLType>>> getSpellsByDiscipline() {
+		HashMap<String,List<List<DISCIPLINESPELLType>>> result = new HashMap<String,List<List<DISCIPLINESPELLType>>>();
 		for(DISCIPLINE discipline : getAllDisziplines()){
-			List<DISCIPLINESPELLType> spells = new ArrayList<DISCIPLINESPELLType>();
-			for( JAXBElement<?> element : discipline.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
-				if( element.getName().getLocalPart().equals("SPELL") ) {
-					spells.add((DISCIPLINESPELLType)element.getValue());
-				}
+			List<List<DISCIPLINESPELLType>> spells = new ArrayList<List<DISCIPLINESPELLType>>();
+			for( DISCIPLINECIRCLEType circle : discipline.getCIRCLE() ) {
+				spells.add(circle.getSPELL());
 			}
 			if( ! spells.isEmpty() ) result.put(discipline.getName(), spells);
 		}
@@ -138,32 +135,33 @@ public class ApplicationProperties {
 
 	public List<SPELLType> getSpells4Grimoir() {
 		List<SPELLType> result = new ArrayList<SPELLType>();
-		HashMap<String, List<DISCIPLINESPELLType>> spellsByDiscipline = getSpellsByDiscipline();
+		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = getSpellsByDiscipline();
 		HashMap<String, SPELLDEFType> spells = getSpells();
 		for( String discipline : spellsByDiscipline.keySet() ) {
-			for( DISCIPLINESPELLType s : spellsByDiscipline.get(discipline)) {
-				SPELLDEFType spelldef = spells.get(s.getName());
-				if(spelldef != null) {
-					SPELLType spell = new SPELLType();
-					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
-					spell.setCircle(s.getCircle());
-					spell.setDuration(spelldef.getDuration());
-					spell.setEffect(spelldef.getEffect());
-					spell.setEffectarea(spelldef.getEffectarea());
-					spell.setName(spelldef.getName());
-					spell.setRange(spelldef.getRange());
-					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
-					spell.setThreads(spelldef.getThreads());
-					spell.setType(s.getType());
-					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
-					
-					spell.setType(s.getType());
-					result.add(spell);
+			int circlenr=0;
+			for( List<DISCIPLINESPELLType> disciplineSpells : spellsByDiscipline.get(discipline)) {
+				circlenr++;
+				for( DISCIPLINESPELLType s : disciplineSpells ) {
+					SPELLDEFType spelldef = spells.get(s.getName());
+					if(spelldef != null) {
+						SPELLType spell = new SPELLType();
+						spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+						spell.setCircle(circlenr);
+						spell.setDuration(spelldef.getDuration());
+						spell.setEffect(spelldef.getEffect());
+						spell.setEffectarea(spelldef.getEffectarea());
+						spell.setName(spelldef.getName());
+						spell.setRange(spelldef.getRange());
+						spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+						spell.setThreads(spelldef.getThreads());
+						spell.setType(s.getType());
+						spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+						spell.setType(s.getType());
+						result.add(spell);
+					} else{
+						System.err.println("Spell " + s.getName() + "(" + discipline +") not found!" );
+					}
 				}
-				else{
-					System.err.println("Spell " + s.getName() + "(" + discipline +") not found!" );
-				}
-					
 			}
 		}
 		return result;

@@ -155,35 +155,37 @@ class SpellsTableModel extends AbstractTableModel {
 		spelllist = new ArrayList<SPELLType>();
 		disciplinelist = new ArrayList<String>();
 		
-		HashMap<String, List<DISCIPLINESPELLType>> spellsByDiscipline = ApplicationProperties.create().getSpellsByDiscipline();
+		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = ApplicationProperties.create().getSpellsByDiscipline();
 		HashMap<String, SPELLDEFType> spells = ApplicationProperties.create().getSpells();
 		for( String discipline : spellsByDiscipline.keySet() ) {
-			for( DISCIPLINESPELLType s : spellsByDiscipline.get(discipline)) {
-				SPELLDEFType spelldef = spells.get(s.getName());
-				if(spelldef != null) {
-					SPELLType spell = new SPELLType();
-					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
-					spell.setCircle(s.getCircle());
-					spell.setDuration(spelldef.getDuration());
-					spell.setEffect(spelldef.getEffect());
-					spell.setEffectarea(spelldef.getEffectarea());
-					spell.setName(spelldef.getName());
-					spell.setRange(spelldef.getRange());
-					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
-					spell.setThreads(spelldef.getThreads());
-					spell.setType(s.getType());
-					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
-					
-					spell.setType(s.getType());
-					spelllist.add(spell);
-					disciplinelist.add(discipline);
+			int circlenr = 0;
+			for( List<DISCIPLINESPELLType> disciplineSpells : spellsByDiscipline.get(discipline)) {
+				circlenr++;
+				for( DISCIPLINESPELLType disciplineSpell : disciplineSpells ) {
+					SPELLDEFType spelldef = spells.get(disciplineSpell.getName());
+					if(spelldef != null) {
+						SPELLType spell = new SPELLType();
+						spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+						spell.setCircle(circlenr);
+						spell.setDuration(spelldef.getDuration());
+						spell.setEffect(spelldef.getEffect());
+						spell.setEffectarea(spelldef.getEffectarea());
+						spell.setName(spelldef.getName());
+						spell.setRange(spelldef.getRange());
+						spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+						spell.setThreads(spelldef.getThreads());
+						spell.setType(disciplineSpell.getType());
+						spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+						
+						spelllist.add(spell);
+						disciplinelist.add(discipline);
+					}
+					else{
+						System.err.println("Spell " + disciplineSpell.getName() + "(" + discipline +") not found!" );
+					}
 				}
-				else{
-					System.err.println("Spell " + s.getName() + "(" + discipline +") not found!" );
-				}
-					
 			}
-		}		
+		}
 	}
 
     
