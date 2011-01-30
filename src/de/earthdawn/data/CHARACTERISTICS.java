@@ -55,16 +55,16 @@ import javax.xml.bind.annotation.XmlType;
 public class CHARACTERISTICS {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "ATTRIBUTELPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
-        @XmlElementRef(name = "SKILLLPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
-        @XmlElementRef(name = "ATTRIBUTECOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
-        @XmlElementRef(name = "DEFENSERAITING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "MYSTICARMOR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "LEGENDARYSTATUS", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
         @XmlElementRef(name = "ENCUMBRANCE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
-        @XmlElementRef(name = "STEPDICETABLE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "DEFENSERAITING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "ATTRIBUTELPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "ATTRIBUTECOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
         @XmlElementRef(name = "HEALTHRATING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
         @XmlElementRef(name = "DISCIPLINENR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
-        @XmlElementRef(name = "LEGENDARYSTATUS", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
-        @XmlElementRef(name = "MYSTICARMOR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class)
+        @XmlElementRef(name = "SKILLLPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class),
+        @XmlElementRef(name = "STEPDICETABLE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class)
     })
     protected List<JAXBElement<?>> encumbranceOrDEFENSERAITINGOrMYSTICARMOR;
 
@@ -86,16 +86,16 @@ public class CHARACTERISTICS {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSLEGENDARYSTATUS }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}
      * {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}
      * {@link JAXBElement }{@code <}{@link CHARACTERISTICSATTRIBUTECOST }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDISCIPLINENR }{@code >}
      * {@link JAXBElement }{@code <}{@link CHARACTERISTICSHEALTHRATING }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSLEGENDARYSTATUS }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDISCIPLINENR }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}
      * 
      * 
      */

@@ -24,7 +24,6 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMASTEP" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>
 		</xs:sequence>
-		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:element name="DISCIPLINE">
 		<xs:complexType>

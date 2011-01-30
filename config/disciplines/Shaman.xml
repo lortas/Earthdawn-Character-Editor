@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE name="Shaman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="4" unconsciousness="3"/>
-	<CIRCLE circle="1">
+	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Creature Analysis"/>
 		<OPTIONALTALENT name="Silent Walk"/>
 		<OPTIONALTALENT name="Speak Language"/>
@@ -29,7 +29,7 @@
 		<SPELL type="shamane" name="Quicken Pace"/>
 		<SPELL type="shamane" name="Resist Cold"/>
 	</CIRCLE>
-	<CIRCLE circle="2">
+	<CIRCLE><!-- 2 -->
 		<OPTIONALTALENT name="Arcane Mutterings"/>
 		<OPTIONALTALENT name="Borrow Sense"/>
 		<OPTIONALTALENT name="Dominate Beast"/>
@@ -47,16 +47,16 @@
 		<SPELL type="shamane" name="Path Home"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
-	<CIRCLE circle="3">
+	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Spirit Talk"/>
 		<TALENTABILITY/>
 	</CIRCLE>
-	<CIRCLE circle="4">
+	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Spirit Hold"/>
 		<TALENTABILITY/>
 		<KARMA spend="Willpower-only Test"/>
 	</CIRCLE>
-	<CIRCLE circle="5">
+	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Cold Purify"/>
 		<OPTIONALTALENT name="Empathic Sense"/>
 		<OPTIONALTALENT name="Enhanced Fetish"/>
@@ -69,22 +69,22 @@
 		<TALENTABILITY/>
 		<ABILITY>Land and Sea"</ABILITY>
 	</CIRCLE>
-	<CIRCLE circle="6">
+	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Blood Share"/>
 		<TALENTABILITY/>
 		<KARMA spend="Perception-only Test"/>
 	</CIRCLE>
-	<CIRCLE circle="7">
+	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Leadership"/>
 		<TALENTABILITY/>
 		<KARMA spend="Spell Effect Test"/>
 	</CIRCLE>
-	<CIRCLE circle="8">
+	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Safe Path"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
-	<CIRCLE circle="9">
+	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Fetish"/>
 		<OPTIONALTALENT name="Armored Fetish"/>
 		<OPTIONALTALENT name="Bestial Toughness"/>
@@ -98,26 +98,26 @@
 		<KARMA spend="Recovery Test"/>
 		<ABILITY>Cloak of Sky and Water</ABILITY>
 	</CIRCLE>
-	<CIRCLE circle="10">
+	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Summoning Circle"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<KARMA spend="Action Test by a spirit or creature under control"/>
 	</CIRCLE>
-	<CIRCLE circle="11">
+	<CIRCLE><!-- 11 -->
 	<DISCIPLINETALENT name="Plant Shelter"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<DEFENSE kind="social"/>
 		<KARMA spend="Charisma-only Test"/>
 	</CIRCLE>
-	<CIRCLE circle="12">
+	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Animate Object"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
-	<CIRCLE circle="13">
+	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Bestial Resilience"/>
 		<OPTIONALTALENT name="Chameleon"/>
 		<OPTIONALTALENT name="Elemental Walk"/>
@@ -130,12 +130,12 @@
 		<KARMASTEP/>
 		<ABILITY>Pinnacle of Comprehension</ABILITY>
 	</CIRCLE>
-	<CIRCLE circle="14">
+	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Netherwalk"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
-	<CIRCLE circle="15">
+	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Multi-Weaving"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>

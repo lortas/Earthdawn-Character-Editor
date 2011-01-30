@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE  name="Warrior" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="9" unconsciousness="7"/>
-	<CIRCLE circle="1">
+	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Acrobatic Strike"/>
 		<OPTIONALTALENT name="Air Dance"/>
 		<OPTIONALTALENT name="Climbing"/>
@@ -14,7 +14,7 @@
 		<DISCIPLINETALENT name="Wood Skin"/>
 		<TALENTABILITY/>
 	</CIRCLE>
-	<CIRCLE circle="2">
+	<CIRCLE><!-- 2 -->
 		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="Fireblood"/>
@@ -27,16 +27,16 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
-	<CIRCLE circle="3">
+	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Wound Balance"/>
 		<TALENTABILITY/>
 	</CIRCLE>
-	<CIRCLE circle="4">
+	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Thread Weaving" limitation="War Weaving"/>
 		<TALENTABILITY/>
 		<KARMA spend="Strength-only Test"/>
 	</CIRCLE>
-	<CIRCLE circle="5">
+	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Cobra Strike"/>
 		<OPTIONALTALENT name="Disarm"/>
 		<OPTIONALTALENT name="Leadership"/>
@@ -49,22 +49,22 @@
 		<TALENTABILITY/>
 		<ABILITY>Battle Rites</ABILITY>
 	</CIRCLE>
-	<CIRCLE circle="6">
+	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Life Check"/>
 		<TALENTABILITY/>
 		<KARMA spend="Dexterity-only Test"/>
 	</CIRCLE>
-	<CIRCLE circle="7">
+	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Crushing Blow"/>
 		<TALENTABILITY/>
 		<KARMA spend="close combat Damage Test"/>
 	</CIRCLE>
-	<CIRCLE circle="8">
+	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Second Attack"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
-	<CIRCLE circle="9">
+	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Battle Bellow"/>
 		<OPTIONALTALENT name="Body Blade"/>
 		<OPTIONALTALENT name="Critical Hit"/>
@@ -78,24 +78,24 @@
 		<KARMA spend="Recovery Test"/>
 		<ABILITY>Battlefield Awareness</ABILITY>
 	</CIRCLE>
-	<CIRCLE circle="10">
+	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Resist Pain"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<KARMA spend="Willpower-only Test"/>
 	</CIRCLE>
-	<CIRCLE circle="11">
+	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Vitality"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
-	<CIRCLE circle="12">
+	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Unmount"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
-	<CIRCLE circle="13">
+	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Etherreal Weapon"/>
 		<OPTIONALTALENT name="Mind Blade"/>
 		<OPTIONALTALENT name="Rushing Attack"/>
@@ -108,13 +108,13 @@
 		<KARMASTEP/>
 		<ABILITY>Resurrect Self</ABILITY>
 	</CIRCLE>
-	<CIRCLE circle="14">
+	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Multi-Strike"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>
-	<CIRCLE circle="15">
+	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
