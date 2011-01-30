@@ -323,7 +323,7 @@
 					<xs:documentation>Names a Talent which receive a +1 rank bonus.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="CIRCLENAME_type">
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Names Spell which additionally can be learned.</xs:documentation>
 				</xs:annotation>
@@ -453,27 +453,20 @@
 		<xs:attribute name="skin" type="xs:string" use="required"/>
 		<xs:attribute name="race" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="CIRCLENAME_type">
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
-	</xs:complexType>
 	<xs:complexType name="DISZIPINABILITY_type">
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="count" type="unsigned_int" default="1"/>
 	</xs:complexType>
 	<xs:complexType name="TALENTABILITY_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
 		<xs:attribute name="limitation" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="KARMAABILITY_type">
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
 		<xs:attribute name="spend" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="DEFENSEABILITY_type">
 		<xs:annotation>
 			<xs:documentation>Indicates which defense type will be increased by one.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
 		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
 	</xs:complexType>
 </xs:schema>

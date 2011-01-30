@@ -22,9 +22,10 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="DISCIPLINESPELL_type">
  *   &lt;complexContent>
- *     &lt;extension base="{http://earthdawn.com/datatypes}CIRCLENAME_type">
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/datatypes}spellkind_type" />
- *     &lt;/extension>
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -33,12 +34,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DISCIPLINESPELL_type", namespace = "http://earthdawn.com/discipline")
-public class DISCIPLINESPELLType
-    extends CIRCLENAMEType
-{
+public class DISCIPLINESPELLType {
 
     @XmlAttribute(required = true)
+    protected String name;
+    @XmlAttribute(required = true)
     protected SpellkindType type;
+
+    /**
+     * Gets the value of the name property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets the value of the name property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
     /**
      * Gets the value of the type property.

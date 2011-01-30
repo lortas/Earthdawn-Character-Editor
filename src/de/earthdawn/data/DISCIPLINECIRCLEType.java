@@ -18,31 +18,28 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for THREADRANK_type complex type.
+ * <p>Java class for DISCIPLINECIRCLE_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="THREADRANK_type">
+ * &lt;complexType name="DISCIPLINECIRCLE_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type" minOccurs="0"/>
- *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" minOccurs="0"/>
- *         &lt;element name="WOUND" type="{http://earthdawn.com/datatypes}WOUND_type" minOccurs="0"/>
- *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SPELL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="DISCIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="8" minOccurs="0"/>
+ *         &lt;element name="TALENTABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/>
+ *         &lt;element name="SPELL" type="{http://earthdawn.com/discipline}DISCIPLINESPELL_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELLABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="RECOVERYTEST" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="KARMA" type="{http://earthdawn.com/datatypes}KARMAABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="rank" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="keyknowledge" use="required" type="{http://earthdawn.com/datatypes}yesno_type" />
- *       &lt;attribute name="lpcost" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="effect" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -51,166 +48,59 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "THREADRANK_type", propOrder = {
-    "armor",
-    "weapon",
-    "wound",
-    "defense",
-    "talent",
+@XmlType(name = "DISCIPLINECIRCLE_type", namespace = "http://earthdawn.com/discipline", propOrder = {
+    "optionaltalent",
+    "disciplinetalent",
+    "talentability",
     "spell",
     "spellability",
+    "defense",
     "initiative",
     "recoverytest",
+    "karma",
     "karmastep",
     "ability"
 })
-public class THREADRANKType {
+public class DISCIPLINECIRCLEType {
 
-    @XmlElement(name = "ARMOR")
-    protected ARMORType armor;
-    @XmlElement(name = "WEAPON")
-    protected WEAPONType weapon;
-    @XmlElement(name = "WOUND")
-    protected WOUNDType wound;
-    @XmlElement(name = "DEFENSE")
-    protected List<DEFENSEABILITYType> defense;
-    @XmlElement(name = "TALENT")
-    protected List<TALENTABILITYType> talent;
+    @XmlElement(name = "OPTIONALTALENT")
+    protected List<TALENTABILITYType> optionaltalent;
+    @XmlElement(name = "DISCIPLINETALENT")
+    protected List<TALENTABILITYType> disciplinetalent;
+    @XmlElement(name = "TALENTABILITY", required = true)
+    protected DISZIPINABILITYType talentability;
     @XmlElement(name = "SPELL")
-    protected List<String> spell;
+    protected List<DISCIPLINESPELLType> spell;
     @XmlElement(name = "SPELLABILITY")
     protected List<DISZIPINABILITYType> spellability;
+    @XmlElement(name = "DEFENSE")
+    protected List<DEFENSEABILITYType> defense;
     @XmlElement(name = "INITIATIVE")
     protected List<DISZIPINABILITYType> initiative;
     @XmlElement(name = "RECOVERYTEST")
     protected List<DISZIPINABILITYType> recoverytest;
+    @XmlElement(name = "KARMA")
+    protected List<KARMAABILITYType> karma;
     @XmlElement(name = "KARMASTEP")
     protected List<DISZIPINABILITYType> karmastep;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
     @XmlAttribute(required = true)
-    protected int rank;
-    @XmlAttribute(required = true)
-    protected YesnoType keyknowledge;
-    @XmlAttribute(required = true)
-    protected int lpcost;
-    @XmlAttribute(required = true)
-    protected String effect;
+    protected int circle;
 
     /**
-     * Gets the value of the armor property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ARMORType }
-     *     
-     */
-    public ARMORType getARMOR() {
-        return armor;
-    }
-
-    /**
-     * Sets the value of the armor property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ARMORType }
-     *     
-     */
-    public void setARMOR(ARMORType value) {
-        this.armor = value;
-    }
-
-    /**
-     * Gets the value of the weapon property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WEAPONType }
-     *     
-     */
-    public WEAPONType getWEAPON() {
-        return weapon;
-    }
-
-    /**
-     * Sets the value of the weapon property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WEAPONType }
-     *     
-     */
-    public void setWEAPON(WEAPONType value) {
-        this.weapon = value;
-    }
-
-    /**
-     * Gets the value of the wound property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WOUNDType }
-     *     
-     */
-    public WOUNDType getWOUND() {
-        return wound;
-    }
-
-    /**
-     * Sets the value of the wound property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WOUNDType }
-     *     
-     */
-    public void setWOUND(WOUNDType value) {
-        this.wound = value;
-    }
-
-    /**
-     * Gets the value of the defense property.
+     * Gets the value of the optionaltalent property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the defense property.
+     * This is why there is not a <CODE>set</CODE> method for the optionaltalent property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDEFENSE().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link DEFENSEABILITYType }
-     * 
-     * 
-     */
-    public List<DEFENSEABILITYType> getDEFENSE() {
-        if (defense == null) {
-            defense = new ArrayList<DEFENSEABILITYType>();
-        }
-        return this.defense;
-    }
-
-    /**
-     * Gets the value of the talent property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the talent property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTALENT().add(newItem);
+     *    getOPTIONALTALENT().add(newItem);
      * </pre>
      * 
      * 
@@ -220,11 +110,64 @@ public class THREADRANKType {
      * 
      * 
      */
-    public List<TALENTABILITYType> getTALENT() {
-        if (talent == null) {
-            talent = new ArrayList<TALENTABILITYType>();
+    public List<TALENTABILITYType> getOPTIONALTALENT() {
+        if (optionaltalent == null) {
+            optionaltalent = new ArrayList<TALENTABILITYType>();
         }
-        return this.talent;
+        return this.optionaltalent;
+    }
+
+    /**
+     * Gets the value of the disciplinetalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the disciplinetalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDISCIPLINETALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTABILITYType }
+     * 
+     * 
+     */
+    public List<TALENTABILITYType> getDISCIPLINETALENT() {
+        if (disciplinetalent == null) {
+            disciplinetalent = new ArrayList<TALENTABILITYType>();
+        }
+        return this.disciplinetalent;
+    }
+
+    /**
+     * Gets the value of the talentability property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DISZIPINABILITYType }
+     *     
+     */
+    public DISZIPINABILITYType getTALENTABILITY() {
+        return talentability;
+    }
+
+    /**
+     * Sets the value of the talentability property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DISZIPINABILITYType }
+     *     
+     */
+    public void setTALENTABILITY(DISZIPINABILITYType value) {
+        this.talentability = value;
     }
 
     /**
@@ -245,13 +188,13 @@ public class THREADRANKType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link DISCIPLINESPELLType }
      * 
      * 
      */
-    public List<String> getSPELL() {
+    public List<DISCIPLINESPELLType> getSPELL() {
         if (spell == null) {
-            spell = new ArrayList<String>();
+            spell = new ArrayList<DISCIPLINESPELLType>();
         }
         return this.spell;
     }
@@ -283,6 +226,35 @@ public class THREADRANKType {
             spellability = new ArrayList<DISZIPINABILITYType>();
         }
         return this.spellability;
+    }
+
+    /**
+     * Gets the value of the defense property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the defense property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEFENSE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link DEFENSEABILITYType }
+     * 
+     * 
+     */
+    public List<DEFENSEABILITYType> getDEFENSE() {
+        if (defense == null) {
+            defense = new ArrayList<DEFENSEABILITYType>();
+        }
+        return this.defense;
     }
 
     /**
@@ -344,6 +316,35 @@ public class THREADRANKType {
     }
 
     /**
+     * Gets the value of the karma property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the karma property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKARMA().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KARMAABILITYType }
+     * 
+     * 
+     */
+    public List<KARMAABILITYType> getKARMA() {
+        if (karma == null) {
+            karma = new ArrayList<KARMAABILITYType>();
+        }
+        return this.karma;
+    }
+
+    /**
      * Gets the value of the karmastep property.
      * 
      * <p>
@@ -402,83 +403,19 @@ public class THREADRANKType {
     }
 
     /**
-     * Gets the value of the rank property.
+     * Gets the value of the circle property.
      * 
      */
-    public int getRank() {
-        return rank;
+    public int getCircle() {
+        return circle;
     }
 
     /**
-     * Sets the value of the rank property.
+     * Sets the value of the circle property.
      * 
      */
-    public void setRank(int value) {
-        this.rank = value;
-    }
-
-    /**
-     * Gets the value of the keyknowledge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link YesnoType }
-     *     
-     */
-    public YesnoType getKeyknowledge() {
-        return keyknowledge;
-    }
-
-    /**
-     * Sets the value of the keyknowledge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link YesnoType }
-     *     
-     */
-    public void setKeyknowledge(YesnoType value) {
-        this.keyknowledge = value;
-    }
-
-    /**
-     * Gets the value of the lpcost property.
-     * 
-     */
-    public int getLpcost() {
-        return lpcost;
-    }
-
-    /**
-     * Sets the value of the lpcost property.
-     * 
-     */
-    public void setLpcost(int value) {
-        this.lpcost = value;
-    }
-
-    /**
-     * Gets the value of the effect property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEffect() {
-        return effect;
-    }
-
-    /**
-     * Sets the value of the effect property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEffect(String value) {
-        this.effect = value;
+    public void setCircle(int value) {
+        this.circle = value;
     }
 
 }
