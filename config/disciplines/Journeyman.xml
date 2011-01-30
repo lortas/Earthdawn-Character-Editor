@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DISCIPLINE  name="Journeyman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="6" unconsciousness="5"/>
+	<CIRCLE circle="1">
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Air Dance"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<OPTIONALTALENT name="Wood Skin"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<TALENTABILITY count="5"/>
+	</CIRCLE>
+	<CIRCLE circle="2">
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE circle="3">
+		<OPTIONALTALENT name="Wound Balance"/>
+		<TALENTABILITY count="2"/>
+	</CIRCLE>
+	<CIRCLE circle="4">
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Journey Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="choosen Attribute*-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="5">
+		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Disarm"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Steel Stare"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Temper Self"/>
+		<TALENTABILITY count="2"/>
+		<ABILITY>Choose the Path</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="6">
+		<OPTIONALTALENT name="Life Check"/>
+		<TALENTABILITY count="2"/>
+		<KARMA spend="choosen Attribute*-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="7">
+		<OPTIONALTALENT name="Crushing Blow"/>
+		<TALENTABILITY count="2"/>
+		<KARMA spend="Learn Somthing New Test"/>
+	</CIRCLE>
+	<CIRCLE circle="8">
+		<OPTIONALTALENT name="Second Attack"/>
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE circle="9">
+		<TALENTABILITY count="2"/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Morphism</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="10">
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="choosen Attribute*-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="11">
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE circle="12">
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+		<ABILITY>a Charakteristic Bonus</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="13">
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+		<KARMASTEP/>
+		<ABILITY>Path of all Paths</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="14">
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+		<ABILITY>a Charakteristic Bonus</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="15">
+		<TALENTABILITY count="2"/>
+		<DEFENSE kind="physical"/>
+		<ABILITY>a Charakteristic Bonus</ABILITY>
+	</CIRCLE>
+</DISCIPLINE>

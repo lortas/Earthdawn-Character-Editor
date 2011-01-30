@@ -23,7 +23,6 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="KARMAABILITY_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="spend" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,25 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 public class KARMAABILITYType {
 
     @XmlAttribute(required = true)
-    protected int circle;
-    @XmlAttribute(required = true)
     protected String spend;
-
-    /**
-     * Gets the value of the circle property.
-     * 
-     */
-    public int getCircle() {
-        return circle;
-    }
-
-    /**
-     * Sets the value of the circle property.
-     * 
-     */
-    public void setCircle(int value) {
-        this.circle = value;
-    }
 
     /**
      * Gets the value of the spend property.

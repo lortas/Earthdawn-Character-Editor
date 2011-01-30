@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="DISZIPINABILITY_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="count" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -35,23 +35,35 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DISZIPINABILITY_type")
 public class DISZIPINABILITYType {
 
-    @XmlAttribute(required = true)
-    protected int circle;
+    @XmlAttribute
+    protected Integer count;
 
     /**
-     * Gets the value of the circle property.
+     * Gets the value of the count property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getCircle() {
-        return circle;
+    public int getCount() {
+        if (count == null) {
+            return  1;
+        } else {
+            return count;
+        }
     }
 
     /**
-     * Sets the value of the circle property.
+     * Sets the value of the count property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setCircle(int value) {
-        this.circle = value;
+    public void setCount(Integer value) {
+        this.count = value;
     }
 
 }

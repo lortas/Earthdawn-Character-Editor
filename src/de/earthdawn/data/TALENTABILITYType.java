@@ -24,7 +24,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -39,8 +38,6 @@ public class TALENTABILITYType {
 
     @XmlAttribute(required = true)
     protected String name;
-    @XmlAttribute(required = true)
-    protected int circle;
     @XmlAttribute
     protected String limitation;
 
@@ -66,22 +63,6 @@ public class TALENTABILITYType {
      */
     public void setName(String value) {
         this.name = value;
-    }
-
-    /**
-     * Gets the value of the circle property.
-     * 
-     */
-    public int getCircle() {
-        return circle;
-    }
-
-    /**
-     * Sets the value of the circle property.
-     * 
-     */
-    public void setCircle(int value) {
-        this.circle = value;
     }
 
     /**

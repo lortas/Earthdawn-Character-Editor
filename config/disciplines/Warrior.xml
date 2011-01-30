@@ -1,78 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE  name="Warrior" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="9" unconsciousness="7"/>
-	<OPTIONALTALENT name="Acrobatic Strike" circle="1"/>
-	<OPTIONALTALENT name="Air Dance" circle="1"/>
-	<OPTIONALTALENT name="Climbing" circle="1"/>
-	<OPTIONALTALENT name="Maneuver" circle="1"/>
-	<OPTIONALTALENT name="Parry" circle="1"/>
-	<DISCIPLINETALENT name="Avoid Blow" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Melee Weapons" circle="1"/>
-	<DISCIPLINETALENT name="Unarmed Combat" circle="1"/>
-	<DISCIPLINETALENT name="Wood Skin" circle="1"/>
-	<OPTIONALTALENT name="Detect Weapon" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2"/>
-	<OPTIONALTALENT name="Fireblood" circle="2"/>
-	<OPTIONALTALENT name="Heartening Laugh" circle="2"/>
-	<OPTIONALTALENT name="Missile Weapons" circle="2"/>
-	<OPTIONALTALENT name="Swift Kick" circle="2"/>
-	<OPTIONALTALENT name="Throwing Weapons" circle="2"/>
-	<OPTIONALTALENT name="Tiger Spring" circle="2"/>
-	<DISCIPLINETALENT name="Anticipate Blow" circle="2"/>
-	<DEFENSE kind="physical" circle="2"/>
-	<DISCIPLINETALENT name="Wound Balance" circle="3"/>
-	<KARMA spend="Strength-only Test" circle="4"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="4" limitation="War Weaving"/>
-	<OPTIONALTALENT name="Cobra Strike" circle="5"/>
-	<OPTIONALTALENT name="Disarm" circle="5"/>
-	<OPTIONALTALENT name="Leadership" circle="5"/>
-	<OPTIONALTALENT name="Lion Heart" circle="5"/>
-	<OPTIONALTALENT name="Second Weapon" circle="5"/>
-	<OPTIONALTALENT name="Shield Charge" circle="5"/>
-	<OPTIONALTALENT name="Steel Stare" circle="5"/>
-	<OPTIONALTALENT name="Tactics" circle="5"/>
-	<DISCIPLINETALENT name="Temper Self" circle="5"/>
-	<ABILITY name="Batte Rites" circle="5"/>
-	<DISCIPLINETALENT name="Life Check" circle="6"/>
-	<KARMA spend="Dexterity-only Test" circle="6"/>
-	<DISCIPLINETALENT name="Crushing Blow" circle="7"/>
-	<KARMA spend="close combat Damage Test" circle="7"/>
-	<DISCIPLINETALENT name="Second Attack" circle="8"/>
-	<DEFENSE kind="physical" circle="8"/>
-	<OPTIONALTALENT name="Battle Bellow" circle="9"/>
-	<OPTIONALTALENT name="Body Blade" circle="9"/>
-	<OPTIONALTALENT name="Critical Hit" circle="9"/>
-	<OPTIONALTALENT name="Frenzy" circle="9"/>
-	<OPTIONALTALENT name="Matrix Strike" circle="9"/>
-	<OPTIONALTALENT name="Shield Beater" circle="9"/>
-	<OPTIONALTALENT name="Spirit Strike" circle="9"/>
-	<OPTIONALTALENT name="Steel Thought" circle="9"/>
-	<DISCIPLINETALENT name="Earth Skin" circle="9"/>
-	<KARMA spend="Recovery Test" circle="9"/>
-	<ABILITY name="Battlefield Awareness" circle="9"/>
-	<DISCIPLINETALENT name="Resist Pain" circle="10"/>
-	<DEFENSE kind="physical" circle="10"/>
-	<KARMA spend="Willpower-only Test" circle="10"/>
-	<DISCIPLINETALENT name="Vitality" circle="11"/>
-	<DEFENSE kind="physical" circle="11"/>
-	<DEFENSE kind="social" circle="11"/>
-	<DISCIPLINETALENT name="Unmount" circle="12"/>
-	<DEFENSE kind="physical" circle="12"/>
-	<OPTIONALTALENT name="Etherreal Weapon" circle="13"/>
-	<OPTIONALTALENT name="Mind Blade" circle="13"/>
-	<OPTIONALTALENT name="Rushing Attack" circle="13"/>
-	<OPTIONALTALENT name="Second Chance" circle="13"/>
-	<OPTIONALTALENT name="Vital Strike" circle="13"/>
-	<OPTIONALTALENT name="Weapon Beater" circle="13"/>
-	<DISCIPLINETALENT name="Stone Skin" circle="13"/>
-	<DEFENSE kind="spell" circle="13"/>
-	<INITIATIVE circle="13"/>
-	<ABILITY name="Resurrect Self" circle="13"/>
-	<DISCIPLINETALENT name="Multi-Strike" circle="14"/>
-	<DEFENSE kind="physical" circle="14"/>
-	<INITIATIVE circle="13"/>
-	<DISCIPLINETALENT name="Aura Armor" circle="15"/>
-	<DEFENSE kind="spell" circle="15"/>
-	<DEFENSE kind="social" circle="15"/>
+	<CIRCLE circle="1">
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Air Dance"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Parry"/>
+		<DISCIPLINETALENT name="Avoid Blow"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Wood Skin"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE circle="2">
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Anticipate Blow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE circle="3">
+		<DISCIPLINETALENT name="Wound Balance"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE circle="4">
+		<DISCIPLINETALENT name="Thread Weaving" limitation="War Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Strength-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="5">
+		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Disarm"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Steel Stare"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<DISCIPLINETALENT name="Temper Self"/>
+		<TALENTABILITY/>
+		<ABILITY>Battle Rites</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="6">
+		<DISCIPLINETALENT name="Life Check"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="7">
+		<DISCIPLINETALENT name="Crushing Blow"/>
+		<TALENTABILITY/>
+		<KARMA spend="close combat Damage Test"/>
+	</CIRCLE>
+	<CIRCLE circle="8">
+		<DISCIPLINETALENT name="Second Attack"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE circle="9">
+		<OPTIONALTALENT name="Battle Bellow"/>
+		<OPTIONALTALENT name="Body Blade"/>
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Frenzy"/>
+		<OPTIONALTALENT name="Matrix Strike"/>
+		<OPTIONALTALENT name="Shield Beater"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<DISCIPLINETALENT name="Earth Skin"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Battlefield Awareness</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="10">
+		<DISCIPLINETALENT name="Resist Pain"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="11">
+		<DISCIPLINETALENT name="Vitality"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE circle="12">
+		<DISCIPLINETALENT name="Unmount"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE circle="13">
+		<OPTIONALTALENT name="Etherreal Weapon"/>
+		<OPTIONALTALENT name="Mind Blade"/>
+		<OPTIONALTALENT name="Rushing Attack"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="Vital Strike"/>
+		<OPTIONALTALENT name="Weapon Beater"/>
+		<DISCIPLINETALENT name="Stone Skin"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>Resurrect Self</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="14">
+		<DISCIPLINETALENT name="Multi-Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE circle="15">
+		<DISCIPLINETALENT name="Aura Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
 </DISCIPLINE>

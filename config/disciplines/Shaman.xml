@@ -1,102 +1,146 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DISCIPLINE name="Shaman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="4" unconsciousness="3"/>
-	<OPTIONALTALENT name="Creature Analysis" circle="1"/>
-	<OPTIONALTALENT name="Creature Analysis" circle="1"/>
-	<OPTIONALTALENT name="Silent Walk" circle="1"/>
-	<OPTIONALTALENT name="Speak Language" circle="1"/>
-	<OPTIONALTALENT name="Spell Fetish" circle="1"/>
-	<OPTIONALTALENT name="Tracking" circle="1"/>
-	<DISCIPLINETALENT name="Create Fetish" circle="1"/>
-	<DISCIPLINETALENT name="Karma Ritual" circle="1"/>
-	<DISCIPLINETALENT name="Spellcasting" circle="1"/>
-	<DISCIPLINETALENT name="Spell Fetish" circle="1"/>
-	<DISCIPLINETALENT name="Thread Weaving" circle="1" limitation="Shamanism"/>
-	<DISCIPLINETALENT name="Wilderness Survival" circle="1"/>
-	<SPELL type="shamane" name="Air Armor" circle="1"/>
-	<SPELL type="shamane" name="Assuring Touch" circle="1"/>
-	<SPELL type="shamane" name="Bone Dance" circle="1"/>
-	<SPELL type="shamane" name="Catseyes" circle="1"/>
-	<SPELL type="shamane" name="Crunch Climb" circle="1"/>
-	<SPELL type="shamane" name="Earth Blend" circle="1"/>
-	<SPELL type="shamane" name="Earth Darts" circle="1"/>
-	<SPELL type="shamane" name="Insect Repellent" circle="1"/>
-	<SPELL type="shamane" name="Moonglow" circle="1"/>
-	<SPELL type="shamane" name="Plant Talk" circle="1"/>
-	<SPELL type="shamane" name="Purify Earth" circle="1"/>
-	<SPELL type="shamane" name="Purify Water" circle="1"/>
-	<SPELL type="shamane" name="Quicken Pace" circle="1"/>
-	<SPELL type="shamane" name="Resist Cold" circle="1"/>
-	<DEFENSE kind="spell" circle="2"/>
-	<OPTIONALTALENT name="Arcane Mutterings" circle="2"/>
-	<OPTIONALTALENT name="Borrow Sense" circle="2"/>
-	<OPTIONALTALENT name="Dominate Beast" circle="2"/>
-	<OPTIONALTALENT name="Durability" circle="2" limitation="4/3"/>
-	<OPTIONALTALENT name="First Impression" circle="2"/>
-	<OPTIONALTALENT name="Heartening Laugh" circle="2"/>
-	<OPTIONALTALENT name="Spell Fetish" circle="2"/>
-	<OPTIONALTALENT name="Spell Fetish" circle="2"/>
-	<DISCIPLINETALENT name="Astral Sight" circle="2"/>
-	<SPELL type="shamane" name="Gadfly" circle="2"/>
-	<SPELL type="shamane" name="Gills" circle="2"/>
-	<SPELL type="shamane" name="Hunter's Sense" circle="2"/>
-	<SPELL type="shamane" name="Icy Surface" circle="2"/>
-	<SPELL type="shamane" name="Path Home" circle="2"/>
-	<DISCIPLINETALENT name="Spirit Talk" circle="3"/>
-	<DISCIPLINETALENT name="Spirit Hold" circle="4"/>
-	<KARMA spend="Willpower-only Test" circle="4"/>
-	<OPTIONALTALENT name="Cold Purify" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<OPTIONALTALENT name="" circle="5"/>
-	<DISCIPLINETALENT name="Summon" circle="5" limitation="Nature Spirits"/>
-	<ABILITY name="Land and Sea" circle="5"/>
-	<DISCIPLINETALENT name="Blood Share" circle="6"/>
-	<KARMA spend="Perception-only Test" circle="6"/>
-	<DISCIPLINETALENT name="Leadership" circle="7"/>
-	<KARMA spend="Spell Effect Test" circle="7"/>
-	<DISCIPLINETALENT name="Safe Path" circle="8"/>
-	<DEFENSE kind="spell" circle="8"/>
-	<OPTIONALTALENT name="Armored Fetish" circle="9"/>
-	<OPTIONALTALENT name="Armored Fetish" circle="9"/>
-	<OPTIONALTALENT name="Bestial Toughness" circle="9"/>
-	<OPTIONALTALENT name="Detect Falsehood" circle="9"/>
-	<OPTIONALTALENT name="Enduring Art" circle="9"/>
-	<OPTIONALTALENT name="Howl" circle="9"/>
-	<OPTIONALTALENT name="Poison Resistance" circle="9"/>
-	<OPTIONALTALENT name="Spirit Dodge" circle="9"/>
-	<DISCIPLINETALENT name="Bargain with Summoned Creature" circle="9"/>
-	<KARMA spend="Recovery Test" circle="9"/>
-	<ABILITY name="Cloak of Sky and Water" circle="9"/>
-	<DISCIPLINETALENT name="Summoning Circle" circle="10"/>
-	<DEFENSE kind="spell" circle="10"/>
-	<KARMA spend="Action Test by a spirit or creature under control" circle="10"/>
-	<DISCIPLINETALENT name="Plant Shelter" circle="11"/>
-	<DEFENSE kind="physical" circle="11"/>
-	<DEFENSE kind="social" circle="11"/>
-	<KARMA spend="Charisma-only Test" circle="11"/>
-	<DISCIPLINETALENT name="Animate Object" circle="12"/>
-	<DEFENSE kind="spell" circle="12"/>
-	<RECOVERYTEST circle="12"/>
-	<OPTIONALTALENT name="Bestial Resilience" circle="13"/>
-	<OPTIONALTALENT name="Chameleon" circle="13"/>
-	<OPTIONALTALENT name="Elemental Walk" circle="13"/>
-	<OPTIONALTALENT name="Second Chance" circle="13"/>
-	<OPTIONALTALENT name="Shared Fetish" circle="13"/>
-	<OPTIONALTALENT name="Shared Fetish" circle="13"/>
-	<DISCIPLINETALENT name="Wounde Transfer" circle="13"/>
-	<DEFENSE kind="social" circle="13"/>
-	<KARMASTEP circle="13"/>
-	<ABILITY name="Pinnacle of Comprehension" circle="13"/>
-	<DISCIPLINETALENT name="Netherwalk" circle="14"/>
-	<DEFENSE kind="spell" circle="14"/>
-	<DISCIPLINETALENT name="Multi-Weaving" circle="15"/>
-	<DEFENSE kind="physical" circle="15"/>
-	<DEFENSE kind="social" circle="15"/>
-	<INITIATIVE circle="15"/>
-	<RECOVERYTEST circle="14"/>
+	<CIRCLE circle="1">
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Spell Fetish"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<DISCIPLINETALENT name="Create Fetish"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Spell Fetish"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Shamanism"/>
+		<DISCIPLINETALENT name="Wilderness Survival"/>
+		<TALENTABILITY/>
+		<SPELL type="shamane" name="Air Armor"/>
+		<SPELL type="shamane" name="Assuring Touch"/>
+		<SPELL type="shamane" name="Bone Dance"/>
+		<SPELL type="shamane" name="Catseyes"/>
+		<SPELL type="shamane" name="Crunch Climb"/>
+		<SPELL type="shamane" name="Earth Blend"/>
+		<SPELL type="shamane" name="Earth Darts"/>
+		<SPELL type="shamane" name="Insect Repellent"/>
+		<SPELL type="shamane" name="Moonglow"/>
+		<SPELL type="shamane" name="Plant Talk"/>
+		<SPELL type="shamane" name="Purify Earth"/>
+		<SPELL type="shamane" name="Purify Water"/>
+		<SPELL type="shamane" name="Quicken Pace"/>
+		<SPELL type="shamane" name="Resist Cold"/>
+	</CIRCLE>
+	<CIRCLE circle="2">
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Dominate Beast"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Spell Fetish"/>
+		<OPTIONALTALENT name="Spell Fetish"/>
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<TALENTABILITY/>
+		<SPELL type="shamane" name="Gadfly"/>
+		<SPELL type="shamane" name="Gills"/>
+		<SPELL type="shamane" name="Hunter's Sense"/>
+		<SPELL type="shamane" name="Icy Surface"/>
+		<SPELL type="shamane" name="Path Home"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE circle="3">
+		<DISCIPLINETALENT name="Spirit Talk"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE circle="4">
+		<DISCIPLINETALENT name="Spirit Hold"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="5">
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Empathic Sense"/>
+		<OPTIONALTALENT name="Enhanced Fetish"/>
+		<OPTIONALTALENT name="Enhanced Fetish"/>
+		<OPTIONALTALENT name="Fire Heal"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<DISCIPLINETALENT name="Summon" limitation="Nature Spirits"/>
+		<TALENTABILITY/>
+		<ABILITY>Land and Sea"</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="6">
+		<DISCIPLINETALENT name="Blood Share"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="7">
+		<DISCIPLINETALENT name="Leadership"/>
+		<TALENTABILITY/>
+		<KARMA spend="Spell Effect Test"/>
+	</CIRCLE>
+	<CIRCLE circle="8">
+		<DISCIPLINETALENT name="Safe Path"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE circle="9">
+		<OPTIONALTALENT name="Armored Fetish"/>
+		<OPTIONALTALENT name="Armored Fetish"/>
+		<OPTIONALTALENT name="Bestial Toughness"/>
+		<OPTIONALTALENT name="Detect Falsehood"/>
+		<OPTIONALTALENT name="Enduring Art"/>
+		<OPTIONALTALENT name="Howl"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Spirit Dodge"/>
+		<DISCIPLINETALENT name="Bargain with Summoned Creature"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Cloak of Sky and Water</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="10">
+		<DISCIPLINETALENT name="Summoning Circle"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Action Test by a spirit or creature under control"/>
+	</CIRCLE>
+	<CIRCLE circle="11">
+	<DISCIPLINETALENT name="Plant Shelter"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE circle="12">
+		<DISCIPLINETALENT name="Animate Object"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE circle="13">
+		<OPTIONALTALENT name="Bestial Resilience"/>
+		<OPTIONALTALENT name="Chameleon"/>
+		<OPTIONALTALENT name="Elemental Walk"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="Shared Fetish"/>
+		<OPTIONALTALENT name="Shared Fetish"/>
+		<DISCIPLINETALENT name="Wounde Transfer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Pinnacle of Comprehension</ABILITY>
+	</CIRCLE>
+	<CIRCLE circle="14">
+		<DISCIPLINETALENT name="Netherwalk"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE circle="15">
+		<DISCIPLINETALENT name="Multi-Weaving"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+		<RECOVERYTEST/>
+	</CIRCLE>
 </DISCIPLINE>
