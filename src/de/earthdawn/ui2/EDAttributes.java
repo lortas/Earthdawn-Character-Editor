@@ -31,6 +31,7 @@ public class EDAttributes extends JPanel {
 		add(scrollPane);
 		
 		table = new JTable();
+		InputMapUtil.setupInputMap(table);
 		table.setModel(new AttributesTableModel());
 		table.getColumnModel().getColumn(2).setCellEditor(new SpinnerEditor(-2, 8));
 		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));

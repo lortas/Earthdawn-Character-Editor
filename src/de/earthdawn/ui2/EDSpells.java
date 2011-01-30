@@ -57,6 +57,7 @@ public class EDSpells extends JPanel {
 		add(scrollPane);
 		
 		table = new JTable();
+		InputMapUtil.setupInputMap(table);
 		table.setModel(new SpellsTableModel(character));
 		scrollPane.setViewportView(table);
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
