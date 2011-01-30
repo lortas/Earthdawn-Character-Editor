@@ -397,22 +397,12 @@ public class CharacterContainer extends CharChangeRefresh {
 			System.err.println("No Used Optinal Talents found for discipline '"+discipline.getName()+"'");
 		}
 		int disciplineCircle = getCircleOf(discipline.getName());
-		for( JAXBElement<?> element : discipline.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL()) {
-			if( element.getName().getLocalPart().equals("OPTIONALTALENT") ) {
-				TALENTABILITYType talent = (TALENTABILITYType)element.getValue();
-				if( talent.getCircle() <= disciplineCircle ) {
-					Boolean found=false;
-					for( TALENTType usedTalent : usedOptionalTalents ) {
-						if(usedTalent != null){
-							if( talent.getName().equals(usedTalent.getName()) ) {
-								found = true;
-								usedOptionalTalents.remove(usedTalent);
-								break;
-							}
-						}
-					}
-					if( ! found ) result.add( talent );
-				}
+		for(int i = 0; i< discipline.getCIRCLE().size(); i++)
+		{
+			DISCIPLINECIRCLEType disciplincircle = discipline.getCIRCLE().get(i);
+			
+			for( TALENTABILITYType tallent :disciplincircle.getOPTIONALTALENT()) {
+				result.add(tallent);
 			}
 		}
 		return result;
@@ -455,43 +445,46 @@ public class CharacterContainer extends CharChangeRefresh {
 	
 	public void initDisciplinTalents(String disciplinname, int circle){
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinname);
-		for( JAXBElement<?> element : d.getOPTIONALTALENTOrDISCIPLINETALENTAndSPELL() ) {
-			if (element.getName().getLocalPart().equals("DISCIPLINETALENT")){
-				TALENTABILITYType ta = (TALENTABILITYType) element.getValue();
-
-				TALENTSType talents = getAllTalentsByDisziplinName().get(disciplinname);
-				if(ta.getCircle() <= circle){
+		TALENTSType talents = getAllTalentsByDisziplinName().get(disciplinname);
+		for(int i = 0; i< d.getCIRCLE().size(); i++)
+		{
+			DISCIPLINECIRCLEType disciplincircle = d.getCIRCLE().get(i);
+			
+			for( TALENTABILITYType element :disciplincircle.getDISCIPLINETALENT()) {
+				if(disciplincircle.getCircle() <= circle){
 					TALENTType talent = new TALENTType();
-					talent.setName(ta.getName());
-					talent.setLimitation(ta.getLimitation());
-					talent.setCircle(ta.getCircle());
+					talent.setName(element.getName());
+					talent.setLimitation(element.getLimitation());
+					
 					RANKType rank = new RANKType();
 					rank.setRank(1);
 					rank.setBonus(0);
 					rank.setStep(1);
 					talent.setRANK(rank);
 					
-					if(getTalentByDisciplinAndName(disciplinname, ta.getName()) == null) {
+					if(getTalentByDisciplinAndName(disciplinname, element.getName()) == null) {
 						talents.getDISZIPLINETALENT().add(talent);
 					}
 				}
 				else{
 					// Disciplin Talente die aus höheren Kreisen löschen
-					if(getTalentByName(ta.getName()) != null){
-						System.out.println("Remove Talent:" + ta.getName());
+					if(getTalentByName(element.getName()) != null){
+						System.out.println("Remove Talent:" + element.getName());
 						List<TALENTType> removelist = new ArrayList<TALENTType>();
 						for(TALENTType talent  : talents.getDISZIPLINETALENT()){
-							if(talent.getName().equals(ta.getName())){
+							if(talent.getName().equals(element.getName())){
 								removelist.add(talent);
 							}
 						}
 						talents.getDISZIPLINETALENT().removeAll(removelist);
-						
-					}
+					}	
 				}
+					
+					
 			}
 			
-		}			
+		}
+
 	}
 	
 	public void addOptionalTalent(String discipline, int circle, TALENTABILITYType talenttype){
