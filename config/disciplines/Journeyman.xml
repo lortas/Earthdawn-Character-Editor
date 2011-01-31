@@ -23,7 +23,7 @@
 		<OPTIONALTALENT name="Swift Kick"/>
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Tiger Spring"/>
-		<TALENTABILITY/>
+		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
