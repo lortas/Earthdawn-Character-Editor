@@ -120,34 +120,16 @@ public class ECEWorker {
 		recovery.setDice(character.getAttributes().get("TOU").getDice());
 
 		// **KARMA**
-		KARMAType karma=character.getKarma();
-		karma.setMaxmodificator(karmaMaxBonus);
-		int karmapointsPLUS = 0;
-		int karmapointsMINUS = 0;
-		int karmapointsZERO = 0;
-		for( ACCOUNTINGType lp : karma.getKARMAPOINTS() ) {
-			switch( lp.getType() ) {
-			case PLUS:  karmapointsPLUS  += lp.getValue(); break;
-			case MINUS: karmapointsMINUS += lp.getValue(); break;
-			case ZERO:  karmapointsZERO  += lp.getValue(); break;
-			}
-		}
-		karma.setCurrent(karmapointsPLUS-karmapointsMINUS);
-		calculatedLP.setKarma(calculatedLP.getKarma()+(karmapointsPLUS*10));
+		TALENTType karmaritualTalent = null;
 		String KARMARUTUAL = ApplicationProperties.create().getKarmaritualName(); 
 		if( KARMARUTUAL == null ) {
-			System.err.println("Karmaritual in names.xml not defined for selected language. Skipping MaxKarma calculation");
+			System.err.println("Karmaritual talent name is not defined for selected language.");
 		} else {
-			int maxkarma = 0;
-			TALENTType karmaritual=character.getTalentByName(KARMARUTUAL);
-			if( karmaritual != null ) {
-				maxkarma += namegiver.getKarmamodifier() * karmaritual.getRANK().getRank();
-			}
-			// Die Übriggebliebenen Kaufpunkte erhöhen das maximale Karma
-			maxkarma += karmaMaxBonus;
-			karma.setMax(maxkarma);
+			karmaritualTalent=character.getTalentByName(KARMARUTUAL);
 		}
-		
+		int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
+		calculatedLP.setKarma(calculatedLP.getKarma()+calculatedKarmaLP);
+
 		// **MOVEMENT**
 		MOVEMENTType movement = character.getMovement();
 		movement.setFlight(namegiver.getMovementFlight());
@@ -186,14 +168,7 @@ public class ECEWorker {
 		protection.getARMOROrSHIELD().clear();
 		protection.getARMOROrSHIELD().addAll(newarmor);
 
-		String abilities = "";
-		for ( String s : namegiver.getABILITY() ) {
-			if( ! abilities.isEmpty() ) {
-				abilities +=", ";
-			}
-			abilities +=s;
-		}
-		character.setAbilities(abilities);
+		character.setAbilities(concatStrings(namegiver.getABILITY()));
 
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
 		character.clearDisciplineBonuses();
@@ -297,10 +272,9 @@ public class ECEWorker {
 			// Nur der höchtse Bonus wird gewertet.
 			int currentKarmaStepBonus = getDisciplineKarmaStepBonus(discipline);
 			if( currentKarmaStepBonus > maxKarmaStepBonus ) maxKarmaStepBonus = currentKarmaStepBonus;
-			List<DISCIPLINEBONUSType> bonuses = getDisciplineBonuses(discipline);
 			List<DISCIPLINEBONUSType> currentBonuses = discipline.getDISCIPLINEBONUS();
-			bonuses.clear();
-			bonuses.addAll(currentBonuses);
+			currentBonuses.clear();
+			currentBonuses.addAll(getDisciplineBonuses(discipline));
 		}
 
 		for( SKILLType skill : character.getSkills() ) {
@@ -327,22 +301,7 @@ public class ECEWorker {
 		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
 		recovery.setDice(step2Dice(recovery.getStep()));
 		
-		EXPERIENCEType legendpoints = character.getLegendPoints();
-		int legendpointsPLUS = 0;
-		int legendpointsMINUS = 0;
-		int legendpointsZERO = 0;
-		for( ACCOUNTINGType lp : legendpoints.getLEGENDPOINTS() ) {
-			switch( lp.getType() ) {
-			case PLUS:  legendpointsPLUS  += lp.getValue(); break;
-			case MINUS: legendpointsMINUS += lp.getValue(); break;
-			case ZERO:  legendpointsZERO  += lp.getValue(); break;
-			}
-		}
-		legendpoints.setCurrentlegendpoints(legendpointsPLUS-legendpointsMINUS);
-		legendpoints.setTotallegendpoints(legendpointsPLUS);
-		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(character.getDiciplineMaxCircle().getCircle());
-		legendpoints.setRenown(legendstatus.getReown());
-		legendpoints.setReputation(legendstatus.getReputation());
+		calculateLegendPointsAndStatus(character.getLegendPoints(),character.getDiciplineMaxCircle().getCircle());
 
 		// ** SPELLS **
 		OPTIONALRULEType OptinalRule_SpellLegendPointCost = ApplicationProperties.create().getOptionalRules().getSPELLLEGENDPOINTCOST();
@@ -413,6 +372,54 @@ public class ECEWorker {
 		System.out.println("Berechnete verbrauchte LPs Knacks: "+calculatedLP.getKnacks());
 		System.out.println("Berechnete verbrauchte LPs gesamt: "+calculatedLP.getTotal());
 		return charakter;
+	}
+
+	public static String concatStrings(List<String> strings) {
+		String result = "";
+		for ( String s : strings ) {
+			if( ! result.isEmpty() ) result += ", ";
+			result += s;
+		}
+		return result;
+	}
+
+	public static List<Integer> calculateAccounting(List<ACCOUNTINGType> accountings) {
+		int plus = 0;
+		int minus = 0;
+		int zero = 0;
+		for( ACCOUNTINGType lp : accountings ) {
+			switch( lp.getType() ) {
+			case PLUS:  plus  += lp.getValue(); break;
+			case MINUS: minus += lp.getValue(); break;
+			case ZERO:  zero  += lp.getValue(); break;
+			}
+		}
+		List<Integer> account = new ArrayList<Integer>();
+		account.add(plus);  // 0
+		account.add(minus); // 1
+		account.add(zero);  // 2
+		return account;
+	}
+
+	private int calculateKarma(KARMAType karma, TALENTType karmaritualTalent, int karmaModifier, int karmaMaxBonus) {
+		karma.setMaxmodificator(karmaMaxBonus);
+		if( (karmaritualTalent != null) && (karmaritualTalent.getRANK() != null) ) {
+			karma.setMax( karmaMaxBonus + (karmaModifier * karmaritualTalent.getRANK().getRank()) );
+		} else {
+			System.err.println("Skipping MaxKarma calculation.");
+		}
+		List<Integer> k = calculateAccounting(karma.getKARMAPOINTS());
+		karma.setCurrent(k.get(0)-k.get(1));
+		return 10*k.get(0); // KarmaLP
+	}
+
+	public static void calculateLegendPointsAndStatus(EXPERIENCEType legendpoints, int circle) {
+		List<Integer> lp = calculateAccounting(legendpoints.getLEGENDPOINTS());
+		legendpoints.setCurrentlegendpoints(lp.get(0)-lp.get(1));
+		legendpoints.setTotallegendpoints(lp.get(0));
+		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(circle);
+		legendpoints.setRenown(legendstatus.getReown());
+		legendpoints.setReputation(legendstatus.getReputation());
 	}
 
 	private void calculateKnacks(CALCULATEDLEGENDPOINTSType calculatedLP, Integer disciplinenumber, TALENTType talent, int rank) {
