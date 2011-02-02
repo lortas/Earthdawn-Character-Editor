@@ -252,14 +252,18 @@ public class EDMainWindow {
 	
 
 	protected  void do_mntmSave_actionPerformed(ActionEvent arg0) {
-		if(file != null){
-			
+		if( file != null ) {
 			try{
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Marshaller m = jc.createMarshaller();
 				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.marshal(ec,new FileWriter(file));
+				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
+				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+				FileWriter fileio = new FileWriter(file);
+				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
+				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
+				m.marshal(ec,fileio);
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -273,14 +277,19 @@ public class EDMainWindow {
 		// Show open dialog; this method does not return until the dialog is closed 
 		fc.showSaveDialog(frame); 
 		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
-		if(selFile != null){
+		if( selFile != null ) {
 			file = selFile;
 			try{
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Marshaller m = jc.createMarshaller();
 				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.marshal(ec,new FileWriter(selFile));
+				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
+				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+				FileWriter fileio = new FileWriter(selFile);
+				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
+				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
+				m.marshal(ec,fileio);
 			}
 			catch(Exception e){
 				e.printStackTrace();
