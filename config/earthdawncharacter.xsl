@@ -21,7 +21,7 @@
 <html>
     <head>
         <title><xsl:value-of select="/edc:EDCHARACTER/@name" /></title>
-        <link rel="stylesheet" type="text/css" href="edstyle.css"/>
+        <link rel="stylesheet" type="text/css" href="earthdawncharacter.css"/>
     </head>
     <body class="edBody">
  
