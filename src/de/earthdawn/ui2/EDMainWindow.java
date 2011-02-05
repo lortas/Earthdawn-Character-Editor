@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -261,9 +263,14 @@ public class EDMainWindow {
 				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
 				FileWriter fileio = new FileWriter(file);
-				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
+				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
+				String path=file.getAbsolutePath();
+				copyFile("./config/earthdawncharacter.xsd",path+"/earthdawncharacter.xsd");
+				copyFile("./config/earthdawncharacter.xsl",path+"/earthdawncharacter.xsl");
+				copyFile("./config/earthdawncharacter.css",path+"/earthdawncharacter.css");
+				copyFile("./config/earthdawndatatypes.xsd",path+"/earthdawndatatypes.xsd");
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -287,9 +294,14 @@ public class EDMainWindow {
 				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
 				FileWriter fileio = new FileWriter(selFile);
-				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
+				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
+				String path=selFile.getAbsolutePath();
+				copyFile("./config/earthdawncharacter.xsd",path+"/earthdawncharacter.xsd");
+				copyFile("./config/earthdawncharacter.xsl",path+"/earthdawncharacter.xsl");
+				copyFile("./config/earthdawncharacter.css",path+"/earthdawncharacter.css");
+				copyFile("./config/earthdawndatatypes.xsd",path+"/earthdawndatatypes.xsd");
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -381,5 +393,14 @@ public class EDMainWindow {
 		});	
 		addTalentsTabs();
 		refreshTabs();
+	}
+
+	public static void copyFile (String source, String destination) throws IOException {
+		FileReader in = new FileReader(new File(source));
+		FileWriter out = new FileWriter(new File(destination));
+		int c=0;
+		while ((c = in.read()) != -1) out.write(c);
+		in.close();
+		out.close();
 	}
 }
