@@ -34,11 +34,8 @@
 
 .edMiscellaneous,
 .edAttributes,
-.edDiscipline, 
-.edDisciplineTalents,
-.edOtherTalents,
-.edSpells,
 .edCharacteristics,
+.edDiscipline, 
 .edWeapons,
 .edSkills,
 .edRaceabilities,
@@ -49,5 +46,14 @@
 .edPatternItems {
     border-width: 3px;
     border-style: solid;
+    margin: 10px;
+}
+
+.edDisciplineTalents,
+.edOtherTalents,
+.edDisciplineBonuses,
+.edSpells {
+    border-width: 3px;
+    border-style: dotted;
     margin: 10px;
 }
