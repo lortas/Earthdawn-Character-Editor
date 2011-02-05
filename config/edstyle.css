@@ -10,6 +10,16 @@
     font-size: 300%
 }
 
+.edSubHeader {
+    text-align: center;
+    font-size: 180%
+}
+
+.edSubHeader {
+    text-align: center;
+    font-size: 130%
+}
+
 .edKey {
     font-weight: bolder;
 }
@@ -23,9 +33,20 @@
 }
 
 .edMiscellaneous,
-.edAttributes, 
+.edAttributes,
+.edDiscipline, 
 .edDisciplineTalents,
-.edCharacteristics {
+.edOtherTalents,
+.edSpells,
+.edCharacteristics,
+.edWeapons,
+.edSkills,
+.edRaceabilities,
+.edExperience,
+.edCoins,
+.edEquipment,
+.edMagicItems,
+.edPatternItems {
     border-width: 3px;
     border-style: solid;
     margin: 10px;
