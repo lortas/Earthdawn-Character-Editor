@@ -331,8 +331,6 @@
         </tr>
     </table>
 
-    <!-- Discipline Bonuses -->
-
     <!-- Discipline Talents -->
     <div class="edDisciplineTalents">
         <xsl:call-template name="disziplinTalents">
@@ -353,6 +351,12 @@
             <xsl:with-param name="disciplineName" select="@name" />
         </xsl:call-template>
     </div>
+
+    <!-- Discipline Bonuses -->
+    <div class="edDisciplineBonuses">
+        <xsl:call-template name="disciplineBonuses"/>
+    </div>
+
 
 </xsl:template>
   
@@ -461,6 +465,27 @@
         <td><xsl:value-of select="@range" /></td>
         <td><xsl:value-of select="@duration" /></td>
         <td><xsl:value-of select="@effect" /></td>
+    </tr>
+</xsl:template>
+
+<xsl:template name="disciplineBonuses">
+
+    <div class="edSubSubHeader">Discipline Bonuses</div>
+    <table border="1">
+        <tr>
+            <td>Circle</td>
+            <td>Bonus/Ability</td>
+        </tr>
+
+        <xsl:apply-templates select="./edt:DISCIPLINEBONUS"/>
+
+    </table>
+</xsl:template>
+
+<xsl:template match="//edt:DISCIPLINEBONUS">
+    <tr>
+        <td><xsl:value-of select="@circle"/></td>
+        <td><xsl:value-of select="@bonus"/></td>
     </tr>
 </xsl:template>
 
