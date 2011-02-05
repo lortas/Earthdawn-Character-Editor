@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -165,6 +166,7 @@ public class ECEPdfExporter {
 		Set<Integer> disciplineOrder = diciplines.keySet();
 		disciplineOrder = new TreeSet<Integer>(disciplineOrder);
 		int numberOfFristDiszipline=0;
+		int counterKarmaritual=0;
 		for( int order : disciplineOrder ) {
 			if( disciplinename == null ) {
 				disciplinename = "";
@@ -174,8 +176,17 @@ public class ECEPdfExporter {
 				disciplinename += " / ";
 				disciplinecircle += " / ";
 			}
-			disciplinename += diciplines.get(order).getName();
-			disciplinecircle += String.valueOf(diciplines.get(order).getCircle());
+			DISCIPLINEType discipline = diciplines.get(order);
+			disciplinename += discipline.getName();
+			disciplinecircle += String.valueOf(discipline.getCircle());
+			for( String description : wrapString(40,discipline.getKARMARITUAL()) ) {
+				if( counterKarmaritual > 11 ) {
+					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
+					break;
+				}
+				acroFields.setField( "KarmaRitual."+counterKarmaritual, description );
+				counterKarmaritual++;
+			}
 		}
 		acroFields.setField( "Discipline", disciplinename );
 		acroFields.setField( "Circle", disciplinecircle );
@@ -342,6 +353,17 @@ public class ECEPdfExporter {
 				counterEquipment++;
 			}
 		}
+
+		int counterDescription=0;
+		for( String description : wrapString(40,character.getDESCRIPTION()) ) {
+			acroFields.setField( "ShortDescription."+counterDescription, description );
+			counterDescription++;
+			if( counterDescription > 7 ) {
+				System.err.println("Character description to long. Only first 8 lines were displayed.");
+				break;
+			}
+		}
+
 		stamper.close();
 	}
 
@@ -380,5 +402,24 @@ public class ECEPdfExporter {
 			}
 		}
 
+	}
+
+	public static List<String> wrapString(int maxLength, String string) {
+		String wrapChar = " -	"; // Liste von Zeichen wo ein Umbruch erlaubt ist
+		List<String> result = new ArrayList<String>();
+		while(string.length() > maxLength) {
+			// Durchlaufe die Schleife solange wie der Eingabestring größer als die maximale Umbruchlänge ist
+			int pos = maxLength;
+			while( (pos>10) && (wrapChar.indexOf(string.charAt(pos)) < 0) ) {
+				pos--; // Wenn auf der maximal zulässigen Stringlänge kein Umbruchzeichen ist suche eins davor, usw.
+			}
+			if( pos <= 10 ) pos= maxLength; // Wenn bei kleiner 10 immer noch kein Umbruch gefunden, dann breche bei der Maximalen Länge auch ohne Umbruchzeichen um
+			result.add(string.substring(0, pos));
+			string = string.substring(pos);
+		}
+		if( ! string.isEmpty() ) {
+			result.add(string);
+		}
+		return result;
 	}
 }

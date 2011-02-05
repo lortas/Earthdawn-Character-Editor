@@ -570,4 +570,10 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<ITEMType> getItems() {
 		return character.getITEM();
 	}
+
+	public String getDESCRIPTION() {
+		String result=character.getDESCRIPTION();
+		if( result == null ) return "";
+		return result;
+	}
 }

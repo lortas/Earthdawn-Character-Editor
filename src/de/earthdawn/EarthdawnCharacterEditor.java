@@ -58,7 +58,7 @@ public class EarthdawnCharacterEditor {
 				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
 				FileWriter fileio = new FileWriter(outFile);
-				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
+				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
 				// Ausgabe (PDF)
