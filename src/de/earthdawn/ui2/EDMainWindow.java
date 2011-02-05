@@ -266,11 +266,7 @@ public class EDMainWindow {
 				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
-				String path=file.getAbsolutePath();
-				copyFile("./config/earthdawncharacter.xsd",path+"/earthdawncharacter.xsd");
-				copyFile("./config/earthdawncharacter.xsl",path+"/earthdawncharacter.xsl");
-				copyFile("./config/earthdawncharacter.css",path+"/earthdawncharacter.css");
-				copyFile("./config/earthdawndatatypes.xsd",path+"/earthdawndatatypes.xsd");
+				copyCharacterAdditionalFiles(file);
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -297,11 +293,7 @@ public class EDMainWindow {
 				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
-				String path=selFile.getAbsolutePath();
-				copyFile("./config/earthdawncharacter.xsd",path+"/earthdawncharacter.xsd");
-				copyFile("./config/earthdawncharacter.xsl",path+"/earthdawncharacter.xsl");
-				copyFile("./config/earthdawncharacter.css",path+"/earthdawncharacter.css");
-				copyFile("./config/earthdawndatatypes.xsd",path+"/earthdawndatatypes.xsd");
+				copyCharacterAdditionalFiles(file);
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -402,5 +394,17 @@ public class EDMainWindow {
 		while ((c = in.read()) != -1) out.write(c);
 		in.close();
 		out.close();
+	}
+
+	public static void copyCharacterAdditionalFiles(File file) throws IOException {
+		String path=file.getCanonicalPath();
+		int slashPlace = path.lastIndexOf ('/');
+		if( slashPlace >= 0 ) path = path.substring( 0, slashPlace );
+		if( path.isEmpty() ) path=".";
+		System.out.println(path);
+		copyFile("./config/earthdawncharacter.xsd",path+"/earthdawncharacter.xsd");
+		copyFile("./config/earthdawncharacter.xsl",path+"/earthdawncharacter.xsl");
+		copyFile("./config/earthdawncharacter.css",path+"/earthdawncharacter.css");
+		copyFile("./config/earthdawndatatypes.xsd",path+"/earthdawndatatypes.xsd");
 	}
 }
