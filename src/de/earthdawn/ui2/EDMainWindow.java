@@ -23,7 +23,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
 
 import com.itextpdf.text.DocumentException;
@@ -256,17 +258,7 @@ public class EDMainWindow {
 	protected  void do_mntmSave_actionPerformed(ActionEvent arg0) {
 		if( file != null ) {
 			try{
-				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-				Marshaller m = jc.createMarshaller();
-				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-				FileWriter fileio = new FileWriter(file);
-				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
-				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
-				m.marshal(ec,fileio);
-				copyCharacterAdditionalFiles(file);
+				writeToXml(file);
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -283,22 +275,26 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			file = selFile;
 			try{
-				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-				Marshaller m = jc.createMarshaller();
-				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-				FileWriter fileio = new FileWriter(selFile);
-				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
-				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
-				m.marshal(ec,fileio);
-				copyCharacterAdditionalFiles(file);
+				writeToXml(file);
+				copyCharacterAdditionalFiles(file.getParentFile());
 			}
 			catch(Exception e){
 				e.printStackTrace();
 			}
 		}
+	}
+
+	private void writeToXml(File file) throws JAXBException, PropertyException, IOException {
+		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+		Marshaller m = jc.createMarshaller();
+		m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
+		m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+		FileWriter fileio = new FileWriter(file);
+		fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
+		fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
+		m.marshal(ec,fileio);
 	}
 	
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
@@ -396,15 +392,10 @@ public class EDMainWindow {
 		out.close();
 	}
 
-	public static void copyCharacterAdditionalFiles(File file) throws IOException {
-		String path=file.getCanonicalPath();
-		int slashPlace = path.lastIndexOf ('/');
-		if( slashPlace >= 0 ) path = path.substring( 0, slashPlace );
-		if( path.isEmpty() ) path=".";
-		System.out.println(path);
-		copyFile("./config/earthdawncharacter.xsd",path+"/earthdawncharacter.xsd");
-		copyFile("./config/earthdawncharacter.xsl",path+"/earthdawncharacter.xsl");
-		copyFile("./config/earthdawncharacter.css",path+"/earthdawncharacter.css");
-		copyFile("./config/earthdawndatatypes.xsd",path+"/earthdawndatatypes.xsd");
+	public static void copyCharacterAdditionalFiles(File path) throws IOException {
+		copyFile("./config/earthdawncharacter.xsd",new File( path, "earthdawncharacter.xsd" ).getCanonicalPath());
+		copyFile("./config/earthdawncharacter.xsl",new File( path, "earthdawncharacter.xsl" ).getCanonicalPath());
+		copyFile("./config/earthdawncharacter.css",new File( path, "earthdawncharacter.css" ).getCanonicalPath());
+		copyFile("./config/earthdawndatatypes.xsd",new File( path, "earthdawndatatypes.xsd" ).getCanonicalPath());
 	}
 }
