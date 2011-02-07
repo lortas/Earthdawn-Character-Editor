@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell earthdawnspells.xsd">
 	<SPELL name="Absorbing Sphere" threads="3" weavingdifficulty="13" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="R+12 rnd" effect="WIL+8/Mystic"/>
 	<SPELL name="Afterlife" threads="5" weavingdifficulty="16" reattuningdifficulty="21" range="10 hex" duration="R min" effect="WIL+14"/>
