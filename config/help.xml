@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HELP xmlns="http://earthdawn.com/help" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/help earthdawnhelp.xsd">
+	<VERSION>Earthdawn Character Editor 0.4</VERSION>
+	<LICENCE>
+		Copyright (C) 2010-2011  Holger von Rhein &lt;lortas@freenet.de&gt;
+		This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+		This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+		You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	</LICENCE>
+	<AUTHOR>Holger von Rhein</AUTHOR>
+	<ABOUT>The Earthdawn Character Editor is a java-based utility to create and manage character for the role-playing game Earthdawn Third Edition. It is intend to be very flexible, so almost the full behaviour can be configured through xml-based config-files.</ABOUT>
+</HELP>
