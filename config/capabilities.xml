@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/capability earthdawncapabilities.xsd">
 	<SKILL name="Acrobatic Strike" attribute="DEX" default="no" action="simple" strain="1"/>
 	<SKILL name="Acting" attribute="CHA" default="no" action="sustained" strain="0"/>
