@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/help" xmlns="http://earthdawn.com/help" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:element name="HELP">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" name="VERSION" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="LICENCE" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="AUTHOR" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="ABOUT" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
