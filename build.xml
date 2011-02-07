@@ -93,6 +93,7 @@
 			<zipfileset file="./examples/BoraxBookbinder.xml" prefix="examples"/>
 			<zipfileset file="./examples/EsphiraAtasy.xml" prefix="examples"/>
 			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>
+			<zipfileset file="./examples/JadaDenairastas.xml" prefix="examples"/>
 			<zipfileset dir="./cmd" />
 		</zip>
 	</target>
