@@ -407,6 +407,7 @@ public class ECEPdfExporter {
 	public static List<String> wrapString(int maxLength, String string) {
 		String wrapChar = " -	"; // Liste von Zeichen wo ein Umbruch erlaubt ist
 		List<String> result = new ArrayList<String>();
+		if( string == null ) return result;
 		while(string.length() > maxLength) {
 			// Durchlaufe die Schleife solange wie der Eingabestring größer als die maximale Umbruchlänge ist
 			int pos = maxLength;

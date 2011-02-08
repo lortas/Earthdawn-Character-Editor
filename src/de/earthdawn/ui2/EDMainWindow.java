@@ -317,12 +317,12 @@ public class EDMainWindow {
 				
 			character = new CharacterContainer(ec);
 			ECEWorker worker = new ECEWorker();
-		    worker.verarbeiteCharakter(character.getEDCHARACTER());			
+			worker.verarbeiteCharakter(character.getEDCHARACTER());
 			this.character.addCharChangeEventListener(new CharChangeEventListener() {
 				@Override
 				public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 					ECEWorker worker = new ECEWorker();
-				    worker.verarbeiteCharakter(character.getEDCHARACTER());
+					worker.verarbeiteCharakter(character.getEDCHARACTER());
 					addTalentsTabs();
 					refreshTabs();
 				}
@@ -335,14 +335,22 @@ public class EDMainWindow {
 		frame.dispose();
 	}
 	protected void do_mntmExport_actionPerformed(ActionEvent arg0) {
-		try {
-			new ECEPdfExporter().export(character.getEDCHARACTER(), new File(file.getParentFile(), chopFilename(file)+ ".pdf"));
-		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if( file == null ) return; // TODO: Fehlermeldung
+		File pdfFile = new File(file.getParentFile(), chopFilename(file)+ ".pdf");
+		JFileChooser fc = new JFileChooser(pdfFile);
+		fc.setSelectedFile(pdfFile);
+		fc.showSaveDialog(frame);
+		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		if( selFile != null ) {
+			try {
+				new ECEPdfExporter().export(character.getEDCHARACTER(), selFile);
+			} catch (DocumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
