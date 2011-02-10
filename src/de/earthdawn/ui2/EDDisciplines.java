@@ -118,7 +118,7 @@ class DisciplinesTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 
-    private String[] columnNames = {"Disciplinename", "Circle"};
+    private String[] columnNames = {"Discipline Name", "Circle"};
 
 
 

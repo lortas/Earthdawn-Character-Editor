@@ -54,7 +54,7 @@
     <WOUND threshold="3"/>
     <ABILITY>Can only wear Living Armor</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Orc" karmamodifier="5" movement_ground="6">
+  <NAMEGIVER name="Ork" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="13" />
     <ATTRIBUTE name="TOU" value="11" />
