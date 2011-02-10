@@ -15,7 +15,7 @@
 		<TALENTABILITY/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<OPTIONALTALENT name="Detect Weapons"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="First Impression"/>
 		<OPTIONALTALENT name="Flame Arrow"/>
