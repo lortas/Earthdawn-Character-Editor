@@ -26,21 +26,20 @@ public class EDAttributes extends JPanel {
 	 */
 	public EDAttributes() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-		
+
 		scrollPane = new JScrollPane();
 		add(scrollPane);
-		
+
 		table = new JTable();
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new AttributesTableModel());
 		table.getColumnModel().getColumn(2).setCellEditor(new SpinnerEditor(-2, 8));
-		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
+		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 3));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
-		 
-				
+
 		scrollPane.setViewportView(table);
 	}
-	
+
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((AttributesTableModel)table.getModel()).setCharacter(character);
