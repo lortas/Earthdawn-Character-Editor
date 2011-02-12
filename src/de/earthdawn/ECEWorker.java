@@ -277,6 +277,9 @@ public class ECEWorker {
 			currentBonuses.addAll(getDisciplineBonuses(discipline));
 		}
 
+		removeEmptySkills(character.getSkills());
+		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills();
+		
 		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
@@ -287,6 +290,28 @@ public class ECEWorker {
 			if( skill.getAttribute() != null ) {
 				calculateCapabilityRank(skill.getRANK(),attribute.get(skill.getAttribute().value()));
 			}
+			removeIfContains(defaultSkills,skill.getName());
+		}
+		// Füge Default Skill hinzu
+		for( CAPABILITYType defaultSkill : defaultSkills ) {
+			SKILLType skill = new SKILLType();
+			RANKType rank = new RANKType();
+			rank.setBonus(0);
+			rank.setLpcost(0);
+			rank.setRank(0);
+			skill.setRANK(rank);
+			skill.setName(defaultSkill.getName());
+			skill.setLimitation(defaultSkill.getLimitation());
+			skill.setAction(defaultSkill.getAction());
+			skill.setAttribute(defaultSkill.getAttribute());
+			skill.setBonus(defaultSkill.getBonus());
+			skill.setKarma(defaultSkill.getKarma());
+			skill.setStrain(defaultSkill.getStrain());
+			skill.setDefault(defaultSkill.getDefault());
+			if( skill.getAttribute() != null ) {
+				calculateCapabilityRank(rank,attribute.get(skill.getAttribute().value()));
+			}
+			character.getSkills().add(skill);
 		}
 
 		DEFENSEType disciplineDefense = getDisciplineDefense(diciplineCircle);
@@ -372,6 +397,26 @@ public class ECEWorker {
 		System.out.println("Berechnete verbrauchte LPs Knacks: "+calculatedLP.getKnacks());
 		System.out.println("Berechnete verbrauchte LPs gesamt: "+calculatedLP.getTotal());
 		return charakter;
+	}
+
+	public static void removeIfContains(List<CAPABILITYType> defaultSkills, String name) {
+		List<CAPABILITYType> remove = new ArrayList<CAPABILITYType>();
+		for( CAPABILITYType skill : defaultSkills) {
+			if( skill.getName().equals(name)) {
+				remove.add(skill);
+			}
+		}
+		defaultSkills.removeAll(remove);
+	}
+
+	public static void removeEmptySkills(List<SKILLType> skills) {
+		List<SKILLType> remove = new ArrayList<SKILLType>();
+		for( SKILLType skill : skills ) {
+			RANKType rank = skill.getRANK();
+			if( (rank != null) && (rank.getRank() > 0) ) continue;
+			remove.add(skill);
+		}
+		skills.removeAll(remove);
 	}
 
 	public static String concatStrings(List<String> strings) {

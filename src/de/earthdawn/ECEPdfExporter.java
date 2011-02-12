@@ -229,6 +229,9 @@ public class ECEPdfExporter {
 		if( skills != null ) {
 			int counter = 0;
 			for( SKILLType skill : skills ) {
+				RANKType skillrank = skill.getRANK();
+				// Skills die keinen Rank haben sollen nicht angezeigt werden.
+				if( skillrank.getRank() < 1 ) continue;
 				if( skill.getLimitation().isEmpty() ) {
 					acroFields.setField( "Skill."+counter, skill.getName());
 				} else {
@@ -242,7 +245,6 @@ public class ECEPdfExporter {
 				case SUSTAINED : acroFields.setField( "SkillAction."+counter, "sstnd" ); break;
 				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
 				}
-				RANKType skillrank = skill.getRANK();
 				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
 				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
 				if( skillrank.getBonus() == 0 ) {
