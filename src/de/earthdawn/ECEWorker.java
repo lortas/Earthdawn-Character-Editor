@@ -278,8 +278,7 @@ public class ECEWorker {
 		}
 
 		removeEmptySkills(character.getSkills());
-		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills();
-		
+		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
 		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
 			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());

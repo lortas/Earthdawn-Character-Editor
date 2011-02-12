@@ -23,6 +23,7 @@
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="xs:string"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="NOTDEFAULTSKILL" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="karmamodifier" type="edt:unsigned_int" default="0"/>
