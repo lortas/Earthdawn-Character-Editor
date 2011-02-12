@@ -141,6 +141,7 @@ public class ECEWorker {
 		carrying.setCarrying(tmp);
 		carrying.setLifting(tmp *2);
 
+		// ** ARMOR **
 		ARMORType naturalArmor = namegiver.getARMOR();
 		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
 		PROTECTIONType protection = character.getProtection();

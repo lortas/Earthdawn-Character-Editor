@@ -53,12 +53,15 @@ import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.YesnoType;
 
 public class ECEPdfExporter {
+	private int counterEquipment=0;
+	private int rowEquipment=0;
+	private AcroFields acroFields = null;
 
 	public void export(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
 		//PdfReader reader = new PdfReader(new FileInputStream(new File("./config/ed3_character_sheet.pdf")));
 		PdfReader reader = new PdfReader(new FileInputStream(new File("./config/ed3_extended_character_sheet.pdf")));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
-		AcroFields acroFields = stamper.getAcroFields();
+		acroFields = stamper.getAcroFields();
 		CharacterContainer character = new CharacterContainer(edCharakter);
 // +++ DEBUG +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 		//Set<String> fieldNames = fields.keySet();
@@ -344,19 +347,30 @@ public class ECEPdfExporter {
 				conterSpells++;
 			}
 		}
-		int counterEquipment=0;
-		int rowEquipment=0;
-		for( ITEMType item : character.getItems() ) {
-			acroFields.setField( "Equipment."+counterEquipment+"."+rowEquipment, item.getName() );
-			acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, String.valueOf(item.getWeight()) );
-			if( counterEquipment > 33 ) {
-				counterEquipment=0;
-				if( rowEquipment == 1 ) {
-					break;
-				} else rowEquipment=1;
-			} else {
-				counterEquipment++;
+		counterEquipment=0;
+		rowEquipment=0;
+		boolean naturalarmor=true;
+		for( ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
+			if( naturalarmor ) {
+				// Der erste Eintrag ist immer die natüliche Rüstung
+				// Diese und nur diese soll übersprungen werden
+				naturalarmor=false;
+				continue;
 			}
+			String name = armor.getName()+" (";
+			name += armor.getPhysicalarmor()+"/";
+			name += armor.getMysticarmor()+"/";
+			name += armor.getPenalty() + ")";
+			if( ! addEquipment(name,String.valueOf(armor.getWeight())) ) break;
+		}
+		for( WEAPONType weapon : character.getWeapons() ) {
+			String name = weapon.getName()+" (";
+			name += weapon.getDamagestep()+"/";
+			name += weapon.getTimesforged()+")";
+			if( ! addEquipment(name,String.valueOf(weapon.getWeight())) ) break;
+		}
+		for( ITEMType item : character.getItems() ) {
+			if( ! addEquipment(item.getName(),String.valueOf(item.getWeight())) ) break;
 		}
 
 		int counterDescription=0;
@@ -380,6 +394,17 @@ public class ECEPdfExporter {
 		}
 
 		stamper.close();
+	}
+
+	private boolean addEquipment(String name, String weight) throws IOException, DocumentException {
+		acroFields.setField( "Equipment."+counterEquipment+"."+rowEquipment, name );
+		acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, weight );
+		if( counterEquipment > 33 ) {
+			counterEquipment=0;
+			if( rowEquipment == 1 ) return false;
+			else rowEquipment=1;
+		} else counterEquipment++;
+		return true;
 	}
 
 	private void setTalent(AcroFields acroFields, int counter, TALENTType talent) throws DocumentException, IOException {
