@@ -22,6 +22,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -159,7 +160,6 @@ public class ECEPdfExporter {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
 			}
 		}
-		acroFields.setField( "RacialAbilities.0", character.getAbilities() );
 		HashMap<Integer,DISCIPLINEType> diciplines = character.getAllDiciplinesByOrder();
 		String disciplinecircle = null;
 		String disciplinename = null;
@@ -226,17 +226,15 @@ public class ECEPdfExporter {
 			}
 		}
 		List<SKILLType> skills = character.getSkills();
+		String notShownSkills="";
 		if( skills != null ) {
 			int counter = 0;
+			Collections.sort(skills, new SkillComparator());
 			for( SKILLType skill : skills ) {
 				RANKType skillrank = skill.getRANK();
-				// Skills die keinen Rank haben sollen nicht angezeigt werden.
-				if( skillrank.getRank() < 1 ) continue;
-				if( skill.getLimitation().isEmpty() ) {
-					acroFields.setField( "Skill."+counter, skill.getName());
-				} else {
-					acroFields.setField( "Skill."+counter, skill.getName()+": "+skill.getLimitation());
-				}
+				String skillName=skill.getName();;
+				if( ! skill.getLimitation().isEmpty() ) skillName += ":"+skill.getLimitation();
+				acroFields.setField( "Skill."+counter, skillName);
 				acroFields.setField( "SkillAttribute."+counter, skill.getAttribute().value() );
 				acroFields.setField( "SkillStrain."+counter, String.valueOf(skill.getStrain()) );
 				switch( skill.getAction() ) {
@@ -253,6 +251,11 @@ public class ECEPdfExporter {
 					acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
 				}
 				counter++;
+				if( counter > 16 ) {
+					notShownSkills += skillName.replaceAll(" ", "")+"("+skill.getAttribute().value();
+					if( skillrank.getRank() > 0 ) notShownSkills += "+"+skillrank.getRank();
+					notShownSkills += ") ";
+				}
 			}
 		}
 		List<WEAPONType> weapons = character.getWeapons();
@@ -362,6 +365,16 @@ public class ECEPdfExporter {
 			counterDescription++;
 			if( counterDescription > 7 ) {
 				System.err.println("Character description to long. Only first 8 lines were displayed.");
+				break;
+			}
+		}
+
+		int counterRacialAbilities=0;
+		for( String skill : wrapString(41, character.getAbilities()+"; "+notShownSkills) ) {
+			acroFields.setField( "RacialAbilities."+counterRacialAbilities, skill );
+			counterRacialAbilities++;
+			if( counterRacialAbilities > 7 ) {
+				System.err.println("Characters NotShownSkills to long. Only first 8 lines were displayed.");
 				break;
 			}
 		}

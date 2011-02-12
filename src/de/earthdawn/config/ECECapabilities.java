@@ -57,11 +57,15 @@ public class ECECapabilities {
 		return skillList;
 	}
 
-	public List<CAPABILITYType> getDefaultSkills() {
+	public List<CAPABILITYType> getDefaultSkills(List<String> exclude) {
 		List<CAPABILITYType> defaultSkills = new ArrayList<CAPABILITYType>();
 		for( CAPABILITYType skill : skillList ) {
 			if( skill.getDefault().equals(YesnoType.YES) ) {
-				defaultSkills.add(skill);
+				boolean insert=true;
+				for( String s : exclude ) {
+					if( skill.getName().equals(s) ) insert=false;
+				}
+				if( insert ) defaultSkills.add(skill);
 			}
 		}
 		return defaultSkills;

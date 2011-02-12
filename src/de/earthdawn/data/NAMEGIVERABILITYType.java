@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="NOTDEFAULTSKILL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="karmamodifier" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -52,7 +53,8 @@ import javax.xml.bind.annotation.XmlType;
     "wound",
     "defense",
     "talent",
-    "ability"
+    "ability",
+    "notdefaultskill"
 })
 public class NAMEGIVERABILITYType {
 
@@ -68,6 +70,8 @@ public class NAMEGIVERABILITYType {
     protected List<TALENTABILITYType> talent;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
+    @XmlElement(name = "NOTDEFAULTSKILL")
+    protected List<String> notdefaultskill;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute
@@ -239,6 +243,35 @@ public class NAMEGIVERABILITYType {
             ability = new ArrayList<String>();
         }
         return this.ability;
+    }
+
+    /**
+     * Gets the value of the notdefaultskill property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the notdefaultskill property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getNOTDEFAULTSKILL().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getNOTDEFAULTSKILL() {
+        if (notdefaultskill == null) {
+            notdefaultskill = new ArrayList<String>();
+        }
+        return this.notdefaultskill;
     }
 
     /**
