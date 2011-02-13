@@ -31,7 +31,10 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DURABILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ARTISAN" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/names}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/>
+ *         &lt;element name="STARTINGWEAPONS" type="{http://earthdawn.com/names}NAME_STARTINGWEAPONS_type" maxOccurs="unbounded"/>
+ *         &lt;element name="STARTINGITEMS" type="{http://earthdawn.com/names}NAME_STARTINGITEMS_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -46,7 +49,10 @@ import javax.xml.bind.annotation.XmlType;
     "durability",
     "versatility",
     "karmarutual",
-    "spellweaving"
+    "artisan",
+    "spellweaving",
+    "startingweapons",
+    "startingitems"
 })
 @XmlRootElement(name = "NAMES", namespace = "http://earthdawn.com/names")
 public class NAMES {
@@ -59,8 +65,14 @@ public class NAMES {
     protected List<NAMELANGType> versatility;
     @XmlElement(name = "KARMARUTUAL", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMELANGType> karmarutual;
+    @XmlElement(name = "ARTISAN", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMELANGType> artisan;
     @XmlElement(name = "SPELLWEAVING", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMESPELLWEAVINGType> spellweaving;
+    @XmlElement(name = "STARTINGWEAPONS", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESTARTINGWEAPONSType> startingweapons;
+    @XmlElement(name = "STARTINGITEMS", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESTARTINGITEMSType> startingitems;
 
     /**
      * Gets the value of the attributes property.
@@ -179,6 +191,35 @@ public class NAMES {
     }
 
     /**
+     * Gets the value of the artisan property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the artisan property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getARTISAN().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getARTISAN() {
+        if (artisan == null) {
+            artisan = new ArrayList<NAMELANGType>();
+        }
+        return this.artisan;
+    }
+
+    /**
      * Gets the value of the spellweaving property.
      * 
      * <p>
@@ -205,6 +246,64 @@ public class NAMES {
             spellweaving = new ArrayList<NAMESPELLWEAVINGType>();
         }
         return this.spellweaving;
+    }
+
+    /**
+     * Gets the value of the startingweapons property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the startingweapons property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSTARTINGWEAPONS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESTARTINGWEAPONSType }
+     * 
+     * 
+     */
+    public List<NAMESTARTINGWEAPONSType> getSTARTINGWEAPONS() {
+        if (startingweapons == null) {
+            startingweapons = new ArrayList<NAMESTARTINGWEAPONSType>();
+        }
+        return this.startingweapons;
+    }
+
+    /**
+     * Gets the value of the startingitems property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the startingitems property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSTARTINGITEMS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESTARTINGITEMSType }
+     * 
+     * 
+     */
+    public List<NAMESTARTINGITEMSType> getSTARTINGITEMS() {
+        if (startingitems == null) {
+            startingitems = new ArrayList<NAMESTARTINGITEMSType>();
+        }
+        return this.startingitems;
     }
 
 }
