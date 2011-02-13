@@ -577,4 +577,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( result == null ) return "";
 		return result;
 	}
+
+	public List<MAGICITEMType> getMagicItem() {
+		return character.getMAGICITEM();
+	}
 }

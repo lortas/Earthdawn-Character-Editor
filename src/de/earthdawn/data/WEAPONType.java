@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="damagestep" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="strengthmin" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="timesforged" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="shortrange" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="mediumrange" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="longrange" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="timesforged" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="dateforged" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -50,13 +50,13 @@ public class WEAPONType
     @XmlAttribute(required = true)
     protected int size;
     @XmlAttribute
-    protected Integer timesforged;
-    @XmlAttribute
     protected Integer shortrange;
     @XmlAttribute
-    protected Integer mediumrange;
-    @XmlAttribute
     protected Integer longrange;
+    @XmlAttribute
+    protected Integer timesforged;
+    @XmlAttribute
+    protected String dateforged;
 
     /**
      * Gets the value of the damagestep property.
@@ -107,34 +107,6 @@ public class WEAPONType
     }
 
     /**
-     * Gets the value of the timesforged property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public int getTimesforged() {
-        if (timesforged == null) {
-            return  0;
-        } else {
-            return timesforged;
-        }
-    }
-
-    /**
-     * Sets the value of the timesforged property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setTimesforged(Integer value) {
-        this.timesforged = value;
-    }
-
-    /**
      * Gets the value of the shortrange property.
      * 
      * @return
@@ -163,34 +135,6 @@ public class WEAPONType
     }
 
     /**
-     * Gets the value of the mediumrange property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public int getMediumrange() {
-        if (mediumrange == null) {
-            return  0;
-        } else {
-            return mediumrange;
-        }
-    }
-
-    /**
-     * Sets the value of the mediumrange property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setMediumrange(Integer value) {
-        this.mediumrange = value;
-    }
-
-    /**
      * Gets the value of the longrange property.
      * 
      * @return
@@ -216,6 +160,62 @@ public class WEAPONType
      */
     public void setLongrange(Integer value) {
         this.longrange = value;
+    }
+
+    /**
+     * Gets the value of the timesforged property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getTimesforged() {
+        if (timesforged == null) {
+            return  0;
+        } else {
+            return timesforged;
+        }
+    }
+
+    /**
+     * Sets the value of the timesforged property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setTimesforged(Integer value) {
+        this.timesforged = value;
+    }
+
+    /**
+     * Gets the value of the dateforged property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDateforged() {
+        if (dateforged == null) {
+            return "";
+        } else {
+            return dateforged;
+        }
+    }
+
+    /**
+     * Sets the value of the dateforged property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDateforged(String value) {
+        this.dateforged = value;
     }
 
 }
