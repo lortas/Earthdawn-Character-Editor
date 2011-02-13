@@ -1,11 +1,11 @@
 package de.earthdawn.ui2;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.EventQueue;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -33,16 +33,9 @@ import com.itextpdf.text.DocumentException;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
-import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.data.TALENTSType;
 import de.earthdawn.event.CharChangeEventListener;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JSplitPane;
-import java.awt.Dimension;
 
 public class EDMainWindow {
 
@@ -169,35 +162,50 @@ public class EDMainWindow {
 				do_mntmClose_actionPerformed(arg0);
 			}
 		});
-
 		mnFile.add(mntmClose);
+
+		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
+		menuBar.add(mnHelp);
+
+		JMenuItem mntmAbout= new JMenuItem(NLS.getString("EDMainWindow.mntmAbout.text")); //$NON-NLS-1$
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmAbout_actionPerformed(arg0);
+			}
+		});
+		mnHelp.add(mntmAbout);
+
 		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
-		
+
 		splitPane = new JSplitPane();
 		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
 		frame.getContentPane().add(splitPane);
-		
+
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		splitPane.setLeftComponent(tabbedPane);
-		
+
 		panelERGeneral = new EDGeneral();
 		panelERGeneral.setMinimumSize(new Dimension(4, 220));
 		panelEDAttributes = new EDAttributes();
 		panelEDDisciplines = new EDDisciplines();
 		panelEDSpells	= new EDSpells();
 		panelEDSkills = new EDSkills();
-		
+
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
 		tabbedPane.addTab("Spells", null, panelEDSpells, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
-		
+
 		panelEDStatus = new EDStatus();
 		splitPane.setRightComponent(panelEDStatus);
 	}
-	
+
+	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
+		//TODO Fenster öffnen und HELP.ABOUT darin anzeigen
+	}
+
 	private void addTalentsTabs(){
 		List<String> allTalentTabs = new ArrayList<String>();
 		for(Component co  : tabbedPane.getComponents() )

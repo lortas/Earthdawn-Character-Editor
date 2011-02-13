@@ -44,7 +44,7 @@
 		<SPELL type="elemental" name="Boil Water"/>
 		<SPELL type="elemental" name="Detect Elementalism Magic"/>
 		<SPELL type="elemental" name="Flame Strike"/>
-		<SPELL type="elemental" name="Grills"/>
+		<SPELL type="elemental" name="Gills"/>
 		<SPELL type="elemental" name="Hunter's Sense"/>
 		<SPELL type="elemental" name="Ice Spear"/>
 		<SPELL type="elemental" name="Icy Surface"/>
@@ -83,7 +83,11 @@
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Air Blast"/>
 		<SPELL type="elemental" name="Blizzard Sphere"/>
-		<SPELL type="elemental" name="[Element] Spear"/>
+		<SPELL type="elemental" name="Element Spear: Air"/>
+		<SPELL type="elemental" name="Element Spear: Earth"/>
+		<SPELL type="elemental" name="Element Spear: Fire"/>
+		<SPELL type="elemental" name="Element Spear: Water"/>
+		<SPELL type="elemental" name="Element Spear: Wood"/>
 		<SPELL type="elemental" name="Falcon's Cloak"/>
 		<SPELL type="elemental" name="Fire Whip"/>
 		<SPELL type="elemental" name="Great Sticky Vines"/>

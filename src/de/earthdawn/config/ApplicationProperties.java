@@ -45,6 +45,7 @@ public class ApplicationProperties {
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
     private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
     private static NAMES NAMES = new NAMES();
+    private static HELP HELP = new HELP();
     private static LanguageType LANGUAGE = LanguageType.EN;
     private ECECharacteristics CHARACTERISTICS = null;
     
@@ -201,7 +202,10 @@ public class ApplicationProperties {
 		return null;
 	}
 
-	
+	public HELP getHelp() {
+		return HELP;
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -243,6 +247,9 @@ public class ApplicationProperties {
 			filename="./config/names.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMES = (NAMES) u.unmarshal(new File(filename));
+			filename="./config/help.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			HELP = (HELP) u.unmarshal(new File(filename));
 
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...

@@ -387,15 +387,15 @@ public class ECEWorker {
 		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
 				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
 				calculatedLP.getSkills()+calculatedLP.getSpells()+calculatedLP.getKnacks());
-		System.out.println("Berechnete verbrauchte LPs Attributes: "+calculatedLP.getAttributes());
-		System.out.println("Berechnete verbrauchte LPs Disciplinetalents: "+calculatedLP.getDisciplinetalents());
-		System.out.println("Berechnete verbrauchte LPs Karma: "+calculatedLP.getKarma());
-		System.out.println("Berechnete verbrauchte LPs Magicitems: "+calculatedLP.getMagicitems());
-		System.out.println("Berechnete verbrauchte LPs Optionaltalents: "+calculatedLP.getOptionaltalents());
-		System.out.println("Berechnete verbrauchte LPs Skills: "+calculatedLP.getSkills());
-		System.out.println("Berechnete verbrauchte LPs Spells: "+calculatedLP.getSpells());
-		System.out.println("Berechnete verbrauchte LPs Knacks: "+calculatedLP.getKnacks());
-		System.out.println("Berechnete verbrauchte LPs gesamt: "+calculatedLP.getTotal());
+//		System.out.println("Berechnete verbrauchte LPs Attributes: "+calculatedLP.getAttributes());
+//		System.out.println("Berechnete verbrauchte LPs Disciplinetalents: "+calculatedLP.getDisciplinetalents());
+//		System.out.println("Berechnete verbrauchte LPs Karma: "+calculatedLP.getKarma());
+//		System.out.println("Berechnete verbrauchte LPs Magicitems: "+calculatedLP.getMagicitems());
+//		System.out.println("Berechnete verbrauchte LPs Optionaltalents: "+calculatedLP.getOptionaltalents());
+//		System.out.println("Berechnete verbrauchte LPs Skills: "+calculatedLP.getSkills());
+//		System.out.println("Berechnete verbrauchte LPs Spells: "+calculatedLP.getSpells());
+//		System.out.println("Berechnete verbrauchte LPs Knacks: "+calculatedLP.getKnacks());
+//		System.out.println("Berechnete verbrauchte LPs gesamt: "+calculatedLP.getTotal());
 		return charakter;
 	}
 
