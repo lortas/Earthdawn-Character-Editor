@@ -260,10 +260,8 @@ public class EDMainWindow {
 			}			
 		}	
 	}
-	
-	
 
-	protected  void do_mntmSave_actionPerformed(ActionEvent arg0) {
+	protected void do_mntmSave_actionPerformed(ActionEvent arg0) {
 		if( file != null ) {
 			try{
 				writeToXml(file);
@@ -271,15 +269,20 @@ public class EDMainWindow {
 			catch(Exception e){
 				e.printStackTrace();
 			}
+		} else {
+			do_mntmSaveAs_actionPerformed(arg0);
 		}
 	}
-	protected void do_mntmSaveAs_actionPerformed(ActionEvent arg0) {
-		String filename = "."; 
-		JFileChooser fc = new JFileChooser(new File(filename)); 
 
-		// Show open dialog; this method does not return until the dialog is closed 
+	protected void do_mntmSaveAs_actionPerformed(ActionEvent arg0) {
+		File xmlFile = new File(character.getName().replaceAll(" ", "_") + ".xml");
+		JFileChooser fc = new JFileChooser(new File("."));
+		fc.setSelectedFile(xmlFile);
+
+		// Show open dialog; this method does not return until the dialog is closed
 		fc.showSaveDialog(frame); 
 		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		//TODO: Wenn abbrechen gedrückt wurde, dann darf auch nicht gespeichert werden
 		if( selFile != null ) {
 			file = selFile;
 			try{
