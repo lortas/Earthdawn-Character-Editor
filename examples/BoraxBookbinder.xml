@@ -83,6 +83,25 @@
 	<SKILL default="no" karma="no" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
 		<edt:RANK rank="1" startrank="1"/>
 	</SKILL>
+	<MAGICITEM name="Counterspell Staff" spelldefense="16" maxthreads="2" lpcostgrowth="5" weight="5" used="yes" weaventhreadrank="3">
+		<edt:description>A counter spell staff is a quaterstaff, topped with finely carved crystal</edt:description>
+		<edt:THREADRANK lpcost="200" effect="Spell Defense+1" keyknowledge="yes">
+			<edt:DEFENSE kind="spell"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="300" effect="Damge Stap 5" keyknowledge="no">
+			<edt:WEAPON name="Counterspell Staff" damagestep="5" strengthmin="0" weight="5" size="2"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="500" effect="The Counterspell's Effect improves to +3 per Result Level" keyknowledge="yes">
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="800" effect="The Counterspell's Effect improves to +4 per Result Level" keyknowledge="no">
+			<edt:WEAPON name="Counterspell Staff" damagestep="5" strengthmin="0" weight="5" size="2"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="1300" effect="The Counterspell's Effect improves to +5 per Result Level" keyknowledge="yes">
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="2100" effect="The Counterspell's Effect improves to +6 per Result Level" keyknowledge="yes">
+			<edt:WEAPON name="Counterspell Staff" damagestep="7" strengthmin="0" weight="5" size="2"/>
+		</edt:THREADRANK>
+	</MAGICITEM>
 	<KARMA maxmodificator="1" max="5" current="0">
 		<edt:KARMAPOINTS when="" type="+" value="0" comment=""/>
 	</KARMA>
