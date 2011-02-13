@@ -82,7 +82,6 @@ public class EDDisciplines extends JPanel {
 		popupMenuCircle = new JPopupMenu();
 		//addPopup(btnAddDicipline, popupMenuCircle);
 		for (String n : ApplicationProperties.create().getAllDisziplinNames()) {
-			System.out.println(n);
 			menuItem = new JMenuItem(n);
 			menuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -91,10 +90,8 @@ public class EDDisciplines extends JPanel {
 			});
 			popupMenuCircle.add(menuItem);		
 		}
-
-
 	}
-	
+
 	protected void do_btnAddDicipline_actionPerformed(ActionEvent arg0) {
 		popupMenuCircle.show(btnAddDicipline, btnAddDicipline.getX(), btnAddDicipline.getY()+ btnAddDicipline.getHeight());
 	}
