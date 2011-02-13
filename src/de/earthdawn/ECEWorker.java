@@ -168,6 +168,27 @@ public class ECEWorker {
 			coins.setWeight(BigDecimal.valueOf(weight));
 		}
 
+		// ** MAGIC ARMOR **
+		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
+		for( MAGICITEMType magicitem : character.getMagicItem() ) {
+			String name = magicitem.getName();
+			BigDecimal weight = magicitem.getWeight();
+			YesnoType used = magicitem.getUsed();
+			int weaven = magicitem.getWeaventhreadrank();
+			ARMORType newmagicarmor = null;
+			for( THREADRANKType threadrank : magicitem.getTHREADRANK() ) {
+				ARMORType armor = threadrank.getARMOR();
+				if( armor != null ) {
+					armor.setName(name);
+					armor.setWeight(weight);
+					armor.setUsed(used);
+					if( weaven > 0 ) newmagicarmor=armor;
+					weaven--;
+				}
+			}
+			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
+		}
+
 		// ** ARMOR **
 		ARMORType naturalArmor = namegiver.getARMOR();
 		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
@@ -177,17 +198,24 @@ public class ECEWorker {
 		int protectionpenalty=naturalArmor.getPenalty();
 		List <ARMORType> newarmor = new ArrayList<ARMORType>();
 		newarmor.add(naturalArmor);
+		newarmor.addAll(magicarmor);
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
-			if( ! armor.getName().equals(naturalArmor.getName())) {
-				newarmor.add(armor);
-				if( armor.getUsed().equals(YesnoType.YES) ) {
-					mysticalarmor+=armor.getMysticarmor();
-					pysicalarmor+=armor.getPhysicalarmor();
-					protectionpenalty+=armor.getPenalty();
-					initiative.setModification(initiative.getModification()-armor.getPenalty());
-					initiative.setStep(initiative.getBase()+initiative.getModification());
-					initiative.setDice(step2Dice(initiative.getStep()));
-				}
+			// Sollte die natürliche Rüstung bereits eingetragen sein, dann überspringen
+			if( armor.getName().equals(naturalArmor.getName())) continue;
+			// Sollte die magische Rüstung bereits eingetragen sein, dann überspringen
+			boolean skip = false;
+			for( ARMORType a : magicarmor ) {
+				if( armor.getName().equals(a.getName())) skip = true;
+			}
+			if( skip ) continue;
+			newarmor.add(armor);
+			if( armor.getUsed().equals(YesnoType.YES) ) {
+				mysticalarmor+=armor.getMysticarmor();
+				pysicalarmor+=armor.getPhysicalarmor();
+				protectionpenalty+=armor.getPenalty();
+				initiative.setModification(initiative.getModification()-armor.getPenalty());
+				initiative.setStep(initiative.getBase()+initiative.getModification());
+				initiative.setDice(step2Dice(initiative.getStep()));
 			}
 		}
 		protection.setMysticarmor(mysticalarmor);

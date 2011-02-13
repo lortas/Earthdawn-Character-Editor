@@ -89,6 +89,7 @@
 			<edt:DEFENSE kind="spell"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK lpcost="300" effect="Damge Stap 5" keyknowledge="no">
+			<edt:ARMOR name="xxx" weight="600"/>
 			<edt:WEAPON name="Counterspell Staff" damagestep="5" strengthmin="0" weight="5" size="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK lpcost="500" effect="The Counterspell's Effect improves to +3 per Result Level" keyknowledge="yes">

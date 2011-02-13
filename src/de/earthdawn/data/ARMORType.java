@@ -28,6 +28,9 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="mysticarmor" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="penalty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="edn" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="timesforged_physical" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="timesforged_mystic" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="dateforged" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -52,6 +55,12 @@ public class ARMORType
     protected Integer penalty;
     @XmlAttribute
     protected Integer edn;
+    @XmlAttribute(name = "timesforged_physical")
+    protected Integer timesforgedPhysical;
+    @XmlAttribute(name = "timesforged_mystic")
+    protected Integer timesforgedMystic;
+    @XmlAttribute
+    protected String dateforged;
 
     /**
      * Gets the value of the physicalarmor property.
@@ -163,6 +172,90 @@ public class ARMORType
      */
     public void setEdn(Integer value) {
         this.edn = value;
+    }
+
+    /**
+     * Gets the value of the timesforgedPhysical property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getTimesforgedPhysical() {
+        if (timesforgedPhysical == null) {
+            return  0;
+        } else {
+            return timesforgedPhysical;
+        }
+    }
+
+    /**
+     * Sets the value of the timesforgedPhysical property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setTimesforgedPhysical(Integer value) {
+        this.timesforgedPhysical = value;
+    }
+
+    /**
+     * Gets the value of the timesforgedMystic property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getTimesforgedMystic() {
+        if (timesforgedMystic == null) {
+            return  0;
+        } else {
+            return timesforgedMystic;
+        }
+    }
+
+    /**
+     * Sets the value of the timesforgedMystic property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setTimesforgedMystic(Integer value) {
+        this.timesforgedMystic = value;
+    }
+
+    /**
+     * Gets the value of the dateforged property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDateforged() {
+        if (dateforged == null) {
+            return "";
+        } else {
+            return dateforged;
+        }
+    }
+
+    /**
+     * Sets the value of the dateforged property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDateforged(String value) {
+        this.dateforged = value;
     }
 
 }
