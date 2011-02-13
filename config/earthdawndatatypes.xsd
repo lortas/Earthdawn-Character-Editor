@@ -350,7 +350,6 @@
 			</xs:element>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>
 		</xs:sequence>
-		<xs:attribute name="rank" type="unsigned_int" use="required"/>
 		<xs:attribute name="keyknowledge" type="yesno_type" use="required">
 			<xs:annotation>
 				<xs:documentation>Is the Key Knowledge is known by the character.</xs:documentation>
@@ -367,9 +366,10 @@
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
 				<xs:sequence>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
 					<xs:element maxOccurs="1" minOccurs="1" name="description" type="xs:string"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
 				</xs:sequence>
+				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
 				<xs:attribute name="maxthreads" type="unsigned_int" use="required"/>
 				<xs:attribute name="spelldefense" type="unsigned_int" use="required"/>
 				<xs:attribute name="lpcostgrowth" type="unsigned_int" use="required">

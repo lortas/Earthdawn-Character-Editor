@@ -39,7 +39,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="rank" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="keyknowledge" use="required" type="{http://earthdawn.com/datatypes}yesno_type" />
  *       &lt;attribute name="lpcost" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="effect" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -88,8 +87,6 @@ public class THREADRANKType {
     protected List<DISZIPINABILITYType> karmastep;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
-    @XmlAttribute(required = true)
-    protected int rank;
     @XmlAttribute(required = true)
     protected YesnoType keyknowledge;
     @XmlAttribute(required = true)
@@ -399,22 +396,6 @@ public class THREADRANKType {
             ability = new ArrayList<String>();
         }
         return this.ability;
-    }
-
-    /**
-     * Gets the value of the rank property.
-     * 
-     */
-    public int getRank() {
-        return rank;
-    }
-
-    /**
-     * Sets the value of the rank property.
-     * 
-     */
-    public void setRank(int value) {
-        this.rank = value;
     }
 
     /**
