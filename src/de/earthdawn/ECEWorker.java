@@ -17,6 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -57,6 +58,18 @@ public class ECEWorker {
 			if( n.getName().equals(race)) {
 				namegiver = n;
 			}
+		}
+
+		// Startgegenstände aus der Charaktererschaffung setzen, wenn gar kein Invetar vorhanden
+		List<ITEMType> itemList = character.getItems();
+		if( itemList.isEmpty() ) {
+			itemList.addAll(ApplicationProperties.create().getStartingItems());
+		}
+
+		// Startwaffen aus der Charaktererschaffung setzen, wenn gar keine Waffen vorhanden
+		List<WEAPONType> weaponList = character.getWeapons();
+		if( weaponList.isEmpty() ) {
+			weaponList.addAll(ApplicationProperties.create().getStartingWeapons());
 		}
 
 		// **ATTRIBUTE**
@@ -140,6 +153,20 @@ public class ECEWorker {
 		int tmp=berechneTraglast(character.getAttributes().get("STR").getCurrentvalue());
 		carrying.setCarrying(tmp);
 		carrying.setLifting(tmp *2);
+
+		// Berechne Gewicht aller Münzen
+		for( COINSType coins : character.getAllCoins() ) {
+			float weight = 0;
+			// Kupfermünzen: 0,5 Unze (oz)
+			weight += coins.getCopper() / 32;
+			// Silbermünzen: 0,2 Unze (oz)
+			weight += coins.getSilver() / 80;
+			// Goldmünzen: 0,1 Unze (oz)
+			weight += coins.getGold() / 160;
+			// Elementarmünzen: 0,1 Unze (oz)
+			weight += ( coins.getAir()+coins.getEarth()+coins.getFire()+coins.getWater()+coins.getOrichalcum() ) / 160;
+			coins.setWeight(BigDecimal.valueOf(weight));
+		}
 
 		// ** ARMOR **
 		ARMORType naturalArmor = namegiver.getARMOR();

@@ -354,6 +354,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<COINSType> allCoins = character.getCOINS();
 		if( allCoins.isEmpty() ) {
 			COINSType coins = new COINSType();
+			coins.setSilver(100); // Startguthaben
 			coins.setLocation("self");
 			coins.setUsed(YesnoType.YES);
 			allCoins.add(coins);

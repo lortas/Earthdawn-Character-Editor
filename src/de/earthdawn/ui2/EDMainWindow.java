@@ -275,7 +275,9 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmSaveAs_actionPerformed(ActionEvent arg0) {
-		File xmlFile = new File(character.getName().replaceAll(" ", "_") + ".xml");
+		String name = character.getName();
+		if( name == null ) name = "noname";
+		File xmlFile = new File(name.replaceAll(" ", "_") + ".xml");
 		JFileChooser fc = new JFileChooser(new File("."));
 		fc.setSelectedFile(xmlFile);
 

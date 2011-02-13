@@ -188,6 +188,22 @@ public class ApplicationProperties {
 		return null;
 	}
 
+	public List<ITEMType> getStartingItems() {
+		for( NAMESTARTINGITEMSType name : NAMES.getSTARTINGITEMS() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getITEM();
+		}
+		// Not found
+		return null;
+	}
+
+	public List<WEAPONType> getStartingWeapons() {
+		for( NAMESTARTINGWEAPONSType name : NAMES.getSTARTINGWEAPONS() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getWEAPON();
+		}
+		// Not found
+		return null;
+	}
+
 	public HashMap<SpellkindType,String> getSpellKindMap() {
 		for( NAMESPELLWEAVINGType name : NAMES.getSPELLWEAVING() ) {
 			if( name.getLang().equals(LANGUAGE)) {

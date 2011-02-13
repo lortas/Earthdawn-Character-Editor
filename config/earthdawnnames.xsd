@@ -25,6 +25,18 @@
 		<xs:attribute name="weaving" type="xs:string" use="required"/>
 		<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="NAME_STARTINGWEAPONS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_STARTINGITEMS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="ITEM" type="edt:ITEM_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
 	<xs:element name="NAMES">
 		<xs:complexType>
 			<xs:sequence>
@@ -32,7 +44,10 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="DURABILITY" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="VERSATILITY" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="KARMARUTUAL" type="NAME_LANG_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARTISAN" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLWEAVING" type="NAME_SPELLWEAVING_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGWEAPONS" type="NAME_STARTINGWEAPONS_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGITEMS" type="NAME_STARTINGITEMS_type"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
