@@ -12,28 +12,40 @@
 
 .edSubHeader {
     text-align: center;
-    font-size: 180%
+    font-size: 200%
 }
 
 .edSubHeader {
     text-align: center;
-    font-size: 130%
+    font-size: 160%
 }
 
-.edKey {
-    font-weight: bolder;
+.edSubSubHeader {
+    font-size: 130%;
+    text-decoration: underline;
 }
 
-.edValue {
-	// NONE
+.edHeaderCell {
+	font-size: 110%;
 }
 
-.edPair {
-    display: block;
+.edCell {
+    border-style: solid;
+    border-width: 1px;
 }
 
-.edMiscellaneous,
-.edAttributes,
+.edKeyCell {
+    font-size: large;
+}
+
+.edValueCell {
+	font-style: italic;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .edCharacteristics,
 .edDiscipline, 
 .edWeapons,
@@ -47,6 +59,14 @@
     border-width: 3px;
     border-style: solid;
     margin: 10px;
+    clear: both ;
+}
+
+.edMiscellaneous {
+   
+}
+.edAttributes {
+	
 }
 
 .edDisciplineTalents,
