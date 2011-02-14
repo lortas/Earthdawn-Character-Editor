@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -361,16 +362,27 @@ public class ECEPdfExporter {
 			name += armor.getPhysicalarmor()+"/";
 			name += armor.getMysticarmor()+"/";
 			name += armor.getPenalty() + ")";
-			if( ! addEquipment(name,String.valueOf(armor.getWeight())) ) break;
+			if( ! addEquipment(name,armor.getWeight()) ) break;
 		}
 		for( WEAPONType weapon : character.getWeapons() ) {
 			String name = weapon.getName()+" (";
 			name += weapon.getDamagestep()+"/";
 			name += weapon.getTimesforged()+")";
-			if( ! addEquipment(name,String.valueOf(weapon.getWeight())) ) break;
+			if( ! addEquipment(name,weapon.getWeight()) ) break;
 		}
 		for( ITEMType item : character.getItems() ) {
-			if( ! addEquipment(item.getName(),String.valueOf(item.getWeight())) ) break;
+			if( ! addEquipment(item.getName(),item.getWeight()) ) break;
+		}
+		for( COINSType coins : character.getAllCoins() ) {
+			String name = "Purse "+coins.getName()+" (";
+			name += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
+			if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
+			if( coins.getWater()>0 )      name += " w:"+coins.getWater();
+			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
+			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
+			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
+			name +=")";
+			if( ! addEquipment(name,coins.getWeight()) ) break;
 		}
 
 		int counterDescription=0;
@@ -396,9 +408,9 @@ public class ECEPdfExporter {
 		stamper.close();
 	}
 
-	private boolean addEquipment(String name, String weight) throws IOException, DocumentException {
+	private boolean addEquipment(String name, float weight) throws IOException, DocumentException {
 		acroFields.setField( "Equipment."+counterEquipment+"."+rowEquipment, name );
-		acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, weight );
+		acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, (new DecimalFormat("0.##")).format(weight) );
 		if( counterEquipment > 33 ) {
 			counterEquipment=0;
 			if( rowEquipment == 1 ) return false;
