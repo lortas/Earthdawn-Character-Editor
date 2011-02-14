@@ -305,18 +305,6 @@ public class ECEPdfExporter {
 			}
 		}
 
-		int copperPieces = 0;
-		int goldPieces = 0;
-		int silverPieces = 0;
-		for( COINSType coin : character.getAllCoins() ) {
-			copperPieces += coin.getCopper();
-			silverPieces += coin.getSilver();
-			goldPieces += coin.getGold();
-		}
-		acroFields.setField( "CopperPieces", String.valueOf(copperPieces) );
-		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
-		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
-
 		int conterSpells=0;
 		for( SPELLSType spells : character.getAllSpells() ) {
 			for( SPELLType spell : spells.getSPELL() ) {
@@ -373,6 +361,10 @@ public class ECEPdfExporter {
 		for( ITEMType item : character.getItems() ) {
 			if( ! addEquipment(item.getName(),item.getWeight()) ) break;
 		}
+
+		int copperPieces = 0;
+		int goldPieces = 0;
+		int silverPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
 			String name = "Purse "+coins.getName()+" (";
 			name += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
@@ -382,8 +374,14 @@ public class ECEPdfExporter {
 			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
 			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
 			name +=")";
-			if( ! addEquipment(name,coins.getWeight()) ) break;
+			addEquipment(name,coins.getWeight());
+			copperPieces += coins.getCopper();
+			silverPieces += coins.getSilver();
+			goldPieces += coins.getGold();
 		}
+		acroFields.setField( "CopperPieces", String.valueOf(copperPieces) );
+		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
+		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
 		int counterDescription=0;
 		for( String description : wrapString(40,character.getDESCRIPTION()) ) {
@@ -409,6 +407,10 @@ public class ECEPdfExporter {
 	}
 
 	private boolean addEquipment(String name, float weight) throws IOException, DocumentException {
+		if( counterEquipment > 33 ) {
+			System.err.println("To many equipment, can not insert \""+name+"\"");
+			return false;
+		}
 		acroFields.setField( "Equipment."+counterEquipment+"."+rowEquipment, name );
 		acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, (new DecimalFormat("0.##")).format(weight) );
 		if( counterEquipment > 33 ) {

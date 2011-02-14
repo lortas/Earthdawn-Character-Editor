@@ -17,7 +17,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -156,8 +155,7 @@ public class ECEWorker {
 
 		// Berechne Gewicht aller Münzen
 		for( COINSType coins : character.getAllCoins() ) {
-			// MIt doppelter Genauigkeit die Gewichte der Münzen addieren,
-			// zum Abspeichern langt die einfache Genaugkeit
+			// Mit doppelter Genauigkeit die Gewichte der Münzen addieren,
 			double weight = 0;
 			// Kupfermünzen: 0,5 Unze (oz)
 			weight += coins.getCopper() / 32.0;
@@ -167,6 +165,7 @@ public class ECEWorker {
 			weight += coins.getGold() / 160.0;
 			// Elementarmünzen: 0,1 Unze (oz)
 			weight += (double)( coins.getAir()+coins.getEarth()+coins.getFire()+coins.getWater()+coins.getOrichalcum() ) / 160.0;
+			// zum Abspeichern langt die einfache Genaugkeit
 			coins.setWeight((float)weight);
 		}
 
