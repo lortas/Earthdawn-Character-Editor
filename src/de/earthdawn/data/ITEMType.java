@@ -8,7 +8,6 @@
 
 package de.earthdawn.data;
 
-import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -26,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}decimal" />
+ *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
  *     &lt;/restriction>
@@ -50,7 +49,7 @@ public class ITEMType {
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
-    protected BigDecimal weight;
+    protected float weight;
     @XmlAttribute
     protected YesnoType used;
     @XmlAttribute
@@ -83,24 +82,16 @@ public class ITEMType {
     /**
      * Gets the value of the weight property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
      */
-    public BigDecimal getWeight() {
+    public float getWeight() {
         return weight;
     }
 
     /**
      * Sets the value of the weight property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
      */
-    public void setWeight(BigDecimal value) {
+    public void setWeight(float value) {
         this.weight = value;
     }
 

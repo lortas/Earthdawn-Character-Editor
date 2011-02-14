@@ -224,7 +224,7 @@
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="weight" type="xs:decimal" use="required"/>
+		<xs:attribute name="weight" type="xs:float" use="required"/>
 		<xs:attribute default="yes" name="used" type="yesno_type"/>
 		<xs:attribute default="self" name="location" type="xs:string"/>
 	</xs:complexType>

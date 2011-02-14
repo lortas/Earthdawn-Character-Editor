@@ -156,23 +156,25 @@ public class ECEWorker {
 
 		// Berechne Gewicht aller Münzen
 		for( COINSType coins : character.getAllCoins() ) {
-			float weight = 0;
+			// MIt doppelter Genauigkeit die Gewichte der Münzen addieren,
+			// zum Abspeichern langt die einfache Genaugkeit
+			double weight = 0;
 			// Kupfermünzen: 0,5 Unze (oz)
-			weight += coins.getCopper() / 32;
+			weight += coins.getCopper() / 32.0;
 			// Silbermünzen: 0,2 Unze (oz)
-			weight += coins.getSilver() / 80;
+			weight += coins.getSilver() / 80.0;
 			// Goldmünzen: 0,1 Unze (oz)
-			weight += coins.getGold() / 160;
+			weight += coins.getGold() / 160.0;
 			// Elementarmünzen: 0,1 Unze (oz)
-			weight += ( coins.getAir()+coins.getEarth()+coins.getFire()+coins.getWater()+coins.getOrichalcum() ) / 160;
-			coins.setWeight(BigDecimal.valueOf(weight));
+			weight += (double)( coins.getAir()+coins.getEarth()+coins.getFire()+coins.getWater()+coins.getOrichalcum() ) / 160.0;
+			coins.setWeight((float)weight);
 		}
 
 		// ** MAGIC ARMOR **
 		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
 		for( MAGICITEMType magicitem : character.getMagicItem() ) {
 			String name = magicitem.getName();
-			BigDecimal weight = magicitem.getWeight();
+			float weight = magicitem.getWeight();
 			YesnoType used = magicitem.getUsed();
 			int weaven = magicitem.getWeaventhreadrank();
 			ARMORType newmagicarmor = null;
