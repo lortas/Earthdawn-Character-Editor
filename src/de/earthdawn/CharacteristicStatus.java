@@ -90,6 +90,7 @@ public class CharacteristicStatus {
 		node.put( "max", character.getKarma().getMax() );
 		node.put( "step", character.getKarma().getStep() );
 		node.put( "dice", character.getKarma().getDice().value() );
+		node.put( "maxmodificator", character.getKarma().getMaxmodificator() );
 		root.put("KARMA", node);
 
 		node = new HashMap<String,Object>();

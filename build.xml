@@ -90,6 +90,7 @@
 			<zipfileset file="${jar.file}"/>
 			<zipfileset dir="./config" prefix="config"/>
 			<zipfileset dir="./lib" prefix="lib"/>
+			<zipfileset dir="./templates" prefix="templates"/>
 			<zipfileset file="./examples/BoraxBookbinder.xml" prefix="examples"/>
 			<zipfileset file="./examples/EsphiraAtasy.xml" prefix="examples"/>
 			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>

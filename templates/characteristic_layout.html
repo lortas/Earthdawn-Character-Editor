@@ -1,71 +1,94 @@
-<table>
+<html><head><title>Characteristics Status</title>
+<style type="text/css">
+table { width:100%; border-width:1px; border-style:solid; border-color:blue; padding:0em; }
+thead { font-weight:bold; text-align:center; }
+td    { text-align:center; }
+</style>
+</head><body>
+
+<table style="border-width:0px;">
 	<tr>
 		<td>
 			<table>
-				<tr>
-					<td colspan="6">Attributes</td>
-				<tr>
-				</tr>
-					<td>Dextarity</td>
-					<td>${ATTRIBUTE.DEX.basevalue}</td>
-					<td>${ATTRIBUTE.DEX.lpincrease}</td>
-					<td>${ATTRIBUTE.DEX.currentvalue}</td>
-					<td>${ATTRIBUTE.DEX.step}</td>
-					<td>${ATTRIBUTE.DEX.dice}</td>
-				<tr>
-				</tr>
-					<td>Strength</td>
-					<td>${ATTRIBUTE.STR.basevalue}</td>
-					<td>${ATTRIBUTE.STR.lpincrease}</td>
-					<td>${ATTRIBUTE.STR.currentvalue}</td>
-					<td>${ATTRIBUTE.STR.step}</td>
-					<td>${ATTRIBUTE.STR.dice}</td>
-				<tr>
-				</tr>
-					<td>Toughness</td>
-					<td>${ATTRIBUTE.TOU.basevalue}</td>
-					<td>${ATTRIBUTE.TOU.lpincrease}</td>
-					<td>${ATTRIBUTE.TOU.currentvalue}</td>
-					<td>${ATTRIBUTE.TOU.step}</td>
-					<td>${ATTRIBUTE.TOU.dice}</td>
-				<tr>
-				</tr>
-					<td>Perception</td>
-					<td>${ATTRIBUTE.PER.basevalue}</td>
-					<td>${ATTRIBUTE.PER.lpincrease}</td>
-					<td>${ATTRIBUTE.PER.currentvalue}</td>
-					<td>${ATTRIBUTE.PER.step}</td>
-					<td>${ATTRIBUTE.PER.dice}</td>
-				<tr>
-				</tr>
-					<td>Willpower</td>
-					<td>${ATTRIBUTE.WIL.basevalue}</td>
-					<td>${ATTRIBUTE.WIL.lpincrease}</td>
-					<td>${ATTRIBUTE.WIL.currentvalue}</td>
-					<td>${ATTRIBUTE.WIL.step}</td>
-					<td>${ATTRIBUTE.WIL.dice}</td>
-				<tr>
-				</tr>
-					<td>Charisma</td>
-					<td>${ATTRIBUTE.CHA.basevalue}</td>
-					<td>${ATTRIBUTE.CHA.lpincrease}</td>
-					<td>${ATTRIBUTE.CHA.currentvalue}</td>
-					<td>${ATTRIBUTE.CHA.step}</td>
-					<td>${ATTRIBUTE.CHA.dice}</td>
-				</tr>
+				<thead>
+					<tr>
+						<td colspan="6">Attributes</td>
+					<tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Dextarity</td>
+						<td>${ATTRIBUTE.DEX.basevalue}</td>
+						<td>${ATTRIBUTE.DEX.lpincrease}</td>
+						<td>${ATTRIBUTE.DEX.currentvalue}</td>
+						<td>${ATTRIBUTE.DEX.step}</td>
+						<td>${ATTRIBUTE.DEX.dice}</td>
+					</tr>
+					<tr>
+						<td>Strength</td>
+						<td>${ATTRIBUTE.STR.basevalue}</td>
+						<td>${ATTRIBUTE.STR.lpincrease}</td>
+						<td>${ATTRIBUTE.STR.currentvalue}</td>
+						<td>${ATTRIBUTE.STR.step}</td>
+						<td>${ATTRIBUTE.STR.dice}</td>
+					</tr>
+					<tr>
+						<td>Toughness</td>
+						<td>${ATTRIBUTE.TOU.basevalue}</td>
+						<td>${ATTRIBUTE.TOU.lpincrease}</td>
+						<td>${ATTRIBUTE.TOU.currentvalue}</td>
+						<td>${ATTRIBUTE.TOU.step}</td>
+						<td>${ATTRIBUTE.TOU.dice}</td>
+					</tr>
+					<tr>
+						<td>Perception</td>
+						<td>${ATTRIBUTE.PER.basevalue}</td>
+						<td>${ATTRIBUTE.PER.lpincrease}</td>
+						<td>${ATTRIBUTE.PER.currentvalue}</td>
+						<td>${ATTRIBUTE.PER.step}</td>
+						<td>${ATTRIBUTE.PER.dice}</td>
+					</tr>
+					<tr>
+						<td>Willpower</td>
+						<td>${ATTRIBUTE.WIL.basevalue}</td>
+						<td>${ATTRIBUTE.WIL.lpincrease}</td>
+						<td>${ATTRIBUTE.WIL.currentvalue}</td>
+						<td>${ATTRIBUTE.WIL.step}</td>
+						<td>${ATTRIBUTE.WIL.dice}</td>
+					</tr>
+					<tr>
+						<td>Charisma</td>
+						<td>${ATTRIBUTE.CHA.basevalue}</td>
+						<td>${ATTRIBUTE.CHA.lpincrease}</td>
+						<td>${ATTRIBUTE.CHA.currentvalue}</td>
+						<td>${ATTRIBUTE.CHA.step}</td>
+						<td>${ATTRIBUTE.CHA.dice}</td>
+					</tr>
+					<tr>
+						<td colspan="6">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="5">Not Spend Attribute Cost</td>
+						<td>${KARMA.maxmodificator}</td>
+					</tr>
+				</tbody>
 			</table>
 		</td>
 		<td>
 			<table>
-				<tr>
-					<td colspan="2">Characteristics</td>
-				</tr>
+				<thead>
+					<tr>
+						<td colspan="2">Characteristics</td>
+					</tr>
+				</thead>
 				<tr>
 					<td>
 						<table>
-							<tr>
-								<td colspan="3">Defense</td>
-							</tr>
+							<thead>
+								<tr>
+									<td colspan="3">Defense</td>
+								</tr>
+							</thead>
 							<tr>
 								<td>physical</td>
 								<td>spell</td>
@@ -80,9 +103,11 @@
 					</td>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2">Armor</td>
-							</tr>
+							<thead>
+								<tr>
+									<td colspan="2">Armor</td>
+								</tr>
+							</thead>
 							<tr>
 								<td>physical</td>
 								<td>mystic</td>
@@ -99,9 +124,11 @@
 				<tr>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2">Initiative</td>
-							</tr>
+							<thead>
+								<tr>
+									<td colspan="2">Initiative</td>
+								</tr>
+							</thead>
 							<tr>
 								<td>Base Step</td>
 								<td>${INITIATIVE.base}</td>
@@ -122,9 +149,11 @@
 					</td>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2">Movement</td>
-							</tr>
+							<thead>
+								<tr>
+									<td colspan="2">Movement</td>
+								</tr>
+							</thead>
 							<tr>
 								<td>Ground</td>
 								<td>${MOVEMENT.ground}</td>
@@ -135,9 +164,11 @@
 							</tr>
 						</table>
 						<table>
-							<tr>
-								<td colspan="2">Encumbrabce</td>
-							</tr>
+							<thead>
+								<tr>
+									<td colspan="2">Encumbrabce</td>
+								</tr>
+							</thead>
 							<tr>
 								<td>Carrying</td>
 								<td>${CARRYING.carrying}</td>
@@ -146,9 +177,11 @@
 					</td>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2">Karma</td>
-							</tr>
+							<thead>
+								<tr>
+									<td colspan="2">Karma</td>
+								</tr>
+							</thead>
 							<tr>
 								<td>current</td>
 								<td>${KARMA.current}</td>
@@ -172,13 +205,15 @@
 		</td>
 	</tr>
 </table>
-<table>
+<table style="border-width:0px;">
 	<tr>
 		<td>
 			<table>
-				<tr>
-					<td colspan="4">Health</td>
-				</tr>
+				<thead>
+					<tr>
+						<td colspan="4">Health</td>
+					</tr>
+				</thead>
 				<tr>
 					<td>Unconsciousness</td>
 					<td colspan="2">${HEALTH.UNCONSCIOUSNESS.base} + ${HEALTH.UNCONSCIOUSNESS.adjustment} =</td>
@@ -205,9 +240,11 @@
 		</td>
 		<td>
 			<table>
-				<tr>
-					<td colspan="2">Damage</td>
-				</tr>
+				<thead>
+					<tr>
+						<td colspan="2">Damage</td>
+					</tr>
+				</thead>
 				<tr>
 					<td>Current Damage</td>
 					<td>${HEALTH.damage}</td>
@@ -226,39 +263,61 @@
 				</tr>
 			</table>
 		</td>
+		<td>
+			<table>
+				<thead>
+					<tr>
+						<td colspan="2">Legend Points</td>
+					</tr>
+				</thead>
+				<tr>
+					<td>Renown</td>
+					<td>${EXPERIENCE.renown}</td>
+				</tr>
+				<tr>
+					<td>Reputation</td>
+					<td>${EXPERIENCE.reputation}</td>
+				</tr>
+				<tr>
+					<td>Current</td>
+					<td>${EXPERIENCE.totallegendpoints}</td>
+				</tr>
+				<tr>
+					<td>Total</td>
+					<td>${EXPERIENCE.currentlegendpoints}</td>
+				</tr>
+			</table>
+		</td>
 	</tr>
 </table>
 <table>
+	<thead>
+		<tr>
+			<td colspan="9">Calculated Legend Points</td>
+		</tr>
+	</thead>
 	<tr>
-		<td colspan="4">Legend Points</td>
-		<td colspan="8">Calculated Legend Points</td>
-	</tr>
-	<tr>
-		<td>Renown</td>
-		<td>Reputation</td>
-		<td>Current</td>
-		<td>Total</td>
-		<td>Total</td>
 		<td>Attributes</td>
 		<td>Discipline Talents</td>
 		<td>Optional Talents</td>
 		<td>Knacks</td>
+		<td>Spells</td>
 		<td>Skills</td>
 		<td>Karma</td>
 		<td>Magic Items</td>
+		<td>Total</td>
 	</tr>
 	<tr>
-		<td>${EXPERIENCE.renown}</td>
-		<td>${EXPERIENCE.reputation}</td>
-		<td>${EXPERIENCE.totallegendpoints}</td>
-		<td>${EXPERIENCE.currentlegendpoints}</td>
-		<td>${CALCULATEDLEGENDPOINTS.total}</td>
 		<td>${CALCULATEDLEGENDPOINTS.attributes}</td>
 		<td>${CALCULATEDLEGENDPOINTS.disciplinetalents}</td>
 		<td>${CALCULATEDLEGENDPOINTS.optionaltalents}</td>
 		<td>${CALCULATEDLEGENDPOINTS.knacks}</td>
+		<td>${CALCULATEDLEGENDPOINTS.spells}</td>
 		<td>${CALCULATEDLEGENDPOINTS.skills}</td>
 		<td>${CALCULATEDLEGENDPOINTS.karma}</td>
 		<td>${CALCULATEDLEGENDPOINTS.magicitems}</td>
+		<td>${CALCULATEDLEGENDPOINTS.total}</td>
 	</tr>
 </table>
+
+</body></html>
