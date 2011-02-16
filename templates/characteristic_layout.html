@@ -1,0 +1,264 @@
+<table>
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td colspan="6">Attributes</td>
+				<tr>
+				</tr>
+					<td>Dextarity</td>
+					<td>${ATTRIBUTE.DEX.basevalue}</td>
+					<td>${ATTRIBUTE.DEX.lpincrease}</td>
+					<td>${ATTRIBUTE.DEX.currentvalue}</td>
+					<td>${ATTRIBUTE.DEX.step}</td>
+					<td>${ATTRIBUTE.DEX.dice}</td>
+				<tr>
+				</tr>
+					<td>Strength</td>
+					<td>${ATTRIBUTE.STR.basevalue}</td>
+					<td>${ATTRIBUTE.STR.lpincrease}</td>
+					<td>${ATTRIBUTE.STR.currentvalue}</td>
+					<td>${ATTRIBUTE.STR.step}</td>
+					<td>${ATTRIBUTE.STR.dice}</td>
+				<tr>
+				</tr>
+					<td>Toughness</td>
+					<td>${ATTRIBUTE.TOU.basevalue}</td>
+					<td>${ATTRIBUTE.TOU.lpincrease}</td>
+					<td>${ATTRIBUTE.TOU.currentvalue}</td>
+					<td>${ATTRIBUTE.TOU.step}</td>
+					<td>${ATTRIBUTE.TOU.dice}</td>
+				<tr>
+				</tr>
+					<td>Perception</td>
+					<td>${ATTRIBUTE.PER.basevalue}</td>
+					<td>${ATTRIBUTE.PER.lpincrease}</td>
+					<td>${ATTRIBUTE.PER.currentvalue}</td>
+					<td>${ATTRIBUTE.PER.step}</td>
+					<td>${ATTRIBUTE.PER.dice}</td>
+				<tr>
+				</tr>
+					<td>Willpower</td>
+					<td>${ATTRIBUTE.WIL.basevalue}</td>
+					<td>${ATTRIBUTE.WIL.lpincrease}</td>
+					<td>${ATTRIBUTE.WIL.currentvalue}</td>
+					<td>${ATTRIBUTE.WIL.step}</td>
+					<td>${ATTRIBUTE.WIL.dice}</td>
+				<tr>
+				</tr>
+					<td>Charisma</td>
+					<td>${ATTRIBUTE.CHA.basevalue}</td>
+					<td>${ATTRIBUTE.CHA.lpincrease}</td>
+					<td>${ATTRIBUTE.CHA.currentvalue}</td>
+					<td>${ATTRIBUTE.CHA.step}</td>
+					<td>${ATTRIBUTE.CHA.dice}</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2">Characteristics</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td colspan="3">Defense</td>
+							</tr>
+							<tr>
+								<td>physical</td>
+								<td>spell</td>
+								<td>social</td>
+							</tr>
+							<tr>
+								<td>${DEFENSE.physical}</td>
+								<td>${DEFENSE.spell}</td>
+								<td>${DEFENSE.social}</td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td colspan="2">Armor</td>
+							</tr>
+							<tr>
+								<td>physical</td>
+								<td>mystic</td>
+							</tr>
+							<tr>
+								<td>${PROTECTION.physicalarmor}</td>
+								<td>${PROTECTION.mysticarmor}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td colspan="2">Initiative</td>
+							</tr>
+							<tr>
+								<td>Base Step</td>
+								<td>${INITIATIVE.base}</td>
+							</tr>
+							<tr>
+								<td>Penalty</td>
+								<td>${INITIATIVE.modification}</td>
+							</tr>
+							<tr>
+								<td>Step</td>
+								<td>${INITIATIVE.step}</td>
+							</tr>
+							<tr>
+								<td>Dice</td>
+								<td>${INITIATIVE.dice}</td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td colspan="2">Movement</td>
+							</tr>
+							<tr>
+								<td>Ground</td>
+								<td>${MOVEMENT.ground}</td>
+							</tr>
+							<tr>
+								<td>Flight</td>
+								<td>${MOVEMENT.flight}</td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<td colspan="2">Encumbrabce</td>
+							</tr>
+							<tr>
+								<td>Carrying</td>
+								<td>${CARRYING.carrying}</td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td colspan="2">Karma</td>
+							</tr>
+							<tr>
+								<td>current</td>
+								<td>${KARMA.current}</td>
+							</tr>
+							<tr>
+								<td>Max</td>
+								<td>${KARMA.max}</td>
+							</tr>
+							<tr>
+								<td>Step</td>
+								<td>${KARMA.step}</td>
+							</tr>
+							<tr>
+								<td>Dice</td>
+								<td>${KARMA.dice}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td colspan="4">Health</td>
+				</tr>
+				<tr>
+					<td>Unconsciousness</td>
+					<td colspan="2">${HEALTH.UNCONSCIOUSNESS.base} + ${HEALTH.UNCONSCIOUSNESS.adjustment} =</td>
+					<td>${HEALTH.UNCONSCIOUSNESS.value}</td>
+				</tr>
+				<tr>
+					<td>Death</td>
+					<td colspan="2">${HEALTH.DEATH.base} + ${HEALTH.DEATH.adjustment} =</td>
+					<td>${HEALTH.DEATH.value}</td>
+				</tr>
+				<tr>
+					<td>Recovery Step</td>
+					<td>${HEALTH.RECOVERY.step}</td>
+					<td>Recovery Dice</td>
+					<td>${HEALTH.RECOVERY.dice}</td>
+				</tr>
+				<tr>
+					<td>Recovery Tests per Day</td>
+					<td>${HEALTH.RECOVERY.testsperday}</td>
+					<td>Wound Threshold</td>
+					<td>${HEALTH.WOUNDS.threshold}</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2">Damage</td>
+				</tr>
+				<tr>
+					<td>Current Damage</td>
+					<td>${HEALTH.damage}</td>
+				</tr>
+				<tr>
+					<td>Current Wounds</td>
+					<td>${HEALTH.WOUNDS.normal}</td>
+				</tr>
+				<tr>
+					<td>Bloodwounds</td>
+					<td>${HEALTH.WOUNDS.blood}</td>
+				</tr>
+				<tr>
+					<td>Wound Penalties</td>
+					<td>${HEALTH.WOUNDS.penalties}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td colspan="4">Legend Points</td>
+		<td colspan="8">Calculated Legend Points</td>
+	</tr>
+	<tr>
+		<td>Renown</td>
+		<td>Reputation</td>
+		<td>Current</td>
+		<td>Total</td>
+		<td>Total</td>
+		<td>Attributes</td>
+		<td>Discipline Talents</td>
+		<td>Optional Talents</td>
+		<td>Knacks</td>
+		<td>Skills</td>
+		<td>Karma</td>
+		<td>Magic Items</td>
+	</tr>
+	<tr>
+		<td>${EXPERIENCE.renown}</td>
+		<td>${EXPERIENCE.reputation}</td>
+		<td>${EXPERIENCE.totallegendpoints}</td>
+		<td>${EXPERIENCE.currentlegendpoints}</td>
+		<td>${CALCULATEDLEGENDPOINTS.total}</td>
+		<td>${CALCULATEDLEGENDPOINTS.attributes}</td>
+		<td>${CALCULATEDLEGENDPOINTS.disciplinetalents}</td>
+		<td>${CALCULATEDLEGENDPOINTS.optionaltalents}</td>
+		<td>${CALCULATEDLEGENDPOINTS.knacks}</td>
+		<td>${CALCULATEDLEGENDPOINTS.skills}</td>
+		<td>${CALCULATEDLEGENDPOINTS.karma}</td>
+		<td>${CALCULATEDLEGENDPOINTS.magicitems}</td>
+	</tr>
+</table>

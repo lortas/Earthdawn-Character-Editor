@@ -94,7 +94,10 @@
 			<zipfileset file="./examples/EsphiraAtasy.xml" prefix="examples"/>
 			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>
 			<zipfileset file="./examples/JadaDenairastas.xml" prefix="examples"/>
-			<zipfileset dir="./cmd" />
+			<zipfileset dir="./cmd"/>
+			<zipfileset file="./license.en.txt"/>
+			<zipfileset file="./license.en.html"/>
+			<zipfileset file="./license.de.html"/>
 		</zip>
 	</target>
 </project>

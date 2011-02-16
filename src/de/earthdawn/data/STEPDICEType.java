@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "STEPDICE_type")
 @XmlSeeAlso({
+    KARMAType.class,
     ATTRIBUTEType.class,
     INITIATIVEType.class,
     RECOVERYType.class,

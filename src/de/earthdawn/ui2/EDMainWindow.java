@@ -6,15 +6,21 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.swing.BoxLayout;
+import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -31,6 +37,7 @@ import javax.xml.bind.Unmarshaller;
 import com.itextpdf.text.DocumentException;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.CharacteristicStatus;
 import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.data.DISCIPLINEType;
@@ -143,7 +150,7 @@ public class EDMainWindow {
 		JMenuItem mntmPrint = new JMenuItem(NLS.getString("EDMainWindow.mntmPrint.text")); //$NON-NLS-1$
 		mntmPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				addTalentsTabs();
+				do_mntmPrint_actionPerformed(arg0);
 			}
 		});
 		mnFile.add(mntmPrint);
@@ -347,6 +354,7 @@ public class EDMainWindow {
 	protected void do_mntmClose_actionPerformed(ActionEvent arg0) {
 		frame.dispose();
 	}
+
 	protected void do_mntmExport_actionPerformed(ActionEvent arg0) {
 		if( file == null ) return; // TODO: Fehlermeldung
 		File pdfFile = new File(file.getParentFile(), chopFilename(file)+ ".pdf");
@@ -366,7 +374,21 @@ public class EDMainWindow {
 			}
 		}
 	}
-	
+
+	protected void do_mntmPrint_actionPerformed(ActionEvent arg0) {
+		CharacteristicStatus status = new CharacteristicStatus(character);
+		status.setTemplate("characteristic_layout.html");
+		Writer out;
+		try {
+			out = new OutputStreamWriter(new FileOutputStream("CharacteristicStatus.html"),"UTF-8");
+			status.parseTo(out);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
 	protected String chopFilename(File f){
 		String choppedFilename;
 		String filename = f.getName();
