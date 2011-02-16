@@ -334,6 +334,11 @@ public class ECEWorker {
 			currentBonuses.addAll(getDisciplineBonuses(discipline));
 		}
 
+		// ** KARMA STEP **
+		KARMAType karma = character.getKarma();
+		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
+		karma.setDice(step2Dice(karma.getStep()));
+
 		removeEmptySkills(character.getSkills());
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
 		for( SKILLType skill : character.getSkills() ) {

@@ -24,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="threshold" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="count" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="normal" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="blood" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="penalties" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +41,9 @@ public class WOUNDType {
     @XmlAttribute(required = true)
     protected int threshold;
     @XmlAttribute
-    protected Integer count;
+    protected Integer normal;
+    @XmlAttribute
+    protected Integer blood;
     @XmlAttribute
     protected Integer penalties;
 
@@ -61,31 +64,59 @@ public class WOUNDType {
     }
 
     /**
-     * Gets the value of the count property.
+     * Gets the value of the normal property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public int getCount() {
-        if (count == null) {
+    public int getNormal() {
+        if (normal == null) {
             return  0;
         } else {
-            return count;
+            return normal;
         }
     }
 
     /**
-     * Sets the value of the count property.
+     * Sets the value of the normal property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setCount(Integer value) {
-        this.count = value;
+    public void setNormal(Integer value) {
+        this.normal = value;
+    }
+
+    /**
+     * Gets the value of the blood property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBlood() {
+        if (blood == null) {
+            return  0;
+        } else {
+            return blood;
+        }
+    }
+
+    /**
+     * Sets the value of the blood property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBlood(Integer value) {
+        this.blood = value;
     }
 
     /**

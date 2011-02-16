@@ -214,7 +214,8 @@
 	</xs:complexType>
 	<xs:complexType name="WOUND_type">
 		<xs:attribute name="threshold" type="unsigned_int" use="required"/>
-		<xs:attribute name="count" type="unsigned_int" default="0"/>
+		<xs:attribute name="normal" type="unsigned_int" default="0"/>
+		<xs:attribute name="blood" type="unsigned_int" default="0"/>
 		<xs:attribute name="penalties" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="DEATH_type">
@@ -279,12 +280,16 @@
 		<xs:attribute name="reputation" type="xs:string" default="na"/>
 	</xs:complexType>
 	<xs:complexType name="KARMA_type">
-		<xs:sequence>
-			<xs:element maxOccurs="unbounded" name="KARMAPOINTS" type="ACCOUNTING_type"/>
-		</xs:sequence>
-		<xs:attribute name="current" type="unsigned_int" use="required"/>
-		<xs:attribute name="max" type="unsigned_int" use="required"/>
-		<xs:attribute name="maxmodificator" type="xs:int" default="0"/>
+		<xs:complexContent>
+			<xs:extension base="STEPDICE_type">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" name="KARMAPOINTS" type="ACCOUNTING_type"/>
+				</xs:sequence>
+				<xs:attribute name="current" type="unsigned_int" use="required"/>
+				<xs:attribute name="max" type="unsigned_int" use="required"/>
+				<xs:attribute name="maxmodificator" type="xs:int" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="ARMOR_type">
 		<xs:complexContent>

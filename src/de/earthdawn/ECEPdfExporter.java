@@ -59,8 +59,8 @@ public class ECEPdfExporter {
 	private AcroFields acroFields = null;
 
 	public void export(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
-		//PdfReader reader = new PdfReader(new FileInputStream(new File("./config/ed3_character_sheet.pdf")));
-		PdfReader reader = new PdfReader(new FileInputStream(new File("./config/ed3_extended_character_sheet.pdf")));
+		//PdfReader reader = new PdfReader(new FileInputStream(new File("./templates/ed3_character_sheet.pdf")));
+		PdfReader reader = new PdfReader(new FileInputStream(new File("./templates/ed3_extended_character_sheet.pdf")));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
 		acroFields = stamper.getAcroFields();
 		CharacterContainer character = new CharacterContainer(edCharakter);

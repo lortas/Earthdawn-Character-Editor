@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="KARMA_type">
  *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
  *       &lt;sequence>
  *         &lt;element name="KARMAPOINTS" type="{http://earthdawn.com/datatypes}ACCOUNTING_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="current" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="max" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="maxmodificator" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
- *     &lt;/restriction>
+ *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -43,7 +43,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "KARMA_type", propOrder = {
     "karmapoints"
 })
-public class KARMAType {
+public class KARMAType
+    extends STEPDICEType
+{
 
     @XmlElement(name = "KARMAPOINTS", required = true)
     protected List<ACCOUNTINGType> karmapoints;
