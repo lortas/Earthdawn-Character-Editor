@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
+import javax.swing.text.EditorKit;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -59,8 +61,8 @@ public class EDMainWindow {
 	private EDTalents panelEDTalents;
 	private File file = null;
 	private JSplitPane splitPane;
-	private EDStatus panelEDStatus;
 	private EDSkills panelEDSkills;
+	private JEditorPane paneStatus;
 	
 	
 	
@@ -198,6 +200,10 @@ public class EDMainWindow {
 		panelEDDisciplines = new EDDisciplines();
 		panelEDSpells	= new EDSpells();
 		panelEDSkills = new EDSkills();
+		paneStatus = new JEditorPane();
+		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
+		paneStatus.setEditorKit(kit);
+		paneStatus.setEditable(false);
 
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
@@ -205,8 +211,7 @@ public class EDMainWindow {
 		tabbedPane.addTab("Spells", null, panelEDSpells, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
 
-		panelEDStatus = new EDStatus();
-		splitPane.setRightComponent(panelEDStatus);
+		splitPane.setRightComponent(paneStatus);
 	}
 
 	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
@@ -241,7 +246,12 @@ public class EDMainWindow {
 	}
 	
 	private void refreshTabs(){
-		panelEDStatus.setCharacter(character);
+		CharacteristicStatus status = new CharacteristicStatus(character);
+		status.setTemplate("characteristic_layout.html");
+		StringWriter out = new StringWriter();
+		status.parseTo(out);
+		paneStatus.setText(out.toString());
+
 		for(Component co  : tabbedPane.getComponents() )
 		{
 			if(co.getClass() == EDTalents.class){
@@ -264,8 +274,8 @@ public class EDMainWindow {
 			}	
 			if(co.getClass() == EDSkills.class){
 				((EDSkills)co).setCharacter(character);
-			}			
-		}	
+			}
+		}
 	}
 
 	protected void do_mntmSave_actionPerformed(ActionEvent arg0) {
