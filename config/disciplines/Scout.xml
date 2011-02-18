@@ -52,7 +52,7 @@
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Astral Sight"/>
 		<TALENTABILITY/>
-		<KARMA spend="Dextarity-only Test"/>
+		<KARMA spend="Dexterity-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Empathic Sense"/>

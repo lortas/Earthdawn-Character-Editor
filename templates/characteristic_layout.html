@@ -1,8 +1,8 @@
 <html><head><title>Characteristics Status</title>
 <style type="text/css">
-table { width:100%; border-width:1px; border-style:solid; border-color:blue; padding:0em; }
-thead { font-weight:bold; text-align:center; }
-td    { text-align:center; }
+table    { width:100%; border-width:1px; border-style:solid; border-color:silver; padding:0em; }
+td       { text-align:center; }
+td.thead { font-weight:bold; font-style:italic; }
 </style>
 </head><body>
 
@@ -10,14 +10,12 @@ td    { text-align:center; }
 	<tr>
 		<td>
 			<table>
-				<thead>
-					<tr>
-						<td colspan="6">Attributes</td>
-					<tr>
-				</thead>
+				<tr>
+					<td colspan="6" class="thead">Attributes</td>
+				<tr>
 				<tbody>
 					<tr>
-						<td>Dextarity</td>
+						<td>Dexterity</td>
 						<td>${ATTRIBUTE.DEX.basevalue}</td>
 						<td>${ATTRIBUTE.DEX.lpincrease}</td>
 						<td>${ATTRIBUTE.DEX.currentvalue}</td>
@@ -76,19 +74,15 @@ td    { text-align:center; }
 		</td>
 		<td>
 			<table>
-				<thead>
-					<tr>
-						<td colspan="2">Characteristics</td>
-					</tr>
-				</thead>
+				<tr>
+					<td colspan="2" class="thead">Characteristics</td>
+				</tr>
 				<tr>
 					<td>
 						<table>
-							<thead>
-								<tr>
-									<td colspan="3">Defense</td>
-								</tr>
-							</thead>
+							<tr>
+								<td colspan="3" class="thead">Defense</td>
+							</tr>
 							<tr>
 								<td>physical</td>
 								<td>spell</td>
@@ -103,11 +97,9 @@ td    { text-align:center; }
 					</td>
 					<td>
 						<table>
-							<thead>
-								<tr>
-									<td colspan="2">Armor</td>
-								</tr>
-							</thead>
+							<tr>
+								<td colspan="2" class="thead">Armor</td>
+							</tr>
 							<tr>
 								<td>physical</td>
 								<td>mystic</td>
@@ -124,11 +116,9 @@ td    { text-align:center; }
 				<tr>
 					<td>
 						<table>
-							<thead>
-								<tr>
-									<td colspan="2">Initiative</td>
-								</tr>
-							</thead>
+							<tr>
+								<td colspan="2" class="thead">Initiative</td>
+							</tr>
 							<tr>
 								<td>Base Step</td>
 								<td>${INITIATIVE.base}</td>
@@ -149,11 +139,9 @@ td    { text-align:center; }
 					</td>
 					<td>
 						<table>
-							<thead>
-								<tr>
-									<td colspan="2">Movement</td>
-								</tr>
-							</thead>
+							<tr>
+								<td colspan="2" class="thead">Movement</td>
+							</tr>
 							<tr>
 								<td>Ground</td>
 								<td>${MOVEMENT.ground}</td>
@@ -164,11 +152,9 @@ td    { text-align:center; }
 							</tr>
 						</table>
 						<table>
-							<thead>
-								<tr>
-									<td colspan="2">Encumbrabce</td>
-								</tr>
-							</thead>
+							<tr>
+								<td colspan="2" class="thead">Encumbrabce</td>
+							</tr>
 							<tr>
 								<td>Carrying</td>
 								<td>${CARRYING.carrying}</td>
@@ -177,11 +163,9 @@ td    { text-align:center; }
 					</td>
 					<td>
 						<table>
-							<thead>
-								<tr>
-									<td colspan="2">Karma</td>
-								</tr>
-							</thead>
+							<tr>
+								<td colspan="2" class="thead">Karma</td>
+							</tr>
 							<tr>
 								<td>current</td>
 								<td>${KARMA.current}</td>
@@ -209,11 +193,9 @@ td    { text-align:center; }
 	<tr>
 		<td>
 			<table>
-				<thead>
-					<tr>
-						<td colspan="4">Health</td>
-					</tr>
-				</thead>
+				<tr>
+					<td colspan="4" class="thead">Health</td>
+				</tr>
 				<tr>
 					<td>Unconsciousness</td>
 					<td colspan="2">${HEALTH.UNCONSCIOUSNESS.base} + ${HEALTH.UNCONSCIOUSNESS.adjustment} =</td>
@@ -240,11 +222,9 @@ td    { text-align:center; }
 		</td>
 		<td>
 			<table>
-				<thead>
-					<tr>
-						<td colspan="2">Damage</td>
-					</tr>
-				</thead>
+				<tr>
+					<td colspan="2" class="thead">Damage</td>
+				</tr>
 				<tr>
 					<td>Current Damage</td>
 					<td>${HEALTH.damage}</td>
@@ -265,11 +245,9 @@ td    { text-align:center; }
 		</td>
 		<td>
 			<table>
-				<thead>
-					<tr>
-						<td colspan="2">Legend Points</td>
-					</tr>
-				</thead>
+				<tr>
+					<td colspan="2" class="thead">Legend Points</td>
+				</tr>
 				<tr>
 					<td>Renown</td>
 					<td>${EXPERIENCE.renown}</td>
@@ -291,11 +269,9 @@ td    { text-align:center; }
 	</tr>
 </table>
 <table>
-	<thead>
-		<tr>
-			<td colspan="9">Calculated Legend Points</td>
-		</tr>
-	</thead>
+	<tr>
+		<td colspan="9" class="thead">Calculated Legend Points</td>
+	</tr>
 	<tr>
 		<td>Attributes</td>
 		<td>Discipline Talents</td>
