@@ -21,27 +21,24 @@ public class CharacteristicStatus {
 	private Configuration cfg;
 	private Template template=null;
 
-	public CharacteristicStatus(CharacterContainer newcharacter) {
-		character = newcharacter;
+	public CharacteristicStatus(String filename) {
 		try {
 			cfg = new freemarker.template.Configuration();
 			cfg.setDirectoryForTemplateLoading(new File("./templates"));
 			cfg.setObjectWrapper(new DefaultObjectWrapper());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void setTemplate(String filename) {
-		try {
 			template = cfg.getTemplate(filename);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
+	public void setCharacter(CharacterContainer newcharacter) {
+		character = newcharacter;
+	}
+
 	public void parseTo(Writer out) {
-		if( template == null );
+		if( template == null )return;
+		if( character == null )return;
 		Map<String,Object> node;
 		Map<String,Map<String,Object>> root = new HashMap<String,Map<String,Object>>();
 

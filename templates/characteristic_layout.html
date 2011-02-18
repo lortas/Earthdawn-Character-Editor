@@ -1,87 +1,81 @@
 <html><head><title>Characteristics Status</title>
 <style type="text/css">
-table    { width:100%; border-width:1px; border-style:solid; border-color:silver; padding:0em; }
+table    { width:100%; height:100%; border-width:1px; border-style:solid; border-color:silver; padding:0px; spacing:0px;}
+table.invis { border-width:0px; border:none; }
 td       { text-align:center; }
-td.thead { font-weight:bold; font-style:italic; }
+tr.thead { font-weight:bold; font-style:italic; }
+tr.tfoot { font-style:italic; }
 </style>
 </head><body>
 
-<table style="border-width:0px;">
+<table class="invis">
 	<tr>
 		<td>
 			<table>
+				<tr class="thead">
+					<td colspan="6">Attributes</td>
+				</tr>
 				<tr>
-					<td colspan="6" class="thead">Attributes</td>
+					<td>Dexterity</td>
+					<td>${ATTRIBUTE.DEX.basevalue}</td>
+					<td>${ATTRIBUTE.DEX.lpincrease}</td>
+					<td>${ATTRIBUTE.DEX.currentvalue}</td>
+					<td>${ATTRIBUTE.DEX.step}</td>
+					<td>${ATTRIBUTE.DEX.dice}</td>
+				</tr>
 				<tr>
-				<tbody>
-					<tr>
-						<td>Dexterity</td>
-						<td>${ATTRIBUTE.DEX.basevalue}</td>
-						<td>${ATTRIBUTE.DEX.lpincrease}</td>
-						<td>${ATTRIBUTE.DEX.currentvalue}</td>
-						<td>${ATTRIBUTE.DEX.step}</td>
-						<td>${ATTRIBUTE.DEX.dice}</td>
-					</tr>
-					<tr>
-						<td>Strength</td>
-						<td>${ATTRIBUTE.STR.basevalue}</td>
-						<td>${ATTRIBUTE.STR.lpincrease}</td>
-						<td>${ATTRIBUTE.STR.currentvalue}</td>
-						<td>${ATTRIBUTE.STR.step}</td>
-						<td>${ATTRIBUTE.STR.dice}</td>
-					</tr>
-					<tr>
-						<td>Toughness</td>
-						<td>${ATTRIBUTE.TOU.basevalue}</td>
-						<td>${ATTRIBUTE.TOU.lpincrease}</td>
-						<td>${ATTRIBUTE.TOU.currentvalue}</td>
-						<td>${ATTRIBUTE.TOU.step}</td>
-						<td>${ATTRIBUTE.TOU.dice}</td>
-					</tr>
-					<tr>
-						<td>Perception</td>
-						<td>${ATTRIBUTE.PER.basevalue}</td>
-						<td>${ATTRIBUTE.PER.lpincrease}</td>
-						<td>${ATTRIBUTE.PER.currentvalue}</td>
-						<td>${ATTRIBUTE.PER.step}</td>
-						<td>${ATTRIBUTE.PER.dice}</td>
-					</tr>
-					<tr>
-						<td>Willpower</td>
-						<td>${ATTRIBUTE.WIL.basevalue}</td>
-						<td>${ATTRIBUTE.WIL.lpincrease}</td>
-						<td>${ATTRIBUTE.WIL.currentvalue}</td>
-						<td>${ATTRIBUTE.WIL.step}</td>
-						<td>${ATTRIBUTE.WIL.dice}</td>
-					</tr>
-					<tr>
-						<td>Charisma</td>
-						<td>${ATTRIBUTE.CHA.basevalue}</td>
-						<td>${ATTRIBUTE.CHA.lpincrease}</td>
-						<td>${ATTRIBUTE.CHA.currentvalue}</td>
-						<td>${ATTRIBUTE.CHA.step}</td>
-						<td>${ATTRIBUTE.CHA.dice}</td>
-					</tr>
-					<tr>
-						<td colspan="6">&nbsp;</td>
-					</tr>
-					<tr>
-						<td colspan="5">Not Spend Attribute Cost</td>
-						<td>${KARMA.maxmodificator}</td>
-					</tr>
-				</tbody>
+					<td>Strength</td>
+					<td>${ATTRIBUTE.STR.basevalue}</td>
+					<td>${ATTRIBUTE.STR.lpincrease}</td>
+					<td>${ATTRIBUTE.STR.currentvalue}</td>
+					<td>${ATTRIBUTE.STR.step}</td>
+					<td>${ATTRIBUTE.STR.dice}</td>
+				</tr>
+				<tr>
+					<td>Toughness</td>
+					<td>${ATTRIBUTE.TOU.basevalue}</td>
+					<td>${ATTRIBUTE.TOU.lpincrease}</td>
+					<td>${ATTRIBUTE.TOU.currentvalue}</td>
+					<td>${ATTRIBUTE.TOU.step}</td>
+					<td>${ATTRIBUTE.TOU.dice}</td>
+				</tr>
+				<tr>
+					<td>Perception</td>
+					<td>${ATTRIBUTE.PER.basevalue}</td>
+					<td>${ATTRIBUTE.PER.lpincrease}</td>
+					<td>${ATTRIBUTE.PER.currentvalue}</td>
+					<td>${ATTRIBUTE.PER.step}</td>
+					<td>${ATTRIBUTE.PER.dice}</td>
+				</tr>
+				<tr>
+					<td>Willpower</td>
+					<td>${ATTRIBUTE.WIL.basevalue}</td>
+					<td>${ATTRIBUTE.WIL.lpincrease}</td>
+					<td>${ATTRIBUTE.WIL.currentvalue}</td>
+					<td>${ATTRIBUTE.WIL.step}</td>
+					<td>${ATTRIBUTE.WIL.dice}</td>
+				</tr>
+				<tr>
+					<td>Charisma</td>
+					<td>${ATTRIBUTE.CHA.basevalue}</td>
+					<td>${ATTRIBUTE.CHA.lpincrease}</td>
+					<td>${ATTRIBUTE.CHA.currentvalue}</td>
+					<td>${ATTRIBUTE.CHA.step}</td>
+					<td>${ATTRIBUTE.CHA.dice}</td>
+				</tr>
+				<tr class="tfoot">
+					<td colspan="5">Not Spend Attribute Cost</td>
+					<td>${KARMA.maxmodificator}</td>
+				</tr>
 			</table>
 		</td>
-		<td>
-			<table>
-				<tr>
-					<td colspan="2" class="thead">Characteristics</td>
-				</tr>
+		<td colspan="2">
+			<table class="invis">
 				<tr>
 					<td>
 						<table>
-							<tr>
-								<td colspan="3" class="thead">Defense</td>
+							<tr class="thead">
+								<td colspan="3">Defense</td>
 							</tr>
 							<tr>
 								<td>physical</td>
@@ -97,8 +91,8 @@ td.thead { font-weight:bold; font-style:italic; }
 					</td>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2" class="thead">Armor</td>
+							<tr class="thead">
+								<td colspan="2">Armor</td>
 							</tr>
 							<tr>
 								<td>physical</td>
@@ -112,12 +106,12 @@ td.thead { font-weight:bold; font-style:italic; }
 					</td>
 				</tr>
 			</table>
-			<table>
+			<table class="invis">
 				<tr>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2" class="thead">Initiative</td>
+							<tr class="thead">
+								<td colspan="2">Initiative</td>
 							</tr>
 							<tr>
 								<td>Base Step</td>
@@ -139,8 +133,8 @@ td.thead { font-weight:bold; font-style:italic; }
 					</td>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2" class="thead">Movement</td>
+							<tr class="thead">
+								<td colspan="2">Movement</td>
 							</tr>
 							<tr>
 								<td>Ground</td>
@@ -150,10 +144,8 @@ td.thead { font-weight:bold; font-style:italic; }
 								<td>Flight</td>
 								<td>${MOVEMENT.flight}</td>
 							</tr>
-						</table>
-						<table>
-							<tr>
-								<td colspan="2" class="thead">Encumbrabce</td>
+							<tr class="thead">
+								<td colspan="2">Encumbrabce</td>
 							</tr>
 							<tr>
 								<td>Carrying</td>
@@ -163,8 +155,8 @@ td.thead { font-weight:bold; font-style:italic; }
 					</td>
 					<td>
 						<table>
-							<tr>
-								<td colspan="2" class="thead">Karma</td>
+							<tr class="thead">
+								<td colspan="2">Karma</td>
 							</tr>
 							<tr>
 								<td>current</td>
@@ -188,13 +180,11 @@ td.thead { font-weight:bold; font-style:italic; }
 			</table>
 		</td>
 	</tr>
-</table>
-<table style="border-width:0px;">
 	<tr>
 		<td>
 			<table>
-				<tr>
-					<td colspan="4" class="thead">Health</td>
+				<tr class="thead">
+					<td colspan="4">Health</td>
 				</tr>
 				<tr>
 					<td>Unconsciousness</td>
@@ -222,8 +212,8 @@ td.thead { font-weight:bold; font-style:italic; }
 		</td>
 		<td>
 			<table>
-				<tr>
-					<td colspan="2" class="thead">Damage</td>
+				<tr class="thead">
+					<td colspan="2">Damage</td>
 				</tr>
 				<tr>
 					<td>Current Damage</td>
@@ -245,8 +235,8 @@ td.thead { font-weight:bold; font-style:italic; }
 		</td>
 		<td>
 			<table>
-				<tr>
-					<td colspan="2" class="thead">Legend Points</td>
+				<tr class="thead">
+					<td colspan="2">Legend Points</td>
 				</tr>
 				<tr>
 					<td>Renown</td>
@@ -267,32 +257,36 @@ td.thead { font-weight:bold; font-style:italic; }
 			</table>
 		</td>
 	</tr>
-</table>
-<table>
 	<tr>
-		<td colspan="9" class="thead">Calculated Legend Points</td>
-	</tr>
-	<tr>
-		<td>Attributes</td>
-		<td>Discipline Talents</td>
-		<td>Optional Talents</td>
-		<td>Knacks</td>
-		<td>Spells</td>
-		<td>Skills</td>
-		<td>Karma</td>
-		<td>Magic Items</td>
-		<td>Total</td>
-	</tr>
-	<tr>
-		<td>${CALCULATEDLEGENDPOINTS.attributes}</td>
-		<td>${CALCULATEDLEGENDPOINTS.disciplinetalents}</td>
-		<td>${CALCULATEDLEGENDPOINTS.optionaltalents}</td>
-		<td>${CALCULATEDLEGENDPOINTS.knacks}</td>
-		<td>${CALCULATEDLEGENDPOINTS.spells}</td>
-		<td>${CALCULATEDLEGENDPOINTS.skills}</td>
-		<td>${CALCULATEDLEGENDPOINTS.karma}</td>
-		<td>${CALCULATEDLEGENDPOINTS.magicitems}</td>
-		<td>${CALCULATEDLEGENDPOINTS.total}</td>
+		<td colspan="3">
+			<table>
+				<tr class="thead">
+					<td colspan="9">Calculated Legend Points</td>
+				</tr>
+				<tr>
+					<td>Attributes</td>
+					<td>Discipline Talents</td>
+					<td>Optional Talents</td>
+					<td>Knacks</td>
+					<td>Spells</td>
+					<td>Skills</td>
+					<td>Karma</td>
+					<td>Magic Items</td>
+					<td>Total</td>
+				</tr>
+				<tr>
+					<td>${CALCULATEDLEGENDPOINTS.attributes}</td>
+					<td>${CALCULATEDLEGENDPOINTS.disciplinetalents}</td>
+					<td>${CALCULATEDLEGENDPOINTS.optionaltalents}</td>
+					<td>${CALCULATEDLEGENDPOINTS.knacks}</td>
+					<td>${CALCULATEDLEGENDPOINTS.spells}</td>
+					<td>${CALCULATEDLEGENDPOINTS.skills}</td>
+					<td>${CALCULATEDLEGENDPOINTS.karma}</td>
+					<td>${CALCULATEDLEGENDPOINTS.magicitems}</td>
+					<td>${CALCULATEDLEGENDPOINTS.total}</td>
+				</tr>
+			</table>
+		</td>
 	</tr>
 </table>
 
