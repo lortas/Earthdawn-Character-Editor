@@ -9,7 +9,7 @@
 		<ATTRIBUTE attribute="CHA" name="Charisma"/>
 	</ATTRIBUTES>
 	<ATTRIBUTES lang="en">
-		<ATTRIBUTE attribute="DEX" name="Dextarity"/>
+		<ATTRIBUTE attribute="DEX" name="Dexterity"/>
 		<ATTRIBUTE attribute="STR" name="Strength"/>
 		<ATTRIBUTE attribute="TOU" name="Toughness"/>
 		<ATTRIBUTE attribute="PER" name="Perception"/>

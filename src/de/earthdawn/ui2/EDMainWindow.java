@@ -63,6 +63,7 @@ public class EDMainWindow {
 	private JSplitPane splitPane;
 	private EDSkills panelEDSkills;
 	private JEditorPane paneStatus;
+	private CharacteristicStatus characteristicStatus;
 	
 	
 	
@@ -204,6 +205,8 @@ public class EDMainWindow {
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
 		paneStatus.setEditable(false);
+		characteristicStatus = new CharacteristicStatus(character);
+		characteristicStatus.setTemplate("characteristic_layout.html");
 
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
@@ -246,10 +249,8 @@ public class EDMainWindow {
 	}
 	
 	private void refreshTabs(){
-		CharacteristicStatus status = new CharacteristicStatus(character);
-		status.setTemplate("characteristic_layout.html");
 		StringWriter out = new StringWriter();
-		status.parseTo(out);
+		characteristicStatus.parseTo(out);
 		paneStatus.setText(out.toString());
 
 		for(Component co  : tabbedPane.getComponents() )
