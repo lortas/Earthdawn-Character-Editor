@@ -205,8 +205,8 @@ public class EDMainWindow {
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
 		paneStatus.setEditable(false);
-		characteristicStatus = new CharacteristicStatus(character);
-		characteristicStatus.setTemplate("characteristic_layout.html");
+		characteristicStatus = new CharacteristicStatus("characteristic_layout.html");
+		characteristicStatus.setCharacter(character);
 
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
@@ -359,6 +359,7 @@ public class EDMainWindow {
 				}
 			});				
 			addTalentsTabs();
+			characteristicStatus.setCharacter(character);
 			refreshTabs();
 		}
 	}
@@ -387,12 +388,10 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmPrint_actionPerformed(ActionEvent arg0) {
-		CharacteristicStatus status = new CharacteristicStatus(character);
-		status.setTemplate("characteristic_layout.html");
 		Writer out;
 		try {
 			out = new OutputStreamWriter(new FileOutputStream("CharacteristicStatus.html"),"UTF-8");
-			status.parseTo(out);
+			characteristicStatus.parseTo(out);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
@@ -434,6 +433,7 @@ public class EDMainWindow {
 			}
 		});	
 		addTalentsTabs();
+		characteristicStatus.setCharacter(character);
 		refreshTabs();
 	}
 
