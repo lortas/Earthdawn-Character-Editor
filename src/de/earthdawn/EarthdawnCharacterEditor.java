@@ -62,7 +62,7 @@ public class EarthdawnCharacterEditor {
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
 				// Ausgabe (PDF)
-				new ECEPdfExporter().export(ec, new File(outFile.getParentFile(), chopFilename(outFile)+ ".pdf"));
+				new ECEPdfExporter().exportRedbrick(ec, new File(outFile.getParentFile(), chopFilename(outFile)+ ".pdf"));
 			} else {
 				// Anzeigen des Hauptdialogs.
 				EDMainWindow.main(args);

@@ -376,7 +376,9 @@ public class EDMainWindow {
 		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
 		if( selFile != null ) {
 			try {
-				new ECEPdfExporter().export(character.getEDCHARACTER(), selFile);
+				//TODO: Popup-Fenster, das danach fragt welcher export gewünscht ist. Oder Mehrer Export Aufrufe im Menü
+				new ECEPdfExporter().exportRedbrick(character.getEDCHARACTER(), selFile);
+				//new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile);
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
