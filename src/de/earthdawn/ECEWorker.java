@@ -65,11 +65,13 @@ public class ECEWorker {
 			itemList.addAll(ApplicationProperties.create().getStartingItems());
 		}
 
-		// Startwaffen aus der Charaktererschaffung setzen, wenn gar keine Waffen vorhanden
+		List<WEAPONType> magicWeapons = character.cutMagicWeaponFromNormalWeaponList();
 		List<WEAPONType> weaponList = character.getWeapons();
 		if( weaponList.isEmpty() ) {
+			// Startwaffen aus der Charaktererschaffung setzen, wenn gar keine Waffen vorhanden
 			weaponList.addAll(ApplicationProperties.create().getStartingWeapons());
 		}
+		weaponList.addAll(magicWeapons);
 
 		// **ATTRIBUTE**
 		int karmaMaxBonus = ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
@@ -169,9 +171,6 @@ public class ECEWorker {
 			coins.setWeight((float)weight);
 		}
 
-		// ** MAGIC ARMOR **
-		List<ARMORType> magicarmor = getMagicArmor(character, calculatedLP);
-
 		// ** ARMOR **
 		ARMORType naturalArmor = namegiver.getARMOR();
 		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
@@ -181,6 +180,7 @@ public class ECEWorker {
 		int protectionpenalty=naturalArmor.getPenalty();
 		List <ARMORType> newarmor = new ArrayList<ARMORType>();
 		newarmor.add(naturalArmor);
+		List<ARMORType> magicarmor = character.getMagicArmor();
 		newarmor.addAll(magicarmor);
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
 			// Sollte die natürliche Rüstung bereits eingetragen sein, dann überspringen
@@ -431,35 +431,6 @@ public class ECEWorker {
 				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
 				calculatedLP.getSkills()+calculatedLP.getSpells()+calculatedLP.getKnacks());
 		return charakter;
-	}
-
-	public List<ARMORType> getMagicArmor(CharacterContainer character, CALCULATEDLEGENDPOINTSType calculatedLP) {
-		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
-		calculatedLP.setMagicitems(0);
-		for( MAGICITEMType magicitem : character.getMagicItem() ) {
-			String name = magicitem.getName();
-			float weight = magicitem.getWeight();
-			YesnoType used = magicitem.getUsed();
-			int weaven = magicitem.getWeaventhreadrank();
-			int rank=0;
-			ARMORType newmagicarmor = null;
-			List<CHARACTERISTICSCOST> LpCosts = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(1,magicitem.getLpcostgrowth() );
-			for( THREADRANKType threadrank : magicitem.getTHREADRANK() ) {
-				rank++;
-				threadrank.setLpcost( LpCosts.get(rank).getCost() );
-				ARMORType armor = threadrank.getARMOR();
-				if( armor != null ) {
-					armor.setName(name);
-					armor.setWeight(weight);
-					armor.setUsed(used);
-					if( weaven > 0 ) newmagicarmor=armor;
-				}
-				if( weaven > 0 ) calculatedLP.setMagicitems(calculatedLP.getMagicitems()+threadrank.getLpcost());
-				weaven--;
-			}
-			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
-		}
-		return magicarmor;
 	}
 
 	public static void removeIfContains(List<CAPABILITYType> defaultSkills, String name) {
