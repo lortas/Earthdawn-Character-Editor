@@ -581,4 +581,77 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<MAGICITEMType> getMagicItem() {
 		return character.getMAGICITEM();
 	}
+
+	public List<ARMORType> getMagicArmor() {
+		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
+		int calculatedLP=0;
+		for( MAGICITEMType magicitem : getMagicItem() ) {
+			String name = magicitem.getName();
+			float weight = magicitem.getWeight();
+			YesnoType used = magicitem.getUsed();
+			int weaven = magicitem.getWeaventhreadrank();
+			int rank=0;
+			ARMORType newmagicarmor = null;
+			List<CHARACTERISTICSCOST> LpCosts = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(1,magicitem.getLpcostgrowth() );
+			for( THREADRANKType threadrank : magicitem.getTHREADRANK() ) {
+				threadrank.setLpcost( LpCosts.get(rank).getCost() );
+				rank++;
+				ARMORType armor = threadrank.getARMOR();
+				if( armor != null ) {
+					armor.setName(name);
+					armor.setWeight(weight);
+					armor.setUsed(used);
+					if( weaven > 0 ) newmagicarmor=armor;
+				}
+				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
+				weaven--;
+			}
+			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
+		}
+		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
+		return magicarmor;
+	}
+
+	public List<WEAPONType> getMagicWeapon() {
+		List<WEAPONType> magicweapon = new ArrayList<WEAPONType>();
+		int calculatedLP=0;
+		for( MAGICITEMType magicitem : getMagicItem() ) {
+			String name = magicitem.getName();
+			float weight = magicitem.getWeight();
+			YesnoType used = magicitem.getUsed();
+			int weaven = magicitem.getWeaventhreadrank();
+			int rank=0;
+			WEAPONType newmagicweapon = null;
+			List<CHARACTERISTICSCOST> LpCosts = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(1,magicitem.getLpcostgrowth() );
+			for( THREADRANKType threadrank : magicitem.getTHREADRANK() ) {
+				threadrank.setLpcost( LpCosts.get(rank).getCost() );
+				rank++;
+				WEAPONType weapon = threadrank.getWEAPON();
+				if( weapon != null ) {
+					weapon.setName(name);
+					weapon.setWeight(weight);
+					weapon.setUsed(used);
+					if( weaven > 0 ) newmagicweapon=weapon;
+				}
+				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
+				weaven--;
+			}
+			if( newmagicweapon != null ) magicweapon.add(newmagicweapon);
+		}
+		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
+		return magicweapon;
+	}
+
+	public List<WEAPONType> cutMagicWeaponFromNormalWeaponList() {
+		List<WEAPONType> magicWeapon = getMagicWeapon();
+		List<WEAPONType> normalWeaponList = character.getWEAPON();
+		List<WEAPONType> delete = new ArrayList<WEAPONType>();
+		for( WEAPONType weapon : normalWeaponList) {
+			for( WEAPONType a : magicWeapon ) {
+				if( weapon.getName().equals(a.getName())) delete.add(a);
+			}
+		}
+		normalWeaponList.removeAll(delete);
+		return magicWeapon;
+	}
 }

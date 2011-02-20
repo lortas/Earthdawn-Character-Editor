@@ -196,6 +196,7 @@ public class ECECharacteristics {
 			if( tmp.getCircle() > circle ) break;
 			circlenr = tmp;
 		}
+		//System.out.println("getTalentRankLPIncreaseTable: circle: searchfor="+circle+" found="+circlenr.getCircle());
 		if( circlenr == null ) {
 			System.err.println("Can not find LP for talents of discipline number "+discipline+" and cirlce number "+circle);
 			return null;
