@@ -592,6 +592,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			int weaven = magicitem.getWeaventhreadrank();
 			int rank=0;
 			ARMORType newmagicarmor = null;
+			SHIELDType newmagicshield = null;
 			List<CHARACTERISTICSCOST> LpCosts = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(1,magicitem.getLpcostgrowth() );
 			for( THREADRANKType threadrank : magicitem.getTHREADRANK() ) {
 				threadrank.setLpcost( LpCosts.get(rank).getCost() );
@@ -603,13 +604,35 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setUsed(used);
 					if( weaven > 0 ) newmagicarmor=armor;
 				}
+				SHIELDType shield = threadrank.getSHIELD();
+				if( shield != null ) {
+					shield.setName(name);
+					shield.setWeight(weight);
+					shield.setUsed(used);
+					if( weaven > 0 ) newmagicshield=shield;
+				}
 				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
 				weaven--;
 			}
 			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
+			if( newmagicshield != null ) magicarmor.add(newmagicshield);
 		}
 		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
 		return magicarmor;
+	}
+
+	public List<ARMORType> cutMagicArmornFromNormalArmorList() {
+		List<ARMORType> magicArmor = getMagicArmor();
+		List<ARMORType> normalArmorList = character.getPROTECTION().getARMOROrSHIELD();
+		List<ARMORType> delete = new ArrayList<ARMORType>();
+		for( ARMORType armor : normalArmorList) {
+			String armorName = armor.getName();
+			for( ARMORType a : magicArmor ) {
+				if( armorName.equals(a.getName()) ) delete.add(armor);
+			}
+		}
+		normalArmorList.removeAll(delete);
+		return magicArmor;
 	}
 
 	public List<WEAPONType> getMagicWeapon() {
@@ -647,8 +670,9 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<WEAPONType> normalWeaponList = character.getWEAPON();
 		List<WEAPONType> delete = new ArrayList<WEAPONType>();
 		for( WEAPONType weapon : normalWeaponList) {
-			for( WEAPONType a : magicWeapon ) {
-				if( weapon.getName().equals(a.getName())) delete.add(a);
+			String weaponName = weapon.getName();
+			for( WEAPONType w : magicWeapon ) {
+				if( weaponName.equals(w.getName()) ) delete.add(weapon);
 			}
 		}
 		normalWeaponList.removeAll(delete);

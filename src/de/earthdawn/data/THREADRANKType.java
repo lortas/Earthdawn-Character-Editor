@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type" minOccurs="0"/>
+ *         &lt;element name="SHIELD" type="{http://earthdawn.com/datatypes}SHIELD_type" minOccurs="0"/>
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" minOccurs="0"/>
  *         &lt;element name="WOUND" type="{http://earthdawn.com/datatypes}WOUND_type" minOccurs="0"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -39,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="keyknowledge" use="required" type="{http://earthdawn.com/datatypes}yesno_type" />
+ *       &lt;attribute name="keyknowledge" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="lpcost" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="effect" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
@@ -52,6 +53,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "THREADRANK_type", propOrder = {
     "armor",
+    "shield",
     "weapon",
     "wound",
     "defense",
@@ -67,6 +69,8 @@ public class THREADRANKType {
 
     @XmlElement(name = "ARMOR")
     protected ARMORType armor;
+    @XmlElement(name = "SHIELD")
+    protected SHIELDType shield;
     @XmlElement(name = "WEAPON")
     protected WEAPONType weapon;
     @XmlElement(name = "WOUND")
@@ -87,8 +91,8 @@ public class THREADRANKType {
     protected List<DISZIPINABILITYType> karmastep;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
-    @XmlAttribute(required = true)
-    protected YesnoType keyknowledge;
+    @XmlAttribute
+    protected String keyknowledge;
     @XmlAttribute(required = true)
     protected int lpcost;
     @XmlAttribute(required = true)
@@ -116,6 +120,30 @@ public class THREADRANKType {
      */
     public void setARMOR(ARMORType value) {
         this.armor = value;
+    }
+
+    /**
+     * Gets the value of the shield property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SHIELDType }
+     *     
+     */
+    public SHIELDType getSHIELD() {
+        return shield;
+    }
+
+    /**
+     * Sets the value of the shield property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SHIELDType }
+     *     
+     */
+    public void setSHIELD(SHIELDType value) {
+        this.shield = value;
     }
 
     /**
@@ -403,11 +431,15 @@ public class THREADRANKType {
      * 
      * @return
      *     possible object is
-     *     {@link YesnoType }
+     *     {@link String }
      *     
      */
-    public YesnoType getKeyknowledge() {
-        return keyknowledge;
+    public String getKeyknowledge() {
+        if (keyknowledge == null) {
+            return "";
+        } else {
+            return keyknowledge;
+        }
     }
 
     /**
@@ -415,10 +447,10 @@ public class THREADRANKType {
      * 
      * @param value
      *     allowed object is
-     *     {@link YesnoType }
+     *     {@link String }
      *     
      */
-    public void setKeyknowledge(YesnoType value) {
+    public void setKeyknowledge(String value) {
         this.keyknowledge = value;
     }
 

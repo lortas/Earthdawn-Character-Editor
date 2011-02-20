@@ -24,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}ARMOR_type">
  *       &lt;attribute name="shatterthreshold" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="deflectionbonus" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="physicaldeflectionbonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="mysticdeflectionbonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -41,7 +42,9 @@ public class SHIELDType
     @XmlAttribute
     protected Integer shatterthreshold;
     @XmlAttribute
-    protected String deflectionbonus;
+    protected Integer physicaldeflectionbonus;
+    @XmlAttribute
+    protected Integer mysticdeflectionbonus;
 
     /**
      * Gets the value of the shatterthreshold property.
@@ -72,31 +75,59 @@ public class SHIELDType
     }
 
     /**
-     * Gets the value of the deflectionbonus property.
+     * Gets the value of the physicaldeflectionbonus property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public String getDeflectionbonus() {
-        if (deflectionbonus == null) {
-            return "";
+    public int getPhysicaldeflectionbonus() {
+        if (physicaldeflectionbonus == null) {
+            return  0;
         } else {
-            return deflectionbonus;
+            return physicaldeflectionbonus;
         }
     }
 
     /**
-     * Sets the value of the deflectionbonus property.
+     * Sets the value of the physicaldeflectionbonus property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public void setDeflectionbonus(String value) {
-        this.deflectionbonus = value;
+    public void setPhysicaldeflectionbonus(Integer value) {
+        this.physicaldeflectionbonus = value;
+    }
+
+    /**
+     * Gets the value of the mysticdeflectionbonus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getMysticdeflectionbonus() {
+        if (mysticdeflectionbonus == null) {
+            return  0;
+        } else {
+            return mysticdeflectionbonus;
+        }
+    }
+
+    /**
+     * Sets the value of the mysticdeflectionbonus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setMysticdeflectionbonus(Integer value) {
+        this.mysticdeflectionbonus = value;
     }
 
 }

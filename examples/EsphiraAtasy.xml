@@ -15,7 +15,7 @@
 		<edt:RECOVERY testsperday="2" dice="d8" step="5"/>
 		<edt:UNCONSCIOUSNESS value="26" adjustment="0" base="26"/>
 		<edt:DEATH value="34" adjustment="0" base="34"/>
-		<edt:WOUNDS penalties="0" count="0" threshold="9"/>
+		<edt:WOUNDS penalties="0" threshold="9"/>
 	</HEALTH>
 	<MOVEMENT ground="3" flight="8"/>
 	<INITIATIVE modification="0" base="6" dice="d10" step="6"/>
