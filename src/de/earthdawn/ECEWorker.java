@@ -172,26 +172,21 @@ public class ECEWorker {
 		}
 
 		// ** ARMOR **
+		List<ARMORType> magicarmor = character.getMagicArmor();
+		// natural ARMOR
 		ARMORType naturalArmor = namegiver.getARMOR();
 		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
-		PROTECTIONType protection = character.getProtection();
 		int mysticalarmor=naturalArmor.getMysticarmor();
 		int pysicalarmor=naturalArmor.getPhysicalarmor();
 		int protectionpenalty=naturalArmor.getPenalty();
 		List <ARMORType> newarmor = new ArrayList<ARMORType>();
 		newarmor.add(naturalArmor);
-		List<ARMORType> magicarmor = character.getMagicArmor();
 		newarmor.addAll(magicarmor);
+		PROTECTIONType protection = character.getProtection();
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
 			// Sollte die natürliche Rüstung bereits eingetragen sein, dann überspringen
-			if( armor.getName().equals(naturalArmor.getName())) continue;
-			// Sollte die magische Rüstung bereits eingetragen sein, dann überspringen
-			boolean skip = false;
-			for( ARMORType a : magicarmor ) {
-				if( armor.getName().equals(a.getName())) skip = true;
-			}
-			if( skip ) continue;
-			newarmor.add(armor);
+			String armorName = armor.getName();
+			if( armorName.equals(naturalArmor.getName())) continue;
 			if( armor.getUsed().equals(YesnoType.YES) ) {
 				mysticalarmor+=armor.getMysticarmor();
 				pysicalarmor+=armor.getPhysicalarmor();
@@ -200,6 +195,12 @@ public class ECEWorker {
 				initiative.setStep(initiative.getBase()+initiative.getModification());
 				initiative.setDice(step2Dice(initiative.getStep()));
 			}
+			// Sollte die Rüstung eine Magische Rüstung sein ist diese bereits eingetragen, dann überspringen
+			boolean insert = true;
+			for( ARMORType a : magicarmor ) {
+				if( armorName.equals(a.getName())) insert = false;
+			}
+			if( insert ) newarmor.add(armor);
 		}
 		protection.setMysticarmor(mysticalarmor);
 		protection.setPenalty(protectionpenalty);

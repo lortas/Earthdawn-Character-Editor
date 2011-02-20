@@ -42,6 +42,7 @@ import de.earthdawn.data.DISCIPLINEBONUSType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.ITEMType;
+import de.earthdawn.data.MAGICITEMType;
 import de.earthdawn.data.MOVEMENTType;
 import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.RANKType;
@@ -51,6 +52,7 @@ import de.earthdawn.data.SPELLSType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.YesnoType;
 
@@ -85,10 +87,11 @@ public class ECEPdfExporter {
 					acroFields.setField( "Armor" , armor.getName() );
 				}
 			} else if( armor.getClass().getSimpleName().equals("SHIELDType") ) {
-				if( armor.getPhysicalarmor()>shield_max ) {
+				SHIELDType shield = (SHIELDType)armor;
+				if( shield.getPhysicalarmor()>shield_max ) {
 					shield_max=armor.getPhysicalarmor();
-					acroFields.setField( "Shield", armor.getName() );
-					acroFields.setField( "ShieldDeflectionBonus", ((SHIELDType)armor).getDeflectionbonus() );
+					acroFields.setField( "Shield", shield.getName() );
+					acroFields.setField( "ShieldDeflectionBonus", shield.getPhysicaldeflectionbonus()+"/"+shield.getMysticdeflectionbonus() );
 				}
 			} else {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
@@ -332,6 +335,32 @@ public class ECEPdfExporter {
 				System.err.println("Characters NotShownSkills to long. Only first 8 lines were displayed.");
 				break;
 			}
+		}
+
+		int counterMagicItem=0; 
+		for( MAGICITEMType item : character.getMagicItem() ) {
+			if( counterMagicItem > 1) break;
+			acroFields.setField( "MagicalTreasureName."+counterMagicItem, item.getName() );
+			acroFields.setField( "MagicalTreasureSpellDefense."+counterMagicItem, String.valueOf(item.getSpelldefense()) );
+			acroFields.setField( "MagicalTreasureMaxThreads."+counterMagicItem, String.valueOf(item.getMaxthreads()) );
+			int counterMagicItemDescription=0;
+			for( String description : wrapString(45,item.getDescription()) ) {
+				acroFields.setField( "MagicalTreasureDesc."+counterMagicItemDescription+"."+counterMagicItem, description );
+				counterMagicItemDescription++;
+				if( counterMagicItemDescription > 2 ) {
+					System.err.println("MagicItem description to long. Only first 3 lines were displayed.");
+					break;
+				}
+			}
+			int counterMagicItemRank=0;
+			for( THREADRANKType rank : item.getTHREADRANK() ) {
+				acroFields.setField( "MagicalTreasureRank.0."+counterMagicItemRank+"."+counterMagicItem, String.valueOf(counterMagicItemRank+1) );
+				acroFields.setField( "MagicalTreasureLPCost."+counterMagicItemRank+"."+counterMagicItem, String.valueOf(rank.getLpcost()) );
+				acroFields.setField( "MagicalTreasureKeyKnowledge."+counterMagicItemRank+"."+counterMagicItem, rank.getKeyknowledge() );
+				acroFields.setField( "MagicalTreasureEffect."+counterMagicItemRank+"."+counterMagicItem, rank.getEffect() );
+				counterMagicItemRank++;
+			}
+			counterMagicItem++;
 		}
 
 		stamper.close();
