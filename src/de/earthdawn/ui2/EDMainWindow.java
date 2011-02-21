@@ -158,14 +158,25 @@ public class EDMainWindow {
 		});
 		mnFile.add(mntmPrint);
 		
-		JMenuItem mntmExport = new JMenuItem(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
-		mntmExport.addActionListener(new ActionListener() {
+		JMenu mntmExport = new JMenu(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
+		mnFile.add(mntmExport);
+
+		JMenuItem mntmExportRedbrick = new JMenuItem(NLS.getString("EDMainWindow.mntmExportRedbrick.text")); //$NON-NLS-1$
+		mntmExportRedbrick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0);
+				do_mntmExport_actionPerformed(arg0,0);
 			}
 		});
-		mnFile.add(mntmExport);
-		
+		mntmExport.add(mntmExportRedbrick);
+
+		JMenuItem mntmExportAjfelmordom = new JMenuItem(NLS.getString("EDMainWindow.mntmExportAjfelmordom.text")); //$NON-NLS-1$
+		mntmExportAjfelmordom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,1);
+			}
+		});
+		mntmExport.add(mntmExportAjfelmordom);
+
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -367,7 +378,7 @@ public class EDMainWindow {
 		frame.dispose();
 	}
 
-	protected void do_mntmExport_actionPerformed(ActionEvent arg0) {
+	protected void do_mntmExport_actionPerformed(ActionEvent arg0, int v) {
 		if( file == null ) return; // TODO: Fehlermeldung
 		File pdfFile = new File(file.getParentFile(), chopFilename(file)+ ".pdf");
 		JFileChooser fc = new JFileChooser(pdfFile);
@@ -376,9 +387,10 @@ public class EDMainWindow {
 		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
 		if( selFile != null ) {
 			try {
-				//TODO: Popup-Fenster, das danach fragt welcher export gewünscht ist. Oder Mehrer Export Aufrufe im Menü
-				new ECEPdfExporter().exportRedbrick(character.getEDCHARACTER(), selFile);
-				//new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile);
+				switch(v) {
+				case 1 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile); break;
+				default: new ECEPdfExporter().exportRedbrick(character.getEDCHARACTER(), selFile); break;
+				}
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
