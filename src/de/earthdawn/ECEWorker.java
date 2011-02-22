@@ -220,7 +220,7 @@ public class ECEWorker {
 		// Finde das DURABILITY Talent aus der Talentliste
 		String durabilityTalentName = ApplicationProperties.create().getDurabilityName();
 		if( durabilityTalentName == null ) {
-			System.err.println("Durability in names.xml not defined for selected language. Skipping Health enhancment");
+			System.err.println("Durability in names.xml not defined for selected language. Skipping health enhancment");
 			durabilityTalentName="";
 		}
 		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
@@ -486,7 +486,7 @@ public class ECEWorker {
 		if( (karmaritualTalent != null) && (karmaritualTalent.getRANK() != null) ) {
 			karma.setMax( karmaMaxBonus + (karmaModifier * karmaritualTalent.getRANK().getRank()) );
 		} else {
-			System.err.println("Skipping MaxKarma calculation.");
+			System.err.println("No karmaritual talent found, skipping maximal karma calculation.");
 		}
 		List<Integer> k = calculateAccounting(karma.getKARMAPOINTS());
 		karma.setCurrent(k.get(0)-k.get(1));
