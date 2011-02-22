@@ -161,18 +161,26 @@ public class EDMainWindow {
 		JMenu mntmExport = new JMenu(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
 		mnFile.add(mntmExport);
 
-		JMenuItem mntmExportRedbrick = new JMenuItem(NLS.getString("EDMainWindow.mntmExportRedbrick.text")); //$NON-NLS-1$
-		mntmExportRedbrick.addActionListener(new ActionListener() {
+		JMenuItem mntmExportRedbrickSimple = new JMenuItem(NLS.getString("EDMainWindow.mntmExportRedbrickSimple.text")); //$NON-NLS-1$
+		mntmExportRedbrickSimple.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,1);
+			}
+		});
+		mntmExport.add(mntmExportRedbrickSimple);
+
+		JMenuItem mntmExportRedbrickExtended = new JMenuItem(NLS.getString("EDMainWindow.mntmExportRedbrickExtended.text")); //$NON-NLS-1$
+		mntmExportRedbrickExtended.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmExport_actionPerformed(arg0,0);
 			}
 		});
-		mntmExport.add(mntmExportRedbrick);
+		mntmExport.add(mntmExportRedbrickExtended);
 
 		JMenuItem mntmExportAjfelmordom = new JMenuItem(NLS.getString("EDMainWindow.mntmExportAjfelmordom.text")); //$NON-NLS-1$
 		mntmExportAjfelmordom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0,1);
+				do_mntmExport_actionPerformed(arg0,2);
 			}
 		});
 		mntmExport.add(mntmExportAjfelmordom);
@@ -379,7 +387,11 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmExport_actionPerformed(ActionEvent arg0, int v) {
-		if( file == null ) return; // TODO: Fehlermeldung
+		if( file == null ) {
+			String name = character.getName();
+			if( name == null ) name = "noname";
+			file = new File(name.replaceAll(" ", "_") + ".xml");
+		}
 		File pdfFile = new File(file.getParentFile(), chopFilename(file)+ ".pdf");
 		JFileChooser fc = new JFileChooser(pdfFile);
 		fc.setSelectedFile(pdfFile);
@@ -388,8 +400,9 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			try {
 				switch(v) {
-				case 1 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile); break;
-				default: new ECEPdfExporter().exportRedbrick(character.getEDCHARACTER(), selFile); break;
+				case 1 : new ECEPdfExporter().exportRedbrickSimple(character.getEDCHARACTER(), selFile); break;
+				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile); break;
+				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
