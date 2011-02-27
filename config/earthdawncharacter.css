@@ -12,7 +12,10 @@
 
 .edHeader {
     text-align: center;
-    font-size: 300%
+    font-size: 300%;
+    border-style: solid;
+    border-width: thick;
+    margin-bottom: 40px;
 }
 
 .edSubHeader {
