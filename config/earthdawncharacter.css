@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+.sup {
+    font-size:0.6em;vertical-align:top
+}
+
 .edBody {
     font-family:Helvetica,Helv;
     background-color: #B1B1B1;
@@ -12,17 +16,16 @@
 
 .edSubHeader {
     text-align: center;
-    font-size: 200%
-}
-
-.edSubHeader {
-    text-align: center;
-    font-size: 160%
+    font-size: 160%;
+    text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 .edSubSubHeader {
+    text-align: center;
     font-size: 130%;
     text-decoration: underline;
+    margin-bottom: 15px;
 }
 
 .edHeaderCell {
@@ -46,34 +49,146 @@
     padding-right: 10px;
 }
 
-.edCharacteristics,
-.edDiscipline, 
-.edWeapons,
-.edSkills,
-.edRaceabilities,
-.edExperience,
-.edCoins,
-.edEquipment,
+.edMiscellaneous {
+    border-style: solid;
+    border-width: thin;
+    vertical-align: top;
+    width: 50%;
+}
+
+.edAttributes {
+    border-style: solid;
+    border-width: thin;
+    vertical-align: top;
+    width: 50%;
+}
+
+.edCharacteristics {
+    border-style: solid;
+    border-width: thin;
+    width: 100%;
+}
+
+.edDefense {
+    border-style: solid;
+    border-width: thin;
+    width: 50%;
+}
+
+.edProtection {
+    border-style: solid;
+    border-width: thin;
+    width: 50%;
+}
+
+.edInitiative {
+    border-style: solid;
+    border-width: thin;
+    width: 33%;
+}
+
+.edMovement {
+    border-style: solid;
+    border-width: thin;
+    width: 33%;
+}
+
+.edKarma {
+    border-style: solid;
+    border-width: thin;
+    width: 33%;
+}
+
+.edHealth  {
+    border-style: solid;
+    border-width: thin;
+    width: 33%;
+}
+
+.edDamage  {
+    border-style: solid;
+    border-width: thin;
+    width: 33%;
+}
+
+.edExperience  {
+    border-style: solid;
+    border-width: thin;
+    width: 33%;
+}
+
+.edRaceabilities {
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+}
+
+.edSkills{
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    width: 50%;
+    vertical-align: top;
+}
+
+.edEquipment {
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    width: 50%;
+    vertical-align: top;
+}
+
+.edCoins {
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    width: 50%;
+    vertical-align: top;
+}
+
+.edWeapons {
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    width: 50%;
+    vertical-align: top;
+}
+
+.edDiscipline {
+    border-width: thin;
+    border-style: solid;
+    width: 100%;
+}
+  
+.edDisciplineTalents {
+    border-width: thin;
+    border-style: solid;
+    vertical-align: top;
+    width: 50%;
+}
+
+.edOptionalTalents {
+    border-width: thin;
+    border-style: solid;
+    vertical-align: top;
+    width: 50%;
+}
+ 
+.edDisciplineBonuses {
+    border-width: thin;
+    border-style: solid;
+}
+
+.edSpells {
+    border-width: thin;
+    border-style: solid;
+}
+
 .edMagicItems,
 .edPatternItems {
-    border-width: 3px;
+    border-width: thin;
     border-style: solid;
     margin: 10px;
-    clear: both ;
-}
-
-.edMiscellaneous {
-   
-}
-.edAttributes {
-	
-}
-
-.edDisciplineTalents,
-.edOtherTalents,
-.edDisciplineBonuses,
-.edSpells {
-    border-width: 3px;
-    border-style: dotted;
-    margin: 10px;
+    width: 100%;
 }
