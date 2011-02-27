@@ -1,7 +1,8 @@
 @CHARSET "UTF-8";
 
 .sup {
-    font-size:0.6em;vertical-align:top
+    font-size:0.6em;
+    vertical-align:top
 }
 
 .edBody {
@@ -16,16 +17,18 @@
 
 .edSubHeader {
     text-align: center;
-    font-size: 160%;
-    text-decoration: underline;
+    font-size: 135%;
     margin-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
 }
 
 .edSubSubHeader {
     text-align: center;
-    font-size: 130%;
-    text-decoration: underline;
+    font-size: 120%;
     margin-bottom: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
 }
 
 .edHeaderCell {
@@ -38,7 +41,7 @@
 }
 
 .edKeyCell {
-    font-size: large;
+    font-size: 105%;
 }
 
 .edValueCell {
@@ -49,13 +52,14 @@
     padding-right: 10px;
 }
 
-.edMiscellaneous {
+.edLayoutRow {
     border-style: solid;
     border-width: thin;
-    vertical-align: top;
-    width: 50%;
+    width: 100%;
+    margin-bottom: 2px;
 }
 
+.edMiscellaneous,
 .edAttributes {
     border-style: solid;
     border-width: thin;
@@ -67,62 +71,46 @@
     border-style: solid;
     border-width: thin;
     width: 100%;
+    margin-bottom: 2px;
 }
 
-.edDefense {
+.edDefense,
+.edProtection  {
     border-style: solid;
     border-width: thin;
     width: 50%;
+    vertical-align: top;
 }
 
-.edProtection {
-    border-style: solid;
-    border-width: thin;
-    width: 50%;
-}
-
-.edInitiative {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
-}
-
-.edMovement {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
-}
-
-.edKarma {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
-}
-
-.edHealth  {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
-}
-
-.edDamage  {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
-}
-
-.edExperience  {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
-}
-
+.edInitiative,
+.edMovement,
+.edKarma,
+.edHealth,
+.edDamage,
+.edExperience,
 .edRaceabilities {
     border-style: solid;
     border-width: thin;
-    text-align: center;
+    width: 33%;
+    vertical-align: top;
 }
 
+.edDiscipline {
+    border-width: thin;
+    border-style: solid;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.edDisciplineTalents,
+.edOptionalTalents,
+.edDisciplineBonuses {
+    border-width: thin;
+    border-style: solid;
+    vertical-align: top;
+    width: 50%;
+}
+ 
 .edSkills{
     border-style: solid;
     border-width: thin;
@@ -131,22 +119,8 @@
     vertical-align: top;
 }
 
-.edEquipment {
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    width: 50%;
-    vertical-align: top;
-}
-
-.edCoins {
-    border-style: solid;
-    border-width: thin;
-    text-align: center;
-    width: 50%;
-    vertical-align: top;
-}
-
+.edEquipment,
+.edCoins,
 .edWeapons {
     border-style: solid;
     border-width: thin;
@@ -155,34 +129,12 @@
     vertical-align: top;
 }
 
-.edDiscipline {
-    border-width: thin;
-    border-style: solid;
-    width: 100%;
-}
-  
-.edDisciplineTalents {
-    border-width: thin;
-    border-style: solid;
-    vertical-align: top;
-    width: 50%;
-}
-
-.edOptionalTalents {
-    border-width: thin;
-    border-style: solid;
-    vertical-align: top;
-    width: 50%;
-}
- 
-.edDisciplineBonuses {
-    border-width: thin;
-    border-style: solid;
-}
-
 .edSpells {
     border-width: thin;
     border-style: solid;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
 }
 
 .edMagicItems,
