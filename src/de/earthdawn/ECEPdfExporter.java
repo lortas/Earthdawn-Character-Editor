@@ -61,7 +61,7 @@ public class ECEPdfExporter {
 	private int rowEquipment=0;
 	private AcroFields acroFields = null;
 
-	private void exportCommonFields(CharacterContainer character) throws IOException, DocumentException {
+	private void exportCommonFields(CharacterContainer character, int maxSkillSpace, int raceAbilitiesLineLength) throws IOException, DocumentException {
 		acroFields.setField( "Name", character.getName());
 		acroFields.setField( "Race", character.getAppearance().getRace() );
 		acroFields.setField( "Age", String.valueOf(character.getAppearance().getAge()) );
@@ -145,6 +145,66 @@ public class ECEPdfExporter {
 		acroFields.setField( "Mystic Armor", String.valueOf(protection.getMysticarmor()) );
 		acroFields.setField( "Physical Armor", String.valueOf(protection.getPhysicalarmor()) );
 		acroFields.setField( "Penalty Armor", String.valueOf(protection.getPenalty()) );
+
+		List<DISCIPLINEBONUSType> bonuses = character.getDisciplineBonuses();
+		if( bonuses != null ) {
+			int counter=0;
+			for( DISCIPLINEBONUSType bonus : bonuses ) {
+				acroFields.setField("DiscBonusAbility."+counter, bonus.getBonus() );
+				if( bonus.getCircle() > 1 ) {
+					acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
+				} else {
+					acroFields.setField("DiscBonusCircle."+counter, "-" );
+				}
+				counter++;
+			}
+		}
+
+		List<SKILLType> skills = character.getSkills();
+		String notShownSkills="";
+		if( (skills != null) && (! skills.isEmpty()) ) {
+			int counter = 0;
+			Collections.sort(skills, new SkillComparator());
+			for( SKILLType skill : skills ) {
+				RANKType skillrank = skill.getRANK();
+				String skillName=skill.getName();;
+				if( ! skill.getLimitation().isEmpty() ) skillName += ":"+skill.getLimitation();
+				acroFields.setField( "Skill."+counter, skillName);
+				acroFields.setField( "SkillStrain."+counter, String.valueOf(skill.getStrain()) );
+				switch( skill.getAction() ) {
+				case STANDARD  : acroFields.setField( "SkillAction."+counter, "std" ); break;
+				case SIMPLE    : acroFields.setField( "SkillAction."+counter, "smpl" ); break;
+				case SUSTAINED : acroFields.setField( "SkillAction."+counter, "sstnd" ); break;
+				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
+				}
+				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
+				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
+				if( skillrank.getBonus() == 0 ) {
+					acroFields.setField( "SkillRank."+counter, String.valueOf(skillrank.getRank()) );
+				} else {
+					acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
+				}
+				ATTRIBUTENameType attribute = skill.getAttribute();
+				acroFields.setField( "SkillAttribute."+counter, attribute.value() );
+				if( attribute.equals(ATTRIBUTENameType.NA) ) {
+					acroFields.setField( "SkillAttributeStep."+counter, "-" );
+				} else { 
+					acroFields.setField( "SkillAttributeStep."+counter, String.valueOf(attributes.get(attribute.value()).getStep()) );
+				}
+				counter++;
+				if( counter > maxSkillSpace ) {
+					notShownSkills += skillName.replaceAll(" ", "")+"("+skill.getAttribute().value();
+					if( skillrank.getRank() > 0 ) notShownSkills += "+"+skillrank.getRank();
+					notShownSkills += ") ";
+				}
+			}
+		}
+		acroFields.setField( "Racial Abilities", character.getAbilities()+"; "+notShownSkills );
+		int counterRacialAbilities=0;
+		for( String skill : wrapString(raceAbilitiesLineLength, character.getAbilities()+"; "+notShownSkills) ) {
+			acroFields.setField( "RacialAbilities."+counterRacialAbilities, skill );
+			counterRacialAbilities++;
+		}
 	}
 
 	public void exportRedbrickSimple(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
@@ -159,7 +219,7 @@ public class ECEPdfExporter {
 		//	System.out.println( fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		exportCommonFields(character);
+		exportCommonFields(character,16,41);
 		acroFields.setField( "Shield", "none" );
 		acroFields.setField( "ShieldDeflectionBonus", "na" );
 		int armor_max=0;
@@ -244,39 +304,6 @@ public class ECEPdfExporter {
 				}
 			}
 		}
-		List<SKILLType> skills = character.getSkills();
-		String notShownSkills="";
-		if( (skills != null) && (! skills.isEmpty()) ) {
-			int counter = 22;
-			Collections.sort(skills, new SkillComparator());
-			for( SKILLType skill : skills ) {
-				RANKType skillrank = skill.getRANK();
-				String skillName=skill.getName();
-				if( ! skill.getLimitation().isEmpty() ) skillName += ":"+skill.getLimitation();
-				acroFields.setField( "Talent."+counter, skillName);
-				acroFields.setField( "Attribute."+counter, skill.getAttribute().value() );
-				acroFields.setField( "Strain."+counter, String.valueOf(skill.getStrain()) );
-				switch( skill.getAction() ) {
-				case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
-				case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;
-				case SUSTAINED : acroFields.setField( "Action."+counter, "sstnd" ); break;
-				default        : acroFields.setField( "Action."+counter, skill.getAction().value() );
-				}
-				acroFields.setField( "ActionDice."+counter, skillrank.getDice().value() );
-				acroFields.setField( "Step."+counter, String.valueOf(skillrank.getStep()) );
-				if( skillrank.getBonus() == 0 ) {
-					acroFields.setField( "Rank."+counter, String.valueOf(skillrank.getRank()) );
-				} else {
-					acroFields.setField( "Rank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
-				}
-				counter++;
-				if( counter > 16 ) {
-					notShownSkills += skillName.replaceAll(" ", "")+"("+skill.getAttribute().value();
-					if( skillrank.getRank() > 0 ) notShownSkills += "+"+skillrank.getRank();
-					notShownSkills += ") ";
-				}
-			}
-		}
 		List<WEAPONType> weapons = character.getWeapons();
 		if( weapons != null ) {
 			int counter = 0;
@@ -287,20 +314,6 @@ public class ECEPdfExporter {
 				acroFields.setField( "WeaponTimesForged."+counter, String.valueOf(weapon.getTimesforged()) );
 				acroFields.setField( "WeaponShortRange."+counter, String.valueOf(weapon.getShortrange()) );
 				acroFields.setField( "Weapon Long Range."+counter, String.valueOf(weapon.getLongrange()) );
-				counter++;
-			}
-		}
-
-		List<DISCIPLINEBONUSType> bonuses = character.getDisciplineBonuses();
-		if( bonuses != null ) {
-			int counter=0;
-			for( DISCIPLINEBONUSType bonus : bonuses ) {
-				acroFields.setField("DiscBonusAbility."+counter, bonus.getBonus() );
-				if( bonus.getCircle() > 1 ) {
-					acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
-				} else {
-					acroFields.setField("DiscBonusCircle."+counter, "-" );
-				}
 				counter++;
 			}
 		}
@@ -336,27 +349,11 @@ public class ECEPdfExporter {
 				conterSpells++;
 			}
 		}
+
 		counterEquipment=0;
 		rowEquipment=0;
-		boolean naturalarmor=true;
-		for( ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
-			if( naturalarmor ) {
-				// Der erste Eintrag ist immer die natüliche Rüstung
-				// Diese und nur diese soll übersprungen werden
-				naturalarmor=false;
-				continue;
-			}
-			String name = armor.getName()+" (";
-			name += armor.getPhysicalarmor()+"/";
-			name += armor.getMysticarmor()+"/";
-			name += armor.getPenalty() + ")";
-			if( ! addEquipment(name,armor.getWeight(),true) ) break;
-		}
-		for( WEAPONType weapon : character.getWeapons() ) {
-			String name = weapon.getName()+" (";
-			name += weapon.getDamagestep()+"/";
-			name += weapon.getTimesforged()+")";
-			if( ! addEquipment(name,weapon.getWeight(),true) ) break;
+		for( ITEMType item : listArmorAndWeapon(character) ) {
+			if( ! addEquipment(item.getName(),item.getWeight(),false) ) break;
 		}
 		for( ITEMType item : character.getItems() ) {
 			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
@@ -392,8 +389,6 @@ public class ECEPdfExporter {
 				break;
 			}
 		}
-
-		acroFields.setField( "Racial Abilities", character.getAbilities()+"; "+notShownSkills );
 
 		MAGICITEMType magicitem = character.getMagicItem().get(0);
 		if( magicitem != null ) {
@@ -434,7 +429,7 @@ public class ECEPdfExporter {
 		//	System.out.println( fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		exportCommonFields(character);
+		exportCommonFields(character,16,41);
 		acroFields.setField( "Shield", "none" );
 		acroFields.setField( "ShieldDeflectionBonus", "na" );
 		int armor_max=0;
@@ -528,39 +523,6 @@ public class ECEPdfExporter {
 				}
 			}
 		}
-		List<SKILLType> skills = character.getSkills();
-		String notShownSkills="";
-		if( (skills != null) && (! skills.isEmpty()) ) {
-			int counter = 0;
-			Collections.sort(skills, new SkillComparator());
-			for( SKILLType skill : skills ) {
-				RANKType skillrank = skill.getRANK();
-				String skillName=skill.getName();;
-				if( ! skill.getLimitation().isEmpty() ) skillName += ":"+skill.getLimitation();
-				acroFields.setField( "Skill."+counter, skillName);
-				acroFields.setField( "SkillAttribute."+counter, skill.getAttribute().value() );
-				acroFields.setField( "SkillStrain."+counter, String.valueOf(skill.getStrain()) );
-				switch( skill.getAction() ) {
-				case STANDARD  : acroFields.setField( "SkillAction."+counter, "std" ); break;
-				case SIMPLE    : acroFields.setField( "SkillAction."+counter, "smpl" ); break;
-				case SUSTAINED : acroFields.setField( "SkillAction."+counter, "sstnd" ); break;
-				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
-				}
-				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
-				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
-				if( skillrank.getBonus() == 0 ) {
-					acroFields.setField( "SkillRank."+counter, String.valueOf(skillrank.getRank()) );
-				} else {
-					acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
-				}
-				counter++;
-				if( counter > 16 ) {
-					notShownSkills += skillName.replaceAll(" ", "")+"("+skill.getAttribute().value();
-					if( skillrank.getRank() > 0 ) notShownSkills += "+"+skillrank.getRank();
-					notShownSkills += ") ";
-				}
-			}
-		}
 		List<WEAPONType> weapons = character.getWeapons();
 		if( weapons != null ) {
 			int counter_melee = 0;
@@ -582,20 +544,6 @@ public class ECEPdfExporter {
 					acroFields.setField( "WeaponTimesForged."+counter_melee, String.valueOf(weapon.getTimesforged()) );
 					counter_melee++;
 				}
-			}
-		}
-
-		List<DISCIPLINEBONUSType> bonuses = character.getDisciplineBonuses();
-		if( bonuses != null ) {
-			int counter=0;
-			for( DISCIPLINEBONUSType bonus : bonuses ) {
-				acroFields.setField("DiscBonusAbility."+counter, bonus.getBonus() );
-				if( bonus.getCircle() > 1 ) {
-					acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
-				} else {
-					acroFields.setField("DiscBonusCircle."+counter, "-" );
-				}
-				counter++;
 			}
 		}
 
@@ -632,25 +580,8 @@ public class ECEPdfExporter {
 		}
 		counterEquipment=0;
 		rowEquipment=0;
-		boolean naturalarmor=true;
-		for( ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
-			if( naturalarmor ) {
-				// Der erste Eintrag ist immer die natüliche Rüstung
-				// Diese und nur diese soll übersprungen werden
-				naturalarmor=false;
-				continue;
-			}
-			String name = armor.getName()+" (";
-			name += armor.getPhysicalarmor()+"/";
-			name += armor.getMysticarmor()+"/";
-			name += armor.getPenalty() + ")";
-			if( ! addEquipment(name,armor.getWeight(),false) ) break;
-		}
-		for( WEAPONType weapon : character.getWeapons() ) {
-			String name = weapon.getName()+" (";
-			name += weapon.getDamagestep()+"/";
-			name += weapon.getTimesforged()+")";
-			if( ! addEquipment(name,weapon.getWeight(),false) ) break;
+		for( ITEMType item : listArmorAndWeapon(character) ) {
+			if( ! addEquipment(item.getName(),item.getWeight(),false) ) break;
 		}
 		for( ITEMType item : character.getItems() ) {
 			if( ! addEquipment(item.getName(),item.getWeight(),false) ) break;
@@ -687,16 +618,6 @@ public class ECEPdfExporter {
 			}
 		}
 
-		int counterRacialAbilities=0;
-		for( String skill : wrapString(41, character.getAbilities()+"; "+notShownSkills) ) {
-			acroFields.setField( "RacialAbilities."+counterRacialAbilities, skill );
-			counterRacialAbilities++;
-			if( counterRacialAbilities > 7 ) {
-				System.err.println("Characters NotShownSkills to long. Only first 8 lines were displayed.");
-				break;
-			}
-		}
-
 		int counterMagicItem=0; 
 		for( MAGICITEMType item : character.getMagicItem() ) {
 			if( counterMagicItem > 1) break;
@@ -726,6 +647,41 @@ public class ECEPdfExporter {
 		stamper.close();
 	}
 
+	private List<ITEMType> listArmorAndWeapon(CharacterContainer character) {
+		List<ITEMType> result = new ArrayList<ITEMType>();
+		boolean naturalarmor=true;
+		for( ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
+			if( naturalarmor ) {
+				// Der erste Eintrag ist immer die natüliche Rüstung
+				// Diese und nur diese soll übersprungen werden
+				naturalarmor=false;
+				continue;
+			}
+			String name = armor.getName()+" (";
+			name += armor.getPhysicalarmor()+"/";
+			name += armor.getMysticarmor()+"/";
+			name += armor.getPenalty() + ")";
+			ITEMType item = new ITEMType();
+			item.setName(name);
+			item.setWeight(armor.getWeight());
+			item.setLocation(armor.getLocation());
+			item.setUsed(armor.getUsed());
+			result.add(item);
+		}
+		for( WEAPONType weapon : character.getWeapons() ) {
+			String name = weapon.getName()+" (";
+			name += weapon.getDamagestep()+"/";
+			name += weapon.getTimesforged()+")";
+			ITEMType item = new ITEMType();
+			item.setName(name);
+			item.setWeight(weapon.getWeight());
+			item.setLocation(weapon.getLocation());
+			item.setUsed(weapon.getUsed());
+			result.add(item);
+		}
+		return result;
+	}
+
 	public void exportAjfelMordom(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
 		PdfReader reader = new PdfReader(new FileInputStream(new File("./templates/ed3_character_sheet_Ajfel+Mordom.pdf")));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
@@ -746,7 +702,7 @@ public class ECEPdfExporter {
 		for( int counter=285; counter<=301; counter++) { 
 			acroFields.setField("untitled"+counter, "Yes" );
 		}
-		exportCommonFields(character);
+		exportCommonFields(character,16,17);
 		setButtons(character.getWound().getNormal(), "Wound.", 7);
 
 		int counterArmor=0;
@@ -800,7 +756,53 @@ public class ECEPdfExporter {
 				}
 				counterOthertalent++;
 			}
+			while( counterOthertalent < 17 ) {
+				acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
+				counterOthertalent++;
+			}
 		}
+
+		List<WEAPONType> weapons = character.getWeapons();
+		if( weapons != null ) {
+			int counter = 0;
+			for( WEAPONType weapon : weapons ) {
+				acroFields.setField( "Weapon."+counter, weapon.getName() );
+				acroFields.setField( "WeaponDmgStep."+counter, String.valueOf(weapon.getDamagestep()) );
+				acroFields.setField( "WeaponStrength."+counter, String.valueOf(weapon.getStrengthmin()) );
+				acroFields.setField( "WeaponRange."+counter, weapon.getShortrange()+" / "+ weapon.getLongrange() );
+				counter++;
+			}
+		}
+
+		counterEquipment=0;
+		rowEquipment=0;
+		for( ITEMType item : listArmorAndWeapon(character) ) {
+			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
+		}
+		for( ITEMType item : character.getItems() ) {
+			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
+		}
+
+		int copperPieces = 0;
+		int goldPieces = 0;
+		int silverPieces = 0;
+		for( COINSType coins : character.getAllCoins() ) {
+			String name = "Purse "+coins.getName()+" (";
+			name += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
+			if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
+			if( coins.getWater()>0 )      name += " w:"+coins.getWater();
+			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
+			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
+			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
+			name +=")";
+			addEquipment(name,coins.getWeight(),true);
+			copperPieces += coins.getCopper();
+			silverPieces += coins.getSilver();
+			goldPieces += coins.getGold();
+		}
+		acroFields.setField( "CopperPieces", String.valueOf(copperPieces) );
+		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
+		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
 		stamper.close();
 	}

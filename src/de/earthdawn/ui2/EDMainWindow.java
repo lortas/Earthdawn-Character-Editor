@@ -109,7 +109,7 @@ public class EDMainWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 620, 550);
+		frame.setBounds(100, 100, 800, 740);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -345,6 +345,7 @@ public class EDMainWindow {
 		fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
 		fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 		m.marshal(ec,fileio);
+		fileio.close();
 	}
 	
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
