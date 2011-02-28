@@ -765,10 +765,12 @@ public class ECEPdfExporter {
 		List<WEAPONType> weapons = character.getWeapons();
 		if( weapons != null ) {
 			int counter = 0;
+			ATTRIBUTEType str = character.getAttributes().get("STR");
 			for( WEAPONType weapon : weapons ) {
 				acroFields.setField( "Weapon."+counter, weapon.getName() );
-				acroFields.setField( "WeaponDmgStep."+counter, String.valueOf(weapon.getDamagestep()) );
-				acroFields.setField( "WeaponStrength."+counter, String.valueOf(weapon.getStrengthmin()) );
+				acroFields.setField( "WeaponStrength."+counter, String.valueOf(str.getStep()) );
+				acroFields.setField( "WeaponDamage.0."+counter, String.valueOf(weapon.getDamagestep()) );
+				acroFields.setField( "WeaponDamage.1."+counter, String.valueOf(weapon.getDamagestep()+str.getStep()) );
 				acroFields.setField( "WeaponRange."+counter, weapon.getShortrange()+" / "+ weapon.getLongrange() );
 				counter++;
 			}
