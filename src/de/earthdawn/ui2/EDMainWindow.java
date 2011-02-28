@@ -1,20 +1,18 @@
 package de.earthdawn.ui2;
 
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -150,14 +148,7 @@ public class EDMainWindow {
 		});
 		mnFile.add(mntmSaveAs);
 		
-		JMenuItem mntmPrint = new JMenuItem(NLS.getString("EDMainWindow.mntmPrint.text")); //$NON-NLS-1$
-		mntmPrint.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmPrint_actionPerformed(arg0);
-			}
-		});
-		mnFile.add(mntmPrint);
-		
+
 		JMenu mntmExport = new JMenu(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
 		mnFile.add(mntmExport);
 
@@ -192,6 +183,17 @@ public class EDMainWindow {
 			}
 		});
 		mnFile.add(mntmClose);
+
+		JMenu mnView = new JMenu(NLS.getString("EDMainWindow.mnView.text")); //$NON-NLS-1$
+		menuBar.add(mnView);
+
+		JMenuItem mntmWebBrowser= new JMenuItem(NLS.getString("EDMainWindow.mntmWebBrowser.text")); //$NON-NLS-1$
+		mntmWebBrowser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmWebBrowser_actionPerformed(arg0);
+			}
+		});
+		mnView.add(mntmWebBrowser);
 
 		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
@@ -415,17 +417,27 @@ public class EDMainWindow {
 		}
 	}
 
-	protected void do_mntmPrint_actionPerformed(ActionEvent arg0) {
-		Writer out;
+	protected void do_mntmWebBrowser_actionPerformed(ActionEvent arg0) {
+		if( ! Desktop.isDesktopSupported() ) {
+			return;
+		}
 		try {
-			out = new OutputStreamWriter(new FileOutputStream("CharacteristicStatus.html"),"UTF-8");
-			characteristicStatus.parseTo(out);
-		} catch (UnsupportedEncodingException e) {
+			String name = character.getName();
+			if( name == null ) name = "noname";
+			File tmpfile = File.createTempFile(name.replaceAll(" ", "_"), ".xml");
+			writeToXml(tmpfile);
+			copyCharacterAdditionalFiles(tmpfile.getParentFile());
+			Desktop desktop = Desktop.getDesktop();
+			URI uri = new URI("file://"+tmpfile.getAbsolutePath());
+			desktop.browse(uri);
+		} catch (URISyntaxException e) {
 			e.printStackTrace();
-		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch(Exception e){
 			e.printStackTrace();
 		}
-	}
+}
 
 	protected String chopFilename(File f){
 		String choppedFilename;
