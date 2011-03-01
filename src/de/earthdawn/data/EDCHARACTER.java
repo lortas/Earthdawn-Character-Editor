@@ -43,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="MAGICITEM" type="{http://earthdawn.com/datatypes}MAGICITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="PATTERNITEM" type="{http://earthdawn.com/datatypes}PATTERNITEM_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="BLOODCHARMITEM" type="{http://earthdawn.com/datatypes}BLOODCHARMITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="COINS" type="{http://earthdawn.com/datatypes}COINS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ITEM" type="{http://earthdawn.com/datatypes}ITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMA" type="{http://earthdawn.com/datatypes}KARMA_type"/>
@@ -78,6 +79,7 @@ import javax.xml.bind.annotation.XmlType;
     "weapon",
     "magicitem",
     "patternitem",
+    "bloodcharmitem",
     "coins",
     "item",
     "karma",
@@ -121,6 +123,8 @@ public class EDCHARACTER {
     protected List<MAGICITEMType> magicitem;
     @XmlElement(name = "PATTERNITEM", namespace = "http://earthdawn.com/character")
     protected List<PATTERNITEMType> patternitem;
+    @XmlElement(name = "BLOODCHARMITEM", namespace = "http://earthdawn.com/character")
+    protected List<BLOODCHARMITEMType> bloodcharmitem;
     @XmlElement(name = "COINS", namespace = "http://earthdawn.com/character")
     protected List<COINSType> coins;
     @XmlElement(name = "ITEM", namespace = "http://earthdawn.com/character")
@@ -540,6 +544,35 @@ public class EDCHARACTER {
             patternitem = new ArrayList<PATTERNITEMType>();
         }
         return this.patternitem;
+    }
+
+    /**
+     * Gets the value of the bloodcharmitem property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bloodcharmitem property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBLOODCHARMITEM().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BLOODCHARMITEMType }
+     * 
+     * 
+     */
+    public List<BLOODCHARMITEMType> getBLOODCHARMITEM() {
+        if (bloodcharmitem == null) {
+            bloodcharmitem = new ArrayList<BLOODCHARMITEMType>();
+        }
+        return this.bloodcharmitem;
     }
 
     /**

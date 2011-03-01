@@ -215,6 +215,7 @@
             <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="5" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
         </THREADRANK>
     </ns5:MAGICITEM>
+    <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="yes" location="self" effect="+6 to attack or damage" blooddamage="3"/>
     <ns5:COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
     <ns5:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
     <ns5:ITEM weight="1.0" name="tourch"/>
