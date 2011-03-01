@@ -405,6 +405,10 @@ public class EDMainWindow {
 				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -417,6 +421,7 @@ public class EDMainWindow {
 
 	protected void do_mntmWebBrowser_actionPerformed(ActionEvent arg0) {
 		if( ! Desktop.isDesktopSupported() ) {
+			//TODO: Infofenster öffnen und Fehler anzeigen.
 			return;
 		}
 		try {
