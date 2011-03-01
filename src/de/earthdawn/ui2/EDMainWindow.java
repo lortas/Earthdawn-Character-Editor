@@ -11,8 +11,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -428,10 +426,7 @@ public class EDMainWindow {
 			writeToXml(tmpfile);
 			copyCharacterAdditionalFiles(tmpfile.getParentFile());
 			Desktop desktop = Desktop.getDesktop();
-			URI uri = new URI("file://"+tmpfile.getAbsolutePath());
-			desktop.browse(uri);
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
+			desktop.browse(tmpfile.toURI());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch(Exception e){
