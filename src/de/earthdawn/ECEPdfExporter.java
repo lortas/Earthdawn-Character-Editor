@@ -25,6 +25,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -694,14 +695,6 @@ public class ECEPdfExporter {
 		//	System.out.println( fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		for( int counter=0; counter<1001; counter++) { 
-			acroFields.setField("untitled"+counter, String.valueOf(counter)+"u" );
-		}
-		// Button Set 1 : 213 - 239
-		// Button Set 2 : 285 . 301
-		for( int counter=285; counter<=301; counter++) { 
-			acroFields.setField("untitled"+counter, "Yes" );
-		}
 		exportCommonFields(character,16,17);
 		setButtons(character.getWound().getNormal(), "Wound.", 7);
 
@@ -805,6 +798,39 @@ public class ECEPdfExporter {
 		acroFields.setField( "CopperPieces", String.valueOf(copperPieces) );
 		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
 		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
+
+		int conterSpells=0;
+		for( SPELLSType spells : character.getAllSpells() ) {
+			for( SPELLType spell : spells.getSPELL() ) {
+				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
+				acroFields.setField( "SpellInMatrix."+conterSpells, spell.getInmatrix().value() );
+				switch( spell.getType() ) {
+				case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
+				case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
+				case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
+				case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
+				case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
+				default:        acroFields.setField( "SpellType."+conterSpells, "" ); break;
+				}
+				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
+				if( spell.getThreads() >= 0 ) {
+					acroFields.setField( "SpellThreads."+conterSpells, String.valueOf(spell.getThreads()) );
+				} else {
+					acroFields.setField( "SpellThreads."+conterSpells, "s. text" );
+				}
+				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
+				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
+				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
+				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
+				List<String> effect = wrapString(40, spell.getEffect() );
+				acroFields.setField( "SpellEffect.0."+conterSpells, effect.get(0) );
+				effect.remove(0);
+				String effect2="";
+				for( String e : effect ) effect2 += e;
+				acroFields.setField( "SpellEffect.1."+conterSpells, effect2 );
+				conterSpells++;
+			}
+		}
 
 		stamper.close();
 	}
