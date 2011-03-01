@@ -582,6 +582,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getMAGICITEM();
 	}
 
+	public List<BLOODCHARMITEMType> getBloodCharmItem() {
+		return character.getBLOODCHARMITEM();
+	}
+
 	public List<ARMORType> getMagicArmor() {
 		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
 		int calculatedLP=0;

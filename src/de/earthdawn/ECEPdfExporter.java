@@ -25,7 +25,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -38,6 +37,7 @@ import com.itextpdf.text.pdf.PdfStamper;
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.BLOODCHARMITEMType;
 import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DISCIPLINEBONUSType;
 import de.earthdawn.data.DISCIPLINEType;
@@ -619,7 +619,7 @@ public class ECEPdfExporter {
 			}
 		}
 
-		int counterMagicItem=0; 
+		int counterMagicItem=0;
 		for( MAGICITEMType item : character.getMagicItem() ) {
 			if( counterMagicItem > 1) break;
 			acroFields.setField( "MagicalTreasureName."+counterMagicItem, item.getName() );
@@ -830,6 +830,29 @@ public class ECEPdfExporter {
 				acroFields.setField( "SpellEffect.1."+conterSpells, effect2 );
 				conterSpells++;
 			}
+		}
+
+		int counterMagicItem=0;
+		for( MAGICITEMType item : character.getMagicItem() ) {
+			int counterMagicItemRank=0;
+			for( THREADRANKType rank : item.getTHREADRANK() ) {
+				counterMagicItemRank++;
+				acroFields.setField( "ThreadMagicObject."+counterMagicItem, item.getName() );
+				acroFields.setField( "ThreadMagicRank."+counterMagicItem, String.valueOf(counterMagicItemRank) );
+				acroFields.setField( "ThreadMagicLPCost."+counterMagicItem, String.valueOf(rank.getLpcost()) );
+				acroFields.setField( "ThreadMagicEffect."+counterMagicItem, rank.getEffect() );
+				counterMagicItem++;
+			}
+		}
+
+		int counterBloodCharms=0;
+		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
+			String used ="";
+			if( item.getUsed().equals(YesnoType.YES)) used=" (in use)";
+			acroFields.setField( "BloodMagicDamage."+counterBloodCharms, item.getBlooddamage()+used );
+			acroFields.setField( "BloodMagicEffect."+counterBloodCharms, item.getEffect() );
+			counterBloodCharms++;
 		}
 
 		stamper.close();

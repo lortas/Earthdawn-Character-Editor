@@ -41,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
     MAGICITEMType.class,
     COINSType.class,
     WEAPONType.class,
+    BLOODCHARMITEMType.class,
     PATTERNITEMType.class,
     ARMORType.class
 })
