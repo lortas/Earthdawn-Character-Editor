@@ -379,35 +379,41 @@
 	<xs:complexType name="MAGICITEM_type">
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
-				<xs:sequence>
-					<xs:element maxOccurs="1" minOccurs="1" name="description" type="xs:string"/>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
-				</xs:sequence>
-				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
-				<xs:attribute name="maxthreads" type="unsigned_int" use="required"/>
-				<xs:attribute name="spelldefense" type="unsigned_int" use="required"/>
-				<xs:attribute name="lpcostgrowth" type="unsigned_int" use="required">
-					<xs:annotation>
-						<xs:documentation>Determines the amount of legend points a character has to spend to waeve the individual thread ranks. These correlate to the cost for increasing talent ranks of talents with the named number as talent circle.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
+				<xs:attribute name="enchantingdifficultynumber" type="unsigned_int" default="0"/>
+				<xs:attribute name="effect" type="xs:string" default=""/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="PATTERNITEM_type">
 		<xs:complexContent>
-			<xs:extension base="ITEM_type">
-				<xs:attribute name="type" type="xs:string" use="required"/>
+			<xs:extension base="MAGICITEM_type">
+				<xs:attribute name="type" type="xs:string" default=""/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="BLOODCHARMITEM_type">
 		<xs:complexContent>
-			<xs:extension base="ITEM_type">
-				<xs:attribute name="blooddamage" type="unsigned_int"/>
-				<xs:attribute name="depatterningrate" type="unsigned_int"/>
-				<xs:attribute name="enchantingdifficultynumber" type="unsigned_int"/>
-				<xs:attribute name="effect" type="xs:string" default=""/>
+			<xs:extension base="MAGICITEM_type">
+				<xs:attribute name="blooddamage" type="unsigned_int" default="0"/>
+				<xs:attribute name="depatterningrate" type="unsigned_int" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="THREADITEM_type">
+		<xs:complexContent>
+			<xs:extension base="MAGICITEM_type">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="description" type="xs:string"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
+				</xs:sequence>
+				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
+				<xs:attribute name="maxthreads" type="unsigned_int" default="2"/>
+				<xs:attribute name="spelldefense" type="unsigned_int" default="0"/>
+				<xs:attribute name="lpcostgrowth" type="unsigned_int" default="5">
+					<xs:annotation>
+						<xs:documentation>Determines the amount of legend points a character has to spend to waeve the individual thread ranks. These correlate to the cost for increasing talent ranks of talents with the named number as talent circle.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

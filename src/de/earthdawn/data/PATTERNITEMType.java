@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="PATTERNITEM_type">
  *   &lt;complexContent>
- *     &lt;extension base="{http://earthdawn.com/datatypes}ITEM_type">
- *       &lt;attribute name="type" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *     &lt;extension base="{http://earthdawn.com/datatypes}MAGICITEM_type">
+ *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,10 +34,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PATTERNITEM_type")
 public class PATTERNITEMType
-    extends ITEMType
+    extends MAGICITEMType
 {
 
-    @XmlAttribute(required = true)
+    @XmlAttribute
     protected String type;
 
     /**
@@ -49,7 +49,11 @@ public class PATTERNITEMType
      *     
      */
     public String getType() {
-        return type;
+        if (type == null) {
+            return "";
+        } else {
+            return type;
+        }
     }
 
     /**

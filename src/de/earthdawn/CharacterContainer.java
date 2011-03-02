@@ -582,6 +582,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getMAGICITEM();
 	}
 
+	public List<THREADITEMType> getThreadItem() {
+		return character.getTHREADITEM();
+	}
+
 	public List<BLOODCHARMITEMType> getBloodCharmItem() {
 		return character.getBLOODCHARMITEM();
 	}
@@ -589,7 +593,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<ARMORType> getMagicArmor() {
 		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
 		int calculatedLP=0;
-		for( MAGICITEMType magicitem : getMagicItem() ) {
+		for( THREADITEMType magicitem : getThreadItem() ) {
 			String name = magicitem.getName();
 			float weight = magicitem.getWeight();
 			YesnoType used = magicitem.getUsed();
@@ -642,7 +646,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<WEAPONType> getMagicWeapon() {
 		List<WEAPONType> magicweapon = new ArrayList<WEAPONType>();
 		int calculatedLP=0;
-		for( MAGICITEMType magicitem : getMagicItem() ) {
+		for( THREADITEMType magicitem : getThreadItem() ) {
 			String name = magicitem.getName();
 			float weight = magicitem.getWeight();
 			YesnoType used = magicitem.getUsed();

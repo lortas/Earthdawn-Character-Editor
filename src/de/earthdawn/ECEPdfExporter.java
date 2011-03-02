@@ -34,28 +34,7 @@ import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
-import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.ATTRIBUTENameType;
-import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.BLOODCHARMITEMType;
-import de.earthdawn.data.COINSType;
-import de.earthdawn.data.DISCIPLINEBONUSType;
-import de.earthdawn.data.DISCIPLINEType;
-import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.data.ITEMType;
-import de.earthdawn.data.MAGICITEMType;
-import de.earthdawn.data.MOVEMENTType;
-import de.earthdawn.data.PROTECTIONType;
-import de.earthdawn.data.RANKType;
-import de.earthdawn.data.SHIELDType;
-import de.earthdawn.data.SKILLType;
-import de.earthdawn.data.SPELLSType;
-import de.earthdawn.data.SPELLType;
-import de.earthdawn.data.TALENTSType;
-import de.earthdawn.data.TALENTType;
-import de.earthdawn.data.THREADRANKType;
-import de.earthdawn.data.WEAPONType;
-import de.earthdawn.data.YesnoType;
+import de.earthdawn.data.*;
 
 public class ECEPdfExporter {
 	private int counterEquipment=0;
@@ -391,7 +370,7 @@ public class ECEPdfExporter {
 			}
 		}
 
-		MAGICITEMType magicitem = character.getMagicItem().get(0);
+		THREADITEMType magicitem = character.getThreadItem().get(0);
 		if( magicitem != null ) {
 			acroFields.setField( "MagicalTreasureName", magicitem.getName() );
 			acroFields.setField( "MagicalTreasureSpellDefense", String.valueOf(magicitem.getSpelldefense()) );
@@ -620,7 +599,7 @@ public class ECEPdfExporter {
 		}
 
 		int counterMagicItem=0;
-		for( MAGICITEMType item : character.getMagicItem() ) {
+		for( THREADITEMType item : character.getThreadItem() ) {
 			if( counterMagicItem > 1) break;
 			acroFields.setField( "MagicalTreasureName."+counterMagicItem, item.getName() );
 			acroFields.setField( "MagicalTreasureSpellDefense."+counterMagicItem, String.valueOf(item.getSpelldefense()) );
@@ -833,7 +812,7 @@ public class ECEPdfExporter {
 		}
 
 		int counterMagicItem=0;
-		for( MAGICITEMType item : character.getMagicItem() ) {
+		for( THREADITEMType item : character.getThreadItem() ) {
 			int counterMagicItemRank=0;
 			for( THREADRANKType rank : item.getTHREADRANK() ) {
 				counterMagicItemRank++;

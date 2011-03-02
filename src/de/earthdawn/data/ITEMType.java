@@ -38,11 +38,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ITEM_type")
 @XmlSeeAlso({
-    MAGICITEMType.class,
     COINSType.class,
     WEAPONType.class,
-    BLOODCHARMITEMType.class,
-    PATTERNITEMType.class,
+    MAGICITEMType.class,
     ARMORType.class
 })
 public class ITEMType {
