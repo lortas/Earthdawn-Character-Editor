@@ -33,9 +33,9 @@ public class ObjectFactory {
 
     private final static QName _KNACKSSKILLKNACK_QNAME = new QName("http://earthdawn.com/knack", "SKILLKNACK");
     private final static QName _KNACKSTALENTKNACK_QNAME = new QName("http://earthdawn.com/knack", "TALENTKNACK");
+    private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
     private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
     private final static QName _CHARACTERISTICSSTEPDICETABLE_QNAME = new QName("http://earthdawn.com/characteristics", "STEPDICETABLE");
-    private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
     private final static QName _CHARACTERISTICSDISCIPLINENR_QNAME = new QName("http://earthdawn.com/characteristics", "DISCIPLINENR");
     private final static QName _CHARACTERISTICSHEALTHRATING_QNAME = new QName("http://earthdawn.com/characteristics", "HEALTHRATING");
     private final static QName _CHARACTERISTICSLEGENDARYSTATUS_QNAME = new QName("http://earthdawn.com/characteristics", "LEGENDARYSTATUS");
@@ -54,19 +54,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CHARACTERISTICSSTEPDICETABLE }
+     * Create an instance of {@link CHARACTERISTICSATTRIBUTECOST }
      * 
      */
-    public CHARACTERISTICSSTEPDICETABLE createCHARACTERISTICSSTEPDICETABLE() {
-        return new CHARACTERISTICSSTEPDICETABLE();
+    public CHARACTERISTICSATTRIBUTECOST createCHARACTERISTICSATTRIBUTECOST() {
+        return new CHARACTERISTICSATTRIBUTECOST();
     }
 
     /**
-     * Create an instance of {@link HELP }
+     * Create an instance of {@link SPELLS }
      * 
      */
-    public HELP createHELP() {
-        return new HELP();
+    public SPELLS createSPELLS() {
+        return new SPELLS();
+    }
+
+    /**
+     * Create an instance of {@link NAMEGIVERS }
+     * 
+     */
+    public NAMEGIVERS createNAMEGIVERS() {
+        return new NAMEGIVERS();
+    }
+
+    /**
+     * Create an instance of {@link MOVEMENTType }
+     * 
+     */
+    public MOVEMENTType createMOVEMENTType() {
+        return new MOVEMENTType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICS }
+     * 
+     */
+    public CHARACTERISTICS createCHARACTERISTICS() {
+        return new CHARACTERISTICS();
+    }
+
+    /**
+     * Create an instance of {@link NAMESTARTINGITEMSType }
+     * 
+     */
+    public NAMESTARTINGITEMSType createNAMESTARTINGITEMSType() {
+        return new NAMESTARTINGITEMSType();
+    }
+
+    /**
+     * Create an instance of {@link DEATHType }
+     * 
+     */
+    public DEATHType createDEATHType() {
+        return new DEATHType();
     }
 
     /**
@@ -78,11 +118,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MAGICITEMType }
+     * Create an instance of {@link SHIELDType }
      * 
      */
-    public MAGICITEMType createMAGICITEMType() {
-        return new MAGICITEMType();
+    public SHIELDType createSHIELDType() {
+        return new SHIELDType();
+    }
+
+    /**
+     * Create an instance of {@link CAPABILITYType }
+     * 
+     */
+    public CAPABILITYType createCAPABILITYType() {
+        return new CAPABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link OPTIONALRULESATTRIBUTE }
+     * 
+     */
+    public OPTIONALRULESATTRIBUTE createOPTIONALRULESATTRIBUTE() {
+        return new OPTIONALRULESATTRIBUTE();
+    }
+
+    /**
+     * Create an instance of {@link NAMESATTRIBUTESType }
+     * 
+     */
+    public NAMESATTRIBUTESType createNAMESATTRIBUTESType() {
+        return new NAMESATTRIBUTESType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSSTEPDICETABLE }
+     * 
+     */
+    public CHARACTERISTICSSTEPDICETABLE createCHARACTERISTICSSTEPDICETABLE() {
+        return new CHARACTERISTICSSTEPDICETABLE();
+    }
+
+    /**
+     * Create an instance of {@link ITEMType }
+     * 
+     */
+    public ITEMType createITEMType() {
+        return new ITEMType();
     }
 
     /**
@@ -102,27 +182,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link KARMAABILITYType }
+     * Create an instance of {@link NAMESATTRIBUTEType }
      * 
      */
-    public KARMAABILITYType createKARMAABILITYType() {
-        return new KARMAABILITYType();
+    public NAMESATTRIBUTEType createNAMESATTRIBUTEType() {
+        return new NAMESATTRIBUTEType();
     }
 
     /**
-     * Create an instance of {@link ARMORType }
+     * Create an instance of {@link PATTERNITEMType }
      * 
      */
-    public ARMORType createARMORType() {
-        return new ARMORType();
+    public PATTERNITEMType createPATTERNITEMType() {
+        return new PATTERNITEMType();
     }
 
     /**
-     * Create an instance of {@link DISCIPLINEDURABILITYType }
+     * Create an instance of {@link HEALTHType }
      * 
      */
-    public DISCIPLINEDURABILITYType createDISCIPLINEDURABILITYType() {
-        return new DISCIPLINEDURABILITYType();
+    public HEALTHType createHEALTHType() {
+        return new HEALTHType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKBASEType }
+     * 
+     */
+    public KNACKBASEType createKNACKBASEType() {
+        return new KNACKBASEType();
+    }
+
+    /**
+     * Create an instance of {@link DEFENSEABILITYType }
+     * 
+     */
+    public DEFENSEABILITYType createDEFENSEABILITYType() {
+        return new DEFENSEABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link STEPDICEType }
+     * 
+     */
+    public STEPDICEType createSTEPDICEType() {
+        return new STEPDICEType();
     }
 
     /**
@@ -134,11 +238,123 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CARRYINGType }
+     * Create an instance of {@link TALENTSType }
      * 
      */
-    public CARRYINGType createCARRYINGType() {
-        return new CARRYINGType();
+    public TALENTSType createTALENTSType() {
+        return new TALENTSType();
+    }
+
+    /**
+     * Create an instance of {@link ACCOUNTINGType }
+     * 
+     */
+    public ACCOUNTINGType createACCOUNTINGType() {
+        return new ACCOUNTINGType();
+    }
+
+    /**
+     * Create an instance of {@link OPTIONALRULEType }
+     * 
+     */
+    public OPTIONALRULEType createOPTIONALRULEType() {
+        return new OPTIONALRULEType();
+    }
+
+    /**
+     * Create an instance of {@link OPTIONALRULES }
+     * 
+     */
+    public OPTIONALRULES createOPTIONALRULES() {
+        return new OPTIONALRULES();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSDISCIPLINENR }
+     * 
+     */
+    public CHARACTERISTICSDISCIPLINENR createCHARACTERISTICSDISCIPLINENR() {
+        return new CHARACTERISTICSDISCIPLINENR();
+    }
+
+    /**
+     * Create an instance of {@link DISCIPLINECIRCLEType }
+     * 
+     */
+    public DISCIPLINECIRCLEType createDISCIPLINECIRCLEType() {
+        return new DISCIPLINECIRCLEType();
+    }
+
+    /**
+     * Create an instance of {@link DEFENSEType }
+     * 
+     */
+    public DEFENSEType createDEFENSEType() {
+        return new DEFENSEType();
+    }
+
+    /**
+     * Create an instance of {@link INITIATIVEType }
+     * 
+     */
+    public INITIATIVEType createINITIATIVEType() {
+        return new INITIATIVEType();
+    }
+
+    /**
+     * Create an instance of {@link KARMAABILITYType }
+     * 
+     */
+    public KARMAABILITYType createKARMAABILITYType() {
+        return new KARMAABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link DISZIPINABILITYType }
+     * 
+     */
+    public DISZIPINABILITYType createDISZIPINABILITYType() {
+        return new DISZIPINABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link TALENTType }
+     * 
+     */
+    public TALENTType createTALENTType() {
+        return new TALENTType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKS }
+     * 
+     */
+    public KNACKS createKNACKS() {
+        return new KNACKS();
+    }
+
+    /**
+     * Create an instance of {@link SPELLSType }
+     * 
+     */
+    public SPELLSType createSPELLSType() {
+        return new SPELLSType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSCOST }
+     * 
+     */
+    public CHARACTERISTICSCOST createCHARACTERISTICSCOST() {
+        return new CHARACTERISTICSCOST();
+    }
+
+    /**
+     * Create an instance of {@link SPELLDEFType }
+     * 
+     */
+    public SPELLDEFType createSPELLDEFType() {
+        return new SPELLDEFType();
     }
 
     /**
@@ -158,83 +374,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OPTIONALRULEType }
+     * Create an instance of {@link APPEARANCEType }
      * 
      */
-    public OPTIONALRULEType createOPTIONALRULEType() {
-        return new OPTIONALRULEType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSCOST }
-     * 
-     */
-    public CHARACTERISTICSCOST createCHARACTERISTICSCOST() {
-        return new CHARACTERISTICSCOST();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSLEGENDARYSTATUS }
-     * 
-     */
-    public CHARACTERISTICSLEGENDARYSTATUS createCHARACTERISTICSLEGENDARYSTATUS() {
-        return new CHARACTERISTICSLEGENDARYSTATUS();
-    }
-
-    /**
-     * Create an instance of {@link KNACKBASEType }
-     * 
-     */
-    public KNACKBASEType createKNACKBASEType() {
-        return new KNACKBASEType();
-    }
-
-    /**
-     * Create an instance of {@link RANKType }
-     * 
-     */
-    public RANKType createRANKType() {
-        return new RANKType();
-    }
-
-    /**
-     * Create an instance of {@link TALENTType }
-     * 
-     */
-    public TALENTType createTALENTType() {
-        return new TALENTType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESATTRIBUTEType }
-     * 
-     */
-    public NAMESATTRIBUTEType createNAMESATTRIBUTEType() {
-        return new NAMESATTRIBUTEType();
-    }
-
-    /**
-     * Create an instance of {@link ATTRIBUTEType }
-     * 
-     */
-    public ATTRIBUTEType createATTRIBUTEType() {
-        return new ATTRIBUTEType();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINE }
-     * 
-     */
-    public DISCIPLINE createDISCIPLINE() {
-        return new DISCIPLINE();
-    }
-
-    /**
-     * Create an instance of {@link TALENTABILITYType }
-     * 
-     */
-    public TALENTABILITYType createTALENTABILITYType() {
-        return new TALENTABILITYType();
+    public APPEARANCEType createAPPEARANCEType() {
+        return new APPEARANCEType();
     }
 
     /**
@@ -246,35 +390,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CAPABILITYType }
+     * Create an instance of {@link DISCIPLINEType }
      * 
      */
-    public CAPABILITYType createCAPABILITYType() {
-        return new CAPABILITYType();
+    public DISCIPLINEType createDISCIPLINEType() {
+        return new DISCIPLINEType();
     }
 
     /**
-     * Create an instance of {@link TALENTSType }
+     * Create an instance of {@link WEAPONType }
      * 
      */
-    public TALENTSType createTALENTSType() {
-        return new TALENTSType();
+    public WEAPONType createWEAPONType() {
+        return new WEAPONType();
     }
 
     /**
-     * Create an instance of {@link BLOODCHARMITEMType }
+     * Create an instance of {@link CAPABILITIES }
      * 
      */
-    public BLOODCHARMITEMType createBLOODCHARMITEMType() {
-        return new BLOODCHARMITEMType();
+    public CAPABILITIES createCAPABILITIES() {
+        return new CAPABILITIES();
     }
 
     /**
-     * Create an instance of {@link CHARACTERISTICS }
+     * Create an instance of {@link DISCIPLINESPELLType }
      * 
      */
-    public CHARACTERISTICS createCHARACTERISTICS() {
-        return new CHARACTERISTICS();
+    public DISCIPLINESPELLType createDISCIPLINESPELLType() {
+        return new DISCIPLINESPELLType();
+    }
+
+    /**
+     * Create an instance of {@link COINSType }
+     * 
+     */
+    public COINSType createCOINSType() {
+        return new COINSType();
+    }
+
+    /**
+     * Create an instance of {@link WOUNDType }
+     * 
+     */
+    public WOUNDType createWOUNDType() {
+        return new WOUNDType();
+    }
+
+    /**
+     * Create an instance of {@link CARRYINGType }
+     * 
+     */
+    public CARRYINGType createCARRYINGType() {
+        return new CARRYINGType();
+    }
+
+    /**
+     * Create an instance of {@link NAMESPELLKINDType }
+     * 
+     */
+    public NAMESPELLKINDType createNAMESPELLKINDType() {
+        return new NAMESPELLKINDType();
     }
 
     /**
@@ -286,19 +462,139 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OPTIONALRULESATTRIBUTE }
+     * Create an instance of {@link CHARACTERISTICSLEGENDARYSTATUS }
      * 
      */
-    public OPTIONALRULESATTRIBUTE createOPTIONALRULESATTRIBUTE() {
-        return new OPTIONALRULESATTRIBUTE();
+    public CHARACTERISTICSLEGENDARYSTATUS createCHARACTERISTICSLEGENDARYSTATUS() {
+        return new CHARACTERISTICSLEGENDARYSTATUS();
     }
 
     /**
-     * Create an instance of {@link CAPABILITIES }
+     * Create an instance of {@link ATTRIBUTEType }
      * 
      */
-    public CAPABILITIES createCAPABILITIES() {
-        return new CAPABILITIES();
+    public ATTRIBUTEType createATTRIBUTEType() {
+        return new ATTRIBUTEType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSHEALTHRATING }
+     * 
+     */
+    public CHARACTERISTICSHEALTHRATING createCHARACTERISTICSHEALTHRATING() {
+        return new CHARACTERISTICSHEALTHRATING();
+    }
+
+    /**
+     * Create an instance of {@link THREADRANKType }
+     * 
+     */
+    public THREADRANKType createTHREADRANKType() {
+        return new THREADRANKType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSDEFENSERAITING }
+     * 
+     */
+    public CHARACTERISTICSDEFENSERAITING createCHARACTERISTICSDEFENSERAITING() {
+        return new CHARACTERISTICSDEFENSERAITING();
+    }
+
+    /**
+     * Create an instance of {@link NAMELANGType }
+     * 
+     */
+    public NAMELANGType createNAMELANGType() {
+        return new NAMELANGType();
+    }
+
+    /**
+     * Create an instance of {@link DISCIPLINE }
+     * 
+     */
+    public DISCIPLINE createDISCIPLINE() {
+        return new DISCIPLINE();
+    }
+
+    /**
+     * Create an instance of {@link BLOODCHARMITEMType }
+     * 
+     */
+    public BLOODCHARMITEMType createBLOODCHARMITEMType() {
+        return new BLOODCHARMITEMType();
+    }
+
+    /**
+     * Create an instance of {@link TALENTABILITYType }
+     * 
+     */
+    public TALENTABILITYType createTALENTABILITYType() {
+        return new TALENTABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link SKILLType }
+     * 
+     */
+    public SKILLType createSKILLType() {
+        return new SKILLType();
+    }
+
+    /**
+     * Create an instance of {@link NAMES }
+     * 
+     */
+    public NAMES createNAMES() {
+        return new NAMES();
+    }
+
+    /**
+     * Create an instance of {@link NAMESPELLWEAVINGType }
+     * 
+     */
+    public NAMESPELLWEAVINGType createNAMESPELLWEAVINGType() {
+        return new NAMESPELLWEAVINGType();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSCIRCLE }
+     * 
+     */
+    public CHARACTERISTICSCIRCLE createCHARACTERISTICSCIRCLE() {
+        return new CHARACTERISTICSCIRCLE();
+    }
+
+    /**
+     * Create an instance of {@link SPELLType }
+     * 
+     */
+    public SPELLType createSPELLType() {
+        return new SPELLType();
+    }
+
+    /**
+     * Create an instance of {@link MAGICITEMType }
+     * 
+     */
+    public MAGICITEMType createMAGICITEMType() {
+        return new MAGICITEMType();
+    }
+
+    /**
+     * Create an instance of {@link HELP }
+     * 
+     */
+    public HELP createHELP() {
+        return new HELP();
+    }
+
+    /**
+     * Create an instance of {@link ARMORType }
+     * 
+     */
+    public ARMORType createARMORType() {
+        return new ARMORType();
     }
 
     /**
@@ -318,291 +614,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link COINSType }
+     * Create an instance of {@link THREADITEMType }
      * 
      */
-    public COINSType createCOINSType() {
-        return new COINSType();
-    }
-
-    /**
-     * Create an instance of {@link ITEMType }
-     * 
-     */
-    public ITEMType createITEMType() {
-        return new ITEMType();
-    }
-
-    /**
-     * Create an instance of {@link HEALTHType }
-     * 
-     */
-    public HEALTHType createHEALTHType() {
-        return new HEALTHType();
-    }
-
-    /**
-     * Create an instance of {@link NAMEGIVERABILITYType }
-     * 
-     */
-    public NAMEGIVERABILITYType createNAMEGIVERABILITYType() {
-        return new NAMEGIVERABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link DEFENSEABILITYType }
-     * 
-     */
-    public DEFENSEABILITYType createDEFENSEABILITYType() {
-        return new DEFENSEABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSENCUMBRANCE }
-     * 
-     */
-    public CHARACTERISTICSENCUMBRANCE createCHARACTERISTICSENCUMBRANCE() {
-        return new CHARACTERISTICSENCUMBRANCE();
-    }
-
-    /**
-     * Create an instance of {@link SPELLType }
-     * 
-     */
-    public SPELLType createSPELLType() {
-        return new SPELLType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESATTRIBUTESType }
-     * 
-     */
-    public NAMESATTRIBUTESType createNAMESATTRIBUTESType() {
-        return new NAMESATTRIBUTESType();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINECIRCLEType }
-     * 
-     */
-    public DISCIPLINECIRCLEType createDISCIPLINECIRCLEType() {
-        return new DISCIPLINECIRCLEType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESTARTINGITEMSType }
-     * 
-     */
-    public NAMESTARTINGITEMSType createNAMESTARTINGITEMSType() {
-        return new NAMESTARTINGITEMSType();
-    }
-
-    /**
-     * Create an instance of {@link KNACKS }
-     * 
-     */
-    public KNACKS createKNACKS() {
-        return new KNACKS();
-    }
-
-    /**
-     * Create an instance of {@link SPELLS }
-     * 
-     */
-    public SPELLS createSPELLS() {
-        return new SPELLS();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINESPELLType }
-     * 
-     */
-    public DISCIPLINESPELLType createDISCIPLINESPELLType() {
-        return new DISCIPLINESPELLType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSDISCIPLINENR }
-     * 
-     */
-    public CHARACTERISTICSDISCIPLINENR createCHARACTERISTICSDISCIPLINENR() {
-        return new CHARACTERISTICSDISCIPLINENR();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSATTRIBUTECOST }
-     * 
-     */
-    public CHARACTERISTICSATTRIBUTECOST createCHARACTERISTICSATTRIBUTECOST() {
-        return new CHARACTERISTICSATTRIBUTECOST();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSDEFENSERAITING }
-     * 
-     */
-    public CHARACTERISTICSDEFENSERAITING createCHARACTERISTICSDEFENSERAITING() {
-        return new CHARACTERISTICSDEFENSERAITING();
-    }
-
-    /**
-     * Create an instance of {@link DEATHType }
-     * 
-     */
-    public DEATHType createDEATHType() {
-        return new DEATHType();
-    }
-
-    /**
-     * Create an instance of {@link SPELLDEFType }
-     * 
-     */
-    public SPELLDEFType createSPELLDEFType() {
-        return new SPELLDEFType();
-    }
-
-    /**
-     * Create an instance of {@link OPTIONALRULES }
-     * 
-     */
-    public OPTIONALRULES createOPTIONALRULES() {
-        return new OPTIONALRULES();
-    }
-
-    /**
-     * Create an instance of {@link INITIATIVEType }
-     * 
-     */
-    public INITIATIVEType createINITIATIVEType() {
-        return new INITIATIVEType();
-    }
-
-    /**
-     * Create an instance of {@link SKILLType }
-     * 
-     */
-    public SKILLType createSKILLType() {
-        return new SKILLType();
-    }
-
-    /**
-     * Create an instance of {@link WEAPONType }
-     * 
-     */
-    public WEAPONType createWEAPONType() {
-        return new WEAPONType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESPELLKINDType }
-     * 
-     */
-    public NAMESPELLKINDType createNAMESPELLKINDType() {
-        return new NAMESPELLKINDType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSCIRCLE }
-     * 
-     */
-    public CHARACTERISTICSCIRCLE createCHARACTERISTICSCIRCLE() {
-        return new CHARACTERISTICSCIRCLE();
-    }
-
-    /**
-     * Create an instance of {@link MOVEMENTType }
-     * 
-     */
-    public MOVEMENTType createMOVEMENTType() {
-        return new MOVEMENTType();
-    }
-
-    /**
-     * Create an instance of {@link NAMEGIVERS }
-     * 
-     */
-    public NAMEGIVERS createNAMEGIVERS() {
-        return new NAMEGIVERS();
-    }
-
-    /**
-     * Create an instance of {@link SPELLSType }
-     * 
-     */
-    public SPELLSType createSPELLSType() {
-        return new SPELLSType();
-    }
-
-    /**
-     * Create an instance of {@link SHIELDType }
-     * 
-     */
-    public SHIELDType createSHIELDType() {
-        return new SHIELDType();
-    }
-
-    /**
-     * Create an instance of {@link NAMES }
-     * 
-     */
-    public NAMES createNAMES() {
-        return new NAMES();
-    }
-
-    /**
-     * Create an instance of {@link WOUNDType }
-     * 
-     */
-    public WOUNDType createWOUNDType() {
-        return new WOUNDType();
-    }
-
-    /**
-     * Create an instance of {@link DISZIPINABILITYType }
-     * 
-     */
-    public DISZIPINABILITYType createDISZIPINABILITYType() {
-        return new DISZIPINABILITYType();
-    }
-
-    /**
-     * Create an instance of {@link PATTERNITEMType }
-     * 
-     */
-    public PATTERNITEMType createPATTERNITEMType() {
-        return new PATTERNITEMType();
-    }
-
-    /**
-     * Create an instance of {@link NAMELANGType }
-     * 
-     */
-    public NAMELANGType createNAMELANGType() {
-        return new NAMELANGType();
-    }
-
-    /**
-     * Create an instance of {@link DISCIPLINEType }
-     * 
-     */
-    public DISCIPLINEType createDISCIPLINEType() {
-        return new DISCIPLINEType();
-    }
-
-    /**
-     * Create an instance of {@link DEFENSEType }
-     * 
-     */
-    public DEFENSEType createDEFENSEType() {
-        return new DEFENSEType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESPELLWEAVINGType }
-     * 
-     */
-    public NAMESPELLWEAVINGType createNAMESPELLWEAVINGType() {
-        return new NAMESPELLWEAVINGType();
+    public THREADITEMType createTHREADITEMType() {
+        return new THREADITEMType();
     }
 
     /**
@@ -614,19 +630,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ACCOUNTINGType }
+     * Create an instance of {@link RANKType }
      * 
      */
-    public ACCOUNTINGType createACCOUNTINGType() {
-        return new ACCOUNTINGType();
-    }
-
-    /**
-     * Create an instance of {@link CHARACTERISTICSHEALTHRATING }
-     * 
-     */
-    public CHARACTERISTICSHEALTHRATING createCHARACTERISTICSHEALTHRATING() {
-        return new CHARACTERISTICSHEALTHRATING();
+    public RANKType createRANKType() {
+        return new RANKType();
     }
 
     /**
@@ -638,27 +646,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link APPEARANCEType }
+     * Create an instance of {@link DISCIPLINEDURABILITYType }
      * 
      */
-    public APPEARANCEType createAPPEARANCEType() {
-        return new APPEARANCEType();
+    public DISCIPLINEDURABILITYType createDISCIPLINEDURABILITYType() {
+        return new DISCIPLINEDURABILITYType();
     }
 
     /**
-     * Create an instance of {@link STEPDICEType }
+     * Create an instance of {@link NAMEGIVERABILITYType }
      * 
      */
-    public STEPDICEType createSTEPDICEType() {
-        return new STEPDICEType();
+    public NAMEGIVERABILITYType createNAMEGIVERABILITYType() {
+        return new NAMEGIVERABILITYType();
     }
 
     /**
-     * Create an instance of {@link THREADRANKType }
+     * Create an instance of {@link CHARACTERISTICSENCUMBRANCE }
      * 
      */
-    public THREADRANKType createTHREADRANKType() {
-        return new THREADRANKType();
+    public CHARACTERISTICSENCUMBRANCE createCHARACTERISTICSENCUMBRANCE() {
+        return new CHARACTERISTICSENCUMBRANCE();
     }
 
     /**
@@ -680,6 +688,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "DEFENSERAITING", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSDEFENSERAITING> createCHARACTERISTICSDEFENSERAITING(CHARACTERISTICSDEFENSERAITING value) {
+        return new JAXBElement<CHARACTERISTICSDEFENSERAITING>(_CHARACTERISTICSDEFENSERAITING_QNAME, CHARACTERISTICSDEFENSERAITING.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}}
      * 
      */
@@ -695,15 +712,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "STEPDICETABLE", scope = CHARACTERISTICS.class)
     public JAXBElement<CHARACTERISTICSSTEPDICETABLE> createCHARACTERISTICSSTEPDICETABLE(CHARACTERISTICSSTEPDICETABLE value) {
         return new JAXBElement<CHARACTERISTICSSTEPDICETABLE>(_CHARACTERISTICSSTEPDICETABLE_QNAME, CHARACTERISTICSSTEPDICETABLE.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "DEFENSERAITING", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSDEFENSERAITING> createCHARACTERISTICSDEFENSERAITING(CHARACTERISTICSDEFENSERAITING value) {
-        return new JAXBElement<CHARACTERISTICSDEFENSERAITING>(_CHARACTERISTICSDEFENSERAITING_QNAME, CHARACTERISTICSDEFENSERAITING.class, CHARACTERISTICS.class, value);
     }
 
     /**

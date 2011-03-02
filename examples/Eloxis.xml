@@ -185,7 +185,8 @@
     </ns5:SKILL>
     <ns5:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
     <ns5:WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
-    <ns5:MAGICITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
+    <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="yes" location="self" effect="+6 to attack or damage" blooddamage="3"/>
+    <ns5:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
         <description>Thread Item Melee Weapon page 276 PlayerGuide</description>
         <THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
             <WEAPON size="5" strengthmin="13" damagestep="12" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
@@ -199,8 +200,8 @@
         <THREADRANK effect="Damage +1" lpcost="800">
             <WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
         </THREADRANK>
-    </ns5:MAGICITEM>
-    <ns5:MAGICITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
+    </ns5:THREADITEM>
+    <ns5:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
         <description>Thread Item Heavy Armor page 276 PlayerGuide</description>
         <THREADRANK effect="max Forge Defense" lpcost="100" keyknowledge="Name of the Item: Sylvio">
             <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="2" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
@@ -214,8 +215,7 @@
         <THREADRANK effect="Intiative Penalty -1" lpcost="500">
             <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="5" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
         </THREADRANK>
-    </ns5:MAGICITEM>
-    <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="yes" location="self" effect="+6 to attack or damage" blooddamage="3"/>
+    </ns5:THREADITEM>
     <ns5:COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
     <ns5:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
     <ns5:ITEM weight="1.0" name="tourch"/>

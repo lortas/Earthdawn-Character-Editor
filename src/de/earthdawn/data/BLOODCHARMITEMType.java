@@ -22,11 +22,9 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="BLOODCHARMITEM_type">
  *   &lt;complexContent>
- *     &lt;extension base="{http://earthdawn.com/datatypes}ITEM_type">
- *       &lt;attribute name="blooddamage" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="depatterningrate" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="enchantingdifficultynumber" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="effect" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *     &lt;extension base="{http://earthdawn.com/datatypes}MAGICITEM_type">
+ *       &lt;attribute name="blooddamage" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="depatterningrate" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -37,17 +35,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BLOODCHARMITEM_type")
 public class BLOODCHARMITEMType
-    extends ITEMType
+    extends MAGICITEMType
 {
 
     @XmlAttribute
     protected Integer blooddamage;
     @XmlAttribute
     protected Integer depatterningrate;
-    @XmlAttribute
-    protected Integer enchantingdifficultynumber;
-    @XmlAttribute
-    protected String effect;
 
     /**
      * Gets the value of the blooddamage property.
@@ -57,8 +51,12 @@ public class BLOODCHARMITEMType
      *     {@link Integer }
      *     
      */
-    public Integer getBlooddamage() {
-        return blooddamage;
+    public int getBlooddamage() {
+        if (blooddamage == null) {
+            return  0;
+        } else {
+            return blooddamage;
+        }
     }
 
     /**
@@ -81,8 +79,12 @@ public class BLOODCHARMITEMType
      *     {@link Integer }
      *     
      */
-    public Integer getDepatterningrate() {
-        return depatterningrate;
+    public int getDepatterningrate() {
+        if (depatterningrate == null) {
+            return  0;
+        } else {
+            return depatterningrate;
+        }
     }
 
     /**
@@ -95,58 +97,6 @@ public class BLOODCHARMITEMType
      */
     public void setDepatterningrate(Integer value) {
         this.depatterningrate = value;
-    }
-
-    /**
-     * Gets the value of the enchantingdifficultynumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getEnchantingdifficultynumber() {
-        return enchantingdifficultynumber;
-    }
-
-    /**
-     * Sets the value of the enchantingdifficultynumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setEnchantingdifficultynumber(Integer value) {
-        this.enchantingdifficultynumber = value;
-    }
-
-    /**
-     * Gets the value of the effect property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEffect() {
-        if (effect == null) {
-            return "";
-        } else {
-            return effect;
-        }
-    }
-
-    /**
-     * Sets the value of the effect property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEffect(String value) {
-        this.effect = value;
     }
 
 }
