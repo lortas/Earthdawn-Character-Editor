@@ -24,9 +24,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import de.earthdawn.data.DiceType;
 import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.data.ROLLEDDICEType;
 import de.earthdawn.ui2.EDMainWindow;
 
 
@@ -35,11 +33,6 @@ public class EarthdawnCharacterEditor {
 	 * Main-Funktion. 
 	 */
 	public static void main(String[] args) {
-		Dicing dicing = new Dicing(30);
-		ROLLEDDICEType r = dicing.roleDiceSet();
-		System.out.println(r.getDice().value()+":"+r.getRolling()+"="+r.getResult());
-		r= Dicing.roleDiceSet(DiceType._2d12Pd10);
-		System.out.println(r.getDice().value()+":"+r.getRolling()+"="+r.getResult());
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 			EDCHARACTER ec = new EDCHARACTER();

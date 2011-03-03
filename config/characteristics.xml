@@ -342,4 +342,45 @@
 	<LEGENDARYSTATUS circle="5" reown="11" reputation="+2"/>
 	<LEGENDARYSTATUS circle="9" reown="9" reputation="+3"/>
 	<LEGENDARYSTATUS circle="13" reown="7" reputation="+5"/>
+	<RESULTLEVEL poor="0" average="0" good="0" excellent="0" extraordinary="0"/>
+	<RESULTLEVEL poor="0" average="1" good="3" excellent="5" extraordinary="7"/>
+	<RESULTLEVEL poor="1" average="2" good="5" excellent="7" extraordinary="9"/>
+	<RESULTLEVEL poor="1" average="3" good="6" excellent="8" extraordinary="10"/>
+	<RESULTLEVEL poor="1" average="4" good="7" excellent="10" extraordinary="12"/>
+	<RESULTLEVEL poor="2" average="5" good="8" excellent="11" extraordinary="14"/>
+	<RESULTLEVEL poor="2" average="6" good="9" excellent="13" extraordinary="17"/>
+	<RESULTLEVEL poor="3" average="7" good="11" excellent="15" extraordinary="19"/>
+	<RESULTLEVEL poor="4" average="8" good="13" excellent="16" extraordinary="20"/>
+	<RESULTLEVEL poor="5" average="9" good="15" excellent="18" extraordinary="22"/>
+	<RESULTLEVEL poor="6" average="10" good="16" excellent="20" extraordinary="24"/>
+	<RESULTLEVEL poor="6" average="11" good="17" excellent="21" extraordinary="25"/>
+	<RESULTLEVEL poor="7" average="12" good="18" excellent="23" extraordinary="27"/>
+	<RESULTLEVEL poor="7" average="13" good="20" excellent="25" extraordinary="29"/>
+	<RESULTLEVEL poor="8" average="14" good="21" excellent="26" extraordinary="31"/>
+	<RESULTLEVEL poor="9" average="15" good="23" excellent="27" extraordinary="31"/>
+	<RESULTLEVEL poor="10" average="16" good="24" excellent="28" extraordinary="33"/>
+	<RESULTLEVEL poor="11" average="17" good="25" excellent="30" extraordinary="34"/>
+	<RESULTLEVEL poor="12" average="18" good="26" excellent="31" extraordinary="36"/>
+	<RESULTLEVEL poor="12" average="19" good="28" excellent="33" extraordinary="37"/>
+	<RESULTLEVEL poor="13" average="20" good="29" excellent="34" extraordinary="39"/>
+	<RESULTLEVEL poor="14" average="21" good="30" excellent="36" extraordinary="41"/>
+	<RESULTLEVEL poor="15" average="22" good="31" excellent="37" extraordinary="42"/>
+	<RESULTLEVEL poor="16" average="23" good="33" excellent="38" extraordinary="43"/>
+	<RESULTLEVEL poor="16" average="24" good="34" excellent="39" extraordinary="44"/>
+	<RESULTLEVEL poor="17" average="25" good="35" excellent="41" extraordinary="46"/>
+	<RESULTLEVEL poor="18" average="26" good="36" excellent="42" extraordinary="47"/>
+	<RESULTLEVEL poor="19" average="27" good="37" excellent="43" extraordinary="49"/>
+	<RESULTLEVEL poor="19" average="28" good="39" excellent="45" extraordinary="50"/>
+	<RESULTLEVEL poor="21" average="29" good="40" excellent="46" extraordinary="51"/>
+	<RESULTLEVEL poor="21" average="30" good="41" excellent="47" extraordinary="53"/>
+	<RESULTLEVEL poor="22" average="31" good="42" excellent="48" extraordinary="54"/>
+	<RESULTLEVEL poor="23" average="32" good="43" excellent="49" extraordinary="55"/>
+	<RESULTLEVEL poor="24" average="33" good="45" excellent="51" extraordinary="57"/>
+	<RESULTLEVEL poor="24" average="34" good="46" excellent="52" extraordinary="58"/>
+	<RESULTLEVEL poor="25" average="35" good="47" excellent="53" extraordinary="60"/>
+	<RESULTLEVEL poor="26" average="36" good="48" excellent="54" extraordinary="60"/>
+	<RESULTLEVEL poor="27" average="37" good="49" excellent="56" extraordinary="62"/>
+	<RESULTLEVEL poor="28" average="38" good="51" excellent="57" extraordinary="63"/>
+	<RESULTLEVEL poor="29" average="39" good="52" excellent="58" extraordinary="64"/>
+	<RESULTLEVEL poor="30" average="40" good="53" excellent="59" extraordinary="66"/>
 </CHARACTERISTICS>

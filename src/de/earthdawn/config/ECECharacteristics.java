@@ -33,7 +33,9 @@ import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
 import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
 import de.earthdawn.data.CHARACTERISTICSLEGENDARYSTATUS;
 import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
+import de.earthdawn.data.CHARACTERISTICSRESULTLEVEL;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
+import de.earthdawn.data.ROLLEDDICEType;
 
 
 public class ECECharacteristics {
@@ -226,4 +228,34 @@ public class ECECharacteristics {
 		// Not found
 		return null;
 	}
+
+	public ROLLEDDICEType getResultLevel(int diceresult) {
+		int difficultyNumber=0;
+		ROLLEDDICEType rolledDice = new ROLLEDDICEType();
+		rolledDice.setResult(diceresult);
+		rolledDice.setPathetic(100);
+		rolledDice.setPoor(0);
+		rolledDice.setAverage(0);
+		rolledDice.setGood(0);
+		rolledDice.setExcellent(0);
+		rolledDice.setExtraordinary(0);
+		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
+			if( element.getName().getLocalPart().equals("RESULTLEVEL") ) {
+				CHARACTERISTICSRESULTLEVEL rl = (CHARACTERISTICSRESULTLEVEL)element.getValue();
+				if( diceresult >= rl.getExtraordinary() ) rolledDice.setExtraordinary(difficultyNumber);
+				if( diceresult >= rl.getExcellent() ) rolledDice.setExcellent(difficultyNumber);
+				if( diceresult >= rl.getGood() ) rolledDice.setGood(difficultyNumber);
+				if( diceresult >= rl.getAverage() ) rolledDice.setAverage(difficultyNumber);
+				if( diceresult >= rl.getPoor() ) {
+					rolledDice.setPoor(difficultyNumber);
+				} else {
+					if( rolledDice.getPathetic() > difficultyNumber ) rolledDice.setPathetic(difficultyNumber);
+				}
+				
+				difficultyNumber++;
+			}
+		}
+		return rolledDice;
+	}
+
 }
