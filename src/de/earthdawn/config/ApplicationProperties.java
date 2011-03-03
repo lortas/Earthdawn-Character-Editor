@@ -105,7 +105,7 @@ public class ApplicationProperties {
 	public ECECharacteristics getCharacteristics() {
 		return CHARACTERISTICS;
 	}
-	
+
 	public CAPABILITIES getCapabilities() {
 		return CAPABILITIES;
 	}

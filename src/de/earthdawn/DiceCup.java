@@ -7,10 +7,10 @@ import de.earthdawn.data.DiceType;
 import de.earthdawn.data.ROLLEDDICEType;
 import de.earthdawn.data.STEPDICEType;
 
-public class Dicing {
+public class DiceCup {
 	private static Random rand = new Random();
 	private STEPDICEType stepDice = null;
-	public Dicing( int step ) {
+	public DiceCup( int step ) {
 		setStep(step);
 	}
 	public void setStep(int step) {
@@ -20,16 +20,16 @@ public class Dicing {
 		stepDice.setDice(dice);
 	}
 
-	public ROLLEDDICEType roleDiceSet() {
-		return roleDiceSet(stepDice.getDice());
+	public ROLLEDDICEType toss() {
+		return toss(stepDice.getDice());
 	}
 
-	public static ROLLEDDICEType roleDiceSet(int step) {
+	public static ROLLEDDICEType toss(int step) {
 		DiceType dice = ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(step).getDice();
-		return roleDiceSet(dice);
+		return toss(dice);
 	}
 
-	public static ROLLEDDICEType roleDiceSet(DiceType diceset) {
+	public static ROLLEDDICEType toss(DiceType diceset) {
 		int sum=0;
 		String path="";
 		for( String dice : diceset.value().split("\\+") ) {
@@ -41,20 +41,19 @@ public class Dicing {
 			int count=1;
 			if( ! d[0].isEmpty() ) count=Integer.valueOf(d[0]); 
 			for( int i=0; i<count; i++ ) {
-				int r=singleDice(Integer.valueOf(d[1]));
+				int r=tossSingleDice(Integer.valueOf(d[1]));
 				sum+=r;
 				if( ! path.isEmpty() ) path+=" + ";
 				path+=r+"(d"+d[1]+")";
 			}
 		}
-		ROLLEDDICEType result = new ROLLEDDICEType();
+		ROLLEDDICEType result = ApplicationProperties.create().getCharacteristics().getResultLevel(sum);
 		result.setDice(diceset);
-		result.setResult(sum);
 		result.setRolling(path);
 		return result;
 	}
 
-	public static int singleDice(int side) {
+	public static int tossSingleDice(int side) {
 		int sum=0;
 		while( true ) {
 			int i = rand.nextInt(side)+1;
