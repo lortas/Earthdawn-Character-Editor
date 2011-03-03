@@ -410,6 +410,7 @@ public class ECEPdfExporter {
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		exportCommonFields(character,16,41);
+		setButtons(character.getWound().getNormal(), "WoundPenalties.", 9);
 		acroFields.setField( "Shield", "none" );
 		acroFields.setField( "ShieldDeflectionBonus", "na" );
 		int armor_max=0;
@@ -510,7 +511,6 @@ public class ECEPdfExporter {
 			for( WEAPONType weapon : weapons ) {
 				if( weapon.getShortrange() > 0 ) {
 					acroFields.setField( "RangedWeapon."+counter_range, weapon.getName() );
-					// Orginal PDF hat an Position "3" ein Leerzeichen: "Ranged Weapon.3" in der Version des Editors ist das korrigiert
 					acroFields.setField( "RangedWeaponDmgStep."+counter_range, String.valueOf(weapon.getDamagestep()) );
 					acroFields.setField( "RangedWeapon Size."+counter_range, String.valueOf(weapon.getSize()) );
 					acroFields.setField( "RangedWeaponTimesForged."+counter_range, String.valueOf(weapon.getTimesforged()) );
@@ -599,6 +599,7 @@ public class ECEPdfExporter {
 		}
 
 		int counterMagicItem=0;
+		int counterThreadItem=0;
 		for( THREADITEMType item : character.getThreadItem() ) {
 			if( counterMagicItem > 1) break;
 			acroFields.setField( "MagicalTreasureName."+counterMagicItem, item.getName() );
@@ -619,9 +620,25 @@ public class ECEPdfExporter {
 				acroFields.setField( "MagicalTreasureLPCost."+counterMagicItemRank+"."+counterMagicItem, String.valueOf(rank.getLpcost()) );
 				acroFields.setField( "MagicalTreasureKeyKnowledge."+counterMagicItemRank+"."+counterMagicItem, rank.getKeyknowledge() );
 				acroFields.setField( "MagicalTreasureEffect."+counterMagicItemRank+"."+counterMagicItem, rank.getEffect() );
+				acroFields.setField( "ThreadMagicEffect."+counterThreadItem, rank.getEffect() );
+				acroFields.setField( "ThreadMagicLPCost."+counterThreadItem, String.valueOf(rank.getLpcost()) );
+				acroFields.setField( "ThreadMagicRank."+counterThreadItem, String.valueOf(counterMagicItemRank+1) );
+				acroFields.setField( "ThreadMagicTarget."+counterThreadItem, item.getName() );
 				counterMagicItemRank++;
+				counterThreadItem++;
 			}
 			counterMagicItem++;
+		}
+
+		int counterBloodCharms=0;
+		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
+			String used ="";
+			if( item.getUsed().equals(YesnoType.YES)) used="*";
+			acroFields.setField( "BloodMagicDR."+counterBloodCharms, String.valueOf(item.getDepatterningrate()) );
+			acroFields.setField( "BloodMagicDamage."+counterBloodCharms, item.getBlooddamage()+used );
+			acroFields.setField( "BloodMagicEffect."+counterBloodCharms, item.getEffect() );
+			counterBloodCharms++;
 		}
 
 		stamper.close();
