@@ -140,6 +140,17 @@
 		<xs:attribute name="step" type="unsigned_int" default="0"/>
 		<xs:attribute name="dice" type="dice_type"/>
 	</xs:complexType>
+	<xs:complexType name="ROLLEDDICE_type">
+		<xs:attribute name="dice" type="dice_type" use="required"/>
+		<xs:attribute name="rolling" type="xs:string" use="required"/>
+		<xs:attribute name="result" type="unsigned_int" use="required"/>
+		<xs:attribute name="pathetic" type="unsigned_int" use="required"/>
+		<xs:attribute name="poor" type="unsigned_int" use="required"/>
+		<xs:attribute name="average" type="unsigned_int" use="required"/>
+		<xs:attribute name="good" type="unsigned_int" use="required"/>
+		<xs:attribute name="excellent" type="unsigned_int" use="required"/>
+		<xs:attribute name="extraordinary" type="unsigned_int" use="required"/>
+	</xs:complexType>
 	<xs:complexType name="ATTRIBUTE_type">
 		<xs:complexContent>
 			<xs:extension base="STEPDICE_type">
