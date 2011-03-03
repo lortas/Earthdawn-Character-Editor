@@ -14,11 +14,11 @@
         <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="5" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
         <ARMOR edn="22" penalty="5" mysticarmor="7" physicalarmor="7" location="self" used="yes" weight="90.0" name="Crystal Plate"/>
     </ns5:PROTECTION>
-    <ns5:HEALTH damage="0">
+    <ns5:HEALTH damage="57">
         <RECOVERY testsperday="3" dice="2d6" step="8"/>
         <UNCONSCIOUSNESS value="84" adjustment="49" base="35"/>
         <DEATH value="106" adjustment="63" base="43"/>
-        <WOUNDS threshold="12"/>
+        <WOUNDS threshold="12" blood="3" normal="4"/>
     </ns5:HEALTH>
     <ns5:MOVEMENT ground="7" flight="0"/>
     <ns5:INITIATIVE modification="-5" base="8" dice="d6-1" step="3"/>
