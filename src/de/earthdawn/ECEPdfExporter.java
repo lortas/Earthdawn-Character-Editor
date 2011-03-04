@@ -196,7 +196,7 @@ public class ECEPdfExporter {
 		//Set<String> fieldNames = acroFields.getFields().keySet();
 		//fieldNames = new TreeSet<String>(fieldNames);
 		//for( String fieldName : fieldNames ) {
-		//	System.out.println( fieldName );
+		//	acroFields.setField( fieldName, fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		exportCommonFields(character,16,41);
@@ -333,7 +333,7 @@ public class ECEPdfExporter {
 		counterEquipment=0;
 		rowEquipment=0;
 		for( ITEMType item : listArmorAndWeapon(character) ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),false) ) break;
+			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
 		}
 		for( ITEMType item : character.getItems() ) {
 			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
@@ -385,13 +385,32 @@ public class ECEPdfExporter {
 				}
 			}
 			int counterMagicItemRank=0;
+			int counterThreadItem=0;
 			for( THREADRANKType rank : magicitem.getTHREADRANK() ) {
 				acroFields.setField( "MagicalTreasureRank."+counterMagicItemRank, String.valueOf(counterMagicItemRank+1) );
 				acroFields.setField( "MagicalTreasureLPCost."+counterMagicItemRank, String.valueOf(rank.getLpcost()) );
 				acroFields.setField( "MagicalTreasureKeyKnowledge."+counterMagicItemRank, rank.getKeyknowledge() );
 				acroFields.setField( "MagicalTreasureEffect."+counterMagicItemRank, rank.getEffect() );
+				acroFields.setField( "ThreadMagicEffect."+counterThreadItem, rank.getEffect() );
+				acroFields.setField( "ThreadMagicLPCost."+counterThreadItem, String.valueOf(rank.getLpcost()) );
+				acroFields.setField( "ThreadMagicRank."+counterThreadItem, String.valueOf(counterMagicItemRank+1) );
+				acroFields.setField( "ThreadMagicTarget."+counterThreadItem, magicitem.getName() );
+				counterThreadItem++;
 				counterMagicItemRank++;
 			}
+		}
+
+		int counterBloodCharms=0;
+		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
+			if( item.getUsed().equals(YesnoType.YES)) {
+				acroFields.setField( "BloodMagicDamage."+counterBloodCharms, String.valueOf(item.getBlooddamage()) );
+			} else {
+				acroFields.setField( "BloodMagicDamage."+counterBloodCharms, "("+item.getBlooddamage()+")" );
+			}
+			acroFields.setField( "BloodMagicDR."+counterBloodCharms, String.valueOf(item.getDepatterningrate()) );
+			acroFields.setField( "BloodMagicEffect."+counterBloodCharms, item.getEffect() );
+			counterBloodCharms++;
 		}
 
 		stamper.close();
@@ -633,10 +652,12 @@ public class ECEPdfExporter {
 		int counterBloodCharms=0;
 		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
 			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
-			String used ="";
-			if( item.getUsed().equals(YesnoType.YES)) used="*";
+			if( item.getUsed().equals(YesnoType.YES)) {
+				acroFields.setField( "BloodMagicDamage."+counterBloodCharms, String.valueOf(item.getBlooddamage()) );
+			} else {
+				acroFields.setField( "BloodMagicDamage."+counterBloodCharms, "("+item.getBlooddamage()+")" );
+			}
 			acroFields.setField( "BloodMagicDR."+counterBloodCharms, String.valueOf(item.getDepatterningrate()) );
-			acroFields.setField( "BloodMagicDamage."+counterBloodCharms, item.getBlooddamage()+used );
 			acroFields.setField( "BloodMagicEffect."+counterBloodCharms, item.getEffect() );
 			counterBloodCharms++;
 		}
