@@ -421,6 +421,13 @@ public class ECEWorker {
 			}
 		}
 
+		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+			if( item.getUsed().equals(YesnoType.YES) ) {
+				death.setAdjustment(death.getAdjustment()-item.getBlooddamage());
+				unconsciousness.setAdjustment(unconsciousness.getAdjustment()-item.getBlooddamage());
+			}
+		}
+
 		// TODO: MagicItems
 
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden

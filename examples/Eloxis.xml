@@ -186,6 +186,7 @@
     <ns5:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
     <ns5:WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
     <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="yes" location="self" effect="+6 to attack or damage" blooddamage="3"/>
+    <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="na" location="self" effect="+6 to attack or damage" blooddamage="3"/>
     <ns5:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
         <description>Thread Item Melee Weapon page 276 PlayerGuide</description>
         <THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
