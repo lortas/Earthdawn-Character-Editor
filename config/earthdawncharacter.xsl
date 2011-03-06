@@ -48,7 +48,7 @@
         <div class="edLayoutRow">
             <table width="100%">
                 <tr>
-                    <td class="edSkills" rowspan="3">
+                    <td class="edSkills" rowspan="4">
                         <!-- Skills -->
                         <xsl:call-template name="skills" />
                     </td>
@@ -63,6 +63,12 @@
                     <td class="edWeapons">
                         <!-- Weapons -->
                         <xsl:call-template name="weapons" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edArmor">
+                        <!-- Weapons -->
+                        <xsl:call-template name="armor" />
                     </td>
                 </tr>
                 <tr>
@@ -171,7 +177,7 @@
                 <td class="edDefense">
                     <xsl:apply-templates select="//edc:DEFENSE"/>    
                 </td>
-                <!-- Armor -->
+                <!-- Pretection -->
                 <td class="edProtection">
                     <xsl:apply-templates select="//edc:PROTECTION"/>    
                 </td>
@@ -293,14 +299,6 @@
             <td class="edValueCell"><xsl:value-of select="@lifting" /></td>
         </tr>
     </table>
-</xsl:template>
-
-
-<xsl:template match="//edt:ARMOR">
-    <div>
-        Armor:<br />
-        Name=<xsl:value-of select="@name" /><br/>
-    </div>
 </xsl:template>
 
 <xsl:template match="//edt:SHIELD">
@@ -532,12 +530,11 @@
 
 <xsl:template name="weapons">
     <div class="edSubHeader">Weapons</div>
-    <table>
-        <xsl:apply-templates select="//edc:WEAPON"/>
-    </table>
+    <xsl:apply-templates select="//edc:WEAPON"/>
 </xsl:template>
 
 <xsl:template match="//edc:WEAPON">
+    <table class="edSubSection">
         <tr>
             <td class="edKeyCell">Name:</td>
             <td class="edValueCell"><xsl:value-of select="@name" /></td>
@@ -562,6 +559,51 @@
                 <td class="edValueCell"><xsl:value-of select="@longrange" /></td>
             </xsl:if>
         </tr>
+    </table>
+</xsl:template>
+
+<xsl:template name="armor">
+    <div class="edSubHeader">Armor</div>
+    <xsl:apply-templates select="//edt:ARMOR"/>
+</xsl:template>
+
+<xsl:template match="//edt:ARMOR">
+    <div class="edSubSection">
+        <table>
+            <tr>
+                <td class="edKeyCell">Name:</td>
+                <td class="edValueCell"><xsl:value-of select="@name" /></td>
+                <td class="edKeyCell">Weight:</td>
+                <td class="edValueCell"><xsl:value-of select="@weight" /></td>
+                <td class="edKeyCell">Location:</td>
+                <td class="edValueCell"><xsl:value-of select="@location" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <xsl:if test="@mysticarmor">
+                    <td class="edKeyCell">Mystic Armor:</td>
+                    <td class="edValueCell"><xsl:value-of select="@mysticarmor" /></td>
+                </xsl:if>
+                <xsl:if test="@physicalarmor">
+                    <td class="edKeyCell">Physical Armor:</td>
+                    <td class="edValueCell"><xsl:value-of select="@physicalarmor" /></td>
+                </xsl:if>
+                <xsl:if test="@penalty">
+                    <td class="edKeyCell">Penalty:</td>
+                    <td class="edValueCell"><xsl:value-of select="@penalty" /></td>
+                </xsl:if>
+                <xsl:if test="@used">
+                    <td class="edKeyCell">Used:</td>
+                    <td class="edValueCell"><xsl:value-of select="@used" /></td>
+                </xsl:if>
+                <xsl:if test="@edn">
+                    <td class="edKeyCell">EDN:</td>
+                    <td class="edValueCell"><xsl:value-of select="@edn" /></td>
+                </xsl:if>
+            </tr>
+        </table>
+    </div>
 </xsl:template>
 
 <xsl:template name="skills">
@@ -661,8 +703,8 @@
         <td class="edCell"><xsl:value-of select="@name" /></td>
         <td class="edCell"><xsl:value-of select="@weight" /></td>
         <td class="edCell"><xsl:value-of select="@location" /></td>
-        <xsl:if test="position() mod 2 = 0">
-            <xsl:element name="tr" />
+        <xsl:if test="position() mod 2 = 0 and position() != last()">
+            <xsl:text disable-output-escaping="yes">&lt;/tr&gt;&lt;tr&gt;</xsl:text>
         </xsl:if>
 </xsl:template>
 

@@ -34,6 +34,11 @@
     border-bottom-width: thin;
 }
 
+.edSubSection {
+    border-style: dotted;
+    border-width: thin;
+}
+
 .edHeaderCell {
 	font-size: 110%;
 }
@@ -128,7 +133,8 @@
 
 .edEquipment,
 .edCoins,
-.edWeapons {
+.edWeapons,
+.edArmor {
     border-style: solid;
     border-width: thin;
     text-align: center;
