@@ -193,6 +193,17 @@ public class EDMainWindow {
 		});
 		mnView.add(mntmWebBrowser);
 
+		JMenu mnExtra = new JMenu(NLS.getString("EDMainWindow.mnExtra.text")); //$NON-NLS-1$
+		menuBar.add(mnExtra);
+
+		JMenuItem mntmDicing= new JMenuItem(NLS.getString("EDMainWindow.mntmDicing.text")); //$NON-NLS-1$
+		mntmDicing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmDicing_actionPerformed(arg0);
+			}
+		});
+		mnExtra.add(mntmDicing);
+
 		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
 
@@ -239,7 +250,11 @@ public class EDMainWindow {
 	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
 		//TODO Fenster öffnen und HELP.ABOUT darin anzeigen
 	}
-
+	
+	private void do_mntmDicing_actionPerformed(ActionEvent arg0) {
+		//TODO: Fenster mit mehrer Würfelbechern öffnen.
+	}
+	
 	private void addTalentsTabs(){
 		List<String> allTalentTabs = new ArrayList<String>();
 		for(Component co  : tabbedPane.getComponents() )
