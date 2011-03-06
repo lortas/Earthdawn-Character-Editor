@@ -77,24 +77,17 @@
     margin-bottom: 2px;
 }
 
+.edInitiative,
+.edMovement,
+.edKarma,
+.edCarrying,
+.edHealth,
+.edDamage,
 .edDefense,
 .edProtection  {
     border-style: solid;
     border-width: thin;
-    width: 50%;
-    vertical-align: top;
-}
-
-.edInitiative,
-.edMovement,
-.edKarma,
-.edHealth,
-.edDamage,
-.edExperience,
-.edRaceabilities {
-    border-style: solid;
-    border-width: thin;
-    width: 33%;
+    width: 25%;
     vertical-align: top;
 }
 
@@ -106,12 +99,23 @@
 }
 
 .edDisciplineTalents,
-.edOptionalTalents,
-.edDisciplineBonuses {
+.edOptionalTalents {
     border-width: thin;
     border-style: solid;
     vertical-align: top;
     width: 50%;
+}
+
+.edDisciplineBonuses {
+    border-width: thin;
+    border-style: solid;
+}
+
+.edExperience,
+.edCalculatedLedgendPoints {
+    border-width: thin;
+    border-style: solid;
+    margin: 2px;
 }
  
 .edSkills{

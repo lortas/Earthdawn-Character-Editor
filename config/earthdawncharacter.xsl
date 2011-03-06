@@ -52,10 +52,6 @@
                         <!-- Skills -->
                         <xsl:call-template name="skills" />
                     </td>
-                    <td class="edEquipment">
-                        <!-- Equipment -->
-                        <xsl:call-template name="equipment" />
-                    </td>
                 </tr>
                 <tr>
                     <td class="edCoins">
@@ -69,12 +65,22 @@
                         <xsl:call-template name="weapons" />
                     </td>
                 </tr>
+                <tr>
+                    <td class="edEquipment" colspan="2">
+                        <!-- Equipment -->
+                        <xsl:call-template name="equipment" />
+                    </td>
+                </tr>
             </table>
         </div>
         <!-- Magic Items -->
         <xsl:call-template name="magicItems" />
         <!-- Pattern Items -->
         <xsl:call-template name="patternItems" />
+        <div class="edLayoutRow">   
+            <!-- Experience -->
+            <xsl:call-template name="experience" />
+        </div>
         <div class="edLayoutRow">   
             <!-- Calculated Ledgend Points -->
             <xsl:call-template name="calculatedLedgendPoints" />
@@ -114,11 +120,22 @@
         <td class="edValueCell"><xsl:value-of select="@weight" /></td>
     </tr>
     <tr>
+        <!-- Racial Abilities -->
+        <td class="edKeyCell">Racial Abilities:</td>
+        <td class="edValueCell" colspan="5">
+            <xsl:apply-templates select="//edc:RACEABILITES"/>
+        </td>
+    </tr>
+    <tr>
         <td class="edKeyCell">Eyes:</td>
         <td class="edValueCell"><xsl:value-of select="@eyes" /></td>
     </tr>
 </xsl:template>
-  
+
+<xsl:template match="//edc:RACEABILITES">
+    <xsl:value-of select="."/>
+</xsl:template>
+ 
 <xsl:template name="attributes">
     <div class="edSubHeader">Attributes</div>
     <table width="100%">
@@ -158,6 +175,13 @@
                 <td class="edProtection">
                     <xsl:apply-templates select="//edc:PROTECTION"/>    
                 </td>
+                <!-- Health -->
+                <td class="edHealth">
+                    <xsl:call-template name="health"/>
+                </td> 
+                <td class="edDamage">
+                    <xsl:apply-templates select="//edc:HEALTH"/>
+                </td>
             </tr>
         </table>
         <table width="100%">
@@ -173,30 +197,11 @@
                 <!-- Karma -->
                 <td class="edKarma">
                     <xsl:apply-templates select="//edc:KARMA"/>    
+                </td>                
+                <!-- Karma -->
+                <td class="edCarrying">
+                    <xsl:apply-templates select="//edc:CARRYING"/>    
                 </td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <!-- Health -->
-                <td class="edHealth">
-                    <xsl:call-template name="health"/>
-                </td> 
-                <td class="edDamage">
-                    <xsl:apply-templates select="//edc:HEALTH"/>
-                </td>
-                <!-- Experience -->
-                <td class="edExperience">
-                    <xsl:call-template name="experience" />
-                </td>   
-            </tr>     
-            <tr>
-                <td></td>
-                <td class="edRaceabilities"> 
-                    <!-- Racial Abilities -->
-                    <xsl:call-template name="raceabilities" />
-                </td>
-                <td></td>
             </tr>
         </table>        
     </div> 
@@ -275,6 +280,21 @@
         </tr>
     </table>
 </xsl:template>
+
+<xsl:template match="//edc:CARRYING">
+    <div class="edSubSubHeader">Carrying</div>
+    <table>
+        <tr>
+            <td class="edKeyCell">Carrying:</td>
+            <td class="edValueCell"><xsl:value-of select="@carrying" /></td>
+        </tr>
+        <tr>
+            <td class="edKeyCell">Lifting:</td>
+            <td class="edValueCell"><xsl:value-of select="@lifting" /></td>
+        </tr>
+    </table>
+</xsl:template>
+
 
 <xsl:template match="//edt:ARMOR">
     <div>
@@ -367,7 +387,7 @@
         <div class="edSubHeader">Discipline <xsl:value-of select="@name" /> (Circle <xsl:value-of select="@circle"/>)</div>
         <table width="100%">
             <tr>
-                <td rowspan="2" class="edDisciplineTalents">
+                <td class="edDisciplineTalents">
                     <!-- Discipline Talents -->
                     <xsl:call-template name="disziplinTalents">
                         <xsl:with-param name="disciplineName" select="@name" />
@@ -381,7 +401,7 @@
                 </td>
             </tr>
             <tr>    
-                <td class="edDisciplineBonuses">
+                <td class="edDisciplineBonuses" colspan="2">
                     <!-- Discipline Bonuses -->
                     <xsl:call-template name="disciplineBonuses"/>
                 </td>
@@ -456,6 +476,18 @@
     </tr>
 </xsl:template>
 
+<xsl:template name="disciplineBonuses">
+    <div class="edSubSubHeader">Discipline Bonuses</div>
+    <xsl:if test="./edt:DISCIPLINEBONUS">
+        <xsl:apply-templates select="./edt:DISCIPLINEBONUS"/>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="//edt:DISCIPLINEBONUS">
+        <xsl:value-of select="@bonus"/> (<xsl:value-of select="@circle"/>)
+        <xsl:if test="./following::edt:DISCIPLINEBONUS">; </xsl:if>
+</xsl:template>
+
 <xsl:template name="spells">
     <xsl:param name="disciplineName" />
     <xsl:if test="//edc:SPELLS[@discipline=$disciplineName]/edc:SPELL">
@@ -495,26 +527,6 @@
         <td class="edCell"><xsl:value-of select="@range" /></td>
         <td class="edCell"><xsl:value-of select="@duration" /></td>
         <td class="edCell"><xsl:value-of select="@effect" /></td>
-    </tr>
-</xsl:template>
-
-<xsl:template name="disciplineBonuses">
-    <div class="edSubSubHeader">Discipline Bonuses</div>
-    <xsl:if test="./edt:DISCIPLINEBONUS">
-        <table>
-            <tr>
-                <td class="edHeaderCell">Circle</td>
-                <td class="edHeaderCell">Bonus/Ability</td>
-            </tr>
-            <xsl:apply-templates select="./edt:DISCIPLINEBONUS"/>
-        </table>
-    </xsl:if>
-</xsl:template>
-
-<xsl:template match="//edt:DISCIPLINEBONUS">
-    <tr>
-        <td class="edCell"><xsl:value-of select="@circle"/></td>
-        <td class="edCell"><xsl:value-of select="@bonus"/></td>
     </tr>
 </xsl:template>
 
@@ -580,61 +592,6 @@
     </tr>
 </xsl:template>
 
-<xsl:template name="raceabilities">
-    <div class="edSubSubHeader">Racial Abilities</div>
-    <table>
-        <tr>
-            <xsl:apply-templates select="//edc:RACEABILITES"/>
-        </tr>
-    </table>
-</xsl:template>
-
-<xsl:template match="//edc:RACEABILITES">
-        <td class="edValueCell"><xsl:value-of select="."/></td>
-</xsl:template>
-
-<xsl:template name="experience">
-    <div class="edSubSubHeader">Ledgend Points</div>
-    <table>
-        <tr>
-            <td class="edKeyCell">Reputation:</td>
-            <td class="edValueCell"><xsl:value-of select="//edc:EXPERIENCE/@reputation" /></td>
-        </tr>
-        <tr>
-            <td class="edKeyCell">Renown:</td>
-            <td class="edValueCell"><xsl:value-of select="//edc:EXPERIENCE/@renown" /></td>
-        </tr>
-        <tr>
-            <td class="edKeyCell">Current:</td>
-            <td class="edValueCell"><xsl:value-of select="//edc:EXPERIENCE/@currentlegendpoints" /></td>
-        </tr>
-        <tr>
-            <td class="edKeyCell">Totall:</td>
-            <td class="edValueCell"><xsl:value-of select="//edc:EXPERIENCE/@totallegendpoints" /></td>
-        </tr>
-    </table>        
-</xsl:template>
-
-<xsl:template name="equipment">
-    <xsl:if test="//edc:ITEM">
-        <div class="edSubHeader">Equipment</div>
-        <table width="100%">
-            <tr>
-                <td class="edHeaderCell">Name</td>
-                <td class="edHeaderCell">Weight</td>
-            </tr>
-            <xsl:apply-templates select="//edc:ITEM"/>
-        </table>
-    </xsl:if>
-</xsl:template>
-
-<xsl:template match="//edc:ITEM">
-    <tr>
-        <td class="edCell"><xsl:value-of select="@name" /></td>
-        <td class="edCell"><xsl:value-of select="@weight" /></td>
-    </tr>
-</xsl:template>
-
 <xsl:template name="coins">
     <xsl:if test="//edc:COINS">
         <div class="edSubHeader">Coins</div>
@@ -681,32 +638,82 @@
     </xsl:if>
 </xsl:template>
 
+<xsl:template name="equipment">
+    <xsl:if test="//edc:ITEM">
+        <div class="edSubHeader">Equipment</div>
+        <table width="100%">
+            <tr>
+                <td class="edHeaderCell" width="40%">Name</td>
+                <td class="edHeaderCell" width="5%">Weight</td>
+                <td class="edHeaderCell" width="5%">Location</td>
+                <td class="edHeaderCell" width="40%">Name</td>
+                <td class="edHeaderCell" width="5%">Weight</td>
+                <td class="edHeaderCell" width="5%">Location</td>
+            </tr>
+            <tr>
+                <xsl:apply-templates select="//edc:ITEM"/>
+            </tr>
+        </table>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="//edc:ITEM">
+        <td class="edCell"><xsl:value-of select="@name" /></td>
+        <td class="edCell"><xsl:value-of select="@weight" /></td>
+        <td class="edCell"><xsl:value-of select="@location" /></td>
+        <xsl:if test="position() mod 2 = 0">
+            <xsl:element name="tr" />
+        </xsl:if>
+</xsl:template>
+
+<xsl:template name="experience">
+    <div class="edExperience">
+        <div class="edSubHeader">Ledgend Points</div>
+            <table width="100%">
+            <tr>
+                <td class="edHeaderCell" width="25%">Reputation</td>
+                <td class="edHeaderCell" width="25%">Renown</td>
+                <td class="edHeaderCell" width="25%">Current</td>
+                <td class="edHeaderCell" width="25%">Total</td>
+            </tr>
+            <tr>
+                <td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@reputation" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@renown" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@currentlegendpoints" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@totallegendpoints" /></td>
+            </tr>
+        </table>
+    </div>
+</xsl:template>
+
 <xsl:template name="calculatedLedgendPoints">
-    <div class="edSubHeader">Calculated Legend Points</div>
-    <table width="100%">
-        <tr>
-            <td class="edHeaderCell">Attributes</td>
-            <td class="edHeaderCell">Discipline Talents</td>
-            <td class="edHeaderCell">Optional Talents</td>
-            <td class="edHeaderCell">Knacks</td>
-            <td class="edHeaderCell">Spells</td>
-            <td class="edHeaderCell">Skills</td>
-            <td class="edHeaderCell">Karma</td>
-            <td class="edHeaderCell">Magic Items</td>
-            <td class="edHeaderCell">Total</td>
-        </tr>
-        <tr>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@attributes" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@disciplinetalents" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@optionaltalents" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@knacks" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@spells" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@skills" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@karma" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@magicitems" /></td>
-            <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@total" /></td>
-        </tr>
-    </table>
+    <div class="edCalculatedLedgendPoints">
+        <div class="edSubHeader">Calculated Legend Points</div>
+        <table width="100%">
+            <tr>
+                <td class="edHeaderCell">Attributes</td>
+                <td class="edHeaderCell">Discipline Talents</td>
+                <td class="edHeaderCell">Optional Talents</td>
+                <td class="edHeaderCell">Knacks</td>
+                <td class="edHeaderCell">Spells</td>
+                <td class="edHeaderCell">Skills</td>
+                <td class="edHeaderCell">Karma</td>
+                <td class="edHeaderCell">Magic Items</td>
+                <td class="edHeaderCell">Total</td>
+            </tr>
+            <tr>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@attributes" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@disciplinetalents" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@optionaltalents" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@knacks" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@spells" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@skills" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@karma" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@magicitems" /></td>
+                <td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@total" /></td>
+            </tr>
+        </table>
+    </div>
 </xsl:template>
 
 </xsl:stylesheet>
