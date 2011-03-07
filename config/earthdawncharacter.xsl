@@ -692,20 +692,19 @@
                 <td class="edHeaderCell" width="5%">Weight</td>
                 <td class="edHeaderCell" width="5%">Location</td>
             </tr>
-            <tr>
-                <xsl:apply-templates select="//edc:ITEM"/>
-            </tr>
+            <xsl:apply-templates select="//edc:ITEM[(position() mod 2) = 1]" /> 
         </table>
     </xsl:if>
 </xsl:template>
 
 <xsl:template match="//edc:ITEM">
-        <td class="edCell"><xsl:value-of select="@name" /></td>
-        <td class="edCell"><xsl:value-of select="@weight" /></td>
-        <td class="edCell"><xsl:value-of select="@location" /></td>
-        <xsl:if test="position() mod 2 = 0 and position() != last()">
-            <xsl:text disable-output-escaping="yes">&lt;/tr&gt;&lt;tr&gt;</xsl:text>
-        </xsl:if>
+    <tr>
+        <xsl:for-each select=". | following-sibling::edc:ITEM[position() &lt; 2]">
+            <td class="edCell"><xsl:value-of select="@name" /></td>
+            <td class="edCell"><xsl:value-of select="@weight" /></td>
+            <td class="edCell"><xsl:value-of select="@location" /></td>
+        </xsl:for-each>
+     </tr>
 </xsl:template>
 
 <xsl:template name="experience">
