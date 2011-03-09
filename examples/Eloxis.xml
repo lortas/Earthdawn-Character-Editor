@@ -1,298 +1,334 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<ns5:EDCHARACTER name="Eloxis" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns:ns2="http://earthdawn.com/characteristics" xmlns="http://earthdawn.com/datatypes" xmlns:ns4="http://earthdawn.com/spell" xmlns:ns3="http://earthdawn.com/names" xmlns:ns9="http://earthdawn.com/help" xmlns:ns5="http://earthdawn.com/character" xmlns:ns6="http://earthdawn.com/knack" xmlns:ns10="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns11="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/discipline">
-    <ns5:APPEARANCE race="Troll" skin="dunkel-braun" hair="schwarz" eyes="gelb" weight="17" height="270" age="20" gender="male"/>
-    <ns5:ATTRIBUTE cost="0" currentvalue="11" lpincrease="1" basevalue="10" generationvalue="0" racevalue="10" name="CHA" dice="d8" step="5"/>
-    <ns5:ATTRIBUTE cost="9" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="6" racevalue="10" name="DEX" dice="2d6" step="8"/>
-    <ns5:ATTRIBUTE cost="7" currentvalue="22" lpincrease="3" basevalue="19" generationvalue="5" racevalue="14" name="STR" dice="d8+d6" step="9"/>
-    <ns5:ATTRIBUTE cost="3" currentvalue="14" lpincrease="2" basevalue="12" generationvalue="3" racevalue="9" name="PER" dice="d10" step="6"/>
-    <ns5:ATTRIBUTE cost="1" currentvalue="14" lpincrease="2" basevalue="12" generationvalue="1" racevalue="11" name="WIL" dice="d10" step="6"/>
-    <ns5:ATTRIBUTE cost="5" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="4" racevalue="12" name="TOU" dice="2d6" step="8"/>
-    <ns5:DEFENSE social="7" spell="8" physical="11"/>
-    <ns5:PROTECTION penalty="5" mysticarmor="14" physicalarmor="13">
-        <ARMOR mysticarmor="2" location="self" used="yes" weight="0.0" name="natural Armor"/>
-        <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="5" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
-        <ARMOR edn="22" penalty="5" mysticarmor="7" physicalarmor="7" location="self" used="yes" weight="90.0" name="Crystal Plate"/>
-    </ns5:PROTECTION>
-    <ns5:HEALTH damage="57">
-        <RECOVERY testsperday="3" dice="2d6" step="8"/>
-        <UNCONSCIOUSNESS value="84" adjustment="49" base="35"/>
-        <DEATH value="106" adjustment="63" base="43"/>
-        <WOUNDS threshold="12" blood="3" normal="4"/>
-    </ns5:HEALTH>
-    <ns5:MOVEMENT ground="7" flight="0"/>
-    <ns5:INITIATIVE modification="-5" base="8" dice="d6-1" step="3"/>
-    <ns5:CARRYING carrying="330" lifting="660"/>
-    <ns5:DISCIPLINE circle="6" name="Warrior" order="1">
-        <DISCIPLINEBONUS bonus="Can spend Karma for Strength-only Test" circle="4"/>
-        <DISCIPLINEBONUS bonus="Ability: Battle Rites" circle="5"/>
-        <DISCIPLINEBONUS bonus="Can spend Karma for Dexterity-only Test" circle="6"/>
-    </ns5:DISCIPLINE>
-    <ns5:TALENTS discipline="Warrior">
-        <ns5:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="d10" step="6"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="1" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="3" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12+d8+d6" step="16"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="4" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
-            <RANK lpcost="5200" bonus="0" rank="6" dice="2d10" step="12"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
-            <RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
-        </ns5:DISZIPLINETALENT>
-        <ns5:OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Air Dance">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
-        </ns5:OPTIONALTALENT>
-        <ns5:OPTIONALTALENT circle="2" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
-        </ns5:OPTIONALTALENT>
-        <ns5:OPTIONALTALENT circle="3" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
-            <RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
-        </ns5:OPTIONALTALENT>
-        <ns5:OPTIONALTALENT circle="4" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
-            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
-        </ns5:OPTIONALTALENT>
-        <ns5:OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
-            <RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
-        </ns5:OPTIONALTALENT>
-        <ns5:OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Maneuver">
-            <RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
-        </ns5:OPTIONALTALENT>
-    </ns5:TALENTS>
-    <ns5:SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
-        <RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
-    </ns5:SKILL>
-    <ns5:SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
-        <RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
-    </ns5:SKILL>
-    <ns5:SKILL karma="no" limitation="Troll" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
-        <RANK lpcost="0" bonus="0" rank="5" startrank="5" dice="d10+d8" step="11"/>
-    </ns5:SKILL>
-    <ns5:SKILL karma="no" limitation="Altertümliche Waffen" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-        <RANK lpcost="300" bonus="0" rank="2" startrank="1" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" bonus="0" attribute="STR" strain="0" action="free" name="Charge">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d8" step="10"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="sustained" name="Disarm Trap">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
-    </ns5:SKILL>
-    <ns5:SKILL karma="no" limitation="Militärgeschichte" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Trap">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" limitation="Legends and Heroes" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Search">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns5:SKILL>
-    <ns5:SKILL karma="no" limitation="Runenschnitzen" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" bonus="0" attribute="CHA" strain="1" action="simple" name="Battle Shout">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="no" karma="no" bonus="0" attribute="na" strain="1" action="simple" name="Mount Attack">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8+d6" step="9"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
-        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Conversation">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="1" action="standard" name="Distract">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Etiquette">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Flirting">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Seduction">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="2" action="standard" name="Slough Blame">
-        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-    </ns5:SKILL>
-    <ns5:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
-    <ns5:WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
-    <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="yes" location="self" effect="+6 to attack or damage" blooddamage="3"/>
-    <ns5:BLOODCHARMITEM name="Desperate Blow" weight="1" depatterningrate="1" enchantingdifficultynumber="14" used="na" location="self" effect="+6 to attack or damage" blooddamage="3"/>
-    <ns5:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
-        <description>Thread Item Melee Weapon page 276 PlayerGuide</description>
-        <THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
-            <WEAPON size="5" strengthmin="13" damagestep="12" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
-        </THREADRANK>
-        <THREADRANK effect="Damage +1" lpcost="300">
-            <WEAPON size="5" strengthmin="13" damagestep="13" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
-        </THREADRANK>
-        <THREADRANK effect="Damage +1" lpcost="500">
-            <WEAPON size="5" strengthmin="13" damagestep="14" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
-        </THREADRANK>
-        <THREADRANK effect="Damage +1" lpcost="800">
-            <WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
-        </THREADRANK>
-    </ns5:THREADITEM>
-    <ns5:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
-        <description>Thread Item Heavy Armor page 276 PlayerGuide</description>
-        <THREADRANK effect="max Forge Defense" lpcost="100" keyknowledge="Name of the Item: Sylvio">
-            <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="2" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
-        </THREADRANK>
-        <THREADRANK effect="Intiative Penalty -1" lpcost="200">
-            <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="1" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
-        </THREADRANK>
-        <THREADRANK effect="Physical Defense +1" lpcost="300">
-            <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="2" mysticarmor="5" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
-        </THREADRANK>
-        <THREADRANK effect="Intiative Penalty -1" lpcost="500">
-            <SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="5" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
-        </THREADRANK>
-    </ns5:THREADITEM>
-    <ns5:COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
-    <ns5:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
-    <ns5:ITEM weight="1.0" name="tourch"/>
-    <ns5:ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
-    <ns5:ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
-    <ns5:ITEM weight="1.0" name="Trail Rations (1 week)"/>
-    <ns5:KARMA maxmodificator="0" max="18" current="20" dice="d6" step="4">
-        <KARMAPOINTS when="" comment="from karmarituals" value="120" type="+"/>
-        <KARMAPOINTS when="" comment="spend during adventures" value="100" type="-"/>
-    </ns5:KARMA>
-    <ns5:RACEABILITES>Heat Sight</ns5:RACEABILITES>
-    <ns5:CALCULATEDLEGENDPOINTS total="93800" magicitems="2900" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="29500" disciplinetalents="42300" attributes="17600"/>
-    <ns5:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="320" totallegendpoints="97620">
-        <LEGENDPOINTS when="" comment="Historische Einnahmen" value="10958" type="+"/>
-        <LEGENDPOINTS when="xx.02.2007" comment="Stand mit Feb." value="2179" type="+"/>
-        <LEGENDPOINTS when="12.04.2007" comment="LP aus Spielrunde" value="671" type="+"/>
-        <LEGENDPOINTS when="07.06.2007" comment="LP aus Spielrunde" value="1235" type="+"/>
-        <LEGENDPOINTS when="21.06.2007" comment="LP aus Spielrunde" value="901" type="+"/>
-        <LEGENDPOINTS when="23.08.2007" comment="LP aus Spielrunde" value="1002" type="+"/>
-        <LEGENDPOINTS when="13.09.2007" comment="LP aus Spielrunde" value="1101" type="+"/>
-        <LEGENDPOINTS when="15.11.2007" comment="LP aus Spielrunde" value="1034" type="+"/>
-        <LEGENDPOINTS when="22.11.2007" comment="LP aus Spielrunde" value="1000" type="+"/>
-        <LEGENDPOINTS when="24.01.2008" comment="LP aus Spielrunde" value="1349" type="+"/>
-        <LEGENDPOINTS when="14.02.2008" comment="LP aus Spielrunde" value="1222" type="+"/>
-        <LEGENDPOINTS when="20.03.2008" comment="LP aus Spielrunde" value="1221" type="+"/>
-        <LEGENDPOINTS when="10.04.2008" comment="LP aus Spielrunde" value="1300" type="+"/>
-        <LEGENDPOINTS when="08.05.2008" comment="LP aus Spielrunde" value="1233" type="+"/>
-        <LEGENDPOINTS when="03.07.2008" comment="LP aus Spielrunde" value="1201" type="+"/>
-        <LEGENDPOINTS when="10.07.2008" comment="LP aus Spielrunde" value="1287" type="+"/>
-        <LEGENDPOINTS when="31.07.2008" comment="LP aus Spielrunde" value="1650" type="+"/>
-        <LEGENDPOINTS when="04.09.2008" comment="LP aus Spielrunde" value="1455" type="+"/>
-        <LEGENDPOINTS when="25.09.2008" comment="LP aus Spielrunde" value="1799" type="+"/>
-        <LEGENDPOINTS when="09.10.2008" comment="LP aus Spielrunde" value="1000" type="+"/>
-        <LEGENDPOINTS when="30.10.2008" comment="LP aus Spielrunde" value="1700" type="+"/>
-        <LEGENDPOINTS when="20.11.2008" comment="LP aus Spielrunde" value="1200" type="+"/>
-        <LEGENDPOINTS when="04.12.2008" comment="LP aus Spielrunde" value="4500" type="+"/>
-        <LEGENDPOINTS when="11.12.2008" comment="LP aus Spielrunde" value="1551" type="+"/>
-        <LEGENDPOINTS when="22.01.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
-        <LEGENDPOINTS when="12.02.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
-        <LEGENDPOINTS when="26.03.2009" comment="LP aus Spielrunde" value="2000" type="+"/>
-        <LEGENDPOINTS when="09.04.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
-        <LEGENDPOINTS when="23.04.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
-        <LEGENDPOINTS when="14.05.2009" comment="LP aus Spielrunde" value="1900" type="+"/>
-        <LEGENDPOINTS when="18.06.2009" comment="LP aus Spielrunde" value="1300" type="+"/>
-        <LEGENDPOINTS when="16.07.2009" comment="LP aus Spielrunde" value="1750" type="+"/>
-        <LEGENDPOINTS when="06.08.2009" comment="LP aus Spielrunde" value="1400" type="+"/>
-        <LEGENDPOINTS when="27.08.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
-        <LEGENDPOINTS when="10.09.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
-        <LEGENDPOINTS when="05.11.2009" comment="LP aus Spielrunde" value="3666" type="+"/>
-        <LEGENDPOINTS when="10.12.2009" comment="LP aus Spielrunde" value="1111" type="+"/>
-        <LEGENDPOINTS when="14.01.2010" comment="LP aus Spielrunde" value="1234" type="+"/>
-        <LEGENDPOINTS when="17.06.2010" comment="LP aus Spielrunde (+5%,+18)" value="1593" type="+"/>
-        <LEGENDPOINTS when="22.04.2010" comment="LP aus Spielrunde (+82)" value="3292" type="+"/>
-        <LEGENDPOINTS when="15.04.2010" comment="LP aus Spielrunde (+158)" value="1658" type="+"/>
-        <LEGENDPOINTS when="18.02.2010" comment="LP aus Spielrunde (+87)" value="1387" type="+"/>
-        <LEGENDPOINTS when="04.02.2010" comment="LP aus Spielrunde" value="1400" type="+"/>
-        <LEGENDPOINTS when="29.07.2010" comment="LP aus Spielrunde" value="1340" type="+"/>
-        <LEGENDPOINTS when="26.08.2010" comment="LP aus Spielrunde (+26)" value="1226" type="+"/>
-        <LEGENDPOINTS when="02.09.2010" comment="LP aus Spielrunde" value="1400" type="+"/>
-        <LEGENDPOINTS when="23.09.2010" comment="LP aus Spielrunde (+27)" value="2827" type="+"/>
-        <LEGENDPOINTS when="30.09.2010" comment="LP aus Spielrunde" value="1575" type="+"/>
-        <LEGENDPOINTS when="07.10.2010" comment="LP aus Spielrunde" value="1785" type="+"/>
-        <LEGENDPOINTS when="04.11.2010" comment="LP aus Spielrunde" value="1819" type="+"/>
-        <LEGENDPOINTS when="11.11.2010" comment="LP aus Spielrunde" value="1590" type="+"/>
-        <LEGENDPOINTS when="02.12.2010" comment="LP aus Spielrunde" value="1500" type="+"/>
-        <LEGENDPOINTS when="09.12.2010" comment="LP aus Spielrunde" value="1700" type="+"/>
-        <LEGENDPOINTS when="06.01.2011" comment="LP aus Spielrunde" value="1524" type="+"/>
-        <LEGENDPOINTS when="13.01.2011" comment="LP aus Spielrunde" value="3694" type="+"/>
-        <LEGENDPOINTS when="13.01.2011" comment="MagicItem: Gratü" value="1800" type="-"/>
-        <LEGENDPOINTS when="13.01.2011" comment="MagicItem: Sylvio" value="2900" type="-"/>
-        <LEGENDPOINTS when="13.01.2011" comment="MagicItem: Silverius" value="1600" type="-"/>
-        <LEGENDPOINTS when="13.01.2011" comment="MagicItem: Tyrios" value="100" type="-"/>
-        <LEGENDPOINTS when="15.01.2011" comment="Attributsteigerungen" value="17600" type="-"/>
-        <LEGENDPOINTS when="15.01.2011" comment="Disziplintalentsteigerungen" value="42300" type="-"/>
-        <LEGENDPOINTS when="15.01.2011" comment="Karmarituale" value="1200" type="-"/>
-        <LEGENDPOINTS when="15.01.2011" comment="Optionaltalentsteigerungen" value="29500" type="-"/>
-        <LEGENDPOINTS when="15.01.2011" comment="Optionaltalentsteigerungen" value="300" type="-"/>
-    </ns5:EXPERIENCE>
-</ns5:EDCHARACTER>
+<EDCHARACTER name="Eloxis" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns:ns2="http://earthdawn.com/datatypes" xmlns="http://earthdawn.com/character" xmlns:ns4="http://earthdawn.com/names" xmlns:ns3="http://earthdawn.com/characteristics" xmlns:ns9="http://earthdawn.com/discipline" xmlns:ns5="http://earthdawn.com/help" xmlns:ns6="http://earthdawn.com/knack" xmlns:ns10="http://earthdawn.com/spell" xmlns:ns7="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns11="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/namegiver">
+    <APPEARANCE race="Troll" skin="dunkel-braun" hair="schwarz" eyes="gelb" weight="17" height="270" age="20" gender="male"/>
+    <ATTRIBUTE cost="0" currentvalue="11" lpincrease="1" basevalue="10" generationvalue="0" racevalue="10" name="CHA" dice="d8" step="5"/>
+    <ATTRIBUTE cost="9" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="6" racevalue="10" name="DEX" dice="2d6" step="8"/>
+    <ATTRIBUTE cost="7" currentvalue="22" lpincrease="3" basevalue="19" generationvalue="5" racevalue="14" name="STR" dice="d8+d6" step="9"/>
+    <ATTRIBUTE cost="3" currentvalue="14" lpincrease="2" basevalue="12" generationvalue="3" racevalue="9" name="PER" dice="d10" step="6"/>
+    <ATTRIBUTE cost="1" currentvalue="14" lpincrease="2" basevalue="12" generationvalue="1" racevalue="11" name="WIL" dice="d10" step="6"/>
+    <ATTRIBUTE cost="5" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="4" racevalue="12" name="TOU" dice="2d6" step="8"/>
+    <DEFENSE social="7" spell="8" physical="11"/>
+    <PROTECTION penalty="5" mysticarmor="15" physicalarmor="13">
+        <ns2:ARMOR mysticarmor="2" location="self" used="yes" weight="0.0" name="natural Armor"/>
+        <ns2:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+        <ns2:ARMOR edn="22" penalty="5" mysticarmor="7" physicalarmor="7" location="self" used="yes" weight="90.0" name="Crystal Plate"/>
+    </PROTECTION>
+    <HEALTH damage="57">
+        <ns2:RECOVERY testsperday="3" dice="2d6" step="8"/>
+        <ns2:UNCONSCIOUSNESS value="81" adjustment="46" base="35"/>
+        <ns2:DEATH value="103" adjustment="60" base="43"/>
+        <ns2:WOUNDS blood="3" normal="4" threshold="12"/>
+    </HEALTH>
+    <MOVEMENT ground="7" flight="0"/>
+    <INITIATIVE modification="-5" base="8" dice="d6-1" step="3"/>
+    <CARRYING carrying="330" lifting="660"/>
+    <DISCIPLINE circle="6" name="Warrior" order="1">
+        <ns2:DISCIPLINEBONUS bonus="Can spend Karma for Strength-only Test" circle="4"/>
+        <ns2:DISCIPLINEBONUS bonus="Ability: Battle Rites" circle="5"/>
+        <ns2:DISCIPLINEBONUS bonus="Can spend Karma for Dexterity-only Test" circle="6"/>
+    </DISCIPLINE>
+    <TALENTS discipline="Warrior">
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+            <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+            <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="d10" step="6"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+            <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+            <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
+            <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
+            <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="3" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
+            <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+d8+d6" step="16"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="4" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+            <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
+            <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d10" step="12"/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
+            <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+        </DISZIPLINETALENT>
+        <OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Air Dance">
+            <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="2" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
+            <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="3" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+            <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="4" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
+            <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
+            <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Maneuver">
+            <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+        </OPTIONALTALENT>
+    </TALENTS>
+    <SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+        <ns2:RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
+    </SKILL>
+    <SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
+        <ns2:RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
+    </SKILL>
+    <SKILL karma="no" limitation="Troll" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+        <ns2:RANK lpcost="0" bonus="0" rank="5" startrank="5" dice="d10+d8" step="11"/>
+    </SKILL>
+    <SKILL karma="no" limitation="Altertümliche Waffen" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <ns2:RANK lpcost="300" bonus="0" rank="2" startrank="1" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="no" karma="no" bonus="0" attribute="STR" strain="0" action="free" name="Charge">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d8" step="10"/>
+    </SKILL>
+    <SKILL default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="sustained" name="Disarm Trap">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
+    </SKILL>
+    <SKILL karma="no" limitation="Militärgeschichte" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </SKILL>
+    <SKILL default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Trap">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </SKILL>
+    <SKILL default="no" karma="no" limitation="Legends and Heroes" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </SKILL>
+    <SKILL default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Search">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </SKILL>
+    <SKILL karma="no" limitation="Runenschnitzen" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="no" karma="no" bonus="0" attribute="CHA" strain="1" action="simple" name="Battle Shout">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="no" karma="no" bonus="0" attribute="na" strain="1" action="simple" name="Mount Attack">
+        <ns2:RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8+d6" step="9"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Conversation">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="1" action="standard" name="Distract">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Etiquette">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Flirting">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Seduction">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="2" action="standard" name="Slough Blame">
+        <ns2:RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </SKILL>
+    <WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
+    <WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="1.0" name="Desperate Blow"/>
+    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="na" weight="1.0" name="Desperate Blow"/>
+    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="na" weight="1.0" name="Trefferauffangen"/>
+    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="na" weight="1.0" name="Trefferauffangen"/>
+    <THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
+        <ns2:description>Thread Item Melee Weapon page 276 PlayerGuide</ns2:description>
+        <ns2:THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
+            <ns2:WEAPON size="5" strengthmin="13" damagestep="12" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Damage +1" lpcost="300">
+            <ns2:WEAPON size="5" strengthmin="13" damagestep="13" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Damage +1" lpcost="500">
+            <ns2:WEAPON size="5" strengthmin="13" damagestep="14" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Damage +1" lpcost="800">
+            <ns2:WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+        </ns2:THREADRANK>
+    </THREADITEM>
+    <THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
+        <ns2:description>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</ns2:description>
+        <ns2:THREADRANK effect="max Forge Defense" lpcost="200" keyknowledge="Name of the Item: Sylvio">
+            <ns2:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="2" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Intiative Penalty -1" lpcost="300">
+            <ns2:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="1" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Physical Armor +1, Mystic Armor +1" lpcost="500">
+            <ns2:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="1" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Intiative Penalty -1" lpcost="800">
+            <ns2:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+        </ns2:THREADRANK>
+    </THREADITEM>
+    <THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="3" used="yes" weight="6.0" name="Silverins Heiltrank">
+        <ns2:description>1 x Anwendung täglich</ns2:description>
+        <ns2:THREADRANK effect="Heiltrank +4" lpcost="300" keyknowledge="Name of the Item: Silverins"/>
+        <ns2:THREADRANK effect="Heiltrank +5" lpcost="500"/>
+        <ns2:THREADRANK effect="Heiltrank +6, Erholungstrank +4" lpcost="800"/>
+        <ns2:THREADRANK effect="Heiltrank +8, Erholungstrank +4" lpcost="1300"/>
+    </THREADITEM>
+    <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Thread Ring">
+        <ns2:description></ns2:description>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: ?"/>
+        <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="200"/>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300"/>
+        <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="500"/>
+    </THREADITEM>
+    <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch">
+        <ns2:description>Schwarzer Stein mit goldener Verzierung</ns2:description>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa"/>
+        <ns2:THREADRANK effect="Charisma based Tests +1" lpcost="200"/>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300"/>
+    </THREADITEM>
+    <THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra">
+        <ns2:description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</ns2:description>
+        <ns2:THREADRANK effect="Physical Armor +3" lpcost="200" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
+            <ns2:ARMOR physicalarmor="3" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Mystic Armor +3" lpcost="300">
+            <ns2:ARMOR mysticarmor="2" physicalarmor="3" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Für eine Überanstr.schaden ein Heiltrank (1x pro Tag)" lpcost="500" keyknowledge="Name of Heror: Dirac Tol Amarra"/>
+        <ns2:THREADRANK effect="Für zwei Überanstr.schaden ein Wiederbelebungssalbe im Augenblick des Todes (1x pro Tag)" lpcost="800"/>
+        <ns2:THREADRANK effect="Verzweiflungsschlag+Verzweiflungszauber Blutamulett (inkl Blutschaden) aber nur gegen Dämonen oder Wesen von Dämonen" lpcost="1300" keyknowledge="Name of slayed daemon: Adugank"/>
+    </THREADITEM>
+    <COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
+    <ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
+    <ITEM weight="1.0" name="tourch"/>
+    <ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
+    <ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
+    <ITEM weight="0.0" name="anschaltbarer Lichtquarz"/>
+    <ITEM weight="0.0" name="cursed ring"/>
+    <ITEM weight="1.0" name="Trail Rations (1 week)"/>
+    <KARMA maxmodificator="0" max="18" current="20" dice="d6" step="4">
+        <ns2:KARMAPOINTS when="" comment="from karmarituals" value="120" type="+"/>
+        <ns2:KARMAPOINTS when="" comment="spend during adventures" value="100" type="-"/>
+    </KARMA>
+    <RACEABILITES>Heat Sight</RACEABILITES>
+    <CALCULATEDLEGENDPOINTS total="96200" magicitems="5300" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="29500" disciplinetalents="42300" attributes="17600"/>
+    <EXPERIENCE reputation="+2" renown="11" currentlegendpoints="320" totallegendpoints="97620">
+        <ns2:LEGENDPOINTS when="" comment="Historische Einnahmen" value="10958" type="+"/>
+        <ns2:LEGENDPOINTS when="xx.02.2007" comment="Stand mit Feb." value="2179" type="+"/>
+        <ns2:LEGENDPOINTS when="12.04.2007" comment="LP aus Spielrunde" value="671" type="+"/>
+        <ns2:LEGENDPOINTS when="07.06.2007" comment="LP aus Spielrunde" value="1235" type="+"/>
+        <ns2:LEGENDPOINTS when="21.06.2007" comment="LP aus Spielrunde" value="901" type="+"/>
+        <ns2:LEGENDPOINTS when="23.08.2007" comment="LP aus Spielrunde" value="1002" type="+"/>
+        <ns2:LEGENDPOINTS when="13.09.2007" comment="LP aus Spielrunde" value="1101" type="+"/>
+        <ns2:LEGENDPOINTS when="15.11.2007" comment="LP aus Spielrunde" value="1034" type="+"/>
+        <ns2:LEGENDPOINTS when="22.11.2007" comment="LP aus Spielrunde" value="1000" type="+"/>
+        <ns2:LEGENDPOINTS when="24.01.2008" comment="LP aus Spielrunde" value="1349" type="+"/>
+        <ns2:LEGENDPOINTS when="14.02.2008" comment="LP aus Spielrunde" value="1222" type="+"/>
+        <ns2:LEGENDPOINTS when="20.03.2008" comment="LP aus Spielrunde" value="1221" type="+"/>
+        <ns2:LEGENDPOINTS when="10.04.2008" comment="LP aus Spielrunde" value="1300" type="+"/>
+        <ns2:LEGENDPOINTS when="08.05.2008" comment="LP aus Spielrunde" value="1233" type="+"/>
+        <ns2:LEGENDPOINTS when="03.07.2008" comment="LP aus Spielrunde" value="1201" type="+"/>
+        <ns2:LEGENDPOINTS when="10.07.2008" comment="LP aus Spielrunde" value="1287" type="+"/>
+        <ns2:LEGENDPOINTS when="31.07.2008" comment="LP aus Spielrunde" value="1650" type="+"/>
+        <ns2:LEGENDPOINTS when="04.09.2008" comment="LP aus Spielrunde" value="1455" type="+"/>
+        <ns2:LEGENDPOINTS when="25.09.2008" comment="LP aus Spielrunde" value="1799" type="+"/>
+        <ns2:LEGENDPOINTS when="09.10.2008" comment="LP aus Spielrunde" value="1000" type="+"/>
+        <ns2:LEGENDPOINTS when="30.10.2008" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <ns2:LEGENDPOINTS when="20.11.2008" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <ns2:LEGENDPOINTS when="04.12.2008" comment="LP aus Spielrunde" value="4500" type="+"/>
+        <ns2:LEGENDPOINTS when="11.12.2008" comment="LP aus Spielrunde" value="1551" type="+"/>
+        <ns2:LEGENDPOINTS when="22.01.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <ns2:LEGENDPOINTS when="12.02.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <ns2:LEGENDPOINTS when="26.03.2009" comment="LP aus Spielrunde" value="2000" type="+"/>
+        <ns2:LEGENDPOINTS when="09.04.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <ns2:LEGENDPOINTS when="23.04.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <ns2:LEGENDPOINTS when="14.05.2009" comment="LP aus Spielrunde" value="1900" type="+"/>
+        <ns2:LEGENDPOINTS when="18.06.2009" comment="LP aus Spielrunde" value="1300" type="+"/>
+        <ns2:LEGENDPOINTS when="16.07.2009" comment="LP aus Spielrunde" value="1750" type="+"/>
+        <ns2:LEGENDPOINTS when="06.08.2009" comment="LP aus Spielrunde" value="1400" type="+"/>
+        <ns2:LEGENDPOINTS when="27.08.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <ns2:LEGENDPOINTS when="10.09.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <ns2:LEGENDPOINTS when="05.11.2009" comment="LP aus Spielrunde" value="3666" type="+"/>
+        <ns2:LEGENDPOINTS when="10.12.2009" comment="LP aus Spielrunde" value="1111" type="+"/>
+        <ns2:LEGENDPOINTS when="14.01.2010" comment="LP aus Spielrunde" value="1234" type="+"/>
+        <ns2:LEGENDPOINTS when="17.06.2010" comment="LP aus Spielrunde (+5%,+18)" value="1593" type="+"/>
+        <ns2:LEGENDPOINTS when="22.04.2010" comment="LP aus Spielrunde (+82)" value="3292" type="+"/>
+        <ns2:LEGENDPOINTS when="15.04.2010" comment="LP aus Spielrunde (+158)" value="1658" type="+"/>
+        <ns2:LEGENDPOINTS when="18.02.2010" comment="LP aus Spielrunde (+87)" value="1387" type="+"/>
+        <ns2:LEGENDPOINTS when="04.02.2010" comment="LP aus Spielrunde" value="1400" type="+"/>
+        <ns2:LEGENDPOINTS when="29.07.2010" comment="LP aus Spielrunde" value="1340" type="+"/>
+        <ns2:LEGENDPOINTS when="26.08.2010" comment="LP aus Spielrunde (+26)" value="1226" type="+"/>
+        <ns2:LEGENDPOINTS when="02.09.2010" comment="LP aus Spielrunde" value="1400" type="+"/>
+        <ns2:LEGENDPOINTS when="23.09.2010" comment="LP aus Spielrunde (+27)" value="2827" type="+"/>
+        <ns2:LEGENDPOINTS when="30.09.2010" comment="LP aus Spielrunde" value="1575" type="+"/>
+        <ns2:LEGENDPOINTS when="07.10.2010" comment="LP aus Spielrunde" value="1785" type="+"/>
+        <ns2:LEGENDPOINTS when="04.11.2010" comment="LP aus Spielrunde" value="1819" type="+"/>
+        <ns2:LEGENDPOINTS when="11.11.2010" comment="LP aus Spielrunde" value="1590" type="+"/>
+        <ns2:LEGENDPOINTS when="02.12.2010" comment="LP aus Spielrunde" value="1500" type="+"/>
+        <ns2:LEGENDPOINTS when="09.12.2010" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <ns2:LEGENDPOINTS when="06.01.2011" comment="LP aus Spielrunde" value="1524" type="+"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="LP aus Spielrunde" value="3694" type="+"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Gratü" value="1800" type="-"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Sylvio" value="2900" type="-"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Silverius" value="1600" type="-"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Tyrios" value="100" type="-"/>
+        <ns2:LEGENDPOINTS when="15.01.2011" comment="Attributsteigerungen" value="17600" type="-"/>
+        <ns2:LEGENDPOINTS when="15.01.2011" comment="Disziplintalentsteigerungen" value="42300" type="-"/>
+        <ns2:LEGENDPOINTS when="15.01.2011" comment="Karmarituale" value="1200" type="-"/>
+        <ns2:LEGENDPOINTS when="15.01.2011" comment="Optionaltalentsteigerungen" value="29500" type="-"/>
+        <ns2:LEGENDPOINTS when="15.01.2011" comment="Optionaltalentsteigerungen" value="300" type="-"/>
+    </EXPERIENCE>
+</EDCHARACTER>

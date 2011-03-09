@@ -184,8 +184,8 @@ public class ECEWorker {
 		newarmor.addAll(magicarmor);
 		PROTECTIONType protection = character.getProtection();
 		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
-			// Sollte die natürliche Rüstung bereits eingetragen sein, dann überspringen
 			String armorName = armor.getName();
+			// Sollte die natürliche Rüstung bereits eingetragen sein, dann überspringen
 			if( armorName.equals(naturalArmor.getName())) continue;
 			if( armor.getUsed().equals(YesnoType.YES) ) {
 				mysticalarmor+=armor.getMysticarmor();

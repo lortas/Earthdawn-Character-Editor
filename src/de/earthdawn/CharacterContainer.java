@@ -622,8 +622,8 @@ public class CharacterContainer extends CharChangeRefresh {
 				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
 				weaven--;
 			}
-			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
-			if( newmagicshield != null ) magicarmor.add(newmagicshield);
+			if( (newmagicarmor != null) && newmagicarmor.getUsed().equals(YesnoType.YES) ) magicarmor.add(newmagicarmor);
+			if( (newmagicshield != null) && newmagicshield.getUsed().equals(YesnoType.YES) ) magicarmor.add(newmagicshield);
 		}
 		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
 		return magicarmor;
