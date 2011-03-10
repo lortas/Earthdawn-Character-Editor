@@ -623,7 +623,6 @@ public class ECEPdfExporter {
 		int counterMagicItem=0;
 		int counterThreadItem=0;
 		for( THREADITEMType item : character.getThreadItem() ) {
-			if( counterMagicItem > 1) break;
 			acroFields.setField( "MagicalTreasureName."+counterMagicItem, item.getName() );
 			acroFields.setField( "MagicalTreasureSpellDefense."+counterMagicItem, String.valueOf(item.getSpelldefense()) );
 			acroFields.setField( "MagicalTreasureMaxThreads."+counterMagicItem, String.valueOf(item.getMaxthreads()) );
@@ -638,7 +637,7 @@ public class ECEPdfExporter {
 			}
 			int counterMagicItemRank=0;
 			for( THREADRANKType rank : item.getTHREADRANK() ) {
-				acroFields.setField( "MagicalTreasureRank.0."+counterMagicItemRank+"."+counterMagicItem, String.valueOf(counterMagicItemRank+1) );
+				acroFields.setField( "MagicalTreasureRank."+counterMagicItemRank+"."+counterMagicItem, String.valueOf(counterMagicItemRank+1) );
 				acroFields.setField( "MagicalTreasureLPCost."+counterMagicItemRank+"."+counterMagicItem, String.valueOf(rank.getLpcost()) );
 				acroFields.setField( "MagicalTreasureKeyKnowledge."+counterMagicItemRank+"."+counterMagicItem, rank.getKeyknowledge() );
 				acroFields.setField( "MagicalTreasureEffect."+counterMagicItemRank+"."+counterMagicItem, rank.getEffect() );
