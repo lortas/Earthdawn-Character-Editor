@@ -23,6 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.text.EditorKit;
@@ -248,13 +249,17 @@ public class EDMainWindow {
 	}
 
 	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
+		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
+		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
 		//TODO Fenster öffnen und HELP.ABOUT darin anzeigen
 	}
-	
+
 	private void do_mntmDicing_actionPerformed(ActionEvent arg0) {
+		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
+		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
 		//TODO: Fenster mit mehrer Würfelbechern öffnen.
 	}
-	
+
 	private void addTalentsTabs(){
 		List<String> allTalentTabs = new ArrayList<String>();
 		for(Component co  : tabbedPane.getComponents() )
