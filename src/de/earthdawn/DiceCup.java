@@ -62,4 +62,8 @@ public class DiceCup {
 		}
 		return sum;
 	}
+
+	public STEPDICEType getStepDice() {
+		return stepDice;
+	}
 }
