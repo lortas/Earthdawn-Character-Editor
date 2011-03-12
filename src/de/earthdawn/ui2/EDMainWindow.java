@@ -105,7 +105,7 @@ public class EDMainWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
+		frame = new JFrame("Earthdawn Character Editor");
 		frame.setBounds(100, 100, 800, 740);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -257,6 +257,7 @@ public class EDMainWindow {
 	private void do_mntmDicing_actionPerformed(ActionEvent arg0) {
 		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
 		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
+		EDDicing dicingWindow = new EDDicing();
 		//TODO: Fenster mit mehrer Würfelbechern öffnen.
 	}
 
