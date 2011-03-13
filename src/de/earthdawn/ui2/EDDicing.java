@@ -30,6 +30,7 @@ public class EDDicing {
 		frame.setBounds(200, 200, 900, 500);
 		frame.setVisible(true);
 		frame.setLayout(new BorderLayout());
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		scrollPane = new JScrollPane();
 		topPanel = Box.createHorizontalBox();

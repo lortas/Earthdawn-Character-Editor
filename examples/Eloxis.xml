@@ -228,16 +228,28 @@
     </THREADITEM>
     <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Thread Ring">
         <ns2:description></ns2:description>
-        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: ?"/>
-        <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="200"/>
-        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300"/>
-        <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="500"/>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: ?">
+            <ns2:DEFENSE kind="social"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="200">
+            <ns2:DEFENSE kind="spell"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300">
+            <ns2:DEFENSE kind="social"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="500">
+            <ns2:DEFENSE kind="spell"/>
+        </ns2:THREADRANK>
     </THREADITEM>
     <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch">
         <ns2:description>Schwarzer Stein mit goldener Verzierung</ns2:description>
-        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa"/>
-        <ns2:THREADRANK effect="Charisma based Tests +1" lpcost="200"/>
-        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300"/>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa">
+            <ns2:DEFENSE kind="social"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Charisma-only Tests +1" lpcost="200"/>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300">
+            <ns2:DEFENSE kind="social"/>
+        </ns2:THREADRANK>
     </THREADITEM>
     <THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra">
         <ns2:description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</ns2:description>
