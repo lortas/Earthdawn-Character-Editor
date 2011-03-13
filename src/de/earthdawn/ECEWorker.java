@@ -428,7 +428,23 @@ public class ECEWorker {
 			}
 		}
 
-		// TODO: MagicItems
+		for( THREADITEMType item : character.getThreadItem() ) {
+			for( int rank=0; rank<item.getWeaventhreadrank(); rank++ ) {
+				THREADRANKType threadrank = item.getTHREADRANK().get(rank);
+				if( threadrank == null ) {
+					System.err.println("Undefined Threadrank for "+item.getName()+" for rank "+rank );
+					continue;
+				}
+				for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
+					switch (itemdefense.getKind()) {
+					case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
+					case SPELL: defense.setSpell(defense.getSpell()+1); break;
+					case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
+					}
+				}
+				// TODO: other effects of MagicItems
+			}
+		}
 
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden
 		death.setValue(death.getBase()+death.getAdjustment());
