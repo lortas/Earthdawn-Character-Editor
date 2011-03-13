@@ -361,7 +361,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
 		int counterDescription=0;
-		for( String description : wrapString(40,character.getDESCRIPTION()) ) {
+		for( String description : wrapString(50,character.getDESCRIPTION()) ) {
 			acroFields.setField( "ShortDescription."+counterDescription, description );
 			counterDescription++;
 			if( counterDescription > 7 ) {
@@ -378,7 +378,7 @@ public class ECEPdfExporter {
 				acroFields.setField( "MagicalTreasureSpellDefense", String.valueOf(magicitem.getSpelldefense()) );
 				acroFields.setField( "MagicalTreasureMaxThreads", String.valueOf(magicitem.getMaxthreads()) );
 				int counterMagicItemDescription=0;
-				for( String description : wrapString(45,magicitem.getDescription()) ) {
+				for( String description : wrapString(50,magicitem.getDescription()) ) {
 					acroFields.setField( "MagicalTreasureDesc."+counterMagicItemDescription, description );
 					counterMagicItemDescription++;
 					if( counterMagicItemDescription > 2 ) {
@@ -431,7 +431,7 @@ public class ECEPdfExporter {
 		//	System.out.println( fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		exportCommonFields(character,16,41);
+		exportCommonFields(character,16,55);
 		setButtons(character.getWound().getNormal(), "WoundPenalties.", 9);
 		acroFields.setField( "Shield", "none" );
 		acroFields.setField( "ShieldDeflectionBonus", "na" );
@@ -474,7 +474,7 @@ public class ECEPdfExporter {
 			DISCIPLINEType discipline = diciplines.get(order);
 			disciplinename += discipline.getName();
 			disciplinecircle += String.valueOf(discipline.getCircle());
-			for( String description : wrapString(40,discipline.getKARMARITUAL()) ) {
+			for( String description : wrapString(50,discipline.getKARMARITUAL()) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
 					break;
@@ -611,7 +611,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
 		int counterDescription=0;
-		for( String description : wrapString(40,character.getDESCRIPTION()) ) {
+		for( String description : wrapString(50,character.getDESCRIPTION()) ) {
 			acroFields.setField( "ShortDescription."+counterDescription, description );
 			counterDescription++;
 			if( counterDescription > 7 ) {
@@ -627,7 +627,7 @@ public class ECEPdfExporter {
 			acroFields.setField( "MagicalTreasureSpellDefense."+counterMagicItem, String.valueOf(item.getSpelldefense()) );
 			acroFields.setField( "MagicalTreasureMaxThreads."+counterMagicItem, String.valueOf(item.getMaxthreads()) );
 			int counterMagicItemDescription=0;
-			for( String description : wrapString(45,item.getDescription()) ) {
+			for( String description : wrapString(55,item.getDescription()) ) {
 				acroFields.setField( "MagicalTreasureDesc."+counterMagicItemDescription+"."+counterMagicItem, description );
 				counterMagicItemDescription++;
 				if( counterMagicItemDescription > 2 ) {

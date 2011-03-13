@@ -226,6 +226,16 @@
         <ns2:THREADRANK effect="Heiltrank +6, Erholungstrank +4" lpcost="800"/>
         <ns2:THREADRANK effect="Heiltrank +8, Erholungstrank +4" lpcost="1300"/>
     </THREADITEM>
+    <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch">
+        <ns2:description>Schwarzer Stein mit goldener Verzierung</ns2:description>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa">
+            <ns2:DEFENSE kind="social"/>
+        </ns2:THREADRANK>
+        <ns2:THREADRANK effect="Charisma-only Tests +1" lpcost="200"/>
+        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300">
+            <ns2:DEFENSE kind="social"/>
+        </ns2:THREADRANK>
+    </THREADITEM>
     <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Thread Ring">
         <ns2:description></ns2:description>
         <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: ?">
@@ -239,16 +249,6 @@
         </ns2:THREADRANK>
         <ns2:THREADRANK effect="Magische Widerstandskraft +1" lpcost="500">
             <ns2:DEFENSE kind="spell"/>
-        </ns2:THREADRANK>
-    </THREADITEM>
-    <THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch">
-        <ns2:description>Schwarzer Stein mit goldener Verzierung</ns2:description>
-        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa">
-            <ns2:DEFENSE kind="social"/>
-        </ns2:THREADRANK>
-        <ns2:THREADRANK effect="Charisma-only Tests +1" lpcost="200"/>
-        <ns2:THREADRANK effect="Soziale Widerstandskraft +1" lpcost="300">
-            <ns2:DEFENSE kind="social"/>
         </ns2:THREADRANK>
     </THREADITEM>
     <THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra">
@@ -334,9 +334,9 @@
         <ns2:LEGENDPOINTS when="06.01.2011" comment="LP aus Spielrunde" value="1524" type="+"/>
         <ns2:LEGENDPOINTS when="13.01.2011" comment="LP aus Spielrunde" value="3694" type="+"/>
         <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Gratü" value="1800" type="-"/>
-        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Sylvio" value="2900" type="-"/>
-        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Silverius" value="1600" type="-"/>
-        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Tyrios" value="100" type="-"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Sylvio" value="1800" type="-"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Silverins" value="1600" type="-"/>
+        <ns2:LEGENDPOINTS when="13.01.2011" comment="MagicItem: Liloa" value="100" type="-"/>
         <ns2:LEGENDPOINTS when="15.01.2011" comment="Attributsteigerungen" value="17600" type="-"/>
         <ns2:LEGENDPOINTS when="15.01.2011" comment="Disziplintalentsteigerungen" value="42300" type="-"/>
         <ns2:LEGENDPOINTS when="15.01.2011" comment="Karmarituale" value="1200" type="-"/>
