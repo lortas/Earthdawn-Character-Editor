@@ -303,10 +303,13 @@ public class ECEWorker {
 			// dier Erhöhung von Todes- und Bewustlosigkeitsschwelle
 			DISCIPLINEType discipline = allDisciplines.get(disciplinenumber);
 			if( durabilityTalent != null ) {
-				DISCIPLINEDURABILITYType durability = ApplicationProperties.create().getDisziplin(discipline.getName()).getDURABILITY();
-				death.setAdjustment(death.getAdjustment()+(durability.getDeath()*durabilityTalent.getRANK().getRank()));
-				unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*durabilityTalent.getRANK().getRank()));
-				durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
+				DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(discipline.getName());
+				if( disziplinProperties != null ) {
+					DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
+					death.setAdjustment(death.getAdjustment()+(durability.getDeath()*durabilityTalent.getRANK().getRank()));
+					unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*durabilityTalent.getRANK().getRank()));
+					durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
+				}
 			}
 			diciplineCircle.put(discipline.getName(), discipline.getCircle());
 			// Nur der höchtse Bonus wird gewertet.
@@ -539,7 +542,9 @@ public class ECEWorker {
 	private int getDisciplineKarmaStepBonus(DISCIPLINEType discipline) {
 		int result = 0;
 		int circlenr=0;
-		for( DISCIPLINECIRCLEType circle : ApplicationProperties.create().getDisziplin(discipline.getName()).getCIRCLE()) {
+		DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(discipline.getName());
+		if( disziplinProperties == null ) return result;
+		for( DISCIPLINECIRCLEType circle : disziplinProperties.getCIRCLE()) {
 			circlenr++;
 			if( circlenr > discipline.getCircle() ) break;
 			for( DISZIPINABILITYType karmastep : circle.getKARMASTEP()) {
@@ -553,6 +558,7 @@ public class ECEWorker {
 		int result = 0;
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			if( d == null ) continue;
 			int tmp = 0;
 			int circlenr=0;
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
@@ -571,6 +577,7 @@ public class ECEWorker {
 		int result = 0;
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			if( d == null ) continue;
 			int tmp = 0;
 			int circlenr=0;
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
@@ -594,6 +601,7 @@ public class ECEWorker {
 		result.setSpell(0);
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			if( d == null ) continue;
 			DEFENSEType tmp = new DEFENSEType();
 			tmp.setPhysical(0);
 			tmp.setSocial(0);
@@ -621,6 +629,7 @@ public class ECEWorker {
 		List<Integer> result = new ArrayList<Integer>();
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			if( d == null ) continue;
 			int circlenr = 0;
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
 				circlenr++;
@@ -730,7 +739,9 @@ public class ECEWorker {
 	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {
 		List<DISCIPLINEBONUSType> bonuses = new ArrayList<DISCIPLINEBONUSType>();
 		int circlenr=0;
-		for(DISCIPLINECIRCLEType circle : ApplicationProperties.create().getDisziplin(discipline.getName()).getCIRCLE()) {
+		DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(discipline.getName());
+		if( disziplinProperties == null ) return bonuses;
+		for(DISCIPLINECIRCLEType circle : disziplinProperties.getCIRCLE()) {
 			circlenr++;
 			if( circlenr > discipline.getCircle() ) break;
 			for( KARMAABILITYType karma : circle.getKARMA() ) {
