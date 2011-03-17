@@ -12,13 +12,13 @@
     <PROTECTION penalty="5" mysticarmor="15" physicalarmor="13">
         <ns2:ARMOR mysticarmor="2" location="self" used="yes" weight="0.0" name="natural Armor"/>
         <ns2:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
-        <ns2:ARMOR edn="22" penalty="5" mysticarmor="7" physicalarmor="7" location="self" used="yes" weight="90.0" name="Crystal Plate"/>
+        <ns2:ARMOR edn="22" penalty="2" mysticarmor="3" physicalarmor="6" location="self" used="yes" weight="0" name="Living Crystal"/>
     </PROTECTION>
-    <HEALTH damage="57">
+    <HEALTH damage="0">
         <ns2:RECOVERY testsperday="3" dice="2d6" step="8"/>
         <ns2:UNCONSCIOUSNESS value="81" adjustment="46" base="35"/>
         <ns2:DEATH value="103" adjustment="60" base="43"/>
-        <ns2:WOUNDS blood="3" normal="4" threshold="12"/>
+        <ns2:WOUNDS blood="3" normal="0" threshold="12"/>
     </HEALTH>
     <MOVEMENT ground="7" flight="0"/>
     <INITIATIVE modification="-5" base="8" dice="d6-1" step="3"/>
@@ -186,9 +186,9 @@
     <WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
     <WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
     <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="1.0" name="Desperate Blow"/>
-    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="na" weight="1.0" name="Desperate Blow"/>
-    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="na" weight="1.0" name="Trefferauffangen"/>
-    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="na" weight="1.0" name="Trefferauffangen"/>
+    <BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="no" weight="1.0" name="Desperate Blow"/>
+    <BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
+    <BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
     <THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
         <ns2:description>Thread Item Melee Weapon page 276 PlayerGuide</ns2:description>
         <ns2:THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">

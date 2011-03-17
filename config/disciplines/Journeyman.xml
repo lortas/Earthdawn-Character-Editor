@@ -2,24 +2,83 @@
 <DISCIPLINE  name="Journeyman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acarne Mutterings"/>
 		<OPTIONALTALENT name="Acrobatic Strike"/>
 		<OPTIONALTALENT name="Air Dance"/>
-		<OPTIONALTALENT name="Climbing"/>
-		<OPTIONALTALENT name="Maneuver"/>
-		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Air Sailing"/>
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Animal Bond"/>
+		<OPTIONALTALENT name="Animal Training"/>
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Astral Sight"/>
 		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Battle Shout"/>
+		<OPTIONALTALENT name="Charge"/>
+		<OPTIONALTALENT name="Claw Shape"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Create Fetish"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Emotion Song"/>
+		<OPTIONALTALENT name="Evaluate"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Forge Weapon"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Impress"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Lock Picking"/>
+		<OPTIONALTALENT name="Maneuver"/>
 		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Mimic Voice"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Missle Weapons"/>
+		<OPTIONALTALENT name="Mystic Aim"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Picking Pockets"/>
+		<OPTIONALTALENT name="Read/Write Language"/>
+		<OPTIONALTALENT name="Read/Write Magic"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Spellcasting"/>
+		<OPTIONALTALENT name="Spell Fetish"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="Taunt"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Elementalism"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Illusionism"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Nethermancy"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Shamanism"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Wizardry"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Trap Initiative"/>
+		<OPTIONALTALENT name="Trick Riding"/>
+		<OPTIONALTALENT name="True Shot"/>
 		<OPTIONALTALENT name="Unarmed Combat"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
 		<OPTIONALTALENT name="Wood Skin"/>
+		<OPTIONALTALENT name="Wound Balance"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
 		<TALENTABILITY count="5"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Direction Arrow"/>
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Flame Arrow"/>
+		<OPTIONALTALENT name="Great Leap"/>
 		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Long Shot"/>
 		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Sprint"/>
 		<OPTIONALTALENT name="Swift Kick"/>
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Tiger Spring"/>
@@ -37,14 +96,23 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Detect Trap"/>
 		<OPTIONALTALENT name="Disarm"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Gliding Stride"/>
 		<OPTIONALTALENT name="Leadership"/>
 		<OPTIONALTALENT name="Lion Heart"/>
 		<OPTIONALTALENT name="Second Weapon"/>
 		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Steal Thought"/>
 		<OPTIONALTALENT name="Steel Stare"/>
+		<OPTIONALTALENT name="Summon" limitation="Elemental Spirits"/>
 		<OPTIONALTALENT name="Tactics"/>
 		<OPTIONALTALENT name="Temper Self"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<OPTIONALTALENT name="Wood Skin"/>
 		<TALENTABILITY count="2"/>
 		<ABILITY>Choose the Path</ABILITY>
 	</CIRCLE>
