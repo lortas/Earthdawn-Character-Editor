@@ -257,6 +257,7 @@ public class EDMainWindow {
 	private void do_mntmDicing_actionPerformed(ActionEvent arg0) {
 		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
 		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
+		@SuppressWarnings("unused")
 		EDDicing dicingWindow = new EDDicing();
 		//TODO: Fenster mit mehrer Würfelbechern öffnen.
 	}
@@ -350,6 +351,7 @@ public class EDMainWindow {
 				copyCharacterAdditionalFiles(file.getParentFile());
 			}
 			catch(Exception e){
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
 		}
@@ -384,6 +386,7 @@ public class EDMainWindow {
 				ec =(EDCHARACTER)u.unmarshal(selFile);
 			}
 			catch(Exception e){
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
 				
@@ -432,9 +435,10 @@ public class EDMainWindow {
 				}
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
 		}
@@ -454,8 +458,10 @@ public class EDMainWindow {
 			Desktop desktop = Desktop.getDesktop();
 			desktop.browse(tmpfile.toURI());
 		} catch (IOException e) {
+			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			e.printStackTrace();
 		} catch(Exception e){
+			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			e.printStackTrace();
 		}
 }
