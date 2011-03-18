@@ -313,22 +313,35 @@ public class EDGeneral extends JPanel {
 			character.getEDCHARACTER().setName(textFieldName.getText());
 		}
 	}
-	
+
+	protected int textToInt(String text) {
+		Integer zahl=null;
+		try {
+			zahl = new Integer(text);
+		}
+		catch(NumberFormatException e) {
+			// Don't Care
+			return 0;
+		}
+		if( zahl == null ) return 0;
+		return zahl.intValue();
+	}
+
 	protected void do_textFieldAge_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			//character.getAppearance().setAge(new Integer(textFieldAge.getText()).intValue());
+			character.getAppearance().setAge(textToInt(textFieldAge.getText()));
 		}
 	}
 	
 	protected void do_textFieldSize_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			//character.getAppearance().setHeight(new Integer(textFieldSize.getText()).intValue());
+			character.getAppearance().setAge(textToInt(textFieldSize.getText()));
 		}
 	}
 	
 	protected void do_textFieldWeight_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			//character.getAppearance().setWeight(new Integer(textFieldWeight.getText()).intValue());
+			character.getAppearance().setAge(textToInt(textFieldWeight.getText()));
 		}
 	}
 	
@@ -340,7 +353,7 @@ public class EDGeneral extends JPanel {
 	
 	protected void do_textFieldEyecolor_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			character.getAppearance().setSkin(textFieldSkincolor.getText());
+			character.getAppearance().setEyes(textFieldSkincolor.getText());
 		}
 	}
 	
