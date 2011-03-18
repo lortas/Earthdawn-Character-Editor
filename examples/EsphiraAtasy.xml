@@ -24,54 +24,71 @@
 	<TALENTS discipline="Shaman">
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Create Fetish">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="na" action="na" name="Karma Ritual">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Spellcasting">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Spell Fetish">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Thread Weaving" limitation="Shamanism">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" attribute="PER" action="standard" name="Wilderness Survival">
 			<edt:RANK lpcost="0" rank="6" startrank="1" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="2" attribute="PER" action="standard" name="Astral Sight">
 			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="3" attribute="PER" action="standard" name="Spirit Talk">
 			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="4" attribute="WIL" action="standard" name="Spirit Hold">
 			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="5" attribute="WIL" action="standard" name="Summon" limitation="Nature Spirits">
 			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="6" attribute="WIL" action="standard" name="Blood Share">
 			<edt:RANK lpcost="0" rank="3" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</DISZIPLINETALENT>
 		<OPTIONALTALENT circle="1" attribute="DEX" strain="0" action="standard" name="Silent Walk">
 			<edt:RANK lpcost="0" rank="6" startrank="2" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</OPTIONALTALENT>
 		<OPTIONALTALENT circle="2" attribute="DEX" strain="0" action="standard" name="Durability">
 			<edt:RANK lpcost="0" rank="7" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</OPTIONALTALENT>
 		<OPTIONALTALENT circle="3" attribute="DEX" strain="0" action="standard" name="Spell Fetish">
 			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</OPTIONALTALENT>
 		<OPTIONALTALENT circle="4" attribute="DEX" strain="0" action="standard" name="Spell Fetish">
 			<edt:RANK lpcost="0" rank="6" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</OPTIONALTALENT>
 		<OPTIONALTALENT circle="5" attribute="WIL" strain="0" action="standard" name="Willforce">
 			<edt:RANK lpcost="0" rank="7" startrank="0" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</OPTIONALTALENT>
 		<OPTIONALTALENT circle="6" attribute="WIL" strain="0" action="standard" name="Enhanced Fetish">
 			<edt:RANK lpcost="0" rank="3" startrank="2" dice="2d6" step="8"/>
+			<edt:TEACHER/>
 		</OPTIONALTALENT>
 	</TALENTS>
 	<SPELLS discipline="Shaman">

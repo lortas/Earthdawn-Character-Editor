@@ -31,51 +31,67 @@
     <TALENTS discipline="Warrior">
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
             <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
             <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="d10" step="6"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
             <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
             <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="1" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
             <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
             <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="3" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
             <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+d8+d6" step="16"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="4" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
             <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
             <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d10" step="12"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
             <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <ns2:TEACHER/>
         </DISZIPLINETALENT>
         <OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Air Dance">
             <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+            <ns2:TEACHER/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="2" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
             <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+            <ns2:TEACHER/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="3" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
             <ns2:RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
+            <ns2:TEACHER/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="4" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
             <ns2:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <ns2:TEACHER/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
             <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <ns2:TEACHER/>
         </OPTIONALTALENT>
         <OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Maneuver">
             <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <ns2:TEACHER/>
         </OPTIONALTALENT>
     </TALENTS>
     <SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
