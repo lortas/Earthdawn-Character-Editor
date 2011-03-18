@@ -42,6 +42,9 @@
     <ATTRIBUTE name="CHA" value="11" />
     <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
     <WOUND threshold="0"/>
+    <TALENT name="Astral Sight"/>
+    <TALENT name="Versatility"/>
+    <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
   <NAMEGIVER name="Obsidiman" karmamodifier="3" movement_ground="5">
     <ATTRIBUTE name="DEX" value="8" />
