@@ -273,7 +273,8 @@ public class ECEWorker {
 				int lpcoststart= ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 				rank.setLpcost(lpcostfull-lpcoststart);
 				calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+rank.getLpcost());
-				calculateCapabilityRank(rank,attribute.get(talent.getAttribute().value()));
+				ATTRIBUTENameType attr = talent.getAttribute();
+				if( attr != null ) calculateCapabilityRank(rank,attribute.get(attr.value()));
 				if( talent.getName().equals(durabilityTalentName)) {
 					durabilityTalent=talent;
 				}
