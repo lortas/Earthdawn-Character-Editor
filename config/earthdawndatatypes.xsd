@@ -194,6 +194,14 @@
 		<xs:attribute name="strain" type="xs:string" use="required"/>
 		<xs:attribute name="minrank" type="unsigned_int" default="0"/>
 	</xs:complexType>
+	<xs:complexType name="TALENTTEACHER_type">
+		<xs:attribute name="name" type="xs:string" default=""/>
+		<xs:attribute name="discipline" type="xs:string" default=""/>
+		<xs:attribute name="talentcircle" type="unsigned_int" default="0"/>
+		<xs:attribute name="teachercircle" type="unsigned_int" default="0"/>
+		<xs:attribute name="comment" type="xs:string" default=""/>
+		<xs:attribute name="byversatility" type="yesno_type" default="no"/>
+	</xs:complexType>
 	<xs:complexType name="CAPABILITY_type">
 		<xs:sequence>
 			<xs:element name="KNACK" type="KNACK_type" minOccurs="0" maxOccurs="unbounded"/>
@@ -219,6 +227,9 @@
 	<xs:complexType name="TALENT_type">
 		<xs:complexContent>
 			<xs:extension base="SKILL_type">
+				<xs:sequence>
+					<xs:element name="TEACHER" type="TALENTTEACHER_type" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
 				<xs:attribute name="circle" type="circle_type" use="required"/>
 			</xs:extension>
 		</xs:complexContent>

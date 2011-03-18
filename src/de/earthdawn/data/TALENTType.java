@@ -11,6 +11,7 @@ package de.earthdawn.data;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -23,6 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="TALENT_type">
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}SKILL_type">
+ *       &lt;sequence>
+ *         &lt;element name="TEACHER" type="{http://earthdawn.com/datatypes}TALENTTEACHER_type"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -32,13 +36,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TALENT_type")
+@XmlType(name = "TALENT_type", propOrder = {
+    "teacher"
+})
 public class TALENTType
     extends SKILLType
 {
 
+    @XmlElement(name = "TEACHER", required = true)
+    protected TALENTTEACHERType teacher;
     @XmlAttribute(required = true)
     protected int circle;
+
+    /**
+     * Gets the value of the teacher property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TALENTTEACHERType }
+     *     
+     */
+    public TALENTTEACHERType getTEACHER() {
+        return teacher;
+    }
+
+    /**
+     * Sets the value of the teacher property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TALENTTEACHERType }
+     *     
+     */
+    public void setTEACHER(TALENTTEACHERType value) {
+        this.teacher = value;
+    }
 
     /**
      * Gets the value of the circle property.
