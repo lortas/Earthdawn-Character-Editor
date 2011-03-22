@@ -48,7 +48,7 @@
         <div class="edLayoutRow">
             <table width="100%">
                 <tr>
-                    <td class="edSkills" rowspan="4">
+                    <td class="edSkills" rowspan="7">
                         <!-- Skills -->
                         <xsl:call-template name="skills" />
                     </td>
@@ -72,6 +72,30 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="edMagicItems">
+                        <!-- Magic Items -->
+                        <xsl:call-template name="magicItems" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edPatternItems">
+                        <!-- Pattern Items -->
+                        <xsl:call-template name="patternItems" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edBloodItems">
+                        <!-- Blood Items -->
+                        <xsl:call-template name="bloodItems" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edThreadItems" colspan="2">
+                        <!-- Thread Items -->
+                        <xsl:call-template name="threadItems" />
+                    </td>
+                </tr>
+                <tr>
                     <td class="edEquipment" colspan="2">
                         <!-- Equipment -->
                         <xsl:call-template name="equipment" />
@@ -79,10 +103,6 @@
                 </tr>
             </table>
         </div>
-        <!-- Magic Items -->
-        <xsl:call-template name="magicItems" />
-        <!-- Pattern Items -->
-        <xsl:call-template name="patternItems" />
         <div class="edLayoutRow">   
             <!-- Experience -->
             <xsl:call-template name="experience" />
@@ -141,7 +161,7 @@
 <xsl:template match="//edc:RACEABILITES">
     <xsl:value-of select="."/>
 </xsl:template>
- 
+
 <xsl:template name="attributes">
     <div class="edSubHeader">Attributes</div>
     <table width="100%">
@@ -156,7 +176,7 @@
         <xsl:apply-templates select="//edc:ATTRIBUTE"/>
     </table>
 </xsl:template>
-  
+
 <xsl:template match="//edc:ATTRIBUTE">
     <tr>
         <td class="edCell"><xsl:value-of select="@name"/></td>
@@ -562,12 +582,32 @@
     </table>
 </xsl:template>
 
-<xsl:template name="armor">
-    <div class="edSubHeader">Armor</div>
-    <xsl:apply-templates select="//edt:ARMOR"/>
+<xsl:template name="bloodItems">
+    <div class="edSubHeader">Blood Items</div>
+    <xsl:apply-templates select="//edc:BLOODCHARMITEM"/>
 </xsl:template>
 
-<xsl:template match="//edt:ARMOR">
+<xsl:template match="//edc:BLOODCHARMITEM">
+    <div class="edSubSection">
+        <table>
+            <tr>
+                <td class="edKeyCell">Name:</td>
+                <td class="edValueCell"><xsl:value-of select="@name" /></td>
+                <td class="edKeyCell">Weight:</td>
+                <td class="edValueCell"><xsl:value-of select="@weight" /></td>
+                <td class="edKeyCell">Location:</td>
+                <td class="edValueCell"><xsl:value-of select="@location" /></td>
+            </tr>
+        </table>
+    </div>
+</xsl:template>
+
+<xsl:template name="armor">
+    <div class="edSubHeader">Armor</div>
+    <xsl:apply-templates select="//edc:PROTECTION/edt:ARMOR[position()  > 1]"/>
+</xsl:template>
+
+<xsl:template match="//edc:PROTECTION/edt:ARMOR">
     <div class="edSubSection">
         <table>
             <tr>
@@ -663,26 +703,26 @@
 </xsl:template>
 
 <xsl:template name="patternItems">
+    <div class="edSubHeader">Pattern Items</div>
     <xsl:if test="//edc:PATTERNITEM">
-        <div class="edPatternItems">
-            <div class="edSubHeader">Pattern Items</div>
+        <div>
             TODO
         </div>
     </xsl:if>
 </xsl:template>
 
 <xsl:template name="magicItems">
+    <div class="edSubHeader">Magic Items</div>
     <xsl:if test="//edc:MAGICITEM">
-        <div class="edMagicItems">
-            <div class="edSubHeader">Magic Items</div>
+        <div>
             TODO
         </div>
     </xsl:if>
 </xsl:template>
 
 <xsl:template name="equipment">
+    <div class="edSubHeader">Equipment</div>
     <xsl:if test="//edc:ITEM">
-        <div class="edSubHeader">Equipment</div>
         <table width="100%">
             <tr>
                 <td class="edHeaderCell" width="40%">Name</td>
@@ -705,6 +745,81 @@
             <td class="edCell"><xsl:value-of select="@location" /></td>
         </xsl:for-each>
      </tr>
+</xsl:template>
+
+<xsl:template name="threadItems">
+    <div class="edSubHeader">Thread Items</div>
+    <xsl:if test="//edc:THREADITEM">
+        <table width="100%">
+            <xsl:apply-templates select="//edc:THREADITEM[(position() mod 2) = 1]" /> 
+        </table>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="//edc:THREADITEM">
+    <tr>
+        <td>
+            <table width="100%">
+                <tr>
+                    <xsl:for-each select=". | following-sibling::edc:THREADITEM[position() &lt; 2]">
+                        <td class="edThreadItemTop">
+                            <table width="100%">
+                                <tr>
+                                    <td class="edKeyCell">Name:</td>
+                                    <td class="edValueCell" colspan="3"><xsl:value-of select="@name" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="edKeyCell">Max Threads:</td>
+                                    <td class="edValueCell"><xsl:value-of select="@maxthreads" /></td>
+                                    <td class="edKeyCell">Spell Defence:</td>
+                                    <td class="edValueCell"><xsl:value-of select="@spelldefense" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="edKeyCell">Description:</td>
+                                    <td class="edValueCell" colspan="3"><xsl:value-of select="./edt:description" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </xsl:for-each>
+                </tr>
+                <tr>
+                    <xsl:for-each select=". | following-sibling::edc:THREADITEM[position() &lt; 2]">
+                        <td class="edThreadItemBottom">
+                            <table width="100%">
+                                <tr>
+                                    <td style="text-align: center">
+                                        Thread Ranks
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%">
+                                            <tr>
+                                                <td class="edHeaderCell">Rank</td>
+                                                <td class="edHeaderCell">Knowledge/Deed</td>
+                                                <td class="edHeaderCell">LPCost</td>
+                                                <td class="edHeaderCell">Effect</td>
+                                            </tr>
+                                            <xsl:apply-templates select="./edt:THREADRANK"/>
+                                        </table>
+                                    </td>
+                               </tr>
+                            </table>
+                        </td>
+                    </xsl:for-each>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</xsl:template>
+
+<xsl:template match="//edt:THREADRANK">
+    <tr>
+        <td class="edCell"><xsl:value-of select="position()" /></td>
+        <td class="edCell"><xsl:value-of select="@keyknowledge" /></td>
+        <td class="edCell"><xsl:value-of select="@lpcost" /></td>
+        <td class="edCell"><xsl:value-of select="@effect" /></td>
+    </tr>
 </xsl:template>
 
 <xsl:template name="experience">
