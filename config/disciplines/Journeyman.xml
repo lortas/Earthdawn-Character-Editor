@@ -136,39 +136,97 @@
 		<KARMA spend="choosen Attribute*-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Companion Durability" limitation="6/5"/>
+		<OPTIONALTALENT name="Battle Bellow"/>
+		<OPTIONALTALENT name="Blade Juggle"/>
+		<OPTIONALTALENT name="Call Animal Companion"/>
+		<OPTIONALTALENT name="Call Missle"/>
+		<OPTIONALTALENT name="Call Misslile"/>
 		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Conceal Object"/>
 		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Direction Sense"/>
 		<OPTIONALTALENT name="Disarm"/>
+		<OPTIONALTALENT name="Disarming Trap"/>
+		<OPTIONALTALENT name="Engaging Banter"/>
+		<OPTIONALTALENT name="Enhanced Fetish"/>
 		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Fearsome Charge"/>
 		<OPTIONALTALENT name="Gliding Stride"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Heal Animal Companion"/>
+		<OPTIONALTALENT name="Hypnotzize"/>
+		<OPTIONALTALENT name="Inspire Others"/>
+		<OPTIONALTALENT name="Lasting Implression"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
 		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Lip Reading"/>
+		<OPTIONALTALENT name="Mount Attack"/>
+		<OPTIONALTALENT name="Mount Durability" limitation="6/5"/>
+		<OPTIONALTALENT name="Orbiting Spy"/>
+		<OPTIONALTALENT name="Performance"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
 		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Sense Poison"/>
 		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Slough Blame"/>
+		<OPTIONALTALENT name="Spirit Mount"/>
 		<OPTIONALTALENT name="Spot Armor Flaw"/>
 		<OPTIONALTALENT name="Steal Thought"/>
 		<OPTIONALTALENT name="Steel Stare"/>
+		<OPTIONALTALENT name="Stopping Aim"/>
+		<OPTIONALTALENT name="Summon" limitation="Ally Spirits"/>
 		<OPTIONALTALENT name="Summon" limitation="Elemental Spirits"/>
+		<OPTIONALTALENT name="Summon" limitation="Nature Spirits"/>
+		<OPTIONALTALENT name="Suprise Strike"/>
+		<OPTIONALTALENT name="Swing Attack"/>
 		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Temper Other"/>
 		<OPTIONALTALENT name="Temper Self"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<OPTIONALTALENT name="Wheeling Attack"/>
 		<OPTIONALTALENT name="Willforce"/>
 		<OPTIONALTALENT name="Wood Skin"/>
 		<TALENTABILITY count="2"/>
 		<ABILITY>Choose the Path</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
+		<OPTIONALTALENT name="Animal Talk"/>
+		<OPTIONALTALENT name="Armor Mount"/>
+		<OPTIONALTALENT name="Bank Shot"/>
+		<OPTIONALTALENT name="Book Recall"/>
 		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Steely Stare"/>
 		<TALENTABILITY count="2"/>
 		<KARMA spend="choosen Attribute*-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<OPTIONALTALENT name="Crushing Blow"/>
+		<OPTIONALTALENT name="Earth Skin"/>
+		<OPTIONALTALENT name="Fast Hand"/>
+		<OPTIONALTALENT name="Impressive Shot"/>
+		<OPTIONALTALENT name="Momentum Attack"/>
+		<OPTIONALTALENT name="Spirit Dodge"/>
+		<OPTIONALTALENT name="Wheeling Defense"/>
 		<TALENTABILITY count="2"/>
 		<KARMA spend="Learn Somthing New Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
+		<OPTIONALTALENT name="Double-Charge"/>
+		<OPTIONALTALENT name="Down Strike"/>
+		<OPTIONALTALENT name="Forge Armor"/>
+		<OPTIONALTALENT name="Frenzy"/>
+		<OPTIONALTALENT name="Hold Thread"/>
+		<OPTIONALTALENT name="Power Mask"/>
+		<OPTIONALTALENT name="Safe Path"/>
 		<OPTIONALTALENT name="Second Attack"/>
+		<OPTIONALTALENT name="Second Shot"/>
+		<OPTIONALTALENT name="Temperature"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
