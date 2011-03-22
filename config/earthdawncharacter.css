@@ -21,7 +21,7 @@
 .edSubHeader {
     text-align: center;
     font-size: 135%;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
     border-bottom-style: solid;
     border-bottom-width: thin;
 }
@@ -50,14 +50,15 @@
 
 .edKeyCell {
     font-size: 105%;
+    text-align: left;
 }
 
 .edValueCell {
 	font-style: italic;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 20px;
 }
 
 .edLayoutRow {
@@ -104,9 +105,31 @@
 }
 
 .edDisciplineTalents,
-.edOptionalTalents {
+.edOptionalTalents,
+.edThreadItems {
     border-width: thin;
     border-style: solid;
+    vertical-align: top;
+    width: 50%;
+}
+
+.edThreadItemTop {
+    border-top-width: thin;
+    border-top-style: solid;
+    border-left-width: thin;
+    border-left-style: solid;
+    border-right-width: thin;
+    border-right-style: solid;
+    vertical-align: top;
+    width: 50%;
+}
+.edThreadItemBottom {
+    border-left-width: thin;
+    border-left-style: solid;
+    border-right-width: thin;
+    border-right-style: solid;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
     vertical-align: top;
     width: 50%;
 }
@@ -134,7 +157,9 @@
 .edEquipment,
 .edCoins,
 .edWeapons,
-.edArmor {
+.edArmor,
+.edThreadItems,
+.edBloodItems {
     border-style: solid;
     border-width: thin;
     text-align: center;
