@@ -67,29 +67,70 @@
 		<TALENTABILITY count="5"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Animal Possession"/>
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Detact Weapons"/>
+		<OPTIONALTALENT name="Detect Trap"/>
 		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Direction Arrow"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Distract"/>
+		<OPTIONALTALENT name="Dominate Beast"/>
 		<OPTIONALTALENT name="Durability"/>
-		<OPTIONALTALENT name="Fireblood"/>
-		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Empathic Command"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Fire Heal"/>
 		<OPTIONALTALENT name="Flame Arrow"/>
+		<OPTIONALTALENT name="Frighten"/>
+		<OPTIONALTALENT name="Frighten Animals"/>
 		<OPTIONALTALENT name="Great Leap"/>
 		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Hearting Laugh"/>
+		<OPTIONALTALENT name="Last Impression"/>
 		<OPTIONALTALENT name="Long Shot"/>
-		<OPTIONALTALENT name="Missile Weapons"/>
-		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Shield Charge"/>
 		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
 		<OPTIONALTALENT name="Swift Kick"/>
-		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Tactics"/>
 		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Wind Catcher"/>
+		<OPTIONALTALENT name="Winning Smile"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
+		<OPTIONALTALENT name="Book Memory"/>
+		<OPTIONALTALENT name="Dead Fall"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Elemental Tongues"/>
+		<OPTIONALTALENT name="Empathic Sense"/>
+		<OPTIONALTALENT name="Riposte"/>
+		<OPTIONALTALENT name="Spirit Hold"/>
+		<OPTIONALTALENT name="Spirit Talk"/>
+		<OPTIONALTALENT name="Sure Mount"/>
 		<OPTIONALTALENT name="Wound Balance"/>
 		<TALENTABILITY count="2"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
+		<OPTIONALTALENT name="Elemental Hold"/>
+		<OPTIONALTALENT name="False Sight"/>
+		<OPTIONALTALENT name="Research"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Air Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Arrow Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Beast Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Rider Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Scout Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Sky Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Story Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Thief Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Thread Smithing"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="War Weaving"/>
+		<OPTIONALTALENT name="Thread Weaving" limitation="Weapon Weaving"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Journey Weaving"/>
 		<TALENTABILITY/>
 		<KARMA spend="choosen Attribute*-only Test"/>
