@@ -335,13 +335,13 @@ public class EDGeneral extends JPanel {
 	
 	protected void do_textFieldSize_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			character.getAppearance().setAge(textToInt(textFieldSize.getText()));
+			character.getAppearance().setHeight(textToInt(textFieldSize.getText()));
 		}
 	}
 	
 	protected void do_textFieldWeight_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			character.getAppearance().setAge(textToInt(textFieldWeight.getText()));
+			character.getAppearance().setWeight(textToInt(textFieldWeight.getText()));
 		}
 	}
 	
