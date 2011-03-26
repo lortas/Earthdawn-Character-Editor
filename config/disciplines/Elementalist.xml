@@ -26,7 +26,6 @@
 		<SPELL type="elemental" name="Purify Water"/>
 		<SPELL type="elemental" name="Resist Cold"/>
 		<SPELL type="elemental" name="Resist Fire"/>
-		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<OPTIONALTALENT name="Astral Sight"/>
@@ -54,6 +53,7 @@
 		<SPELL type="elemental" name="Small Slayer"/>
 		<SPELL type="elemental" name="Sterilize Object"/>
 		<SPELL type="elemental" name="Stick Together"/>
+		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Elemental Tongues"/>

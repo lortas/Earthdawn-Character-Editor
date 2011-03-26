@@ -353,7 +353,7 @@ public class EDGeneral extends JPanel {
 	
 	protected void do_textFieldEyecolor_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			character.getAppearance().setEyes(textFieldSkincolor.getText());
+			character.getAppearance().setEyes(textFieldEyecolor.getText());
 		}
 	}
 	

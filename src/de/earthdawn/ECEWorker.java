@@ -139,7 +139,8 @@ public class ECEWorker {
 		if( KARMARUTUAL == null ) {
 			System.err.println("Karmaritual talent name is not defined for selected language.");
 		} else {
-			karmaritualTalent=character.getTalentByName(KARMARUTUAL);
+			List<TALENTType> talentByName = character.getTalentByName(KARMARUTUAL);
+			if( ! talentByName.isEmpty() ) karmaritualTalent=talentByName.get(0);
 		}
 		int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
 		calculatedLP.setKarma(calculatedLP.getKarma()+calculatedKarmaLP);
@@ -432,7 +433,14 @@ public class ECEWorker {
 			}
 		}
 
+		int threaditemdefensePhysical = 0;
+		int threaditemdefenseSpell = 0;
+		int threaditemdefenseSocial = 0;
+		boolean threadItemDoStack = ApplicationProperties.create().getOptionalRules().getTHREADITEMDOSTACK().getUsed().equals(YesnoType.YES);
 		for( THREADITEMType item : character.getThreadItem() ) {
+			int defensePhysical = 0;
+			int defenseSpell = 0;
+			int defenseSocial = 0;
 			for( int rank=0; rank<item.getWeaventhreadrank(); rank++ ) {
 				THREADRANKType threadrank = item.getTHREADRANK().get(rank);
 				if( threadrank == null ) {
@@ -441,14 +449,37 @@ public class ECEWorker {
 				}
 				for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
 					switch (itemdefense.getKind()) {
-					case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
-					case SPELL: defense.setSpell(defense.getSpell()+1); break;
-					case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
+					case PHYSICAL: defensePhysical++; break;
+					case SPELL: defenseSpell++; break;
+					case SOCIAL: defenseSocial++; break;
 					}
 				}
+				for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
+					String limitation = itemtalent.getLimitation();
+					for( TALENTType talent : character.getTalentByName(itemtalent.getName()) ) {
+						if( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) {
+							RANKType talentrank = talent.getRANK();
+							talentrank.setBonus(talentrank.getBonus()+1);
+							calculateCapabilityRank(talentrank,attribute.get(talent.getAttribute().value()));
+						}
+					}
+				}
+				
 				// TODO: other effects of MagicItems
 			}
+			if( threadItemDoStack ) {
+				threaditemdefensePhysical+=defensePhysical;
+				threaditemdefenseSpell+=defenseSpell;
+				threaditemdefenseSocial+=defenseSocial;
+			} else {
+				if( defensePhysical > threaditemdefensePhysical ) threaditemdefensePhysical=defensePhysical;
+				if( defenseSpell > threaditemdefenseSpell ) threaditemdefenseSpell=defenseSpell;
+				if( defenseSocial > threaditemdefenseSocial ) threaditemdefenseSocial=defenseSocial;
+			}
 		}
+		defense.setPhysical(defense.getPhysical()+threaditemdefensePhysical);
+		defense.setSpell(defense.getSpell()+threaditemdefenseSpell);
+		defense.setSocial(defense.getSocial()+threaditemdefenseSocial);
 
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden
 		death.setValue(death.getBase()+death.getAdjustment());

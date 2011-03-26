@@ -611,7 +611,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
 
 		int counterDescription=0;
-		for( String description : wrapString(50,character.getDESCRIPTION()) ) {
+		for( String description : wrapString(60,character.getDESCRIPTION()) ) {
 			acroFields.setField( "ShortDescription."+counterDescription, description );
 			counterDescription++;
 			if( counterDescription > 7 ) {
@@ -822,7 +822,11 @@ public class ECEPdfExporter {
 		for( SPELLSType spells : character.getAllSpells() ) {
 			for( SPELLType spell : spells.getSPELL() ) {
 				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
-				acroFields.setField( "SpellInMatrix."+conterSpells, spell.getInmatrix().value() );
+				if( spell.getInmatrix().equals(YesnoType.YES) ) {
+					acroFields.setField( "SpellInMatrix."+conterSpells, "X" );
+				} else {
+					acroFields.setField( "SpellInMatrix."+conterSpells, "" );
+				}
 				switch( spell.getType() ) {
 				case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
 				case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
