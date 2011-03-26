@@ -281,21 +281,21 @@ public class CharacterContainer extends CharChangeRefresh {
 		return alltalents;
 	}
 
-	public TALENTType getTalentByName(String searchTalent) {
+	public List<TALENTType> getTalentByName(String searchTalent) {
+		List<TALENTType> result = new ArrayList<TALENTType>();
 		for (TALENTSType talents : character.getTALENTS()) {
 			for (TALENTType talent : talents.getDISZIPLINETALENT()) {
 				if ( talent.getName().equals(searchTalent)) {
-					return talent;
+					result.add(talent);
 				}
 			}
 			for (TALENTType talent : talents.getOPTIONALTALENT()) {
 				if ( talent.getName().equals(searchTalent)) {
-					return talent;
+					result.add(talent);
 				}
 			}
 		}
-		// Not found
-		return null;
+		return result;
 	}
 
 	public TALENTType getTalentByDisciplinAndName(String disciplin, String searchTalent) {

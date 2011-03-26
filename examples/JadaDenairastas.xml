@@ -1,33 +1,48 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
 <EDCHARACTER  name="Jada Denairastas" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
 	<APPEARANCE race="Denairastas" skin="hell" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
-	<ATTRIBUTE name="DEX" generationvalue="3" lpincrease="2"/>
-	<ATTRIBUTE name="STR" generationvalue="3" lpincrease="3"/>
-	<ATTRIBUTE name="TOU" generationvalue="3" lpincrease="3"/>
-	<ATTRIBUTE name="PER" generationvalue="4" lpincrease="3"/>
-	<ATTRIBUTE name="WIL" generationvalue="6" lpincrease="3"/>
-	<ATTRIBUTE name="CHA" generationvalue="2" lpincrease="2"/>
-	<DEFENSE spell="0" social="0" physical="0"/>
-	<PROTECTION penalty="0" physicalarmor="0" mysticarmor="0">
-		<edt:ARMOR name="Espagra-Scale Cloak" weight="0" physicalarmor="3" mysticarmor="1" penalty="1"/>
+	<ATTRIBUTE cost="3" currentvalue="15" lpincrease="2" basevalue="13" generationvalue="3" racevalue="10" name="DEX" dice="d10" step="6"/>
+	<ATTRIBUTE cost="3" currentvalue="16" lpincrease="3" basevalue="13" generationvalue="3" racevalue="10" name="STR" dice="d12" step="7"/>
+	<ATTRIBUTE cost="3" currentvalue="16" lpincrease="3" basevalue="13" generationvalue="3" racevalue="10" name="TOU" dice="d12" step="7"/>
+	<ATTRIBUTE cost="5" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="4" racevalue="12" name="PER" dice="2d6" step="8"/>
+	<ATTRIBUTE cost="9" currentvalue="21" lpincrease="3" basevalue="18" generationvalue="6" racevalue="12" name="WIL" dice="2d6" step="8"/>
+	<ATTRIBUTE cost="2" currentvalue="15" lpincrease="2" basevalue="13" generationvalue="2" racevalue="11" name="CHA" dice="d10" step="6"/>
+	<DEFENSE social="12" spell="13" physical="12"/>
+	<PROTECTION penalty="2" mysticarmor="10" physicalarmor="11">
+		<edt:ARMOR mysticarmor="4" location="self" used="yes" weight="0.0" name="natural Armor"/>
+		<edt:ARMOR penalty="1" mysticarmor="5" physicalarmor="8" used="yes" weight="6.0" name="Thread Hide Armor"/>
+		<edt:ARMOR penalty="1" mysticarmor="1" physicalarmor="3" weight="10.0" name="Espagra-Scale Cloak"/>
 	</PROTECTION>
 	<HEALTH damage="0">
-		<edt:RECOVERY testsperday="0" dice="d6" step="0"/>
-		<edt:UNCONSCIOUSNESS value="0" adjustment="0" base="0"/>
-		<edt:DEATH value="0" adjustment="0" base="0"/>
-		<edt:WOUNDS threshold="9"/>
+		<edt:RECOVERY testsperday="3" dice="d12" step="7"/>
+		<edt:UNCONSCIOUSNESS value="73" adjustment="42" base="31"/>
+		<edt:DEATH value="95" adjustment="56" base="39"/>
+		<edt:WOUNDS threshold="11"/>
 	</HEALTH>
-	<MOVEMENT ground="0"/>
-	<INITIATIVE modification="0" base="0"/>
-	<CARRYING/>
-	<DISCIPLINE circle="11" name="Nethermancer" order="1"/>
-	<DISCIPLINE circle="6" name="Illusionist" order="2"/>
+	<MOVEMENT ground="6" flight="0"/>
+	<INITIATIVE modification="-2" base="6" dice="d6" step="4"/>
+	<CARRYING carrying="160" lifting="320"/>
+	<DISCIPLINE circle="11" name="Nethermancer" order="1">
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="4"/>
+		<edt:DISCIPLINEBONUS bonus="Ability: Decay and Renewal" circle="5"/>
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Perseption-Only Tests" circle="6"/>
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for spell effect tests" circle="7"/>
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Recovery Tests" circle="9"/>
+		<edt:DISCIPLINEBONUS bonus="Ability: Otherworldly Control" circle="9"/>
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Action Tests made by a spirit or creature und his control" circle="10"/>
+	</DISCIPLINE>
+	<DISCIPLINE circle="6" name="Illusionist" order="2">
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="4"/>
+		<edt:DISCIPLINEBONUS bonus="Ability: Glamour" circle="5"/>
+		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="6"/>
+	</DISCIPLINE>
 	<TALENTS discipline="Nethermancer">
 		<DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Nethermancer"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" name="Astral Sight"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="14" startrank="2"/><edt:TEACHER/></DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="11" startrank="2"/><edt:TEACHER/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="2" name="Frighten"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
 		<DISZIPLINETALENT circle="3" name="Spirit Talk"><edt:RANK rank="12"/><edt:TEACHER/></DISZIPLINETALENT>
@@ -101,49 +116,51 @@
 		<edt:RANK lpcost="0" rank="5" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Knowledge" limitation="Alchemy and Porions" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+		<edt:RANK lpcost="0" rank="5" startrank="1" dice="2d6" step="8"/>
 	</SKILL>
 	<SKILL name="Knowledge" limitation="Barsaive Politics" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+		<edt:RANK lpcost="0" rank="5" startrank="1" dice="2d6" step="8"/>
 	</SKILL>
 	<SKILL name="Knowledge" limitation="Botany" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" dice="2d6" step="8"/>
+		<edt:RANK lpcost="0" rank="5" dice="2d6" step="8"/>
 	</SKILL>
 	<SKILL name="Conversation" action="standard" attribute="CHA">
-		<edt:RANK lpcost="0" rank="2" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="5" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Knowledge" limitation="Death Rebellion History" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" dice="2d6" step="8"/>
+		<edt:RANK lpcost="0" rank="5" dice="2d6" step="8"/>
 	</SKILL>
 	<SKILL name="Knowledge" limitation="Holders of the Trust Group" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" dice="2d6" step="8"/>
+		<edt:RANK lpcost="0" rank="7" dice="2d6" step="8"/>
 	</SKILL>
 	<SKILL name="Knowledge" limitation="Magical Theory" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" dice="2d6" step="8"/>
+		<edt:RANK lpcost="0" rank="6" dice="2d6" step="8"/>
 	</SKILL>
 	<SKILL name="Melee Weapons" action="sustained" attribute="CHA">
-		<edt:RANK lpcost="0" rank="3" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="6" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Artisan" limitation="Miniature Sculpture" action="sustained" attribute="CHA">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="2" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Physician" action="standard" attribute="DEX">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="5" startrank="1" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Research" action="standard" attribute="DEX">
-		<edt:RANK lpcost="0" rank="2" startrank="0" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="5" startrank="0" dice="d12" step="7"/>
 	</SKILL>
 	<SKILL name="Artisan" limitation="Robe Embroidery" action="sustained" attribute="CHA">
-		<edt:RANK lpcost="0" rank="1" dice="d12" step="7"/>
+		<edt:RANK lpcost="0" rank="6" dice="d12" step="7"/>
 	</SKILL>
-	<SKILL name="Read/Write Language" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="1" startrank="1" dice="2d6" step="8"/>
+	<SKILL name="Read/Write Language" limitation="Dwarf/Throalic" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="6" startrank="6" dice="2d6" step="8"/>
 	</SKILL>
-	<SKILL name="Speak Language" action="standard" attribute="PER">
-		<edt:RANK lpcost="0" rank="2" startrank="2" dice="2d6" step="8"/>
+	<SKILL name="Speak Language" limitation="Dwarf/Throalic" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="6" startrank="6" dice="2d6" step="8"/>
+	</SKILL>
+	<SKILL name="Speak Language" limitation="Human/Iopan" action="standard" attribute="PER">
+		<edt:RANK lpcost="0" rank="5" startrank="5" dice="2d6" step="8"/>
 	</SKILL>
 	<WEAPON name="knife" weight="0" used="yes" location="self" damagestep="1" strengthmin="3" size="1" />
-	<WEAPON name="blowgun" weight="1" used="yes" location="self" damagestep="1" strengthmin="3" size="1" longrange="16" shortrange="8"/>
 	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread Hide Armor">
 		<edt:description></edt:description>
 		<edt:THREADRANK effect="max forged Armor" lpcost="100" keyknowledge="Name of the Item">
@@ -159,13 +176,86 @@
 			<edt:ARMOR name="Thread Hide Armor" weight="25" physicalarmor="8" mysticarmor="5" penalty="1"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<KARMA maxmodificator="0" max="6" current="20">
-		<edt:KARMAPOINTS when="" type="+" value="100" comment="doing karmarituals"/>
-		<edt:KARMAPOINTS when="" type="-" value="89" comment="spend during adventures"/>
+	<THREADITEM name="Protection Bracers" weight="0" used="yes" weaventhreadrank="4" lpcostgrowth="1">
+		<edt:description></edt:description>
+		<edt:THREADRANK effect="Physical Defense +1" lpcost="0">
+			<edt:DEFENSE/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Social Defense +1" lpcost="0">
+			<edt:DEFENSE kind="social"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Physical Defens +1" lpcost="0">
+			<edt:DEFENSE/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Avoid Blow talent +1" lpcost="0">
+			<edt:TALENT name="Avoid Blow"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Protection Brooch" weight="0" used="yes" weaventhreadrank="4" lpcostgrowth="1">
+		<edt:description></edt:description>
+		<edt:THREADRANK effect="Physical Defense +1" lpcost="0">
+			<edt:DEFENSE/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Social Defense +1" lpcost="0">
+			<edt:DEFENSE kind="social"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Social Defense +1" lpcost="0">
+			<edt:DEFENSE kind="social"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Resist Taunt talent +1" lpcost="0">
+			<edt:TALENT name="Resist Taunt"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Spellmaster's Wand" weight="0" used="yes" weaventhreadrank="4" lpcostgrowth="5">
+		<edt:description></edt:description>
+		<edt:THREADRANK effect="Spellcasting talent +1" lpcost="200">
+			<edt:TALENT name="Spellcasting"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Thread Weaving (Nethermancer) talent +1" lpcost="300">
+			<edt:TALENT limitation="Nethermancer" name="Thread Weaving"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Spellcasting talent +1" lpcost="500">
+			<edt:TALENT name="Spellcasting"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Effect tests +1" lpcost="800"/>
+	</THREADITEM>
+	<COINS silver="20" weight="0.25" name=""/>
+	<ITEM location="River Pearl" weight="0.0" name="Alchemy Kit"/>
+	<ITEM weight="0.0" name="Adventurer's Kit"/>
+	<ITEM weight="0.0" name="Arcan Tomes"/>
+	<ITEM weight="0.0" name="Embroidered Robes"/>
+	<ITEM weight="0.0" name="Embroidery Tools"/>
+	<ITEM weight="0.0" name="Grimoires (2x)"/>
+	<ITEM weight="0.0" name="Healing Potions (3x)"/>
+	<ITEM weight="0.0" name="Healing Kit (3 uses)"/>
+	<ITEM weight="0.0" name="Physician Kit (3 uses)"/>
+	<ITEM weight="0.0" name="Quiet Pouch"/>
+	<ITEM weight="0.0" name="Scrolls"/>
+	<ITEM weight="0.0" name="Sculpting Tools"/>
+	<ITEM weight="0.0" name="Wealthy Traveler's Grab"/>
+	<ITEM weight="0.0" name="Writing Kit"/>
+	<ITEM weight="0.0" name="Gems and Jewels (worth 500 silver pieces)"/>
+	<KARMA maxmodificator="0" max="60" current="11" dice="d6" step="4">
+		<edt:KARMAPOINTS when="" comment="doing karmarituals" value="1060" type="+"/>
+		<edt:KARMAPOINTS when="" comment="spend during adventures" value="1000" type="-"/>
 	</KARMA>
-	<DESCRIPTION>etwas bla bla zum Char</DESCRIPTION>
-	<COMMENT>hier kommt ein Kommentar</COMMENT>
-	<EXPERIENCE reputation="0" renown="0" currentlegendpoints="0" totallegendpoints="0">
-		<edt:LEGENDPOINTS comment="total" value="37000" type="+" when="past"/>
+	<DESCRIPTION>
+The young and attractive Jada Denairastas is a polite, amiable, cold-blooded killer.
+Raised in the sheltered atmosphere of the Grand Palace of Iopos, she has been trained in manipulation and villainy from the cradle.
+Uhl Denairastas, patriarch of the notorious magician clan, is her uncle.
+Ever since she was a little girl, she has competed with his other nephews and nieces-and even his own children-for the old man's favour.
+By playing the children against one another, Uhl created a circle of operatives who are unquestioningly loyal to him alone.
+Jada does not view the things she does for Uhl as evil.
+Never exposed to such concepts as morality or virtue, she sees nothing wrong in ruthlessly destroying anyone whom Uhl decrees a Denairastas enemy.
+Truly amoral, Jada would rather charm or trick an opponent than kill him simple because such methods are less risky than overt violence.
+She finds people interesting, including her adversaries, and she typically engages a victim in friendly, sincerely empathetic conversation before casually slaying him.
+Jada has risen in her primary Discipline at an astonishing rate, and she is clearly the shining star among the younger generation o Denairastas-though Uhl would never dampen her desire to please him by telling her so.
+In Iopos, and in the lands of the t'skrang House of Ishkarat, Jada's legend is celebrated in song ans story.
+When her missions take here elsewhere, she adopts one of several false identities.
+	</DESCRIPTION>
+	<RACEABILITES>Low-Light Vision</RACEABILITES>
+	<CALCULATEDLEGENDPOINTS total="2152300" magicitems="5100" karma="1000" spells="0" skills="48100" knacks="0" optionaltalents="817800" disciplinetalents="1259300" attributes="21000"/>
+	<EXPERIENCE reputation="+3" renown="9" currentlegendpoints="0" totallegendpoints="0">
+		<edt:LEGENDPOINTS comment="" value="0" type="+" when=""/>
 	</EXPERIENCE>
 </EDCHARACTER>

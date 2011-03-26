@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_ATTRIBUTE"/>
  *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "attribute",
-    "spelllegendpointcost"
+    "spelllegendpointcost",
+    "threaditemdostack"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
 public class OPTIONALRULES {
@@ -47,6 +49,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULESATTRIBUTE attribute;
     @XmlElement(name = "SPELLLEGENDPOINTCOST", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType spelllegendpointcost;
+    @XmlElement(name = "THREADITEMDOSTACK", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType threaditemdostack;
 
     /**
      * Gets the value of the attribute property.
@@ -94,6 +98,30 @@ public class OPTIONALRULES {
      */
     public void setSPELLLEGENDPOINTCOST(OPTIONALRULEType value) {
         this.spelllegendpointcost = value;
+    }
+
+    /**
+     * Gets the value of the threaditemdostack property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getTHREADITEMDOSTACK() {
+        return threaditemdostack;
+    }
+
+    /**
+     * Sets the value of the threaditemdostack property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setTHREADITEMDOSTACK(OPTIONALRULEType value) {
+        this.threaditemdostack = value;
     }
 
 }
