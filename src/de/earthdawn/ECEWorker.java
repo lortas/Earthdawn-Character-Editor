@@ -433,14 +433,7 @@ public class ECEWorker {
 			}
 		}
 
-		int threaditemdefensePhysical = 0;
-		int threaditemdefenseSpell = 0;
-		int threaditemdefenseSocial = 0;
-		boolean threadItemDoStack = ApplicationProperties.create().getOptionalRules().getTHREADITEMDOSTACK().getUsed().equals(YesnoType.YES);
 		for( THREADITEMType item : character.getThreadItem() ) {
-			int defensePhysical = 0;
-			int defenseSpell = 0;
-			int defenseSocial = 0;
 			for( int rank=0; rank<item.getWeaventhreadrank(); rank++ ) {
 				THREADRANKType threadrank = item.getTHREADRANK().get(rank);
 				if( threadrank == null ) {
@@ -449,37 +442,41 @@ public class ECEWorker {
 				}
 				for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
 					switch (itemdefense.getKind()) {
-					case PHYSICAL: defensePhysical++; break;
-					case SPELL: defenseSpell++; break;
-					case SOCIAL: defenseSocial++; break;
+					case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
+					case SPELL: defense.setSpell(defense.getSpell()+1); break;
+					case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
 					}
 				}
 				for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
 					String limitation = itemtalent.getLimitation();
+					boolean notfound=true;
 					for( TALENTType talent : character.getTalentByName(itemtalent.getName()) ) {
 						if( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) {
+							notfound=false;
 							RANKType talentrank = talent.getRANK();
 							talentrank.setBonus(talentrank.getBonus()+1);
 							calculateCapabilityRank(talentrank,attribute.get(talent.getAttribute().value()));
 						}
 					}
+					if( notfound ) {
+						TALENTType bonusTalent = new TALENTType();
+						bonusTalent.setName(itemtalent.getName());
+						bonusTalent.setLimitation(itemtalent.getLimitation());
+						bonusTalent.setCircle(0);
+						enforceCapabilityParams(bonusTalent,capabilities);
+						RANKType bonusrank = new RANKType();
+						bonusrank.setRank(0);
+						bonusrank.setBonus(1);
+						calculateCapabilityRank(bonusrank,attribute.get(bonusTalent.getAttribute().value()));
+						bonusTalent.setRANK(bonusrank);
+						allTalents.get(1).getOPTIONALTALENT().add(bonusTalent);
+					}
 				}
 				
 				// TODO: other effects of MagicItems
 			}
-			if( threadItemDoStack ) {
-				threaditemdefensePhysical+=defensePhysical;
-				threaditemdefenseSpell+=defenseSpell;
-				threaditemdefenseSocial+=defenseSocial;
-			} else {
-				if( defensePhysical > threaditemdefensePhysical ) threaditemdefensePhysical=defensePhysical;
-				if( defenseSpell > threaditemdefenseSpell ) threaditemdefenseSpell=defenseSpell;
-				if( defenseSocial > threaditemdefenseSocial ) threaditemdefenseSocial=defenseSocial;
-			}
+			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
 		}
-		defense.setPhysical(defense.getPhysical()+threaditemdefensePhysical);
-		defense.setSpell(defense.getSpell()+threaditemdefenseSpell);
-		defense.setSocial(defense.getSocial()+threaditemdefenseSocial);
 
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden
 		death.setValue(death.getBase()+death.getAdjustment());
