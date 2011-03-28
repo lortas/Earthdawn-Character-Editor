@@ -54,6 +54,10 @@ public class EDMainWindow {
 	private EDGeneral panelERGeneral;
 	private EDAttributes panelEDAttributes;
 	private EDDisciplines panelEDDisciplines;
+	private EDExperience panelEDExperience;
+	private EDKarma panelEDKarma;
+	private EDItems panelEDItems;
+	
 	private EDSpells panelEDSpells;
 	private EDTalents panelEDTalents;
 	private File file = null;
@@ -232,6 +236,9 @@ public class EDMainWindow {
 		panelEDDisciplines = new EDDisciplines();
 		panelEDSpells	= new EDSpells();
 		panelEDSkills = new EDSkills();
+		panelEDExperience = new EDExperience();
+		panelEDKarma = new EDKarma();
+		panelEDItems = new EDItems();
 		paneStatus = new JEditorPane();
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
@@ -244,7 +251,10 @@ public class EDMainWindow {
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
 		tabbedPane.addTab("Spells", null, panelEDSpells, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
-
+		tabbedPane.addTab("Experience", null, panelEDExperience , null);
+		tabbedPane.addTab("Karma", null, panelEDKarma , null);
+		tabbedPane.addTab("Items", null, panelEDItems , null);
+		
 		splitPane.setRightComponent(paneStatus);
 	}
 
@@ -317,6 +327,15 @@ public class EDMainWindow {
 			if(co.getClass() == EDSkills.class){
 				((EDSkills)co).setCharacter(character);
 			}
+			if(co.getClass() == EDExperience.class){
+				((EDExperience)co).setCharacter(character);
+			}	
+			if(co.getClass() == EDKarma.class){
+				((EDKarma)co).setCharacter(character);
+			}
+			if(co.getClass() == EDItems.class){
+				((EDItems)co).setCharacter(character);
+			}				
 		}
 	}
 
