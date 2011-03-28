@@ -57,6 +57,9 @@ public class EDMainWindow {
 	private EDExperience panelEDExperience;
 	private EDKarma panelEDKarma;
 	private EDItems panelEDItems;
+	private EDBloodCharmItems panelEDBloodCharmItems;
+	
+	private EDWeapons panelEDWeapons;
 	
 	private EDSpells panelEDSpells;
 	private EDTalents panelEDTalents;
@@ -239,6 +242,9 @@ public class EDMainWindow {
 		panelEDExperience = new EDExperience();
 		panelEDKarma = new EDKarma();
 		panelEDItems = new EDItems();
+		panelEDBloodCharmItems = new EDBloodCharmItems();
+		panelEDWeapons = new EDWeapons();
+		
 		paneStatus = new JEditorPane();
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
@@ -254,6 +260,8 @@ public class EDMainWindow {
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
 		tabbedPane.addTab("Items", null, panelEDItems , null);
+		tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
+		tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
 		
 		splitPane.setRightComponent(paneStatus);
 	}
@@ -335,7 +343,15 @@ public class EDMainWindow {
 			}
 			if(co.getClass() == EDItems.class){
 				((EDItems)co).setCharacter(character);
-			}				
+			}	
+			if(co.getClass() == EDBloodCharmItems.class){
+				((EDBloodCharmItems)co).setCharacter(character);
+			}
+			if(co.getClass() == EDWeapons.class){
+				((EDWeapons)co).setCharacter(character);
+			}			
+			
+			
 		}
 	}
 
