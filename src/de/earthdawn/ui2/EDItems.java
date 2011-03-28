@@ -42,10 +42,6 @@ public class EDItems extends JPanel {
 		
 		this.character = character;
 		((ItemTableModel)table.getModel()).setCharacter(character);
-		JComboBox comboBoxPlusMinus = new JComboBox();
-		comboBoxPlusMinus.addItem("+");
-		comboBoxPlusMinus.addItem("-");
-		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
 	}
 
 	public EDItems() {
@@ -81,19 +77,11 @@ public class EDItems extends JPanel {
 		table.setModel(new ItemTableModel(character));
 		scrollPane.setViewportView(table);
 		table.setRowSelectionAllowed(false);
-		
-		JComboBox comboBoxPlusMinus = new JComboBox();
-		comboBoxPlusMinus.addItem("+");
-		comboBoxPlusMinus.addItem("-");
-		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
 	}
 	
 	protected void do_btnAddItem_actionPerformed(ActionEvent arg0) {
-		SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
-		
-		
 		ITEMType item = new ITEMType();
-		item.setLocation(new String("none"));
+		item.setLocation(new String("self"));
 		item.setName(new String(""));
 		item.setWeight(new Float("0").floatValue());
 		item.setUsed(YesnoType.NO);
