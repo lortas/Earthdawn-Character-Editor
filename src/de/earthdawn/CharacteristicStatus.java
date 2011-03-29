@@ -6,8 +6,16 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.ATTRIBUTEType;
+import de.earthdawn.data.CALCULATEDLEGENDPOINTSType;
 import de.earthdawn.data.DEATHType;
+import de.earthdawn.data.DEFENSEType;
+import de.earthdawn.data.EXPERIENCEType;
+import de.earthdawn.data.INITIATIVEType;
+import de.earthdawn.data.KARMAType;
+import de.earthdawn.data.MOVEMENTType;
+import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.RECOVERYType;
 import de.earthdawn.data.WOUNDType;
 import freemarker.template.Configuration;
@@ -47,35 +55,52 @@ public class CharacteristicStatus {
 		for( String a : attributes.keySet() ) {
 			Map<String,Object> values = new HashMap<String,Object>();
 			node.put(a, values);
-			values.put( "basevalue", attributes.get(a).getBasevalue() );
-			values.put( "lpincrease", attributes.get(a).getLpincrease() );
-			values.put( "currentvalue", attributes.get(a).getCurrentvalue() );
-			values.put( "step", attributes.get(a).getStep() );
-			values.put( "dice", attributes.get(a).getDice().value() );
+			ATTRIBUTEType attribute = attributes.get(a);
+			values.put( "basevalue", attribute.getBasevalue() );
+			values.put( "lpincrease", attribute.getLpincrease() );
+			values.put( "currentvalue", attribute.getCurrentvalue() );
+			values.put( "step", attribute.getStep() );
+			values.put( "dice", attribute.getDice().value() );
 		}
 		root.put("ATTRIBUTE", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "physical", character.getDefence().getPhysical() );
-		node.put( "spell", character.getDefence().getSpell() );
-		node.put( "social", character.getDefence().getSocial() );
+		APPEARANCEType appearance = character.getAppearance();
+		node.put( "race", appearance.getRace() );
+		node.put( "age", appearance.getAge() );
+		node.put( "gender", appearance.getGender().value() );
+		node.put( "weight", appearance.getWeight() );
+		node.put( "eyes", appearance.getEyes() );
+		node.put( "hair", appearance.getHair() );
+		node.put( "height", appearance.getHeight() );
+		node.put( "skin", appearance.getSkin() );
+		root.put("APPEARANCE", node);
+
+		node = new HashMap<String,Object>();
+		DEFENSEType defence = character.getDefence();
+		node.put( "physical", defence.getPhysical() );
+		node.put( "spell", defence.getSpell() );
+		node.put( "social", defence.getSocial() );
 		root.put("DEFENSE", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "physicalarmor", character.getProtection().getPhysicalarmor() );
-		node.put( "mysticarmor", character.getProtection().getMysticarmor() );
+		PROTECTIONType protection = character.getProtection();
+		node.put( "physicalarmor", protection.getPhysicalarmor() );
+		node.put( "mysticarmor", protection.getMysticarmor() );
 		root.put("PROTECTION", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "base", character.getInitiative().getBase() );
-		node.put( "modification", character.getInitiative().getModification() );
-		node.put( "step", character.getInitiative().getStep() );
-		node.put( "dice", character.getInitiative().getDice().value() );
+		INITIATIVEType initiative = character.getInitiative();
+		node.put( "base", initiative.getBase() );
+		node.put( "modification", initiative.getModification() );
+		node.put( "step", initiative.getStep() );
+		node.put( "dice", initiative.getDice().value() );
 		root.put("INITIATIVE", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "ground", character.getMovement().getGround() );
-		node.put( "flight", character.getMovement().getFlight() );
+		MOVEMENTType movement = character.getMovement();
+		node.put( "ground", movement.getGround() );
+		node.put( "flight", movement.getFlight() );
 		root.put("MOVEMENT", node);
 
 		node = new HashMap<String,Object>();
@@ -83,30 +108,34 @@ public class CharacteristicStatus {
 		root.put("CARRYING", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "current", character.getKarma().getCurrent() );
-		node.put( "max", character.getKarma().getMax() );
-		node.put( "step", character.getKarma().getStep() );
-		node.put( "dice", character.getKarma().getDice().value() );
-		node.put( "maxmodificator", character.getKarma().getMaxmodificator() );
+		KARMAType karma = character.getKarma();
+		node.put( "current", karma.getCurrent() );
+		node.put( "max", karma.getMax() );
+		node.put( "step", karma.getStep() );
+		node.put( "dice", karma.getDice().value() );
+		node.put( "maxmodificator", karma.getMaxmodificator() );
 		root.put("KARMA", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "renown", character.getLegendPoints().getRenown() );
-		node.put( "reputation", character.getLegendPoints().getReputation() );
-		node.put( "totallegendpoints", character.getLegendPoints().getTotallegendpoints() );
-		node.put( "currentlegendpoints", character.getLegendPoints().getCurrentlegendpoints() );
+		EXPERIENCEType legendPoints = character.getLegendPoints();
+		node.put( "renown", legendPoints.getRenown() );
+		node.put( "reputation", legendPoints.getReputation() );
+		node.put( "totallegendpoints", legendPoints.getTotallegendpoints() );
+		node.put( "currentlegendpoints", legendPoints.getCurrentlegendpoints() );
 		root.put("EXPERIENCE", node);
 
 		node = new HashMap<String,Object>();
-		node.put( "total", character.getCalculatedLegendpoints().getTotal() );
-		node.put( "attributes", character.getCalculatedLegendpoints().getAttributes() );
-		node.put( "disciplinetalents", character.getCalculatedLegendpoints().getDisciplinetalents() );
-		node.put( "optionaltalents", character.getCalculatedLegendpoints().getOptionaltalents() );
-		node.put( "knacks", character.getCalculatedLegendpoints().getKnacks() );
-		node.put( "spells", character.getCalculatedLegendpoints().getSpells() );
-		node.put( "skills", character.getCalculatedLegendpoints().getSkills() );
-		node.put( "karma", character.getCalculatedLegendpoints().getKarma() );
-		node.put( "magicitems", character.getCalculatedLegendpoints().getMagicitems() );
+		CALCULATEDLEGENDPOINTSType calculatedLegendpoints = character.getCalculatedLegendpoints();
+		node.put( "unused", (legendPoints.getTotallegendpoints()-calculatedLegendpoints.getTotal()) );
+		node.put( "total", calculatedLegendpoints.getTotal() );
+		node.put( "attributes", calculatedLegendpoints.getAttributes() );
+		node.put( "disciplinetalents", calculatedLegendpoints.getDisciplinetalents() );
+		node.put( "optionaltalents", calculatedLegendpoints.getOptionaltalents() );
+		node.put( "knacks", calculatedLegendpoints.getKnacks() );
+		node.put( "spells", calculatedLegendpoints.getSpells() );
+		node.put( "skills", calculatedLegendpoints.getSkills() );
+		node.put( "karma", calculatedLegendpoints.getKarma() );
+		node.put( "magicitems", calculatedLegendpoints.getMagicitems() );
 		root.put("CALCULATEDLEGENDPOINTS", node);
 
 		node = new HashMap<String,Object>();
