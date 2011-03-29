@@ -58,6 +58,7 @@ public class EDMainWindow {
 	private EDKarma panelEDKarma;
 	private EDItems panelEDItems;
 	private EDBloodCharmItems panelEDBloodCharmItems;
+	private EDThreadItems panelEDThreadItems;
 	
 	private EDWeapons panelEDWeapons;
 	private EDArmor panelEDArmor;
@@ -246,6 +247,7 @@ public class EDMainWindow {
 		panelEDBloodCharmItems = new EDBloodCharmItems();
 		panelEDWeapons = new EDWeapons();
 		panelEDArmor = new EDArmor();
+		panelEDThreadItems = new EDThreadItems();
 		
 		paneStatus = new JEditorPane();
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
@@ -265,6 +267,8 @@ public class EDMainWindow {
 		tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
 		tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
 		tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
+		tabbedPane.addTab("Threaditems", null, panelEDThreadItems , null);
+		
 		splitPane.setRightComponent(paneStatus);
 	}
 
@@ -355,6 +359,10 @@ public class EDMainWindow {
 			if(co.getClass() == EDArmor.class){
 				((EDArmor)co).setCharacter(character);
 			}	
+			if(co.getClass() == EDThreadItems.class){
+				((EDThreadItems)co).setCharacter(character);
+			}
+			
 			
 		}
 	}
