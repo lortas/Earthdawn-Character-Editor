@@ -18,6 +18,7 @@ import javax.swing.table.AbstractTableModel;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ACCOUNTINGType;
+import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.PlusminusType;
 import de.earthdawn.data.YesnoType;
@@ -80,22 +81,34 @@ public class EDArmor extends JPanel {
 	}
 	
 	protected void do_btnAddArmor_actionPerformed(ActionEvent arg0) {
-		ITEMType item = new ITEMType();
-		item.setLocation(new String("self"));
-		item.setName(new String(""));
-		item.setWeight(new Float("0").floatValue());
-		item.setUsed(YesnoType.NO);
-		character.getItems().add(item);
+		ARMORType armor = new ARMORType();
+		armor.setLocation(new String("self"));
+		armor.setName(new String(""));
+		armor.setWeight(new Float("0").floatValue());
+		
+		armor.setPhysicalarmor(1);
+		armor.setMysticarmor(1);
+		armor.setTimesforgedMystic(0);
+		armor.setTimesforgedPhysical(0);
+		
+		armor.setPenalty(0);
+		armor.setEdn(0);
+		armor.setDateforged("");
+		
+		
+		armor.setUsed(YesnoType.YES);
+		
+		character.getProtection().getARMOROrSHIELD().add(armor);
 		character.refesh();
 	}
 	
 	protected void do_btnRemoveArmor_actionPerformed(ActionEvent arg0) {
-		ArrayList<ITEMType> itemsForRemoval = new ArrayList<ITEMType> ();
+		ArrayList<ARMORType> armorForRemoval = new ArrayList<ARMORType> ();
 		for(int row :table.getSelectedRows()){
-			ITEMType item = character.getItems().get(row);
-			itemsForRemoval.add(item);
+			ARMORType armor = character.getProtection().getARMOROrSHIELD().get(row);
+			armorForRemoval.add(armor);
 		}
-		character.getItems().removeAll(itemsForRemoval);	
+		character.getProtection().getARMOROrSHIELD().removeAll(armorForRemoval);	
 		character.refesh();
 	}
 }
@@ -107,7 +120,7 @@ class ArmorTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-    private String[] columnNames = {"Name", "Weight",  "Location", "Used"};
+    private String[] columnNames = {"Name", "Weight",  "Location", "Physicalarmor", "Mysticarmor" , "Penalty", "Enchantingdifficultynumber", "TimesforgedPhysical", "TimesforgedMystic",  "Dateforged", "Used"};
 
 
     
@@ -133,7 +146,7 @@ class ArmorTableModel extends AbstractTableModel {
 
     public int getRowCount() {
     	if(character != null){
-    		return character.getItems().size();
+    		return character.getProtection().getARMOROrSHIELD().size();
     	}
     	else{
     		return 0;
@@ -147,13 +160,20 @@ class ArmorTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int col) {
-        // {"Name", "Weight",  "Location", "Used"}
+        // {"Name", "Weight",  "Location", "Physicalarmor", "Mysticarmor" , "Penalty", "Enchantingdifficultynumber", "TimesforgedPhysical", "TimesforgedMystic",  "Dateforged", "Used"}
         if(character != null){ 
 	    	switch (col) {
-	    		case 0: return character.getItems().get(row).getName();
-	    		case 1: return character.getItems().get(row).getWeight();
-	    		case 2: return character.getItems().get(row).getLocation();
-	    		case 3: if (character.getItems().get(row).getUsed().equals(YesnoType.YES)) {
+	    		case 0: return character.getProtection().getARMOROrSHIELD().get(row).getName();
+	    		case 1: return character.getProtection().getARMOROrSHIELD().get(row).getWeight();
+	    		case 2: return character.getProtection().getARMOROrSHIELD().get(row).getLocation();
+	    		case 3: return character.getProtection().getARMOROrSHIELD().get(row).getPhysicalarmor();
+	    		case 4: return character.getProtection().getARMOROrSHIELD().get(row).getMysticarmor();
+	    		case 5: return character.getProtection().getARMOROrSHIELD().get(row).getPenalty();
+	    		case 6: return character.getProtection().getARMOROrSHIELD().get(row).getEdn();
+	    		case 7: return character.getProtection().getARMOROrSHIELD().get(row).getTimesforgedPhysical();
+	    		case 8: return character.getProtection().getARMOROrSHIELD().get(row).getTimesforgedMystic();
+	    		case 9: return character.getProtection().getARMOROrSHIELD().get(row).getDateforged();
+	    		case 10: if (character.getProtection().getARMOROrSHIELD().get(row).getUsed().equals(YesnoType.YES)) {
 	    					return new Boolean(true);
 	    				}
 	    				else{
@@ -194,18 +214,26 @@ class ArmorTableModel extends AbstractTableModel {
     
     
     public void setValueAt(Object value, int row, int col) { 
-    	// {"Name", "Weight",  "Location", "Used"}
+    	// {"Name", "Weight",  "Location", "Physicalarmor", "Mysticarmor" , "Penalty", "Enchantingdifficultynumber", "TimesforgedPhysical", "TimesforgedMystic", "Dateforged", "Used"}
     	switch (col) {    		
-			case 0:character.getItems().get(row).setName((String)value); break;
-			case 1: character.getItems().get(row).setWeight(((Float)value).floatValue());  break;
-			case 2: character.getItems().get(row).setLocation((String)value);  break;
-			case 3: if (((Boolean)value)) {
+			case 0: character.getProtection().getARMOROrSHIELD().get(row).setName((String)value); break;
+			case 1: character.getProtection().getARMOROrSHIELD().get(row).setWeight(((Float)value).floatValue());  break;
+			case 2: character.getProtection().getARMOROrSHIELD().get(row).setLocation((String)value);  break;
+			case 3: character.getProtection().getARMOROrSHIELD().get(row).setPhysicalarmor((Integer)value);  break;
+			case 4: character.getProtection().getARMOROrSHIELD().get(row).setMysticarmor((Integer)value);  break;
+			case 5: character.getProtection().getARMOROrSHIELD().get(row).setPenalty((Integer)value);  break;
+			case 6: character.getProtection().getARMOROrSHIELD().get(row).setEdn((Integer)value);  break;
+			case 7: character.getProtection().getARMOROrSHIELD().get(row).setTimesforgedPhysical((Integer)value);  break;
+			case 8: character.getProtection().getARMOROrSHIELD().get(row).setTimesforgedMystic((Integer)value);  break;
+			case 9: character.getProtection().getARMOROrSHIELD().get(row).setDateforged((String)value);  break;
+			
+			case 10: if (((Boolean)value)) {
 						System.out.println("true");
-						character.getItems().get(row).setUsed(YesnoType.YES);
+						character.getProtection().getARMOROrSHIELD().get(row).setUsed(YesnoType.YES);
 					}
 					else{
 						System.out.println("false");
-						character.getItems().get(row).setUsed(YesnoType.NO);
+						character.getProtection().getARMOROrSHIELD().get(row).setUsed(YesnoType.NO);
 					}
 					break;
 			
