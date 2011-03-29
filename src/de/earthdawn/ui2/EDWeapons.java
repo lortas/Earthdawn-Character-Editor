@@ -170,7 +170,7 @@ class WeaponTableModel extends AbstractTableModel {
 	    		case 7: return character.getWeapons().get(row).getDateforged();
 	    		case 8: return character.getWeapons().get(row).getShortrange();
 	    		case 9: return character.getWeapons().get(row).getLongrange();
-	    		case 10: if (character.getItems().get(row).getUsed().equals(YesnoType.YES)) {
+	    		case 10: if (character.getWeapons().get(row).getUsed().equals(YesnoType.YES)) {
 	    					return new Boolean(true);
 	    				}
 	    				else{
@@ -228,11 +228,11 @@ class WeaponTableModel extends AbstractTableModel {
 			
 			case 10: if (((Boolean)value)) {
 						System.out.println("true");
-						character.getItems().get(row).setUsed(YesnoType.YES);
+						character.getWeapons().get(row).setUsed(YesnoType.YES);
 					}
 					else{
 						System.out.println("false");
-						character.getItems().get(row).setUsed(YesnoType.NO);
+						character.getWeapons().get(row).setUsed(YesnoType.NO);
 					}
 					break;
 			
