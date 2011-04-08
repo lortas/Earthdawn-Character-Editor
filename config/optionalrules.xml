@@ -3,4 +3,5 @@
 	<ATTRIBUTE points="25" limitoneway="yes"/>
 	<SPELLLEGENDPOINTCOST used="yes"/>
 	<THREADITEMDOSTACK used="yes"/>
+	<SHOWDEFAULTSKILLS used="yes"/>
 </OPTIONALRULES>

@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_ATTRIBUTE"/>
  *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "attribute",
     "spelllegendpointcost",
-    "threaditemdostack"
+    "threaditemdostack",
+    "showdefaultskills"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
 public class OPTIONALRULES {
@@ -51,6 +53,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType spelllegendpointcost;
     @XmlElement(name = "THREADITEMDOSTACK", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType threaditemdostack;
+    @XmlElement(name = "SHOWDEFAULTSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType showdefaultskills;
 
     /**
      * Gets the value of the attribute property.
@@ -122,6 +126,30 @@ public class OPTIONALRULES {
      */
     public void setTHREADITEMDOSTACK(OPTIONALRULEType value) {
         this.threaditemdostack = value;
+    }
+
+    /**
+     * Gets the value of the showdefaultskills property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getSHOWDEFAULTSKILLS() {
+        return showdefaultskills;
+    }
+
+    /**
+     * Sets the value of the showdefaultskills property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setSHOWDEFAULTSKILLS(OPTIONALRULEType value) {
+        this.showdefaultskills = value;
     }
 
 }
