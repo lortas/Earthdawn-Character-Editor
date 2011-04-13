@@ -11,6 +11,7 @@ import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.CALCULATEDLEGENDPOINTSType;
 import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEType;
+import de.earthdawn.data.DEVOTIONType;
 import de.earthdawn.data.EXPERIENCEType;
 import de.earthdawn.data.INITIATIVEType;
 import de.earthdawn.data.KARMAType;
@@ -123,6 +124,17 @@ public class CharacteristicStatus {
 		node.put( "totallegendpoints", legendPoints.getTotallegendpoints() );
 		node.put( "currentlegendpoints", legendPoints.getCurrentlegendpoints() );
 		root.put("EXPERIENCE", node);
+
+		node = new HashMap<String,Object>();
+		DEVOTIONType devotionPoints = character.getDevotionPoints();
+		if( devotionPoints == null ) {
+			node.put( "passion", "na" );
+			node.put( "value", "-" );
+		} else {
+			node.put( "passion", devotionPoints.getPassion() );
+			node.put( "value", devotionPoints.getValue() );
+		}
+		root.put("DEVOTION", node);
 
 		node = new HashMap<String,Object>();
 		CALCULATEDLEGENDPOINTSType calculatedLegendpoints = character.getCalculatedLegendpoints();

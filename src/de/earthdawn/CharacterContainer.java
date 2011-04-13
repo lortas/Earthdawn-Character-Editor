@@ -107,6 +107,39 @@ public class CharacterContainer extends CharChangeRefresh {
 		return calculatedLegendpoints;
 	}
 
+	public CALCULATEDLEGENDPOINTSType resetCalculatedLegendpoints() {
+		CALCULATEDLEGENDPOINTSType calculatedLP = getCalculatedLegendpoints();
+		int attributes=0;
+		int disciplinetalents=0;
+		int karma=0;
+		int knacks=0;
+		int magicitems=0;
+		int optionaltalents=0;
+		int skills=0;
+		int spells=0;
+		for( CALCULATEDLEGENDPOINTADJUSTMENTType adjustment : calculatedLP.getADJUSTMENT() ) {
+			switch(adjustment.getType()) {
+			case ATTRIBUTES:        attributes       +=adjustment.getValue(); break;
+			case DISCIPLINETALENTS: disciplinetalents+=adjustment.getValue(); break;
+			case KARMA:             karma            +=adjustment.getValue(); break;
+			case KNACKS:            knacks           +=adjustment.getValue(); break;
+			case MAGICITEMS:        magicitems       +=adjustment.getValue(); break;
+			case OPTIONALTALENTS:   optionaltalents  +=adjustment.getValue(); break;
+			case SKILLS:            skills           +=adjustment.getValue(); break;
+			case SPELLS:            spells           +=adjustment.getValue(); break;
+			}
+		}
+		calculatedLP.setAttributes(attributes);
+		calculatedLP.setDisciplinetalents(disciplinetalents);
+		calculatedLP.setKarma(karma);
+		calculatedLP.setKnacks(knacks);
+		calculatedLP.setMagicitems(magicitems);
+		calculatedLP.setOptionaltalents(optionaltalents);
+		calculatedLP.setSkills(skills);
+		calculatedLP.setSpells(spells);
+		return calculatedLP;
+	}
+
 	public INITIATIVEType getInitiative() {
 		INITIATIVEType initiative = character.getINITIATIVE();
 		if( initiative == null ) {
@@ -686,4 +719,33 @@ public class CharacterContainer extends CharChangeRefresh {
 		normalWeaponList.removeAll(delete);
 		return magicWeapon;
 	}
+
+	public static List<Integer> calculateAccounting(List<ACCOUNTINGType> accountings) {
+		int plus = 0;
+		int minus = 0;
+		for( ACCOUNTINGType lp : accountings ) {
+			switch( lp.getType() ) {
+			case PLUS:  plus  += lp.getValue(); break;
+			case MINUS: minus += lp.getValue(); break;
+			}
+		}
+		List<Integer> account = new ArrayList<Integer>();
+		account.add(plus);  // 0
+		account.add(minus); // 1
+		return account;
+	}
+
+	public DEVOTIONType getDevotionPoints() {
+		return character.getDEVOTION();
+	}
+
+	public int calculateDevotionPoints() {
+		DEVOTIONType devotionpoints=getDevotionPoints();
+		if( devotionpoints == null ) return 0;
+		List<Integer> dp = calculateAccounting(devotionpoints.getDEVOTIONPOINTS());
+		int result = dp.get(0)-dp.get(1);
+		devotionpoints.setValue(result);
+		return result;
+	}
+
 }

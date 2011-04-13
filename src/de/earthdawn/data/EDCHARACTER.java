@@ -54,6 +54,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="PORTRAIT" type="{http://www.w3.org/2001/XMLSchema}base64Binary" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="CALCULATEDLEGENDPOINTS" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTS_type" minOccurs="0"/>
  *         &lt;element name="EXPERIENCE" type="{http://earthdawn.com/datatypes}EXPERIENCE_type"/>
+ *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}DEVOTION_type" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
@@ -90,7 +91,8 @@ import javax.xml.bind.annotation.XmlType;
     "comment",
     "portrait",
     "calculatedlegendpoints",
-    "experience"
+    "experience",
+    "devotion"
 })
 @XmlRootElement(name = "EDCHARACTER", namespace = "http://earthdawn.com/character")
 public class EDCHARACTER {
@@ -147,6 +149,8 @@ public class EDCHARACTER {
     protected CALCULATEDLEGENDPOINTSType calculatedlegendpoints;
     @XmlElement(name = "EXPERIENCE", namespace = "http://earthdawn.com/character", required = true)
     protected EXPERIENCEType experience;
+    @XmlElement(name = "DEVOTION", namespace = "http://earthdawn.com/character")
+    protected DEVOTIONType devotion;
     @XmlAttribute(required = true)
     protected String name;
 
@@ -836,6 +840,30 @@ public class EDCHARACTER {
      */
     public void setEXPERIENCE(EXPERIENCEType value) {
         this.experience = value;
+    }
+
+    /**
+     * Gets the value of the devotion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DEVOTIONType }
+     *     
+     */
+    public DEVOTIONType getDEVOTION() {
+        return devotion;
+    }
+
+    /**
+     * Sets the value of the devotion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DEVOTIONType }
+     *     
+     */
+    public void setDEVOTION(DEVOTIONType value) {
+        this.devotion = value;
     }
 
     /**

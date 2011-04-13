@@ -39,16 +39,8 @@ public class ECEWorker {
 	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
 		CharacterContainer character = new CharacterContainer(charakter);
 
-		// Berechnete LP erstmal zurück setzen
-		CALCULATEDLEGENDPOINTSType calculatedLP = character.getCalculatedLegendpoints();
-		calculatedLP.setAttributes(0);
-		calculatedLP.setDisciplinetalents(0);
-		calculatedLP.setKarma(0);
-		calculatedLP.setMagicitems(0);
-		calculatedLP.setOptionaltalents(0);
-		calculatedLP.setSkills(0);
-		calculatedLP.setSpells(0);
-		calculatedLP.setKnacks(0);
+		// Berechnete LP erstmal zurücksetzen
+		CALCULATEDLEGENDPOINTSType calculatedLP = character.resetCalculatedLegendpoints();
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		NAMEGIVERABILITYType namegiver = null;
@@ -380,6 +372,7 @@ public class ECEWorker {
 		recovery.setDice(step2Dice(recovery.getStep()));
 		
 		calculateLegendPointsAndStatus(character.getLegendPoints(),character.getDiciplineMaxCircle().getCircle());
+		character.calculateDevotionPoints();
 
 		// ** SPELLS **
 		OPTIONALRULEType OptinalRule_SpellLegendPointCost = ApplicationProperties.create().getOptionalRules().getSPELLLEGENDPOINTCOST();
@@ -522,24 +515,6 @@ public class ECEWorker {
 		return result;
 	}
 
-	public static List<Integer> calculateAccounting(List<ACCOUNTINGType> accountings) {
-		int plus = 0;
-		int minus = 0;
-		int zero = 0;
-		for( ACCOUNTINGType lp : accountings ) {
-			switch( lp.getType() ) {
-			case PLUS:  plus  += lp.getValue(); break;
-			case MINUS: minus += lp.getValue(); break;
-			case ZERO:  zero  += lp.getValue(); break;
-			}
-		}
-		List<Integer> account = new ArrayList<Integer>();
-		account.add(plus);  // 0
-		account.add(minus); // 1
-		account.add(zero);  // 2
-		return account;
-	}
-
 	private int calculateKarma(KARMAType karma, TALENTType karmaritualTalent, int karmaModifier, int karmaMaxBonus) {
 		karma.setMaxmodificator(karmaMaxBonus);
 		if( (karmaritualTalent != null) && (karmaritualTalent.getRANK() != null) ) {
@@ -547,13 +522,13 @@ public class ECEWorker {
 		} else {
 			System.err.println("No karmaritual talent found, skipping maximal karma calculation.");
 		}
-		List<Integer> k = calculateAccounting(karma.getKARMAPOINTS());
+		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
 		karma.setCurrent(k.get(0)-k.get(1));
 		return 10*k.get(0); // KarmaLP
 	}
 
 	public static void calculateLegendPointsAndStatus(EXPERIENCEType legendpoints, int circle) {
-		List<Integer> lp = calculateAccounting(legendpoints.getLEGENDPOINTS());
+		List<Integer> lp = CharacterContainer.calculateAccounting(legendpoints.getLEGENDPOINTS());
 		legendpoints.setCurrentlegendpoints(lp.get(0)-lp.get(1));
 		legendpoints.setTotallegendpoints(lp.get(0));
 		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(circle);

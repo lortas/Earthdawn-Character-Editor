@@ -14,7 +14,27 @@
 		</xs:choice>
 		<xs:attribute name="discipline" type="xs:string" use="required"/>
 	</xs:complexType>
+	<xs:simpleType name="CALCULATEDLEGENDPOINTADJUSTMENTTYPE_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="attributes"/>
+			<xs:enumeration value="disciplinetalents"/>
+			<xs:enumeration value="optionaltalents"/>
+			<xs:enumeration value="knacks"/>
+			<xs:enumeration value="spells"/>
+			<xs:enumeration value="skills"/>
+			<xs:enumeration value="karma"/>
+			<xs:enumeration value="magicitems"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CALCULATEDLEGENDPOINTADJUSTMENT_type">
+		<xs:attribute name="type" type="CALCULATEDLEGENDPOINTADJUSTMENTTYPE_type" use="required"/>
+		<xs:attribute name="reason" type="xs:string" default=""/>
+		<xs:attribute name="value" type="xs:int" default="0"/>
+	</xs:complexType>
 	<xs:complexType name="CALCULATEDLEGENDPOINTS_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ADJUSTMENT" type="CALCULATEDLEGENDPOINTADJUSTMENT_type"/>
+		</xs:sequence>
 		<xs:attribute name="attributes" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="disciplinetalents" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="optionaltalents" type="edt:unsigned_int" default="0"/>
@@ -54,6 +74,7 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PORTRAIT" type="xs:base64Binary"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="DEVOTION" type="edt:DEVOTION_type"/>
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:string" use="required"/>
 		</xs:complexType>
