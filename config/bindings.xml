@@ -8,7 +8,6 @@
             <jaxb:typesafeEnumClass>
                 <jaxb:typesafeEnumMember value="+" name="PLUS" />
                 <jaxb:typesafeEnumMember value="-" name="MINUS" />
-                <jaxb:typesafeEnumMember value="0" name="ZERO" />
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
         <jaxb:bindings node="//xs:simpleType[@name='yesno_type']">

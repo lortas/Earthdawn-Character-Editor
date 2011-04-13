@@ -43,7 +43,6 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="+"/>
 			<xs:enumeration value="-"/>
-			<xs:enumeration value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="language_type">
@@ -291,6 +290,13 @@
 		<xs:attribute name="value" type="unsigned_int" use="required"/>
 		<xs:attribute name="comment" type="xs:string" use="required"/>
 		<xs:attribute name="when" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="DEVOTION_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="DEVOTIONPOINTS" type="ACCOUNTING_type"/>
+		</xs:sequence>
+		<xs:attribute name="passion" type="xs:string" use="required"/>
+		<xs:attribute name="value" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="EXPERIENCE_type">
 		<xs:sequence>

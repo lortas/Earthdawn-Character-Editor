@@ -93,6 +93,10 @@
             <ns2:RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
             <ns2:TEACHER/>
         </OPTIONALTALENT>
+        <OPTIONALTALENT circle="0" limitation="Thystonius" name="Questor">
+            <ns2:RANK rank="3"/>
+            <ns2:TEACHER/>
+        </OPTIONALTALENT>
     </TALENTS>
     <SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
         <ns2:RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
@@ -359,4 +363,7 @@
         <ns2:LEGENDPOINTS when="15.01.2011" comment="Optionaltalentsteigerungen" value="29500" type="-"/>
         <ns2:LEGENDPOINTS when="15.01.2011" comment="Optionaltalentsteigerungen" value="300" type="-"/>
     </EXPERIENCE>
+    <DEVOTION passion="Thystonius">
+        <ns2:DEVOTIONPOINTS when="07.04.2011" type="+" value="150" comment="sogut wie alleine gegen eine Hydra"/>
+    </DEVOTION>
 </EDCHARACTER>

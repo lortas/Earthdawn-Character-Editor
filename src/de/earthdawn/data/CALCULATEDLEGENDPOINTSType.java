@@ -8,9 +8,12 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -23,6 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="CALCULATEDLEGENDPOINTS_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="ADJUSTMENT" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTADJUSTMENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="attributes" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="disciplinetalents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="optionaltalents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -40,9 +46,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CALCULATEDLEGENDPOINTS_type", namespace = "http://earthdawn.com/character")
+@XmlType(name = "CALCULATEDLEGENDPOINTS_type", namespace = "http://earthdawn.com/character", propOrder = {
+    "adjustment"
+})
 public class CALCULATEDLEGENDPOINTSType {
 
+    @XmlElement(name = "ADJUSTMENT")
+    protected List<CALCULATEDLEGENDPOINTADJUSTMENTType> adjustment;
     @XmlAttribute
     protected Integer attributes;
     @XmlAttribute
@@ -61,6 +71,35 @@ public class CALCULATEDLEGENDPOINTSType {
     protected Integer magicitems;
     @XmlAttribute
     protected Integer total;
+
+    /**
+     * Gets the value of the adjustment property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the adjustment property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getADJUSTMENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CALCULATEDLEGENDPOINTADJUSTMENTType }
+     * 
+     * 
+     */
+    public List<CALCULATEDLEGENDPOINTADJUSTMENTType> getADJUSTMENT() {
+        if (adjustment == null) {
+            adjustment = new ArrayList<CALCULATEDLEGENDPOINTADJUSTMENTType>();
+        }
+        return this.adjustment;
+    }
 
     /**
      * Gets the value of the attributes property.

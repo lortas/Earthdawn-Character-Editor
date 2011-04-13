@@ -23,7 +23,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="+"/>
  *     &lt;enumeration value="-"/>
- *     &lt;enumeration value="0"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -36,9 +35,7 @@ public enum PlusminusType {
     @XmlEnumValue("+")
     PLUS("+"),
     @XmlEnumValue("-")
-    MINUS("-"),
-    @XmlEnumValue("0")
-    ZERO("0");
+    MINUS("-");
     private final String value;
 
     PlusminusType(String v) {
