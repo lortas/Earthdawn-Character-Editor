@@ -56,6 +56,7 @@ public class EDMainWindow {
 	private EDDisciplines panelEDDisciplines;
 	private EDExperience panelEDExperience;
 	private EDKarma panelEDKarma;
+	private EDDevotionPoints panelEDDevotionPoints;
 	private EDItems panelEDItems;
 	private EDBloodCharmItems panelEDBloodCharmItems;
 	private EDThreadItems panelEDThreadItems;
@@ -243,6 +244,7 @@ public class EDMainWindow {
 		panelEDSkills = new EDSkills();
 		panelEDExperience = new EDExperience();
 		panelEDKarma = new EDKarma();
+		panelEDDevotionPoints = new EDDevotionPoints();
 		panelEDItems = new EDItems();
 		panelEDBloodCharmItems = new EDBloodCharmItems();
 		panelEDWeapons = new EDWeapons();
@@ -263,6 +265,7 @@ public class EDMainWindow {
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
+		tabbedPane.addTab("DevotionPoints", null, panelEDDevotionPoints , null);
 		tabbedPane.addTab("Items", null, panelEDItems , null);
 		tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
 		tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
@@ -346,6 +349,9 @@ public class EDMainWindow {
 			}	
 			if(co.getClass() == EDKarma.class){
 				((EDKarma)co).setCharacter(character);
+			}
+			if(co.getClass() == EDDevotionPoints.class){
+				((EDDevotionPoints)co).setCharacter(character);
 			}
 			if(co.getClass() == EDItems.class){
 				((EDItems)co).setCharacter(character);
