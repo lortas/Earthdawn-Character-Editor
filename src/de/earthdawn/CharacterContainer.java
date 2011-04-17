@@ -451,6 +451,12 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	public static List<Integer> getOptionalTalentsPerCircle(DISCIPLINEType discipline) {
+		List<Integer> result = new ArrayList<Integer>();
+		// TODO
+		return result;
+	}
+	
 	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
 		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
 		HashMap<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
@@ -464,6 +470,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 			int disciplineCircle = getCircleOf(discipline);
 			for( int i=1; i<=disciplineCircle; i++ ) {
+				// TODO: Prüfe ob mehrer OptionalTalents pro Kreis möglich sind.
 				if( talentsList.get(i).size() == 0 ) list.add( i );
 			}
 			result.put(discipline, list);
