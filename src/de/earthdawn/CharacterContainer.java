@@ -451,12 +451,21 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public static List<Integer> getOptionalTalentsPerCircle(DISCIPLINEType discipline) {
+	public static List<Integer> getNumberOfOptionalTalentsPerCircle(String discipline) {
+		return getNumberOfOptionalTalentsPerCircle(ApplicationProperties.create().getDisziplin(discipline));
+	}
+
+	public static List<Integer> getNumberOfOptionalTalentsPerCircle(DISCIPLINE discipline) {
 		List<Integer> result = new ArrayList<Integer>();
-		// TODO
+		if( discipline == null ) return result;
+		List<DISCIPLINECIRCLEType> circleList = discipline.getCIRCLE();
+		if( circleList == null ) return result;
+		for( DISCIPLINECIRCLEType circle : circleList ) {
+			result.add(circle.getTALENTABILITY().getCount());
+		}
 		return result;
 	}
-	
+
 	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
 		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
 		HashMap<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
@@ -469,9 +478,12 @@ public class CharacterContainer extends CharChangeRefresh {
 				for(int i=0;i<20;i++) talentsList.add(new ArrayList<TALENTType>());
 			}
 			int disciplineCircle = getCircleOf(discipline);
-			for( int i=1; i<=disciplineCircle; i++ ) {
-				// TODO: Prüfe ob mehrer OptionalTalents pro Kreis möglich sind.
-				if( talentsList.get(i).size() == 0 ) list.add( i );
+			int circlenr=0;
+			for( int numberOfOptionalTalents : getNumberOfOptionalTalentsPerCircle(discipline) ) {
+				circlenr++;
+				if( circlenr > disciplineCircle ) break;
+				int freeOptionalTalents=numberOfOptionalTalents-talentsList.get(circlenr).size();
+				for( int i=0; i<freeOptionalTalents; i++ ) list.add(circlenr);
 			}
 			result.put(discipline, list);
 		}

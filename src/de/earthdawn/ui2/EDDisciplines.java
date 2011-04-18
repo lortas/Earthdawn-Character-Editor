@@ -144,7 +144,7 @@ class DisciplinesTableModel extends AbstractTableModel {
 
     public int getRowCount() {
         if(character == null){
-        	System.out.println("character is null");
+        	//System.out.println("character is null");
         	return 0;
         }
         

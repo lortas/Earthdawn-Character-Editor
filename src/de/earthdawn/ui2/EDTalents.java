@@ -3,7 +3,6 @@ package de.earthdawn.ui2;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -14,8 +13,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
-import javax.xml.bind.JAXBElement;
-
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINE;
@@ -25,15 +22,20 @@ import de.earthdawn.data.TALENTType;
 
 public class EDTalents extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private CharacterContainer character;
-	
+
 	private JScrollPane scrollPane;
 	private JTable table;
 	private String disciplin;
 	private JButton buttonAdd;
 	private JPopupMenu popupMenuCircle;
 	private JPopupMenu popupMenuTalent;
-	
+
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((TalentsTableModel)table.getModel()).setCharacter(character);
@@ -43,7 +45,6 @@ public class EDTalents extends JPanel {
 	public CharacterContainer getCharacter() {
 		return character;
 	}	
-	
 
 	/**
 	 * Create the panel.
