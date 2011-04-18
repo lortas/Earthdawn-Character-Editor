@@ -18,7 +18,9 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.TALENTSType;
+import de.earthdawn.data.TALENTTEACHERType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.YesnoType;
 
 public class EDTalents extends JPanel {
 	
@@ -44,7 +46,7 @@ public class EDTalents extends JPanel {
 
 	public CharacterContainer getCharacter() {
 		return character;
-	}	
+	}
 
 	/**
 	 * Create the panel.
@@ -52,10 +54,10 @@ public class EDTalents extends JPanel {
 	public EDTalents(String disciplin ) {
 		this.disciplin  = disciplin;
 		setLayout(new BorderLayout(0, 0));
-		
+
 		scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
-		
+
 		table = new JTable();
 		table.setRowSelectionAllowed(false);
 		table.setSurrendersFocusOnKeystroke(true);
@@ -64,11 +66,11 @@ public class EDTalents extends JPanel {
 		table.setAutoCreateRowSorter(true);
 
 		scrollPane.setViewportView(table);
-		
+
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
 		add(toolBar, BorderLayout.NORTH);
-		
+
 		buttonAdd = new JButton("Add optional Talent");
 		buttonAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -76,15 +78,14 @@ public class EDTalents extends JPanel {
 			}
 		});
 		toolBar.add(buttonAdd);
-		
+
 		popupMenuTalent = new JPopupMenu();
 		toolBar.add(popupMenuTalent);
-		
+
 		popupMenuCircle = new JPopupMenu();
 		toolBar.add(popupMenuCircle);
-
 	}
-	
+
 	public String getDisciplin() {
 		return disciplin;
 	}
@@ -126,7 +127,6 @@ public class EDTalents extends JPanel {
 				popupMenuTalent.add(menuItem);
 			}
 		}
-		
 		popupMenuTalent.show(buttonAdd,source.getX() + source.getWidth(), source.getY()+10);
 		//popupMenuTalent.show(buttonAdd,1,1);
 	}
@@ -144,8 +144,6 @@ public class EDTalents extends JPanel {
 				break;
 			}
 		}
-
-		
 	}
 }
 
@@ -157,34 +155,23 @@ class TalentsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private TALENTSType talents;
-    private String[] columnNames = {"Circle", "Talentname", "Strain", "Attribute", "Rank", "Step", "Action", "Dice", "Type"};
-    private String disciplin = "";
-    
-
-
+	private String[] columnNames = {"Circle", "Talentname", "Strain", "Attribute", "Rank", "Step", "Action", "by Vers.", "Type"};
+	private String disciplin = "";
 
 	public String getDisciplin() {
 		return disciplin;
 	}
 
-
 	public void setDisciplin(String diciplin) {
 		this.disciplin = diciplin;
 	}
-
-
-
 
 	public TalentsTableModel(CharacterContainer character, String diciplin) {
 		super();
 		this.character = character;
 		this.disciplin = diciplin;
-		
 	}
 
-	
-    
-  
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		if (character != null){
@@ -198,26 +185,24 @@ class TalentsTableModel extends AbstractTableModel {
 
 	public CharacterContainer getCharacter() {
 		return character;
-	}	
+	}
 
-    public int getColumnCount() {
-        return columnNames.length;
-    }
+	public int getColumnCount() {
+		return columnNames.length;
+	}
 
-    public int getRowCount() {
-        if(character == null){
-        	System.out.println("character is null");
-        	return 0;
-        }
-        if (talents  == null){
-        	return 0;
-        }
-        return talents.getDISZIPLINETALENT().size()+talents.getOPTIONALTALENT().size();
-    }
+	public int getRowCount() {
+		if(character == null){
+			//System.out.println("character is null");
+			return 0;
+		}
+		if (talents == null) return 0;
+		return talents.getDISZIPLINETALENT().size()+talents.getOPTIONALTALENT().size();
+	}
 
-    public String getColumnName(int col) {
-        return columnNames[col];
-    }
+	public String getColumnName(int col) {
+		return columnNames[col];
+	}
 
 	public Object getValueAt(int row, int col) {
 		TALENTType talent = null;
@@ -270,7 +255,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        	catch(Exception e){
 	        		System.err.println("Error: " + talent.getName());
 	        	}
-	        	break;	        	
+	        	break;
 	        case 5:
 	        	try{
 	        		result = talent.getRANK().getStep();
@@ -286,22 +271,26 @@ class TalentsTableModel extends AbstractTableModel {
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
-	        	break;	 	        	
+	        	break;
 	        case 7:
 	        	try{
-	        		result = talent.getRANK().getDice().value();
+	        		TALENTTEACHERType teacher = talent.getTEACHER();
+	        		if( teacher == null ) {
+	        			result = false;
+	        		} else {
+	        			result = teacher.getByversatility().equals(YesnoType.YES);
+	        		}
 	        	}
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
-	        	break;	 	        	
+	        	break;
 	        case 8:
 	        	try{
 	        		if( isDisciplinTalent ) {
 	        			result="DisciplineTalent";
 	        		} else {
 	        			result="OptionalTalent";
-	        			
 	        		}
 	        	}
 	        	catch(Exception e){
@@ -309,10 +298,9 @@ class TalentsTableModel extends AbstractTableModel {
 	        	}
 	        	break;	 	        	
 	        default: return new Integer(0);
-        }
-
-    	return result;
-    }
+		}
+		return result;
+	}
 
     /*
      * JTable uses this method to determine the default renderer/
@@ -320,37 +308,40 @@ class TalentsTableModel extends AbstractTableModel {
      * then the last column would contain text ("true"/"false"),
      * rather than a check box.
      */
-    public Class getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
-    }
+	public Class getColumnClass(int c) {
+		return getValueAt(0, c).getClass();
+	}
 
     /*
      * Don't need to implement this method unless your table's
      * editable.
      */
-    public boolean isCellEditable(int row, int col) {
-    	if(col == 4){
-    		return true;
-    	}
-    	return false;
-    }
+	public boolean isCellEditable(int row, int col) {
+		if (col == 4) return true;
+		return false;
+	}
 
     /*
      * Don't need to implement this method unless your table's
      * data can change.
      */
-    public void setValueAt(Object value, int row, int col) {   
+    public void setValueAt(Object value, int row, int col) {
 		TALENTType talent = null;
 		if(talents.getDISZIPLINETALENT().size() > row ) {
 			talent=talents.getDISZIPLINETALENT().get(row);
 		} else {
 			talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
 		}
-    	talent.getRANK().setRank((Integer)value);
-    	character.refesh();
-        fireTableCellUpdated(row, col);
-        fireTableCellUpdated(row, 5);
-        fireTableCellUpdated(row, 7);
-    }
-
+		switch (col) {
+		case 4:
+			talent.getRANK().setRank((Integer)value);
+			break;
+		case 7:
+			break;
+		}
+		character.refesh();
+		fireTableCellUpdated(row, col);
+		fireTableCellUpdated(row, 5);
+		fireTableCellUpdated(row, 7);
+	}
 }

@@ -482,14 +482,22 @@ public class CharacterContainer extends CharChangeRefresh {
 			for( int numberOfOptionalTalents : getNumberOfOptionalTalentsPerCircle(discipline) ) {
 				circlenr++;
 				if( circlenr > disciplineCircle ) break;
-				int freeOptionalTalents=numberOfOptionalTalents-talentsList.get(circlenr).size();
+				int freeOptionalTalents=numberOfOptionalTalents;
+				for( TALENTType ot : talentsList.get(circlenr) ) {
+					TALENTTEACHERType teacher = ot.getTEACHER();
+					if( teacher == null ) {
+						freeOptionalTalents--;
+					} else if( teacher.getByversatility().equals(YesnoType.NO) ) {
+						freeOptionalTalents--;
+					}
+				}
 				for( int i=0; i<freeOptionalTalents; i++ ) list.add(circlenr);
 			}
 			result.put(discipline, list);
 		}
 		return result;
 	}
-	
+
 	public void addDiciplin(String name){
 		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
 		if( (disciplines.size() < 3) && (getAllDiciplinesByName().get(name) == null) ){
@@ -505,7 +513,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		
 	}
-	
+
 	public void initDisciplinTalents(String disciplinename, int circle){
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinename);
 		TALENTSType talents = getAllTalentsByDisziplinName().get(disciplinename);
