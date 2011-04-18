@@ -286,7 +286,6 @@ public class EDMainWindow {
 		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
 		@SuppressWarnings("unused")
 		EDDicing dicingWindow = new EDDicing();
-		//TODO: Fenster mit mehrer Würfelbechern öffnen.
 	}
 
 	private void addTalentsTabs(){
@@ -303,7 +302,7 @@ public class EDMainWindow {
 				}
 			}
 		}
-			
+
 		HashMap<Integer, DISCIPLINEType> allDicipines = character.getAllDiciplinesByOrder();
 		for(Integer key : allDicipines.keySet()){
 			String diciplinName = allDicipines.get(key).getName();
@@ -311,7 +310,7 @@ public class EDMainWindow {
 			if(!allTalentTabs.contains(diciplinName)){
 				panelEDTalents = new EDTalents(diciplinName);
 				panelEDTalents.setCharacter(character);
-				tabbedPane.addTab("Talents (" + diciplinName + ")", null, panelEDTalents, null);	
+				tabbedPane.insertTab("Talents (" + diciplinName + ")", null, panelEDTalents, null, 2+key);
 			}
 		}
 	}
@@ -340,13 +339,13 @@ public class EDMainWindow {
 			}
 			if(co.getClass() == EDSpells.class){
 				((EDSpells)co).setCharacter(character);
-			}	
+			}
 			if(co.getClass() == EDSkills.class){
 				((EDSkills)co).setCharacter(character);
 			}
 			if(co.getClass() == EDExperience.class){
 				((EDExperience)co).setCharacter(character);
-			}	
+			}
 			if(co.getClass() == EDKarma.class){
 				((EDKarma)co).setCharacter(character);
 			}
@@ -355,21 +354,19 @@ public class EDMainWindow {
 			}
 			if(co.getClass() == EDItems.class){
 				((EDItems)co).setCharacter(character);
-			}	
+			}
 			if(co.getClass() == EDBloodCharmItems.class){
 				((EDBloodCharmItems)co).setCharacter(character);
 			}
 			if(co.getClass() == EDWeapons.class){
 				((EDWeapons)co).setCharacter(character);
-			}			
+			}
 			if(co.getClass() == EDArmor.class){
 				((EDArmor)co).setCharacter(character);
-			}	
+			}
 			if(co.getClass() == EDThreadItems.class){
 				((EDThreadItems)co).setCharacter(character);
 			}
-			
-			
 		}
 	}
 
