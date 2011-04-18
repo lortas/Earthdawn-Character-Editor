@@ -314,7 +314,7 @@ public class EDMainWindow {
 			}
 		}
 	}
-	
+
 	private void refreshTabs(){
 		StringWriter out = new StringWriter();
 		characteristicStatus.parseTo(out);
