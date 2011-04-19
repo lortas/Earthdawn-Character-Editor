@@ -13,8 +13,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
+import javax.xml.bind.JAXBElement;
+
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.config.ECECapabilities;
+import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.TALENTSType;
@@ -35,8 +39,10 @@ public class EDTalents extends JPanel {
 	private JTable table;
 	private String disciplin;
 	private JButton buttonAdd;
+	private JButton buttonAdd2;
 	private JPopupMenu popupMenuCircle;
 	private JPopupMenu popupMenuTalent;
+	private JPopupMenu popupVersatilityTalent;
 
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
@@ -79,11 +85,22 @@ public class EDTalents extends JPanel {
 		});
 		toolBar.add(buttonAdd);
 
+		buttonAdd2 = new JButton("Add Talent by Versatility");
+		buttonAdd2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_buttonAdd2_actionPerformed(arg0);
+			}
+		});
+		toolBar.add(buttonAdd2);
+
 		popupMenuTalent = new JPopupMenu();
 		toolBar.add(popupMenuTalent);
 
 		popupMenuCircle = new JPopupMenu();
 		toolBar.add(popupMenuCircle);
+
+		popupVersatilityTalent= new JPopupMenu();
+		toolBar.add(popupVersatilityTalent);
 	}
 
 	public String getDisciplin() {
@@ -109,6 +126,27 @@ public class EDTalents extends JPanel {
 		}
 		
 		popupMenuCircle.show(buttonAdd,buttonAdd.getX(), buttonAdd.getY()+ buttonAdd.getHeight());
+	}
+
+	protected void do_buttonAdd2_actionPerformed(ActionEvent arg0) {
+		popupVersatilityTalent.removeAll();
+		// TODO: Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
+		//if( character.getUnusedVersatilityRanks() < 1 ) return;
+		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
+		if( capabilities == null ) return;
+		List<CAPABILITYType> talents = capabilities.getTalents();
+		if( talents == null ) return;
+		for( CAPABILITYType talent : talents ) {
+			JMenuItem menuItem = new JMenuItem(talent.getName());
+			menuItem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO: aktueller Disziplin Kreis als Talent Kreis setzen
+					do_menuItemTalent_actionPerformed(arg0, "1");
+				}
+			});
+			popupVersatilityTalent.add(menuItem);
+		}
+		popupVersatilityTalent.show(buttonAdd,buttonAdd2.getX(), buttonAdd2.getY()+ buttonAdd2.getHeight());
 	}
 
 	protected void do_menuItemCircle_actionPerformed(ActionEvent arg0) {
@@ -155,7 +193,7 @@ class TalentsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private TALENTSType talents;
-	private String[] columnNames = {"Circle", "Talentname", "Strain", "Attribute", "Rank", "Step", "Action", "by Vers.", "Type"};
+	private String[] columnNames = {"Circle", "Talentname", "Strain", "Attribute", "Rank", "Step", "Action", "Teacher Dis", "Type"};
 	private String disciplin = "";
 
 	public String getDisciplin() {
@@ -218,7 +256,7 @@ class TalentsTableModel extends AbstractTableModel {
 		switch (col) {
 		case 0:
 	        	try{
-	        		result = talent.getCircle();
+	        		result = new Integer(talent.getCircle());
 	        	}
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
@@ -276,9 +314,9 @@ class TalentsTableModel extends AbstractTableModel {
 	        	try{
 	        		TALENTTEACHERType teacher = talent.getTEACHER();
 	        		if( teacher == null ) {
-	        			result = false;
+	        			result = "-";
 	        		} else {
-	        			result = teacher.getByversatility().equals(YesnoType.YES);
+	        			result = teacher.getDiscipline();
 	        		}
 	        	}
 	        	catch(Exception e){
@@ -287,7 +325,10 @@ class TalentsTableModel extends AbstractTableModel {
 	        	break;
 	        case 8:
 	        	try{
-	        		if( isDisciplinTalent ) {
+	        		TALENTTEACHERType teacher = talent.getTEACHER();
+	        		if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) {
+	        			result="Versatility";
+	        		} else if( isDisciplinTalent ) {
 	        			result="DisciplineTalent";
 	        		} else {
 	        			result="OptionalTalent";
@@ -317,7 +358,18 @@ class TalentsTableModel extends AbstractTableModel {
      * editable.
      */
 	public boolean isCellEditable(int row, int col) {
-		if (col == 4) return true;
+		if( col == 4 ) return true;
+		if( col == 7 ) return true;
+		if( col == 0 ) {
+			TALENTType talent = null;
+			if(talents.getDISZIPLINETALENT().size() > row ) {
+				talent=talents.getDISZIPLINETALENT().get(row);
+			} else {
+				talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
+			}
+			TALENTTEACHERType teacher = talent.getTEACHER();
+			if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) return true;
+		}
 		return false;
 	}
 
@@ -333,10 +385,19 @@ class TalentsTableModel extends AbstractTableModel {
 			talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
 		}
 		switch (col) {
+		case 0:
+			talent.setCircle((Integer)value);
+			break;
 		case 4:
 			talent.getRANK().setRank((Integer)value);
 			break;
 		case 7:
+			TALENTTEACHERType teacher = talent.getTEACHER();
+			if( teacher == null ) {
+				teacher = new TALENTTEACHERType();
+				talent.setTEACHER(teacher);
+			}
+			teacher.setDiscipline((String)value);
 			break;
 		}
 		character.refesh();
