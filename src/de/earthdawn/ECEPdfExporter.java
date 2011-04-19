@@ -906,12 +906,11 @@ public class ECEPdfExporter {
 	}
 
 	private void setTalent(int counter, TALENTType talent, HashMap<String,ATTRIBUTEType> attributes) throws DocumentException, IOException {
-		if ( talent.getLimitation().isEmpty() ) {
-			acroFields.setField( "Talent."+counter, talent.getName());
-		} else {
-			acroFields.setField( "Talent."+counter, talent.getName()+": "+talent.getLimitation());
-			
-		}
+		String talentname = talent.getName();
+		TALENTTEACHERType teacher = talent.getTEACHER();
+		if ( ! talent.getLimitation().isEmpty() ) talentname += ": "+talent.getLimitation();
+		if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
+		acroFields.setField( "Talent."+counter, talentname);
 		ATTRIBUTENameType attribute = talent.getAttribute();
 		acroFields.setField( "Attribute."+counter, attribute.value() );
 		if( attribute.equals(ATTRIBUTENameType.NA) ) {

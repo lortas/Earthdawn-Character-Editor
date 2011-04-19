@@ -483,17 +483,35 @@ public class CharacterContainer extends CharChangeRefresh {
 				circlenr++;
 				if( circlenr > disciplineCircle ) break;
 				int freeOptionalTalents=numberOfOptionalTalents;
-				for( TALENTType ot : talentsList.get(circlenr) ) {
-					TALENTTEACHERType teacher = ot.getTEACHER();
-					if( teacher == null ) {
-						freeOptionalTalents--;
-					} else if( teacher.getByversatility().equals(YesnoType.NO) ) {
-						freeOptionalTalents--;
-					}
-				}
+				freeOptionalTalents-=isNotLearnedByVersatility(talentsList.get(circlenr));
 				for( int i=0; i<freeOptionalTalents; i++ ) list.add(circlenr);
 			}
 			result.put(discipline, list);
+		}
+		return result;
+	}
+
+	public static boolean isLearnedByVersatility(TALENTType talent) {
+		TALENTTEACHERType teacher = talent.getTEACHER();
+		if( teacher == null ) return false;
+		if( teacher.getByversatility().equals(YesnoType.YES) ) return true;
+		return false;
+	}
+
+	public static int isLearnedByVersatility(List<TALENTType> talents) {
+		if( talents == null ) return 0;
+		int result=0;
+		for( TALENTType talent : talents ) {
+			if( isLearnedByVersatility(talent) ) result++;
+		}
+		return result;
+	}
+
+	public static int isNotLearnedByVersatility(List<TALENTType> talents) {
+		if( talents == null ) return 0;
+		int result=0;
+		for( TALENTType talent : talents ) {
+			if( ! isLearnedByVersatility(talent) ) result++;
 		}
 		return result;
 	}
@@ -775,4 +793,28 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	public int getNumberOfTalentsLearnedByVersatility() {
+		List<TALENTSType> allTalents = getAllTalents();
+		int result = 0;
+		if( allTalents == null ) return result;
+		for( TALENTSType talents : allTalents ) {
+			result += isLearnedByVersatility(talents.getDISZIPLINETALENT());
+			result += isLearnedByVersatility(talents.getOPTIONALTALENT());
+		}
+		return result;
+	}
+
+	public int getUnusedVersatilityRanks() {
+		int result=getNumberOfTalentsLearnedByVersatility();
+		List<TALENTType> versatilityList = getTalentByName(ApplicationProperties.create().getVersatilityName());
+		if( versatilityList == null ) return result;
+		if( versatilityList.isEmpty() ) return result;
+		for( TALENTType versatility : versatilityList ) {
+			RANKType rank = versatility.getRANK();
+			if( rank != null ) {
+				result -= rank.getRank();
+			}
+		}
+		return result;
+	}
 }
