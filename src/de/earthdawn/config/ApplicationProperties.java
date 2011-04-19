@@ -188,6 +188,14 @@ public class ApplicationProperties {
 		return null;
 	}
 
+	public String getVersatilityName() {
+		for( NAMELANGType name : NAMES.getVERSATILITY() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getName();
+		}
+		// Not found
+		return null;
+	}
+
 	public List<ITEMType> getStartingItems() {
 		for( NAMESTARTINGITEMSType name : NAMES.getSTARTINGITEMS() ) {
 			if( name.getLang().equals(LANGUAGE) ) return name.getITEM();
