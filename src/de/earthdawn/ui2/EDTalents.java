@@ -130,18 +130,20 @@ public class EDTalents extends JPanel {
 
 	protected void do_buttonAdd2_actionPerformed(ActionEvent arg0) {
 		popupVersatilityTalent.removeAll();
-		// TODO: Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
-		//if( character.getUnusedVersatilityRanks() < 1 ) return;
+		// Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
+		if( character.getUnusedVersatilityRanks() < 1 ) return;
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
-		if( capabilities == null ) return;
 		List<CAPABILITYType> talents = capabilities.getTalents();
 		if( talents == null ) return;
 		for( CAPABILITYType talent : talents ) {
 			JMenuItem menuItem = new JMenuItem(talent.getName());
 			menuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					// TODO: aktueller Disziplin Kreis als Talent Kreis setzen
-					do_menuItemTalent_actionPerformed(arg0, "1");
+					JMenuItem source = ((JMenuItem)arg0.getSource());
+					TALENTABILITYType talent = new TALENTABILITYType();
+					talent.setName(source.getText());
+					character.addOptionalTalent(disciplin, 15, talent, true);
+					character.refesh();
 				}
 			});
 			popupVersatilityTalent.add(menuItem);
@@ -177,7 +179,7 @@ public class EDTalents extends JPanel {
 		for( TALENTABILITYType talent : talentlist){
 			if(talent.getName().equals( source.getText())) {
 				System.out.println("add");
-				character.addOptionalTalent(disciplin, Integer.valueOf(circle), talent);
+				character.addOptionalTalent(disciplin, Integer.valueOf(circle), talent, false);
 				character.refesh();
 				break;
 			}
@@ -193,7 +195,7 @@ class TalentsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private TALENTSType talents;
-	private String[] columnNames = {"Circle", "Talentname", "Strain", "Attribute", "Rank", "Step", "Action", "Teacher Dis", "Type"};
+	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Rank", "Step", "Action", "Teacher Dis", "Type"};
 	private String disciplin = "";
 
 	public String getDisciplin() {
@@ -272,7 +274,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        	break;
 	        case 2:
 	        	try{
-	        		result = talent.getStrain();
+	        		result = talent.getLimitation();
 	        	}
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());

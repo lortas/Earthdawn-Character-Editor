@@ -572,7 +572,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 	
-	public void addOptionalTalent(String discipline, int circle, TALENTABILITYType talenttype){
+	public void addOptionalTalent(String discipline, int circle, TALENTABILITYType talenttype, boolean byVersatility){
 		TALENTType talent = new TALENTType();
 		talent.setName(talenttype.getName());
 		talent.setLimitation(talenttype.getLimitation());
@@ -583,6 +583,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		rank.setBonus(0);
 		rank.setStep(1);
 		talent.setRANK(rank);
+
+		TALENTTEACHERType teacher = new TALENTTEACHERType();
+		if( byVersatility ) teacher.setByversatility(YesnoType.YES);
+		talent.setTEACHER(teacher);
 
 		getAllTalentsByDisziplinName().get(discipline).getOPTIONALTALENT().add(talent);
 	}
@@ -805,14 +809,14 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public int getUnusedVersatilityRanks() {
-		int result=getNumberOfTalentsLearnedByVersatility();
+		int result=-getNumberOfTalentsLearnedByVersatility();
 		List<TALENTType> versatilityList = getTalentByName(ApplicationProperties.create().getVersatilityName());
 		if( versatilityList == null ) return result;
 		if( versatilityList.isEmpty() ) return result;
 		for( TALENTType versatility : versatilityList ) {
 			RANKType rank = versatility.getRANK();
 			if( rank != null ) {
-				result -= rank.getRank();
+				result += rank.getRank();
 			}
 		}
 		return result;
