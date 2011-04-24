@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE  name="Wind Scout" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Missle Weapons"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<DISCIPLINETALENT name="Avoid Blow"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Evidence Analysis"/>
+		<DISCIPLINETALENT name="Tracking"/>
+		<DISCIPLINETALENT name="Wilderness Survival"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Creature Analysisf"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Animal Bond"/>
+		<OPTIONALTALENT name="Lifesight"/>
+		<DISCIPLINETALENT name="Search"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="NScent Identifier"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Scent Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Mystic Aim"/>
+		<OPTIONALTALENT name="Direction Arrow"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Wind Dance"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Bird Song"/>
+		<TALENTABILITY/>
+		<ABILITY>Step Outside</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Endure Cold"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Sense Poison"/>
+		<TALENTABILITY/>
+		<KARMA spend="gather information by Smell Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Safe Path"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+</DISCIPLINE>

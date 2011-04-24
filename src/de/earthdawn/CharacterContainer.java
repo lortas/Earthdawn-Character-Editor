@@ -339,11 +339,21 @@ public class CharacterContainer extends CharChangeRefresh {
 						return talent;
 					}
 				}
-				for (TALENTType talent : talents.getOPTIONALTALENT()) {
+				List<TALENTType> optionaltalents = talents.getOPTIONALTALENT();
+				List<TALENTType> remove = new ArrayList<TALENTType>();
+				TALENTType result = null;
+				for( TALENTType talent : optionaltalents ) {
+					RANKType rank = talent.getRANK();
+					if( (rank == null) || (rank.getRank() < 1) ) {
+						remove.add(talent);
+						continue;
+					}
 					if ( talent.getName().equals(searchTalent)) {
-						return talent;
+						result=talent;
 					}
 				}
+				optionaltalents.removeAll(remove);
+				if( result != null ) return result;
 			}
 		}
 		// Not found
@@ -820,5 +830,16 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		return result;
+	}
+
+	public void removeEmptySkills() {
+		List<SKILLType> skills = getSkills();
+		List<SKILLType> remove = new ArrayList<SKILLType>();
+		for( SKILLType skill : skills ) {
+			RANKType rank = skill.getRANK();
+			if( (rank != null) && (rank.getRank() > 0) ) continue;
+			remove.add(skill);
+		}
+		skills.removeAll(remove);
 	}
 }

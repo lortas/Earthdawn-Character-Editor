@@ -110,12 +110,14 @@
 	<SPELL name="Dark Spy" threads="1" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="TSD*" range="5 hex" duration="R min" effect="Sees through a nightflyer's eyes"/>
 	<SPELL name="Dark Sword" threads="6" weavingdifficulty="15" reattuningdifficulty="19" range="touch" duration="R days" effect="WIL+8/Physical" effectarea="10-yard (5 hex) radius of wearer"/>
 	<SPELL name="Death Rain" threads="1" weavingdifficulty="15" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="R+12 rnd" effect="Step 5/D8 acid damage (WIL + 5; s. text)" effectarea="30-yard (15-hex) radius of magician"/>
+	<SPELL name="Death Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation"/>
 	<SPELL name="Death Vow" threads="3" weavingdifficulty="13" reattuningdifficulty="22" castingdifficulty="TSD*" range="touch" duration="R weeks" effect="WIL+10/NA"/>
 	<SPELL name="Death's Head" threads="1" weavingdifficulty="7" reattuningdifficulty="14" castingdifficulty="TSD*" range="self*" duration="R+5 rnd" effect="WIL + 5"/>
 	<SPELL name="Delay Blow" threads="2" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+10 rnd" effect="WIL + 15/Physical"/>
 	<SPELL name="Detect Elementalism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician"/>
 	<SPELL name="Detect Illusionism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician"/>
 	<SPELL name="Detect Nethermancy Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician"/>
+	<SPELL name="Detect Shamanism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician"/>
 	<SPELL name="Detect Undead" threads="0" reattuningdifficulty="7" range="touch" duration="R+3 min" effect="WIL + 5" effectarea="30-yard (15-hex) radius from target"/>
 	<SPELL name="Disaster" threads="1" weavingdifficulty="9" reattuningdifficulty="17" range="5 hex" duration="R+5 rnd" effect="WIL + 6"/>
 	<SPELL name="Disguise Metal" threads="1" weavingdifficulty="7" reattuningdifficulty="14" range="touch" duration="R+7 min" effect="WIL"/>
@@ -124,6 +126,7 @@
 	<SPELL name="Dispel Illusionism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
 	<SPELL name="Dispel Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
 	<SPELL name="Dispel Nethermancy Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
+	<SPELL name="Dispel Shamanism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
 	<SPELL name="Displace Image" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+7 rnd" effect="Projects image of the target"/>
 	<SPELL name="Displace Self" threads="2" weavingdifficulty="9" reattuningdifficulty="16" range="self" duration="R+5 rnd" effect="WIL + 7"/>
 	<SPELL name="Disrupt Magic" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="1 rnd" effect="WIL/Mystic"/>
@@ -285,7 +288,6 @@
 	<SPELL name="Mystic Net" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="self" duration="R+2 min" effect="WIL + 8" effectarea="16-yard (8-hex) radius from magician"/>
 	<SPELL name="Mystic Shock" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="2 hex" duration="1 rnd" effect="WIL + 10/Mystic"/>
 	<SPELL name="Mystic Vessel" threads="3" weavingdifficulty="15" reattuningdifficulty="23" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="WIL+10"/>
-	<SPELL name="Death Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation"/>
 	<SPELL name="Netherblade" threads="2" weavingdifficulty="14" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="WIL + 8/Mystic"/>
 	<SPELL name="Nightflyer's Cloak" threads="2" weavingdifficulty="7" reattuningdifficulty="17" range="self" duration="R+10 min" effect="Transforms caster into a nightflyer"/>
 	<SPELL name="Nightmare of Foreboding" threads="5" weavingdifficulty="10" reattuningdifficulty="17" range="10 hex" duration="R days" effect="-6 to target's Wound Threshold"/>

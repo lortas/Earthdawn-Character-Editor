@@ -45,15 +45,53 @@
 		<SPELL type="shamane" name="Hunter's Sense"/>
 		<SPELL type="shamane" name="Icy Surface"/>
 		<SPELL type="shamane" name="Path Home"/>
+		<SPELL type="shamane" name="Small Slayer"/>
+		<SPELL type="shamane" name="Weather Cloak"/>
+		<SPELL type="shamane" name="Vines"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Spirit Talk"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Astral Sense"/>
+		<SPELL type="shamane" name="Behind Eye"/>
+		<SPELL type="shamane" name="Catwalk"/>
+		<SPELL type="shamane" name="Death Trance"/>
+		<SPELL type="shamane" name="Dispel Shamanism Magic"/>
+		<SPELL type="shamane" name="Fog of Fear"/>
+		<SPELL type="shamane" name="Ice Mace and Chain"/>
+		<SPELL type="shamane" name="Mind Fog"/>
+		<SPELL type="shamane" name="Ork Stoke"/>
+		<SPELL type="shamane" name="Plant Feast"/>
+		<SPELL type="shamane" name="Puddle Deep"/>
+		<SPELL type="shamane" name="Soothe the Savage Beast"/>
+		<SPELL type="shamane" name="Sunlight"/>
+		<SPELL type="shamane" name="Thrive"/>
+		<SPELL type="shamane" name="Water Wings"/>
+		<SPELL type="shamane" name="Winds of Deflection"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Spirit Hold"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Air Blast"/>
+		<SPELL type="shamane" name="Blizzard Sphere"/>
+		<SPELL type="shamane" name="Bouyancy"/>
+		<SPELL type="shamane" name="Circle of Well Being"/>
+		<SPELL type="shamane" name="Conceal Tracks"/>
+		<SPELL type="shamane" name="Dust Devil"/>
+		<SPELL type="shamane" name="Falcon's Cloak"/>
+		<SPELL type="shamane" name="Fatal Food "/>
+		<SPELL type="shamane" name="Friend or Foe"/>
+		<SPELL type="shamane" name="Great Sticky Vines"/>
+		<SPELL type="shamane" name="Hair Frenzy"/>
+		<SPELL type="shamane" name="Hunger"/>
+		<SPELL type="shamane" name="Karmic Connection"/>
+		<SPELL type="shamane" name="Last Chance"/>
+		<SPELL type="shamane" name="Lighten Load"/>
+		<SPELL type="shamane" name="Relax"/>
+		<SPELL type="shamane" name="Root Trap"/>
+		<SPELL type="shamane" name="Thorny Reteat"/>
+		<SPELL type="shamane" name="Uneven Ground"/>
 		<KARMA spend="Willpower-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
@@ -67,21 +105,55 @@
 		<OPTIONALTALENT name="Willforce"/>
 		<DISCIPLINETALENT name="Summon" limitation="Nature Spirits"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Bond of Silence"/>
+		<SPELL type="shamane" name="Ironwood"/>
+		<SPELL type="shamane" name="Nutritious Earth"/>
+		<SPELL type="shamane" name="Resist Poison"/>
+		<SPELL type="shamane" name="Sanctuary"/>
+		<SPELL type="shamane" name="Spiritual Guidance"/>
+		<SPELL type="shamane" name="Wither Limb"/>
 		<ABILITY>Land and Sea"</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Blood Share"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Bone Shatter"/>
+		<SPELL type="shamane" name="Ease Passage"/>
+		<SPELL type="shamane" name="Foreseeing"/>
+		<SPELL type="shamane" name="Living Wall"/>
+		<SPELL type="shamane" name="Recovery"/>
+		<SPELL type="shamane" name="Sleep"/>
+		<SPELL type="shamane" name="Stench"/>
+		<SPELL type="shamane" name="Tossing Earth"/>
+		<SPELL type="shamane" name="Tree Merge"/>
 		<KARMA spend="Perception-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Leadership"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Beastform"/>
+		<SPELL type="shamane" name="Blood Boil"/>
+		<SPELL type="shamane" name="Calm Water"/>
+		<SPELL type="shamane" name="Cloud Summon"/>
+		<SPELL type="shamane" name="Death Rain"/>
+		<SPELL type="shamane" name="Dream Sight"/>
+		<SPELL type="shamane" name="Earth Q'wril"/>
+		<SPELL type="shamane" name="Lightning  Cloud"/>
+		<SPELL type="shamane" name="Rebel Limp"/>
+		<SPELL type="shamane" name="Steal Strength"/>
+		<SPELL type="shamane" name="Walk Through"/>
+		<SPELL type="shamane" name="Whirlwind"/>
 		<KARMA spend="Spell Effect Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Safe Path"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Dreamsend"/>
+		<SPELL type="shamane" name="Other Place"/>
+		<SPELL type="shamane" name="Peacebond"/>
+		<SPELL type="shamane" name="Waterspout"/>
+		<SPELL type="shamane" name="Wither Away"/>
+		<SPELL type="shamane" name="Wound Mask"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
@@ -95,18 +167,32 @@
 		<OPTIONALTALENT name="Spirit Dodge"/>
 		<DISCIPLINETALENT name="Bargain with Summoned Creature"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Cloud Banish"/>
+		<SPELL type="shamane" name="Glowing Swarm"/>
+		<SPELL type="shamane" name="Moon Shadow"/>
+		<SPELL type="shamane" name="Reattach Limb"/>
+		<SPELL type="shamane" name="Tell Tale"/>
+		<SPELL type="shamane" name="Water Wall"/>
 		<KARMA spend="Recovery Test"/>
 		<ABILITY>Cloak of Sky and Water</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Summoning Circle"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Damage Transfer"/>
+		<SPELL type="shamane" name="Death Vow"/>
+		<SPELL type="shamane" name="Eclipse"/>
+		<SPELL type="shamane" name="Eternal Day"/>
+		<SPELL type="shamane" name="Journey of Life"/>
+		<SPELL type="shamane" name="Onion Blood"/>
+		<SPELL type="shamane" name="Weather Change"/>
 		<DEFENSE kind="spell"/>
 		<KARMA spend="Action Test by a spirit or creature under control"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 	<DISCIPLINETALENT name="Plant Shelter"/>
-		<TALENTABILITY/>
+	<TALENTABILITY/>
+	<SPELL type="shamane" name="Wood Blade"/>
 		<DEFENSE kind="physical"/>
 		<DEFENSE kind="social"/>
 		<KARMA spend="Charisma-only Test"/>
@@ -114,6 +200,8 @@
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Animate Object"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Alter Form"/>
+		<SPELL type="shamane" name="Crop Blight"/>
 		<DEFENSE kind="spell"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
@@ -124,8 +212,9 @@
 		<OPTIONALTALENT name="Second Chance"/>
 		<OPTIONALTALENT name="Shared Fetish"/>
 		<OPTIONALTALENT name="Shared Fetish"/>
-		<DISCIPLINETALENT name="Wounde Transfer"/>
+		<DISCIPLINETALENT name="Wound Transfer"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Council of the Forest"/>
 		<DEFENSE kind="social"/>
 		<KARMASTEP/>
 		<ABILITY>Pinnacle of Comprehension</ABILITY>
@@ -133,6 +222,8 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Netherwalk"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Call Forth The Maelstrom"/>
+		<SPELL type="shamane" name="Purify Forest"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
