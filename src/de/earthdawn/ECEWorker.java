@@ -278,7 +278,7 @@ public class ECEWorker {
 			}
 			// Talenete mit Rang == 0 werden entfernt.
 			optTalents.removeAll(rankZeroTalents);
-			// Alle Dizipline Talente die bis jetzt noch nicht enthalten waren,
+			// Alle Namegiver Talente, die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
 				TALENTType talent = new TALENTType();
@@ -319,7 +319,7 @@ public class ECEWorker {
 		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
 		karma.setDice(step2Dice(karma.getStep()));
 
-		removeEmptySkills(character.getSkills());
+		character.removeEmptySkills();
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
 		for( SKILLType skill : character.getSkills() ) {
 			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
@@ -494,16 +494,6 @@ public class ECEWorker {
 			}
 		}
 		defaultSkills.removeAll(remove);
-	}
-
-	public static void removeEmptySkills(List<SKILLType> skills) {
-		List<SKILLType> remove = new ArrayList<SKILLType>();
-		for( SKILLType skill : skills ) {
-			RANKType rank = skill.getRANK();
-			if( (rank != null) && (rank.getRank() > 0) ) continue;
-			remove.add(skill);
-		}
-		skills.removeAll(remove);
 	}
 
 	public static String concatStrings(List<String> strings) {

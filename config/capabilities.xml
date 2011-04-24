@@ -158,10 +158,12 @@
 	<TALENT name="Disarm Trap" attribute="DEX" action="standard" karma="no" strain="1"/>
 	<TALENT name="Disguise Self" attribute="PER" action="standard" karma="yes" strain="0"/>
 	<TALENT name="Distract" attribute="CHA" action="standard" karma="no" strain="0"/>
+	<TALENT name="Dive Attack" attribute="STR" action="free" karma="no" strain="1"/>
 	<TALENT name="Dominate Beast" attribute="WIL" action="standard" karma="no" strain="1"/>
 	<TALENT name="Double-Charge" attribute="DEX" action="simple" karma="yes" strain="1"/>
 	<TALENT name="Down Strike" attribute="STR" action="free" karma="no" strain="1"/>
 	<TALENT name="Durability" attribute="na" action="na" karma="no" strain="0"/>
+	<TALENT name="Earth Bond" attribute="TOU" action="standard" karma="no" strain="0"/>
 	<TALENT name="Earth Skin" attribute="TOU" action="standard" karma="yes" strain="0"/>
 	<TALENT name="Elemental Hold" attribute="WIL" action="standard" karma="no" strain="1"/>
 	<TALENT name="Elemental Tongues" attribute="PER" action="standard" karma="yes" strain="1"/>
@@ -169,12 +171,14 @@
 	<TALENT name="Empathic Command" attribute="WIL" action="free" karma="no" strain="0"/>
 	<TALENT name="Empathic Sense" attribute="CHA" action="standard" karma="no" strain="-1"/>
 	<TALENT name="Engaging Banter" attribute="CHA" action="standard" karma="no" strain="1"/>
+	<TALENT name="Engaging Dance" attribute="CHA" action="standard" karma="no" strain="1"/>
 	<TALENT name="Enhanced Matrix" attribute="na" action="na" karma="no" strain="0"/>
 	<TALENT name="Enhanced Fetish" attribute="na" action="na" karma="no" strain="0"/>
 	<TALENT name="Etiquette" attribute="CHA" action="sustained" karma="no" strain="0"/>
 	<TALENT name="Evaluate" attribute="PER" action="standard" karma="no" strain="0"/>
 	<TALENT name="Evidence Analysis" attribute="PER" action="sustained" karma="no" strain="1"/>
 	<TALENT name="False Sight" attribute="na" action="simple" karma="no" strain="1"/>
+	<TALENT name="False Shackles" attribute="DEX" action="standard" karma="no" strain="1"/>
 	<TALENT name="Familiar Durability" attribute="na" action="na" karma="no" strain="0"/>
 	<TALENT name="Fast Hand" attribute="DEX" action="standard" karma="yes" strain="0"/>
 	<TALENT name="Fearsome Charge" attribute="CHA" action="simple" karma="no" strain="2"/>
@@ -184,9 +188,12 @@
 	<TALENT name="Flame Arrow" attribute="WIL" action="free" karma="yes" strain="1"/>
 	<TALENT name="Forge Armor" attribute="PER" action="sustained" karma="no" strain="2"/>
 	<TALENT name="Forge Weapon" attribute="PER" action="sustained" karma="no" strain="1"/>
+	<TALENT name="Free Mind" attribute="CHA" action="sustained" karma="no" strain="0"/>
+	<TALENT name="Freedom Search" attribute="PER" action="sustained" karma="no" strain="1"/>
 	<TALENT name="Frenzy" attribute="DEX" action="standard" karma="yes" strain="-1"/>
 	<TALENT name="Frighten" attribute="WIL" action="standard" karma="yes" strain="0"/>
 	<TALENT name="Frighten Animals" attribute="CHA" action="standard" karma="yes" strain="0"/>
+	<TALENT name="Gliding" attribute="DEX" action="simple" karma="no" strain="0"/>
 	<TALENT name="Gliding Stride" attribute="DEX" action="free" karma="no" strain="1"/>
 	<TALENT name="Graceful Exit" attribute="CHA" action="standard" karma="no" strain="0"/>
 	<TALENT name="Great Leap" attribute="DEX" action="free" karma="no" strain="1"/>
