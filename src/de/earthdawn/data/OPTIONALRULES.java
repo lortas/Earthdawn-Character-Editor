@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -44,6 +45,7 @@ import javax.xml.bind.annotation.XmlType;
     "legendpointsforattributeincrease",
     "spelllegendpointcost",
     "threaditemdostack",
+    "autoincrementdiciplinetalents",
     "showdefaultskills"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
@@ -57,6 +59,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType spelllegendpointcost;
     @XmlElement(name = "THREADITEMDOSTACK", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType threaditemdostack;
+    @XmlElement(name = "AUTOINCREMENTDICIPLINETALENTS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType autoincrementdiciplinetalents;
     @XmlElement(name = "SHOWDEFAULTSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType showdefaultskills;
 
@@ -154,6 +158,30 @@ public class OPTIONALRULES {
      */
     public void setTHREADITEMDOSTACK(OPTIONALRULEType value) {
         this.threaditemdostack = value;
+    }
+
+    /**
+     * Gets the value of the autoincrementdiciplinetalents property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getAUTOINCREMENTDICIPLINETALENTS() {
+        return autoincrementdiciplinetalents;
+    }
+
+    /**
+     * Sets the value of the autoincrementdiciplinetalents property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setAUTOINCREMENTDICIPLINETALENTS(OPTIONALRULEType value) {
+        this.autoincrementdiciplinetalents = value;
     }
 
     /**

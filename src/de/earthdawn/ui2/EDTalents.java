@@ -3,6 +3,7 @@ package de.earthdawn.ui2;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -13,11 +14,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
-import javax.xml.bind.JAXBElement;
-
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.TALENTABILITYType;
@@ -42,7 +40,6 @@ public class EDTalents extends JPanel {
 	private JButton buttonAdd2;
 	private JPopupMenu popupMenuCircle;
 	private JPopupMenu popupMenuTalent;
-	private JPopupMenu popupVersatilityTalent;
 
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
@@ -98,9 +95,6 @@ public class EDTalents extends JPanel {
 
 		popupMenuCircle = new JPopupMenu();
 		toolBar.add(popupMenuCircle);
-
-		popupVersatilityTalent= new JPopupMenu();
-		toolBar.add(popupVersatilityTalent);
 	}
 
 	public String getDisciplin() {
@@ -129,26 +123,18 @@ public class EDTalents extends JPanel {
 	}
 
 	protected void do_buttonAdd2_actionPerformed(ActionEvent arg0) {
-		popupVersatilityTalent.removeAll();
 		// Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
 		if( character.getUnusedVersatilityRanks() < 1 ) return;
-		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
-		List<CAPABILITYType> talents = capabilities.getTalents();
-		if( talents == null ) return;
-		for( CAPABILITYType talent : talents ) {
-			JMenuItem menuItem = new JMenuItem(talent.getName());
-			menuItem.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					JMenuItem source = ((JMenuItem)arg0.getSource());
-					TALENTABILITYType talent = new TALENTABILITYType();
-					talent.setName(source.getText());
-					character.addOptionalTalent(disciplin, 15, talent, true);
-					character.refesh();
-				}
-			});
-			popupVersatilityTalent.add(menuItem);
+		EDTalentSelectDialog dialog = new EDTalentSelectDialog();
+		dialog.setVisible(true);
+		HashMap<String, CAPABILITYType> selected = dialog.getSelectedTalentMap();
+		for(String key : selected.keySet()){
+			CAPABILITYType cap = selected.get(key);
+			TALENTABILITYType talent = new TALENTABILITYType();
+			talent.setName(cap.getName());
+			character.addOptionalTalent(disciplin, 15, talent, true);
+			character.refesh();
 		}
-		popupVersatilityTalent.show(buttonAdd,buttonAdd2.getX(), buttonAdd2.getY()+ buttonAdd2.getHeight());
 	}
 
 	protected void do_menuItemCircle_actionPerformed(ActionEvent arg0) {
