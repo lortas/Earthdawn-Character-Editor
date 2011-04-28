@@ -299,7 +299,9 @@ public class ECEPdfExporter {
 
 		int conterSpells=0;
 		for( SPELLSType spells : character.getAllSpells() ) {
-			for( SPELLType spell : spells.getSPELL() ) {
+			List<SPELLType> spellList = spells.getSPELL();
+			Collections.sort(spellList, new SpellComparator());
+			for( SPELLType spell : spellList ) {
 				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
 				if( spell.getInmatrix().equals(YesnoType.YES)) {
 					acroFields.setField( "InMatrix."+conterSpells, "Yes" );
@@ -539,7 +541,9 @@ public class ECEPdfExporter {
 
 		int conterSpells=0;
 		for( SPELLSType spells : character.getAllSpells() ) {
-			for( SPELLType spell : spells.getSPELL() ) {
+			List<SPELLType> spellList = spells.getSPELL();
+			Collections.sort(spellList, new SpellComparator());
+			for( SPELLType spell : spellList ) {
 				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
 				if( spell.getInmatrix().equals(YesnoType.YES)) {
 					acroFields.setField( "InMatrix."+conterSpells, "Yes" );
@@ -812,7 +816,9 @@ public class ECEPdfExporter {
 
 		int conterSpells=0;
 		for( SPELLSType spells : character.getAllSpells() ) {
-			for( SPELLType spell : spells.getSPELL() ) {
+			List<SPELLType> spellList = spells.getSPELL();
+			Collections.sort(spellList, new SpellComparator());
+			for( SPELLType spell : spellList ) {
 				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
 				if( spell.getInmatrix().equals(YesnoType.YES) ) {
 					acroFields.setField( "SpellInMatrix."+conterSpells, "X" );
