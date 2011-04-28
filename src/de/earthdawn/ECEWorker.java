@@ -66,11 +66,11 @@ public class ECEWorker {
 		weaponList.addAll(magicWeapons);
 
 		// **ATTRIBUTE**
+		boolean legendpointsForAttributeIncrease=ApplicationProperties.create().getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 		int karmaMaxBonus = ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
-
 			ATTRIBUTEType attribute = character.getAttributes().get(raceattribute.getName());
 			attribute.setRacevalue(raceattribute.getValue());
 			attribute.setCost(berechneAttriubteCost(attribute.getGenerationvalue()));
@@ -82,7 +82,7 @@ public class ECEWorker {
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
 			karmaMaxBonus-=attribute.getCost();
-			calculatedLP.setAttributes(calculatedLP.getAttributes()+ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
+			if( legendpointsForAttributeIncrease ) calculatedLP.setAttributes(calculatedLP.getAttributes()+ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
 		}
 		if( karmaMaxBonus <0 ) {
 			System.err.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
