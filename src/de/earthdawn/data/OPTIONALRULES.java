@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_ATTRIBUTE"/>
+ *         &lt;element name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
@@ -40,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "attribute",
+    "legendpointsforattributeincrease",
     "spelllegendpointcost",
     "threaditemdostack",
     "showdefaultskills"
@@ -49,6 +51,8 @@ public class OPTIONALRULES {
 
     @XmlElement(name = "ATTRIBUTE", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULESATTRIBUTE attribute;
+    @XmlElement(name = "LEGENDPOINTSFORATTRIBUTEINCREASE", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType legendpointsforattributeincrease;
     @XmlElement(name = "SPELLLEGENDPOINTCOST", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType spelllegendpointcost;
     @XmlElement(name = "THREADITEMDOSTACK", namespace = "http://earthdawn.com/optionalrules", required = true)
@@ -78,6 +82,30 @@ public class OPTIONALRULES {
      */
     public void setATTRIBUTE(OPTIONALRULESATTRIBUTE value) {
         this.attribute = value;
+    }
+
+    /**
+     * Gets the value of the legendpointsforattributeincrease property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getLEGENDPOINTSFORATTRIBUTEINCREASE() {
+        return legendpointsforattributeincrease;
+    }
+
+    /**
+     * Sets the value of the legendpointsforattributeincrease property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setLEGENDPOINTSFORATTRIBUTEINCREASE(OPTIONALRULEType value) {
+        this.legendpointsforattributeincrease = value;
     }
 
     /**
