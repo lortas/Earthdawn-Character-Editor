@@ -25,6 +25,6 @@ public class TalentComparator implements Comparator<TALENTType> {
 		if( step0 < step1 ) return  1;
 		if( step0 > step1 ) return -1;
 		// Bei gleicher Stufe sortiere nach TalentName
-		return arg0.getName().compareTo(arg0.getName());
+		return arg0.getName().compareTo(arg1.getName());
 	}
 }

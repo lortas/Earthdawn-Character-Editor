@@ -20,6 +20,6 @@ public class SkillComparator implements Comparator<SKILLType> {
 		if( step0 < step1 ) return  1;
 		if( step0 > step1 ) return -1;
 		// Bei gleicher Stufe sortiere nach SkillName
-		return arg0.getName().compareTo(arg0.getName());
+		return arg0.getName().compareToIgnoreCase(arg1.getName());
 	}
 }
