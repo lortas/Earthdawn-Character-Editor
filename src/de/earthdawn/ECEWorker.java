@@ -203,6 +203,7 @@ public class ECEWorker {
 
 		character.setAbilities(concatStrings(namegiver.getABILITY()));
 
+		final boolean autoincrementDiciplinetalents = ApplicationProperties.create().getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
 		character.clearDisciplineBonuses();
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
@@ -229,11 +230,17 @@ public class ECEWorker {
 			TALENTType durabilityTalent = null;
 			List<TALENTType> disTalents = allTalents.get(disciplinenumber).getDISZIPLINETALENT();
 			List<TALENTType> rankZeroTalents = new ArrayList<TALENTType>();
+			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber);
 			for( TALENTType talent : disTalents ) {
 				RANKType rank = talent.getRANK();
-				if( rank.getRank() < 1 ) {
-					rankZeroTalents.add(talent);
-					continue;
+				if( rank == null ) {
+					rank = new RANKType();
+					talent.setRANK(rank);
+				}
+				if( autoincrementDiciplinetalents &&
+						(talent.getCircle() < currentDiscipline.getCircle()) &&
+						(rank.getRank() < currentDiscipline.getCircle()) ) {
+					rank.setRank(currentDiscipline.getCircle());
 				}
 				rank.setBonus(0);
 				enforceCapabilityParams(talent,capabilities);
@@ -295,7 +302,7 @@ public class ECEWorker {
 			}
 			// Wenn ein Durability-Talent gefunden wurde berechnen aus dessen Rank
 			// dier Erhöhung von Todes- und Bewustlosigkeitsschwelle
-			DISCIPLINEType discipline = allDisciplines.get(disciplinenumber);
+			DISCIPLINEType discipline = currentDiscipline;
 			if( durabilityTalent != null ) {
 				DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(discipline.getName());
 				if( disziplinProperties != null ) {
