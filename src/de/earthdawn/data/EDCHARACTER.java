@@ -57,6 +57,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}DEVOTION_type" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="player" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -153,6 +154,8 @@ public class EDCHARACTER {
     protected DEVOTIONType devotion;
     @XmlAttribute(required = true)
     protected String name;
+    @XmlAttribute
+    protected String player;
 
     /**
      * Gets the value of the appearance property.
@@ -888,6 +891,30 @@ public class EDCHARACTER {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the player property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPlayer() {
+        return player;
+    }
+
+    /**
+     * Sets the value of the player property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPlayer(String value) {
+        this.player = value;
     }
 
 }
