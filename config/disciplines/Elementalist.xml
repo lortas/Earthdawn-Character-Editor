@@ -172,4 +172,35 @@
 		<SPELL type="elemental" name="Waterspout"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Bargain with Summoned Creature"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<OPTIONALTALENT name="Wrap Missle"/>
+		<DISCIPLINETALENT name="Metal Ward"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Earth and Wind</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Endurace Cold"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Reshape Object"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Summoning Circle"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+	</CIRCLE>
 </DISCIPLINE>

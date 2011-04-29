@@ -119,7 +119,7 @@ public class EDTalents extends JPanel {
 			});
 			popupMenuCircle.add(menuItem);		
 		}
-		
+
 		popupMenuCircle.show(buttonAdd,buttonAdd.getX(), buttonAdd.getY()+ buttonAdd.getHeight());
 	}
 

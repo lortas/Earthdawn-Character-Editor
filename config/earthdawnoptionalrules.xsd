@@ -8,10 +8,14 @@
 		<xs:attribute name="points" type="xs:int" />
 		<xs:attribute name="limitoneway" type="edt:yesno_type"/>
 	</xs:complexType>
+	<xs:complexType name="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT">
+		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
+	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="1" minOccurs="1" name="ATTRIBUTE" type="OPTIONALRULES_ATTRIBUTE"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="ATTRIBUTEBASEDMOVEMENT" type="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT"/>
 				<xs:element maxOccurs="1" minOccurs="1" name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="OPTIONALRULE_type"/>
 				<xs:element maxOccurs="1" minOccurs="1" name="SPELLLEGENDPOINTCOST" type="OPTIONALRULE_type"/>
 				<xs:element maxOccurs="1" minOccurs="1" name="THREADITEMDOSTACK" type="OPTIONALRULE_type"/>

@@ -69,9 +69,10 @@ public class ECEWorker {
 		boolean legendpointsForAttributeIncrease=ApplicationProperties.create().getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 		int karmaMaxBonus = ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
+		HashMap<String, ATTRIBUTEType> characterAttributes = character.getAttributes();
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
-			ATTRIBUTEType attribute = character.getAttributes().get(raceattribute.getName());
+			ATTRIBUTEType attribute = characterAttributes.get(raceattribute.getName());
 			attribute.setRacevalue(raceattribute.getValue());
 			attribute.setCost(berechneAttriubteCost(attribute.getGenerationvalue()));
 			int value = attribute.getRacevalue() + attribute.getGenerationvalue();
@@ -90,9 +91,9 @@ public class ECEWorker {
 
 		// **DEFENSE**
 		DEFENSEType defense = character.getDefence();
-		defense.setPhysical(berechneWiederstandskraft(character.getAttributes().get("DEX").getCurrentvalue()));
-		defense.setSpell(berechneWiederstandskraft(character.getAttributes().get("PER").getCurrentvalue()));
-		defense.setSocial(berechneWiederstandskraft(character.getAttributes().get("CHA").getCurrentvalue()));
+		defense.setPhysical(berechneWiederstandskraft(characterAttributes.get("DEX").getCurrentvalue()));
+		defense.setSpell(berechneWiederstandskraft(characterAttributes.get("PER").getCurrentvalue()));
+		defense.setSocial(berechneWiederstandskraft(characterAttributes.get("CHA").getCurrentvalue()));
 		
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
@@ -103,7 +104,7 @@ public class ECEWorker {
 		}
 
 		// **INITIATIVE**
-		STEPDICEType initiativeStepdice=attribute2StepAndDice(character.getAttributes().get("DEX").getCurrentvalue());
+		STEPDICEType initiativeStepdice=attribute2StepAndDice(characterAttributes.get("DEX").getCurrentvalue());
 		INITIATIVEType initiative = character.getInitiative();
 		// Setze alle Initiative Modifikatoren zurück, da diese im folgenden neu bestimmt werden.
 		initiative.setModification(0);
@@ -112,7 +113,7 @@ public class ECEWorker {
 		initiative.setDice(initiativeStepdice.getDice());
 
 		// **HEALTH**
-		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(character.getAttributes().get("TOU").getCurrentvalue());
+		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(characterAttributes.get("TOU").getCurrentvalue());
 		DEATHType death=character.getDeath();
 		DEATHType unconsciousness=character.getUnconsciousness();
 		death.setBase(newhealth.getDeath());
@@ -122,8 +123,8 @@ public class ECEWorker {
 		character.getWound().setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
 		RECOVERYType recovery = character.getRecovery();
 		recovery.setTestsperday(newhealth.getRecovery());
-		recovery.setStep(character.getAttributes().get("TOU").getStep());
-		recovery.setDice(character.getAttributes().get("TOU").getDice());
+		recovery.setStep(characterAttributes.get("TOU").getStep());
+		recovery.setDice(characterAttributes.get("TOU").getDice());
 
 		// **KARMA**
 		TALENTType karmaritualTalent = null;
@@ -139,12 +140,31 @@ public class ECEWorker {
 
 		// **MOVEMENT**
 		MOVEMENTType movement = character.getMovement();
-		movement.setFlight(namegiver.getMovementFlight());
-		movement.setGround(namegiver.getMovementGround());
+		int movementFlight = namegiver.getMovementFlight();
+		int movementGround = namegiver.getMovementGround();
+		ATTRIBUTEType strength = characterAttributes.get("STR");
+		switch(ApplicationProperties.create().getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute()) {
+		case CHA:
+			break;
+		case DEX:
+			break;
+		case PER:
+			break;
+		case STR:
+			strength.getRacevalue();
+			strength.getCurrentvalue();
+			break;
+		case TOU:
+			break;
+		case WIL:
+			break;
+		}
+		movement.setFlight(movementFlight);
+		movement.setGround(movementGround);
 
 		// **CARRYING**
 		CARRYINGType carrying = character.getCarrying();
-		int tmp=berechneTraglast(character.getAttributes().get("STR").getCurrentvalue());
+		int tmp=berechneTraglast(strength.getCurrentvalue());
 		carrying.setCarrying(tmp);
 		carrying.setLifting(tmp *2);
 
@@ -168,7 +188,7 @@ public class ECEWorker {
 		List<ARMORType> magicarmor = character.getMagicArmor();
 		// natural ARMOR
 		ARMORType naturalArmor = namegiver.getARMOR();
-		naturalArmor.setMysticarmor(berechneMysticArmor(character.getAttributes().get("WIL").getCurrentvalue()));
+		naturalArmor.setMysticarmor(berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
 		int mysticalarmor=naturalArmor.getMysticarmor();
 		int pysicalarmor=naturalArmor.getPhysicalarmor();
 		int protectionpenalty=naturalArmor.getPenalty();
@@ -208,7 +228,7 @@ public class ECEWorker {
 		character.clearDisciplineBonuses();
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		HashMap<String, ATTRIBUTEType> attribute = character.getAttributes();
+		HashMap<String, ATTRIBUTEType> attribute = characterAttributes;
 		HashMap<Integer, DISCIPLINEType> allDisciplines = character.getAllDiciplinesByOrder();
 		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
 		// Finde das DURABILITY Talent aus der Talentliste
@@ -389,7 +409,7 @@ public class ECEWorker {
 		int startingSpellLegendPointCost = 0;
 		if( OptinalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
 			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
-			ATTRIBUTEType per = character.getAttributes().get("PER");
+			ATTRIBUTEType per = characterAttributes.get("PER");
 			startingSpellLegendPointCost = 100 * attribute2StepAndDice(per.getBasevalue()).getStep();
 			int lpbonus = 0;
 			for( int spellability : getDisciplineSpellAbility(diciplineCircle) ) {
