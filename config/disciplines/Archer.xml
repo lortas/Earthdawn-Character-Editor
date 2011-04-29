@@ -37,7 +37,7 @@
 		<KARMA spend="Dexterity-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
-		<OPTIONALTALENT name="Call Misslile"/>
+		<OPTIONALTALENT name="Call Missile"/>
 		<OPTIONALTALENT name="Conceal Object"/>
 		<OPTIONALTALENT name="Creature Analysis"/>
 		<OPTIONALTALENT name="Empathic Sense"/>
@@ -63,5 +63,38 @@
 		<DISCIPLINETALENT name="Second Shot"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Blade Juggle"/>
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Lifesight"/>
+		<OPTIONALTALENT name="Rushing Attack"/>
+		<OPTIONALTALENT name="Quick Shot"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Trace Missle"/>
+		<OPTIONALTALENT name="Warp Missle"/>
+		<DISCIPLINETALENT name="Eagle Eye"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Create Arrow</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Warning Shot"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Dominate Arrow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Blind Fire"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
 	</CIRCLE>
 </DISCIPLINE>

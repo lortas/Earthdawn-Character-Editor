@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <OPTIONALRULES xmlns="http://earthdawn.com/optionalrules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/optionalrules earthdawnoptionalrules.xsd">
 	<ATTRIBUTE points="25" limitoneway="yes"/>
+	<ATTRIBUTEBASEDMOVEMENT attribute="STR"/>
 	<LEGENDPOINTSFORATTRIBUTEINCREASE used="yes"/>
 	<SPELLLEGENDPOINTCOST used="yes"/>
 	<THREADITEMDOSTACK used="yes"/>
