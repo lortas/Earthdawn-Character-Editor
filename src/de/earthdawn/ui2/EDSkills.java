@@ -3,38 +3,28 @@ package de.earthdawn.ui2;
 import javax.swing.JPanel;
 
 import de.earthdawn.CharacterContainer;
-import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
 
-import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
-import javax.swing.BoxLayout;
-import javax.swing.KeyStroke;
-
 import java.awt.BorderLayout;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
-import javax.xml.bind.JAXBElement;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import javax.swing.JPopupMenu;
-import java.awt.Dimension;
 import javax.swing.ListSelectionModel;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 public class EDSkills extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private JToolBar toolBar;
 	private JScrollPane scrollPane;
@@ -92,11 +82,11 @@ public class EDSkills extends JPanel {
 	public CharacterContainer getCharacter() {
 		return character;
 	}	
-	
+
 	protected void do_btnAddSkill_actionPerformed(ActionEvent arg0) {
-		EDSkillSelectDialog dialog = new EDSkillSelectDialog();
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(false);
 		dialog.setVisible(true);
-		HashMap<String, CAPABILITYType> selected = dialog.getSelectedSkillMap();
+		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
 		for(Object key : selected.keySet()){
 			CAPABILITYType cap = selected.get(key);
 			SKILLType skill = new SKILLType();
@@ -111,9 +101,8 @@ public class EDSkills extends JPanel {
 			character.getSkills().add(skill);
 			character.refesh();
 		}
-		
 	}
-	
+
 	protected void do_btnRemoveSkill_actionPerformed(ActionEvent arg0) {
 		ArrayList<SKILLType> skillsForRemoval = new ArrayList<SKILLType> ();
 		for(int row :table.getSelectedRows()){
@@ -123,28 +112,22 @@ public class EDSkills extends JPanel {
 		character.getSkills().removeAll(skillsForRemoval);
 		character.refesh();
 	}
-	
-
 }
 
 class SkillsTableModel extends AbstractTableModel {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-    private String[] columnNames = {"Name", "Limitation",  "Attribute", "Rank", "Strain", "Action", "Step", "Dice"};
-
-
-    
-    
+	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Rank", "Strain", "Action", "Step", "Dice"};
 
 	public SkillsTableModel(CharacterContainer character) {
 		super();
 		this.character = character;
-	}    
-  
+	}
+
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		fireTableStructureChanged();
@@ -152,7 +135,7 @@ class SkillsTableModel extends AbstractTableModel {
 
 	public CharacterContainer getCharacter() {
 		return character;
-	}	
+	}
 
     public int getColumnCount() {
         return columnNames.length;

@@ -125,9 +125,9 @@ public class EDTalents extends JPanel {
 	protected void do_buttonAdd2_actionPerformed(ActionEvent arg0) {
 		// Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
 		if( character.getUnusedVersatilityRanks() < 1 ) return;
-		EDTalentSelectDialog dialog = new EDTalentSelectDialog();
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(true);
 		dialog.setVisible(true);
-		HashMap<String, CAPABILITYType> selected = dialog.getSelectedTalentMap();
+		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
 			CAPABILITYType cap = selected.get(key);
 			TALENTABILITYType talent = new TALENTABILITYType();
