@@ -95,14 +95,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NAMEGIVERMOVEMENTType }
-     * 
-     */
-    public NAMEGIVERMOVEMENTType createNAMEGIVERMOVEMENTType() {
-        return new NAMEGIVERMOVEMENTType();
-    }
-
-    /**
      * Create an instance of {@link CHARACTERISTICSLEGENDARYSTATUS }
      * 
      */
@@ -228,14 +220,6 @@ public class ObjectFactory {
      */
     public DEATHType createDEATHType() {
         return new DEATHType();
-    }
-
-    /**
-     * Create an instance of {@link NAMEGIVERABILITYType }
-     * 
-     */
-    public NAMEGIVERABILITYType createNAMEGIVERABILITYType() {
-        return new NAMEGIVERABILITYType();
     }
 
     /**
@@ -431,14 +415,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CALCULATEDLEGENDPOINTADJUSTMENTType }
-     * 
-     */
-    public CALCULATEDLEGENDPOINTADJUSTMENTType createCALCULATEDLEGENDPOINTADJUSTMENTType() {
-        return new CALCULATEDLEGENDPOINTADJUSTMENTType();
-    }
-
-    /**
      * Create an instance of {@link THREADRANKType }
      * 
      */
@@ -487,11 +463,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NAMEGIVERS }
+     * 
+     */
+    public NAMEGIVERS createNAMEGIVERS() {
+        return new NAMEGIVERS();
+    }
+
+    /**
      * Create an instance of {@link SPELLSType }
      * 
      */
     public SPELLSType createSPELLSType() {
         return new SPELLSType();
+    }
+
+    /**
+     * Create an instance of {@link NAMEVALUEType }
+     * 
+     */
+    public NAMEVALUEType createNAMEVALUEType() {
+        return new NAMEVALUEType();
     }
 
     /**
@@ -511,11 +503,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NAMEVALUEType }
+     * Create an instance of {@link NAMEGIVERMOVEMENTType }
      * 
      */
-    public NAMEVALUEType createNAMEVALUEType() {
-        return new NAMEVALUEType();
+    public NAMEGIVERMOVEMENTType createNAMEGIVERMOVEMENTType() {
+        return new NAMEGIVERMOVEMENTType();
     }
 
     /**
@@ -583,11 +575,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NAMEGIVERS }
+     * Create an instance of {@link NAMEGIVERABILITYType }
      * 
      */
-    public NAMEGIVERS createNAMEGIVERS() {
-        return new NAMEGIVERS();
+    public NAMEGIVERABILITYType createNAMEGIVERABILITYType() {
+        return new NAMEGIVERABILITYType();
     }
 
     /**
@@ -596,6 +588,14 @@ public class ObjectFactory {
      */
     public KNACKS createKNACKS() {
         return new KNACKS();
+    }
+
+    /**
+     * Create an instance of {@link CALCULATEDLEGENDPOINTADJUSTMENTType }
+     * 
+     */
+    public CALCULATEDLEGENDPOINTADJUSTMENTType createCALCULATEDLEGENDPOINTADJUSTMENTType() {
+        return new CALCULATEDLEGENDPOINTADJUSTMENTType();
     }
 
     /**

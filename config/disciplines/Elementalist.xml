@@ -131,16 +131,45 @@
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Cold Purify"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Drastic Temperature"/>
+		<SPELL type="elemental" name="Ease Passage"/>
+		<SPELL type="elemental" name="Fireweave"/>
+		<SPELL type="elemental" name="Flameshaw"/>
+		<SPELL type="elemental" name="Living Wall"/>
+		<SPELL type="elemental" name="Ricochet Attack"/>
+		<SPELL type="elemental" name="Stone Rain"/>
+		<SPELL type="elemental" name="Tossing Earth"/>	
+		<SPELL type="elemental" name="Tree Merge"/>
 		<KARMA spend="Willpower-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Earth Skin"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Beastform"/>
+		<SPELL type="elemental" name="Calm Water"/>
+		<SPELL type="elemental" name="Cloud Summon"/>
+		<SPELL type="elemental" name="Death Rain"/>
+		<SPELL type="elemental" name="Earth Q'wril"/>
+		<SPELL type="elemental" name="Earth Surfing"/>
+		<SPELL type="elemental" name="Engulf [Element]"/>
+		<SPELL type="elemental" name="Fire Hounds"/>
+		<SPELL type="elemental" name="Flame Darts"/>
+		<SPELL type="elemental" name="Grasping Hand of Earth"/>
+		<SPELL type="elemental" name="Storm Manacles"/>
+		<SPELL type="elemental" name="Thunderclap"/>
+		<SPELL type="elemental" name="Whirlwind"/>
 		<KARMA spend="Spell Effect Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Temperature"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Blade Fury"/>
+		<SPELL type="elemental" name="Crushing Hand of Earth"/>
+		<SPELL type="elemental" name="Earth Wall"/>
+		<SPELL type="elemental" name="Perimeter Alarm"/>
+		<SPELL type="elemental" name="Silence Metal"/>
+		<SPELL type="elemental" name="Silver Shadow"/>
+		<SPELL type="elemental" name="Waterspout"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 </DISCIPLINE>

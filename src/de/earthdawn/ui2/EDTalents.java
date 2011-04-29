@@ -44,7 +44,8 @@ public class EDTalents extends JPanel {
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((TalentsTableModel)table.getModel()).setCharacter(character);
-		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 20));
+		table.getColumnModel().getColumn(0).setCellEditor(new SpinnerEditor(0, 15));
+		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 15));
 	}
 
 	public CharacterContainer getCharacter() {

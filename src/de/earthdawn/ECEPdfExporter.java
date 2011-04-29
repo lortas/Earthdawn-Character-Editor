@@ -51,6 +51,8 @@ public class ECEPdfExporter {
 		acroFields.setField( "Height", String.valueOf(character.getAppearance().getHeight()) );
 		acroFields.setField( "Skin", character.getAppearance().getSkin() );
 		acroFields.setField( "CharacterWeight" , String.valueOf(character.getAppearance().getWeight()) );
+		acroFields.setField( "Passion" , character.getPassion() );
+		acroFields.setField( "PlayerName" , character.getPlayer() );
 		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
 		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get("DEX").getBasevalue()) );
 		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get("STR").getBasevalue()) );
@@ -110,7 +112,7 @@ public class ECEPdfExporter {
 		if( character.getHealth().getDamage() > 0 ) {
 			acroFields.setField( "CurrentDamage", String.valueOf(character.getHealth().getDamage()) );
 		} else {
-			acroFields.setField( "CurrentDamage",  "" );
+			acroFields.setField( "CurrentDamage", "" );
 		}
 		acroFields.setField( "KarmaCurrent", String.valueOf(character.getKarma().getCurrent()) );
 		acroFields.setField( "KarmaMax", String.valueOf(character.getKarma().getMax()) );

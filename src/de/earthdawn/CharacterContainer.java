@@ -43,6 +43,12 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getName();
 	}
 
+	public String getPlayer() {
+		String player = character.getPlayer();
+		if( player == null ) return "";
+		return player;
+	}
+
 	public APPEARANCEType getAppearance() {
 		APPEARANCEType appearance = character.getAPPEARANCE();
 		if( appearance != null ) return appearance;
@@ -796,6 +802,14 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public DEVOTIONType getDevotionPoints() {
 		return character.getDEVOTION();
+	}
+
+	public String getPassion() {
+		DEVOTIONType devotion = getDevotionPoints();
+		if( devotion == null ) return "";
+		String passion = devotion.getPassion();
+		if( passion == null ) return "";
+		return passion;
 	}
 
 	public int calculateDevotionPoints() {

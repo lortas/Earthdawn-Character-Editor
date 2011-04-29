@@ -36,10 +36,10 @@ public class EDSkills extends JPanel {
 	 */
 	public EDSkills() {
 		setLayout(new BorderLayout(0, 0));
-		
+
 		toolBar = new JToolBar();
 		add(toolBar, BorderLayout.NORTH);
-		
+
 		btnAddSkill = new JButton("Add Skill");
 		btnAddSkill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -47,7 +47,7 @@ public class EDSkills extends JPanel {
 			}
 		});
 		toolBar.add(btnAddSkill);
-		
+
 		btnRemoveSkill = new JButton("Remove Skill");
 		btnRemoveSkill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -55,33 +55,31 @@ public class EDSkills extends JPanel {
 			}
 		});
 		toolBar.add(btnRemoveSkill);
-		
+
 		scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
-		
+
 		table = new JTable();
 		InputMapUtil.setupInputMap(table);	
-		
+
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new SkillsTableModel(character));
 		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
+		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
 		scrollPane.setViewportView(table);
 		table.setRowSelectionAllowed(false);
-		
 	}
-	
-
-	
 
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((SkillsTableModel)table.getModel()).setCharacter(character);
 		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
+		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
 	}
 
 	public CharacterContainer getCharacter() {
 		return character;
-	}	
+	}
 
 	protected void do_btnAddSkill_actionPerformed(ActionEvent arg0) {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(false);
@@ -121,7 +119,7 @@ class SkillsTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Rank", "Strain", "Action", "Step", "Dice"};
+	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Rank", "Startrank", "Action", "Step", "Dice"};
 
 	public SkillsTableModel(CharacterContainer character) {
 		super();
@@ -157,14 +155,14 @@ class SkillsTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int col) {
-        // {"Name", "Limitation",  "Attribute", "Rank", "Strain", "Action", "Step" "Dice"};
+        // {"Name", "Limitation",  "Attribute", "Rank", "Startrank", "Action", "Step" "Dice"};
         if(character != null){ 
 	    	switch (col) {
 	    		case 0: return character.getSkills().get(row).getName();
 	    		case 1: return character.getSkills().get(row).getLimitation();
 	    		case 2: return character.getSkills().get(row).getAttribute();
 	    		case 3: return new Integer(character.getSkills().get(row).getRANK().getRank());
-	    		case 4: return character.getSkills().get(row).getStrain();
+	    		case 4: return new Integer(character.getSkills().get(row).getRANK().getStartrank());
 	    		case 5: return character.getSkills().get(row).getAction().value();
 	    		case 6: return character.getSkills().get(row).getRANK().getStep();
 	    		case 7: return character.getSkills().get(row).getRANK().getDice().value();
@@ -190,29 +188,25 @@ class SkillsTableModel extends AbstractTableModel {
      * Don't need to implement this method unless your table's
      * editable.
      */
-    public boolean isCellEditable(int row, int col) {
-    	if (col == 3 ){
-    		return true;
-    	}
-    	return false;
-    }
+	public boolean isCellEditable(int row, int col) {
+		if( col == 1 ) return true;
+		if( col == 3 ) return true;
+		if( col == 4 ) return true;
+		return false;
+	}
 
     /*
      * Don't need to implement this method unless your table's
      * data can change.
      */
-    
-    
-    public void setValueAt(Object value, int row, int col) {   	
-    	if(col == 3){
-    		character.getSkills().get(row).getRANK().setRank((Integer) value);
-    	}
-    	character.refesh();	
-    	
-    	fireTableCellUpdated(row, 6);
-    	fireTableCellUpdated(row, 7);
-        fireTableCellUpdated(row, col);
-    }
 
+	public void setValueAt(Object value, int row, int col) {
+		if(col == 1) character.getSkills().get(row).setLimitation((String)value);
+		if(col == 3) character.getSkills().get(row).getRANK().setRank((Integer) value);
+		if(col == 4) character.getSkills().get(row).getRANK().setStartrank((Integer) value);
+		character.refesh();
+		fireTableCellUpdated(row, 6);
+		fireTableCellUpdated(row, 7);
+		fireTableCellUpdated(row, col);
+	}
 }
-
