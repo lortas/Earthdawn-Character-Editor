@@ -2,7 +2,7 @@
 <SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell earthdawnspells.xsd">
 	<SPELL name="Absorbing Sphere" threads="3" weavingdifficulty="13" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="R+12 rnd" effect="WIL+8/Mystic"/>
 	<SPELL name="Afterlife" threads="5" weavingdifficulty="16" reattuningdifficulty="21" range="10 hex" duration="R min" effect="WIL+14"/>
-	<SPELL name="Air Armor" threads="0" reattuningdifficulty="10" range="touch" duration="R+5 min" effect="+3 Physical Armor, +3 Fatigue Test bonus vs. heat"/>
+	<SPELL name="Air Armor" threads="0" reattuningdifficulty="10" range="touch" duration="R+5 min" effect="+3 Physical Armor, +3 Fatigue Test bonus vs. heat" bookref="PG p.146"/>
 	<SPELL name="Air Blast" threads="1" weavingdifficulty="10" reattuningdifficulty="16" castingdifficulty="TSD*" range="12 hex" duration="1 rnd" effect="WIL + 9" effectarea="60-degree arc from an origin hex adjacent to the spellcaster towards the target hex, up to the spell's range. For every 2 yards (1 hex) length away from the caster, the effect expands by 2 yards (1 hex) in width."/>
 	<SPELL name="Air Fortress" threads="-1" weavingdifficulty="17" reattuningdifficulty="23" castingdifficulty="8" range="touch" duration="Rank×10 hr" effect="WIL+12"/>
 	<SPELL name="Air Mattress" threads="1" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="10 hr" effect="+2 Recovery Test bonus"/>
