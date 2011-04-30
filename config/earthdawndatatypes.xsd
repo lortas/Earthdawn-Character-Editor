@@ -192,6 +192,7 @@
 		<xs:attribute name="name"  type="xs:string" use="required"/>
 		<xs:attribute name="strain" type="xs:string" use="required"/>
 		<xs:attribute name="minrank" type="unsigned_int" default="0"/>
+		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="TALENTTEACHER_type">
 		<xs:attribute name="name" type="xs:string" default=""/>
@@ -213,6 +214,7 @@
 		<xs:attribute name="limitation" type="xs:string" default=""/>
 		<xs:attribute name="karma" type="yesno_type" default="no"/>
 		<xs:attribute name="default" type="yesno_type" default="no"/>
+		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="SKILL_type">
 		<xs:complexContent>
@@ -482,6 +484,7 @@
 		<xs:attribute name="duration" type="xs:string" default="s. text"/>
 		<xs:attribute name="effect" type="xs:string" default="s. text"/>
 		<xs:attribute name="effectarea" type="xs:string" default="s. text"/>
+		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="SPELL_type">
 		<xs:complexContent>

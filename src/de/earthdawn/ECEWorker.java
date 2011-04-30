@@ -147,12 +147,22 @@ public class ECEWorker {
 		case CHA:
 			break;
 		case DEX:
+			int modDex = characterAttributes.get("DEX").getStep()-6;
+			movementGround+=modDex;
+			if(movementFlight>0) movementFlight+=modDex;
 			break;
 		case PER:
 			break;
 		case STR:
-			strength.getRacevalue();
-			strength.getCurrentvalue();
+			int d=strength.getCurrentvalue()-strength.getRacevalue();
+			int modStr=0;
+			if( d < 0 ) {
+				modStr = -1 - (int) ((((double)d)/2.0)+0.99);
+			} else {
+				modStr = (int) ((((double)d)/4.0)+0.99) - 1;
+			}
+			movementGround+=modStr;
+			if(movementFlight>0) movementFlight+=modStr;
 			break;
 		case TOU:
 			break;
