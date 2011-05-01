@@ -97,4 +97,30 @@
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Chameleon"/>
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<DISCIPLINETALENT name="Multi-Shot"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>Hail of Arrows</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Screaming Arrow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Wind Bow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
 </DISCIPLINE>
