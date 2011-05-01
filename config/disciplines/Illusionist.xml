@@ -164,4 +164,76 @@
 		<SPELL type="illusion" name="Shadow Spell"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Hold Thread"/>
+		<OPTIONALTALENT name="Incite Mob"/>
+		<OPTIONALTALENT name="Memorize Image"/>
+		<OPTIONALTALENT name="Safe Thought"/>
+		<DISCIPLINETALENT name="Detect Falsehood"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Do Unto Others"/>
+		<SPELL type="illusion" name="Grim Reaper"/>
+		<SPELL type="illusion" name="One of the Crowd"/>
+		<SPELL type="illusion" name="Revulsion"/>
+		<SPELL type="illusion" name="Shift Walls"/>
+		<SPELL type="illusion" name="Thundering Walls"/>
+		<KARMA spend="Recovery Tests"/>
+		<ABILITY>Hide Matrix</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Mind Wave"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Afterlife"/>
+		<SPELL type="illusion" name="Astral Materialization"/>
+		<SPELL type="illusion" name="Eclipse"/>
+		<SPELL type="illusion" name="Eternal Day"/>
+		<SPELL type="illusion" name="Haunted House"/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Netherwalk"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Bone Compass"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Casting Pattern"/>
+		<OPTIONALTALENT name="Chameleon"/>
+		<OPTIONALTALENT name="Impossible Hide"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<DISCIPLINETALENT name="Multi-Weaving"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Restore Pattern"/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Truth Interpreted</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Shadow Palace"/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Range Pattern"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
 </DISCIPLINE>

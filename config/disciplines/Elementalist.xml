@@ -183,24 +183,71 @@
 		<OPTIONALTALENT name="Wrap Missle"/>
 		<DISCIPLINETALENT name="Metal Ward"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Burning Water"/>
+		<SPELL type="elemental" name="Cloud Banish"/>
+		<SPELL type="elemental" name="Cold Embers"/>
+		<SPELL type="elemental" name="Dragon's Breath"/>
+		<SPELL type="elemental" name="Fire Wall"/>
+		<SPELL type="elemental" name="Moon Shadow"/>
+		<SPELL type="elemental" name="Water Wall"/>
 		<KARMA spend="Recovery Test"/>
 		<ABILITY>Earth and Wind</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Endurace Cold"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Fortress"/>
+		<SPELL type="elemental" name="Earth and Air"/>
+		<SPELL type="elemental" name="Elemental Merchant"/>
+		<SPELL type="elemental" name="Fire and Water"/>
+		<SPELL type="elemental" name="Frozen Harbor"/>
+		<SPELL type="elemental" name="Petrify"/>
+		<SPELL type="elemental" name="Weather Change"/>
 		<DEFENSE kind="spell"/>
+		<KARMA spend="Karma Point on Action Tests made by a spirit or creature under his control"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Reshape Object"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Wood Blade"/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Summoning Circle"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Crop Blight"/>
 		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<OPTIONALTALENT name="Gold Sense"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Soften Blade"/>
+		<OPTIONALTALENT name="Water Dancing"/>
+		<DISCIPLINETALENT name="Moving Earth"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Element Matrix</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Elemental Walk"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Council of the Forest"/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Earth Armor"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Call Forth the Maelstrom"/>
+		<SPELL type="elemental" name="Purify Forest"/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
 </DISCIPLINE>

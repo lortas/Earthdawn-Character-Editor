@@ -64,4 +64,64 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Down Strike"/>
+		<OPTIONALTALENT name="Eagle Eye"/>
+		<OPTIONALTALENT name="Elemental Tongues"/>
+		<OPTIONALTALENT name="Endure Cold"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<DISCIPLINETALENT name="Thought Link"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Determined Charge</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Shield Beater"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Life Check"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Rally"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Aura Armor"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Multi-Tongue"/>
+		<OPTIONALTALENT name="Screaming Arrow"/>
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Safe Passage</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Wound Transfer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Vitality"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
 </DISCIPLINE>
+
