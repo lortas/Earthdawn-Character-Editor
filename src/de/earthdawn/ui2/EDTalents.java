@@ -347,15 +347,19 @@ class TalentsTableModel extends AbstractTableModel {
      * editable.
      */
 	public boolean isCellEditable(int row, int col) {
+		TALENTType talent = null;
+		if(talents.getDISZIPLINETALENT().size() > row ) {
+			talent=talents.getDISZIPLINETALENT().get(row);
+		} else {
+			int o = row-talents.getDISZIPLINETALENT().size();
+			talent=talents.getOPTIONALTALENT().get(o);
+		}
+		if( talent == null ) return false;
+		// Realigned Talents dürfen nicht mehr editiert werden
+		if( talent.getRealigned() > 0 ) return false;
 		if( col == 4 ) return true;
 		if( col == 7 ) return true;
 		if( col == 0 ) {
-			TALENTType talent = null;
-			if(talents.getDISZIPLINETALENT().size() > row ) {
-				talent=talents.getDISZIPLINETALENT().get(row);
-			} else {
-				talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
-			}
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) return true;
 		}

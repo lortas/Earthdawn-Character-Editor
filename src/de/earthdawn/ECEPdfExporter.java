@@ -918,6 +918,7 @@ public class ECEPdfExporter {
 		TALENTTEACHERType teacher = talent.getTEACHER();
 		if ( ! talent.getLimitation().isEmpty() ) talentname += ": "+talent.getLimitation();
 		if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
+		if ( talent.getRealigned() > 0 ) talentname="("+talentname+")";
 		acroFields.setField( "Talent."+counter, talentname);
 		ATTRIBUTENameType attribute = talent.getAttribute();
 		acroFields.setField( "Attribute."+counter, attribute.value() );

@@ -38,6 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="karma" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *       &lt;attribute name="default" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
+ *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="realigned" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -72,6 +74,10 @@ public class CAPABILITYType {
     protected YesnoType karma;
     @XmlAttribute(name = "default")
     protected YesnoType _default;
+    @XmlAttribute
+    protected String bookref;
+    @XmlAttribute
+    protected Integer realigned;
 
     /**
      * Gets the value of the knack property.
@@ -316,6 +322,62 @@ public class CAPABILITYType {
      */
     public void setDefault(YesnoType value) {
         this._default = value;
+    }
+
+    /**
+     * Gets the value of the bookref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookref() {
+        if (bookref == null) {
+            return "";
+        } else {
+            return bookref;
+        }
+    }
+
+    /**
+     * Sets the value of the bookref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookref(String value) {
+        this.bookref = value;
+    }
+
+    /**
+     * Gets the value of the realigned property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getRealigned() {
+        if (realigned == null) {
+            return  0;
+        } else {
+            return realigned;
+        }
+    }
+
+    /**
+     * Sets the value of the realigned property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setRealigned(Integer value) {
+        this.realigned = value;
     }
 
 }

@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="strain" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -47,6 +48,8 @@ public class KNACKType {
     protected String strain;
     @XmlAttribute
     protected Integer minrank;
+    @XmlAttribute
+    protected String bookref;
 
     /**
      * Gets the value of the name property.
@@ -122,6 +125,34 @@ public class KNACKType {
      */
     public void setMinrank(Integer value) {
         this.minrank = value;
+    }
+
+    /**
+     * Gets the value of the bookref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookref() {
+        if (bookref == null) {
+            return "";
+        } else {
+            return bookref;
+        }
+    }
+
+    /**
+     * Sets the value of the bookref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookref(String value) {
+        this.bookref = value;
     }
 
 }
