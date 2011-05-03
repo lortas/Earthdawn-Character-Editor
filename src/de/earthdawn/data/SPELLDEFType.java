@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="duration" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
  *       &lt;attribute name="effect" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
  *       &lt;attribute name="effectarea" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
+ *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -65,6 +66,8 @@ public class SPELLDEFType {
     protected String effect;
     @XmlAttribute
     protected String effectarea;
+    @XmlAttribute
+    protected String bookref;
 
     /**
      * Gets the value of the name property.
@@ -312,6 +315,34 @@ public class SPELLDEFType {
      */
     public void setEffectarea(String value) {
         this.effectarea = value;
+    }
+
+    /**
+     * Gets the value of the bookref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookref() {
+        if (bookref == null) {
+            return "";
+        } else {
+            return bookref;
+        }
+    }
+
+    /**
+     * Sets the value of the bookref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookref(String value) {
+        this.bookref = value;
     }
 
 }
