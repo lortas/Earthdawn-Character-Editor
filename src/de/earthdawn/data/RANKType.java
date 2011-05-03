@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
  *       &lt;attribute name="startrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="realignedrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="rank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="lpcost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -42,6 +43,8 @@ public class RANKType
 
     @XmlAttribute
     protected Integer startrank;
+    @XmlAttribute
+    protected Integer realignedrank;
     @XmlAttribute
     protected Integer rank;
     @XmlAttribute
@@ -75,6 +78,34 @@ public class RANKType
      */
     public void setStartrank(Integer value) {
         this.startrank = value;
+    }
+
+    /**
+     * Gets the value of the realignedrank property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getRealignedrank() {
+        if (realignedrank == null) {
+            return  0;
+        } else {
+            return realignedrank;
+        }
+    }
+
+    /**
+     * Sets the value of the realignedrank property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setRealignedrank(Integer value) {
+        this.realignedrank = value;
     }
 
     /**

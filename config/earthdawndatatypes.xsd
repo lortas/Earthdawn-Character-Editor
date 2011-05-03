@@ -182,6 +182,7 @@
 		<xs:complexContent>
 			<xs:extension base="STEPDICE_type">
 				<xs:attribute name="startrank" type="unsigned_int" default="0"/>
+				<xs:attribute name="realignedrank" type="unsigned_int" default="0"/>
 				<xs:attribute name="rank" type="unsigned_int" default="0"/>
 				<xs:attribute name="bonus" type="unsigned_int" default="0"/>
 				<xs:attribute name="lpcost" type="unsigned_int" default="0"/>

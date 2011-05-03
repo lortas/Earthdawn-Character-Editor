@@ -856,4 +856,47 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		skills.removeAll(remove);
 	}
+
+	public void updateRealignedTalents() {
+		HashMap<Integer,TALENTSType> allTalents = getAllTalentsByDisziplinOrder();
+		HashMap<String, List<TALENTType>> realignedTalentHash = new HashMap<String, List<TALENTType>>();
+		for( Integer disciplinenumber : allTalents.keySet() ) {
+			insertIfRealigned(realignedTalentHash, allTalents.get(disciplinenumber).getDISZIPLINETALENT());
+			insertIfRealigned(realignedTalentHash, allTalents.get(disciplinenumber).getOPTIONALTALENT());
+		}
+		for( String talentName : realignedTalentHash.keySet() ) {
+			List<TALENTType> talentsByName = getTalentByName(talentName);
+			List<TALENTType> realignedTalentList = realignedTalentHash.get(talentName);
+			// Entferne alle Talente die wir bereits haben.
+			talentsByName.removeAll(realignedTalentList);
+			// Theoretisch sollte in talentsByName nur noch ein Element übrig bleiben.
+			int maxRealignedRank=0;
+			for( TALENTType talent : realignedTalentList ) {
+				int currentRealignedRank = talent.getRANK().getRealignedrank();
+				if( maxRealignedRank < currentRealignedRank ) maxRealignedRank=currentRealignedRank;
+			}
+			for( TALENTType talent : talentsByName ) {
+				talent.getRANK().setRealignedrank(maxRealignedRank);
+			}
+		}
+	}
+
+	private void insertIfRealigned(HashMap<String, List<TALENTType>> realignedTalents, List<TALENTType> disTalents) {
+		for( TALENTType talent : disTalents ) {
+			RANKType rank = talent.getRANK();
+			if( rank == null ) {
+				rank = new RANKType();
+				talent.setRANK(rank);
+			}
+			if( rank.getRealignedrank() > 0 ) {
+				String talentName = talent.getName();
+				List<TALENTType> list = realignedTalents.get(talentName);
+				if( list == null ) {
+					list = new ArrayList<TALENTType>();
+					realignedTalents.put(talentName, list);
+				}
+				list.add(talent);
+			}
+		}
+	}
 }
