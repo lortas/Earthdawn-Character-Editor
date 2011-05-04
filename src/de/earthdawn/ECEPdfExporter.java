@@ -922,7 +922,8 @@ public class ECEPdfExporter {
 		acroFields.setField( "Talent."+counter, talentname);
 		ATTRIBUTENameType attribute = talent.getAttribute();
 		acroFields.setField( "Attribute."+counter, attribute.value() );
-		if( attribute.equals(ATTRIBUTENameType.NA) ) {
+		boolean attributeIsNa = attribute.equals(ATTRIBUTENameType.NA);
+		if( attributeIsNa ) {
 			acroFields.setField( "TalentAttributeStep."+counter, "-" );
 		} else { 
 			acroFields.setField( "TalentAttributeStep."+counter, String.valueOf(attributes.get(attribute.value()).getStep()) );
@@ -935,12 +936,16 @@ public class ECEPdfExporter {
 		default        : acroFields.setField( "Action."+counter, talent.getAction().value() );
 		}
 		RANKType talentrank = talent.getRANK();
-		if( talentrank.getDice() == null ) {
+		if( attributeIsNa || (talentrank.getDice()==null) ) {
 			acroFields.setField( "ActionDice."+counter, "-" );
 		} else {
 			acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
 		}
-		acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
+		if( attributeIsNa ) {
+			acroFields.setField( "Step."+counter, "-" );
+		} else {
+			acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
+		}
 		if( talentrank.getBonus() == 0 ) {
 			acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
 		} else {

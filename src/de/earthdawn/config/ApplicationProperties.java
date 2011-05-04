@@ -185,7 +185,7 @@ public class ApplicationProperties {
 			if( name.getLang().equals(LANGUAGE) ) return name.getName();
 		}
 		// Not found
-		return null;
+		return "";
 	}
 
 	public String getVersatilityName() {
