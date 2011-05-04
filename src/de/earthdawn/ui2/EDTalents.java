@@ -46,6 +46,7 @@ public class EDTalents extends JPanel {
 		((TalentsTableModel)table.getModel()).setCharacter(character);
 		table.getColumnModel().getColumn(0).setCellEditor(new SpinnerEditor(0, 15));
 		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 15));
+		table.getColumnModel().getColumn(5).setCellEditor(new SpinnerEditor(0, 15));
 	}
 
 	public CharacterContainer getCharacter() {
@@ -182,7 +183,7 @@ class TalentsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private TALENTSType talents;
-	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Rank", "Step", "Action", "Teacher Dis", "Type"};
+	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Start Rank", "Rank", "Step", "Action", "Teacher Dis", "Type"};
 	private String disciplin = "";
 
 	public String getDisciplin() {
@@ -238,10 +239,16 @@ class TalentsTableModel extends AbstractTableModel {
 			talent=talents.getDISZIPLINETALENT().get(row);
 			isDisciplinTalent=true;
 		} else {
-			talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
-			isDisciplinTalent=false;
+			int i = row-talents.getDISZIPLINETALENT().size();
+			List<TALENTType> optionaltalent = talents.getOPTIONALTALENT();
+			if( (i>= 0) && (i<optionaltalent.size()) ) {
+				talent=optionaltalent.get(i);
+				isDisciplinTalent=false;
+			} else {
+				return new String("Error");
+			}
 		}
-		Object result = new String("Error"); 
+		Object result = new String("Error");
 		switch (col) {
 		case 0:
 	        	try{
@@ -254,6 +261,9 @@ class TalentsTableModel extends AbstractTableModel {
 	        case 1:  
 	        	try{
 	        		result = talent.getName();
+	        		if( talent.getRealigned() > 0 ) {
+	        			result = "("+result+")";
+	        		}
 	        	}
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
@@ -275,9 +285,9 @@ class TalentsTableModel extends AbstractTableModel {
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 4: 
+	        case 4:
 	        	try{
-	        		result = new Integer(talent.getRANK().getRank());
+	        		result = new Integer(talent.getRANK().getStartrank());
 	        	}
 	        	catch(Exception e){
 	        		System.err.println("Error: " + talent.getName());
@@ -285,13 +295,21 @@ class TalentsTableModel extends AbstractTableModel {
 	        	break;
 	        case 5:
 	        	try{
+	        		result = new Integer(talent.getRANK().getRank());
+	        	}
+	        	catch(Exception e){
+	        		System.err.println("Error: " + talent.getName());
+	        	}
+	        	break;
+	        case 6:
+	        	try{
 	        		result = talent.getRANK().getStep();
 	        	}
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 6:
+	        case 7:
 	        	try{
 	        		result = talent.getAction().value();
 	        	}
@@ -299,7 +317,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 7:
+	        case 8:
 	        	try{
 	        		TALENTTEACHERType teacher = talent.getTEACHER();
 	        		if( teacher == null ) {
@@ -312,7 +330,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 8:
+	        case 9:
 	        	try{
 	        		TALENTTEACHERType teacher = talent.getTEACHER();
 	        		if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) {
@@ -358,7 +376,8 @@ class TalentsTableModel extends AbstractTableModel {
 		// Realigned Talents dürfen nicht mehr editiert werden
 		if( talent.getRealigned() > 0 ) return false;
 		if( col == 4 ) return true;
-		if( col == 7 ) return true;
+		if( col == 5 ) return true;
+		if( col == 8 ) return true;
 		if( col == 0 ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) return true;
@@ -382,9 +401,12 @@ class TalentsTableModel extends AbstractTableModel {
 			talent.setCircle((Integer)value);
 			break;
 		case 4:
+			talent.getRANK().setStartrank((Integer)value);
+			break;
+		case 5:
 			talent.getRANK().setRank((Integer)value);
 			break;
-		case 7:
+		case 8:
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( teacher == null ) {
 				teacher = new TALENTTEACHERType();
@@ -396,6 +418,5 @@ class TalentsTableModel extends AbstractTableModel {
 		character.refesh();
 		fireTableCellUpdated(row, col);
 		fireTableCellUpdated(row, 5);
-		fireTableCellUpdated(row, 7);
 	}
 }

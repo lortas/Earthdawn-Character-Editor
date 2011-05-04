@@ -194,8 +194,6 @@ class DisciplinesTableModel extends AbstractTableModel {
      */
     public void setValueAt(Object value, int row, int col) {  
     	character.getAllDiciplinesByOrder().get(new Integer(row+1)).setCircle((Integer)value);
-    	
-    	character.initDisciplinTalents((String)getValueAt(row, 0), ((Integer) getValueAt(row, 1)).intValue());
     	character.refesh();
         fireTableCellUpdated(row, col);
     }

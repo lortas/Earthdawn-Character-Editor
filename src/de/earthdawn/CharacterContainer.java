@@ -414,6 +414,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<SPELLSType> getAllSpells() {
 		return character.getSPELLS();
 	}
+
 	public HashMap<Integer,SPELLSType> getAllSpellsByDisziplinOrder() {
 		// Erstelle zu erst eine Liste von Disziplinen
 		HashMap<String,DISCIPLINEType> alldisciplines = getAllDiciplinesByName();
@@ -424,44 +425,47 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		return allspells;
 	}
+
 	public HashMap<String,List<List<TALENTType>>> getUsedOptionalTalents() {
 		HashMap<String,List<List<TALENTType>>> result = new HashMap<String,List<List<TALENTType>>>();
 		for(TALENTSType talents : getAllTalents() ) {
 			List<List<TALENTType>> list = new ArrayList<List<TALENTType>>();
 			for(int i=0;i<20;i++) list.add(new ArrayList<TALENTType>());
 			for( TALENTType talent : talents.getOPTIONALTALENT()) {
-				list.get(talent.getCircle()).add(talent);
+				if( talent.getRealigned() < 1 ) list.get(talent.getCircle()).add(talent);
 			}
 			result.put(talents.getDiscipline(), list);
 		}
 		return result;
 	}
 
-	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE discipline, int circle) {
+	public static String getFullTalentname(TALENTType talent) {
+		String name = talent.getName();
+		String limitation = talent.getLimitation();
+		if( limitation == null ) return name;
+		if( limitation.isEmpty() ) return name;
+		return name + " : "+limitation;
+	}
+
+	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE disciplineDefinition, int talentCircleNr) {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
-		List<List<TALENTType>> usedOptionalTalentsList = getUsedOptionalTalents().get(discipline.getName());
-		if( usedOptionalTalentsList == null ) {
-			System.err.println("No Used Optinal Talents found for discipline '"+discipline.getName()+"'");
-			usedOptionalTalentsList = new ArrayList<List<TALENTType>>();
-			for(int i=0;i<20;i++) usedOptionalTalentsList.add(new ArrayList<TALENTType>());
+		List<String> usedTalents = new ArrayList<String>();
+		for( TALENTSType talents : getAllTalents() ) {
+			for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
+				usedTalents.add(getFullTalentname(talent));
+			}
+			for( TALENTType talent : talents.getOPTIONALTALENT() ) {
+				usedTalents.add(getFullTalentname(talent));
+			}
 		}
 		int circlenr = 0;
-		for( DISCIPLINECIRCLEType disciplineCircle : discipline.getCIRCLE() ) {
+		for( DISCIPLINECIRCLEType disciplineCircle : disciplineDefinition.getCIRCLE() ) {
 			circlenr++;
-			if( circlenr > circle ) break;
-			for( TALENTABILITYType talent :disciplineCircle.getOPTIONALTALENT()) {
-				boolean found=false;
-				for( List<TALENTType> usedOptionalTalents : usedOptionalTalentsList ) {
-					for( TALENTType usedOptionalTalent : usedOptionalTalents ) {
-						if( talent.getName().equals(usedOptionalTalent.getName()) ) {
-							found=true;
-							usedOptionalTalents.remove(usedOptionalTalent);
-							break;
-						}
-						if( found ) break;
-					}
+			if( circlenr > talentCircleNr ) break;
+			for( TALENTABILITYType talent : disciplineCircle.getOPTIONALTALENT()) {
+				if( ! usedTalents.contains(talent.getName()) ) {
+					result.add(talent);
 				}
-				if( ! found ) result.add(talent);
 			}
 		}
 		return result;
@@ -543,51 +547,82 @@ public class CharacterContainer extends CharChangeRefresh {
 			TALENTSType talents =  new TALENTSType();
 			talents.setDiscipline(name);
 			character.getTALENTS().add(talents);
-			initDisciplinTalents(name,1);
+			ensureDisciplinTalentsExits();
+			realignOptionalTalents();
 		}
-		
 	}
 
-	public void initDisciplinTalents(String disciplinename, int circle){
-		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplinename);
-		TALENTSType talents = getAllTalentsByDisziplinName().get(disciplinename);
-		int circlenr=0;
-		for( DISCIPLINECIRCLEType disciplincircle : d.getCIRCLE() ) {
-			circlenr++;
-			if( circlenr > circle ) break;
-			for( TALENTABILITYType disciplinetalent :disciplincircle.getDISCIPLINETALENT()) {
-				if(getTalentByDisciplinAndName(disciplinename, disciplinetalent.getName()) == null) {
-					TALENTType talent = new TALENTType();
-					talent.setName(disciplinetalent.getName());
-					talent.setLimitation(disciplinetalent.getLimitation());
-					talent.setCircle(circlenr);
-					
-					RANKType rank = new RANKType();
-					rank.setRank(1);
-					rank.setBonus(0);
-					rank.setStep(1);
-					talent.setRANK(rank);
-					
-					talents.getDISZIPLINETALENT().add(talent);
+	public void ensureDisciplinTalentsExits() {
+		HashMap<String, DISCIPLINEType> allDiciplines = getAllDiciplinesByName();
+		List<String> totalListOfDisciplineTalents = new ArrayList<String>();
+		List<TALENTSType> allTalents = getAllTalents();
+		for( TALENTSType talents : allTalents ) {
+			for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
+				totalListOfDisciplineTalents.add(getFullTalentname(talent));
+			}
+		}
+		int maxDisciplineOrder=0;
+		for( TALENTSType talents : allTalents ) {
+			String disciplineName = talents.getDiscipline();
+			DISCIPLINE disciplineDefinition = ApplicationProperties.create().getDisziplin(disciplineName);
+			if( disciplineDefinition == null ) continue;
+			DISCIPLINEType discipline = allDiciplines.get(disciplineName);
+			if( discipline == null ) continue;
+			int disciplineCircleNr = discipline.getCircle();
+			int disciplineOrder = discipline.getOrder();
+			if( maxDisciplineOrder < disciplineOrder ) maxDisciplineOrder = disciplineOrder;
+			int circlenr=0;
+			for( DISCIPLINECIRCLEType disciplineCircleDefinition : disciplineDefinition.getCIRCLE() ) {
+				circlenr++;
+				if( circlenr > disciplineCircleNr ) break;
+				for( TALENTABILITYType disciplineTalent :disciplineCircleDefinition.getDISCIPLINETALENT()) {
+					TALENTType newTalent = new TALENTType();
+					newTalent.setName(disciplineTalent.getName());
+					newTalent.setLimitation(disciplineTalent.getLimitation());
+					newTalent.setCircle(circlenr);
+					String newFullTalentName=getFullTalentname(newTalent);
+					if( ! totalListOfDisciplineTalents.contains(newFullTalentName) ) {
+						talents.getDISZIPLINETALENT().add(newTalent);
+						totalListOfDisciplineTalents.add(newFullTalentName);
+					}
 				}
 			}
-			List<TALENTType> remove = new ArrayList<TALENTType>();
-			for (TALENTType talent : talents.getDISZIPLINETALENT()) {
-				if ( talent.getCircle() > circle ) {
-					remove.add(talent);
-				}
-			}
-			talents.getDISZIPLINETALENT().removeAll(remove);
-			remove.clear();
-			for (TALENTType talent : talents.getOPTIONALTALENT()) {
-				if ( talent.getCircle() > circle ) {
-					remove.add(talent);
-				}
-			}
-			talents.getOPTIONALTALENT().removeAll(remove);
 		}
 	}
-	
+
+	public void realignOptionalTalents() {
+		HashMap<String, DISCIPLINEType> allDiciplines = getAllDiciplinesByName();
+		List<TALENTSType> allTalents = getAllTalents();
+		int maxDisciplineOrder=0;
+		for( TALENTSType talents : allTalents ) {
+			DISCIPLINEType discipline = allDiciplines.get(talents.getDiscipline());
+			if( discipline == null ) continue;
+			int disciplineOrder = discipline.getOrder();
+			if( maxDisciplineOrder < disciplineOrder) maxDisciplineOrder = disciplineOrder;
+		}
+		for( TALENTSType talents1 : allTalents ) {
+			DISCIPLINEType discipline = allDiciplines.get(talents1.getDiscipline());
+			// Wenn es zu einer Talentauflistung keine zugehörige Diziplin gibt, dann überspringen wir diese.
+			if( discipline == null ) continue;
+			int disciplineOrder = discipline.getOrder();
+			for( TALENTType disTalent : talents1.getDISZIPLINETALENT() ) {
+				String disTalentName=getFullTalentname(disTalent);
+				for( TALENTSType talents2 : allTalents ) {
+					// Bei optionalen Talenten müssen nicht mit den Disziplintalenten der selben Disziplin verglichen werden.
+					if( talents1 == talents2 ) continue;
+					for( TALENTType optTalent : talents2.getOPTIONALTALENT() ) {
+						if( optTalent.getRealigned() > maxDisciplineOrder ) {
+							optTalent.setRealigned(0);
+						}
+						if( disTalentName.equals(getFullTalentname(optTalent)) ) {
+							optTalent.setRealigned(disciplineOrder);
+						}
+					}
+				}
+			}
+		}
+	}
+
 	public void addOptionalTalent(String discipline, int circle, TALENTABILITYType talenttype, boolean byVersatility){
 		TALENTType talent = new TALENTType();
 		talent.setName(talenttype.getName());
@@ -872,23 +907,23 @@ public class CharacterContainer extends CharChangeRefresh {
 			// Theoretisch sollte in talentsByName nur noch ein Element übrig bleiben.
 			int maxRealignedRank=0;
 			for( TALENTType talent : realignedTalentList ) {
-				int currentRealignedRank = talent.getRANK().getRealignedrank();
+				int currentRealignedRank = talent.getRANK().getRank();
 				if( maxRealignedRank < currentRealignedRank ) maxRealignedRank=currentRealignedRank;
 			}
 			for( TALENTType talent : talentsByName ) {
-				talent.getRANK().setRealignedrank(maxRealignedRank);
+				RANKType rank = talent.getRANK();
+				if( rank == null ) {
+					rank = new RANKType();
+					talent.setRANK(rank);
+				}
+				rank.setRealignedrank(maxRealignedRank);
 			}
 		}
 	}
 
-	private void insertIfRealigned(HashMap<String, List<TALENTType>> realignedTalents, List<TALENTType> disTalents) {
-		for( TALENTType talent : disTalents ) {
-			RANKType rank = talent.getRANK();
-			if( rank == null ) {
-				rank = new RANKType();
-				talent.setRANK(rank);
-			}
-			if( rank.getRealignedrank() > 0 ) {
+	private void insertIfRealigned(HashMap<String, List<TALENTType>> realignedTalents, List<TALENTType> talents) {
+		for( TALENTType talent : talents ) {
+			if( talent.getRealigned() > 0 ) {
 				String talentName = talent.getName();
 				List<TALENTType> list = realignedTalents.get(talentName);
 				if( list == null ) {
@@ -897,6 +932,38 @@ public class CharacterContainer extends CharChangeRefresh {
 				}
 				list.add(talent);
 			}
+		}
+	}
+
+	public void removeZeroRankOptionalTalents() {
+		for( TALENTSType talents : getAllTalents() ) {
+			List<TALENTType> rankZeroTalents = new ArrayList<TALENTType>();
+			List<TALENTType> optionalTalents = talents.getOPTIONALTALENT();
+			for( TALENTType talent : optionalTalents ) {
+				RANKType rank = talent.getRANK();
+				if( (rank == null) || (rank.getRank() < 1) ) rankZeroTalents.add(talent);
+			}
+			optionalTalents.removeAll(rankZeroTalents);
+		}
+	}
+
+	public void removeIllegalTalents() {
+		HashMap<String, DISCIPLINEType> allDiciplines = getAllDiciplinesByName();
+		for( TALENTSType talents : getAllTalents() ) {
+			String disciplineName = talents.getDiscipline();
+			int disciplineCircleNr = allDiciplines.get(disciplineName).getCircle();
+			List<TALENTType> remove = new ArrayList<TALENTType>();
+			List<TALENTType> disciplineTalents = talents.getDISZIPLINETALENT();
+			for( TALENTType talent : disciplineTalents ) {
+				if( talent.getCircle() > disciplineCircleNr ) remove.add(talent);
+			}
+			disciplineTalents.removeAll(remove);
+			remove.clear();
+			List<TALENTType> optionalTalents = talents.getDISZIPLINETALENT();
+			for( TALENTType talent : optionalTalents ) {
+				if( talent.getCircle() > disciplineCircleNr ) remove.add(talent);
+			}
+			optionalTalents.removeAll(remove);
 		}
 	}
 }
