@@ -8,6 +8,8 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -32,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -48,7 +51,8 @@ import javax.xml.bind.annotation.XmlType;
     "spelllegendpointcost",
     "threaditemdostack",
     "autoincrementdiciplinetalents",
-    "showdefaultskills"
+    "showdefaultskills",
+    "defaultoptionaltalent"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
 public class OPTIONALRULES {
@@ -67,6 +71,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType autoincrementdiciplinetalents;
     @XmlElement(name = "SHOWDEFAULTSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType showdefaultskills;
+    @XmlElement(name = "DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
+    protected List<OPTIONALRULESDEFAULTOPTIONALTALENT> defaultoptionaltalent;
 
     /**
      * Gets the value of the attribute property.
@@ -234,6 +240,35 @@ public class OPTIONALRULES {
      */
     public void setSHOWDEFAULTSKILLS(OPTIONALRULEType value) {
         this.showdefaultskills = value;
+    }
+
+    /**
+     * Gets the value of the defaultoptionaltalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the defaultoptionaltalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEFAULTOPTIONALTALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OPTIONALRULESDEFAULTOPTIONALTALENT }
+     * 
+     * 
+     */
+    public List<OPTIONALRULESDEFAULTOPTIONALTALENT> getDEFAULTOPTIONALTALENT() {
+        if (defaultoptionaltalent == null) {
+            defaultoptionaltalent = new ArrayList<OPTIONALRULESDEFAULTOPTIONALTALENT>();
+        }
+        return this.defaultoptionaltalent;
     }
 
 }

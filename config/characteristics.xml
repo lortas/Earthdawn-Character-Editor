@@ -383,4 +383,27 @@
 	<RESULTLEVEL poor="28" average="38" good="51" excellent="57" extraordinary="63"/>
 	<RESULTLEVEL poor="29" average="39" good="52" excellent="58" extraordinary="64"/>
 	<RESULTLEVEL poor="30" average="40" good="53" excellent="59" extraordinary="66"/>
+	<NEWDISCIPLINETALENTCOST>
+		<DISCIPLINE>
+			<COST cost="1300"/>
+			<COST cost="800"/>
+			<COST cost="500"/>
+			<COST cost="300"/>
+			<COST cost="200"/>
+		</DISCIPLINE>
+		<DISCIPLINE>
+			<COST cost="2100"/>
+			<COST cost="1300"/>
+			<COST cost="800"/>
+			<COST cost="500"/>
+			<COST cost="300"/>
+		</DISCIPLINE>
+		<DISCIPLINE>
+			<COST cost="3400"/>
+			<COST cost="2100"/>
+			<COST cost="1300"/>
+			<COST cost="800"/>
+			<COST cost="500"/>
+		</DISCIPLINE>
+	</NEWDISCIPLINETALENTCOST>
 </CHARACTERISTICS>

@@ -31,9 +31,16 @@
 		<xs:attribute name="reason" type="xs:string" default=""/>
 		<xs:attribute name="value" type="xs:int" default="0"/>
 	</xs:complexType>
+	<xs:complexType name="NEWDISCIPLINETALENTADJUSTMENT_type">
+		<xs:attribute name="type" type="CALCULATEDLEGENDPOINTADJUSTMENTTYPE_type" use="required"/>
+		<xs:attribute name="lowestcircle" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="diciplinenumber" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="value" type="xs:int" default="0"/>
+	</xs:complexType>
 	<xs:complexType name="CALCULATEDLEGENDPOINTS_type">
 		<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="ADJUSTMENT" type="CALCULATEDLEGENDPOINTADJUSTMENT_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="COMMONADJUSTMENT" type="CALCULATEDLEGENDPOINTADJUSTMENT_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="NEWDISCIPLINETALENTADJUSTMENT" type="NEWDISCIPLINETALENTADJUSTMENT_type"/>
 		</xs:sequence>
 		<xs:attribute name="attributes" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="disciplinetalents" type="edt:unsigned_int" default="0"/>

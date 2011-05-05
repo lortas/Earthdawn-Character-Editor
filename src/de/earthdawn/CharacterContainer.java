@@ -123,7 +123,19 @@ public class CharacterContainer extends CharChangeRefresh {
 		int optionaltalents=0;
 		int skills=0;
 		int spells=0;
-		for( CALCULATEDLEGENDPOINTADJUSTMENTType adjustment : calculatedLP.getADJUSTMENT() ) {
+		for( CALCULATEDLEGENDPOINTADJUSTMENTType adjustment : calculatedLP.getCOMMONADJUSTMENT() ) {
+			switch(adjustment.getType()) {
+			case ATTRIBUTES:        attributes       +=adjustment.getValue(); break;
+			case DISCIPLINETALENTS: disciplinetalents+=adjustment.getValue(); break;
+			case KARMA:             karma            +=adjustment.getValue(); break;
+			case KNACKS:            knacks           +=adjustment.getValue(); break;
+			case MAGICITEMS:        magicitems       +=adjustment.getValue(); break;
+			case OPTIONALTALENTS:   optionaltalents  +=adjustment.getValue(); break;
+			case SKILLS:            skills           +=adjustment.getValue(); break;
+			case SPELLS:            spells           +=adjustment.getValue(); break;
+			}
+		}
+		for( NEWDISCIPLINETALENTADJUSTMENTType adjustment : calculatedLP.getNEWDISCIPLINETALENTADJUSTMENT() ) {
 			switch(adjustment.getType()) {
 			case ATTRIBUTES:        attributes       +=adjustment.getValue(); break;
 			case DISCIPLINETALENTS: disciplinetalents+=adjustment.getValue(); break;

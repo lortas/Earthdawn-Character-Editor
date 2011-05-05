@@ -7,4 +7,5 @@
 	<THREADITEMDOSTACK used="yes"/>
 	<AUTOINCREMENTDICIPLINETALENTS used="yes"/>
 	<SHOWDEFAULTSKILLS used="yes"/>
+	<DEFAULTOPTIONALTALENT talent="Durability" circle="2"/>
 </OPTIONALRULES>

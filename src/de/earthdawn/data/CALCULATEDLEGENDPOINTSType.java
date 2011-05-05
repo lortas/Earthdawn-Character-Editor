@@ -27,7 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ADJUSTMENT" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTADJUSTMENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="COMMONADJUSTMENT" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTADJUSTMENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="NEWDISCIPLINETALENTADJUSTMENT" type="{http://earthdawn.com/character}NEWDISCIPLINETALENTADJUSTMENT_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="attributes" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="disciplinetalents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -47,12 +48,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CALCULATEDLEGENDPOINTS_type", namespace = "http://earthdawn.com/character", propOrder = {
-    "adjustment"
+    "commonadjustment",
+    "newdisciplinetalentadjustment"
 })
 public class CALCULATEDLEGENDPOINTSType {
 
-    @XmlElement(name = "ADJUSTMENT")
-    protected List<CALCULATEDLEGENDPOINTADJUSTMENTType> adjustment;
+    @XmlElement(name = "COMMONADJUSTMENT")
+    protected List<CALCULATEDLEGENDPOINTADJUSTMENTType> commonadjustment;
+    @XmlElement(name = "NEWDISCIPLINETALENTADJUSTMENT")
+    protected List<NEWDISCIPLINETALENTADJUSTMENTType> newdisciplinetalentadjustment;
     @XmlAttribute
     protected Integer attributes;
     @XmlAttribute
@@ -73,18 +77,18 @@ public class CALCULATEDLEGENDPOINTSType {
     protected Integer total;
 
     /**
-     * Gets the value of the adjustment property.
+     * Gets the value of the commonadjustment property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the adjustment property.
+     * This is why there is not a <CODE>set</CODE> method for the commonadjustment property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getADJUSTMENT().add(newItem);
+     *    getCOMMONADJUSTMENT().add(newItem);
      * </pre>
      * 
      * 
@@ -94,11 +98,40 @@ public class CALCULATEDLEGENDPOINTSType {
      * 
      * 
      */
-    public List<CALCULATEDLEGENDPOINTADJUSTMENTType> getADJUSTMENT() {
-        if (adjustment == null) {
-            adjustment = new ArrayList<CALCULATEDLEGENDPOINTADJUSTMENTType>();
+    public List<CALCULATEDLEGENDPOINTADJUSTMENTType> getCOMMONADJUSTMENT() {
+        if (commonadjustment == null) {
+            commonadjustment = new ArrayList<CALCULATEDLEGENDPOINTADJUSTMENTType>();
         }
-        return this.adjustment;
+        return this.commonadjustment;
+    }
+
+    /**
+     * Gets the value of the newdisciplinetalentadjustment property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the newdisciplinetalentadjustment property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getNEWDISCIPLINETALENTADJUSTMENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NEWDISCIPLINETALENTADJUSTMENTType }
+     * 
+     * 
+     */
+    public List<NEWDISCIPLINETALENTADJUSTMENTType> getNEWDISCIPLINETALENTADJUSTMENT() {
+        if (newdisciplinetalentadjustment == null) {
+            newdisciplinetalentadjustment = new ArrayList<NEWDISCIPLINETALENTADJUSTMENTType>();
+        }
+        return this.newdisciplinetalentadjustment;
     }
 
     /**

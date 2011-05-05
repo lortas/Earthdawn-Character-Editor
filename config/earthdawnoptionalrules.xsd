@@ -11,16 +11,22 @@
 	<xs:complexType name="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT">
 		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="OPTIONALRULES_DEFAULTOPTIONALTALENT">
+		<xs:attribute name="talent" type="xs:string" use="required"/>
+		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="discipline" type="edt:unsigned_int" default="1"/>
+	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element maxOccurs="1" minOccurs="1" name="ATTRIBUTE" type="OPTIONALRULES_ATTRIBUTE"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="ATTRIBUTEBASEDMOVEMENT" type="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="OPTIONALRULE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="SPELLLEGENDPOINTCOST" type="OPTIONALRULE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="THREADITEMDOSTACK" type="OPTIONALRULE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="AUTOINCREMENTDICIPLINETALENTS" type="OPTIONALRULE_type"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="SHOWDEFAULTSKILLS" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="ATTRIBUTE" type="OPTIONALRULES_ATTRIBUTE"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="ATTRIBUTEBASEDMOVEMENT" type="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="SPELLLEGENDPOINTCOST" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="THREADITEMDOSTACK" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="AUTOINCREMENTDICIPLINETALENTS" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="SHOWDEFAULTSKILLS" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
