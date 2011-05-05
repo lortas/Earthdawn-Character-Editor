@@ -49,8 +49,8 @@ import javax.xml.bind.annotation.XmlType;
 public class KNACKS {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "SKILLKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class),
-        @XmlElementRef(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class)
+        @XmlElementRef(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class),
+        @XmlElementRef(name = "SKILLKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class)
     })
     protected List<JAXBElement<KNACKBASEType>> skillknackOrTALENTKNACK;
     @XmlAttribute(required = true)
