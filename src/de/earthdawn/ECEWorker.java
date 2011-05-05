@@ -210,29 +210,24 @@ public class ECEWorker {
 
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
 		character.clearDisciplineBonuses();
+		// Stelle sicher dass ale Disziplin Talent eingügt werden
+		character.ensureDisciplinTalentsExits();
 		// Entferne alle Talente die zuhohle Kreise haben.
 		character.removeIllegalTalents();
 		// Entferne alle Optionalen Talente ohne Rang.
 		character.removeZeroRankOptionalTalents();
 		// Prüfe ob Talente realigned weren müssen.
+		character.realignOptionalTalents();
 		character.updateRealignedTalents();
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
 		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
 		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
-		// TODO: Default Optional Talents
-		// Finde das DURABILITY Talent aus der Talentliste
-		if( durabilityTalentName.isEmpty() ) {
-			System.err.println("Durability in names.xml not defined for selected language. Skipping health enhancment");
-		}
 		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
 		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			namegivertalents.put(t.getName(), t);
 		}
 		int maxKarmaStepBonus=0;
-		// Zwei Schleifen:
-		// - äußere Schleife über alle Disziplinen und
-		// - innere Schleife über alle Talente der Disziplin
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
 			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber-1);
@@ -244,8 +239,9 @@ public class ECEWorker {
 					talent.setRANK(rank);
 				}
 			}
-			calculateTalents(namegivertalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getDISZIPLINETALENT(), true);
-			calculateTalents(namegivertalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getOPTIONALTALENT(), false);
+			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getDISZIPLINETALENT(), true);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getOPTIONALTALENT(), false);
 			// Alle Namegiver Talente, die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
@@ -255,8 +251,20 @@ public class ECEWorker {
 				talent.setCircle(0);
 				enforceCapabilityParams(talent);
 				RANKType rank = new RANKType();
-				rank.setRank(0);
-				rank.setBonus(0);
+				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
+				talent.setRANK(rank);
+				currentTalents.getOPTIONALTALENT().add(talent);
+			}
+			namegivertalents.clear(); // Ist keine lokale Variable und Namensgebertalent sollen nur bei einer Disziplin einfügt werden
+			for( String t : defaultOptionalTalents.keySet() ) {
+				// Talente aus späteren Kreisen werden auch erst später eingefügt
+				int circle = defaultOptionalTalents.get(t);
+				if( circle > currentDiscipline.getCircle() ) continue;
+				TALENTType talent = new TALENTType();
+				talent.setName(t);
+				talent.setCircle(circle);
+				enforceCapabilityParams(talent);
+				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
 				currentTalents.getOPTIONALTALENT().add(talent);
@@ -454,7 +462,7 @@ public class ECEWorker {
 		return charakter;
 	}
 
-	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, int disciplinenumber, int disciplinecircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
+	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
 		int totallpcost=0;
 		for( TALENTType talent : talents ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
@@ -490,6 +498,9 @@ public class ECEWorker {
 			calculateKnacks(disciplinenumber, talent, rank.getRank());
 			if( namegivertalents.containsKey(talent.getName()) ) {
 				namegivertalents.remove(talent.getName());
+			}
+			if( defaultOptionalTalents.containsKey(talent.getName()) ) {
+				defaultOptionalTalents.remove(talent.getName());
 			}
 		}
 		if( disTalents ) {
