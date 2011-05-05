@@ -14,7 +14,13 @@
 	<xs:complexType name="OPTIONALRULES_DEFAULTOPTIONALTALENT">
 		<xs:attribute name="talent" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 		<xs:attribute name="discipline" type="edt:unsigned_int" default="1"/>
+	</xs:complexType>
+	<xs:complexType name="OPTIONALRULES_MULTIUSETALENT">
+		<xs:attribute name="talent" type="xs:string" use="required"/>
+		<xs:attribute name="count" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
@@ -26,6 +32,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="THREADITEMDOSTACK" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="AUTOINCREMENTDICIPLINETALENTS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="SHOWDEFAULTSKILLS" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="MULTIUSETALENT" type="OPTIONALRULES_MULTIUSETALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
 			</xs:sequence>
 		</xs:complexType>
