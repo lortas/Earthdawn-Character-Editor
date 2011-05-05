@@ -224,26 +224,12 @@ public class ECEPdfExporter {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
 			}
 		}
-		HashMap<Integer,DISCIPLINEType> diciplines = character.getAllDiciplinesByOrder();
-		String disciplinecircle = null;
-		String disciplinename = null;
-		Set<Integer> disciplineOrder = diciplines.keySet();
-		disciplineOrder = new TreeSet<Integer>(disciplineOrder);
-		int numberOfFristDiszipline=0;
+		List<DISCIPLINEType> diciplines = character.getDisciplines();
+		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
+		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 		int counterKarmaritual=0;
-		for( int order : disciplineOrder ) {
-			if( disciplinename == null ) {
-				disciplinename = "";
-				disciplinecircle = "";
-				numberOfFristDiszipline=order;
-			} else {
-				disciplinename += " / ";
-				disciplinecircle += " / ";
-			}
-			DISCIPLINEType discipline = diciplines.get(order);
-			disciplinename += discipline.getName();
-			disciplinecircle += String.valueOf(discipline.getCircle());
-			for( String description : wrapString(40,discipline.getKARMARITUAL()) ) {
+		for( DISCIPLINEType discipline : diciplines ) {
+			for( String description : wrapString(50,discipline.getKARMARITUAL()) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
 					break;
@@ -252,10 +238,8 @@ public class ECEPdfExporter {
 				counterKarmaritual++;
 			}
 		}
-		acroFields.setField( "Discipline", disciplinename );
-		acroFields.setField( "Circle", disciplinecircle );
 		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		TALENTSType talents = allTalents.get(numberOfFristDiszipline);
+		TALENTSType talents = allTalents.get(1);
 		if( talents != null ) {
 			int counter = 0;
 			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
@@ -458,25 +442,11 @@ public class ECEPdfExporter {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
 			}
 		}
-		HashMap<Integer,DISCIPLINEType> diciplines = character.getAllDiciplinesByOrder();
-		String disciplinecircle = null;
-		String disciplinename = null;
-		Set<Integer> disciplineOrder = diciplines.keySet();
-		disciplineOrder = new TreeSet<Integer>(disciplineOrder);
-		int numberOfFristDiszipline=0;
+		List<DISCIPLINEType> diciplines = character.getDisciplines();
+		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
+		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 		int counterKarmaritual=0;
-		for( int order : disciplineOrder ) {
-			if( disciplinename == null ) {
-				disciplinename = "";
-				disciplinecircle = "";
-				numberOfFristDiszipline=order;
-			} else {
-				disciplinename += " / ";
-				disciplinecircle += " / ";
-			}
-			DISCIPLINEType discipline = diciplines.get(order);
-			disciplinename += discipline.getName();
-			disciplinecircle += String.valueOf(discipline.getCircle());
+		for( DISCIPLINEType discipline : diciplines ) {
 			for( String description : wrapString(50,discipline.getKARMARITUAL()) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
@@ -486,10 +456,8 @@ public class ECEPdfExporter {
 				counterKarmaritual++;
 			}
 		}
-		acroFields.setField( "Discipline", disciplinename );
-		acroFields.setField( "Circle", disciplinecircle );
 		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		TALENTSType talents = allTalents.get(numberOfFristDiszipline);
+		TALENTSType talents = allTalents.get(1);
 		if( talents != null ) {
 			int counter = 0;
 			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
@@ -722,30 +690,12 @@ public class ECEPdfExporter {
 		}
 
 		
-		HashMap<Integer,DISCIPLINEType> diciplines = character.getAllDiciplinesByOrder();
-		String disciplinecircle = null;
-		String disciplinename = null;
-		Set<Integer> disciplineOrder = diciplines.keySet();
-		disciplineOrder = new TreeSet<Integer>(disciplineOrder);
-		int numberOfFristDiszipline=0;
-		for( int order : disciplineOrder ) {
-			if( disciplinename == null ) {
-				disciplinename = "";
-				disciplinecircle = "";
-				numberOfFristDiszipline=order;
-			} else {
-				disciplinename += " / ";
-				disciplinecircle += " / ";
-			}
-			DISCIPLINEType discipline = diciplines.get(order);
-			disciplinename += discipline.getName();
-			disciplinecircle += String.valueOf(discipline.getCircle());
-		}
-		acroFields.setField( "Discipline", disciplinename );
-		acroFields.setField( "Circle", disciplinecircle );
+		List<DISCIPLINEType> diciplines = character.getDisciplines();
+		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
+		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 
 		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		TALENTSType talents = allTalents.get(numberOfFristDiszipline);
+		TALENTSType talents = allTalents.get(1);
 		if( talents != null ) {
 			int counterDisciplinetalent=0;
 			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
@@ -969,6 +919,15 @@ public class ECEPdfExporter {
 		}
 		if( ! string.isEmpty() ) {
 			result.add(string);
+		}
+		return result;
+	}
+
+	public static String concat(String sep, List<?> list) {
+		String result="";
+		for( Object e : list ) {
+			if( ! result.isEmpty() ) result+=sep;
+			result+=String.valueOf(e);
 		}
 		return result;
 	}

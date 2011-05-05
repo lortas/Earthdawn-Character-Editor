@@ -294,7 +294,7 @@ public class EDMainWindow {
 		{
 			if(co.getClass() == EDTalents.class){
 				// löschen wenn die Disciplin nicht mehr vorhanden ist
-				if(!character.getAllDiciplinesByName().containsKey(((EDTalents)co).getDisciplin())){
+				if(!character.getAllDisciplinesByName().containsKey(((EDTalents)co).getDisciplin())){
 					tabbedPane.remove(co);
 				}
 				else{
@@ -303,15 +303,16 @@ public class EDMainWindow {
 			}
 		}
 
-		HashMap<Integer, DISCIPLINEType> allDicipines = character.getAllDiciplinesByOrder();
-		for(Integer key : allDicipines.keySet()){
-			String diciplinName = allDicipines.get(key).getName();
+		int order=3;
+		for(DISCIPLINEType discipline : character.getDisciplines()){
+			String diciplineName = discipline.getName();
 			// wenn tab nicht beteits vorhanden -> hinzufügen
-			if(!allTalentTabs.contains(diciplinName)){
-				panelEDTalents = new EDTalents(diciplinName);
+			if(!allTalentTabs.contains(diciplineName)){
+				panelEDTalents = new EDTalents(diciplineName);
 				panelEDTalents.setCharacter(character);
-				tabbedPane.insertTab("Talents (" + diciplinName + ")", null, panelEDTalents, null, 2+key);
+				tabbedPane.insertTab("Talents (" + diciplineName + ")", null, panelEDTalents, null, order);
 			}
+			order++;
 		}
 	}
 

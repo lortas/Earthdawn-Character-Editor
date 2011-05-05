@@ -32,12 +32,13 @@ import de.earthdawn.data.*;
  * @author lortas
  */
 public class ECEWorker {
-	public final String durabilityTalentName = ApplicationProperties.create().getDurabilityName();
-	public final ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
-	public final OPTIONALRULEType OptionalRule_SpellLegendPointCost = ApplicationProperties.create().getOptionalRules().getSPELLLEGENDPOINTCOST();
-	public final OPTIONALRULEType OptionalRule_ShowDefaultSkills = ApplicationProperties.create().getOptionalRules().getSHOWDEFAULTSKILLS();
-	public final boolean OptionalRule_autoincrementDiciplinetalents = ApplicationProperties.create().getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
-	public final boolean OptionalRule_LegendpointsForAttributeIncrease=ApplicationProperties.create().getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
+	public final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public final String durabilityTalentName = PROPERTIES.getDurabilityName();
+	public final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
+	public final OPTIONALRULEType OptionalRule_SpellLegendPointCost = PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST();
+	public final OPTIONALRULEType OptionalRule_ShowDefaultSkills = PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS();
+	public final boolean OptionalRule_autoincrementDiciplinetalents = PROPERTIES.getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
+	public final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CALCULATEDLEGENDPOINTSType calculatedLP = null;
 
@@ -51,30 +52,24 @@ public class ECEWorker {
 		calculatedLP = character.resetCalculatedLegendpoints();
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
-		NAMEGIVERABILITYType namegiver = null;
-		String race = character.getAppearance().getRace();
-		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers().getNAMEGIVER()) {
-			if( n.getName().equals(race)) {
-				namegiver = n;
-			}
-		}
+		NAMEGIVERABILITYType namegiver = character.getRace();
 
 		// Startgegenstände aus der Charaktererschaffung setzen, wenn gar kein Invetar vorhanden
 		List<ITEMType> itemList = character.getItems();
 		if( itemList.isEmpty() ) {
-			itemList.addAll(ApplicationProperties.create().getStartingItems());
+			itemList.addAll(PROPERTIES.getStartingItems());
 		}
 
 		List<WEAPONType> magicWeapons = character.cutMagicWeaponFromNormalWeaponList();
 		List<WEAPONType> weaponList = character.getWeapons();
 		if( weaponList.isEmpty() ) {
 			// Startwaffen aus der Charaktererschaffung setzen, wenn gar keine Waffen vorhanden
-			weaponList.addAll(ApplicationProperties.create().getStartingWeapons());
+			weaponList.addAll(PROPERTIES.getStartingWeapons());
 		}
 		weaponList.addAll(magicWeapons);
 
 		// **ATTRIBUTE**
-		int karmaMaxBonus = ApplicationProperties.create().getOptionalRules().getATTRIBUTE().getPoints();
+		int karmaMaxBonus = PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints();
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		characterAttributes = character.getAttributes();
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
@@ -90,7 +85,7 @@ public class ECEWorker {
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
 			karmaMaxBonus-=attribute.getCost();
-			if( OptionalRule_LegendpointsForAttributeIncrease ) calculatedLP.setAttributes(calculatedLP.getAttributes()+ApplicationProperties.create().getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
+			if( OptionalRule_LegendpointsForAttributeIncrease ) calculatedLP.setAttributes(calculatedLP.getAttributes()+PROPERTIES.getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
 		}
 		if( karmaMaxBonus <0 ) {
 			System.err.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
@@ -135,7 +130,7 @@ public class ECEWorker {
 
 		// **KARMA**
 		TALENTType karmaritualTalent = null;
-		final String KARMARITUAL = ApplicationProperties.create().getKarmaritualName(); 
+		final String KARMARITUAL = PROPERTIES.getKarmaritualName(); 
 		if( KARMARITUAL == null ) {
 			System.err.println("Karmaritual talent name is not defined for selected language.");
 		} else {
@@ -153,44 +148,10 @@ public class ECEWorker {
 		calculatedLP.setKarma(calculatedLP.getKarma()+calculatedKarmaLP);
 
 		// **MOVEMENT**
-		MOVEMENTType movement = character.getMovement();
-		int movementFlight = namegiver.getMovementFlight();
-		int movementGround = namegiver.getMovementGround();
-		ATTRIBUTEType strength = characterAttributes.get("STR");
-		switch(ApplicationProperties.create().getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute()) {
-		case CHA:
-			break;
-		case DEX:
-			int modDex = characterAttributes.get("DEX").getStep()-6;
-			movementGround+=modDex;
-			if(movementFlight>0) movementFlight+=modDex;
-			break;
-		case PER:
-			break;
-		case STR:
-			int d=strength.getCurrentvalue()-strength.getRacevalue();
-			int modStr=0;
-			if( d < 0 ) {
-				modStr = -1 - (int) ((((double)d)/2.0)+0.99);
-			} else {
-				modStr = (int) ((((double)d)/4.0)+0.99) - 1;
-			}
-			movementGround+=modStr;
-			if(movementFlight>0) movementFlight+=modStr;
-			break;
-		case TOU:
-			break;
-		case WIL:
-			break;
-		}
-		movement.setFlight(movementFlight);
-		movement.setGround(movementGround);
+		character.calculateMovement();
 
 		// **CARRYING**
-		CARRYINGType carrying = character.getCarrying();
-		int tmp=berechneTraglast(strength.getCurrentvalue());
-		carrying.setCarrying(tmp);
-		carrying.setLifting(tmp *2);
+		character.calculateCarrying();
 
 		// Berechne Gewicht aller Münzen
 		for( COINSType coins : character.getAllCoins() ) {
@@ -249,12 +210,16 @@ public class ECEWorker {
 
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
 		character.clearDisciplineBonuses();
+		// Entferne alle Talente die zuhohle Kreise haben.
 		character.removeIllegalTalents();
+		// Entferne alle Optionalen Talente ohne Rang.
 		character.removeZeroRankOptionalTalents();
+		// Prüfe ob Talente realigned weren müssen.
 		character.updateRealignedTalents();
 		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		HashMap<Integer, DISCIPLINEType> allDisciplines = character.getAllDiciplinesByOrder();
+		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
 		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
+		// TODO: Default Optional Talents
 		// Finde das DURABILITY Talent aus der Talentliste
 		if( durabilityTalentName.isEmpty() ) {
 			System.err.println("Durability in names.xml not defined for selected language. Skipping health enhancment");
@@ -270,7 +235,7 @@ public class ECEWorker {
 		// - innere Schleife über alle Talente der Disziplin
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
-			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber);
+			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber-1);
 			TALENTSType currentTalents = allTalents.get(disciplinenumber);
 			for( TALENTType talent : currentTalents.getDISZIPLINETALENT() ) {
 				RANKType rank = talent.getRANK();
@@ -299,7 +264,7 @@ public class ECEWorker {
 			// Wenn Durability-Talente gefunden wurden, berechnen aus dessen Rank
 			// die Erhöhung von Todes- und Bewustlosigkeitsschwelle
 			for( TALENTType durabilityTalent : durabilityTalents ) {
-				DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(currentDiscipline.getName());
+				DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(currentDiscipline.getName());
 				if( disziplinProperties != null ) {
 					DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
 					int rank = durabilityTalent.getRANK().getRank()-durabilityTalent.getRANK().getRealignedrank();
@@ -325,8 +290,8 @@ public class ECEWorker {
 		character.removeEmptySkills();
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
 		for( SKILLType skill : character.getSkills() ) {
-			int lpcostfull= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
-			int lpcoststart= ApplicationProperties.create().getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
+			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
+			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
 			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
 			skill.getRANK().setBonus(0);
 			calculatedLP.setSkills(calculatedLP.getSkills()+skill.getRANK().getLpcost());
@@ -378,8 +343,10 @@ public class ECEWorker {
 
 		// ** SPELLS **
 		String firstDisciplineName = "";
-		DISCIPLINEType firstDiscipline = allDisciplines.get(1);
-		if( firstDiscipline != null ) firstDisciplineName=firstDiscipline.getName();
+		if( ! allDisciplines.isEmpty() ) {
+			DISCIPLINEType firstDiscipline = allDisciplines.get(0);
+			if( firstDiscipline != null ) firstDisciplineName=firstDiscipline.getName();
+		}
 		int startingSpellLegendPointCost = 0;
 		if( OptionalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
 			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
@@ -387,13 +354,13 @@ public class ECEWorker {
 			startingSpellLegendPointCost = 100 * attribute2StepAndDice(per.getBasevalue()).getStep();
 			int lpbonus = 0;
 			for( int spellability : getDisciplineSpellAbility(diciplineCircle) ) {
-				lpbonus += ApplicationProperties.create().getCharacteristics().getSpellLP(spellability);
+				lpbonus += PROPERTIES.getCharacteristics().getSpellLP(spellability);
 			}
 			calculatedLP.setSpells(-lpbonus);
 		} else {
 			calculatedLP.setSpells(0);
 		}
-		HashMap<String, SPELLDEFType> spelllist = ApplicationProperties.create().getSpells();
+		HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 		for( SPELLSType spells : character.getAllSpells() ) {
 			if( spells.getDiscipline().equals(firstDisciplineName) && OptionalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES) )  {
 				// Wenn die erste Disziplin eine Zauberdisciplin ist und die Optionale Regel, dass Zaubersprüche LP Kosten
@@ -418,7 +385,7 @@ public class ECEWorker {
 				}
 				if( OptionalRule_SpellLegendPointCost.getUsed().equals(YesnoType.YES)) {
 					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle
-					int lpcost=ApplicationProperties.create().getCharacteristics().getSpellLP(spell.getCircle());
+					int lpcost=PROPERTIES.getCharacteristics().getSpellLP(spell.getCircle());
 					calculatedLP.setSpells(calculatedLP.getSpells()+lpcost);
 				}
 			}
@@ -508,9 +475,9 @@ public class ECEWorker {
 			if( rank.getRank() < rank.getRealignedrank() ) rank.setRank(rank.getRealignedrank());
 			rank.setBonus(0);
 			enforceCapabilityParams(talent);
-			final int lpcostfull=ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
-			final int lpcoststart=ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
-			final int lpcostrealigned=ApplicationProperties.create().getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
+			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
+			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
+			final int lpcostrealigned=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
 			if( lpcostrealigned > lpcoststart ) {
 				rank.setLpcost(lpcostfull-lpcostrealigned);
 			} else {
@@ -578,7 +545,7 @@ public class ECEWorker {
 				System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
 						+rank+" vs. "+knack.getMinrank());
 			}
-			int lp = ApplicationProperties.create().getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
+			int lp = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
 			calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
 		}
 	}
@@ -694,19 +661,6 @@ public class ECEWorker {
 			}
 		}
 		return defense;
-	}
-
-	public static int berechneTraglast(int value) {
-		List<Integer> encumbrance = ApplicationProperties.create().getCharacteristics().getENCUMBRANCE();
-		if( value< 1) {
-			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
-			value = 1;
-		}
-		if( value > encumbrance.size()) {
-			value = encumbrance.size();
-			System.err.println("The strength attribute was out of range. The carrying value will now base on: "+value);
-		}
-		return encumbrance.get(value);
 	}
 
 	public static int berechneAttriubteCost(int modifier) {
