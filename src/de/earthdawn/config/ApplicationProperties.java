@@ -93,7 +93,7 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	public List<Integer> getNumberOfOptionalTalentsPerCircle(String discipline) {
+	public List<Integer> getNumberOfOptionalTalentsPerCircleByDiscipline(String discipline) {
 		return getNumberOfOptionalTalentsPerCircle(getDisziplin(discipline));
 	}
 

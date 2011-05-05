@@ -322,6 +322,19 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
+	public int getCircleOf(int disciplineNumber) {
+		if( disciplineNumber < 1 ) {
+			System.err.println("Discipline numer "+disciplineNumber+" is to low!");
+			return 0;
+		}
+		List<DISCIPLINEType> disciplines = getDisciplines();
+		if( disciplineNumber > disciplines.size() ) {
+			System.err.println("Discipline numer "+disciplineNumber+" is to high!");
+			return 0;
+		}
+		return disciplines.get(disciplineNumber-1).getCircle();
+	}
+
 	public DISCIPLINEType getDiciplineMaxCircle() {
 		DISCIPLINEType discipline = new DISCIPLINEType();
 		discipline.setCircle(0);
@@ -528,21 +541,30 @@ public class CharacterContainer extends CharChangeRefresh {
 	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
 		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
 		HashMap<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
+		HashMap<String, Integer> disciplineOrderByName = getDisciplineOrderByName();
 		for(String discipline : talentsMap.keySet() ) {
 			List<Integer> list = new ArrayList<Integer>();
 			List<List<TALENTType>> talentsList = talentsMap.get(discipline);
+			Integer disciplineNumber = disciplineOrderByName.get(discipline);
 			if( talentsList == null ) {
 				System.err.println("A talent list for the discipline '"+discipline+"' could not be found.");
 				talentsList = new ArrayList<List<TALENTType>>();
 				for(int i=0;i<20;i++) talentsList.add(new ArrayList<TALENTType>());
 			}
-			int disciplineCircle = getCircleOf(discipline);
+			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplineNumber);
+			int disciplineCircle = getCircleOf(disciplineNumber);
 			int circlenr=0;
-			for( int numberOfOptionalTalents : PROPERTIES.getNumberOfOptionalTalentsPerCircle(discipline) ) {
+			for( int numberOfOptionalTalents : PROPERTIES.getNumberOfOptionalTalentsPerCircleByDiscipline(discipline) ) {
 				circlenr++;
 				if( circlenr > disciplineCircle ) break;
 				int freeOptionalTalents=numberOfOptionalTalents;
-				freeOptionalTalents-=isNotLearnedByVersatility(talentsList.get(circlenr));
+				List<TALENTType> talents = new ArrayList<TALENTType>();
+				for( TALENTType talent : talentsList.get(circlenr) ) {
+					Integer c = defaultOptionalTalents.get(talent.getName());
+					if( (c!=null) && (c<=circlenr) ) continue;
+					talents.add(talent);
+				}
+				freeOptionalTalents-=isNotLearnedByVersatility(talents);
 				for( int i=0; i<freeOptionalTalents; i++ ) list.add(circlenr);
 			}
 			result.put(discipline, list);
@@ -631,6 +653,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public void realignOptionalTalents() {
+		final String durabilityName = PROPERTIES.getDurabilityName();
 		HashMap<String, Integer> disciplineOrderByName = getDisciplineOrderByName();
 		List<DISCIPLINEType> allDiciplines = character.getDISCIPLINE();
 		List<TALENTSType> allTalents = getAllTalents();
@@ -644,16 +667,20 @@ public class CharacterContainer extends CharChangeRefresh {
 			// Eigentlich kann das nicht mehr "null" sein, da disciplineOrder definiert ist.
 			if( discipline == null ) continue;
 			for( TALENTType disTalent : talents1.getDISZIPLINETALENT() ) {
+				// Disziplinetalente können nicht realigned werden, daher ist auch keine gesonderte Prüfung
+				// ob dieses Talent bereits ge-realigned ist nicht notwendig und unsinnig
 				String disTalentName=getFullTalentname(disTalent);
 				for( TALENTSType talents2 : allTalents ) {
-					// Bei optionalen Talenten müssen nicht mit den Disziplintalenten der selben Disziplin verglichen werden.
+					// Talentlisten nicht mit sich selbst vergleichen
 					if( talents1 == talents2 ) continue;
 					for( TALENTType optTalent : talents2.getOPTIONALTALENT() ) {
-						if( optTalent.getRealigned() > maxDisciplineOrder ) {
-							optTalent.setRealigned(0);
-						}
-						if( disTalentName.equals(getFullTalentname(optTalent)) ) {
-							optTalent.setRealigned(disciplineOrder);
+						// Sollte das Optinaltalent auf ein Talent einer nicht mehr exisiterenden Disziplin realgined sind,
+						// kann dieses Realgined entfernt werden
+						if( optTalent.getRealigned() > maxDisciplineOrder ) optTalent.setRealigned(0);
+						if( durabilityName.equals(disTalent.getName()) ) {
+							if( durabilityName.equals(optTalent.getName()) ) optTalent.setRealigned(disciplineOrder);
+						} else {
+							if( disTalentName.equals(getFullTalentname(optTalent)) ) optTalent.setRealigned(disciplineOrder);
 						}
 					}
 				}
@@ -661,7 +688,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
-	public void addOptionalTalent(String discipline, int circle, TALENTABILITYType talenttype, boolean byVersatility){
+	public void addOptionalTalent(String disciplineName, int circle, TALENTABILITYType talenttype, boolean byVersatility){
 		TALENTType talent = new TALENTType();
 		talent.setName(talenttype.getName());
 		talent.setLimitation(talenttype.getLimitation());
@@ -669,15 +696,30 @@ public class CharacterContainer extends CharChangeRefresh {
 
 		RANKType rank = new RANKType();
 		rank.setRank(1);
-		rank.setBonus(0);
-		rank.setStep(1);
 		talent.setRANK(rank);
-
 		TALENTTEACHERType teacher = new TALENTTEACHERType();
 		if( byVersatility ) teacher.setByversatility(YesnoType.YES);
 		talent.setTEACHER(teacher);
 
-		getAllTalentsByDisziplinName().get(discipline).getOPTIONALTALENT().add(talent);
+		// Wenn es sich bei dem neuen OptionalTalent um das Vielseitigkeitstalent handelt,
+		// dann muss geprüft werden ob dieses bereits in einder anderen Disziplin vorhanden ist.
+		Integer disciplineOrder = getDisciplineOrderByName().get(disciplineName);
+		if( disciplineOrder != null ) {
+			final String durabilityName = PROPERTIES.getDurabilityName();
+			if( durabilityName.equals(talent.getName()) ) {
+				for( TALENTSType talents : getAllTalents() ) {
+					// Wenn die Disziplin namen über einstimmen, dann handelt es sich um die selbe Disziplin
+					// und es brauch nichts geprüft werden.
+					if( disciplineName.equals(talents.getDiscipline()) ) continue;
+					for( TALENTType optTalent : talents.getOPTIONALTALENT() ) {
+						if( ! durabilityName.equals(optTalent.getName()) ) continue;
+						optTalent.setRealigned(disciplineOrder);
+					}
+				}
+			}
+		}
+
+		getAllTalentsByDisziplinName().get(disciplineName).getOPTIONALTALENT().add(talent);
 	}
 	
 	public void addSpell(String discipline, SPELLType spell){

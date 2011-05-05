@@ -113,7 +113,6 @@ public class ECECharacteristics {
 			}
 		}
 		// Not found
-		System.err.println("Could not found a dice for the step value: "+step);
 		return new CHARACTERISTICSSTEPDICETABLE();
 	}
 

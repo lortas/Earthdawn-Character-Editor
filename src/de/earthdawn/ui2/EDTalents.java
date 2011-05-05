@@ -416,7 +416,9 @@ class TalentsTableModel extends AbstractTableModel {
 			break;
 		}
 		character.refesh();
-		fireTableCellUpdated(row, col);
-		fireTableCellUpdated(row, 5);
+		if( row < getRowCount() ) { 
+			fireTableCellUpdated(row, col);
+			fireTableCellUpdated(row, 5);
+		}
 	}
 }
