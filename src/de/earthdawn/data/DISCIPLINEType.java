@@ -30,7 +30,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DISCIPLINEBONUS" type="{http://earthdawn.com/datatypes}DISCIPLINEBONUS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="order" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *     &lt;/restriction>
@@ -51,8 +50,6 @@ public class DISCIPLINEType {
     protected List<DISCIPLINEBONUSType> disciplinebonus;
     @XmlElement(name = "KARMARITUAL")
     protected String karmaritual;
-    @XmlAttribute(required = true)
-    protected int order;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
@@ -109,22 +106,6 @@ public class DISCIPLINEType {
      */
     public void setKARMARITUAL(String value) {
         this.karmaritual = value;
-    }
-
-    /**
-     * Gets the value of the order property.
-     * 
-     */
-    public int getOrder() {
-        return order;
-    }
-
-    /**
-     * Sets the value of the order property.
-     * 
-     */
-    public void setOrder(int value) {
-        this.order = value;
     }
 
     /**

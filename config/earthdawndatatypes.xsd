@@ -267,7 +267,6 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISCIPLINEBONUS" type="DISCIPLINEBONUS_type"/>
 			<xs:element minOccurs="0" maxOccurs="1" name="KARMARITUAL" type="xs:string"/>
 		</xs:sequence>
-		<xs:attribute name="order" type="unsigned_int" use="required"/>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="circle_type" use="required"/>
 	</xs:complexType>

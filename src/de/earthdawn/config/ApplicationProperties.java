@@ -82,6 +82,21 @@ public class ApplicationProperties {
 		return MESSAGES.getString(key);
 	}
 	
+	public static List<Integer> getNumberOfOptionalTalentsPerCircle(DISCIPLINE discipline) {
+		List<Integer> result = new ArrayList<Integer>();
+		if( discipline == null ) return result;
+		List<DISCIPLINECIRCLEType> circleList = discipline.getCIRCLE();
+		if( circleList == null ) return result;
+		for( DISCIPLINECIRCLEType circle : circleList ) {
+			result.add(circle.getTALENTABILITY().getCount());
+		}
+		return result;
+	}
+
+	public List<Integer> getNumberOfOptionalTalentsPerCircle(String discipline) {
+		return getNumberOfOptionalTalentsPerCircle(getDisziplin(discipline));
+	}
+
 	public DISCIPLINE getDisziplin(String name) {
 		DISCIPLINE discipline = DISCIPLINES.get(name);
 		if( discipline == null ) {
@@ -170,6 +185,16 @@ public class ApplicationProperties {
 
 	public OPTIONALRULES getOptionalRules() {
 		return OPTIONALRULES;
+	}
+
+	public HashMap<String,Integer> getDefaultOptionalTalents(int discipline) {
+		HashMap<String,Integer> result = new HashMap<String,Integer>();
+		for( OPTIONALRULESDEFAULTOPTIONALTALENT talent : OPTIONALRULES.getDEFAULTOPTIONALTALENT() ) {
+			if( talent.getDiscipline() == discipline ) {
+				result.put(talent.getTalent(), talent.getCircle());
+			}
+		}
+		return result;
 	}
 
 	public String getKarmaritualName() {

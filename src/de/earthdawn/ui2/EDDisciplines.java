@@ -147,25 +147,21 @@ class DisciplinesTableModel extends AbstractTableModel {
         	//System.out.println("character is null");
         	return 0;
         }
-        
-       
-    	return character.getAllDiciplinesByOrder().size();
+    	return character.getDisciplines().size();
     }
 
     public String getColumnName(int col) {
         return columnNames[col];
     }
 
-    public Object getValueAt(int row, int col) {
-    	character.getAllDiciplinesByOrder().get(new Integer(row+1)).getName();
-
-    	switch (col) {
-	        case 0: return  character.getAllDiciplinesByOrder().get(new Integer(row+1)).getName();
-	        case 1: return  new Integer(character.getAllDiciplinesByOrder().get(new Integer(row+1)).getCircle());
-	
-	        default: return new Integer(0);
-        } 
-    }
+	public Object getValueAt(int row, int col) {
+		DISCIPLINEType discipline = character.getDisciplines().get(row);
+		switch (col) {
+		case 0:  return discipline.getName();
+		case 1:  return new Integer(discipline.getCircle());
+		default: return new Integer(0);
+		}
+	}
 
     /*
      * JTable uses this method to determine the default renderer/
@@ -192,10 +188,14 @@ class DisciplinesTableModel extends AbstractTableModel {
      * Don't need to implement this method unless your table's
      * data can change.
      */
-    public void setValueAt(Object value, int row, int col) {  
-    	character.getAllDiciplinesByOrder().get(new Integer(row+1)).setCircle((Integer)value);
-    	character.refesh();
-        fireTableCellUpdated(row, col);
-    }
+	public void setValueAt(Object value, int row, int col) {  
+		DISCIPLINEType discipline = character.getDisciplines().get(row);
+		switch (col) {
+		case 0: discipline.setName((String)value);
+		case 1: discipline.setCircle((Integer)value);
+		}
+		character.refesh();
+		fireTableCellUpdated(row, col);
+	}
 
 }
