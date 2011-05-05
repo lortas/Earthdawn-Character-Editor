@@ -15,18 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for OPTIONALRULES_DEFAULTOPTIONALTALENT complex type.
+ * <p>Java class for OPTIONALRULES_MULTIUSETALENT complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="OPTIONALRULES_DEFAULTOPTIONALTALENT">
+ * &lt;complexType name="OPTIONALRULES_MULTIUSETALENT">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="talent" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="count" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
- *       &lt;attribute name="discipline" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -35,17 +34,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OPTIONALRULES_DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
-public class OPTIONALRULESDEFAULTOPTIONALTALENT {
+@XmlType(name = "OPTIONALRULES_MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
+public class OPTIONALRULESMULTIUSETALENT {
 
     @XmlAttribute(required = true)
     protected String talent;
     @XmlAttribute(required = true)
-    protected int circle;
+    protected int count;
     @XmlAttribute(required = true)
     protected LanguageType lang;
-    @XmlAttribute
-    protected Integer discipline;
 
     /**
      * Gets the value of the talent property.
@@ -72,19 +69,19 @@ public class OPTIONALRULESDEFAULTOPTIONALTALENT {
     }
 
     /**
-     * Gets the value of the circle property.
+     * Gets the value of the count property.
      * 
      */
-    public int getCircle() {
-        return circle;
+    public int getCount() {
+        return count;
     }
 
     /**
-     * Sets the value of the circle property.
+     * Sets the value of the count property.
      * 
      */
-    public void setCircle(int value) {
-        this.circle = value;
+    public void setCount(int value) {
+        this.count = value;
     }
 
     /**
@@ -109,34 +106,6 @@ public class OPTIONALRULESDEFAULTOPTIONALTALENT {
      */
     public void setLang(LanguageType value) {
         this.lang = value;
-    }
-
-    /**
-     * Gets the value of the discipline property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public int getDiscipline() {
-        if (discipline == null) {
-            return  1;
-        } else {
-            return discipline;
-        }
-    }
-
-    /**
-     * Sets the value of the discipline property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setDiscipline(Integer value) {
-        this.discipline = value;
     }
 
 }

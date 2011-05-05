@@ -402,6 +402,7 @@ class TalentsTableModel extends AbstractTableModel {
 			break;
 		case 4:
 			talent.getRANK().setStartrank((Integer)value);
+			if( talent.getRANK().getStartrank() > talent.getRANK().getRank() ) talent.getRANK().setRank(talent.getRANK().getStartrank());
 			break;
 		case 5:
 			talent.getRANK().setRank((Integer)value);

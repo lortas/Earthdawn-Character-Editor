@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -52,6 +53,7 @@ import javax.xml.bind.annotation.XmlType;
     "threaditemdostack",
     "autoincrementdiciplinetalents",
     "showdefaultskills",
+    "multiusetalent",
     "defaultoptionaltalent"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
@@ -71,6 +73,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType autoincrementdiciplinetalents;
     @XmlElement(name = "SHOWDEFAULTSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType showdefaultskills;
+    @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
+    protected List<OPTIONALRULESMULTIUSETALENT> multiusetalent;
     @XmlElement(name = "DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
     protected List<OPTIONALRULESDEFAULTOPTIONALTALENT> defaultoptionaltalent;
 
@@ -240,6 +244,35 @@ public class OPTIONALRULES {
      */
     public void setSHOWDEFAULTSKILLS(OPTIONALRULEType value) {
         this.showdefaultskills = value;
+    }
+
+    /**
+     * Gets the value of the multiusetalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the multiusetalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getMULTIUSETALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OPTIONALRULESMULTIUSETALENT }
+     * 
+     * 
+     */
+    public List<OPTIONALRULESMULTIUSETALENT> getMULTIUSETALENT() {
+        if (multiusetalent == null) {
+            multiusetalent = new ArrayList<OPTIONALRULESMULTIUSETALENT>();
+        }
+        return this.multiusetalent;
     }
 
     /**

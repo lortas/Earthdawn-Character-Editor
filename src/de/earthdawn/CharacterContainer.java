@@ -514,15 +514,67 @@ public class CharacterContainer extends CharChangeRefresh {
 		return name + " : "+limitation;
 	}
 
+	public static String getFullTalentname(TALENTABILITYType talent) {
+		String name = talent.getName();
+		String limitation = talent.getLimitation();
+		if( limitation == null ) return name;
+		if( limitation.isEmpty() ) return name;
+		return name + " : "+limitation;
+	}
+
+	private static void collectTalentsByMultiUse(List<String> usedTalents, HashMap<String, Integer> multiUseTalents, TALENTType talent, boolean isdisciplinetalent) {
+		String name = getFullTalentname(talent);
+		Integer multiUseCount = multiUseTalents.get(name);
+		if( multiUseCount == null ) {
+			// Wenn es kein MultiUseTalent ist, dann behandele es ganz normal
+			// und füge es in die Liste der Benutzen Talent hinzu
+			usedTalents.add(name);
+		} else {
+			// Wenn es sich aber um ein MultiUseTalent handelt, Zähle den MultiUse-Zähler hinunter,
+			// es sei denn er ist bereits auf Eins, dann füge das Talent in die Liste der Benutzen Talent hinzu
+			if( multiUseCount > 1 ) multiUseCount--;
+			else usedTalents.add(name);
+			// Aktuallisiere den MultiUse-Zähler bzw lösche das Talent aus der MultiUse Liste
+			if( multiUseCount > 0 ) multiUseTalents.put(name,multiUseCount);
+			else multiUseTalents.remove(name);
+		}
+	}
+
 	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE disciplineDefinition, int talentCircleNr) {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
 		List<String> usedTalents = new ArrayList<String>();
+		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
+		String disciplineName = disciplineDefinition.getName();
 		for( TALENTSType talents : getAllTalents() ) {
-			for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
-				usedTalents.add(getFullTalentname(talent));
-			}
-			for( TALENTType talent : talents.getOPTIONALTALENT() ) {
-				usedTalents.add(getFullTalentname(talent));
+			if( disciplineName.equals(talents.getDiscipline())) {
+				// Disziplintalente der selben Disziplin reduzieren zwar den multiUse-Zähler
+				// werden aber in keinem Fall in die usedTalents-Liste aufgenommen
+				for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
+					String name = getFullTalentname(talent);
+					Integer multiUseCount = multiUseTalents.get(name);
+					if( multiUseCount != null ) {
+						multiUseCount--;
+						multiUseTalents.put(name,multiUseCount);
+					}
+				}
+				// Optionaltalente der selben Disziplin reduzieren den multiUse-Zähler
+				// UND werden in jedem Fall in die usedTalents-Liste aufgenommen
+				for( TALENTType talent : talents.getOPTIONALTALENT() ) {
+					String name = getFullTalentname(talent);
+					usedTalents.add(name);
+					Integer multiUseCount = multiUseTalents.get(name);
+					if( multiUseCount != null ) {
+						multiUseCount--;
+						multiUseTalents.put(name,multiUseCount);
+					}
+				}
+			} else {
+				for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
+					collectTalentsByMultiUse(usedTalents, multiUseTalents, talent, true);
+				}
+				for( TALENTType talent : talents.getOPTIONALTALENT() ) {
+					collectTalentsByMultiUse(usedTalents, multiUseTalents, talent, false);
+				}
 			}
 		}
 		int circlenr = 0;
@@ -530,7 +582,10 @@ public class CharacterContainer extends CharChangeRefresh {
 			circlenr++;
 			if( circlenr > talentCircleNr ) break;
 			for( TALENTABILITYType talent : disciplineCircle.getOPTIONALTALENT()) {
-				if( ! usedTalents.contains(talent.getName()) ) {
+				String name = getFullTalentname(talent);
+				if( usedTalents.contains(name) ) {
+					usedTalents.remove(name);
+				} else {
 					result.add(talent);
 				}
 			}

@@ -190,8 +190,18 @@ public class ApplicationProperties {
 	public HashMap<String,Integer> getDefaultOptionalTalents(int discipline) {
 		HashMap<String,Integer> result = new HashMap<String,Integer>();
 		for( OPTIONALRULESDEFAULTOPTIONALTALENT talent : OPTIONALRULES.getDEFAULTOPTIONALTALENT() ) {
-			if( talent.getDiscipline() == discipline ) {
+			if( (talent.getDiscipline() == discipline) && talent.getLang().equals(LANGUAGE) ) {
 				result.put(talent.getTalent(), talent.getCircle());
+			}
+		}
+		return result;
+	}
+
+	public HashMap<String,Integer> getMultiUseTalents() {
+		HashMap<String,Integer> result = new HashMap<String,Integer>();
+		for( OPTIONALRULESMULTIUSETALENT talent : OPTIONALRULES.getMULTIUSETALENT() ) {
+			if( talent.getLang().equals(LANGUAGE) ) {
+				result.put(talent.getTalent(), talent.getCount());
 			}
 		}
 		return result;
