@@ -271,11 +271,22 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<DISCIPLINEType> getDisciplines() {
 		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
+		CALCULATEDLEGENDPOINTSType calculatedlegendpoints = character.getCALCULATEDLEGENDPOINTS();
 		// Solange die letzte Disziplin keinen Kreis hat, wird diese entfernt. 
 		while( (! disciplines.isEmpty()) && (disciplines.get(disciplines.size()-1).getCircle()<1) ) {
-			disciplines.remove(disciplines.size()-1);
+			int disciplineNumber = disciplines.size();
+			disciplines.remove(disciplineNumber-1);
+			// Wenn es keine Berechneten Legendenpunkte gibt, dann ist hier auch nichts zu tun.
+			if( calculatedlegendpoints == null ) continue;
+			// Anpasssungen der berechneten Legendenpunkt für Talente einer Disziplin die gelöscht wird, können auch weg
+			List<NEWDISCIPLINETALENTADJUSTMENTType> remove = new ArrayList<NEWDISCIPLINETALENTADJUSTMENTType>();
+			List<NEWDISCIPLINETALENTADJUSTMENTType> newdisciplinetalentadjustments = calculatedlegendpoints.getNEWDISCIPLINETALENTADJUSTMENT();
+			for( NEWDISCIPLINETALENTADJUSTMENTType e : newdisciplinetalentadjustments ) {
+				if( e.getDiciplinenumber() == disciplineNumber ) remove.add(e);
+			}
+			newdisciplinetalentadjustments.removeAll(remove);
 		}
-		// Bei allen anderen Disziplinen die keinen Kreis haben wird dieser auf 1 gesetzt.
+		// Bei allen anderen Disziplinen die keinen Kreis haben wird dort der Kreis auf 1 hoch gesetzt.
 		for (DISCIPLINEType discipline : disciplines) {
 			if( discipline.getCircle() < 1 ) discipline.setCircle(1);
 		}
@@ -341,6 +352,18 @@ public class CharacterContainer extends CharChangeRefresh {
 		discipline.setName("na");
 		for( DISCIPLINEType d : getDisciplines() ) {
 			if( d.getCircle() > discipline.getCircle() ) {
+				discipline=d;
+			}
+		}
+		return discipline;
+	}
+
+	public DISCIPLINEType getDiciplineMinCircle() {
+		DISCIPLINEType discipline = new DISCIPLINEType();
+		discipline.setCircle(20);
+		discipline.setName("na");
+		for( DISCIPLINEType d : getDisciplines() ) {
+			if( d.getCircle() < discipline.getCircle() ) {
 				discipline=d;
 			}
 		}
@@ -522,7 +545,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		return name + " : "+limitation;
 	}
 
-	private static void collectTalentsByMultiUse(List<String> usedTalents, HashMap<String, Integer> multiUseTalents, TALENTType talent, boolean isdisciplinetalent) {
+	private static void collectTalentsByMultiUse(List<String> usedTalents, HashMap<String, Integer> multiUseTalents, TALENTType talent) {
 		String name = getFullTalentname(talent);
 		Integer multiUseCount = multiUseTalents.get(name);
 		if( multiUseCount == null ) {
@@ -570,10 +593,10 @@ public class CharacterContainer extends CharChangeRefresh {
 				}
 			} else {
 				for( TALENTType talent : talents.getDISZIPLINETALENT() ) {
-					collectTalentsByMultiUse(usedTalents, multiUseTalents, talent, true);
+					collectTalentsByMultiUse(usedTalents, multiUseTalents, talent);
 				}
 				for( TALENTType talent : talents.getOPTIONALTALENT() ) {
-					collectTalentsByMultiUse(usedTalents, multiUseTalents, talent, false);
+					collectTalentsByMultiUse(usedTalents, multiUseTalents, talent);
 				}
 			}
 		}
@@ -709,6 +732,7 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public void realignOptionalTalents() {
 		final String durabilityName = PROPERTIES.getDurabilityName();
+		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
 		HashMap<String, Integer> disciplineOrderByName = getDisciplineOrderByName();
 		List<DISCIPLINEType> allDiciplines = character.getDISCIPLINE();
 		List<TALENTSType> allTalents = getAllTalents();
@@ -729,13 +753,19 @@ public class CharacterContainer extends CharChangeRefresh {
 					// Talentlisten nicht mit sich selbst vergleichen
 					if( talents1 == talents2 ) continue;
 					for( TALENTType optTalent : talents2.getOPTIONALTALENT() ) {
+						String name = getFullTalentname(optTalent);
+						if( multiUseTalents.containsKey(name) ) {
+							// MultiUseTalents können nicht realigned werden.
+							if( optTalent.getRealigned() > 0 ) optTalent.setRealigned(0);
+							continue;
+						}
 						// Sollte das Optinaltalent auf ein Talent einer nicht mehr exisiterenden Disziplin realgined sind,
 						// kann dieses Realgined entfernt werden
 						if( optTalent.getRealigned() > maxDisciplineOrder ) optTalent.setRealigned(0);
 						if( durabilityName.equals(disTalent.getName()) ) {
 							if( durabilityName.equals(optTalent.getName()) ) optTalent.setRealigned(disciplineOrder);
 						} else {
-							if( disTalentName.equals(getFullTalentname(optTalent)) ) optTalent.setRealigned(disciplineOrder);
+							if( disTalentName.equals(name) ) optTalent.setRealigned(disciplineOrder);
 						}
 					}
 				}
