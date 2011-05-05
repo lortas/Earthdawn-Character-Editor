@@ -21,13 +21,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
@@ -42,7 +43,8 @@ public class ECEPdfExporter {
 	private AcroFields acroFields = null;
 
 	private void exportCommonFields(CharacterContainer character, int maxSkillSpace, int raceAbilitiesLineLength) throws IOException, DocumentException {
-		acroFields.setField( "Name", character.getName());
+		acroFields.setField( "ExportDate", getCurrentDateTime());
+		acroFields.setField( "Name", character.getName() );
 		acroFields.setField( "Race", character.getAppearance().getRace() );
 		acroFields.setField( "Age", String.valueOf(character.getAppearance().getAge()) );
 		acroFields.setField( "Eyes", character.getAppearance().getEyes() );
@@ -690,7 +692,6 @@ public class ECEPdfExporter {
 		}
 
 		
-		List<DISCIPLINEType> diciplines = character.getDisciplines();
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 
@@ -930,5 +931,11 @@ public class ECEPdfExporter {
 			result+=String.valueOf(e);
 		}
 		return result;
+	}
+
+	public static String getCurrentDateTime() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		Date date = new Date();
+		return dateFormat.format(date);
 	}
 }
