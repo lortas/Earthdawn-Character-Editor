@@ -24,6 +24,8 @@
 	<KARMARUTUAL name="Karma Ritual" lang="en"/>
 	<ARTISAN name="Kunsthandwerk" lang="de"/>
 	<ARTISAN name="Artisan" lang="en"/>
+	<QUESTORTALENT name="Questor" lang="en"/>
+	<QUESTORTALENT name="Questor" lang="de"/>
 	<SPELLWEAVING lang="en">
 		<SPELLKIND type="elemental" weaving="Elementalism"/>
 		<SPELLKIND type="illusion" weaving="Illusionism"/>

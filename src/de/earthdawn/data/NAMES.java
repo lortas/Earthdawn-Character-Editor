@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="ARTISAN" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="QUESTORTALENT" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/names}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/>
  *         &lt;element name="STARTINGWEAPONS" type="{http://earthdawn.com/names}NAME_STARTINGWEAPONS_type" maxOccurs="unbounded"/>
  *         &lt;element name="STARTINGITEMS" type="{http://earthdawn.com/names}NAME_STARTINGITEMS_type" maxOccurs="unbounded"/>
@@ -50,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
     "versatility",
     "karmarutual",
     "artisan",
+    "questortalent",
     "spellweaving",
     "startingweapons",
     "startingitems"
@@ -67,6 +69,8 @@ public class NAMES {
     protected List<NAMELANGType> karmarutual;
     @XmlElement(name = "ARTISAN", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMELANGType> artisan;
+    @XmlElement(name = "QUESTORTALENT", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMELANGType> questortalent;
     @XmlElement(name = "SPELLWEAVING", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMESPELLWEAVINGType> spellweaving;
     @XmlElement(name = "STARTINGWEAPONS", namespace = "http://earthdawn.com/names", required = true)
@@ -217,6 +221,35 @@ public class NAMES {
             artisan = new ArrayList<NAMELANGType>();
         }
         return this.artisan;
+    }
+
+    /**
+     * Gets the value of the questortalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the questortalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getQUESTORTALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getQUESTORTALENT() {
+        if (questortalent == null) {
+            questortalent = new ArrayList<NAMELANGType>();
+        }
+        return this.questortalent;
     }
 
     /**

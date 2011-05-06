@@ -7,9 +7,10 @@
 	<THREADITEMDOSTACK used="yes"/>
 	<AUTOINCREMENTDICIPLINETALENTS used="yes"/>
 	<SHOWDEFAULTSKILLS used="yes"/>
+	<QUESTORTALENTNEEDLEGENDPOINTS used="yes"/>
 	<MULTIUSETALENT talent="Spell Matrix" lang="en" count="5"/>
 	<MULTIUSETALENT talent="Enhanced Matrix" lang="en" count="4"/>
 	<MULTIUSETALENT talent="Armored Matrix" lang="en" count="3"/>
 	<MULTIUSETALENT talent="Shared Matrix" lang="en" count="3"/>
-	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as extra talent-->
+	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as an extra talent-->
 </OPTIONALRULES>

@@ -265,6 +265,14 @@ public class ApplicationProperties {
 		return HELP;
 	}
 
+	public String getQuestorTalentName() {
+		for( NAMELANGType name : NAMES.getQUESTORTALENT() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getName();
+		}
+		// Not found
+		return "";
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
