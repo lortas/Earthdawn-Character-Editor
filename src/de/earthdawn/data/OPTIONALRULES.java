@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -53,6 +54,7 @@ import javax.xml.bind.annotation.XmlType;
     "threaditemdostack",
     "autoincrementdiciplinetalents",
     "showdefaultskills",
+    "questortalentneedlegendpoints",
     "multiusetalent",
     "defaultoptionaltalent"
 })
@@ -73,6 +75,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType autoincrementdiciplinetalents;
     @XmlElement(name = "SHOWDEFAULTSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType showdefaultskills;
+    @XmlElement(name = "QUESTORTALENTNEEDLEGENDPOINTS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType questortalentneedlegendpoints;
     @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
     protected List<OPTIONALRULESMULTIUSETALENT> multiusetalent;
     @XmlElement(name = "DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
@@ -244,6 +248,30 @@ public class OPTIONALRULES {
      */
     public void setSHOWDEFAULTSKILLS(OPTIONALRULEType value) {
         this.showdefaultskills = value;
+    }
+
+    /**
+     * Gets the value of the questortalentneedlegendpoints property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getQUESTORTALENTNEEDLEGENDPOINTS() {
+        return questortalentneedlegendpoints;
+    }
+
+    /**
+     * Sets the value of the questortalentneedlegendpoints property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setQUESTORTALENTNEEDLEGENDPOINTS(OPTIONALRULEType value) {
+        this.questortalentneedlegendpoints = value;
     }
 
     /**
