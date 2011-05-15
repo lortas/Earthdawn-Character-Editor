@@ -29,7 +29,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfReader;
@@ -414,9 +413,10 @@ public class ECEPdfExporter {
 		acroFields = stamper.getAcroFields();
 		CharacterContainer character = new CharacterContainer(edCharakter);
 // +++ DEBUG +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-		//Set<String> fieldNames = fields.keySet();
+		//Set<String> fieldNames = acroFields.getFields().keySet();
 		//fieldNames = new TreeSet<String>(fieldNames);
 		//for( String fieldName : fieldNames ) {
+		//	acroFields.setField( fieldName, fieldName );
 		//	System.out.println( fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -479,6 +479,35 @@ public class ECEPdfExporter {
 				if( (talent.getCircle()>4)  && (counter<7) )  counter = 7;
 				if( (talent.getCircle()>8)  && (counter<13) ) counter = 13;
 				setTalent(20+counter, talent, attributes);
+				// Optionale Talente können Karma erfordern
+				if( talent.getKarma().equals(YesnoType.YES)) {
+					acroFields.setField( "KarmaRequired."+counter, "Yes" );
+				} else {
+					acroFields.setField( "KarmaRequired."+counter, "" );
+				}
+				counter++;
+			}
+		}
+		talents = allTalents.get(2);
+		if( talents != null ) {
+			int counter = 36;
+			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
+			Collections.sort(disziplinetalents, new TalentComparator());
+			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+			for( TALENTType talent : disziplinetalents ) {
+				if( (talent.getCircle()>4)  && (counter<44) ) counter = 44;
+				if( (talent.getCircle()>8)  && (counter<48) ) counter = 48;
+				if( (talent.getCircle()>12) && (counter<52) ) counter = 52;
+				setTalent(counter, talent, attributes);
+				counter++;
+			}
+			List<TALENTType> optionaltalents = talents.getOPTIONALTALENT();
+			Collections.sort(optionaltalents, new TalentComparator());
+			counter = 16;
+			for( TALENTType talent : optionaltalents ) {
+				if( (talent.getCircle()>4)  && (counter<22) ) counter = 22;
+				if( (talent.getCircle()>8)  && (counter<26) ) counter = 26;
+				setTalent(39+counter, talent, attributes);
 				// Optionale Talente können Karma erfordern
 				if( talent.getKarma().equals(YesnoType.YES)) {
 					acroFields.setField( "KarmaRequired."+counter, "Yes" );
