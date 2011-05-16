@@ -225,12 +225,11 @@ public class ECEPdfExporter {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
 			}
 		}
-		List<DISCIPLINEType> diciplines = character.getDisciplines();
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 		int counterKarmaritual=0;
-		for( DISCIPLINEType discipline : diciplines ) {
-			for( String description : wrapString(50,discipline.getKARMARITUAL()) ) {
+		for( String karmaritual : character.getKarmarituals() ) {
+			for( String description : wrapString(50,karmaritual) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
 					break;
@@ -444,12 +443,11 @@ public class ECEPdfExporter {
 				System.err.println( "Unbekannte Rüstungstyp: "+armor.getClass().getSimpleName() );
 			}
 		}
-		List<DISCIPLINEType> diciplines = character.getDisciplines();
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 		int counterKarmaritual=0;
-		for( DISCIPLINEType discipline : diciplines ) {
-			for( String description : wrapString(50,discipline.getKARMARITUAL()) ) {
+		for( String karmaritual : character.getKarmarituals() ) {
+			for( String description : wrapString(50,karmaritual) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
 					break;

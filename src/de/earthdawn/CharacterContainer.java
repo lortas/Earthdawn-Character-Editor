@@ -301,6 +301,19 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	public List<String> getKarmarituals() {
+		List<String> result = new ArrayList<String>();
+		for( DISCIPLINEType discipline : getDisciplines() ) {
+			String karmaritual = discipline.getKARMARITUAL();
+			if( karmaritual == null ) {
+				result.add(discipline.getName()+": NA");
+			} else {
+				result.add(discipline.getName()+": "+karmaritual);
+			}
+		}
+		return result;
+	}
+
 	public List<Integer> getDisciplineCircles() {
 		List<Integer> result = new ArrayList<Integer>();
 		for( DISCIPLINEType discipline : getDisciplines() ) {
