@@ -43,6 +43,20 @@
         </div>
         <!-- Characteristics -->
         <xsl:call-template name="characteristics"/>
+        <div class="edLayoutRow">   
+        <table width="100%">
+            <tr>
+                <td class="edHeaderCell">
+                    <!-- Experience -->
+                    <xsl:call-template name="experience" />
+                </td>
+                <td class="edHeaderCell">
+                    <!-- Calculated Legend Points -->
+                    <xsl:call-template name="calculatedLegendPoints" />
+                </td>
+            </tr>
+        </table>
+        </div>
         <!-- Discipline -->
         <xsl:call-template name="discipline"/>
         <div class="edLayoutRow">
@@ -102,14 +116,6 @@
                     </td>
                 </tr>
             </table>
-        </div>
-        <div class="edLayoutRow">   
-            <!-- Experience -->
-            <xsl:call-template name="experience" />
-        </div>
-        <div class="edLayoutRow">   
-            <!-- Calculated Ledgend Points -->
-            <xsl:call-template name="calculatedLedgendPoints" />
         </div>
     </body> 
 </html> 
@@ -386,7 +392,6 @@
         Step=<xsl:value-of select="@step" />
     </div>
 </xsl:template>
-
 
 <xsl:template match="//edt:WOUNDS">
     <div>
@@ -824,7 +829,7 @@
 
 <xsl:template name="experience">
     <div class="edExperience">
-        <div class="edSubHeader">Ledgend Points</div>
+        <div class="edSubHeader">Legend Points</div>
             <table width="100%">
             <tr>
                 <td class="edHeaderCell" width="25%">Reputation</td>
@@ -842,8 +847,8 @@
     </div>
 </xsl:template>
 
-<xsl:template name="calculatedLedgendPoints">
-    <div class="edCalculatedLedgendPoints">
+<xsl:template name="calculatedLegendPoints">
+    <div class="edCalculatedLegendPoints">
         <div class="edSubHeader">Calculated Legend Points</div>
         <table width="100%">
             <tr>
