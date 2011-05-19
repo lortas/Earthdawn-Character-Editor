@@ -106,4 +106,48 @@
     <ABILITY>Flight</ABILITY>
     <NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
   </NAMEGIVER>
+  <NAMEGIVER name="Gar" karmamodifier="4" movement_ground="7">
+    <ATTRIBUTE name="DEX" value="11" />
+    <ATTRIBUTE name="STR" value="11" />
+    <ATTRIBUTE name="TOU" value="11" />
+    <ATTRIBUTE name="PER" value="11" />
+    <ATTRIBUTE name="WIL" value="11" />
+    <ATTRIBUTE name="CHA" value="8" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Low-Light Vision</ABILITY>
+  </NAMEGIVER>
+  <NAMEGIVER name="Ki Mao" karmamodifier="4" movement_ground="7">
+    <ATTRIBUTE name="DEX" value="12" />
+    <ATTRIBUTE name="STR" value="9" />
+    <ATTRIBUTE name="TOU" value="8" />
+    <ATTRIBUTE name="PER" value="12" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="11" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Low-Light Vision</ABILITY>
+  </NAMEGIVER>
+  <NAMEGIVER name="Po Na" karmamodifier="5" movement_ground="6">
+    <ATTRIBUTE name="DEX" value="11" />
+    <ATTRIBUTE name="STR" value="11" />
+    <ATTRIBUTE name="TOU" value="10" />
+    <ATTRIBUTE name="PER" value="10" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="8" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <ABILITY>Prehensile Tail</ABILITY>
+  </NAMEGIVER>
+  <NAMEGIVER name="Storm Children" karmamodifier="5" movement_ground="6">
+    <ATTRIBUTE name="DEX" value="10" />
+    <ATTRIBUTE name="STR" value="10" />
+    <ATTRIBUTE name="TOU" value="10" />
+    <ATTRIBUTE name="PER" value="10" />
+    <ATTRIBUTE name="WIL" value="10" />
+    <ATTRIBUTE name="CHA" value="10" />
+    <ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+    <TALENT name="Lightning Born"/>
+  </NAMEGIVER>
  </NAMEGIVERS>
