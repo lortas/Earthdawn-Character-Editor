@@ -12,7 +12,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -37,6 +36,7 @@ import com.itextpdf.text.DocumentException;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.CharacteristicStatus;
+import de.earthdawn.ECECsvExporter;
 import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.data.DISCIPLINEType;
@@ -159,7 +159,10 @@ public class EDMainWindow {
 		
 
 		JMenu mntmExport = new JMenu(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
-		mnFile.add(mntmExport);
+		menuBar.add(mntmExport);
+
+		JMenu mntmPdfExport = new JMenu(NLS.getString("EDMainWindow.mntmPdfExport.text")); //$NON-NLS-1$
+		mntmExport.add(mntmPdfExport);
 
 		JMenuItem mntmExportRedbrickSimple = new JMenuItem(NLS.getString("EDMainWindow.mntmExportRedbrickSimple.text")); //$NON-NLS-1$
 		mntmExportRedbrickSimple.addActionListener(new ActionListener() {
@@ -167,7 +170,7 @@ public class EDMainWindow {
 				do_mntmExport_actionPerformed(arg0,1);
 			}
 		});
-		mntmExport.add(mntmExportRedbrickSimple);
+		mntmPdfExport.add(mntmExportRedbrickSimple);
 
 		JMenuItem mntmExportRedbrickExtended = new JMenuItem(NLS.getString("EDMainWindow.mntmExportRedbrickExtended.text")); //$NON-NLS-1$
 		mntmExportRedbrickExtended.addActionListener(new ActionListener() {
@@ -175,7 +178,7 @@ public class EDMainWindow {
 				do_mntmExport_actionPerformed(arg0,0);
 			}
 		});
-		mntmExport.add(mntmExportRedbrickExtended);
+		mntmPdfExport.add(mntmExportRedbrickExtended);
 
 		JMenuItem mntmExportAjfelmordom = new JMenuItem(NLS.getString("EDMainWindow.mntmExportAjfelmordom.text")); //$NON-NLS-1$
 		mntmExportAjfelmordom.addActionListener(new ActionListener() {
@@ -183,7 +186,18 @@ public class EDMainWindow {
 				do_mntmExport_actionPerformed(arg0,2);
 			}
 		});
-		mntmExport.add(mntmExportAjfelmordom);
+		mntmPdfExport.add(mntmExportAjfelmordom);
+
+		JMenu mntmCsvExport = new JMenu(NLS.getString("EDMainWindow.mntmCsvExport.text")); //$NON-NLS-1$
+		mntmExport.add(mntmCsvExport);
+
+		JMenuItem mntmSpellCSV = new JMenuItem(NLS.getString("EDMainWindow.mntmSpellCSV.text")); //$NON-NLS-1$
+		mntmSpellCSV.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmSpellCSV_actionPerformed(arg0);
+			}
+		});
+		mntmCsvExport.add(mntmSpellCSV);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
@@ -489,6 +503,34 @@ public class EDMainWindow {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void do_mntmSpellCSV_actionPerformed(ActionEvent arg0) {
+		if( file == null ) {
+			String name = character.getName();
+			if( name == null ) name = "noname";
+			file = new File(name.replaceAll(" ", "_") + ".xml");
+		}
+		File csvFile = new File(file.getParentFile(), chopFilename(file)+ "_Spells.csv");
+		JFileChooser fc = new JFileChooser(csvFile);
+		fc.setSelectedFile(csvFile);
+		fc.showSaveDialog(frame);
+		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		if( selFile != null ) {
+			try {
+				new ECECsvExporter().exportSpells(character.getEDCHARACTER(), selFile);
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (Exception e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
