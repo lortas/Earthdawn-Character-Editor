@@ -744,6 +744,7 @@ public class ECEWorker {
 			capability.setBonus(replacment.getBonus());
 			capability.setKarma(replacment.getKarma());
 			capability.setStrain(replacment.getStrain());
+			capability.setBookref(replacment.getBookref());
 		}
 	}
 

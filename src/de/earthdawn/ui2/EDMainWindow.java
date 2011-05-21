@@ -199,6 +199,14 @@ public class EDMainWindow {
 		});
 		mntmCsvExport.add(mntmSpellCSV);
 
+		JMenuItem mntmTalentCSV = new JMenuItem(NLS.getString("EDMainWindow.mntmTalentCSV.text")); //$NON-NLS-1$
+		mntmTalentCSV.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmTalentCSV_actionPerformed(arg0);
+			}
+		});
+		mntmCsvExport.add(mntmTalentCSV);
+
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -477,16 +485,7 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmExport_actionPerformed(ActionEvent arg0, int v) {
-		if( file == null ) {
-			String name = character.getName();
-			if( name == null ) name = "noname";
-			file = new File(name.replaceAll(" ", "_") + ".xml");
-		}
-		File pdfFile = new File(file.getParentFile(), chopFilename(file)+ ".pdf");
-		JFileChooser fc = new JFileChooser(pdfFile);
-		fc.setSelectedFile(pdfFile);
-		fc.showSaveDialog(frame);
-		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		File selFile = selectFileName(".pdf");
 		if( selFile != null ) {
 			try {
 				switch(v) {
@@ -510,16 +509,7 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmSpellCSV_actionPerformed(ActionEvent arg0) {
-		if( file == null ) {
-			String name = character.getName();
-			if( name == null ) name = "noname";
-			file = new File(name.replaceAll(" ", "_") + ".xml");
-		}
-		File csvFile = new File(file.getParentFile(), chopFilename(file)+ "_Spells.csv");
-		JFileChooser fc = new JFileChooser(csvFile);
-		fc.setSelectedFile(csvFile);
-		fc.showSaveDialog(frame);
-		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		File selFile = selectFileName("_Spells.csv");
 		if( selFile != null ) {
 			try {
 				new ECECsvExporter().exportSpells(character.getEDCHARACTER(), selFile);
@@ -535,6 +525,39 @@ public class EDMainWindow {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	protected void do_mntmTalentCSV_actionPerformed(ActionEvent arg0) {
+		File selFile = selectFileName("_Talents.csv");
+		if( selFile != null ) {
+			try {
+				new ECECsvExporter().exportTalents(character.getEDCHARACTER(), selFile);
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private File selectFileName(String extention) {
+		if( file == null ) {
+			String name = character.getName();
+			if( name == null ) name = "noname";
+			file = new File(name.replaceAll(" ", "_") + ".xml");
+		}
+		File csvFile = new File(file.getParentFile(), chopFilename(file)+ extention);
+		JFileChooser fc = new JFileChooser(csvFile);
+		fc.setSelectedFile(csvFile);
+		fc.showSaveDialog(frame);
+		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		return selFile;
 	}
 
 	protected void do_mntmWebBrowser_actionPerformed(ActionEvent arg0) {
