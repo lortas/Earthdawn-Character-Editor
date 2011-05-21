@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,24 +38,104 @@ public class ECECsvExporter {
 			List<SPELLType> spellList = spells.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
 			for( SPELLType spell : spellList ) {
-				if( spell.getInmatrix().equals(YesnoType.YES)) out.print( "Yes\t" );
-				else out.print( "\t" );
-				out.print( spell.getName() + "\t" );
-				out.print( spell.getType().value() + "\t" );
-				out.print( String.valueOf(spell.getCircle()) + "\t" );
+				List<String> row = new ArrayList<String>();
+				if( spell.getInmatrix().equals(YesnoType.YES)) row.add( "Yes" );
+				else row.add( "" );
+				row.add( spell.getName() );
+				row.add( spell.getType().value() );
+				row.add( String.valueOf(spell.getCircle()) );
 				if( spell.getThreads() >= 0 ) {
-					out.print( String.valueOf(spell.getThreads()) + "\t");
-				} else out.print( "s. text\t" );
-				out.print( spell.getWeavingdifficulty() + "\t" );
-				out.print( spell.getReattuningdifficulty() + "\t" );
-				out.print( spell.getCastingdifficulty() + "\t" );
-				out.print( spell.getRange() + "\t" );
-				out.print( spell.getDuration() + "\t" );
-				out.print( spell.getEffectarea() + "\t" );
-				out.print( spell.getEffect() + "\t");
-				out.print( spell.getBookref() );
-				out.println();
+					row.add( String.valueOf(spell.getThreads()) );
+				} else row.add( "s. text" );
+				row.add( spell.getWeavingdifficulty() );
+				row.add( String.valueOf(spell.getReattuningdifficulty()) );
+				row.add( spell.getCastingdifficulty() );
+				row.add( spell.getRange() );
+				row.add( spell.getDuration() );
+				row.add( spell.getEffectarea() );
+				row.add( spell.getEffect() );
+				row.add( spell.getBookref() );
+				out.println(generaterow(row));
 			}
 		}
+	}
+
+	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws Exception, IOException {
+		CharacterContainer character = new CharacterContainer(edCharakter);
+		PrintStream out = new PrintStream(outFile);
+		out.println( "Type\tCircle\tTalent Name\tLimitation\tAttribute\tRank\tRealigned Rank\t"+
+				"Start Rank\tRank Bonus\tStep\tDice\tLP cost\tAction\tTalent Bonus\t"+
+				"Karma\tStrain\tTeacher Name\tTeacher Discipline\tTeachers Talent Circle\t"+
+				"Teachers Current Circle\tLearned By Versatility\tComment\tBook Ref" );
+		for( TALENTSType allTalents : character.getAllTalents() ) {
+			printTalents(out, allTalents.getDISZIPLINETALENT(), true );
+			printTalents(out, allTalents.getOPTIONALTALENT(), false );
+		}
+	}
+
+	private void printTalents(PrintStream out, List<TALENTType> talents, boolean discipline) {
+		Collections.sort(talents, new TalentComparator());
+		for( TALENTType talent : talents ) {
+			if( talent.getRealigned() > 0 ) continue;
+			List<String> row = new ArrayList<String>();
+			if( discipline ) row.add( "D" );
+			else row.add( "O" );
+			row.add( String.valueOf(talent.getCircle()) );
+			row.add( talent.getName() );
+			row.add( talent.getLimitation() );
+			RANKType rank = talent.getRANK();
+			row.add( talent.getAttribute().value() );
+			if( rank == null ) {
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+			} else {
+				row.add( String.valueOf(rank.getRank()) );
+				row.add( String.valueOf(rank.getRealignedrank()) );
+				row.add( String.valueOf(rank.getStartrank()) );
+				row.add( String.valueOf(rank.getBonus()) );
+				row.add( String.valueOf(rank.getStep()) );
+				DiceType dice = rank.getDice();
+				if( dice == null ) row.add( "-" );
+				else row.add( dice.value() );
+				row.add( String.valueOf(rank.getLpcost()) );
+			}
+			row.add( talent.getAction().value() );
+			row.add( String.valueOf(talent.getBonus()) );
+			if( discipline ) row.add("-");
+			else row.add( String.valueOf(talent.getKarma()) );
+			row.add( String.valueOf(talent.getStrain()) );
+			TALENTTEACHERType teacher = talent.getTEACHER();
+			if( teacher == null ) {
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+				row.add( "-" );
+			} else {
+				row.add( teacher.getName() );
+				row.add( teacher.getDiscipline() );
+				row.add( String.valueOf(teacher.getTalentcircle()) );
+				row.add( String.valueOf(teacher.getTeachercircle()) );
+				row.add( teacher.getByversatility().value() );
+				row.add( teacher.getComment() );
+			}
+			row.add( talent.getBookref() );
+			out.println(generaterow(row));
+		}
+	}
+
+	public static String generaterow(List<String> list) {
+		String result="";
+		for( Object e : list ) {
+			if( ! result.isEmpty() ) result+="\t";
+			result+=String.valueOf(e);
+		}
+		return result;
 	}
 }
