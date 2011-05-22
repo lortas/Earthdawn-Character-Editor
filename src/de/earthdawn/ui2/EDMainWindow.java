@@ -207,6 +207,14 @@ public class EDMainWindow {
 		});
 		mntmCsvExport.add(mntmTalentCSV);
 
+		JMenuItem mntmItemCSV = new JMenuItem(NLS.getString("EDMainWindow.mntmItemCSV.text")); //$NON-NLS-1$
+		mntmItemCSV.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmItemCSV_actionPerformed(arg0);
+			}
+		});
+		mntmCsvExport.add(mntmItemCSV);
+
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -520,9 +528,6 @@ public class EDMainWindow {
 			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
 			}
 		}
 	}
@@ -539,7 +544,20 @@ public class EDMainWindow {
 			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
-			} catch (Exception e) {
+			}
+		}
+	}
+
+	protected void do_mntmItemCSV_actionPerformed(ActionEvent arg0) {
+		File selFile = selectFileName("_Items.csv");
+		if( selFile != null ) {
+			try {
+				new ECECsvExporter().exportItems(character.getEDCHARACTER(), selFile);
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
+			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}

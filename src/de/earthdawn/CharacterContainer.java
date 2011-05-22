@@ -1221,4 +1221,45 @@ public class CharacterContainer extends CharChangeRefresh {
 		carrying.setCarrying(carryingValue);
 		carrying.setLifting(carryingValue *2);
 	}
+
+	public HashMap<String,ITEMType> getAllItems() {
+		HashMap<String,ITEMType> result = new HashMap<String, ITEMType>();
+		for( ITEMType item : character.getITEM() ) result.put( item.getName(), item );
+		int pursecounter=0;
+		for( COINSType coins : character.getCOINS() ) {
+			String name = coins.getName();
+			if( name == null ) {
+				name = "Purse #"+String.valueOf(++pursecounter);
+			} else {
+				if( name.isEmpty() ) name = "Purse #"+String.valueOf(++pursecounter);
+				else name = "Purse "+name;
+			}
+			name += " (c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
+			if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
+			if( coins.getWater()>0 )      name += " w:"+coins.getWater();
+			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
+			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
+			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
+			name +=")";
+			result.put( name, coins );
+		}
+		for( ITEMType item : character.getWEAPON() )         result.put( item.getName(), item );
+		PROTECTIONType protection = character.getPROTECTION();
+		if( protection != null ) {
+			boolean naturalArmor=true; // Der erste Eintrag ist immer die natürliche Rüstung
+			for( ITEMType item : protection.getARMOROrSHIELD() ) {
+				if( naturalArmor ) {
+					// Die natürliche Rüstng nicht als Gegenstand auflisten
+					naturalArmor=false;
+					continue;
+				}
+				result.put( item.getName(), item );
+			}
+		}
+		for( ITEMType item : character.getMAGICITEM() )      result.put( item.getName(), item );
+		for( ITEMType item : character.getBLOODCHARMITEM() ) result.put( item.getName(), item );
+		for( ITEMType item : character.getPATTERNITEM() )    result.put( item.getName(), item );
+		for( ITEMType item : character.getTHREADITEM() )     result.put( item.getName(), item );
+		return result;
+	}
 }
