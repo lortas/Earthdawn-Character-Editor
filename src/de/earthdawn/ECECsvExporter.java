@@ -22,13 +22,16 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import de.earthdawn.data.*;
 
 public class ECECsvExporter {
 
-	public void exportSpells(EDCHARACTER edCharakter, File outFile) throws Exception, IOException {
+	public void exportSpells(EDCHARACTER edCharakter, File outFile) throws IOException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(outFile);
 		out.println( "In Matrix\tSpell Name\tType\tCircle\tThreads\tWeaving Difficulty\t"+
@@ -60,7 +63,7 @@ public class ECECsvExporter {
 		}
 	}
 
-	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws Exception, IOException {
+	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws IOException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(outFile);
 		out.println( "Type\tCircle\tTalent Name\tLimitation\tAttribute\tRank\tRealigned Rank\t"+
@@ -70,6 +73,23 @@ public class ECECsvExporter {
 		for( TALENTSType allTalents : character.getAllTalents() ) {
 			printTalents(out, allTalents.getDISZIPLINETALENT(), true );
 			printTalents(out, allTalents.getOPTIONALTALENT(), false );
+		}
+	}
+
+	public void exportItems(EDCHARACTER edCharakter, File outFile) throws IOException {
+		CharacterContainer character = new CharacterContainer(edCharakter);
+		PrintStream out = new PrintStream(outFile);
+		out.println( "Name\tLocation\tWeight\tIn Use" );
+		HashMap<String, ITEMType> itemMap = character.getAllItems();
+		Set<String> itemNames = new TreeSet<String>(itemMap.keySet());
+		for( String itemName : itemNames ) {
+			List<String> row = new ArrayList<String>();
+			ITEMType item = itemMap.get(itemName);
+			row.add( itemName );
+			row.add( item.getLocation() );
+			row.add( String.valueOf(item.getWeight()) );
+			row.add( item.getUsed().value() );
+			out.println(generaterow(row));
 		}
 	}
 
