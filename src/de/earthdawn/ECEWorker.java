@@ -174,12 +174,18 @@ public class ECEWorker {
 		// ** ARMOR **
 		List<ARMORType> magicarmor = character.getMagicArmor();
 		// natural ARMOR
-		ARMORType naturalArmor = namegiver.getARMOR();
-		// TODO: naturalArmor muss per "call by value" übergeben werden
-		naturalArmor.setMysticarmor(berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
-		int mysticalarmor=naturalArmor.getMysticarmor();
-		int pysicalarmor=naturalArmor.getPhysicalarmor();
-		int protectionpenalty=naturalArmor.getPenalty();
+		ARMORType namegiverArmor = namegiver.getARMOR();
+		int mysticalarmor=namegiverArmor.getMysticarmor();
+		int physicalarmor=namegiverArmor.getPhysicalarmor();
+		int protectionpenalty=namegiverArmor.getPenalty();
+		mysticalarmor+=berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue());
+		ARMORType naturalArmor = new ARMORType();
+		naturalArmor.setName(namegiverArmor.getName());
+		naturalArmor.setMysticarmor(mysticalarmor);
+		naturalArmor.setPhysicalarmor(physicalarmor);
+		naturalArmor.setPenalty(protectionpenalty);
+		naturalArmor.setUsed(namegiverArmor.getUsed());
+		naturalArmor.setWeight(namegiverArmor.getWeight());
 		List <ARMORType> newarmor = new ArrayList<ARMORType>();
 		newarmor.add(naturalArmor);
 		newarmor.addAll(magicarmor);
@@ -190,7 +196,7 @@ public class ECEWorker {
 			if( armorName.equals(naturalArmor.getName())) continue;
 			if( armor.getUsed().equals(YesnoType.YES) ) {
 				mysticalarmor+=armor.getMysticarmor();
-				pysicalarmor+=armor.getPhysicalarmor();
+				physicalarmor+=armor.getPhysicalarmor();
 				protectionpenalty+=armor.getPenalty();
 				initiative.setModification(initiative.getModification()-armor.getPenalty());
 				initiative.setStep(initiative.getBase()+initiative.getModification());
@@ -205,7 +211,7 @@ public class ECEWorker {
 		}
 		protection.setMysticarmor(mysticalarmor);
 		protection.setPenalty(protectionpenalty);
-		protection.setPhysicalarmor(pysicalarmor);
+		protection.setPhysicalarmor(physicalarmor);
 		protection.getARMOROrSHIELD().clear();
 		protection.getARMOROrSHIELD().addAll(newarmor);
 
