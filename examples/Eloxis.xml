@@ -23,7 +23,7 @@
 	<ns3:MOVEMENT ground="8" flight="0"/>
 	<ns3:INITIATIVE modification="-2" base="8" dice="d10" step="6"/>
 	<ns3:CARRYING carrying="330" lifting="660"/>
-	<ns3:DISCIPLINE circle="6" name="Warrior" order="1">
+	<ns3:DISCIPLINE circle="6" name="Warrior">
 		<DISCIPLINEBONUS bonus="Can spend Karma for Strength-only Test" circle="4"/>
 		<DISCIPLINEBONUS bonus="Ability: Battle Rites" circle="5"/>
 		<DISCIPLINEBONUS bonus="Can spend Karma for Dexterity-only Test" circle="6"/>
@@ -365,13 +365,13 @@
 		<LEGENDPOINTS when="17.03.2011" comment="LP aus Spielrunde" value="2060" type="+"/>
 		<LEGENDPOINTS when="07.04.2011" comment="LP aus Spielrunde" value="9810" type="+"/>
 		<LEGENDPOINTS when="14.04.2011" comment="LP aus Spielrunde" value="3012" type="+"/>
-		<LEGENDPOINTS when="21.04.2011" comment="LP aus Spielrunde" value="15870" type="+"/>
+		<LEGENDPOINTS when="21.04.2011" comment="LP aus Spielrunde" value="17426" type="+"/>
 	</ns3:EXPERIENCE>
 	<ns3:DEVOTION value="550" passion="Thystonius">
 		<DEVOTIONPOINTS when="2009.08.06" comment="" value="100" type="+"/>
 		<DEVOTIONPOINTS when="2009.11.05" comment="" value="100" type="+"/>
 		<DEVOTIONPOINTS when="23.09.2010" comment="" value="100" type="+"/>
 		<DEVOTIONPOINTS when="07.04.2011" comment="sogut wie alleine gegen eine Hydra" value="150" type="+"/>
-		<DEVOTIONPOINTS when="21.04.2011" comment="gegen eine Hydra" value="100" type="+"/>
+		<DEVOTIONPOINTS when="21.04.2011" comment="gegen eine Hydra" value="150" type="+"/>
 	</ns3:DEVOTION>
 </ns3:EDCHARACTER>

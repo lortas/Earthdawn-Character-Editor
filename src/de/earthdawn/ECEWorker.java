@@ -175,6 +175,7 @@ public class ECEWorker {
 		List<ARMORType> magicarmor = character.getMagicArmor();
 		// natural ARMOR
 		ARMORType naturalArmor = namegiver.getARMOR();
+		// TODO: naturalArmor muss per "call by value" übergeben werden
 		naturalArmor.setMysticarmor(berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
 		int mysticalarmor=naturalArmor.getMysticarmor();
 		int pysicalarmor=naturalArmor.getPhysicalarmor();

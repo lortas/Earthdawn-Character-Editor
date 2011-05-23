@@ -150,4 +150,14 @@
     <WOUND threshold="0"/>
     <TALENT name="Lightning Born"/>
   </NAMEGIVER>
+  <NAMEGIVER name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10">
+    <ATTRIBUTE name="DEX" value="28" />
+    <ATTRIBUTE name="STR" value="37" />
+    <ATTRIBUTE name="TOU" value="28" />
+    <ATTRIBUTE name="PER" value="34" />
+    <ATTRIBUTE name="WIL" value="40" />
+    <ATTRIBUTE name="CHA" value="31" />
+    <ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
+    <WOUND threshold="0"/>
+  </NAMEGIVER>
  </NAMEGIVERS>

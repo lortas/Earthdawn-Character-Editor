@@ -31,6 +31,42 @@
   <ENCUMBRANCE attribute="28" carrying="620"/>
   <ENCUMBRANCE attribute="29" carrying="680"/>
   <ENCUMBRANCE attribute="30" carrying="740"/>
+  <ENCUMBRANCE attribute="31" carrying="810"/>
+  <ENCUMBRANCE attribute="32" carrying="880"/>
+  <ENCUMBRANCE attribute="33" carrying="950"/>
+  <ENCUMBRANCE attribute="34" carrying="1030"/>
+  <ENCUMBRANCE attribute="35" carrying="1110"/>
+  <ENCUMBRANCE attribute="36" carrying="1190"/>
+  <ENCUMBRANCE attribute="37" carrying="1280"/>
+  <ENCUMBRANCE attribute="38" carrying="1370"/>
+  <ENCUMBRANCE attribute="39" carrying="1460"/>
+  <ENCUMBRANCE attribute="40" carrying="1560"/>
+  <ENCUMBRANCE attribute="41" carrying="1660"/>
+  <ENCUMBRANCE attribute="42" carrying="1760"/>
+  <ENCUMBRANCE attribute="43" carrying="1870"/>
+  <ENCUMBRANCE attribute="44" carrying="1980"/>
+  <ENCUMBRANCE attribute="45" carrying="2090"/>
+  <ENCUMBRANCE attribute="46" carrying="2210"/>
+  <ENCUMBRANCE attribute="47" carrying="2330"/>
+  <ENCUMBRANCE attribute="48" carrying="2450"/>
+  <ENCUMBRANCE attribute="49" carrying="2580"/>
+  <ENCUMBRANCE attribute="50" carrying="2710"/>
+  <ENCUMBRANCE attribute="51" carrying="2840"/>
+  <ENCUMBRANCE attribute="52" carrying="2980"/>
+  <ENCUMBRANCE attribute="53" carrying="3120"/>
+  <ENCUMBRANCE attribute="54" carrying="3260"/>
+  <ENCUMBRANCE attribute="55" carrying="3410"/>
+  <ENCUMBRANCE attribute="56" carrying="3560"/>
+  <ENCUMBRANCE attribute="57" carrying="3710"/>
+  <ENCUMBRANCE attribute="58" carrying="3870"/>
+  <ENCUMBRANCE attribute="59" carrying="4030"/>
+  <ENCUMBRANCE attribute="60" carrying="4190"/>
+  <ENCUMBRANCE attribute="61" carrying="4360"/>
+  <ENCUMBRANCE attribute="62" carrying="4530"/>
+  <ENCUMBRANCE attribute="63" carrying="4700"/>
+  <ENCUMBRANCE attribute="64" carrying="4880"/>
+  <ENCUMBRANCE attribute="65" carrying="5060"/>
+  <ENCUMBRANCE attribute="66" carrying="5240"/>
   <DEFENSERAITING attribute="0" defense="1" />
   <DEFENSERAITING attribute="1" defense="2" />
   <DEFENSERAITING attribute="2" defense="3" />
@@ -64,6 +100,8 @@
   <MYSTICARMOR attribute="38" armor="10" />
   <MYSTICARMOR attribute="41" armor="11" />
   <MYSTICARMOR attribute="44" armor="12" />
+  <MYSTICARMOR attribute="47" armor="13" />
+  <MYSTICARMOR attribute="50" armor="14" />
   <ATTRIBUTECOST modifier="-2" cost="-2" />
   <ATTRIBUTECOST modifier="-1" cost="-1" />
   <ATTRIBUTECOST modifier="0" cost="0" />
@@ -105,6 +143,13 @@
   <HEALTHRATING value="28" death="55" unconsciousness="48" wound="16" recovery="5" />
   <HEALTHRATING value="29" death="56" unconsciousness="49" wound="16" recovery="5" />
   <HEALTHRATING value="30" death="58" unconsciousness="51" wound="17" recovery="5" />
+  <HEALTHRATING value="31" death="59" unconsciousness="52" wound="17" recovery="5" />
+  <HEALTHRATING value="32" death="60" unconsciousness="53" wound="18" recovery="6" />
+  <HEALTHRATING value="33" death="62" unconsciousness="55" wound="18" recovery="6" />
+  <HEALTHRATING value="33" death="63" unconsciousness="56" wound="18" recovery="6" />
+  <HEALTHRATING value="34" death="64" unconsciousness="57" wound="19" recovery="6" />
+  <HEALTHRATING value="35" death="66" unconsciousness="59" wound="19" recovery="6" />
+  <HEALTHRATING value="36" death="67" unconsciousness="60" wound="20" recovery="6" />
   <STEPDICETABLE attribute="0" step="1" dice="d6-3" />
   <STEPDICETABLE attribute="1" step="2" dice="d6-2" />
   <STEPDICETABLE attribute="4" step="3" dice="d6-1" />
@@ -336,6 +381,10 @@
 	<ATTRIBUTELPCOST cost="800"/> 
 	<ATTRIBUTELPCOST cost="1300"/> 
 	<ATTRIBUTELPCOST cost="2100"/> 
+	<ATTRIBUTELPCOST cost="3400"/>
+	<ATTRIBUTELPCOST cost="5500"/>
+	<ATTRIBUTELPCOST cost="8900"/>
+	<ATTRIBUTELPCOST cost="14400"/>
 	<LEGENDARYSTATUS circle="0" reown="37" reputation="na"/>
 	<LEGENDARYSTATUS circle="1" reown="21" reputation="na"/>
 	<LEGENDARYSTATUS circle="2" reown="15" reputation="+1"/>
