@@ -31,6 +31,7 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
+import javax.swing.JMenu;
 
 public class EDThreadItems extends JPanel {
 	private JScrollPane scrollPane;
@@ -44,6 +45,10 @@ public class EDThreadItems extends JPanel {
 	private JMenuItem menuItemRemove;
 	private JMenuItem menuItemEdit;
 	private JMenuItem menuItemActivate;
+	private JMenu mnAddEffect;
+	private JMenuItem menuItem_1;
+	private JMenuItem menuItem_2;
+	private JMenuItem menuItem_3;
 	
 	public CharacterContainer getCharacter() {
 		return character;
@@ -88,7 +93,20 @@ public class EDThreadItems extends JPanel {
 				do_menuItemAdd_actionPerformed(arg0);
 			}
 		});
+	
 		popupMenuTree.add(menuItemAdd);
+		
+		mnAddEffect = new JMenu("Add effect");
+		popupMenuTree.add(mnAddEffect);
+		
+		menuItem_2 = new JMenuItem("New menu item");
+		mnAddEffect.add(menuItem_2);
+		
+		menuItem_1 = new JMenuItem("New menu item");
+		mnAddEffect.add(menuItem_1);
+		
+		menuItem_3 = new JMenuItem("New menu item");
+		mnAddEffect.add(menuItem_3);
 		
 		menuItemRemove = new JMenuItem("Remove");
 		popupMenuTree.add(menuItemRemove);
@@ -129,7 +147,7 @@ public class EDThreadItems extends JPanel {
         		itemNode.add(rankNode);
         		ARMORType a = rank.getARMOR();
         		if (a != null){
-        			effectNode = new DefaultMutableTreeNode(new ThreadEffectInfo(a));
+        			effectNode = new DefaultMutableTreeNode(new ThreadEffectArmor(a));
         			rankNode.add(effectNode);
         			
         		}
@@ -151,54 +169,7 @@ public class EDThreadItems extends JPanel {
 	}
 
 	
-    private class ThreadItemInfo {
-        public THREADITEMType threaditem;
-
-
-        public ThreadItemInfo(THREADITEMType threaditem) {
-        	this.threaditem = threaditem;
-        }
-
-        @Override
-		public String toString() {
-        	return threaditem.getName() + " - " + threaditem.getDescription() ;
-        }
-    }
-    
-    public class ThreadRankInfo {
-        public THREADRANKType threadrank;
-        public int rank; 
-
-        public ThreadRankInfo(int rank, THREADRANKType threadrank) {
-        	this.threadrank = threadrank;
-        	this.rank = rank;
-        }
-
-        @Override
-		public String toString() {
-            return "Rank " + String.valueOf(rank) + ": " + threadrank.getEffect();
-        }
-    }
-    
-    private class ThreadEffectInfo{
-    	public Object effect;
-    	
-    	
-    	public ThreadEffectInfo(Object effect) {
-			this.effect = effect;
-		}
-
-
-		@Override
-		public String toString() {
-	    	String temp = new String("Effect not implemented!");
-	    	if(effect.getClass() == ARMORType.class){
-	    		temp = "Armor (Physical:" + ((ARMORType)effect).getPhysicalarmor() + ", Mystic" + + ((ARMORType)effect).getMysticarmor() + ")";
-	    	}
-	    	
-	    	return temp;
-        }
-    }
+   
 
 
 	protected void do_tree_mouseReleased(MouseEvent arg0) {
@@ -243,8 +214,7 @@ public class EDThreadItems extends JPanel {
 	public class EDItemTreeCellEditor extends AbstractCellEditor  implements TreeCellEditor {
 		
 		DefaultMutableTreeNode node;
-		ThreadItemInfoPanel threaditeminfopanel;
-		ThreadRankInfoPanel threadrankinfopanel;
+
 		Object userObject;
 		
 		public EDItemTreeCellEditor() {
@@ -271,15 +241,7 @@ public class EDThreadItems extends JPanel {
 
 		@Override
 		public boolean stopCellEditing() {
-			if  (userObject instanceof ThreadItemInfo){
-				((ThreadItemInfo)node.getUserObject()).threaditem.setName(threaditeminfopanel.textFieldName.getText());
-				((ThreadItemInfo)node.getUserObject()).threaditem.setDescription(threaditeminfopanel.textFieldDescription.getText());
-			}
-			if  (userObject instanceof ThreadRankInfo){
-				((ThreadRankInfo)node.getUserObject()).threadrank.setEffect(threadrankinfopanel.textFieldEffect.getText());
-			}
-			
-			
+			((IntNode)node.getUserObject()).updateUserObject();
 			System.out.println("Stopped");
 			return true;
 		}
@@ -287,21 +249,8 @@ public class EDThreadItems extends JPanel {
 		@Override
 		public Component getTreeCellEditorComponent(final JTree tree, Object value, 
 				boolean selected, boolean expanded, boolean leaf, int row) {
-			
-			node = (DefaultMutableTreeNode)value;
-			if  (userObject instanceof ThreadItemInfo){
-				threaditeminfopanel = new ThreadItemInfoPanel((ThreadItemInfo)node.getUserObject());
-				threaditeminfopanel.setOpaque(false);
-				return threaditeminfopanel;
-			}
-			if  (userObject instanceof ThreadRankInfo){
-				threadrankinfopanel = new ThreadRankInfoPanel((ThreadRankInfo)node.getUserObject());
-				threadrankinfopanel.setOpaque(false);
-				return threadrankinfopanel;
-			}
-			
-			return null;
-			
+			node = (DefaultMutableTreeNode)value;			
+			return ((IntNode)userObject).getEditor();	
 		}
 		
 		
@@ -323,8 +272,10 @@ public class EDThreadItems extends JPanel {
 						if ((node != null) && (node instanceof DefaultMutableTreeNode)) {
 							DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) node;
 							userObject = treeNode.getUserObject();
-							returnValue = (userObject instanceof ThreadItemInfo) ||
-								(userObject instanceof ThreadRankInfo);
+							//returnValue = (userObject instanceof ThreadItemInfo) ||
+							//	(userObject instanceof ThreadRankInfo);
+							returnValue = (userObject instanceof IntNode);
+							
 						}
 					}
 				}
@@ -345,50 +296,228 @@ public class EDThreadItems extends JPanel {
 		}
 	}
 	
-	public class ThreadItemInfoPanel extends JPanel {
-		private JTextField textFieldName;
-		private JLabel lblName;
-		private JLabel lblDescription;
-		private JTextField textFieldDescription;
-		public ThreadItemInfoPanel(ThreadItemInfo tii) {
-			setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+//*****************************************************************************************
+// Utilclasses	
+//*****************************************************************************************
+	interface IntNode{
+		public JPanel editor = null;   
 
-			
-			lblName = new JLabel("Name");
-			add(lblName);
-			System.out.println("name: " + tii.threaditem.getName());
-			textFieldName = new JTextField(tii.threaditem.getName());
-			add(textFieldName);
-			
-			textFieldName.setColumns(10);
-			
-			lblDescription = new JLabel("Description");
-			add(lblDescription);
-			
-			textFieldDescription = new JTextField(tii.threaditem.getDescription());
-			add(textFieldDescription);
-			textFieldDescription.setColumns(30);
-			
-			
-		}
-
+	    public JPanel getEditor();
+	    public JPanel getRenderer();
+	    public Object getUserObject();
+	    public String toString();
+	    public void updateUserObject();
 	}
 	
-	public class ThreadRankInfoPanel extends JPanel {
-		private JLabel lbRank;
-		private JTextField textFieldEffect;
-		public ThreadRankInfoPanel(ThreadRankInfo tri) {
-			setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-			
-			lbRank = new JLabel("Rank" + tri.rank);
-			add(lbRank);
-			
-			textFieldEffect = new JTextField(tri.threadrank.getEffect());
-			add(textFieldEffect);
-			textFieldEffect.setColumns(50);
-		}
+	 private class ThreadItemInfo implements IntNode {
+	        public THREADITEMType threaditem;
+	        public JPanel editor = null; 
+			private JTextField textFieldName;
+			private JLabel lblName;
+			private JLabel lblDescription;
+			private JTextField textFieldDescription;
 
-	}
+	        public ThreadItemInfo(THREADITEMType threaditem) {
+	        	this.threaditem = threaditem;
+	        }
+
+	        @Override
+			public String toString() {
+	        	return threaditem.getName() + " - " + threaditem.getDescription() ;
+	        }
+
+			@Override
+			public JPanel getEditor() {
+				JPanel editor = new JPanel();
+				editor.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+
+				
+				lblName = new JLabel("Name");
+				editor.add(lblName);
+				
+				textFieldName = new JTextField(threaditem.getName());
+				editor.add(textFieldName);
+				
+				textFieldName.setColumns(10);
+				
+				lblDescription = new JLabel("Description");
+				editor.add(lblDescription);
+				
+				textFieldDescription = new JTextField(threaditem.getDescription());
+				editor.add(textFieldDescription);
+				textFieldDescription.setColumns(30);
+				editor.setOpaque(false);
+				return editor;
+			}
+
+			@Override
+			public JPanel getRenderer() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Object getUserObject() {
+				return threaditem;
+			}
+
+			@Override
+			public void updateUserObject() {
+				threaditem.setName(textFieldName.getText());
+				threaditem.setDescription(textFieldDescription.getText());
+			}
+	    }
+	    
+	    public class ThreadRankInfo implements IntNode {
+	        public THREADRANKType threadrank;
+	        public int rank; 
+	        public JPanel editor = null; 
+	        public JTextField textFieldEffect = null;
+
+	        public ThreadRankInfo(int rank, THREADRANKType threadrank) {
+	        	this.threadrank = threadrank;
+	        	this.rank = rank;
+	        }
+
+	        @Override
+			public String toString() {
+	            return "Rank " + String.valueOf(rank) + ": " + threadrank.getEffect();
+	        }
+
+			@Override
+			public JPanel getEditor() {
+				    editor = new JPanel(); 
+				    JLabel lbRank;
+				   
+			
+				    editor.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+					
+					lbRank = new JLabel("Rank" + rank);
+					editor.add(lbRank);
+					
+					textFieldEffect = new JTextField(threadrank.getEffect());
+					editor.add(textFieldEffect);
+					textFieldEffect.setColumns(50);
+					editor.setOpaque(false);
+					return editor;
+			}
+
+			@Override
+			public JPanel getRenderer() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Object getUserObject() {
+				return threadrank;
+			}
+
+			@Override
+			public void updateUserObject() {
+				threadrank.setEffect(textFieldEffect.getText());
+				
+			}
+	    }
+	    
+	    private class ThreadEffectInfo{
+	    	public Object effect;
+	    	
+	    	
+	    	public ThreadEffectInfo(Object effect) {
+				this.effect = effect;
+			}
+
+
+			@Override
+			public String toString() {
+		    	String temp = new String("Effect not implemented!");
+		    	if(effect.getClass() == ARMORType.class){
+		    		temp = "Armor (Physical:" + ((ARMORType)effect).getPhysicalarmor() + ", Mystic" + + ((ARMORType)effect).getMysticarmor() + ")";
+		    	}
+		    	
+		    	return temp;
+	        }
+	    }
+	    
+	    public class ThreadEffectArmor implements IntNode {
+			public ARMORType armoreffect;
+	        public JPanel editor = null; 
+	    	private JLabel lbPhysicArmor;
+	    	private JTextField textFieldPhysicArmor;
+	    	private JLabel lblMysticArmor;
+	    	private JTextField textFieldMysticArmor;
+	    	private JLabel lblPenalty;
+	    	private JTextField textFieldPenalty;
+
+	    	public ThreadEffectArmor(ARMORType armoreffect) {
+					super();
+					this.armoreffect = armoreffect;
+			}
+	    	
+			@Override
+			public JPanel getEditor() {
+				System.out.println("getEditor");
+				JPanel editor = new JPanel();
+				editor.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+				
+				lbPhysicArmor = new JLabel("Physical Armor");
+				editor.add(lbPhysicArmor);
+				
+				textFieldPhysicArmor = new JTextField();
+				
+				textFieldPhysicArmor.setDocument(new NumericDocument());
+				textFieldPhysicArmor.setText(String.valueOf((armoreffect.getPhysicalarmor())));
+				editor.add(textFieldPhysicArmor);
+				textFieldPhysicArmor.setColumns(10);
+				
+				lblMysticArmor = new JLabel("Mystic Armor");
+				editor.add(lblMysticArmor);
+				
+				textFieldMysticArmor = new JTextField();
+				textFieldMysticArmor.setText(String.valueOf((armoreffect.getMysticarmor())));
+				editor.add(textFieldMysticArmor);
+				textFieldMysticArmor.setColumns(10);
+				
+				lblPenalty = new JLabel("Penalty");
+				editor.add(lblPenalty);
+				
+				textFieldPenalty = new JTextField();
+				textFieldPenalty.setText(String.valueOf((armoreffect.getPenalty())));
+				editor.add(textFieldPenalty);
+				textFieldPenalty.setColumns(10);
+				
+				editor.setOpaque(false);
+				
+				return editor;
+			}
+
+			@Override
+			public JPanel getRenderer() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Object getUserObject() {
+				return armoreffect;
+			}
+
+			@Override
+			public void updateUserObject() {
+				armoreffect.setPhysicalarmor(new Integer(textFieldPhysicArmor.getText()));
+				armoreffect.setMysticarmor(new Integer(textFieldMysticArmor.getText()));
+				armoreffect.setPenalty(new Integer(textFieldPenalty.getText()));
+			}
+			
+			@Override
+			public String toString() {
+				return "Armor (Physical:" + armoreffect.getPhysicalarmor() + ", Mystic:" +  armoreffect.getMysticarmor() + ", Penalty:" +  armoreffect.getPenalty() + ")";
+			}
+	    	
+	    }
+	
+	
 
 	
 }
