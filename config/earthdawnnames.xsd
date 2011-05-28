@@ -46,6 +46,7 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="KARMARUTUAL" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARTISAN" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="QUESTORTALENT" type="NAME_LANG_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="THREADWEAVING" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLWEAVING" type="NAME_SPELLWEAVING_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGWEAPONS" type="NAME_STARTINGWEAPONS_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGITEMS" type="NAME_STARTINGITEMS_type"/>

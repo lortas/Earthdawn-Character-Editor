@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -41,6 +42,7 @@ import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.TALENTType;
 import de.earthdawn.event.CharChangeEventListener;
 
 public class EDMainWindow {
@@ -71,9 +73,7 @@ public class EDMainWindow {
 	private EDSkills panelEDSkills;
 	private JEditorPane paneStatus;
 	private CharacteristicStatus characteristicStatus;
-	
-	
-	
+
 	/**
 	 * Launch the application.
 	 */
@@ -97,14 +97,14 @@ public class EDMainWindow {
 		ec = new EDCHARACTER();
 		character = new CharacterContainer(ec);
 		ECEWorker worker = new ECEWorker();
-	    worker.verarbeiteCharakter(character.getEDCHARACTER());
-	    initialize();
+		worker.verarbeiteCharakter(character.getEDCHARACTER());
+		initialize();
 		this.character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 				ECEWorker worker = new ECEWorker();
 			    worker.verarbeiteCharakter(character.getEDCHARACTER());
-				addTalentsTabs();
+				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}
 		});		
@@ -156,7 +156,6 @@ public class EDMainWindow {
 			}
 		});
 		mnFile.add(mntmSaveAs);
-		
 
 		JMenu mntmExport = new JMenu(NLS.getString("EDMainWindow.mntmExport.text")); //$NON-NLS-1$
 		menuBar.add(mntmExport);
@@ -270,7 +269,6 @@ public class EDMainWindow {
 		panelERGeneral.setMinimumSize(new Dimension(4, 220));
 		panelEDAttributes = new EDAttributes();
 		panelEDDisciplines = new EDDisciplines();
-		panelEDSpells	= new EDSpells();
 		panelEDSkills = new EDSkills();
 		panelEDExperience = new EDExperience();
 		panelEDKarma = new EDKarma();
@@ -280,7 +278,7 @@ public class EDMainWindow {
 		panelEDWeapons = new EDWeapons();
 		panelEDArmor = new EDArmor();
 		panelEDThreadItems = new EDThreadItems();
-		
+
 		paneStatus = new JEditorPane();
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
@@ -291,7 +289,6 @@ public class EDMainWindow {
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
-		tabbedPane.addTab("Spells", null, panelEDSpells, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
@@ -318,17 +315,26 @@ public class EDMainWindow {
 		EDDicing dicingWindow = new EDDicing();
 	}
 
-	private void addTalentsTabs(){
+	private void addTalentsAndSpellsTabs(){
 		List<String> allTalentTabs = new ArrayList<String>();
-		for(Component co  : tabbedPane.getComponents() )
-		{
-			if(co.getClass() == EDTalents.class){
+		List<String> allSpellTabs = new ArrayList<String>();
+		HashMap<String, List<TALENTType>> threadWeavingTalents = character.getThreadWeavingTalents();
+		HashMap<String, DISCIPLINEType> allDisciplinesByName = character.getAllDisciplinesByName();
+		for(Component co : tabbedPane.getComponents() ) {
+			if(co.getClass() == EDTalents.class) {
 				// löschen wenn die Disciplin nicht mehr vorhanden ist
-				if(!character.getAllDisciplinesByName().containsKey(((EDTalents)co).getDisciplin())){
+				if(!allDisciplinesByName.containsKey(((EDTalents)co).getDisciplin())){
 					tabbedPane.remove(co);
-				}
-				else{
+				} else{
 					allTalentTabs.add(((EDTalents)co).getDisciplin());
+				}
+			} else if(co.getClass() == EDSpells.class) {
+				String diciplineName = ((EDSpells)co).getDisciplin();
+				List<TALENTType> list = threadWeavingTalents.get(diciplineName);
+				if( (list==null) || list.isEmpty() || (!allDisciplinesByName.containsKey(diciplineName)) ) {
+					tabbedPane.remove(co);
+				} else {
+					allSpellTabs.add(diciplineName);
 				}
 			}
 		}
@@ -343,6 +349,19 @@ public class EDMainWindow {
 				tabbedPane.insertTab("Talents (" + diciplineName + ")", null, panelEDTalents, null, order);
 			}
 			order++;
+		}
+		for(DISCIPLINEType discipline : character.getDisciplines()){
+			String diciplineName = discipline.getName();
+			List<TALENTType> list = threadWeavingTalents.get(diciplineName);
+			if( (list!=null) && (!list.isEmpty()) ) {
+				// wenn tab nicht beteits vorhanden -> hinzufügen
+				if(!allSpellTabs.contains(diciplineName)){
+					panelEDSpells = new EDSpells(diciplineName);
+					panelEDSpells.setCharacter(character);
+					tabbedPane.insertTab("Spells (" + diciplineName + ")", null, panelEDSpells, null, order);
+				}
+				order++;
+			}
 		}
 	}
 
@@ -479,11 +498,11 @@ public class EDMainWindow {
 				public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 					ECEWorker worker = new ECEWorker();
 					worker.verarbeiteCharakter(character.getEDCHARACTER());
-					addTalentsTabs();
+					addTalentsAndSpellsTabs();
 					refreshTabs();
 				}
 			});				
-			addTalentsTabs();
+			addTalentsAndSpellsTabs();
 			characteristicStatus.setCharacter(character);
 			refreshTabs();
 		}
@@ -594,7 +613,7 @@ public class EDMainWindow {
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			e.printStackTrace();
-		} catch(Exception e){
+		} catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			e.printStackTrace();
 		}
@@ -606,34 +625,31 @@ public class EDMainWindow {
 		// where the last dot is. There may be more than one.
 		int dotPlace = filename.lastIndexOf ( '.' );
 
-		if ( dotPlace >= 0 )
-		   {
-		   // possibly empty
-		   choppedFilename = filename.substring( 0, dotPlace );
-		   }
-		else
-		   {
-		   // was no extension
-		   choppedFilename = filename;
-		   }	
+		if ( dotPlace >= 0 ) {
+			// possibly empty
+			choppedFilename = filename.substring( 0, dotPlace );
+		} else {
+			// was no extension
+			choppedFilename = filename;
+		}
 		return choppedFilename;
 	}
-	
+
 	protected void do_mntmNew_actionPerformed(ActionEvent arg0) {
 		ec = new EDCHARACTER();
 		character = new CharacterContainer(ec);
 		ECEWorker worker = new ECEWorker();
-	    worker.verarbeiteCharakter(character.getEDCHARACTER());
+		worker.verarbeiteCharakter(character.getEDCHARACTER());
 		this.character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 				ECEWorker worker = new ECEWorker();
-			    worker.verarbeiteCharakter(character.getEDCHARACTER());
-				addTalentsTabs();
+				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}
-		});	
-		addTalentsTabs();
+		});
+		addTalentsAndSpellsTabs();
 		characteristicStatus.setCharacter(character);
 		refreshTabs();
 	}
