@@ -196,10 +196,11 @@ class SpellsTableModel extends AbstractTableModel {
 				}
 			}
 		}
+		if( spelllist.isEmpty() ) {
+			throw new IndexOutOfBoundsException("No Spells for the thread waving talent(s): "+threadweavingTypes.toString());
+		}
 	}
 
-    
-  
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		fireTableStructureChanged();
