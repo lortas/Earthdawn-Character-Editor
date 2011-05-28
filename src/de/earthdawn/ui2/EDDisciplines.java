@@ -123,12 +123,8 @@ class DisciplinesTableModel extends AbstractTableModel {
 	public DisciplinesTableModel(CharacterContainer character) {
 		super();
 		this.character = character;
-
 	}
 
-	
-    
-  
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		fireTableStructureChanged();

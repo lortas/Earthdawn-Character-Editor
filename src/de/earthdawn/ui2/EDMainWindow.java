@@ -329,6 +329,7 @@ public class EDMainWindow {
 					allTalentTabs.add(((EDTalents)co).getDisciplin());
 				}
 			} else if(co.getClass() == EDSpells.class) {
+				((EDSpells)co).refresh();
 				String diciplineName = ((EDSpells)co).getDisciplin();
 				List<TALENTType> list = threadWeavingTalents.get(diciplineName);
 				if( (list==null) || list.isEmpty() || (!allDisciplinesByName.containsKey(diciplineName)) ) {
@@ -356,8 +357,7 @@ public class EDMainWindow {
 			if( (list!=null) && (!list.isEmpty()) ) {
 				// wenn tab nicht beteits vorhanden -> hinzufügen
 				if(!allSpellTabs.contains(diciplineName)){
-					panelEDSpells = new EDSpells(diciplineName);
-					panelEDSpells.setCharacter(character);
+					panelEDSpells = new EDSpells(character,diciplineName);
 					tabbedPane.insertTab("Spells (" + diciplineName + ")", null, panelEDSpells, null, order);
 				}
 				order++;

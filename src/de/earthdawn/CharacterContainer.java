@@ -874,22 +874,20 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		
 	}
-	
+
 	public boolean hasSpellLearned(String discipline, SPELLType spelltype){
 		List<SPELLSType> spellslist = getAllSpells();
-		boolean blnFound = false;
 		for(SPELLSType spells : spellslist){
 			if(spells.getDiscipline().equals(discipline)){
 				for(SPELLType spell : spells.getSPELL()){
 					if (spell.getName().equals(spelltype.getName())){
-						blnFound = true;
+						return true;
 					}
 				}
 				break;
 			}
 		}
-		
-		return blnFound;
+		return false;
 	}
 
 	public List<ITEMType> getItems() {
