@@ -355,12 +355,21 @@ public class EDMainWindow {
 			String diciplineName = discipline.getName();
 			List<TALENTType> list = threadWeavingTalents.get(diciplineName);
 			if( (list!=null) && (!list.isEmpty()) ) {
-				// wenn tab nicht beteits vorhanden -> hinzufügen
-				if(!allSpellTabs.contains(diciplineName)){
-					panelEDSpells = new EDSpells(character,diciplineName);
-					tabbedPane.insertTab("Spells (" + diciplineName + ")", null, panelEDSpells, null, order);
+				try {
+					// wenn tab nicht beteits vorhanden -> hinzufügen
+					if(!allSpellTabs.contains(diciplineName)){
+						panelEDSpells = new EDSpells(character,diciplineName);
+						tabbedPane.insertTab("Spells (" + diciplineName + ")", null, panelEDSpells, null, order);
+					}
+					order++;
+				} catch(IndexOutOfBoundsException e) {
+					String message = e.getLocalizedMessage();
+					if( message.startsWith("No Spells for the thread waving talent(s): ")) System.out.println(message);
+					else {
+						System.err.println(message);
+						e.printStackTrace();
+					}
 				}
-				order++;
 			}
 		}
 	}
