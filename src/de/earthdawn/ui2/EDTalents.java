@@ -56,7 +56,7 @@ public class EDTalents extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public EDTalents(String disciplin ) {
+	public EDTalents(String disciplin) {
 		this.disciplin  = disciplin;
 		setLayout(new BorderLayout(0, 0));
 

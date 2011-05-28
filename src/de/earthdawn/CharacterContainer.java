@@ -31,14 +31,16 @@ public class CharacterContainer extends CharChangeRefresh {
 	public final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
 	public final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
+	public final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 
 	public CharacterContainer( EDCHARACTER c) {
 		character = c;
 	}
-	
+
 	public void setEDCHARACTER(EDCHARACTER c) {
 		character = c;
 	}
+
 	public EDCHARACTER getEDCHARACTER() {
 		return character;
 	}
@@ -458,8 +460,19 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		// Not found
 		return null;
-	}	
-	
+	}
+
+	public HashMap<String,List<TALENTType>> getThreadWeavingTalents() {
+		HashMap<String,List<TALENTType>> result = new HashMap<String,List<TALENTType>>();
+		for (TALENTSType talents : getAllTalents() ) {
+			List<TALENTType> threadweaving = new ArrayList<TALENTType>();
+			for(TALENTType talent : talents.getDISZIPLINETALENT() ) if( threadWeavingName.equals(talent.getName()) ) threadweaving.add(talent);
+			for(TALENTType talent : talents.getOPTIONALTALENT() ) if( threadWeavingName.equals(talent.getName()) ) threadweaving.add(talent);
+			result.put(talents.getDiscipline(),threadweaving);
+		}
+		return result;
+	}
+
 	public List<SKILLType> getSkills() {
 		return character.getSKILL();
 	}

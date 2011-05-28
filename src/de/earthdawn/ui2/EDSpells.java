@@ -31,6 +31,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 
 public class EDSpells extends JPanel {
+	private String disciplin;
 	private CharacterContainer character;
 	private JScrollPane scrollPane;
 	private JToolBar toolBar;
@@ -38,8 +39,7 @@ public class EDSpells extends JPanel {
 	private JLabel lblFilter;
 	private JComboBox comboBox;
 	TableRowSorter<SpellsTableModel> sorter;
-	
-	
+
 	public CharacterContainer getCharacter() {
 		return character;
 	}
@@ -47,15 +47,17 @@ public class EDSpells extends JPanel {
 		this.character = character;
 		((SpellsTableModel)table.getModel()).setCharacter(character);
 	}
+
 	/**
 	 * Create the panel.
 	 */
-	public EDSpells() {
+	public EDSpells(String disciplin) {
+		this.disciplin  = disciplin;
 		setLayout(new BorderLayout(0, 0));
-		
+
 		scrollPane = new JScrollPane();
 		add(scrollPane);
-		
+
 		table = new JTable();
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new SpellsTableModel(character));
@@ -64,47 +66,43 @@ public class EDSpells extends JPanel {
 		sorter = new TableRowSorter<SpellsTableModel>((SpellsTableModel) table.getModel());
 		table.setRowSorter(sorter);
 
-		List <RowSorter.SortKey> sortKeys 
-	    	= new ArrayList<RowSorter.SortKey>();
+		List <RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>();
 		sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
 		sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
 		sorter.setSortKeys(sortKeys); 
 
-
-		
 		toolBar = new JToolBar();
 		add(toolBar, BorderLayout.NORTH);
-		
+
 		lblFilter = new JLabel("Filter     ");
 		toolBar.add(lblFilter);
-		
+
 		comboBox = new JComboBox();
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				do_comboBox_itemStateChanged(arg0);
 			}
 		});
-		
-		
+
 		Set<String> disciplineset = ApplicationProperties.create().getAllDisziplinNames();
 		ArrayList<String> arrayList =  new ArrayList<String>();
-		
-		for ( String dis : disciplineset){
-			arrayList.add(dis);
-		}
+
+		for ( String dis : disciplineset) arrayList.add(dis);
 		arrayList.add(0, "All");
-		String[] disciplinearray =  (String[]) arrayList.toArray(new String[arrayList.size()]);
-		
+		String[] disciplinearray = (String[]) arrayList.toArray(new String[arrayList.size()]);
+
 		comboBox.setModel(new DefaultComboBoxModel(disciplinearray));
 		toolBar.add(comboBox);
-
-		
-
-
-		
-		
 	}
-	
+
+	public String getDisciplin() {
+		return disciplin;
+	}
+
+	public void setDisciplin(String disciplin) {
+		this.disciplin = disciplin;
+	}
+
 	private void newFilter(String filter) {
 		System.out.println("Filter: " + filter);
 		RowFilter<SpellsTableModel, Object> rf = null;

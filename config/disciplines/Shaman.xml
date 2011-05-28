@@ -75,12 +75,12 @@
 		<TALENTABILITY/>
 		<SPELL type="shamane" name="Air Blast"/>
 		<SPELL type="shamane" name="Blizzard Sphere"/>
-		<SPELL type="shamane" name="Bouyancy"/>
+		<SPELL type="shamane" name="Buoyancy"/>
 		<SPELL type="shamane" name="Circle of Well Being"/>
 		<SPELL type="shamane" name="Conceal Tracks"/>
 		<SPELL type="shamane" name="Dust Devil"/>
 		<SPELL type="shamane" name="Falcon's Cloak"/>
-		<SPELL type="shamane" name="Fatal Food "/>
+		<SPELL type="shamane" name="Fatal Food"/>
 		<SPELL type="shamane" name="Friend or Foe"/>
 		<SPELL type="shamane" name="Great Sticky Vines"/>
 		<SPELL type="shamane" name="Hair Frenzy"/>
@@ -90,7 +90,7 @@
 		<SPELL type="shamane" name="Lighten Load"/>
 		<SPELL type="shamane" name="Relax"/>
 		<SPELL type="shamane" name="Root Trap"/>
-		<SPELL type="shamane" name="Thorny Reteat"/>
+		<SPELL type="shamane" name="Thorny Retreat"/>
 		<SPELL type="shamane" name="Uneven Ground"/>
 		<KARMA spend="Willpower-only Test"/>
 	</CIRCLE>
@@ -138,8 +138,8 @@
 		<SPELL type="shamane" name="Death Rain"/>
 		<SPELL type="shamane" name="Dream Sight"/>
 		<SPELL type="shamane" name="Earth Q'wril"/>
-		<SPELL type="shamane" name="Lightning  Cloud"/>
-		<SPELL type="shamane" name="Rebel Limp"/>
+		<SPELL type="shamane" name="Lightning Cloud"/>
+		<SPELL type="shamane" name="Rebel Limb"/>
 		<SPELL type="shamane" name="Steal Strength"/>
 		<SPELL type="shamane" name="Walk Through"/>
 		<SPELL type="shamane" name="Whirlwind"/>
@@ -183,7 +183,7 @@
 		<SPELL type="shamane" name="Death Vow"/>
 		<SPELL type="shamane" name="Eclipse"/>
 		<SPELL type="shamane" name="Eternal Day"/>
-		<SPELL type="shamane" name="Journey of Life"/>
+		<SPELL type="shamane" name="Journey to Life"/>
 		<SPELL type="shamane" name="Onion Blood"/>
 		<SPELL type="shamane" name="Weather Change"/>
 		<DEFENSE kind="spell"/>
@@ -222,7 +222,7 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Netherwalk"/>
 		<TALENTABILITY/>
-		<SPELL type="shamane" name="Call Forth The Maelstrom"/>
+		<SPELL type="shamane" name="Call Forth the Maelstrom"/>
 		<SPELL type="shamane" name="Purify Forest"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>

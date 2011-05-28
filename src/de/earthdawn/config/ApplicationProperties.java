@@ -129,6 +129,8 @@ public class ApplicationProperties {
 		return KNACKS;
 	}
 
+	// Liefert die Definition aller verfügbarer Zauber zurück.
+	// Unabhängig von der Diszipin oder dem Fadenweben-Talent
 	public HashMap<String,SPELLDEFType> getSpells() {
 		HashMap<String,SPELLDEFType> spellmap = new HashMap<String,SPELLDEFType>();
 		for( SPELLDEFType spell : SPELLS.getSPELL() ) {
@@ -229,6 +231,14 @@ public class ApplicationProperties {
 		}
 		// Not found
 		return null;
+	}
+
+	public String getThreadWeavingName() {
+		for( NAMELANGType name : NAMES.getTHREADWEAVING() ) {
+			if( name.getLang().equals(LANGUAGE) ) return name.getName();
+		}
+		// Not found
+		return "";
 	}
 
 	public List<ITEMType> getStartingItems() {

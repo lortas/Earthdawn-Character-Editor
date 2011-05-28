@@ -26,6 +26,8 @@
 	<ARTISAN name="Artisan" lang="en"/>
 	<QUESTORTALENT name="Questor" lang="en"/>
 	<QUESTORTALENT name="Questor" lang="de"/>
+	<THREADWEAVING name="Thread Weaving" lang="en"/>
+	<THREADWEAVING name="Fadenweben" lang="de"/>
 	<SPELLWEAVING lang="en">
 		<SPELLKIND type="elemental" weaving="Elementalism"/>
 		<SPELLKIND type="illusion" weaving="Illusionism"/>
