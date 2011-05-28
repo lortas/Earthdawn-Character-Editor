@@ -26,6 +26,7 @@ import de.earthdawn.data.DISCIPLINESPELLType;
 import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
+import de.earthdawn.data.TALENTType;
 
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
@@ -46,21 +47,29 @@ public class EDSpells extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((SpellsTableModel)table.getModel()).setCharacter(character);
+		refresh();
+	}
+
+	public void refresh() {
+		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
+		((SpellsTableModel)table.getModel()).generateLists(threadweavings);
 	}
 
 	/**
 	 * Create the panel.
 	 */
-	public EDSpells(String disciplin) {
+	public EDSpells(CharacterContainer character,String disciplin) {
+		this.character = character;
 		this.disciplin  = disciplin;
 		setLayout(new BorderLayout(0, 0));
 
 		scrollPane = new JScrollPane();
 		add(scrollPane);
 
+		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
 		table = new JTable();
 		InputMapUtil.setupInputMap(table);
-		table.setModel(new SpellsTableModel(character));
+		table.setModel(new SpellsTableModel(character,disciplin,threadweavings));
 		scrollPane.setViewportView(table);
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		sorter = new TableRowSorter<SpellsTableModel>((SpellsTableModel) table.getModel());
@@ -106,27 +115,21 @@ public class EDSpells extends JPanel {
 	private void newFilter(String filter) {
 		System.out.println("Filter: " + filter);
 		RowFilter<SpellsTableModel, Object> rf = null;
-	    //If current expression doesn't parse, don't update.
-	    try {
-	        rf = RowFilter.regexFilter( filter);
-	    } catch (java.util.regex.PatternSyntaxException e) {
-	    	  return;
-	    }
-	    sorter.setRowFilter(rf);
+		//If current expression doesn't parse, don't update.
+		try {
+			rf = RowFilter.regexFilter( filter);
+		} catch (java.util.regex.PatternSyntaxException e) {
+			return;
+		}
+		sorter.setRowFilter(rf);
 	}
-
 
 	protected void do_comboBox_itemStateChanged(ItemEvent arg0) {
 		String item = (String) arg0.getItem();
-		if(item.equals("All")){
-			newFilter("");
-		}
-		else{
-			newFilter(item);
-		}
+		if(item.equals("All")) newFilter("");
+		else newFilter(item);
 	}
 }
-
 
 
 class SpellsTableModel extends AbstractTableModel {
@@ -136,51 +139,60 @@ class SpellsTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-    private String[] columnNames = {"Learned",  "Circle", "Discipline", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
+	private String discipline;
+	public final ApplicationProperties PROPERTIES = ApplicationProperties.create();
+	private String[] columnNames = {"Learned",  "Circle", "Type", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
 
-    List<SPELLType> spelllist;
-    List<String> disciplinelist;
-    
-    
+	List<SPELLType> spelllist;
 
-	public SpellsTableModel(CharacterContainer character) {
+	public SpellsTableModel(CharacterContainer character, String discipline, List<TALENTType> threadweavings) {
 		super();
 		this.character = character;
-		generateLists();
+		this.discipline = discipline;
+		generateLists(threadweavings);
 	}
-	
-	public void generateLists(){
+
+	public void generateLists(List<TALENTType> threadweavings){
 		spelllist = new ArrayList<SPELLType>();
-		disciplinelist = new ArrayList<String>();
-		
-		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = ApplicationProperties.create().getSpellsByDiscipline();
-		HashMap<String, SPELLDEFType> spells = ApplicationProperties.create().getSpells();
+
+		List<String> threadweavingTypes = new ArrayList<String>();
+		for(TALENTType threadweaving : threadweavings ) threadweavingTypes.add(threadweaving.getLimitation());
+
+		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = PROPERTIES.getSpellsByDiscipline();
+		HashMap<String, SPELLDEFType> spells = PROPERTIES.getSpells();
+		HashMap<SpellkindType, String> spellKindMap = PROPERTIES.getSpellKindMap();
+		int maxCircle=character.getCircleOf(discipline);
 		for( String discipline : spellsByDiscipline.keySet() ) {
 			int circlenr = 0;
 			for( List<DISCIPLINESPELLType> disciplineSpells : spellsByDiscipline.get(discipline)) {
 				circlenr++;
+				if(circlenr>maxCircle) break;
 				for( DISCIPLINESPELLType disciplineSpell : disciplineSpells ) {
+					String spellKind = spellKindMap.get(disciplineSpell.getType());
+					// Wenn der SpruchType nicht bekannt ist, dann Überspringe das Einfügen
+					if( spellKind == null ) continue;
+					// Wenn der SpruchType nicht zu einem der FadenwebenTalente passt, dann Überspringe das Einfügen
+					if( !threadweavingTypes.contains(spellKind)) continue;
 					SPELLDEFType spelldef = spells.get(disciplineSpell.getName());
-					if(spelldef != null) {
-						SPELLType spell = new SPELLType();
-						spell.setCastingdifficulty(spelldef.getCastingdifficulty());
-						spell.setCircle(circlenr);
-						spell.setDuration(spelldef.getDuration());
-						spell.setEffect(spelldef.getEffect());
-						spell.setEffectarea(spelldef.getEffectarea());
-						spell.setName(spelldef.getName());
-						spell.setRange(spelldef.getRange());
-						spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
-						spell.setThreads(spelldef.getThreads());
-						spell.setType(disciplineSpell.getType());
-						spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
-						
-						spelllist.add(spell);
-						disciplinelist.add(discipline);
-					}
-					else{
+					if( spelldef == null ) {
+						// Wenn es zu dem Zauberspruch keine Definition gibt, dann Überspringe das Einfügen
 						System.err.println("Spell " + disciplineSpell.getName() + "(" + discipline +") not found!" );
+						continue;
 					}
+					SPELLType spell = new SPELLType();
+					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+					spell.setCircle(circlenr);
+					spell.setDuration(spelldef.getDuration());
+					spell.setEffect(spelldef.getEffect());
+					spell.setEffectarea(spelldef.getEffectarea());
+					spell.setName(spelldef.getName());
+					spell.setRange(spelldef.getRange());
+					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+					spell.setThreads(spelldef.getThreads());
+					spell.setType(disciplineSpell.getType());
+					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+
+					spelllist.add(spell);
 				}
 			}
 		}
@@ -209,28 +221,25 @@ class SpellsTableModel extends AbstractTableModel {
         return columnNames[col];
     }
 
-    public Object getValueAt(int row, int col) {
-    	switch (col) {
-        	case 0: if(character != null){ 
-        	        	return character.hasSpellLearned(disciplinelist.get(row), spelllist.get(row) );
-        			}
-        			else{
-        				return false;
-        			}
-        	case 1: return spelllist.get(row).getCircle();
-        	case 2:	return disciplinelist.get(row);
-        	case 3: return spelllist.get(row).getName();
-        	case 4: return spelllist.get(row).getCastingdifficulty();
-        	case 5: return spelllist.get(row).getThreads();
-        	case 6: return spelllist.get(row).getWeavingdifficulty();
-        	case 7: return spelllist.get(row).getReattuningdifficulty();
-        	case 8: return spelllist.get(row).getEffect();
-        	case 9: return spelllist.get(row).getEffectarea();
-        	case 10: return spelllist.get(row).getRange();
-        	case 11: return spelllist.get(row).getDuration();
-        	default : return new String("Error not defined");
-    	}
-    }
+	public Object getValueAt(int row, int col) {
+		switch (col) {
+			case 0:
+				if(character == null) return false;
+				else return character.hasSpellLearned(discipline, spelllist.get(row) );
+			case 1: return spelllist.get(row).getCircle();
+			case 2: return spelllist.get(row).getType().value();
+			case 3: return spelllist.get(row).getName();
+			case 4: return spelllist.get(row).getCastingdifficulty();
+			case 5: return spelllist.get(row).getThreads();
+			case 6: return spelllist.get(row).getWeavingdifficulty();
+			case 7: return spelllist.get(row).getReattuningdifficulty();
+			case 8: return spelllist.get(row).getEffect();
+			case 9: return spelllist.get(row).getEffectarea();
+			case 10: return spelllist.get(row).getRange();
+			case 11: return spelllist.get(row).getDuration();
+			default : return new String("Error not defined");
+		}
+	}
 
     /*
      * JTable uses this method to determine the default renderer/
@@ -257,19 +266,14 @@ class SpellsTableModel extends AbstractTableModel {
      * Don't need to implement this method unless your table's
      * data can change.
      */
-    public void setValueAt(Object value, int row, int col) {   
-    	if(character != null){
-	    	if (character.hasSpellLearned(disciplinelist.get(row), spelllist.get(row) )){
-	    		character.removeSpell(disciplinelist.get(row), spelllist.get(row));
-	    	}
-	    	else{
-	    		character.addSpell(disciplinelist.get(row), spelllist.get(row));
-	    	}
-    	}
-    		
-    	character.refesh();
-    	
-        fireTableCellUpdated(row, col);
-    }
-
+	public void setValueAt(Object value, int row, int col) {
+		if( character == null ) return;
+		if( character.hasSpellLearned(discipline, spelllist.get(row)) ) {
+			character.removeSpell(discipline, spelllist.get(row));
+		} else {
+			character.addSpell(discipline, spelllist.get(row));
+		}
+		character.refesh();
+		fireTableCellUpdated(row, col);
+	}
 }
