@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NAME_SPELLKIND_type complex type.
+ * <p>Java class for USEDSTARTRANKS_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="NAME_SPELLKIND_type">
+ * &lt;complexType name="USEDSTARTRANKS_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="weaving" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/datatypes}spellkind_type" />
+ *       &lt;attribute name="talents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="skills" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -33,60 +33,68 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAME_SPELLKIND_type", namespace = "http://earthdawn.com/names")
-public class NAMESPELLKINDType {
+@XmlType(name = "USEDSTARTRANKS_type")
+public class USEDSTARTRANKSType {
 
-    @XmlAttribute(required = true)
-    protected String weaving;
-    @XmlAttribute(required = true)
-    protected SpellkindType type;
+    @XmlAttribute
+    protected Integer talents;
+    @XmlAttribute
+    protected Integer skills;
 
     /**
-     * Gets the value of the weaving property.
+     * Gets the value of the talents property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public String getWeaving() {
-        return weaving;
+    public int getTalents() {
+        if (talents == null) {
+            return  0;
+        } else {
+            return talents;
+        }
     }
 
     /**
-     * Sets the value of the weaving property.
+     * Sets the value of the talents property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public void setWeaving(String value) {
-        this.weaving = value;
+    public void setTalents(Integer value) {
+        this.talents = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the value of the skills property.
      * 
      * @return
      *     possible object is
-     *     {@link SpellkindType }
+     *     {@link Integer }
      *     
      */
-    public SpellkindType getType() {
-        return type;
+    public int getSkills() {
+        if (skills == null) {
+            return  0;
+        } else {
+            return skills;
+        }
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the value of the skills property.
      * 
      * @param value
      *     allowed object is
-     *     {@link SpellkindType }
+     *     {@link Integer }
      *     
      */
-    public void setType(SpellkindType value) {
-        this.type = value;
+    public void setSkills(Integer value) {
+        this.skills = value;
     }
 
 }

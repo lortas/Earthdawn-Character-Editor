@@ -531,4 +531,8 @@
 		</xs:annotation>
 		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
 	</xs:complexType>
+	<xs:complexType name="USEDSTARTRANKS_type">
+		<xs:attribute name="talents" type="unsigned_int" default="0"/>
+		<xs:attribute name="skills" type="unsigned_int" default="0"/>
+	</xs:complexType>
 </xs:schema>

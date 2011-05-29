@@ -39,6 +39,7 @@
 	</xs:complexType>
 	<xs:complexType name="CALCULATEDLEGENDPOINTS_type">
 		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="USEDSTARTRANKS" type="edt:USEDSTARTRANKS_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="COMMONADJUSTMENT" type="CALCULATEDLEGENDPOINTADJUSTMENT_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="NEWDISCIPLINETALENTADJUSTMENT" type="NEWDISCIPLINETALENTADJUSTMENT_type"/>
 		</xs:sequence>

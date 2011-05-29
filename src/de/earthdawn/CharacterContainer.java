@@ -32,6 +32,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
 	public final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public final String threadWeavingName = PROPERTIES.getThreadWeavingName();
+	public final USEDSTARTRANKSType OptionalRule_FreeStartRanks = PROPERTIES.getOptionalRules().getSTARTRANKS();
 
 	public CharacterContainer( EDCHARACTER c) {
 		character = c;
@@ -161,6 +162,13 @@ public class CharacterContainer extends CharChangeRefresh {
 		calculatedLP.setOptionaltalents(optionaltalents);
 		calculatedLP.setSkills(skills);
 		calculatedLP.setSpells(spells);
+		USEDSTARTRANKSType startranks = calculatedLP.getUSEDSTARTRANKS();
+		if( startranks==null ) {
+			startranks = new USEDSTARTRANKSType();
+			calculatedLP.setUSEDSTARTRANKS(startranks);
+		}
+		startranks.setSkills(-OptionalRule_FreeStartRanks.getSkills());
+		startranks.setTalents(-OptionalRule_FreeStartRanks.getTalents());
 		return calculatedLP;
 	}
 

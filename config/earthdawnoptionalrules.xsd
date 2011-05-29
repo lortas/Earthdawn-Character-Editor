@@ -26,6 +26,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="1" maxOccurs="1" name="ATTRIBUTE" type="OPTIONALRULES_ATTRIBUTE"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="STARTRANKS" type="edt:USEDSTARTRANKS_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="ATTRIBUTEBASEDMOVEMENT" type="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="SPELLLEGENDPOINTCOST" type="OPTIONALRULE_type"/>
