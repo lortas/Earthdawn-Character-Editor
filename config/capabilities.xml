@@ -365,7 +365,7 @@
 	<TALENT name="Storm Shield" attribute="WIL" action="standard" karma="no" strain="2"/>
 	<TALENT name="Summon" attribute="PER" action="standard" karma="yes" strain="0" bookref="PG p.82"/>
 	<TALENT name="Summoning Circle" attribute="WIL" action="sustained" karma="yes" strain="0"/>
-	<TALENT name="Supress Influence" attribute="WIL" action="standard" karma="yes" strain="0" bookref="NG p.222"/>
+	<TALENT name="Suppress Influence" attribute="WIL" action="standard" karma="yes" strain="0" bookref="NG p.222"/>
 	<TALENT name="Sure Mount" attribute="STR" action="free" karma="no" strain="0" bookref="PG p.82"/>
 	<TALENT name="Surprise Strike" attribute="STR" action="free" karma="no" strain="1" bookref="PG p.82"/>
 	<TALENT name="Swift Kick" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.82"/>
