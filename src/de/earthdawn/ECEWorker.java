@@ -441,9 +441,11 @@ public class ECEWorker {
 						}
 					}
 					if( notfound ) {
+						if( limitation.isEmpty() ) limitation ="(#)";
+						else limitation += " (#)";
 						TALENTType bonusTalent = new TALENTType();
 						bonusTalent.setName(itemtalent.getName());
-						bonusTalent.setLimitation(itemtalent.getLimitation());
+						bonusTalent.setLimitation(limitation);
 						bonusTalent.setCircle(0);
 						enforceCapabilityParams(bonusTalent);
 						RANKType bonusrank = new RANKType();

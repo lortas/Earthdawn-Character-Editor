@@ -1159,7 +1159,16 @@ public class CharacterContainer extends CharChangeRefresh {
 			remove.clear();
 			List<TALENTType> optionalTalents = talents.getDISZIPLINETALENT();
 			for( TALENTType talent : optionalTalents ) {
-				if( talent.getCircle() > disciplineCircleNr ) remove.add(talent);
+				if( talent.getCircle() > disciplineCircleNr ) {
+					remove.add(talent);
+					continue;
+				}
+				// Talente bei denen die Limitation auf "(#)" endet kommen von ThreadItems und fliegen erstmal raus
+				// Diese werden wieder vom ThreadItem ergänzt, wenn es noch da ist.
+				if( talent.getLimitation().endsWith("(#)") ) {
+					remove.add(talent);
+					continue;
+				}
 			}
 			optionalTalents.removeAll(remove);
 		}

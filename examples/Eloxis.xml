@@ -10,7 +10,7 @@
 	<ns3:ATTRIBUTE cost="5" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="4" racevalue="12" name="TOU" dice="2d6" step="8"/>
 	<ns3:DEFENSE social="8" spell="8" physical="11"/>
 	<ns3:PROTECTION penalty="2" mysticarmor="11" physicalarmor="12">
-		<ARMOR mysticarmor="2" location="self" used="yes" weight="0.0" name="natural Armor"/>
+		<ARMOR penalty="0" mysticarmor="2" physicalarmor="0" used="yes" weight="0.0" name="natural Armor"/>
 		<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		<ARMOR edn="22" penalty="2" mysticarmor="3" physicalarmor="6" location="self" used="yes" weight="0.0" name="Living Crystal"/>
 	</ns3:PROTECTION>
@@ -23,121 +23,126 @@
 	<ns3:MOVEMENT ground="8" flight="0"/>
 	<ns3:INITIATIVE modification="-2" base="8" dice="d10" step="6"/>
 	<ns3:CARRYING carrying="330" lifting="660"/>
-	<ns3:DISCIPLINE circle="6" name="Warrior">
+	<ns3:DISCIPLINE circle="7" name="Warrior">
 		<DISCIPLINEBONUS bonus="Can spend Karma for Strength-only Test" circle="4"/>
 		<DISCIPLINEBONUS bonus="Ability: Battle Rites" circle="5"/>
 		<DISCIPLINEBONUS bonus="Can spend Karma for Dexterity-only Test" circle="6"/>
+		<DISCIPLINEBONUS bonus="Can spend Karma for close combat Damage Test" circle="7"/>
 	</ns3:DISCIPLINE>
 	<ns3:TALENTS discipline="Warrior">
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
-			<RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14" startrank="2"/>
+		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.62" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+			<RANK lpcost="5000" bonus="0" rank="7" startrank="2" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
-			<RANK lpcost="3200" bonus="0" rank="6" dice="d10" step="6" startrank="1"/>
+		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12" step="7"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
-			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15" startrank="2"/>
+		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.75" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+			<RANK lpcost="5000" bonus="0" rank="7" startrank="2" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
-			<RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14" startrank="1"/>
+		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.85" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
-			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15" startrank="1"/>
+		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.86" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
+			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
-			<RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+		<ns3:DISZIPLINETALENT circle="2" bookref="PG p.61" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
+			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+d10" step="13"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="3" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
+		<ns3:DISZIPLINETALENT circle="3" bookref="PG p.86" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
 			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+d8+d6" step="16"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="4" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
-			<RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+		<ns3:DISZIPLINETALENT circle="4" bookref="PG p.83" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+d10" step="13"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
-			<RANK lpcost="5200" bonus="0" rank="6" dice="2d10" step="12"/>
+		<ns3:DISZIPLINETALENT circle="5" bookref="PG p.83" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
+			<RANK lpcost="8600" bonus="0" rank="7" dice="d12+d10" step="13"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
-			<RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+		<ns3:DISZIPLINETALENT circle="6" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
+			<RANK lpcost="8600" bonus="0" rank="7" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Air Dance">
-			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15" startrank="1"/>
+		<ns3:DISZIPLINETALENT circle="7" bookref="PG p.65" karma="yes" limitation="" bonus="0" attribute="STR" strain="1" action="free" name="Crushing Blow">
+			<RANK lpcost="0" bonus="0" dice="d8+d6" step="9"/>
+			<TEACHER/>
+		</ns3:DISZIPLINETALENT>
+		<ns3:OPTIONALTALENT circle="1" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Air Dance">
+			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="2" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
+		<ns3:OPTIONALTALENT circle="2" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
 			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="3" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+		<ns3:OPTIONALTALENT circle="3" bookref="PG p.66" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
 			<RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="4" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
+		<ns3:OPTIONALTALENT circle="4" bookref="PG p.76" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
 			<RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
-			<RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+		<ns3:OPTIONALTALENT circle="5" bookref="PG p.69" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
+			<RANK lpcost="8600" bonus="0" rank="7" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Maneuver">
-			<RANK lpcost="5200" bonus="0" rank="6" dice="2d12" step="14"/>
+		<ns3:OPTIONALTALENT circle="6" bookref="PG p.75" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Maneuver">
+			<RANK lpcost="8600" bonus="0" rank="7" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="0" karma="no" limitation="Thystonius" bonus="0" attribute="na" strain="0" action="na" name="Questor">
+		<ns3:OPTIONALTALENT circle="0" bookref="" karma="no" limitation="Thystonius" bonus="0" attribute="na" strain="0" action="na" name="Questor">
 			<RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
 	</ns3:TALENTS>
-	<ns3:SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+	<ns3:SKILL bookref="PG p.102" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
 		<RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
 	</ns3:SKILL>
-	<ns3:SKILL karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
+	<ns3:SKILL bookref="PG p.100" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
 		<RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
 	</ns3:SKILL>
-	<ns3:SKILL karma="no" limitation="Troll" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+	<ns3:SKILL bookref="PG p.102" karma="no" limitation="Troll" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
 		<RANK lpcost="0" bonus="0" rank="5" startrank="5" dice="d10+d8" step="11"/>
 	</ns3:SKILL>
-	<ns3:SKILL karma="no" limitation="Altertümliche Waffen" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+	<ns3:SKILL bookref="PG p.98" karma="no" limitation="Altertümliche Waffen" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
 		<RANK lpcost="300" bonus="0" rank="2" startrank="1" dice="2d6" step="8"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" bonus="0" attribute="STR" strain="0" action="free" name="Charge">
+	<ns3:SKILL bookref="PG p.94" default="no" karma="no" bonus="0" attribute="STR" strain="0" action="free" name="Charge">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d8" step="10"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="sustained" name="Disarm Trap">
+	<ns3:SKILL bookref="PG p.96" default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="sustained" name="Disarm Trap">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
 	</ns3:SKILL>
-	<ns3:SKILL karma="no" limitation="Militärgeschichte" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+	<ns3:SKILL bookref="PG p.98" karma="no" limitation="Militärgeschichte" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Trap">
+	<ns3:SKILL bookref="PG p.95" default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Trap">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
+	<ns3:SKILL bookref="PG p.95" default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" limitation="Legends and Heroes" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+	<ns3:SKILL bookref="PG p.98" default="no" karma="no" limitation="Legends and Heroes" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Search">
+	<ns3:SKILL bookref="PG p.101" default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Search">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
-	<ns3:SKILL karma="no" limitation="Runenschnitzen" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
+	<ns3:SKILL bookref="PG p.93" karma="no" limitation="Runenschnitzen" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" bonus="0" attribute="CHA" strain="1" action="simple" name="Battle Shout">
+	<ns3:SKILL bookref="PG p.93" default="no" karma="no" bonus="0" attribute="CHA" strain="1" action="simple" name="Battle Shout">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="no" karma="no" bonus="0" attribute="na" strain="1" action="simple" name="Mount Attack">
+	<ns3:SKILL bookref="PG p.99" default="no" karma="no" bonus="0" attribute="na" strain="1" action="simple" name="Mount Attack">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
 	</ns3:SKILL>
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
@@ -209,6 +214,68 @@
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="no" weight="1.0" name="Desperate Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
+	<ns3:THREADITEM name="Thermail Schutz der Plage" weight="0" used="yes" maxthreads="1" spelldefense="20" lpcostgrowth="9" weaventhreadrank="4">
+		<description>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</description>
+		<THREADRANK lpcost="1" effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
+		<THREADRANK lpcost="2" effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
+			<TALENT name="Avoid Blow"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="3" effect="Steel Thought erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="4" effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges " keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Second Attack"/>
+			<TALENT name="Second Attack"/>
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="5" effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="6" effect="-" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="7" effect="-">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="8" effect="-">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="9" effect="-">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="10" effect="-">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="11" effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" keyknowledge="Rasse des Dracheneierdiebs">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK lpcost="12" effect="Antimagische Waffe, alle geführten Waffen sind für 4 Überanstregungsschaden (pro Waffen und Runde) durch keinen magischen Effekt zu beeinflussen. (Achtung, nur die Waffe(n))">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+	</ns3:THREADITEM>
 	<ns3:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
 		<description>Thread Item Melee Weapon page 276 PlayerGuide</description>
 		<THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
@@ -291,13 +358,13 @@
 	<ns3:ITEM weight="0.0" name="anschaltbarer Lichtquarz"/>
 	<ns3:ITEM weight="0.0" name="cursed ring"/>
 	<ns3:ITEM weight="1.0" name="Trail Rations (1 week)"/>
-	<ns3:KARMA maxmodificator="0" max="18" current="20" dice="d6" step="4">
+	<ns3:KARMA maxmodificator="0" max="21" current="20" dice="d6" step="4">
 		<KARMAPOINTS when="" comment="from karmarituals" value="120" type="+"/>
 		<KARMAPOINTS when="" comment="spend during adventures" value="100" type="-"/>
 	</ns3:KARMA>
 	<ns3:RACEABILITES>Heat Sight</ns3:RACEABILITES>
-	<ns3:CALCULATEDLEGENDPOINTS total="96800" magicitems="5300" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="30100" disciplinetalents="42300" attributes="17600"/>
-	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="32166" totallegendpoints="128366">
+	<ns3:CALCULATEDLEGENDPOINTS total="119900" magicitems="5300" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="36800" disciplinetalents="58700" attributes="17600"/>
+	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="33722" totallegendpoints="129922">
 		<LEGENDPOINTS when="" comment="Historische Einnahmen" value="10958" type="+"/>
 		<LEGENDPOINTS when="xx.02.2007" comment="Stand mit Feb." value="2179" type="+"/>
 		<LEGENDPOINTS when="12.04.2007" comment="LP aus Spielrunde" value="671" type="+"/>
@@ -367,7 +434,7 @@
 		<LEGENDPOINTS when="14.04.2011" comment="LP aus Spielrunde" value="3012" type="+"/>
 		<LEGENDPOINTS when="21.04.2011" comment="LP aus Spielrunde" value="17426" type="+"/>
 	</ns3:EXPERIENCE>
-	<ns3:DEVOTION value="550" passion="Thystonius">
+	<ns3:DEVOTION value="600" passion="Thystonius">
 		<DEVOTIONPOINTS when="2009.08.06" comment="" value="100" type="+"/>
 		<DEVOTIONPOINTS when="2009.11.05" comment="" value="100" type="+"/>
 		<DEVOTIONPOINTS when="23.09.2010" comment="" value="100" type="+"/>
