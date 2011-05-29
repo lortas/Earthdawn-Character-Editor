@@ -304,20 +304,25 @@ public class ECEWorker {
 		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
 		karma.setDice(step2Dice(karma.getStep()));
 
+		int skillsStartranks=calculatedLP.getUSEDSTARTRANKS().getSkills();
 		character.removeEmptySkills();
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
 		for( SKILLType skill : character.getSkills() ) {
-			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(skill.getRANK().getRank());
-			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(skill.getRANK().getStartrank());
-			skill.getRANK().setLpcost(lpcostfull-lpcoststart);
-			skill.getRANK().setBonus(0);
-			calculatedLP.setSkills(calculatedLP.getSkills()+skill.getRANK().getLpcost());
+			RANKType rank = skill.getRANK();
+			int startrank = rank.getStartrank();
+			skillsStartranks+=startrank;
+			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(rank.getRank());
+			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
+			rank.setLpcost(lpcostfull-lpcoststart);
+			rank.setBonus(0);
+			calculatedLP.setSkills(calculatedLP.getSkills()+rank.getLpcost());
 			enforceCapabilityParams(skill);
 			if( skill.getAttribute() != null ) {
-				calculateCapabilityRank(skill.getRANK(),characterAttributes.get(skill.getAttribute().value()));
+				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 			}
 			removeIfContains(defaultSkills,skill.getName());
 		}
+		calculatedLP.getUSEDSTARTRANKS().setSkills(skillsStartranks);
 
 		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
 		if( OptionalRule_ShowDefaultSkills ) {
@@ -475,6 +480,7 @@ public class ECEWorker {
 
 	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
 		int totallpcost=0;
+		int startranks=calculatedLP.getUSEDSTARTRANKS().getTalents();
 		for( TALENTType talent : talents ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( teacher == null ) {
@@ -503,6 +509,7 @@ public class ECEWorker {
 				rank.setLpcost(lpcostfull-lpcoststart);
 			}
 			totallpcost+=rank.getLpcost();
+			startranks+=rank.getStartrank();
 			ATTRIBUTENameType attr = talent.getAttribute();
 			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr.value()));
 			if( talent.getName().equals(durabilityTalentName)) durabilityTalents.add(talent);
@@ -514,6 +521,7 @@ public class ECEWorker {
 				defaultOptionalTalents.remove(talent.getName());
 			}
 		}
+		calculatedLP.getUSEDSTARTRANKS().setTalents(startranks);
 		if( disTalents ) {
 			calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+totallpcost);
 		} else {

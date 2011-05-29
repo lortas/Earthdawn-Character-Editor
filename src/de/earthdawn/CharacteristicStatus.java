@@ -18,6 +18,7 @@ import de.earthdawn.data.KARMAType;
 import de.earthdawn.data.MOVEMENTType;
 import de.earthdawn.data.PROTECTIONType;
 import de.earthdawn.data.RECOVERYType;
+import de.earthdawn.data.USEDSTARTRANKSType;
 import de.earthdawn.data.WOUNDType;
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
@@ -149,6 +150,12 @@ public class CharacteristicStatus {
 		node.put( "karma", calculatedLegendpoints.getKarma() );
 		node.put( "magicitems", calculatedLegendpoints.getMagicitems() );
 		root.put("CALCULATEDLEGENDPOINTS", node);
+
+		node = new HashMap<String,Object>();
+		USEDSTARTRANKSType usedStartranks = calculatedLegendpoints.getUSEDSTARTRANKS();
+		node.put( "skills", -usedStartranks.getSkills() );
+		node.put( "talents", -usedStartranks.getTalents() );
+		root.put("USEDSTARTRANKS", node);
 
 		node = new HashMap<String,Object>();
 		node.put( "damage", character.getHealth().getDamage() );

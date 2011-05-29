@@ -10,7 +10,7 @@ tr.tfoot { font-style:italic; }
 
 <table class="invis">
 	<tr>
-		<td>
+		<td colspan="2">
 			${APPEARANCE.race} (${APPEARANCE.gender}, ${APPEARANCE.age})<br/>
 			<table>
 				<tr class="thead">
@@ -184,6 +184,24 @@ tr.tfoot { font-style:italic; }
 	<tr>
 		<td>
 			<table>
+				<tr class="tfoot">
+					<td colspan="2">Not Spent</td>
+				</tr>
+				<tr class="tfoot">
+					<td colspan="2">Start Ranks</td>
+				</tr>
+				<tr>
+					<td>Talents</td>
+					<td>${USEDSTARTRANKS.talents}</td>
+				</tr>
+				<tr>
+					<td>Skills</td>
+					<td>${USEDSTARTRANKS.skills}</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
 				<tr class="thead">
 					<td colspan="4">Health</td>
 				</tr>
@@ -278,7 +296,7 @@ tr.tfoot { font-style:italic; }
 		</td>
 	</tr>
 	<tr>
-		<td colspan="4">
+		<td colspan="5">
 			<table>
 				<tr class="thead">
 					<td colspan="9">Calculated Legend Points</td>
