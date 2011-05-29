@@ -1,5 +1,6 @@
 package de.earthdawn.ui2;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -8,11 +9,16 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.EventObject;
+import java.util.TreeMap;
 
 import javax.swing.AbstractCellEditor;
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
@@ -21,14 +27,19 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTree;
-import javax.swing.KeyStroke;
 import javax.swing.event.CellEditorListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellEditor;
+import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.ARMORType;
+import de.earthdawn.data.CAPABILITYType;
+import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 import javax.swing.JMenu;
@@ -43,11 +54,11 @@ public class EDThreadItems extends JPanel {
 	private JPopupMenu popupMenuTree;
 	private JMenuItem menuItemAdd;
 	private JMenuItem menuItemRemove;
-	private JMenuItem menuItemEdit;
-	private JMenuItem menuItemActivate;
+	
+	
 	private JMenu mnAddEffect;
-	private JMenuItem menuItem_1;
-	private JMenuItem menuItem_2;
+	private JMenuItem mntmTalentEffect;
+	private JMenuItem mntmArmorEffect;
 	private JMenuItem menuItem_3;
 	
 	public CharacterContainer getCharacter() {
@@ -57,7 +68,6 @@ public class EDThreadItems extends JPanel {
 	public void setCharacter(CharacterContainer character) {	
 		this.character = character;
 		initTree();
-		System.out.println("ads");
 	}
 	
 	/**
@@ -71,7 +81,7 @@ public class EDThreadItems extends JPanel {
 		
 		
 		topNode =
-            new DefaultMutableTreeNode("Thread Items");
+            new DefaultMutableTreeNode("Threaditems");
 		tree = new JTree(topNode);
 		tree.setEditable(true);
 		
@@ -99,28 +109,37 @@ public class EDThreadItems extends JPanel {
 		mnAddEffect = new JMenu("Add effect");
 		popupMenuTree.add(mnAddEffect);
 		
-		menuItem_2 = new JMenuItem("New menu item");
-		mnAddEffect.add(menuItem_2);
+		mntmArmorEffect = new JMenuItem("Armor effect");
+		mntmArmorEffect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmArmorEffect_actionPerformed(arg0);
+			}
+		});
+		mnAddEffect.add(mntmArmorEffect);
 		
-		menuItem_1 = new JMenuItem("New menu item");
-		mnAddEffect.add(menuItem_1);
+		mntmTalentEffect = new JMenuItem("Talent effect");
+		mntmTalentEffect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmTalentEffect_actionPerformed(arg0);
+			}
+		});
+		mnAddEffect.add(mntmTalentEffect);
 		
 		menuItem_3 = new JMenuItem("New menu item");
 		mnAddEffect.add(menuItem_3);
 		
 		menuItemRemove = new JMenuItem("Remove");
+		menuItemRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_menuItemRemove_actionPerformed(arg0);
+			}
+		});
 		popupMenuTree.add(menuItemRemove);
-		
-		menuItemEdit = new JMenuItem("Edit");
-		popupMenuTree.add(menuItemEdit);
-		
-		menuItemActivate = new JMenuItem("Activate");
-		popupMenuTree.add(menuItemActivate);
-		
+			
 	}
 	
 	private void initTree(){
-		topNode = new DefaultMutableTreeNode("Thread Items");
+		topNode = new DefaultMutableTreeNode("Threaditems");
 		tree = new JTree(topNode);
 		tree.setEditable(true);
 		tree.setInvokesStopCellEditing(true); 
@@ -132,7 +151,9 @@ public class EDThreadItems extends JPanel {
 			}
 		});
 		tree.setCellEditor(new EDItemTreeCellEditor());
+		//tree.setCellRenderer(new EDItemTreeCellEditor());
 		scrollPane.setViewportView(tree);
+		
             
 		DefaultMutableTreeNode itemNode = null;
         DefaultMutableTreeNode rankNode = null;
@@ -150,6 +171,10 @@ public class EDThreadItems extends JPanel {
         			effectNode = new DefaultMutableTreeNode(new ThreadEffectArmor(a));
         			rankNode.add(effectNode);
         			
+        		}
+        		for(TALENTABILITYType talent : rank.getTALENT()){
+        			effectNode = new DefaultMutableTreeNode(new ThreadEffectTalent(talent));
+        			rankNode.add(effectNode);
         		}
         		i++;
         	}
@@ -173,7 +198,8 @@ public class EDThreadItems extends JPanel {
 
 
 	protected void do_tree_mouseReleased(MouseEvent arg0) {
-		 if (arg0.isPopupTrigger()) {
+		 if (arg0.getButton() == arg0.BUTTON3) {
+			 
 		      // das unter der Maus liegende Element selektieren
 		      TreePath selPath = this.tree.getPathForLocation(arg0.getX(), arg0.getY());
 
@@ -184,6 +210,31 @@ public class EDThreadItems extends JPanel {
 		      popupMenuTree.show(arg0.getComponent(), arg0.getX(), arg0.getY());
 		    }
 
+	}
+	
+	
+	protected void do_menuItemRemove_actionPerformed(ActionEvent arg0) {
+		DefaultMutableTreeNode node = (DefaultMutableTreeNode)tree.getSelectionPath().getLastPathComponent();
+		Object userObject = node.getUserObject();
+		if (userObject instanceof ThreadItemInfo){
+			character.getThreadItem().remove(((ThreadItemInfo)userObject).getUserObject());
+		}
+		if (userObject instanceof ThreadRankInfo){
+			DefaultMutableTreeNode parent = (DefaultMutableTreeNode) node.getParent();
+			ThreadItemInfo parentItem = (ThreadItemInfo)parent.getUserObject();	
+			THREADITEMType item = (THREADITEMType)parentItem.getUserObject();
+			item.getTHREADRANK().remove(((IntNode)userObject).getUserObject());
+		}
+		if (userObject instanceof ThreadEffectArmor){
+			DefaultMutableTreeNode parent = (DefaultMutableTreeNode) node.getParent();
+			ThreadRankInfo parentRank = (ThreadRankInfo)parent.getUserObject();	
+			THREADRANKType rank = (THREADRANKType)parentRank.getUserObject();
+			if (userObject instanceof IntEffectNode){
+				rank.setARMOR(null);
+			}
+		}
+		initTree();
+		
 	}
 	
 	protected void do_menuItemAdd_actionPerformed(ActionEvent arg0) {
@@ -206,20 +257,54 @@ public class EDThreadItems extends JPanel {
 			
 
 		}
-		System.out.println();
+		
 		initTree();
 	}
 	
+	protected void do_mntmArmorEffect_actionPerformed(ActionEvent arg0) {
+		DefaultMutableTreeNode node = (DefaultMutableTreeNode)tree.getSelectionPath().getLastPathComponent();
+		Object userObject = node.getUserObject();
+		if (userObject instanceof ThreadRankInfo){
+			THREADRANKType rank = (THREADRANKType)((ThreadRankInfo)userObject).getUserObject();
+			rank.setARMOR(new ARMORType());
+		}
+		initTree();
+	}
 	
-	public class EDItemTreeCellEditor extends AbstractCellEditor  implements TreeCellEditor {
+	protected void do_mntmTalentEffect_actionPerformed(ActionEvent arg0) {
+		DefaultMutableTreeNode node = (DefaultMutableTreeNode)tree.getSelectionPath().getLastPathComponent();
+		Object userObject = node.getUserObject();
+		if (userObject instanceof ThreadRankInfo){
+			THREADRANKType rank = (THREADRANKType)((ThreadRankInfo)userObject).getUserObject();
+			TALENTABILITYType talent = new TALENTABILITYType();
+			ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
+			talent.setName(capabilities.getTalents().get(1).getName());
+			rank.getTALENT().add(talent);
+			
+		}
+		initTree();		
+	}
+	
+	
+	
+	
+	public class EDItemTreeCellEditor extends  DefaultTreeCellRenderer   implements TreeCellEditor {
 		
 		DefaultMutableTreeNode node;
+		ImageIcon rootIconClosed; 
+		ImageIcon rootIconOpen; 
+		Icon defaultIconClosed; 
+		Icon defaultIconOpen; 
+		Icon defaultIconLeaf; 
+		
 
 		Object userObject;
 		
 		public EDItemTreeCellEditor() {
-			
+			rootIconClosed = new ImageIcon("./icons/chest_closed.png"); 
+			rootIconOpen = new ImageIcon("./icons/chest_open.png"); 
 		}
+		
 
 
 
@@ -294,6 +379,36 @@ public class EDThreadItems extends JPanel {
 			// TODO Auto-generated method stub
 			return false;
 		}
+
+
+
+		@Override
+		public Component getTreeCellRendererComponent(JTree tree, Object value,
+				boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+
+			super.getTreeCellRendererComponent( 
+					tree, value, selected, 
+					expanded, leaf, row, 
+					hasFocus); 
+			tree.setCellEditor(new EDItemTreeCellEditor());		
+			// setting icons	
+			DefaultMutableTreeNode node = (DefaultMutableTreeNode)value;
+			/*if (node.getUserObject().toString().equals("Threaditems")){
+				setLeafIcon(rootIconClosed); 
+				setOpenIcon(rootIconOpen); 
+				setClosedIcon(rootIconClosed); 
+			} 
+			else{
+				setLeafIcon(getDefaultLeafIcon()); 
+				setOpenIcon(getDefaultOpenIcon()); 
+				setClosedIcon(getDefaultClosedIcon());				
+			}*/
+				
+			putClientProperty("JTree.lineStyle", "None"); 
+			//	setFont(getFont().deriveFont(Font.BOLD)); 
+			setBackground(new Color(55, 123, 111)); 
+			return this;
+		}
 	}
 	
 //*****************************************************************************************
@@ -307,6 +422,10 @@ public class EDThreadItems extends JPanel {
 	    public Object getUserObject();
 	    public String toString();
 	    public void updateUserObject();
+	}
+	
+	interface IntEffectNode{
+	    public String getEffectType();
 	}
 	
 	 private class ThreadItemInfo implements IntNode {
@@ -420,27 +539,9 @@ public class EDThreadItems extends JPanel {
 			}
 	    }
 	    
-	    private class ThreadEffectInfo{
-	    	public Object effect;
-	    	
-	    	
-	    	public ThreadEffectInfo(Object effect) {
-				this.effect = effect;
-			}
 
-
-			@Override
-			public String toString() {
-		    	String temp = new String("Effect not implemented!");
-		    	if(effect.getClass() == ARMORType.class){
-		    		temp = "Armor (Physical:" + ((ARMORType)effect).getPhysicalarmor() + ", Mystic" + + ((ARMORType)effect).getMysticarmor() + ")";
-		    	}
-		    	
-		    	return temp;
-	        }
-	    }
 	    
-	    public class ThreadEffectArmor implements IntNode {
+	    public class ThreadEffectArmor implements IntNode,IntEffectNode {
 			public ARMORType armoreffect;
 	        public JPanel editor = null; 
 	    	private JLabel lbPhysicArmor;
@@ -514,10 +615,84 @@ public class EDThreadItems extends JPanel {
 			public String toString() {
 				return "Armor (Physical:" + armoreffect.getPhysicalarmor() + ", Mystic:" +  armoreffect.getMysticarmor() + ", Penalty:" +  armoreffect.getPenalty() + ")";
 			}
+
+			@Override
+			public String getEffectType() {
+				return "Armor";
+			}
 	    	
 	    }
 	
-	
+	    public class ThreadEffectTalent implements IntNode,IntEffectNode {
+			public TALENTABILITYType talent;
+	        public JPanel editor = null; 
+	    	private JLabel lbTalent;
+	    	private JLabel lblBonus;
+	    	private JTextField textFieldBonus;
+	    	private JComboBox comboBoxTalent;
 
-	
+	    	public ThreadEffectTalent(TALENTABILITYType talent) {
+					super();
+					this.talent = talent;
+			}
+	    	
+			@Override
+			public JPanel getEditor() {
+				System.out.println("getEditor");
+				JPanel editor = new JPanel();
+				editor.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+					
+				lbTalent = new JLabel("Talent");
+				editor.add(lbTalent);
+				
+				comboBoxTalent = new JComboBox();
+				editor.add(comboBoxTalent);
+				ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
+				for (CAPABILITYType capability : capabilities.getTalents()) comboBoxTalent.addItem(capability.getName());
+				comboBoxTalent.setSelectedItem(talent.getName());
+				
+				/*lblBonus = new JLabel("Bonus");
+				editor.add(lblBonus);
+				
+				textFieldBonus = new JTextField();
+				textFieldBonus.setText(talent.getB)
+				editor.add(textFieldBonus);
+				textFieldBonus.setColumns(10);*/
+				
+				editor.setOpaque(false);
+				
+				return editor;
+			}
+
+			@Override
+			public JPanel getRenderer() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Object getUserObject() {
+				return talent;
+			}
+
+			@Override
+			public void updateUserObject() {
+				talent.setName((String)comboBoxTalent.getSelectedItem());
+			}
+			
+			@Override
+			public String toString() {
+				return "Talent: " + talent.getName();
+			}
+
+			@Override
+			public String getEffectType() {
+				return "Talent";
+			}
+	    	
+	    }	
+
+
+
+
 }
