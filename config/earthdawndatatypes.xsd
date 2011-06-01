@@ -135,6 +135,21 @@
 			<xs:enumeration value="4d12+2d10" />
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="itemtype_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="undefined"/>
+			<xs:enumeration value="armor"/>
+			<xs:enumeration value="shield"/>
+			<xs:enumeration value="meleweapon"/>
+			<xs:enumeration value="thowingweapon"/>
+			<xs:enumeration value="missleweapon"/>
+			<xs:enumeration value="purse"/>
+			<xs:enumeration value="ring"/>
+			<xs:enumeration value="cloth"/>
+			<xs:enumeration value="brooch"/>
+			<xs:enumeration value="animal"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="STEPDICE_type">
 		<xs:attribute name="step" type="unsigned_int" default="0"/>
 		<xs:attribute name="dice" type="dice_type"/>
@@ -251,8 +266,9 @@
 	<xs:complexType name="ITEM_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="weight" type="xs:float" use="required"/>
-		<xs:attribute default="yes" name="used" type="yesno_type"/>
-		<xs:attribute default="self" name="location" type="xs:string"/>
+		<xs:attribute name="used" type="yesno_type" default="yes"/>
+		<xs:attribute name="location" type="xs:string" default="self"/>
+		<xs:attribute name="itemtype" type="itemtype_type" default="undefined"/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
 		<xs:attribute name="flight" type="unsigned_int"/>

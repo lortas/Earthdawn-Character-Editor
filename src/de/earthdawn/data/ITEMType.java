@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
+ *       &lt;attribute name="itemtype" type="{http://earthdawn.com/datatypes}itemtype_type" default="undefined" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -53,6 +54,8 @@ public class ITEMType {
     protected YesnoType used;
     @XmlAttribute
     protected String location;
+    @XmlAttribute
+    protected ItemtypeType itemtype;
 
     /**
      * Gets the value of the name property.
@@ -148,6 +151,34 @@ public class ITEMType {
      */
     public void setLocation(String value) {
         this.location = value;
+    }
+
+    /**
+     * Gets the value of the itemtype property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ItemtypeType }
+     *     
+     */
+    public ItemtypeType getItemtype() {
+        if (itemtype == null) {
+            return ItemtypeType.UNDEFINED;
+        } else {
+            return itemtype;
+        }
+    }
+
+    /**
+     * Sets the value of the itemtype property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ItemtypeType }
+     *     
+     */
+    public void setItemtype(ItemtypeType value) {
+        this.itemtype = value;
     }
 
 }

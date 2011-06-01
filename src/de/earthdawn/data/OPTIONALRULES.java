@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -57,6 +58,7 @@ import javax.xml.bind.annotation.XmlType;
     "autoincrementdiciplinetalents",
     "showdefaultskills",
     "questortalentneedlegendpoints",
+    "autoinsertlegendpointspent",
     "multiusetalent",
     "defaultoptionaltalent"
 })
@@ -81,6 +83,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType showdefaultskills;
     @XmlElement(name = "QUESTORTALENTNEEDLEGENDPOINTS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType questortalentneedlegendpoints;
+    @XmlElement(name = "AUTOINSERTLEGENDPOINTSPENT", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType autoinsertlegendpointspent;
     @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
     protected List<OPTIONALRULESMULTIUSETALENT> multiusetalent;
     @XmlElement(name = "DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
@@ -300,6 +304,30 @@ public class OPTIONALRULES {
      */
     public void setQUESTORTALENTNEEDLEGENDPOINTS(OPTIONALRULEType value) {
         this.questortalentneedlegendpoints = value;
+    }
+
+    /**
+     * Gets the value of the autoinsertlegendpointspent property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getAUTOINSERTLEGENDPOINTSPENT() {
+        return autoinsertlegendpointspent;
+    }
+
+    /**
+     * Sets the value of the autoinsertlegendpointspent property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setAUTOINSERTLEGENDPOINTSPENT(OPTIONALRULEType value) {
+        this.autoinsertlegendpointspent = value;
     }
 
     /**
