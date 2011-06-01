@@ -24,6 +24,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.text.EditorKit;
@@ -280,9 +281,13 @@ public class EDMainWindow {
 		panelEDThreadItems = new EDThreadItems();
 
 		paneStatus = new JEditorPane();
+		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
+		editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		editorScrollPane.setMinimumSize(new Dimension(500,300));
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
 		paneStatus.setEditable(false);
+		paneStatus.setFocusable(false);
 		characteristicStatus = new CharacteristicStatus("characteristic_layout.html");
 		characteristicStatus.setCharacter(character);
 
@@ -299,7 +304,7 @@ public class EDMainWindow {
 		tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
 		tabbedPane.addTab("Threaditems", null, panelEDThreadItems , null);
 		
-		splitPane.setRightComponent(paneStatus);
+		splitPane.setRightComponent(editorScrollPane);
 	}
 
 	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
