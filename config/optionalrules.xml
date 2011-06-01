@@ -9,6 +9,7 @@
 	<AUTOINCREMENTDICIPLINETALENTS used="yes"/>
 	<SHOWDEFAULTSKILLS used="yes"/>
 	<QUESTORTALENTNEEDLEGENDPOINTS used="yes"/>
+	<AUTOINSERTLEGENDPOINTSPENT used="yes"/>
 	<MULTIUSETALENT talent="Spell Matrix" lang="en" count="5"/>
 	<MULTIUSETALENT talent="Enhanced Matrix" lang="en" count="4"/>
 	<MULTIUSETALENT talent="Armored Matrix" lang="en" count="3"/>

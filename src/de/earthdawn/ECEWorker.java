@@ -41,6 +41,7 @@ public class ECEWorker {
 	public final boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
 	public final boolean OptionalRule_autoincrementDiciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
+	public final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CALCULATEDLEGENDPOINTSType calculatedLP = null;
 
@@ -50,6 +51,8 @@ public class ECEWorker {
 	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
 		CharacterContainer character = new CharacterContainer(charakter);
 
+		// Orignal berechnete LP sichern
+		CALCULATEDLEGENDPOINTSType oldcalculatedLP = character.getCopyOfCalculatedLegendpoints();
 		// Berechnete LP erstmal zurücksetzen
 		calculatedLP = character.resetCalculatedLegendpoints();
 
@@ -359,9 +362,6 @@ public class ECEWorker {
 
 		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
 		recovery.setDice(step2Dice(recovery.getStep()));
-		
-		calculateLegendPointsAndStatus(character.getLegendPoints(),character.getDiciplineMaxCircle().getCircle());
-		character.calculateDevotionPoints();
 
 		// ** SPELLS **
 		String firstDisciplineName = "";
@@ -475,6 +475,11 @@ public class ECEWorker {
 		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
 				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
 				calculatedLP.getSkills()+calculatedLP.getSpells()+calculatedLP.getKnacks());
+
+		if( OptionalRule_AutoInsertLegendPointSpent ) character.addLegendPointsSpent(oldcalculatedLP);
+		character.calculateLegendPointsAndStatus();
+		character.calculateDevotionPoints();
+
 		return charakter;
 	}
 
@@ -558,15 +563,6 @@ public class ECEWorker {
 		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
 		karma.setCurrent(k.get(0)-k.get(1));
 		return 10*k.get(0); // KarmaLP
-	}
-
-	public static void calculateLegendPointsAndStatus(EXPERIENCEType legendpoints, int circle) {
-		List<Integer> lp = CharacterContainer.calculateAccounting(legendpoints.getLEGENDPOINTS());
-		legendpoints.setCurrentlegendpoints(lp.get(0)-lp.get(1));
-		legendpoints.setTotallegendpoints(lp.get(0));
-		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(circle);
-		legendpoints.setRenown(legendstatus.getReown());
-		legendpoints.setReputation(legendstatus.getReputation());
 	}
 
 	private void calculateKnacks(int disciplinenumber, TALENTType talent, int rank) {

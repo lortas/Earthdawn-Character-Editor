@@ -87,12 +87,9 @@ public class EDExperience extends JPanel {
 	}
 	
 	protected void do_btnAddEXPEntry_actionPerformed(ActionEvent arg0) {
-		SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
-		
-		
 		ACCOUNTINGType ac = new ACCOUNTINGType();
 		ac.setType(PlusminusType.PLUS);
-		ac.setWhen(format.format(new Date()));
+		ac.setWhen(CharacterContainer.getCurrentDateTime());
 		ac.setComment(new String(""));
 		ac.setValue(0);
 		character.getEDCHARACTER().getEXPERIENCE().getLEGENDPOINTS().add(ac);

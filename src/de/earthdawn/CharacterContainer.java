@@ -17,7 +17,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -33,6 +36,12 @@ public class CharacterContainer extends CharChangeRefresh {
 	public final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public final USEDSTARTRANKSType OptionalRule_FreeStartRanks = PROPERTIES.getOptionalRules().getSTARTRANKS();
+
+	public static String getCurrentDateTime() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
 
 	public CharacterContainer( EDCHARACTER c) {
 		character = c;
@@ -120,6 +129,32 @@ public class CharacterContainer extends CharChangeRefresh {
 		return calculatedLegendpoints;
 	}
 
+	public CALCULATEDLEGENDPOINTSType getCopyOfCalculatedLegendpoints() {
+		CALCULATEDLEGENDPOINTSType calculatedLP = getCalculatedLegendpoints();
+		CALCULATEDLEGENDPOINTSType result = new CALCULATEDLEGENDPOINTSType();
+		result.setAttributes(calculatedLP.getAttributes());
+		result.setDisciplinetalents(calculatedLP.getDisciplinetalents());
+		result.setKarma(calculatedLP.getKarma());
+		result.setKnacks(calculatedLP.getKnacks());
+		result.setMagicitems(calculatedLP.getMagicitems());
+		result.setOptionaltalents(calculatedLP.getOptionaltalents());
+		result.setSkills(calculatedLP.getSkills());
+		result.setSpells(calculatedLP.getSpells());
+		result.setTotal(calculatedLP.getTotal());
+		USEDSTARTRANKSType oldstartranks = calculatedLP.getUSEDSTARTRANKS();
+		USEDSTARTRANKSType newstartranks = new USEDSTARTRANKSType();
+		calculatedLP.setUSEDSTARTRANKS(newstartranks);
+		if( oldstartranks != null ) {
+			newstartranks.setSkills(oldstartranks.getSkills());
+			newstartranks.setTalents(oldstartranks.getTalents());
+		}
+		List<CALCULATEDLEGENDPOINTADJUSTMENTType> commonadjustment = result.getCOMMONADJUSTMENT();
+		for( CALCULATEDLEGENDPOINTADJUSTMENTType e : calculatedLP.getCOMMONADJUSTMENT() ) commonadjustment.add(e);
+		List<NEWDISCIPLINETALENTADJUSTMENTType> newdisciplietalentadjustment = result.getNEWDISCIPLINETALENTADJUSTMENT();
+		for( NEWDISCIPLINETALENTADJUSTMENTType e : calculatedLP.getNEWDISCIPLINETALENTADJUSTMENT() ) newdisciplietalentadjustment.add(e);
+		return result;
+	}
+
 	public CALCULATEDLEGENDPOINTSType resetCalculatedLegendpoints() {
 		CALCULATEDLEGENDPOINTSType calculatedLP = getCalculatedLegendpoints();
 		int attributes=0;
@@ -170,6 +205,97 @@ public class CharacterContainer extends CharChangeRefresh {
 		startranks.setSkills(-OptionalRule_FreeStartRanks.getSkills());
 		startranks.setTalents(-OptionalRule_FreeStartRanks.getTalents());
 		return calculatedLP;
+	}
+
+	public void addLegendPointsSpent(CALCULATEDLEGENDPOINTSType oldLP) {
+		CALCULATEDLEGENDPOINTSType calculatedLP = getCalculatedLegendpoints();
+		List<ACCOUNTINGType> legendpoints = getLegendPoints().getLEGENDPOINTS();
+		String currentDateTime=getCurrentDateTime();
+		String comment = "-LP spent (automaticly added by ECE)";
+		int diff=0;
+		
+		diff=calculatedLP.getAttributes()-oldLP.getAttributes();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Attribute"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getDisciplinetalents()-oldLP.getDisciplinetalents();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Disciplinetalents"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getKarma()-oldLP.getKarma();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Karma"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getKnacks()-oldLP.getKnacks();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Knacks"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getMagicitems()-oldLP.getMagicitems();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Magicitems"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getOptionaltalents()-oldLP.getOptionaltalents();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Optionaltalents"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getSkills()-oldLP.getSkills();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Skills"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+		diff=calculatedLP.getSpells()-oldLP.getSpells();
+		if( diff>0 ) {
+			ACCOUNTINGType entry = new ACCOUNTINGType();
+			entry.setComment("Spells"+comment);
+			entry.setType(PlusminusType.MINUS);
+			entry.setValue(diff);
+			entry.setWhen(currentDateTime);
+			legendpoints.add(entry);
+		}
+	}
+
+	public void calculateLegendPointsAndStatus() {
+		EXPERIENCEType legendpoints = getLegendPoints();
+		List<Integer> lp = CharacterContainer.calculateAccounting(legendpoints.getLEGENDPOINTS());
+		legendpoints.setCurrentlegendpoints(lp.get(0)-lp.get(1));
+		legendpoints.setTotallegendpoints(lp.get(0));
+		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(getDiciplineMaxCircle().getCircle());
+		legendpoints.setRenown(legendstatus.getReown());
+		legendpoints.setReputation(legendstatus.getReputation());
 	}
 
 	public INITIATIVEType getInitiative() {

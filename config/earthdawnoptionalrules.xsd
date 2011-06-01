@@ -34,6 +34,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="AUTOINCREMENTDICIPLINETALENTS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="SHOWDEFAULTSKILLS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="QUESTORTALENTNEEDLEGENDPOINTS" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="AUTOINSERTLEGENDPOINTSPENT" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MULTIUSETALENT" type="OPTIONALRULES_MULTIUSETALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
 			</xs:sequence>
