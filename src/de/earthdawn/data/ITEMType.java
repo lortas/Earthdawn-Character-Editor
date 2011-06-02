@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
- *       &lt;attribute name="itemtype" type="{http://earthdawn.com/datatypes}itemtype_type" default="undefined" />
+ *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}itemkind_type" default="undefined" />
  *       &lt;attribute name="virtual" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -56,7 +56,7 @@ public class ITEMType {
     @XmlAttribute
     protected String location;
     @XmlAttribute
-    protected ItemtypeType itemtype;
+    protected ItemkindType kind;
     @XmlAttribute
     protected YesnoType virtual;
 
@@ -157,31 +157,31 @@ public class ITEMType {
     }
 
     /**
-     * Gets the value of the itemtype property.
+     * Gets the value of the kind property.
      * 
      * @return
      *     possible object is
-     *     {@link ItemtypeType }
+     *     {@link ItemkindType }
      *     
      */
-    public ItemtypeType getItemtype() {
-        if (itemtype == null) {
-            return ItemtypeType.UNDEFINED;
+    public ItemkindType getKind() {
+        if (kind == null) {
+            return ItemkindType.UNDEFINED;
         } else {
-            return itemtype;
+            return kind;
         }
     }
 
     /**
-     * Sets the value of the itemtype property.
+     * Sets the value of the kind property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ItemtypeType }
+     *     {@link ItemkindType }
      *     
      */
-    public void setItemtype(ItemtypeType value) {
-        this.itemtype = value;
+    public void setKind(ItemkindType value) {
+        this.kind = value;
     }
 
     /**

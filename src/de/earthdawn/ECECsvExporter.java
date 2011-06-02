@@ -22,10 +22,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import de.earthdawn.data.*;
 
@@ -80,7 +77,7 @@ public class ECECsvExporter {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(outFile);
 		int pursecounter=0;
-		out.println( "Name\tLocation\tWeight\tIn Use\tType\tClass" );
+		out.println( "Name\tLocation\tWeight\tIn Use\tKind\tClass" );
 		for( ITEMType item : character.getAllNonVirtualItems() ) {
 			List<String> row = new ArrayList<String>();
 			if( item instanceof COINSType ) {
@@ -104,7 +101,7 @@ public class ECECsvExporter {
 			row.add( item.getLocation() );
 			row.add( String.valueOf(item.getWeight()) );
 			row.add( item.getUsed().value() );
-			row.add( item.getItemtype().value() );
+			row.add( item.getKind().value() );
 			row.add( item.getClass().getSimpleName() );
 			out.println(generaterow(row));
 		}
