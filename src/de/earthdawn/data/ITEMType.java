@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
  *       &lt;attribute name="itemtype" type="{http://earthdawn.com/datatypes}itemtype_type" default="undefined" />
+ *       &lt;attribute name="virtual" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -56,6 +57,8 @@ public class ITEMType {
     protected String location;
     @XmlAttribute
     protected ItemtypeType itemtype;
+    @XmlAttribute
+    protected YesnoType virtual;
 
     /**
      * Gets the value of the name property.
@@ -179,6 +182,34 @@ public class ITEMType {
      */
     public void setItemtype(ItemtypeType value) {
         this.itemtype = value;
+    }
+
+    /**
+     * Gets the value of the virtual property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link YesnoType }
+     *     
+     */
+    public YesnoType getVirtual() {
+        if (virtual == null) {
+            return YesnoType.NO;
+        } else {
+            return virtual;
+        }
+    }
+
+    /**
+     * Sets the value of the virtual property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link YesnoType }
+     *     
+     */
+    public void setVirtual(YesnoType value) {
+        this.virtual = value;
     }
 
 }

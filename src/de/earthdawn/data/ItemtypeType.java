@@ -22,16 +22,30 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;simpleType name="itemtype_type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="undefined"/>
+ *     &lt;enumeration value="melee weapon"/>
+ *     &lt;enumeration value="missile weapon"/>
+ *     &lt;enumeration value="throwing weapon"/>
  *     &lt;enumeration value="armor"/>
  *     &lt;enumeration value="shield"/>
- *     &lt;enumeration value="meleweapon"/>
- *     &lt;enumeration value="thowingweapon"/>
- *     &lt;enumeration value="missleweapon"/>
- *     &lt;enumeration value="purse"/>
- *     &lt;enumeration value="ring"/>
+ *     &lt;enumeration value="light"/>
+ *     &lt;enumeration value="potion"/>
+ *     &lt;enumeration value="salve"/>
+ *     &lt;enumeration value="talisman"/>
  *     &lt;enumeration value="cloth"/>
+ *     &lt;enumeration value="ring"/>
  *     &lt;enumeration value="brooch"/>
  *     &lt;enumeration value="animal"/>
+ *     &lt;enumeration value="coins"/>
+ *     &lt;enumeration value="gems"/>
+ *     &lt;enumeration value="kit"/>
+ *     &lt;enumeration value="pot"/>
+ *     &lt;enumeration value="tool"/>
+ *     &lt;enumeration value="instrument"/>
+ *     &lt;enumeration value="food"/>
+ *     &lt;enumeration value="drink"/>
+ *     &lt;enumeration value="ration"/>
+ *     &lt;enumeration value="mount"/>
+ *     &lt;enumeration value="transport"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -43,26 +57,54 @@ public enum ItemtypeType {
 
     @XmlEnumValue("undefined")
     UNDEFINED("undefined"),
+    @XmlEnumValue("melee weapon")
+    MELEE_WEAPON("melee weapon"),
+    @XmlEnumValue("missile weapon")
+    MISSILE_WEAPON("missile weapon"),
+    @XmlEnumValue("throwing weapon")
+    THROWING_WEAPON("throwing weapon"),
     @XmlEnumValue("armor")
     ARMOR("armor"),
     @XmlEnumValue("shield")
     SHIELD("shield"),
-    @XmlEnumValue("meleweapon")
-    MELEWEAPON("meleweapon"),
-    @XmlEnumValue("thowingweapon")
-    THOWINGWEAPON("thowingweapon"),
-    @XmlEnumValue("missleweapon")
-    MISSLEWEAPON("missleweapon"),
-    @XmlEnumValue("purse")
-    PURSE("purse"),
-    @XmlEnumValue("ring")
-    RING("ring"),
+    @XmlEnumValue("light")
+    LIGHT("light"),
+    @XmlEnumValue("potion")
+    POTION("potion"),
+    @XmlEnumValue("salve")
+    SALVE("salve"),
+    @XmlEnumValue("talisman")
+    TALISMAN("talisman"),
     @XmlEnumValue("cloth")
     CLOTH("cloth"),
+    @XmlEnumValue("ring")
+    RING("ring"),
     @XmlEnumValue("brooch")
     BROOCH("brooch"),
     @XmlEnumValue("animal")
-    ANIMAL("animal");
+    ANIMAL("animal"),
+    @XmlEnumValue("coins")
+    COINS("coins"),
+    @XmlEnumValue("gems")
+    GEMS("gems"),
+    @XmlEnumValue("kit")
+    KIT("kit"),
+    @XmlEnumValue("pot")
+    POT("pot"),
+    @XmlEnumValue("tool")
+    TOOL("tool"),
+    @XmlEnumValue("instrument")
+    INSTRUMENT("instrument"),
+    @XmlEnumValue("food")
+    FOOD("food"),
+    @XmlEnumValue("drink")
+    DRINK("drink"),
+    @XmlEnumValue("ration")
+    RATION("ration"),
+    @XmlEnumValue("mount")
+    MOUNT("mount"),
+    @XmlEnumValue("transport")
+    TRANSPORT("transport");
     private final String value;
 
     ItemtypeType(String v) {

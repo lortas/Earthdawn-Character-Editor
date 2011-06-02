@@ -79,16 +79,33 @@ public class ECECsvExporter {
 	public void exportItems(EDCHARACTER edCharakter, File outFile) throws IOException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(outFile);
-		out.println( "Name\tLocation\tWeight\tIn Use" );
-		HashMap<String, ITEMType> itemMap = character.getAllItems();
-		Set<String> itemNames = new TreeSet<String>(itemMap.keySet());
-		for( String itemName : itemNames ) {
+		int pursecounter=0;
+		out.println( "Name\tLocation\tWeight\tIn Use\tType\tClass" );
+		for( ITEMType item : character.getAllNonVirtualItems() ) {
 			List<String> row = new ArrayList<String>();
-			ITEMType item = itemMap.get(itemName);
-			row.add( itemName );
+			if( item instanceof COINSType ) {
+				COINSType coins = (COINSType)item;
+				String name = coins.getName();
+				if( name == null ) {
+					name = "Purse #"+String.valueOf(++pursecounter);
+				} else {
+					if( name.isEmpty() ) name = "Purse #"+String.valueOf(++pursecounter);
+					else name = "Purse "+name;
+				}
+				name += " (c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
+				if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
+				if( coins.getWater()>0 )      name += " w:"+coins.getWater();
+				if( coins.getAir()>0 )        name += " a:"+coins.getAir();
+				if( coins.getFire()>0 )       name += " f:"+coins.getFire();
+				if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
+				name +=")";
+				row.add( name );
+			} else row.add( item.getName() );
 			row.add( item.getLocation() );
 			row.add( String.valueOf(item.getWeight()) );
 			row.add( item.getUsed().value() );
+			row.add( item.getItemtype().value() );
+			row.add( item.getClass().getSimpleName() );
 			out.println(generaterow(row));
 		}
 	}

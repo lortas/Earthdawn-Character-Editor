@@ -10,8 +10,6 @@
 	<ns3:ATTRIBUTE cost="5" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="4" racevalue="12" name="TOU" dice="2d6" step="8"/>
 	<ns3:DEFENSE social="8" spell="8" physical="11"/>
 	<ns3:PROTECTION penalty="2" mysticarmor="11" physicalarmor="12">
-		<ARMOR penalty="0" mysticarmor="2" physicalarmor="0" used="yes" weight="0.0" name="natural Armor"/>
-		<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		<ARMOR edn="22" penalty="2" mysticarmor="3" physicalarmor="6" location="self" used="yes" weight="0.0" name="Living Crystal"/>
 	</ns3:PROTECTION>
 	<ns3:HEALTH damage="0">
@@ -363,7 +361,9 @@
 		<KARMAPOINTS when="" comment="spend during adventures" value="100" type="-"/>
 	</ns3:KARMA>
 	<ns3:RACEABILITES>Heat Sight</ns3:RACEABILITES>
-	<ns3:CALCULATEDLEGENDPOINTS total="119900" magicitems="5300" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="36800" disciplinetalents="58700" attributes="17600"/>
+	<ns3:CALCULATEDLEGENDPOINTS total="119900" magicitems="5300" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="36800" disciplinetalents="58700" attributes="17600">
+		<ns3:USEDSTARTRANKS skills="14" talents="0"/>
+	</ns3:CALCULATEDLEGENDPOINTS>
 	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="33722" totallegendpoints="129922">
 		<LEGENDPOINTS when="" comment="Historische Einnahmen" value="10958" type="+"/>
 		<LEGENDPOINTS when="xx.02.2007" comment="Stand mit Feb." value="2179" type="+"/>
