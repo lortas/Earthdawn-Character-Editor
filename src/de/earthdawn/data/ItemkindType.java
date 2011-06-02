@@ -14,12 +14,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for itemtype_type.
+ * <p>Java class for itemkind_type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="itemtype_type">
+ * &lt;simpleType name="itemkind_type">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="undefined"/>
  *     &lt;enumeration value="melee weapon"/>
@@ -46,14 +46,16 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ration"/>
  *     &lt;enumeration value="mount"/>
  *     &lt;enumeration value="transport"/>
+ *     &lt;enumeration value="book"/>
+ *     &lt;enumeration value="paper"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "itemtype_type")
+@XmlType(name = "itemkind_type")
 @XmlEnum
-public enum ItemtypeType {
+public enum ItemkindType {
 
     @XmlEnumValue("undefined")
     UNDEFINED("undefined"),
@@ -104,10 +106,14 @@ public enum ItemtypeType {
     @XmlEnumValue("mount")
     MOUNT("mount"),
     @XmlEnumValue("transport")
-    TRANSPORT("transport");
+    TRANSPORT("transport"),
+    @XmlEnumValue("book")
+    BOOK("book"),
+    @XmlEnumValue("paper")
+    PAPER("paper");
     private final String value;
 
-    ItemtypeType(String v) {
+    ItemkindType(String v) {
         value = v;
     }
 
@@ -115,8 +121,8 @@ public enum ItemtypeType {
         return value;
     }
 
-    public static ItemtypeType fromValue(String v) {
-        for (ItemtypeType c: ItemtypeType.values()) {
+    public static ItemkindType fromValue(String v) {
+        for (ItemkindType c: ItemkindType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

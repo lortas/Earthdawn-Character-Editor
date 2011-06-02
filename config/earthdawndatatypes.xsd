@@ -135,7 +135,7 @@
 			<xs:enumeration value="4d12+2d10" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="itemtype_type">
+	<xs:simpleType name="itemkind_type"> 
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="undefined"/>
 			<xs:enumeration value="melee weapon"/>
@@ -162,6 +162,8 @@
 			<xs:enumeration value="ration"/>
 			<xs:enumeration value="mount"/>
 			<xs:enumeration value="transport"/>
+			<xs:enumeration value="book"/>
+			<xs:enumeration value="paper"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="STEPDICE_type">
@@ -282,7 +284,7 @@
 		<xs:attribute name="weight" type="xs:float" use="required"/>
 		<xs:attribute name="used" type="yesno_type" default="yes"/>
 		<xs:attribute name="location" type="xs:string" default="self"/>
-		<xs:attribute name="itemtype" type="itemtype_type" default="undefined"/>
+		<xs:attribute name="kind" type="itemkind_type" default="undefined"/>
 		<xs:attribute name="virtual" type="yesno_type" default="no"/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
