@@ -138,16 +138,30 @@
 	<xs:simpleType name="itemtype_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="undefined"/>
+			<xs:enumeration value="melee weapon"/>
+			<xs:enumeration value="missile weapon"/>
+			<xs:enumeration value="throwing weapon"/>
 			<xs:enumeration value="armor"/>
 			<xs:enumeration value="shield"/>
-			<xs:enumeration value="meleweapon"/>
-			<xs:enumeration value="thowingweapon"/>
-			<xs:enumeration value="missleweapon"/>
-			<xs:enumeration value="purse"/>
-			<xs:enumeration value="ring"/>
+			<xs:enumeration value="light"/>
+			<xs:enumeration value="potion"/>
+			<xs:enumeration value="salve"/>
+			<xs:enumeration value="talisman"/>
 			<xs:enumeration value="cloth"/>
+			<xs:enumeration value="ring"/>
 			<xs:enumeration value="brooch"/>
 			<xs:enumeration value="animal"/>
+			<xs:enumeration value="coins"/>
+			<xs:enumeration value="gems"/>
+			<xs:enumeration value="kit"/>
+			<xs:enumeration value="pot"/>
+			<xs:enumeration value="tool"/>
+			<xs:enumeration value="instrument"/>
+			<xs:enumeration value="food"/>
+			<xs:enumeration value="drink"/>
+			<xs:enumeration value="ration"/>
+			<xs:enumeration value="mount"/>
+			<xs:enumeration value="transport"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="STEPDICE_type">
@@ -269,6 +283,7 @@
 		<xs:attribute name="used" type="yesno_type" default="yes"/>
 		<xs:attribute name="location" type="xs:string" default="self"/>
 		<xs:attribute name="itemtype" type="itemtype_type" default="undefined"/>
+		<xs:attribute name="virtual" type="yesno_type" default="no"/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
 		<xs:attribute name="flight" type="unsigned_int"/>

@@ -175,8 +175,11 @@ public class ECEWorker {
 		}
 
 		// ** ARMOR **
-		List<ARMORType> magicarmor = character.getMagicArmor();
-		// natural ARMOR
+		// Zu erstmal alles entfernen was nicht eine Reale Rüstung ist:
+		List<ARMORType> totalarmor = character.removeVirtualArmorFromNormalArmorList();
+		// Dann Magische Rüstungen anhängen:
+		totalarmor.addAll(character.getMagicArmor());
+		// natural ARMOR bestimmen
 		ARMORType namegiverArmor = namegiver.getARMOR();
 		int mysticalarmor=namegiverArmor.getMysticarmor();
 		int physicalarmor=namegiverArmor.getPhysicalarmor();
@@ -189,14 +192,11 @@ public class ECEWorker {
 		naturalArmor.setPenalty(protectionpenalty);
 		naturalArmor.setUsed(namegiverArmor.getUsed());
 		naturalArmor.setWeight(namegiverArmor.getWeight());
-		List <ARMORType> newarmor = new ArrayList<ARMORType>();
-		newarmor.add(naturalArmor);
-		newarmor.addAll(magicarmor);
-		PROTECTIONType protection = character.getProtection();
-		for (ARMORType armor : protection.getARMOROrSHIELD() ) {
-			String armorName = armor.getName();
-			// Sollte die natürliche Rüstung bereits eingetragen sein, dann überspringen
-			if( armorName.equals(naturalArmor.getName())) continue;
+		naturalArmor.setVirtual(YesnoType.YES);
+		// Natürliche Rüstung der Liste voranstellen
+		totalarmor.add(0, naturalArmor);
+		// Bestimme der aktuellen Rüstungsschutz
+		for (ARMORType armor : totalarmor ) {
 			if( armor.getUsed().equals(YesnoType.YES) ) {
 				mysticalarmor+=armor.getMysticarmor();
 				physicalarmor+=armor.getPhysicalarmor();
@@ -205,18 +205,11 @@ public class ECEWorker {
 				initiative.setStep(initiative.getBase()+initiative.getModification());
 				initiative.setDice(step2Dice(initiative.getStep()));
 			}
-			// Sollte die Rüstung eine Magische Rüstung sein ist diese bereits eingetragen, dann überspringen
-			boolean insert = true;
-			for( ARMORType a : magicarmor ) {
-				if( armorName.equals(a.getName())) insert = false;
-			}
-			if( insert ) newarmor.add(armor);
 		}
+		PROTECTIONType protection = character.getProtection();
 		protection.setMysticarmor(mysticalarmor);
 		protection.setPenalty(protectionpenalty);
 		protection.setPhysicalarmor(physicalarmor);
-		protection.getARMOROrSHIELD().clear();
-		protection.getARMOROrSHIELD().addAll(newarmor);
 
 		character.setAbilities(concatStrings(namegiver.getABILITY()));
 

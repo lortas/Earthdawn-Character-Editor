@@ -1053,7 +1053,9 @@ public class CharacterContainer extends CharChangeRefresh {
 			String name = magicitem.getName();
 			float weight = magicitem.getWeight();
 			YesnoType used = magicitem.getUsed();
+			ItemtypeType itemtype = magicitem.getItemtype();
 			int weaven = magicitem.getWeaventhreadrank();
+			String location = magicitem.getLocation();
 			int rank=0;
 			ARMORType newmagicarmor = null;
 			SHIELDType newmagicshield = null;
@@ -1066,6 +1068,9 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setName(name);
 					armor.setWeight(weight);
 					armor.setUsed(used);
+					armor.setItemtype(itemtype);
+					armor.setLocation(location);
+					armor.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicarmor=armor;
 				}
 				SHIELDType shield = threadrank.getSHIELD();
@@ -1073,30 +1078,27 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setName(name);
 					shield.setWeight(weight);
 					shield.setUsed(used);
+					shield.setItemtype(itemtype);
+					shield.setLocation(location);
+					shield.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicshield=shield;
 				}
 				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
 				weaven--;
 			}
-			if( (newmagicarmor != null) && newmagicarmor.getUsed().equals(YesnoType.YES) ) magicarmor.add(newmagicarmor);
-			if( (newmagicshield != null) && newmagicshield.getUsed().equals(YesnoType.YES) ) magicarmor.add(newmagicshield);
+			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
+			if( newmagicshield != null ) magicarmor.add(newmagicshield);
 		}
 		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
 		return magicarmor;
 	}
 
-	public List<ARMORType> cutMagicArmornFromNormalArmorList() {
-		List<ARMORType> magicArmor = getMagicArmor();
-		List<ARMORType> normalArmorList = character.getPROTECTION().getARMOROrSHIELD();
+	public List<ARMORType> removeVirtualArmorFromNormalArmorList() {
+		List<ARMORType> armors = getProtection().getARMOROrSHIELD();
 		List<ARMORType> delete = new ArrayList<ARMORType>();
-		for( ARMORType armor : normalArmorList) {
-			String armorName = armor.getName();
-			for( ARMORType a : magicArmor ) {
-				if( armorName.equals(a.getName()) ) delete.add(armor);
-			}
-		}
-		normalArmorList.removeAll(delete);
-		return magicArmor;
+		for( ARMORType armor : armors) if( armor.getVirtual().equals(YesnoType.YES)) delete.add(armor);
+		armors.removeAll(delete);
+		return armors;
 	}
 
 	public List<WEAPONType> getMagicWeapon() {
@@ -1136,6 +1138,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		for( WEAPONType weapon : normalWeaponList) {
 			String weaponName = weapon.getName();
 			for( WEAPONType w : magicWeapon ) {
+				w.setVirtual(YesnoType.YES);
 				if( weaponName.equals(w.getName()) ) delete.add(weapon);
 			}
 		}
@@ -1376,7 +1379,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		carrying.setLifting(carryingValue *2);
 	}
 
-	public HashMap<String,ITEMType> getAllItems() {
+	public HashMap<String,ITEMType> getHashOfAllItems() {
 		HashMap<String,ITEMType> result = new HashMap<String, ITEMType>();
 		for( ITEMType item : character.getITEM() ) result.put( item.getName(), item );
 		int pursecounter=0;
@@ -1397,7 +1400,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			name +=")";
 			result.put( name, coins );
 		}
-		for( ITEMType item : character.getWEAPON() )         result.put( item.getName(), item );
+		for( ITEMType item : character.getWEAPON() ) result.put( item.getName(), item );
 		PROTECTIONType protection = character.getPROTECTION();
 		if( protection != null ) {
 			boolean naturalArmor=true; // Der erste Eintrag ist immer die natürliche Rüstung
@@ -1414,6 +1417,22 @@ public class CharacterContainer extends CharChangeRefresh {
 		for( ITEMType item : character.getBLOODCHARMITEM() ) result.put( item.getName(), item );
 		for( ITEMType item : character.getPATTERNITEM() )    result.put( item.getName(), item );
 		for( ITEMType item : character.getTHREADITEM() )     result.put( item.getName(), item );
+		return result;
+	}
+
+	public List<ITEMType> getAllNonVirtualItems() {
+		List<ITEMType> result = new ArrayList<ITEMType>();
+		for( ITEMType item : character.getITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		for( ITEMType item : character.getCOINS() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		for( ITEMType item : character.getWEAPON() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		PROTECTIONType protection = character.getPROTECTION();
+		if( protection != null ) {
+			for( ITEMType item : protection.getARMOROrSHIELD() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		}
+		for( ITEMType item : character.getMAGICITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		for( ITEMType item : character.getBLOODCHARMITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		for( ITEMType item : character.getPATTERNITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		for( ITEMType item : character.getTHREADITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
 		return result;
 	}
 }
