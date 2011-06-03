@@ -204,6 +204,7 @@ class ArmorTableModel extends AbstractTableModel {
      * editable.
      */
     public boolean isCellEditable(int row, int col) {
+    	if( character.getProtection().getARMOROrSHIELD().get(row).getVirtual().equals(YesnoType.YES) ) return false;
     	return true;
     }
 
