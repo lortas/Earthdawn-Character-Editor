@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <OPTIONALRULES xmlns="http://earthdawn.com/optionalrules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/optionalrules earthdawnoptionalrules.xsd">
+	<!--
+	By the following rule you can define how many attribute buy points can be used during character creation.
+	If you set limitoneway to "no", not only the left attribute buy points will increase the maximum karma,
+	but also to many spent points will decrease the maximum karma.
+	-->
 	<ATTRIBUTE points="25" limitoneway="yes"/>
+	<!--
+	By the following rule you can define how many start ranks a character will receive during the character creation
+	Usually:
+	 - 8 ranks for talents
+	 - 2 ranks for knowledge skill
+	 - 2 ranks for speaking skills
+	 - 1 rank for read/write language skill
+	 - 1 rank for artisan skill
+	 - 8 ranks for other skills
+	-->
 	<STARTRANKS talents="8" skills="14"/>
+	<!--
+	By the following rule you can define which attribute will modify the racial movement rate
+	right now implemented are racial movement rate modifier based on "STR", "DEX" or "na"
+	The last on means no movement rate modification.
+	-->
 	<ATTRIBUTEBASEDMOVEMENT attribute="STR"/>
+	<!-- By the following rule you can define if the attribute increase will cost legend points or not -->
 	<LEGENDPOINTSFORATTRIBUTEINCREASE used="yes"/>
+	<!--
+	By the following rule you can define if the freely learned spell will cost legend points or not
+	The spells ability set by the discipline circle will never cost legend points
+	-->
 	<SPELLLEGENDPOINTCOST used="yes"/>
+	<!--
+	By the following rule you can define if all modifier of thread items will be added or
+	if only the maximum of each modifier will count.
+	-->
 	<THREADITEMDOSTACK used="yes"/>
+	<!--
+	By the following rule you can define if the all discipline talent will be automatically increase
+	to met the circle increase requirement, but be care full this can result in to many spent legend points
+	-->
 	<AUTOINCREMENTDICIPLINETALENTS used="yes"/>
+	<!-- By the following rule you can define if the default skills will be displayed where possible -->
 	<SHOWDEFAULTSKILLS used="yes"/>
+	<!-- By the following rule you can define if a questor need to spend legend points for his questor talent -->
 	<QUESTORTALENTNEEDLEGENDPOINTS used="yes"/>
+	<!--
+	By the following rule you can define if the editor will auto insert legend points into the experience table
+	But note, that this rule will only insert not delete entries from the experience table.
+	E.g., if you increase and reduce steps form talents you will get multiple entries and you have to decide
+	which is the right one and which can be deleted. You still in response for your legend point entries.
+	 -->
 	<AUTOINSERTLEGENDPOINTSPENT used="yes"/>
+	<!-- The following Rule can be added multiple times and will define which talents can be used more than ones and how many at maximum -->
 	<MULTIUSETALENT talent="Spell Matrix" lang="en" count="5"/>
 	<MULTIUSETALENT talent="Enhanced Matrix" lang="en" count="4"/>
 	<MULTIUSETALENT talent="Armored Matrix" lang="en" count="3"/>
 	<MULTIUSETALENT talent="Shared Matrix" lang="en" count="3"/>
+	<!-- By the following rule you can define if if a specific talent will be added automatically and will not cost an optional talent slot -->
 	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as an extra talent-->
 </OPTIONALRULES>
