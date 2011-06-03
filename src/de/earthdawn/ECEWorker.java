@@ -450,6 +450,12 @@ public class ECEWorker {
 						bonusrank.setBonus(1);
 						calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute().value()));
 						bonusTalent.setRANK(bonusrank);
+						TALENTTEACHERType teacher = new TALENTTEACHERType();
+						teacher.setByversatility(YesnoType.NO);
+						teacher.setTalentcircle(rank);
+						teacher.setTeachercircle(rank);
+						teacher.setName(item.getName());
+						bonusTalent.setTEACHER(teacher);
 						allTalents.get(1).getOPTIONALTALENT().add(bonusTalent);
 					}
 				}
