@@ -177,8 +177,6 @@ public class ECEWorker {
 		// ** ARMOR **
 		// Zu erstmal alles entfernen was nicht eine Reale Rüstung ist:
 		List<ARMORType> totalarmor = character.removeVirtualArmorFromNormalArmorList();
-		// Dann Magische Rüstungen anhängen:
-		totalarmor.addAll(character.getMagicArmor());
 		// natural ARMOR bestimmen
 		ARMORType namegiverArmor = namegiver.getARMOR();
 		ARMORType naturalArmor = new ARMORType();
@@ -191,6 +189,8 @@ public class ECEWorker {
 		naturalArmor.setVirtual(YesnoType.YES);
 		// Natürliche Rüstung der Liste voranstellen
 		totalarmor.add(0, naturalArmor);
+		// magischen Rüstung/Rüstungsschutz anhängen:
+		totalarmor.addAll(character.getMagicArmor());
 		// Bestimme nun den aktuellen Gesamtrüstungsschutz
 		int mysticalarmor=0;
 		int physicalarmor=0;

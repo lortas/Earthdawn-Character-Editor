@@ -1056,6 +1056,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			ItemkindType kind = magicitem.getKind();
 			int weaven = magicitem.getWeaventhreadrank();
 			String location = magicitem.getLocation();
+			int edn=magicitem.getEnchantingdifficultynumber();
 			int rank=0;
 			ARMORType newmagicarmor = null;
 			SHIELDType newmagicshield = null;
@@ -1070,6 +1071,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setUsed(used);
 					armor.setKind(kind);
 					armor.setLocation(location);
+					armor.setEdn(edn);
 					armor.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicarmor=armor;
 				}
@@ -1080,6 +1082,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setUsed(used);
 					shield.setKind(kind);
 					shield.setLocation(location);
+					shield.setEdn(edn);
 					shield.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicshield=shield;
 				}
