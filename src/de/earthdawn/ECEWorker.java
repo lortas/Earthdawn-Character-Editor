@@ -181,21 +181,20 @@ public class ECEWorker {
 		totalarmor.addAll(character.getMagicArmor());
 		// natural ARMOR bestimmen
 		ARMORType namegiverArmor = namegiver.getARMOR();
-		int mysticalarmor=namegiverArmor.getMysticarmor();
-		int physicalarmor=namegiverArmor.getPhysicalarmor();
-		int protectionpenalty=namegiverArmor.getPenalty();
-		mysticalarmor+=berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue());
 		ARMORType naturalArmor = new ARMORType();
 		naturalArmor.setName(namegiverArmor.getName());
-		naturalArmor.setMysticarmor(mysticalarmor);
-		naturalArmor.setPhysicalarmor(physicalarmor);
-		naturalArmor.setPenalty(protectionpenalty);
+		naturalArmor.setMysticarmor(namegiverArmor.getMysticarmor()+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
+		naturalArmor.setPhysicalarmor(namegiverArmor.getPhysicalarmor());
+		naturalArmor.setPenalty(namegiverArmor.getPhysicalarmor());
 		naturalArmor.setUsed(namegiverArmor.getUsed());
 		naturalArmor.setWeight(namegiverArmor.getWeight());
 		naturalArmor.setVirtual(YesnoType.YES);
 		// Natürliche Rüstung der Liste voranstellen
 		totalarmor.add(0, naturalArmor);
-		// Bestimme der aktuellen Rüstungsschutz
+		// Bestimme nun den aktuellen Gesamtrüstungsschutz
+		int mysticalarmor=0;
+		int physicalarmor=0;
+		int protectionpenalty=0;
 		for (ARMORType armor : totalarmor ) {
 			if( armor.getUsed().equals(YesnoType.YES) ) {
 				mysticalarmor+=armor.getMysticarmor();
