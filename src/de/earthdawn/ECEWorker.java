@@ -459,7 +459,11 @@ public class ECEWorker {
 						allTalents.get(1).getOPTIONALTALENT().add(bonusTalent);
 					}
 				}
-				
+				for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
+					initiative.setModification(initiative.getModification()+iteminitiative.getCount());
+				}
+				initiative.setStep(initiative.getBase()+initiative.getModification());
+				initiative.setDice(step2Dice(initiative.getStep()));
 				// TODO: other effects of MagicItems
 			}
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
