@@ -3,9 +3,7 @@ package de.earthdawn.ui2;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -87,12 +85,9 @@ public class EDKarma extends JPanel {
 	}
 	
 	protected void do_btnAddKarmaEntry_actionPerformed(ActionEvent arg0) {
-		SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
-		
-		
 		ACCOUNTINGType ac = new ACCOUNTINGType();
 		ac.setType(PlusminusType.PLUS);
-		ac.setWhen(format.format(new Date()));
+		ac.setWhen(CharacterContainer.getCurrentDateTime());
 		ac.setComment(new String(""));
 		ac.setValue(0);
 		character.getEDCHARACTER().getKARMA().getKARMAPOINTS().add(ac);
