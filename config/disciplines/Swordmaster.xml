@@ -64,4 +64,63 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
+		<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Mind Blade"/>
+		<OPTIONALTALENT name="Pin"/>
+		<OPTIONALTALENT name="Shield Beater"/>
+		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<OPTIONALTALENT name="Whirlwind"/>
+		<DISCIPLINETALENT name="Impressive Strike"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Weapon Bond</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Champion Challenge"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Spot Armor Flaw"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="spell"/>
+		
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Defense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Infuse Blade"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Mind Armor"/>
+		<OPTIONALTALENT name="Missle Twister"/>
+		<OPTIONALTALENT name="Rushing Attack"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<DISCIPLINETALENT name="Vital Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMASTEP/>
+		<ABILITY>Keen Blade</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Multi-Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Ethereal Weapon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+	</CIRCLE>
 </DISCIPLINE>

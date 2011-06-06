@@ -64,4 +64,63 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
+		<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Disarm"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Sense Magic Item"/>
+		<OPTIONALTALENT name="Show Armor Flaw"/>
+		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spellcasting"/>
+		<OPTIONALTALENT name="Temperature"/>
+		<DISCIPLINETALENT name="Infuse Weapon"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Elementalism</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Weapon Ward"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Strength-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Infuse Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Mind Blade"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<OPTIONALTALENT name="Resist Pain"/>
+		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Soften Blade"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<DISCIPLINETALENT name="Ethereal Weapon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Craft Mastery</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Aura Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Toughness-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Reshape Object"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
 </DISCIPLINE>
