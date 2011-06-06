@@ -63,5 +63,63 @@
 		<DISCIPLINETALENT name="Frenzy"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
+	</CIRCLE>	
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Bestial Toughness"/>
+		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Enduring Art"/>
+		<OPTIONALTALENT name="Howl"/>
+		<OPTIONALTALENT name="Incite Stampede"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Tame Mount"/>
+		<DISCIPLINETALENT name="Chamelion"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Tough Hide</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Animal Leadership"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Develop Animal Sense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Toughness-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Bestial Resilience"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Echo Location"/>
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<OPTIONALTALENT name="Trample"/>
+		<DISCIPLINETALENT name="Scent Identifier"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Wild Sense</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Venom"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Astral Web"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
 	</CIRCLE>
 </DISCIPLINE>

@@ -64,4 +64,63 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+		<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Eagle Eye"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Lifesight"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Sense Poison"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Trace Missle"/>
+		<DISCIPLINETALENT name="Endure Cold"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Blend</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Defense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Detect Falsehood"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Bestial Resilience"/>
+		<OPTIONALTALENT name="Elemental Walk"/>
+		<OPTIONALTALENT name="Multi-Tongue"/>
+		<OPTIONALTALENT name="Nehterwalk"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<OPTIONALTALENT name="Vital Strike"/>
+		<DISCIPLINETALENT name="Echo Location"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>One with the World</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Chameleon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
 </DISCIPLINE>

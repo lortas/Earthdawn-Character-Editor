@@ -64,4 +64,61 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Call Mount"/>
+		<OPTIONALTALENT name="Down Strike"/>
+		<OPTIONALTALENT name="Incite Stampede"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Rally"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Trample"/>
+		<DISCIPLINETALENT name="Critical Hit"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Gait Mastery</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Unmount"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Tame Mount"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Life Check"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Bestial Toughness"/>
+		<OPTIONALTALENT name="Champion Challange"/>
+		<OPTIONALTALENT name="Develop Animal Sense"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<DISCIPLINETALENT name="Shield Beater"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Resurrect Mount</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Vitality"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE count="2"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Multi-Charge"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
 </DISCIPLINE>
