@@ -150,6 +150,7 @@
 			<xs:enumeration value="cloth"/>
 			<xs:enumeration value="ring"/>
 			<xs:enumeration value="brooch"/>
+			<xs:enumeration value="amulet"/>
 			<xs:enumeration value="wand"/>
 			<xs:enumeration value="animal"/>
 			<xs:enumeration value="coins"/>

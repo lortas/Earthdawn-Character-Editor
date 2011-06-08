@@ -212,7 +212,7 @@
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="no" weight="1.0" name="Desperate Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
-	<ns3:THREADITEM name="Thermail Schutz der Plage" weight="0" used="yes" maxthreads="1" spelldefense="20" lpcostgrowth="9" weaventhreadrank="4">
+	<ns3:THREADITEM name="Thermail Schutz der Plage" weight="0" used="yes" maxthreads="1" spelldefense="20" lpcostgrowth="9" weaventhreadrank="4" kind="ring">
 		<description>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</description>
 		<THREADRANK lpcost="1" effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
 		<THREADRANK lpcost="2" effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
@@ -274,7 +274,7 @@
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
+	<ns3:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü" kind="melee weapon">
 		<description>Thread Item Melee Weapon page 276 PlayerGuide</description>
 		<THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
 			<WEAPON size="5" strengthmin="13" damagestep="12" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
@@ -289,7 +289,7 @@
 			<WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
+	<ns3:THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio" kind="shield">
 		<description>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</description>
 		<THREADRANK effect="max Forge Defense" lpcost="200" keyknowledge="Name of the Item: Sylvio">
 			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="2" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
@@ -304,14 +304,14 @@
 			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="3" used="yes" weight="6.0" name="Silverins Heiltrank">
+	<ns3:THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="3" used="yes" weight="6.0" name="Silverins Heiltrank" kind="potion">
 		<description>1 x Anwendung täglich</description>
 		<THREADRANK effect="Heiltrank +4" lpcost="300" keyknowledge="Name of the Item: Silverins"/>
 		<THREADRANK effect="Heiltrank +5" lpcost="500"/>
 		<THREADRANK effect="Heiltrank +6, Erholungstrank +4" lpcost="800"/>
 		<THREADRANK effect="Heiltrank +8, Erholungstrank +4" lpcost="1300"/>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch">
+	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch" kind="brooch">
 		<description>Schwarzer Stein mit goldener Verzierung</description>
 		<THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa">
 			<DEFENSE kind="social"/>
@@ -321,7 +321,7 @@
 			<DEFENSE kind="social"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Thread Ring">
+	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Thread Ring" kind="ring">
 		<description></description>
 		<THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: ?">
 			<DEFENSE kind="social"/>
@@ -336,7 +336,7 @@
 			<DEFENSE kind="spell"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra">
+	<ns3:THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra" kind="brooch">
 		<description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</description>
 		<THREADRANK effect="Physical Armor +3" lpcost="200" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
 			<ARMOR physicalarmor="3" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
