@@ -369,7 +369,7 @@ public class EDThreadItems extends JPanel {
 			for(String strFilename : dir.list()){
 				System.out.println("Filename:" + stripExtension(strFilename));
 				ImageIcon orgIcon = new ImageIcon("./icons/" + strFilename);
-				treeIcons.put(stripExtension(strFilename),  scale(orgIcon.getImage()));
+				treeIcons.put(stripExtension(strFilename.toUpperCase()),  scale(orgIcon.getImage()));
 			}
 		}
 
