@@ -254,6 +254,7 @@ public class ECEWorker {
 				talent.setLimitation(namegivertalents.get(t).getLimitation());
 				talent.setCircle(0);
 				enforceCapabilityParams(talent);
+				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
@@ -268,6 +269,7 @@ public class ECEWorker {
 				talent.setName(t);
 				talent.setCircle(circle);
 				enforceCapabilityParams(talent);
+				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
