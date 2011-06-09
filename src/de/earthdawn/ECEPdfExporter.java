@@ -773,26 +773,47 @@ public class ECEPdfExporter {
 			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
 		}
 
-		int copperPieces = 0;
-		int goldPieces = 0;
-		int silverPieces = 0;
+		String copperPieces = null;
+		String goldPieces = null;
+		String silverPieces = null;
+		int otherPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
-			String name = "Purse "+coins.getName()+" (";
-			name += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
-			if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
-			if( coins.getWater()>0 )      name += " w:"+coins.getWater();
-			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
-			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
-			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
-			name +=")";
-			addEquipment(name,coins.getWeight(),true);
-			copperPieces += coins.getCopper();
-			silverPieces += coins.getSilver();
-			goldPieces += coins.getGold();
+			String other = "";
+			if( coins.getEarth()>0 )      other += " earth:"+coins.getEarth();
+			if( coins.getWater()>0 )      other += " water:"+coins.getWater();
+			if( coins.getAir()>0 )        other += " air:"+coins.getAir();
+			if( coins.getFire()>0 )       other += " fire:"+coins.getFire();
+			if( coins.getOrichalcum()>0 ) other += " orichalcum:"+coins.getOrichalcum();
+			if( ! other.isEmpty() ) {
+				if( ! coins.getName().isEmpty() ) other += " ["+coins.getName()+"]";
+				acroFields.setField( "Coins."+String.valueOf(otherPieces), other );
+				otherPieces++;
+			}
+			if( coins.getCopper() != 0 ) {
+				if( copperPieces == null ) {
+					copperPieces = String.valueOf(coins.getCopper());
+				} else {
+					copperPieces += "+"+String.valueOf(coins.getCopper());
+				}
+			}
+			if( coins.getSilver() != 0 ) {
+				if( silverPieces == null ) {
+					silverPieces = String.valueOf(coins.getSilver());
+				} else {
+					silverPieces += "+"+String.valueOf(coins.getSilver());
+				}
+			}
+			if( coins.getGold() != 0 ) {
+				if( goldPieces == null ) {
+					goldPieces = String.valueOf(coins.getGold());
+				} else {
+					goldPieces += "+"+String.valueOf(coins.getGold());
+				}
+			}
 		}
-		acroFields.setField( "CopperPieces", String.valueOf(copperPieces) );
-		acroFields.setField( "SilverPieces", String.valueOf(silverPieces) );
-		acroFields.setField( "GoldPieces", String.valueOf(goldPieces) );
+		acroFields.setField( "CopperPieces", copperPieces );
+		acroFields.setField( "SilverPieces.0", silverPieces );
+		acroFields.setField( "GoldPieces", goldPieces );
 
 		int conterSpells=0;
 		for( SPELLSType spells : character.getAllSpells() ) {
