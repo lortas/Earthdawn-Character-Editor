@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE name="Swordmaster-Slasher" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+<DISCIPLINE name="Swordmaster-Bladesman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY death="7" unconsciousness="6"/>
 	<CIRCLE><!-- 1 -->
-		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Taunt"/>
 		<OPTIONALTALENT name="Avoid Blow"/>
 		<OPTIONALTALENT name="First Impression"/>
 		<OPTIONALTALENT name="Speak Language"/>
 		<OPTIONALTALENT name="Wound Balance"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
-		<DISCIPLINETALENT name="Close In"/>
+		<DISCIPLINETALENT name="Maneuver"/>
 		<DISCIPLINETALENT name="Melee Weapons"/>
 		<DISCIPLINETALENT name="Parry"/>
-		<DISCIPLINETALENT name="Taunt"/>
+		<DISCIPLINETALENT name="Acrobatic Strike"/>
 		<TALENTABILITY/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
@@ -22,10 +22,10 @@
 		<OPTIONALTALENT name="Sprint"/>
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Unarmed Combat"/>
-		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Winning Smile"/>
 		<DISCIPLINETALENT name="Heartening Laugh"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Riposte"/>
@@ -57,12 +57,12 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Resist Taunt"/>
 		<TALENTABILITY/>
-		<KARMA spend="Damage Tests made with melee and thrown weapons smaller than his one-handed Weapon Size capability"/>
+		<KARMA spend="mele weapon Damage Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Second Attack"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 	</CIRCLE>
 		<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Critical Hit"/>
@@ -81,19 +81,19 @@
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Champion Challenge"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Spot Armor Flaw"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Defense"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -105,20 +105,20 @@
 		<OPTIONALTALENT name="Second Chance"/>
 		<DISCIPLINETALENT name="Vital Strike"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<KARMASTEP/>
 		<ABILITY>Keen Blade</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Multi-Strike"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 		<KARMA spend="Perception-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Ethereal Weapon"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<DEFENSE kind="spell"/>
 		<INITIATIVE/>
 	</CIRCLE>
