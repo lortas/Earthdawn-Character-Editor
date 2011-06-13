@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE name="Scout" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+<DISCIPLINE name="Scout-Explorer" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Avoid Blow"/>
-		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Speak Language"/>
 		<OPTIONALTALENT name="Melee Weapons"/>
 		<OPTIONALTALENT name="Missle Weapons"/>
 		<OPTIONALTALENT name="Silent Walk"/>
@@ -23,7 +23,7 @@
 		<OPTIONALTALENT name="Great Leap"/>
 		<OPTIONALTALENT name="Read/Write Language"/>
 		<OPTIONALTALENT name="Sprint"/>
-		<DISCIPLINETALENT name="Speak Language"/>
+		<DISCIPLINETALENT name="Creature Analysis"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
@@ -42,12 +42,12 @@
 		<OPTIONALTALENT name="Disarm Trap"/>
 		<OPTIONALTALENT name="Lock Picking"/>
 		<OPTIONALTALENT name="Maneuver"/>
-		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
 		<OPTIONALTALENT name="Trap Initiative"/>
 		<OPTIONALTALENT name="Trick Riding"/>
-		<DISCIPLINETALENT name="Evidence Analysis"/>
+		<DISCIPLINETALENT name="Sense Danger"/>
 		<TALENTABILITY/>
-		<ABILITY>Ehnaced Sense</ABILITY>
+		<ABILITY>Enhanced Sense</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Astral Sight"/>

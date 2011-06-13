@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE name="Archer" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+<DISCIPLINE name="Archer-Crossbowman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Avoid Blow"/>
@@ -17,15 +17,15 @@
 	<CIRCLE><!-- 2 -->
 		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Durability"/>
-		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Direction Arrow"/>
 		<OPTIONALTALENT name="Flame Arrow"/>
 		<OPTIONALTALENT name="Great Leap"/>
 		<OPTIONALTALENT name="Long Shot"/>
 		<OPTIONALTALENT name="Speak Language"/>
 		<OPTIONALTALENT name="Sprint"/>
-		<DISCIPLINETALENT name="Direction Arrow"/>
+		<DISCIPLINETALENT name="First Impression"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Anticipate Blow"/>
@@ -62,7 +62,7 @@
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Second Shot"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Blade Juggle"/>
@@ -81,20 +81,20 @@
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Warning Shot"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Dominate Arrow"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 		<DEFENSE kind="spell"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Blind Fire"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -113,14 +113,14 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Screaming Arrow"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Wind Bow"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
 </DISCIPLINE>
