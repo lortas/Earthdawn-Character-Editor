@@ -237,7 +237,7 @@ public class EDThreadItems extends JPanel {
 
 
 	protected void do_tree_mouseReleased(MouseEvent arg0) {
-		if (arg0.getButton() == arg0.BUTTON3) {
+		if (arg0.getButton() == MouseEvent.BUTTON3) {
 
 			// das unter der Maus liegende Element selektieren
 			TreePath selPath = this.tree.getPathForLocation(arg0.getX(), arg0.getY());
@@ -341,6 +341,7 @@ public class EDThreadItems extends JPanel {
 
 	public class EDItemTreeCellEditor extends  DefaultTreeCellRenderer   implements TreeCellEditor {
 
+		private static final long serialVersionUID = 1L;
 		DefaultMutableTreeNode node;
 		JLabel renderComponent;
 		ImageIcon rootIconClosed; 
@@ -365,7 +366,7 @@ public class EDThreadItems extends JPanel {
 			System.out.println("Init");
 			File dir = new File("./icons");
 
-			treeIcons = new HashMap();
+			treeIcons = new HashMap<String, ImageIcon>();
 			for(String strFilename : dir.list()){
 				System.out.println("Filename:" + stripExtension(strFilename));
 				ImageIcon orgIcon = new ImageIcon("./icons/" + strFilename);
