@@ -214,7 +214,6 @@
 		<OPTIONALTALENT name="Shared Fetish"/>
 		<DISCIPLINETALENT name="Wound Transfer"/>
 		<TALENTABILITY/>
-		<SPELL type="shamane" name="Council of the Forest"/>
 		<DEFENSE kind="social"/>
 		<KARMASTEP/>
 		<ABILITY>Pinnacle of Comprehension</ABILITY>
@@ -222,16 +221,17 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Netherwalk"/>
 		<TALENTABILITY/>
-		<SPELL type="shamane" name="Call Forth the Maelstrom"/>
-		<SPELL type="shamane" name="Purify Forest"/>
+		<SPELL type="shamane" name="Council of the Forest"/>
 		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Multi-Weaving"/>
 		<TALENTABILITY/>
+		<SPELL type="shamane" name="Call Forth the Maelstrom"/>
+		<SPELL type="shamane" name="Purify Forest"/>
 		<DEFENSE kind="physical"/>
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
-		<RECOVERYTEST/>
 	</CIRCLE>
 </DISCIPLINE>
