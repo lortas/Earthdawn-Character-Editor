@@ -44,6 +44,7 @@ import de.earthdawn.data.ItemkindType;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
+import de.earthdawn.data.WEAPONType;
 
 public class EDThreadItems extends JPanel {
 	private JScrollPane scrollPane;
@@ -57,6 +58,7 @@ public class EDThreadItems extends JPanel {
 	private DefaultMutableTreeNode nodeMundaneItems;
 	private DefaultMutableTreeNode nodeBloodCharmItems;
 	private DefaultMutableTreeNode nodeArmorShield;
+	private DefaultMutableTreeNode nodeWeapons;
 	
 	private JPopupMenu popupMenuTree;
 	private JMenuItem menuItemAdd;
@@ -73,6 +75,7 @@ public class EDThreadItems extends JPanel {
 
 	public CharacterContainer getCharacter() {
 		return character;
+		
 	}
 
 	public void setCharacter(CharacterContainer character) {	
@@ -163,15 +166,18 @@ public class EDThreadItems extends JPanel {
 		nodeMundaneItems = new DefaultMutableTreeNode("Mundane items");
 		nodeBloodCharmItems = new DefaultMutableTreeNode("Bloodcharms");
 		nodeArmorShield = new DefaultMutableTreeNode("Armor/Shield");
+		nodeWeapons = new DefaultMutableTreeNode("Weapons");
 		
 		
-		nodeRoot.add(nodeMundaneItems);
+		//nodeRoot.add(nodeMundaneItems);
 		nodeRoot.add(nodeArmorShield);
 		nodeRoot.add(nodeBloodCharmItems);
 		nodeRoot.add(nodeThreadItems);
+		nodeRoot.add(nodeWeapons);
 		
 		tree = new JTree(nodeRoot);
 		tree.setRootVisible(false);
+		
 		
 		
 		tree.setEditable(true);
@@ -192,6 +198,24 @@ public class EDThreadItems extends JPanel {
 			itemNode = new DefaultMutableTreeNode(item.getName());
 			nodeMundaneItems.add(itemNode);
 		}
+		
+		// weapons
+		DefaultMutableTreeNode weaponNode = null;
+		for(WEAPONType weapon : character.getWeapons()){
+			weaponNode = new DefaultMutableTreeNode(weapon.getName());
+			nodeWeapons.add(weaponNode);
+		}
+		
+		// armor
+		DefaultMutableTreeNode armorNode = null;
+		for(ARMORType armor : character.getProtection().getARMOROrSHIELD()){
+			ArmorShieldInfo info = new ArmorShieldInfo(armor);
+			armorNode = new DefaultMutableTreeNode(info);
+			nodeArmorShield.add(armorNode);
+		}		
+		
+		
+		
 		
 		// threaditems
 		DefaultMutableTreeNode rankNode = null;
@@ -219,7 +243,7 @@ public class EDThreadItems extends JPanel {
 			nodeThreadItems.add(itemNode);
 		}
 		
-		//expandAll(tree);
+		expandAll(tree);
 
 
 	}
@@ -489,7 +513,10 @@ public class EDThreadItems extends JPanel {
 				}			
 				if(node.getUserObject().toString().equals("Mundane items")){
 					renderComponent.setIcon((ImageIcon)treeIcons.get("BACKPACK"));
-				}		
+				}	
+				if(node.getUserObject().toString().equals("Weapons")){
+					renderComponent.setIcon((ImageIcon)treeIcons.get("MELEE_WEAPON"));
+				}				
 				
 				
 			}
@@ -681,6 +708,79 @@ public class EDThreadItems extends JPanel {
 		}
 	}
 
+	public class ArmorShieldInfo implements IntNode {
+		public ARMORType armor;
+		private JLabel lbPhysicArmor;
+		private JTextField textFieldPhysicArmor;
+		private JLabel lblMysticArmor;
+		private JTextField textFieldMysticArmor;
+		private JLabel lblPenalty;
+		private JTextField textFieldPenalty;
+		
+		public ArmorShieldInfo(ARMORType a) {
+			super();
+			this.armor = a;
+		}
+
+
+
+		@Override
+		public JPanel getEditor() {
+			JPanel editor = new JPanel();
+			editor.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+
+			lbPhysicArmor = new JLabel("Physical Armor");
+			editor.add(lbPhysicArmor);
+
+			textFieldPhysicArmor = new JTextField();
+
+			textFieldPhysicArmor.setDocument(new NumericDocument());
+			textFieldPhysicArmor.setText(String.valueOf((armor.getPhysicalarmor())));
+			editor.add(textFieldPhysicArmor);
+			textFieldPhysicArmor.setColumns(10);
+
+			lblMysticArmor = new JLabel("Mystic Armor");
+			editor.add(lblMysticArmor);
+
+			textFieldMysticArmor = new JTextField();
+			textFieldMysticArmor.setText(String.valueOf((armor.getMysticarmor())));
+			editor.add(textFieldMysticArmor);
+			textFieldMysticArmor.setColumns(10);
+
+			lblPenalty = new JLabel("Penalty");
+			editor.add(lblPenalty);
+
+			textFieldPenalty = new JTextField();
+			textFieldPenalty.setText(String.valueOf((armor.getPenalty())));
+			editor.add(textFieldPenalty);
+			textFieldPenalty.setColumns(10);
+
+			editor.setOpaque(false);
+
+			return editor;
+		}
+
+		@Override
+		public JPanel getRenderer() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public Object getUserObject() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public void updateUserObject() {
+			armor.setPhysicalarmor(new Integer(textFieldPhysicArmor.getText()));
+			armor.setMysticarmor(new Integer(textFieldMysticArmor.getText()));
+			armor.setPenalty(new Integer(textFieldPenalty.getText()));
+
+		}
+		
+	}
 
 
 	public class ThreadEffectArmor implements IntNode,IntEffectNode {
@@ -700,7 +800,6 @@ public class EDThreadItems extends JPanel {
 
 		@Override
 		public JPanel getEditor() {
-			System.out.println("getEditor");
 			JPanel editor = new JPanel();
 			editor.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 
@@ -760,7 +859,7 @@ public class EDThreadItems extends JPanel {
 
 		@Override
 		public String getEffectType() {
-			return "Armor";
+			return "ArmorEffect";
 		}
 
 	}
