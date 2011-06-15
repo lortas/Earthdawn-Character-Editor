@@ -57,7 +57,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Momentum Attack"/>
 		<TALENTABILITY/>
-		<KARMA spend="Melle Weapon Damage Test"/>
+		<KARMA spend="Melee Weapon Damage Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Second Attack"/>
