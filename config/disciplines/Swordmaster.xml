@@ -89,7 +89,6 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<DEFENSE kind="spell"/>
-		
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Defense"/>
