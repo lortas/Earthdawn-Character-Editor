@@ -711,10 +711,14 @@ public class ECEPdfExporter {
 		int counterArmor=0;
 		for (ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
 			if( ! armor.getUsed().equals(YesnoType.YES) ) continue;
+			int physicalarmor = armor.getPhysicalarmor();
+			int mysticarmor = armor.getMysticarmor();
+			int penalty = armor.getPenalty();
+			if( (physicalarmor==0) && (mysticarmor==0) && (penalty==0) ) continue;
 			acroFields.setField( "ArmorName."+counterArmor , armor.getName() );
-			acroFields.setField( "ArmorPhysical."+counterArmor , String.valueOf(armor.getPhysicalarmor()) );
-			acroFields.setField( "ArmorMystic."+counterArmor , String.valueOf(armor.getMysticarmor()) );
-			acroFields.setField( "ArmorPenalty."+counterArmor , String.valueOf(armor.getPenalty()) );
+			acroFields.setField( "ArmorPhysical."+counterArmor , String.valueOf(physicalarmor) );
+			acroFields.setField( "ArmorMystic."+counterArmor , String.valueOf(mysticarmor) );
+			acroFields.setField( "ArmorPenalty."+counterArmor , String.valueOf(penalty) );
 			counterArmor++;
 		}
 
