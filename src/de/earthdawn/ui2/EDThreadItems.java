@@ -163,7 +163,7 @@ public class EDThreadItems extends JPanel {
 	private void initTree(){
 		nodeRoot = new DefaultMutableTreeNode("Inventory");
 		nodeThreadItems = new DefaultMutableTreeNode("Thread items");
-		nodeMundaneItems = new DefaultMutableTreeNode("Mundane items");
+		nodeMundaneItems = new DefaultMutableTreeNode("Mundane Items");
 		nodeBloodCharmItems = new DefaultMutableTreeNode("Bloodcharms");
 		nodeArmorShield = new DefaultMutableTreeNode("Armor/Shield");
 		nodeWeapons = new DefaultMutableTreeNode("Weapons");
@@ -318,7 +318,7 @@ public class EDThreadItems extends JPanel {
 		if (tree.getSelectionPath().getPathCount() == 2){
 			THREADITEMType newitem = new THREADITEMType();
 			newitem.setName("New Item");
-			newitem.setDescription("Discription");
+			newitem.setDescription("Description");
 			character.getThreadItem().add(newitem);
 		}
 		if (tree.getSelectionPath().getPathCount() == 3){
@@ -511,7 +511,7 @@ public class EDThreadItems extends JPanel {
 				if(node.getUserObject().toString().equals("Armor/Shield")){
 					renderComponent.setIcon((ImageIcon)treeIcons.get("HELM"));
 				}			
-				if(node.getUserObject().toString().equals("Mundane items")){
+				if(node.getUserObject().toString().equals("Mundane Items")){
 					renderComponent.setIcon((ImageIcon)treeIcons.get("BACKPACK"));
 				}	
 				if(node.getUserObject().toString().equals("Weapons")){
