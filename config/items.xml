@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/items earthdawnitems.xsd">
+	<ARMOR penalty="4" mysticarmor="0" physicalarmor="9" location="self" used="yes" weight="60.0" name="Schuppenpanzer"/>
+	<WEAPON size="4" strengthmin="17" damagestep="8" weight="6.0" name="Troll Battle Axe" kind="melee weapon"/>
+	<WEAPON size="5" strengthmin="13" damagestep="7" weight="6.0" name="Battle Axe" kind="melee weapon"/>
+	<WEAPON size="3" strengthmin="12" damagestep="5" weight="4.0" name="Broadsword" kind="melee weapon"/>
+	<WEAPON longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe" kind="throwing weapon"/>
+	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 for attack or damage" enchantingdifficultynumber="14" location="self" weight="0.0" name="Desperate Blow"/>
+</ITEMS>

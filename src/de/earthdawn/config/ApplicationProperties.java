@@ -44,6 +44,7 @@ public class ApplicationProperties {
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
     private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
+    private static ITEMS ITEMS = new ITEMS();
     private static NAMES NAMES = new NAMES();
     private static HELP HELP = new HELP();
     private static LanguageType LANGUAGE = LanguageType.EN;
@@ -283,6 +284,10 @@ public class ApplicationProperties {
 		return "";
 	}
 
+	public ITEMS getItems() {
+		return ITEMS;
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -321,6 +326,9 @@ public class ApplicationProperties {
 			filename="./config/optionalrules.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			OPTIONALRULES = (OPTIONALRULES) u.unmarshal(new File(filename));
+			filename="./config/items.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			ITEMS = (ITEMS) u.unmarshal(new File(filename));
 			filename="./config/names.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMES = (NAMES) u.unmarshal(new File(filename));
