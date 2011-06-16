@@ -9,6 +9,7 @@ import java.util.TreeMap;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -121,5 +122,13 @@ public class EDCapabilitySelectDialog extends JDialog {
 	protected void do_cancelButton_actionPerformed(ActionEvent arg0) {
 		selectedCapabilityMap.clear();
 		this.dispose();
+	}
+
+	public void setSingleSelection( boolean selection ) {
+		if( selection ) {
+			list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		} else {
+			list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		}
 	}
 }
