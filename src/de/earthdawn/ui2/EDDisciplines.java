@@ -7,8 +7,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.swing.JButton;
+import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
@@ -78,26 +82,46 @@ public class EDDisciplines extends JPanel {
 			}
 		});
 		toolBar.add(btnAddDicipline);
-		
-		popupMenuCircle = new JPopupMenu();
-		//addPopup(btnAddDicipline, popupMenuCircle);
-		for (String n : ApplicationProperties.create().getAllDisziplinNames()) {
-			menuItem = new JMenuItem(n);
+		popupMenuCircle = DisziplinAsTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
+	}
+
+	protected JMenu DisziplinAsTree(String name, Map<String, Map<String, ?>> tree) {
+		JMenu result;
+		if( name == null ) {
+			result = new JMenu();
+		} else {
+			result = new JMenu(name);
+			JMenuItem menuItem = new JMenuItem(name);
 			menuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					do_menuItem_actionPerformed(arg0);
 				}
 			});
-			popupMenuCircle.add(menuItem);		
+			result.add(menuItem);
 		}
+		SortedSet<String> sortedset= new TreeSet<String>(tree.keySet());
+		for( String n : sortedset ) {
+			if( tree.get(n).isEmpty() ) {
+				JMenuItem menuItem = new JMenuItem(n);
+				menuItem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						do_menuItem_actionPerformed(arg0);
+					}
+				});
+				result.add(menuItem);
+			} else {
+				@SuppressWarnings("unchecked")
+				Map<String, Map<String, ?>> submap = (Map<String, Map<String, ?>>)(tree.get(n));
+				result.add(DisziplinAsTree(n,submap));
+			}
+		}
+		return result;
 	}
 
 	protected void do_btnAddDicipline_actionPerformed(ActionEvent arg0) {
 		popupMenuCircle.show(btnAddDicipline, btnAddDicipline.getX(), btnAddDicipline.getY()+ btnAddDicipline.getHeight());
 	}
-	
 
-	
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
 		System.out.println(((JMenuItem)arg0.getSource()).getText());
 		character.addDiciplin(((JMenuItem)arg0.getSource()).getText());

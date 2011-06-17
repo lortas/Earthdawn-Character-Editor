@@ -110,6 +110,46 @@ public class ApplicationProperties {
 		return DISCIPLINES.keySet();
 	}
 
+	public Map<String,Map<String,?>> getAllDisziplinNamesAsTree() {
+		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
+		for( String s : DISCIPLINES.keySet() ) result.put(s,new HashMap<String, Map<String,?>>());
+		return shrinkStringMap(result);
+	}
+
+	private Map<String,Map<String,?>> shrinkStringMap(Map<String,Map<String,?>> map) {
+		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
+		for( String newkey : map.keySet() ) {
+			boolean insert=false;
+			for( String s : result.keySet() ) {
+				if( newkey.startsWith(s) ) {
+					//Der neue String fängt genauso an wie ein bereits eingefügter String,
+					//damit kann der neue der Liste der Vorhandenen angefügt werden
+					@SuppressWarnings("unchecked")
+					Map<String,Map<String,?>> element = (Map<String,Map<String,?>>)(result.get(s));
+					element.put(newkey, new HashMap<String, Map<String,?>>());
+					insert=true;
+					break;
+				} else if( s.startsWith(newkey) ) {
+					result.remove(s);
+					Map<String,Map<String,?>> element = new HashMap<String, Map<String,?>>();
+					element.put(s, new HashMap<String, Map<String,?>>());
+					result.put(newkey,element);
+					insert=true;
+					break;
+				}
+			}
+			if( ! insert ) {
+				result.put(newkey, new HashMap<String, Map<String,?>>());
+			}
+		}
+		for( String s : result.keySet() ) {
+			@SuppressWarnings("unchecked")
+			Map<String,Map<String,?>> element = (Map<String,Map<String,?>>)(result.get(s));
+			if( ! element.isEmpty() ) result.put( s, shrinkStringMap(element) );
+		}
+		return result;
+	}
+
 	public Collection<DISCIPLINE> getAllDisziplines() {
 		return DISCIPLINES.values();
 	}
