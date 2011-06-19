@@ -62,7 +62,7 @@ public class EDMainWindow {
 	private EDDevotionPoints panelEDDevotionPoints;
 	private EDItems panelEDItems;
 	private EDBloodCharmItems panelEDBloodCharmItems;
-	private EDThreadItems panelEDThreadItems;
+	private EDInventory panelEDThreadItems;
 	
 	private EDWeapons panelEDWeapons;
 	private EDArmor panelEDArmor;
@@ -278,7 +278,7 @@ public class EDMainWindow {
 		panelEDBloodCharmItems = new EDBloodCharmItems();
 		panelEDWeapons = new EDWeapons();
 		panelEDArmor = new EDArmor();
-		panelEDThreadItems = new EDThreadItems();
+		panelEDThreadItems = new EDInventory();
 
 		paneStatus = new JEditorPane();
 		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
@@ -298,11 +298,11 @@ public class EDMainWindow {
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
 		tabbedPane.addTab("DevotionPoints", null, panelEDDevotionPoints , null);
-		tabbedPane.addTab("Items", null, panelEDItems , null);
-		tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
-		tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
-		tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
-		tabbedPane.addTab("Threaditems", null, panelEDThreadItems , null);
+		//tabbedPane.addTab("Items", null, panelEDItems , null);
+		//tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
+		//tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
+		//tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
+		tabbedPane.addTab("Inventory", null, panelEDThreadItems , null);
 		
 		splitPane.setRightComponent(editorScrollPane);
 	}
@@ -428,8 +428,8 @@ public class EDMainWindow {
 			if(co.getClass() == EDArmor.class){
 				((EDArmor)co).setCharacter(character);
 			}
-			if(co.getClass() == EDThreadItems.class){
-				((EDThreadItems)co).setCharacter(character);
+			if(co.getClass() == EDInventory.class){
+				((EDInventory)co).setCharacter(character);
 			}
 		}
 	}
