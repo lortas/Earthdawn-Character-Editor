@@ -51,6 +51,8 @@
 	which is the right one and which can be deleted. You still in response for your legend point entries.
 	 -->
 	<AUTOINSERTLEGENDPOINTSPENT used="yes"/>
+	<!-- If a date should be printed this defines the format of the date and time -->
+	<DATEFORMAT>yyyy-MM-dd HH:mm:ss</DATEFORMAT>
 	<!-- The following Rule can be added multiple times and will define which talents can be used more than ones and how many at maximum -->
 	<MULTIUSETALENT talent="Spell Matrix" lang="en" count="5"/>
 	<MULTIUSETALENT talent="Enhanced Matrix" lang="en" count="4"/>
