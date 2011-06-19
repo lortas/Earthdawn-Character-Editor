@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="keyknowledge" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
- *       &lt;attribute name="lpcost" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="lpcost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="effect" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -93,8 +93,8 @@ public class THREADRANKType {
     protected List<String> ability;
     @XmlAttribute
     protected String keyknowledge;
-    @XmlAttribute(required = true)
-    protected int lpcost;
+    @XmlAttribute
+    protected Integer lpcost;
     @XmlAttribute(required = true)
     protected String effect;
 
@@ -457,16 +457,28 @@ public class THREADRANKType {
     /**
      * Gets the value of the lpcost property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getLpcost() {
-        return lpcost;
+        if (lpcost == null) {
+            return  0;
+        } else {
+            return lpcost;
+        }
     }
 
     /**
      * Sets the value of the lpcost property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setLpcost(int value) {
+    public void setLpcost(Integer value) {
         this.lpcost = value;
     }
 
