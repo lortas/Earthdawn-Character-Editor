@@ -435,7 +435,7 @@
 				<xs:documentation>Is the Key Knowledge is known by the character.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="lpcost" type="unsigned_int" use="required">
+		<xs:attribute name="lpcost" type="unsigned_int" default="0">
 			<xs:annotation>
 				<xs:documentation>Is calculated by the attribute lpcostgrowth.</xs:documentation>
 			</xs:annotation>
