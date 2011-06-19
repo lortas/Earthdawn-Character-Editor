@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<ns3:EDCHARACTER name="Eloxis" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns:ns2="http://earthdawn.com/namegiver" xmlns="http://earthdawn.com/datatypes" xmlns:ns4="http://earthdawn.com/optionalrules" xmlns:ns3="http://earthdawn.com/character" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/help" xmlns:ns6="http://earthdawn.com/names" xmlns:ns10="http://earthdawn.com/spell" xmlns:ns7="http://earthdawn.com/characteristics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns11="http://earthdawn.com/knack" xmlns:ns8="http://earthdawn.com/discipline">
+<ns3:EDCHARACTER name="Eloxis" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns="http://earthdawn.com/datatypes" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/characteristics" xmlns:ns12="http://earthdawn.com/items" xmlns:ns6="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/discipline" xmlns:ns10="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/spell" xmlns:ns11="http://earthdawn.com/help" xmlns:ns2="http://earthdawn.com/names" xmlns:ns3="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ns3:APPEARANCE race="Troll" skin="dunkel-braun" hair="schwarz" eyes="gelb" weight="17" height="270" age="20" gender="male"/>
 	<ns3:ATTRIBUTE cost="0" currentvalue="11" lpincrease="1" basevalue="10" generationvalue="0" racevalue="10" name="CHA" dice="d8" step="5"/>
 	<ns3:ATTRIBUTE cost="9" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="6" racevalue="10" name="DEX" dice="2d6" step="8"/>
@@ -10,7 +10,9 @@
 	<ns3:ATTRIBUTE cost="5" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="4" racevalue="12" name="TOU" dice="2d6" step="8"/>
 	<ns3:DEFENSE social="8" spell="8" physical="11"/>
 	<ns3:PROTECTION penalty="2" mysticarmor="11" physicalarmor="12">
+		<ARMOR penalty="0" mysticarmor="2" physicalarmor="0" virtual="yes" used="yes" weight="0.0" name="natural Armor"/>
 		<ARMOR edn="22" penalty="2" mysticarmor="3" physicalarmor="6" location="self" used="yes" weight="0.0" name="Living Crystal"/>
+		<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="0" mysticarmor="6" physicalarmor="6" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 	</ns3:PROTECTION>
 	<ns3:HEALTH damage="0">
 		<RECOVERY testsperday="3" dice="2d6" step="8"/>
@@ -29,7 +31,7 @@
 	</ns3:DISCIPLINE>
 	<ns3:TALENTS discipline="Warrior">
 		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.62" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
-			<RANK lpcost="5000" bonus="0" rank="7" startrank="2" dice="d12+2d6" step="15"/>
+			<RANK lpcost="5000" bonus="4" rank="7" startrank="2" dice="d12+2d10" step="19"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
@@ -57,11 +59,11 @@
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="4" bookref="PG p.83" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
-			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+d10" step="13"/>
+			<RANK lpcost="8700" bonus="0" rank="8" dice="2d12" step="14"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="5" bookref="PG p.83" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
-			<RANK lpcost="8600" bonus="0" rank="7" dice="d12+d10" step="13"/>
+			<RANK lpcost="8600" bonus="0" rank="7" startrank="0" dice="d12+d10" step="13"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="6" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
@@ -77,7 +79,7 @@
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
 		<ns3:OPTIONALTALENT circle="2" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
-			<RANK lpcost="5300" bonus="0" rank="7" dice="d12+2d6" step="15"/>
+			<RANK lpcost="8700" bonus="0" rank="8" dice="d12+d8+d6" step="16"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
 		<ns3:OPTIONALTALENT circle="3" bookref="PG p.66" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
@@ -99,6 +101,14 @@
 		<ns3:OPTIONALTALENT circle="0" bookref="" karma="no" limitation="Thystonius" bonus="0" attribute="na" strain="0" action="na" name="Questor">
 			<RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
 			<TEACHER/>
+		</ns3:OPTIONALTALENT>
+		<ns3:OPTIONALTALENT circle="0" bookref="PG p.81" karma="no" limitation="(#)" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
+			<RANK bonus="4" rank="0" dice="2d8" step="10"/>
+			<TEACHER byversatility="no" teachercircle="2" talentcircle="2" name="Thermail Schutz der Plage"/>
+		</ns3:OPTIONALTALENT>
+		<ns3:OPTIONALTALENT circle="0" bookref="PG p.79" karma="yes" limitation="(#)" bonus="0" attribute="DEX" strain="1" action="simple" name="Second Attack">
+			<RANK bonus="4" rank="0" dice="2d10" step="12"/>
+			<TEACHER byversatility="no" teachercircle="3" talentcircle="3" name="Thermail Schutz der Plage"/>
 		</ns3:OPTIONALTALENT>
 	</ns3:TALENTS>
 	<ns3:SKILL bookref="PG p.102" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
@@ -207,74 +217,74 @@
 		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
 	</ns3:SKILL>
 	<ns3:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
-	<ns3:WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+	<ns3:WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="1.0" name="Desperate Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="no" weight="1.0" name="Desperate Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
-	<ns3:THREADITEM name="Thermail Schutz der Plage" weight="0" used="yes" maxthreads="1" spelldefense="20" lpcostgrowth="9" weaventhreadrank="4" kind="ring">
+	<ns3:THREADITEM lpcostgrowth="9" spelldefense="20" maxthreads="1" weaventhreadrank="4" kind="ring" used="yes" weight="0.0" name="Thermail Schutz der Plage">
 		<description>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</description>
-		<THREADRANK lpcost="1" effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
-		<THREADRANK lpcost="2" effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
+		<THREADRANK effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" lpcost="300" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
+		<THREADRANK effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" lpcost="500" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
 			<TALENT name="Avoid Blow"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="3" effect="Steel Thought erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
+		<THREADRANK effect="Steel Thought erhält einen Bonus in Höhe des aktuellen Fadenranges" lpcost="800" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="4" effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges " keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
+		<THREADRANK effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges " lpcost="1300" keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Second Attack"/>
 			<TALENT name="Second Attack"/>
-			<TALENT name="Second Attack"/>
-			<TALENT name="Steel Thought"/>
-			<TALENT name="Avoid Blow"/>
-		</THREADRANK>
-		<THREADRANK lpcost="5" effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="6" effect="-" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
+		<THREADRANK effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" lpcost="2100" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="7" effect="-">
+		<THREADRANK effect="-" lpcost="3400" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="8" effect="-">
+		<THREADRANK effect="-" lpcost="5500">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="9" effect="-">
+		<THREADRANK effect="-" lpcost="8900">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="10" effect="-">
+		<THREADRANK effect="-" lpcost="14400">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="11" effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" keyknowledge="Rasse des Dracheneierdiebs">
+		<THREADRANK effect="-" lpcost="23300">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
-		<THREADRANK lpcost="12" effect="Antimagische Waffe, alle geführten Waffen sind für 4 Überanstregungsschaden (pro Waffen und Runde) durch keinen magischen Effekt zu beeinflussen. (Achtung, nur die Waffe(n))">
+		<THREADRANK effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" lpcost="37700" keyknowledge="Rasse des Dracheneierdiebs">
+			<TALENT name="Second Attack"/>
+			<TALENT name="Steel Thought"/>
+			<TALENT name="Avoid Blow"/>
+		</THREADRANK>
+		<THREADRANK effect="Antimagische Waffe, alle geführten Waffen sind für 4 Überanstregungsschaden (pro Waffen und Runde) durch keinen magischen Effekt zu beeinflussen. (Achtung, nur die Waffe(n))" lpcost="61000">
 			<TALENT name="Second Attack"/>
 			<TALENT name="Steel Thought"/>
 			<TALENT name="Avoid Blow"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü" kind="melee weapon">
+	<ns3:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
 		<description>Thread Item Melee Weapon page 276 PlayerGuide</description>
 		<THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
 			<WEAPON size="5" strengthmin="13" damagestep="12" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
@@ -286,32 +296,32 @@
 			<WEAPON size="5" strengthmin="13" damagestep="14" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 		<THREADRANK effect="Damage +1" lpcost="800">
-			<WEAPON size="5" strengthmin="13" damagestep="15" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+			<WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio" kind="shield">
+	<ns3:THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" kind="shield" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
 		<description>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</description>
 		<THREADRANK effect="max Forge Defense" lpcost="200" keyknowledge="Name of the Item: Sylvio">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="2" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="2" mysticarmor="5" physicalarmor="5" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 		<THREADRANK effect="Intiative Penalty -1" lpcost="300">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="1" mysticarmor="5" physicalarmor="5" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="1" mysticarmor="5" physicalarmor="5" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 		<THREADRANK effect="Physical Armor +1, Mystic Armor +1" lpcost="500">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="1" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="1" mysticarmor="6" physicalarmor="6" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 		<THREADRANK effect="Intiative Penalty -1" lpcost="800">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" penalty="0" mysticarmor="6" physicalarmor="6" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="0" mysticarmor="6" physicalarmor="6" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="3" used="yes" weight="6.0" name="Silverins Heiltrank" kind="potion">
+	<ns3:THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="3" kind="potion" used="yes" weight="6.0" name="Silverins Heiltrank">
 		<description>1 x Anwendung täglich</description>
 		<THREADRANK effect="Heiltrank +4" lpcost="300" keyknowledge="Name of the Item: Silverins"/>
 		<THREADRANK effect="Heiltrank +5" lpcost="500"/>
 		<THREADRANK effect="Heiltrank +6, Erholungstrank +4" lpcost="800"/>
 		<THREADRANK effect="Heiltrank +8, Erholungstrank +4" lpcost="1300"/>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" used="yes" weight="6.0" name="Thread Brooch" kind="brooch">
+	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="1" kind="brooch" used="yes" weight="6.0" name="Thread Brooch">
 		<description>Schwarzer Stein mit goldener Verzierung</description>
 		<THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: Liloa">
 			<DEFENSE kind="social"/>
@@ -321,7 +331,7 @@
 			<DEFENSE kind="social"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Thread Ring" kind="ring">
+	<ns3:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="0" kind="ring" used="no" weight="6.0" name="Thread Ring">
 		<description></description>
 		<THREADRANK effect="Soziale Widerstandskraft +1" lpcost="100" keyknowledge="Name of the Item: ?">
 			<DEFENSE kind="social"/>
@@ -336,13 +346,13 @@
 			<DEFENSE kind="spell"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
-	<ns3:THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra" kind="brooch">
+	<ns3:THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" kind="brooch" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra">
 		<description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</description>
 		<THREADRANK effect="Physical Armor +3" lpcost="200" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
-			<ARMOR physicalarmor="3" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 		</THREADRANK>
 		<THREADRANK effect="Mystic Armor +3" lpcost="300">
-			<ARMOR mysticarmor="2" physicalarmor="3" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 		</THREADRANK>
 		<THREADRANK effect="Für eine Überanstr.schaden ein Heiltrank (1x pro Tag)" lpcost="500" keyknowledge="Name of Heror: Dirac Tol Amarra"/>
 		<THREADRANK effect="Für zwei Überanstr.schaden ein Wiederbelebungssalbe im Augenblick des Todes (1x pro Tag)" lpcost="800"/>
@@ -361,10 +371,10 @@
 		<KARMAPOINTS when="" comment="spend during adventures" value="100" type="-"/>
 	</ns3:KARMA>
 	<ns3:RACEABILITES>Heat Sight</ns3:RACEABILITES>
-	<ns3:CALCULATEDLEGENDPOINTS total="119900" magicitems="5300" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="36800" disciplinetalents="58700" attributes="17600">
+	<ns3:CALCULATEDLEGENDPOINTS total="129600" magicitems="8200" karma="1200" spells="0" skills="300" knacks="0" optionaltalents="40200" disciplinetalents="62100" attributes="17600">
 		<ns3:USEDSTARTRANKS skills="14" talents="0"/>
 	</ns3:CALCULATEDLEGENDPOINTS>
-	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="33722" totallegendpoints="129922">
+	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="6223" totallegendpoints="135823">
 		<LEGENDPOINTS when="" comment="Historische Einnahmen" value="10958" type="+"/>
 		<LEGENDPOINTS when="xx.02.2007" comment="Stand mit Feb." value="2179" type="+"/>
 		<LEGENDPOINTS when="12.04.2007" comment="LP aus Spielrunde" value="671" type="+"/>
@@ -433,6 +443,10 @@
 		<LEGENDPOINTS when="07.04.2011" comment="LP aus Spielrunde" value="9810" type="+"/>
 		<LEGENDPOINTS when="14.04.2011" comment="LP aus Spielrunde" value="3012" type="+"/>
 		<LEGENDPOINTS when="21.04.2011" comment="LP aus Spielrunde" value="17426" type="+"/>
+		<LEGENDPOINTS when="21.04.2011" comment="diverse Steigerungen" value="33400" type="-"/>
+		<LEGENDPOINTS when="12.05.2011" comment="LP aus Spielrunde" value="1558" type="+"/>
+		<LEGENDPOINTS when="26.05.2011" comment="LP aus Spielrunde" value="2016" type="+"/>
+		<LEGENDPOINTS when="16.06.2011" comment="LP aus Spielrunde" value="2327" type="+"/>
 	</ns3:EXPERIENCE>
 	<ns3:DEVOTION value="600" passion="Thystonius">
 		<DEVOTIONPOINTS when="2009.08.06" comment="" value="100" type="+"/>

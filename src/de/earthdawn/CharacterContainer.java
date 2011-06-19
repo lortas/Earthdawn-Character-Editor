@@ -31,14 +31,15 @@ import de.earthdawn.event.CharChangeRefresh;
 
 public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
-	public final ApplicationProperties PROPERTIES=ApplicationProperties.create();
-	public final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
-	public final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
-	public final String threadWeavingName = PROPERTIES.getThreadWeavingName();
-	public final USEDSTARTRANKSType OptionalRule_FreeStartRanks = PROPERTIES.getOptionalRules().getSTARTRANKS();
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public static final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
+	public static final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
+	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
+	public static final USEDSTARTRANKSType OptionalRule_FreeStartRanks = PROPERTIES.getOptionalRules().getSTARTRANKS();
+	public static final String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
 
 	public static String getCurrentDateTime() {
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		DateFormat dateFormat = new SimpleDateFormat(DATEFORMAT);
 		Date date = new Date();
 		return dateFormat.format(date);
 	}

@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="DATEFORMAT" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -59,6 +60,7 @@ import javax.xml.bind.annotation.XmlType;
     "showdefaultskills",
     "questortalentneedlegendpoints",
     "autoinsertlegendpointspent",
+    "dateformat",
     "multiusetalent",
     "defaultoptionaltalent"
 })
@@ -85,6 +87,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType questortalentneedlegendpoints;
     @XmlElement(name = "AUTOINSERTLEGENDPOINTSPENT", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType autoinsertlegendpointspent;
+    @XmlElement(name = "DATEFORMAT", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected String dateformat;
     @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
     protected List<OPTIONALRULESMULTIUSETALENT> multiusetalent;
     @XmlElement(name = "DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
@@ -328,6 +332,30 @@ public class OPTIONALRULES {
      */
     public void setAUTOINSERTLEGENDPOINTSPENT(OPTIONALRULEType value) {
         this.autoinsertlegendpointspent = value;
+    }
+
+    /**
+     * Gets the value of the dateformat property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDATEFORMAT() {
+        return dateformat;
+    }
+
+    /**
+     * Sets the value of the dateformat property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDATEFORMAT(String value) {
+        this.dateformat = value;
     }
 
     /**

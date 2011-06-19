@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="USEDSTARTRANKS_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="talents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="skills" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="talents" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+ *       &lt;attribute name="skills" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
