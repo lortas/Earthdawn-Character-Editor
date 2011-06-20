@@ -43,7 +43,7 @@
 	<SKILL name="Forgery" attribute="DEX" default="no" action="sustained" strain="0" bookref="PG p.97"/>
 	<SKILL name="Graceful Exit" attribute="CHA" default="no" action="standard" strain="0" bookref="PG p.97"/>
 	<SKILL name="Great Leap" attribute="DEX" default="no" action="free" strain="1" bookref="PG p.97"/>
-	<SKILL name="Guhvuul" limitation="Orc" attribute="WIL" default="no" action="free" strain="1" bookref="CF p.xxx"/>
+	<SKILL name="Guhvuul" attribute="WIL" default="no" action="free" strain="1" bookref="CF p.xxx"/>
 	<SKILL name="Haggle" attribute="CHA" default="yes" action="sustained" strain="0" bookref="PG p.97"/>
 	<SKILL name="Heartening Laugh" attribute="CHA" default="no" action="standard" strain="1" bookref="PG p.97"/>
 	<SKILL name="Hunting" attribute="DEX" default="no" action="sustained" strain="0" bookref="PG p.97"/>
