@@ -22,7 +22,7 @@
 	<ns3:MOVEMENT ground="5" flight="0"/>
 	<ns3:INITIATIVE modification="-1" base="5" dice="d6" step="4"/>
 	<ns3:CARRYING carrying="110" lifting="220"/>
-	<ns3:DISCIPLINE circle="5" name="Wizard" order="1">
+	<ns3:DISCIPLINE circle="5" name="Wizard">
 		<DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="4"/>
 		<DISCIPLINEBONUS bonus="Ability: Book Mage" circle="5"/>
 	</ns3:DISCIPLINE>
@@ -222,7 +222,9 @@
 		<KARMAPOINTS when="" comment="" value="0" type="+"/>
 	</ns3:KARMA>
 	<ns3:RACEABILITES>Heat Sight</ns3:RACEABILITES>
-	<ns3:CALCULATEDLEGENDPOINTS total="56100" magicitems="0" karma="0" spells="4900" skills="14500" knacks="0" optionaltalents="7800" disciplinetalents="20500" attributes="8400"/>
+	<ns3:CALCULATEDLEGENDPOINTS total="56100" magicitems="0" karma="0" spells="4900" skills="14500" knacks="0" optionaltalents="7800" disciplinetalents="20500" attributes="8400">
+		<ns3:USEDSTARTRANKS/>
+	</ns3:CALCULATEDLEGENDPOINTS>
 	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="0" totallegendpoints="0">
 		<LEGENDPOINTS when="" comment="" value="0" type="+"/>
 	</ns3:EXPERIENCE>
