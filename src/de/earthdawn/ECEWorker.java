@@ -231,6 +231,14 @@ public class ECEWorker {
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			namegivertalents.put(t.getName(), t);
 		}
+		// Wenn ein Charakter Weihepunkte erhalten hat, dann steht ihm  das Questorentalent zur Verfügung
+		DEVOTIONType devotionPoints = character.getDevotionPoints();
+		if( (devotionPoints!=null) && (devotionPoints.getValue()>0) ) {
+			TALENTABILITYType talent = new TALENTABILITYType();
+			talent.setName(questorTalentName);
+			talent.setLimitation(devotionPoints.getPassion());
+			namegivertalents.put(questorTalentName, talent);
+		}
 		int maxKarmaStepBonus=0;
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
