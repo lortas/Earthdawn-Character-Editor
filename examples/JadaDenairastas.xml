@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<EDCHARACTER  name="Jada Denairastas" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
+<EDCHARACTER name="Jada Denairastas" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
 	<APPEARANCE race="Denairastas" skin="hell" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
 	<ATTRIBUTE cost="3" currentvalue="15" lpincrease="2" basevalue="13" generationvalue="3" racevalue="10" name="DEX" dice="d10" step="6"/>
 	<ATTRIBUTE cost="3" currentvalue="16" lpincrease="3" basevalue="13" generationvalue="3" racevalue="10" name="STR" dice="d12" step="7"/>
@@ -23,7 +23,7 @@
 	<MOVEMENT ground="6" flight="0"/>
 	<INITIATIVE modification="-2" base="6" dice="d6" step="4"/>
 	<CARRYING carrying="160" lifting="320"/>
-	<DISCIPLINE circle="11" name="Nethermancer" order="1">
+	<DISCIPLINE circle="11" name="Nethermancer">
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="4"/>
 		<edt:DISCIPLINEBONUS bonus="Ability: Decay and Renewal" circle="5"/>
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Perseption-Only Tests" circle="6"/>
@@ -32,7 +32,7 @@
 		<edt:DISCIPLINEBONUS bonus="Ability: Otherworldly Control" circle="9"/>
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Action Tests made by a spirit or creature und his control" circle="10"/>
 	</DISCIPLINE>
-	<DISCIPLINE circle="6" name="Illusionist" order="2">
+	<DISCIPLINE circle="6" name="Illusionist">
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="4"/>
 		<edt:DISCIPLINEBONUS bonus="Ability: Glamour" circle="5"/>
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="6"/>
@@ -254,7 +254,9 @@ In Iopos, and in the lands of the t'skrang House of Ishkarat, Jada's legend is c
 When her missions take here elsewhere, she adopts one of several false identities.
 	</DESCRIPTION>
 	<RACEABILITES>Low-Light Vision</RACEABILITES>
-	<CALCULATEDLEGENDPOINTS total="2152300" magicitems="5100" karma="1000" spells="0" skills="48100" knacks="0" optionaltalents="817800" disciplinetalents="1259300" attributes="21000"/>
+	<CALCULATEDLEGENDPOINTS total="2152300" magicitems="5100" karma="1000" spells="0" skills="48100" knacks="0" optionaltalents="817800" disciplinetalents="1259300" attributes="21000">
+		<USEDSTARTRANKS/>
+	</CALCULATEDLEGENDPOINTS>
 	<EXPERIENCE reputation="+3" renown="9" currentlegendpoints="0" totallegendpoints="0">
 		<edt:LEGENDPOINTS comment="" value="0" type="+" when=""/>
 	</EXPERIENCE>

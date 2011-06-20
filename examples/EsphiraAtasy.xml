@@ -22,7 +22,7 @@
 	<ns3:MOVEMENT ground="3" flight="8"/>
 	<ns3:INITIATIVE modification="0" base="6" dice="d10" step="6"/>
 	<ns3:CARRYING carrying="40" lifting="80"/>
-	<ns3:DISCIPLINE circle="6" name="Shaman" order="1">
+	<ns3:DISCIPLINE circle="6" name="Shaman">
 		<DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="4"/>
 		<DISCIPLINEBONUS bonus="Ability: Land and Sea&quot;" circle="5"/>
 		<DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="6"/>
@@ -257,7 +257,9 @@
 	<ns3:DESCRIPTION>etwas bla bla zum Char</ns3:DESCRIPTION>
 	<ns3:RACEABILITES>Flight</ns3:RACEABILITES>
 	<ns3:COMMENT>hier kommt ein Kommentar</ns3:COMMENT>
-	<ns3:CALCULATEDLEGENDPOINTS total="73300" magicitems="0" karma="3100" spells="1700" skills="5400" knacks="0" optionaltalents="23700" disciplinetalents="34400" attributes="5000"/>
+	<ns3:CALCULATEDLEGENDPOINTS total="73300" magicitems="0" karma="3100" spells="1700" skills="5400" knacks="0" optionaltalents="23700" disciplinetalents="34400" attributes="5000">
+		<ns3:USEDSTARTRANKS/>
+	</ns3:CALCULATEDLEGENDPOINTS>
 	<ns3:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="19226" totallegendpoints="90826">
 		<LEGENDPOINTS when="2007-12-13" comment="90% von Abos Start LP" value="14138" type="+"/>
 		<LEGENDPOINTS when="2010-01-14" comment="90% Abos gesammelten LP" value="67726" type="+"/>

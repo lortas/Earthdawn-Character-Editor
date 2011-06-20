@@ -20,7 +20,7 @@
     <MOVEMENT ground="3" flight="8"/>
     <INITIATIVE modification="0" base="7" dice="d12" step="7"/>
     <CARRYING carrying="20" lifting="40"/>
-    <DISCIPLINE circle="6" name="Elementalist" order="1"/>
+    <DISCIPLINE circle="6" name="Elementalist"/>
     <TALENTS discipline="Elementalist">
         <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Air Speaking">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
@@ -100,7 +100,9 @@
         <edt:KARMAPOINTS when="" type="-" value="180" comment="geschätzter Karma verbrauch"/>
     </KARMA>
     <RACEABILITES>Flight</RACEABILITES>
-    <CALCULATEDLEGENDPOINTS total="45900" magicitems="0" karma="0" spells="0" skills="0" knacks="0" optionaltalents="19300" disciplinetalents="22300" attributes="5000"/>
+    <CALCULATEDLEGENDPOINTS total="45900" magicitems="0" karma="0" spells="0" skills="0" knacks="0" optionaltalents="19300" disciplinetalents="22300" attributes="5000">
+    	<USEDSTARTRANKS/>
+    </CALCULATEDLEGENDPOINTS>
     <EXPERIENCE reputation="+2" renown="11" currentlegendpoints="0" totallegendpoints="0">
         <edt:LEGENDPOINTS when="" type="+" value="0" comment=""/>
     </EXPERIENCE>
