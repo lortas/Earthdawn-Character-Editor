@@ -60,13 +60,7 @@ public class EDMainWindow {
 	private EDExperience panelEDExperience;
 	private EDKarma panelEDKarma;
 	private EDDevotionPoints panelEDDevotionPoints;
-	private EDItems panelEDItems;
-	private EDBloodCharmItems panelEDBloodCharmItems;
 	private EDInventory panelEDThreadItems;
-	
-	private EDWeapons panelEDWeapons;
-	private EDArmor panelEDArmor;
-	
 	private EDSpells panelEDSpells;
 	private EDTalents panelEDTalents;
 	private File file = null;
@@ -274,13 +268,9 @@ public class EDMainWindow {
 		panelEDExperience = new EDExperience();
 		panelEDKarma = new EDKarma();
 		panelEDDevotionPoints = new EDDevotionPoints();
-		panelEDItems = new EDItems();
-		panelEDBloodCharmItems = new EDBloodCharmItems();
-		panelEDWeapons = new EDWeapons();
-		panelEDArmor = new EDArmor();
 		panelEDThreadItems = new EDInventory();
 
-		paneStatus = new JEditorPane();
+		paneStatus = new BackgroundEditorPane("templates/characteristic_background.jpg");
 		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
 		editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		editorScrollPane.setMinimumSize(new Dimension(500,300));
