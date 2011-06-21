@@ -1124,6 +1124,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					weapon.setName(name);
 					weapon.setWeight(weight);
 					weapon.setUsed(used);
+					weapon.setKind(magicitem.getKind());
 					if( weaven > 0 ) newmagicweapon=weapon;
 				}
 				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
