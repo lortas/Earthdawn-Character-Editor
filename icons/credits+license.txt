@@ -1,0 +1,77 @@
+BACKPACK.png
+	Author: DaPino, http://www.dapino-colada.nl/
+	License: CC Attribution Non-Commercial
+	Modified by Lortas
+
+ARMOR.png
+	Pixel Art Icon for RPG by Ails
+
+BLOOD_CHARM.png
+	Pixel Art Icon for RPG by Ails
+
+BOOK.png
+	Pixel Art Icon for RPG by Ails
+
+BROOCH.png
+	Pixel Art Icon for RPG by Ails
+
+CHEST_CLOSED.png
+	Pixel Art Icon for RPG by Ails
+
+CHEST_OPEN.png
+	Pixel Art Icon for RPG by Ails
+
+HELM.png
+	Pixel Art Icon for RPG by Ails
+
+LIGHT.png
+	Pixel Art Icon for RPG by Ails
+
+MELEE_WEAPON.png
+	Pixel Art Icon for RPG by Ails
+
+MISSILE_WEAPON.png
+	Pixel Art Icon for RPG by Ails
+
+POTION.png
+	Pixel Art Icon for RPG by Ails
+
+RANK1.png
+
+RANK2.png
+
+RANK3.png
+
+RANK4.png
+
+RANK5.png
+
+RANK6.png
+
+RANK7.png
+
+RANK8.png
+
+RANK9.png
+
+RANKn.png
+
+RANK.png
+
+RING.png
+	Pixel Art Icon for RPG by Ails
+
+SALVE.png
+	Pixel Art Icon for RPG by Ails
+
+SHIELD.png
+	Pixel Art Icon for RPG by Ails
+
+TALISMAN.png
+	Pixel Art Icon for RPG by Ails
+
+THROWING_WEAPON.png
+	Pixel Art Icon for RPG by Ails
+
+UNDEFINED.png
+	Pixel Art Icon for RPG by Ails
