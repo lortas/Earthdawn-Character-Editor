@@ -120,27 +120,24 @@ public class ApplicationProperties {
 		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
 		for( String newkey : map.keySet() ) {
 			boolean insert=false;
+			Map<String, Map<String, ?>> newvalue = new HashMap<String, Map<String,?>>();
+			List<String> removelist = new ArrayList<String>();
 			for( String s : result.keySet() ) {
 				if( newkey.startsWith(s) ) {
 					//Der neue String fängt genauso an wie ein bereits eingefügter String,
 					//damit kann der neue der Liste der Vorhandenen angefügt werden
 					@SuppressWarnings("unchecked")
 					Map<String,Map<String,?>> element = (Map<String,Map<String,?>>)(result.get(s));
-					element.put(newkey, new HashMap<String, Map<String,?>>());
+					element.put(newkey, newvalue);
 					insert=true;
 					break;
 				} else if( s.startsWith(newkey) ) {
-					result.remove(s);
-					Map<String,Map<String,?>> element = new HashMap<String, Map<String,?>>();
-					element.put(s, new HashMap<String, Map<String,?>>());
-					result.put(newkey,element);
-					insert=true;
-					break;
+					removelist.add(s);
+					newvalue.put(s, new HashMap<String, Map<String,?>>());
 				}
 			}
-			if( ! insert ) {
-				result.put(newkey, new HashMap<String, Map<String,?>>());
-			}
+			for( String s : removelist ) result.remove(s);
+			if( ! insert ) result.put(newkey, newvalue);
 		}
 		for( String s : result.keySet() ) {
 			@SuppressWarnings("unchecked")
