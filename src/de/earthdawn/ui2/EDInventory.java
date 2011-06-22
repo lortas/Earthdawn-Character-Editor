@@ -3,6 +3,7 @@ package de.earthdawn.ui2;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -13,9 +14,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.EventObject;
 import java.util.HashMap;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -66,7 +69,7 @@ public class EDInventory extends JPanel {
 	public void setCharacter(CharacterContainer character) {	
 		this.character = character;
 		//initTree();
-		tree = new JTree(new ItemTreeModel(character));
+		tree = new BackgroundTree(new ItemTreeModel(character),"templates/inventory_background.jpg");
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -91,7 +94,7 @@ public class EDInventory extends JPanel {
 		scrollPane = new JScrollPane();
 		add(scrollPane);
 			
-		tree = new JTree(new DefaultMutableTreeNode("Empty"));
+		tree = new BackgroundTree(new DefaultMutableTreeNode("Empty"),"templates/inventory_background.jpg");
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
