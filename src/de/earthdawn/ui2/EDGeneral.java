@@ -1,5 +1,6 @@
 package de.earthdawn.ui2;
 
+import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JComboBox;
@@ -16,12 +17,18 @@ import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
+import java.io.File;
+import java.io.IOException;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
 
@@ -48,12 +55,13 @@ public class EDGeneral extends JPanel {
 	private JTextField textFieldSkincolor;
 	private JTextField textFieldEyecolor;
 	private JTextField textFieldHaircolor;
+	private static final String backgroundImage="templates/genralpanel_background.jpg";
 
 	/**
 	 * Create the panel.
 	 */
 	public EDGeneral() {
-		
+		setOpaque(false);
 		lblCharactername = new JLabel("Charactername");
 		
 		textFieldName = new JTextField();
@@ -245,7 +253,6 @@ public class EDGeneral extends JPanel {
 					.addGap(190))
 		);
 		setLayout(groupLayout);
-
 	}
 
 	public void setCharacter(CharacterContainer character) {
@@ -361,5 +368,16 @@ public class EDGeneral extends JPanel {
 		if(character != null){
 			character.getAppearance().setHair(textFieldHaircolor.getText());
 		}
+	}
+
+	@Override
+	protected void paintComponent(Graphics g) {
+		try {
+			BufferedImage image = ImageIO.read(new File(backgroundImage));
+			g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		super.paintComponent(g);
 	}
 }
