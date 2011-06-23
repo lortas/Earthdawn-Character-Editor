@@ -1,20 +1,15 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
-
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JMenu;
@@ -25,27 +20,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
-import javax.xml.bind.JAXBElement;
-
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.config.ECECapabilities;
-import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.DISCIPLINEType;
-import de.earthdawn.data.ObjectFactory;
-import de.earthdawn.data.RANKType;
-import de.earthdawn.data.TALENTABILITYType;
-import de.earthdawn.data.TALENTSType;
-import de.earthdawn.data.TALENTType;
 
 public class EDDisciplines extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
+	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private JScrollPane scrollPane;
 	private JTable table;
@@ -53,7 +35,6 @@ public class EDDisciplines extends JPanel {
 	private JButton btnAddDicipline;
 	private JPopupMenu popupMenuCircle;
 
-	
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
@@ -63,7 +44,6 @@ public class EDDisciplines extends JPanel {
 	public CharacterContainer getCharacter() {
 		return character;
 	}	
-	
 
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -86,12 +66,13 @@ public class EDDisciplines extends JPanel {
 		scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
-		
+
 		table = new JTable();
 		table.setModel(new DisciplinesTableModel(character));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		table.setOpaque(false);
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 
 		toolBar = new JToolBar();
 		toolBar.setFloatable(false);
@@ -149,24 +130,18 @@ public class EDDisciplines extends JPanel {
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
 		System.out.println(((JMenuItem)arg0.getSource()).getText());
 		character.addDiciplin(((JMenuItem)arg0.getSource()).getText());
-        ECEWorker worker = new ECEWorker();
-        worker.verarbeiteCharakter(character.getEDCHARACTER());
-        character.refesh();
+		ECEWorker worker = new ECEWorker();
+		worker.verarbeiteCharakter(character.getEDCHARACTER());
+		character.refesh();
 	}
 }
 
 class DisciplinesTableModel extends AbstractTableModel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 
-    private String[] columnNames = {"Discipline Name", "Circle"};
-
-
-
+	private String[] columnNames = {"Discipline Name", "Circle"};
 
 	public DisciplinesTableModel(CharacterContainer character) {
 		super();
@@ -182,21 +157,18 @@ class DisciplinesTableModel extends AbstractTableModel {
 		return character;
 	}	
 
-    public int getColumnCount() {
-        return columnNames.length;
-    }
+	public int getColumnCount() {
+		return columnNames.length;
+	}
 
-    public int getRowCount() {
-        if(character == null){
-        	//System.out.println("character is null");
-        	return 0;
-        }
-    	return character.getDisciplines().size();
-    }
+	public int getRowCount() {
+		if( character == null ) return 0;
+		return character.getDisciplines().size();
+	}
 
-    public String getColumnName(int col) {
-        return columnNames[col];
-    }
+	public String getColumnName(int col) {
+		return columnNames[col];
+	}
 
 	public Object getValueAt(int row, int col) {
 		DISCIPLINEType discipline = character.getDisciplines().get(row);
@@ -207,31 +179,29 @@ class DisciplinesTableModel extends AbstractTableModel {
 		}
 	}
 
-    /*
-     * JTable uses this method to determine the default renderer/
-     * editor for each cell.  If we didn't implement this method,
-     * then the last column would contain text ("true"/"false"),
-     * rather than a check box.
-     */
-    public Class getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
-    }
+	/*
+	 * JTable uses this method to determine the default renderer/
+	 * editor for each cell.  If we didn't implement this method,
+	 * then the last column would contain text ("true"/"false"),
+	 * rather than a check box.
+	 */
+	public Class getColumnClass(int c) {
+		return getValueAt(0, c).getClass();
+	}
 
-    /*
-     * Don't need to implement this method unless your table's
-     * editable.
-     */
-    public boolean isCellEditable(int row, int col) {
-    	if(col == 1){
-    		return true;
-    	}
-    	return false;
-    }
+	/*
+	 * Don't need to implement this method unless your table's
+	 * editable.
+	 */
+	public boolean isCellEditable(int row, int col) {
+		if( col == 1 ) return true;
+		return false;
+	}
 
-    /*
-     * Don't need to implement this method unless your table's
-     * data can change.
-     */
+	/*
+	 * Don't need to implement this method unless your table's
+	 * data can change.
+	 */
 	public void setValueAt(Object value, int row, int col) {  
 		DISCIPLINEType discipline = character.getDisciplines().get(row);
 		switch (col) {
