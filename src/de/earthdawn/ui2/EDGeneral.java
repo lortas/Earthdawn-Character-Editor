@@ -73,6 +73,7 @@ public class EDGeneral extends JPanel {
 
 
 		textFieldName.setColumns(10);
+		textFieldName.setOpaque(false);
 		
 		lblRace = new JLabel("Race");
 		
@@ -82,8 +83,8 @@ public class EDGeneral extends JPanel {
 				do_comboBoxRace_itemStateChanged(arg0);
 			}
 		});
+		comboBoxRace.setOpaque(false);
 
-		
 		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers().getNAMEGIVER()) {
 			comboBoxRace.addItem(n.getName());
 		}
@@ -101,7 +102,8 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		textFieldAge.setColumns(10);
-		
+		textFieldAge.setOpaque(false);
+
 		textFieldSize = new JTextField();
 		textFieldSize.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -109,7 +111,8 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		textFieldSize.setColumns(10);
-		
+		textFieldSize.setOpaque(false);
+
 		textFieldWeight = new JTextField();
 		textFieldWeight.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -117,7 +120,8 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		textFieldWeight.setColumns(10);
-		
+		textFieldWeight.setOpaque(false);
+
 		lblSex = new JLabel("Sex");
 		
 		lblSkincolor = new JLabel("Skincolor");
@@ -130,14 +134,16 @@ public class EDGeneral extends JPanel {
 				do_rdbtnMale_itemStateChanged(arg0);
 			}
 		});
-		
+		rdbtnMale.setOpaque(false);
+
 		rdbtnFemale = new JRadioButton("Female");
 		rdbtnFemale.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				do_rdbtnFemale_itemStateChanged(arg0);
 			}
 		});
-		
+		rdbtnFemale.setOpaque(false);
+
 		lblHaircolor = new JLabel("Haircolor");
 		
 		textFieldSkincolor = new JTextField();
@@ -147,6 +153,7 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		textFieldSkincolor.setColumns(10);
+		textFieldSkincolor.setOpaque(false);
 		
 		textFieldEyecolor = new JTextField();
 		textFieldEyecolor.addCaretListener(new CaretListener() {
@@ -155,7 +162,8 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		textFieldEyecolor.setColumns(10);
-		
+		textFieldEyecolor.setOpaque(false);
+
 		textFieldHaircolor = new JTextField();
 		textFieldHaircolor.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -163,6 +171,7 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		textFieldHaircolor.setColumns(10);
+		textFieldHaircolor.setOpaque(false);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
