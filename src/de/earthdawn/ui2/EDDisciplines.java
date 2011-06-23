@@ -2,15 +2,20 @@ package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -36,14 +41,17 @@ import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTType;
 
 public class EDDisciplines extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private CharacterContainer character;
-	
 	private JScrollPane scrollPane;
 	private JTable table;
 	private JToolBar toolBar;
 	private JButton btnAddDicipline;
 	private JPopupMenu popupMenuCircle;
-	private JMenuItem menuItem;
 
 	
 	public void setCharacter(CharacterContainer character) {
@@ -57,30 +65,46 @@ public class EDDisciplines extends JPanel {
 	}	
 	
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		try {
+			BufferedImage image = ImageIO.read(new File("templates/disciplines_background.jpg"));
+			g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		super.paintComponent(g);
+	}
+
 	/**
 	 * Create the panel.
 	 */
 	public EDDisciplines() {
+		setOpaque(false);
 		setLayout(new BorderLayout(0, 0));
-		
+
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
 		
 		table = new JTable();
 		table.setModel(new DisciplinesTableModel(character));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+		table.setOpaque(false);
 		scrollPane.setViewportView(table);
-		
+
 		toolBar = new JToolBar();
 		toolBar.setFloatable(false);
 		add(toolBar, BorderLayout.NORTH);
-		
+		toolBar.setOpaque(false);
+
 		btnAddDicipline = new JButton("Add Dicipline");
 		btnAddDicipline.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddDicipline_actionPerformed(arg0);
 			}
 		});
+		btnAddDicipline.setOpaque(false);
 		toolBar.add(btnAddDicipline);
 		popupMenuCircle = DisziplinAsTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
 	}
