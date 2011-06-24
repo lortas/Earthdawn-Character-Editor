@@ -232,13 +232,13 @@
 		<edt:THREADRANK effect="SpellMatrix Rank 15"/>
 	</THREADITEM>
 	<ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
-	<ITEM weight="1.0" name="tourch"/>
+	<ITEM weight="1.0" name="torch"/>
 	<ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
 	<ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
 	<ITEM weight="0.0" name="anschaltbarer Lichtquarz"/>
 	<ITEM weight="0.0" name="cursed ring"/>
 	<ITEM weight="1.0" name="Trail Rations (1 week)"/>
-	<ITEM weight="1.0" name="tourch"/>
+	<ITEM weight="1.0" name="torch"/>
 	<ITEM weight="5.0" name="artisan tool (to be specified)"/>
 	<ITEM weight="3.0" name="grimoire (magicans only)"/>
 	<ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>

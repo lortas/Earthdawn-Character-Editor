@@ -51,7 +51,7 @@
 	</STARTINGITEMS>
 	<STARTINGITEMS lang="en">
 		<ITEM name="backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="13"/>
-		<ITEM name="tourch" weight="1" kind="light"/>
+		<ITEM name="torch" weight="1" kind="light"/>
 		<ITEM name="artisan tool (to be specified)" weight="5" kind="tool"/>
 		<ITEM name="grimoire (magicans only)" weight="3" kind="book"/>
 		<ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3" kind="cloth"/>
