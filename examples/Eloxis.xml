@@ -360,7 +360,7 @@
 	</ns3:THREADITEM>
 	<ns3:COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
 	<ns3:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
-	<ns3:ITEM weight="1.0" name="tourch"/>
+	<ns3:ITEM weight="1.0" name="torch"/>
 	<ns3:ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
 	<ns3:ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
 	<ns3:ITEM weight="0.0" name="anschaltbarer Lichtquarz"/>

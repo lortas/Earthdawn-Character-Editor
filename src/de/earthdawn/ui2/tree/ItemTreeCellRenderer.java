@@ -72,14 +72,14 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		}	
 		
 		// Bloodcharms
-		if(value == "Blodcharms"){
-			label.setText("Blodcharms");	
+		if(value == "Bloodcharms"){
+			label.setText("Bloodcharms");	
 			label.setIcon((ImageIcon)treeIcons.get("BLOOD_CHARM"));
 		}			
 		
 		// ThreadItems
-		if(value == "Threasd Items"){
-			label.setText("Threasd Items");	
+		if(value == "Thread Items"){
+			label.setText("Thread Items");	
 			if(expanded){
 				label.setIcon((ImageIcon)treeIcons.get("CHEST_OPEN"));
 			}

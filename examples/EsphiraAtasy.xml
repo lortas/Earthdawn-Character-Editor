@@ -230,7 +230,7 @@
 	<ns3:WEAPON longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" location="self" used="yes" weight="1.0" name="blowgun"/>
 	<ns3:COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
 	<ns3:ITEM weight="34.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack, tent"/>
-	<ns3:ITEM weight="1.0" name="tourch"/>
+	<ns3:ITEM weight="1.0" name="torch"/>
 	<ns3:ITEM weight="5.0" name="artisan tool (Holzschnitzwerkzeug)"/>
 	<ns3:ITEM location="dry bag" weight="2.0" name="writing kit (quill pen, writing ink, 10 sheeds, 2 candles, 10 pieces of chalk)"/>
 	<ns3:ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>

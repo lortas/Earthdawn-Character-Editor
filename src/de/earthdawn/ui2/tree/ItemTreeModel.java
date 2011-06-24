@@ -26,10 +26,10 @@ public class ItemTreeModel implements TreeModel {
 			// set displayed nodes
 			displayedNodes = new HashMap<String, Object>();
 			displayedNodes.put("Items", character.getItems());
-			displayedNodes.put("Blodcharms", character.getBloodCharmItem());
+			displayedNodes.put("Bloodcharms", character.getBloodCharmItem());
 			displayedNodes.put("Weapons", character.getWeapons());
 			displayedNodes.put("Armor", character.getProtection().getARMOROrSHIELD());
-			displayedNodes.put("Threasd Items", character.getThreadItem());
+			displayedNodes.put("Thread Items", character.getThreadItem());
 			displayKeys = new ArrayList<String>(displayedNodes.keySet());
 			
 		}
