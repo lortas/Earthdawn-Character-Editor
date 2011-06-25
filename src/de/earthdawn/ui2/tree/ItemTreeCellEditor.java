@@ -1,27 +1,15 @@
 package de.earthdawn.ui2.tree;
 
 import java.awt.Component;
-import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.EventObject;
 import java.util.HashMap;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JTree;
 import javax.swing.event.CellEditorListener;
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
-
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.BLOODCHARMITEMType;
 import de.earthdawn.data.ITEMType;
@@ -80,7 +68,6 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 			}
 		}
 		return returnValue;	
-
 	}
 
 	@Override
@@ -118,8 +105,4 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		}
 		return null;
 	}
-	
-
-
-
 }

@@ -38,13 +38,12 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		File dir = new File("./icons");
 
 		treeIcons = new HashMap<String, ImageIcon>();
-		for(String strFilename : dir.list()){
-			System.out.println("Filename:" + stripExtension(strFilename));
-			ImageIcon orgIcon = new ImageIcon("./icons/" + strFilename);
-			treeIcons.put(stripExtension(strFilename.toUpperCase()),  scale(orgIcon.getImage()));
+		for(String strFilename : dir.list()) {
+			if( strFilename.endsWith(".png") ) {
+				ImageIcon orgIcon = new ImageIcon("./icons/" + strFilename);
+				treeIcons.put(stripExtension(strFilename.toUpperCase()),  scale(orgIcon.getImage()));
+			}
 		}
-		
-
 	}
 
 	@Override
