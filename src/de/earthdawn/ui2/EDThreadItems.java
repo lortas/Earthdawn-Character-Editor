@@ -47,24 +47,19 @@ import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
 
 public class EDThreadItems extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JScrollPane scrollPane;
 	private JTree tree;
-	private JPopupMenu popupMenu;
-	private JMenuItem menuItem;
 	private CharacterContainer character;
-	
 	private DefaultMutableTreeNode nodeRoot;
 	private DefaultMutableTreeNode nodeThreadItems;
 	private DefaultMutableTreeNode nodeMundaneItems;
 	private DefaultMutableTreeNode nodeBloodCharmItems;
 	private DefaultMutableTreeNode nodeArmorShield;
 	private DefaultMutableTreeNode nodeWeapons;
-	
 	private JPopupMenu popupMenuTree;
 	private JMenuItem menuItemAdd;
 	private JMenuItem menuItemRemove;
-
-
 	private JMenu mnAddEffect;
 	private JMenuItem mntmTalentEffect;
 	private JMenuItem mntmArmorEffect;
@@ -149,7 +144,7 @@ public class EDThreadItems extends JPanel {
 			}
 		});
 		popupMenuTree.add(menuItemRemove);
-		
+
 		mntmActivar = new JMenuItem("Activate");
 		mntmActivar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -157,7 +152,6 @@ public class EDThreadItems extends JPanel {
 			}
 		});
 		popupMenuTree.add(mntmActivar);
-
 	}
 
 	private void initTree(){
@@ -167,22 +161,17 @@ public class EDThreadItems extends JPanel {
 		nodeBloodCharmItems = new DefaultMutableTreeNode("Bloodcharms");
 		nodeArmorShield = new DefaultMutableTreeNode("Armor/Shield");
 		nodeWeapons = new DefaultMutableTreeNode("Weapons");
-		
-		
+
 		//nodeRoot.add(nodeMundaneItems);
 		nodeRoot.add(nodeArmorShield);
 		nodeRoot.add(nodeBloodCharmItems);
 		nodeRoot.add(nodeThreadItems);
 		nodeRoot.add(nodeWeapons);
-		
+
 		tree = new JTree(nodeRoot);
 		tree.setRootVisible(false);
-		
-		
-		
 		tree.setEditable(true);
 		tree.setInvokesStopCellEditing(true); 
-
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -192,47 +181,42 @@ public class EDThreadItems extends JPanel {
 		tree.setCellEditor(new EDItemTreeCellEditor());
 		tree.setCellRenderer(new EDItemTreeCellEditor());
 		scrollPane.setViewportView(tree);
+
 		// normal items
 		DefaultMutableTreeNode itemNode = null;
 		for(ITEMType item : character.getItems()){
 			itemNode = new DefaultMutableTreeNode(item.getName());
 			nodeMundaneItems.add(itemNode);
 		}
-		
+
 		// weapons
 		DefaultMutableTreeNode weaponNode = null;
 		for(WEAPONType weapon : character.getWeapons()){
 			weaponNode = new DefaultMutableTreeNode(weapon.getName());
 			nodeWeapons.add(weaponNode);
 		}
-		
+
 		// armor
 		DefaultMutableTreeNode armorNode = null;
 		for(ARMORType armor : character.getProtection().getARMOROrSHIELD()){
 			ArmorShieldInfo info = new ArmorShieldInfo(armor);
 			armorNode = new DefaultMutableTreeNode(info);
 			nodeArmorShield.add(armorNode);
-		}		
-		
-		
-		
-		
+		}
+
 		// threaditems
 		DefaultMutableTreeNode rankNode = null;
 		DefaultMutableTreeNode effectNode = null;
-
 		for(THREADITEMType item  : character.getThreadItem()){
 			itemNode = new DefaultMutableTreeNode(new ThreadItemInfo(item));
 			int i = 1;
 			for(THREADRANKType rank : item.getTHREADRANK()){
 				rankNode = new DefaultMutableTreeNode(new ThreadRankInfo(i, rank));
-				
 				itemNode.add(rankNode);
 				ARMORType a = rank.getARMOR();
 				if (a != null){
 					effectNode = new DefaultMutableTreeNode(new ThreadEffectArmor(a));
 					rankNode.add(effectNode);
-
 				}
 				for(TALENTABILITYType talent : rank.getTALENT()){
 					effectNode = new DefaultMutableTreeNode(new ThreadEffectTalent(talent));
@@ -242,10 +226,7 @@ public class EDThreadItems extends JPanel {
 			}
 			nodeThreadItems.add(itemNode);
 		}
-		
 		expandAll(tree);
-
-
 	}
 
 	public void expandAll(JTree tree) {
@@ -256,16 +237,10 @@ public class EDThreadItems extends JPanel {
 		}
 	}
 
-
-
-
-
 	protected void do_tree_mouseReleased(MouseEvent arg0) {
 		if (arg0.getButton() == MouseEvent.BUTTON3) {
-
 			// das unter der Maus liegende Element selektieren
 			TreePath selPath = this.tree.getPathForLocation(arg0.getX(), arg0.getY());
-
 			tree.makeVisible(selPath);
 			tree.scrollPathToVisible(selPath);
 			tree.setSelectionPath(selPath);
@@ -274,7 +249,6 @@ public class EDThreadItems extends JPanel {
 		}
 
 	}
-
 
 	protected void do_menuItemRemove_actionPerformed(ActionEvent arg0) {
 		DefaultMutableTreeNode node = (DefaultMutableTreeNode)tree.getSelectionPath().getLastPathComponent();
@@ -297,7 +271,6 @@ public class EDThreadItems extends JPanel {
 			}
 		}
 		initTree();
-
 	}
 	
 	protected void do_mntmActivar_actionPerformed(ActionEvent arg0) {
@@ -313,7 +286,6 @@ public class EDThreadItems extends JPanel {
 	}
 
 	protected void do_menuItemAdd_actionPerformed(ActionEvent arg0) {
-
 		System.out.println("Add");
 		if (tree.getSelectionPath().getPathCount() == 2){
 			THREADITEMType newitem = new THREADITEMType();
@@ -322,17 +294,13 @@ public class EDThreadItems extends JPanel {
 			character.getThreadItem().add(newitem);
 		}
 		if (tree.getSelectionPath().getPathCount() == 3){
-
 			DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getSelectionPath().getLastPathComponent();
 			ThreadItemInfo tii = (ThreadItemInfo)node.getUserObject();
 			THREADITEMType threaditem = tii.threaditem;
 			THREADRANKType newrank = new THREADRANKType();
 			newrank.setEffect("New Rank");
 			threaditem.getTHREADRANK().add(0, newrank);
-
-
 		}
-
 		initTree();
 	}
 
@@ -355,13 +323,9 @@ public class EDThreadItems extends JPanel {
 			ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 			talent.setName(capabilities.getTalents().get(1).getName());
 			rank.getTALENT().add(talent);
-
 		}
-		initTree();		
+		initTree();
 	}
-
-
-
 
 	public class EDItemTreeCellEditor extends  DefaultTreeCellRenderer   implements TreeCellEditor {
 
@@ -392,14 +356,14 @@ public class EDThreadItems extends JPanel {
 
 			treeIcons = new HashMap<String, ImageIcon>();
 			for(String strFilename : dir.list()){
-				System.out.println("Filename:" + stripExtension(strFilename));
-				ImageIcon orgIcon = new ImageIcon("./icons/" + strFilename);
-				treeIcons.put(stripExtension(strFilename.toUpperCase()),  scale(orgIcon.getImage()));
+				if( strFilename.endsWith(".png") ) {
+					ImageIcon orgIcon = new ImageIcon("./icons/" + strFilename);
+					treeIcons.put(stripExtension(strFilename.toUpperCase()),  scale(orgIcon.getImage()));
+				}
 			}
 		}
 
 		private ImageIcon scale(Image src) {
-
 			int type = BufferedImage.TRANSLUCENT;
 			BufferedImage dst = new BufferedImage(intWidth, intHeight, type);
 			Graphics2D g2 = dst.createGraphics();
@@ -408,23 +372,15 @@ public class EDThreadItems extends JPanel {
 			return new ImageIcon(dst);
 		}
 
-
-
 		@Override
 		public void cancelCellEditing() {
 			System.out.println("cancelCellEditing");
-
 		}
 
 		@Override
 		public Object getCellEditorValue() {
-
-
 			return node.getUserObject();
 		}
-
-
-
 
 		@Override
 		public boolean stopCellEditing() {
