@@ -1,7 +1,6 @@
 BACKPACK.png
-	Author: DaPino, http://www.dapino-colada.nl/
-	License: CC Attribution Non-Commercial
-	Modified by Lortas
+	Author: Harwen Zhang, http://harwen.net/
+	License: Free for non commercial use.
 
 ARMOR.png
 	Pixel Art Icon for RPG by Ails
@@ -75,3 +74,35 @@ THROWING_WEAPON.png
 
 UNDEFINED.png
 	Pixel Art Icon for RPG by Ails
+
+CLOTH.png
+
+AMULET.png
+
+WAND.png
+
+ANIMAL.png
+
+COINS.png
+
+GEMS.png
+
+KIT.png
+
+POT.png
+
+TOOL.png
+
+INSTRUMENT.png
+
+FOOD.png
+
+DRINK.png
+
+RATION.png
+
+MOUNT.png
+
+TRANSPORT.png
+
+PAPER.png
