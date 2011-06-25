@@ -1,3 +1,7 @@
+UNDEFINED.png
+	Author: Maakdogan
+	License: Free for non commercial use.
+
 BACKPACK.png
 	Author: Harwen Zhang, http://harwen.net/
 	License: Free for non commercial use.
@@ -35,28 +39,6 @@ MISSILE_WEAPON.png
 POTION.png
 	Pixel Art Icon for RPG by Ails
 
-RANK1.png
-
-RANK2.png
-
-RANK3.png
-
-RANK4.png
-
-RANK5.png
-
-RANK6.png
-
-RANK7.png
-
-RANK8.png
-
-RANK9.png
-
-RANKn.png
-
-RANK.png
-
 RING.png
 	Pixel Art Icon for RPG by Ails
 
@@ -70,9 +52,6 @@ TALISMAN.png
 	Pixel Art Icon for RPG by Ails
 
 THROWING_WEAPON.png
-	Pixel Art Icon for RPG by Ails
-
-UNDEFINED.png
 	Pixel Art Icon for RPG by Ails
 
 CLOTH.png
@@ -106,3 +85,25 @@ MOUNT.png
 TRANSPORT.png
 
 PAPER.png
+
+RANK1.png
+
+RANK2.png
+
+RANK3.png
+
+RANK4.png
+
+RANK5.png
+
+RANK6.png
+
+RANK7.png
+
+RANK8.png
+
+RANK9.png
+
+RANKn.png
+
+RANK.png
