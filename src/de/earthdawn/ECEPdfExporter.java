@@ -31,8 +31,10 @@ import java.util.HashMap;
 import java.util.List;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
+import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
+import com.itextpdf.text.Image;
 
 import de.earthdawn.data.*;
 
@@ -423,6 +425,17 @@ public class ECEPdfExporter {
 		setButtons(character.getWound().getNormal(), "WoundPenalties.", 9);
 		acroFields.setField( "Shield", "none" );
 		acroFields.setField( "ShieldDeflectionBonus", "na" );
+
+		// Charakter Potrait-Bild einfügen
+		List<byte[]> potraits = character.getPotrait();
+		if( ! potraits.isEmpty() ) {
+			Image image = Image.getInstance(potraits.get(0));
+			image.setAbsolutePosition(35f,517f);
+			image.scaleAbsolute(165f, 200f);
+			PdfContentByte overContent = stamper.getOverContent(2);
+			overContent.addImage(image);
+		}
+
 		int armor_max=0;
 		int shield_max=0;
 		for (ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
@@ -707,6 +720,16 @@ public class ECEPdfExporter {
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		exportCommonFields(character,16,17);
 		setButtons(character.getWound().getNormal(), "Wound.", 7);
+
+		// Charakter Potrait-Bild einfügen
+		List<byte[]> potraits = character.getPotrait();
+		if( ! potraits.isEmpty() ) {
+			Image image = Image.getInstance(potraits.get(0));
+			image.setAbsolutePosition(18.5f,702.5f);
+			image.scaleAbsolute(91.5f, 93f);
+			PdfContentByte overContent = stamper.getOverContent(2);
+			overContent.addImage(image);
+		}
 
 		int counterArmor=0;
 		for (ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
