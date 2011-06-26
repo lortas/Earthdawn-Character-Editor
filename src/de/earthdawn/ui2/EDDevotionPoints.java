@@ -1,13 +1,20 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -18,6 +25,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ACCOUNTINGType;
@@ -37,6 +45,7 @@ public class EDDevotionPoints extends JPanel {
 	private JButton btnAddDevotionPointsEntry;
 	private JButton btnRemoveDevotionPointsEntry;
 	private JTextField textFieldPassion;
+	private BufferedImage backgroundimage = null;
 
 	public CharacterContainer getCharacter() {
 		return character;
@@ -52,14 +61,30 @@ public class EDDevotionPoints extends JPanel {
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
 	}
 
-	public EDDevotionPoints() {
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/devotionpoints_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
 
+	public EDDevotionPoints() {
+		setOpaque(false);
 		setLayout(new BorderLayout(0,0));
 
 		toolBar = new JToolBar();
+		toolBar.setOpaque(false);
 		add(toolBar, BorderLayout.NORTH);
 		
 		btnAddDevotionPointsEntry = new JButton("Add DevotionPoints");
+		btnAddDevotionPointsEntry.setOpaque(false);
 		btnAddDevotionPointsEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddDevotionPointsEntry_actionPerformed(arg0);
@@ -68,6 +93,7 @@ public class EDDevotionPoints extends JPanel {
 		toolBar.add(btnAddDevotionPointsEntry);
 
 		btnRemoveDevotionPointsEntry = new JButton("Remove DevotionPoints");
+		btnRemoveDevotionPointsEntry.setOpaque(false);
 		btnRemoveDevotionPointsEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnRemoveDevotionPointsEntry_actionPerformed(arg0);
@@ -76,24 +102,38 @@ public class EDDevotionPoints extends JPanel {
 		toolBar.add(btnRemoveDevotionPointsEntry);
 		
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
-		
-		table = new JTable();
+
+		// Create transperant table
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer( renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		table.setOpaque(false);
 		InputMapUtil.setupInputMap(table);	
 		
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new DevotionPointsTableModel(character));
 		scrollPane.setViewportView(table);
 		table.setRowSelectionAllowed(false);
-		
+		scrollPane.getViewport().setOpaque(false);
+
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
 		JPanel southPanel= new JPanel();
+		southPanel.setOpaque(false);
 		add(southPanel,BorderLayout.SOUTH);
 		southPanel.add(new JLabel("Passion:"));
 		textFieldPassion = new JTextField();
+		textFieldPassion.setOpaque(false);
 		textFieldPassion.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
 				do_textFieldPassion_caretUpdate(arg0);

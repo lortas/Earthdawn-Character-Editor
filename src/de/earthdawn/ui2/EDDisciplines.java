@@ -38,6 +38,7 @@ public class EDDisciplines extends JPanel {
 	private JToolBar toolBar;
 	private JButton btnAddDicipline;
 	private JPopupMenu popupMenuCircle;
+	private BufferedImage backgroundimage = null;
 
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
@@ -51,12 +52,15 @@ public class EDDisciplines extends JPanel {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		try {
-			BufferedImage image = ImageIO.read(new File("templates/disciplines_background.jpg"));
-			g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if( backgroundimage == null ) {
+			File file = new File("templates/disciplines_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
 		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
 		super.paintComponent(g);
 	}
 
@@ -81,8 +85,7 @@ public class EDDisciplines extends JPanel {
 				return component;
 			}
 		};
-		
-		
+
 		table.setModel(new DisciplinesTableModel(character));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		table.setOpaque(false);

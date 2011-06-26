@@ -1,20 +1,28 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ACCOUNTINGType;
@@ -31,6 +39,7 @@ public class EDExperience extends JPanel {
 	private JTable table;
 	private JButton btnAddEXPEntry;
 	private JButton btnRemoveEXPEntry;
+	private BufferedImage backgroundimage = null;
 	
 	public CharacterContainer getCharacter() {
 		return character;
@@ -46,14 +55,30 @@ public class EDExperience extends JPanel {
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
 	}
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/experience_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
+
 	public EDExperience() {
-		
+		setOpaque(false);
 		setLayout(new BorderLayout(0, 0));
 		
 		toolBar = new JToolBar();
+		toolBar.setOpaque(false);
 		add(toolBar, BorderLayout.NORTH);
 		
 		btnAddEXPEntry = new JButton("Add Experience");
+		btnAddEXPEntry.setOpaque(false);
 		btnAddEXPEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddEXPEntry_actionPerformed(arg0);
@@ -62,6 +87,7 @@ public class EDExperience extends JPanel {
 		toolBar.add(btnAddEXPEntry);
 		
 		btnRemoveEXPEntry = new JButton("Remove Experience");
+		btnRemoveEXPEntry.setOpaque(false);
 		btnRemoveEXPEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnRemoveEXPEntry_actionPerformed(arg0);
@@ -70,16 +96,27 @@ public class EDExperience extends JPanel {
 		toolBar.add(btnRemoveEXPEntry);
 		
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
-		
-		table = new JTable();
+
+		// Create transperant table
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer( renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		table.setOpaque(false);
 		InputMapUtil.setupInputMap(table);	
 		
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new ExperienceTableModel(character));
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 		table.setRowSelectionAllowed(false);
-		
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
