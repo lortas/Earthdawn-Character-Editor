@@ -1,66 +1,37 @@
 package de.earthdawn.ui2;
 
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.EventObject;
-import java.util.HashMap;
+import java.util.List;
 
-import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
-import javax.swing.JTextField;
 import javax.swing.JTree;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.event.CellEditorListener;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
-import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.config.ECECapabilities;
-import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.CAPABILITYType;
-import de.earthdawn.data.ITEMType;
-import de.earthdawn.data.ItemkindType;
-import de.earthdawn.data.TALENTABILITYType;
-import de.earthdawn.data.THREADITEMType;
-import de.earthdawn.data.THREADRANKType;
-import de.earthdawn.data.WEAPONType;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
+
+import de.earthdawn.data.*;
 
 public class EDInventory extends JPanel {
 	private JScrollPane scrollPane;
 	private JTree tree;
 
 	private CharacterContainer character;
+	private Object currentNode; 
+	private TreePath currentPath;
 	
-
 	public CharacterContainer getCharacter() {
 		return character;
 		
@@ -104,13 +75,109 @@ public class EDInventory extends JPanel {
 		scrollPane.add(tree);
 		scrollPane.setViewportView(tree);
 	}
+	
 	protected void do_tree_mouseReleased(MouseEvent event) {
-		System.out.println(event.getButton());
 		if(event.getButton() > 1){
-			PopupMenu popup = new PopupMenu("Action");
-			popup.add(new MenuItem("Bala"));
+			JPopupMenu popup = new JPopupMenu();
+			currentPath = tree.getPathForLocation(event.getX(), event.getY());
+			currentNode = currentPath.getLastPathComponent();
+			
+			// Popup for group nodes
+			if(currentNode instanceof String){
+				String str = (String)currentNode;
+				// add item
+				if(str.equals("Items")){
+					JMenuItem menuitem = new JMenuItem("Add item");
+					menuitem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							ITEMType item = new ITEMType();
+							item.setName("New Item");
+							character.getItems().add(item);
+							((ItemTreeModel) tree.getModel()).fireAdd(currentPath,item, character.getItems().indexOf(item));
+							tree.scrollPathToVisible(currentPath.pathByAddingChild(item));
+						}
+					});
+					popup.add(menuitem);
+				}
+				// add weapon
+				if(str.equals("Weapons")){
+					JMenuItem menuitem = new JMenuItem("Add weapon");
+					menuitem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							WEAPONType weapon = new WEAPONType();
+							weapon.setName("New weapon");
+							character.getWeapons().add(weapon);
+							((ItemTreeModel) tree.getModel()).fireAdd(currentPath,weapon, character.getWeapons().indexOf(weapon));
+							tree.scrollPathToVisible(currentPath.pathByAddingChild(weapon));
+						}
+					});
+					popup.add(menuitem);
+				}		
+				//add threaditem
+				if(str.equals("Thread Items")){
+					JMenuItem menuitem = new JMenuItem("Add Thread Item");
+					menuitem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							THREADITEMType threaditem = new THREADITEMType();
+							threaditem.setName("New Thread Item");
+							character.getThreadItem().add(threaditem);
+							((ItemTreeModel) tree.getModel()).fireAdd(currentPath,threaditem, character.getThreadItem().indexOf(threaditem));
+							tree.scrollPathToVisible(currentPath.pathByAddingChild(threaditem));
+						}
+					});
+					popup.add(menuitem);
+				}	
+				// add armor
+				if(str.equals("Armor")){
+					JMenuItem menuitem = new JMenuItem("Add Armor");
+					menuitem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							ARMORType armor = new ARMORType();
+							armor.setName("New Armor");
+							character.getProtection().getARMOROrSHIELD().add(armor);
+							((ItemTreeModel) tree.getModel()).fireAdd(currentPath,armor, character.getProtection().getARMOROrSHIELD().indexOf(armor));
+							tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
+						}
+					});
+					popup.add(menuitem);
+				}	
+				// add bloodcharm
+				if(str.equals("Bloodcharms")){
+					JMenuItem menuitem = new JMenuItem("Add Bloodcharms");
+					menuitem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							BLOODCHARMITEMType bloodcharm = new BLOODCHARMITEMType();
+							bloodcharm.setName("New Bloodcharm");
+							character.getBloodCharmItem().add(bloodcharm);
+							((ItemTreeModel) tree.getModel()).fireAdd(currentPath,bloodcharm, character.getBloodCharmItem().indexOf(bloodcharm));
+							tree.scrollPathToVisible(currentPath.pathByAddingChild(bloodcharm));
+						}
+					});
+					popup.add(menuitem);
+				}				
+				
+			}
+			
+			//remove
+			Object parent = currentPath.getParentPath().getLastPathComponent();
+			if(parent instanceof String){
+				List temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+				if(temp != null){
+					JMenuItem menuitem = new JMenuItem("Remove");
+					menuitem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							Object parent = currentPath.getParentPath().getLastPathComponent();
+							List temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+							temp.remove(currentNode); 
+							((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode, 0);
+							
+						}
+					});
+					popup.add(menuitem);	
+				}
+			}
+			
 			tree.add(popup);
-			System.out.println("Trigger");
 			popup.show(tree, event.getX(), event.getY());
 		}
 	}
