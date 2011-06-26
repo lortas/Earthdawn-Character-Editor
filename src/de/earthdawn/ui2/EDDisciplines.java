@@ -1,6 +1,7 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -20,6 +22,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
+
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
@@ -67,7 +71,18 @@ public class EDDisciplines extends JPanel {
 		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
 
-		table = new JTable();
+		// Create transperant table
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer( renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		
+		
 		table.setModel(new DisciplinesTableModel(character));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		table.setOpaque(false);
