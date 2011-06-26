@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/names}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/>
  *         &lt;element name="STARTINGWEAPONS" type="{http://earthdawn.com/names}NAME_STARTINGWEAPONS_type" maxOccurs="unbounded"/>
  *         &lt;element name="STARTINGITEMS" type="{http://earthdawn.com/names}NAME_STARTINGITEMS_type" maxOccurs="unbounded"/>
+ *         &lt;element name="STARTINGSKILLS" type="{http://earthdawn.com/names}NAME_STARTINGSKILLS_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -56,7 +57,8 @@ import javax.xml.bind.annotation.XmlType;
     "threadweaving",
     "spellweaving",
     "startingweapons",
-    "startingitems"
+    "startingitems",
+    "startingskills"
 })
 @XmlRootElement(name = "NAMES", namespace = "http://earthdawn.com/names")
 public class NAMES {
@@ -81,6 +83,8 @@ public class NAMES {
     protected List<NAMESTARTINGWEAPONSType> startingweapons;
     @XmlElement(name = "STARTINGITEMS", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMESTARTINGITEMSType> startingitems;
+    @XmlElement(name = "STARTINGSKILLS", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESTARTINGSKILLSType> startingskills;
 
     /**
      * Gets the value of the attributes property.
@@ -370,6 +374,35 @@ public class NAMES {
             startingitems = new ArrayList<NAMESTARTINGITEMSType>();
         }
         return this.startingitems;
+    }
+
+    /**
+     * Gets the value of the startingskills property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the startingskills property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSTARTINGSKILLS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESTARTINGSKILLSType }
+     * 
+     * 
+     */
+    public List<NAMESTARTINGSKILLSType> getSTARTINGSKILLS() {
+        if (startingskills == null) {
+            startingskills = new ArrayList<NAMESTARTINGSKILLSType>();
+        }
+        return this.startingskills;
     }
 
 }

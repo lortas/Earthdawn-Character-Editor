@@ -37,6 +37,12 @@
 		</xs:sequence>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="NAME_STARTINGSKILLS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
 	<xs:element name="NAMES">
 		<xs:complexType>
 			<xs:sequence>
@@ -50,6 +56,7 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLWEAVING" type="NAME_SPELLWEAVING_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGWEAPONS" type="NAME_STARTINGWEAPONS_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGITEMS" type="NAME_STARTINGITEMS_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGSKILLS" type="NAME_STARTINGSKILLS_type"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

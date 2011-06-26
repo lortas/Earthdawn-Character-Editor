@@ -57,4 +57,21 @@
 		<ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3" kind="cloth"/>
 		<ITEM name="Trail Rations (1 week)" weight="1" kind="food"/>
 	</STARTINGITEMS>
+	<STARTINGSKILLS lang="en">
+		<SKILL name="Speak Language">
+			<edt:RANK rank="2" startrank="2"/>
+		</SKILL>
+		<SKILL name="Read/Write Language">
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+		<SKILL name="Knowledge" limitation="TBD">
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+		<SKILL name="Knowledge" limitation="TBD">
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+		<SKILL name="Artisan" limitation="TBD">
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+	</STARTINGSKILLS>
 </NAMES>

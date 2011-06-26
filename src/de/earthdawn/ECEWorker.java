@@ -101,7 +101,6 @@ public class ECEWorker {
 		defense.setPhysical(berechneWiederstandskraft(characterAttributes.get("DEX").getCurrentvalue()));
 		defense.setSpell(berechneWiederstandskraft(characterAttributes.get("PER").getCurrentvalue()));
 		defense.setSocial(berechneWiederstandskraft(characterAttributes.get("CHA").getCurrentvalue()));
-		
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
 			case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
@@ -311,8 +310,21 @@ public class ECEWorker {
 
 		int skillsStartranks=calculatedLP.getUSEDSTARTRANKS().getSkills();
 		character.removeEmptySkills();
+		List<SKILLType> skills = character.getSkills();
+		if( skills.isEmpty() ) {
+			for(SKILLType skilltemplate : PROPERTIES.getStartingSkills() ) {
+				SKILLType skill = new SKILLType();
+				skill.setName(skilltemplate.getName());
+				skill.setLimitation(skilltemplate.getLimitation());
+				RANKType rank = new RANKType();
+				rank.setRank(skilltemplate.getRANK().getRank());
+				rank.setStartrank(skilltemplate.getRANK().getStartrank());
+				skill.setRANK(rank);
+				skills.add(skill);
+			}
+		}
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
-		for( SKILLType skill : character.getSkills() ) {
+		for( SKILLType skill : skills ) {
 			RANKType rank = skill.getRANK();
 			int startrank = rank.getStartrank();
 			skillsStartranks+=startrank;
@@ -349,7 +361,7 @@ public class ECEWorker {
 				if( skill.getAttribute() != null ) {
 					calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 				}
-				character.getSkills().add(skill);
+				skills.add(skill);
 			}
 		}
 
@@ -515,6 +527,8 @@ public class ECEWorker {
 			}
 			if( rank.getRank() < rank.getStartrank() ) rank.setRank(rank.getStartrank());
 			if( rank.getRank() < rank.getRealignedrank() ) rank.setRank(rank.getRealignedrank());
+			// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
+			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
 			rank.setBonus(0);
 			enforceCapabilityParams(talent);
 			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());

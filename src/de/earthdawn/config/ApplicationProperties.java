@@ -295,6 +295,14 @@ public class ApplicationProperties {
 		return null;
 	}
 
+	public List<SKILLType> getStartingSkills() {
+		for( NAMESTARTINGSKILLSType skills : NAMES.getSTARTINGSKILLS() ) {
+			if( skills.getLang().equals(LANGUAGE) ) return skills.getSKILL();
+		}
+		// Not found
+		return null;
+	}
+
 	public HashMap<SpellkindType,String> getSpellKindMap() {
 		for( NAMESPELLWEAVINGType name : NAMES.getSPELLWEAVING() ) {
 			if( name.getLang().equals(LANGUAGE)) {
