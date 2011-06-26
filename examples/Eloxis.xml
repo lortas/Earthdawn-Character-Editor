@@ -34,10 +34,6 @@
 			<RANK lpcost="5000" bonus="4" rank="7" startrank="2" dice="d12+2d10" step="19"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
-			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12" step="7"/>
-			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.75" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
 			<RANK lpcost="5000" bonus="0" rank="7" startrank="2" dice="d12+2d6" step="15"/>
 			<TEACHER/>
@@ -48,6 +44,10 @@
 		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.86" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
 			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12+2d6" step="15"/>
+			<TEACHER/>
+		</ns3:DISZIPLINETALENT>
+		<ns3:DISZIPLINETALENT circle="1" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12" step="7"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
 		<ns3:DISZIPLINETALENT circle="2" bookref="PG p.61" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
@@ -74,6 +74,18 @@
 			<RANK lpcost="0" bonus="0" dice="d8+d6" step="9"/>
 			<TEACHER/>
 		</ns3:DISZIPLINETALENT>
+		<ns3:OPTIONALTALENT circle="0" bookref="PC p.111" karma="no" limitation="Thystonius" bonus="0" attribute="na" strain="0" action="na" name="Questor">
+			<RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
+			<TEACHER/>
+		</ns3:OPTIONALTALENT>
+		<ns3:OPTIONALTALENT circle="0" bookref="PG p.79" karma="yes" limitation="(#)" bonus="0" attribute="DEX" strain="1" action="simple" name="Second Attack">
+			<RANK bonus="4" rank="0" dice="2d10" step="12"/>
+			<TEACHER byversatility="no" teachercircle="3" talentcircle="3" name="Thermail Schutz der Plage"/>
+		</ns3:OPTIONALTALENT>
+		<ns3:OPTIONALTALENT circle="0" bookref="PG p.81" karma="no" limitation="(#)" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
+			<RANK bonus="4" rank="0" dice="2d8" step="10"/>
+			<TEACHER byversatility="no" teachercircle="2" talentcircle="2" name="Thermail Schutz der Plage"/>
+		</ns3:OPTIONALTALENT>
 		<ns3:OPTIONALTALENT circle="1" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Air Dance">
 			<RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12+2d6" step="15"/>
 			<TEACHER/>
@@ -98,23 +110,11 @@
 			<RANK lpcost="8600" bonus="0" rank="7" dice="d12+2d6" step="15"/>
 			<TEACHER/>
 		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="0" bookref="" karma="no" limitation="Thystonius" bonus="0" attribute="na" strain="0" action="na" name="Questor">
-			<RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
-			<TEACHER/>
-		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="0" bookref="PG p.81" karma="no" limitation="(#)" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
-			<RANK bonus="4" rank="0" dice="2d8" step="10"/>
-			<TEACHER byversatility="no" teachercircle="2" talentcircle="2" name="Thermail Schutz der Plage"/>
-		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="0" bookref="PG p.79" karma="yes" limitation="(#)" bonus="0" attribute="DEX" strain="1" action="simple" name="Second Attack">
-			<RANK bonus="4" rank="0" dice="2d10" step="12"/>
-			<TEACHER byversatility="no" teachercircle="3" talentcircle="3" name="Thermail Schutz der Plage"/>
-		</ns3:OPTIONALTALENT>
 	</ns3:TALENTS>
-	<ns3:SKILL bookref="PG p.102" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+	<ns3:SKILL bookref="PG p.100" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
 		<RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
 	</ns3:SKILL>
-	<ns3:SKILL bookref="PG p.100" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
+	<ns3:SKILL bookref="PG p.102" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
 		<RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
 	</ns3:SKILL>
 	<ns3:SKILL bookref="PG p.102" karma="no" limitation="Troll" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
@@ -129,13 +129,13 @@
 	<ns3:SKILL bookref="PG p.96" default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="sustained" name="Disarm Trap">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
 	</ns3:SKILL>
-	<ns3:SKILL bookref="PG p.98" karma="no" limitation="Militärgeschichte" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-	</ns3:SKILL>
 	<ns3:SKILL bookref="PG p.95" default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Trap">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
 	<ns3:SKILL bookref="PG p.95" default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
+		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+	</ns3:SKILL>
+	<ns3:SKILL bookref="PG p.98" karma="no" limitation="Militärgeschichte" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
 	</ns3:SKILL>
 	<ns3:SKILL bookref="PG p.98" default="no" karma="no" limitation="Legends and Heroes" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
@@ -153,17 +153,47 @@
 	<ns3:SKILL bookref="PG p.99" default="no" karma="no" bonus="0" attribute="na" strain="1" action="simple" name="Mount Attack">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d8+d6" step="9"/>
 	</ns3:SKILL>
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
 		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
-	</ns3:SKILL>
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
 		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
+		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
+		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
+		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	</ns3:SKILL>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
 	</ns3:SKILL>
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Conversation">
 		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
@@ -180,20 +210,8 @@
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
 		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
-		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
-		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
-		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Intimidation">
+		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
 	</ns3:SKILL>
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Seduction">
 		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
@@ -201,23 +219,8 @@
 	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="2" action="standard" name="Slough Blame">
 		<RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
 	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d8+d6" step="9"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
-		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
-		<RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
-	</ns3:SKILL>
-	<ns3:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
-		<RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
-	</ns3:SKILL>
 	<ns3:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
-	<ns3:WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+	<ns3:WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="1.0" name="Desperate Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="no" weight="1.0" name="Desperate Blow"/>
 	<ns3:BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" location="self" used="no" weight="1.0" name="Absorb Blow"/>
@@ -287,16 +290,16 @@
 	<ns3:THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" weaventhreadrank="4" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü">
 		<description>Thread Item Melee Weapon page 276 PlayerGuide</description>
 		<THREADRANK effect="max Forge Damage" lpcost="200" keyknowledge="Name of the Item: Gratü">
-			<WEAPON size="5" strengthmin="13" damagestep="12" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+			<WEAPON size="5" strengthmin="13" damagestep="12" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 		<THREADRANK effect="Damage +1" lpcost="300">
-			<WEAPON size="5" strengthmin="13" damagestep="13" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+			<WEAPON size="5" strengthmin="13" damagestep="13" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 		<THREADRANK effect="Damage +1" lpcost="500">
-			<WEAPON size="5" strengthmin="13" damagestep="14" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+			<WEAPON size="5" strengthmin="13" damagestep="14" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 		<THREADRANK effect="Damage +1" lpcost="800">
-			<WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+			<WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
 	<ns3:THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" kind="shield" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">

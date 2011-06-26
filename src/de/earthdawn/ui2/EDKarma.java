@@ -1,18 +1,26 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ACCOUNTINGType;
@@ -29,7 +37,8 @@ public class EDKarma extends JPanel {
 	private JTable table;
 	private JButton btnAddKarmaEntry;
 	private JButton btnRemoveKarmaEntry;
-	
+	private BufferedImage backgroundimage = null;
+
 	public CharacterContainer getCharacter() {
 		return character;
 	}
@@ -44,40 +53,66 @@ public class EDKarma extends JPanel {
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
 	}
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/karma_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
+
 	public EDKarma() {
-		
+		setOpaque(false);
 		setLayout(new BorderLayout(0, 0));
-		
 		toolBar = new JToolBar();
 		add(toolBar, BorderLayout.NORTH);
-		
 		btnAddKarmaEntry = new JButton("Add Karma");
 		btnAddKarmaEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddKarmaEntry_actionPerformed(arg0);
 			}
 		});
+		btnAddKarmaEntry.setOpaque(false);
 		toolBar.add(btnAddKarmaEntry);
-		
 		btnRemoveKarmaEntry = new JButton("Remove Karma");
 		btnRemoveKarmaEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnRemoveKarmaEntry_actionPerformed(arg0);
 			}
 		});
+		btnRemoveKarmaEntry.setOpaque(false);
 		toolBar.add(btnRemoveKarmaEntry);
+		toolBar.setOpaque(false);
 		
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
-		
-		table = new JTable();
+
+		// Create transperant table
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer( renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+
 		InputMapUtil.setupInputMap(table);	
-		
+
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new KarmaTableModel(character));
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 		table.setRowSelectionAllowed(false);
-		
+		table.setOpaque(false);
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
