@@ -4,23 +4,31 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.swing.event.EventListenerList;
+import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
-import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
-import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 
-public class ItemTreeModel implements TreeModel {
+public class ItemTreeModel  implements TreeModel {
 	private CharacterContainer character;
 	private HashMap<String, Object> displayedNodes;
 	private ArrayList<String> displayKeys;
+	protected ArrayList<TreeModelListener> listeners  = new ArrayList<TreeModelListener>();
+	
+	public List getListForGroupNode(String groupkey){
+		return (List)displayedNodes.get(groupkey);
+	}
 	
 	public ItemTreeModel(CharacterContainer character) {
 		super();
+
 		this.character = character;
 		if(this.character != null) {
 			// set displayed nodes
@@ -49,8 +57,7 @@ public class ItemTreeModel implements TreeModel {
 
 	@Override
 	public void addTreeModelListener(TreeModelListener arg0) {
-		// TODO Auto-generated method stub
-
+		listeners.add(arg0);
 	}
 
 	@Override
@@ -145,17 +152,6 @@ public class ItemTreeModel implements TreeModel {
 		
 	}
 
-	@Override
-	public void removeTreeModelListener(TreeModelListener arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void valueForPathChanged(TreePath arg0, Object arg1) {
-		// TODO Auto-generated method stub
-
-	}
 	
 	private List getEffectNodes(THREADRANKType rank){
 		ArrayList<Object> list = new ArrayList<Object>();
@@ -179,5 +175,41 @@ public class ItemTreeModel implements TreeModel {
 		return list;
 		
 	}
+
+	@Override
+	public void removeTreeModelListener(TreeModelListener l) {
+		listeners.remove(l);
+		
+	}
+
+	@Override
+	public void valueForPathChanged(TreePath path, Object newValue) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	 public void fireAdd( TreePath parent, Object child, int index ){
+	        TreeModelEvent event = new TreeModelEvent( 
+	                this,  
+	                parent, 
+	                new int[] {index},  
+	                new Object[]{ child } ); 
+	        
+	        for( TreeModelListener listener : listeners ){
+	        		listener.treeNodesInserted( event );
+	        }
+	    }
+	 
+	 public void fireRemove( TreePath parent, Object child, int index ){
+	        TreeModelEvent event = new TreeModelEvent( 
+	                this,  
+	                parent, 
+	                new int[] {index},  
+	                new Object[]{ child } ); 
+	        System.out.println("fire");
+	        for( TreeModelListener listener : listeners ){
+	        		listener.treeNodesRemoved( event );
+	        }
+	    }
 
 }
