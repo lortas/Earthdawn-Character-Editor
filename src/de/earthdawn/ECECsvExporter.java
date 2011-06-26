@@ -167,8 +167,8 @@ public class ECECsvExporter {
 	public static String generaterow(List<String> list) {
 		String result="";
 		for( Object e : list ) {
-			if( ! result.isEmpty() ) result+="\t";
-			result+=String.valueOf(e);
+			if( ! result.isEmpty() ) result+=",";
+			result+="\""+String.valueOf(e).replaceAll("\"", "''")+"\"";
 		}
 		return result;
 	}
