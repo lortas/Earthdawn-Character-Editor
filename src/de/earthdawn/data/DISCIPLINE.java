@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -56,6 +57,8 @@ public class DISCIPLINE {
     protected LanguageType lang;
     @XmlAttribute(required = true)
     protected String name;
+    @XmlAttribute
+    protected String bookref;
 
     /**
      * Gets the value of the durability property.
@@ -156,6 +159,34 @@ public class DISCIPLINE {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the bookref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookref() {
+        if (bookref == null) {
+            return "";
+        } else {
+            return bookref;
+        }
+    }
+
+    /**
+     * Sets the value of the bookref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookref(String value) {
+        this.bookref = value;
     }
 
 }
