@@ -17,6 +17,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -1438,6 +1442,36 @@ public class CharacterContainer extends CharChangeRefresh {
 		for( ITEMType item : character.getBLOODCHARMITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
 		for( ITEMType item : character.getPATTERNITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
 		for( ITEMType item : character.getTHREADITEM() ) if( item.getVirtual().equals(YesnoType.NO) ) result.add( item );
+		return result;
+	}
+
+	public List<byte[]> getPotrait() {
+		List<byte[]> result = character.getPORTRAIT();
+		if( result.isEmpty() ) {
+			File file;
+			APPEARANCEType appearance = getAppearance();
+			file = new File("templates/default_character_potrait_"+appearance.getRace().toLowerCase()+"_"+appearance.getGender().value().toLowerCase()+".jpg");
+			if( ! file.canRead() ) {
+				System.out.println("can not read file "+file.getAbsolutePath());
+				file = new File("templates/default_character_potrait_"+appearance.getRace().toLowerCase()+".jpg");
+				if( ! file.canRead() ) {
+					System.out.println("can not read file "+file.getAbsolutePath());
+					file = new File("templates/default_character_potrait.jpg");
+				}
+			}
+			try {
+				FileInputStream fileInputStream = new FileInputStream(file);
+				byte[] data = new byte[(int) file.length()];
+				fileInputStream.read(data);
+				fileInputStream.close();
+				result.add(data);
+			} catch (FileNotFoundException e) {
+				// Wenn Datei nicht gefunden, dann Pech.
+				System.err.println("can not insert default potrait : "+e.getLocalizedMessage());
+			} catch (IOException e) {
+				System.err.println("can not insert default potrait : "+e.getLocalizedMessage());
+			}
+		}
 		return result;
 	}
 }
