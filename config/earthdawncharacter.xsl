@@ -117,6 +117,7 @@
                 </tr>
             </table>
         </div>
+        <xsl:call-template name="portraits"/>
     </body> 
 </html> 
 </xsl:template>
@@ -897,7 +898,7 @@
         <div class="edPortraitImages">
             <img>
                 <xsl:attribute name="src">
-                    <xsl:value-of select="//edc:PORTRAIT/@contenttype"/>;base64,<xsl:value-of select="//edc:PORTRAIT"/>
+                    data:<xsl:value-of select="//edc:PORTRAIT/@contenttype"/>;base64,<xsl:value-of select="//edc:PORTRAIT"/>
                 </xsl:attribute>
             </img>
         </div>

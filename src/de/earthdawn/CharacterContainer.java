@@ -1445,18 +1445,18 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public List<BASE64BINARYType> getPotrait() {
+	public List<BASE64BINARYType> getPortrait() {
 		List<BASE64BINARYType> result = character.getPORTRAIT();
 		if( result.isEmpty() ) {
 			File file;
 			APPEARANCEType appearance = getAppearance();
-			file = new File("templates/default_character_potrait_"+appearance.getRace().toLowerCase()+"_"+appearance.getGender().value().toLowerCase()+".jpg");
+			file = new File("templates/default_character_portrait_"+appearance.getRace().toLowerCase()+"_"+appearance.getGender().value().toLowerCase()+".jpg");
 			if( ! file.canRead() ) {
 				System.out.println("can not read file "+file.getAbsolutePath());
-				file = new File("templates/default_character_potrait_"+appearance.getRace().toLowerCase()+".jpg");
+				file = new File("templates/default_character_portrait_"+appearance.getRace().toLowerCase()+".jpg");
 				if( ! file.canRead() ) {
 					System.out.println("can not read file "+file.getAbsolutePath());
-					file = new File("templates/default_character_potrait.jpg");
+					file = new File("templates/default_character_portrait.jpg");
 				}
 			}
 			try {
@@ -1466,17 +1466,14 @@ public class CharacterContainer extends CharChangeRefresh {
 				fileInputStream.close();
 				BASE64BINARYType base64bin = new BASE64BINARYType();
 				base64bin.setValue(data);
-				final String filename = file.getName();
-				if( filename.endsWith(".jpg") || filename.endsWith(".jpeg") ) base64bin.setContenttype("image/jpeg");
-				else if( filename.endsWith(".gif") ) base64bin.setContenttype("image/gif");
-				else if( filename.endsWith(".png") ) base64bin.setContenttype("image/png");
-				else base64bin.setContenttype("image/unknown");
+				final String[] filename = file.getName().split("\\.");
+				base64bin.setContenttype("image/"+filename[filename.length-1]);
 				result.add(base64bin);
 			} catch (FileNotFoundException e) {
 				// Wenn Datei nicht gefunden, dann Pech.
-				System.err.println("can not insert default potrait : "+e.getLocalizedMessage());
+				System.err.println("can not insert default portrait : "+e.getLocalizedMessage());
 			} catch (IOException e) {
-				System.err.println("can not insert default potrait : "+e.getLocalizedMessage());
+				System.err.println("can not insert default portrait : "+e.getLocalizedMessage());
 			}
 		}
 		return result;

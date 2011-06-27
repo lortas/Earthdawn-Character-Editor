@@ -182,3 +182,16 @@
     margin: 10px;
     width: 100%;
 }
+
+.edPortraits {
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    width: 100%;
+    vertical-align: top;
+}
+
+.edPortraitImages {
+    text-align: center;
+    vertical-align: top;
+}
