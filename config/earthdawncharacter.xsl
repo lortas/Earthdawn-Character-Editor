@@ -891,4 +891,17 @@
     </div>
 </xsl:template>
 
+<xsl:template name="portraits">
+    <div class="edPortraits">
+        <div class="edSubHeader">Portraits</div>
+        <div class="edPortraitImages">
+            <img>
+                <xsl:attribute name="src">
+                    <xsl:value-of select="//edc:PORTRAIT/@contenttype"/>;base64,<xsl:value-of select="//edc:PORTRAIT"/>
+                </xsl:attribute>
+            </img>
+        </div>
+    </div>
+</xsl:template>
+
 </xsl:stylesheet>
