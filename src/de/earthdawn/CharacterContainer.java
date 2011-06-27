@@ -1445,8 +1445,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public List<byte[]> getPotrait() {
-		List<byte[]> result = character.getPORTRAIT();
+	public List<BASE64BINARYType> getPotrait() {
+		List<BASE64BINARYType> result = character.getPORTRAIT();
 		if( result.isEmpty() ) {
 			File file;
 			APPEARANCEType appearance = getAppearance();
@@ -1464,7 +1464,14 @@ public class CharacterContainer extends CharChangeRefresh {
 				byte[] data = new byte[(int) file.length()];
 				fileInputStream.read(data);
 				fileInputStream.close();
-				result.add(data);
+				BASE64BINARYType base64bin = new BASE64BINARYType();
+				base64bin.setValue(data);
+				final String filename = file.getName();
+				if( filename.endsWith(".jpg") || filename.endsWith(".jpeg") ) base64bin.setContenttype("image/jpeg");
+				else if( filename.endsWith(".gif") ) base64bin.setContenttype("image/gif");
+				else if( filename.endsWith(".png") ) base64bin.setContenttype("image/png");
+				else base64bin.setContenttype("image/unknown");
+				result.add(base64bin);
 			} catch (FileNotFoundException e) {
 				// Wenn Datei nicht gefunden, dann Pech.
 				System.err.println("can not insert default potrait : "+e.getLocalizedMessage());

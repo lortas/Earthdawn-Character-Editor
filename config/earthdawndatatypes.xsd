@@ -168,6 +168,13 @@
 			<xs:enumeration value="paper"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="BASE64BINARY_type">
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="contenttype" type="xs:string" default="image/jpeg"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="STEPDICE_type">
 		<xs:attribute name="step" type="unsigned_int" default="0"/>
 		<xs:attribute name="dice" type="dice_type"/>
