@@ -135,7 +135,9 @@ public class EDTalents extends JPanel {
 			CAPABILITYType cap = selected.get(key);
 			TALENTABILITYType talent = new TALENTABILITYType();
 			talent.setName(cap.getName());
-			character.addOptionalTalent(disciplin, 15, talent, true);
+			int circle=1;
+			for( int c : character.getDisciplineCircles() ) if( c > circle ) circle=c;
+			character.addOptionalTalent(disciplin, circle, talent, true);
 			character.refesh();
 		}
 	}

@@ -21,12 +21,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.itextpdf.text.DocumentException;
@@ -44,7 +41,7 @@ public class ECEPdfExporter {
 	private AcroFields acroFields = null;
 
 	private void exportCommonFields(CharacterContainer character, int maxSkillSpace, int raceAbilitiesLineLength) throws IOException, DocumentException {
-		acroFields.setField( "ExportDate", getCurrentDateTime());
+		acroFields.setField( "ExportDate", CharacterContainer.getCurrentDateTime());
 		acroFields.setField( "Name", character.getName() );
 		acroFields.setField( "Race", character.getAppearance().getRace() );
 		acroFields.setField( "Age", String.valueOf(character.getAppearance().getAge()) );
@@ -1006,11 +1003,5 @@ public class ECEPdfExporter {
 			result+=String.valueOf(e);
 		}
 		return result;
-	}
-
-	public static String getCurrentDateTime() {
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		Date date = new Date();
-		return dateFormat.format(date);
 	}
 }
