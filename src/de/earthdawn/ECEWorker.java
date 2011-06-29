@@ -173,42 +173,6 @@ public class ECEWorker {
 			coins.setWeight((float)weight);
 		}
 
-		// ** ARMOR **
-		// Zu erstmal alles entfernen was nicht eine Reale Rüstung ist:
-		List<ARMORType> totalarmor = character.removeVirtualArmorFromNormalArmorList();
-		// natural ARMOR bestimmen
-		ARMORType namegiverArmor = namegiver.getARMOR();
-		ARMORType naturalArmor = new ARMORType();
-		naturalArmor.setName(namegiverArmor.getName());
-		naturalArmor.setMysticarmor(namegiverArmor.getMysticarmor()+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
-		naturalArmor.setPhysicalarmor(namegiverArmor.getPhysicalarmor());
-		naturalArmor.setPenalty(namegiverArmor.getPhysicalarmor());
-		naturalArmor.setUsed(namegiverArmor.getUsed());
-		naturalArmor.setWeight(namegiverArmor.getWeight());
-		naturalArmor.setVirtual(YesnoType.YES);
-		// Natürliche Rüstung der Liste voranstellen
-		totalarmor.add(0, naturalArmor);
-		// magischen Rüstung/Rüstungsschutz anhängen:
-		totalarmor.addAll(character.getMagicArmor());
-		// Bestimme nun den aktuellen Gesamtrüstungsschutz
-		int mysticalarmor=0;
-		int physicalarmor=0;
-		int protectionpenalty=0;
-		for (ARMORType armor : totalarmor ) {
-			if( armor.getUsed().equals(YesnoType.YES) ) {
-				mysticalarmor+=armor.getMysticarmor();
-				physicalarmor+=armor.getPhysicalarmor();
-				protectionpenalty+=armor.getPenalty();
-				initiative.setModification(initiative.getModification()-armor.getPenalty());
-				initiative.setStep(initiative.getBase()+initiative.getModification());
-				initiative.setDice(step2Dice(initiative.getStep()));
-			}
-		}
-		PROTECTIONType protection = character.getProtection();
-		protection.setMysticarmor(mysticalarmor);
-		protection.setPenalty(protectionpenalty);
-		protection.setPhysicalarmor(physicalarmor);
-
 		character.setAbilities(concatStrings(namegiver.getABILITY()));
 
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
@@ -303,10 +267,44 @@ public class ECEWorker {
 			currentBonuses.addAll(getDisciplineBonuses(currentDiscipline));
 		}
 
+		// ** ARMOR **
+		// Zu erstmal alles entfernen was nicht eine Reale Rüstung ist:
+		List<ARMORType> totalarmor = character.removeVirtualArmorFromNormalArmorList();
+		// natural ARMOR bestimmen
+		ARMORType namegiverArmor = namegiver.getARMOR();
+		ARMORType naturalArmor = new ARMORType();
+		naturalArmor.setName(namegiverArmor.getName());
+		naturalArmor.setMysticarmor(namegiverArmor.getMysticarmor()+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
+		naturalArmor.setPhysicalarmor(namegiverArmor.getPhysicalarmor());
+		naturalArmor.setPenalty(namegiverArmor.getPhysicalarmor());
+		naturalArmor.setUsed(namegiverArmor.getUsed());
+		naturalArmor.setWeight(namegiverArmor.getWeight());
+		naturalArmor.setVirtual(YesnoType.YES);
+		// Natürliche Rüstung der Liste voranstellen
+		totalarmor.add(0, naturalArmor);
+		// magischen Rüstung/Rüstungsschutz anhängen:
+		totalarmor.addAll(character.getMagicArmor());
+		// Bestimme nun den aktuellen Gesamtrüstungsschutz
+		int mysticalarmor=0;
+		int physicalarmor=0;
+		int protectionpenalty=0;
+		for (ARMORType armor : totalarmor ) {
+			if( armor.getUsed().equals(YesnoType.YES) ) {
+				mysticalarmor+=armor.getMysticarmor();
+				physicalarmor+=armor.getPhysicalarmor();
+				protectionpenalty+=armor.getPenalty();
+			}
+		}
+		PROTECTIONType protection = character.getProtection();
+		protection.setMysticarmor(mysticalarmor);
+		protection.setPenalty(protectionpenalty);
+		protection.setPhysicalarmor(physicalarmor);
+		character.readjustInitiativeModifikator(-protectionpenalty);
+
 		// ** KARMA STEP **
 		KARMAType karma = character.getKarma();
 		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
-		karma.setDice(step2Dice(karma.getStep()));
+		karma.setDice(PROPERTIES.step2Dice(karma.getStep()));
 
 		int skillsStartranks=calculatedLP.getUSEDSTARTRANKS().getSkills();
 		character.removeEmptySkills();
@@ -372,10 +370,10 @@ public class ECEWorker {
 
 		initiative.setModification(initiative.getModification()+getDisciplineInitiative(diciplineCircle));
 		initiative.setStep(initiative.getBase()+initiative.getModification());
-		initiative.setDice(step2Dice(initiative.getStep()));
+		initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
 
 		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
-		recovery.setDice(step2Dice(recovery.getStep()));
+		recovery.setDice(PROPERTIES.step2Dice(recovery.getStep()));
 
 		// ** SPELLS **
 		String firstDisciplineName = "";
@@ -482,10 +480,10 @@ public class ECEWorker {
 					}
 				}
 				for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
-					initiative.setModification(initiative.getModification()+iteminitiative.getCount());
+					character.readjustInitiativeModifikator(iteminitiative.getCount());
 				}
 				initiative.setStep(initiative.getBase()+initiative.getModification());
-				initiative.setDice(step2Dice(initiative.getStep()));
+				initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
 				// TODO: other effects of MagicItems
 			}
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
@@ -529,8 +527,8 @@ public class ECEWorker {
 			if( rank.getRank() < rank.getRealignedrank() ) rank.setRank(rank.getRealignedrank());
 			// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
 			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
-			rank.setBonus(0);
 			enforceCapabilityParams(talent);
+			rank.setBonus(talent.getBonus());
 			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
 			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 			final int lpcostrealigned=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
@@ -755,17 +753,15 @@ public class ECEWorker {
 		return null;
 	}
 
-	public static DiceType step2Dice(int value) {
-		return ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(value).getDice();
-	}
-
 	public void calculateCapabilityRank(RANKType talentRank, ATTRIBUTEType attr) {
+		// Da der talent.bonus bereits im talent.rank.bonus enhalten ist, muss er hier
+		// explizit nicht mehr weiter beachtet werden.
 		if( attr == null ) {
 			talentRank.setStep(talentRank.getRank()+talentRank.getBonus());
 		} else {
 			talentRank.setStep(talentRank.getRank()+talentRank.getBonus()+attr.getStep());
 		}
-		talentRank.setDice(step2Dice(talentRank.getStep()));
+		talentRank.setDice(PROPERTIES.step2Dice(talentRank.getStep()));
 	}
 
 	private void enforceCapabilityParams(CAPABILITYType capability) {
@@ -784,6 +780,7 @@ public class ECEWorker {
 			capability.setKarma(replacment.getKarma());
 			capability.setStrain(replacment.getStrain());
 			capability.setBookref(replacment.getBookref());
+			capability.setIsinitiative(replacment.getIsinitiative());
 		}
 	}
 

@@ -159,11 +159,15 @@ public class ApplicationProperties {
 		return CHARACTERISTICS;
 	}
 
+	public DiceType step2Dice(int value) {
+		return getCharacteristics().getSTEPDICEbyStep(value).getDice();
+	}
+
 	public CAPABILITIES getCapabilities() {
 		return CAPABILITIES;
 	}
 
-	public static KNACKS getKnacks() {
+	public KNACKS getKnacks() {
 		return KNACKS;
 	}
 

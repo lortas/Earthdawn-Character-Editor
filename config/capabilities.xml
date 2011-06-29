@@ -119,7 +119,7 @@
 	<SKILL name="Wound Balance" attribute="STR" default="no" action="free" strain="0" bookref="PG p.103"/>
 	<TALENT name="Abate Curse" attribute="WIL" action="standard" karma="no" strain="1" bookref="PG p.59"/>
 	<TALENT name="Acrobatic Strike" attribute="DEX" action="simple" karma="no" strain="1" bookref="PG p.59"/>
-	<TALENT name="Air Dance" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.59"/>
+	<TALENT name="Air Dance" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.59" isinitiative="yes"/>
 	<TALENT name="Air Sailing" attribute="WIL" action="sustained" karma="no" strain="0" bookref="PG p.60"/>
 	<TALENT name="Air Speaking" attribute="PER" action="simple" karma="no" strain="1" bookref="PG p.60"/>
 	<TALENT name="Animal Bond" attribute="CHA" action="standard" karma="no" strain="0" bookref="PG p.60"/>
