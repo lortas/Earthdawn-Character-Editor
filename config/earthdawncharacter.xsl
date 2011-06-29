@@ -465,9 +465,9 @@
         <td class="edCell"><xsl:value-of select="@strain"/></td>
         <td class="edCell"><xsl:value-of select="@attribute"/></td>
         <td class="edCell">
-        	<xsl:if test="@bonus!=0"><xsl:value-of select="@bonus"/>+</xsl:if>
         	<xsl:value-of select="./edt:RANK/@rank"/>
-        	<xsl:if test="./edt:RANK/@bonus!=0">+<xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
+        	<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
+        	<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
         </td>
         <td class="edCell"><xsl:value-of select="./edt:RANK/@step"/></td>
         <td class="edCell"><xsl:value-of select="./edt:RANK/@dice"/></td>   
@@ -505,9 +505,9 @@
         <td class="edCell"><xsl:value-of select="@attribute"/></td>
         <td class="edCell"><xsl:value-of select="@attribute"/></td>
         <td class="edCell">
-        	<xsl:if test="@bonus!=0"><xsl:value-of select="@bonus"/>+</xsl:if>
         	<xsl:value-of select="./edt:RANK/@rank"/>
-        	<xsl:if test="./edt:RANK/@bonus!=0">+<xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
+        	<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
+        	<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
         </td>
         <td class="edCell"><xsl:value-of select="./edt:RANK/@step"/></td>
         <td class="edCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
@@ -688,7 +688,11 @@
         <td class="edCell"><xsl:value-of select="@action"/></td>
         <td class="edCell"><xsl:value-of select="@strain"/></td>
         <td class="edCell"><xsl:value-of select="@attribute"/></td>
-        <td class="edCell"><xsl:value-of select="./edt:RANK/@rank"/></td>
+        <td class="edCell">
+        	<xsl:value-of select="./edt:RANK/@rank"/>
+        	<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
+        	<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
+        </td>
         <td class="edCell"><xsl:value-of select="./edt:RANK/@step"/></td>
         <td class="edCell"><xsl:value-of select="./edt:RANK/@dice"/></td>   
     </tr>

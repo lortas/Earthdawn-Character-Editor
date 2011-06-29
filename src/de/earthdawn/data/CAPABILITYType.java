@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="default" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="realigned" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="isinitiative" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -78,6 +79,8 @@ public class CAPABILITYType {
     protected String bookref;
     @XmlAttribute
     protected Integer realigned;
+    @XmlAttribute
+    protected YesnoType isinitiative;
 
     /**
      * Gets the value of the knack property.
@@ -378,6 +381,34 @@ public class CAPABILITYType {
      */
     public void setRealigned(Integer value) {
         this.realigned = value;
+    }
+
+    /**
+     * Gets the value of the isinitiative property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link YesnoType }
+     *     
+     */
+    public YesnoType getIsinitiative() {
+        if (isinitiative == null) {
+            return YesnoType.NO;
+        } else {
+            return isinitiative;
+        }
+    }
+
+    /**
+     * Sets the value of the isinitiative property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link YesnoType }
+     *     
+     */
+    public void setIsinitiative(YesnoType value) {
+        this.isinitiative = value;
     }
 
 }

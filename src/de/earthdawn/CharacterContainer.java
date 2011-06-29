@@ -1478,4 +1478,30 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		return result;
 	}
+
+	public void readjustInitiativeModifikator(int adjustment) {
+		INITIATIVEType initiative = getInitiative();
+		initiative.setModification(initiative.getModification()+adjustment);
+		initiative.setStep(initiative.getBase()+initiative.getModification());
+		initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
+		for( TALENTSType talents : getAllTalents() ) {
+			for( TALENTType talent : talents.getDISZIPLINETALENT() ) readjustSkillInitiativeModifikator(talent,adjustment);
+			for( TALENTType talent : talents.getOPTIONALTALENT() ) readjustSkillInitiativeModifikator(talent,adjustment);
+		}
+		for( SKILLType skill : getSkills() ) readjustSkillInitiativeModifikator(skill,adjustment);
+	}
+
+	private static void readjustSkillInitiativeModifikator(SKILLType skill, int adjustment) {
+		// Wenn der Skill gar keine Initiative-Skill ist, tut nichts
+		if( ! skill.getIsinitiative().equals(YesnoType.YES) ) return;
+		skill.setBonus(skill.getBonus()+adjustment);
+		RANKType rank = skill.getRANK();
+		if( rank == null ) {
+			rank = new RANKType();
+			skill.setRANK(rank);
+		}
+		rank.setBonus(rank.getBonus()+adjustment);
+		rank.setStep(rank.getStep()+adjustment);
+		rank.setDice(PROPERTIES.step2Dice(rank.getStep()));
+	}
 }

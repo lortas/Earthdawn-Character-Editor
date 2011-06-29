@@ -257,6 +257,7 @@
 		<xs:attribute name="default" type="yesno_type" default="no"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
 		<xs:attribute name="realigned" type="unsigned_int" default="0"/>
+		<xs:attribute name="isinitiative" type="yesno_type" default="no"/>
 	</xs:complexType>
 	<xs:complexType name="SKILL_type">
 		<xs:complexContent>
