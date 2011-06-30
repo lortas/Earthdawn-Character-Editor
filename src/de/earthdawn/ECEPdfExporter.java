@@ -93,8 +93,6 @@ public class ECEPdfExporter {
 		acroFields.setField( "DefensePhysical", String.valueOf(character.getDefence().getPhysical()) );
 		acroFields.setField( "DefenseSocial", String.valueOf(character.getDefence().getSocial()) );
 		acroFields.setField( "DefenseSpell", String.valueOf(character.getDefence().getSpell()) );
-		acroFields.setField( "InitiativeDice", character.getInitiative().getDice().value() );
-		acroFields.setField( "InitiativeStep", String.valueOf(character.getInitiative().getStep()) );
 		acroFields.setField( "DeathAdjustment", String.valueOf(character.getDeath().getAdjustment()) );
 		acroFields.setField( "DeathBase", String.valueOf(character.getDeath().getBase()) );
 		acroFields.setField( "DeathValue", String.valueOf(character.getDeath().getValue()) );
@@ -109,6 +107,15 @@ public class ECEPdfExporter {
 		acroFields.setField( "CurrentLegendPoints", String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
 		acroFields.setField( "Renown", String.valueOf(character.getLegendPoints().getRenown()) );
 		acroFields.setField( "Reputation", character.getLegendPoints().getReputation() );
+		acroFields.setField( "InitiativeDice", character.getInitiative().getDice().value() );
+		String initiativeStep = String.valueOf(character.getInitiative().getStep());
+		for( TALENTSType talents : character.getAllTalents() ) {
+			for( TALENTType talent : talents.getDISZIPLINETALENT() ) initiativeStep += initiativeStepOpts(talent);
+			for( TALENTType talent : talents.getOPTIONALTALENT() ) initiativeStep += initiativeStepOpts(talent);
+		}
+		for( SKILLType skill : character.getSkills() ) initiativeStep += initiativeStepOpts(skill);
+
+		acroFields.setField( "InitiativeStep", initiativeStep );
 		if( character.getHealth().getDamage() > 0 ) {
 			acroFields.setField( "CurrentDamage", String.valueOf(character.getHealth().getDamage()) );
 		} else {
@@ -162,11 +169,9 @@ public class ECEPdfExporter {
 				}
 				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
 				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
-				if( skillrank.getBonus() == 0 ) {
-					acroFields.setField( "SkillRank."+counter, String.valueOf(skillrank.getRank()) );
-				} else {
-					acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
-				}
+				if( skillrank.getBonus() > 0 ) acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
+				else if( skillrank.getBonus() < 0 ) acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"-"+(skillrank.getBonus()*-1) );
+				else acroFields.setField( "SkillRank."+counter, String.valueOf(skillrank.getRank()) );
 				ATTRIBUTENameType attribute = skill.getAttribute();
 				acroFields.setField( "SkillAttribute."+counter, attribute.value() );
 				if( attribute.equals(ATTRIBUTENameType.NA) ) {
@@ -188,6 +193,13 @@ public class ECEPdfExporter {
 			acroFields.setField( "RacialAbilities."+counterRacialAbilities, ability );
 			counterRacialAbilities++;
 		}
+	}
+
+	private static String initiativeStepOpts(SKILLType skill) {
+		if( ! skill.getIsinitiative().equals(YesnoType.YES) ) return "";
+		String initiativeStep = " +"+skill.getRANK().getRank();
+		for(String s : skill.getName().split(" ") ) initiativeStep += s.charAt(0);
+		return initiativeStep;
 	}
 
 	public void exportRedbrickSimple(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
@@ -977,11 +989,9 @@ public class ECEPdfExporter {
 		} else {
 			acroFields.setField( "Step."+counter, String.valueOf(talentrank.getStep()) );
 		}
-		if( talentrank.getBonus() == 0 ) {
-			acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
-		} else {
-			acroFields.setField( "Rank."+counter, talentrank.getRank()+"+"+talentrank.getBonus() );
-		}
+		if( talentrank.getBonus() > 0 ) acroFields.setField( "Rank."+counter, talentrank.getRank()+"+"+talentrank.getBonus() );
+		else if( talentrank.getBonus() < 0 ) acroFields.setField( "Rank."+counter, talentrank.getRank()+"-"+(talentrank.getBonus()*-1) );
+		else acroFields.setField( "Rank."+counter, String.valueOf(talentrank.getRank()) );
 	}
 
 	public static List<String> wrapString(int maxLength, String string) {

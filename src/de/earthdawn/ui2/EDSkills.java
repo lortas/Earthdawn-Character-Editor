@@ -119,7 +119,7 @@ class SkillsTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Rank", "Startrank", "Action", "Step", "Dice"};
+	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Startrank", "Rank", "Action", "Step", "Dice", "Bookref"};
 
 	public SkillsTableModel(CharacterContainer character) {
 		super();
@@ -161,11 +161,12 @@ class SkillsTableModel extends AbstractTableModel {
 	    		case 0: return character.getSkills().get(row).getName();
 	    		case 1: return character.getSkills().get(row).getLimitation();
 	    		case 2: return character.getSkills().get(row).getAttribute();
-	    		case 3: return new Integer(character.getSkills().get(row).getRANK().getRank());
-	    		case 4: return new Integer(character.getSkills().get(row).getRANK().getStartrank());
+	    		case 3: return new Integer(character.getSkills().get(row).getRANK().getStartrank());
+	    		case 4: return new Integer(character.getSkills().get(row).getRANK().getRank());
 	    		case 5: return character.getSkills().get(row).getAction().value();
 	    		case 6: return character.getSkills().get(row).getRANK().getStep();
 	    		case 7: return character.getSkills().get(row).getRANK().getDice().value();
+	    		case 8: return character.getSkills().get(row).getBookref();
 	    		default : return new String("Error not defined");
 	    	}
         }
@@ -202,8 +203,13 @@ class SkillsTableModel extends AbstractTableModel {
 
 	public void setValueAt(Object value, int row, int col) {
 		if(col == 1) character.getSkills().get(row).setLimitation((String)value);
-		if(col == 3) character.getSkills().get(row).getRANK().setRank((Integer) value);
-		if(col == 4) character.getSkills().get(row).getRANK().setStartrank((Integer) value);
+		if(col == 4) character.getSkills().get(row).getRANK().setRank((Integer) value);
+		if( col == 3 ) {
+			character.getSkills().get(row).getRANK().setStartrank((Integer) value);
+			if( character.getSkills().get(row).getRANK().getRank() < (Integer) value ) {
+				character.getSkills().get(row).getRANK().setRank((Integer) value);
+			}
+		}
 		character.refesh();
 		fireTableCellUpdated(row, 6);
 		fireTableCellUpdated(row, 7);

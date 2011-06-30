@@ -186,7 +186,7 @@ class TalentsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private TALENTSType talents;
-	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Start Rank", "Rank", "Step", "Action", "Teacher Dis", "Type"};
+	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Startrank", "Rank", "Step", "Action", "Teacher Dis", "Type", "BookRef" };
 	private String disciplin = "";
 
 	public String getDisciplin() {
@@ -304,22 +304,8 @@ class TalentsTableModel extends AbstractTableModel {
 	        		System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 6:
-	        	try{
-	        		result = talent.getRANK().getStep();
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 7:
-	        	try{
-	        		result = talent.getAction().value();
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
+	        case 6: return talent.getRANK().getStep();
+	        case 7: return talent.getAction().value();
 	        case 8:
 	        	try{
 	        		TALENTTEACHERType teacher = talent.getTEACHER();
@@ -347,7 +333,8 @@ class TalentsTableModel extends AbstractTableModel {
 	        	catch(Exception e){
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
-	        	break;	 	        	
+	        	break;
+	        case 10: return talent.getBookref();
 	        default: return new Integer(0);
 		}
 		return result;
@@ -363,10 +350,6 @@ class TalentsTableModel extends AbstractTableModel {
 		return getValueAt(0, c).getClass();
 	}
 
-    /*
-     * Don't need to implement this method unless your table's
-     * editable.
-     */
 	public boolean isCellEditable(int row, int col) {
 		TALENTType talent = null;
 		if(talents.getDISZIPLINETALENT().size() > row ) {
@@ -378,7 +361,10 @@ class TalentsTableModel extends AbstractTableModel {
 		if( talent == null ) return false;
 		// Realigned Talents dürfen nicht mehr editiert werden
 		if( talent.getRealigned() > 0 ) return false;
-		if( col == 4 ) return true;
+		if( col == 4 ) {
+			if( talent.getCircle() > 1 ) return false;
+			return true;
+		}
 		if( col == 5 ) return true;
 		if( col == 8 ) return true;
 		if( col == 0 ) {
@@ -388,11 +374,7 @@ class TalentsTableModel extends AbstractTableModel {
 		return false;
 	}
 
-    /*
-     * Don't need to implement this method unless your table's
-     * data can change.
-     */
-    public void setValueAt(Object value, int row, int col) {
+	public void setValueAt(Object value, int row, int col) {
 		TALENTType talent = null;
 		if(talents.getDISZIPLINETALENT().size() > row ) {
 			talent=talents.getDISZIPLINETALENT().get(row);
