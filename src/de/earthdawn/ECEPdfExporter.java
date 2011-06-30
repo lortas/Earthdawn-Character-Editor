@@ -861,9 +861,8 @@ public class ECEPdfExporter {
 			List<SPELLType> spellList = spells.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
 			for( SPELLType spell : spellList ) {
-				String spellname = spell.getName();
-				if( ! spell.getBookref().isEmpty() ) spellname += " ["+spell.getBookref()+"]";
-				acroFields.setField( "SpellName."+conterSpells, spellname );
+				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
+				acroFields.setField( "SpellBookref."+conterSpells, String.valueOf(spell.getBookref()) );
 				if( spell.getInmatrix().equals(YesnoType.YES) ) {
 					acroFields.setField( "SpellInMatrix."+conterSpells, "X" );
 				} else {
@@ -959,7 +958,7 @@ public class ECEPdfExporter {
 		String talentname = talent.getName();
 		TALENTTEACHERType teacher = talent.getTEACHER();
 		if ( ! talent.getLimitation().isEmpty() ) talentname += ": "+talent.getLimitation();
-		if( ! talent.getBookref().isEmpty() ) talentname += " ["+talent.getBookref()+"]";
+		acroFields.setField( "TalentBookref."+counter, String.valueOf(talent.getBookref()) );
 		if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
 		if ( talent.getRealigned() > 0 ) talentname="("+talentname+")";
 		acroFields.setField( "Talent."+counter, talentname);
