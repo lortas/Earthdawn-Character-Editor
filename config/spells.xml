@@ -9,131 +9,131 @@
 	<SPELL name="Alarm" threads="1" weavingdifficulty="8" reattuningdifficulty="17" range="25 hex" duration="R+6 min" effect="WIL + 4" bookref="PG p.146"/>
 	<SPELL name="Alter Form" threads="-1" weavingdifficulty="16" reattuningdifficulty="26" castingdifficulty="TSD*" range="touch*" duration="1 rnd" effect="Alters the nature and pattern of the target"/>
 	<SPELL name="Alter Life" threads="-1" weavingdifficulty="21" reattuningdifficulty="26" range="touch" duration="R+7 years" effect="Alters life form's pattern"/>
-	<SPELL name="And His Money" threads="1" weavingdifficulty="7" reattuningdifficulty="16" range="5 hex" duration="R+3 min" effect="-4 to Social Defense against Interaction Tests involving finances"/>
+	<SPELL name="And His Money" threads="1" weavingdifficulty="7" reattuningdifficulty="16" range="5 hex" duration="R+3 min" effect="-4 to Social Defense against Interaction Tests involving finances" bookref="PG p.147"/>
 	<SPELL name="And Then I Woke Up" threads="1" weavingdifficulty="10" reattuningdifficulty="15" range="self" duration="2 rnd" effect="+8 bonus to Perception and True Sight Tests" bookref="PG p.147"/>
 	<SPELL name="Animate Dead" threads="3" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+5 days" effect="Creates cadaver men"/>
-	<SPELL name="Animate Skeleton" threads="2" weavingdifficulty="7" reattuningdifficulty="18" castingdifficulty="TSD*" range="20 hex" duration="R+8 min" effect="Animates skeletons"/>
-	<SPELL name="Animate Spirit Object" threads="3" weavingdifficulty="10" reattuningdifficulty="19" castingdifficulty="9" range="5 hex" duration="R x 10 min" effect="WIL + 5"/>
-	<SPELL name="Arrow of Night" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="6" range="touch" duration="1 rnd" effect="+8 missile Damage Test bonus"/>
+	<SPELL name="Animate Skeleton" threads="2" weavingdifficulty="7" reattuningdifficulty="18" castingdifficulty="TSD*" range="20 hex" duration="R+8 min" effect="Animates skeletons" bookref="PG p.147"/>
+	<SPELL name="Animate Spirit Object" threads="3" weavingdifficulty="10" reattuningdifficulty="19" castingdifficulty="9" range="5 hex" duration="R x 10 min" effect="WIL + 5" bookref="PG p.147"/>
+	<SPELL name="Arrow of Night" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="6" range="touch" duration="1 rnd" effect="+8 missile Damage Test bonus" bookref="PG p.148"/>
 	<SPELL name="Assuring Touch" threads="0" reattuningdifficulty="7" range="touch" duration="R+12 rnd" effect="+3 to Spell and Social Defense; +3 Willpower Test bonus against fear" bookref="PG p.148"/>
 	<SPELL name="Astral Beacon" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="8 hex" duration="1 rnd" effect="Creates a beacon in astral space"/>
-	<SPELL name="Astral Flare" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="self" duration="R+5 rnd" effect="WIL + 6" effectarea="10-yard (5-hex) radius"/>
-	<SPELL name="Astral Gift" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="15 hex" duration="R hr" effect="Gives the target Astral Sight"/>
-	<SPELL name="Astral Horror" threads="3" weavingdifficulty="9" reattuningdifficulty="19" castingdifficulty="TSD*" range="24 hex" duration="R+1 min" effect="WIL + 6"/>
+	<SPELL name="Astral Flare" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="self" duration="R+5 rnd" effect="WIL + 6" effectarea="10-yard (5-hex) radius" bookref="PG p.148"/>
+	<SPELL name="Astral Gift" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="15 hex" duration="R hr" effect="Gives the target Astral Sight" bookref="PG p.148"/>
+	<SPELL name="Astral Horror" threads="3" weavingdifficulty="9" reattuningdifficulty="19" castingdifficulty="TSD*" range="24 hex" duration="R+1 min" effect="WIL + 6" bookref="PG p.148"/>
 	<SPELL name="Astral Materialization" threads="4" weavingdifficulty="15" reattuningdifficulty="22" range="15 hex" duration="1 hour" effect="WIL+13"/>
-	<SPELL name="Astral Maw" threads="2" weavingdifficulty="13" reattuningdifficulty="17" castingdifficulty="TSD*" range="5 hex" duration="R+3 rnd" effect="WIL + 10/Physical"/>
-	<SPELL name="Astral Mount" threads="-1" weavingdifficulty="11" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="Conjures an astral mount"/>
+	<SPELL name="Astral Maw" threads="2" weavingdifficulty="13" reattuningdifficulty="17" castingdifficulty="TSD*" range="5 hex" duration="R+3 rnd" effect="WIL + 10/Physical" bookref="PG p.149"/>
+	<SPELL name="Astral Mount" threads="-1" weavingdifficulty="11" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="Conjures an astral mount" bookref="PG p.149"/>
 	<SPELL name="Astral Nightmare" threads="4" weavingdifficulty="12" reattuningdifficulty="21" range="5 hex" duration="R+3 min" effect="WIL + 10/Mystic" bookref="PG p.149"/>
-	<SPELL name="Astral Sense" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician"/>
+	<SPELL name="Astral Sense" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician" bookref="PG p.150"/>
 	<SPELL name="Astral Shadow" threads="2" weavingdifficulty="12" reattuningdifficulty="17" range="touch" duration="R+3 min" effect="WIL + 4" bookref="PG p.150"/>
-	<SPELL name="Astral Shield" threads="0" reattuningdifficulty="7" range="touch" duration="R+7 rnd" effect="+3 to Spell Defense"/>
+	<SPELL name="Astral Shield" threads="0" reattuningdifficulty="7" range="touch" duration="R+7 rnd" effect="+3 to Spell Defense" bookref="PG p.150"/>
 	<SPELL name="Astral Slice" threads="5" weavingdifficulty="13" reattuningdifficulty="26" castingdifficulty="TSD (Excellent Result)" range="80 yards (40 hexes)" duration="1 rnd" effect="WIL+15/NA"/>
-	<SPELL name="Astral Spear" threads="1" weavingdifficulty="6" reattuningdifficulty="12" range="24 hex" duration="1 rnd" effect="WIL + 6/Mystic"/>
-	<SPELL name="Astral Whisper" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="12 hex" duration="R+3 min" effect="WIL + 8"/>
+	<SPELL name="Astral Spear" threads="1" weavingdifficulty="6" reattuningdifficulty="12" range="24 hex" duration="1 rnd" effect="WIL + 6/Mystic" bookref="PG p.150"/>
+	<SPELL name="Astral Whisper" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="12 hex" duration="R+3 min" effect="WIL + 8" bookref="PG p.150"/>
 	<SPELL name="Aura" threads="1" weavingdifficulty="10" reattuningdifficulty="16" range="2 hex" duration="R+3 rnd" effect="Makes target's aura visible" bookref="PG p.151"/>
-	<SPELL name="Aura Strike" threads="1" weavingdifficulty="7" reattuningdifficulty="12" range="8 hex" duration="1 rnd" effect="WIL + 8/Mystic"/>
+	<SPELL name="Aura Strike" threads="1" weavingdifficulty="7" reattuningdifficulty="12" range="8 hex" duration="1 rnd" effect="WIL + 8/Mystic" bookref="PG p.151"/>
 	<SPELL name="Awaken" threads="2" weavingdifficulty="11" reattuningdifficulty="18" range="touch" duration="1 rnd" effect="WIL + 6" bookref="PG p.151"/>
-	<SPELL name="Ball of String" threads="3" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="6" range="varies*" duration="R+3 hr" effect="WIL + 6"/>
+	<SPELL name="Ball of String" threads="3" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="6" range="varies*" duration="R+3 hr" effect="WIL + 6" bookref="PG p.151"/>
 	<SPELL name="Balloons of Mist" threads="3" weavingdifficulty="8" reattuningdifficulty="15" castingdifficulty="6" range="12 hex" duration="R+5 min" effect="WIL + 4" bookref="PG p.151"/>
-	<SPELL name="Banquet of Dis" threads="3" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="R days" effect="Eliminates hunger and fatigue"/>
+	<SPELL name="Banquet of Dis" threads="3" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="R days" effect="Eliminates hunger and fatigue" bookref="PG p.151"/>
 	<SPELL name="Beastform" threads="2" weavingdifficulty="16" reattuningdifficulty="23" range="self" duration="R+5 min" effect="Transforms caster into an animal" bookref="PG p.151"/>
-	<SPELL name="Bedazzling Display of Logical Analysis" threads="0" reattuningdifficulty="7" castingdifficulty="TSD*" range="self" duration="R min" effect="+6 bonus to verbal Charisma-based Tests"/>
+	<SPELL name="Bedazzling Display of Logical Analysis" threads="0" reattuningdifficulty="7" castingdifficulty="TSD*" range="self" duration="R min" effect="+6 bonus to verbal Charisma-based Tests" bookref="PG p.152"/>
 	<SPELL name="Behind Eye" threads="2" weavingdifficulty="6" reattuningdifficulty="16" range="touch" duration="R+30 min" effect="Step 4/D6 Perception Test to rear" bookref="PG p.152"/>
 	<SPELL name="Bellow of the Thundras" threads="0" reattuningdifficulty="15" range="30 hex" duration="R+5 min" effect="Allows target to be clearly heard" bookref="PG p.152"/>
 	<SPELL name="Best Face" threads="2" weavingdifficulty="5" reattuningdifficulty="14" range="touch" duration="R+8 min" effect="+5 bonus to Charisma-based Tests" bookref="PG p.152"/>
 	<SPELL name="Billowing Cloak" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+3 min" effect="WIL + 5" bookref="PG p.152"/>
-	<SPELL name="Binding Threads" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="8 hex" duration="R+3 rnd" effect="WIL + 8"/>
+	<SPELL name="Binding Threads" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="8 hex" duration="R+3 rnd" effect="WIL + 8" bookref="PG p.153"/>
 	<SPELL name="Blade Fury" threads="2" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+3 rnd" effect="WIL + 10/Physical" bookref="PG p.153"/>
 	<SPELL name="Blazing Fists of Rage" threads="0" reattuningdifficulty="16" range="touch" duration="R+4 rnd" effect="WIL + 5/Physical" bookref="PG p.153"/>
 	<SPELL name="Bleeding Edge" threads="1" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R rnd" effect="+5 bonus to melee weapon's Damage Tests against the previous wielder" bookref="PG p.153"/>
-	<SPELL name="Blessed Light" threads="1" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R+15 min" effect="WIL + 4" effectarea="6-yard (3-hex) radius sphere from centre"/>
-	<SPELL name="Blind" threads="3" weavingdifficulty="11" reattuningdifficulty="15" range="8 yards (4 hexes)" duration="R+5 rnd" effect="WIL + 8"/>
+	<SPELL name="Blessed Light" threads="1" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R+15 min" effect="WIL + 4" effectarea="6-yard (3-hex) radius sphere from centre" bookref="PG p.153"/>
+	<SPELL name="Blind" threads="3" weavingdifficulty="11" reattuningdifficulty="15" range="8 yards (4 hexes)" duration="R+5 rnd" effect="WIL + 8" bookref="PG p.153"/>
 	<SPELL name="Blinding Glare" threads="1" weavingdifficulty="10" reattuningdifficulty="20" range="6 hex" duration="varies*" effect="WIL + 6" effectarea="4-yard (2-hex) radius from centre" bookref="PG p.153"/>
 	<SPELL name="Blindness" threads="1" weavingdifficulty="8" reattuningdifficulty="14" range="5 hex" duration="R+5 min" effect="Obscures the target's vision" bookref="PG p.153"/>
 	<SPELL name="Blizzard Sphere" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="20 hex" duration="R+3 rnd" effect="WIL + 8/Physical" effectarea="4-yard (2-hex) radius sphere from centre" bookref="PG p.154"/>
 	<SPELL name="Block Magic" threads="4" weavingdifficulty="16" reattuningdifficulty="25" castingdifficulty="10" range="20 hex" duration="R+3 min" effect="-10 penalty to magic-related Action Tests" effectarea="10-yard radius"/>
-	<SPELL name="Blood Boil" threads="3" weavingdifficulty="12" reattuningdifficulty="17" range="12 hex" duration="4 rnd" effect="WIL + 9/Mystic"/>
-	<SPELL name="Blood Lost" threads="3" weavingdifficulty="12" reattuningdifficulty="22" range="touch" duration="R+1 days" effect="Target loses ability to heal Wounds"/>
-	<SPELL name="Blood Servitor" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="8" range="Rank miles" duration="R hr" effect="Creates a flying servant"/>
+	<SPELL name="Blood Boil" threads="3" weavingdifficulty="12" reattuningdifficulty="17" range="12 hex" duration="4 rnd" effect="WIL + 9/Mystic" bookref="PG p.154"/>
+	<SPELL name="Blood Lost" threads="3" weavingdifficulty="12" reattuningdifficulty="22" range="touch" duration="R+1 days" effect="Target loses ability to heal Wounds" bookref="PG p.154"/>
+	<SPELL name="Blood Servitor" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="8" range="Rank miles" duration="R hr" effect="Creates a flying servant" bookref="PG p.154"/>
 	<SPELL name="Boil Water" threads="2" weavingdifficulty="7" reattuningdifficulty="13" castingdifficulty="6" range="touch" duration="R+3 min" effect="Boils water/Physical" bookref="PG p.154"/>
 	<SPELL name="Bond of Silence" threads="3" weavingdifficulty="11" reattuningdifficulty="18" range="10 hex" duration="R min" effect="WIL + 4" bookref="PG p.155"/>
-	<SPELL name="Bone Circle" threads="-1" weavingdifficulty="6" reattuningdifficulty="17" castingdifficulty="9" range="touch" duration="R+3 months" effect="WIL + 5" effectarea="2-yard (1-hex) radius circle around centre"/>
-	<SPELL name="Bone Dance" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="5 hex" duration="R+3 rnd" effect="WIL + 4"/>
-	<SPELL name="Bone Pudding" threads="3" weavingdifficulty="12" reattuningdifficulty="20" range="2 hex" duration="R+6 rnd" effect="Turns bones to sludge"/>
-	<SPELL name="Bone Puppet" threads="3" weavingdifficulty="8" reattuningdifficulty="15" range="5 hex" duration="R+6 rnd" effect="WIL + 4"/>
-	<SPELL name="Bone Shatter" threads="2" weavingdifficulty="12" reattuningdifficulty="20" range="12 hex" duration="1 rnd" effect="WIL + 8/Mystic"/>
-	<SPELL name="Bone Walker" threads="-1" weavingdifficulty="12" reattuningdifficulty="18" castingdifficulty="10" range="touch" duration="R+2 days *" effect="Creates a bone walker" effectarea="20-yard (10-hex) radius of magician"/>
+	<SPELL name="Bone Circle" threads="-1" weavingdifficulty="6" reattuningdifficulty="17" castingdifficulty="9" range="touch" duration="R+3 months" effect="WIL + 5" effectarea="2-yard (1-hex) radius circle around centre" bookref="PG p.155"/>
+	<SPELL name="Bone Dance" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="5 hex" duration="R+3 rnd" effect="WIL + 4" bookref="PG p.155"/>
+	<SPELL name="Bone Pudding" threads="3" weavingdifficulty="12" reattuningdifficulty="20" range="2 hex" duration="R+6 rnd" effect="Turns bones to sludge" bookref="PG p.155"/>
+	<SPELL name="Bone Puppet" threads="3" weavingdifficulty="8" reattuningdifficulty="15" range="5 hex" duration="R+6 rnd" effect="WIL + 4" bookref="PG p.155"/>
+	<SPELL name="Bone Shatter" threads="2" weavingdifficulty="12" reattuningdifficulty="20" range="12 hex" duration="1 rnd" effect="WIL + 8/Mystic" bookref="PG p.155"/>
+	<SPELL name="Bone Walker" threads="-1" weavingdifficulty="12" reattuningdifficulty="18" castingdifficulty="10" range="touch" duration="R+2 days *" effect="Creates a bone walker" effectarea="20-yard (10-hex) radius of magician" bookref="PG p.156"/>
 	<SPELL name="Bouncing Blaster" threads="4" weavingdifficulty="9" reattuningdifficulty="20" castingdifficulty="6*" range="touch" duration="R+3 days" effect="WIL + 8/Mystic" effectarea="Up to 12-yard (6-hex) radius circle from center" bookref="PG p.156"/>
-	<SPELL name="Buoyancy" threads="1" weavingdifficulty="13" reattuningdifficulty="20" range="self" duration="R hr" effect="+3 bonus to Swimming Tests"/>
+	<SPELL name="Buoyancy" threads="1" weavingdifficulty="13" reattuningdifficulty="20" range="self" duration="R hr" effect="+3 bonus to Swimming Tests" bookref="PG p.156"/>
 	<SPELL name="Burning Water" threads="5" weavingdifficulty="15" reattuningdifficulty="25" castingdifficulty="6" range="10 hex" duration="R min" effect="Creates flammable water" effectarea="100 square yards of water"/>
-	<SPELL name="Call" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="100 miles" duration="1 rnd" effect="Delivers a message"/>
+	<SPELL name="Call" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="100 miles" duration="1 rnd" effect="Delivers a message" bookref="PG p.156"/>
 	<SPELL name="Call Forth the Army of Decay" threads="-1" weavingdifficulty="21" reattuningdifficulty="29" castingdifficulty="10" range="touch" duration="R days" effect="Summons an army of cadaver men" effectarea="5-mile radius of caster"/>
 	<SPELL name="Call Forth the Maelstrom" threads="-1" weavingdifficulty="25" reattuningdifficulty="33" castingdifficulty="10" range="touch" duration="R hr" effect="WIL/NA" effectarea="100 square miles"/>
 	<SPELL name="Calm Water" threads="4" weavingdifficulty="8" reattuningdifficulty="19" castingdifficulty="6+*" range="self" duration="R+1 hr" effect="WIL + 9" effectarea="500 square yards of water" bookref="PG p.156"/>
-	<SPELL name="Catch Spell" threads="2" weavingdifficulty="14" reattuningdifficulty="21" range="self" duration="R rnd" effect="WIL + 12"/>
+	<SPELL name="Catch Spell" threads="2" weavingdifficulty="14" reattuningdifficulty="21" range="self" duration="R rnd" effect="WIL + 12" bookref="PG p.156"/>
 	<SPELL name="Catseyes" threads="1" weavingdifficulty="5" reattuningdifficulty="10" range="touch" duration="R+3 min" effect="Target gets Low-Light Vision" bookref="PG p.157"/>
-	<SPELL name="Catwalk" threads="1" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+8 rnd" effect="+6 bonus to Action Tests involving climbing or balancing"/>
+	<SPELL name="Catwalk" threads="1" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+8 rnd" effect="+6 bonus to Action Tests involving climbing or balancing" bookref="PG p.157"/>
 	<SPELL name="Channel Raw Magic" threads="2" weavingdifficulty="12" reattuningdifficulty="25" range="15 hex" duration="3 rnd" effect="Channels astral energy through target"/>
-	<SPELL name="Chilling Circle" threads="2" weavingdifficulty="6" reattuningdifficulty="15" range="touch" duration="R+6 min" effect="Causes Step 4/D6 cold damage to those in the circle/Mystic" effectarea="2-yard (1-hex) radius circle from magician"/>
+	<SPELL name="Chilling Circle" threads="2" weavingdifficulty="6" reattuningdifficulty="15" range="touch" duration="R+6 min" effect="Causes Step 4/D6 cold damage to those in the circle/Mystic" effectarea="2-yard (1-hex) radius circle from magician" bookref="PG p.157"/>
 	<SPELL name="Chosen Path" threads="3" weavingdifficulty="10" reattuningdifficulty="18" castingdifficulty="6" range="self" duration="R+3 hr" effect="WIL + 8" effectarea="60 yards (30 hexes)" bookref="PG p.157"/>
-	<SPELL name="Circle of Astral Protection" threads="3" weavingdifficulty="11" reattuningdifficulty="19" range="touch" duration="R+1 min" effect="WIL + 8" effectarea="2-yard (1-hex) radius circle from center"/>
+	<SPELL name="Circle of Astral Protection" threads="3" weavingdifficulty="11" reattuningdifficulty="19" range="touch" duration="R+1 min" effect="WIL + 8" effectarea="2-yard (1-hex) radius circle from center" bookref="PG p.157"/>
 	<SPELL name="Circle of Well Being" threads="3" weavingdifficulty="8" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="R x 10 min" effect="WIL" effectarea="2-yard (1-hex) radius circle from center" bookref="PG p.158"/>
 	<SPELL name="City in a Bottle" threads="-1" weavingdifficulty="18" reattuningdifficulty="33" castingdifficulty="12" range="25 miles" duration="R+1 days" effect="Captures terrain in a bottle" effectarea="100 square miles"/>
 	<SPELL name="Clarion Call" threads="1" weavingdifficulty="8" reattuningdifficulty="17" range="20 hex" duration="R+12 rnd" effect="WIL + 4" bookref="PG p.158"/>
-	<SPELL name="Clean" threads="2" weavingdifficulty="5" reattuningdifficulty="13" range="touch" duration="1 min" effect="WIL + 4"/>
+	<SPELL name="Clean" threads="2" weavingdifficulty="5" reattuningdifficulty="13" range="touch" duration="1 min" effect="WIL + 4" bookref="PG p.158"/>
 	<SPELL name="Cleanse Astral Space" threads="-1" weavingdifficulty="20" reattuningdifficulty="28" castingdifficulty="10" range="touch" duration="1 rnd" effect="WIL+12" effectarea="1-mile radius"/>
 	<SPELL name="Clothing Gone" threads="3" weavingdifficulty="11" reattuningdifficulty="21" range="12 hex" duration="5 rnd" effect="Harries the target" bookref="PG p.158"/>
 	<SPELL name="Cloud Banish" threads="3" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="8+*" range="touch" duration="R+1 hr" effect="WIL+8" effectarea="1-mile radius of ground"/>
 	<SPELL name="Cloud Summon" threads="3" weavingdifficulty="12" reattuningdifficulty="20" castingdifficulty="8+*" range="1 mile*" duration="R+1 hr" effect="WIL + 7" bookref="PG p.158"/>
 	<SPELL name="Cold Embers" threads="4" weavingdifficulty="18" reattuningdifficulty="25" castingdifficulty="6" range="touch" duration="1 rnd" effect="Extinguishes open flames" effectarea="100 yards by 100 yards"/>
-	<SPELL name="Cold Storage" threads="-1" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="8" range="touch" duration="R months" effect="Preserves organic matter"/>
-	<SPELL name="Combat Fury" threads="1" weavingdifficulty="9" reattuningdifficulty="16" range="touch" duration="R+7 rnd" effect="+4 bonus to close combat Attack Tests"/>
-	<SPELL name="Command Nightflyer" threads="1" weavingdifficulty="5" reattuningdifficulty="13" range="24 hex" duration="R+3 min" effect="WIL + 2"/>
-	<SPELL name="Compression Bubble" threads="3" weavingdifficulty="15" reattuningdifficulty="22" range="15 hex" duration="R+7 rnd" effect="WIL + 10/Physical"/>
+	<SPELL name="Cold Storage" threads="-1" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="8" range="touch" duration="R months" effect="Preserves organic matter" bookref="PG p.158"/>
+	<SPELL name="Combat Fury" threads="1" weavingdifficulty="9" reattuningdifficulty="16" range="touch" duration="R+7 rnd" effect="+4 bonus to close combat Attack Tests" bookref="PG p.158"/>
+	<SPELL name="Command Nightflyer" threads="1" weavingdifficulty="5" reattuningdifficulty="13" range="24 hex" duration="R+3 min" effect="WIL + 2" bookref="PG p.159"/>
+	<SPELL name="Compression Bubble" threads="3" weavingdifficulty="15" reattuningdifficulty="22" range="15 hex" duration="R+7 rnd" effect="WIL + 10/Physical" bookref="PG p.159"/>
 	<SPELL name="Conceal Tracks" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="touch" duration="R hr" effect="WIL + 5" bookref="PG p.159"/>
-	<SPELL name="Confusing Weave" threads="1" weavingdifficulty="13" reattuningdifficulty="20" range="12 hex" duration="1 rnd" effect="WIL + 3"/>
-	<SPELL name="Constrict Heart" threads="0" reattuningdifficulty="18" range="5 hex" duration="R+3 rnd" effect="WIL + 6/NA"/>
-	<SPELL name="Control Being" threads="3" weavingdifficulty="14" reattuningdifficulty="20" range="5 hex" duration="R+10 min" effect="WIL + 6"/>
+	<SPELL name="Confusing Weave" threads="1" weavingdifficulty="13" reattuningdifficulty="20" range="12 hex" duration="1 rnd" effect="WIL + 3" bookref="PG p.159"/>
+	<SPELL name="Constrict Heart" threads="0" reattuningdifficulty="18" range="5 hex" duration="R+3 rnd" effect="WIL + 6/NA" bookref="PG p.159"/>
+	<SPELL name="Control Being" threads="3" weavingdifficulty="14" reattuningdifficulty="20" range="5 hex" duration="R+10 min" effect="WIL + 6" bookref="PG p.159"/>
 	<SPELL name="Council of the Forest" threads="-1" weavingdifficulty="18" reattuningdifficulty="32" castingdifficulty="10" range="self" duration="1 day" effect="Summons tree/plant spirits" effectarea="1-mile radius from magician"/>
-	<SPELL name="Counterspell" threads="0" reattuningdifficulty="11" range="3 hex" duration="R+10 rnd" effect="Improves magical defense"/>
+	<SPELL name="Counterspell" threads="0" reattuningdifficulty="11" range="3 hex" duration="R+10 rnd" effect="Improves magical defense" bookref="PG p.159"/>
 	<SPELL name="Crafty Thought" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="2 yards (1 hex)" duration="R min" effect="WIL + 5" bookref="PG p.160"/>
 	<SPELL name="Create Life" threads="-1" weavingdifficulty="21" reattuningdifficulty="26" range="touch" duration="R+7 years" effect="Creates a life form"/>
 	<SPELL name="Crop Blight" threads="-1" weavingdifficulty="21" reattuningdifficulty="26" castingdifficulty="6" range="touch" duration="A year and a day" effect="Destroys plant life" effectarea="10 square miles"/>
 	<SPELL name="Crunch Climb" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+5 min" effect="+3 Climbing Test bonus" bookref="PG p.160"/>
 	<SPELL name="Crushing Hand of Earth" threads="2" weavingdifficulty="14" reattuningdifficulty="21" range="12 hex" duration="R+3 rnd" effect="WIL + 6/Physical" bookref="PG p.160"/>
-	<SPELL name="Crushing Will" threads="1" weavingdifficulty="8" reattuningdifficulty="16" range="24 hex" duration="1 rnd" effect="WIL + 5/Mystic"/>
-	<SPELL name="Damage Shift" threads="2" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="TSD*" range="self" duration="3 rnd" effect="Shifts damage to target/Mystic"/>
+	<SPELL name="Crushing Will" threads="1" weavingdifficulty="8" reattuningdifficulty="16" range="24 hex" duration="1 rnd" effect="WIL + 5/Mystic" bookref="PG p.161"/>
+	<SPELL name="Damage Shift" threads="2" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="TSD*" range="self" duration="3 rnd" effect="Shifts damage to target/Mystic" bookref="PG p.161"/>
 	<SPELL name="Damage Transfer" threads="3" weavingdifficulty="14" reattuningdifficulty="19" castingdifficulty="TSD*" range="50 hex" duration="1 rnd" effect="WIL+10/Mystic"/>
 	<SPELL name="Dampen Karma" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="12 hex" duration="R+6 rnd" effect="-3 Karma Step penalty" bookref="PG p.161"/>
 	<SPELL name="Dancing Disks" threads="3" weavingdifficulty="7" reattuningdifficulty="19" castingdifficulty="TSD*" range="15 hex" duration="R+7 rnd" effect="WIL + 6" bookref="PG p.161"/>
-	<SPELL name="Dark Messenger" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R hr" effect="Sends nightflyer to deliver a message"/>
-	<SPELL name="Dark Spy" threads="1" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="TSD*" range="5 hex" duration="R min" effect="Sees through a nightflyer's eyes"/>
+	<SPELL name="Dark Messenger" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R hr" effect="Sends nightflyer to deliver a message" bookref="PG p.161"/>
+	<SPELL name="Dark Spy" threads="1" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="TSD*" range="5 hex" duration="R min" effect="Sees through a nightflyer's eyes" bookref="PG p.161"/>
 	<SPELL name="Dark Sword" threads="6" weavingdifficulty="15" reattuningdifficulty="19" range="touch" duration="R days" effect="WIL+8/Physical" effectarea="10-yard (5 hex) radius of wearer"/>
 	<SPELL name="Death Rain" threads="1" weavingdifficulty="15" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="R+12 rnd" effect="Step 5/D8 acid damage (WIL + 5; s. text)" effectarea="30-yard (15-hex) radius of magician" bookref="PG p.161"/>
-	<SPELL name="Death Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation"/>
+	<SPELL name="Death Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation" bookref="PG p.161"/>
 	<SPELL name="Death Vow" threads="3" weavingdifficulty="13" reattuningdifficulty="22" castingdifficulty="TSD*" range="touch" duration="R weeks" effect="WIL+10/NA"/>
-	<SPELL name="Death's Head" threads="1" weavingdifficulty="7" reattuningdifficulty="14" castingdifficulty="TSD*" range="self*" duration="R+5 rnd" effect="WIL + 5"/>
+	<SPELL name="Death's Head" threads="1" weavingdifficulty="7" reattuningdifficulty="14" castingdifficulty="TSD*" range="self*" duration="R+5 rnd" effect="WIL + 5" bookref="PG p.162"/>
 	<SPELL name="Delay Blow" threads="2" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+10 rnd" effect="WIL + 15/Physical"/>
 	<SPELL name="Detect Elementalism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician" bookref="PG p.162"/>
 	<SPELL name="Detect Illusionism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician" bookref="PG p.162"/>
 	<SPELL name="Detect Nethermancy Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician" bookref="PG p.162"/>
-	<SPELL name="Detect Shamanism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician" bookref="PG p.162"/>
-	<SPELL name="Detect Undead" threads="0" reattuningdifficulty="7" range="touch" duration="R+3 min" effect="WIL + 5" effectarea="30-yard (15-hex) radius from target"/>
+	<SPELL name="Detect Shamanism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="30-yard (15-hex) radius from magician"/>
+	<SPELL name="Detect Undead" threads="0" reattuningdifficulty="7" range="touch" duration="R+3 min" effect="WIL + 5" effectarea="30-yard (15-hex) radius from target" bookref="PG p.162"/>
 	<SPELL name="Disaster" threads="1" weavingdifficulty="9" reattuningdifficulty="17" range="5 hex" duration="R+5 rnd" effect="WIL + 6" bookref="PG p.163"/>
 	<SPELL name="Disguise Metal" threads="1" weavingdifficulty="7" reattuningdifficulty="14" range="touch" duration="R+7 min" effect="WIL" bookref="PG p.163"/>
-	<SPELL name="Dislodge Spell" threads="1" weavingdifficulty="9" reattuningdifficulty="22" range="12 hex" duration="1 rnd" effect="WIL + 10"/>
+	<SPELL name="Dislodge Spell" threads="1" weavingdifficulty="9" reattuningdifficulty="22" range="12 hex" duration="1 rnd" effect="WIL + 10" bookref="PG p.163"/>
 	<SPELL name="Dispel Elementalism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
 	<SPELL name="Dispel Illusionism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
-	<SPELL name="Dispel Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
+	<SPELL name="Dispel Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
 	<SPELL name="Dispel Nethermancy Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
-	<SPELL name="Dispel Shamanism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
+	<SPELL name="Dispel Shamanism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
 	<SPELL name="Displace Image" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+7 rnd" effect="Projects image of the target" bookref="PG p.163"/>
-	<SPELL name="Displace Self" threads="2" weavingdifficulty="9" reattuningdifficulty="16" range="self" duration="R+5 rnd" effect="WIL + 7"/>
+	<SPELL name="Displace Self" threads="2" weavingdifficulty="9" reattuningdifficulty="16" range="self" duration="R+5 rnd" effect="WIL + 7" bookref="PG p.164"/>
 	<SPELL name="Disrupt Magic" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="1 rnd" effect="WIL/Mystic"/>
-	<SPELL name="Divine Aura" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="12 hex" duration="R+5 min" effect="WIL + 5"/>
+	<SPELL name="Divine Aura" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="12 hex" duration="R+5 min" effect="WIL + 5" bookref="PG p.164"/>
 	<SPELL name="Do Unto Others" threads="3" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="varies*" range="10 hex*" duration="R rnd" effect="Creates illusory spell effects"/>
-	<SPELL name="Dodge Boost" threads="0" reattuningdifficulty="8" range="touch" duration="R+5 rnd" effect="+3 bonus to Avoid Blow Tests"/>
-	<SPELL name="Doom Missile" threads="3" weavingdifficulty="10" reattuningdifficulty="21" range="20 hex" duration="R rnd" effect="WIL + 5/Mystic"/>
+	<SPELL name="Dodge Boost" threads="0" reattuningdifficulty="8" range="touch" duration="R+5 rnd" effect="+3 bonus to Avoid Blow Tests" bookref="PG p.164"/>
+	<SPELL name="Doom Missile" threads="3" weavingdifficulty="10" reattuningdifficulty="21" range="20 hex" duration="R rnd" effect="WIL + 5/Mystic" bookref="PG p.164"/>
 	<SPELL name="Dragon's Breath" threads="3" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="TSD*" range="25 hex" duration="1 round (s. text)" effect="WIL+12/Physical"/>
 	<SPELL name="Draining Eye" threads="4" weavingdifficulty="14" reattuningdifficulty="15" castingdifficulty="TSD*" range="60 yards (s. text)" duration="R min" effect="WIL+10"/>
 	<SPELL name="Drastic Temperature" threads="2" weavingdifficulty="11" reattuningdifficulty="19" castingdifficulty="6" range="20 hex" duration="R+3 min" effect="WIL + 3/NA" effectarea="2-yard (1-hex) radius sphere from center" bookref="PG p.164"/>
@@ -141,9 +141,9 @@
 	<SPELL name="Dream Sight" threads="-1" weavingdifficulty="13" reattuningdifficulty="23" range="1 mile" duration="R+8 min" effect="WIL + 8" bookref="PG p.164"/>
 	<SPELL name="Dreamsend" threads="-1" weavingdifficulty="11" reattuningdifficulty="24" range="1 mile" duration="R+5 min" effect="WIL + 6" bookref="PG p.164"/>
 	<SPELL name="Drunken Stagger" threads="4" weavingdifficulty="13" reattuningdifficulty="20" range="touch" duration="R+5 days" effect="Penalizes target's actions" bookref="PG p.165"/>
-	<SPELL name="Dry and Wet" threads="1" weavingdifficulty="7" reattuningdifficulty="8" range="7 hex" duration="1 rnd" effect="WIL + 4"/>
-	<SPELL name="Dust Devil" threads="2" weavingdifficulty="9" reattuningdifficulty="13" range="self" duration="R+5 rnd" effect="Causes a Harried penalty to targets' Action Tests requiring sight, hearing, or smell" effectarea="32-yard (16-hex) radius sphere from center"/>
-	<SPELL name="Dust to Dust" threads="-1" weavingdifficulty="12" reattuningdifficulty="22" range="12 hex" duration="1 rnd" effect="WIL + 11/Mystic"/>
+	<SPELL name="Dry and Wet" threads="1" weavingdifficulty="7" reattuningdifficulty="8" range="7 hex" duration="1 rnd" effect="WIL + 4" bookref="PG p.165"/>
+	<SPELL name="Dust Devil" threads="2" weavingdifficulty="9" reattuningdifficulty="13" range="self" duration="R+5 rnd" effect="Causes a Harried penalty to targets' Action Tests requiring sight, hearing, or smell" effectarea="32-yard (16-hex) radius sphere from center" bookref="PG p.165"/>
+	<SPELL name="Dust to Dust" threads="-1" weavingdifficulty="12" reattuningdifficulty="22" range="12 hex" duration="1 rnd" effect="WIL + 11/Mystic" bookref="PG p.165"/>
 	<SPELL name="Earth and Air" threads="3" weavingdifficulty="16" reattuningdifficulty="20" range="120 yards (60 hexes)" duration="R+1 hr" effect="WIL+10"/>
 	<SPELL name="Earth Blend" threads="0" reattuningdifficulty="7" range="touch" duration="R+5 min" effect="WIL + 7" bookref="PG p.165"/>
 	<SPELL name="Earth Darts" threads="1" weavingdifficulty="5" reattuningdifficulty="12" range="6 hex" duration="1 rnd" effect="WIL + 6/Physical" bookref="PG p.165"/>
@@ -166,16 +166,16 @@
 	<SPELL name="Erase Horror Mark" threads="-1" weavingdifficulty="17" reattuningdifficulty="22" castingdifficulty="HSD*" range="touch" duration="1 rnd" effect="Removes Horror mark"/>
 	<SPELL name="Eternal Day" threads="5" weavingdifficulty="18" reattuningdifficulty="21" castingdifficulty="6" range="20 miles" duration="R days" effect="WIL+8"/>
 	<SPELL name="Eternal Youth" threads="-1" weavingdifficulty="17" reattuningdifficulty="31" castingdifficulty="12" range="self" duration="R years" effect="Temporarily stops the magician aging"/>
-	<SPELL name="Ethereal Darkness" threads="1" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="Creates magical darkness" effectarea="4-yard (2-hex) radius sphere from target's center"/>
-	<SPELL name="Evil Eye" threads="2" weavingdifficulty="7" reattuningdifficulty="17" range="5 hex" duration="R+10 rnd" effect="Causes a -5 penalty to target's Action Tests"/>
-	<SPELL name="Experience Death" threads="1" weavingdifficulty="6" reattuningdifficulty="12" range="10 hex" duration="R+3 rnd" effect="WIL + 5"/>
+	<SPELL name="Ethereal Darkness" threads="1" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="Creates magical darkness" effectarea="4-yard (2-hex) radius sphere from target's center" bookref="PG p.167"/>
+	<SPELL name="Evil Eye" threads="2" weavingdifficulty="7" reattuningdifficulty="17" range="5 hex" duration="R+10 rnd" effect="Causes a -5 penalty to target's Action Tests" bookref="PG p.167"/>
+	<SPELL name="Experience Death" threads="1" weavingdifficulty="6" reattuningdifficulty="12" range="10 hex" duration="R+3 rnd" effect="WIL + 5" bookref="PG p.168"/>
 	<SPELL name="Eye of Truth" threads="1" weavingdifficulty="11" reattuningdifficulty="18" range="self" duration="R+5 min" effect="+10 bonus to Disbelief Tests" bookref="PG p.168"/>
 	<SPELL name="Eyes Have It" threads="3" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6*" range="12 hex" duration="R+1 min" effect="WIL + 4" bookref="PG p.168"/>
 	<SPELL name="Falcon's Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="self" duration="R hr" effect="Turns caster into a falcon" bookref="PG p.168"/>
-	<SPELL name="False Aura" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 min" effect="WIL + 6"/>
+	<SPELL name="False Aura" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 min" effect="WIL + 6" bookref="PG p.168"/>
 	<SPELL name="False Enchantment" threads="5" weavingdifficulty="8" reattuningdifficulty="20" castingdifficulty="6*" range="touch" duration="R+7 days" effect="Gives an item fake magical abilities;  +5 to the illusion's Disbelief Difficulty" bookref="PG p.168"/>
 	<SPELL name="False Floor" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="R+1 hr" effect="WIL + 6" effectarea="6-yard (3-hex) radius from center" bookref="PG p.169"/>
-	<SPELL name="Fatal Food" threads="3" weavingdifficulty="9" reattuningdifficulty="17" range="5 hex" duration="R+10 min" effect="WIL + 6/Mystic"/>
+	<SPELL name="Fatal Food" threads="3" weavingdifficulty="9" reattuningdifficulty="17" range="5 hex" duration="R+10 min" effect="WIL + 6/Mystic" bookref="PG p.169"/>
 	<SPELL name="Fingers of Wind" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="6" range="10 hex" duration="R+5 min" effect="WIL" bookref="PG p.169"/>
 	<SPELL name="Fire and Water" threads="3" weavingdifficulty="17" reattuningdifficulty="20" range="120 yards (60 hexes)" duration="R+1 hr" effect="WIL+9"/>
 	<SPELL name="Fire Hounds" threads="-1" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="TSD*" range="2 hex" duration="R+5 min" effect="Summons one or more fire hounds" bookref="PG p.169"/>
@@ -184,128 +184,128 @@
 	<SPELL name="Fireball" threads="1" weavingdifficulty="12" reattuningdifficulty="20" castingdifficulty="TSD*" range="20 hex" duration="1 rnd" effect="WIL + 8/Physical" effectarea="4-yard (2-hex) radius sphere from point of impact" bookref="PG p.170"/>
 	<SPELL name="Fireweave" threads="2" weavingdifficulty="12" reattuningdifficulty="19" range="touch" duration="R min" effect="WIL/Physical" bookref="PG p.170"/>
 	<SPELL name="Flame Darts" threads="2" weavingdifficulty="13" reattuningdifficulty="23" range="8 hex" duration="1 rnd" effect="WIL + 7/Physical" effectarea="2-yard (1-hex) radius circle" bookref="PG p.170"/>
-	<SPELL name="Flame Flash" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="5 hex" duration="1 rnd" effect="WIL + 4/Physical"/>
+	<SPELL name="Flame Flash" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="5 hex" duration="1 rnd" effect="WIL + 4/Physical" bookref="PG p.170"/>
 	<SPELL name="Flame Strike" threads="0" reattuningdifficulty="11" range="6 hex" duration="1 rnd" effect="WIL + 6/Physical" bookref="PG p.170"/>
 	<SPELL name="Flameshaw" threads="4" weavingdifficulty="10" reattuningdifficulty="17" castingdifficulty="TSD*" range="20 hex" duration="R+1 hr" effect="WIL + 7" bookref="PG p.170"/>
 	<SPELL name="Flameweapon" threads="2" weavingdifficulty="5" reattuningdifficulty="14" castingdifficulty="TSD*" range="2 hex" duration="R+10 rnd" effect="Weapon adds D6 Bonus Die to Damage Tests/Physical" bookref="PG p.171"/>
 	<SPELL name="Flesh Eater" threads="1" weavingdifficulty="14" reattuningdifficulty="21" range="touch" duration="R+5 rnd" effect="Causes target to be Harried" bookref="PG p.171"/>
 	<SPELL name="Flying Carpet" threads="3" weavingdifficulty="10" reattuningdifficulty="18" castingdifficulty="7" range="touch" duration="R+1 hr" effect="WIL + 5" bookref="PG p.171"/>
-	<SPELL name="Fog Ghost" threads="2" weavingdifficulty="6" reattuningdifficulty="15" castingdifficulty="TSD*" range="5 hex" duration="R+3 rnd" effect="Summons fog ghost"/>
-	<SPELL name="Fog of Fear" threads="2" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="6" range="12 hex" duration="R+6 rnd" effect="WIL + 5" effectarea="2-yard (1-hex) radius from center"/>
+	<SPELL name="Fog Ghost" threads="2" weavingdifficulty="6" reattuningdifficulty="15" castingdifficulty="TSD*" range="5 hex" duration="R+3 rnd" effect="Summons fog ghost" bookref="PG p.171"/>
+	<SPELL name="Fog of Fear" threads="2" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="6" range="12 hex" duration="R+6 rnd" effect="WIL + 5" effectarea="2-yard (1-hex) radius from center" bookref="PG p.172"/>
 	<SPELL name="Foreseeing" threads="-1" weavingdifficulty="12" reattuningdifficulty="22" castingdifficulty="9" range="self" duration="1 rnd" effect="WIL + 3" bookref="PG p.172"/>
 	<SPELL name="Forge Falsemen" threads="-1" weavingdifficulty="20" reattuningdifficulty="29" castingdifficulty="TSD*" range="touch" duration="R years" effect="Creates falsemen"/>
 	<SPELL name="Form Exchange" threads="4" weavingdifficulty="11" reattuningdifficulty="21" range="5 hex" duration="R+7 min" effect="WIL + 10" bookref="PG p.172"/>
-	<SPELL name="Foul Vapors" threads="1" weavingdifficulty="11" reattuningdifficulty="19" range="self" duration="R+6 rnd" effect="WIL + 5/Mystic" effectarea="20-yard (10-hex) radius sphere from magician"/>
+	<SPELL name="Foul Vapors" threads="1" weavingdifficulty="11" reattuningdifficulty="19" range="self" duration="R+6 rnd" effect="WIL + 5/Mystic" effectarea="20-yard (10-hex) radius sphere from magician" bookref="PG p.172"/>
 	<SPELL name="Fragile Pattern" threads="7" weavingdifficulty="14" reattuningdifficulty="23" range="50 hex" duration="1 rnd" effect="WIL+12"/>
-	<SPELL name="Friend or Foe" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="2 hex" duration="R+5 rnd" effect="WIL + 6"/>
-	<SPELL name="Friendly Darkness" threads="3" weavingdifficulty="9" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R rnd" effect="Creates magical darkness; +5 bonus to one type of Action Test for friendly characters" effectarea="6-yard (3-hex) radius sphere from center"/>
+	<SPELL name="Friend or Foe" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="2 hex" duration="R+5 rnd" effect="WIL + 6" bookref="PG p.173"/>
+	<SPELL name="Friendly Darkness" threads="3" weavingdifficulty="9" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R rnd" effect="Creates magical darkness; +5 bonus to one type of Action Test for friendly characters" effectarea="6-yard (3-hex) radius sphere from center" bookref="PG p.173"/>
 	<SPELL name="Frozen Harbor" threads="-1" weavingdifficulty="16" reattuningdifficulty="29" castingdifficulty="9" range="15 hex" duration="1 round (s. text)" effect="Freezes expanse of water" effectarea="1-mile diameter area of water"/>
 	<SPELL name="Fuel Flame" threads="0" reattuningdifficulty="14" castingdifficulty="6" range="2 hex" duration="R rnd" effect="WIL + 3" bookref="PG p.173"/>
 	<SPELL name="Fun With Doors" threads="2" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="TSD*" range="10 hex" duration="R+1 min" effect="Creates/alters door illusions" bookref="PG p.173"/>
-	<SPELL name="Gadfly" threads="1" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="TSD*" range="6 hex" duration="R+4 rnd" effect="Harries target"/>
+	<SPELL name="Gadfly" threads="1" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="TSD*" range="6 hex" duration="R+4 rnd" effect="Harries target" bookref="PG p.173"/>
 	<SPELL name="Gateway" threads="5" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="5,000 miles" duration="R rnd" effect="WIL+10"/>
-	<SPELL name="Giant Size" threads="2" weavingdifficulty="11" reattuningdifficulty="18" range="touch" duration="R+2 rnd" effect="+5 bonus to Strength- and Toughness-only Tests"/>
+	<SPELL name="Giant Size" threads="2" weavingdifficulty="11" reattuningdifficulty="18" range="touch" duration="R+2 rnd" effect="+5 bonus to Strength- and Toughness-only Tests" bookref="PG p.174"/>
 	<SPELL name="Gills" threads="2" weavingdifficulty="4" reattuningdifficulty="13" range="touch" duration="R+10 min" effect="Allows target to breathe underwater" bookref="PG p.174"/>
-	<SPELL name="Globe of Silence" threads="3" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="6" range="8 hex" duration="R+2 min" effect="WIL + 8" effectarea="4-yard (2-hex) radius sphere"/>
+	<SPELL name="Globe of Silence" threads="3" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="6" range="8 hex" duration="R+2 min" effect="WIL + 8" effectarea="4-yard (2-hex) radius sphere" bookref="PG p.174"/>
 	<SPELL name="Glowing Swarm" threads="4" weavingdifficulty="12" reattuningdifficulty="22" castingdifficulty="TSD*" range="10 yards" duration="R+3 rnd" effect="Creates a swarm of glowing insects"/>
 	<SPELL name="Grasping Hand of Earth" threads="1" weavingdifficulty="13" reattuningdifficulty="20" range="12 hex" duration="R+3 rnd" effect="WIL + 6" bookref="PG p.174"/>
-	<SPELL name="Grave Message" threads="4" weavingdifficulty="7" reattuningdifficulty="19" castingdifficulty="6+*" range="100 miles" duration="R days" effect="Sends message to a Nethermancer"/>
+	<SPELL name="Grave Message" threads="4" weavingdifficulty="7" reattuningdifficulty="19" castingdifficulty="6+*" range="100 miles" duration="R days" effect="Sends message to a Nethermancer" bookref="PG p.174"/>
 	<SPELL name="Great Sticky Vines" threads="2" weavingdifficulty="11" reattuningdifficulty="20" castingdifficulty="6*" range="5 hex" duration="R min" effect="WIL + 4" bookref="PG p.174"/>
 	<SPELL name="Great Weapon" threads="1" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+2 rnd" effect="Harries opponents" bookref="PG p.175"/>
 	<SPELL name="Grim Reaper" threads="5" weavingdifficulty="13" reattuningdifficulty="21" range="touch" duration="Rank x 10 min" effect="WIL+13"/>
 	<SPELL name="Grounding" threads="2" weavingdifficulty="4" reattuningdifficulty="12" range="touch" duration="R min" effect="+6 Physical and Mystic Armor vs. electricity; +6 Knockdown Test bonus" bookref="PG p.175"/>
-	<SPELL name="Hair Frenzy" threads="0" reattuningdifficulty="20" range="5 hex" duration="R+5 rnd" effect="Harries target"/>
+	<SPELL name="Hair Frenzy" threads="0" reattuningdifficulty="20" range="5 hex" duration="R+5 rnd" effect="Harries target" bookref="PG p.175"/>
 	<SPELL name="Haunted House" threads="5" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="6" range="70 yards (35 hexes)" duration="R days" effect="WIL+11/Physical"/>
-	<SPELL name="Healing Sleep" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="8 hr" effect="Bonus Recovery Test; +4 Recovery Test bonus"/>
+	<SPELL name="Healing Sleep" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="8 hr" effect="Bonus Recovery Test; +4 Recovery Test bonus" bookref="PG p.175"/>
 	<SPELL name="Heat Food" threads="1" weavingdifficulty="5" reattuningdifficulty="7" castingdifficulty="6" range="touch" duration="R+10 min" effect="Heats and rejuvenates food" bookref="PG p.175"/>
-	<SPELL name="Heat Metal Armor" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="2 hex" duration="R+7 rnd" effect="WIL + 5/Physical (NA)"/>
+	<SPELL name="Heat Metal Armor" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="2 hex" duration="R+7 rnd" effect="WIL + 5/Physical (NA)" bookref="PG p.175"/>
 	<SPELL name="Hold Pattern" threads="6" weavingdifficulty="14" reattuningdifficulty="23" castingdifficulty="6" range="touch" duration="R days" effect="WIL+8"/>
-	<SPELL name="Horror Call" threads="6" weavingdifficulty="13" reattuningdifficulty="22" castingdifficulty="TSD*" range="touch" duration="R hr" effect="WIL + 16" effectarea="4-yard (2-hex) radius circle from center"/>
+	<SPELL name="Horror Call" threads="6" weavingdifficulty="13" reattuningdifficulty="22" castingdifficulty="TSD*" range="touch" duration="R hr" effect="WIL + 16" effectarea="4-yard (2-hex) radius circle from center" bookref="PG p.176"/>
 	<SPELL name="Hunger" threads="3" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="R days" effect="Increases or diminishes hunger" bookref="PG p.176"/>
 	<SPELL name="Hunter's Sense" threads="0" reattuningdifficulty="14" range="15 hex" duration="R+3 min" effect="WIL + 5" bookref="PG p.176"/>
 	<SPELL name="Ice Mace and Chain" threads="0" reattuningdifficulty="15" range="8 hex" duration="2 rnd" effect="WIL + 5/Physical" bookref="PG p.176"/>
 	<SPELL name="Ice Spear" threads="1" weavingdifficulty="7" reattuningdifficulty="14" range="24 hex" duration="1 rnd" effect="WIL + 3/Physical" bookref="PG p.176"/>
-	<SPELL name="Icy Protection" threads="1" weavingdifficulty="7" reattuningdifficulty="12" range="self" duration="R+5 min" effect="Reduces fire or heat damage"/>
+	<SPELL name="Icy Protection" threads="1" weavingdifficulty="7" reattuningdifficulty="12" range="self" duration="R+5 min" effect="Reduces fire or heat damage" bookref="PG p.177"/>
 	<SPELL name="Icy Surface" threads="0" reattuningdifficulty="8" castingdifficulty="6" range="touch" duration="R+3 min" effect="WIL" effectarea="100-square-yard area, no greater than 20 yards (10 hexes) in any dimension" bookref="PG p.177"/>
-	<SPELL name="Identify Magic" threads="1" weavingdifficulty="10" reattuningdifficulty="20" range="20 hex" duration="1 rnd" effect="Identifies type of magic"/>
-	<SPELL name="Identify Spell" threads="-1" reattuningdifficulty="12" castingdifficulty="TSD*" range="15 hex" duration="1 rnd" effect="Identifies a previously cast spell"/>
-	<SPELL name="Ignite" threads="0" reattuningdifficulty="11" range="2 yards (1 hex)" duration="1 round (s. text)" effect="Ignites flammable objects/Mystic"/>
+	<SPELL name="Identify Magic" threads="1" weavingdifficulty="10" reattuningdifficulty="20" range="20 hex" duration="1 rnd" effect="Identifies type of magic" bookref="PG p.177"/>
+	<SPELL name="Identify Spell" threads="-1" reattuningdifficulty="12" castingdifficulty="TSD*" range="15 hex" duration="1 rnd" effect="Identifies a previously cast spell" bookref="PG p.177"/>
+	<SPELL name="Ignite" threads="0" reattuningdifficulty="11" range="2 yards (1 hex)" duration="1 round (s. text)" effect="Ignites flammable objects/Mystic" bookref="PG p.177"/>
 	<SPELL name="Illusion" threads="2" weavingdifficulty="11" reattuningdifficulty="21" castingdifficulty="6" range="6 hex" duration="R+5 min" effect="Creates illusions" effectarea="10-yard (5-hex) radius from origin" bookref="PG p.177"/>
 	<SPELL name="Illusory Missiles" threads="2" weavingdifficulty="12" reattuningdifficulty="15" range="24 hex" duration="1 rnd" effect="WIL + 11/Physical" effectarea="4-yard (2-hex) radius circle from center" bookref="PG p.177"/>
 	<SPELL name="Impossible Knot" threads="2" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="6" range="touch" duration="R+1 days" effect="WIL + 4" bookref="PG p.178"/>
 	<SPELL name="Impossible Lock" threads="2" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="WIL + 7" bookref="PG p.178"/>
 	<SPELL name="Improve Karma" threads="3" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="+4 Karma Steps" bookref="PG p.178"/>
 	<SPELL name="Improved Alarm" threads="3" weavingdifficulty="8" reattuningdifficulty="19" range="120 yards (60 hexes)" duration="R+1 hr" effect="WIL + 5" effectarea="4-yard (2-hex) radius from origin" bookref="PG p.178"/>
-	<SPELL name="Incessant Talking" threads="3" weavingdifficulty="14" reattuningdifficulty="18" range="8 hex" duration="R+1 min" effect="Makes target babble nonsense"/>
+	<SPELL name="Incessant Talking" threads="3" weavingdifficulty="14" reattuningdifficulty="18" range="8 hex" duration="R+1 min" effect="Makes target babble nonsense" bookref="PG p.178"/>
 	<SPELL name="Inflame Self" threads="3" weavingdifficulty="8" reattuningdifficulty="15" range="self" duration="R+1 rnd" effect="WIL + 8/Physical" bookref="PG p.178"/>
 	<SPELL name="Innocent Activity" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+12 rnd" effect="Covers up true activity" bookref="PG p.178"/>
-	<SPELL name="Insect Repellent" threads="1" weavingdifficulty="6" reattuningdifficulty="7" castingdifficulty="6" range="touch" duration="R+3 min" effect="WIL + 5"/>
-	<SPELL name="Inventory" threads="4" weavingdifficulty="9" reattuningdifficulty="18" range="15 hex" duration="1 min" effect="WIL + 8"/>
-	<SPELL name="Invigorate" threads="2" weavingdifficulty="9" reattuningdifficulty="17" range="touch" duration="R+1 hr" effect="+5 bonus to Recovery Tests"/>
-	<SPELL name="Iron Hand" threads="1" weavingdifficulty="5" reattuningdifficulty="13" range="touch" duration="R+10 rnd" effect="+3 bonus to close combat Damage Tests"/>
+	<SPELL name="Insect Repellent" threads="1" weavingdifficulty="6" reattuningdifficulty="7" castingdifficulty="6" range="touch" duration="R+3 min" effect="WIL + 5" bookref="PG p.178"/>
+	<SPELL name="Inventory" threads="4" weavingdifficulty="9" reattuningdifficulty="18" range="15 hex" duration="1 min" effect="WIL + 8" bookref="PG p.179"/>
+	<SPELL name="Invigorate" threads="2" weavingdifficulty="9" reattuningdifficulty="17" range="touch" duration="R+1 hr" effect="+5 bonus to Recovery Tests" bookref="PG p.179"/>
+	<SPELL name="Iron Hand" threads="1" weavingdifficulty="5" reattuningdifficulty="13" range="touch" duration="R+10 rnd" effect="+3 bonus to close combat Damage Tests" bookref="PG p.179"/>
 	<SPELL name="Ironwood" threads="3" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R hr" effect="Transforms wood" bookref="PG p.179"/>
 	<SPELL name="Journey to Life" threads="-1" weavingdifficulty="14" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R days" effect="WIL+15"/>
-	<SPELL name="Juggler's Touch" threads="2" weavingdifficulty="10" reattuningdifficulty="17" castingdifficulty="6*" range="6 hex" duration="R rnd" effect="WIL + 6/Physical" effectarea="2-yard (1-hex) radius from center"/>
-	<SPELL name="Kaer Knocking" threads="4" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="1 min" effect="WIL + 5"/>
-	<SPELL name="Kaer Pictographs" threads="4" weavingdifficulty="9" reattuningdifficulty="17" range="touch" duration="10 min" effect="Creates pictures or written messages (s. text)"/>
-	<SPELL name="Karma Cancel" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="20 hex" duration="R+8 rnd" effect="Prevents use of Karma"/>
-	<SPELL name="Karmic Connection" threads="1" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="1 rnd" effect="WIL + 10"/>
-	<SPELL name="Last Chance" threads="1" weavingdifficulty="7" reattuningdifficulty="17" range="touch" duration="1 rnd" effect="Grants +8 bonus Recovery Test"/>
+	<SPELL name="Juggler's Touch" threads="2" weavingdifficulty="10" reattuningdifficulty="17" castingdifficulty="6*" range="6 hex" duration="R rnd" effect="WIL + 6/Physical" effectarea="2-yard (1-hex) radius from center" bookref="PG p.180"/>
+	<SPELL name="Kaer Knocking" threads="4" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="1 min" effect="WIL + 5" bookref="PG p.180"/>
+	<SPELL name="Kaer Pictographs" threads="4" weavingdifficulty="9" reattuningdifficulty="17" range="touch" duration="10 min" effect="Creates pictures or written messages (s. text)" bookref="PG p.180"/>
+	<SPELL name="Karma Cancel" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="20 hex" duration="R+8 rnd" effect="Prevents use of Karma" bookref="PG p.180"/>
+	<SPELL name="Karmic Connection" threads="1" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="1 rnd" effect="WIL + 10" bookref="PG p.180"/>
+	<SPELL name="Last Chance" threads="1" weavingdifficulty="7" reattuningdifficulty="17" range="touch" duration="1 rnd" effect="Grants +8 bonus Recovery Test" bookref="PG p.181"/>
 	<SPELL name="Leaping Lizards" threads="3" weavingdifficulty="9" reattuningdifficulty="21" castingdifficulty="6" range="30 hex" duration="R min" effect="WIL + 7/Physical" bookref="PG p.181"/>
-	<SPELL name="Leaps and Bounds" threads="0" reattuningdifficulty="9" castingdifficulty="TSD*" range="touch" duration="R+5 rnd" effect="WIL + 7"/>
-	<SPELL name="Levitate" threads="1" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="TSD*" range="20 hex" duration="R+10 min" effect="Levitate up to 1,000 pounds" effectarea="2-yard (1-hex) radius from origin"/>
-	<SPELL name="Life Circle of One" threads="2" weavingdifficulty="6" reattuningdifficulty="15" castingdifficulty="6*" range="touch" duration="R+3 min" effect="WIL + 5/Mystic" effectarea="2-yard (1-hex) radius circle from center"/>
+	<SPELL name="Leaps and Bounds" threads="0" reattuningdifficulty="9" castingdifficulty="TSD*" range="touch" duration="R+5 rnd" effect="WIL + 7" bookref="PG p.181"/>
+	<SPELL name="Levitate" threads="1" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="TSD*" range="20 hex" duration="R+10 min" effect="Levitate up to 1,000 pounds" effectarea="2-yard (1-hex) radius from origin" bookref="PG p.181"/>
+	<SPELL name="Life Circle of One" threads="2" weavingdifficulty="6" reattuningdifficulty="15" castingdifficulty="6*" range="touch" duration="R+3 min" effect="WIL + 5/Mystic" effectarea="2-yard (1-hex) radius circle from center" bookref="PG p.181"/>
 	<SPELL name="Light" threads="1" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="6 or TSD (s. text)" range="2 hex" duration="R+5 min" effect="Summons a sphere of light" bookref="PG p.181"/>
 	<SPELL name="Lighten Load" threads="1" weavingdifficulty="9" reattuningdifficulty="16" range="5 hex" duration="R+7 hr" effect="WIL + 3" effectarea="2-yard (1-hex) radius from center" bookref="PG p.182"/>
 	<SPELL name="Lightning Bolt" threads="1" weavingdifficulty="10" reattuningdifficulty="15" range="5 hex" duration="1 rnd" effect="WIL + 5/Physical (non-metal)" bookref="PG p.182"/>
-	<SPELL name="Lightning Cloud" threads="4" weavingdifficulty="12" reattuningdifficulty="18" castingdifficulty="TSD*" range="24 hex" duration="R+5 rnd" effect="WIL + 10/Physical (non-metal)"/>
+	<SPELL name="Lightning Cloud" threads="4" weavingdifficulty="12" reattuningdifficulty="18" castingdifficulty="TSD*" range="24 hex" duration="R+5 rnd" effect="WIL + 10/Physical (non-metal)" bookref="PG p.182"/>
 	<SPELL name="Lightning Shield" threads="0" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R+7 rnd" effect="WIL + 3/Mystic" bookref="PG p.182"/>
 	<SPELL name="Lightning Step" threads="3" weavingdifficulty="10" reattuningdifficulty="17" range="self" duration="R+3 rnd" effect="WIL + 2" bookref="PG p.182"/>
 	<SPELL name="Liquid Arrow" threads="1" weavingdifficulty="10" reattuningdifficulty="17" range="32 yards (16 hexes)" duration="1 rnd" effect="WIL + 9/Physical" bookref="PG p.182"/>
-	<SPELL name="Liquid Eyes" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="8 hex" duration="R rnd" effect="Blinds target"/>
+	<SPELL name="Liquid Eyes" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="8 hex" duration="R rnd" effect="Blinds target" bookref="PG p.182"/>
 	<SPELL name="Living Wall" threads="2" weavingdifficulty="12" reattuningdifficulty="22" castingdifficulty="6" range="touch" duration="R+3 min" effect="WIL + 3" effectarea="Up to 4-yard (2-hex) high, 20 yard (10-hex) wide, 2-yard (1-hex) thick wall" bookref="PG p.183"/>
-	<SPELL name="Loan Spell" threads="2" weavingdifficulty="11" reattuningdifficulty="15" range="touch" duration="R+4 rnd" effect="Loans spell to another"/>
+	<SPELL name="Loan Spell" threads="2" weavingdifficulty="11" reattuningdifficulty="15" range="touch" duration="R+4 rnd" effect="Loans spell to another" bookref="PG p.183"/>
 	<SPELL name="Lodestone's Touch" threads="2" weavingdifficulty="13" reattuningdifficulty="17" range="3 hex" duration="R+5 min" effect="WIL + 3" effectarea="2-yard (1-hex) radius around target" bookref="PG p.183"/>
-	<SPELL name="Mage Armor" threads="1" weavingdifficulty="12" reattuningdifficulty="16" range="touch" duration="R+7 min" effect="+4 Physical Armor"/>
-	<SPELL name="Makeshift Missile" threads="1" weavingdifficulty="9" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+2 rnd" effect="WIL + 6/Physical"/>
-	<SPELL name="Makeshift Weapon" threads="1" weavingdifficulty="10" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="WIL + 8/Physical"/>
-	<SPELL name="Marathon Run" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="32 yards (16 hexes)" duration="R+1 min" effect="Forces target to flee"/>
+	<SPELL name="Mage Armor" threads="1" weavingdifficulty="12" reattuningdifficulty="16" range="touch" duration="R+7 min" effect="+4 Physical Armor" bookref="PG p.183"/>
+	<SPELL name="Makeshift Missile" threads="1" weavingdifficulty="9" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+2 rnd" effect="WIL + 6/Physical" bookref="PG p.184"/>
+	<SPELL name="Makeshift Weapon" threads="1" weavingdifficulty="10" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="WIL + 8/Physical" bookref="PG p.184"/>
+	<SPELL name="Marathon Run" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="32 yards (16 hexes)" duration="R+1 min" effect="Forces target to flee" bookref="PG p.184"/>
 	<SPELL name="Massive Missiles" threads="4" weavingdifficulty="12" reattuningdifficulty="21" range="50 hex" duration="R+3 rnd" effect="WIL + 12/Physical" bookref="PG p.184"/>
 	<SPELL name="Memory Blank" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="2 yards (1 hex)" duration="R+1 hr" effect="WIL + 4" bookref="PG p.184"/>
 	<SPELL name="Memory Scribe" threads="3" weavingdifficulty="12" reattuningdifficulty="19" range="touch" duration="R+1 hr" effect="WIL + 6" bookref="PG p.184"/>
-	<SPELL name="Mental Library" threads="3" weavingdifficulty="12" reattuningdifficulty="19" range="self" duration="R hr" effect="+10 to Book Memory Rank"/>
+	<SPELL name="Mental Library" threads="3" weavingdifficulty="12" reattuningdifficulty="19" range="self" duration="R hr" effect="+10 to Book Memory Rank" bookref="PG p.184"/>
 	<SPELL name="Metal Scream" threads="1" weavingdifficulty="11" reattuningdifficulty="17" castingdifficulty="TSD*" range="20 hex" duration="R+1 rnd" effect="WIL + 5" bookref="PG p.184"/>
 	<SPELL name="Metal Wings" threads="2" weavingdifficulty="8" reattuningdifficulty="18" range="touch" duration="R+20 min" effect="Flight;  +5 bonus to lifting Strength Tests" bookref="PG p.185"/>
-	<SPELL name="Mind Dagger" threads="0" reattuningdifficulty="7" range="8 hex" duration="1 rnd" effect="WIL + 2/Mystic"/>
+	<SPELL name="Mind Dagger" threads="0" reattuningdifficulty="7" range="8 hex" duration="1 rnd" effect="WIL + 2/Mystic" bookref="PG p.185"/>
 	<SPELL name="Mind Fog" threads="1" weavingdifficulty="8" reattuningdifficulty="15" range="12 hex" duration="R rnd" effect="WIL + 6" bookref="PG p.185"/>
 	<SPELL name="Monstrous Mantle" threads="2" weavingdifficulty="8" reattuningdifficulty="13" range="touch" duration="R+5 rnd" effect="Increases the combat prowess of a target character" bookref="PG p.185"/>
 	<SPELL name="Moon Shadow" threads="5" weavingdifficulty="16" reattuningdifficulty="22" range="50 hex" duration="1 month" effect="WIL+10/NA"/>
 	<SPELL name="Moonglow" threads="0" reattuningdifficulty="10" castingdifficulty="6" range="5 hex" duration="R+5 min" effect="Creates sphere of light" effectarea="10-yard (5-hex) radius sphere from center" bookref="PG p.185"/>
-	<SPELL name="Mount Scare" threads="1" weavingdifficulty="5" reattuningdifficulty="13" castingdifficulty="TSD*" range="10 hex" duration="R+5 rnd" effect="Spooks mount"/>
-	<SPELL name="Move on Through" threads="0" reattuningdifficulty="17" range="24 hex" duration="1 round (s. text)" effect="WIL + 4"/>
-	<SPELL name="Multi-Mind Dagger" threads="-1" weavingdifficulty="9" reattuningdifficulty="22" castingdifficulty="TSD*" range="8 hex" duration="1 rnd" effect="WIL + 2/Mystic"/>
+	<SPELL name="Mount Scare" threads="1" weavingdifficulty="5" reattuningdifficulty="13" castingdifficulty="TSD*" range="10 hex" duration="R+5 rnd" effect="Spooks mount" bookref="PG p.185"/>
+	<SPELL name="Move on Through" threads="0" reattuningdifficulty="17" range="24 hex" duration="1 round (s. text)" effect="WIL + 4" bookref="PG p.186"/>
+	<SPELL name="Multi-Mind Dagger" threads="-1" weavingdifficulty="9" reattuningdifficulty="22" castingdifficulty="TSD*" range="8 hex" duration="1 rnd" effect="WIL + 2/Mystic" bookref="PG p.186"/>
 	<SPELL name="Multi-Missile" threads="2" weavingdifficulty="8" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="1 rnd" effect="Creates four missiles" bookref="PG p.186"/>
-	<SPELL name="Mystic Net" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="self" duration="R+2 min" effect="WIL + 8" effectarea="16-yard (8-hex) radius from magician"/>
-	<SPELL name="Mystic Shock" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="2 hex" duration="1 rnd" effect="WIL + 10/Mystic"/>
+	<SPELL name="Mystic Net" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="self" duration="R+2 min" effect="WIL + 8" effectarea="16-yard (8-hex) radius from magician" bookref="PG p.186"/>
+	<SPELL name="Mystic Shock" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="2 hex" duration="1 rnd" effect="WIL + 10/Mystic" bookref="PG p.186"/>
 	<SPELL name="Mystic Vessel" threads="3" weavingdifficulty="15" reattuningdifficulty="23" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="WIL+10"/>
-	<SPELL name="Netherblade" threads="2" weavingdifficulty="14" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="WIL + 8/Mystic"/>
-	<SPELL name="Nightflyer's Cloak" threads="2" weavingdifficulty="7" reattuningdifficulty="17" range="self" duration="R+10 min" effect="Transforms caster into a nightflyer"/>
+	<SPELL name="Netherblade" threads="2" weavingdifficulty="14" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="WIL + 8/Mystic" bookref="PG p.186"/>
+	<SPELL name="Nightflyer's Cloak" threads="2" weavingdifficulty="7" reattuningdifficulty="17" range="self" duration="R+10 min" effect="Transforms caster into a nightflyer" bookref="PG p.186"/>
 	<SPELL name="Nightmare of Foreboding" threads="5" weavingdifficulty="10" reattuningdifficulty="17" range="10 hex" duration="R days" effect="-6 to target's Wound Threshold" bookref="PG p.187"/>
 	<SPELL name="Noble Manner" threads="0" reattuningdifficulty="10" range="touch" duration="R+3 min" effect="+5 bonus to target's Interaction Tests" bookref="PG p.187"/>
 	<SPELL name="Nobody Here" threads="1" weavingdifficulty="10" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="R+8 min" effect="WIL + 8" effectarea="4-yard (2-hex) radius from magician" bookref="PG p.187"/>
-	<SPELL name="Notice Not" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+1 min" effect="+3 bonus to stealthy Action Tests"/>
+	<SPELL name="Notice Not" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+1 min" effect="+3 bonus to stealthy Action Tests" bookref="PG p.187"/>
 	<SPELL name="Nutritious Earth" threads="4" weavingdifficulty="8" reattuningdifficulty="15" range="touch" duration="A year and a day" effect="Makes land fertile" effectarea="100-yard (50-hex) radius circle from magician" bookref="PG p.187"/>
 	<SPELL name="Observe Event" threads="5" weavingdifficulty="14" reattuningdifficulty="15" range="touch" duration="Variable (s. text)" effect="WIL+3" effectarea="10-yard (5-hex) radius"/>
 	<SPELL name="One of the Crowd" threads="5" weavingdifficulty="14" reattuningdifficulty="21" castingdifficulty="TSD*" range="15 yards" duration="R+1 hr" effect="WIL+10"/>
 	<SPELL name="Onion Blood" threads="4" weavingdifficulty="16" reattuningdifficulty="19" range="50 hex" duration="R rnd" effect="WIL+6/Mystic"/>
-	<SPELL name="Ork Stoke" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="15 hex" duration="Instant" effect="Sets off orkish gahad"/>
+	<SPELL name="Ork Stoke" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="15 hex" duration="Instant" effect="Sets off orkish gahad" bookref="PG p.187"/>
 	<SPELL name="Other Place" threads="3" weavingdifficulty="9" reattuningdifficulty="21" castingdifficulty="TSD*" range="1 mile" duration="R+3 hr" effect="Links two doorways" bookref="PG p.187"/>
-	<SPELL name="Pack Bags" threads="1" weavingdifficulty="7" reattuningdifficulty="11" castingdifficulty="6" range="3 hex" duration="1 rnd" effect="WIL-1"/>
-	<SPELL name="Pain" threads="0" reattuningdifficulty="11" range="2 hex" duration="R+3 rnd" effect="WIL"/>
-	<SPELL name="Pass Ward" threads="-1" weavingdifficulty="13" reattuningdifficulty="21" castingdifficulty="6*" range="touch" duration="R weeks (s. text)" effect="WIL + 12/Mystic" effectarea="4-yard (2-hex) radius from center"/>
+	<SPELL name="Pack Bags" threads="1" weavingdifficulty="7" reattuningdifficulty="11" castingdifficulty="6" range="3 hex" duration="1 rnd" effect="WIL-1" bookref="PG p.188"/>
+	<SPELL name="Pain" threads="0" reattuningdifficulty="11" range="2 hex" duration="R+3 rnd" effect="WIL" bookref="PG p.188"/>
+	<SPELL name="Pass Ward" threads="-1" weavingdifficulty="13" reattuningdifficulty="21" castingdifficulty="6*" range="touch" duration="R weeks (s. text)" effect="WIL + 12/Mystic" effectarea="4-yard (2-hex) radius from center" bookref="PG p.188"/>
 	<SPELL name="Path Home" threads="2" weavingdifficulty="7" reattuningdifficulty="14" castingdifficulty="TSD*" range="30 hex" duration="R+20 min" effect="Summons spirit wings to guide the caster home" bookref="PG p.188"/>
 	<SPELL name="Pauper's Purse" threads="0" reattuningdifficulty="7" range="touch" duration="R+1 min" effect="WIL + 4" bookref="PG p.188"/>
-	<SPELL name="Peacebond" threads="3" weavingdifficulty="11" reattuningdifficulty="21" range="touch" duration="R+5 min" effect="WIL + 10/NA"/>
+	<SPELL name="Peacebond" threads="3" weavingdifficulty="11" reattuningdifficulty="21" range="touch" duration="R+5 min" effect="WIL + 10/NA" bookref="PG p.188"/>
 	<SPELL name="Perimeter Alarm" threads="3" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="6" range="touch" duration="R+4 hr" effect="WIL + 12" effectarea="10-yard (5-hex) radius circle from center" bookref="PG p.189"/>
 	<SPELL name="Pervert Emotion" threads="10" weavingdifficulty="23" reattuningdifficulty="29" range="touch" duration="R+1 days" effect="Twists the target's thoughts and emotions"/>
 	<SPELL name="Petrify" threads="4" weavingdifficulty="19" reattuningdifficulty="26" range="10 hex" duration="R days" effect="WIL+5"/>
@@ -314,96 +314,96 @@
 	<SPELL name="Plant Feast" threads="3" weavingdifficulty="6" reattuningdifficulty="16" castingdifficulty="6" range="12 hex" duration="R+1 hr" effect="WIL + 8" bookref="PG p.189"/>
 	<SPELL name="Plant Talk" threads="0" reattuningdifficulty="7" castingdifficulty="6" range="touch" duration="R+10 min" effect="Allows conversation with plant spirits" bookref="PG p.189"/>
 	<SPELL name="Pleasant Visions" threads="1" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="TSD*" range="12 hex" duration="R+3 min" effect="Creates visions that prevent targets from acting" bookref="PG p.189"/>
-	<SPELL name="Pocket Guardian" threads="3" weavingdifficulty="7" reattuningdifficulty="13" castingdifficulty="TSD*" range="self" duration="R+1 days" effect="Summons diminutive spirit guardian"/>
+	<SPELL name="Pocket Guardian" threads="3" weavingdifficulty="7" reattuningdifficulty="13" castingdifficulty="TSD*" range="self" duration="R+1 days" effect="Summons diminutive spirit guardian" bookref="PG p.189"/>
 	<SPELL name="Porter" threads="-1" weavingdifficulty="9" reattuningdifficulty="15" castingdifficulty="TSD*" range="15 yards" duration="R days" effect="WIL" bookref="PG p.190"/>
-	<SPELL name="Preserve" threads="2" weavingdifficulty="7" reattuningdifficulty="12" castingdifficulty="6" range="touch" duration="R days" effect="Stops target decaying" effectarea="2-yard (1-hex) radius circle of item touched"/>
+	<SPELL name="Preserve" threads="2" weavingdifficulty="7" reattuningdifficulty="12" castingdifficulty="6" range="touch" duration="R days" effect="Stops target decaying" effectarea="2-yard (1-hex) radius circle of item touched" bookref="PG p.190"/>
 	<SPELL name="Puddle Deep" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="6" range="3 hex" duration="R+3 min" effect="WIL/NA" effectarea="2-yard (1-hex) radius, 2-yard (1-hex) deep puddle" bookref="PG p.190"/>
 	<SPELL name="Purify Earth" threads="1" weavingdifficulty="5" reattuningdifficulty="13" castingdifficulty="6+*" range="5 hex" duration="1 rnd" effect="Purifies earth and soil" effectarea="2-yard (1-hex) radius of earth from center" bookref="PG p.190"/>
 	<SPELL name="Purify Forest" threads="-1" weavingdifficulty="28" reattuningdifficulty="33" castingdifficulty="TSD*" range="touch" duration="Permanent" effect="Cleanses astral space over forested areas" effectarea="10-mile radius from magician"/>
 	<SPELL name="Purify Water" threads="1" weavingdifficulty="5" reattuningdifficulty="13" castingdifficulty="6+*" range="touch" duration="1 rnd" effect="WIL + 8" bookref="PG p.190"/>
-	<SPELL name="Putrefy" threads="0" reattuningdifficulty="9" castingdifficulty="TSD*" range="12 hex" duration="1 rnd" effect="Putrefies food"/>
-	<SPELL name="Quicken Pace" threads="2" weavingdifficulty="10" reattuningdifficulty="13" range="touch" duration="R+4 hr" effect="WIL + 4"/>
-	<SPELL name="Rampage" threads="2" weavingdifficulty="12" reattuningdifficulty="19" range="5 hex" duration="Instant" effect="Sets off orkish gahad"/>
-	<SPELL name="Razor Orb" threads="2" weavingdifficulty="11" reattuningdifficulty="19" range="20 hex" duration="1 rnd" effect="WIL + 15/Physical"/>
+	<SPELL name="Putrefy" threads="0" reattuningdifficulty="9" castingdifficulty="TSD*" range="12 hex" duration="1 rnd" effect="Putrefies food" bookref="PG p.191"/>
+	<SPELL name="Quicken Pace" threads="2" weavingdifficulty="10" reattuningdifficulty="13" range="touch" duration="R+4 hr" effect="WIL + 4" bookref="PG p.191"/>
+	<SPELL name="Rampage" threads="2" weavingdifficulty="12" reattuningdifficulty="19" range="5 hex" duration="Instant" effect="Sets off orkish gahad" bookref="PG p.191"/>
+	<SPELL name="Razor Orb" threads="2" weavingdifficulty="11" reattuningdifficulty="19" range="20 hex" duration="1 rnd" effect="WIL + 15/Physical" bookref="PG p.191"/>
 	<SPELL name="Reattach Limb" threads="6" weavingdifficulty="15" reattuningdifficulty="15" range="touch" duration="1 rnd" effect="WIL/NA"/>
 	<SPELL name="Rebel Limb" threads="1" weavingdifficulty="16" reattuningdifficulty="18" range="12 hex" duration="R+10 rnd" effect="WIL + 4" bookref="PG p.191"/>
-	<SPELL name="Recovery" threads="3" weavingdifficulty="9" reattuningdifficulty="20" range="touch" duration="1 rnd" effect="WIL + 15"/>
-	<SPELL name="Relax" threads="3" weavingdifficulty="9" reattuningdifficulty="13" range="touch" duration="1 rnd" effect="WIL + 4"/>
+	<SPELL name="Recovery" threads="3" weavingdifficulty="9" reattuningdifficulty="20" range="touch" duration="1 rnd" effect="WIL + 15" bookref="PG p.191"/>
+	<SPELL name="Relax" threads="3" weavingdifficulty="9" reattuningdifficulty="13" range="touch" duration="1 rnd" effect="WIL + 4" bookref="PG p.191"/>
 	<SPELL name="Remove Shadow" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+5 min" effect="Removes target's shadow and reflection" bookref="PG p.192"/>
 	<SPELL name="Repair" threads="1" weavingdifficulty="9" reattuningdifficulty="16" castingdifficulty="6" range="touch" duration="R+3 months" effect="WIL + 5" bookref="PG p.192"/>
-	<SPELL name="Repair Lock" threads="3" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="Permanent" effect="WIL + 8"/>
-	<SPELL name="Repel Animal" threads="2" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="3 hex" duration="R+1 hr" effect="WIL + 6" effectarea="2-yard (1-hex) radius circle from center"/>
+	<SPELL name="Repair Lock" threads="3" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="Permanent" effect="WIL + 8" bookref="PG p.192"/>
+	<SPELL name="Repel Animal" threads="2" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="3 hex" duration="R+1 hr" effect="WIL + 6" effectarea="2-yard (1-hex) radius circle from center" bookref="PG p.192"/>
 	<SPELL name="Resist Cold" threads="0" reattuningdifficulty="7" range="touch" duration="R+6 min" effect="+3 Physical and Mystic Armor vs. cold" bookref="PG p.192"/>
 	<SPELL name="Resist Fire" threads="0" reattuningdifficulty="7" range="touch" duration="R+6 min" effect="+3 Physical and Mystic Armor vs. fire" bookref="PG p.192"/>
 	<SPELL name="Resist Poison" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="touch" duration="R hr" effect="+8 Toughness Test bonus vs. poison" bookref="PG p.192"/>
 	<SPELL name="Restore Pattern" threads="-1" weavingdifficulty="20" reattuningdifficulty="31" range="touch" duration="1 rnd" effect="WIL+15"/>
-	<SPELL name="Restrain Entity" threads="2" weavingdifficulty="14" reattuningdifficulty="20" range="5 hex" duration="R+3 min" effect="WIL + 12"/>
-	<SPELL name="Restrain Horror" threads="1" weavingdifficulty="13" reattuningdifficulty="19" range="5 hex" duration="R rnd" effect="WIL + 16"/>
+	<SPELL name="Restrain Entity" threads="2" weavingdifficulty="14" reattuningdifficulty="20" range="5 hex" duration="R+3 min" effect="WIL + 12" bookref="PG p.192"/>
+	<SPELL name="Restrain Horror" threads="1" weavingdifficulty="13" reattuningdifficulty="19" range="5 hex" duration="R rnd" effect="WIL + 16" bookref="PG p.193"/>
 	<SPELL name="Reversal of Passion" threads="2" weavingdifficulty="13" reattuningdifficulty="20" range="15 hex" duration="R+3 rnd" effect="WIL + 8" bookref="PG p.193"/>
-	<SPELL name="Reverse Withering" threads="3" weavingdifficulty="11" reattuningdifficulty="18" range="touch" duration="R+3 rnd" effect="Restores withered limb"/>
+	<SPELL name="Reverse Withering" threads="3" weavingdifficulty="11" reattuningdifficulty="18" range="touch" duration="R+3 rnd" effect="Restores withered limb" bookref="PG p.193"/>
 	<SPELL name="Revulsion" threads="4" weavingdifficulty="15" reattuningdifficulty="21" range="touch" duration="R+1 min" effect="WIL+13"/>
 	<SPELL name="Ricochet Attack" threads="-1" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="15 hex" duration="1 rnd" effect="WIL + 12/Physical" bookref="PG p.193"/>
 	<SPELL name="Root Trap" threads="0" reattuningdifficulty="20" castingdifficulty="6*" range="2 hex" duration="R+5 rnd" effect="WIL + 2" bookref="PG p.193"/>
 	<SPELL name="Rope Guide" threads="0" reattuningdifficulty="7" castingdifficulty="6" range="touch" duration="R+3 rnd" effect="WIL + 4" effectarea="30-yard (15-hex) radius from magician" bookref="PG p.193"/>
-	<SPELL name="Rope Ladder" threads="2" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="6" range="touch" duration="R min" effect="Create ladder from rope" effectarea="50-yard (25-hex) radius from magician"/>
+	<SPELL name="Rope Ladder" threads="2" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="6" range="touch" duration="R min" effect="Create ladder from rope" effectarea="50-yard (25-hex) radius from magician" bookref="PG p.194"/>
 	<SPELL name="Rust" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="6 hex" duration="1 rnd" effect="Reduces a weapon's Damage Step or an armor/shield's Physical Armor" bookref="PG p.194"/>
-	<SPELL name="Safe Opening" threads="2" weavingdifficulty="12" reattuningdifficulty="19" range="3 hex" duration="R+5 rnd" effect="WIL + 8"/>
-	<SPELL name="Sanctuary" threads="3" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R+10 min" effect="WIL + 8"/>
-	<SPELL name="Sculpt Darkness" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="5 hex" duration="R+4 min" effect="+4 bonus to stealth-based Action Tests"/>
-	<SPELL name="Seal" threads="1" weavingdifficulty="6" reattuningdifficulty="11" castingdifficulty="6" range="10 hex" duration="R+8 min" effect="WIL + 6"/>
+	<SPELL name="Safe Opening" threads="2" weavingdifficulty="12" reattuningdifficulty="19" range="3 hex" duration="R+5 rnd" effect="WIL + 8" bookref="PG p.194"/>
+	<SPELL name="Sanctuary" threads="3" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R+10 min" effect="WIL + 8" bookref="PG p.194"/>
+	<SPELL name="Sculpt Darkness" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="5 hex" duration="R+4 min" effect="+4 bonus to stealth-based Action Tests" bookref="PG p.194"/>
+	<SPELL name="Seal" threads="1" weavingdifficulty="6" reattuningdifficulty="11" castingdifficulty="6" range="10 hex" duration="R+8 min" effect="WIL + 6" bookref="PG p.194"/>
 	<SPELL name="See the Unseen" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+5 min" effect="+8 bonus to sight-based Perception Tests" bookref="PG p.194"/>
-	<SPELL name="Seeking Sight" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+1 min" effect="+3 bonus to ranged Attack Tests made against the target"/>
+	<SPELL name="Seeking Sight" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+1 min" effect="+3 bonus to ranged Attack Tests made against the target" bookref="PG p.194"/>
 	<SPELL name="Send Message" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="self*" duration="R rnd" effect="Passes a paper message to a chosen target" bookref="PG p.195"/>
-	<SPELL name="Sense Horror" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="self" duration="R+5 min" effect="WIL + 8" effectarea="30-yard (15-hex) radius from caster"/>
-	<SPELL name="Shadow Hunter" threads="3" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="2 hex" duration="R+1 hr" effect="Summons a hunter spirit"/>
-	<SPELL name="Shadow Meld" threads="2" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R min" effect="WIL+6"/>
+	<SPELL name="Sense Horror" threads="2" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="6" range="self" duration="R+5 min" effect="WIL + 8" effectarea="30-yard (15-hex) radius from caster" bookref="PG p.195"/>
+	<SPELL name="Shadow Hunter" threads="3" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="2 hex" duration="R+1 hr" effect="Summons a hunter spirit" bookref="PG p.195"/>
+	<SPELL name="Shadow Meld" threads="2" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R min" effect="WIL+6" bookref="PG p.195"/>
 	<SPELL name="Shadow Palace" threads="-1" weavingdifficulty="21" reattuningdifficulty="32" castingdifficulty="8" range="touch" duration="R days" effect="WIL+10"/>
 	<SPELL name="Shadow Spell" threads="2" weavingdifficulty="14" reattuningdifficulty="21" range="12 hex" duration="R+1 rnd" effect="WIL+12" bookref="PG p.195"/>
-	<SPELL name="Shadow Tether" threads="2" weavingdifficulty="16" reattuningdifficulty="19" range="10 hex" duration="R+10 min" effect="WIL+7"/>
-	<SPELL name="Shadow's Whisper" threads="1" weavingdifficulty="6" reattuningdifficulty="11" castingdifficulty="6" range="50 hex" duration="R+3 min" effect="WIL + 6"/>
-	<SPELL name="Shatter Lock" threads="2" weavingdifficulty="6" reattuningdifficulty="13" range="3 hex" duration="1 rnd" effect="WIL+8"/>
+	<SPELL name="Shadow Tether" threads="2" weavingdifficulty="16" reattuningdifficulty="19" range="10 hex" duration="R+10 min" effect="WIL+7" bookref="PG p.195"/>
+	<SPELL name="Shadow's Whisper" threads="1" weavingdifficulty="6" reattuningdifficulty="11" castingdifficulty="6" range="50 hex" duration="R+3 min" effect="WIL + 6" bookref="PG p.196"/>
+	<SPELL name="Shatter Lock" threads="2" weavingdifficulty="6" reattuningdifficulty="13" range="3 hex" duration="1 rnd" effect="WIL+8" bookref="PG p.196"/>
 	<SPELL name="Shatter Pattern" threads="-1" weavingdifficulty="TSD" reattuningdifficulty="23" range="touch" duration="varies*" effect="WIL+15/NA"/>
 	<SPELL name="Shattering Stone" threads="1" weavingdifficulty="11" reattuningdifficulty="21" range="5 hex" duration="1 rnd" effect="WIL + 6/Physical" effectarea="4-yard (2-hex) radius from center of impact" bookref="PG p.196"/>
-	<SPELL name="Shield Mist" threads="1" weavingdifficulty="6" reattuningdifficulty="13" range="self" duration="R+3 rnd" effect="WIL+6"/>
+	<SPELL name="Shield Mist" threads="1" weavingdifficulty="6" reattuningdifficulty="13" range="self" duration="R+3 rnd" effect="WIL+6" bookref="PG p.196"/>
 	<SPELL name="Shield of Warping" threads="1" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="R+5 rnd" effect="WIL + 6" bookref="PG p.196"/>
 	<SPELL name="Shield Willow" threads="2" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="6" range="touch" duration="R min" effect="+6 to shield's Shatter Threshold and +1 to its Physical and Mystic Armor" bookref="PG p.196"/>
 	<SPELL name="Shift Skin" threads="2" weavingdifficulty="17" reattuningdifficulty="18" range="touch" duration="R rnd" effect="WIL+4/NA"/>
 	<SPELL name="Shift Walls" threads="5" weavingdifficulty="15" reattuningdifficulty="21" castingdifficulty="TSD*" range="10 hex" duration="R+3 hr" effect="WIL+9"/>
 	<SPELL name="Silence Metal" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="touch" duration="R+1 hr" effect="WIL + 7" bookref="PG p.196"/>
-	<SPELL name="Silent Converse" threads="1" weavingdifficulty="5" reattuningdifficulty="13" castingdifficulty="TSD*" range="50 hex" duration="R+5 min" effect="Allows whispered conversation"/>
+	<SPELL name="Silent Converse" threads="1" weavingdifficulty="5" reattuningdifficulty="13" castingdifficulty="TSD*" range="50 hex" duration="R+5 min" effect="Allows whispered conversation" bookref="PG p.197"/>
 	<SPELL name="Silent Darkness" threads="3" weavingdifficulty="15" reattuningdifficulty="22" castingdifficulty="TSD*" range="self" duration="R+5 rnd" effect="WIL+8" effectarea="10-yard (5-hex) radius from magician"/>
 	<SPELL name="Silent Stampede" threads="6" weavingdifficulty="11" reattuningdifficulty="20" range="touch" duration="R hr" effect="Silences sound" bookref="PG p.197"/>
 	<SPELL name="Silver Shadow" threads="3" weavingdifficulty="12" reattuningdifficulty="19" range="20 hex" duration="R+1 hr" effect="WIL + 3" bookref="PG p.197"/>
 	<SPELL name="Sky Lattice" threads="3" weavingdifficulty="8" reattuningdifficulty="17" castingdifficulty="6" range="120 yards (60 hexes)" duration="R+10 min" effect="WIL + 3" bookref="PG p.197"/>
-	<SPELL name="Sleep" threads="2" weavingdifficulty="9" reattuningdifficulty="17" range="12 hex" duration="R+10 rnd" effect="Puts target to sleep"/>
-	<SPELL name="Slow" threads="2" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="Halves movement; -5 penalty to Dexterity-based Tests"/>
+	<SPELL name="Sleep" threads="2" weavingdifficulty="9" reattuningdifficulty="17" range="12 hex" duration="R+10 rnd" effect="Puts target to sleep" bookref="PG p.197"/>
+	<SPELL name="Slow" threads="2" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="Halves movement; -5 penalty to Dexterity-based Tests" bookref="PG p.197"/>
 	<SPELL name="Slow Metal Weapon" threads="1" weavingdifficulty="9" reattuningdifficulty="13" range="12 hex" duration="R+8 rnd" effect="-3 Damage Test penalty" bookref="PG p.197"/>
 	<SPELL name="Small Slayer" threads="1" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="TSD*" range="2 hex" duration="R+3 min" effect="Summons a poisonous creature" bookref="PG p.197"/>
 	<SPELL name="Smoke Cloud" threads="1" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+8 rnd" effect="Causes a Complete Darkness penalty" effectarea="4-yard (2-hex) radius around magician" bookref="PG p.198"/>
 	<SPELL name="Snuff" threads="2" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="1 rnd" effect="WIL + 5" effectarea="2-yard (1-hex) radius around center" bookref="PG p.198"/>
-	<SPELL name="Solo Flight" threads="2" weavingdifficulty="7" reattuningdifficulty="18" range="self" duration="R+15 min" effect="Grants flight"/>
+	<SPELL name="Solo Flight" threads="2" weavingdifficulty="7" reattuningdifficulty="18" range="self" duration="R+15 min" effect="Grants flight" bookref="PG p.198"/>
 	<SPELL name="Soothe the Savage Beast" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="2 hex" duration="R+3 minutes (s. text)" effect="Hypnotizes animal into passivity" bookref="PG p.198"/>
-	<SPELL name="Soul Armor" threads="1" weavingdifficulty="7" reattuningdifficulty="17" range="touch" duration="R+15 min" effect="+5 Mystic Armor"/>
+	<SPELL name="Soul Armor" threads="1" weavingdifficulty="7" reattuningdifficulty="17" range="touch" duration="R+15 min" effect="+5 Mystic Armor" bookref="PG p.198"/>
 	<SPELL name="Soul Trap" threads="6" weavingdifficulty="13" reattuningdifficulty="23" range="touch" duration="R hr" effect="Traps deceased's soul"/>
-	<SPELL name="Spell Cage" threads="3" weavingdifficulty="11" reattuningdifficulty="19" range="20 hex" duration="R+8 rnd" effect="-5 penalty to Spellcasting Tests" effectarea="4-yard (2-hex) tall by 4-yard (2-hex) thick by 4-yard (2-hex) wide cage"/>
+	<SPELL name="Spell Cage" threads="3" weavingdifficulty="11" reattuningdifficulty="19" range="20 hex" duration="R+8 rnd" effect="-5 penalty to Spellcasting Tests" effectarea="4-yard (2-hex) tall by 4-yard (2-hex) thick by 4-yard (2-hex) wide cage" bookref="PG p.198"/>
 	<SPELL name="Spell Fusion" threads="4" weavingdifficulty="16" reattuningdifficulty="26" castingdifficulty="6; TSD; 12 (s. text)" range="20 hex" duration="3 rnd" effect="WIL+3" effectarea="20-yard (10-hex) radius from magician"/>
-	<SPELL name="Spell Snatcher" threads="2" weavingdifficulty="14" reattuningdifficulty="24" range="12 hex" duration="1 round (s. text)" effect="WIL + 10"/>
-	<SPELL name="Spellstore" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="6" range="touch" duration="R hr" effect="WIL + 6"/>
-	<SPELL name="Spirit Bolt" threads="1" weavingdifficulty="13" reattuningdifficulty="23" range="12 hex" duration="1 rnd" effect="WIL + 12/Mystic"/>
-	<SPELL name="Spirit Dart" threads="0" reattuningdifficulty="7" range="5 hex" duration="1 rnd" effect="WIL + 2/Mystic"/>
-	<SPELL name="Spirit Double" threads="1" weavingdifficulty="11" reattuningdifficulty="19" castingdifficulty="10" range="self" duration="R+10 rnd" effect="Creates spirit double of the magician"/>
-	<SPELL name="Spirit Grip" threads="0" reattuningdifficulty="7" range="touch" duration="1 rnd" effect="WIL + 6/Physical"/>
-	<SPELL name="Spirit Portal" threads="4" weavingdifficulty="14" reattuningdifficulty="19" castingdifficulty="6" range="touch" duration="10 x Rank min" effect="WIL + 10 (s. text)"/>
-	<SPELL name="Spirit Servant" threads="3" weavingdifficulty="8" reattuningdifficulty="20" range="touch" duration="R+3 days" effect="Summons a spirit servant"/>
+	<SPELL name="Spell Snatcher" threads="2" weavingdifficulty="14" reattuningdifficulty="24" range="12 hex" duration="1 round (s. text)" effect="WIL + 10" bookref="PG p.199"/>
+	<SPELL name="Spellstore" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="6" range="touch" duration="R hr" effect="WIL + 6" bookref="PG p.199"/>
+	<SPELL name="Spirit Bolt" threads="1" weavingdifficulty="13" reattuningdifficulty="23" range="12 hex" duration="1 rnd" effect="WIL + 12/Mystic" bookref="PG p.199"/>
+	<SPELL name="Spirit Dart" threads="0" reattuningdifficulty="7" range="5 hex" duration="1 rnd" effect="WIL + 2/Mystic" bookref="PG p.199"/>
+	<SPELL name="Spirit Double" threads="1" weavingdifficulty="11" reattuningdifficulty="19" castingdifficulty="10" range="self" duration="R+10 rnd" effect="Creates spirit double of the magician" bookref="PG p.199"/>
+	<SPELL name="Spirit Grip" threads="0" reattuningdifficulty="7" range="touch" duration="1 rnd" effect="WIL + 6/Physical" bookref="PG p.199"/>
+	<SPELL name="Spirit Portal" threads="4" weavingdifficulty="14" reattuningdifficulty="19" castingdifficulty="6" range="touch" duration="10 x Rank min" effect="WIL + 10 (s. text)" bookref="PG p.200"/>
+	<SPELL name="Spirit Servant" threads="3" weavingdifficulty="8" reattuningdifficulty="20" range="touch" duration="R+3 days" effect="Summons a spirit servant" bookref="PG p.200"/>
 	<SPELL name="Spirit Tempest" threads="4" weavingdifficulty="16" reattuningdifficulty="23" range="15 hex" duration="R rnd" effect="WIL+5/Mystic" effectarea="10 x 10 x 10-yard (5 x 5 x 5-hex) area placed in Range"/>
 	<SPELL name="Spirits of Death's Sea" threads="3" weavingdifficulty="10" reattuningdifficulty="17" castingdifficulty="TSD*" range="touch" duration="R hr" effect="WIL + 6" bookref="PG p.200"/>
-	<SPELL name="Spiritual Guidance" threads="3" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="30 rnd" effect="Summons a spirit guide to answer a question"/>
+	<SPELL name="Spiritual Guidance" threads="3" weavingdifficulty="8" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="30 rnd" effect="Summons a spirit guide to answer a question" bookref="PG p.200"/>
 	<SPELL name="Spotlight" threads="2" weavingdifficulty="11" reattuningdifficulty="20" castingdifficulty="TSD*" range="20 hex" duration="R+7 rnd" effect="WIL + 8" effectarea="2-yard (1-hex) radius circle from center" bookref="PG p.200"/>
 	<SPELL name="Stampede" threads="4" weavingdifficulty="12" reattuningdifficulty="17" range="24 hex" duration="R+1 rnd" effect="Causes targets to become Harried" bookref="PG p.201"/>
-	<SPELL name="Star Shower" threads="1" weavingdifficulty="11" reattuningdifficulty="17" range="self" duration="1 rnd" effect="WIL + 9/Physical" effectarea="4-yard (2-hex) radius sphere from magician"/>
-	<SPELL name="Steal Strength" threads="3" weavingdifficulty="13" reattuningdifficulty="23" castingdifficulty="6*" range="touch" duration="R+5 min" effect="WIL + 4"/>
+	<SPELL name="Star Shower" threads="1" weavingdifficulty="11" reattuningdifficulty="17" range="self" duration="1 rnd" effect="WIL + 9/Physical" effectarea="4-yard (2-hex) radius sphere from magician" bookref="PG p.201"/>
+	<SPELL name="Steal Strength" threads="3" weavingdifficulty="13" reattuningdifficulty="23" castingdifficulty="6*" range="touch" duration="R+5 min" effect="WIL + 4" bookref="PG p.201"/>
 	<SPELL name="Stench" threads="3" weavingdifficulty="12" reattuningdifficulty="22" range="8 hex" duration="R+3 rnd" effect="WIL + 6" effectarea="4-yard (2-hex) radius sphere from center" bookref="PG p.201"/>
-	<SPELL name="Step Through Shadow" threads="3" weavingdifficulty="12" reattuningdifficulty="24" range="self" duration="R+3 rnd" effect="Creates astral passageway"/>
+	<SPELL name="Step Through Shadow" threads="3" weavingdifficulty="12" reattuningdifficulty="24" range="self" duration="R+3 rnd" effect="Creates astral passageway" bookref="PG p.201"/>
 	<SPELL name="Sterilize Object" threads="1" weavingdifficulty="5" reattuningdifficulty="14" castingdifficulty="6" range="5 hex" duration="1 rnd" effect="WIL + 7" bookref="PG p.201"/>
 	<SPELL name="Stick Together" threads="1" weavingdifficulty="5" reattuningdifficulty="13" range="5 hex" duration="R+3 min" effect="WIL + 7" bookref="PG p.202"/>
 	<SPELL name="Stone Cage" threads="1" weavingdifficulty="11" reattuningdifficulty="19" range="12 hex" duration="R+10 rnd" effect="Traps target in a cage of stone" effectarea="4-yard (2-hex) tall by 4-yard (2-hex) thick by 4-yard (2-hex) wide cage" bookref="PG p.202"/>
@@ -411,67 +411,67 @@
 	<SPELL name="Stop Right There" threads="0" reattuningdifficulty="9" range="12 hex" duration="R rnd" effect="WIL + 3" bookref="PG p.202"/>
 	<SPELL name="Storm Manacles" threads="2" weavingdifficulty="12" reattuningdifficulty="18" range="12 hex" duration="R+12 rnd" effect="WIL + 5/Mystic" bookref="PG p.202"/>
 	<SPELL name="Strong Pattern" threads="6" weavingdifficulty="18" reattuningdifficulty="23" range="touch" duration="R+7 years" effect="WIL+12"/>
-	<SPELL name="Study Thread" threads="2" weavingdifficulty="11" reattuningdifficulty="15" range="5 hex" duration="R min" effect="WIL + 5"/>
+	<SPELL name="Study Thread" threads="2" weavingdifficulty="11" reattuningdifficulty="15" range="5 hex" duration="R min" effect="WIL + 5" bookref="PG p.202"/>
 	<SPELL name="Suffocating Paste" threads="2" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="TSD*" range="5 hex" duration="R+6 rnd" effect="WIL + 3/NA" bookref="PG p.202"/>
 	<SPELL name="Suffocation" threads="3" weavingdifficulty="7" reattuningdifficulty="18" castingdifficulty="TSD*" range="24 hex" duration="R+3 rnd" effect="WIL + 8/Mystic" effectarea="4-yard (2-hex) radius sphere from center" bookref="PG p.203"/>
-	<SPELL name="Summon Bone Ghost" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="9" range="2 hex" duration="R+1 min" effect="Summons a bone spirit"/>
+	<SPELL name="Summon Bone Ghost" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="9" range="2 hex" duration="R+1 min" effect="Summons a bone spirit" bookref="PG p.203"/>
 	<SPELL name="Sunlight" threads="2" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+5 min" effect="Creates daylight" effectarea="10-yard (5-hex) radius sphere from magician" bookref="PG p.203"/>
 	<SPELL name="Switch" threads="5" weavingdifficulty="11" reattuningdifficulty="18" range="2 hex" duration="R min" effect="Switches magician's appearance with target" bookref="PG p.203"/>
 	<SPELL name="Tailor" threads="2" weavingdifficulty="6" reattuningdifficulty="7" range="touch" duration="R x 10 min" effect="WIL + 4" bookref="PG p.203"/>
 	<SPELL name="Talent Shredder" threads="1" weavingdifficulty="17" reattuningdifficulty="19" range="50 hex" duration="1 rnd" effect="WIL"/>
 	<SPELL name="Tap Horror Karma" threads="2" weavingdifficulty="18" reattuningdifficulty="20" range="25 hex" duration="2 rnd" effect="WIL+10"/>
-	<SPELL name="Target Portal" threads="4" weavingdifficulty="10" reattuningdifficulty="19" range="1,000 yards (s. text)" duration="R min" effect="WIL + 7"/>
-	<SPELL name="Tears of the Scourge" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="2 hex" duration="R rnd" effect="WIL + 4" effectarea="4-yard (2-hex) radius sphere from center"/>
+	<SPELL name="Target Portal" threads="4" weavingdifficulty="10" reattuningdifficulty="19" range="1,000 yards (s. text)" duration="R min" effect="WIL + 7" bookref="PG p.203"/>
+	<SPELL name="Tears of the Scourge" threads="2" weavingdifficulty="11" reattuningdifficulty="21" range="2 hex" duration="R rnd" effect="WIL + 4" effectarea="4-yard (2-hex) radius sphere from center" bookref="PG p.203"/>
 	<SPELL name="Tell Tale" threads="3" weavingdifficulty="12" reattuningdifficulty="15" range="touch" duration="1 min" effect="Gains the answer to a question"/>
-	<SPELL name="Thorny Retreat" threads="1" weavingdifficulty="11" reattuningdifficulty="13" castingdifficulty="6" range="8 hex" duration="R+7 rnd" effect="WIL + 2" effectarea="4-yard (2-hex) tall, 2-yard (1-hex) thick sections"/>
+	<SPELL name="Thorny Retreat" threads="1" weavingdifficulty="11" reattuningdifficulty="13" castingdifficulty="6" range="8 hex" duration="R+7 rnd" effect="WIL + 2" effectarea="4-yard (2-hex) tall, 2-yard (1-hex) thick sections" bookref="PG p.204"/>
 	<SPELL name="Thrive" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="8" range="touch" duration="1 rnd" effect="Accelerates plant growth" effectarea="2-yard (1-hex) radius circle from center" bookref="PG p.204"/>
 	<SPELL name="Throne of Air" threads="2" weavingdifficulty="8" reattuningdifficulty="17" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 7" bookref="PG p.204"/>
 	<SPELL name="Thunderclap" threads="3" weavingdifficulty="13" reattuningdifficulty="17" range="self" duration="2 rnd" effect="-8 penalty to Action Tests; causes deafness" effectarea="2-yard (1-hex) radius sphere from magician" bookref="PG p.204"/>
 	<SPELL name="Thundering Walls" threads="3" weavingdifficulty="15" reattuningdifficulty="21" castingdifficulty="6" range="80 yards (40 hexes)" duration="R+7 rnd" effect="WIL+9/Mystic"/>
 	<SPELL name="Time Flies" threads="4" weavingdifficulty="10" reattuningdifficulty="23" castingdifficulty="6" range="touch" duration="R hr" effect="WIL + 3" effectarea="24-yard (12-hex) radius of light source" bookref="PG p.204"/>
 	<SPELL name="Tossing Earth" threads="3" weavingdifficulty="11" reattuningdifficulty="17" castingdifficulty="6" range="20 hex" duration="R+1 hr" effect="WIL + 1" effectarea="20-yard (10-hex) radius circle from center" bookref="PG p.205"/>
-	<SPELL name="Translator Spirit" threads="4" weavingdifficulty="11" reattuningdifficulty="19" castingdifficulty="TSD*" range="2 hex" duration="R x 10 min" effect="WIL + 5"/>
+	<SPELL name="Translator Spirit" threads="4" weavingdifficulty="11" reattuningdifficulty="19" castingdifficulty="TSD*" range="2 hex" duration="R x 10 min" effect="WIL + 5" bookref="PG p.205"/>
 	<SPELL name="Tree Merge" threads="3" weavingdifficulty="16" reattuningdifficulty="23" range="self" duration="R+6 hr" effect="Merges caster's body with a tree to hide him" bookref="PG p.205"/>
-	<SPELL name="Triangulate" threads="0" reattuningdifficulty="10" range="500 yards" duration="1 rnd" effect="Determines distance to target"/>
+	<SPELL name="Triangulate" threads="0" reattuningdifficulty="10" range="500 yards" duration="1 rnd" effect="Determines distance to target" bookref="PG p.205"/>
 	<SPELL name="True Blazing Fists of Rage" threads="0" reattuningdifficulty="16" range="touch" duration="R+4 rnd" effect="WIL + 2/Physical" bookref="PG p.205"/>
 	<SPELL name="True Ephemeral Bolt" threads="0" reattuningdifficulty="8" range="12 hex" duration="1 rnd" effect="WIL + 3/Physical" bookref="PG p.205"/>
-	<SPELL name="Trust" threads="1" weavingdifficulty="13" reattuningdifficulty="17" range="10 hex" duration="R min" effect="WIL + 3"/>
+	<SPELL name="Trust" threads="1" weavingdifficulty="13" reattuningdifficulty="17" range="10 hex" duration="R min" effect="WIL + 3" bookref="PG p.205"/>
 	<SPELL name="Twisted Tongues" threads="1" weavingdifficulty="14" reattuningdifficulty="18" castingdifficulty="TSD*" range="12 hex" duration="R+3 min" effect="Jumbles targets' speech" bookref="PG p.206"/>
-	<SPELL name="Undead Struggle" threads="0" reattuningdifficulty="7" range="2 hex" duration="R+3 rnd" effect="WIL + 4/Mystic"/>
+	<SPELL name="Undead Struggle" threads="0" reattuningdifficulty="7" range="2 hex" duration="R+3 rnd" effect="WIL + 4/Mystic" bookref="PG p.206"/>
 	<SPELL name="Uneven Ground" threads="1" weavingdifficulty="11" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="R+4 rnd" effect="Penalizes to enemy character actions" effectarea="10-yard (5-hex) radius circle from magician" bookref="PG p.206"/>
 	<SPELL name="Unmask" threads="1" weavingdifficulty="10" reattuningdifficulty="20" range="8 yards (4 hexes)" duration="R+3 min" effect="WIL + 6" bookref="PG p.206"/>
 	<SPELL name="Unnatural Life" threads="-1" weavingdifficulty="19" reattuningdifficulty="25" range="touch*" duration="R years" effect="Restores target to unnatural life"/>
 	<SPELL name="Unseen Voices" threads="0" reattuningdifficulty="7" range="20 hex" duration="R+15 rnd" effect="Creates unseen illusory voices" bookref="PG p.206"/>
 	<SPELL name="Vertigo" threads="3" weavingdifficulty="12" reattuningdifficulty="16" range="15 hex" duration="R+7 rnd" effect="-6 penalty to Action Tests" bookref="PG p.206"/>
-	<SPELL name="Viewpoint" threads="1" weavingdifficulty="9" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="R+6 min" effect="WIL + 9"/>
-	<SPELL name="Vines" threads="1" weavingdifficulty="6" reattuningdifficulty="15" range="10 hex" duration="R+3 rnd" effect="WIL + 4"/>
-	<SPELL name="Visions of Death" threads="1" weavingdifficulty="9" reattuningdifficulty="17" range="20 hex" duration="R+6 rnd" effect="Immobilizes target with horror and fear"/>
-	<SPELL name="Visit Death" threads="4" weavingdifficulty="11" reattuningdifficulty="24" range="touch" duration="R+1 days" effect="WIL + 4"/>
+	<SPELL name="Viewpoint" threads="1" weavingdifficulty="9" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="R+6 min" effect="WIL + 9" bookref="PG p.207"/>
+	<SPELL name="Vines" threads="1" weavingdifficulty="6" reattuningdifficulty="15" range="10 hex" duration="R+3 rnd" effect="WIL + 4" bookref="PG p.207"/>
+	<SPELL name="Visions of Death" threads="1" weavingdifficulty="9" reattuningdifficulty="17" range="20 hex" duration="R+6 rnd" effect="Immobilizes target with horror and fear" bookref="PG p.207"/>
+	<SPELL name="Visit Death" threads="4" weavingdifficulty="11" reattuningdifficulty="24" range="touch" duration="R+1 days" effect="WIL + 4" bookref="PG p.207"/>
 	<SPELL name="Void Wave" threads="4" weavingdifficulty="15" reattuningdifficulty="22" range="50 hex" duration="1 rnd" effect="WIL+13/Mystic"/>
-	<SPELL name="Wake-Up Call" threads="4" weavingdifficulty="6" reattuningdifficulty="15" range="touch" duration="Up to 24 hr" effect="Sets alarm to go off at specified time"/>
+	<SPELL name="Wake-Up Call" threads="4" weavingdifficulty="6" reattuningdifficulty="15" range="touch" duration="Up to 24 hr" effect="Sets alarm to go off at specified time" bookref="PG p.207"/>
 	<SPELL name="Walk Through" threads="1" weavingdifficulty="13" reattuningdifficulty="17" range="touch" duration="R+6 rnd" effect="Creates temporary pathway through an obstacle" bookref="PG p.207"/>
 	<SPELL name="Walking Dead" threads="4" weavingdifficulty="13" reattuningdifficulty="19" castingdifficulty="TSD*" range="touch" duration="R days" effect="WIL"/>
-	<SPELL name="Wall of Bones" threads="4" weavingdifficulty="14" reattuningdifficulty="21" castingdifficulty="7" range="touch" duration="R+3 min" effect="Creates a wall of bones" effectarea="4-yard (2-hex) high, 2-yard (1-hex) thick, 2-yard (1-hex) wide wall section"/>
-	<SPELL name="Wall of Darkness" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="6" range="2 hex" duration="R+3 rnd" effect="WIL + 6" effectarea="10-yard (5-hex) high, 2-yard (1-hex) thick, 10-yard (5-hex) wide wall"/>
+	<SPELL name="Wall of Bones" threads="4" weavingdifficulty="14" reattuningdifficulty="21" castingdifficulty="7" range="touch" duration="R+3 min" effect="Creates a wall of bones" effectarea="4-yard (2-hex) high, 2-yard (1-hex) thick, 2-yard (1-hex) wide wall section" bookref="PG p.207"/>
+	<SPELL name="Wall of Darkness" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="6" range="2 hex" duration="R+3 rnd" effect="WIL + 6" effectarea="10-yard (5-hex) high, 2-yard (1-hex) thick, 10-yard (5-hex) wide wall" bookref="PG p.208"/>
 	<SPELL name="Wall of Unfire" threads="3" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="6" range="12 hex" duration="R+3 min" effect="WIL + 8/Mystic" effectarea="4-yard (2-hex) high, 2-yard (1-hex) thick, 2-yard (1-hex) wide wall" bookref="PG p.208"/>
-	<SPELL name="Wall Walker" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+10 rnd" effect="WIL + 5"/>
+	<SPELL name="Wall Walker" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+10 rnd" effect="WIL + 5" bookref="PG p.208"/>
 	<SPELL name="Warp Astral Space" threads="3" weavingdifficulty="17" reattuningdifficulty="23" castingdifficulty="15" range="touch" duration="R+5 rnd" effect="Warps astral space; 8 penalty to Spellcasting Tests through or in the warped area" effectarea="50-yard (25-hex) radius sphere from point of casting"/>
 	<SPELL name="Water Wall" threads="4" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="50 yards" duration="R+1 hr" effect="WIL+10" effectarea="2-yard (1-hex) tall, 2-yard (1-hex) wide sections"/>
-	<SPELL name="Water Wings" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R hr" effect="Waterproofs windling wings"/>
+	<SPELL name="Water Wings" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R hr" effect="Waterproofs windling wings" bookref="PG p.208"/>
 	<SPELL name="Waterspout" threads="2" weavingdifficulty="14" reattuningdifficulty="21" range="1 mile" duration="1 rnd" effect="WIL + 15/Physical" bookref="PG p.208"/>
 	<SPELL name="Weapon Back" threads="-1" weavingdifficulty="5" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R weeks (s. text)" effect="WIL + 6" effectarea="100 yards (50 hexes)" bookref="PG p.208"/>
 	<SPELL name="Weather Change" threads="5" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="6" range="touch" duration="R+10 hr" effect="WIL+8" effectarea="10-mile radius from magician"/>
 	<SPELL name="Weather Cloak" threads="1" weavingdifficulty="6" reattuningdifficulty="9" range="touch" duration="R x 10 min" effect="WIL + 3" bookref="PG p.208"/>
 	<SPELL name="Whirlwind" threads="2" weavingdifficulty="12" reattuningdifficulty="18" castingdifficulty="6*" range="12 hex" duration="R+6 rnd" effect="WIL + 9/Physical" effectarea="4-yard (2-hex) radius from center" bookref="PG p.209"/>
-	<SPELL name="Whisper Through the Night" threads="1" weavingdifficulty="11" reattuningdifficulty="18" range="5 hex" duration="R+1 rnd" effect="WIL + 6"/>
+	<SPELL name="Whisper Through the Night" threads="1" weavingdifficulty="11" reattuningdifficulty="18" range="5 hex" duration="R+1 rnd" effect="WIL + 6" bookref="PG p.209"/>
 	<SPELL name="Winds of Deflection" threads="1" weavingdifficulty="8" reattuningdifficulty="15" castingdifficulty="TSD*" range="self" duration="R+5 rnd" effect="WIL + 6" bookref="PG p.209"/>
 	<SPELL name="Wipe Matrices" threads="-1" weavingdifficulty="12" reattuningdifficulty="22" range="30 hex" duration="1 rnd" effect="WIL+12"/>
-	<SPELL name="Wit Friend" threads="2" weavingdifficulty="8" reattuningdifficulty="19" range="touch" duration="R+10 min" effect="WIL + 5"/>
-	<SPELL name="Wither Away" threads="5" weavingdifficulty="11" reattuningdifficulty="21" range="touch" duration="R months" effect="WIL/Mystic"/>
-	<SPELL name="Wither Limb" threads="3" weavingdifficulty="8" reattuningdifficulty="19" range="12 hex" duration="1 rnd" effect="WIL + 8/Mystic"/>
-	<SPELL name="Wizard Mark" threads="2" weavingdifficulty="6" reattuningdifficulty="15" range="touch" duration="R+1 hr" effect="Places astral mark on target"/>
-	<SPELL name="Wizard's Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="R+5 min" effect="WIL + 8"/>
+	<SPELL name="Wit Friend" threads="2" weavingdifficulty="8" reattuningdifficulty="19" range="touch" duration="R+10 min" effect="WIL + 5" bookref="PG p.209"/>
+	<SPELL name="Wither Away" threads="5" weavingdifficulty="11" reattuningdifficulty="21" range="touch" duration="R months" effect="WIL/Mystic" bookref="PG p.209"/>
+	<SPELL name="Wither Limb" threads="3" weavingdifficulty="8" reattuningdifficulty="19" range="12 hex" duration="1 rnd" effect="WIL + 8/Mystic" bookref="PG p.209"/>
+	<SPELL name="Wizard Mark" threads="2" weavingdifficulty="6" reattuningdifficulty="15" range="touch" duration="R+1 hr" effect="Places astral mark on target" bookref="PG p.209"/>
+	<SPELL name="Wizard's Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="17" range="touch" duration="R+5 min" effect="WIL + 8" bookref="PG p.210"/>
 	<SPELL name="Wood Blade" threads="4" weavingdifficulty="22" reattuningdifficulty="28" castingdifficulty="6" range="touch" duration="R+8 hr" effect="WIL+16/Physical"/>
-	<SPELL name="Wound Mask" threads="3" weavingdifficulty="13" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="WIL + 10"/>
+	<SPELL name="Wound Mask" threads="3" weavingdifficulty="13" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="WIL + 10" bookref="PG p.210"/>
 	<SPELL name="You Got Me" threads="1" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="6" range="self" duration="R+6 min" effect="+6 bonus to Charisma-based Tests" bookref="PG p.210"/>
 </SPELLS>
