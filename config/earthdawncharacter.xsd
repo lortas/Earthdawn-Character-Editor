@@ -68,6 +68,7 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="TALENTS" type="TALENTS_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELLS" type="SPELLS_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGE" type="edt:CHARACTERLANGUAGE_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MAGICITEM" type="edt:MAGICITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
