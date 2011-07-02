@@ -32,16 +32,16 @@ import de.earthdawn.data.*;
  * @author lortas
  */
 public class ECEWorker {
-	public final ApplicationProperties PROPERTIES=ApplicationProperties.create();
-	public final String durabilityTalentName = PROPERTIES.getDurabilityName();
-	public final String questorTalentName = PROPERTIES.getQuestorTalentName();
-	public final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
-	public final boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-	public final boolean OptionalRule_ShowDefaultSkills=PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES);
-	public final boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
-	public final boolean OptionalRule_autoincrementDiciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
-	public final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
-	public final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public static final String durabilityTalentName = PROPERTIES.getDurabilityName();
+	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
+	public static final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
+	public static final boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_ShowDefaultSkills=PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_autoincrementDiciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CALCULATEDLEGENDPOINTSType calculatedLP = null;
 
@@ -186,9 +186,6 @@ public class ECEWorker {
 		// Prüfe ob Talente realigned weren müssen.
 		character.realignOptionalTalents();
 		character.updateRealignedTalents();
-		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
-		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
 		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
 		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
@@ -203,6 +200,9 @@ public class ECEWorker {
 			namegivertalents.put(questorTalentName, talent);
 		}
 		int maxKarmaStepBonus=0;
+		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
+		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
+		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
 		for( Integer disciplinenumber : allTalents.keySet() ) {
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
 			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber-1);
@@ -368,19 +368,20 @@ public class ECEWorker {
 		defense.setSocial(defense.getSocial()+disciplineDefense.getSocial());
 		defense.setSpell(defense.getSpell()+disciplineDefense.getSpell());
 
-		initiative.setModification(initiative.getModification()+getDisciplineInitiative(diciplineCircle));
-		initiative.setStep(initiative.getBase()+initiative.getModification());
-		initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
-
 		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
 		recovery.setDice(PROPERTIES.step2Dice(recovery.getStep()));
 
-		// ** SPELLS **
+		character.readjustInitiativeModifikator(getDisciplineInitiative(diciplineCircle));
+
+		// Ermittele den Namen der ersten Diszipline, wenn vorhanden
 		String firstDisciplineName = "";
 		if( ! allDisciplines.isEmpty() ) {
 			DISCIPLINEType firstDiscipline = allDisciplines.get(0);
 			if( firstDiscipline != null ) firstDisciplineName=firstDiscipline.getName();
 		}
+		// ** SPELLS **
+		// Bestimme die wieviele Zaubersprüche bei der Charactererschaffung kostenlos dazu kamen
+		// und wieviel ein SpellAbility pro Kreis pro Disziplin kostenlos dazukamen.
 		int startingSpellLegendPointCost = 0;
 		if( OptionalRule_SpellLegendPointCost ) {
 			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
@@ -396,7 +397,7 @@ public class ECEWorker {
 		}
 		HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 		for( SPELLSType spells : character.getAllSpells() ) {
-			if( spells.getDiscipline().equals(firstDisciplineName) && OptionalRule_SpellLegendPointCost )  {
+			if( spells.getDiscipline().equals(firstDisciplineName) && OptionalRule_SpellLegendPointCost ) {
 				// Wenn die erste Disziplin eine Zauberdisciplin ist und die Optionale Regel, dass Zaubersprüche LP Kosten
 				// gewählt wurde, dann reduziere die ZauberLPKosten um die StartZauber
 				calculatedLP.setSpells(calculatedLP.getSpells()-startingSpellLegendPointCost);
@@ -416,6 +417,7 @@ public class ECEWorker {
 					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
 					spell.setThreads(spelldef.getThreads());
 					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+					spell.setBookref(spelldef.getBookref());
 				}
 				if( OptionalRule_SpellLegendPointCost ) {
 					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle
@@ -689,11 +691,12 @@ public class ECEWorker {
 	private static List<Integer> getDisciplineSpellAbility(HashMap<String,Integer> diciplineCircle) {
 		List<Integer> result = new ArrayList<Integer>();
 		for( String discipline : diciplineCircle.keySet() ) {
-			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			DISCIPLINE d = PROPERTIES.getDisziplin(discipline);
 			if( d == null ) continue;
 			int circlenr = 0;
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
 				circlenr++;
+				if( circlenr > diciplineCircle.get(discipline) ) break;
 				for( DISZIPINABILITYType spell : circle.getSPELLABILITY() ) {
 					for(int i=0; i<spell.getCount(); i++) result.add(circlenr);
 				}
