@@ -919,6 +919,16 @@ public class ECEPdfExporter {
 			counterBloodCharms++;
 		}
 
+		int counterDescription=0;
+		for( String description : wrapString(60,character.getDESCRIPTION()) ) {
+			acroFields.setField( "ShortDescription."+counterDescription, description );
+			counterDescription++;
+			if( counterDescription > 7 ) {
+				System.err.println("Character description to long. Only first 8 lines were displayed.");
+				break;
+			}
+		}
+
 		stamper.close();
 	}
 
