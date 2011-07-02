@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="TALENTS" type="{http://earthdawn.com/character}TALENTS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELLS" type="{http://earthdawn.com/character}SPELLS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}SKILL_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="LANGUAGE" type="{http://earthdawn.com/datatypes}CHARACTERLANGUAGE_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="MAGICITEM" type="{http://earthdawn.com/datatypes}MAGICITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="PATTERNITEM" type="{http://earthdawn.com/datatypes}PATTERNITEM_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -79,6 +80,7 @@ import javax.xml.bind.annotation.XmlType;
     "talents",
     "spells",
     "skill",
+    "language",
     "weapon",
     "magicitem",
     "patternitem",
@@ -122,6 +124,8 @@ public class EDCHARACTER {
     protected List<SPELLSType> spells;
     @XmlElement(name = "SKILL", namespace = "http://earthdawn.com/character")
     protected List<SKILLType> skill;
+    @XmlElement(name = "LANGUAGE", namespace = "http://earthdawn.com/character")
+    protected List<CHARACTERLANGUAGEType> language;
     @XmlElement(name = "WEAPON", namespace = "http://earthdawn.com/character")
     protected List<WEAPONType> weapon;
     @XmlElement(name = "MAGICITEM", namespace = "http://earthdawn.com/character")
@@ -468,6 +472,35 @@ public class EDCHARACTER {
             skill = new ArrayList<SKILLType>();
         }
         return this.skill;
+    }
+
+    /**
+     * Gets the value of the language property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the language property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLANGUAGE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CHARACTERLANGUAGEType }
+     * 
+     * 
+     */
+    public List<CHARACTERLANGUAGEType> getLANGUAGE() {
+        if (language == null) {
+            language = new ArrayList<CHARACTERLANGUAGEType>();
+        }
+        return this.language;
     }
 
     /**

@@ -578,4 +578,9 @@
 		<xs:attribute name="talents" type="xs:int" default="0"/>
 		<xs:attribute name="skills" type="xs:int" default="0"/>
 	</xs:complexType>
+	<xs:complexType name="CHARACTERLANGUAGE_type">
+		<xs:attribute name="language" type="xs:string" use="required"/>
+		<xs:attribute name="speak" type="yesno_type" default="no"/>
+		<xs:attribute name="readwrite" type="yesno_type" default="no"/>
+	</xs:complexType>
 </xs:schema>
