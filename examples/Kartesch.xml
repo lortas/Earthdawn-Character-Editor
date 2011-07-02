@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
+<ns4:EDCHARACTER name="Kartesch Mienenkaer" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns="http://earthdawn.com/datatypes" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/characteristics" xmlns:ns12="http://earthdawn.com/items" xmlns:ns6="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/discipline" xmlns:ns10="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/spell" xmlns:ns11="http://earthdawn.com/help" xmlns:ns2="http://earthdawn.com/names" xmlns:ns4="http://earthdawn.com/character" xmlns:ns3="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ns4:APPEARANCE race="Dwarf" skin="hellbraun" hair="Feuerrot" eyes="Tiefschwarz" weight="63" height="123" age="31" gender="male"/>
+    <ns4:ATTRIBUTE cost="9" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="6" racevalue="10" name="DEX" dice="2d6" step="8"/>
+    <ns4:ATTRIBUTE cost="9" currentvalue="19" lpincrease="1" basevalue="18" generationvalue="6" racevalue="12" name="STR" dice="2d6" step="8"/>
+    <ns4:ATTRIBUTE cost="5" currentvalue="20" lpincrease="3" basevalue="17" generationvalue="4" racevalue="13" name="TOU" dice="2d6" step="8"/>
+    <ns4:ATTRIBUTE cost="3" currentvalue="13" lpincrease="0" basevalue="13" generationvalue="3" racevalue="10" name="PER" dice="d10" step="6"/>
+    <ns4:ATTRIBUTE cost="0" currentvalue="10" lpincrease="0" basevalue="10" generationvalue="0" racevalue="10" name="WIL" dice="d8" step="5"/>
+    <ns4:ATTRIBUTE cost="-1" currentvalue="7" lpincrease="0" basevalue="7" generationvalue="-1" racevalue="8" name="CHA" dice="d6" step="4"/>
+    <ns4:DEFENSE social="7" spell="9" physical="14"/>
+    <ns4:PROTECTION penalty="1" mysticarmor="10" physicalarmor="13">
+        <ARMOR penalty="0" mysticarmor="0" physicalarmor="0" virtual="yes" used="yes" weight="0.0" name="natural Armor"/>
+        <ARMOR edn="16" penalty="0" mysticarmor="6" physicalarmor="7" virtual="yes" kind="armor" location="self" used="yes" weight="45.0" name="Thread Crystal Ringlet: Kolan"/>
+        <ARMOR edn="0" penalty="1" mysticarmor="4" physicalarmor="6" virtual="yes" kind="armor" location="self" used="yes" weight="10.0" name="Thread Espagra-Scale Cloak: Rodak"/>
+    </ns4:PROTECTION>
+    <ns4:HEALTH damage="0">
+        <RECOVERY testsperday="4" dice="2d6" step="8"/>
+        <UNCONSCIOUSNESS value="65" adjustment="29" base="36"/>
+        <DEATH value="83" adjustment="39" base="44"/>
+        <WOUNDS threshold="13"/>
+    </ns4:HEALTH>
+    <ns4:MOVEMENT ground="6" flight="0"/>
+    <ns4:INITIATIVE modification="-1" base="8" dice="d12" step="7"/>
+    <ns4:CARRYING carrying="230" lifting="460"/>
+    <ns4:DISCIPLINE circle="6" name="Warrior">
+        <DISCIPLINEBONUS bonus="Can spend Karma for Strength-only Test" circle="4"/>
+        <DISCIPLINEBONUS bonus="Ability: Battle Rites" circle="5"/>
+        <DISCIPLINEBONUS bonus="Can spend Karma for Dexterity-only Test" circle="6"/>
+    </ns4:DISCIPLINE>
+    <ns4:TALENTS discipline="Warrior">
+        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.75" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+            <RANK lpcost="5000" bonus="3" rank="7" startrank="2" dice="d12+d10+d8" step="18"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.62" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+            <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="2d12" step="14"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.85" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+            <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="2d12" step="14"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.86" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
+            <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="2d12" step="14"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+            <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="d10" step="6"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="2" isinitiative="no" bookref="PG p.61" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
+            <RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="3" isinitiative="no" bookref="PG p.86" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
+            <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="4" isinitiative="no" bookref="PG p.83" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+            <RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="5" isinitiative="no" bookref="PG p.83" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
+            <RANK lpcost="5200" bonus="0" rank="6" dice="d10+d8" step="11"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:DISZIPLINETALENT circle="6" isinitiative="no" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
+            <RANK lpcost="200" bonus="0" rank="1" dice="d8+d6" step="9"/>
+            <TEACHER/>
+        </ns4:DISZIPLINETALENT>
+        <ns4:OPTIONALTALENT circle="1" isinitiative="yes" bookref="PG p.59" karma="no" limitation="" bonus="-1" attribute="DEX" strain="1" action="free" name="Air Dance">
+            <RANK lpcost="1600" bonus="-1" rank="5" startrank="2" dice="2d10" step="12"/>
+            <TEACHER/>
+        </ns4:OPTIONALTALENT>
+        <ns4:OPTIONALTALENT circle="2" isinitiative="no" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
+            <RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
+            <TEACHER/>
+        </ns4:OPTIONALTALENT>
+        <ns4:OPTIONALTALENT circle="3" isinitiative="no" bookref="PG p.66" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+            <RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
+            <TEACHER/>
+        </ns4:OPTIONALTALENT>
+        <ns4:OPTIONALTALENT circle="4" isinitiative="yes" bookref="PG p.84" karma="no" limitation="" bonus="-1" attribute="na" strain="1" action="free" name="Tiger Spring">
+            <RANK lpcost="1900" bonus="-1" rank="5" dice="d6" step="4"/>
+            <TEACHER/>
+        </ns4:OPTIONALTALENT>
+        <ns4:OPTIONALTALENT circle="5" isinitiative="no" bookref="PG p.65" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="standard" name="Disarm">
+            <RANK lpcost="1000" bonus="0" rank="3" dice="d10+d8" step="11"/>
+            <TEACHER/>
+        </ns4:OPTIONALTALENT>
+        <ns4:OPTIONALTALENT circle="6" isinitiative="no" bookref="PG p.69" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
+            <RANK lpcost="1000" bonus="0" rank="3" dice="d10+d8" step="11"/>
+            <TEACHER/>
+        </ns4:OPTIONALTALENT>
+        <ns4:OPTIONALTALENT circle="0" isinitiative="no" bookref="PG p.64" karma="no" limitation="(#)" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
+            <RANK bonus="1" rank="0" dice="d8+d6" step="9"/>
+            <TEACHER byversatility="no" teachercircle="2" talentcircle="2" name="K'thar"/>
+        </ns4:OPTIONALTALENT>
+    </ns4:TALENTS>
+    <ns4:SKILL isinitiative="no" bookref="PG p.100" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
+        <RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.102" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+        <RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.102" karma="no" limitation="Ork" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+        <RANK lpcost="0" bonus="0" rank="5" startrank="5" dice="d10+d8" step="11"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.95" default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Trap">
+        <RANK lpcost="300" bonus="0" rank="2" startrank="1" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.93" karma="no" limitation="Runenschnitzen auf Waffen" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
+        <RANK lpcost="300" bonus="0" rank="2" startrank="1" dice="d10" step="6"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.96" default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="sustained" name="Disarm Trap">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.102" default="no" karma="no" bonus="0" attribute="STR" strain="1" action="free" name="Surprise Strike">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.103" default="no" karma="no" bonus="0" attribute="DEX" strain="1" action="free" name="Trap Initiative">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8+d6" step="9"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.98" karma="no" limitation="Rassenkunde Ork" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.98" karma="no" limitation="Altertümliche Waffen" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.98" default="no" karma="no" limitation="Legenden und Helden" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.101" default="no" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Search">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.103" default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
+    </ns4:SKILL>
+    <ns4:SKILL isinitiative="no" bookref="PG p.97" default="yes" karma="no" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d8" step="5"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Conversation">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="1" action="standard" name="Distract">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Etiquette">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Flirting">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Intimidation">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d8" step="5"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Seduction">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="2" action="standard" name="Slough Blame">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d6" step="4"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+        <RANK lpcost="0" bonus="0" rank="0" dice="2d6" step="8"/>
+    </ns4:SKILL>
+    <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
+        <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
+    </ns4:SKILL>
+    <ns4:WEAPON timesforged="6" size="4" strengthmin="17" damagestep="14" weight="6.0" name="Troll Battle Axe mit Lindwurmgriff (beidhändig)"/>
+    <ns4:WEAPON timesforged="3" size="5" strengthmin="13" damagestep="10" weight="6.0" name="Battle Axe (beidhändig)"/>
+    <ns4:WEAPON timesforged="3" size="3" strengthmin="12" damagestep="8" weight="4.0" name="Broadsword"/>
+    <ns4:WEAPON longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe"/>
+    <ns4:BLOODCHARMITEM depatterningrate="0" blooddamage="3" effect="Bei Tod Erholungsprobe+5" enchantingdifficultynumber="0" location="self" used="no" weight="0.0" name="Letzte Rettung"/>
+    <ns4:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 for attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="0.0" name="Desperate Blow"/>
+    <ns4:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 for attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="0.0" name="Desperate Blow"/>
+    <ns4:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" enchantingdifficultynumber="16" kind="armor" used="yes" weight="45.0" name="Thread Crystal Ringlet: Kolan">
+        <description>Made from carved, interlocking rings of living crystal, this armor protects the character's entire body except the legs below the knee</description>
+        <THREADRANK effect="get max forged" lpcost="100">
+            <ARMOR edn="16" penalty="2" mysticarmor="6" physicalarmor="6" virtual="yes" kind="armor" location="self" used="yes" weight="45.0" name="Thread Crystal Ringlet: Kolan"/>
+        </THREADRANK>
+        <THREADRANK effect="initiative penalty -1" lpcost="200">
+            <ARMOR edn="16" penalty="1" mysticarmor="6" physicalarmor="6" virtual="yes" kind="armor" location="self" used="yes" weight="45.0" name="Thread Crystal Ringlet: Kolan"/>
+        </THREADRANK>
+        <THREADRANK effect="physical armor +1" lpcost="300">
+            <ARMOR edn="16" penalty="1" mysticarmor="6" physicalarmor="7" virtual="yes" kind="armor" location="self" used="yes" weight="45.0" name="Thread Crystal Ringlet: Kolan"/>
+        </THREADRANK>
+        <THREADRANK effect="initiative penalty -1" lpcost="500">
+            <ARMOR edn="16" penalty="0" mysticarmor="6" physicalarmor="7" virtual="yes" kind="armor" location="self" used="yes" weight="45.0" name="Thread Crystal Ringlet: Kolan"/>
+        </THREADRANK>
+    </ns4:THREADITEM>
+    <ns4:THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="armor" location="self" used="yes" weight="10.0" name="Thread Espagra-Scale Cloak: Rodak">
+        <description>-</description>
+        <THREADRANK effect="New Rank" lpcost="100">
+            <ARMOR edn="0" penalty="1" mysticarmor="2" physicalarmor="5" virtual="yes" kind="armor" location="self" used="yes" weight="10.0" name="Thread Espagra-Scale Cloak: Rodak"/>
+        </THREADRANK>
+        <THREADRANK effect="New Rank" lpcost="200">
+            <ARMOR edn="0" penalty="1" mysticarmor="2" physicalarmor="6" virtual="yes" kind="armor" location="self" used="yes" weight="10.0" name="Thread Espagra-Scale Cloak: Rodak"/>
+        </THREADRANK>
+        <THREADRANK effect="New Rank" lpcost="300">
+            <ARMOR edn="0" penalty="1" mysticarmor="3" physicalarmor="6" virtual="yes" kind="armor" location="self" used="yes" weight="10.0" name="Thread Espagra-Scale Cloak: Rodak"/>
+        </THREADRANK>
+        <THREADRANK effect="New Rank" lpcost="500">
+            <ARMOR edn="0" penalty="1" mysticarmor="4" physicalarmor="6" virtual="yes" kind="armor" location="self" used="yes" weight="10.0" name="Thread Espagra-Scale Cloak: Rodak"/>
+        </THREADRANK>
+    </ns4:THREADITEM>
+    <ns4:THREADITEM lpcostgrowth="9" spelldefense="18" maxthreads="2" weaventhreadrank="1" kind="ring" weight="0.0" name="Feran">
+        <description>Ring der Genauigkeit</description>
+        <THREADRANK effect="+1 Angriff mit der Waffenhand" lpcost="300">
+            <TALENT name="Melee Weapons"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Angriff mit der Waffenhand" lpcost="500">
+            <TALENT name="Melee Weapons"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Schadenstufe der geführten Waffe" lpcost="800"/>
+        <THREADRANK effect="+1 Angriff mit der Waffenhand" lpcost="1300">
+            <TALENT name="Melee Weapons"/>
+        </THREADRANK>
+    </ns4:THREADITEM>
+    <ns4:THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" kind="ring" weight="0.0" name="Pharmier">
+        <description>Ring (physical)</description>
+        <THREADRANK effect="+1 Social Defense" lpcost="100">
+            <DEFENSE kind="social"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Spell Defense" lpcost="200">
+            <DEFENSE kind="spell"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Social Defense" lpcost="300">
+            <DEFENSE kind="social"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Spell Defense" lpcost="500">
+            <DEFENSE kind="spell"/>
+        </THREADRANK>
+    </ns4:THREADITEM>
+    <ns4:THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="cloth" weight="0.0" name="K'thar">
+        <description>Stiefel</description>
+        <THREADRANK effect="+1 Physical Defense" lpcost="100">
+            <DEFENSE kind="physical"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Physical Defense" lpcost="200">
+            <DEFENSE kind="physical"/>
+        </THREADRANK>
+        <THREADRANK effect="Klettern +1" lpcost="300">
+            <TALENT name="Climbing"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Physical Defense" lpcost="500">
+            <DEFENSE kind="physical"/>
+        </THREADRANK>
+    </ns4:THREADITEM>
+    <ns4:THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="2" kind="cloth" weight="0.0" name="Kila">
+        <description>Handschuhe des Nahkampfes</description>
+        <THREADRANK effect="+1 Angriff mit der Waffenhand" lpcost="100">
+            <TALENT name="Melee Weapons"/>
+        </THREADRANK>
+        <THREADRANK effect="+1 Angriff mit der Waffenhand" lpcost="200">
+            <TALENT name="Melee Weapons"/>
+        </THREADRANK>
+    </ns4:THREADITEM>
+    <ns4:THREADITEM lpcostgrowth="5" spelldefense="18" maxthreads="2" weaventhreadrank="1" kind="ring" weight="0.0" name="Brika">
+        <description>Silberner Ring</description>
+        <THREADRANK effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" lpcost="200"/>
+    </ns4:THREADITEM>
+    <ns4:COINS gold="2" silver="1800" copper="134" weight="26.7" name="beutel1"/>
+    <ns4:ITEM weight="3.0" name="Zwergenwintermantel (Kälte +4)"/>
+    <ns4:ITEM weight="1.0" name="Reisekleidung (weiche Stiefel, Hemd, Gürtel, Hose, Mantel)"/>
+    <ns4:ITEM weight="1.0" name="2 Geldbeutel"/>
+    <ns4:ITEM weight="1.0" name="Rucksack"/>
+    <ns4:ITEM weight="1.0" name="großer Sack"/>
+    <ns4:ITEM weight="1.0" name="Schlafsack"/>
+    <ns4:ITEM weight="1.0" name="Wasserbeutel"/>
+    <ns4:ITEM weight="25.0" name="Elfenseil, 50 Ellen"/>
+    <ns4:ITEM weight="5.0" name="Strickleiter 5 Meter"/>
+    <ns4:ITEM weight="1.0" name="Lichtquarz, klein"/>
+    <ns4:ITEM weight="1.0" name="Kerze"/>
+    <ns4:ITEM weight="1.0" name="Feuerstein"/>
+    <ns4:ITEM weight="1.0" name="Fackel"/>
+    <ns4:ITEM weight="1.0" name="7 Tage Nahrung"/>
+    <ns4:ITEM weight="1.0" name="Beutel Teekräuter"/>
+    <ns4:ITEM weight="1.0" name="3 Heiltrank"/>
+    <ns4:ITEM weight="1.0" name="10 Erholungstränke"/>
+    <ns4:ITEM weight="1.0" name="1 Wiederbelebungssalbe"/>
+    <ns4:ITEM weight="1.0" name="Empfehlungsrolle von Stadthalter Carrassin"/>
+    <ns4:ITEM weight="1.0" name="Streitross"/>
+    <ns4:ITEM location="self" used="yes" weight="1.0" name="kleines Fass Zwergenbier 5L"/>
+    <ns4:ITEM location="self" used="yes" weight="0.0" name="Kommandantenbrief"/>
+    <ns4:ITEM weight="1.0" name="4 Edelsteine a 50 Silbermünzen"/>
+    <ns4:KARMA maxmodificator="0" max="24" current="20" dice="d6" step="4">
+        <KARMAPOINTS when="" comment="from karmarituals" value="120" type="+"/>
+        <KARMAPOINTS when="" comment="spend during adventures" value="100" type="-"/>
+    </ns4:KARMA>
+    <ns4:DESCRIPTION>Titel: Kommandant Kartesch Mienenkaer Held von Ardanyan und Karahsin, Dämonentöter von Karahsin, Lindwumrtöter am Hort vom Großdrachen Eisschwinge, Eisschwinges Erzdrachenamulettträger</ns4:DESCRIPTION>
+    <ns4:RACEABILITES>Heat Sight</ns4:RACEABILITES>
+    <ns4:COMMENT>1 Orichalcum an Fillis Hintern tätowiert</ns4:COMMENT>
+    <ns4:CALCULATEDLEGENDPOINTS total="57900" magicitems="5200" karma="1200" spells="0" skills="600" knacks="0" optionaltalents="9300" disciplinetalents="32400" attributes="9200">
+        <ns4:USEDSTARTRANKS skills="14" talents="0"/>
+    </ns4:CALCULATEDLEGENDPOINTS>
+    <ns4:EXPERIENCE reputation="+2" renown="11" currentlegendpoints="12907" totallegendpoints="70807">
+        <LEGENDPOINTS when="anno Tobaco" comment="LP aus Spielrunde" value="1250" type="+"/>
+        <LEGENDPOINTS when="14.10.2004" comment="LP aus Spielrunde" value="200" type="+"/>
+        <LEGENDPOINTS when="11.11.2004" comment="LP aus Spielrunde" value="150" type="+"/>
+        <LEGENDPOINTS when="20.01.2005" comment="LP aus Spielrunde" value="200" type="+"/>
+        <LEGENDPOINTS when="17.02.2005" comment="LP aus Spielrunde" value="235" type="+"/>
+        <LEGENDPOINTS when="03.03.2005" comment="LP aus Spielrunde" value="436" type="+"/>
+        <LEGENDPOINTS when="07.04.2005" comment="LP aus Spielrunde" value="500" type="+"/>
+        <LEGENDPOINTS when="21.04.2005" comment="LP aus Spielrunde" value="200" type="+"/>
+        <LEGENDPOINTS when="12.05.2005" comment="LP aus Spielrunde" value="200" type="+"/>
+        <LEGENDPOINTS when="09.06.2005" comment="LP aus Spielrunde" value="300" type="+"/>
+        <LEGENDPOINTS when="16.06.2005" comment="LP aus Spielrunde" value="300" type="+"/>
+        <LEGENDPOINTS when="30.06.2005" comment="LP aus Spielrunde" value="300" type="+"/>
+        <LEGENDPOINTS when="07.07.2005" comment="LP aus Spielrunde" value="300" type="+"/>
+        <LEGENDPOINTS when="11.08.2005" comment="LP aus Spielrunde" value="250" type="+"/>
+        <LEGENDPOINTS when="16.09.2005" comment="LP aus Spielrunde" value="400" type="+"/>
+        <LEGENDPOINTS when="22.09.2005" comment="LP aus Spielrunde" value="400" type="+"/>
+        <LEGENDPOINTS when="13.10.2005" comment="LP aus Spielrunde" value="240" type="+"/>
+        <LEGENDPOINTS when="27.10.2005" comment="LP aus Spielrunde" value="240" type="+"/>
+        <LEGENDPOINTS when="15.12.2005" comment="LP aus Spielrunde" value="320" type="+"/>
+        <LEGENDPOINTS when="19.01.2006" comment="LP aus Spielrunde" value="500" type="+"/>
+        <LEGENDPOINTS when="09.03.2006" comment="LP aus Spielrunde" value="370" type="+"/>
+        <LEGENDPOINTS when="07.04.2006" comment="LP aus Spielrunde" value="523" type="+"/>
+        <LEGENDPOINTS when="20.04.2006" comment="LP aus Spielrunde" value="1500" type="+"/>
+        <LEGENDPOINTS when="18.05.2006" comment="LP aus Spielrunde" value="500" type="+"/>
+        <LEGENDPOINTS when="08.06.2006" comment="LP aus Spielrunde" value="500" type="+"/>
+        <LEGENDPOINTS when="09.11.2006" comment="LP aus Spielrunde" value="600" type="+"/>
+        <LEGENDPOINTS when="23.11.2006" comment="LP aus Spielrunde" value="650" type="+"/>
+        <LEGENDPOINTS when="08.03.2007" comment="LP aus Spielrunde" value="532" type="+"/>
+        <LEGENDPOINTS when="12.04.2007" comment="LP aus Spielrunde" value="671" type="+"/>
+        <LEGENDPOINTS when="10.05.2007" comment="LP aus Spielrunde" value="700" type="+"/>
+        <LEGENDPOINTS when="21.06.2007" comment="LP aus Spielrunde" value="1201" type="+"/>
+        <LEGENDPOINTS when="29.11.2007" comment="LP aus Spielrunde" value="1111" type="+"/>
+        <LEGENDPOINTS when="24.01.2008" comment="LP aus Spielrunde" value="1349" type="+"/>
+        <LEGENDPOINTS when="07.02.2008" comment="LP aus Spielrunde" value="1000" type="+"/>
+        <LEGENDPOINTS when="20.03.2008" comment="LP aus Spielrunde" value="1221" type="+"/>
+        <LEGENDPOINTS when="12.03.2009" comment="LP aus Spielrunde" value="1500" type="+"/>
+        <LEGENDPOINTS when="09.04.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <LEGENDPOINTS when="09.04.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <LEGENDPOINTS when="23.04.2009" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <LEGENDPOINTS when="06.08.2009" comment="LP aus Spielrunde" value="1400" type="+"/>
+        <LEGENDPOINTS when="27.08.2009" comment="LP aus Spielrunde" value="1700" type="+"/>
+        <LEGENDPOINTS when="05.11.2009" comment="LP aus Spielrunde" value="3333" type="+"/>
+        <LEGENDPOINTS when="14.01.2010" comment="LP aus Spielrunde" value="1234" type="+"/>
+        <LEGENDPOINTS when="18.02.2010" comment="LP aus Spielrunde" value="1300" type="+"/>
+        <LEGENDPOINTS when="15.04.2010" comment="LP aus Spielrunde" value="1658" type="+"/>
+        <LEGENDPOINTS when="22.04.2010" comment="LP aus Spielrunde" value="3210" type="+"/>
+        <LEGENDPOINTS when="13.05.2010" comment="LP aus Spielrunde" value="2500" type="+"/>
+        <LEGENDPOINTS when="17.06.2010" comment="LP aus Spielrunde" value="1518" type="+"/>
+        <LEGENDPOINTS when="26.08.2010" comment="LP aus Spielrunde" value="1200" type="+"/>
+        <LEGENDPOINTS when="23.09.2010" comment="LP aus Spielrunde" value="2827" type="+"/>
+        <LEGENDPOINTS when="04.11.2010" comment="LP aus Spielrunde" value="1714" type="+"/>
+        <LEGENDPOINTS when="18.01.2011" comment="Berechnete verbrauchte LPs Attributes" value="9200" type="-"/>
+        <LEGENDPOINTS when="18.01.2011" comment="Berechnete verbrauchte LPs Disciplinetalents" value="32400" type="-"/>
+        <LEGENDPOINTS when="18.01.2011" comment="Berechnete verbrauchte LPs Optionaltalents" value="9300" type="-"/>
+        <LEGENDPOINTS when="18.01.2011" comment="Berechnete verbrauchte LPs Karma" value="1200" type="-"/>
+        <LEGENDPOINTS when="2011-06-02" comment="extra LP für Hydra/Ring Finale" value="7000" type="+"/>
+        <LEGENDPOINTS when="2011-06-02 17:50:00" comment="Berechnete verbrauchte LPs Skills" value="600" type="-"/>
+        <LEGENDPOINTS when="2011-06-02 18:29:49" comment="Berechnete verbrauchte LPs MagicItems" value="3000" type="-"/>
+        <LEGENDPOINTS when="2011-06-16 16:47:15" comment="Magicitems-LP spent (Armor)" value="2200" type="-"/>
+        <LEGENDPOINTS when="20.01.2011" comment="LP aus Spielrunde" value="5140" type="+"/>
+        <LEGENDPOINTS when="02.06.2011" comment="LP aus Spielrunde" value="2300" type="+"/>
+        <LEGENDPOINTS when="09.09.2011" comment="LP aus Spielrunde" value="5024" type="+"/>
+        <LEGENDPOINTS when="16.06.2011" comment="LP aus Spielrunde" value="2300" type="+"/>
+    </ns4:EXPERIENCE>
+</ns4:EDCHARACTER>
