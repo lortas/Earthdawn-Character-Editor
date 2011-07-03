@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeMap;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -14,11 +13,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.CAPABILITYType;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import de.earthdawn.data.YesnoType;
 
 public class EDCapabilitySelectDialog extends JDialog {
 
@@ -106,7 +106,9 @@ public class EDCapabilitySelectDialog extends JDialog {
 	public void initCapabilityList(boolean talent){
 		ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
 		if( talent ) {
-			for (CAPABILITYType capability : capabilities.getTalents()) capabilityMap.put(capability.getName(),capability);
+			for( CAPABILITYType capability : capabilities.getTalents() ) {
+				if( ! capability.getNotbyversatility().equals(YesnoType.YES) ) capabilityMap.put(capability.getName(),capability);
+			}
 		} else {
 			for (CAPABILITYType capability : capabilities.getSkills()) capabilityMap.put(capability.getName(),capability);
 		}

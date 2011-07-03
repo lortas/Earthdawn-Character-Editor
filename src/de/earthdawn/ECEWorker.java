@@ -17,6 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +45,7 @@ public class ECEWorker {
 	public static final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CALCULATEDLEGENDPOINTSType calculatedLP = null;
+	private static PrintStream errorout = System.err;
 
 	/**
 	 * Verabeiten eines Charakters.
@@ -93,7 +95,7 @@ public class ECEWorker {
 			if( OptionalRule_LegendpointsForAttributeIncrease ) calculatedLP.setAttributes(calculatedLP.getAttributes()+PROPERTIES.getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
 		}
 		if( karmaMaxBonus <0 ) {
-			System.err.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
+			errorout.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
 		}
 
 		// **DEFENSE**
@@ -136,7 +138,7 @@ public class ECEWorker {
 		TALENTType karmaritualTalent = null;
 		final String KARMARITUAL = PROPERTIES.getKarmaritualName(); 
 		if( KARMARITUAL == null ) {
-			System.err.println("Karmaritual talent name is not defined for selected language.");
+			errorout.println("Karmaritual talent name is not defined for selected language.");
 		} else {
 			for( TALENTType talent : character.getTalentByName(KARMARITUAL) ) {
 				if( talent.getRealigned() == 0 ) {
@@ -145,7 +147,7 @@ public class ECEWorker {
 				}
 			}
 			if(karmaritualTalent == null ) {
-				System.err.println("No Karmaritual ("+KARMARITUAL+") could be found.");
+				errorout.println("No Karmaritual ("+KARMARITUAL+") could be found.");
 			}
 		}
 		int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
@@ -207,13 +209,8 @@ public class ECEWorker {
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
 			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber-1);
 			TALENTSType currentTalents = allTalents.get(disciplinenumber);
-			for( TALENTType talent : currentTalents.getDISZIPLINETALENT() ) {
-				RANKType rank = talent.getRANK();
-				if( rank == null ) {
-					rank = new RANKType();
-					talent.setRANK(rank);
-				}
-			}
+			for( TALENTType talent : currentTalents.getDISZIPLINETALENT() ) ensureRankAndTeacher(talent);
+			for( TALENTType talent : currentTalents.getOPTIONALTALENT() ) ensureRankAndTeacher(talent);
 			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
 			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getDISZIPLINETALENT(), true);
 			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getOPTIONALTALENT(), false);
@@ -407,7 +404,7 @@ public class ECEWorker {
 			for( SPELLType spell : spells.getSPELL() ) {
 				SPELLDEFType spelldef = spelllist.get(spell.getName());
 				if( spelldef == null ) {
-					System.err.println("Unknown Spell '"+spell.getName()+"' in grimour found. Spell is left unmodified in grimour.");
+					errorout.println("Unknown Spell '"+spell.getName()+"' in grimour found. Spell is left unmodified in grimour.");
 				} else {
 					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
 					spell.setDuration(spelldef.getDuration());
@@ -438,7 +435,7 @@ public class ECEWorker {
 			for( int rank=0; rank<item.getWeaventhreadrank(); rank++ ) {
 				THREADRANKType threadrank = item.getTHREADRANK().get(rank);
 				if( threadrank == null ) {
-					System.err.println("Undefined Threadrank for "+item.getName()+" for rank "+rank );
+					errorout.println("Undefined Threadrank for "+item.getName()+" for rank "+rank );
 					continue;
 				}
 				for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
@@ -507,6 +504,11 @@ public class ECEWorker {
 		return charakter;
 	}
 
+	public void ensureRankAndTeacher(TALENTType talent) {
+		if( talent.getRANK() == null ) talent.setRANK(new RANKType());
+		if( talent.getTEACHER() == null ) talent.setTEACHER(new TALENTTEACHERType());
+	}
+
 	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
 		int totallpcost=0;
 		int startranks=calculatedLP.getUSEDSTARTRANKS().getTalents();
@@ -543,13 +545,17 @@ public class ECEWorker {
 			startranks+=rank.getStartrank();
 			ATTRIBUTENameType attr = talent.getAttribute();
 			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr.value()));
-			if( talent.getName().equals(durabilityTalentName)) durabilityTalents.add(talent);
+			String talentname = talent.getName();
+			if( talentname.equals(durabilityTalentName)) durabilityTalents.add(talent);
 			calculateKnacks(disciplinenumber, talent, rank.getRank());
-			if( namegivertalents.containsKey(talent.getName()) ) {
-				namegivertalents.remove(talent.getName());
+			if( namegivertalents.containsKey(talentname) ) {
+				namegivertalents.remove(talentname);
 			}
-			if( defaultOptionalTalents.containsKey(talent.getName()) ) {
-				defaultOptionalTalents.remove(talent.getName());
+			if( defaultOptionalTalents.containsKey(talentname) ) {
+				defaultOptionalTalents.remove(talentname);
+			}
+			if( talent.getNotbyversatility().equals(YesnoType.YES) && teacher.getByversatility().equals(YesnoType.YES) ) {
+				errorout.println("Talent '"+talentname+"' was lernead by versatility, but is not allowed to be learned by versatility.");
 			}
 		}
 		calculatedLP.getUSEDSTARTRANKS().setTalents(startranks);
@@ -584,7 +590,7 @@ public class ECEWorker {
 		if( (karmaritualTalent != null) && (karmaritualTalent.getRANK() != null) ) {
 			karma.setMax( karmaMaxBonus + (karmaModifier * karmaritualTalent.getRANK().getRank()) );
 		} else {
-			System.err.println("No karmaritual talent found, skipping maximal karma calculation.");
+			errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
 		}
 		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
 		karma.setCurrent(k.get(0)-k.get(1));
@@ -594,7 +600,7 @@ public class ECEWorker {
 	private void calculateKnacks(int disciplinenumber, TALENTType talent, int rank) {
 		for( KNACKType knack : talent.getKNACK() ) {
 			if( knack.getMinrank() > rank ) {
-				System.err.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
+				errorout.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
 						+rank+" vs. "+knack.getMinrank());
 			}
 			int lp = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
@@ -708,7 +714,7 @@ public class ECEWorker {
 	public static int berechneWiederstandskraft(int value) {
 		int defense=0;
 		for (CHARACTERISTICSDEFENSERAITING defenserating : ApplicationProperties.create().getCharacteristics().getDEFENSERAITING() ) {
-			// System.err.println("berechneWiederstandskraft value "+value+" defense "+defense+" defenserating "+defenserating.getAttribute());
+			// errorout.println("berechneWiederstandskraft value "+value+" defense "+defense+" defenserating "+defenserating.getAttribute());
 			if( (value >= defenserating.getAttribute()) && (defense<defenserating.getDefense()) ) {
 				defense=defenserating.getDefense();
 			}
@@ -718,11 +724,11 @@ public class ECEWorker {
 
 	public static int berechneAttriubteCost(int modifier) {
 		if ( modifier < -2 ) {
-			System.err.println("The generation attribute value was to low. Value will increased to -2.");
+			errorout.println("The generation attribute value was to low. Value will increased to -2.");
 			modifier = -2;
 		}
 		if ( modifier > 8 ) {
-			System.err.println("The generation attribute value was to high. Value will be lower down to 8.");
+			errorout.println("The generation attribute value was to high. Value will be lower down to 8.");
 			modifier = 8;
 		}
 		HashMap<Integer,Integer> attributecost = ApplicationProperties.create().getCharacteristics().getATTRIBUTECOST();
@@ -775,7 +781,7 @@ public class ECEWorker {
 			replacment=capabilities.getSkill(capability.getName());
 		}
 		if( replacment == null ) {
-			System.err.println("Capability '"+capability.getName()+"' not found : "+capability.getClass().getSimpleName());
+			errorout.println("Capability '"+capability.getName()+"' not found : "+capability.getClass().getSimpleName());
 		} else {
 			capability.setAction(replacment.getAction());
 			capability.setAttribute(replacment.getAttribute());
@@ -784,6 +790,7 @@ public class ECEWorker {
 			capability.setStrain(replacment.getStrain());
 			capability.setBookref(replacment.getBookref());
 			capability.setIsinitiative(replacment.getIsinitiative());
+			capability.setNotbyversatility(replacment.getNotbyversatility());
 		}
 	}
 
@@ -809,5 +816,13 @@ public class ECEWorker {
 			}
 		}
 		return bonuses;
+	}
+
+	public PrintStream getErrorout() {
+		return errorout;
+	}
+
+	public void setErrorout(PrintStream stream) {
+		errorout = stream;
 	}
 }
