@@ -118,14 +118,19 @@
 	<SKILL name="Wilderness Survival" attribute="PER" default="yes" action="sustained" strain="0" bookref="PG p.103"/>
 	<SKILL name="Wound Balance" attribute="STR" default="no" action="free" strain="0" bookref="PG p.103"/>
 	<TALENT name="Abate Curse" attribute="WIL" action="standard" karma="no" strain="1" bookref="PG p.59"/>
+	<TALENT name="Absorb Blow" attribute="TOU" action="free" karma="yes" strain="1" bookref="CPG p.79"/>
+	<TALENT name="Absorb Spell" attribute="WIL" action="free" karma="yes" strain="2" bookref="CPG p.79" notbyversatility="yes"/>
 	<TALENT name="Acrobatic Strike" attribute="DEX" action="simple" karma="no" strain="1" bookref="PG p.59"/>
 	<TALENT name="Air Dance" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.59" isinitiative="yes"/>
 	<TALENT name="Air Sailing" attribute="WIL" action="sustained" karma="no" strain="0" bookref="PG p.60"/>
 	<TALENT name="Air Speaking" attribute="PER" action="simple" karma="no" strain="1" bookref="PG p.60"/>
+	<TALENT name="Airs of Nobility" attribute="CHA" action="standard" karma="no" strain="1" bookref="CPG p.79" notbyversatility="yes"/>
+	<TALENT name="Ambush" attribute="WIL" action="standard" karma="yes" strain="1" bookref="CPG p.79"/>	
 	<TALENT name="Animal Bond" attribute="CHA" action="standard" karma="no" strain="0" bookref="PG p.60"/>
 	<TALENT name="Animal Companion Durability" attribute="na" action="na" karma="no" strain="0" bookref="PG p.60"/>
 	<TALENT name="Animal Leadership" attribute="CHA" action="standard" karma="yes" strain="0" bookref="PC p.102"/>
 	<TALENT name="Animal Possession" attribute="WIL" action="standard" karma="no" strain="2" bookref="PG p.60"/>
+	<TALENT name="Animal Slumber" attribute="PER" action="sustained" karma="no" strain="0" bookref="CPG p.80" notbyversatility="yes"/>
 	<TALENT name="Animal Talk" attribute="PER" action="standard" karma="yes" strain="0" bookref="PG p.60"/>
 	<TALENT name="Animal Training" attribute="CHA" action="sustained" karma="no" strain="0" bookref="PG p.61"/>
 	<TALENT name="Animate Object" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.102"/>
@@ -135,6 +140,7 @@
 	<TALENT name="Armor Mount" attribute="WIL" action="simple" karma="no" strain="1" bookref="PG p.61"/>
 	<TALENT name="Armored Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.217"/>
 	<TALENT name="Armored Matrix" attribute="na" action="na" karma="no" strain="0" bookref="PC p.102"/>
+	<TALENT name="Assess Community" attribute="CHA" action="sustained" karma="no" strain="0" bookref="CPG p.80"/>
 	<TALENT name="Astral Sight" attribute="PER" action="simple" karma="no" strain="1" bookref="PG p.61"/>
 	<TALENT name="Astral Pocket" attribute="PER" action="standard" karma="no" strain="-1" bookref="PC p.102"/>
 	<TALENT name="Astral Web" attribute="STR" action="standard" karma="no" strain="3" bookref="PC p.103"/>
@@ -147,12 +153,17 @@
 	<TALENT name="Battle Bellow" attribute="CHA" action="simple" karma="no" strain="1" bookref="PG p.62"/>
 	<TALENT name="Battle Shout" attribute="CHA" action="simple" karma="no" strain="1" bookref="PG p.62"/>
 	<TALENT name="Bear Mark" attribute="WIL" action="free" karma="no" strain="1" bookref="NG p.217"/>
+	<TALENT name="Beast Summons" attribute="CHA" action="standard" karma="no" strain="80" bookref="CPG p.80" notbyversatility="yes"/>
 	<TALENT name="Bedazzle" attribute="CHA" action="free" karma="no" strain="1" bookref="NG p.218"/>
 	<TALENT name="Bestial Resilience" attribute="TOU" action="na" karma="no" strain="0" bookref="PC p.103"/>
 	<TALENT name="Bestial Toughness" attribute="TOU" action="simple" karma="yes" strain="0" bookref="PC p.103"/>
 	<TALENT name="Bird Song" attribute="PER" action="standard" karma="no" strain="1" bookref="NG p.218"/>
+	<TALENT name="Blade Blur" attribute="DEX" action="standard" karma="yes" strain="2" bookref="CPG p.80" notbyversatility="yes"/>
+	<TALENT name="Blade Dance" attribute="PER" action="simple" karma="yes" strain="1" bookref="CPG p.81"/>
 	<TALENT name="Blade Juggle" attribute="DEX" action="standard" karma="no" strain="-1" bookref="PG p.62"/>
 	<TALENT name="Blind Fire" attribute="PER" action="simple" karma="yes" strain="0" bookref="PC p.103"/>
+	<TALENT name="Block and Counter" attribute="DEX" action="free" karma="no" strain="2" bookref="CPG p.81"/>
+	<TALENT name="Block Spell" attribute="WIL" action="free" karma="no" strain="1" bookref="CPG p.81" notbyversatility="yes"/>
 	<TALENT name="Blood Guilt Weapon" attribute="PER" action="standard" karma="yes" strain="0" bookref="PC p.104"/>
 	<TALENT name="Blood Share" attribute="TOU" action="standard" karma="yes" strain="0" bookref="PG p.63"/>
 	<TALENT name="Body Blade" attribute="STR" action="free" karma="yes" strain="0" bookref="PC p.104"/>
@@ -163,6 +174,7 @@
 	<TALENT name="Borrow Sense" attribute="WIL" action="standard" karma="no" strain="0" bookref="PG p.63"/>
 	<TALENT name="Bribery" attribute="CHA" action="standard" karma="no" strain="0" bookref="KR p.224"/>
 	<TALENT name="Buzz" attribute="DEX" action="standard" karma="no" strain="0" bookref="NG p.218"/>
+	<TALENT name="Calm Beast" attribute="CHA" action="standard" karma="no" strain="0" bookref="CPG p.81" notbyversatility="yes"/>
 	<TALENT name="Call Animal Companion" attribute="WIL" action="standard" karma="no" strain="1" bookref="PG p.63"/>
 	<TALENT name="Call Missile" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.63"/>
 	<TALENT name="Call Mount" attribute="WIL" action="standard" karma="no" strain="1" bookref="PC p.104"/>
@@ -173,18 +185,26 @@
 	<TALENT name="Champion Challenge" attribute="CHA" action="standard" karma="yes" strain="0" bookref="PC p.104"/>
 	<TALENT name="Charge" attribute="STR" action="free" karma="no" strain="0" bookref="PG p.64"/>
 	<TALENT name="Claw Shape" attribute="STR" action="simple" karma="yes" strain="0" bookref="PG p.64"/>
-	<TALENT name="Clay Skin" attribute="TOU" action="standard" karma="yes" strain="2" bookref="NG p.219"/>
+	<TALENT name="Clay Skin" attribute="TOU" action="standard" karma="yes" strain="0" bookref="NG p.219"/>
 	<TALENT name="Climbing" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.64"/>
 	<TALENT name="Close In" attribute="DEX" action="simple" karma="no" strain="1" bookref="KR p.224"/>
 	<TALENT name="Cobra Strike" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.64"/>
 	<TALENT name="Cold Purify" attribute="WIL" action="sustained" karma="no" strain="0" bookref="PG p.64"/>
+	<TALENT name="Combo" attribute="na" action="simple" karma="yes" strain="1" bookref="CPG p.81"/>
+	<TALENT name="Commune" attribute="PER" action="standard" karma="yes" strain="-1" bookref="CPG p.82" notbyversatility="yes"/>
+	<TALENT name="Company of One" attribute="PER" action="standard" karma="yes" strain="-1" bookref="CPG p.82"/>
+	<TALENT name="Conceal Caravan" attribute="PER" action="standard" karma="yes" strain="-1" bookref="CPG p.82"/>
 	<TALENT name="Conceal Object" attribute="DEX" action="standard" karma="no" strain="1" bookref="PG p.64"/>
 	<TALENT name="Confront Horror" attribute="CHA" action="standard" karma="yes" strain="5" bookref="PC p.105"/>
 	<TALENT name="Conversation" attribute="CHA" action="sustained" karma="no" strain="0" bookref="PG p.64"/>
+	<TALENT name="Counteract" attribute="WIL" action="standard" karma="yes" strain="1" bookref="CPG p.83" notbyversatility="yes"/>
 	<TALENT name="Create Fetish" attribute="PER" action="standard" karma="no" strain="0" bookref="NG p.219"/>
+	<TALENT name="Create Moon Staff" attribute="PER" action="sustained" karma="no" strain="0" bookref="CPG p.83" notbyversatility="yes"/>	
 	<TALENT name="Creature Analysis" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.64"/>
 	<TALENT name="Critical Hit" attribute="na" action="free" karma="yes" strain="0" bookref="PC p.105"/>
+	<TALENT name="Cross" attribute="STR" action="free" karma="yes" strain="1" bookref="CPG p.83"/>	
 	<TALENT name="Crushing Blow" attribute="STR" action="free" karma="yes" strain="1" bookref="PG p.65"/>
+	<TALENT name="Cyclone" attribute="WIL" action="standard" karma="yes" strain="3" bookref="CPG p.83"/>
 	<TALENT name="Dead Fall" attribute="WIL" action="simple" karma="no" strain="1" bookref="PG p.65"/>
 	<TALENT name="Defense" attribute="DEX" action="standard" karma="yes" strain="1" bookref="PC p.105"/>
 	<TALENT name="Detect Falsehood" attribute="PER" action="standard" karma="no" strain="1" bookref="PC p.105"/>
@@ -197,13 +217,18 @@
 	<TALENT name="Direction Sense" attribute="PER" action="standard" karma="yes" strain="2" bookref="PG p.65"/>
 	<TALENT name="Disarm" attribute="DEX" action="standard" karma="no" strain="1" bookref="PG p.65"/>
 	<TALENT name="Disarm Trap" attribute="DEX" action="standard" karma="no" strain="1" bookref="PG p.65"/>
+	<TALENT name="Disguise Chest" attribute="PER" action="standard" karma="no" strain="1" bookref="CPG p.83"/>	
 	<TALENT name="Disguise Self" attribute="PER" action="standard" karma="yes" strain="0" bookref="PG p.66"/>
 	<TALENT name="Distract" attribute="CHA" action="standard" karma="no" strain="0" bookref="PG p.66"/>
 	<TALENT name="Dive Attack" attribute="STR" action="free" karma="no" strain="1" bookref="NG p.219"/>
 	<TALENT name="Dominate Arrow" attribute="WIL" action="standard" karma="no" strain="1" bookref="PC p.106"/>
 	<TALENT name="Dominate Beast" attribute="WIL" action="standard" karma="no" strain="1" bookref="PG p.66"/>
+	<TALENT name="Doom Circle" attribute="PER" action="standard" karma="no" strain="1" bookref="CPG p.84"/>	
 	<TALENT name="Double-Charge" attribute="DEX" action="simple" karma="yes" strain="1" bookref="PG p.66"/>
 	<TALENT name="Down Strike" attribute="STR" action="free" karma="no" strain="1" bookref="PG p.66"/>
+	<TALENT name="Dragonfire" attribute="WIL" action="free" karma="yes" strain="-1" bookref="CPG p.84" notbyversatility="yes"/>
+	<TALENT name="Dragonscales" attribute="TOU" action="na" karma="no" strain="0" bookref="CPG p.84" notbyversatility="yes"/>
+	<TALENT name="Duel" attribute="CHA" action="standard" karma="yes" strain="0" bookref="CPG p.84" notbyversatility="yes"/>	
 	<TALENT name="Durability" attribute="na" action="na" karma="no" strain="0" bookref="PG p.66"/>
 	<TALENT name="Eagle Eye" attribute="PER" action="simple" karma="no" strain="1" bookref="PC p.106"/>
 	<TALENT name="Earth Armor" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.106"/>
@@ -214,6 +239,7 @@
 	<TALENT name="Elemental Hold" attribute="WIL" action="standard" karma="no" strain="1" bookref="PG p.67"/>
 	<TALENT name="Elemental Tongues" attribute="PER" action="standard" karma="yes" strain="1" bookref="PG p.67"/>
 	<TALENT name="Elemental Walk" attribute="WIL" action="standard" karma="yes" strain="2" bookref="PC p.106"/>
+	<TALENT name="Embrace of the Phoenix" attribute="PER" action="sustained" karma="yes" strain="2" bookref="CPG p.84" notbyversatility="yes"/>	
 	<TALENT name="Emotion Song" attribute="CHA" action="sustained" karma="no" strain="0" bookref="PG p.67"/>
 	<TALENT name="Empathic Command" attribute="WIL" action="free" karma="no" strain="0" bookref="PG p.67"/>
 	<TALENT name="Empathic Sense" attribute="CHA" action="standard" karma="no" strain="-1" bookref="PG p.68"/>
@@ -233,12 +259,16 @@
 	<TALENT name="Familiar Durability" attribute="na" action="na" karma="no" strain="0" bookref="PG p.69"/>
 	<TALENT name="Fast Hand" attribute="DEX" action="standard" karma="yes" strain="0" bookref="PG p.69"/>
 	<TALENT name="Fearsome Charge" attribute="CHA" action="simple" karma="no" strain="2" bookref="PG p.69"/>
+	<TALENT name="Feather Light" attribute="DEX" action="simple" karma="yes" strain="2" bookref="CPG p.85"/>
+	<TALENT name="Feign Retreat" attribute="CHA" action="standard" karma="no" strain="1" bookref="CPG p.85"/>
+	<TALENT name="Fiery Blade" attribute="PER" action="standard" karma="yes" strain="2" bookref="CPG p.85"/>
 	<TALENT name="Fireblood" attribute="TOU" action="standard" karma="no" strain="0" bookref="PG p.69"/>
 	<TALENT name="Fire Heal" attribute="WIL" action="sustained" karma="no" strain="0" bookref="PG p.69"/>
 	<TALENT name="First Impression" attribute="CHA" action="standard" karma="no" strain="0" bookref="PG p.70"/>
 	<TALENT name="First Ring of Perfection" attribute="PER" action="simple" karma="yes" strain="0" bookref="PC p.107"/>
 	<TALENT name="Flame Arrow" attribute="WIL" action="free" karma="yes" strain="1" bookref="PG p.70"/>
 	<TALENT name="Flirting" attribute="CHA" action="sustained" karma="no" strain="0" bookref="KR p.225"/>
+	<TALENT name="Flowing Blow" attribute="STR" action="free" karma="no" strain="1" bookref="CPG p.85" notbyversatility="yes"/>
 	<TALENT name="Forge Armor" attribute="PER" action="sustained" karma="no" strain="2" bookref="PG p.70"/>
 	<TALENT name="Forge Weapon" attribute="PER" action="sustained" karma="no" strain="1" bookref="PG p.71"/>
 	<TALENT name="Free Mind" attribute="CHA" action="sustained" karma="no" strain="0" bookref="NG p.220"/>
@@ -247,11 +277,15 @@
 	<TALENT name="Frighten" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PG p.71"/>
 	<TALENT name="Frighten Animals" attribute="CHA" action="standard" karma="yes" strain="0" bookref="PG p.71"/>
 	<TALENT name="Gain Surprise" attribute="WIL" action="simple" karma="yes" strain="1" bookref="PC p.107"/>
+	<TALENT name="Gift of the Phoenix" attribute="WIL" action="standard" karma="yes" strain="2" bookref="CPG p.86" notbyversatility="yes"/>
 	<TALENT name="Gliding" attribute="DEX" action="simple" karma="no" strain="0" bookref="NG p.220"/>
 	<TALENT name="Gliding Stride" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.71"/>
 	<TALENT name="Gold Sense" attribute="PER" action="standard" karma="yes" strain="0" bookref="PC p.107"/>
 	<TALENT name="Graceful Exit" attribute="CHA" action="standard" karma="no" strain="0" bookref="PG p.72"/>
+	<TALENT name="Great Kick" attribute="na" action="free" karma="yes" strain="1" bookref="CPG p.86"/>
 	<TALENT name="Great Leap" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.72"/>
+	<TALENT name="Great Strike" attribute="PER" action="simple" karma="no" strain="1" bookref="CPG p.86"/>
+	<TALENT name="Guard Stance" attribute="DEX" action="standard" karma="no" strain="-2" bookref="CPG p.86"/>	
 	<TALENT name="Haggle" attribute="CHA" action="sustained" karma="no" strain="0" bookref="PG p.72"/>
 	<TALENT name="Heal Animal Companion" attribute="TOU" action="standard" karma="no" strain="0" bookref="PG p.72"/>
 	<TALENT name="Heal Slave" attribute="WIL" action="standard" karma="no" strain="0" bookref="NG p.220"/>
@@ -259,42 +293,61 @@
 	<TALENT name="Heart of Freedom" attribute="WIL" action="standard" karma="yes" strain="1" bookref="NG p.220"/>
 	<TALENT name="Hoard Blows" attribute="WIL" action="free" karma="yes" strain="0" bookref="NG p.221"/>
 	<TALENT name="Hold Thread" attribute="WIL" action="simple" karma="no" strain="1" bookref="PG p.72"/>
+	<TALENT name="Hook" attribute="STR" action="free" karma="yes" strain="1" bookref="CPG p.86"/>
 	<TALENT name="Howl" attribute="CHA" action="standard" karma="no" strain="1" bookref="PC p.107"/>
 	<TALENT name="Hypnotize" attribute="CHA" action="standard" karma="no" strain="1" bookref="PG p.73"/>
 	<TALENT name="Impossible Hide" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.107"/>
 	<TALENT name="Impress" attribute="CHA" action="standard" karma="no" strain="1" bookref="PG p.73"/>
 	<TALENT name="Impressive Shot" attribute="DEX" action="standard" karma="no" strain="1" bookref="PG p.73"/>
 	<TALENT name="Impressive Strike" attribute="DEX" action="standard" karma="no" strain="1" bookref="PC p.108"/>
+	<TALENT name="Improvised Poultice" attribute="PER" action="sustained" karma="yes" strain="-1" bookref="CPG p.86" notbyversatility="yes"/>	
 	<TALENT name="Incite Mob" attribute="WIL" action="sustained" karma="no" strain="1" bookref="PC p.108"/>
 	<TALENT name="Incite Stampede" attribute="WIL" action="sustained" karma="no" strain="1" bookref="PC p.108"/>
 	<TALENT name="Infuse Armor" attribute="PER" action="standard" karma="yes" strain="2" bookref="PC p.108"/>
 	<TALENT name="Infuse Blade" attribute="PER" action="standard" karma="yes" strain="2" bookref="PC p.108"/>
 	<TALENT name="Infuse Weapon" attribute="PER" action="standard" karma="yes" strain="1" bookref="PC p.108"/>
+	<TALENT name="Inherited Powers" attribute="WIL" action="standard" karma="no" strain="1" bookref="CPG p.87" notbyversatility="yes"/>
+	<TALENT name="Inner Strength" attribute="WIL" action="free" karma="no" strain="1" bookref="CPG p.87"/>	
 	<TALENT name="Inspire Others" attribute="CHA" action="standard" karma="yes" strain="0" bookref="PG p.73"/>
 	<TALENT name="Item History" attribute="PER" action="sustained" karma="yes" strain="0" bookref="PG p.73"/>
+	<TALENT name="Jab" attribute="STR" action="free" karma="yes" strain="1" bookref="CPG p.87"/>
+	<TALENT name="Joint Lock" attribute="DEX" action="standard" karma="no" strain="1" bookref="CPG p.87"/>
+	<TALENT name="Karma Cancel" attribute="WIL" action="standard" karma="no" strain="1" bookref="CPG p.87" notbyversatility="yes"/>	
 	<TALENT name="Karma Ritual" attribute="na" action="na" karma="no" strain="0" bookref="PG p.74"/>
+	<TALENT name="Kiai" attribute="CHA" action="simple" karma="no" strain="1" bookref="CPG p.87"/>
+	<TALENT name="Kip" attribute="DEX" action="simple" karma="no" strain="2" bookref="CPG p.87"/>
+	<TALENT name="Knockout" attribute="DEX" action="standard" karma="no" strain="1" bookref="CPG p.88"/>
 	<TALENT name="Lasting Impression" attribute="CHA" action="standard" karma="yes" strain="0" bookref="PG p.74"/>
 	<TALENT name="Leadership" attribute="CHA" action="sustained" karma="yes" strain="0" bookref="PG p.74"/>
+	<TALENT name="Legendary Blades" attribute="PER" action="free" karma="yes" strain="-1" bookref="CPG p.88" notbyversatility="yes"/>	
 	<TALENT name="Life Check" attribute="TOU" action="free" karma="no" strain="0" bookref="PG p.74"/>
 	<TALENT name="Lifesight" attribute="PER" action="simple" karma="no" strain="1" bookref="PG p.74"/>
+	<TALENT name="Lightning Born" attribute="WIL" action="standard" karma="yes" strain="-1" bookref="CPG p.88" notbyversatility="yes"/>
+	<TALENT name="Lightning Combo" attribute="DEX" action="standard" karma="yes" strain="-1" bookref="CPG p.88"/>
 	<TALENT name="Lion Heart" attribute="WIL" action="free" karma="no" strain="0" bookref="PG p.74"/>
 	<TALENT name="Lion Spirit" attribute="na" action="na" karma="no" strain="0" bookref="PC p.108"/>
+	<TALENT name="Liquid Prison" attribute="WIL" action="sustained" karma="yes" strain="4" bookref="CPG p.88"/>	
 	<TALENT name="Lip Reading" attribute="CHA" action="standard" karma="yes" strain="1" bookref="PG p.74"/>
 	<TALENT name="Lock Picking" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.74"/>
 	<TALENT name="Long Shot" attribute="PER" action="simple" karma="yes" strain="0" bookref="PG p.75"/>
 	<TALENT name="Maneuver" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.75"/>
+	<TALENT name="Manifest Beast" attribute="CHA" action="standard" karma="yes" strain="1" bookref="CPG p.89" notbyversatility="yes"/>	
 	<TALENT name="Matrix Strike" attribute="WIL" action="simple" karma="no" strain="1" bookref="PC p.108"/>
+	<TALENT name="Meditate" attribute="WIL" action="sustained" karma="yes" strain="0" bookref="CPG p.89" notbyversatility="yes"/>	
 	<TALENT name="Melee Weapons" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.75"/>
 	<TALENT name="Memorize Image" attribute="PER" action="standard" karma="yes" strain="0" bookref="PC p.109"/>
 	<TALENT name="Metal Ward" attribute="PER" action="standard" karma="yes" strain="0" bookref="PC p.109"/>
 	<TALENT name="Mimic Voice" attribute="CHA" action="simple" karma="no" strain="0" bookref="PG p.75"/>
 	<TALENT name="Mind Armor" attribute="na" action="standard" karma="no" strain="1" bookref="PC p.109"/>
 	<TALENT name="Mind Blade" attribute="na" action="standard" karma="no" strain="1" bookref="PC p.109"/>
+	<TALENT name="Mind Hand" attribute="WIL" action="standard" karma="no" strain="1" bookref="CPG p.89"/>	
 	<TALENT name="Mind Wave" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.109"/>
 	<TALENT name="Missile Path" attribute="PER" action="simple" karma="no" strain="1" bookref="NG p.221"/>
 	<TALENT name="Missile Twister" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.109"/>
 	<TALENT name="Missile Weapons" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.75"/>
 	<TALENT name="Momentum Attack" attribute="DEX" action="simple" karma="no" strain="1" bookref="PG p.75"/>
+	<TALENT name="Moon Ray" attribute="PER" action="standard" karma="no" strain="1" bookref="CPG p.89" notbyversatility="yes"/>
+	<TALENT name="Moon Shield" attribute="WIL" action="standard" karma="no" strain="-1" bookref="CPG p.89" notbyversatility="yes"/>
 	<TALENT name="Mount Attack" attribute="na" action="simple" karma="no" strain="1" bookref="PG p.75"/>
 	<TALENT name="Mount Durability" attribute="na" action="na" karma="no" strain="0" bookref="PG p.75"/>
 	<TALENT name="Moving Earth" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.109"/>
@@ -308,7 +361,10 @@
 	<TALENT name="Netherwalk" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.110"/>
 	<TALENT name="Orbiting Spy" attribute="PER" action="standard" karma="yes" strain="0" bookref="PG p.76"/>
 	<TALENT name="Parry" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.76"/>
+	<TALENT name="Past Tongues" attribute="PER" action="standard" karma="yes" strain="1" bookref="CPG p.89" notbyversatility="yes"/>
+	<TALENT name="Path of the Righteous" attribute="WIL" action="standard" karma="no" strain="2" bookref="CPG p.89"/>
 	<TALENT name="Performance" attribute="CHA" action="simple" karma="yes" strain="1" bookref="PG p.76"/>
+	<TALENT name="Phantom Strike" attribute="DEX" action="standard" karma="yes" strain="1" bookref="CPG p.90"/>	
 	<TALENT name="Picking Pockets" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.77"/>
 	<TALENT name="Pilot Boat" attribute="PER" karma="no" action="sustained" strain="0" bookref="NG p.221"/>
 	<TALENT name="Pin" attribute="DEX" action="standard" karma="no" strain="0" bookref="PC p.111"/>
@@ -316,18 +372,23 @@
 	<TALENT name="Poison Resistance" attribute="TOU" action="free" karma="no" strain="0" bookref="PG p.77"/>
 	<TALENT name="Power Mask" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PG p.77"/>
 	<TALENT name="Prison Call" attribute="PER" action="standard" karma="yes" strain="0" bookref="NG p.221"/>
+	<TALENT name="Purge Pattern" attribute="WIL" action="sustained" karma="yes" strain="1" bookref="CPG p.90" notbyversatility="yes"/>	
 	<TALENT name="Questor" attribute="na" action="na" karma="no" strain="0" bookref="PC p.111"/>
 	<TALENT name="Quick Shot" attribute="DEX" action="standard" karma="yes" strain="-1" bookref="PC p.111"/>
 	<TALENT name="Rally" attribute="CHA" action="standard" karma="yes" strain="-1" bookref="PC p.111"/>
 	<TALENT name="Range Pattern" attribute="PER" action="standard" karma="no" strain="1" bookref="PC p.111"/>
+	<TALENT name="Rapid Strike" attribute="DEX" action="simple" karma="no" strain="1" bookref="CPG p.90"/>	
 	<TALENT name="Read River" attribute="PER" action="standard" karma="no" strain="0" bookref="NG p.221"/>
 	<TALENT name="Read/Write Language" attribute="PER" action="standard" karma="no" strain="-1" bookref="PG p.77"/>
 	<TALENT name="Read/Write Magic" attribute="PER" action="standard" karma="no" strain="0" bookref="PG p.78"/>
+	<TALENT name="Regeneration" attribute="TOU" action="simple" karma="no" strain="0" bookref="CPG p.90" notbyversatility="yes"/>	
 	<TALENT name="Research" attribute="PER" action="sustained" karma="no" strain="0" bookref="PG p.78"/>
 	<TALENT name="Reshape Object" attribute="WIL" action="standard" karma="no" strain="2" bookref="PC p.111"/>
 	<TALENT name="Resist Pain" attribute="na" action="na" karma="no" strain="0" bookref="PC p.112"/>
 	<TALENT name="Resist Taunt" attribute="WIL" action="free" karma="no" strain="1" bookref="PG p.78"/>
+	<TALENT name="Rhetoric" attribute="PER" action="sustained" karma="no" strain="0" bookref="CPG p.90"/>	
 	<TALENT name="Riposte" attribute="DEX" action="free" karma="no" strain="2" bookref="PG p.78"/>
+	<TALENT name="Rundown" attribute="PER" action="standard" karma="no" strain="1" bookref="CPG p.90"/>	
 	<TALENT name="Rushing Attack" attribute="na" action="simple" karma="yes" strain="-1" bookref="PC p.112"/>
 	<TALENT name="Safe Path" attribute="PER" action="standard" karma="yes" strain="0" bookref="PG p.78"/>
 	<TALENT name="Safe Thought" attribute="WIL" action="standard" karma="yes" strain="0" bookref="PC p.112"/>
@@ -339,14 +400,17 @@
 	<TALENT name="Second Shot" attribute="DEX" action="simple" karma="yes" strain="1" bookref="PG p.79"/>
 	<TALENT name="Second Weapon" attribute="DEX" action="simple" karma="no" strain="1" bookref="PG p.79"/>
 	<TALENT name="Seduction" attribute="CHA" action="sustained" karma="no" strain="0" bookref="KR p.225"/>
+	<TALENT name="Sense Animals" attribute="PER" action="standard" karma="no" strain="0" bookref="CPG p.91"/>	
 	<TALENT name="Sense Danger" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.79"/>
 	<TALENT name="Sense Magic Item" attribute="PER" action="standard" karma="no" strain="1" bookref="PC p.113"/>
 	<TALENT name="Sense Poison" attribute="PER" action="simple" karma="no" strain="1" bookref="PG p.79"/>
 	<TALENT name="Shackle Shrug" attribute="DEX" action="sustained" karma="no" strain="1" bookref="PC p.113"/>
+	<TALENT name="Shadow Step" attribute="PER" action="simple" karma="no" strain="1" bookref="CPG p.91"/>	
 	<TALENT name="Shared Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.221"/>
 	<TALENT name="Shared Matrix" attribute="na" action="na" karma="no" strain="0" bookref="PC p.113"/>
 	<TALENT name="Shield Beater" attribute="na" action="simple" karma="yes" strain="1" bookref="PC p.113"/>
 	<TALENT name="Shield Charge" attribute="STR" action="free" karma="no" strain="1" bookref="PG p.79"/>
+	<TALENT name="Shield of the Innocent" attribute="CHA" action="standard" karma="yes" strain="1" bookref="CPG p.91"/>	
 	<TALENT name="Shout of Jusice" attribute="CHA" action="standard" karma="yes" strain="0" bookref="NG p.221"/>
 	<TALENT name="Show Armor Flaw" attribute="PER" action="standard" karma="no" strain="2" bookref="PC p.113"/>
 	<TALENT name="Silent Walk" attribute="DEX" action="simple" karma="no" strain="0" bookref="PG p.79"/>
@@ -359,6 +423,7 @@
 	<TALENT name="Spell Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.221"/>
 	<TALENT name="Spell Matrix" attribute="na" action="na" karma="no" strain="0" bookref="PG p.80"/>
 	<TALENT name="Spellcasting" attribute="PER" action="standard" karma="no" strain="0" bookref="PG p.80"/>
+	<TALENT name="Spirit Blend" attribute="WIL" action="standard" karma="yes" strain="2" bookref="CPG p.91" notbyversatility="yes"/>	
 	<TALENT name="Spirit Dodge" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.80"/>
 	<TALENT name="Spirit Hold" attribute="WIL" action="standard" karma="no" strain="1" bookref="PG p.81"/>
 	<TALENT name="Spirit Mount" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.81"/>
@@ -368,8 +433,10 @@
 	<TALENT name="Sprint" attribute="na" action="simple" karma="yes" strain="1" bookref="PG p.81"/>
 	<TALENT name="Steel Thought" attribute="WIL" action="simple" karma="no" strain="1" bookref="PG p.81"/>
 	<TALENT name="Steely Stare" attribute="CHA" action="standard" karma="no" strain="1" bookref="PG p.82"/>
+	<TALENT name="Steer Wagon" attribute="PER" action="simple" karma="no" strain="0" bookref="CPG p.91"/>	
 	<TALENT name="Stone Skin" attribute="TOU" action="standard" karma="yes" strain="0" bookref="PC p.114"/>
 	<TALENT name="Stopping Aim" attribute="CHA" action="standard" karma="no" strain="1" bookref="PG p.82"/>
+	<TALENT name="Store Knowledge" attribute="PER" action="standard" karma="yes" strain="0" bookref="CPG p.91" notbyversatility="yes"/>	
 	<TALENT name="Storm Shield" attribute="WIL" action="standard" karma="no" strain="2" bookref="PC p.114"/>
 	<TALENT name="Summon" attribute="PER" action="standard" karma="yes" strain="0" bookref="PG p.82"/>
 	<TALENT name="Summoning Circle" attribute="WIL" action="sustained" karma="yes" strain="0" bookref="PC p.114"/>
@@ -381,7 +448,9 @@
 	<TALENT name="Swing Attack" attribute="DEX" action="standard" karma="no" strain="1" bookref="PG p.82"/>	
 	<TALENT name="Tactics" attribute="PER" action="standard" karma="no" strain="0" bookref="PG p.83"/>
 	<TALENT name="Tail Dance" attribute="DEX" action="simple" karma="no" strain="1" bookref="NG p.222"/>
+	<TALENT name="Takedown" attribute="DEX" action="standard" karma="no" strain="1" bookref="CPG p.91"/>	
 	<TALENT name="Tame Mount" attribute="CHA" action="standard" karma="yes" strain="0" bookref="PC p.114"/>
+	<TALENT name="Task Kin" attribute="CHA" action="standard" karma="no" strain="1" bookref="CPG p.92" notbyversatility="yes"/>	
 	<TALENT name="Taunt" attribute="CHA" action="simple" karma="no" strain="1" bookref="PG p.83"/>
 	<TALENT name="Temper Other" attribute="WIL" action="sustained" karma="no" strain="0" bookref="PG p.83"/>
 	<TALENT name="Temper Self" attribute="WIL" action="sustained" karma="no" strain="0" bookref="PG p.83"/>
@@ -392,8 +461,10 @@
 	<TALENT name="Throwing Weapons" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.84"/>
 	<TALENT name="Thunder Axe" attribute="STR" action="free" karma="no" strain="1" bookref="PC p.115"/>
 	<TALENT name="Tiger Spring" attribute="na" action="free" karma="no" strain="1" bookref="PG p.84" isinitiative="yes"/>
+	<TALENT name="Touch of the Phoenix" attribute="WIL" action="standard" karma="no" strain="1" bookref="CPG p.92" notbyversatility="yes"/>	
 	<TALENT name="Trace Missile" attribute="PER" action="simple" karma="no" strain="1" bookref="PC p.115"/>
 	<TALENT name="Tracking" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.84"/>
+	<TALENT name="Trading" attribute="CHA" action="sustained" karma="no" strain="0" bookref="CPG p.92" notbyversatility="yes"/>	
 	<TALENT name="Trample" attribute="na" action="free" karma="no" strain="1" bookref="PC p.115"/>
 	<TALENT name="Trap Initiative" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.84" isinitiative="yes"/>
 	<TALENT name="Trick Riding" attribute="DEX" action="simple" karma="no" strain="1" bookref="PG p.84"/>
@@ -402,6 +473,7 @@
 	<TALENT name="Truth Skit" attribute="PER" action="sustained" karma="yes" strain="0" bookref="PC p.115"/>
 	<TALENT name="Unarmed Combat" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.85"/>
 	<TALENT name="Unmount" attribute="STR" action="simple" karma="no" strain="0" bookref="PC p.115"/>
+	<TALENT name="Uppercut" attribute="STR" action="free" karma="yes" strain="1" bookref="CPG p.92"/>	
 	<TALENT name="Venom" attribute="TOU" action="simple" karma="yes" strain="0" bookref="PC p.115"/>
 	<TALENT name="Versatility" attribute="na" action="na" karma="no" strain="0" bookref="PG p.85"/>
 	<TALENT name="Vital Strike" attribute="PER" action="simple" karma="yes" strain="1" bookref="PC p.116"/>
@@ -419,6 +491,7 @@
 	<TALENT name="Wind Bow" attribute="na" action="standard" karma="no" strain="1" bookref="PC p.117"/>
 	<TALENT name="Wind Catcher" attribute="WIL" action="standard" karma="no" strain="0" bookref="PG p.86"/>
 	<TALENT name="Wind Dance" attribute="PER" action="simple" karma="no" strain="1" bookref="NG p.222"/>
+	<TALENT name="Wind Slash" attribute="DEX" action="standard" karma="yes" strain="1" bookref="CPG p.92"/>	
 	<TALENT name="Winning Smile" attribute="CHA" action="standard" karma="no" strain="0" bookref="PG p.86"/>
 	<TALENT name="Woodspeak" attribute="PER" action="standard" karma="no" strain="1" bookref="NG p.223"/>
 	<TALENT name="Woodwalk" attribute="WIL" action="sustained" karma="yes" strain="1" bookref="NG p.223"/>
