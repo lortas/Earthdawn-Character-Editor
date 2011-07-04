@@ -721,7 +721,7 @@ public class ECEPdfExporter {
 		//Set<String> fieldNames = acroFields.getFields().keySet();
 		//fieldNames = new TreeSet<String>(fieldNames);
 		//for( String fieldName : fieldNames ) {
-		//	System.out.println( fieldName );
+		//	acroFields.setField( fieldName, fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		exportCommonFields(character,16,17);
@@ -908,6 +908,19 @@ public class ECEPdfExporter {
 		}
 
 		acroFields.setField( "ShortDescription", character.getDESCRIPTION() );
+
+		int counterLanguageSpeak=0;
+		int counterLanguageReadwrite=0;
+		for( CHARACTERLANGUAGEType language : character.getLanguages() ) {
+			if( language.getSpeak().equals(YesnoType.YES) ) {
+				acroFields.setField( "LanguagesSpeak."+counterLanguageSpeak, language.getLanguage() );
+				counterLanguageSpeak++;
+			}
+			if( language.getReadwrite().equals(YesnoType.YES) ) {
+				acroFields.setField( "LanguagesReadWrite."+counterLanguageReadwrite, language.getLanguage() );
+				counterLanguageReadwrite++;
+			}
+		}
 
 		stamper.close();
 	}
