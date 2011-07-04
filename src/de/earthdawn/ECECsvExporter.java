@@ -44,9 +44,7 @@ public class ECECsvExporter {
 				row.add( spell.getName() );
 				row.add( spell.getType().value() );
 				row.add( String.valueOf(spell.getCircle()) );
-				if( spell.getThreads() >= 0 ) {
-					row.add( String.valueOf(spell.getThreads()) );
-				} else row.add( "s. text" );
+				row.add( spell.getThreads() );
 				row.add( spell.getWeavingdifficulty() );
 				row.add( String.valueOf(spell.getReattuningdifficulty()) );
 				row.add( spell.getCastingdifficulty() );
@@ -142,7 +140,7 @@ public class ECECsvExporter {
 			row.add( String.valueOf(talent.getBonus()) );
 			if( discipline ) row.add("-");
 			else row.add( String.valueOf(talent.getKarma()) );
-			row.add( String.valueOf(talent.getStrain()) );
+			row.add( talent.getStrain() );
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( teacher == null ) {
 				row.add( "-" );

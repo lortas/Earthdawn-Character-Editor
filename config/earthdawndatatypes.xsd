@@ -34,11 +34,6 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="unsigned_intplus">
-		<xs:restriction base="xs:int">
-			<xs:minInclusive value="-1"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="plusminus_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="+"/>
@@ -249,7 +244,7 @@
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="action" type="action_type" default="standard"/>
-		<xs:attribute default="0" name="strain" type="unsigned_intplus"/>
+		<xs:attribute default="0" name="strain" type="xs:string"/>
 		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
 		<xs:attribute default="0" name="bonus" type="xs:int"/>
 		<xs:attribute name="limitation" type="xs:string" default=""/>
@@ -521,7 +516,7 @@
 	</xs:complexType>
 	<xs:complexType name="SPELLDEF_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="threads" type="unsigned_intplus" default="0"/>
+		<xs:attribute name="threads" type="xs:string" default="0"/>
 		<xs:attribute name="weavingdifficulty" type="xs:string" default="na"/>
 		<xs:attribute name="reattuningdifficulty" type="unsigned_int" default="0"/>
 		<xs:attribute name="castingdifficulty" type="xs:string" default="TSD"/>

@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="action" type="{http://earthdawn.com/datatypes}action_type" default="standard" />
- *       &lt;attribute name="strain" type="{http://earthdawn.com/datatypes}unsigned_intplus" default="0" />
+ *       &lt;attribute name="strain" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
  *       &lt;attribute name="attribute" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" />
  *       &lt;attribute name="bonus" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
@@ -65,7 +65,7 @@ public class CAPABILITYType {
     @XmlAttribute
     protected ActionType action;
     @XmlAttribute
-    protected Integer strain;
+    protected String strain;
     @XmlAttribute
     protected ATTRIBUTENameType attribute;
     @XmlAttribute
@@ -171,12 +171,12 @@ public class CAPABILITYType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public int getStrain() {
+    public String getStrain() {
         if (strain == null) {
-            return  0;
+            return "0";
         } else {
             return strain;
         }
@@ -187,10 +187,10 @@ public class CAPABILITYType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setStrain(Integer value) {
+    public void setStrain(String value) {
         this.strain = value;
     }
 
