@@ -160,7 +160,7 @@ public class ECEPdfExporter {
 				if( ! skill.getLimitation().isEmpty() ) skillName += ":"+skill.getLimitation();
 				if( ! skill.getBookref().isEmpty() ) skillName += " ["+skill.getBookref()+"]";
 				acroFields.setField( "Skill."+counter, skillName);
-				acroFields.setField( "SkillStrain."+counter, String.valueOf(skill.getStrain()) );
+				acroFields.setField( "SkillStrain."+counter, skill.getStrain() );
 				switch( skill.getAction() ) {
 				case STANDARD  : acroFields.setField( "SkillAction."+counter, "std" ); break;
 				case SIMPLE    : acroFields.setField( "SkillAction."+counter, "smpl" ); break;
@@ -317,11 +317,7 @@ public class ECEPdfExporter {
 				default:   acroFields.setField( "SpellType."+conterSpells, "" ); break;
 				}
 				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
-				if( spell.getThreads() >= 0 ) {
-					acroFields.setField( "SpellThreads."+conterSpells, String.valueOf(spell.getThreads()) );
-				} else {
-					acroFields.setField( "SpellThreads."+conterSpells, "s. text" );
-				}
+				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
 				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
 				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
 				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
@@ -585,11 +581,7 @@ public class ECEPdfExporter {
 				default:   acroFields.setField( "SpellType."+conterSpells, "" ); break;
 				}
 				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
-				if( spell.getThreads() >= 0 ) {
-					acroFields.setField( "SpellThreads."+conterSpells, String.valueOf(spell.getThreads()) );
-				} else {
-					acroFields.setField( "SpellThreads."+conterSpells, "s. text" );
-				}
+				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
 				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
 				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
 				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
@@ -877,11 +869,7 @@ public class ECEPdfExporter {
 				default:        acroFields.setField( "SpellType."+conterSpells, "" ); break;
 				}
 				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
-				if( spell.getThreads() >= 0 ) {
-					acroFields.setField( "SpellThreads."+conterSpells, String.valueOf(spell.getThreads()) );
-				} else {
-					acroFields.setField( "SpellThreads."+conterSpells, "s. text" );
-				}
+				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
 				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
 				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
 				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
@@ -919,15 +907,7 @@ public class ECEPdfExporter {
 			counterBloodCharms++;
 		}
 
-		int counterDescription=0;
-		for( String description : wrapString(60,character.getDESCRIPTION()) ) {
-			acroFields.setField( "ShortDescription."+counterDescription, description );
-			counterDescription++;
-			if( counterDescription > 7 ) {
-				System.err.println("Character description to long. Only first 8 lines were displayed.");
-				break;
-			}
-		}
+		acroFields.setField( "ShortDescription", character.getDESCRIPTION() );
 
 		stamper.close();
 	}
@@ -980,7 +960,7 @@ public class ECEPdfExporter {
 		} else { 
 			acroFields.setField( "TalentAttributeStep."+counter, String.valueOf(attributes.get(attribute.value()).getStep()) );
 		}
-		acroFields.setField( "Strain."+counter, String.valueOf(talent.getStrain()) );
+		acroFields.setField( "Strain."+counter, talent.getStrain() );
 		switch( talent.getAction() ) {
 		case STANDARD  : acroFields.setField( "Action."+counter, "std" ); break;
 		case SIMPLE    : acroFields.setField( "Action."+counter, "smpl" ); break;

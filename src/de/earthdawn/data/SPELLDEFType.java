@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="threads" type="{http://earthdawn.com/datatypes}unsigned_intplus" default="0" />
+ *       &lt;attribute name="threads" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
  *       &lt;attribute name="weavingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="na" />
  *       &lt;attribute name="reattuningdifficulty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="castingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="TSD" />
@@ -51,7 +51,7 @@ public class SPELLDEFType {
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute
-    protected Integer threads;
+    protected String threads;
     @XmlAttribute
     protected String weavingdifficulty;
     @XmlAttribute
@@ -98,12 +98,12 @@ public class SPELLDEFType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public int getThreads() {
+    public String getThreads() {
         if (threads == null) {
-            return  0;
+            return "0";
         } else {
             return threads;
         }
@@ -114,10 +114,10 @@ public class SPELLDEFType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setThreads(Integer value) {
+    public void setThreads(String value) {
         this.threads = value;
     }
 
