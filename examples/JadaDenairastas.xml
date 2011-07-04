@@ -160,6 +160,9 @@
 	<SKILL name="Speak Language" limitation="Human/Iopan" action="standard" attribute="PER">
 		<edt:RANK lpcost="0" rank="5" startrank="5" dice="2d6" step="8"/>
 	</SKILL>
+	<LANGUAGE language="Dwarf/Throalic" readwrite="yes" speak="yes"/>
+	<LANGUAGE language="Human/Iopan" readwrite="yes" speak="yes"/>
+	<LANGUAGE language="Tskrang" speak="yes"/>
 	<WEAPON name="knife" weight="0" used="yes" location="self" damagestep="1" strengthmin="3" size="1" />
 	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" used="yes" weight="6.0" name="Thread Hide Armor">
 		<edt:description></edt:description>

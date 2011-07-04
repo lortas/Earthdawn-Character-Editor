@@ -1504,4 +1504,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		rank.setStep(rank.getStep()+adjustment);
 		rank.setDice(PROPERTIES.step2Dice(rank.getStep()));
 	}
+
+	public List<CHARACTERLANGUAGEType> getLanguages() {
+		return character.getLANGUAGE();
+	}
 }
