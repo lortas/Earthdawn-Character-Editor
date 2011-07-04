@@ -97,6 +97,7 @@
 			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>
 			<zipfileset file="./examples/JadaDenairastas.xml" prefix="examples"/>
 			<zipfileset file="./examples/Eloxis.xml" prefix="examples"/>
+			<zipfileset file="./examples/Kartesch.xml" prefix="examples"/>
 			<zipfileset dir="./cmd"/>
 			<zipfileset file="./license.en.txt"/>
 			<zipfileset file="./license.en.html"/>
