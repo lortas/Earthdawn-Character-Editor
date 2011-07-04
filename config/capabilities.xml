@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/capability earthdawncapabilities.xsd">
+	
+	
 	<SKILL name="Acrobatic Strike" attribute="DEX" default="no" action="simple" strain="1" bookref="PG p.91"/>
 	<SKILL name="Acting" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.91"/>
 	<SKILL name="Air Sailing" attribute="WIL" default="no" action="sustained" strain="0" bookref="PG p.91"/>
@@ -10,10 +12,12 @@
 	<SKILL name="Arcane Mutterings" attribute="CHA" default="no" action="standard" strain="1" bookref="PG p.92"/>
 	<SKILL name="Artisan" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.93"/>
 	<SKILL name="Artist" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.93"/>
+	<SKILL name="Assess Community" attribute="CHA" default="no" action="sustained" strain="0" bookref="CPG p.101"/>	
 	<SKILL name="Avoid Blow" attribute="DEX" default="yes" action="free" strain="1" bookref="PG p.93"/>
 	<SKILL name="Battle Bellow" attribute="CHA" default="no" action="simple" strain="2" bookref="PG p.93"/>
 	<SKILL name="Battle Shout" attribute="CHA" default="no" action="simple" strain="1" bookref="PG p.93"/>
 	<SKILL name="Blade Juggle" attribute="DEX" default="no" action="standard" strain="s. text" bookref="PG p.93"/>
+	<SKILL name="Block and Counter" attribute="DEX" default="no" action="free" strain="2" bookref="CPG p.101"/>	
 	<SKILL name="Bribery" attribute="CHA" default="yes" action="standard" strain="0" bookref="PG p.93"/>
 	<SKILL name="Charge" attribute="STR" default="no" action="free" strain="0" bookref="PG p.94"/>
 	<SKILL name="Climbing" attribute="DEX" default="yes" action="standard" strain="0" bookref="PG p.94"/>
@@ -43,6 +47,7 @@
 	<SKILL name="Forgery" attribute="DEX" default="no" action="sustained" strain="0" bookref="PG p.97"/>
 	<SKILL name="Graceful Exit" attribute="CHA" default="no" action="standard" strain="0" bookref="PG p.97"/>
 	<SKILL name="Great Leap" attribute="DEX" default="no" action="free" strain="1" bookref="PG p.97"/>
+	<SKILL name="Guard Stance" attribute="DEX" default="no" action="standard" strain="3" bookref="CPG p.101"/>	
 	<SKILL name="Guhvuul" attribute="WIL" default="no" action="free" strain="1" bookref="CF p.xxx"/>
 	<SKILL name="Haggle" attribute="CHA" default="yes" action="sustained" strain="0" bookref="PG p.97"/>
 	<SKILL name="Heartening Laugh" attribute="CHA" default="no" action="standard" strain="1" bookref="PG p.97"/>
@@ -50,6 +55,8 @@
 	<SKILL name="Hypnotize" attribute="CHA" default="no" action="sustained" strain="1" bookref="PG p.98"/>
 	<SKILL name="Impress" attribute="CHA" default="no" action="sustained" strain="1" bookref="PG p.98"/>
 	<SKILL name="Intimidation" attribute="CHA" default="yes" action="standard" strain="0" bookref="KR p.225"/>
+	<SKILL name="Joint Lock" attribute="DEX" default="no" action="standard" strain="1" bookref="CPG p.101"/>
+	<SKILL name="Kiai" attribute="CHA" default="no" action="simple" strain="1" bookref="CPG p.101"/>	
 	<SKILL name="Knowledge" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.98"/>
 	<SKILL name="Lip Reading" attribute="CHA" default="no" action="standard" strain="2" bookref="PG p.98"/>
 	<SKILL name="Lock Picking" attribute="DEX" default="no" action="sustained" strain="0" bookref="PG p.98"/>
@@ -66,6 +73,7 @@
 	<SKILL name="Physician" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.99"/>
 	<SKILL name="Picking Pockets" attribute="DEX" default="no" action="standard" strain="0" bookref="PG p.100"/>
 	<SKILL name="Pilot Boat" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.100"/>
+	<SKILL name="Rapid Strike" attribute="DEX" default="no" action="simple" strain="1" bookref="CPG p.101"/>	
 	<SKILL name="Read/Write Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
 	<SKILL name="Read/Write Language" limitation="Dwarf" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
 	<SKILL name="Read/Write Language" limitation="Sperethiel" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
@@ -100,6 +108,7 @@
 	<SKILL name="Speak Language" limitation="T'skrang" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
 	<SKILL name="Speak Language" limitation="Windling" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
 	<SKILL name="Sprint" attribute="na" default="no" action="simple" strain="3" bookref="PG p.102"/>
+	<SKILL name="Steer Wagon" attribute="PER" default="no" action="simple" strain="0" bookref="CPG p.101"/>
 	<SKILL name="Streetwise" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.102"/>
 	<SKILL name="Sure Mount" attribute="STR" default="no" action="free" strain="0" bookref="PG p.102"/>
 	<SKILL name="Surprise Strike" attribute="STR" default="no" action="free" strain="1" bookref="PG p.102"/>
