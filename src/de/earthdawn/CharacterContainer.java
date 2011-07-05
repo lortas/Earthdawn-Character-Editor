@@ -1506,6 +1506,10 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public List<CHARACTERLANGUAGEType> getLanguages() {
-		return character.getLANGUAGE();
+		List<CHARACTERLANGUAGEType> languages = character.getLANGUAGE();
+		if( languages.isEmpty() ) {
+			for( CHARACTERLANGUAGEType l : PROPERTIES.getDefaultLanguage() ) languages.add(l);
+		}
+		return languages;
 	}
 }
