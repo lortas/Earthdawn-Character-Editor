@@ -251,6 +251,20 @@ public class ApplicationProperties {
 		return result;
 	}
 
+	public List<CHARACTERLANGUAGEType> getDefaultLanguage() {
+		List<CHARACTERLANGUAGEType> result = new ArrayList<CHARACTERLANGUAGEType>();
+		for( OPTIONALRULESDEFAULTLANGUAGE language : OPTIONALRULES.getDEFAULTLANGUAGE() ) {
+			if( language.getLang().equals(LANGUAGE) ) {
+				CHARACTERLANGUAGEType l = new CHARACTERLANGUAGEType();
+				l.setLanguage(language.getLanguage());
+				l.setReadwrite(language.getReadwrite());
+				l.setSpeak(language.getSpeak());
+				result.add(language);
+			}
+		}
+		return result;
+	}
+
 	public String getKarmaritualName() {
 		for( NAMELANGType name : NAMES.getKARMARUTUAL() ) {
 			if( name.getLang().equals(LANGUAGE) ) return name.getName();

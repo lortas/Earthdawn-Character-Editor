@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DATEFORMAT" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="DEFAULTLANGUAGE" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTLANGUAGE" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -62,7 +63,8 @@ import javax.xml.bind.annotation.XmlType;
     "autoinsertlegendpointspent",
     "dateformat",
     "multiusetalent",
-    "defaultoptionaltalent"
+    "defaultoptionaltalent",
+    "defaultlanguage"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
 public class OPTIONALRULES {
@@ -93,6 +95,8 @@ public class OPTIONALRULES {
     protected List<OPTIONALRULESMULTIUSETALENT> multiusetalent;
     @XmlElement(name = "DEFAULTOPTIONALTALENT", namespace = "http://earthdawn.com/optionalrules")
     protected List<OPTIONALRULESDEFAULTOPTIONALTALENT> defaultoptionaltalent;
+    @XmlElement(name = "DEFAULTLANGUAGE", namespace = "http://earthdawn.com/optionalrules")
+    protected List<OPTIONALRULESDEFAULTLANGUAGE> defaultlanguage;
 
     /**
      * Gets the value of the attribute property.
@@ -414,6 +418,35 @@ public class OPTIONALRULES {
             defaultoptionaltalent = new ArrayList<OPTIONALRULESDEFAULTOPTIONALTALENT>();
         }
         return this.defaultoptionaltalent;
+    }
+
+    /**
+     * Gets the value of the defaultlanguage property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the defaultlanguage property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEFAULTLANGUAGE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OPTIONALRULESDEFAULTLANGUAGE }
+     * 
+     * 
+     */
+    public List<OPTIONALRULESDEFAULTLANGUAGE> getDEFAULTLANGUAGE() {
+        if (defaultlanguage == null) {
+            defaultlanguage = new ArrayList<OPTIONALRULESDEFAULTLANGUAGE>();
+        }
+        return this.defaultlanguage;
     }
 
 }
