@@ -464,12 +464,12 @@ public class EDMainWindow {
 	private void writeToXml(File file) throws JAXBException, PropertyException, IOException {
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
-		m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+		FileWriter fileio = new FileWriter(file);
+		m.setProperty(Marshaller.JAXB_ENCODING, fileio.getEncoding());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 		m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-		FileWriter fileio = new FileWriter(file);
-		fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
+		fileio.write("<?xml version=\"1.0\" encoding=\""+fileio.getEncoding()+"\" standalone=\"no\"?>\n");
 		fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 		m.marshal(ec,fileio);
 		fileio.close();
