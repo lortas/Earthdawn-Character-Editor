@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ATTRIBUTEBASEDMOVEMENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT"/>
  *         &lt;element name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="KARMALEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
@@ -56,6 +57,7 @@ import javax.xml.bind.annotation.XmlType;
     "attributebasedmovement",
     "legendpointsforattributeincrease",
     "spelllegendpointcost",
+    "karmalegendpointcost",
     "threaditemdostack",
     "autoincrementdiciplinetalents",
     "showdefaultskills",
@@ -79,6 +81,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType legendpointsforattributeincrease;
     @XmlElement(name = "SPELLLEGENDPOINTCOST", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType spelllegendpointcost;
+    @XmlElement(name = "KARMALEGENDPOINTCOST", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType karmalegendpointcost;
     @XmlElement(name = "THREADITEMDOSTACK", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType threaditemdostack;
     @XmlElement(name = "AUTOINCREMENTDICIPLINETALENTS", namespace = "http://earthdawn.com/optionalrules", required = true)
@@ -216,6 +220,30 @@ public class OPTIONALRULES {
      */
     public void setSPELLLEGENDPOINTCOST(OPTIONALRULEType value) {
         this.spelllegendpointcost = value;
+    }
+
+    /**
+     * Gets the value of the karmalegendpointcost property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getKARMALEGENDPOINTCOST() {
+        return karmalegendpointcost;
+    }
+
+    /**
+     * Sets the value of the karmalegendpointcost property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setKARMALEGENDPOINTCOST(OPTIONALRULEType value) {
+        this.karmalegendpointcost = value;
     }
 
     /**

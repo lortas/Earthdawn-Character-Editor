@@ -38,6 +38,7 @@ public class ECEWorker {
 	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
 	public static final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
 	public static final boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_ShowDefaultSkills=PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_autoincrementDiciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
@@ -151,7 +152,12 @@ public class ECEWorker {
 			}
 		}
 		int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
-		calculatedLP.setKarma(calculatedLP.getKarma()+calculatedKarmaLP);
+		if( OptionalRule_KarmaLegendPointCost ) {
+			calculatedLP.setKarma(calculatedLP.getKarma()+calculatedKarmaLP);
+		} else {
+			calculatedKarmaLP=0;
+			calculatedLP.setKarma(0);
+		}
 
 		// **MOVEMENT**
 		character.calculateMovement();

@@ -37,6 +37,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="ATTRIBUTEBASEDMOVEMENT" type="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="LEGENDPOINTSFORATTRIBUTEINCREASE" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="SPELLLEGENDPOINTCOST" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="KARMALEGENDPOINTCOST" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="THREADITEMDOSTACK" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="AUTOINCREMENTDICIPLINETALENTS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="SHOWDEFAULTSKILLS" type="OPTIONALRULE_type"/>
