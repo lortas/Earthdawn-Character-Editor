@@ -54,7 +54,7 @@ class AttributesTableModel extends AbstractTableModel {
 	
 	private CharacterContainer character;
 	
-    private String[] columnNames = {"Attribute", "Base", "Buy", "Circle", "Final", "Step"};
+    private String[] columnNames = {"Attribute", "Base", "Buy", "LP increase", "Final", "Step"};
     private Object[][] data = {
     {"Dexterity"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0)},
     {"Strength"		, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0)},    
