@@ -31,6 +31,10 @@
 	-->
 	<SPELLLEGENDPOINTCOST used="yes"/>
 	<!--
+	By the following rule you can define if the karma points will cost legend points or not
+	-->
+	<KARMALEGENDPOINTCOST used="yes"/>
+	<!--
 	By the following rule you can define if all modifier of thread items will be added or
 	if only the maximum of each modifier will count.
 	-->
