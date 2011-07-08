@@ -1,9 +1,11 @@
 # Installation #
 First of all you need a java runtime environment installed, eg. from sun/oracle.
 
-Unzip the file to a folder on your local media. It can be something like `C:\\Programme\\EarthdawnCharacterEditor\\`. Any new release can be unzip into the same folder, but you have to allow your unzip tool to overwrite exiting files. You may have changed some files in the sub folder "config", for example the file `optionalrules.xml`. You may want to backup those files before installing a new release.
+Unzip the release file to a folder on your local media. It can be something like `C:\Program Files\EarthdawnCharacterEditor\`. Any new release can be unziped into the same folder, but you have to allow your unzip tool to overwrite exiting files. You may have changed some files in the sub folder "config", for example the file `optionalrules.xml`. You may want to backup those files before installing a new release.
 
 You now can start the application by running one of the start scripts `EarthdawnCharacterEditor.cmd` or `EarthdawnCharacterEditor.sh`. Or by starting the `.jar` file directly. In the first case, the command `java` have to be with in your `PATH`. In the second case, files ending with `.jar` have to be linked to the `java` command.
+
+If your operating system ask you, if you would like to start the EarthdawnCharacterEditor within an terminal window or not, you can chose both. If you start it within an terminal you can also see some status and debug output. But this output is not needed for just using the EarthdawnCharacterEditor.
 
 
 # optionalrules.xml #
