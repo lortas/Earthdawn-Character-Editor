@@ -194,7 +194,7 @@
 		<ABILITY>Earth and Wind</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 10 -->
-		<DISCIPLINETALENT name="Endurace Cold"/>
+		<DISCIPLINETALENT name="Endure Cold"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Air Fortress"/>
 		<SPELL type="elemental" name="Earth and Air"/>
