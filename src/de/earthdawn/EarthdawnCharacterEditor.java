@@ -53,12 +53,12 @@ public class EarthdawnCharacterEditor {
 				File outFile = new File(args[1]);
 				System.out.println("Speichere Charakter in " + outFile);
 				Marshaller m = jc.createMarshaller();
-				m.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+				FileWriter fileio = new FileWriter(outFile);
+				m.setProperty(Marshaller.JAXB_ENCODING, fileio.getEncoding());
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-				FileWriter fileio = new FileWriter(outFile);
-				fileio.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n");
+				fileio.write("<?xml version=\"1.0\" encoding=\""+fileio.getEncoding()+"\" standalone=\"no\"?>\n");
 				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 				m.marshal(ec,fileio);
 				// Ausgabe (PDF)
