@@ -43,7 +43,7 @@ public class EDDisciplines extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
-		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0, 20));
+		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0, 15));
 	}
 
 	public CharacterContainer getCharacter() {
