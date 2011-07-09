@@ -10,10 +10,10 @@
 	</xs:complexType>
 	<xs:element name="KNACKS">
 		<xs:complexType>
-			<xs:choice maxOccurs="unbounded">
+			<xs:sequence>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILLKNACK" type="KNACKBASE_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENTKNACK" type="KNACKBASE_type"/>
-			</xs:choice>
+			</xs:sequence>
 			<xs:attribute name="lang" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>

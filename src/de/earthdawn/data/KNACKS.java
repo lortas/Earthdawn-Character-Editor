@@ -10,12 +10,10 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -29,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
+ *       &lt;sequence>
  *         &lt;element name="SKILLKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TALENTKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,47 +41,75 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "skillknackOrTALENTKNACK"
+    "skillknack",
+    "talentknack"
 })
 @XmlRootElement(name = "KNACKS", namespace = "http://earthdawn.com/knack")
 public class KNACKS {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "SKILLKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class),
-        @XmlElementRef(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<KNACKBASEType>> skillknackOrTALENTKNACK;
+    @XmlElement(name = "SKILLKNACK", namespace = "http://earthdawn.com/knack")
+    protected List<KNACKBASEType> skillknack;
+    @XmlElement(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack")
+    protected List<KNACKBASEType> talentknack;
     @XmlAttribute(required = true)
     protected String lang;
 
     /**
-     * Gets the value of the skillknackOrTALENTKNACK property.
+     * Gets the value of the skillknack property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the skillknackOrTALENTKNACK property.
+     * This is why there is not a <CODE>set</CODE> method for the skillknack property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSKILLKNACKOrTALENTKNACK().add(newItem);
+     *    getSKILLKNACK().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}
-     * {@link JAXBElement }{@code <}{@link KNACKBASEType }{@code >}
+     * {@link KNACKBASEType }
      * 
      * 
      */
-    public List<JAXBElement<KNACKBASEType>> getSKILLKNACKOrTALENTKNACK() {
-        if (skillknackOrTALENTKNACK == null) {
-            skillknackOrTALENTKNACK = new ArrayList<JAXBElement<KNACKBASEType>>();
+    public List<KNACKBASEType> getSKILLKNACK() {
+        if (skillknack == null) {
+            skillknack = new ArrayList<KNACKBASEType>();
         }
-        return this.skillknackOrTALENTKNACK;
+        return this.skillknack;
+    }
+
+    /**
+     * Gets the value of the talentknack property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the talentknack property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTALENTKNACK().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKBASEType }
+     * 
+     * 
+     */
+    public List<KNACKBASEType> getTALENTKNACK() {
+        if (talentknack == null) {
+            talentknack = new ArrayList<KNACKBASEType>();
+        }
+        return this.talentknack;
     }
 
     /**
