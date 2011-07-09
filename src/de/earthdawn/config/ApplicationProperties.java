@@ -167,8 +167,8 @@ public class ApplicationProperties {
 		return CAPABILITIES;
 	}
 
-	public KNACKS getKnacks() {
-		return KNACKS;
+	public List<KNACKBASEType> getTalentKnacks() {
+		return KNACKS.getTALENTKNACK();
 	}
 
 	// Liefert die Definition aller verfügbarer Zauber zurück.

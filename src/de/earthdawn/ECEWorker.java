@@ -37,6 +37,7 @@ public class ECEWorker {
 	public static final String durabilityTalentName = PROPERTIES.getDurabilityName();
 	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
 	public static final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
+	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
 	public static final boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_ShowDefaultSkills=PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES);
@@ -268,6 +269,9 @@ public class ECEWorker {
 			List<DISCIPLINEBONUSType> currentBonuses = currentDiscipline.getDISCIPLINEBONUS();
 			currentBonuses.clear();
 			currentBonuses.addAll(getDisciplineBonuses(currentDiscipline));
+			// TALENT KNACKS
+			for( TALENTType talent : currentTalents.getDISZIPLINETALENT() ) checkTalentKnacks(talent,disciplinenumber);
+			for( TALENTType talent : currentTalents.getOPTIONALTALENT() ) checkTalentKnacks(talent,disciplinenumber);
 		}
 
 		// ** ARMOR **
@@ -508,6 +512,36 @@ public class ECEWorker {
 		character.calculateDevotionPoints();
 
 		return charakter;
+	}
+
+	private void checkTalentKnacks(TALENTType talent, int disciplinenumber) {
+		String talentname = talent.getName();
+		for( KNACKType knack : talent.getKNACK() ) {
+			String knackname = knack.getName();
+			for( KNACKBASEType k : globalTalentKnackList ) {
+				if( k.getName().equals(knackname) ) {
+					if( k.getBasename().equals(talentname) ) {
+						knack.setBookref(k.getBookref());
+						knack.setMinrank(k.getMinrank());
+						knack.setStrain(k.getStrain());
+						break; // Wenn er einmal gefunden wurde, brauch nicht mehr weitergesucht werden.
+					} else {
+						errorout.println("The knack '"+knackname+"' was learned for the talent '"+talentname+"', but should be learned for talent '"+k.getBasename()+"'. Will not enforce knack default values!");
+					}
+				}
+			}
+			int talentrank = talent.getRANK().getRank();
+			int knackminrank = knack.getMinrank();
+			if( talentrank < knackminrank ) {
+				errorout.println("The knack '"+knackname+"' was learned for the talent '"+talentname+"', but talent rank ("+talentrank+") is less than the knack minimum talent rank ("+knackminrank+")!");
+			}
+			CHARACTERISTICSCOST knackcost = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knackminrank);
+			if( knackcost == null ) {
+				errorout.println("Could not get knack lp costs for disciplinenumber="+disciplinenumber+", talent_circle="+talent.getCircle()+" and knackminrank="+knackminrank);
+			} else {
+				calculatedLP.setKnacks(calculatedLP.getKnacks()+knackcost.getCost());
+			}
+		}
 	}
 
 	public void ensureRankAndTeacher(TALENTType talent) {
