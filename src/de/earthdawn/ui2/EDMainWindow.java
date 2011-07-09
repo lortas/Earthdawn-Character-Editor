@@ -7,9 +7,11 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +51,7 @@ import de.earthdawn.event.CharChangeEventListener;
 public class EDMainWindow {
 
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
+	private static final String encoding="UTF8";
 
 	private JFrame frame;
 	private EDCHARACTER ec;
@@ -464,13 +467,14 @@ public class EDMainWindow {
 	private void writeToXml(File file) throws JAXBException, PropertyException, IOException {
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
-		FileWriter fileio = new FileWriter(file);
-		m.setProperty(Marshaller.JAXB_ENCODING, fileio.getEncoding());
+		FileOutputStream out = new FileOutputStream(file);
+		PrintStream fileio = new PrintStream(out, false, "UTF8");
+		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 		m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-		fileio.write("<?xml version=\"1.0\" encoding=\""+fileio.getEncoding()+"\" standalone=\"no\"?>\n");
-		fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
+		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n");
+		fileio.print("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 		m.marshal(ec,fileio);
 		fileio.close();
 	}
