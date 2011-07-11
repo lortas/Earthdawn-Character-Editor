@@ -51,7 +51,7 @@ import de.earthdawn.event.CharChangeEventListener;
 public class EDMainWindow {
 
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
-	private static final String encoding="UTF8";
+	private static final String encoding="UTF-8";
 
 	private JFrame frame;
 	private EDCHARACTER ec;
