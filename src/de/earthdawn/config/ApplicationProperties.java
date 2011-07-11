@@ -167,6 +167,30 @@ public class ApplicationProperties {
 		return CAPABILITIES;
 	}
 
+	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
+		HashMap<String,TALENTABILITYType> result = new HashMap<String,TALENTABILITYType>();
+		for(DISCIPLINE discipline : getAllDisziplines()) {
+			int circlenr=maxcirclenr;
+			for( DISCIPLINECIRCLEType circle : discipline.getCIRCLE() ) {
+				if( circlenr < 1) break;
+				for( TALENTABILITYType talent : circle.getOPTIONALTALENT() ) {
+					String name = talent.getName();
+					String limitation = talent.getLimitation();
+					if( limitation.isEmpty() ) result.put(name,talent);
+					else result.put(name+" - "+limitation,talent);
+				}
+				for( TALENTABILITYType talent : circle.getDISCIPLINETALENT() ) {
+					String name = talent.getName();
+					String limitation = talent.getLimitation();
+					if( limitation.isEmpty() ) result.put(name,talent);
+					else result.put(name+" - "+limitation,talent);
+				}
+				circlenr--;
+			}
+		}
+		return result;
+	}
+
 	public List<KNACKBASEType> getTalentKnacks() {
 		return KNACKS.getTALENTKNACK();
 	}
