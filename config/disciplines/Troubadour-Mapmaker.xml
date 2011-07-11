@@ -19,7 +19,7 @@
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="Etiquette"/>
 		<OPTIONALTALENT name="Heartening Laugh"/>
-		<OPTIONALTALENT name="Last Impression"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
 		<OPTIONALTALENT name="Taunt"/>
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Winning Smile"/>
@@ -103,7 +103,7 @@
 		<OPTIONALTALENT name="Life Check"/>
 		<OPTIONALTALENT name="Safe Thought"/>
 		<OPTIONALTALENT name="Second Chance"/>
-		<OPTIONALTALENT name="Thruth Skit"/>
+		<OPTIONALTALENT name="Truth Skit"/>
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>

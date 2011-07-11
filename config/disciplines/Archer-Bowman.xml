@@ -71,8 +71,8 @@
 		<OPTIONALTALENT name="Rushing Attack"/>
 		<OPTIONALTALENT name="Quick Shot"/>
 		<OPTIONALTALENT name="Tiger Spring"/>
-		<OPTIONALTALENT name="Trace Missle"/>
-		<OPTIONALTALENT name="Warp Missle"/>
+		<OPTIONALTALENT name="Trace Missile"/>
+		<OPTIONALTALENT name="Warp Missile"/>
 		<DISCIPLINETALENT name="Eagle Eye"/>
 		<TALENTABILITY/>
 		<KARMA spend="Recovery Test"/>

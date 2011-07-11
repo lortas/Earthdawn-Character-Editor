@@ -2,7 +2,7 @@
 <DISCIPLINE name="Journeyman" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
-		<OPTIONALTALENT name="Acarne Mutterings"/>
+		<OPTIONALTALENT name="Arcane Mutterings"/>
 		<OPTIONALTALENT name="Acrobatic Strike"/>
 		<OPTIONALTALENT name="Air Dance"/>
 		<OPTIONALTALENT name="Air Sailing"/>
@@ -33,7 +33,7 @@
 		<OPTIONALTALENT name="Melee Weapons"/>
 		<OPTIONALTALENT name="Mimic Voice"/>
 		<OPTIONALTALENT name="Missile Weapons"/>
-		<OPTIONALTALENT name="Missle Weapons"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
 		<OPTIONALTALENT name="Mystic Aim"/>
 		<OPTIONALTALENT name="Navigation"/>
 		<OPTIONALTALENT name="Parry"/>
@@ -73,7 +73,7 @@
 		<OPTIONALTALENT name="Anticipate Blow"/>
 		<OPTIONALTALENT name="Blood Share"/>
 		<OPTIONALTALENT name="Borrow Sense"/>
-		<OPTIONALTALENT name="Detact Weapons"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Detect Trap"/>
 		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Direction Arrow"/>
@@ -89,8 +89,8 @@
 		<OPTIONALTALENT name="Frighten Animals"/>
 		<OPTIONALTALENT name="Great Leap"/>
 		<OPTIONALTALENT name="Heartening Laugh"/>
-		<OPTIONALTALENT name="Hearting Laugh"/>
-		<OPTIONALTALENT name="Last Impression"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
 		<OPTIONALTALENT name="Long Shot"/>
 		<OPTIONALTALENT name="Shield Charge"/>
 		<OPTIONALTALENT name="Sprint"/>
@@ -140,8 +140,8 @@
 		<OPTIONALTALENT name="Battle Bellow"/>
 		<OPTIONALTALENT name="Blade Juggle"/>
 		<OPTIONALTALENT name="Call Animal Companion"/>
-		<OPTIONALTALENT name="Call Missle"/>
-		<OPTIONALTALENT name="Call Misslile"/>
+		<OPTIONALTALENT name="Call Missile"/>
+		<OPTIONALTALENT name="Call Missile"/>
 		<OPTIONALTALENT name="Cobra Strike"/>
 		<OPTIONALTALENT name="Cold Purify"/>
 		<OPTIONALTALENT name="Conceal Object"/>
@@ -149,7 +149,7 @@
 		<OPTIONALTALENT name="Diplomacy"/>
 		<OPTIONALTALENT name="Direction Sense"/>
 		<OPTIONALTALENT name="Disarm"/>
-		<OPTIONALTALENT name="Disarming Trap"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
 		<OPTIONALTALENT name="Engaging Banter"/>
 		<OPTIONALTALENT name="Enhanced Fetish"/>
 		<OPTIONALTALENT name="Enhanced Matrix"/>
@@ -157,9 +157,9 @@
 		<OPTIONALTALENT name="Gliding Stride"/>
 		<OPTIONALTALENT name="Graceful Exit"/>
 		<OPTIONALTALENT name="Heal Animal Companion"/>
-		<OPTIONALTALENT name="Hypnotzize"/>
+		<OPTIONALTALENT name="Hypnotize"/>
 		<OPTIONALTALENT name="Inspire Others"/>
-		<OPTIONALTALENT name="Lasting Implression"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
 		<OPTIONALTALENT name="Lasting Impression"/>
 		<OPTIONALTALENT name="Leadership"/>
 		<OPTIONALTALENT name="Lifesight"/>
@@ -177,13 +177,13 @@
 		<OPTIONALTALENT name="Slough Blame"/>
 		<OPTIONALTALENT name="Spirit Mount"/>
 		<OPTIONALTALENT name="Spot Armor Flaw"/>
-		<OPTIONALTALENT name="Steal Thought"/>
-		<OPTIONALTALENT name="Steel Stare"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="Steely Stare"/>
 		<OPTIONALTALENT name="Stopping Aim"/>
 		<OPTIONALTALENT name="Summon" limitation="Ally Spirits"/>
 		<OPTIONALTALENT name="Summon" limitation="Elemental Spirits"/>
 		<OPTIONALTALENT name="Summon" limitation="Nature Spirits"/>
-		<OPTIONALTALENT name="Suprise Strike"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
 		<OPTIONALTALENT name="Swing Attack"/>
 		<OPTIONALTALENT name="Tactics"/>
 		<OPTIONALTALENT name="Temper Other"/>

@@ -40,7 +40,7 @@
 		<OPTIONALTALENT name="Fearsome Charge"/>
 		<OPTIONALTALENT name="Frighten Animals"/>
 		<OPTIONALTALENT name="Heal Animal Companion"/>
-		<OPTIONALTALENT name="Hearting Laugh"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
 		<OPTIONALTALENT name="Leadership"/>
 		<OPTIONALTALENT name="Mount Attack"/>
 		<OPTIONALTALENT name="Mount Durability" limitation="6/5"/>
@@ -98,7 +98,7 @@
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Bestial Toughness"/>
-		<OPTIONALTALENT name="Champion Challange"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
 		<OPTIONALTALENT name="Develop Animal Sense"/>
 		<OPTIONALTALENT name="Lion Spirit"/>
 		<OPTIONALTALENT name="Second Chance"/>
