@@ -30,6 +30,7 @@ public class ECECapabilities {
 	
 	private List<CAPABILITYType> talentList = new ArrayList<CAPABILITYType>();
 	private List<CAPABILITYType> skillList = new ArrayList<CAPABILITYType>();
+	private List<CAPABILITYType> versatilitytalentList = null;
 	private HashMap<String,CAPABILITYType> talentMap = new HashMap<String,CAPABILITYType>();
 	private HashMap<String,CAPABILITYType> skillMap = new HashMap<String,CAPABILITYType>();
 	
@@ -51,6 +52,16 @@ public class ECECapabilities {
 
 	public List<CAPABILITYType> getTalents() {
 		return talentList;
+	}
+
+	public List<CAPABILITYType> getVersatilityTalents() {
+		if( versatilitytalentList == null ) {
+			versatilitytalentList = new ArrayList<CAPABILITYType>();
+			for( CAPABILITYType t : talentList ) {
+				if( ! t.getNotbyversatility().equals(YesnoType.YES) ) versatilitytalentList.add(t);
+			}
+		}
+		return versatilitytalentList;
 	}
 
 	public List<CAPABILITYType> getSkills() {

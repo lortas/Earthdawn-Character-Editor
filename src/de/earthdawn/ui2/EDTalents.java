@@ -127,7 +127,9 @@ public class EDTalents extends JPanel {
 	protected void do_buttonAdd2_actionPerformed(ActionEvent arg0) {
 		// Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
 		if( character.getUnusedVersatilityRanks() < 1 ) return;
-		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(true);
+		// Bestimme den höchsten Kreis aller erlernten Disziplinen
+		int circle=1; for( int c : character.getDisciplineCircles() ) if( c > circle ) circle=c;
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(true,circle);
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
 		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
@@ -135,8 +137,7 @@ public class EDTalents extends JPanel {
 			CAPABILITYType cap = selected.get(key);
 			TALENTABILITYType talent = new TALENTABILITYType();
 			talent.setName(cap.getName());
-			int circle=1;
-			for( int c : character.getDisciplineCircles() ) if( c > circle ) circle=c;
+			talent.setLimitation(cap.getLimitation());
 			character.addOptionalTalent(disciplin, circle, talent, true);
 			character.refesh();
 		}
