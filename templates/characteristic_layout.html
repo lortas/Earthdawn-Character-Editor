@@ -3,6 +3,7 @@
 table    { width:100%; height:100%; border-width:1px; border-style:solid; border-color:silver; padding:0px; spacing:0px;}
 table.invis { border-width:0px; border:none; }
 td       { text-align:center; }
+td.red   { font-weight:bold; color:red; }
 tr.thead { font-weight:bold; font-style:italic; }
 tr.tfoot { font-style:italic; }
 </style>
@@ -192,11 +193,11 @@ tr.tfoot { font-style:italic; }
 				</tr>
 				<tr>
 					<td>Talents</td>
-					<td>${USEDSTARTRANKS.talents}</td>
+					<#if USEDSTARTRANKS.talents < 0><td class="red"><#else><td></#if>${USEDSTARTRANKS.talents}</td>
 				</tr>
 				<tr>
 					<td>Skills</td>
-					<td>${USEDSTARTRANKS.skills}</td>
+					<#if USEDSTARTRANKS.skills < 0><td class="red"><#else><td></#if>${USEDSTARTRANKS.skills}</td>
 				</tr>
 			</table>
 		</td>
@@ -267,7 +268,7 @@ tr.tfoot { font-style:italic; }
 				</tr>
 				<tr>
 					<td>Current</td>
-					<td>${EXPERIENCE.currentlegendpoints}</td>
+					<#if EXPERIENCE.currentlegendpoints < 0><td class="red"><#else><td></#if>${EXPERIENCE.currentlegendpoints}</td>
 				</tr>
 				<tr>
 					<td>Total</td>
@@ -323,7 +324,7 @@ tr.tfoot { font-style:italic; }
 					<td>${CALCULATEDLEGENDPOINTS.karma}</td>
 					<td>${CALCULATEDLEGENDPOINTS.magicitems}</td>
 					<td>${CALCULATEDLEGENDPOINTS.total}</td>
-					<td>${CALCULATEDLEGENDPOINTS.unused}</td>
+					<#if CALCULATEDLEGENDPOINTS.unused < 0><td class="red"><#else><td></#if>${CALCULATEDLEGENDPOINTS.unused}</td>
 				</tr>
 			</table>
 		</td>
