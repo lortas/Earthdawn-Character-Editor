@@ -102,6 +102,7 @@
 			<zipfileset file="./license.en.txt"/>
 			<zipfileset file="./license.en.html"/>
 			<zipfileset file="./license.de.html"/>
+			<zipfileset file="./readme.txt"/>
 		</zip>
 	</target>
 </project>
