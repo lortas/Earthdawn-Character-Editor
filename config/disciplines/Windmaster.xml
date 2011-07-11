@@ -68,7 +68,7 @@
 		<OPTIONALTALENT name="Defense"/>
 		<OPTIONALTALENT name="Pin"/>
 		<OPTIONALTALENT name="Poison Resistance"/>
-		<OPTIONALTALENT name="Resist Painy"/>
+		<OPTIONALTALENT name="Resist Pain"/>
 		<OPTIONALTALENT name="Rushing Attack"/>
 		<OPTIONALTALENT name="Vitality"/>
 		<OPTIONALTALENT name="Spirit Strike"/>
@@ -102,7 +102,7 @@
 		<OPTIONALTALENT name="Second Chance"/>
 		<OPTIONALTALENT name="Show Armor Flaw"/>
 		<OPTIONALTALENT name="Stone Skin"/>
-		<DISCIPLINETALENT name="Ethernal Weapon"/>
+		<DISCIPLINETALENT name="Ethereal Weapon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<KARMASTEP/>

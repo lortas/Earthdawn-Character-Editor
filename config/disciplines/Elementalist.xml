@@ -175,12 +175,12 @@
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Matrix"/>
 		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Bargain with Summoned Creature"/>
+		<OPTIONALTALENT name="Bargain With Summoned Creature"/>
 		<OPTIONALTALENT name="Disarm Trap"/>
 		<OPTIONALTALENT name="Plant Shelter"/>
 		<OPTIONALTALENT name="Safe Path"/>
 		<OPTIONALTALENT name="Spirit Strike"/>
-		<OPTIONALTALENT name="Wrap Missle"/>
+		<OPTIONALTALENT name="Warp Missile"/>
 		<DISCIPLINETALENT name="Metal Ward"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Burning Water"/>

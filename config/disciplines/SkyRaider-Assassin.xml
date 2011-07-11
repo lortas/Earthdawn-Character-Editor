@@ -7,7 +7,7 @@
 		<OPTIONALTALENT name="Parry"/>
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Unarmed Combat"/>
-		<DISCIPLINETALENT name="Steel Tought"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
 		<DISCIPLINETALENT name="Battle Shout"/>
 		<DISCIPLINETALENT name="Fireblood"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
@@ -16,7 +16,7 @@
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<OPTIONALTALENT name="Air Speaking"/>
-		<OPTIONALTALENT name="Detact Weapons"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="Missile Weapons"/>
 		<OPTIONALTALENT name="Swift Kick"/>
@@ -39,10 +39,10 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Blood Share"/>
 		<OPTIONALTALENT name="Cold Purify"/>
-		<OPTIONALTALENT name="Lasting Implression"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
 		<OPTIONALTALENT name="Leadership"/>
 		<OPTIONALTALENT name="Lion Heart"/>
-		<OPTIONALTALENT name="Suprise Strike"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
 		<OPTIONALTALENT name="Tactics"/>
 		<OPTIONALTALENT name="Tiger Spring"/>
 		<DISCIPLINETALENT name="Battle Bellow"/>
@@ -97,11 +97,11 @@
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
-		<OPTIONALTALENT name="Champion Challange"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
 		<OPTIONALTALENT name="Ethereal Weapon"/>
 		<OPTIONALTALENT name="Howl"/>
 		<OPTIONALTALENT name="Lion Spirit"/>
-		<OPTIONALTALENT name="Missle Twister"/>
+		<OPTIONALTALENT name="Missile Twister"/>
 		<OPTIONALTALENT name="Second Chance"/>
 		<DISCIPLINETALENT name="Rally"/>
 		<TALENTABILITY/>

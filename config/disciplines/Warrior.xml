@@ -43,7 +43,7 @@
 		<OPTIONALTALENT name="Lion Heart"/>
 		<OPTIONALTALENT name="Second Weapon"/>
 		<OPTIONALTALENT name="Shield Charge"/>
-		<OPTIONALTALENT name="Steel Stare"/>
+		<OPTIONALTALENT name="Steely Stare"/>
 		<OPTIONALTALENT name="Tactics"/>
 		<DISCIPLINETALENT name="Temper Self"/>
 		<TALENTABILITY/>
@@ -96,12 +96,12 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
-		<OPTIONALTALENT name="Etherreal Weapon"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
 		<OPTIONALTALENT name="Mind Blade"/>
 		<OPTIONALTALENT name="Rushing Attack"/>
 		<OPTIONALTALENT name="Second Chance"/>
 		<OPTIONALTALENT name="Vital Strike"/>
-		<OPTIONALTALENT name="Weapon Beater"/>
+		<OPTIONALTALENT name="Weapon Breaker"/>
 		<DISCIPLINETALENT name="Stone Skin"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>

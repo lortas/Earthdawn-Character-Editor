@@ -5,7 +5,7 @@
 		<OPTIONALTALENT name="Avoid Blow"/>
 		<OPTIONALTALENT name="Speak Language"/>
 		<OPTIONALTALENT name="Melee Weapons"/>
-		<OPTIONALTALENT name="Missle Weapons"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
 		<OPTIONALTALENT name="Silent Walk"/>
 		<DISCIPLINETALENT name="Climbing"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
@@ -72,7 +72,7 @@
 		<OPTIONALTALENT name="Sense Poison"/>
 		<OPTIONALTALENT name="Spot Armor Flaw"/>
 		<OPTIONALTALENT name="Tiger Spring"/>
-		<OPTIONALTALENT name="Trace Missle"/>
+		<OPTIONALTALENT name="Trace Missile"/>
 		<DISCIPLINETALENT name="Endure Cold"/>
 		<TALENTABILITY/>
 		<KARMA spend="Recovery Test"/>
@@ -101,7 +101,7 @@
 		<OPTIONALTALENT name="Bestial Resilience"/>
 		<OPTIONALTALENT name="Elemental Walk"/>
 		<OPTIONALTALENT name="Multi-Tongue"/>
-		<OPTIONALTALENT name="Nehterwalk"/>
+		<OPTIONALTALENT name="Netherwalk"/>
 		<OPTIONALTALENT name="Plant Shelter"/>
 		<OPTIONALTALENT name="Vital Strike"/>
 		<DISCIPLINETALENT name="Echo Location"/>

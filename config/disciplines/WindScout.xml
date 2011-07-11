@@ -5,7 +5,7 @@
 		<OPTIONALTALENT name="Navigation"/>
 		<OPTIONALTALENT name="Sprint"/>
 		<OPTIONALTALENT name="Melee Weapons"/>
-		<OPTIONALTALENT name="Missle Weapons"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
 		<OPTIONALTALENT name="Silent Walk"/>
 		<DISCIPLINETALENT name="Avoid Blow"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
@@ -18,7 +18,7 @@
 		<OPTIONALTALENT name="Anticipate Blow"/>
 		<OPTIONALTALENT name="Detect Trap"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Creature Analysisf"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Animal Bond"/>
@@ -28,7 +28,7 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<DISCIPLINETALENT name="NScent Identifier"/>
+		<DISCIPLINETALENT name="Scent Identifier"/>
 		<TALENTABILITY/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
@@ -110,7 +110,7 @@
 		<ABILITY>Wing Mastery</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 14 -->
-		<DISCIPLINETALENT name="Second Chancee"/>
+		<DISCIPLINETALENT name="Second Chance"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
