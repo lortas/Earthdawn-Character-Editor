@@ -13,6 +13,22 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.27-20110711.zip ##
++ Bugs
+	+ XML encoding for storing character should now be set correct
+	+ Typing error within different discipline config files corrected
+	+ The maximal circle for disciplines is now reduced to 15.
++ XML Schema enhanced:
+	+ select element type for the list of available talent knacks from xs:choise to xs:sequence
++ If the language list of the character is empty default language will be inserted
++ The languages of the character are listed at the Ajfel+Mordom PDF
++ This readme in markdown-syntax added
++ All spells of Cathay Players Guide added
++ New optional rule KARMALEGENDPOINTCOST added
++ The column for LP based raising of attributes is renamed from "circle" to "LP increase"
++ The knack list of the character will now be evaluated and the knack LPs will now be calculated
++ The list for versatility talents will now only show talents until current circle and also list talents multiple time with different limitations
++ Negative values of (calculated) legend points and negative values of starti ranks will now changed to red within the characteristic overview
 ## EarthdawnCharacterEditor-0.26-20110704.zip ##
 + XML Schema enhanced:
 	- The element "portrait" has now the attribute "contenttype"
