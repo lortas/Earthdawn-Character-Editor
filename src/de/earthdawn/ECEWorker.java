@@ -351,18 +351,10 @@ public class ECEWorker {
 			for( CAPABILITYType defaultSkill : defaultSkills ) {
 				SKILLType skill = new SKILLType();
 				RANKType rank = new RANKType();
-				rank.setBonus(0);
-				rank.setLpcost(0);
-				rank.setRank(0);
 				skill.setRANK(rank);
 				skill.setName(defaultSkill.getName());
 				skill.setLimitation(defaultSkill.getLimitation());
-				skill.setAction(defaultSkill.getAction());
-				skill.setAttribute(defaultSkill.getAttribute());
-				skill.setBonus(defaultSkill.getBonus());
-				skill.setKarma(defaultSkill.getKarma());
-				skill.setStrain(defaultSkill.getStrain());
-				skill.setDefault(defaultSkill.getDefault());
+				enforceCapabilityParams(skill);
 				if( skill.getAttribute() != null ) {
 					calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 				}
@@ -831,6 +823,7 @@ public class ECEWorker {
 			capability.setBookref(replacment.getBookref());
 			capability.setIsinitiative(replacment.getIsinitiative());
 			capability.setNotbyversatility(replacment.getNotbyversatility());
+			capability.setDefault(replacment.getDefault());
 		}
 	}
 
