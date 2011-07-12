@@ -48,27 +48,25 @@ public class ECECsvExporter {
 		String[] header = {"In Matrix","Spell Name","Type","Circle","Threads","Weaving Difficulty","Reattuning Difficulty",
 				"Casting Difficulty","Range","Duration","Effect Area","Effect","Book Ref"};
 		out.println(generaterow(header));
-		for( SPELLSType spells : character.getAllSpells() ) {
-			List<SPELLType> spellList = spells.getSPELL();
-			Collections.sort(spellList, new SpellComparator());
-			for( SPELLType spell : spellList ) {
-				List<String> row = new ArrayList<String>();
-				if( spell.getInmatrix().equals(YesnoType.YES)) row.add( "Yes" );
-				else row.add( "" );
-				row.add( spell.getName() );
-				row.add( spell.getType().value() );
-				row.add( String.valueOf(spell.getCircle()) );
-				row.add( spell.getThreads() );
-				row.add( spell.getWeavingdifficulty() );
-				row.add( String.valueOf(spell.getReattuningdifficulty()) );
-				row.add( spell.getCastingdifficulty() );
-				row.add( spell.getRange() );
-				row.add( spell.getDuration() );
-				row.add( spell.getEffectarea() );
-				row.add( spell.getEffect() );
-				row.add( spell.getBookref() );
-				out.println(generaterow(row));
-			}
+		List<SPELLType> spells = character.getAllSpells();
+		Collections.sort(spells, new SpellComparator());
+		for( SPELLType spell : spells ) {
+			List<String> row = new ArrayList<String>();
+			if( spell.getInmatrix().equals(YesnoType.YES)) row.add( "Yes" );
+			else row.add( "" );
+			row.add( spell.getName() );
+			row.add( spell.getType().value() );
+			row.add( String.valueOf(spell.getCircle()) );
+			row.add( spell.getThreads() );
+			row.add( spell.getWeavingdifficulty() );
+			row.add( String.valueOf(spell.getReattuningdifficulty()) );
+			row.add( spell.getCastingdifficulty() );
+			row.add( spell.getRange() );
+			row.add( spell.getDuration() );
+			row.add( spell.getEffectarea() );
+			row.add( spell.getEffect() );
+			row.add( spell.getBookref() );
+			out.println(generaterow(row));
 		}
 	}
 
@@ -79,9 +77,9 @@ public class ECECsvExporter {
 				"Dice","LP cost","Action","Talent Bonus","Karma","Strain","Teacher Name","Teacher Discipline","Teachers Talent Circle",
 				"Teachers Current Circle","Learned By Versatility","Comment","Book Ref"};
 		out.println(generaterow(header));
-		for( TALENTSType allTalents : character.getAllTalents() ) {
-			printTalents(out, allTalents.getDISZIPLINETALENT(), true );
-			printTalents(out, allTalents.getOPTIONALTALENT(), false );
+		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			printTalents(out, discipline.getDISZIPLINETALENT(), true );
+			printTalents(out, discipline.getOPTIONALTALENT(), false );
 		}
 	}
 

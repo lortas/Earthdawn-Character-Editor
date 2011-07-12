@@ -20,81 +20,80 @@
     <MOVEMENT ground="3" flight="8"/>
     <INITIATIVE modification="0" base="7" dice="d12" step="7"/>
     <CARRYING carrying="20" lifting="40"/>
-    <DISCIPLINE circle="6" name="Elementalist"/>
-    <TALENTS discipline="Elementalist">
-        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Air Speaking">
+    <DISCIPLINE circle="6" name="Elementalist">
+        <edt:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Air Speaking">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
             <edt:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
             <edt:RANK lpcost="100" bonus="0" rank="1" dice="d8+d6" step="9"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" karma="no" limitation="Elementalism" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="1" karma="no" limitation="Elementalism" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
             <edt:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
             <edt:RANK lpcost="600" bonus="0" rank="3" dice="d6-1" step="3"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Fire Heal">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Fire Heal">
             <edt:RANK lpcost="100" bonus="0" rank="1" dice="2d6" step="8"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="3" karma="yes" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Elemental Tongues">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="3" karma="yes" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Elemental Tongues">
             <edt:RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="4" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="standard" name="Elemental Hold">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="4" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="standard" name="Elemental Hold">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="2d10" step="12"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="5" karma="yes" limitation="Elemental Spirits" bonus="0" attribute="PER" strain="0" action="standard" name="Summon">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="5" karma="yes" limitation="Elemental Spirits" bonus="0" attribute="PER" strain="0" action="standard" name="Summon">
             <edt:RANK lpcost="3100" bonus="0" rank="5" dice="d12+d10" step="13"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Cold Purify">
+        </edt:DISZIPLINETALENT>
+        <edt:DISZIPLINETALENT circle="6" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Cold Purify">
             <edt:RANK lpcost="3100" bonus="0" rank="5" dice="2d10" step="12"/>
             <edt:TEACHER/>
-        </DISZIPLINETALENT>
-        <OPTIONALTALENT circle="0" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
+        </edt:DISZIPLINETALENT>
+        <edt:OPTIONALTALENT circle="0" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
             <edt:RANK lpcost="0" bonus="0" rank="2" dice="2d8" step="10"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-        <OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
+        </edt:OPTIONALTALENT>
+        <edt:OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="2d8" step="10"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-        <OPTIONALTALENT circle="2" karma="yes" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Item History">
+        </edt:OPTIONALTALENT>
+        <edt:OPTIONALTALENT circle="2" karma="yes" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Item History">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-        <OPTIONALTALENT circle="3" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+        </edt:OPTIONALTALENT>
+        <edt:OPTIONALTALENT circle="3" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
             <edt:RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-        <OPTIONALTALENT circle="4" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+        </edt:OPTIONALTALENT>
+        <edt:OPTIONALTALENT circle="4" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
             <edt:RANK lpcost="5300" bonus="0" rank="7" dice="d12" step="7"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-        <OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
+        </edt:OPTIONALTALENT>
+        <edt:OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
             <edt:RANK lpcost="5200" bonus="0" rank="6" dice="d12+d10" step="13"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-        <OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Enhanced Matrix">
+        </edt:OPTIONALTALENT>
+        <edt:OPTIONALTALENT circle="6" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Enhanced Matrix">
             <edt:RANK lpcost="3100" bonus="0" rank="5" dice="d8" step="5"/>
             <edt:TEACHER/>
-        </OPTIONALTALENT>
-    </TALENTS>
+        </edt:OPTIONALTALENT>
+    </DISCIPLINE>
     <KARMA maxmodificator="1" max="31" current="0">
         <edt:KARMAPOINTS when="" type="+" value="200" comment="geschätztes Karma durch Rituale"/>
         <edt:KARMAPOINTS when="" type="-" value="180" comment="geschätzter Karma verbrauch"/>

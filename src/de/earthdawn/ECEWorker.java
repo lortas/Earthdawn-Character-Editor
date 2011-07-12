@@ -209,18 +209,17 @@ public class ECEWorker {
 			namegivertalents.put(questorTalentName, talent);
 		}
 		int maxKarmaStepBonus=0;
-		HashMap<Integer,TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		HashMap<String,Integer> diciplineCircle = new HashMap<String,Integer>();
 		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
-		for( Integer disciplinenumber : allTalents.keySet() ) {
+		HashMap<String,Integer> diciplineCircle = new HashMap<String, Integer>();
+		int disciplinenumber=0;
+		for( DISCIPLINEType currentDiscipline : allDisciplines ) {
+			disciplinenumber++;
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
-			DISCIPLINEType currentDiscipline = allDisciplines.get(disciplinenumber-1);
-			TALENTSType currentTalents = allTalents.get(disciplinenumber);
-			for( TALENTType talent : currentTalents.getDISZIPLINETALENT() ) ensureRankAndTeacher(talent);
-			for( TALENTType talent : currentTalents.getOPTIONALTALENT() ) ensureRankAndTeacher(talent);
+			TalentsContainer currentTalents = new TalentsContainer(currentDiscipline);
+			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) ensureRankAndTeacher(talent);
 			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
-			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getDISZIPLINETALENT(), true);
-			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getOPTIONALTALENT(), false);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getDisciplinetalents(), true);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getOptionaltalents(), false);
 			// Alle Namegiver Talente, die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
@@ -233,7 +232,7 @@ public class ECEWorker {
 				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
-				currentTalents.getOPTIONALTALENT().add(talent);
+				currentTalents.getOptionaltalents().add(talent);
 			}
 			namegivertalents.clear(); // Ist keine lokale Variable und Namensgebertalent sollen nur bei einer Disziplin einfügt werden
 			for( String t : defaultOptionalTalents.keySet() ) {
@@ -248,7 +247,7 @@ public class ECEWorker {
 				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
 				talent.setRANK(rank);
-				currentTalents.getOPTIONALTALENT().add(talent);
+				currentTalents.getOptionaltalents().add(talent);
 			}
 			// Wenn Durability-Talente gefunden wurden, berechnen aus dessen Rank
 			// die Erhöhung von Todes- und Bewustlosigkeitsschwelle
@@ -270,8 +269,7 @@ public class ECEWorker {
 			currentBonuses.clear();
 			currentBonuses.addAll(getDisciplineBonuses(currentDiscipline));
 			// TALENT KNACKS
-			for( TALENTType talent : currentTalents.getDISZIPLINETALENT() ) checkTalentKnacks(talent,disciplinenumber);
-			for( TALENTType talent : currentTalents.getOPTIONALTALENT() ) checkTalentKnacks(talent,disciplinenumber);
+			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) checkTalentKnacks(talent,disciplinenumber);
 		}
 
 		// ** ARMOR **
@@ -372,12 +370,6 @@ public class ECEWorker {
 
 		character.readjustInitiativeModifikator(getDisciplineInitiative(diciplineCircle));
 
-		// Ermittele den Namen der ersten Diszipline, wenn vorhanden
-		String firstDisciplineName = "";
-		if( ! allDisciplines.isEmpty() ) {
-			DISCIPLINEType firstDiscipline = allDisciplines.get(0);
-			if( firstDiscipline != null ) firstDisciplineName=firstDiscipline.getName();
-		}
 		// ** SPELLS **
 		// Bestimme die wieviele Zaubersprüche bei der Charactererschaffung kostenlos dazu kamen
 		// und wieviel ein SpellAbility pro Kreis pro Disziplin kostenlos dazukamen.
@@ -395,15 +387,16 @@ public class ECEWorker {
 			calculatedLP.setSpells(0);
 		}
 		HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
-		for( SPELLSType spells : character.getAllSpells() ) {
-			if( spells.getDiscipline().equals(firstDisciplineName) && OptionalRule_SpellLegendPointCost ) {
+		boolean firstDiscipline=true;
+		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			if( firstDiscipline && OptionalRule_SpellLegendPointCost ) {
 				// Wenn die erste Disziplin eine Zauberdisciplin ist und die Optionale Regel, dass Zaubersprüche LP Kosten
 				// gewählt wurde, dann reduziere die ZauberLPKosten um die StartZauber
 				calculatedLP.setSpells(calculatedLP.getSpells()-startingSpellLegendPointCost);
 				// Es ist jetzt schon einmal abgezogen. Stelle nun sicher dass nicht noch ein zweites Mal abgezogen werden kann.
 				startingSpellLegendPointCost=0;
 			}
-			for( SPELLType spell : spells.getSPELL() ) {
+			for( SPELLType spell : discipline.getSPELL() ) {
 				SPELLDEFType spelldef = spelllist.get(spell.getName());
 				if( spelldef == null ) {
 					errorout.println("Unknown Spell '"+spell.getName()+"' in grimour found. Spell is left unmodified in grimour.");
@@ -424,6 +417,7 @@ public class ECEWorker {
 					calculatedLP.setSpells(calculatedLP.getSpells()+lpcost);
 				}
 			}
+			firstDiscipline=false;
 		}
 
 		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
@@ -433,6 +427,8 @@ public class ECEWorker {
 			}
 		}
 
+		List<TALENTType> firstDisciplineOptionalTalents = null;
+		if( ! allDisciplines.isEmpty() ) firstDisciplineOptionalTalents = allDisciplines.get(0).getOPTIONALTALENT();
 		for( THREADITEMType item : character.getThreadItem() ) {
 			for( int rank=0; rank<item.getWeaventhreadrank(); rank++ ) {
 				THREADRANKType threadrank = item.getTHREADRANK().get(rank);
@@ -458,7 +454,7 @@ public class ECEWorker {
 							calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
 						}
 					}
-					if( notfound ) {
+					if( notfound && (firstDisciplineOptionalTalents!=null) ) {
 						if( limitation.isEmpty() ) limitation ="(#)";
 						else limitation += " (#)";
 						TALENTType bonusTalent = new TALENTType();
@@ -477,7 +473,7 @@ public class ECEWorker {
 						teacher.setTeachercircle(rank);
 						teacher.setName(item.getName());
 						bonusTalent.setTEACHER(teacher);
-						allTalents.get(1).getOPTIONALTALENT().add(bonusTalent);
+						firstDisciplineOptionalTalents.add(bonusTalent);
 					}
 				}
 				for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {

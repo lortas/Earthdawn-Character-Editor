@@ -109,9 +109,8 @@ public class ECEPdfExporter {
 		acroFields.setField( "Reputation", character.getLegendPoints().getReputation() );
 		acroFields.setField( "InitiativeDice", character.getInitiative().getDice().value() );
 		String initiativeStep = String.valueOf(character.getInitiative().getStep());
-		for( TALENTSType talents : character.getAllTalents() ) {
-			for( TALENTType talent : talents.getDISZIPLINETALENT() ) initiativeStep += initiativeStepOpts(talent);
-			for( TALENTType talent : talents.getOPTIONALTALENT() ) initiativeStep += initiativeStepOpts(talent);
+		for( TalentsContainer talents : character.getAllTalents() ) {
+			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) initiativeStep += initiativeStepOpts(talent);
 		}
 		for( SKILLType skill : character.getSkills() ) initiativeStep += initiativeStepOpts(skill);
 
@@ -250,11 +249,10 @@ public class ECEPdfExporter {
 				counterKarmaritual++;
 			}
 		}
-		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		TALENTSType talents = allTalents.get(1);
-		if( talents != null ) {
+		DISCIPLINEType discipline1 = character.getDisciplines().get(0);
+		if( discipline1 != null ) {
 			int counter = 0;
-			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
+			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
@@ -264,7 +262,7 @@ public class ECEPdfExporter {
 				setTalent(counter, talent, attributes);
 				counter++;
 			}
-			List<TALENTType> optionaltalents = talents.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
 			Collections.sort(optionaltalents, new TalentComparator());
 			counter = 0;
 			for( TALENTType talent : optionaltalents ) {
@@ -296,10 +294,10 @@ public class ECEPdfExporter {
 		}
 
 		int conterSpells=0;
-		for( SPELLSType spells : character.getAllSpells() ) {
-			List<SPELLType> spellList = spells.getSPELL();
-			Collections.sort(spellList, new SpellComparator());
-			for( SPELLType spell : spellList ) {
+		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			List<SPELLType> spells = discipline.getSPELL();
+			Collections.sort(spells, new SpellComparator());
+			for( SPELLType spell : spells ) {
 				String spellname = spell.getName();
 				if( ! spell.getBookref().isEmpty() ) spellname += " ["+spell.getBookref()+"]";
 				acroFields.setField( "SpellName."+conterSpells, spellname );
@@ -477,11 +475,11 @@ public class ECEPdfExporter {
 				counterKarmaritual++;
 			}
 		}
-		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		TALENTSType talents = allTalents.get(1);
-		if( talents != null ) {
+		List<DISCIPLINEType> disciplines = character.getDisciplines();
+		DISCIPLINEType discipline1 = disciplines.get(0);
+		if( discipline1 != null ) {
 			int counter = 0;
-			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
+			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
@@ -491,7 +489,7 @@ public class ECEPdfExporter {
 				setTalent(counter, talent, attributes);
 				counter++;
 			}
-			List<TALENTType> optionaltalents = talents.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
 			Collections.sort(optionaltalents, new TalentComparator());
 			counter = 0;
 			for( TALENTType talent : optionaltalents ) {
@@ -507,10 +505,10 @@ public class ECEPdfExporter {
 				counter++;
 			}
 		}
-		talents = allTalents.get(2);
-		if( talents != null ) {
+		DISCIPLINEType discipline2 = disciplines.get(1);
+		if( discipline2 != null ) {
 			int counter = 36;
-			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
+			List<TALENTType> disziplinetalents = discipline2.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
@@ -520,7 +518,7 @@ public class ECEPdfExporter {
 				setTalent(counter, talent, attributes);
 				counter++;
 			}
-			List<TALENTType> optionaltalents = talents.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = discipline2.getOPTIONALTALENT();
 			Collections.sort(optionaltalents, new TalentComparator());
 			counter = 16;
 			for( TALENTType talent : optionaltalents ) {
@@ -560,8 +558,8 @@ public class ECEPdfExporter {
 		}
 
 		int conterSpells=0;
-		for( SPELLSType spells : character.getAllSpells() ) {
-			List<SPELLType> spellList = spells.getSPELL();
+		for( DISCIPLINEType discipline : disciplines ) {
+			List<SPELLType> spellList = discipline.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
 			for( SPELLType spell : spellList ) {
 				String spellname = spell.getName();
@@ -755,18 +753,18 @@ public class ECEPdfExporter {
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 
-		HashMap<Integer, TALENTSType> allTalents = character.getAllTalentsByDisziplinOrder();
-		TALENTSType talents = allTalents.get(1);
-		if( talents != null ) {
+		List<DISCIPLINEType> disciplines = character.getDisciplines();
+		DISCIPLINEType discipline1 = disciplines.get(0);
+		if( discipline1 != null ) {
 			int counterDisciplinetalent=0;
-			List<TALENTType> disziplinetalents = talents.getDISZIPLINETALENT();
+			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			for( TALENTType talent : disziplinetalents ) {
 				setTalent(counterDisciplinetalent, talent, character.getAttributes());
 				counterDisciplinetalent++;
 			}
 			int counterOthertalent=0;
-			List<TALENTType> optionaltalents = talents.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
 			Collections.sort(optionaltalents, new TalentComparator());
 			for( TALENTType talent : optionaltalents ) {
 				setTalent(20+counterOthertalent, talent, character.getAttributes());
@@ -849,8 +847,8 @@ public class ECEPdfExporter {
 		acroFields.setField( "GoldPieces", goldPieces );
 
 		int conterSpells=0;
-		for( SPELLSType spells : character.getAllSpells() ) {
-			List<SPELLType> spellList = spells.getSPELL();
+		for( DISCIPLINEType discipline : disciplines ) {
+			List<SPELLType> spellList = discipline.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
 			for( SPELLType spell : spellList ) {
 				acroFields.setField( "SpellName."+conterSpells, spell.getName() );

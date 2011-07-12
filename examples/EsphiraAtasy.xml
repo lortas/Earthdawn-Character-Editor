@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<ns4:EDCHARACTER name="Esphira Atasy" xsi:schemaLocation="http://earthdawn.com/character earthdawncharacter.xsd" xmlns="http://earthdawn.com/datatypes" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/characteristics" xmlns:ns12="http://earthdawn.com/items" xmlns:ns6="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/discipline" xmlns:ns10="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/spell" xmlns:ns11="http://earthdawn.com/help" xmlns:ns2="http://earthdawn.com/names" xmlns:ns4="http://earthdawn.com/character" xmlns:ns3="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ns4:EDCHARACTER name="Esphira Atasy" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns="http://earthdawn.com/datatypes" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/characteristics" xmlns:ns12="http://earthdawn.com/items" xmlns:ns6="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/discipline" xmlns:ns10="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/spell" xmlns:ns11="http://earthdawn.com/help" xmlns:ns2="http://earthdawn.com/names" xmlns:ns4="http://earthdawn.com/character" xmlns:ns3="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <ns4:APPEARANCE race="Windling" skin="pale" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
     <ns4:ATTRIBUTE cost="3" currentvalue="14" lpincrease="0" basevalue="14" generationvalue="3" racevalue="11" name="DEX" dice="d10" step="6"/>
     <ns4:ATTRIBUTE cost="3" currentvalue="7" lpincrease="0" basevalue="7" generationvalue="3" racevalue="4" name="STR" dice="d6" step="4"/>
@@ -27,196 +27,189 @@
         <DISCIPLINEBONUS bonus="Ability: Land and Sea&quot;" circle="5"/>
         <DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="6"/>
         <DISCIPLINEBONUS bonus="Can spend Karma for Spell Effect Test" circle="7"/>
-    </ns4:DISCIPLINE>
-    <ns4:DISCIPLINE circle="3" name="Wizard"/>
-    <ns4:TALENTS discipline="Shaman">
-        <ns4:DISZIPLINETALENT circle="1" bookref="NG p.219" karma="no" bonus="0" attribute="PER" strain="0" action="standard" name="Create Fetish">
+        <DISZIPLINETALENT circle="1" bookref="NG p.219" karma="no" bonus="0" attribute="PER" strain="0" action="standard" name="Create Fetish">
             <RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.80" karma="no" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="PG p.80" karma="no" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
             <RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.83" karma="no" limitation="Shamanism" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="PG p.83" karma="no" limitation="Shamanism" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
             <RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.86" karma="no" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="PG p.86" karma="no" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
             <RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.74" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="PG p.74" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
             <RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12" step="7"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="NG p.221" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Spell Fetish">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="NG p.221" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Spell Fetish">
             <RANK lpcost="5200" bonus="0" rank="7" startrank="1" dice="d12" step="7"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="2" bookref="PG p.61" karma="no" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="2" bookref="PG p.61" karma="no" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
             <RANK lpcost="5300" bonus="0" rank="7" startrank="0" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="3" bookref="PG p.81" karma="yes" bonus="0" attribute="PER" strain="1" action="standard" name="Spirit Talk">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="3" bookref="PG p.81" karma="yes" bonus="0" attribute="PER" strain="1" action="standard" name="Spirit Talk">
             <RANK lpcost="5300" bonus="0" rank="7" startrank="0" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="4" bookref="PG p.81" karma="no" bonus="0" attribute="WIL" strain="1" action="standard" name="Spirit Hold">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="4" bookref="PG p.81" karma="no" bonus="0" attribute="WIL" strain="1" action="standard" name="Spirit Hold">
             <RANK lpcost="5300" bonus="0" rank="7" startrank="0" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="5" bookref="PG p.82" karma="yes" limitation="Nature Spirits" bonus="0" attribute="PER" strain="0" action="standard" name="Summon">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="5" bookref="PG p.82" karma="yes" limitation="Nature Spirits" bonus="0" attribute="PER" strain="0" action="standard" name="Summon">
             <RANK lpcost="8600" bonus="0" rank="7" startrank="0" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="6" bookref="PG p.63" karma="yes" bonus="0" attribute="TOU" strain="0" action="standard" name="Blood Share">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="6" bookref="PG p.63" karma="yes" bonus="0" attribute="TOU" strain="0" action="standard" name="Blood Share">
             <RANK lpcost="8600" bonus="0" rank="7" startrank="0" dice="d12+d10" step="13"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="7" bookref="PG p.74" karma="yes" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Leadership">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="7" bookref="PG p.74" karma="yes" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Leadership">
             <RANK lpcost="200" bonus="0" rank="1" dice="d12" step="7"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:OPTIONALTALENT circle="1" bookref="PG p.79" karma="no" bonus="0" attribute="DEX" strain="0" action="simple" name="Silent Walk">
+        </DISZIPLINETALENT>
+        <OPTIONALTALENT circle="1" bookref="PG p.79" karma="no" bonus="0" attribute="DEX" strain="0" action="simple" name="Silent Walk">
             <RANK lpcost="2900" bonus="0" rank="6" startrank="2" dice="2d10" step="12"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="2" bookref="PG p.66" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="2" bookref="PG p.66" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
             <RANK lpcost="5300" bonus="0" rank="7" startrank="0" dice="d12" step="7"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="3" bookref="NG p.221" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Spell Fetish">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="3" bookref="NG p.221" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Spell Fetish">
             <RANK lpcost="3200" bonus="0" rank="6" startrank="0" dice="d10" step="6"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="4" bookref="NG p.221" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Spell Fetish">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="4" bookref="NG p.221" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Spell Fetish">
             <RANK lpcost="5300" bonus="0" rank="7" startrank="0" dice="d12" step="7"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="5" bookref="PG p.86" karma="no" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="5" bookref="PG p.86" karma="no" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
             <RANK lpcost="8600" bonus="0" rank="7" startrank="0" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="6" bookref="NG p.220" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Enhanced Fetish">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="6" bookref="NG p.220" karma="no" bonus="0" attribute="na" strain="0" action="na" name="Enhanced Fetish">
             <RANK lpcost="1000" bonus="0" rank="3" startrank="0" dice="d6-1" step="3"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="7" bookref="PG p.81" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="7" bookref="PG p.81" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
             <RANK lpcost="200" bonus="0" rank="1" dice="2d6" step="8"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-    </ns4:TALENTS>
-    <ns4:TALENTS discipline="Wizard">
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.78" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
+        </OPTIONALTALENT>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="+3 Physical Armor, +3 Fatigue Test bonus vs. heat" duration="R+5 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="10" weavingdifficulty="na" threads="0" name="Air Armor"/>
+        <SPELL circle="4" type="shamane" effectarea="60-degree arc from an origin hex adjacent to the spellcaster towards the target hex, up to the spell's range. For every 2 yards (1 hex) length away from the caster, the effect expands by 2 yards (1 hex) in width." effect="WIL + 9" duration="1 rnd" range="12 hex" castingdifficulty="TSD*" reattuningdifficulty="16" weavingdifficulty="10" threads="1" name="Air Blast"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="+3 to Spell and Social Defense; +3 Willpower Test bonus against fear" duration="R+12 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Assuring Touch"/>
+        <SPELL circle="7" type="shamane" effectarea="s. text" effect="Transforms caster into an animal" duration="R+5 min" range="self" castingdifficulty="TSD" reattuningdifficulty="23" weavingdifficulty="16" threads="2" name="Beastform"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="Step 4/D6 Perception Test to rear" duration="R+30 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="6" threads="2" name="Behind Eye"/>
+        <SPELL circle="4" type="shamane" effectarea="4-yard (2-hex) radius sphere from centre" effect="WIL + 8/Physical" duration="R+3 rnd" range="20 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="10" threads="2" name="Blizzard Sphere"/>
+        <SPELL circle="7" type="shamane" effectarea="s. text" effect="WIL + 9/Mystic" duration="4 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="12" threads="3" name="Blood Boil"/>
+        <SPELL circle="5" type="shamane" effectarea="s. text" effect="WIL + 4" duration="R min" range="10 hex" castingdifficulty="TSD" reattuningdifficulty="18" weavingdifficulty="11" threads="3" name="Bond of Silence"/>
+        <SPELL circle="6" type="shamane" effectarea="s. text" effect="WIL + 8/Mystic" duration="1 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="12" threads="2" name="Bone Shatter"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="+3 bonus to Swimming Tests" duration="R hr" range="self" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="13" threads="1" name="Buoyancy"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="Target gets Low-Light Vision" duration="R+3 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="10" weavingdifficulty="5" threads="1" name="Catseyes"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="+6 bonus to Action Tests involving climbing or balancing" duration="R+8 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="1" name="Catwalk"/>
+        <SPELL circle="4" type="shamane" effectarea="2-yard (1-hex) radius circle from center" effect="WIL" duration="R x 10 min" range="touch" castingdifficulty="6" reattuningdifficulty="17" weavingdifficulty="8" threads="3" name="Circle of Well Being"/>
+        <SPELL circle="7" type="shamane" effectarea="s. text" effect="WIL + 7" duration="R+1 hr" range="1 mile*" castingdifficulty="8+*" reattuningdifficulty="20" weavingdifficulty="12" threads="3" name="Cloud Summon"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 5" duration="R hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="10" threads="2" name="Conceal Tracks"/>
+        <SPELL circle="7" type="shamane" effectarea="30-yard (15-hex) radius of magician" effect="Step 5/D8 acid damage (WIL + 5; s. text)" duration="R+12 rnd" range="self" castingdifficulty="TSD*" reattuningdifficulty="18" weavingdifficulty="15" threads="1" name="Death Rain"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="Puts target into hibernation" duration="R+3 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="2" name="Death Trance"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL" duration="1 rnd" range="15 hex" castingdifficulty="6" reattuningdifficulty="13" weavingdifficulty="6" threads="1" name="Dispel Shamanism Magic"/>
+        <SPELL circle="4" type="shamane" effectarea="32-yard (16-hex) radius sphere from center" effect="Causes a Harried penalty to targets' Action Tests requiring sight, hearing, or smell" duration="R+5 rnd" range="self" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="9" threads="2" name="Dust Devil"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 7" duration="R+5 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Earth Blend"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 6/Physical" duration="1 rnd" range="6 hex" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="5" threads="1" name="Earth Darts"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="Turns caster into a falcon" duration="R hr" range="self" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="10" threads="2" name="Falcon's Cloak"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 6/Mystic" duration="R+10 min" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="9" threads="3" name="Fatal Food"/>
+        <SPELL circle="3" type="shamane" effectarea="2-yard (1-hex) radius from center" effect="WIL + 5" duration="R+6 rnd" range="12 hex" castingdifficulty="6" reattuningdifficulty="18" weavingdifficulty="8" threads="2" name="Fog of Fear"/>
+        <SPELL circle="2" type="shamane" effectarea="s. text" effect="Harries target" duration="R+4 rnd" range="6 hex" castingdifficulty="TSD*" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Gadfly"/>
+        <SPELL circle="2" type="shamane" effectarea="s. text" effect="Allows target to breathe underwater" duration="R+10 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="4" threads="2" name="Gills"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 4" duration="R min" range="5 hex" castingdifficulty="6*" reattuningdifficulty="20" weavingdifficulty="11" threads="2" name="Great Sticky Vines"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="Harries target" duration="R+5 rnd" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="na" threads="0" name="Hair Frenzy"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="Increases or diminishes hunger" duration="R days" range="touch" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="10" threads="3" name="Hunger"/>
+        <SPELL circle="2" type="shamane" effectarea="s. text" effect="WIL + 5" duration="R+3 min" range="15 hex" castingdifficulty="TSD" reattuningdifficulty="14" weavingdifficulty="na" threads="0" name="Hunter's Sense"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL + 5/Physical" duration="2 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="na" threads="0" name="Ice Mace and Chain"/>
+        <SPELL circle="2" type="shamane" effectarea="100-square-yard area, no greater than 20 yards (10 hexes) in any dimension" effect="WIL" duration="R+3 min" range="touch" castingdifficulty="6" reattuningdifficulty="8" weavingdifficulty="na" threads="0" name="Icy Surface"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 5" duration="R+3 min" range="touch" castingdifficulty="6" reattuningdifficulty="7" weavingdifficulty="6" threads="1" name="Insect Repellent"/>
+        <SPELL circle="5" type="shamane" effectarea="s. text" effect="Transforms wood" duration="R hr" range="touch" castingdifficulty="6" reattuningdifficulty="18" weavingdifficulty="11" threads="3" name="Ironwood"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 10" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="10" threads="1" name="Karmic Connection"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="Grants +8 bonus Recovery Test" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="7" threads="1" name="Last Chance"/>
+        <SPELL circle="4" type="shamane" effectarea="2-yard (1-hex) radius from center" effect="WIL + 3" duration="R+7 hr" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="9" threads="1" name="Lighten Load"/>
+        <SPELL circle="6" type="shamane" effectarea="Up to 4-yard (2-hex) high, 20 yard (10-hex) wide, 2-yard (1-hex) thick wall" effect="WIL + 3" duration="R+3 min" range="touch" castingdifficulty="6" reattuningdifficulty="22" weavingdifficulty="12" threads="2" name="Living Wall"/>
+        <SPELL circle="1" type="shamane" effectarea="10-yard (5-hex) radius sphere from center" effect="Creates sphere of light" duration="R+5 min" range="5 hex" castingdifficulty="6" reattuningdifficulty="10" weavingdifficulty="na" threads="0" name="Moonglow"/>
+        <SPELL circle="5" type="shamane" effectarea="100-yard (50-hex) radius circle from magician" effect="Makes land fertile" duration="A year and a day" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="8" threads="4" name="Nutritious Earth"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="Sets off orkish gahad" duration="Instant" range="15 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Ork Stoke"/>
+        <SPELL circle="2" type="shamane" effectarea="s. text" effect="Summons spirit wings to guide the caster home" duration="R+20 min" range="30 hex" castingdifficulty="TSD*" reattuningdifficulty="14" weavingdifficulty="7" threads="2" name="Path Home"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL + 8" duration="R+1 hr" range="12 hex" castingdifficulty="6" reattuningdifficulty="16" weavingdifficulty="6" threads="3" name="Plant Feast"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="Allows conversation with plant spirits" duration="R+10 min" range="touch" castingdifficulty="6" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Plant Talk"/>
+        <SPELL circle="1" type="shamane" effectarea="2-yard (1-hex) radius of earth from center" effect="Purifies earth and soil" duration="1 rnd" range="5 hex" castingdifficulty="6+*" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Purify Earth"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 8" duration="1 rnd" range="touch" castingdifficulty="6+*" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Purify Water"/>
+        <SPELL circle="6" type="shamane" effectarea="s. text" effect="WIL + 15" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="9" threads="3" name="Recovery"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 4" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="9" threads="3" name="Relax"/>
+        <SPELL circle="1" type="shamane" effectarea="s. text" effect="+3 Physical and Mystic Armor vs. cold" duration="R+6 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Resist Cold"/>
+        <SPELL circle="5" type="shamane" effectarea="s. text" effect="+8 Toughness Test bonus vs. poison" duration="R hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="21" weavingdifficulty="11" threads="2" name="Resist Poison"/>
+        <SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 2" duration="R+5 rnd" range="2 hex" castingdifficulty="6*" reattuningdifficulty="20" weavingdifficulty="na" threads="0" name="Root Trap"/>
+        <SPELL circle="5" type="shamane" effectarea="s. text" effect="WIL + 8" duration="R+10 min" range="touch" castingdifficulty="6" reattuningdifficulty="18" weavingdifficulty="11" threads="3" name="Sanctuary"/>
+        <SPELL circle="6" type="shamane" effectarea="s. text" effect="Puts target to sleep" duration="R+10 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="9" threads="2" name="Sleep"/>
+        <SPELL circle="2" type="shamane" effectarea="s. text" effect="Summons a poisonous creature" duration="R+3 min" range="2 hex" castingdifficulty="TSD*" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Small Slayer"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="Hypnotizes animal into passivity" duration="R+3 minutes (s. text)" range="2 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Soothe the Savage Beast"/>
+        <SPELL circle="5" type="shamane" effectarea="s. text" effect="Summons a spirit guide to answer a question" duration="30 rnd" range="self" castingdifficulty="TSD*" reattuningdifficulty="18" weavingdifficulty="8" threads="3" name="Spiritual Guidance"/>
+        <SPELL circle="6" type="shamane" effectarea="4-yard (2-hex) radius sphere from center" effect="WIL + 6" duration="R+3 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="22" weavingdifficulty="12" threads="3" name="Stench"/>
+        <SPELL circle="3" type="shamane" effectarea="10-yard (5-hex) radius sphere from magician" effect="Creates daylight" duration="R+5 min" range="self" castingdifficulty="6" reattuningdifficulty="15" weavingdifficulty="10" threads="2" name="Sunlight"/>
+        <SPELL circle="3" type="shamane" effectarea="2-yard (1-hex) radius circle from center" effect="Accelerates plant growth" duration="1 rnd" range="touch" castingdifficulty="8" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Thrive"/>
+        <SPELL circle="6" type="shamane" effectarea="20-yard (10-hex) radius circle from center" effect="WIL + 1" duration="R+1 hr" range="20 hex" castingdifficulty="6" reattuningdifficulty="17" weavingdifficulty="11" threads="3" name="Tossing Earth"/>
+        <SPELL circle="6" type="shamane" effectarea="s. text" effect="Merges caster's body with a tree to hide him" duration="R+6 hr" range="self" castingdifficulty="TSD" reattuningdifficulty="23" weavingdifficulty="16" threads="3" name="Tree Merge"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="Waterproofs windling wings" duration="R hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Water Wings"/>
+        <SPELL circle="2" type="shamane" effectarea="s. text" effect="WIL + 3" duration="R x 10 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="9" weavingdifficulty="6" threads="1" name="Weather Cloak"/>
+        <SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL + 6" duration="R+5 rnd" range="self" castingdifficulty="TSD*" reattuningdifficulty="15" weavingdifficulty="8" threads="1" name="Winds of Deflection"/>
+        <SPELL circle="5" type="shamane" effectarea="s. text" effect="WIL + 8/Mystic" duration="1 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="19" weavingdifficulty="8" threads="3" name="Wither Limb"/>
+    </ns4:DISCIPLINE>
+    <ns4:DISCIPLINE circle="3" name="Wizard">
+        <DISZIPLINETALENT circle="1" bookref="PG p.78" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
             <RANK lpcost="1000" bonus="0" rank="3" dice="2d8" step="10"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
             <RANK lpcost="1000" bonus="0" rank="3" dice="d6-1" step="3"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" bookref="PG p.83" karma="no" limitation="Wizardry" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" bookref="PG p.83" karma="no" limitation="Wizardry" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
             <RANK lpcost="1000" bonus="0" rank="3" dice="2d8" step="10"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="2" bookref="PG p.77" karma="no" limitation="" bonus="0" attribute="PER" strain="-1" action="standard" name="Read/Write Language">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="2" bookref="PG p.77" karma="no" limitation="" bonus="0" attribute="PER" strain="-1" action="standard" name="Read/Write Language">
             <RANK lpcost="1000" bonus="0" rank="3" dice="2d8" step="10"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="3" bookref="PG p.63" karma="yes" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Book Memory">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="3" bookref="PG p.63" karma="yes" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Book Memory">
             <RANK lpcost="200" bonus="0" rank="1" dice="2d6" step="8"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:OPTIONALTALENT circle="1" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+        </DISZIPLINETALENT>
+        <OPTIONALTALENT circle="1" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
             <RANK lpcost="1000" bonus="0" rank="3" dice="d6-1" step="3"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="2" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="PER" strain="-1" action="standard" name="Speak Language">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="2" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="PER" strain="-1" action="standard" name="Speak Language">
             <RANK lpcost="200" bonus="0" rank="1" dice="2d6" step="8"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="3" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="3" bookref="PG p.80" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
             <RANK lpcost="1000" bonus="0" rank="3" dice="d6-1" step="3"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-    </ns4:TALENTS>
-    <ns4:SPELLS discipline="Shaman">
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="+3 Physical Armor, +3 Fatigue Test bonus vs. heat" duration="R+5 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="10" weavingdifficulty="na" threads="0" name="Air Armor"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="60-degree arc from an origin hex adjacent to the spellcaster towards the target hex, up to the spell's range. For every 2 yards (1 hex) length away from the caster, the effect expands by 2 yards (1 hex) in width." effect="WIL + 9" duration="1 rnd" range="12 hex" castingdifficulty="TSD*" reattuningdifficulty="16" weavingdifficulty="10" threads="1" name="Air Blast"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="+3 to Spell and Social Defense; +3 Willpower Test bonus against fear" duration="R+12 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Assuring Touch"/>
-        <ns4:SPELL circle="7" type="shamane" effectarea="s. text" effect="Transforms caster into an animal" duration="R+5 min" range="self" castingdifficulty="TSD" reattuningdifficulty="23" weavingdifficulty="16" threads="2" name="Beastform"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="Step 4/D6 Perception Test to rear" duration="R+30 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="6" threads="2" name="Behind Eye"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="4-yard (2-hex) radius sphere from centre" effect="WIL + 8/Physical" duration="R+3 rnd" range="20 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="10" threads="2" name="Blizzard Sphere"/>
-        <ns4:SPELL circle="7" type="shamane" effectarea="s. text" effect="WIL + 9/Mystic" duration="4 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="12" threads="3" name="Blood Boil"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="s. text" effect="WIL + 4" duration="R min" range="10 hex" castingdifficulty="TSD" reattuningdifficulty="18" weavingdifficulty="11" threads="3" name="Bond of Silence"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="s. text" effect="WIL + 8/Mystic" duration="1 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="12" threads="2" name="Bone Shatter"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="+3 bonus to Swimming Tests" duration="R hr" range="self" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="13" threads="1" name="Buoyancy"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="Target gets Low-Light Vision" duration="R+3 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="10" weavingdifficulty="5" threads="1" name="Catseyes"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="+6 bonus to Action Tests involving climbing or balancing" duration="R+8 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="1" name="Catwalk"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="2-yard (1-hex) radius circle from center" effect="WIL" duration="R x 10 min" range="touch" castingdifficulty="6" reattuningdifficulty="17" weavingdifficulty="8" threads="3" name="Circle of Well Being"/>
-        <ns4:SPELL circle="7" type="shamane" effectarea="s. text" effect="WIL + 7" duration="R+1 hr" range="1 mile*" castingdifficulty="8+*" reattuningdifficulty="20" weavingdifficulty="12" threads="3" name="Cloud Summon"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 5" duration="R hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="10" threads="2" name="Conceal Tracks"/>
-        <ns4:SPELL circle="7" type="shamane" effectarea="30-yard (15-hex) radius of magician" effect="Step 5/D8 acid damage (WIL + 5; s. text)" duration="R+12 rnd" range="self" castingdifficulty="TSD*" reattuningdifficulty="18" weavingdifficulty="15" threads="1" name="Death Rain"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="Puts target into hibernation" duration="R+3 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="2" name="Death Trance"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL" duration="1 rnd" range="15 hex" castingdifficulty="6" reattuningdifficulty="13" weavingdifficulty="6" threads="1" name="Dispel Shamanism Magic"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="32-yard (16-hex) radius sphere from center" effect="Causes a Harried penalty to targets' Action Tests requiring sight, hearing, or smell" duration="R+5 rnd" range="self" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="9" threads="2" name="Dust Devil"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 7" duration="R+5 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Earth Blend"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 6/Physical" duration="1 rnd" range="6 hex" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="5" threads="1" name="Earth Darts"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="Turns caster into a falcon" duration="R hr" range="self" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="10" threads="2" name="Falcon's Cloak"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 6/Mystic" duration="R+10 min" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="9" threads="3" name="Fatal Food"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="2-yard (1-hex) radius from center" effect="WIL + 5" duration="R+6 rnd" range="12 hex" castingdifficulty="6" reattuningdifficulty="18" weavingdifficulty="8" threads="2" name="Fog of Fear"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="s. text" effect="Harries target" duration="R+4 rnd" range="6 hex" castingdifficulty="TSD*" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Gadfly"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="s. text" effect="Allows target to breathe underwater" duration="R+10 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="4" threads="2" name="Gills"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 4" duration="R min" range="5 hex" castingdifficulty="6*" reattuningdifficulty="20" weavingdifficulty="11" threads="2" name="Great Sticky Vines"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="Harries target" duration="R+5 rnd" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="na" threads="0" name="Hair Frenzy"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="Increases or diminishes hunger" duration="R days" range="touch" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="10" threads="3" name="Hunger"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="s. text" effect="WIL + 5" duration="R+3 min" range="15 hex" castingdifficulty="TSD" reattuningdifficulty="14" weavingdifficulty="na" threads="0" name="Hunter's Sense"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL + 5/Physical" duration="2 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="na" threads="0" name="Ice Mace and Chain"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="100-square-yard area, no greater than 20 yards (10 hexes) in any dimension" effect="WIL" duration="R+3 min" range="touch" castingdifficulty="6" reattuningdifficulty="8" weavingdifficulty="na" threads="0" name="Icy Surface"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 5" duration="R+3 min" range="touch" castingdifficulty="6" reattuningdifficulty="7" weavingdifficulty="6" threads="1" name="Insect Repellent"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="s. text" effect="Transforms wood" duration="R hr" range="touch" castingdifficulty="6" reattuningdifficulty="18" weavingdifficulty="11" threads="3" name="Ironwood"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 10" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="10" threads="1" name="Karmic Connection"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="Grants +8 bonus Recovery Test" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="7" threads="1" name="Last Chance"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="2-yard (1-hex) radius from center" effect="WIL + 3" duration="R+7 hr" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="9" threads="1" name="Lighten Load"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="Up to 4-yard (2-hex) high, 20 yard (10-hex) wide, 2-yard (1-hex) thick wall" effect="WIL + 3" duration="R+3 min" range="touch" castingdifficulty="6" reattuningdifficulty="22" weavingdifficulty="12" threads="2" name="Living Wall"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="10-yard (5-hex) radius sphere from center" effect="Creates sphere of light" duration="R+5 min" range="5 hex" castingdifficulty="6" reattuningdifficulty="10" weavingdifficulty="na" threads="0" name="Moonglow"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="100-yard (50-hex) radius circle from magician" effect="Makes land fertile" duration="A year and a day" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="8" threads="4" name="Nutritious Earth"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="Sets off orkish gahad" duration="Instant" range="15 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Ork Stoke"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="s. text" effect="Summons spirit wings to guide the caster home" duration="R+20 min" range="30 hex" castingdifficulty="TSD*" reattuningdifficulty="14" weavingdifficulty="7" threads="2" name="Path Home"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL + 8" duration="R+1 hr" range="12 hex" castingdifficulty="6" reattuningdifficulty="16" weavingdifficulty="6" threads="3" name="Plant Feast"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="Allows conversation with plant spirits" duration="R+10 min" range="touch" castingdifficulty="6" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Plant Talk"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="2-yard (1-hex) radius of earth from center" effect="Purifies earth and soil" duration="1 rnd" range="5 hex" castingdifficulty="6+*" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Purify Earth"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="WIL + 8" duration="1 rnd" range="touch" castingdifficulty="6+*" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Purify Water"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="s. text" effect="WIL + 15" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="20" weavingdifficulty="9" threads="3" name="Recovery"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 4" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="9" threads="3" name="Relax"/>
-        <ns4:SPELL circle="1" type="shamane" effectarea="s. text" effect="+3 Physical and Mystic Armor vs. cold" duration="R+6 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Resist Cold"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="s. text" effect="+8 Toughness Test bonus vs. poison" duration="R hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="21" weavingdifficulty="11" threads="2" name="Resist Poison"/>
-        <ns4:SPELL circle="4" type="shamane" effectarea="s. text" effect="WIL + 2" duration="R+5 rnd" range="2 hex" castingdifficulty="6*" reattuningdifficulty="20" weavingdifficulty="na" threads="0" name="Root Trap"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="s. text" effect="WIL + 8" duration="R+10 min" range="touch" castingdifficulty="6" reattuningdifficulty="18" weavingdifficulty="11" threads="3" name="Sanctuary"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="s. text" effect="Puts target to sleep" duration="R+10 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="9" threads="2" name="Sleep"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="s. text" effect="Summons a poisonous creature" duration="R+3 min" range="2 hex" castingdifficulty="TSD*" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Small Slayer"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="Hypnotizes animal into passivity" duration="R+3 minutes (s. text)" range="2 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Soothe the Savage Beast"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="s. text" effect="Summons a spirit guide to answer a question" duration="30 rnd" range="self" castingdifficulty="TSD*" reattuningdifficulty="18" weavingdifficulty="8" threads="3" name="Spiritual Guidance"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="4-yard (2-hex) radius sphere from center" effect="WIL + 6" duration="R+3 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="22" weavingdifficulty="12" threads="3" name="Stench"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="10-yard (5-hex) radius sphere from magician" effect="Creates daylight" duration="R+5 min" range="self" castingdifficulty="6" reattuningdifficulty="15" weavingdifficulty="10" threads="2" name="Sunlight"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="2-yard (1-hex) radius circle from center" effect="Accelerates plant growth" duration="1 rnd" range="touch" castingdifficulty="8" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Thrive"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="20-yard (10-hex) radius circle from center" effect="WIL + 1" duration="R+1 hr" range="20 hex" castingdifficulty="6" reattuningdifficulty="17" weavingdifficulty="11" threads="3" name="Tossing Earth"/>
-        <ns4:SPELL circle="6" type="shamane" effectarea="s. text" effect="Merges caster's body with a tree to hide him" duration="R+6 hr" range="self" castingdifficulty="TSD" reattuningdifficulty="23" weavingdifficulty="16" threads="3" name="Tree Merge"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="Waterproofs windling wings" duration="R hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Water Wings"/>
-        <ns4:SPELL circle="2" type="shamane" effectarea="s. text" effect="WIL + 3" duration="R x 10 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="9" weavingdifficulty="6" threads="1" name="Weather Cloak"/>
-        <ns4:SPELL circle="3" type="shamane" effectarea="s. text" effect="WIL + 6" duration="R+5 rnd" range="self" castingdifficulty="TSD*" reattuningdifficulty="15" weavingdifficulty="8" threads="1" name="Winds of Deflection"/>
-        <ns4:SPELL circle="5" type="shamane" effectarea="s. text" effect="WIL + 8/Mystic" duration="1 rnd" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="19" weavingdifficulty="8" threads="3" name="Wither Limb"/>
-    </ns4:SPELLS>
-    <ns4:SPELLS discipline="Wizard">
-        <ns4:SPELL circle="1" type="wizard" effectarea="30-yard (15-hex) radius from magician" effect="WIL + 6" duration="R+10 min" range="self" castingdifficulty="6" reattuningdifficulty="15" weavingdifficulty="5" threads="2" name="Astral Sense"/>
-        <ns4:SPELL circle="3" type="wizard" effectarea="s. text" effect="WIL + 8/Mystic" duration="1 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="1" name="Aura Strike"/>
-        <ns4:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL" duration="1 rnd" range="15 hex" castingdifficulty="6" reattuningdifficulty="13" weavingdifficulty="6" threads="1" name="Dispel Magic"/>
-        <ns4:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 4/Physical" duration="1 rnd" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Flame Flash"/>
-        <ns4:SPELL circle="3" type="wizard" effectarea="s. text" effect="Bonus Recovery Test; +4 Recovery Test bonus" duration="8 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="2" name="Healing Sleep"/>
-        <ns4:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 2/Mystic" duration="1 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Mind Dagger"/>
-        <ns4:SPELL circle="2" type="wizard" effectarea="s. text" effect="Sets alarm to go off at specified time" duration="Up to 24 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="6" threads="4" name="Wake-Up Call"/>
-    </ns4:SPELLS>
+        </OPTIONALTALENT>
+        <SPELL circle="1" type="wizard" effectarea="30-yard (15-hex) radius from magician" effect="WIL + 6" duration="R+10 min" range="self" castingdifficulty="6" reattuningdifficulty="15" weavingdifficulty="5" threads="2" name="Astral Sense"/>
+        <SPELL circle="3" type="wizard" effectarea="s. text" effect="WIL + 8/Mystic" duration="1 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="1" name="Aura Strike"/>
+        <SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL" duration="1 rnd" range="15 hex" castingdifficulty="6" reattuningdifficulty="13" weavingdifficulty="6" threads="1" name="Dispel Magic"/>
+        <SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 4/Physical" duration="1 rnd" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Flame Flash"/>
+        <SPELL circle="3" type="wizard" effectarea="s. text" effect="Bonus Recovery Test; +4 Recovery Test bonus" duration="8 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="2" name="Healing Sleep"/>
+        <SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 2/Mystic" duration="1 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Mind Dagger"/>
+        <SPELL circle="2" type="wizard" effectarea="s. text" effect="Sets alarm to go off at specified time" duration="Up to 24 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="6" threads="4" name="Wake-Up Call"/>
+    </ns4:DISCIPLINE>
     <ns4:SKILL bookref="PG p.100" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
         <RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="d12+d10" step="13"/>
     </ns4:SKILL>

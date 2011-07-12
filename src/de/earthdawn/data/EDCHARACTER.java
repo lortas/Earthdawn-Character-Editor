@@ -37,8 +37,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}INITIATIVE_type" minOccurs="0"/>
  *         &lt;element name="CARRYING" type="{http://earthdawn.com/datatypes}CARRYING_type" minOccurs="0"/>
  *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/datatypes}DISCIPLINE_type" maxOccurs="3" minOccurs="0"/>
- *         &lt;element name="TALENTS" type="{http://earthdawn.com/character}TALENTS_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SPELLS" type="{http://earthdawn.com/character}SPELLS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}SKILL_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="LANGUAGE" type="{http://earthdawn.com/datatypes}CHARACTERLANGUAGE_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -77,8 +75,6 @@ import javax.xml.bind.annotation.XmlType;
     "initiative",
     "carrying",
     "discipline",
-    "talents",
-    "spells",
     "skill",
     "language",
     "weapon",
@@ -118,10 +114,6 @@ public class EDCHARACTER {
     protected CARRYINGType carrying;
     @XmlElement(name = "DISCIPLINE", namespace = "http://earthdawn.com/character")
     protected List<DISCIPLINEType> discipline;
-    @XmlElement(name = "TALENTS", namespace = "http://earthdawn.com/character")
-    protected List<TALENTSType> talents;
-    @XmlElement(name = "SPELLS", namespace = "http://earthdawn.com/character")
-    protected List<SPELLSType> spells;
     @XmlElement(name = "SKILL", namespace = "http://earthdawn.com/character")
     protected List<SKILLType> skill;
     @XmlElement(name = "LANGUAGE", namespace = "http://earthdawn.com/character")
@@ -385,64 +377,6 @@ public class EDCHARACTER {
             discipline = new ArrayList<DISCIPLINEType>();
         }
         return this.discipline;
-    }
-
-    /**
-     * Gets the value of the talents property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the talents property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTALENTS().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TALENTSType }
-     * 
-     * 
-     */
-    public List<TALENTSType> getTALENTS() {
-        if (talents == null) {
-            talents = new ArrayList<TALENTSType>();
-        }
-        return this.talents;
-    }
-
-    /**
-     * Gets the value of the spells property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spells property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSPELLS().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SPELLSType }
-     * 
-     * 
-     */
-    public List<SPELLSType> getSPELLS() {
-        if (spells == null) {
-            spells = new ArrayList<SPELLSType>();
-        }
-        return this.spells;
     }
 
     /**

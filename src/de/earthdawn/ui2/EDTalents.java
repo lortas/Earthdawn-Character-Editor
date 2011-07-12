@@ -15,11 +15,11 @@ import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.TALENTABILITYType;
-import de.earthdawn.data.TALENTSType;
 import de.earthdawn.data.TALENTTEACHERType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
@@ -186,7 +186,7 @@ class TalentsTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
-	private TALENTSType talents;
+	private TalentsContainer talents;
 	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Startrank", "Rank", "Step", "Action", "Teacher Dis", "Type", "BookRef" };
 	private String disciplin = "";
 
@@ -229,7 +229,7 @@ class TalentsTableModel extends AbstractTableModel {
 			return 0;
 		}
 		if (talents == null) return 0;
-		return talents.getDISZIPLINETALENT().size()+talents.getOPTIONALTALENT().size();
+		return talents.getDisciplinetalents().size()+talents.getOptionaltalents().size();
 	}
 
 	public String getColumnName(int col) {
@@ -239,12 +239,12 @@ class TalentsTableModel extends AbstractTableModel {
 	public Object getValueAt(int row, int col) {
 		TALENTType talent = null;
 		boolean isDisciplinTalent=true;
-		if(talents.getDISZIPLINETALENT().size() > row ) {
-			talent=talents.getDISZIPLINETALENT().get(row);
+		if(talents.getDisciplinetalents().size() > row ) {
+			talent=talents.getDisciplinetalents().get(row);
 			isDisciplinTalent=true;
 		} else {
-			int i = row-talents.getDISZIPLINETALENT().size();
-			List<TALENTType> optionaltalent = talents.getOPTIONALTALENT();
+			int i = row-talents.getDisciplinetalents().size();
+			List<TALENTType> optionaltalent = talents.getOptionaltalents();
 			if( (i>= 0) && (i<optionaltalent.size()) ) {
 				talent=optionaltalent.get(i);
 				isDisciplinTalent=false;
@@ -353,11 +353,11 @@ class TalentsTableModel extends AbstractTableModel {
 
 	public boolean isCellEditable(int row, int col) {
 		TALENTType talent = null;
-		if(talents.getDISZIPLINETALENT().size() > row ) {
-			talent=talents.getDISZIPLINETALENT().get(row);
+		if(talents.getDisciplinetalents().size() > row ) {
+			talent=talents.getDisciplinetalents().get(row);
 		} else {
-			int o = row-talents.getDISZIPLINETALENT().size();
-			talent=talents.getOPTIONALTALENT().get(o);
+			int o = row-talents.getDisciplinetalents().size();
+			talent=talents.getOptionaltalents().get(o);
 		}
 		if( talent == null ) return false;
 		// Realigned Talents dürfen nicht mehr editiert werden
@@ -377,10 +377,10 @@ class TalentsTableModel extends AbstractTableModel {
 
 	public void setValueAt(Object value, int row, int col) {
 		TALENTType talent = null;
-		if(talents.getDISZIPLINETALENT().size() > row ) {
-			talent=talents.getDISZIPLINETALENT().get(row);
+		if(talents.getDisciplinetalents().size() > row ) {
+			talent=talents.getDisciplinetalents().get(row);
 		} else {
-			talent=talents.getOPTIONALTALENT().get(row-talents.getDISZIPLINETALENT().size());
+			talent=talents.getOptionaltalents().get(row-talents.getDisciplinetalents().size());
 		}
 		switch (col) {
 		case 0:
