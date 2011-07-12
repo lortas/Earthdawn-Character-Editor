@@ -101,7 +101,7 @@ public class EDMainWindow {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 				ECEWorker worker = new ECEWorker();
-			    worker.verarbeiteCharakter(character.getEDCHARACTER());
+				worker.verarbeiteCharakter(character.getEDCHARACTER());
 				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}
@@ -203,6 +203,14 @@ public class EDMainWindow {
 			}
 		});
 		mntmCsvExport.add(mntmTalentCSV);
+
+		JMenuItem mntmSkillCSV = new JMenuItem(NLS.getString("EDMainWindow.mntmSkillCSV.text")); //$NON-NLS-1$
+		mntmSkillCSV.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmSkillCSV_actionPerformed(arg0);
+			}
+		});
+		mntmCsvExport.add(mntmSkillCSV);
 
 		JMenuItem mntmItemCSV = new JMenuItem(NLS.getString("EDMainWindow.mntmItemCSV.text")); //$NON-NLS-1$
 		mntmItemCSV.addActionListener(new ActionListener() {
@@ -468,7 +476,7 @@ public class EDMainWindow {
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
 		FileOutputStream out = new FileOutputStream(file);
-		PrintStream fileio = new PrintStream(out, false, "UTF8");
+		PrintStream fileio = new PrintStream(out, false, encoding);
 		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
@@ -547,7 +555,7 @@ public class EDMainWindow {
 		File selFile = selectFileName("_Spells.csv");
 		if( selFile != null ) {
 			try {
-				new ECECsvExporter().exportSpells(character.getEDCHARACTER(), selFile);
+				new ECECsvExporter(encoding).exportSpells(character.getEDCHARACTER(), selFile);
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
@@ -563,7 +571,23 @@ public class EDMainWindow {
 		File selFile = selectFileName("_Talents.csv");
 		if( selFile != null ) {
 			try {
-				new ECECsvExporter().exportTalents(character.getEDCHARACTER(), selFile);
+				new ECECsvExporter(encoding).exportTalents(character.getEDCHARACTER(), selFile);
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void do_mntmSkillCSV_actionPerformed(ActionEvent arg0) {
+		File selFile = selectFileName("_Skills.csv");
+		if( selFile != null ) {
+			try {
+				new ECECsvExporter(encoding).exportSkills(character.getEDCHARACTER(), selFile);
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
@@ -579,7 +603,7 @@ public class EDMainWindow {
 		File selFile = selectFileName("_Items.csv");
 		if( selFile != null ) {
 			try {
-				new ECECsvExporter().exportItems(character.getEDCHARACTER(), selFile);
+				new ECECsvExporter(encoding).exportItems(character.getEDCHARACTER(), selFile);
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
