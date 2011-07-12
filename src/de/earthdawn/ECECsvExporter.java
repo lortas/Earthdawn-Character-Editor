@@ -18,6 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -27,13 +28,26 @@ import java.util.List;
 import de.earthdawn.data.*;
 
 public class ECECsvExporter {
+	private String encoding="UTF-8";
+
+	public ECECsvExporter(String encoding) {
+		setEncoding(encoding);
+	}
+
+	public void setEncoding(String encoding) {
+		this.encoding=encoding;
+	}
+
+	public String getEncoding() {
+		return encoding;
+	}
 
 	public void exportSpells(EDCHARACTER edCharakter, File outFile) throws IOException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
-		PrintStream out = new PrintStream(outFile);
-		out.println( "In Matrix\tSpell Name\tType\tCircle\tThreads\tWeaving Difficulty\t"+
-				"Reattuning Difficulty\tCasting Difficulty\tRange\tDuration\t"+
-				"Effect Area\tEffect\tBook Ref" );
+		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
+		String[] header = {"In Matrix","Spell Name","Type","Circle","Threads","Weaving Difficulty","Reattuning Difficulty",
+				"Casting Difficulty","Range","Duration","Effect Area","Effect","Book Ref"};
+		out.println(generaterow(header));
 		for( SPELLSType spells : character.getAllSpells() ) {
 			List<SPELLType> spellList = spells.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
@@ -60,22 +74,68 @@ public class ECECsvExporter {
 
 	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws IOException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
-		PrintStream out = new PrintStream(outFile);
-		out.println( "Type\tCircle\tTalent Name\tLimitation\tAttribute\tRank\tRealigned Rank\t"+
-				"Start Rank\tRank Bonus\tStep\tDice\tLP cost\tAction\tTalent Bonus\t"+
-				"Karma\tStrain\tTeacher Name\tTeacher Discipline\tTeachers Talent Circle\t"+
-				"Teachers Current Circle\tLearned By Versatility\tComment\tBook Ref" );
+		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
+		String[] header = {"Type","Circle","Talent Name","Limitation","Attribute","Rank","Realigned Rank","Start Rank","Rank Bonus","Step",
+				"Dice","LP cost","Action","Talent Bonus","Karma","Strain","Teacher Name","Teacher Discipline","Teachers Talent Circle",
+				"Teachers Current Circle","Learned By Versatility","Comment","Book Ref"};
+		out.println(generaterow(header));
 		for( TALENTSType allTalents : character.getAllTalents() ) {
 			printTalents(out, allTalents.getDISZIPLINETALENT(), true );
 			printTalents(out, allTalents.getOPTIONALTALENT(), false );
 		}
 	}
 
+	public void exportSkills(EDCHARACTER edCharakter, File outFile) throws IOException {
+		CharacterContainer character = new CharacterContainer(edCharakter);
+		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
+		String[] header = {"Skill Name","Limitation","Attribute","Rank","Realigned Rank","Start Rank","Rank Bonus","Step","Dice","LP cost",
+				"Action","Skill Bonus","Strain","Default","Book Ref"};
+		out.println(generaterow(header));
+		List<SKILLType> skills = character.getSkills();
+		if( (skills != null) && (! skills.isEmpty()) ) {
+			Collections.sort(skills, new SkillComparator());
+			for( SKILLType skill : skills ) {
+				if( skill.getRealigned() > 0 ) continue;
+				List<String> row = new ArrayList<String>();
+				row.add( skill.getName() );
+				row.add( skill.getLimitation() );
+				RANKType rank = skill.getRANK();
+				row.add( skill.getAttribute().value() );
+				if( rank == null ) {
+					row.add( "-" );
+					row.add( "-" );
+					row.add( "-" );
+					row.add( "-" );
+					row.add( "-" );
+					row.add( "-" );
+					row.add( "-" );
+				} else {
+					row.add( String.valueOf(rank.getRank()) );
+					row.add( String.valueOf(rank.getRealignedrank()) );
+					row.add( String.valueOf(rank.getStartrank()) );
+					row.add( String.valueOf(rank.getBonus()) );
+					row.add( String.valueOf(rank.getStep()) );
+					DiceType dice = rank.getDice();
+					if( dice == null ) row.add( "-" );
+					else row.add( dice.value() );
+					row.add( String.valueOf(rank.getLpcost()) );
+				}
+				row.add( skill.getAction().value() );
+				row.add( String.valueOf(skill.getBonus()) );
+				row.add( skill.getStrain() );
+				row.add( skill.getDefault().value() );
+				row.add( skill.getBookref() );
+				out.println(generaterow(row));
+			}
+		}
+	}
+
 	public void exportItems(EDCHARACTER edCharakter, File outFile) throws IOException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
-		PrintStream out = new PrintStream(outFile);
+		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
 		int pursecounter=0;
-		out.println( "Name\tLocation\tWeight\tIn Use\tKind\tClass" );
+		String[] header = {"Name","Location","Weight","In Use","Kind","Class"};
+		out.println(generaterow(header));
 		for( ITEMType item : character.getAllNonVirtualItems() ) {
 			List<String> row = new ArrayList<String>();
 			if( item instanceof COINSType ) {
@@ -162,12 +222,18 @@ public class ECECsvExporter {
 		}
 	}
 
-	public static String generaterow(List<String> list) {
-		String result="";
+	public static String generaterow(List<?> list) {
+		return generaterow(list.toArray());
+	}
+
+	public static String generaterow(Object[] list) {
+		StringBuilder result = new StringBuilder(1024);
 		for( Object e : list ) {
-			if( ! result.isEmpty() ) result+=",";
-			result+="\""+String.valueOf(e).replaceAll("\"", "''")+"\"";
+			if( result.length() > 0 ) result.append(",");
+			result.append("\"");
+			result.append(e.toString().replaceAll("\"", "''"));
+			result.append("\"");
 		}
-		return result;
+		return result.toString();
 	}
 }
