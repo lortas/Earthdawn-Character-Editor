@@ -29,6 +29,9 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="DISCIPLINEBONUS" type="{http://earthdawn.com/datatypes}DISCIPLINEBONUS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="DISZIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}SPELL_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
@@ -42,7 +45,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DISCIPLINE_type", propOrder = {
     "disciplinebonus",
-    "karmaritual"
+    "karmaritual",
+    "disziplinetalent",
+    "optionaltalent",
+    "spell"
 })
 public class DISCIPLINEType {
 
@@ -50,6 +56,12 @@ public class DISCIPLINEType {
     protected List<DISCIPLINEBONUSType> disciplinebonus;
     @XmlElement(name = "KARMARITUAL")
     protected String karmaritual;
+    @XmlElement(name = "DISZIPLINETALENT")
+    protected List<TALENTType> disziplinetalent;
+    @XmlElement(name = "OPTIONALTALENT")
+    protected List<TALENTType> optionaltalent;
+    @XmlElement(name = "SPELL")
+    protected List<SPELLType> spell;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
@@ -106,6 +118,93 @@ public class DISCIPLINEType {
      */
     public void setKARMARITUAL(String value) {
         this.karmaritual = value;
+    }
+
+    /**
+     * Gets the value of the disziplinetalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the disziplinetalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDISZIPLINETALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTType }
+     * 
+     * 
+     */
+    public List<TALENTType> getDISZIPLINETALENT() {
+        if (disziplinetalent == null) {
+            disziplinetalent = new ArrayList<TALENTType>();
+        }
+        return this.disziplinetalent;
+    }
+
+    /**
+     * Gets the value of the optionaltalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the optionaltalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOPTIONALTALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTType }
+     * 
+     * 
+     */
+    public List<TALENTType> getOPTIONALTALENT() {
+        if (optionaltalent == null) {
+            optionaltalent = new ArrayList<TALENTType>();
+        }
+        return this.optionaltalent;
+    }
+
+    /**
+     * Gets the value of the spell property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spell property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPELL().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SPELLType }
+     * 
+     * 
+     */
+    public List<SPELLType> getSPELL() {
+        if (spell == null) {
+            spell = new ArrayList<SPELLType>();
+        }
+        return this.spell;
     }
 
     /**

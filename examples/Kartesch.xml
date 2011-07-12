@@ -27,77 +27,75 @@
         <DISCIPLINEBONUS bonus="Can spend Karma for Strength-only Test" circle="4"/>
         <DISCIPLINEBONUS bonus="Ability: Battle Rites" circle="5"/>
         <DISCIPLINEBONUS bonus="Can spend Karma for Dexterity-only Test" circle="6"/>
-    </ns4:DISCIPLINE>
-    <ns4:TALENTS discipline="Warrior">
-        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.75" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+        <DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.75" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
             <RANK lpcost="5000" bonus="3" rank="7" startrank="2" dice="d12+d10+d8" step="18"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.62" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.62" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
             <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.85" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.85" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
             <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.86" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.86" karma="yes" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Wood Skin">
             <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" isinitiative="no" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
             <RANK lpcost="3100" bonus="0" rank="6" startrank="1" dice="d10" step="6"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="2" isinitiative="no" bookref="PG p.61" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="2" isinitiative="no" bookref="PG p.61" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Anticipate Blow">
             <RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="3" isinitiative="no" bookref="PG p.86" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="3" isinitiative="no" bookref="PG p.86" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="free" name="Wound Balance">
             <RANK lpcost="3200" bonus="0" rank="6" dice="2d12" step="14"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="4" isinitiative="no" bookref="PG p.83" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="4" isinitiative="no" bookref="PG p.83" karma="no" limitation="War Weaving" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
             <RANK lpcost="3200" bonus="0" rank="6" dice="2d10" step="12"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="5" isinitiative="no" bookref="PG p.83" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="5" isinitiative="no" bookref="PG p.83" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="sustained" name="Temper Self">
             <RANK lpcost="5200" bonus="0" rank="6" dice="d10+d8" step="11"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:DISZIPLINETALENT circle="6" isinitiative="no" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="6" isinitiative="no" bookref="PG p.74" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="free" name="Life Check">
             <RANK lpcost="200" bonus="0" rank="1" dice="d8+d6" step="9"/>
             <TEACHER/>
-        </ns4:DISZIPLINETALENT>
-        <ns4:OPTIONALTALENT circle="1" isinitiative="yes" bookref="PG p.59" karma="no" limitation="" bonus="-1" attribute="DEX" strain="1" action="free" name="Air Dance">
+        </DISZIPLINETALENT>
+        <OPTIONALTALENT circle="1" isinitiative="yes" bookref="PG p.59" karma="no" limitation="" bonus="-1" attribute="DEX" strain="1" action="free" name="Air Dance">
             <RANK lpcost="1600" bonus="-1" rank="5" startrank="2" dice="2d10" step="12"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="2" isinitiative="no" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="2" isinitiative="no" bookref="PG p.59" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="simple" name="Acrobatic Strike">
             <RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="3" isinitiative="no" bookref="PG p.66" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="3" isinitiative="no" bookref="PG p.66" karma="no" limitation="9/7" bonus="0" attribute="na" strain="0" action="na" name="Durability">
             <RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="4" isinitiative="yes" bookref="PG p.84" karma="no" limitation="" bonus="-1" attribute="na" strain="1" action="free" name="Tiger Spring">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="4" isinitiative="yes" bookref="PG p.84" karma="no" limitation="" bonus="-1" attribute="na" strain="1" action="free" name="Tiger Spring">
             <RANK lpcost="1900" bonus="-1" rank="5" dice="d6" step="4"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="5" isinitiative="no" bookref="PG p.65" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="standard" name="Disarm">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="5" isinitiative="no" bookref="PG p.65" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="standard" name="Disarm">
             <RANK lpcost="1000" bonus="0" rank="3" dice="d10+d8" step="11"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="6" isinitiative="no" bookref="PG p.69" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="6" isinitiative="no" bookref="PG p.69" karma="no" limitation="" bonus="0" attribute="TOU" strain="0" action="standard" name="Fireblood">
             <RANK lpcost="1000" bonus="0" rank="3" dice="d10+d8" step="11"/>
             <TEACHER/>
-        </ns4:OPTIONALTALENT>
-        <ns4:OPTIONALTALENT circle="0" isinitiative="no" bookref="PG p.64" karma="no" limitation="(#)" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
+        </OPTIONALTALENT>
+        <OPTIONALTALENT circle="0" isinitiative="no" bookref="PG p.64" karma="no" limitation="(#)" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
             <RANK bonus="1" rank="0" dice="d8+d6" step="9"/>
             <TEACHER byversatility="no" teachercircle="2" talentcircle="2" name="K'thar"/>
-        </ns4:OPTIONALTALENT>
-    </ns4:TALENTS>
+        </OPTIONALTALENT>
+    </ns4:DISCIPLINE>
     <ns4:SKILL isinitiative="no" bookref="PG p.100" karma="no" limitation="Dwarf" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
         <RANK lpcost="0" bonus="0" rank="6" startrank="6" dice="2d10" step="12"/>
     </ns4:SKILL>

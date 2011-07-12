@@ -25,101 +25,97 @@
 	<ns3:DISCIPLINE circle="5" name="Wizard">
 		<DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="4"/>
 		<DISCIPLINEBONUS bonus="Ability: Book Mage" circle="5"/>
-	</ns3:DISCIPLINE>
-	<ns3:TALENTS discipline="Wizard">
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
+		<DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="simple" name="Astral Sight">
 			<RANK lpcost="1800" bonus="0" rank="5" startrank="1" dice="d12+d10" step="13"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
 			<RANK lpcost="500" bonus="0" rank="3" startrank="1" dice="d6-1" step="3"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Spellcasting">
 			<RANK lpcost="2900" bonus="0" rank="6" startrank="2" dice="2d12" step="14"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Magic">
 			<RANK lpcost="1800" bonus="0" rank="5" startrank="1" dice="d12+d10" step="13"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="Wizardry" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" karma="no" limitation="Wizardry" bonus="0" attribute="PER" strain="0" action="standard" name="Thread Weaving">
 			<RANK lpcost="2900" bonus="0" rank="6" startrank="2" dice="2d12" step="14"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
 			<RANK lpcost="1800" bonus="0" rank="5" startrank="1" dice="d8" step="5"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="PER" strain="-1" action="standard" name="Read/Write Language">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="2" karma="no" limitation="" bonus="0" attribute="PER" strain="-1" action="standard" name="Read/Write Language">
 			<RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="3" karma="yes" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Book Memory">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="3" karma="yes" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Book Memory">
 			<RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="4" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="4" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
 			<RANK lpcost="1900" bonus="0" rank="5" dice="d12+d10" step="13"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:DISZIPLINETALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
+		</DISZIPLINETALENT>
+		<DISZIPLINETALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="simple" name="Steel Thought">
 			<RANK lpcost="3100" bonus="0" rank="5" dice="d12+d10" step="13"/>
 			<TEACHER/>
-		</ns3:DISZIPLINETALENT>
-		<ns3:OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+		</DISZIPLINETALENT>
+		<OPTIONALTALENT circle="1" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
 			<RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
 			<TEACHER/>
-		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="2" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="2" karma="no" limitation="4/3" bonus="0" attribute="na" strain="0" action="na" name="Durability">
 			<RANK lpcost="1900" bonus="0" rank="5" dice="d8" step="5"/>
 			<TEACHER/>
-		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="3" karma="yes" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Item History">
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="3" karma="yes" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Item History">
 			<RANK lpcost="1100" bonus="0" rank="4" dice="2d10" step="12"/>
 			<TEACHER/>
-		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="4" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="4" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Spell Matrix">
 			<RANK lpcost="1100" bonus="0" rank="4" dice="d6" step="4"/>
 			<TEACHER/>
-		</ns3:OPTIONALTALENT>
-		<ns3:OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
+		</OPTIONALTALENT>
+		<OPTIONALTALENT circle="5" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Willforce">
 			<RANK lpcost="1800" bonus="0" rank="4" dice="2d10" step="12"/>
 			<TEACHER/>
-		</ns3:OPTIONALTALENT>
-	</ns3:TALENTS>
-	<ns3:SPELLS discipline="Wizard">
-		<ns3:SPELL circle="1" type="wizard" effectarea="30-yard (15-hex) radius from magician" effect="WIL + 6" duration="R+10 min" range="self" castingdifficulty="6" reattuningdifficulty="15" weavingdifficulty="5" threads="2" name="Astral Sense"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="+6 bonus to verbal Charisma-based Tests" duration="R min" range="self" castingdifficulty="TSD*" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Bedazzling Display of Logical Analysis"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 5/Mystic" duration="1 rnd" range="24 hex" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="8" threads="1" name="Crushing Will"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL" duration="1 rnd" range="15 hex" castingdifficulty="6" reattuningdifficulty="13" weavingdifficulty="6" threads="1" name="Dispel Magic"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 5" duration="R+5 min" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Divine Aura"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 4/Physical" duration="1 rnd" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Flame Flash"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="Ignites flammable objects/Mystic" duration="1 round (s. text)" range="2 yards (1 hex)" castingdifficulty="TSD" reattuningdifficulty="11" weavingdifficulty="na" threads="0" name="Ignite"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 2/Mystic" duration="1 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Mind Dagger"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="+3 bonus to close combat Damage Tests" duration="R+10 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Iron Hand"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="-4 to Social Defense against Interaction Tests involving finances" duration="R+3 min" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="7" threads="1" name="And His Money"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="+3 to Spell Defense" duration="R+7 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Astral Shield"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="+3 bonus to Avoid Blow Tests" duration="R+5 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="8" weavingdifficulty="na" threads="0" name="Dodge Boost"/>
-		<ns3:SPELL circle="3" type="wizard" effectarea="2-yard (1-hex) radius from origin" effect="Levitate up to 1,000 pounds" duration="R+10 min" range="20 hex" castingdifficulty="TSD*" reattuningdifficulty="18" weavingdifficulty="8" threads="1" name="Levitate"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="Allows whispered conversation" duration="R+5 min" range="50 hex" castingdifficulty="TSD*" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Silent Converse"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="Determines distance to target" duration="1 rnd" range="500 yards" castingdifficulty="TSD" reattuningdifficulty="10" weavingdifficulty="na" threads="0" name="Triangulate"/>
-		<ns3:SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 5" duration="R+10 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Wall Walker"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="Sets alarm to go off at specified time" duration="Up to 24 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="6" threads="4" name="Wake-Up Call"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="WIL + 4" duration="R+3 rnd" range="10 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="6" threads="1" name="Vines"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="WIL + 6" duration="R+8 min" range="10 hex" castingdifficulty="6" reattuningdifficulty="11" weavingdifficulty="6" threads="1" name="Seal"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="50-yard (25-hex) radius from magician" effect="Create ladder from rope" duration="R min" range="touch" castingdifficulty="6" reattuningdifficulty="14" weavingdifficulty="6" threads="2" name="Rope Ladder"/>
-		<ns3:SPELL circle="2" type="wizard" effectarea="s. text" effect="WIL + 4" duration="1 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="5" threads="2" name="Clean"/>
-		<ns3:SPELL circle="4" type="wizard" effectarea="s. text" effect="WIL + 4" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="9" threads="3" name="Relax"/>
-		<ns3:SPELL circle="4" type="wizard" effectarea="s. text" effect="WIL + 3" duration="R min" range="10 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="13" threads="1" name="Trust"/>
-		<ns3:SPELL circle="4" type="wizard" effectarea="s. text" effect="WIL + 8" duration="1 min" range="15 hex" castingdifficulty="TSD" reattuningdifficulty="18" weavingdifficulty="9" threads="4" name="Inventory"/>
-		<ns3:SPELL circle="5" type="wizard" effectarea="s. text" effect="Grants flight" duration="R+15 min" range="self" castingdifficulty="TSD" reattuningdifficulty="18" weavingdifficulty="7" threads="2" name="Solo Flight"/>
-		<ns3:SPELL circle="5" type="wizard" effectarea="s. text" effect="WIL + 10/Mystic" duration="1 rnd" range="2 hex" castingdifficulty="TSD" reattuningdifficulty="21" weavingdifficulty="11" threads="2" name="Mystic Shock"/>
-		<ns3:SPELL circle="3" type="wizard" effectarea="s. text" effect="+3 bonus to stealthy Action Tests" duration="R+1 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Notice Not"/>
-		<ns3:SPELL circle="3" type="wizard" effectarea="s. text" effect="Identifies a previously cast spell" duration="1 rnd" range="15 hex" castingdifficulty="TSD*" reattuningdifficulty="12" weavingdifficulty="na" threads="-1" name="Identify Spell"/>
-		<ns3:SPELL circle="3" type="wizard" effectarea="s. text" effect="Bonus Recovery Test; +4 Recovery Test bonus" duration="8 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="2" name="Healing Sleep"/>
-		<ns3:SPELL circle="3" type="wizard" effectarea="s. text" effect="+4 bonus to close combat Attack Tests" duration="R+7 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="9" threads="1" name="Combat Fury"/>
-	</ns3:SPELLS>
+		</OPTIONALTALENT>
+		<SPELL circle="1" type="wizard" effectarea="30-yard (15-hex) radius from magician" effect="WIL + 6" duration="R+10 min" range="self" castingdifficulty="6" reattuningdifficulty="15" weavingdifficulty="5" threads="2" name="Astral Sense"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="+6 bonus to verbal Charisma-based Tests" duration="R min" range="self" castingdifficulty="TSD*" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Bedazzling Display of Logical Analysis"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 5/Mystic" duration="1 rnd" range="24 hex" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="8" threads="1" name="Crushing Will"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL" duration="1 rnd" range="15 hex" castingdifficulty="6" reattuningdifficulty="13" weavingdifficulty="6" threads="1" name="Dispel Magic"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 5" duration="R+5 min" range="12 hex" castingdifficulty="TSD" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Divine Aura"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 4/Physical" duration="1 rnd" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Flame Flash"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="Ignites flammable objects/Mystic" duration="1 round (s. text)" range="2 yards (1 hex)" castingdifficulty="TSD" reattuningdifficulty="11" weavingdifficulty="na" threads="0" name="Ignite"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 2/Mystic" duration="1 rnd" range="8 hex" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Mind Dagger"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="+3 bonus to close combat Damage Tests" duration="R+10 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Iron Hand"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="-4 to Social Defense against Interaction Tests involving finances" duration="R+3 min" range="5 hex" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="7" threads="1" name="And His Money"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="+3 to Spell Defense" duration="R+7 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="7" weavingdifficulty="na" threads="0" name="Astral Shield"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="+3 bonus to Avoid Blow Tests" duration="R+5 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="8" weavingdifficulty="na" threads="0" name="Dodge Boost"/>
+		<SPELL circle="3" type="wizard" effectarea="2-yard (1-hex) radius from origin" effect="Levitate up to 1,000 pounds" duration="R+10 min" range="20 hex" castingdifficulty="TSD*" reattuningdifficulty="18" weavingdifficulty="8" threads="1" name="Levitate"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="Allows whispered conversation" duration="R+5 min" range="50 hex" castingdifficulty="TSD*" reattuningdifficulty="13" weavingdifficulty="5" threads="1" name="Silent Converse"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="Determines distance to target" duration="1 rnd" range="500 yards" castingdifficulty="TSD" reattuningdifficulty="10" weavingdifficulty="na" threads="0" name="Triangulate"/>
+		<SPELL circle="1" type="wizard" effectarea="s. text" effect="WIL + 5" duration="R+10 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="14" weavingdifficulty="6" threads="1" name="Wall Walker"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="Sets alarm to go off at specified time" duration="Up to 24 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="6" threads="4" name="Wake-Up Call"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="WIL + 4" duration="R+3 rnd" range="10 hex" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="6" threads="1" name="Vines"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="WIL + 6" duration="R+8 min" range="10 hex" castingdifficulty="6" reattuningdifficulty="11" weavingdifficulty="6" threads="1" name="Seal"/>
+		<SPELL circle="2" type="wizard" effectarea="50-yard (25-hex) radius from magician" effect="Create ladder from rope" duration="R min" range="touch" castingdifficulty="6" reattuningdifficulty="14" weavingdifficulty="6" threads="2" name="Rope Ladder"/>
+		<SPELL circle="2" type="wizard" effectarea="s. text" effect="WIL + 4" duration="1 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="5" threads="2" name="Clean"/>
+		<SPELL circle="4" type="wizard" effectarea="s. text" effect="WIL + 4" duration="1 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="13" weavingdifficulty="9" threads="3" name="Relax"/>
+		<SPELL circle="4" type="wizard" effectarea="s. text" effect="WIL + 3" duration="R min" range="10 hex" castingdifficulty="TSD" reattuningdifficulty="17" weavingdifficulty="13" threads="1" name="Trust"/>
+		<SPELL circle="4" type="wizard" effectarea="s. text" effect="WIL + 8" duration="1 min" range="15 hex" castingdifficulty="TSD" reattuningdifficulty="18" weavingdifficulty="9" threads="4" name="Inventory"/>
+		<SPELL circle="5" type="wizard" effectarea="s. text" effect="Grants flight" duration="R+15 min" range="self" castingdifficulty="TSD" reattuningdifficulty="18" weavingdifficulty="7" threads="2" name="Solo Flight"/>
+		<SPELL circle="5" type="wizard" effectarea="s. text" effect="WIL + 10/Mystic" duration="1 rnd" range="2 hex" castingdifficulty="TSD" reattuningdifficulty="21" weavingdifficulty="11" threads="2" name="Mystic Shock"/>
+		<SPELL circle="3" type="wizard" effectarea="s. text" effect="+3 bonus to stealthy Action Tests" duration="R+1 min" range="touch" castingdifficulty="TSD" reattuningdifficulty="15" weavingdifficulty="7" threads="1" name="Notice Not"/>
+		<SPELL circle="3" type="wizard" effectarea="s. text" effect="Identifies a previously cast spell" duration="1 rnd" range="15 hex" castingdifficulty="TSD*" reattuningdifficulty="12" weavingdifficulty="na" threads="-1" name="Identify Spell"/>
+		<SPELL circle="3" type="wizard" effectarea="s. text" effect="Bonus Recovery Test; +4 Recovery Test bonus" duration="8 hr" range="touch" castingdifficulty="TSD" reattuningdifficulty="12" weavingdifficulty="7" threads="2" name="Healing Sleep"/>
+		<SPELL circle="3" type="wizard" effectarea="s. text" effect="+4 bonus to close combat Attack Tests" duration="R+7 rnd" range="touch" castingdifficulty="TSD" reattuningdifficulty="16" weavingdifficulty="9" threads="1" name="Combat Fury"/>
+	</ns3:DISCIPLINE>
 	<ns3:SKILL default="no" karma="no" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
 	</ns3:SKILL>

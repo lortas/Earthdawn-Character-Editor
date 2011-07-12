@@ -31,87 +31,81 @@
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Recovery Tests" circle="9"/>
 		<edt:DISCIPLINEBONUS bonus="Ability: Otherworldly Control" circle="9"/>
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Action Tests made by a spirit or creature und his control" circle="10"/>
+		<edt:DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Nethermancer"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Astral Sight"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="11" startrank="2"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="2" name="Frighten"><edt:RANK rank="11"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="3" name="Spirit Talk"><edt:RANK rank="12"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="4" name="Spirit Hold"><edt:RANK rank="12"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="5" name="Summon"><edt:RANK rank="12"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="6" name="Lifesight"><edt:RANK rank="11"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="7" name="Spirit Dodge"><edt:RANK rank="11"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="9" name="Bargain With Summoned Creature"><edt:RANK rank="11"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="8" name="Orbiting Spy"><edt:RANK rank="11"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="10" name="Summoning Circle"><edt:RANK rank="12"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="11" name="Netherwalk"><edt:RANK rank="11"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:OPTIONALTALENT circle="1" name="Arcane Mutterings"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="2" name="Durability"><edt:RANK rank="14"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="3" name="Spell Matrix"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="4" name="Spell Matrix"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="5" name="Read/Write Language"><edt:RANK rank="9"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="6" name="Willforce"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="7" name="Enhanced Matrix"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="8" name="Enhanced Matrix"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="9" name="Item History"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="10" name="Armored Matrix"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="11" name="Armored Matrix"><edt:RANK rank="11"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="0" name="Versatility"><edt:RANK rank="2" startrank="1"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="2" name="Avoid Blow"><edt:RANK rank="7" startrank="1"/><edt:TEACHER byversatility="yes"/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="2" name="Taunt"><edt:RANK rank="6"/><edt:TEACHER byversatility="yes"/></edt:OPTIONALTALENT>
+		<edt:SPELL name="Astral Spear" circle="1" type="nether"/>
+		<edt:SPELL name="Bone Dance" circle="1" type="nether"/>
+		<edt:SPELL name="Chilling Circle" circle="1" type="nether"/>
+		<edt:SPELL name="Command Nightflyer" circle="1" type="nether"/>
+		<edt:SPELL name="Detect Undead" circle="1" type="nether"/>
+		<edt:SPELL name="Dry and Wet" circle="1" type="nether"/>
+		<edt:SPELL name="Experience Death" circle="1" type="nether"/>
+		<edt:SPELL name="Insect Repellent" circle="1" type="nether"/>
+		<edt:SPELL name="Mount Scare" circle="1" type="nether"/>
+		<edt:SPELL name="Putrefy" circle="1" type="nether"/>
+		<edt:SPELL name="Spirit Dart" circle="1" type="nether"/>
+		<edt:SPELL name="Spirit Grip" circle="1" type="nether"/>
+		<edt:SPELL name="Undead Struggle" circle="1" type="nether"/>
+		<edt:SPELL name="Bone Circle" circle="2" type="nether"/>
+		<edt:SPELL name="Detect Nethermancy Magic" circle="2" type="nether"/>
+		<edt:SPELL name="Ethereal Darkness" circle="2" type="nether"/>
+		<edt:SPELL name="Fog Ghost" circle="2" type="nether"/>
+		<edt:SPELL name="Life Circle of One" circle="2" type="nether"/>
+		<edt:SPELL name="Pocket Guardian" circle="2" type="nether"/>
+		<edt:SPELL name="Repel Animal" circle="2" type="nether"/>
+		<edt:SPELL name="Shadow's Whisper" circle="2" type="nether"/>
+		<edt:SPELL name="Shield Mist" circle="2" type="nether"/>
 	</DISCIPLINE>
 	<DISCIPLINE circle="6" name="Illusionist">
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Perception-only Test" circle="4"/>
 		<edt:DISCIPLINEBONUS bonus="Ability: Glamour" circle="5"/>
 		<edt:DISCIPLINEBONUS bonus="Can spend Karma for Willpower-only Test" circle="6"/>
+		<edt:DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="0"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="0"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="0"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="3" name="Dead Fall"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="2" name="Disguise Self"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="6" name="Engaging Banter"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="4" name="False Sight"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Speak Language"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Illusionism"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:DISZIPLINETALENT circle="5" name="True Sight"><edt:RANK rank="6"/><edt:TEACHER/></edt:DISZIPLINETALENT>
+		<edt:OPTIONALTALENT circle="1" name="First Impression"><edt:RANK rank="6"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="2" name="Silent Walk"><edt:RANK rank="6"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="3" name="Haggle"><edt:RANK rank="6"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="4" name="Winning Smile"><edt:RANK rank="6"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="5" name="Resist Taunt"><edt:RANK rank="6"/><edt:TEACHER/></edt:OPTIONALTALENT>
+		<edt:OPTIONALTALENT circle="6" name="Slough Blame"><edt:RANK rank="6"/><edt:TEACHER/></edt:OPTIONALTALENT>
 	</DISCIPLINE>
-	<TALENTS discipline="Nethermancer">
-		<DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Nethermancer"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Astral Sight"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="12" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="11" startrank="2"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="2" name="Frighten"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="3" name="Spirit Talk"><edt:RANK rank="12"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="4" name="Spirit Hold"><edt:RANK rank="12"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="5" name="Summon"><edt:RANK rank="12"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="6" name="Lifesight"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="7" name="Spirit Dodge"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="9" name="Bargain With Summoned Creature"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="8" name="Orbiting Spy"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="10" name="Summoning Circle"><edt:RANK rank="12"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="11" name="Netherwalk"><edt:RANK rank="11"/><edt:TEACHER/></DISZIPLINETALENT>
-		<OPTIONALTALENT circle="1" name="Arcane Mutterings"><edt:RANK rank="11" startrank="1"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="2" name="Durability"><edt:RANK rank="14"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="3" name="Spell Matrix"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="4" name="Spell Matrix"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="5" name="Read/Write Language"><edt:RANK rank="9"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="6" name="Willforce"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="7" name="Enhanced Matrix"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="8" name="Enhanced Matrix"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="9" name="Item History"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="10" name="Armored Matrix"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="11" name="Armored Matrix"><edt:RANK rank="11"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="0" name="Versatility"><edt:RANK rank="2" startrank="1"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="2" name="Avoid Blow"><edt:RANK rank="7" startrank="1"/><edt:TEACHER byversatility="yes"/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="2" name="Taunt"><edt:RANK rank="6"/><edt:TEACHER byversatility="yes"/></OPTIONALTALENT>
-	</TALENTS>
-	<TALENTS discipline="Illusionist">
-		<DISZIPLINETALENT circle="1" name="Karma Ritual"><edt:RANK rank="0"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Spellcasting"><edt:RANK rank="0"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Read/Write Magic"><edt:RANK rank="0"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="3" name="Dead Fall"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="2" name="Disguise Self"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="6" name="Engaging Banter"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="4" name="False Sight"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Speak Language"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Spell Matrix"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="1" name="Thread Weaving" limitation="Illusionism"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<DISZIPLINETALENT circle="5" name="True Sight"><edt:RANK rank="6"/><edt:TEACHER/></DISZIPLINETALENT>
-		<OPTIONALTALENT circle="1" name="First Impression"><edt:RANK rank="6"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="2" name="Silent Walk"><edt:RANK rank="6"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="3" name="Haggle"><edt:RANK rank="6"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="4" name="Winning Smile"><edt:RANK rank="6"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="5" name="Resist Taunt"><edt:RANK rank="6"/><edt:TEACHER/></OPTIONALTALENT>
-		<OPTIONALTALENT circle="6" name="Slough Blame"><edt:RANK rank="6"/><edt:TEACHER/></OPTIONALTALENT>
-	</TALENTS>
-	<SPELLS discipline="Nethermancer">
-		<SPELL name="Astral Spear" circle="1" type="nether"/>
-		<SPELL name="Bone Dance" circle="1" type="nether"/>
-		<SPELL name="Chilling Circle" circle="1" type="nether"/>
-		<SPELL name="Command Nightflyer" circle="1" type="nether"/>
-		<SPELL name="Detect Undead" circle="1" type="nether"/>
-		<SPELL name="Dry and Wet" circle="1" type="nether"/>
-		<SPELL name="Experience Death" circle="1" type="nether"/>
-		<SPELL name="Insect Repellent" circle="1" type="nether"/>
-		<SPELL name="Mount Scare" circle="1" type="nether"/>
-		<SPELL name="Putrefy" circle="1" type="nether"/>
-		<SPELL name="Spirit Dart" circle="1" type="nether"/>
-		<SPELL name="Spirit Grip" circle="1" type="nether"/>
-		<SPELL name="Undead Struggle" circle="1" type="nether"/>
-		<SPELL name="Bone Circle" circle="2" type="nether"/>
-		<SPELL name="Detect Nethermancy Magic" circle="2" type="nether"/>
-		<SPELL name="Ethereal Darkness" circle="2" type="nether"/>
-		<SPELL name="Fog Ghost" circle="2" type="nether"/>
-		<SPELL name="Life Circle of One" circle="2" type="nether"/>
-		<SPELL name="Pocket Guardian" circle="2" type="nether"/>
-		<SPELL name="Repel Animal" circle="2" type="nether"/>
-		<SPELL name="Shadow's Whisper" circle="2" type="nether"/>
-		<SPELL name="Shield Mist" circle="2" type="nether"/>
-	</SPELLS>
 	<SKILL name="Alchemy" action="standard" attribute="CHA">
 		<edt:RANK lpcost="0" rank="5" startrank="1" dice="d12" step="7"/>
 	</SKILL>
