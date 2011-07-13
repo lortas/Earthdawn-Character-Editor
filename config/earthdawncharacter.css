@@ -47,6 +47,11 @@
     border-style: solid;
     border-width: 1px;
 }
+.edMidCell {
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+}
 
 .edKeyCell {
     font-size: 105%;
@@ -184,8 +189,6 @@
 }
 
 .edPortraits {
-    border-style: solid;
-    border-width: thin;
     text-align: center;
     width: 100%;
     vertical-align: top;
@@ -193,5 +196,27 @@
 
 .edPortraitImages {
     text-align: center;
+    vertical-align: top;
+}
+
+.edDescription {
+    text-align: left;
+    width: 100%;
+    vertical-align: top;
+}
+
+.edDescriptionText {
+    text-align: left;
+    vertical-align: top;
+}
+
+.edComment {
+    text-align: left;
+    width: 100%;
+    vertical-align: top;
+}
+
+.edCommentText {
+    text-align: left;
     vertical-align: top;
 }
