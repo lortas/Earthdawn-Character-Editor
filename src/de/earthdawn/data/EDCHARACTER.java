@@ -57,6 +57,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="player" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="xsd-version" use="required" type="{http://www.w3.org/2001/XMLSchema}string" fixed="1.0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -152,6 +153,8 @@ public class EDCHARACTER {
     protected String name;
     @XmlAttribute
     protected String player;
+    @XmlAttribute(name = "xsd-version", required = true)
+    protected String xsdVersion;
 
     /**
      * Gets the value of the appearance property.
@@ -883,6 +886,34 @@ public class EDCHARACTER {
      */
     public void setPlayer(String value) {
         this.player = value;
+    }
+
+    /**
+     * Gets the value of the xsdVersion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getXsdVersion() {
+        if (xsdVersion == null) {
+            return "1.0";
+        } else {
+            return xsdVersion;
+        }
+    }
+
+    /**
+     * Sets the value of the xsdVersion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setXsdVersion(String value) {
+        this.xsdVersion = value;
     }
 
 }

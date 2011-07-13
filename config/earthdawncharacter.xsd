@@ -72,6 +72,7 @@
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="player" type="xs:string" use="optional"/>
+			<xs:attribute name="xsd-version" type="xs:string" fixed="1.0" use="required"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
