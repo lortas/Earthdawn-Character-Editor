@@ -41,6 +41,10 @@
 
 .edHeaderCell {
 	font-size: 110%;
+	text-align: center;
+	vertical-align:bottom;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
 }
 
 .edCell {
@@ -51,6 +55,15 @@
     border-style: solid;
     border-width: 1px;
     text-align: center;
+}
+
+.edCapabCell {
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
 }
 
 .edKeyCell {

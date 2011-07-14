@@ -436,14 +436,14 @@
 					<div class="edSubSubHeader">Discipline Talents</div>
 					<table width="100%">
 						<tr>
-							<td class="edHeaderCell">Talentname</td>
+							<td class="edHeaderCell" style="text-align: left;">Talentname</td>
 							<td class="edHeaderCell">Action</td>
-							<td class="edHeaderCell">Strain</td>
-							<td class="edHeaderCell">Attibute</td>
+							<td class="edHeaderCell">S</td>
+							<td class="edHeaderCell">Attr.</td>
 							<td class="edHeaderCell">Rank</td>
 							<td class="edHeaderCell">Step</td>
-							<td class="edHeaderCell">Action Dice</td>
-							<td class="edHeaderCell">Book Ref.</td>
+							<td class="edHeaderCell">Dice</td>
+							<td class="edHeaderCell">Book</td>
 						</tr>
 						<xsl:apply-templates select="./edt:DISZIPLINETALENT"/>
 					</table>
@@ -453,15 +453,15 @@
 					<div class="edSubSubHeader">Optional Talents</div>
 					<table width="100%">
 						<tr>
-							<td class="edHeaderCell">Talent Name</td>
-							<td class="edHeaderCell">Karma?</td>
+							<td class="edHeaderCell" style="text-align: left;">Talent Name</td>
+							<td class="edHeaderCell">K?</td>
 							<td class="edHeaderCell">Action</td>
-							<td class="edHeaderCell">Strain</td>
-							<td class="edHeaderCell">Attribute</td>
+							<td class="edHeaderCell">S</td>
+							<td class="edHeaderCell">Attr.</td>
 							<td class="edHeaderCell">Rank</td>
 							<td class="edHeaderCell">Step</td>
-							<td class="edHeaderCell">Action Dice</td>
-							<td class="edHeaderCell">Book Ref.</td>
+							<td class="edHeaderCell">Dice</td>
+							<td class="edHeaderCell">Book</td>
 						</tr>
 						<xsl:apply-templates select="./edt:OPTIONALTALENT"/>
 					</table>
@@ -473,42 +473,43 @@
 
 <xsl:template match="//edt:DISZIPLINETALENT">
 	<tr>
-		<td class="edCell">
+		<td class="edCapabCell" style="text-align: left;">
 			<xsl:value-of select="@name"/>
 			<xsl:if test="@limitation!=''">: <xsl:value-of select="@limitation"/></xsl:if>
+			<xsl:if test="./edt:TEACHER/@byversatility!='yes'"> (v)</xsl:if>
 		</td>
-		<td class="edMidCell"><xsl:value-of select="@action"/></td>
-		<td class="edMidCell"><xsl:value-of select="@strain"/></td>
-		<td class="edMidCell"><xsl:value-of select="@attribute"/></td>
-		<td class="edMidCell">
+		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
 			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
 		</td>
-		<td class="edMidCell"><xsl:value-of select="./edt:RANK/@step"/></td>
-		<td class="edMidCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
-		<td class="edMidCell"><xsl:value-of select="@bookref"/></td>
+		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
+		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
 
 <xsl:template match="//edt:OPTIONALTALENT">
 	<tr>
-		<td class="edCell">
+		<td class="edCapabCell" style="text-align: left;">
 			<xsl:value-of select="@name"/>
 			<xsl:if test="@limitation!=''">: <xsl:value-of select="@limitation"/></xsl:if>
 		</td>
-		<td class="edMidCell"><xsl:value-of select="@karma"/></td>
-		<td class="edMidCell"><xsl:value-of select="@action"/></td>
-		<td class="edMidCell"><xsl:value-of select="@attribute"/></td>
-		<td class="edMidCell"><xsl:value-of select="@attribute"/></td>
-		<td class="edMidCell">
+		<td class="edCapabCell"><xsl:value-of select="@karma"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
 			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
 		</td>
-		<td class="edMidCell"><xsl:value-of select="./edt:RANK/@step"/></td>
-		<td class="edMidCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
-		<td class="edMidCell"><xsl:value-of select="@bookref"/></td>
+		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
+		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
 
@@ -534,21 +535,27 @@
 					<table width="100%">
 						<tr>
 							<td class="edHeaderCell">Spellname</td>
-							<td class="edHeaderCell">In Matrix?</td>
+							<td class="edHeaderCell">M<sup>1)</sup></td>
 							<td class="edHeaderCell">Type</td>
 							<td class="edHeaderCell">Circle</td>
-							<td class="edHeaderCell">Threads</td>
-							<td class="edHeaderCell">WD<sup>1)</sup></td>
-							<td class="edHeaderCell">RD<sup>2)</sup></td>
-							<td class="edHeaderCell">CD<sup>3)</sup></td>
+							<td class="edHeaderCell">T<sup>2)</sup></td>
+							<td class="edHeaderCell">WD<sup>3)</sup></td>
+							<td class="edHeaderCell">RD<sup>4)</sup></td>
+							<td class="edHeaderCell">CD<sup>5)</sup></td>
 							<td class="edHeaderCell">Range</td>
 							<td class="edHeaderCell">Duration</td>
 							<td class="edHeaderCell">Effect</td>
-							<td class="edHeaderCell">Book Ref.</td>
+							<td class="edHeaderCell">Book</td>
 						</tr>
 						<xsl:apply-templates select="./edt:SPELL"/>
 					</table>
-					<div><span class="sup">1)</span> Weaving Difficulty; <span class="sup">2)</span> Reattuning Difficulty;<span class="sup">3)</span> Casting Difficulty;</div>
+					<div>
+						<span class="sup">1)</span>In Matrix?;
+						<span class="sup">2)</span>Threads;
+						<span class="sup">3)</span>Weaving Difficulty;
+						<span class="sup">4)</span>Reattuning Difficulty;
+						<span class="sup">5)</span>Casting Difficulty;
+					</div>
 				</div>
 			</div>
 		</xsl:if>
@@ -557,18 +564,18 @@
 
 <xsl:template match="//edt:SPELL">
 	<tr>
-		<td class="edCell"><xsl:value-of select="@name" /></td>
-		<td class="edMidCell"><xsl:if test="@inmatrix='yes'">X</xsl:if></td>
-		<td class="edMidCell"><xsl:value-of select="@type" /></td>
-		<td class="edMidCell"><xsl:value-of select="@circle" /></td>
-		<td class="edMidCell"><xsl:value-of select="@threads" /></td>
-		<td class="edMidCell"><xsl:value-of select="@weavingdifficulty" /></td>
-		<td class="edMidCell"><xsl:value-of select="@reattuningdifficulty" /></td>
-		<td class="edMidCell"><xsl:value-of select="@castingdifficulty" /></td>
-		<td class="edMidCell"><xsl:value-of select="@range" /></td>
-		<td class="edMidCell"><xsl:value-of select="@duration" /></td>
-		<td class="edMidCell"><xsl:value-of select="@effect" /></td>
-		<td class="edMidCell"><xsl:value-of select="@bookref"/></td>
+		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name" /></td>
+		<td class="edCapabCell"><xsl:if test="@inmatrix='yes'">X</xsl:if></td>
+		<td class="edCapabCell"><xsl:value-of select="@type" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@circle" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@threads" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@weavingdifficulty" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@reattuningdifficulty" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@castingdifficulty" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@range" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@duration" /></td>
+		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@effect" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
 
@@ -674,7 +681,7 @@
 	<div class="edSubHeader">Skills</div>
 	<table width="100%">
 		<tr>
-			<td class="edHeaderCell">Skillname</td>
+			<td class="edHeaderCell" style="text-align: left;">Skillname</td>
 			<td class="edHeaderCell">Action</td>
 			<td class="edHeaderCell">Strain</td>
 			<td class="edHeaderCell">Attibute</td>
@@ -688,17 +695,17 @@
 
 <xsl:template match="//edc:SKILL">
 	<tr>
-		<td class="edCell"><xsl:value-of select="@name"/></td>
-		<td class="edCell"><xsl:value-of select="@action"/></td>
-		<td class="edCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCell"><xsl:value-of select="@attribute"/></td>
-		<td class="edCell">
+		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
 			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
 		</td>
-		<td class="edCell"><xsl:value-of select="./edt:RANK/@step"/></td>
-		<td class="edCell"><xsl:value-of select="./edt:RANK/@dice"/></td>   
+		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
+		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>   
 	</tr>
 </xsl:template>
 
