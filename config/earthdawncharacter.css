@@ -15,7 +15,6 @@
     font-size: 300%;
     border-style: solid;
     border-width: thick;
-    margin-bottom: 40px;
 }
 
 .edSubHeader {
@@ -51,6 +50,7 @@
     border-style: solid;
     border-width: 1px;
 }
+
 .edMidCell {
     border-style: solid;
     border-width: 1px;
@@ -64,6 +64,12 @@
 	border-style: hidden;
 	border-bottom-style: solid;
 	border-bottom-width: thin;
+}
+
+.edLPCell {
+	border-style: solid;
+	text-align: center;
+	border-style: hidden;
 }
 
 .edKeyCell {
@@ -208,8 +214,9 @@
 }
 
 .edPortraitImages {
-    text-align: center;
-    vertical-align: top;
+	text-align: center;
+	vertical-align: top;
+	height: 30ex;
 }
 
 .edDescription {
