@@ -216,11 +216,11 @@
 			<tr>
 				<!-- Defense -->
 				<td class="edDefense">
-					<xsl:apply-templates select="//edc:DEFENSE"/>	
-				</td>
-				<!-- Pretection -->
-				<td class="edProtection">
-					<xsl:apply-templates select="//edc:PROTECTION"/>	
+					<div class="edSubSubHeader">Defense/Armor Ratings</div>
+					<table>
+						<xsl:apply-templates select="//edc:DEFENSE"/>	
+						<xsl:apply-templates select="//edc:PROTECTION"/>
+					</table>
 				</td>
 				<!-- Health -->
 				<td class="edHealth">
@@ -297,35 +297,29 @@
 </xsl:template>
 
 <xsl:template match="//edc:DEFENSE">
-	<div class="edSubSubHeader">Defense Ratings</div>
-	<table>
-		<tr>
-			<td class="edKeyCell">Social Defense:</td>
-			<td class="edValueCell"><xsl:value-of select="@social" /></td>
-		</tr>
-		<tr>
-			<td class="edKeyCell">Spell Defense:</td>
-			<td class="edValueCell"><xsl:value-of select="@spell" /></td>
-		</tr>
-		<tr>
-			<td class="edKeyCell">Physical Defense:</td>
-			<td class="edValueCell"><xsl:value-of select="@physical" /></td>
-		</tr>
-	</table>
+	<tr>
+		<td class="edKeyCell">Social Defense:</td>
+		<td class="edValueCell"><xsl:value-of select="@social" /></td>
+	</tr>
+	<tr>
+		<td class="edKeyCell">Spell Defense:</td>
+		<td class="edValueCell"><xsl:value-of select="@spell" /></td>
+	</tr>
+	<tr>
+		<td class="edKeyCell">Physical Defense:</td>
+		<td class="edValueCell"><xsl:value-of select="@physical" /></td>
+	</tr>
 </xsl:template>
 
 <xsl:template match="//edc:PROTECTION">
-	<div class="edSubSubHeader">Armor Ratings</div>
-	<table>
-		<tr>
-			<td class="edKeyCell">Mystic Armor:</td>
-			<td class="edValueCell"><xsl:value-of select="@mysticarmor" /></td>
-		</tr>
-		<tr>
-			<td class="edKeyCell">Physical Armor:</td>
-			<td class="edValueCell"><xsl:value-of select="@physicalarmor" /></td>
-		</tr>
-	</table>
+	<tr>
+		<td class="edKeyCell">Mystic Armor:</td>
+		<td class="edValueCell"><xsl:value-of select="@mysticarmor" /></td>
+	</tr>
+	<tr>
+		<td class="edKeyCell">Physical Armor:</td>
+		<td class="edValueCell"><xsl:value-of select="@physicalarmor" /></td>
+	</tr>
 </xsl:template>
 
 <xsl:template match="//edc:CARRYING">
@@ -868,10 +862,10 @@
 				<td class="edHeaderCell" width="25%">Total</td>
 			</tr>
 			<tr>
-				<td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@reputation" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@renown" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@currentlegendpoints" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:EXPERIENCE/@totallegendpoints" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:EXPERIENCE/@reputation" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:EXPERIENCE/@renown" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:EXPERIENCE/@currentlegendpoints" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:EXPERIENCE/@totallegendpoints" /></td>
 			</tr>
 		</table>
 	</div>
@@ -893,15 +887,15 @@
 				<td class="edHeaderCell">Total</td>
 			</tr>
 			<tr>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@attributes" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@disciplinetalents" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@optionaltalents" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@knacks" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@spells" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@skills" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@karma" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@magicitems" /></td>
-				<td class="edCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@total" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@attributes" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@disciplinetalents" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@optionaltalents" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@knacks" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@spells" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@skills" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@karma" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@magicitems" /></td>
+				<td class="edLPCell"><xsl:value-of select="//edc:CALCULATEDLEGENDPOINTS/@total" /></td>
 			</tr>
 		</table>
 	</div>
@@ -911,13 +905,11 @@
 	<xsl:if test="//edc:PORTRAIT">
 		<div class="edPortraits">
 			<div class="edSubHeader">Portraits</div>
-			<div class="edPortraitImages">
-				<img>
-					<xsl:attribute name="src">
-						data:<xsl:value-of select="//edc:PORTRAIT/@contenttype"/>;base64,<xsl:value-of select="//edc:PORTRAIT"/>
-					</xsl:attribute>
-				</img>
-			</div>
+			<img class="edPortraitImages">
+				<xsl:attribute name="src">
+					data:<xsl:value-of select="//edc:PORTRAIT/@contenttype"/>;base64,<xsl:value-of select="//edc:PORTRAIT"/>
+				</xsl:attribute>
+			</img>
 		</div>
 	</xsl:if>
 </xsl:template>
