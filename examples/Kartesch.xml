@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<ns4:EDCHARACTER name="Kartesch Mienenkaer" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns="http://earthdawn.com/datatypes" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/characteristics" xmlns:ns12="http://earthdawn.com/items" xmlns:ns6="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/discipline" xmlns:ns10="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/spell" xmlns:ns11="http://earthdawn.com/help" xmlns:ns2="http://earthdawn.com/names" xmlns:ns4="http://earthdawn.com/character" xmlns:ns3="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ns4:EDCHARACTER xsd-version="1.0" name="Kartesch Mienenkaer" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd" xmlns="http://earthdawn.com/datatypes" xmlns:ns9="http://earthdawn.com/capability" xmlns:ns5="http://earthdawn.com/characteristics" xmlns:ns12="http://earthdawn.com/items" xmlns:ns6="http://earthdawn.com/namegiver" xmlns:ns7="http://earthdawn.com/discipline" xmlns:ns10="http://earthdawn.com/optionalrules" xmlns:ns8="http://earthdawn.com/spell" xmlns:ns11="http://earthdawn.com/help" xmlns:ns2="http://earthdawn.com/names" xmlns:ns4="http://earthdawn.com/character" xmlns:ns3="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <ns4:APPEARANCE race="Dwarf" skin="hellbraun" hair="Feuerrot" eyes="Tiefschwarz" weight="63" height="123" age="31" gender="male"/>
     <ns4:ATTRIBUTE cost="9" currentvalue="19" lpincrease="3" basevalue="16" generationvalue="6" racevalue="10" name="DEX" dice="2d6" step="8"/>
     <ns4:ATTRIBUTE cost="9" currentvalue="19" lpincrease="1" basevalue="18" generationvalue="6" racevalue="12" name="STR" dice="2d6" step="8"/>
@@ -201,6 +201,8 @@
     <ns4:SKILL default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
         <RANK lpcost="0" bonus="0" rank="0" dice="d10" step="6"/>
     </ns4:SKILL>
+    <ns4:LANGUAGE language="Dwarf/Throalic" readwrite="yes" speak="yes"/>
+    <ns4:LANGUAGE language="Ork" speak="yes"/>
     <ns4:WEAPON timesforged="6" size="4" strengthmin="17" damagestep="14" weight="6.0" name="Troll Battle Axe mit Lindwurmgriff (beidhändig)"/>
     <ns4:WEAPON timesforged="3" size="5" strengthmin="13" damagestep="10" weight="6.0" name="Battle Axe (beidhändig)"/>
     <ns4:WEAPON timesforged="3" size="3" strengthmin="12" damagestep="8" weight="4.0" name="Broadsword"/>

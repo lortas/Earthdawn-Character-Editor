@@ -58,10 +58,9 @@
 }
 
 .edCapabCell {
-	border-style: solid;
+	border-style: hidden;
 	border-width: 1px;
 	text-align: center;
-	border-style: hidden;
 	border-bottom-style: solid;
 	border-bottom-width: thin;
 }
@@ -90,6 +89,12 @@
     border-width: thin;
     width: 100%;
     margin-bottom: 2px;
+}
+
+.invisible {
+	margin: 0px;
+	padding: 0px;
+	border-style: none;
 }
 
 .edMiscellaneous,
@@ -178,6 +183,7 @@
     vertical-align: top;
 }
 
+.edLanguages,
 .edEquipment,
 .edCoins,
 .edWeapons,
