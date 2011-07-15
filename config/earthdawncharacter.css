@@ -139,7 +139,6 @@
     border-width: thin;
     border-style: solid;
     vertical-align: top;
-    width: 50%;
 }
 
 .edThreadItemTop {
@@ -150,7 +149,6 @@
     border-right-width: thin;
     border-right-style: solid;
     vertical-align: top;
-    width: 50%;
 }
 .edThreadItemBottom {
     border-left-width: thin;
@@ -160,7 +158,6 @@
     border-bottom-width: thin;
     border-bottom-style: solid;
     vertical-align: top;
-    width: 50%;
 }
 
 .edDisciplineBonuses {
@@ -179,7 +176,6 @@
     border-style: solid;
     border-width: thin;
     text-align: center;
-    width: 50%;
     vertical-align: top;
 }
 
@@ -193,7 +189,6 @@
     border-style: solid;
     border-width: thin;
     text-align: center;
-    width: 50%;
     vertical-align: top;
 }
 
@@ -209,7 +204,6 @@
 .edPatternItems {
     border-width: thin;
     border-style: solid;
-    margin: 10px;
     width: 100%;
 }
 
