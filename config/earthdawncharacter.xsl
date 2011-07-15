@@ -43,7 +43,7 @@
 		</div>
 		<!-- Characteristics -->
 		<xsl:call-template name="characteristics"/>
-		<div class="edLayoutRow">   
+		<div class="edLayoutRow">
 		<table width="100%">
 			<tr>
 				<td class="edHeaderCell">
@@ -62,9 +62,15 @@
 		<div class="edLayoutRow">
 			<table width="100%">
 				<tr>
-					<td class="edSkills" rowspan="7">
+					<td class="edSkills" rowspan="8">
 						<!-- Skills -->
 						<xsl:call-template name="skills" />
+					</td>
+				</tr>
+				<tr>
+					<td class="edLanguages">
+						<!-- Coins -->
+						<xsl:call-template name="languages" />
 					</td>
 				</tr>
 				<tr>
@@ -677,11 +683,12 @@
 		<tr>
 			<td class="edHeaderCell" style="text-align: left;">Skillname</td>
 			<td class="edHeaderCell">Action</td>
-			<td class="edHeaderCell">Strain</td>
-			<td class="edHeaderCell">Attibute</td>
+			<td class="edHeaderCell">S</td>
+			<td class="edHeaderCell">Attr</td>
 			<td class="edHeaderCell">Rank</td>
 			<td class="edHeaderCell">Step</td>
-			<td class="edHeaderCell">Action Dice</td>
+			<td class="edHeaderCell">Dice</td>
+			<td class="edHeaderCell">Book</td>
 		</tr>
 		<xsl:apply-templates select="//edc:SKILL"/>
 	</table>
@@ -700,7 +707,21 @@
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
 		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>   
+		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>   
 	</tr>
+</xsl:template>
+
+<xsl:template name="languages">
+	<div class="edSubHeader">Languages</div>
+	<b>Speak:</b>&#160;
+	<xsl:for-each select="//edc:LANGUAGE">
+		<xsl:if test="@speak='yes'"><xsl:value-of select="@language"/>; </xsl:if>
+	</xsl:for-each>
+	<br/>
+	<b>Read/Write:</b>&#160;
+	<xsl:for-each select="//edc:LANGUAGE">
+		<xsl:if test="@readwrite='yes'"><xsl:value-of select="@language"/>; </xsl:if>
+	</xsl:for-each>
 </xsl:template>
 
 <xsl:template name="coins">
