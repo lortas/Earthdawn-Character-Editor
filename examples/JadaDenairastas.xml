@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<EDCHARACTER name="Jada Denairastas" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
+<EDCHARACTER xsd-version="1.0"  name="Jada Denairastas" xmlns="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
 	<APPEARANCE race="Denairastas" skin="hell" hair="blond, dreadlocks" eyes="deepblue" weight="83" height="23" age="34" gender="female"/>
 	<ATTRIBUTE cost="3" currentvalue="15" lpincrease="2" basevalue="13" generationvalue="3" racevalue="10" name="DEX" dice="d10" step="6"/>
 	<ATTRIBUTE cost="3" currentvalue="16" lpincrease="3" basevalue="13" generationvalue="3" racevalue="10" name="STR" dice="d12" step="7"/>
@@ -10,8 +10,6 @@
 	<ATTRIBUTE cost="2" currentvalue="15" lpincrease="2" basevalue="13" generationvalue="2" racevalue="11" name="CHA" dice="d10" step="6"/>
 	<DEFENSE social="12" spell="13" physical="12"/>
 	<PROTECTION penalty="2" mysticarmor="10" physicalarmor="11">
-		<edt:ARMOR mysticarmor="4" location="self" used="yes" weight="0.0" name="natural Armor"/>
-		<edt:ARMOR penalty="1" mysticarmor="5" physicalarmor="8" used="yes" weight="6.0" name="Thread Hide Armor"/>
 		<edt:ARMOR penalty="1" mysticarmor="1" physicalarmor="3" weight="10.0" name="Espagra-Scale Cloak"/>
 	</PROTECTION>
 	<HEALTH damage="0">
