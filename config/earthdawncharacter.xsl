@@ -62,7 +62,7 @@
 		<div class="edLayoutRow">
 			<table width="100%">
 				<tr>
-					<td class="edSkills">
+					<td class="edSkills" width="50%">
 						<!-- Skills -->
 						<xsl:call-template name="skills" />
 					</td>
@@ -540,10 +540,8 @@
 	<div class="edSubHeader">Weapons</div>
 	<table width="100%">
 		<tr>
-			<td class="edHeaderCell">Kind</td>
 			<td class="edHeaderCell" style="text-align: left;">Name</td>
-			<td class="edHeaderCell">Damage</td>
-			<td class="edHeaderCell">Str</td>
+			<td class="edHeaderCell">Dmg</td>
 			<td class="edHeaderCell">Sz</td>
 			<td class="edHeaderCell">Short</td>
 			<td class="edHeaderCell">Long</td>
@@ -551,7 +549,6 @@
 			<td class="edHeaderCell">Date</td>
 			<td class="edHeaderCell">Location</td>
 			<td class="edHeaderCell">Weight</td>
-			<td class="edHeaderCell">Used?</td>
 		</tr>
 		<xsl:apply-templates select="//edc:WEAPON"/>
 	</table>
@@ -559,10 +556,8 @@
 
 <xsl:template match="//edc:WEAPON">
 	<tr>
-		<td class="edCapabCell"><xsl:value-of select="@kind"/></td>
 		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@damagestep"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@strengthmin"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@size"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@shortrange"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@longrange"/></td>
@@ -570,7 +565,6 @@
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
 
@@ -652,9 +646,8 @@
 	<table width="100%">
 		<tr>
 			<td class="edHeaderCell" style="text-align: left;">Name</td>
-			<td class="edHeaderCell">protec</td>
+			<td class="edHeaderCell">protect</td>
 			<td class="edHeaderCell">edn</td>
-			<td class="edHeaderCell">forged</td>
 			<td class="edHeaderCell">date</td>
 			<td class="edHeaderCell">location</td>
 			<td class="edHeaderCell">weight</td>
@@ -666,12 +659,11 @@
 	<table width="100%">
 		<tr>
 			<td class="edHeaderCell" style="text-align: left;">Name</td>
-			<td class="edHeaderCell">protec</td>
+			<td class="edHeaderCell">protect</td>
 			<td class="edHeaderCell">edn</td>
 			<td class="edHeaderCell">shatter</td>
 			<td class="edHeaderCell">pdb</td>
 			<td class="edHeaderCell">mdb</td>
-			<td class="edHeaderCell">forged</td>
 			<td class="edHeaderCell">date</td>
 			<td class="edHeaderCell">location</td>
 			<td class="edHeaderCell">weight</td>
@@ -683,32 +675,29 @@
 
 <xsl:template match="//edc:PROTECTION/edt:ARMOR">
 	<tr>
-		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name"/></td>
+		<td class="edCapabCell" style="text-align: left;">
+			<xsl:value-of select="@name"/>
+			<xsl:if test="(@timesforged_physical>0) or (@timesforged_mystic>0)">(<xsl:choose>
+				<xsl:when test="@timesforged_physical>0"><xsl:value-of select="@timesforged_physical"/></xsl:when>
+				<xsl:otherwise>0</xsl:otherwise>
+			</xsl:choose>/<xsl:choose>
+				<xsl:when test="@timesforged_mystic>0"><xsl:value-of select="@timesforged_mystic"/></xsl:when>
+				<xsl:otherwise>0</xsl:otherwise>
+			</xsl:choose>)</xsl:if>
+		</td>
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@physicalarmor>0"><xsl:value-of select="@physicalarmor"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/
-			<xsl:choose>
+			</xsl:choose>/<xsl:choose>
 				<xsl:when test="@mysticarmor>0"><xsl:value-of select="@mysticarmor"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/
-			<xsl:choose>
+			</xsl:choose>/<xsl:choose>
 				<xsl:when test="@penalty>0"><xsl:value-of select="@penalty"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@edn"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@timesforged_physical>0"><xsl:value-of select="@timesforged_physical"/></xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/
-			<xsl:choose>
-				<xsl:when test="@timesforged_mystic>0"><xsl:value-of select="@timesforged_mystic"/></xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>
-		</td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
@@ -718,17 +707,24 @@
 
 <xsl:template match="//edc:PROTECTION/edt:SHIELD">
 	<tr>
-		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name"/></td>
+		<td class="edCapabCell" style="text-align: left;">
+			<xsl:value-of select="@name"/>
+			<xsl:if test="(@timesforged_physical>0) or (@timesforged_mystic>0)">(<xsl:choose>
+				<xsl:when test="@timesforged_physical>0"><xsl:value-of select="@timesforged_physical"/></xsl:when>
+				<xsl:otherwise>0</xsl:otherwise>
+			</xsl:choose>/<xsl:choose>
+				<xsl:when test="@timesforged_mystic>0"><xsl:value-of select="@timesforged_mystic"/></xsl:when>
+				<xsl:otherwise>0</xsl:otherwise>
+			</xsl:choose>)</xsl:if>
+		</td>
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@physicalarmor>0"><xsl:value-of select="@physicalarmor"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/
-			<xsl:choose>
+			</xsl:choose>/<xsl:choose>
 				<xsl:when test="@mysticarmor>0"><xsl:value-of select="@mysticarmor"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/
-			<xsl:choose>
+			</xsl:choose>/<xsl:choose>
 				<xsl:when test="@penalty>0"><xsl:value-of select="@penalty"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
 			</xsl:choose>
@@ -737,16 +733,6 @@
 		<td class="edCapabCell"><xsl:value-of select="@shatterthreshold"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@physicaldeflectionbonus"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@mysticdeflectionbonus"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@timesforged_physical>0"><xsl:value-of select="@timesforged_physical"/></xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/
-			<xsl:choose>
-				<xsl:when test="@timesforged_mystic>0"><xsl:value-of select="@timesforged_mystic"/></xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>
-		</td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
