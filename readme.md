@@ -13,6 +13,18 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.28-20110716.zip ##
++ Bugs
+	+ Header of the CSV Export are now also comma separated.
+	+ The attribute "default" will now also be inherit from the capability database.
++ XML Schema enhanced
+	+ The elements "disciplinetalent", "optionaltalent" and "spell" has moved from the root-element to the "discipline"-element. Sadly, this result in incompatible save files to older versions. But there is a easy way for converting old character files, please take a look into the help forum (https://sourceforge.net/projects/ed-char-editor/forums/forum/1265052)
+	+ XSD-version defined and set to "1.0"
++ CSV export for skills added
++ All CSV will now UTF-8 encoded
++ The large changes of the XML-schema need to readjust the XSL and CSS files.
++ XSL and CSS was additionally modified and enhanced to include more details (e.g. showing languages) and to better fit the print-view.
++ New export plausibility added: JSON (http://www.json.org/)
 ## EarthdawnCharacterEditor-0.27-20110711.zip ##
 + Bugs
 	+ XML encoding for storing character should now be set correct
