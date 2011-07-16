@@ -6,11 +6,13 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -33,8 +35,11 @@ import javax.swing.text.EditorKit;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.XML;
 
 import com.itextpdf.text.DocumentException;
 
@@ -219,6 +224,14 @@ public class EDMainWindow {
 			}
 		});
 		mntmCsvExport.add(mntmItemCSV);
+
+		JMenuItem mntmJson = new JMenuItem(NLS.getString("EDMainWindow.mntmJson.text")); //$NON-NLS-1$
+		mntmJson.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmJson_actionPerformed(arg0);
+			}
+		});
+		mntmExport.add(mntmJson);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
@@ -472,21 +485,40 @@ public class EDMainWindow {
 		}
 	}
 
-	private void writeToXml(File file) throws JAXBException, PropertyException, IOException {
+	private void writeToXml(File file) throws JAXBException, IOException {
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
 		FileOutputStream out = new FileOutputStream(file);
 		PrintStream fileio = new PrintStream(out, false, encoding);
 		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-		m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+		m.setProperty(Marshaller.JAXB_FRAGMENT, true);
 		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n");
 		fileio.print("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
 		m.marshal(ec,fileio);
 		fileio.close();
+		out.close();
 	}
-	
+
+	private void writeToJson(File file) throws JAXBException, JSONException, IOException {
+		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+		Marshaller m = jc.createMarshaller();
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
+		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
+		m.marshal(ec,baos);
+		JSONObject json = XML.toJSONObject(baos.toString());
+		baos.close();
+		FileOutputStream out = new FileOutputStream(file);
+		OutputStreamWriter fileio = new OutputStreamWriter(out,encoding);
+		json.write(fileio);
+		fileio.close();
+		out.close();
+	}
+
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
 		String filename = "."; 
 		JFileChooser fc = new JFileChooser(new File(filename)); 
@@ -609,6 +641,24 @@ public class EDMainWindow {
 					desktop.open(selFile);
 				}
 			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void do_mntmJson_actionPerformed(ActionEvent arg0) {
+		File selFile = selectFileName(".json");
+		if( selFile != null ) {
+			try {
+				writeToJson(selFile);
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (JAXBException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (JSONException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
