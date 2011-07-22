@@ -85,10 +85,10 @@ public class EDGeneral extends JPanel {
 		});
 		comboBoxRace.setOpaque(false);
 
-		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers().getNAMEGIVER()) {
+		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers()) {
 			comboBoxRace.addItem(n.getName());
 		}
-		
+
 		lblAge = new JLabel("Age");
 		
 		lblSize = new JLabel("Size");

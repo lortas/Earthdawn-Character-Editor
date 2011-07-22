@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<NAMEGIVERS  lang="en" xmlns="http://earthdawn.com/namegiver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/namegiver earthdawnnamegivers.xsd">
-  <NAMEGIVER name="Dwarf" karmamodifier="4" movement_ground="5">
+<NAMEGIVERS xmlns="http://earthdawn.com/namegiver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/namegiver earthdawnnamegivers.xsd">
+  <NAMEGIVER lang="en" name="Dwarf" karmamodifier="4" movement_ground="5">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="12" />
     <ATTRIBUTE name="TOU" value="13" />
@@ -11,7 +11,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Heat Sight</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Elf" karmamodifier="4" movement_ground="7">
+  <NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="7">
     <ATTRIBUTE name="DEX" value="12" />
     <ATTRIBUTE name="STR" value="10" />
     <ATTRIBUTE name="TOU" value="8" />
@@ -22,7 +22,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Human" karmamodifier="5" movement_ground="6">
+  <NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="10" />
     <ATTRIBUTE name="TOU" value="10" />
@@ -33,7 +33,7 @@
     <WOUND threshold="0"/>
     <TALENT name="Versatility"/>
   </NAMEGIVER>
-  <NAMEGIVER name="Denairastas" karmamodifier="5" movement_ground="6">
+  <NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="10" />
     <ATTRIBUTE name="TOU" value="10" />
@@ -46,7 +46,7 @@
     <TALENT name="Versatility"/>
     <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Obsidiman" karmamodifier="3" movement_ground="5">
+  <NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5">
     <ATTRIBUTE name="DEX" value="8" />
     <ATTRIBUTE name="STR" value="18" />
     <ATTRIBUTE name="TOU" value="13" />
@@ -57,7 +57,7 @@
     <WOUND threshold="3"/>
     <ABILITY>Can only wear Living Armor</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Ork" karmamodifier="5" movement_ground="6">
+  <NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="13" />
     <ATTRIBUTE name="TOU" value="11" />
@@ -69,7 +69,7 @@
     <ABILITY>Gahad</ABILITY>
     <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Troll" karmamodifier="3" movement_ground="7">
+  <NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="14" />
     <ATTRIBUTE name="TOU" value="12" />
@@ -80,7 +80,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Heat Sight</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="T'skrang" karmamodifier="4" movement_ground="6">
+  <NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="6">
     <ATTRIBUTE name="DEX" value="11" />
     <ATTRIBUTE name="STR" value="10" />
     <ATTRIBUTE name="TOU" value="11" />
@@ -91,7 +91,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Tail Combat</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8">
+  <NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8">
     <ATTRIBUTE name="DEX" value="11" />
     <ATTRIBUTE name="STR" value="4" />
     <ATTRIBUTE name="TOU" value="8" />
@@ -106,7 +106,7 @@
     <ABILITY>Flight</ABILITY>
     <NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
   </NAMEGIVER>
-  <NAMEGIVER name="Gar" karmamodifier="4" movement_ground="7">
+  <NAMEGIVER lang="en" name="Gar" karmamodifier="4" movement_ground="7">
     <ATTRIBUTE name="DEX" value="11" />
     <ATTRIBUTE name="STR" value="11" />
     <ATTRIBUTE name="TOU" value="11" />
@@ -117,7 +117,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Ki Mao" karmamodifier="4" movement_ground="7">
+  <NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="7">
     <ATTRIBUTE name="DEX" value="12" />
     <ATTRIBUTE name="STR" value="9" />
     <ATTRIBUTE name="TOU" value="8" />
@@ -128,7 +128,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Low-Light Vision</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Po Na" karmamodifier="5" movement_ground="6">
+  <NAMEGIVER lang="en" name="Po Na" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="11" />
     <ATTRIBUTE name="STR" value="11" />
     <ATTRIBUTE name="TOU" value="10" />
@@ -139,7 +139,7 @@
     <WOUND threshold="0"/>
     <ABILITY>Prehensile Tail</ABILITY>
   </NAMEGIVER>
-  <NAMEGIVER name="Storm Children" karmamodifier="5" movement_ground="6">
+  <NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="6">
     <ATTRIBUTE name="DEX" value="10" />
     <ATTRIBUTE name="STR" value="10" />
     <ATTRIBUTE name="TOU" value="10" />
@@ -150,7 +150,7 @@
     <WOUND threshold="0"/>
     <TALENT name="Lightning Born"/>
   </NAMEGIVER>
-  <NAMEGIVER name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10">
+  <NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10">
     <ATTRIBUTE name="DEX" value="28" />
     <ATTRIBUTE name="STR" value="37" />
     <ATTRIBUTE name="TOU" value="28" />
