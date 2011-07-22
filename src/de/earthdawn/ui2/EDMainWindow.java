@@ -41,6 +41,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.XML;
 
+import com.google.gson.Gson;
 import com.itextpdf.text.DocumentException;
 
 import de.earthdawn.CharacterContainer;
@@ -225,13 +226,24 @@ public class EDMainWindow {
 		});
 		mntmCsvExport.add(mntmItemCSV);
 
-		JMenuItem mntmJson = new JMenuItem(NLS.getString("EDMainWindow.mntmJson.text")); //$NON-NLS-1$
+		JMenu mntmJsonExport = new JMenu(NLS.getString("EDMainWindow.mntmJson.text")); //$NON-NLS-1$
+		mntmExport.add(mntmJsonExport);
+
+		JMenuItem mntmJson = new JMenuItem(NLS.getString("EDMainWindow.mntmXML2Json.text")); //$NON-NLS-1$
 		mntmJson.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmJson_actionPerformed(arg0);
 			}
 		});
-		mntmExport.add(mntmJson);
+		mntmJsonExport.add(mntmJson);
+
+		JMenuItem mntmGson = new JMenuItem(NLS.getString("EDMainWindow.mntmObject2Json.text")); //$NON-NLS-1$
+		mntmGson.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmGson_actionPerformed(arg0);
+			}
+		});
+		mntmJsonExport.add(mntmGson);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
@@ -519,6 +531,11 @@ public class EDMainWindow {
 		out.close();
 	}
 
+	private void writeToGson(File file) throws IOException {
+		Gson gson = new Gson();
+		gson.toJson(ec,new OutputStreamWriter(new FileOutputStream(file),encoding));
+	}
+
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
 		String filename = "."; 
 		JFileChooser fc = new JFileChooser(new File(filename)); 
@@ -659,6 +676,18 @@ public class EDMainWindow {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			} catch (JSONException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void do_mntmGson_actionPerformed(ActionEvent arg0) {
+		File selFile = selectFileName(".json");
+		if( selFile != null ) {
+			try {
+				writeToGson(selFile);
+			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
