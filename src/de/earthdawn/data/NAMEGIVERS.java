@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -30,7 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="NAMEGIVER" type="{http://earthdawn.com/namegiver}NAMEGIVERABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -47,8 +45,6 @@ public class NAMEGIVERS {
 
     @XmlElement(name = "NAMEGIVER", namespace = "http://earthdawn.com/namegiver")
     protected List<NAMEGIVERABILITYType> namegiver;
-    @XmlAttribute(required = true)
-    protected LanguageType lang;
 
     /**
      * Gets the value of the namegiver property.
@@ -77,30 +73,6 @@ public class NAMEGIVERS {
             namegiver = new ArrayList<NAMEGIVERABILITYType>();
         }
         return this.namegiver;
-    }
-
-    /**
-     * Gets the value of the lang property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link LanguageType }
-     *     
-     */
-    public LanguageType getLang() {
-        return lang;
-    }
-
-    /**
-     * Sets the value of the lang property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LanguageType }
-     *     
-     */
-    public void setLang(LanguageType value) {
-        this.lang = value;
     }
 
 }

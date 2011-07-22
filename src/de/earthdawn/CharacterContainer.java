@@ -1238,7 +1238,7 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public NAMEGIVERABILITYType getRace() {
 		String race = getAppearance().getRace();
-		for (NAMEGIVERABILITYType n : PROPERTIES.getNamegivers().getNAMEGIVER()) {
+		for (NAMEGIVERABILITYType n : PROPERTIES.getNamegivers()) {
 			if( n.getName().equals(race)) return n;
 		}
 		// not found

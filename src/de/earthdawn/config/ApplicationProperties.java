@@ -151,8 +151,12 @@ public class ApplicationProperties {
 		return DISCIPLINES.values();
 	}
 
-	public NAMEGIVERS getNamegivers() {
-		return NAMEGIVERS;
+	public List<NAMEGIVERABILITYType> getNamegivers() {
+		List<NAMEGIVERABILITYType> result = new ArrayList<NAMEGIVERABILITYType>();
+		for( NAMEGIVERABILITYType namegiver : NAMEGIVERS.getNAMEGIVER()) {
+			if( namegiver.getLang().equals(LANGUAGE) ) result.add(namegiver);
+		}
+		return result;
 	}
 	
 	public ECECharacteristics getCharacteristics() {

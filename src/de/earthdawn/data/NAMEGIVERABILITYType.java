@@ -39,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="karmamodifier" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="movement_ground" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="movement_flight" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -80,6 +81,8 @@ public class NAMEGIVERABILITYType {
     protected Integer movementGround;
     @XmlAttribute(name = "movement_flight")
     protected Integer movementFlight;
+    @XmlAttribute(required = true)
+    protected LanguageType lang;
 
     /**
      * Gets the value of the attribute property.
@@ -380,6 +383,30 @@ public class NAMEGIVERABILITYType {
      */
     public void setMovementFlight(Integer value) {
         this.movementFlight = value;
+    }
+
+    /**
+     * Gets the value of the lang property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LanguageType }
+     *     
+     */
+    public LanguageType getLang() {
+        return lang;
+    }
+
+    /**
+     * Sets the value of the lang property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LanguageType }
+     *     
+     */
+    public void setLang(LanguageType value) {
+        this.lang = value;
     }
 
 }
