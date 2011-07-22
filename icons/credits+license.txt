@@ -55,16 +55,30 @@ THROWING_WEAPON.png
 	Pixel Art Icon for RPG by Ails
 
 CLOTH.png
-
-AMULET.png
-
-WAND.png
-
-ANIMAL.png
+	Pixel Art Icon for RPG by Ails
 
 COINS.png
+	Pixel Art Icon for RPG by Ails
+
+AMULET.png
+	Pixel Art Icon for RPG by Ails
 
 GEMS.png
+	Pixel Art Icon for RPG by Ails
+
+PAPER.png
+	Pixel Art Icon for RPG by Ails
+
+CLOTH.png
+	Pixel Art Icon for RPG by Ails
+
+FOOD.png
+	Pixel Art Icon for RPG by Ails
+
+WAND.png
+	Pixel Art Icon for RPG by Ails
+
+ANIMAL.png
 
 KIT.png
 
@@ -74,8 +88,6 @@ TOOL.png
 
 INSTRUMENT.png
 
-FOOD.png
-
 DRINK.png
 
 RATION.png
@@ -83,8 +95,6 @@ RATION.png
 MOUNT.png
 
 TRANSPORT.png
-
-PAPER.png
 
 RANK1.png
 
