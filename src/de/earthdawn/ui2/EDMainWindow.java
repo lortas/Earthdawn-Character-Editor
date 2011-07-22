@@ -42,6 +42,7 @@ import org.json.JSONObject;
 import org.json.XML;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.itextpdf.text.DocumentException;
 
 import de.earthdawn.CharacterContainer;
@@ -532,7 +533,7 @@ public class EDMainWindow {
 	}
 
 	private void writeToGson(File file) throws IOException {
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		gson.toJson(ec,new OutputStreamWriter(new FileOutputStream(file),encoding));
 	}
 
