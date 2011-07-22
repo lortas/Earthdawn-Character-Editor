@@ -534,7 +534,11 @@ public class EDMainWindow {
 
 	private void writeToGson(File file) throws IOException {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		gson.toJson(ec,new OutputStreamWriter(new FileOutputStream(file),encoding));
+		FileOutputStream out = new FileOutputStream(file);
+		OutputStreamWriter fileio = new OutputStreamWriter(out,encoding);
+		gson.toJson(ec,fileio);
+		fileio.close();
+		out.close();
 	}
 
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
