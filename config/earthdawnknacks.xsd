@@ -5,6 +5,7 @@
 		<xs:complexContent>
 			<xs:extension base="edt:KNACK_type">
 				<xs:attribute name="basename" type="xs:string" use="required"/>
+				<xs:attribute name="limitation" type="xs:string" default=""/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
