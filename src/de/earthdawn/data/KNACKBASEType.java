@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}KNACK_type">
  *       &lt;attribute name="basename" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,6 +40,8 @@ public class KNACKBASEType
 
     @XmlAttribute(required = true)
     protected String basename;
+    @XmlAttribute
+    protected String limitation;
 
     /**
      * Gets the value of the basename property.
@@ -62,6 +65,34 @@ public class KNACKBASEType
      */
     public void setBasename(String value) {
         this.basename = value;
+    }
+
+    /**
+     * Gets the value of the limitation property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLimitation() {
+        if (limitation == null) {
+            return "";
+        } else {
+            return limitation;
+        }
+    }
+
+    /**
+     * Sets the value of the limitation property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLimitation(String value) {
+        this.limitation = value;
     }
 
 }
