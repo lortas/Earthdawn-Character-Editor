@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items earthdawnitems.xsd">
-	<ARMOR penalty="4" mysticarmor="0" physicalarmor="9" weight="60.0" name="Schuppenpanzer"/>
-	<ARMOR penalty="1" mysticarmor="0" physicalarmor="5" weight="20.0" name="Harden Leather"/>
-	<ARMOR edn="13" penalty="0" mysticarmor="3" physicalarmor="2" weight="3.0" name="Fernweave"/>
-	<ARMOR edn="22" penalty="2" mysticarmor="3" physicalarmor="6" weight="0.0" name="Living Crystal"/>
-	<ARMOR penalty="1" mysticarmor="1" physicalarmor="3" weight="0.0" name="Espagra-Scale Cloak"/>
-	<SHIELD mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" name="Crystal Buckler"/>
-	<WEAPON size="4" strengthmin="17" damagestep="8" weight="6.0" name="Troll Battle Axe" kind="melee weapon"/>
-	<WEAPON size="5" strengthmin="13" damagestep="7" weight="6.0" name="Battle Axe" kind="melee weapon"/>
-	<WEAPON size="3" strengthmin="12" damagestep="5" weight="4.0" name="Broadsword" kind="melee weapon"/>
-	<WEAPON size="5" strengthmin="1" damagestep="2" weight="3.0" name="Kampfstab" kind="melee weapon"/>
-	<WEAPON size="1" strengthmin="3" damagestep="2" weight="0.5" name="windling dagger"/>
-	<WEAPON longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe" kind="throwing weapon"/>
-	<WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
-	<WEAPON longrange="80" shortrange="40" size="5" strengthmin="11" damagestep="4" weight="4.0" name="Longbow"/>
+	<ARMOR kind="armor" penalty="4" mysticarmor="0" physicalarmor="9" weight="60.0" name="Schuppenpanzer"/>
+	<ARMOR kind="armor" penalty="1" mysticarmor="0" physicalarmor="5" weight="20.0" name="Harden Leather"/>
+	<ARMOR kind="armor" edn="13" penalty="0" mysticarmor="3" physicalarmor="2" weight="3.0" name="Fernweave"/>
+	<ARMOR kind="armor" edn="22" penalty="2" mysticarmor="3" physicalarmor="6" weight="0.0" name="Living Crystal"/>
+	<ARMOR kind="armor" penalty="1" mysticarmor="1" physicalarmor="3" weight="0.0" name="Espagra-Scale Cloak"/>
+	<ARMOR kind="armor" physicalarmor="5" penalty="1" weight="20" name="Hardened Leather"/>
+	<SHIELD kind="shield" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" name="Buckler"/>
+	<SHIELD kind="shield" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" name="Crystal Buckler"/>
+	<WEAPON kind="melee weapon" size="4" strengthmin="17" damagestep="8" weight="6" name="Troll Battle Axe"/>
+	<WEAPON kind="melee weapon" size="5" strengthmin="13" damagestep="7" weight="6" name="Battle Axe"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Broadsword"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="4" weight="4" name="Short Sword"/>
+	<WEAPON kind="melee weapon" size="5" strengthmin="12" damagestep="2" weight="3" name="Kampfstab"/>
+	<WEAPON kind="melee weapon" size="1" strengthmin="3"  damagestep="2" weight="0.5" name="windling dagger"/>
+	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe"/>
+	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
+	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="5" strengthmin="11" damagestep="4" weight="4.0" name="Longbow"/>
 	<MAGICITEM weight="5.0" name="Counterspell Staff"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" name="Desperate Spell"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" name="Desperate Blow"/>

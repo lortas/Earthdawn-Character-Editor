@@ -507,8 +507,7 @@ public class EDMainWindow {
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 		m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n");
-		fileio.print("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
+		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
 		m.marshal(ec,fileio);
 		fileio.close();
 		out.close();
