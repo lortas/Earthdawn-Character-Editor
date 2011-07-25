@@ -3,18 +3,22 @@ package de.earthdawn;
 import java.util.Random;
 
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.config.ECECharacteristics;
 import de.earthdawn.data.DiceType;
 import de.earthdawn.data.ROLLEDDICEType;
 import de.earthdawn.data.STEPDICEType;
 
 public class DiceCup {
+	private static final ECECharacteristics CHARACTERISTICS = ApplicationProperties.create().getCharacteristics();
 	private static Random rand = new Random();
 	private STEPDICEType stepDice = null;
+
 	public DiceCup( int step ) {
 		setStep(step);
 	}
+
 	public void setStep(int step) {
-		DiceType dice = ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(step).getDice();
+		DiceType dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
 		stepDice = new STEPDICEType();
 		stepDice.setStep(step);
 		stepDice.setDice(dice);
@@ -25,7 +29,7 @@ public class DiceCup {
 	}
 
 	public static ROLLEDDICEType toss(int step) {
-		DiceType dice = ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(step).getDice();
+		DiceType dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
 		return toss(dice);
 	}
 
@@ -47,7 +51,7 @@ public class DiceCup {
 				path+=r+"(d"+d[1]+")";
 			}
 		}
-		ROLLEDDICEType result = ApplicationProperties.create().getCharacteristics().getResultLevel(sum);
+		ROLLEDDICEType result = CHARACTERISTICS.getResultLevel(sum);
 		result.setDice(diceset);
 		result.setRolling(path);
 		return result;
