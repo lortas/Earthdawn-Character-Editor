@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
+<ns10:EDCHARACTER xmlns="http://earthdawn.com/datatypes" xmlns:ns2="http://earthdawn.com/characteristics" xmlns:ns3="http://earthdawn.com/discipline" xmlns:ns4="http://earthdawn.com/names" xmlns:ns5="http://earthdawn.com/optionalrules" xmlns:ns6="http://earthdawn.com/help" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/capability" xmlns:ns9="http://earthdawn.com/knack" xmlns:ns10="http://earthdawn.com/character" xmlns:ns11="http://earthdawn.com/spell" xmlns:ns12="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsd-version="1.0" name="Player Guide First Circle Ork Beastmaster" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
+    <ns10:APPEARANCE race="Ork" skin="?" hair="?" eyes="?" weight="0" height="0" age="0" gender="male"/>
+    <ns10:ATTRIBUTE cost="12" currentvalue="16" basevalue="16" generationvalue="7" racevalue="9" name="CHA" dice="d12" step="7"/>
+    <ns10:ATTRIBUTE cost="3" currentvalue="13" basevalue="13" generationvalue="3" racevalue="10" name="DEX" dice="d10" step="6"/>
+    <ns10:ATTRIBUTE cost="3" currentvalue="16" basevalue="16" generationvalue="3" racevalue="13" name="STR" dice="d12" step="7"/>
+    <ns10:ATTRIBUTE cost="1" currentvalue="11" basevalue="11" generationvalue="1" racevalue="10" name="PER" dice="d8" step="5"/>
+    <ns10:ATTRIBUTE cost="3" currentvalue="11" lpincrease="0" basevalue="11" generationvalue="3" racevalue="8" name="WIL" dice="d8" step="5"/>
+    <ns10:ATTRIBUTE cost="3" currentvalue="14" basevalue="14" generationvalue="3" racevalue="11" name="TOU" dice="d10" step="6"/>
+    <ns10:DEFENSE social="9" spell="7" physical="7"/>
+    <ns10:PROTECTION penalty="1" mysticarmor="1" physicalarmor="6">
+        <ARMOR penalty="0" mysticarmor="1" physicalarmor="0" virtual="yes" used="yes" weight="0.0" name="natural Armor"/>
+        <SHIELD physicaldeflectionbonus="1" shatterthreshold="17" penalty="0" physicalarmor="1" kind="shield" weight="3.0" name="Buckler"/>
+        <ARMOR penalty="1" physicalarmor="5" kind="armor" weight="20.0" name="Hardened Leather"/>
+    </ns10:PROTECTION>
+    <ns10:HEALTH damage="0">
+        <RECOVERY testsperday="3" dice="d10" step="6"/>
+        <UNCONSCIOUSNESS value="28" adjustment="0" base="28"/>
+        <DEATH value="36" adjustment="0" base="36"/>
+        <WOUNDS threshold="10"/>
+    </ns10:HEALTH>
+    <ns10:MOVEMENT ground="6" flight="0"/>
+    <ns10:INITIATIVE modification="-1" base="6" dice="d8" step="5"/>
+    <ns10:CARRYING carrying="160" lifting="320"/>
+    <ns10:DISCIPLINE circle="1" name="Beastmaster">
+        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.60" default="no" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Animal Bond">
+            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
+            <TEACHER/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.64" default="no" karma="yes" limitation="" bonus="0" attribute="STR" strain="0" action="simple" name="Claw Shape">
+            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
+            <TEACHER/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.64" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Creature Analysis">
+            <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="d12" step="7"/>
+            <TEACHER/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.74" default="no" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
+            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
+            <TEACHER/>
+        </DISZIPLINETALENT>
+        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.85" default="no" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+            <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="2d6" step="8"/>
+            <TEACHER/>
+        </DISZIPLINETALENT>
+        <OPTIONALTALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.84" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
+            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
+            <TEACHER/>
+        </OPTIONALTALENT>
+    </ns10:DISCIPLINE>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.102" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
+        <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.100" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.98" default="no" karma="no" limitation="Creature Lore" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.98" default="no" karma="no" limitation="Wild Animals" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.93" default="no" karma="no" limitation="Wood Carving" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
+        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.92" default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
+        <RANK dice="d8" step="5"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.93" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.93" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.94" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.94" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Conversation">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.95" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
+        <RANK dice="d8" step="5"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.96" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="1" action="standard" name="Distract">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.96" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Etiquette">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.97" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Flirting">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.97" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="KR p.225" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Intimidation">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.100" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
+        <RANK dice="d8" step="5"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.100" default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
+        <RANK dice="d8" step="5"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.101" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Seduction">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.102" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="2" action="standard" name="Slough Blame">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.102" default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
+        <RANK dice="d12" step="7"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
+        <RANK dice="d8" step="5"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
+        <RANK dice="d10" step="6"/>
+    </ns10:SKILL>
+    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
+        <RANK dice="d8" step="5"/>
+    </ns10:SKILL>
+    <ns10:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" kind="melee weapon" weight="1.0" name="Dagger"/>
+    <ns10:WEAPON size="3" strengthmin="12" damagestep="5" kind="melee weapon" weight="4.0" name="Broadsword"/>
+    <ns10:WEAPON size="3" strengthmin="12" damagestep="4" kind="melee weapon" location="self" used="yes" weight="4.0" name="Short Sword"/>
+    <ns10:COINS silver="100" location="self" used="yes" weight="1.25" name="#1"/>
+    <ns10:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
+    <ns10:ITEM kind="light" weight="1.0" name="torch"/>
+    <ns10:ITEM kind="tool" weight="5.0" name="artisan tool (to be specified)"/>
+    <ns10:ITEM kind="book" weight="3.0" name="grimoire (magicans only)"/>
+    <ns10:ITEM kind="cloth" weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
+    <ns10:ITEM kind="food" weight="1.0" name="Trail Rations (1 week)"/>
+    <ns10:KARMA maxmodificator="0" max="5" current="0" dice="d6" step="4">
+        <KARMAPOINTS when="" comment="" value="0" type="+"/>
+    </ns10:KARMA>
+    <ns10:RACEABILITES>Gahad, Low-Light Vision</ns10:RACEABILITES>
+    <ns10:CALCULATEDLEGENDPOINTS total="0" magicitems="0" karma="0" spells="0" skills="0" knacks="0" optionaltalents="0" disciplinetalents="0" attributes="0">
+        <ns10:USEDSTARTRANKS skills="-8" talents="0"/>
+    </ns10:CALCULATEDLEGENDPOINTS>
+    <ns10:EXPERIENCE reputation="na" renown="21" currentlegendpoints="-100" totallegendpoints="0">
+        <LEGENDPOINTS when="" comment="" value="0" type="+"/>
+        <LEGENDPOINTS when="2011-07-25 21:10" comment="Optionaltalents-LP spent (automaticly added by ECE)" value="100" type="-"/>
+    </ns10:EXPERIENCE>
+</ns10:EDCHARACTER>
