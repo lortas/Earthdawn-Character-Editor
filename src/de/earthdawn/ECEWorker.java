@@ -621,7 +621,7 @@ public class ECEWorker {
 			errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
 		}
 		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
-		karma.setCurrent(k.get(0)-k.get(1));
+		karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
 		return 10*k.get(0); // KarmaLP
 	}
 
