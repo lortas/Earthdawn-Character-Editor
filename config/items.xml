@@ -14,11 +14,14 @@
 	<WEAPON kind="melee weapon" size="5" strengthmin="13" damagestep="7" weight="6" name="Battle Axe"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Broadsword"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="4" weight="4" name="Short Sword"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="13" damagestep="4" weight="5" name="Mace"/>
 	<WEAPON kind="melee weapon" size="5" strengthmin="12" damagestep="2" weight="3" name="Kampfstab"/>
 	<WEAPON kind="melee weapon" size="1" strengthmin="3"  damagestep="2" weight="0.5" name="windling dagger"/>
 	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe"/>
+	<WEAPON kind="throwing weapon" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" name="Spear"/>
 	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
 	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="5" strengthmin="11" damagestep="4" weight="4.0" name="Longbow"/>
+	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling"/>
 	<MAGICITEM weight="5.0" name="Counterspell Staff"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" name="Desperate Spell"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" name="Desperate Blow"/>
