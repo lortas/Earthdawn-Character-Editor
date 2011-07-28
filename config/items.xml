@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items earthdawnitems.xsd">
-	<ARMOR kind="armor" penalty="4" mysticarmor="0" physicalarmor="9" weight="60.0" name="Schuppenpanzer"/>
-	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="4" weight="20.0" name="Padded Leather"/>
-	<ARMOR kind="armor" penalty="1" mysticarmor="0" physicalarmor="5" weight="20.0" name="Harden Leather"/>
+	<ARMOR kind="armor" penalty="4" mysticarmor="0" physicalarmor="9" weight="60" name="Schuppenpanzer"/>
+	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="3" weight="15" name="Leather"/>
+	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="4" weight="20" name="Padded Leather"/>
+	<ARMOR kind="armor" penalty="1" mysticarmor="0" physicalarmor="5" weight="20" name="Hardened Leather"/>
+	<ARMOR kind="armor" penalty="1" mysticarmor="1" physicalarmor="5" weight="25" name="Hide"/>
 	<ARMOR kind="armor" edn="13" penalty="0" mysticarmor="3" physicalarmor="2" weight="3.0" name="Fernweave"/>
 	<ARMOR kind="armor" edn="22" penalty="2" mysticarmor="3" physicalarmor="6" weight="0.0" name="Living Crystal"/>
 	<ARMOR kind="armor" penalty="1" mysticarmor="1" physicalarmor="3" weight="0.0" name="Espagra-Scale Cloak"/>
 	<ARMOR kind="armor" physicalarmor="5" penalty="1" weight="20" name="Hardened Leather"/>
 	<SHIELD kind="shield" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" name="Buckler"/>
-	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="9" name="Rider's Shield"/>
+	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="8" name="Rider's"/>
+	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="10" name="Footman's"/>
+	<SHIELD kind="shield" physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5" name="Ferndask"/>
+	<SHIELD kind="shield" physicalarmor="5" penalty="2" physicaldeflectionbonus="4" shatterthreshold="21" weight="15" name="Body"/>
 	<SHIELD kind="shield" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" name="Crystal Buckler"/>
 	<WEAPON kind="melee weapon" size="4" strengthmin="17" damagestep="8" weight="6" name="Troll Battle Axe"/>
 	<WEAPON kind="melee weapon" size="5" strengthmin="13" damagestep="7" weight="6" name="Battle Axe"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="10" damagestep="5" weight="5" name="Flail"/>
+	<WEAPON kind="melee weapon" size="2" strengthmin="8" damagestep="4" weight="3" name="Hand-Axe"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Broadsword"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="4" weight="4" name="Short Sword"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="4" weight="3" name="Short Sword"/>
+	<WEAPON kind="melee weapon" size="1" strengthmin="6" damagestep="3" weight="1" name="Windling Sword"/>
+	<WEAPON kind="melee weapon" size="1" strengthmin="3" damagestep="1" weight="2" name="Sap"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="13" damagestep="4" weight="5" name="Mace"/>
+	<WEAPON kind="melee weapon" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Knife"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="7" damagestep="3" weight="2" name="Whip"/>
 	<WEAPON kind="melee weapon" size="5" strengthmin="12" damagestep="2" weight="3" name="Kampfstab"/>
+	<WEAPON kind="melee weapon" size="5" strengthmin="6" damagestep="4" weight="4" name="Quaterstaff"/>
 	<WEAPON kind="melee weapon" size="1" strengthmin="3"  damagestep="2" weight="0.5" name="windling dagger"/>
 	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe"/>
 	<WEAPON kind="throwing weapon" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" name="Spear"/>
+	<WEAPON kind="throwing weapon" longrange="24" shortrange="12" size="3" strengthmin="6"  damagestep="3" weight="2" name="Bola"/>
 	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
 	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="5" strengthmin="11" damagestep="4" weight="4.0" name="Longbow"/>
 	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling"/>
+	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling"/>
 	<MAGICITEM weight="5.0" name="Counterspell Staff"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" name="Desperate Spell"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" name="Desperate Blow"/>
