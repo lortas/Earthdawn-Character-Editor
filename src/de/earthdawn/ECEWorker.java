@@ -281,7 +281,7 @@ public class ECEWorker {
 		naturalArmor.setName(namegiverArmor.getName());
 		naturalArmor.setMysticarmor(namegiverArmor.getMysticarmor()+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
 		naturalArmor.setPhysicalarmor(namegiverArmor.getPhysicalarmor());
-		naturalArmor.setPenalty(namegiverArmor.getPhysicalarmor());
+		naturalArmor.setPenalty(namegiverArmor.getPenalty());
 		naturalArmor.setUsed(namegiverArmor.getUsed());
 		naturalArmor.setWeight(namegiverArmor.getWeight());
 		naturalArmor.setVirtual(YesnoType.YES);
