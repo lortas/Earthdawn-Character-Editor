@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<ns10:EDCHARACTER xmlns="http://earthdawn.com/datatypes" xmlns:ns2="http://earthdawn.com/characteristics" xmlns:ns3="http://earthdawn.com/discipline" xmlns:ns4="http://earthdawn.com/names" xmlns:ns5="http://earthdawn.com/optionalrules" xmlns:ns6="http://earthdawn.com/help" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/capability" xmlns:ns9="http://earthdawn.com/knack" xmlns:ns10="http://earthdawn.com/character" xmlns:ns11="http://earthdawn.com/spell" xmlns:ns12="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsd-version="1.0" name="Player's Guide First Circle Obsidiman Wizard" xsi:schemaLocation="http://earthdawn.com/character earthdawncharacter.xsd">
+<ns10:EDCHARACTER xmlns="http://earthdawn.com/datatypes" xmlns:ns2="http://earthdawn.com/characteristics" xmlns:ns3="http://earthdawn.com/discipline" xmlns:ns4="http://earthdawn.com/names" xmlns:ns5="http://earthdawn.com/optionalrules" xmlns:ns6="http://earthdawn.com/help" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/capability" xmlns:ns9="http://earthdawn.com/knack" xmlns:ns10="http://earthdawn.com/character" xmlns:ns11="http://earthdawn.com/spell" xmlns:ns12="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsd-version="1.0" name="Player's Guide First Circle Obsidiman Wizard" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
     <ns10:APPEARANCE race="Obsidiman" skin="?" hair="?" eyes="?" weight="0" height="0" age="0" gender="male"/>
     <ns10:ATTRIBUTE cost="2" currentvalue="11" basevalue="11" generationvalue="2" racevalue="9" name="CHA" dice="d8" step="5"/>
     <ns10:ATTRIBUTE cost="3" currentvalue="11" basevalue="11" generationvalue="3" racevalue="8" name="DEX" dice="d8" step="5"/>
@@ -155,12 +155,14 @@
     <ns10:WEAPON longrange="20" shortrange="10" size="3" strengthmin="9" damagestep="4" kind="throwing weapon" weight="3.0" name="Spear"/>
     <ns10:WEAPON longrange="20" shortrange="10" size="3" strengthmin="9" damagestep="4" kind="throwing weapon" weight="3.0" name="Spear"/>
     <ns10:COINS silver="2" location="self" used="yes" weight="0.025" name="purse #1"/>
-    <ns10:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
-    <ns10:ITEM kind="light" weight="1.0" name="torch"/>
-    <ns10:ITEM kind="tool" weight="5.0" name="artisan tool (to be specified)"/>
-    <ns10:ITEM kind="book" weight="3.0" name="grimoire (magicans only)"/>
-    <ns10:ITEM kind="cloth" weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
-    <ns10:ITEM kind="food" weight="1.0" name="Trail Rations (1 week)"/>
+    <ns10:ITEM name="Backpack, Bedroll, Flint&amp;Steel, Waterskin, Large Sack" kind="kit" weight="13"/>
+    <ns10:ITEM name="Torch" kind="light" weight="1"/>
+    <ns10:ITEM name="Embroidered Robe" kind="cloth" weight="1"/>
+    <ns10:ITEM name="Embroidery Tools" kind="tool" weight="5"/>
+    <ns10:ITEM name="Grimoire" kind="book" weight="3"/>
+    <ns10:ITEM name="Trail Rations (1 week)" kind="food" weight="1"/>
+    <ns10:ITEM name="Wealthy Traveler's Garb 1/2 (riding boots, bellt, shoes, three patterned shirts and guild breeches)" kind="cloth" weight="3"/>
+    <ns10:ITEM name="Wealthy Traveler's Garb 2/2 (fine hat, satinlined cloak, ornamental brooch)" kind="cloth" weight="2"/>
     <ns10:KARMA maxmodificator="0" max="3" current="3" dice="d6" step="4">
         <KARMAPOINTS when="" comment="" value="0" type="+"/>
     </ns10:KARMA>
