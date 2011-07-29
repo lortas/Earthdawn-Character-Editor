@@ -145,12 +145,12 @@
     <ns10:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" kind="throwing weapon" weight="1.0" name="Dagger"/>
     <ns10:WEAPON size="1" strengthmin="3" damagestep="1" kind="melee weapon" weight="0.625" name="Knife"/>
     <ns10:COINS gold="3" silver="6" copper="1" location="self" used="yes" weight="0.125" name="Purse #1"/>
-    <ns10:ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
-    <ns10:ITEM kind="light" weight="1.0" name="torch"/>
-    <ns10:ITEM kind="tool" weight="5.0" name="artisan tool (to be specified)"/>
-    <ns10:ITEM kind="book" weight="3.0" name="grimoire (magicans only)"/>
-    <ns10:ITEM kind="cloth" weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
-    <ns10:ITEM kind="food" weight="1.0" name="Trail Rations (1 week)"/>
+    <ns10:ITEM name="Backpack, Bedroll, Flint&amp;Steel, Waterskin, Large Sack" kind="kit" weight="13"/>
+    <ns10:ITEM name="Torch" kind="light" weight="1"/>
+    <ns10:ITEM name="Carving Tools" kind="tool" weight="5"/>
+    <ns10:ITEM name="Forge Tools" kind="tool" weight="5"/>
+    <ns10:ITEM name="Trail Rations (1 week)" kind="food" weight="1"/>
+    <ns10:ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" kind="cloth" weight="3"/>
     <ns10:KARMA maxmodificator="0" max="4" current="4" dice="d6" step="4">
         <KARMAPOINTS when="" comment="" value="0" type="+"/>
     </ns10:KARMA>
