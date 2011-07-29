@@ -1,4 +1,4 @@
-# Installation #
+﻿# Installation #
 First of all you need a java runtime environment installed, eg. from sun/oracle.
 
 Unzip the release file to a folder on your local media. It can be something like `C:\Program Files\EarthdawnCharacterEditor\`. Any new release can be unziped into the same folder, but you have to allow your unzip tool to overwrite exiting files. You may have changed some files in the sub folder "config", for example the file `optionalrules.xml`. You may want to backup those files before installing a new release.
@@ -13,6 +13,18 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.29-20110729.zip ##
++ Bugs
+	+ Now every character starts with karma points equal to is base karma modifier.
+	+ The penalty of the natural armor was wrongly set to the physical armor. Was only relevant for obsidiman.
++ XML Schema enhanced
+	+ The knacks element also need the attribute limitation, while some knacks only work for specific talents.
++ Knacks (including book references) of the book namegivers added.
++ All example characters of the Players Guide added.
++ New export plausibility added: GSON; This also creates a Json file, but for human it is much better to read.
++ Some missing icons for character items added.
++ Enhanced item library.
++ Minor changes of the namegivers configuration file.
 ## EarthdawnCharacterEditor-0.28-20110716.zip ##
 + Bugs
 	+ Header of the CSV Export are now also comma separated.
