@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SPELLLEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="KARMALEGENDPOINTCOST" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="THREADITEMDOSTACK" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
- *         &lt;element name="AUTOINCREMENTDICIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="AUTOINCREMENTDISCIPLINETALENTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
@@ -59,7 +59,7 @@ import javax.xml.bind.annotation.XmlType;
     "spelllegendpointcost",
     "karmalegendpointcost",
     "threaditemdostack",
-    "autoincrementdiciplinetalents",
+    "autoincrementdisciplinetalents",
     "showdefaultskills",
     "questortalentneedlegendpoints",
     "autoinsertlegendpointspent",
@@ -85,8 +85,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType karmalegendpointcost;
     @XmlElement(name = "THREADITEMDOSTACK", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType threaditemdostack;
-    @XmlElement(name = "AUTOINCREMENTDICIPLINETALENTS", namespace = "http://earthdawn.com/optionalrules", required = true)
-    protected OPTIONALRULEType autoincrementdiciplinetalents;
+    @XmlElement(name = "AUTOINCREMENTDISCIPLINETALENTS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType autoincrementdisciplinetalents;
     @XmlElement(name = "SHOWDEFAULTSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType showdefaultskills;
     @XmlElement(name = "QUESTORTALENTNEEDLEGENDPOINTS", namespace = "http://earthdawn.com/optionalrules", required = true)
@@ -271,27 +271,27 @@ public class OPTIONALRULES {
     }
 
     /**
-     * Gets the value of the autoincrementdiciplinetalents property.
+     * Gets the value of the autoincrementdisciplinetalents property.
      * 
      * @return
      *     possible object is
      *     {@link OPTIONALRULEType }
      *     
      */
-    public OPTIONALRULEType getAUTOINCREMENTDICIPLINETALENTS() {
-        return autoincrementdiciplinetalents;
+    public OPTIONALRULEType getAUTOINCREMENTDISCIPLINETALENTS() {
+        return autoincrementdisciplinetalents;
     }
 
     /**
-     * Sets the value of the autoincrementdiciplinetalents property.
+     * Sets the value of the autoincrementdisciplinetalents property.
      * 
      * @param value
      *     allowed object is
      *     {@link OPTIONALRULEType }
      *     
      */
-    public void setAUTOINCREMENTDICIPLINETALENTS(OPTIONALRULEType value) {
-        this.autoincrementdiciplinetalents = value;
+    public void setAUTOINCREMENTDISCIPLINETALENTS(OPTIONALRULEType value) {
+        this.autoincrementdisciplinetalents = value;
     }
 
     /**

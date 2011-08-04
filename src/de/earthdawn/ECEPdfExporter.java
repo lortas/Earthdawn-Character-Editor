@@ -505,8 +505,8 @@ public class ECEPdfExporter {
 				counter++;
 			}
 		}
-		DISCIPLINEType discipline2 = disciplines.get(1);
-		if( discipline2 != null ) {
+		if( disciplines.size() > 1 ) {
+			DISCIPLINEType discipline2 = disciplines.get(1);
 			int counter = 36;
 			List<TALENTType> disziplinetalents = discipline2.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());

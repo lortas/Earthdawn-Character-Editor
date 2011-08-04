@@ -21,7 +21,7 @@
 	<xs:complexType name="NEWDISCIPLINETALENTADJUSTMENT_type">
 		<xs:attribute name="type" type="CALCULATEDLEGENDPOINTADJUSTMENTTYPE_type" use="required"/>
 		<xs:attribute name="lowestcircle" type="edt:unsigned_int" use="required"/>
-		<xs:attribute name="diciplinenumber" type="edt:unsigned_int" use="required"/>
+		<xs:attribute name="disciplinenumber" type="edt:unsigned_int" use="required"/>
 		<xs:attribute name="value" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="CALCULATEDLEGENDPOINTS_type">

@@ -299,7 +299,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<Integer> lp = CharacterContainer.calculateAccounting(legendpoints.getLEGENDPOINTS());
 		legendpoints.setCurrentlegendpoints(lp.get(0)-lp.get(1));
 		legendpoints.setTotallegendpoints(lp.get(0));
-		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(getDiciplineMaxCircle().getCircle());
+		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(getDisciplineMaxCircle().getCircle());
 		legendpoints.setRenown(legendstatus.getReown());
 		legendpoints.setReputation(legendstatus.getReputation());
 	}
@@ -424,7 +424,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			List<NEWDISCIPLINETALENTADJUSTMENTType> remove = new ArrayList<NEWDISCIPLINETALENTADJUSTMENTType>();
 			List<NEWDISCIPLINETALENTADJUSTMENTType> newdisciplinetalentadjustments = calculatedlegendpoints.getNEWDISCIPLINETALENTADJUSTMENT();
 			for( NEWDISCIPLINETALENTADJUSTMENTType e : newdisciplinetalentadjustments ) {
-				if( e.getDiciplinenumber() == disciplineNumber ) remove.add(e);
+				if( e.getDisciplinenumber() == disciplineNumber ) remove.add(e);
 			}
 			newdisciplinetalentadjustments.removeAll(remove);
 		}
@@ -505,7 +505,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		return disciplines.get(disciplineNumber-1).getCircle();
 	}
 
-	public DISCIPLINEType getDiciplineMaxCircle() {
+	public DISCIPLINEType getDisciplineMaxCircle() {
 		DISCIPLINEType discipline = new DISCIPLINEType();
 		discipline.setCircle(0);
 		discipline.setName("na");
@@ -517,7 +517,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		return discipline;
 	}
 
-	public DISCIPLINEType getDiciplineMinCircle() {
+	public DISCIPLINEType getDisciplineMinCircle() {
 		DISCIPLINEType discipline = new DISCIPLINEType();
 		discipline.setCircle(20);
 		discipline.setName("na");
@@ -841,8 +841,8 @@ public class CharacterContainer extends CharChangeRefresh {
 	public void realignOptionalTalents() {
 		final String durabilityName = PROPERTIES.getDurabilityName();
 		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
-		List<DISCIPLINEType> allDiciplines = character.getDISCIPLINE();
-		int maxDisciplineOrder=allDiciplines.size();
+		List<DISCIPLINEType> allDisciplines = character.getDISCIPLINE();
+		int maxDisciplineOrder=allDisciplines.size();
 		List<DISCIPLINEType> disciplines = getDisciplines();
 		for( DISCIPLINEType discipline1 : disciplines ) {
 			int disciplineOrder=0;

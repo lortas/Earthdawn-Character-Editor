@@ -42,7 +42,7 @@ public class ECEWorker {
 	public static final boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_ShowDefaultSkills=PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
-	public static final boolean OptionalRule_autoincrementDiciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDICIPLINETALENTS().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_autoincrementDisciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
@@ -551,7 +551,7 @@ public class ECEWorker {
 				rank = new RANKType();
 				talent.setRANK(rank);
 			}
-			if( disTalents && OptionalRule_autoincrementDiciplinetalents &&
+			if( disTalents && OptionalRule_autoincrementDisciplinetalents &&
 					(talent.getCircle() < disciplinecircle) && (rank.getRank() < disciplinecircle) ) {
 				rank.setRank(disciplinecircle);
 			}

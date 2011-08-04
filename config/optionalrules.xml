@@ -43,7 +43,7 @@
 	By the following rule you can define if the all discipline talent will be automatically increase
 	to met the circle increase requirement, but be care full this can result in to many spent legend points
 	-->
-	<AUTOINCREMENTDICIPLINETALENTS used="yes"/>
+	<AUTOINCREMENTDISCIPLINETALENTS used="yes"/>
 	<!-- By the following rule you can define if the default skills will be displayed where possible -->
 	<SHOWDEFAULTSKILLS used="yes"/>
 	<!-- By the following rule you can define if a questor need to spend legend points for his questor talent -->

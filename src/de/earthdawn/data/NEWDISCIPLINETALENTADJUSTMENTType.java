@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTADJUSTMENTTYPE_type" />
  *       &lt;attribute name="lowestcircle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="diciplinenumber" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="disciplinenumber" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,7 +43,7 @@ public class NEWDISCIPLINETALENTADJUSTMENTType {
     @XmlAttribute(required = true)
     protected int lowestcircle;
     @XmlAttribute(required = true)
-    protected int diciplinenumber;
+    protected int disciplinenumber;
     @XmlAttribute
     protected Integer value;
 
@@ -88,19 +88,19 @@ public class NEWDISCIPLINETALENTADJUSTMENTType {
     }
 
     /**
-     * Gets the value of the diciplinenumber property.
+     * Gets the value of the disciplinenumber property.
      * 
      */
-    public int getDiciplinenumber() {
-        return diciplinenumber;
+    public int getDisciplinenumber() {
+        return disciplinenumber;
     }
 
     /**
-     * Sets the value of the diciplinenumber property.
+     * Sets the value of the disciplinenumber property.
      * 
      */
-    public void setDiciplinenumber(int value) {
-        this.diciplinenumber = value;
+    public void setDisciplinenumber(int value) {
+        this.disciplinenumber = value;
     }
 
     /**
