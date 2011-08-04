@@ -101,7 +101,7 @@ public class ApplicationProperties {
 	public DISCIPLINE getDisziplin(String name) {
 		DISCIPLINE discipline = DISCIPLINES.get(name);
 		if( discipline == null ) {
-			System.err.println("Dicipline '"+name+"' does not exist.");
+			System.err.println("Discipline '"+name+"' does not exist.");
 		}
 		return discipline;
 	}

@@ -36,7 +36,7 @@ public class EDDisciplines extends JPanel {
 	private JScrollPane scrollPane;
 	private JTable table;
 	private JToolBar toolBar;
-	private JButton btnAddDicipline;
+	private JButton btnAddDiscipline;
 	private JPopupMenu popupMenuCircle;
 	private BufferedImage backgroundimage = null;
 
@@ -97,14 +97,14 @@ public class EDDisciplines extends JPanel {
 		add(toolBar, BorderLayout.NORTH);
 		toolBar.setOpaque(false);
 
-		btnAddDicipline = new JButton("Add Dicipline");
-		btnAddDicipline.addActionListener(new ActionListener() {
+		btnAddDiscipline = new JButton("Add Discipline");
+		btnAddDiscipline.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				do_btnAddDicipline_actionPerformed(arg0);
+				do_btnAddDiscipline_actionPerformed(arg0);
 			}
 		});
-		btnAddDicipline.setOpaque(false);
-		toolBar.add(btnAddDicipline);
+		btnAddDiscipline.setOpaque(false);
+		toolBar.add(btnAddDiscipline);
 		popupMenuCircle = DisziplinAsTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
 	}
 
@@ -141,8 +141,8 @@ public class EDDisciplines extends JPanel {
 		return result;
 	}
 
-	protected void do_btnAddDicipline_actionPerformed(ActionEvent arg0) {
-		popupMenuCircle.show(btnAddDicipline, btnAddDicipline.getX(), btnAddDicipline.getY()+ btnAddDicipline.getHeight());
+	protected void do_btnAddDiscipline_actionPerformed(ActionEvent arg0) {
+		popupMenuCircle.show(btnAddDiscipline, btnAddDiscipline.getX(), btnAddDiscipline.getY()+ btnAddDiscipline.getHeight());
 	}
 
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
