@@ -13,6 +13,14 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.30-20110805.zip ##
++ Bugs
+	+ Missspelled Dicipline is corrected to Discipline (everywhere).
+	+ The RB extended pdf export works again.
+	+ The Durability can again only be chosen once per discipline.
+	+ The save and export dialog will now only write a file if Yes/Ok button was clicked.
++ All knacks from the CPG inclusive bookref were inserted.
++ The optional talent chooser is now a pop-up window with scrollbar.
 ## EarthdawnCharacterEditor-0.29-20110729.zip ##
 + Bugs
 	+ Now every character starts with karma points equal to is base karma modifier.
