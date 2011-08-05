@@ -482,8 +482,9 @@ public class EDMainWindow {
 		fc.setSelectedFile(xmlFile);
 
 		// Show open dialog; this method does not return until the dialog is closed
-		fc.showSaveDialog(frame); 
-		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		if( fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION ) return;
+		// Only Save file if OK/Yes was pressed
+		File selFile = fc.getSelectedFile();
 		//TODO: Wenn abbrechen gedrückt wurde, dann darf auch nicht gespeichert werden
 		if( selFile != null ) {
 			file = selFile;
@@ -544,9 +545,10 @@ public class EDMainWindow {
 		String filename = "."; 
 		JFileChooser fc = new JFileChooser(new File(filename)); 
 
-		// Show open dialog; this method does not return until the dialog is closed 
-		fc.showOpenDialog(frame); 
-		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
+		// Show open dialog; this method does not return until the dialog is closed
+		if( fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION ) return;
+		// Only Save file if OK/Yes was pressed
+		File selFile = fc.getSelectedFile();
 		if(selFile != null){
 			file = selFile;
 			try{
@@ -707,9 +709,10 @@ public class EDMainWindow {
 		File csvFile = new File(file.getParentFile(), chopFilename(file)+ extention);
 		JFileChooser fc = new JFileChooser(csvFile);
 		fc.setSelectedFile(csvFile);
-		fc.showSaveDialog(frame);
-		File selFile = fc.getSelectedFile(); // Show save dialog; this method does not return until the dialog is closed fc.showSaveDialog(frame);
-		return selFile;
+		// Show open dialog; this method does not return until the dialog is closed
+		if( fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION ) return null;
+		// Only Save file if OK/Yes was pressed
+		return fc.getSelectedFile();
 	}
 
 	protected void do_mntmWebBrowser_actionPerformed(ActionEvent arg0) {
