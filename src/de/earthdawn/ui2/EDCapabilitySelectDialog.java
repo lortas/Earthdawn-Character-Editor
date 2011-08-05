@@ -2,6 +2,7 @@ package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -45,6 +46,10 @@ public class EDCapabilitySelectDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	public EDCapabilitySelectDialog(boolean talent,int maxcirclenr) {
+		this(talent,maxcirclenr,null);
+	}
+
+	public EDCapabilitySelectDialog(boolean talent,int maxcirclenr, List<TALENTABILITYType> talentabilities) {
 		if( talent ) {
 			setTitle("Select one talent");
 		} else {
@@ -53,7 +58,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setAlwaysOnTop(true);
 		selectedCapabilityMap = new HashMap<String,CAPABILITYType>();
-		initCapabilityList(talent,maxcirclenr);
+		initCapabilityList(talent,maxcirclenr,talentabilities);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -107,18 +112,24 @@ public class EDCapabilitySelectDialog extends JDialog {
 		}
 	}
 
-	public void initCapabilityList(boolean talent,int maxcirclenr){
+	public void initCapabilityList(boolean talent,int maxcirclenr, List<TALENTABILITYType> talentabilities){
 		if( talent ) {
-			HashMap<String, TALENTABILITYType> talentabilities = PROPERTIES.getTalentsByCircle(maxcirclenr);
-			for( String name : talentabilities.keySet() ) {
-				TALENTABILITYType talentabilitiy = talentabilities.get(name);
+			if( talentabilities == null ) {
+				talentabilities=new ArrayList<TALENTABILITYType>();
+				HashMap<String, TALENTABILITYType> alltalentabilities = PROPERTIES.getTalentsByCircle(maxcirclenr);
+				for( String name : alltalentabilities.keySet() ) {
+					talentabilities.add(alltalentabilities.get(name));
+				}
+			}
+			for( TALENTABILITYType talentabilitiy : talentabilities ) {
 				String talentabilityName = talentabilitiy.getName();
+				String limitation = talentabilitiy.getLimitation();
 				int found=0;
 				for( CAPABILITYType capability : talents ) {
 					if( talentabilityName.equals(capability.getName()) ) {
 						CAPABILITYType cap = new CAPABILITYType();
 						cap.setName(talentabilityName);
-						cap.setLimitation(talentabilitiy.getLimitation());
+						cap.setLimitation(limitation);
 						cap.setAction(capability.getAction());
 						cap.setAttribute(capability.getAttribute());
 						cap.setBonus(capability.getBonus());
@@ -128,7 +139,8 @@ public class EDCapabilitySelectDialog extends JDialog {
 						cap.setNotbyversatility(capability.getNotbyversatility());
 						cap.setRealigned(capability.getRealigned());
 						cap.setStrain(capability.getStrain());
-						capabilityMap.put(name,cap);
+						if( limitation.isEmpty() ) capabilityMap.put(talentabilityName,cap);
+						else capabilityMap.put(talentabilityName+" - "+limitation,cap);
 						found++;
 					}
 				}
