@@ -546,21 +546,21 @@ public class EDMainWindow {
 		JFileChooser fc = new JFileChooser(new File(filename)); 
 
 		// Show open dialog; this method does not return until the dialog is closed
-		if( fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION ) return;
-		// Only Save file if OK/Yes was pressed
+		if( fc.showOpenDialog(frame) != JFileChooser.APPROVE_OPTION ) return;
+		// Only Open file if OK/Yes was pressed
 		File selFile = fc.getSelectedFile();
 		if(selFile != null){
 			file = selFile;
 			try{
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-				Unmarshaller u = jc.createUnmarshaller();					
+				Unmarshaller u = jc.createUnmarshaller();
 				ec =(EDCHARACTER)u.unmarshal(selFile);
 			}
 			catch(Exception e){
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
-				
+
 			character = new CharacterContainer(ec);
 			ECEWorker worker = new ECEWorker();
 			worker.verarbeiteCharakter(character.getEDCHARACTER());
