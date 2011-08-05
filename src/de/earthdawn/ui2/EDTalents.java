@@ -39,7 +39,6 @@ public class EDTalents extends JPanel {
 	private JButton buttonAdd;
 	private JButton buttonAdd2;
 	private JPopupMenu popupMenuCircle;
-	private JPopupMenu popupMenuTalent;
 
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
@@ -92,9 +91,6 @@ public class EDTalents extends JPanel {
 		});
 		toolBar.add(buttonAdd2);
 
-		popupMenuTalent = new JPopupMenu();
-		toolBar.add(popupMenuTalent);
-
 		popupMenuCircle = new JPopupMenu();
 		toolBar.add(popupMenuCircle);
 	}
@@ -115,10 +111,10 @@ public class EDTalents extends JPanel {
 			JMenuItem menuItem = new JMenuItem(String.valueOf(c));
 			menuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					do_menuItemCircle_actionPerformed(arg0);
+					do_menuItemTalent_actionPerformed(arg0);
 				}
 			});
-			popupMenuCircle.add(menuItem);		
+			popupMenuCircle.add(menuItem);
 		}
 
 		popupMenuCircle.show(buttonAdd,buttonAdd.getX(), buttonAdd.getY()+ buttonAdd.getHeight());
@@ -143,38 +139,22 @@ public class EDTalents extends JPanel {
 		}
 	}
 
-	protected void do_menuItemCircle_actionPerformed(ActionEvent arg0) {
-		popupMenuTalent.removeAll();
-		final JMenuItem source = ((JMenuItem)arg0.getSource());
-		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplin);
-		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,Integer.valueOf(source.getText()));
-		for( TALENTABILITYType talent : talentlist){
-			if (talent != null){
-				JMenuItem menuItem = new JMenuItem(talent.getName());
-				menuItem.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						do_menuItemTalent_actionPerformed(arg0, source.getText());
-					}
-				});
-				popupMenuTalent.add(menuItem);
-			}
-		}
-		popupMenuTalent.show(buttonAdd,source.getX() + source.getWidth(), source.getY()+10);
-		//popupMenuTalent.show(buttonAdd,1,1);
-	}
-
-	protected void do_menuItemTalent_actionPerformed(ActionEvent arg0, String circle) {
+	protected void do_menuItemTalent_actionPerformed(ActionEvent arg0) {
 		JMenuItem source = ((JMenuItem)arg0.getSource());
+		int circle = Integer.valueOf(source.getText());
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplin);
-		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,Integer.valueOf(circle));
-		System.out.println(circle + " " + source.getText() );
-		for( TALENTABILITYType talent : talentlist){
-			if(talent.getName().equals( source.getText())) {
-				System.out.println("add");
-				character.addOptionalTalent(disciplin, Integer.valueOf(circle), talent, false);
-				character.refesh();
-				break;
-			}
+		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,circle);
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(true,circle,talentlist);
+		dialog.setSingleSelection(true);
+		dialog.setVisible(true);
+		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
+		for(String key : selected.keySet()){
+			CAPABILITYType cap = selected.get(key);
+			TALENTABILITYType talent = new TALENTABILITYType();
+			talent.setName(cap.getName());
+			talent.setLimitation(cap.getLimitation());
+			character.addOptionalTalent(disciplin, circle, talent, false);
+			character.refesh();
 		}
 	}
 }
