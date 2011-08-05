@@ -660,6 +660,9 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public static String getFullTalentname(TALENTType talent) {
 		String name = talent.getName();
+		// Falls es das DurabilityTalent ist, dann ignoriere die Limitationsangabe
+		if( name.equals(durabilityName) ) return durabilityName;
+
 		String limitation = talent.getLimitation();
 		if( limitation == null ) return name;
 		if( limitation.isEmpty() ) return name;
@@ -668,6 +671,9 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public static String getFullTalentname(TALENTABILITYType talent) {
 		String name = talent.getName();
+		// Falls es das DurabilityTalent ist, dann ignoriere die Limitationsangabe
+		if( name.equals(durabilityName) ) return durabilityName;
+
 		String limitation = talent.getLimitation();
 		if( limitation == null ) return name;
 		if( limitation.isEmpty() ) return name;
