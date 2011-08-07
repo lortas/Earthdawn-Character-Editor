@@ -1,6 +1,9 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -36,8 +39,6 @@ public class EDTalents extends JPanel {
 	private JScrollPane scrollPane;
 	private JTable table;
 	private String disciplin;
-	private JButton buttonAdd;
-	private JButton buttonAdd2;
 	private JPopupMenu popupMenuCircle;
 
 	public void setCharacter(final CharacterContainer character) {
@@ -75,21 +76,29 @@ public class EDTalents extends JPanel {
 		toolBar.setFloatable(false);
 		add(toolBar, BorderLayout.NORTH);
 
-		buttonAdd = new JButton("Add optional Talent");
-		buttonAdd.addActionListener(new ActionListener() {
+		JButton button = new JButton("Add optional talent");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				do_buttonAdd_actionPerformed(arg0);
+				do_buttonAddOptionalTalent_actionPerformed(arg0);
 			}
 		});
-		toolBar.add(buttonAdd);
+		toolBar.add(button);
 
-		buttonAdd2 = new JButton("Add Talent by Versatility");
-		buttonAdd2.addActionListener(new ActionListener() {
+		button = new JButton("Add talent by versatility");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				do_buttonAdd2_actionPerformed(arg0);
+				do_buttonAddVersalityTalent_actionPerformed(arg0);
 			}
 		});
-		toolBar.add(buttonAdd2);
+		toolBar.add(button);
+
+		button = new JButton("Add random optional talents");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_buttonAddRandomOptionalTalents_actionPerformed(arg0);
+			}
+		});
+		toolBar.add(button);
 
 		popupMenuCircle = new JPopupMenu();
 		toolBar.add(popupMenuCircle);
@@ -103,9 +112,9 @@ public class EDTalents extends JPanel {
 		this.disciplin = disciplin;
 	}
 
-	protected void do_buttonAdd_actionPerformed(ActionEvent arg0) {
+	protected void do_buttonAddOptionalTalent_actionPerformed(ActionEvent arg0) {
 		popupMenuCircle.removeAll();
-
+		JButton button = (JButton) arg0.getSource();
 		List<Integer> l = character.getCircleOfMissingOptionalTalents().get(disciplin);
 		for(Integer c : l){
 			JMenuItem menuItem = new JMenuItem(String.valueOf(c));
@@ -117,15 +126,21 @@ public class EDTalents extends JPanel {
 			popupMenuCircle.add(menuItem);
 		}
 
-		popupMenuCircle.show(buttonAdd,buttonAdd.getX(), buttonAdd.getY()+ buttonAdd.getHeight());
+		popupMenuCircle.show(button,button.getX(), button.getY()+ button.getHeight());
 	}
 
-	protected void do_buttonAdd2_actionPerformed(ActionEvent arg0) {
+	protected void do_buttonAddRandomOptionalTalents_actionPerformed(ActionEvent arg0) {
+		character.fillOptionalTalentsRandom(disciplin);
+		character.refesh();
+	}
+
+	protected void do_buttonAddVersalityTalent_actionPerformed(ActionEvent arg0) {
 		// Wenn kein ungenutze Vielseitigkeit Räng vorhanden, dann abbrechen
 		if( character.getUnusedVersatilityRanks() < 1 ) return;
 		// Bestimme den höchsten Kreis aller erlernten Disziplinen
 		int circle=1; for( int c : character.getDisciplineCircles() ) if( c > circle ) circle=c;
-		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(true,circle);
+		JButton button = (JButton) arg0.getSource();
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_VERSATILITYTALENT,circle,new Rectangle(button.getLocationOnScreen().x, button.getLocationOnScreen().y+button.getHeight(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
 		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
@@ -141,10 +156,11 @@ public class EDTalents extends JPanel {
 
 	protected void do_menuItemTalent_actionPerformed(ActionEvent arg0) {
 		JMenuItem source = ((JMenuItem)arg0.getSource());
+		Point parentloc = this.getLocationOnScreen();
 		int circle = Integer.valueOf(source.getText());
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplin);
 		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,circle);
-		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(true,circle,talentlist);
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_TALENT,circle,talentlist,new Rectangle(parentloc.x+source.getX()+source.getWidth(), parentloc.y+source.getY(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
 		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();

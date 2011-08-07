@@ -2,6 +2,7 @@ package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +22,7 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.TALENTABILITYType;
+import de.earthdawn.data.YesnoType;
 
 public class EDCapabilitySelectDialog extends JDialog {
 
@@ -30,7 +32,6 @@ public class EDCapabilitySelectDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private static final ApplicationProperties  PROPERTIES = ApplicationProperties.create();
 	private static final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
-	private static final List<CAPABILITYType> talents = capabilities.getVersatilityTalents();
 	private final JPanel contentPanel = new JPanel();
 	private JScrollPane scrollPane;
 	private JList list;
@@ -41,25 +42,28 @@ public class EDCapabilitySelectDialog extends JDialog {
 	public HashMap<String, CAPABILITYType> getSelectedCapabilitytMap() {
 		return selectedCapabilityMap;
 	}
+	public static final int SELECT_SKILLS=0;
+	public static final int SELECT_TALENT=1;
+	public static final int SELECT_VERSATILITYTALENT=2;
 
 	/**
 	 * Create the dialog.
 	 */
-	public EDCapabilitySelectDialog(boolean talent,int maxcirclenr) {
-		this(talent,maxcirclenr,null);
+	public EDCapabilitySelectDialog(int talent,int maxcirclenr,Rectangle dim) {
+		this(talent,maxcirclenr,null,dim);
 	}
 
-	public EDCapabilitySelectDialog(boolean talent,int maxcirclenr, List<TALENTABILITYType> talentabilities) {
-		if( talent ) {
-			setTitle("Select one talent");
-		} else {
-			setTitle("Select one or more skills");
+	public EDCapabilitySelectDialog(int talent,int maxcirclenr, List<TALENTABILITYType> talentabilities,Rectangle dim) {
+		switch( talent ) {
+		case SELECT_SKILLS: setTitle("Select one or more skills"); break;
+		case SELECT_TALENT: setTitle("Select one talent"); break;
+		case SELECT_VERSATILITYTALENT: setTitle("Select one versatility talent"); break;
 		}
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setAlwaysOnTop(true);
+		setBounds(dim);
 		selectedCapabilityMap = new HashMap<String,CAPABILITYType>();
 		initCapabilityList(talent,maxcirclenr,talentabilities);
-		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -112,8 +116,10 @@ public class EDCapabilitySelectDialog extends JDialog {
 		}
 	}
 
-	public void initCapabilityList(boolean talent,int maxcirclenr, List<TALENTABILITYType> talentabilities){
-		if( talent ) {
+	public void initCapabilityList(int talent,int maxcirclenr, List<TALENTABILITYType> talentabilities){
+		if( talent == SELECT_SKILLS ) {
+			for (CAPABILITYType capability : capabilities.getSkills()) capabilityMap.put(capability.getName(),capability);
+		} else {
 			if( talentabilities == null ) {
 				talentabilities=new ArrayList<TALENTABILITYType>();
 				HashMap<String, TALENTABILITYType> alltalentabilities = PROPERTIES.getTalentsByCircle(maxcirclenr);
@@ -125,33 +131,28 @@ public class EDCapabilitySelectDialog extends JDialog {
 				String talentabilityName = talentabilitiy.getName();
 				String limitation = talentabilitiy.getLimitation();
 				int found=0;
-				for( CAPABILITYType capability : talents ) {
-					if( talentabilityName.equals(capability.getName()) ) {
-						CAPABILITYType cap = new CAPABILITYType();
-						cap.setName(talentabilityName);
-						cap.setLimitation(limitation);
-						cap.setAction(capability.getAction());
-						cap.setAttribute(capability.getAttribute());
-						cap.setBonus(capability.getBonus());
-						cap.setDefault(capability.getDefault());
-						cap.setIsinitiative(capability.getIsinitiative());
-						cap.setKarma(capability.getKarma());
-						cap.setNotbyversatility(capability.getNotbyversatility());
-						cap.setRealigned(capability.getRealigned());
-						cap.setStrain(capability.getStrain());
-						if( limitation.isEmpty() ) capabilityMap.put(talentabilityName,cap);
-						else capabilityMap.put(talentabilityName+" - "+limitation,cap);
-						found++;
-					}
-				}
-				if( found == 0 ) {
+				CAPABILITYType capability = capabilities.getTalent(talentabilityName);
+				if( capability == null ) {
 					System.err.println( "Talent '"+talentabilityName+"' not found in capability list." );
-				} else if( found > 1 ) {
-					System.err.println("Talent '"+talentabilityName+"' was found "+found+"times in capability list.");
+				} else if( (talent==SELECT_TALENT) ||
+						((talent==SELECT_VERSATILITYTALENT) && capability.getNotbyversatility().equals(YesnoType.NO)) ) {
+					CAPABILITYType cap = new CAPABILITYType();
+					cap.setName(talentabilityName);
+					cap.setLimitation(limitation);
+					cap.setAction(capability.getAction());
+					cap.setAttribute(capability.getAttribute());
+					cap.setBonus(capability.getBonus());
+					cap.setDefault(capability.getDefault());
+					cap.setIsinitiative(capability.getIsinitiative());
+					cap.setKarma(capability.getKarma());
+					cap.setNotbyversatility(capability.getNotbyversatility());
+					cap.setRealigned(capability.getRealigned());
+					cap.setStrain(capability.getStrain());
+					if( limitation.isEmpty() ) capabilityMap.put(talentabilityName,cap);
+					else capabilityMap.put(talentabilityName+" - "+limitation,cap);
+					found++;
 				}
 			}
-		} else {
-			for (CAPABILITYType capability : capabilities.getSkills()) capabilityMap.put(capability.getName(),capability);
 		}
 	}
 
