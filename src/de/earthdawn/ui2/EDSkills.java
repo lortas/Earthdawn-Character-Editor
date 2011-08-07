@@ -10,6 +10,8 @@ import de.earthdawn.data.SKILLType;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 import java.awt.BorderLayout;
+import java.awt.Rectangle;
+
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.JButton;
@@ -82,7 +84,7 @@ public class EDSkills extends JPanel {
 	}
 
 	protected void do_btnAddSkill_actionPerformed(ActionEvent arg0) {
-		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(false,0);
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_SKILLS,0, new Rectangle(100, 100, 450, 300) );
 		dialog.setVisible(true);
 		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
 		for(Object key : selected.keySet()){

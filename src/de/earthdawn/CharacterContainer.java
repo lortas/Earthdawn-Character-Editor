@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECharacteristics;
@@ -35,6 +36,7 @@ import de.earthdawn.event.CharChangeRefresh;
 
 public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
+	private static Random rand = new Random();
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
 	public static final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
@@ -881,7 +883,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
-	public void addOptionalTalent(String disciplineName, int circle, TALENTABILITYType talenttype, boolean byVersatility){
+	public TALENTType addOptionalTalent(String disciplineName, int circle, TALENTABILITYType talenttype, boolean byVersatility) {
 		TALENTType talent = new TALENTType();
 		talent.setName(talenttype.getName());
 		talent.setLimitation(talenttype.getLimitation());
@@ -897,14 +899,14 @@ public class CharacterContainer extends CharChangeRefresh {
 		int disciplineOrder = getDisciplineOrder(disciplineName);
 		if( disciplineOrder < 1 ) {
 			System.err.println("Discipline '"+disciplineName+"' cound not be found. So, the optional talent '"+talenttype.getName()+"' cound not be inserted.");
-			return;
+			return null;
 		}
 		// Wenn es sich bei dem neuen OptionalTalent um das Unempfindlichkeitstalent handelt,
-		// dann muss geprüft werden ob dieses bereits in einder anderen Disziplin vorhanden ist.
+		// dann muss geprüft werden, ob dieses bereits in einder anderen Disziplin vorhanden ist.
 		//TODO: nicht nur Unempfindlichkeitstalent
 		if( durabilityName.equals(talent.getName()) ) {
 			for( DISCIPLINEType discipline : getDisciplines() ) {
-				// Wenn die Disziplin namen über einstimmen, dann handelt es sich um die selbe Disziplin
+				// Wenn die Disziplinnamen über einstimmen, dann handelt es sich um die selbe Disziplin
 				// und es brauch nichts geprüft werden.
 				if( disciplineName.equals(discipline.getName()) ) continue;
 				for( TALENTType optTalent : discipline.getOPTIONALTALENT() ) {
@@ -914,6 +916,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		getAllTalents().get(disciplineOrder-1).getOptionaltalents().add(talent);
+		return talent;
 	}
 
 	public void addSpell(String discipline, SPELLType spell){
@@ -1432,5 +1435,43 @@ public class CharacterContainer extends CharChangeRefresh {
 			for( CHARACTERLANGUAGEType l : PROPERTIES.getDefaultLanguage() ) languages.add(l);
 		}
 		return languages;
+	}
+
+	public void fillOptionalTalentsRandom(String disciplinename) {
+		int circleNr = getCircleOf(disciplinename);
+		while(true) {
+			List<Integer> l = getCircleOfMissingOptionalTalents().get(disciplinename);
+			if( l.isEmpty() ) break;
+			int circle = l.get(0);
+			DISCIPLINE discipline = PROPERTIES.getDisziplin(disciplinename);
+			List<TALENTABILITYType> talentlist = getUnusedOptionalTalents(discipline,circle);
+			// Suche nach dem Talent Unempfindlichkeit
+			TALENTABILITYType talent=null;
+			for( TALENTABILITYType t : talentlist ) {
+				if( t.getName().equals(durabilityName) ) {
+					talent=t;
+					TALENTType newtalent = addOptionalTalent(disciplinename, circle, talent, false);
+					newtalent.getRANK().setRank(circleNr);
+					break;
+				}
+			}
+			if( talent==null ) {
+				talent = talentlist.get(spaeterzufall(talentlist.size()));
+				TALENTType newtalent = addOptionalTalent(disciplinename, circle, talent, false);
+				newtalent.getRANK().setRank(circleNr-spaeterzufall(circle));
+			}
+		}
+	}
+
+	public static int spaeterzufall(int bereich) {
+		int g=1;
+		for( int i=0; i<bereich; i++ ) g+=i;
+		int r = rand.nextInt(g);
+		g=0;
+		for( int i=0; i<bereich; i++ ) {
+			if( r<=g ) return i;
+			g+=i;
+		}
+		return bereich-1;
 	}
 }
