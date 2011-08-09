@@ -1,0 +1,25 @@
+﻿HOW-TO export to my own character sheet 
+=======================================
+
+If included deployed character sheet do not suffice your needs. You may want to choose your own character sheet to be filled out by the character editor.
+
+This is possible but you have to comply with the following requirements:
+
+1) The character sheet is available as PDF document.
+2) The PDF character sheet supports PDF form fields.
+3) The PDF form fields are named analogue to one of the existing PDF character sheets.
+
+You can take a look at the files *.data_fields.txt within this documentation folder to see which field names exists in each PDF character sheet.
+
+If you are able to fulfil the requirements above. You can just replace one of the existing PDF character sheets with yours. But I would also be pleased, if you send your character sheet to me, so I can include it into the character editor as additional choice. So your character sheet will also be available to other Earthdawn people.
+
+If you are not totally able to fulfil requirement 3 it may still be possible to support your character sheet. Just send it to me. Give me some comments with which field you have trouble. If possible, I may extend the character editors PDF export to support your fields.
+
+
+If your are planning to create a new PDF character sheet supporting your character own/group needs, I would be really happy if you decide to use libreoffice/openoffice or scribus for your project.
+
+Here is a old but still useful HowTo for creating PDF forms with openoffice:
+http://danilop.wordpress.com/2008/07/02/how-to-create-pdf-forms-with-openoffice/
+
+Kind Regards,
+Holger von Rhein
