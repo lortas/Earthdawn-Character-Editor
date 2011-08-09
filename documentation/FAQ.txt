@@ -1,7 +1,8 @@
-===== Why is the Internet Explorer started? =====
+﻿===== Why is the Internet Explorer started? =====
+
 When the Earthdawn character editor start an helper application to render the XML as HTML, the editor ask the Java virtual machine to launch the operation systems linked default application. If you have set e.g. Firefox as default browser. The operation system has linked Firefox to html files. But normally the Internet Explorer is still linked to XML files. By this you need to link the application Firefox to XML files, if you want that the Earthdawn character editor to launch Firefox for rendering a XML file as HTML. 
 
-====================================================================
+======================================================================
 
 ===== Legend Point Mismatch =====
 
@@ -17,7 +18,7 @@ When the internal parser sees that he now calculate a higher amount of legend po
 
 The inverse way is not supported. If the internal parser sees that he now calculate a lower amount of legend point, then he will do nothing. He can not determine which accounting entry have to be modified. It is not his territory. He will not modify the players accounting entries. So the player knows he can always trust his given legend point accounting, even if the Earthdawn Character Editor calculates wrong legend points. 
 
-====================================================================
+======================================================================
 
 ===== Will not enforce rules =====
 
@@ -27,4 +28,8 @@ For example you can spend more than the allowed attribute buy points or earned l
 
 Another example is, that you can edit the xml-file and add more talents by hand. This talents will not be deleted. Such a behaviour intends to give the player more flexibility how to use the Earthdawn Character Editor. Even if he/she like to have a non conform character.
 
-====================================================================
+======================================================================
+
+===== The shown movement rate differs from the race movement rate =====
+
+It is possible to chose different movement rate definitions. The default movement rate definitions is the optional rule for strength based movement. This is configured by the parameter “ATTRIBUTEBASEDMOVEMENT” within the optional optionalrules.xml file. Right now the following modifier are implemented: "STR", "DEX" or "na". The last one means that the namegiver fixed movement rate will be set.
