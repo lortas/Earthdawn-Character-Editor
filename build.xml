@@ -92,6 +92,7 @@
 			<zipfileset dir="./lib" prefix="lib"/>
 			<zipfileset dir="./templates" prefix="templates"/>
 			<zipfileset dir="./icons" prefix="icons"/>
+			<zipfileset dir="./documentation" prefix="documentation"/>
 			<zipfileset file="./examples/BoraxBookbinder.xml" prefix="examples"/>
 			<zipfileset file="./examples/EsphiraAtasy.xml" prefix="examples"/>
 			<zipfileset file="./examples/Sah-Krel.xml" prefix="examples"/>
