@@ -753,34 +753,6 @@ public class ECEPdfExporter {
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 
-		List<DISCIPLINEType> disciplines = character.getDisciplines();
-		DISCIPLINEType discipline1 = disciplines.get(0);
-		if( discipline1 != null ) {
-			int counterDisciplinetalent=0;
-			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
-			Collections.sort(disziplinetalents, new TalentComparator());
-			for( TALENTType talent : disziplinetalents ) {
-				setTalent(counterDisciplinetalent, talent, character.getAttributes());
-				counterDisciplinetalent++;
-			}
-			int counterOthertalent=0;
-			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
-			Collections.sort(optionaltalents, new TalentComparator());
-			for( TALENTType talent : optionaltalents ) {
-				setTalent(20+counterOthertalent, talent, character.getAttributes());
-				if( talent.getKarma().equals(YesnoType.YES)) {
-					acroFields.setField( "KarmaRequired."+counterOthertalent, "Yes" );
-				} else {
-					acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
-				}
-				counterOthertalent++;
-			}
-			while( counterOthertalent < 17 ) {
-				acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
-				counterOthertalent++;
-			}
-		}
-
 		List<WEAPONType> weapons = character.getWeapons();
 		if( weapons != null ) {
 			int counter = 0;
@@ -847,7 +819,28 @@ public class ECEPdfExporter {
 		acroFields.setField( "GoldPieces", goldPieces );
 
 		int conterSpells=0;
-		for( DISCIPLINEType discipline : disciplines ) {
+		int counterDisciplinetalent=0;
+		int counterOthertalent=0;
+		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			List<TALENTType> disziplinetalents = discipline.getDISZIPLINETALENT();
+			Collections.sort(disziplinetalents, new TalentComparator());
+			for( TALENTType talent : disziplinetalents ) {
+				// Für mehr als 20 Disziplintalente ist kein Platz!
+				if( counterDisciplinetalent>20 ) break;
+				setTalent(counterDisciplinetalent, talent, character.getAttributes());
+				counterDisciplinetalent++;
+			}
+			List<TALENTType> optionaltalents = discipline.getOPTIONALTALENT();
+			Collections.sort(optionaltalents, new TalentComparator());
+			for( TALENTType talent : optionaltalents ) {
+				setTalent(20+counterOthertalent, talent, character.getAttributes());
+				if( talent.getKarma().equals(YesnoType.YES)) {
+					acroFields.setField( "KarmaRequired."+counterOthertalent, "Yes" );
+				} else {
+					acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
+				}
+				counterOthertalent++;
+			}
 			List<SPELLType> spellList = discipline.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
 			for( SPELLType spell : spellList ) {
@@ -880,6 +873,11 @@ public class ECEPdfExporter {
 				acroFields.setField( "SpellEffect.1."+conterSpells, effect2 );
 				conterSpells++;
 			}
+		}
+		// Die eventuell gesetzte KarmaBenötigtHarken löschen
+		while( counterOthertalent < 17 ) {
+			acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
+			counterOthertalent++;
 		}
 
 		int counterMagicItem=0;
