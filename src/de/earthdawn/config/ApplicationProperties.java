@@ -48,6 +48,7 @@ public class ApplicationProperties {
     private static NAMES NAMES = new NAMES();
     private static HELP HELP = new HELP();
     private static LanguageType LANGUAGE = LanguageType.EN;
+    private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
     private ECECharacteristics CHARACTERISTICS = null;
     
     /** Singleton-Instanz dieser Klasse. */
@@ -379,6 +380,10 @@ public class ApplicationProperties {
 		return ITEMS;
 	}
 
+	public List<RANDOMNAMERACEType> getRandomNamesByRaces() {
+		return RANDOMNAMES.getRANDOMNAMERACE();
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -426,6 +431,9 @@ public class ApplicationProperties {
 			filename="./config/help.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			HELP = (HELP) u.unmarshal(new File(filename));
+			filename="./config/randomnames.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			RANDOMNAMES = (EDRANDOMNAME) u.unmarshal(new File(filename));
 
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EDRANDOMNAME xmlns="http://earthdawn.com/randomname" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomname earthdawnrandomname.xsd">
+	<RANDOMNAME_RACE race="Dwarf">
+		<RANDOMNAME_NAMEPART part="0" gender="female">achatell aquial bapuea bapuy baschy dorilly fanlike galfie gilly igrami jatraschya kiry kleiyie mergrima mergrimya morianell obsidianial obsidya platinea platiny saphirell segalnall segalnell segalnial segalnya sloncia wapargall waparge yania</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male">alfregg arex baver bulim engarim etogosch fasakel grepius grirr gumgelf himbez irmeam kagrem lemosch levom lugom mekel morax morram myrr obalosch ogalme parilex rabogasch schilbimg thorek thorim turweck tuwer vinelfr</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1">axthauer axtschwinger bergschmied breithelm donnerstein eisenfaust eisenhammer eisenheim eisenrein eisenstolz erdauge feuerwerk gassenzwerg goldheim goldschmuck hammerblut hammertanz isenformer isenklang kupferbart kupferblut schmiedeeisen silberblut silberfaust silberglanz silberhaar stahlblick steinreich</RANDOMNAME_NAMEPART>
+	</RANDOMNAME_RACE>
+	<RANDOMNAME_RACE race="Elf">
+		<RANDOMNAME_NAMEPART part="0">adan aelin alquar annon arien atar avari barad bragol brethil carak carakquen celeb coron dagor eldar glínrith hadlon laurwen marach melwer moriquendi noldor quendi qwaith telpe vanyië</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1">adurídûnê aerávién alquóque argélohar atagdûr borarína curánil dimile dungâmbar earinirist erariand fingaya firnulach fuínahel gulinost ivênost ivreriand managorn mírênael morwurúth nahála námíhabar ramadris raméler ranogdûr seróvrin sulige tuminna vinálas vingálachel</RANDOMNAME_NAMEPART>
+	</RANDOMNAME_RACE>
+</EDRANDOMNAME>

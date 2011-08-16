@@ -275,15 +275,12 @@ public class EDGeneral extends JPanel {
 		textFieldEyecolor.setText(character.getAppearance().getEyes());
 		textFieldHaircolor.setText(character.getAppearance().getHair());
 		
-		if(character.getAppearance().getGender().value().equals("male")){
-	    	rdbtnMale.getModel().setSelected(true);
-		}
-		else{
+		if(character.getAppearance().getGender().equals(GenderType.MALE)){
+			rdbtnMale.getModel().setSelected(true);
+		} else{
 			rdbtnFemale.getModel().setSelected(true);
 		}
-			
-		
-		
+
 		comboBoxRace.setSelectedItem(character.getAppearance().getRace());
 	}
 
@@ -296,7 +293,8 @@ public class EDGeneral extends JPanel {
 			if(arg0.getStateChange() == 1) {
 				character.getAppearance().setRace((String)arg0.getItem());
 				ECEWorker worker = new ECEWorker();
-			    worker.verarbeiteCharakter(character.getEDCHARACTER());
+				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				textFieldName.setText(character.setRandomName());
 			}
 		}
 	}
@@ -308,17 +306,14 @@ public class EDGeneral extends JPanel {
 	protected void do_rdbtnFemale_itemStateChanged(ItemEvent arg0) {
 		rdbtnMale.getModel().setSelected(!((JRadioButton)arg0.getItem()).getModel().isSelected());
 		if(character != null){
-		    if (((JRadioButton)arg0.getItem()).getModel().isSelected()) 
-		    {
-		    	character.getAppearance().setGender(GenderType.fromValue("female"));
-
-		    }
-		    else{
-		    	character.getAppearance().setGender(GenderType.fromValue("male"));
-
-		    }
+			if (((JRadioButton)arg0.getItem()).getModel().isSelected()) {
+				character.getAppearance().setGender(GenderType.FEMALE);
+			} else {
+				character.getAppearance().setGender(GenderType.MALE);
+			}
+			textFieldName.setText(character.setRandomName());
 			ECEWorker worker = new ECEWorker();
-		    worker.verarbeiteCharakter(character.getEDCHARACTER());		
+			worker.verarbeiteCharakter(character.getEDCHARACTER());		
 		}
 	}
 

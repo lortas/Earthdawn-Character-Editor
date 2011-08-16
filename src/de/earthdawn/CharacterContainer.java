@@ -67,6 +67,45 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getName();
 	}
 
+	public String setRandomName() {
+		APPEARANCEType appearance = getAppearance();
+		final String race = appearance.getRace();
+		GenderType gender = appearance.getGender();
+		List<List<String>> namesAllRaces = new ArrayList<List<String>>();
+		List<List<String>> namesOneRace = new ArrayList<List<String>>();
+		final int maxPart=4;
+		for( int i=0; i<maxPart; i++ ) {
+			namesAllRaces.add(new ArrayList<String>());
+			namesOneRace.add(new ArrayList<String>());
+		}
+		for( RANDOMNAMERACEType randomnames: PROPERTIES.getRandomNamesByRaces() ) {
+			boolean isRace=randomnames.getRace().equals(race);
+			for( RANDOMNAMENAMESType nameparts : randomnames.getRANDOMNAMENAMEPART() ) {
+				int part=nameparts.getPart();
+				if( part < 0 ) continue;
+				if( part >= maxPart ) continue;
+				GenderType g = nameparts.getGender();
+				if( gender.equals(GenderType.MINUS) || g.equals(GenderType.MINUS) || g.equals(gender) ) {
+					List<String> splitNameParts = new ArrayList<String>();
+					for( String s : nameparts.getValue().split(nameparts.getDelimer()) ) splitNameParts.add(s);
+					namesAllRaces.get(part).addAll(splitNameParts);
+					if( isRace ) namesOneRace.get(part).addAll(splitNameParts);
+				}
+			}
+		}
+		String name="";
+		for( int i=0; i<maxPart; i++ ) {
+			List<String> list = namesOneRace.get(i);
+			if( list.isEmpty() ) list = namesAllRaces.get(i);
+			if( list.isEmpty() ) continue;
+			String s = list.get(rand.nextInt(list.size()));
+			if( name.isEmpty() ) name=s;
+			else name += " "+s;
+		}
+		character.setName(name);
+		return name;
+	}
+
 	public String getPlayer() {
 		String player = character.getPlayer();
 		if( player == null ) return "";
