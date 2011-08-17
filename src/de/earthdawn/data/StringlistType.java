@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlValue;
  * &lt;complexType name="stringlist_type">
  *   &lt;simpleContent>
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *       &lt;attribute name="delimer" type="{http://www.w3.org/2001/XMLSchema}string" default=" " />
+ *       &lt;attribute name="delimiter" type="{http://www.w3.org/2001/XMLSchema}string" default=" " />
  *     &lt;/extension>
  *   &lt;/simpleContent>
  * &lt;/complexType>
@@ -46,7 +46,7 @@ public class StringlistType {
     @XmlValue
     protected String value;
     @XmlAttribute
-    protected String delimer;
+    protected String delimiter;
 
     /**
      * Gets the value of the value property.
@@ -73,7 +73,7 @@ public class StringlistType {
     }
 
     /**
-     * Gets the value of the delimer property.
+     * Gets the value of the delimiter property.
      * 
      * @return
      *     possible object is
@@ -81,15 +81,15 @@ public class StringlistType {
      *     
      */
     public String getDelimer() {
-        if (delimer == null) {
+        if (delimiter == null) {
             return " ";
         } else {
-            return delimer;
+            return delimiter;
         }
     }
 
     /**
-     * Sets the value of the delimer property.
+     * Sets the value of the delimiter property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class StringlistType {
      *     
      */
     public void setDelimer(String value) {
-        this.delimer = value;
+        this.delimiter = value;
     }
 
 }
