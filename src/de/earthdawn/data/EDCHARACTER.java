@@ -50,7 +50,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DESCRIPTION" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RACEABILITES" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="COMMENT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="PORTRAIT" type="{http://earthdawn.com/datatypes}BASE64BINARY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="PORTRAIT" type="{http://earthdawn.com/datatypes}base64binary_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="CALCULATEDLEGENDPOINTS" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTS_type" minOccurs="0"/>
  *         &lt;element name="EXPERIENCE" type="{http://earthdawn.com/datatypes}EXPERIENCE_type"/>
  *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}DEVOTION_type" minOccurs="0"/>
@@ -142,7 +142,7 @@ public class EDCHARACTER {
     @XmlElement(name = "COMMENT", namespace = "http://earthdawn.com/character")
     protected String comment;
     @XmlElement(name = "PORTRAIT", namespace = "http://earthdawn.com/character")
-    protected List<BASE64BINARYType> portrait;
+    protected List<Base64BinaryType> portrait;
     @XmlElement(name = "CALCULATEDLEGENDPOINTS", namespace = "http://earthdawn.com/character")
     protected CALCULATEDLEGENDPOINTSType calculatedlegendpoints;
     @XmlElement(name = "EXPERIENCE", namespace = "http://earthdawn.com/character", required = true)
@@ -757,13 +757,13 @@ public class EDCHARACTER {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link BASE64BINARYType }
+     * {@link Base64BinaryType }
      * 
      * 
      */
-    public List<BASE64BINARYType> getPORTRAIT() {
+    public List<Base64BinaryType> getPORTRAIT() {
         if (portrait == null) {
-            portrait = new ArrayList<BASE64BINARYType>();
+            portrait = new ArrayList<Base64BinaryType>();
         }
         return this.portrait;
     }

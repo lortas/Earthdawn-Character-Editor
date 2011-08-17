@@ -16,12 +16,12 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for BASE64BINARY_type complex type.
+ * <p>Java class for base64binary_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="BASE64BINARY_type">
+ * &lt;complexType name="base64binary_type">
  *   &lt;simpleContent>
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>base64Binary">
  *       &lt;attribute name="contenttype" type="{http://www.w3.org/2001/XMLSchema}string" default="image/jpeg" />
@@ -33,10 +33,10 @@ import javax.xml.bind.annotation.XmlValue;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BASE64BINARY_type", propOrder = {
+@XmlType(name = "base64binary_type", propOrder = {
     "value"
 })
-public class BASE64BINARYType {
+public class Base64BinaryType {
 
     @XmlValue
     protected byte[] value;
