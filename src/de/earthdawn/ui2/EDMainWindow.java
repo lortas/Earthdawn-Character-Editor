@@ -50,6 +50,7 @@ import de.earthdawn.CharacteristicStatus;
 import de.earthdawn.ECECsvExporter;
 import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.TALENTType;
@@ -57,6 +58,7 @@ import de.earthdawn.event.CharChangeEventListener;
 
 public class EDMainWindow {
 
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
 	private static final String encoding="UTF-8";
 
@@ -276,6 +278,22 @@ public class EDMainWindow {
 		});
 		mnExtra.add(mntmDicing);
 
+		JMenuItem mntmRandomName= new JMenuItem(NLS.getString("EDMainWindow.mntmRandomName.text")); //$NON-NLS-1$
+		mntmRandomName.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmRandomName_actionPerformed(arg0);
+			}
+		});
+		mnExtra.add(mntmRandomName);
+
+		JMenuItem mntmRandomCharacter= new JMenuItem(NLS.getString("EDMainWindow.mntmRandomCharacter.text")); //$NON-NLS-1$
+		mntmRandomCharacter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmRandomCharacter_actionPerformed(arg0);
+			}
+		});
+		mnExtra.add(mntmRandomCharacter);
+
 		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
 
@@ -345,6 +363,31 @@ public class EDMainWindow {
 		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
 		@SuppressWarnings("unused")
 		EDDicing dicingWindow = new EDDicing();
+	}
+
+	private void do_mntmRandomName_actionPerformed(ActionEvent arg0) {
+		character.setRandomName();
+		refreshTabs();
+	}
+
+	private void do_mntmRandomCharacter_actionPerformed(ActionEvent arg0) {
+		CharacterContainer c = PROPERTIES.getRandomCharacter("fighter");
+		if( c == null ) return;
+		ECEWorker worker = new ECEWorker();
+		worker.verarbeiteCharakter(c.getEDCHARACTER());
+		this.character=c;
+		this.character.addCharChangeEventListener(new CharChangeEventListener() {
+			@Override
+			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
+				ECEWorker worker = new ECEWorker();
+				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				addTalentsAndSpellsTabs();
+				refreshTabs();
+			}
+		});
+		addTalentsAndSpellsTabs();
+		characteristicStatus.setCharacter(character);
+		refreshTabs();
 	}
 
 	private void addTalentsAndSpellsTabs(){
@@ -572,7 +615,7 @@ public class EDMainWindow {
 					addTalentsAndSpellsTabs();
 					refreshTabs();
 				}
-			});				
+			});
 			addTalentsAndSpellsTabs();
 			characteristicStatus.setCharacter(character);
 			refreshTabs();

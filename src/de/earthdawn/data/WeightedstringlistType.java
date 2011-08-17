@@ -11,7 +11,6 @@ package de.earthdawn.data;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -34,9 +33,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "weightedstringlist_type", namespace = "http://earthdawn.com/randomcharactertemplate")
-@XmlSeeAlso({
-    WeightedstringlistcatType.class
-})
 public class WeightedstringlistType
     extends StringlistType
 {
