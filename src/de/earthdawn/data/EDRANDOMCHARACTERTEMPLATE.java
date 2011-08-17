@@ -36,14 +36,16 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="SPELLS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="SKILLS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
- *         &lt;element name="ITEMS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlistcat_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ITEMCATEGORY" type="{http://earthdawn.com/randomcharactertemplate}RANDOMITEMCATEGORY_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *       &lt;attribute name="circle_min" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
  *       &lt;attribute name="circle_max" type="{http://earthdawn.com/datatypes}unsigned_int" default="15" />
  *       &lt;attribute name="weapon_min" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="weapon_max" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
+ *       &lt;attribute name="skill_min" type="{http://earthdawn.com/datatypes}unsigned_int" default="8" />
+ *       &lt;attribute name="skill_max" type="{http://earthdawn.com/datatypes}unsigned_int" default="8" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -61,7 +63,7 @@ import javax.xml.bind.annotation.XmlType;
     "weapon",
     "spells",
     "skills",
-    "items"
+    "itemcategory"
 })
 @XmlRootElement(name = "EDRANDOMCHARACTERTEMPLATE", namespace = "http://earthdawn.com/randomcharactertemplate")
 public class EDRANDOMCHARACTERTEMPLATE {
@@ -82,12 +84,12 @@ public class EDRANDOMCHARACTERTEMPLATE {
     protected List<WeightedstringlistType> spells;
     @XmlElement(name = "SKILLS", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
     protected List<WeightedstringlistType> skills;
-    @XmlElement(name = "ITEMS", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
-    protected List<WeightedstringlistcatType> items;
+    @XmlElement(name = "ITEMCATEGORY", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
+    protected List<RANDOMITEMCATEGORYType> itemcategory;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
-    protected String lang;
+    protected LanguageType lang;
     @XmlAttribute(name = "circle_min")
     protected Integer circleMin;
     @XmlAttribute(name = "circle_max")
@@ -96,6 +98,10 @@ public class EDRANDOMCHARACTERTEMPLATE {
     protected Integer weaponMin;
     @XmlAttribute(name = "weapon_max")
     protected Integer weaponMax;
+    @XmlAttribute(name = "skill_min")
+    protected Integer skillMin;
+    @XmlAttribute(name = "skill_max")
+    protected Integer skillMax;
 
     /**
      * Gets the value of the races property.
@@ -330,32 +336,32 @@ public class EDRANDOMCHARACTERTEMPLATE {
     }
 
     /**
-     * Gets the value of the items property.
+     * Gets the value of the itemcategory property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the items property.
+     * This is why there is not a <CODE>set</CODE> method for the itemcategory property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getITEMS().add(newItem);
+     *    getITEMCATEGORY().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link WeightedstringlistcatType }
+     * {@link RANDOMITEMCATEGORYType }
      * 
      * 
      */
-    public List<WeightedstringlistcatType> getITEMS() {
-        if (items == null) {
-            items = new ArrayList<WeightedstringlistcatType>();
+    public List<RANDOMITEMCATEGORYType> getITEMCATEGORY() {
+        if (itemcategory == null) {
+            itemcategory = new ArrayList<RANDOMITEMCATEGORYType>();
         }
-        return this.items;
+        return this.itemcategory;
     }
 
     /**
@@ -387,10 +393,10 @@ public class EDRANDOMCHARACTERTEMPLATE {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public String getLang() {
+    public LanguageType getLang() {
         return lang;
     }
 
@@ -399,10 +405,10 @@ public class EDRANDOMCHARACTERTEMPLATE {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public void setLang(String value) {
+    public void setLang(LanguageType value) {
         this.lang = value;
     }
 
@@ -516,6 +522,62 @@ public class EDRANDOMCHARACTERTEMPLATE {
      */
     public void setWeaponMax(Integer value) {
         this.weaponMax = value;
+    }
+
+    /**
+     * Gets the value of the skillMin property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getSkillMin() {
+        if (skillMin == null) {
+            return  8;
+        } else {
+            return skillMin;
+        }
+    }
+
+    /**
+     * Sets the value of the skillMin property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setSkillMin(Integer value) {
+        this.skillMin = value;
+    }
+
+    /**
+     * Gets the value of the skillMax property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getSkillMax() {
+        if (skillMax == null) {
+            return  8;
+        } else {
+            return skillMax;
+        }
+    }
+
+    /**
+     * Sets the value of the skillMax property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setSkillMax(Integer value) {
+        this.skillMax = value;
     }
 
 }

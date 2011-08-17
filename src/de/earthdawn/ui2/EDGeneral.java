@@ -294,7 +294,6 @@ public class EDGeneral extends JPanel {
 				character.getAppearance().setRace((String)arg0.getItem());
 				ECEWorker worker = new ECEWorker();
 				worker.verarbeiteCharakter(character.getEDCHARACTER());
-				textFieldName.setText(character.setRandomName());
 			}
 		}
 	}
@@ -311,7 +310,6 @@ public class EDGeneral extends JPanel {
 			} else {
 				character.getAppearance().setGender(GenderType.MALE);
 			}
-			textFieldName.setText(character.setRandomName());
 			ECEWorker worker = new ECEWorker();
 			worker.verarbeiteCharakter(character.getEDCHARACTER());		
 		}

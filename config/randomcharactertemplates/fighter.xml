@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<EDRANDOMCHARACTERTEMPLATE lang="en" name="fighter" circle_min="3" circle_max="6" xmlns="http://earthdawn.com/randomcharactertemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomcharactertemplate ../earthdawnrandomcharactertemplate.xsd">
+<EDRANDOMCHARACTERTEMPLATE lang="en" name="fighter" circle_min="3" circle_max="6" weapon_min="1" weapon_max="3" xmlns="http://earthdawn.com/randomcharactertemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomcharactertemplate ../earthdawnrandomcharactertemplate.xsd">
 <RACES weight="6" >Dwarf Human Troll Ork</RACES>
 <RACES weight="3" >Elf</RACES>
 <RACES weight="1" >Windling</RACES>
@@ -16,5 +16,7 @@
 <WEAPON>Broadsword</WEAPON>
 <SPELLS></SPELLS>
 <SKILLS></SKILLS>
-<ITEMS category="utils" delimiter=",">Bedroll, artisan tool (rune carving)</ITEMS>
+<ITEMCATEGORY name="utils">
+	<ITEMS delimiter=",">Bedroll, artisan tool (rune carving)</ITEMS>
+</ITEMCATEGORY>
 </EDRANDOMCHARACTERTEMPLATE>

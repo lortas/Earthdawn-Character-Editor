@@ -31,6 +31,7 @@ import java.util.TreeMap;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
+import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.*;
 
 /** 
@@ -59,6 +60,8 @@ public class ApplicationProperties {
 
     /** Disziplinen (Name Label geordnet) */
     private static final Map<String, DISCIPLINE> DISCIPLINES = new TreeMap<String, DISCIPLINE>();
+    /** RandomCharacterTemplates (Name Label geordnet) */
+    private static final RandomCharacterTemplates RANDOMCHARACTERTEMPLATES = new RandomCharacterTemplates();
 
     private ApplicationProperties() {
     	init();
@@ -384,6 +387,12 @@ public class ApplicationProperties {
 		return RANDOMNAMES.getRANDOMNAMERACE();
 	}
 
+	public CharacterContainer getRandomCharacter(String template) {
+		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
+		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.getSPELL());
+		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -391,7 +400,7 @@ public class ApplicationProperties {
 			String filename="";
 
 			// disziplinen laden
-			// --- Bestimmen aller Dateien im Unterordner 'disziplins'
+			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
 			File[] files = new File("./config/disciplines").listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
 					return name != null && name.endsWith(".xml");
@@ -402,6 +411,20 @@ public class ApplicationProperties {
 				System.out.println("Lese Konfigurationsdatei: '" + disConfigFile.getCanonicalPath() + "'");
 				DISCIPLINE dis = (DISCIPLINE) u.unmarshal(disConfigFile);
 				DISCIPLINES.put(dis.getName(), dis);
+			}
+
+			// randomcharactertemplates laden
+			// --- Bestimmen aller Dateien im Unterordner 'randomcharactertemplates'
+			files = new File("./config/randomcharactertemplates").listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name != null && name.endsWith(".xml");
+				}
+			});
+			// --- Einlesen der Dateien
+			for(File configFile : files) {
+				System.out.println("Lese Konfigurationsdatei: '" + configFile.getCanonicalPath() + "'");
+				EDRANDOMCHARACTERTEMPLATE t = (EDRANDOMCHARACTERTEMPLATE) u.unmarshal(configFile);
+				if( t.getLang().equals(LANGUAGE) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
 			}
 
 			filename="./config/characteristics.xml";
