@@ -65,7 +65,7 @@
 				<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string"/>
-				<xs:element minOccurs="0" maxOccurs="unbounded" name="PORTRAIT" type="edt:BASE64BINARY_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="PORTRAIT" type="edt:base64binary_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="DEVOTION" type="edt:DEVOTION_type"/>

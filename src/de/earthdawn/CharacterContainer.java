@@ -80,7 +80,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		for( RANDOMNAMERACEType randomnames: PROPERTIES.getRandomNamesByRaces() ) {
 			boolean isRace=randomnames.getRace().equals(race);
-			for( RANDOMNAMENAMESType nameparts : randomnames.getRANDOMNAMENAMEPART() ) {
+			for( RandomnameNamesType nameparts : randomnames.getRANDOMNAMENAMEPART() ) {
 				int part=nameparts.getPart();
 				if( part < 0 ) continue;
 				if( part >= maxPart ) continue;
@@ -1409,8 +1409,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public List<BASE64BINARYType> getPortrait() {
-		List<BASE64BINARYType> result = character.getPORTRAIT();
+	public List<Base64BinaryType> getPortrait() {
+		List<Base64BinaryType> result = character.getPORTRAIT();
 		if( result.isEmpty() ) {
 			File file;
 			APPEARANCEType appearance = getAppearance();
@@ -1428,7 +1428,7 @@ public class CharacterContainer extends CharChangeRefresh {
 				byte[] data = new byte[(int) file.length()];
 				fileInputStream.read(data);
 				fileInputStream.close();
-				BASE64BINARYType base64bin = new BASE64BINARYType();
+				Base64BinaryType base64bin = new Base64BinaryType();
 				base64bin.setValue(data);
 				final String[] filename = file.getName().split("\\.");
 				base64bin.setContenttype("image/"+filename[filename.length-1]);

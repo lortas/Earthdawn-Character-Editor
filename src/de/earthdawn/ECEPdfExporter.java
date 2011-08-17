@@ -436,7 +436,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "ShieldDeflectionBonus", "na" );
 
 		// Charakter Potrait-Bild einfügen
-		List<BASE64BINARYType> potraits = character.getPortrait();
+		List<Base64BinaryType> potraits = character.getPortrait();
 		if( ! potraits.isEmpty() ) {
 			Image image = Image.getInstance(potraits.get(0).getValue());
 			image.setAbsolutePosition(35f,517f);
@@ -732,7 +732,7 @@ public class ECEPdfExporter {
 		setButtons(character.getWound().getNormal(), "Wound.", 7);
 
 		// Charakter Potrait-Bild einfügen
-		List<BASE64BINARYType> potraits = character.getPortrait();
+		List<Base64BinaryType> potraits = character.getPortrait();
 		if( ! potraits.isEmpty() ) {
 			Image image = Image.getInstance(potraits.get(0).getValue());
 			image.setAbsolutePosition(18.5f,702.5f);

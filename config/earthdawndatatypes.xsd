@@ -163,7 +163,14 @@
 			<xs:enumeration value="paper"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="BASE64BINARY_type">
+	<xs:complexType name="stringlist_type">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="delimer" type="xs:string" default=" "/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="base64binary_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:base64Binary">
 				<xs:attribute name="contenttype" type="xs:string" default="image/jpeg"/>

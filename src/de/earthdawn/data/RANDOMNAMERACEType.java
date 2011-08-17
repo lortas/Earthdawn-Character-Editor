@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="RANDOMNAME_NAMEPART" type="{http://earthdawn.com/randomname}RANDOMNAME_NAMES_type" maxOccurs="unbounded"/>
+ *         &lt;element name="RANDOMNAME_NAMEPART" type="{http://earthdawn.com/randomname}randomname_names_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="race" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
@@ -44,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 public class RANDOMNAMERACEType {
 
     @XmlElement(name = "RANDOMNAME_NAMEPART", required = true)
-    protected List<RANDOMNAMENAMESType> randomnamenamepart;
+    protected List<RandomnameNamesType> randomnamenamepart;
     @XmlAttribute(required = true)
     protected String race;
 
@@ -66,13 +66,13 @@ public class RANDOMNAMERACEType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link RANDOMNAMENAMESType }
+     * {@link RandomnameNamesType }
      * 
      * 
      */
-    public List<RANDOMNAMENAMESType> getRANDOMNAMENAMEPART() {
+    public List<RandomnameNamesType> getRANDOMNAMENAMEPART() {
         if (randomnamenamepart == null) {
-            randomnamenamepart = new ArrayList<RANDOMNAMENAMESType>();
+            randomnamenamepart = new ArrayList<RandomnameNamesType>();
         }
         return this.randomnamenamepart;
     }

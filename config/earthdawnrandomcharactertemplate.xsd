@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/randomcharactertemplate" xmlns="http://earthdawn.com/randomcharactertemplate" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="weightedstringlist_type">
+		<xs:simpleContent>
+			<xs:extension base="edt:stringlist_type">
+				<xs:attribute name="weight" type="edt:unsigned_int" default="1"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="weightedstringlistcat_type">
+		<xs:simpleContent>
+			<xs:extension base="weightedstringlist_type">
+				<xs:attribute name="category" type="xs:string" default=""/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="RANDOMATTRIBUTES_type">
+		<xs:attribute name="weight" type="edt:unsigned_int" default="1"/>
+		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
+	</xs:complexType>
+	<xs:element name="EDRANDOMCHARACTERTEMPLATE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="RACES" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ATTRIBUTES" type="RANDOMATTRIBUTES_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="DISCIPLINES" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARMOR" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="SHIELD" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="WEAPON" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLS" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="SKILLS" type="weightedstringlist_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ITEMS" type="weightedstringlistcat_type"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="lang" type="xs:string" use="required"/>
+			<xs:attribute name="circle_min" type="edt:unsigned_int" default="1"/>
+			<xs:attribute name="circle_max" type="edt:unsigned_int" default="15"/>
+			<xs:attribute name="weapon_min" type="edt:unsigned_int" default="0"/>
+			<xs:attribute name="weapon_max" type="edt:unsigned_int" default="1"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

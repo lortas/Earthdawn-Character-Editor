@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EDRANDOMCHARACTERTEMPLATE lang="en" name="fighter" circle_min="3" circle_max="6" xmlns="http://earthdawn.com/randomcharactertemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomcharactertemplate ../earthdawnrandomcharactertemplate.xsd">
+<RACES weight="6" >Dwarf Human Troll Ork</RACES>
+<RACES weight="3" >Elf</RACES>
+<RACES weight="1" >Windling</RACES>
+<ATTRIBUTES attribute="DEX" weight="10"/>
+<ATTRIBUTES attribute="STR" weight="9"/>
+<ATTRIBUTES attribute="TOU" weight="7"/>
+<ATTRIBUTES attribute="PER" weight="3"/>
+<ATTRIBUTES attribute="WIL" weight="1"/>
+<ATTRIBUTES attribute="CHA" weight="1"/>
+<DISCIPLINES weight="8">Warrior Swordmaster</DISCIPLINES>
+<DISCIPLINES weight="5">Scout</DISCIPLINES>
+<ARMOR delimer=",">Hardened Leather,Padded Leather</ARMOR>
+<SHIELD>Buckler Buckler</SHIELD>
+<WEAPON>Broadsword</WEAPON>
+<SPELLS></SPELLS>
+<SKILLS></SKILLS>
+<ITEMS category="utils" delimer=",">Bedroll, artisan tool (rune carving)</ITEMS>
+</EDRANDOMCHARACTERTEMPLATE>
