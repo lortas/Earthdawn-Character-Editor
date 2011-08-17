@@ -11,10 +11,10 @@
 <ATTRIBUTES attribute="CHA" weight="1"/>
 <DISCIPLINES weight="8">Warrior Swordmaster</DISCIPLINES>
 <DISCIPLINES weight="5">Scout</DISCIPLINES>
-<ARMOR delimer=",">Hardened Leather,Padded Leather</ARMOR>
+<ARMOR delimiter=",">Hardened Leather,Padded Leather</ARMOR>
 <SHIELD>Buckler Buckler</SHIELD>
 <WEAPON>Broadsword</WEAPON>
 <SPELLS></SPELLS>
 <SKILLS></SKILLS>
-<ITEMS category="utils" delimer=",">Bedroll, artisan tool (rune carving)</ITEMS>
+<ITEMS category="utils" delimiter=",">Bedroll, artisan tool (rune carving)</ITEMS>
 </EDRANDOMCHARACTERTEMPLATE>

@@ -166,7 +166,7 @@
 	<xs:complexType name="stringlist_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="delimer" type="xs:string" default=" "/>
+				<xs:attribute name="delimiter" type="xs:string" default=" "/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
