@@ -87,7 +87,7 @@ public class CharacterContainer extends CharChangeRefresh {
 				GenderType g = nameparts.getGender();
 				if( gender.equals(GenderType.MINUS) || g.equals(GenderType.MINUS) || g.equals(gender) ) {
 					List<String> splitNameParts = new ArrayList<String>();
-					for( String s : nameparts.getValue().split(nameparts.getDelimer()) ) splitNameParts.add(s);
+					for( String s : nameparts.getValue().split(nameparts.getDelimiter()) ) splitNameParts.add(s);
 					namesAllRaces.get(part).addAll(splitNameParts);
 					if( isRace ) namesOneRace.get(part).addAll(splitNameParts);
 				}

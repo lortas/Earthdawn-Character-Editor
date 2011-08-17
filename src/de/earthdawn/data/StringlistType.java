@@ -80,7 +80,7 @@ public class StringlistType {
      *     {@link String }
      *     
      */
-    public String getDelimer() {
+    public String getDelimiter() {
         if (delimiter == null) {
             return " ";
         } else {
@@ -96,7 +96,7 @@ public class StringlistType {
      *     {@link String }
      *     
      */
-    public void setDelimer(String value) {
+    public void setDelimiter(String value) {
         this.delimiter = value;
     }
 
