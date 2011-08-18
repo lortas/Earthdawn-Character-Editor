@@ -99,6 +99,21 @@
 			<zipfileset file="./examples/JadaDenairastas.xml" prefix="examples"/>
 			<zipfileset file="./examples/Eloxis.xml" prefix="examples"/>
 			<zipfileset file="./examples/Kartesch.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Dwarf_Cavalryman.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Dwarf_Elementalist.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Dwarf_Weaponsmith.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Elf_Troubadour.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Human_Air_Sailor.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Human_Archer.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Human_Nethermancer.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Human_Scout.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Obsidiman_Warrior.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Obsidiman_Wizard.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Ork_Beastmaster.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Ork_Sky_Raider.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Troll_Illusionist.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_T'Skrang_Swordmaster.xml" prefix="examples"/>
+			<zipfileset file="./examples/Player's_Guide_First_Circle_Windling_Thief.xml" prefix="examples"/>
 			<zipfileset dir="./cmd"/>
 			<zipfileset file="./license.en.txt"/>
 			<zipfileset file="./license.en.html"/>
