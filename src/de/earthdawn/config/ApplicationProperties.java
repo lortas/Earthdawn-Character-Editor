@@ -390,6 +390,7 @@ public class ApplicationProperties {
 	public CharacterContainer getRandomCharacter(String template) {
 		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
 		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.getSPELL());
+		RANDOMCHARACTERTEMPLATES.setCapabilities(new ECECapabilities(getCapabilities().getSKILLOrTALENT()));
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
 	}
 

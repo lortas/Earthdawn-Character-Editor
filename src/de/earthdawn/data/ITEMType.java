@@ -40,10 +40,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ITEM_type")
 @XmlSeeAlso({
-    COINSType.class,
+    ARMORType.class,
     WEAPONType.class,
     MAGICITEMType.class,
-    ARMORType.class
+    COINSType.class
 })
 public class ITEMType {
 

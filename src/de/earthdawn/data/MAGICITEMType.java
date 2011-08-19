@@ -36,9 +36,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MAGICITEM_type")
 @XmlSeeAlso({
-    THREADITEMType.class,
+    PATTERNITEMType.class,
     BLOODCHARMITEMType.class,
-    PATTERNITEMType.class
+    THREADITEMType.class
 })
 public class MAGICITEMType
     extends ITEMType
