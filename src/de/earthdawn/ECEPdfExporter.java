@@ -871,12 +871,7 @@ public class ECEPdfExporter {
 				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
 				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
 				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
-				List<String> effect = wrapString(40, spell.getEffect() );
-				acroFields.setField( "SpellEffect.0."+conterSpells, effect.get(0) );
-				effect.remove(0);
-				String effect2="";
-				for( String e : effect ) effect2 += e;
-				acroFields.setField( "SpellEffect.1."+conterSpells, effect2 );
+				acroFields.setField( "SpellEffect."+conterSpells, spell.getEffect() );
 				conterSpells++;
 			}
 		}
