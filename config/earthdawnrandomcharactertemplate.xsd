@@ -26,9 +26,6 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="RACES" type="weightedstringlist_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="ATTRIBUTES" type="RANDOMATTRIBUTES_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="DISCIPLINES" type="weightedstringlist_type"/>
-				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARMOR" type="weightedstringlist_type"/>
-				<xs:element minOccurs="1" maxOccurs="unbounded" name="SHIELD" type="weightedstringlist_type"/>
-				<xs:element minOccurs="1" maxOccurs="unbounded" name="WEAPON" type="weightedstringlist_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLS" type="weightedstringlist_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SKILLS" type="weightedstringlist_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="ITEMCATEGORY" type="RANDOMITEMCATEGORY_type"/>
@@ -37,8 +34,6 @@
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="circle_min" type="edt:unsigned_int" default="1"/>
 			<xs:attribute name="circle_max" type="edt:unsigned_int" default="15"/>
-			<xs:attribute name="weapon_min" type="edt:unsigned_int" default="0"/>
-			<xs:attribute name="weapon_max" type="edt:unsigned_int" default="1"/>
 			<xs:attribute name="skill_min" type="edt:unsigned_int" default="8"/>
 			<xs:attribute name="skill_max" type="edt:unsigned_int" default="8"/>
 		</xs:complexType>

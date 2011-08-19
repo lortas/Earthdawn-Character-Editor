@@ -31,9 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="RACES" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="ATTRIBUTES" type="{http://earthdawn.com/randomcharactertemplate}RANDOMATTRIBUTES_type" maxOccurs="unbounded"/>
  *         &lt;element name="DISCIPLINES" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
- *         &lt;element name="ARMOR" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
- *         &lt;element name="SHIELD" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
- *         &lt;element name="WEAPON" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="SPELLS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="SKILLS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="ITEMCATEGORY" type="{http://earthdawn.com/randomcharactertemplate}RANDOMITEMCATEGORY_type" maxOccurs="unbounded"/>
@@ -42,8 +39,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *       &lt;attribute name="circle_min" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
  *       &lt;attribute name="circle_max" type="{http://earthdawn.com/datatypes}unsigned_int" default="15" />
- *       &lt;attribute name="weapon_min" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="weapon_max" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
  *       &lt;attribute name="skill_min" type="{http://earthdawn.com/datatypes}unsigned_int" default="8" />
  *       &lt;attribute name="skill_max" type="{http://earthdawn.com/datatypes}unsigned_int" default="8" />
  *     &lt;/restriction>
@@ -58,9 +53,6 @@ import javax.xml.bind.annotation.XmlType;
     "races",
     "attributes",
     "disciplines",
-    "armor",
-    "shield",
-    "weapon",
     "spells",
     "skills",
     "itemcategory"
@@ -74,12 +66,6 @@ public class EDRANDOMCHARACTERTEMPLATE {
     protected List<RANDOMATTRIBUTESType> attributes;
     @XmlElement(name = "DISCIPLINES", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
     protected List<WeightedstringlistType> disciplines;
-    @XmlElement(name = "ARMOR", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
-    protected List<WeightedstringlistType> armor;
-    @XmlElement(name = "SHIELD", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
-    protected List<WeightedstringlistType> shield;
-    @XmlElement(name = "WEAPON", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
-    protected List<WeightedstringlistType> weapon;
     @XmlElement(name = "SPELLS", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
     protected List<WeightedstringlistType> spells;
     @XmlElement(name = "SKILLS", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
@@ -94,10 +80,6 @@ public class EDRANDOMCHARACTERTEMPLATE {
     protected Integer circleMin;
     @XmlAttribute(name = "circle_max")
     protected Integer circleMax;
-    @XmlAttribute(name = "weapon_min")
-    protected Integer weaponMin;
-    @XmlAttribute(name = "weapon_max")
-    protected Integer weaponMax;
     @XmlAttribute(name = "skill_min")
     protected Integer skillMin;
     @XmlAttribute(name = "skill_max")
@@ -188,93 +170,6 @@ public class EDRANDOMCHARACTERTEMPLATE {
             disciplines = new ArrayList<WeightedstringlistType>();
         }
         return this.disciplines;
-    }
-
-    /**
-     * Gets the value of the armor property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the armor property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getARMOR().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link WeightedstringlistType }
-     * 
-     * 
-     */
-    public List<WeightedstringlistType> getARMOR() {
-        if (armor == null) {
-            armor = new ArrayList<WeightedstringlistType>();
-        }
-        return this.armor;
-    }
-
-    /**
-     * Gets the value of the shield property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shield property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSHIELD().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link WeightedstringlistType }
-     * 
-     * 
-     */
-    public List<WeightedstringlistType> getSHIELD() {
-        if (shield == null) {
-            shield = new ArrayList<WeightedstringlistType>();
-        }
-        return this.shield;
-    }
-
-    /**
-     * Gets the value of the weapon property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the weapon property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getWEAPON().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link WeightedstringlistType }
-     * 
-     * 
-     */
-    public List<WeightedstringlistType> getWEAPON() {
-        if (weapon == null) {
-            weapon = new ArrayList<WeightedstringlistType>();
-        }
-        return this.weapon;
     }
 
     /**
@@ -466,62 +361,6 @@ public class EDRANDOMCHARACTERTEMPLATE {
      */
     public void setCircleMax(Integer value) {
         this.circleMax = value;
-    }
-
-    /**
-     * Gets the value of the weaponMin property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public int getWeaponMin() {
-        if (weaponMin == null) {
-            return  0;
-        } else {
-            return weaponMin;
-        }
-    }
-
-    /**
-     * Sets the value of the weaponMin property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setWeaponMin(Integer value) {
-        this.weaponMin = value;
-    }
-
-    /**
-     * Gets the value of the weaponMax property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public int getWeaponMax() {
-        if (weaponMax == null) {
-            return  1;
-        } else {
-            return weaponMax;
-        }
-    }
-
-    /**
-     * Sets the value of the weaponMax property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setWeaponMax(Integer value) {
-        this.weaponMax = value;
     }
 
     /**

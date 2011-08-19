@@ -1,32 +1,4 @@
 package de.earthdawn.config;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeMap;
-
-import de.earthdawn.CharacterContainer;
-import de.earthdawn.ECEWorker;
-import de.earthdawn.data.APPEARANCEType;
-import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.ATTRIBUTENameType;
-import de.earthdawn.data.ATTRIBUTEType;
-import de.earthdawn.data.EDCHARACTER;
-import de.earthdawn.data.EDRANDOMCHARACTERTEMPLATE;
-import de.earthdawn.data.GenderType;
-import de.earthdawn.data.ITEMS;
-import de.earthdawn.data.RANDOMATTRIBUTESType;
-import de.earthdawn.data.SHIELDType;
-import de.earthdawn.data.SPELLDEFType;
-import de.earthdawn.data.SPELLType;
-import de.earthdawn.data.SpellkindType;
-import de.earthdawn.data.StringlistType;
-import de.earthdawn.data.WEAPONType;
-import de.earthdawn.data.WeightedstringlistType;
-
 /******************************************************************************\
 Copyright (C) 2010-2011  Holger von Rhein <lortas@freenet.de>
 
@@ -45,11 +17,24 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeMap;
+
+import de.earthdawn.CharacterContainer;
+import de.earthdawn.ECEWorker;
+import de.earthdawn.data.*;
+
 public class RandomCharacterTemplates {
 
 	private static Random rand = new Random();
 	private static final Map<String, EDRANDOMCHARACTERTEMPLATE> RandomCharactertemplateMap = new TreeMap<String, EDRANDOMCHARACTERTEMPLATE>();
 	private ITEMS items = null;
+	private ECECapabilities capabilities = null;
 	private List<SPELLDEFType> spells = null;
 
 	public void setItems(ITEMS items) {
@@ -58,6 +43,10 @@ public class RandomCharacterTemplates {
 
 	public void setSpells(List<SPELLDEFType> spells) {
 		this.spells = spells;
+	}
+
+	public void setCapabilities(ECECapabilities capabilities) {
+		this.capabilities = capabilities;
 	}
 
 	public EDRANDOMCHARACTERTEMPLATE get(String key) {
@@ -96,6 +85,7 @@ public class RandomCharacterTemplates {
 		for( RANDOMATTRIBUTESType attr : template.getATTRIBUTES() ) {
 			attributeTotalWeight+=attr.getWeight();
 		}
+		// Am KarmaMaxModificator ist zu erkennen ob zuviele Kaufpunkte ausgegeben wurden.
 		while( character.getKarma().getMaxmodificator() > 0 ) {
 			ATTRIBUTEType a = null;
 			int r = rand.nextInt(attributeTotalWeight);
@@ -128,31 +118,6 @@ public class RandomCharacterTemplates {
 				}
 			}
 		}
-		// Armor
-		String armorname = rollSingle(template.getARMOR());
-		for( ARMORType armor : items.getARMOR() ) {
-			if( armor.getName().equals(armorname) ) {
-				character.getProtection().getARMOROrSHIELD().add(armor);
-				break;
-			}
-		}
-		// Shield
-		String shieldname = rollSingle(template.getSHIELD());
-		for( SHIELDType shield : items.getSHIELD() ) {
-			if( shield.getName().equals(shieldname) ) {
-				character.getProtection().getARMOROrSHIELD().add(shield);
-				break;
-			}
-		}
-		// Weapon
-		for( String weaponname : rollMulti(template.getWEAPON(),template.getWeaponMin(),template.getWeaponMax()) ){
-			for( WEAPONType weapon : items.getWEAPON() ) {
-				if( weapon.getName().equals(weaponname) ) {
-					character.getWeapons().add(weapon);
-					break;
-				}
-			}
-		}
 		// Spells
 		for( String spellname : rollMulti(template.getSPELLS(),1,10) ){
 			for( SPELLDEFType spelldef : spells ) {
@@ -174,6 +139,126 @@ public class RandomCharacterTemplates {
 				}
 			}
 		}
+		if( capabilities == null ) {
+			System.err.println("RandomCharacterTemplate: capabilities not defined. Skipping Skills");
+		} else {
+			int skillMin = template.getSkillMin();
+			int skillMax = template.getSkillMax();
+			List<TALENTType> optionaltalents = character.getDisciplines().get(0).getOPTIONALTALENT();
+			List<WeightedstringlistType> skills = template.getSKILLS();
+			while( skillMax>0 && skillMin>=0 ) {
+				// Wenn nach einem Schleifendurchlauf die verfügbare Auswahlliste von Skills leer ist, dann breche Schleife ab. Fertig.
+				if( skills.isEmpty() ) break;
+				List<String> skillnames = rollMulti(skills,skillMin,skillMax);
+				// Wenn beim "Würfel" raus kam, das kein Skill raus kam, dann breche die Schleife ab. Fertig.
+				if( skillnames.isEmpty() ) break;
+				List<String> skilltalentnames = new ArrayList<String>();
+				for( String skillname : skillnames ) {
+					for( TALENTType optionaltalent : optionaltalents ) {
+						if( optionaltalent.getName().equals(skillname) ) {
+							skilltalentnames.add(skillname);
+							break;
+						}
+					}
+				}
+				// Wenn der Skill bereits als OptionalTalent gelernt wurde, dann lerne diesen Skill nicht noch zusätzlich.
+				skillnames.removeAll(skilltalentnames);
+				if( skillnames.isEmpty() ) continue;
+				for( CAPABILITYType skilldef : capabilities.getSkills() ) {
+					String skilldefName = skilldef.getName();
+					for( String skillname : skillnames ) {
+						if( skillname.equals(skilldefName)) {
+							SKILLType skill = new SKILLType();
+							skill.setAction(skilldef.getAction());
+							skill.setAttribute(skilldef.getAttribute());
+							skill.setDefault(skilldef.getDefault());
+							skill.setStrain(skilldef.getStrain());
+							skill.setName(skilldefName);
+							RANKType rank = new RANKType();
+							int rankvalue = 1+rand.nextInt(template.getCircleMin()-1);
+							if( rankvalue > 10 ) rankvalue=10;
+							rank.setRank(rankvalue);
+							skill.setRANK(rank);
+							character.getSkills().add(skill);
+							skillMin--;
+							skillMax--;
+							skillnames.remove(skillname);
+							break;
+						}
+					}
+					if( skillnames.isEmpty() ) break;
+				}
+			}
+		}
+		for( RANDOMITEMCATEGORYType itemcategory : template.getITEMCATEGORY() ) {
+			//String categoryname=itemcategory.getName();
+			for( String itemname : rollMulti(itemcategory.getITEMS(),itemcategory.getMin(),itemcategory.getMin()) ) {
+				boolean found=false;
+				for( WEAPONType item : items.getWEAPON() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getWeapons().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( ARMORType item : items.getARMOR() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getProtection().getARMOROrSHIELD().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( SHIELDType item : items.getSHIELD() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getProtection().getARMOROrSHIELD().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( THREADITEMType item : items.getTHREADITEM() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getThreadItem().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( BLOODCHARMITEMType item : items.getBLOODCHARMITEM() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getBloodCharmItem().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( PATTERNITEMType item : items.getPATTERNITEM() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getPatternItem().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( MAGICITEMType item : items.getMAGICITEM() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getMagicItem().add(item);
+						found=true;
+						break;
+					}
+				}
+				if( found ) continue;
+				for( ITEMType item : items.getITEM() ) {
+					if( item.getName().equals(itemname) ) {
+						character.getItems().add(item);
+						found=true;
+						break;
+					}
+				}
+			}
+		}
 		return character;
 	}
 
@@ -185,12 +270,14 @@ public class RandomCharacterTemplates {
 	}
 
 	public static List<String> rollMulti(List<WeightedstringlistType> list, int min, int max) {
-		if( list.isEmpty() ) return null;
 		List<String> result = new ArrayList<String>();
+		if( list.isEmpty() ) return result;
+		if( min < 0 ) return result;
+		if( max < 1 ) return result;
 		List<String> fulllist = weightconcat(list);
 		if( fulllist.isEmpty() ) return result;
 		int count=0;
-		if(max<min){
+		if(max<=min){
 			count=min;
 		} else {
 			count = min+rand.nextInt(max-min);
@@ -219,4 +306,5 @@ public class RandomCharacterTemplates {
 		for( String s : stringlist.getValue().split(stringlist.getDelimiter()) ) result.add(s);
 		return result;
 	}
+
 }

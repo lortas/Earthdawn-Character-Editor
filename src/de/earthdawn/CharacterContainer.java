@@ -1027,6 +1027,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getBLOODCHARMITEM();
 	}
 
+	public List<PATTERNITEMType> getPatternItem() {
+		return character.getPATTERNITEM();
+	}
+
 	public List<ARMORType> getMagicArmor() {
 		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
 		int calculatedLP=0;
