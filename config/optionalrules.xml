@@ -5,7 +5,7 @@
 	If you set limitoneway to "no", not only the left attribute buy points will increase the maximum karma,
 	but also to many spent points will decrease the maximum karma.
 	-->
-	<ATTRIBUTE points="25" limitoneway="yes"/>
+	<ATTRIBUTE points="25" limitoneway="yes" limitlpincrease="3"/>
 	<!--
 	By the following rule you can define how many start ranks a character will receive during the character creation
 	Usually:
