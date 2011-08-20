@@ -7,6 +7,7 @@
 	<xs:complexType name="OPTIONALRULES_ATTRIBUTE">
 		<xs:attribute name="points" type="xs:int" />
 		<xs:attribute name="limitoneway" type="edt:yesno_type"/>
+		<xs:attribute name="limitlpincrease" type="edt:unsigned_int" default="3"/>
 	</xs:complexType>
 	<xs:complexType name="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT">
 		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>

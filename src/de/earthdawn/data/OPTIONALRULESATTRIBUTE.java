@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="points" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="limitoneway" type="{http://earthdawn.com/datatypes}yesno_type" />
+ *       &lt;attribute name="limitlpincrease" type="{http://earthdawn.com/datatypes}unsigned_int" default="3" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -40,6 +41,8 @@ public class OPTIONALRULESATTRIBUTE {
     protected Integer points;
     @XmlAttribute
     protected YesnoType limitoneway;
+    @XmlAttribute
+    protected Integer limitlpincrease;
 
     /**
      * Gets the value of the points property.
@@ -87,6 +90,34 @@ public class OPTIONALRULESATTRIBUTE {
      */
     public void setLimitoneway(YesnoType value) {
         this.limitoneway = value;
+    }
+
+    /**
+     * Gets the value of the limitlpincrease property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getLimitlpincrease() {
+        if (limitlpincrease == null) {
+            return  3;
+        } else {
+            return limitlpincrease;
+        }
+    }
+
+    /**
+     * Sets the value of the limitlpincrease property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setLimitlpincrease(Integer value) {
+        this.limitlpincrease = value;
     }
 
 }

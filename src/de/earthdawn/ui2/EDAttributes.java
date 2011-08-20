@@ -3,21 +3,23 @@ package de.earthdawn.ui2;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.DefaultCellEditor;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 import javax.swing.BoxLayout;
-import javax.swing.JSpinner;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
+import de.earthdawn.config.ApplicationProperties;
 
 public class EDAttributes extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6319723413147452999L;
 	private CharacterContainer character;
-	
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public static final int lpincrease_max = PROPERTIES.getOptionalRules().getATTRIBUTE().getLimitlpincrease();
+
 	private JScrollPane scrollPane;
 	private JTable table;
 
@@ -34,7 +36,7 @@ public class EDAttributes extends JPanel {
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new AttributesTableModel());
 		table.getColumnModel().getColumn(2).setCellEditor(new SpinnerEditor(-2, 8));
-		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 3));
+		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, lpincrease_max));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 
 		scrollPane.setViewportView(table);
