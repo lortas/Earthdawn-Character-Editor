@@ -16,9 +16,9 @@
 		<RANDOMNAME_NAMEPART part="1">Khan</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Human">
-		<RANDOMNAME_NAMEPART part="0" gender="female">Celina Galdora Igna Kelandra Nahindra Ophelia Quelana</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male">Alachrim Alvar Baldred Cymric Daylen Delmor Elwind Fenwill Gandalar Gillian Honguth Hyram Jel J’Role Lamand Melgador Pandur Rigus Santorano Timbur Ulgur Vendar Wilbur Yan Yanno Xandir Zidan</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="1">Goerm Jagaro Lang Mammo</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Celina;Galdora;Igna;Kelandra;Nahindra;Ophelia;Quelana</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alachrim;Alvar;Baldred;Cymric;Daylen;Delmor;Elwind;Fenwill;Gandalar;Gillian;Honguth;Hyram;Jel;J’Role;Lamand;Melgador;Pandur;Rigus;Santorano;Timbur;Ulgur;Vendar;Wilbur;Yan;Yanno;Xandir;Zidan</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1" delimiter=";">Goerm;Jagaro;Lang;Mammo</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Ki Mao">
 		<RANDOMNAME_NAMEPART part="0" gender="female"></RANDOMNAME_NAMEPART>
