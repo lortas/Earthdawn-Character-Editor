@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="COMMENT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RANDOMNAME_NAMEPART" type="{http://earthdawn.com/randomname}randomname_names_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="race" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -39,14 +40,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RANDOMNAME_RACE_type", namespace = "http://earthdawn.com/randomname", propOrder = {
+    "comment",
     "randomnamenamepart"
 })
 public class RANDOMNAMERACEType {
 
+    @XmlElement(name = "COMMENT")
+    protected String comment;
     @XmlElement(name = "RANDOMNAME_NAMEPART", required = true)
     protected List<RandomnameNamesType> randomnamenamepart;
     @XmlAttribute(required = true)
     protected String race;
+
+    /**
+     * Gets the value of the comment property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCOMMENT() {
+        return comment;
+    }
+
+    /**
+     * Sets the value of the comment property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCOMMENT(String value) {
+        this.comment = value;
+    }
 
     /**
      * Gets the value of the randomnamenamepart property.

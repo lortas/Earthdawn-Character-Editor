@@ -3,6 +3,7 @@
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:complexType name="RANDOMNAME_RACE_type">
 		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string"/>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="RANDOMNAME_NAMEPART" type="randomname_names_type"/>
 		</xs:sequence>
 		<xs:attribute name="race" type="xs:string" use="required"/>
@@ -12,6 +13,8 @@
 			<xs:extension base="edt:stringlist_type">
 				<xs:attribute name="part" type="edt:unsigned_int" default="0"/>
 				<xs:attribute name="gender" type="edt:gender_type" default="-"/>
+				<xs:attribute name="creativity" type="edt:unsigned_int" default="50"/>
+				<xs:attribute name="syllabledelimiter" type="xs:string" default="-"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
