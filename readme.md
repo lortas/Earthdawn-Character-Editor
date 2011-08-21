@@ -1,4 +1,4 @@
-﻿# Installation #
+# Installation #
 First of all you need a java runtime environment installed, eg. from sun/oracle.
 
 Unzip the release file to a folder on your local media. It can be something like `C:\Program Files\EarthdawnCharacterEditor\`. Any new release can be unziped into the same folder, but you have to allow your unzip tool to overwrite exiting files. You may have changed some files in the sub folder "config", for example the file `optionalrules.xml`. You may want to backup those files before installing a new release.
