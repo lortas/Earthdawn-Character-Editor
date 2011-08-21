@@ -1,4 +1,4 @@
-# Installation #
+﻿# Installation #
 First of all you need a java runtime environment installed, eg. from sun/oracle.
 
 Unzip the release file to a folder on your local media. It can be something like `C:\Program Files\EarthdawnCharacterEditor\`. Any new release can be unziped into the same folder, but you have to allow your unzip tool to overwrite exiting files. You may have changed some files in the sub folder "config", for example the file `optionalrules.xml`. You may want to backup those files before installing a new release.
@@ -13,12 +13,31 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.31-20110821.zip ##
++ Bugs
+	+ Talents not allowed for versatility are no more missing on the optional talent list.
+	+ To save space on the Redbrick PDF export, only woven thread ranks of thread items are shown on the overview.
++ CPG:
+	+ New discipline Beastlord added.
+	+ New discipline Guardian of Cathay added
+	+ New discipline Daughter of Heaven added
++ bookref for disciplines from NG added.
++ Button for selecting optional talents by random added.
++ Added a second spell page for the Ajfel+Mordom PDF export.
++ On the Ajfel+Mordom PDF export use unused talent rows to show talents from additional disciplines.
++ Documentation folder added.
+	+ A HOWTO for inserting an own character pdf into the ECE.
+	+ A FAQ added.
++ A basic RandomNameGenerator inserted. But still under construction and need more name input.
++ A RandomCharacterGenerator inserted. But only two test-templates are available. Need more templates.
++ The maximum for attribute LP increase can now be configured by optional rules.
++ Comments for name giving (from NG) added.
 ## EarthdawnCharacterEditor-0.30-20110805.zip ##
 + Bugs
-	+ Missspelled Dicipline is corrected to Discipline (everywhere).
+	+ Misspelled “Dicipline” is corrected to “Discipline” (everywhere).
 	+ The RB extended pdf export works again.
 	+ The Durability can again only be chosen once per discipline.
-	+ The save and export dialog will now only write a file if Yes/Ok button was clicked.
+	+ The save and export dialogue will now only write a file if Yes/Ok button was clicked.
 + All knacks from the CPG inclusive bookref were inserted.
 + The optional talent chooser is now a pop-up window with scrollbar.
 ## EarthdawnCharacterEditor-0.29-20110729.zip ##
