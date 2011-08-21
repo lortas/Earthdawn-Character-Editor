@@ -12,6 +12,14 @@
 		<xs:attribute name="weight" type="edt:unsigned_int" default="1"/>
 		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="RANDOMSPELLCATEGORY_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLS" type="weightedstringlist_type"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" default=""/>
+		<xs:attribute name="min" type="edt:unsigned_int" default="1"/>
+		<xs:attribute name="max" type="edt:unsigned_int" default="1"/>
+	</xs:complexType>
 	<xs:complexType name="RANDOMITEMCATEGORY_type">
 		<xs:sequence>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="ITEMS" type="weightedstringlist_type"/>
@@ -26,7 +34,7 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="RACES" type="weightedstringlist_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="ATTRIBUTES" type="RANDOMATTRIBUTES_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="DISCIPLINES" type="weightedstringlist_type"/>
-				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLS" type="weightedstringlist_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELLCATEGORY" type="RANDOMSPELLCATEGORY_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SKILLS" type="weightedstringlist_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="ITEMCATEGORY" type="RANDOMITEMCATEGORY_type"/>
 			</xs:sequence>

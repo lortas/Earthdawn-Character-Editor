@@ -105,10 +105,10 @@ public class EDDisciplines extends JPanel {
 		});
 		btnAddDiscipline.setOpaque(false);
 		toolBar.add(btnAddDiscipline);
-		popupMenuCircle = DisziplinAsTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
+		popupMenuCircle = mapTreeToMenuTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
 	}
 
-	protected JMenu DisziplinAsTree(String name, Map<String, Map<String, ?>> tree) {
+	private JMenu mapTreeToMenuTree(String name, Map<String, Map<String, ?>> tree) {
 		JMenu result;
 		if( name == null ) {
 			result = new JMenu();
@@ -135,7 +135,7 @@ public class EDDisciplines extends JPanel {
 			} else {
 				@SuppressWarnings("unchecked")
 				Map<String, Map<String, ?>> submap = (Map<String, Map<String, ?>>)(tree.get(n));
-				result.add(DisziplinAsTree(n,submap));
+				result.add(mapTreeToMenuTree(n,submap));
 			}
 		}
 		return result;

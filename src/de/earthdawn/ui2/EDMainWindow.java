@@ -18,7 +18,10 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.swing.BoxLayout;
 import javax.swing.JEditorPane;
@@ -28,6 +31,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
@@ -286,13 +290,10 @@ public class EDMainWindow {
 		});
 		mnExtra.add(mntmRandomName);
 
-		JMenuItem mntmRandomCharacter= new JMenuItem(NLS.getString("EDMainWindow.mntmRandomCharacter.text")); //$NON-NLS-1$
-		mntmRandomCharacter.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmRandomCharacter_actionPerformed(arg0);
-			}
-		});
+		JMenu mntmRandomCharacter = mapTreeToMenuTree(null,ApplicationProperties.create().getAllCharacterTemplatesNamesAsTree());
+		mntmRandomCharacter.setText(NLS.getString("EDMainWindow.mntmRandomCharacter.text"));
 		mnExtra.add(mntmRandomCharacter);
+
 
 		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
@@ -352,6 +353,39 @@ public class EDMainWindow {
 		splitPane.setRightComponent(editorScrollPane);
 	}
 
+	private JMenu mapTreeToMenuTree(String name, Map<String, Map<String, ?>> tree) {
+		JMenu result;
+		if( name == null ) {
+			result = new JMenu();
+		} else {
+			result = new JMenu(name);
+			JMenuItem menuItem = new JMenuItem(name);
+			menuItem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					do_mntmRandomCharacter_actionPerformed(arg0);
+				}
+			});
+			result.add(menuItem);
+		}
+		SortedSet<String> sortedset= new TreeSet<String>(tree.keySet());
+		for( String n : sortedset ) {
+			if( tree.get(n).isEmpty() ) {
+				JMenuItem menuItem = new JMenuItem(n);
+				menuItem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						do_mntmRandomCharacter_actionPerformed(arg0);
+					}
+				});
+				result.add(menuItem);
+			} else {
+				@SuppressWarnings("unchecked")
+				Map<String, Map<String, ?>> submap = (Map<String, Map<String, ?>>)(tree.get(n));
+				result.add(mapTreeToMenuTree(n,submap));
+			}
+		}
+		return result;
+	}
+
 	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
 		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
 		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
@@ -371,7 +405,9 @@ public class EDMainWindow {
 	}
 
 	private void do_mntmRandomCharacter_actionPerformed(ActionEvent arg0) {
-		CharacterContainer c = PROPERTIES.getRandomCharacter("fighter");
+		JMenuItem menuitem = (JMenuItem)arg0.getSource();
+		if( menuitem == null ) return;
+		CharacterContainer c = PROPERTIES.getRandomCharacter(menuitem.getText());
 		if( c == null ) return;
 		ECEWorker worker = new ECEWorker();
 		worker.verarbeiteCharakter(c.getEDCHARACTER());

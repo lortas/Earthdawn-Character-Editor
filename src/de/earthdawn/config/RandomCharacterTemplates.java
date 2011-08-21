@@ -36,6 +36,7 @@ public class RandomCharacterTemplates {
 	private ITEMS items = null;
 	private ECECapabilities capabilities = null;
 	private List<SPELLDEFType> spells = null;
+	private Map<String, DISCIPLINE> disciplines = null;
 
 	public void setItems(ITEMS items) {
 		this.items = items;
@@ -47,6 +48,10 @@ public class RandomCharacterTemplates {
 
 	public void setCapabilities(ECECapabilities capabilities) {
 		this.capabilities = capabilities;
+	}
+
+	public void setDisciplineDefinitions(Map<String, DISCIPLINE> disciplines) {
+		this.disciplines = disciplines;
 	}
 
 	public EDRANDOMCHARACTERTEMPLATE get(String key) {
@@ -73,12 +78,76 @@ public class RandomCharacterTemplates {
 		if( race != null ) appearance.setRace(race);
 		if( rand.nextBoolean() ) appearance.setGender(GenderType.MALE);
 		else appearance.setGender(GenderType.FEMALE);
-		// Discipline
-		String discipline = rollSingle(template.getDISCIPLINES());
-		if( discipline != null ) character.addDiciplin(discipline);
-		int circle = template.getCircleMin()+rand.nextInt(template.getCircleMax()-template.getCircleMin());
-		character.getDisciplines().get(0).setCircle(circle);
-		character.fillOptionalTalentsRandom(discipline);
+		int circle=0;
+		String disciplineName = rollSingle(template.getDISCIPLINES());
+		DISCIPLINEType choosenDiscipline = null;
+		if( (disciplineName==null) || !disciplines.containsKey(disciplineName) ) {
+			System.err.println("Discipline '"+disciplineName+"' is unkonwn. Do not add any discipline");
+		} else {
+			// Discipline
+			character.addDiciplin(disciplineName);
+			circle = template.getCircleMin()+rand.nextInt(template.getCircleMax()-template.getCircleMin());
+			choosenDiscipline = character.getDisciplines().get(0);
+			choosenDiscipline.setCircle(circle);
+			character.fillOptionalTalentsRandom(disciplineName);
+			worker.verarbeiteCharakter(character.getEDCHARACTER());
+			for( TALENTType talent : choosenDiscipline.getDISZIPLINETALENT() ) {
+				if( talent.getCircle() < circle ) talent.getRANK().setRank(circle);
+				else talent.getRANK().setRank(1+rand.nextInt(circle));
+			}
+			// Spells
+			List<String> rolledSpellNames = new ArrayList<String>();
+			for( RANDOMSPELLCATEGORYType spellcategory : template.getSPELLCATEGORY() ) {
+				rolledSpellNames.addAll(rollMulti(spellcategory.getSPELLS(),spellcategory.getMin(),spellcategory.getMax()));
+			}
+			DISCIPLINE disciplineDefinition = disciplines.get(disciplineName);
+			int currentSpellCircle=0;
+			for( DISCIPLINECIRCLEType circleDefinition : disciplineDefinition.getCIRCLE() ) {
+				// Prüfe für jede Kreisdefinition, ob einer der definierten Zauber gewählt wurde
+				// Sollte aber inzwischen keine gewählten Zaubernamen mehr da sein, breche Schleife ab.
+				if( rolledSpellNames.isEmpty() ) break;
+				currentSpellCircle++;
+				for( DISCIPLINESPELLType spellInDiscipline : circleDefinition.getSPELL() ) {
+					for( String spellname : rolledSpellNames ) {
+						// Prüfe, ob der Name des Zaubers aus der Kreisdefinition mit einem gewählte Namen übereinstimmt
+						if( spellInDiscipline.getName().equals(spellname)) {
+							// Finde nun zu dem gewählten Zauber seine Eigenschaften
+							boolean notfound=true;
+							for( SPELLDEFType spelldef : spells ) {
+								if( spelldef.getName().equals(spellname) ) {
+									// Wir haben nun nicht nur den Zauber in der Disziplinkreisdefinition gefunden,
+									// sondern auch in der Gesamtzauberdefinition, und kennen nun seine Eigenschaften vollständig
+									SPELLType spell = new SPELLType();
+									spell.setCircle(currentSpellCircle);
+									spell.setType(spellInDiscipline.getType());
+									spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+									spell.setDuration(spelldef.getDuration());
+									spell.setEffect(spelldef.getEffect());
+									spell.setEffectarea(spelldef.getEffectarea());
+									spell.setName(spelldef.getName());
+									spell.setRange(spelldef.getRange());
+									spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+									spell.setThreads(spelldef.getThreads());
+									spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+									choosenDiscipline.getSPELL().add(spell);
+									notfound=false;
+									break;
+								}
+							}
+							if( notfound ) {
+								System.err.println( "The Spell "+spellname+" count not be found." );
+							}
+							// Um die Suche etwas zu vereinfachen entfernen wir (in der Kreisdefinition) gefundene Zauber aus der Liste der gewählte Zauber
+							rolledSpellNames.remove(spellname);
+							break;
+						}
+					}
+				}
+			}
+			if( ! rolledSpellNames.isEmpty() ) {
+				System.err.println("The following rolled spell(s) were not allowed in the discipline '"+disciplineName+"':"+rolledSpellNames.toString());
+			}
+		}
 		// Atributes
 		int attributeTotalWeight = 0;
 		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
@@ -118,33 +187,17 @@ public class RandomCharacterTemplates {
 				}
 			}
 		}
-		// Spells
-		for( String spellname : rollMulti(template.getSPELLS(),1,10) ){
-			for( SPELLDEFType spelldef : spells ) {
-				if( spelldef.getName().equals(spellname) ) {
-					SPELLType spell = new SPELLType();
-					spell.setCircle(1); // TODO: genauer Kreis muss noch ermittelt werden
-					spell.setType(SpellkindType.WIZARD); // TODO: genauer Spruchtyp muss noch ermittelt werden
-					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
-					spell.setDuration(spelldef.getDuration());
-					spell.setEffect(spelldef.getEffect());
-					spell.setEffectarea(spelldef.getEffectarea());
-					spell.setName(spelldef.getName());
-					spell.setRange(spelldef.getRange());
-					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
-					spell.setThreads(spelldef.getThreads());
-					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
-					character.getDisciplines().get(0).getSPELL().add(spell);
-					break;
-				}
-			}
-		}
 		if( capabilities == null ) {
 			System.err.println("RandomCharacterTemplate: capabilities not defined. Skipping Skills");
 		} else {
 			int skillMin = template.getSkillMin();
 			int skillMax = template.getSkillMax();
-			List<TALENTType> optionaltalents = character.getDisciplines().get(0).getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = null;
+			if( choosenDiscipline == null ) {
+				optionaltalents = new ArrayList<TALENTType>();
+			} else {
+				optionaltalents = choosenDiscipline.getOPTIONALTALENT();
+			}
 			List<WeightedstringlistType> skills = template.getSKILLS();
 			while( skillMax>0 && skillMin>=0 ) {
 				// Wenn nach einem Schleifendurchlauf die verfügbare Auswahlliste von Skills leer ist, dann breche Schleife ab. Fertig.
@@ -306,5 +359,4 @@ public class RandomCharacterTemplates {
 		for( String s : stringlist.getValue().split(stringlist.getDelimiter()) ) result.add(s);
 		return result;
 	}
-
 }
