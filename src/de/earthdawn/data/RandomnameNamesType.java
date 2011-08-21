@@ -25,6 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="&lt;http://earthdawn.com/datatypes>stringlist_type">
  *       &lt;attribute name="part" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="gender" type="{http://earthdawn.com/datatypes}gender_type" default="-" />
+ *       &lt;attribute name="creativity" type="{http://earthdawn.com/datatypes}unsigned_int" default="50" />
+ *       &lt;attribute name="syllabledelimiter" type="{http://www.w3.org/2001/XMLSchema}string" default="-" />
  *     &lt;/extension>
  *   &lt;/simpleContent>
  * &lt;/complexType>
@@ -42,6 +44,10 @@ public class RandomnameNamesType
     protected Integer part;
     @XmlAttribute
     protected GenderType gender;
+    @XmlAttribute
+    protected Integer creativity;
+    @XmlAttribute
+    protected String syllabledelimiter;
 
     /**
      * Gets the value of the part property.
@@ -97,6 +103,62 @@ public class RandomnameNamesType
      */
     public void setGender(GenderType value) {
         this.gender = value;
+    }
+
+    /**
+     * Gets the value of the creativity property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getCreativity() {
+        if (creativity == null) {
+            return  50;
+        } else {
+            return creativity;
+        }
+    }
+
+    /**
+     * Sets the value of the creativity property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setCreativity(Integer value) {
+        this.creativity = value;
+    }
+
+    /**
+     * Gets the value of the syllabledelimiter property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSyllabledelimiter() {
+        if (syllabledelimiter == null) {
+            return "-";
+        } else {
+            return syllabledelimiter;
+        }
+    }
+
+    /**
+     * Sets the value of the syllabledelimiter property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSyllabledelimiter(String value) {
+        this.syllabledelimiter = value;
     }
 
 }

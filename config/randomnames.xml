@@ -1,121 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <EDRANDOMNAME xmlns="http://earthdawn.com/randomname" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomname earthdawnrandomname.xsd">
-	<!--
-	"Dwarfs usually have two Names. The first Name is chosen by the dwarf ’s parents, the second by the most significant grandparent.
-	It is common for a young dwarf to share one of his Names with a grandparent or parent." (NG p.135)
-	1. Vorname (von den Eltern gewählt)
-	2. Vorame (von den Großeltern)
-	3. Familienname (meist von Eltern, in ausnahmen auch von Großeltern)
-	-->
 	<RANDOMNAME_RACE race="Dwarf">
+		<COMMENT>
+			"Dwarfs usually have two Names. The first Name is chosen by the dwarf ’s parents, the second by the most significant grandparent.
+			It is common for a young dwarf to share one of his Names with a grandparent or parent." (NG p.135)
+			1. Vorname (von den Eltern gewählt)
+			2. Vorame (von den Großeltern)
+			3. Familienname (meist von Eltern, in ausnahmen auch von Großeltern)
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Achatell;Aquial;Bapuea;Bapuy;Baschy;Dorilly;Fanlike;Galfie;Gilly;Igrami;Jaella;Jatraschya;Kiry;Kleiyie;Learka;Maera;Mergrima;Mergrimya;Morianell;Obsidianial;Obsidya;Platinea;Platiny;saphirell;Seadda;Segalnall;Segalnell;Segalnial;Segalnya;Sloncia;Wapargall;Waparge;Yania;Ysilla</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alfregg;Agnar;Arex;Bariv;Baver;Bulim;Carnadan;Dagnus;Del;Egin;Engarim;Etogosch;Fasakel;Fignus;Glorin;Grepius;Grirr;Gumgelf;Himbez;Hofur;Irmeam;Kagrem;Kordur;Lemosch;Levom;Lognar;Lugom;Mekel;Merrox;Moran;Morax;Morram;Myrr;Noran;Obalosch;Ogalme;Parilex;Paranur;Rabogasch;Renar;Schilbimg;Sunar;Thom;Thorek;Thorim;Turweck;Tusur;Tuwer;Ulrun;Varulus;Vignor;Vinelfr;Vunar;Zognar</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Axthauer;Axtschwinger;Bergschmied;Breithelm;Donnerstein;Eisenfaust;Eisenhammer;Eisenheim;Eisenrein;Eisenstolz;Erdauge;Feuerwerk;Gassenzwerg;Goldheim;Goldschmuck;Hammerblade;Hammerblut;Hammertanz;Isenformer;Isenklang;Kupferbart;Kupferblut;Rieka;Schmiedeeisen;Silberblut;Silberfaust;Silberglanz;Silberhaar;Stahlblick;Steinreich</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"The Names of elven infants often represent an aspect of their lineage, and are chosen by the parents. Elves commonly undergo the
-	Ritual of Passage at the age of twenty, during which they choose their own Names." (NG p. 135)
-	1. Vorname (beim "Ritual of Passage" selbst gewählt)
-	-->
 	<RANDOMNAME_RACE race="Elf">
+		<COMMENT>
+			"The Names of elven infants often represent an aspect of their lineage, and are chosen by the parents. Elves commonly undergo the
+			Ritual of Passage at the age of twenty, during which they choose their own Names." (NG p. 135)
+			1. Vorname (beim "Ritual of Passage" selbst gewählt)
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">;Aelin;Alquar;Annon;Arien;Atar;Avari;Barad;Bragol;Brethil;Carak;Carakquen;Celeb;Coron;Dagor;Eirdeth;Eldar;Gaelin;Glínrith;Hadlon;Laurwen;Luevia;Marach;Melwer;Moriquendi;Nai’ara;Noldor;Quendi;Qwaith;Telpe;Tyrnea;Vanyië</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Adan;Adurídûnê;Aeraias;Aerávién;Alquóque;Argélohar;Atagdûr;Belphegor;Beshar;Borarína;Caelarion;Caluath;Curánil;Delthrien;Dremnin;Daa;Dimile;Dungâmbar;Earinirist;Erariand;Evensong;Eytherian;Farliv;fingaya;Fithvael;Firnulach;Fuínahel;Gulinost;Hareth;Iathi;Ivênost;Ivreriand;Jaren;Jerreck;Karon;Kermanthil;Lianar;Managorn;Maralan;Mestoph;Mírênael;Morwurúth;Nahála;Námíhabar;Noarethal;Pyrail;Ramadris;Raméler;Ranogdûr;Seróvrin;Siluath;Sulige;Tiathar;Tuminna;Vinálas;Vingálachel;Weng;Yalathael;Zydan</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	-->
 	<RANDOMNAME_RACE race="Gar">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Naran</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Khan</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"Humans receive their Names from their parents, keeping them for the rest of their lives." (NG p.136)
-	1. Vorname (von den Eltern)	Nachname eher selten, wenn es um die Abstammung geht wird dazugesagt "Sohn/ Tochter von ..."; ist aber regional unterschiedlich
-	-->
 	<RANDOMNAME_RACE race="Human">
+		<COMMENT>
+			"Humans receive their Names from their parents, keeping them for the rest of their lives." (NG p.136)
+			1. Vorname (von den Eltern)	Nachname eher selten, wenn es um die Abstammung geht wird dazugesagt "Sohn/ Tochter von ..."; ist aber regional unterschiedlich
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Celina;Galdora;Igna;Kelandra;Nahindra;Ophelia;Quelana</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alachrim;Alvar;Baldred;Cymric;Daylen;Delmor;Elwind;Fenwill;Gandalar;Gillian;Honguth;Hyram;Jel;J’Role;Lamand;Melgador;Pandur;Rigus;Santorano;Timbur;Ulgur;Vendar;Wilbur;Yan;Yanno;Xandir;Zidan</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alachrim;Alvar;Baldred;Cymric;Daylen;Delmor;Elwind;Fenwill;Gandalar;Gillian;Honguth;Hyram;Jel;J’Role;Lamand;Melgador;Pandur;Rigus;Santorano;Timbur;Ulgur;Vendar;Wilbur;Yan;Yanno;Xandir;Zidan;$C$=60;A-de-lo;A-de-lon;A-gi-more;A-gra-men;A-le-ac;Al-kan-dair;Al-kor;An-thros;Apu-li-an;Ar-go;Ar-rald;Ar-tho-nius;Ben-ton;Ber-thon;Be-var-den;Bla-nack;Bo-ram;Bral-toth;Bri-us;Brus-pri;Byth;Ca-en;Cal-vis;Ca-ra-vath;Ce-dric;Ce-vas;Char-ne-ale;Chukh;Cly-stein;Co-dy;Cym-ric;D'-nal;D'-zar;Da-ckus;Da-mi-en;Da-ris;De-lain;Der-fil-lion;Ea-conn;El-ja-zer;E-lom;E-ralk;Fai-ral;Far-lus;Fe-gis;Fi-er;For-tin;Ga-reth;Gar-shin;Ger-rik;Gra-is;Gro-gand;Gur-drim;Gwan-do;Ha-mos;Han-rald;He-ri-zim;Hier-mon;Hu-san;I-lio;Il-kith;I-tien-nie;J'-role;Ja-nus;Ja-ron;Ja-som;Ja-van;Je-renn;Jer-leth;Je-vais;Jo-eb;Jo-sa-ra;Ka-la-rian;Ka-leb;Ka-rim;Kei-nar;Kos-sol;Kui-per;Ku-lul;Kyp-ros;Lan-nen;Les-sar;Lo'-arr;Lor-go;Lu-wen;Lys-ke;M'-da-li;M'-ka-el;Mal-va-ri;Ma-xor;Max-ton;Me-li-as;Me-nach'-me;Mer-vin;Mi-la;Mi-sha;Mor-dain;Mor-vak;Myk;Mys-tal;Na-al;Na-lil;Nee-dren;Ne-ru;No-nan;No-ra-im;O-berh;O-du;Ol-ti-on;O-mag;Pa-trin;Pa-trus;Pin-dre;Pol;Qua-ri-que;Rak-land;Ral-fan-ter;Re-le-el;Sad-du;Sa-ma-el;Sen-dric;Sha-ku-ru;Sha-ryn;Shim-mus;So-go-ra;Sud-low;Tal-lis;Ta-ly-rin;Tar-lanth;Te-le-mir;Tel-la-nion;Te-vern;Thom;Tho-ma-las;Ton-laa;Tor-kel;To-ro-co;Tor-ran;Tre-la-nia;Tri-ann;Tri-bas;Tu-ral;Tu-ran;Ty-rani-sis;Ur-rif;Ur-var;Ve-rin;Vi-dar;War-ris;Wil-lem;Wor-li-as;Yan-no;Ya-rith;Yer-reb</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Goerm;Jagaro;Lang;Mammo</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	-->
 	<RANDOMNAME_RACE race="Ki Mao">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Jun</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Lu</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"Obsidimen receive their Names during the Awakening, given to them by their Liferock. Over the course of two decades, the Awakened 
-	learns about the world from fellow brothers, and during this time he discovers the Name that was given to him." (NG p.138)
-	The Name in not mal or female because Obsidimen are not male nor female.
-	1. Vorname (vom Lebensfelsen bekommen vor dem "Awakening")
-	-->
 	<RANDOMNAME_RACE race="Obsidimen">
+		<COMMENT>
+			"Obsidimen receive their Names during the Awakening, given to them by their Liferock. Over the course of two decades, the Awakened 
+			learns about the world from fellow brothers, and during this time he discovers the Name that was given to him." (NG p.138)
+			The Name in not mal or female because Obsidimen are not male nor female.
+			1. Vorname (vom Lebensfelsen bekommen vor dem "Awakening")
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">Amaltham;Belarus;Cedrok;Domasae;Domnur;Erathun;Forr;Gothus;Haralayelus;Imodun;Jarralak;Kolarat;Korum;Laramanus;Monuk;Nostrus;Omasu;Omeyras;Onnaro;Ophranim;Physt;Quaron;Redurus;Sogun;Torukor;Uhnar;Voltor;Wethysor;Xamdar;Ygasu</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"Before an ork is born, his mother dreams the vravraka, where she sees the child demanding the Name it desires. Tribal orks usually add descriptive Names hinting at their deeds, ideals, or virtues to this Name over the course of their lives." (NG p.138)
-	1. Vorname (in einem Traum der Mutter vom Kind offenbart)
-	2. Name (von manchen Orks als Beschreibender Zusatz gewählt)
-	-->
 	<RANDOMNAME_RACE race="Ork">
+		<COMMENT>
+			"Before an ork is born, his mother dreams the vravraka, where she sees the child demanding the Name it desires. Tribal orks usually add descriptive Names hinting at their deeds, ideals, or virtues to this Name over the course of their lives." (NG p.138)
+			1. Vorname (in einem Traum der Mutter vom Kind offenbart)
+			2. Name (von manchen Orks als Beschreibender Zusatz gewählt)
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Aluk;Brog;Curst;Drognur;Ekarr;Faghn;Garon;Gors;Gragok;Hamvel;Horak;Jurok;Karoar;Kartos;Kia’k;Kraeg;Krolok;Lorga;Malgat;Mornur;Nago;Orkal;Pahok;Quan;Ristar;Tadhg;Tok;Uvul;Ulag;Venag;Y’lomm;Zugrut</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Manystones;Yelloweye</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	-->
 	<RANDOMNAME_RACE race="Po Na">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Lang</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Hi</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	-->
 	<RANDOMNAME_RACE race="Storm Children">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Fey</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"Highland trolls have three Names. A troll’s first Name, like a human’s or dwarf ’s “given” Name, is associated more or less uniquely with that individual and often has some meaning in the language from which it derives. The derivation of the second Name varies from from clan to clan and moot to moot. In some clans it indicates the trolls family or clan; in others, it merely serves as a second personal identifier. The third Name identifies the troll’s clan or moot. The major trollmoots are located in the Twilight Peaks:
-	the Stoneclaws and the Swiftwinds to the East, the Blood Lores and Blackfangs to the West, and the Ironmongers and Thundersky trollmoots in the central peaks.
-	Lowland trolls are known to follow human Naming rituals and pay court in the manner of their human neighbors." (NG p. 138)
-	Hochlandtrolle
-	1. Vorname (während dem Ritual (Claiming) selbst gewählt )
-	2. Vorname (während dem Ritual (Claiming) selbst gewählt )
-	3. Clanname
-	Tieflandtrolle:
-	1. Vorname (von den Eltern bekommen)
-	-->
 	<RANDOMNAME_RACE race="Troll">
+		<COMMENT>
+			"Highland trolls have three Names. A troll’s first Name, like a human’s or dwarf ’s “given” Name, is associated more or less uniquely with that individual and often has some meaning in the language from which it derives. The derivation of the second Name varies from from clan to clan and moot to moot. In some clans it indicates the trolls family or clan; in others, it merely serves as a second personal identifier. The third Name identifies the troll’s clan or moot. The major trollmoots are located in the Twilight Peaks:
+			the Stoneclaws and the Swiftwinds to the East, the Blood Lores and Blackfangs to the West, and the Ironmongers and Thundersky trollmoots in the central peaks.
+			Lowland trolls are known to follow human Naming rituals and pay court in the manner of their human neighbors." (NG p. 138)
+			Hochlandtrolle
+			1. Vorname (während dem Ritual (Claiming) selbst gewählt )
+			2. Vorname (während dem Ritual (Claiming) selbst gewählt )
+			3. Clanname
+			Tieflandtrolle:
+			1. Vorname (von den Eltern bekommen)
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Skorja</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Barak;Belwharg;Belgaras;Bormak;Chag;Crygath;Dogul;Dul’Gaar;Emkor;Fograk;Ganlor;Holdur;Irrgam;Jarth’d;Jorkaw;Kaan;Karok;Larus;Lorm;Lorrm;Mongur;Narkys;Orrguth;Osker;Pawkarr;Quindor;Rothur;Starrk;Tahst;Targ;Twak’dar;Urdon;Vigord;Wrogath;Yggerg;Zisgul</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Baldurion;Boneslicer;Skat</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"A t’skrang begins life with two Names, one chosen by its egg parent before the hatchling breaks its shell, and the second the 
-	Name of the foundation into which it is born. At kaissa , when the hatchling becomes an adult, it chooses its third Name, 
-	sometimes a descriptive Name or self-styled title. A t’skrang who earns the honor of entering an aropagoi gains a fourth Name, 
-	although it often replaces the foundation Name where the foundation is a recognized and known part of the aropagoi any way. An honored
-	t’skrang who undergoes k ’soto  ensherenk and becomes a lahala accepts her foundation’s Name as her only Name. 
-	T’skrang Names are often difficult to pronounce for outsiders." (NG p.139-140) T+skrang Names never male or female because nobody knows
-	if a t´skrang will be a man or a woman after his kaissa.
-	1. Vorname (von Eivater gegeben)
-	2. Name (Name des Fundaments zu dem er gehört)
-	3. Vorname (selbst gewählt zu beginn der "kaissa")
-	4. Name (Name des Aropagoi wenn der T´skrang aufgenommen wird, ersetzt manchmal den Namen des Fundaments wenn dieses zum Aropagoi gehört)
-	Wird der T´skrang lahala nimmt er den Namen des Fundaments als einzigen Namen an
-	-->
 	<RANDOMNAME_RACE race="T´skrang">
+		<COMMENT>
+			"A t’skrang begins life with two Names, one chosen by its egg parent before the hatchling breaks its shell, and the second the 
+			Name of the foundation into which it is born. At kaissa , when the hatchling becomes an adult, it chooses its third Name, 
+			sometimes a descriptive Name or self-styled title. A t’skrang who earns the honor of entering an aropagoi gains a fourth Name, 
+			although it often replaces the foundation Name where the foundation is a recognized and known part of the aropagoi any way. An honored
+			t’skrang who undergoes k ’soto  ensherenk and becomes a lahala accepts her foundation’s Name as her only Name. 
+			T’skrang Names are often difficult to pronounce for outsiders." (NG p.139-140) T+skrang Names never male or female because nobody knows
+			if a t´skrang will be a man or a woman after his kaissa.
+			1. Vorname (von Eivater gegeben)
+			2. Name (Name des Fundaments zu dem er gehört)
+			3. Vorname (selbst gewählt zu beginn der "kaissa")
+			4. Name (Name des Aropagoi wenn der T´skrang aufgenommen wird, ersetzt manchmal den Namen des Fundaments wenn dieses zum Aropagoi gehört)
+			Wird der T´skrang lahala nimmt er den Namen des Fundaments als einzigen Namen an
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">Aysusul;Ayapagoam;Aychasu;Ch’isha;D’zurr;Gris’kall;Ka’Daiyen;Kar’rath;Kricklas;Kricklen;Kenshan;Rh’gullian;R’ressnosh;San’t;Segue;P’shalmar;Schlome;Shisa’kas;Ss’kala;Syrkhan;T’aysta;T’sabur;T’shystalan;Vash’sten;V’stogas;Yoke;Z’rrt’shulam</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
-	<!--
-	"A windling receives his Name from his parents and kin-parents." (NG p.140)
-	1. Vorname (von den Eltern bekommen)
-	-->
 	<RANDOMNAME_RACE race="Windling">
+		<COMMENT>
+			"A windling receives his Name from his parents and kin-parents." (NG p.140)
+			1. Vorname (von den Eltern bekommen)
+		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Aylaa;Cydiilya;Nyataij;Vaylaa</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Broomé;Buukh;Daalan;Ekidii;Faylaa;Filtch;Ghooru;Gesaale;Hakudaa;Ijundaa;Joorn;Kaarth;Leeth;Manataas;Osildaas;Poorht;Poosim;Qendaar;Pooth;Seethian;Syildijan;Thalon;Tinsoo;Ukayaar;Xastiin;Zorisanaal</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>

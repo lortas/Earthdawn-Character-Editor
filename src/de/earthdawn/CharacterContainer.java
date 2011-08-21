@@ -87,21 +87,27 @@ public class CharacterContainer extends CharChangeRefresh {
 				GenderType g = nameparts.getGender();
 				if( gender.equals(GenderType.MINUS) || g.equals(GenderType.MINUS) || g.equals(gender) ) {
 					List<String> splitNameParts = new ArrayList<String>();
-					for( String s : nameparts.getValue().split(nameparts.getDelimiter()) ) splitNameParts.add(s);
+					for( String s : nameparts.getValue().trim().split(nameparts.getDelimiter()) ) {
+						if( s.isEmpty() ) continue;
+						StringBuffer buf = new StringBuffer();
+						for( String sylalable : s.trim().split(nameparts.getSyllabledelimiter()) ) buf.append(sylalable.trim());
+						String concat = buf.toString();
+						splitNameParts.add(concat.substring(0,1).toUpperCase()+concat.substring(1).toLowerCase());
+					}
 					namesAllRaces.get(part).addAll(splitNameParts);
 					if( isRace ) namesOneRace.get(part).addAll(splitNameParts);
 				}
 			}
 		}
-		String name="";
+		StringBuffer namebuf = new StringBuffer();
 		for( int i=0; i<maxPart; i++ ) {
 			List<String> list = namesOneRace.get(i);
 			if( list.isEmpty() ) list = namesAllRaces.get(i);
 			if( list.isEmpty() ) continue;
-			String s = list.get(rand.nextInt(list.size()));
-			if( name.isEmpty() ) name=s;
-			else name += " "+s;
+			namebuf.append(" ");
+			namebuf.append(list.get(rand.nextInt(list.size())));
 		}
+		String name = namebuf.toString().trim();
 		character.setName(name);
 		return name;
 	}
