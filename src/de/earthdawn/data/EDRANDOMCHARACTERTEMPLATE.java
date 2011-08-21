@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="RACES" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="ATTRIBUTES" type="{http://earthdawn.com/randomcharactertemplate}RANDOMATTRIBUTES_type" maxOccurs="unbounded"/>
  *         &lt;element name="DISCIPLINES" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
- *         &lt;element name="SPELLS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
+ *         &lt;element name="SPELLCATEGORY" type="{http://earthdawn.com/randomcharactertemplate}RANDOMSPELLCATEGORY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SKILLS" type="{http://earthdawn.com/randomcharactertemplate}weightedstringlist_type" maxOccurs="unbounded"/>
  *         &lt;element name="ITEMCATEGORY" type="{http://earthdawn.com/randomcharactertemplate}RANDOMITEMCATEGORY_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
@@ -53,7 +53,7 @@ import javax.xml.bind.annotation.XmlType;
     "races",
     "attributes",
     "disciplines",
-    "spells",
+    "spellcategory",
     "skills",
     "itemcategory"
 })
@@ -66,8 +66,8 @@ public class EDRANDOMCHARACTERTEMPLATE {
     protected List<RANDOMATTRIBUTESType> attributes;
     @XmlElement(name = "DISCIPLINES", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
     protected List<WeightedstringlistType> disciplines;
-    @XmlElement(name = "SPELLS", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
-    protected List<WeightedstringlistType> spells;
+    @XmlElement(name = "SPELLCATEGORY", namespace = "http://earthdawn.com/randomcharactertemplate")
+    protected List<RANDOMSPELLCATEGORYType> spellcategory;
     @XmlElement(name = "SKILLS", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
     protected List<WeightedstringlistType> skills;
     @XmlElement(name = "ITEMCATEGORY", namespace = "http://earthdawn.com/randomcharactertemplate", required = true)
@@ -173,32 +173,32 @@ public class EDRANDOMCHARACTERTEMPLATE {
     }
 
     /**
-     * Gets the value of the spells property.
+     * Gets the value of the spellcategory property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spells property.
+     * This is why there is not a <CODE>set</CODE> method for the spellcategory property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSPELLS().add(newItem);
+     *    getSPELLCATEGORY().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link WeightedstringlistType }
+     * {@link RANDOMSPELLCATEGORYType }
      * 
      * 
      */
-    public List<WeightedstringlistType> getSPELLS() {
-        if (spells == null) {
-            spells = new ArrayList<WeightedstringlistType>();
+    public List<RANDOMSPELLCATEGORYType> getSPELLCATEGORY() {
+        if (spellcategory == null) {
+            spellcategory = new ArrayList<RANDOMSPELLCATEGORYType>();
         }
-        return this.spells;
+        return this.spellcategory;
     }
 
     /**

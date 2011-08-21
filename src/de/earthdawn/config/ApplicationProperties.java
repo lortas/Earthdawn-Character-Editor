@@ -120,6 +120,12 @@ public class ApplicationProperties {
 		return shrinkStringMap(result);
 	}
 
+	public Map<String,Map<String,?>> getAllCharacterTemplatesNamesAsTree() {
+		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
+		for( String s : RANDOMCHARACTERTEMPLATES.getAllTemplateNames() ) result.put(s,new HashMap<String, Map<String,?>>());
+		return shrinkStringMap(result);
+	}
+
 	private Map<String,Map<String,?>> shrinkStringMap(Map<String,Map<String,?>> map) {
 		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
 		for( String newkey : map.keySet() ) {
@@ -388,9 +394,11 @@ public class ApplicationProperties {
 	}
 
 	public CharacterContainer getRandomCharacter(String template) {
+		if( template == null ) return null; 
 		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
 		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.getSPELL());
 		RANDOMCHARACTERTEMPLATES.setCapabilities(new ECECapabilities(getCapabilities().getSKILLOrTALENT()));
+		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES);
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
 	}
 

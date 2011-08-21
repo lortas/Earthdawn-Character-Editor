@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EDRANDOMCHARACTERTEMPLATE lang="en" name="Wizard c3-6" circle_min="3" circle_max="6" xmlns="http://earthdawn.com/randomcharactertemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomcharactertemplate ../earthdawnrandomcharactertemplate.xsd">
+<RACES weight="6" >Dwarf Human Elf</RACES>
+<RACES weight="4" >Ork</RACES>
+<RACES weight="3" >Troll</RACES>
+<RACES weight="1" >Windling</RACES>
+<ATTRIBUTES attribute="DEX" weight="2"/>
+<ATTRIBUTES attribute="STR" weight="2"/>
+<ATTRIBUTES attribute="TOU" weight="4"/>
+<ATTRIBUTES attribute="PER" weight="10"/>
+<ATTRIBUTES attribute="WIL" weight="10"/>
+<ATTRIBUTES attribute="CHA" weight="4"/>
+<DISCIPLINES>Wizard</DISCIPLINES>
+<SPELLCATEGORY name="basis spells" max="1" min="10">
+	<SPELLS weight="30" delimiter=",">Astral Sense,Bedazzling Display of Logical Analysis,Crushing Will,Dispel Magic,Divine Aura,Divine Aura,Iron Hand,Mind Dagger,Silent Converse</SPELLS>
+	<SPELLS delimiter=",">And His Money,Astral Shield,Clean</SPELLS>
+</SPELLCATEGORY>
+<SPELLCATEGORY name="enhanced spells" max="1" min="4">
+	<SPELLS delimiter=",">Ball of String,Binding Threads,Buoyancy,Dust Devil,Hair Frenzy,Icy Protection</SPELLS>
+</SPELLCATEGORY>
+<SKILLS delimiter=";">Detect Trap;Disarm Trap;Surprise Strike;Trap Initiative;Search;Tracking;Haggle;Animal Handling;Avoid Blow</SKILLS>
+<ITEMCATEGORY name="weapon" min="1" max="1">
+	<ITEMS>Broadsword Shortsword Axe</ITEMS>
+</ITEMCATEGORY>
+<ITEMCATEGORY name="armor">
+	<ITEMS delimiter=",">Hardened Leather,Padded Leather</ITEMS>
+</ITEMCATEGORY>
+<ITEMCATEGORY name="utils">
+	<ITEMS delimiter=",">Bedroll, artisan tool (rune carving)</ITEMS>
+</ITEMCATEGORY>
+</EDRANDOMCHARACTERTEMPLATE>
