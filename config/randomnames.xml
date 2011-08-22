@@ -4,20 +4,20 @@
 		<COMMENT>
 			"Dwarfs usually have two Names. The first Name is chosen by the dwarf ’s parents, the second by the most significant grandparent.
 			It is common for a young dwarf to share one of his Names with a grandparent or parent." (NG p.135)
-			1. Vorname (von den Eltern gewählt)
-			2. Vorname (von den Großeltern gewählt)
-			3. Familienname (meist von Eltern, in Ausnahmefällen auch von den Großeltern)
+			- first given Name (chosen by parents)
+			- second given Name (chosen by most significant grandparent)
+			- family Name (most often shares its family Name with its parents, though in some cases a young dwarf shares that Name with its grandparents. )
 		</COMMENT>
-		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ach-a-tell;A-qui-al;Ba-pu-e-a;Ba-puy;Ba-schy;Do-ri-lly;Fan-like;Galfie;Gilly;Igrami;Jaella;Jatraschya;Kiry;Kleiyie;Learka;Maera;Mergrima;Mergrimya;Morianell;Obsidianial;Obsidya;Platinea;Platiny;saphirell;Seadda;Segalnall;Segalnell;Segalnial;Segalnya;Sloncia;Wapargall;Waparge;Yania;Ysilla</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alfregg;Agnar;Arex;Bariv;Baver;Bulim;Carnadan;Dagnus;Del;Egin;Engarim;Etogosch;Fasakel;Fignus;Glorin;Grepius;Grirr;Gumgelf;Himbez;Hofur;Irmeam;Kagrem;Kordur;Lemosch;Levom;Lognar;Lugom;Mekel;Merrox;Moran;Morax;Morram;Myrr;Noran;Obalosch;Ogalme;Parilex;Paranur;Rabogasch;Renar;Schilbimg;Sunar;Thom;Thorek;Thorim;Turweck;Tusur;Tuwer;Ulrun;Varulus;Vignor;Vinelfr;Vunar;Zognar</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="1" delimiter=";">Axt-hau-er;Axtschwinger;Bergschmied;Breithelm;Donnerstein;Eisenfaust;Eisenhammer;Eisenheim;Eisenrein;Eisenstolz;Erdauge;Feuerwerk;Gassenzwerg;Goldheim;Goldschmuck;Hammerblade;Hammerblut;Hammertanz;Isenformer;Isenklang;Kupferbart;Kupferblut;Rieka;Schmiedeeisen;Silberblut;Silberfaust;Silberglanz;Silberhaar;Stahlblick;Steinreich</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ach-a-tell;Do-ri-lly;Gal-fie;Gi-lly;Ja-e-lla;Ja-tra-schy-a;Klei-yie;Le-ar-ka;Ma-e-ra;Mer-gri-mya;Mo-ri-a-nell;Ob-si-dya;Pla-ti-nea;Pla-tiny;Se-a-dda;Se-gal-nya;Slon-ci-a;Wa-par-ge;Ya-ni-a;Y-si-lla</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";">A-qui-al;Ba-pu-e-a;Ba-schy;Ba-puy;I-gra-mi;Ki-ry;Mer-gri-ma;Ob-si-dian-ial;O-gal-me;Sa-phi-rell;Se-gal-nall;Se-gal-nell;Su-nar;Wa-par-gall;</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Al-fregg;Ag-nar;A-rex;Ba-riv;Ba-ver;Bu-lim;Car-na-dan;Dag-nus;Del;Eg-in;En-ga-rim;E-to-gosch;Fa-sa-kel;Fi-gnus;Gl-orin;Gre-pi-us;Grirr;Gum-gelf;Him-bez;Ho-fur;Ir-me-am;Kag-rem;Kor-dur;Le-mosch;Le-vom;Log-nar;Lu-gom;Me-kel;Mer-rox;Mo-ran;Mor-ax;Mor-ram;Myrr;No-ran;O-ba-losch;Pa-ri-lex;Pa-ra-nur;Ra-bo-gasch;Re-nar;Schil-bimg;Se-gal-ni-al;Thom;Tho-rek;Tho-rim;Tur-weck;Tu-sur;Tu-wer;Ul-run;Va-ru-lus;Vi-gnor;Vi-nelfr;Vu-nar;Zo-gnar</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1" delimiter=";">Axt-hau-er;Axt-schwin-ger;Berg-schmied;Breit-helm;Do-nner-stein;Ei-sen-faust;Ei-sen-ham-mer;Ei-sen-heim;Ei-sen-rein;Ei-sen-stolz;Erd-auge;Feu-er-werk;Ga-ssen-zwerg;Gold-heim;Gold-schmuck;Ham-mer-blade;Ham-mer-blut;Ham-mer-tanz;I-sen-for-mer;I-sen-klang;Ku-pfer-bart;Ku-pfer-blut;Rie-ka;Schmie-de-ei-sen;Sil-ber-blut;Sil-ber-faust;Sil-ber-glanz;Sil-ber-haar;Stahl-blick;Stein-reich</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Elf">
 		<COMMENT>
 			"The Names of elven infants often represent an aspect of their lineage, and are chosen by the parents. Elves commonly undergo the
-			Ritual of Passage at the age of twenty, during which they choose their own Names." (NG p. 135)
-			1. Vorname (beim "Ritual of Passage" selbst gewählt)
+			Ritual of Passage at the age of twenty, during which they choose their own Names." (NG p.135)
+			- first given Name (discovered within the "Ritual of Passage" by himself)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ae-lin;Ae-nea;Ai-na;A-la-chia;A-ri-en;A-va-ri;Bal-ta-na;Be-al-te;Be-tha-ny;Bo-ra-rí-na;Cayn-reth;Dal-lia;Dal-ya;Den-na;Di-ri-na;Dol-ret-tea;Eir-deth;El-be-ria;Ele-the-ria;El-kan-sha-ra;Es-tey-ria;E-the-nia;Fa-il-la;Fec-ti-via;Fin-gaya;Ili-sa;Jo-re-alla;Ju-lea;Ke-le-shanne;Kle-ve-na;Kor-ren-zia;Le'-a-ra;Le-na-ya;Le-sha;Li-a-ra;Li-an-dra;Lu-e-vi-a;Lyl-la-ria;Mas-tha-she-ra-na;Me'-ga-na;Me-nea;Me-ri-ana;Na-há-la;Nai’ara;Na-ya-de;Ni-al-le;Ni-riame;Prey-stia;R'-Mai;Rhen-yia;Ri-an-na;Ris-sa;Se-le-nika;Sha-ne-ra;She-ra-na;Shyn-reth;Su-ra-kina;Te-lia;Thy-re-sia;Tu-mi-nna;Tyr-ne-a;U-ve-nia;Vae-rin;Va-nyi-ë;</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">A-du-rí-dû-nê;Ae-rá-vi-én;Al-quó-que;Bre-thil;Ca-ra-kqu-en;Cu-rá-nil;Daa;Del-thri-en;Di-mi-le;Ed-deth;El-dar;E-len-yu;E-lin-drel;E-va-get;Fan-she-rin;Fal-schi-del;Gae-lin;Gel-thrain;Glín-rith;I-a-thi;Jah-nee;Jek-ky;Kai;Ka-thi-eri;Ke-ris;Kes'-tu-rah;Lar-rin;Laur-wen;Lo-ri-nel;Lu-xi;Ly-gis;Mor-drinn;Mo-ri-quen-di;Mor-wen;Nur-ya-nel;Quen-di;Qwaith;Rad-lin;Ra-ma-dris;Ser-óv-rin;Si-lu-ath;Te-lpe;Ti-ri-ame;Thrai-le;T'-ra-ya;Um-bar-sis;Va-cho-ryn;Va-li-an;Yas-sal;</RANDOMNAME_NAMEPART>
