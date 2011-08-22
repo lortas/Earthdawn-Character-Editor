@@ -33,6 +33,7 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECharacteristics;
 import de.earthdawn.data.*;
 import de.earthdawn.event.CharChangeRefresh;
+import de.earthdawn.namegenerator.NameGenerator;
 
 public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
@@ -68,46 +69,16 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public String setRandomName() {
-		APPEARANCEType appearance = getAppearance();
+		final APPEARANCEType appearance = getAppearance();
 		final String race = appearance.getRace();
-		GenderType gender = appearance.getGender();
-		List<List<String>> namesAllRaces = new ArrayList<List<String>>();
-		List<List<String>> namesOneRace = new ArrayList<List<String>>();
-		final int maxPart=4;
-		for( int i=0; i<maxPart; i++ ) {
-			namesAllRaces.add(new ArrayList<String>());
-			namesOneRace.add(new ArrayList<String>());
-		}
-		for( RANDOMNAMERACEType randomnames: PROPERTIES.getRandomNamesByRaces() ) {
-			boolean isRace=randomnames.getRace().equals(race);
-			for( RandomnameNamesType nameparts : randomnames.getRANDOMNAMENAMEPART() ) {
-				int part=nameparts.getPart();
-				if( part < 0 ) continue;
-				if( part >= maxPart ) continue;
-				GenderType g = nameparts.getGender();
-				if( gender.equals(GenderType.MINUS) || g.equals(GenderType.MINUS) || g.equals(gender) ) {
-					List<String> splitNameParts = new ArrayList<String>();
-					for( String s : nameparts.getValue().trim().split(nameparts.getDelimiter()) ) {
-						if( s.isEmpty() ) continue;
-						StringBuffer buf = new StringBuffer();
-						for( String sylalable : s.trim().split(nameparts.getSyllabledelimiter()) ) buf.append(sylalable.trim());
-						String concat = buf.toString();
-						splitNameParts.add(concat.substring(0,1).toUpperCase()+concat.substring(1).toLowerCase());
-					}
-					namesAllRaces.get(part).addAll(splitNameParts);
-					if( isRace ) namesOneRace.get(part).addAll(splitNameParts);
-				}
-			}
-		}
-		StringBuffer namebuf = new StringBuffer();
-		for( int i=0; i<maxPart; i++ ) {
-			List<String> list = namesOneRace.get(i);
-			if( list.isEmpty() ) list = namesAllRaces.get(i);
-			if( list.isEmpty() ) continue;
-			namebuf.append(" ");
-			namebuf.append(list.get(rand.nextInt(list.size())));
-		}
-		String name = namebuf.toString().trim();
+		final GenderType gender = appearance.getGender();
+
+		NameGenerator namegenerator = new NameGenerator(PROPERTIES.getRandomNamesByRaces());
+
+		System.out.println(namegenerator.generateName(race, gender));
+		System.out.println(namegenerator.generateName2(race, gender));
+
+		String name = namegenerator.generateName3(race,gender);
 		character.setName(name);
 		return name;
 	}

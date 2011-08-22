@@ -19,69 +19,65 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import de.earthdawn.data.GenderType;
 
-public class Syllable {
-	private String sSyl;
-	private HashMap<String,HashMap<GenderType,List<List<Syllable>>>> next;
+public class SyllableComplex {
+	private String syl;
+	private HashMap<String,HashMap<GenderType,List<List<SyllableComplex>>>> next;
 	private SyllableType type;
 
-	public Syllable(String sSyl, String type ) {
+	public SyllableComplex(String sSyl, String type ) {
 		this(sSyl,SyllableType.fromValue(type));
 	}
 
-	public Syllable(String sSyl, SyllableType type ) {
-		this.sSyl = sSyl;
+	public SyllableComplex(String sSyl, SyllableType type ) {
+		this.syl = sSyl;
 		this.type = type;
-		this.next = new HashMap<String,HashMap<GenderType,List<List<Syllable>>>>();
+		this.next = new HashMap<String,HashMap<GenderType,List<List<SyllableComplex>>>>();
 	}
 
-	public void isalso(SyllableType type) {
+	public void isAlso(SyllableType type) {
 		if( type.equals(this.type) ) return;
 		this.type = SyllableType.MID;
 	}
 
-	public String toString() {
-		return this.toString(null);
+	public String getSyl() {
+		return this.syl;
 	}
 
-	public String toString(String indent) {
+	public String toString() {
 		StringBuffer result = new StringBuffer();
-		if( indent != null ) result.append(indent);
-		else indent="";
 		switch( this.type ) {
 		case BEGIN:
 			result.append("$BEGIN$");
-			result.append(sSyl);
-			result.append("\n");
-			result.append(indent);
+			result.append(syl);
+			result.append(":");
 			break;
 		case END:
-			result.append(sSyl);
+			result.append(syl);
 			result.append("$END$");
-			result.append("\n");
 			return result.toString();
 		default:
-			result.append(sSyl);
-			result.append("\n");
-			result.append(indent);
+			result.append(syl);
+			result.append(":");
 			break;
 		}
 		for( String racename : this.next.keySet() ) {
 			result.append(racename);
 			result.append(":");
-			HashMap<GenderType, List<List<Syllable>>> race = this.next.get(racename);
+			HashMap<GenderType, List<List<SyllableComplex>>> race = this.next.get(racename);
 			for( GenderType gendertype : race.keySet() ) {
 				result.append(gendertype.value());
 				result.append(":");
 				int partpos = 0;
-				for( List<Syllable> part : race.get(gendertype) ) {
-					result.append(partpos);
-					result.append(":\n");
-					for( Syllable s : part ) s.toString(indent+" ");
-					partpos++;
+				for( List<SyllableComplex> part : race.get(gendertype) ) {
+					result.append(partpos++);
+					for(SyllableComplex s : part) {
+						result.append(";");
+						result.append(s.hashCode());
+					}
 				}
 			}
 		}
@@ -89,41 +85,48 @@ public class Syllable {
 	}
 
 	public void insertNext(String race, GenderType gender, int part, String syl, SyllableType type ) {
-		insertNext(race,gender,part,new Syllable(syl,type));
+		insertNext(race,gender,part,new SyllableComplex(syl,type));
 	}
 
-	public void insertNext(String race, GenderType gender, int part, Syllable syl ) {
-		HashMap<GenderType, List<List<Syllable>>> r = this.next.get(race);
+	public void insertNext(String race, GenderType gender, int part, SyllableComplex syl ) {
+		HashMap<GenderType, List<List<SyllableComplex>>> r = this.next.get(race);
 		if( r == null ) {
-			r = new HashMap<GenderType, List<List<Syllable>>>();
+			r = new HashMap<GenderType,List<List<SyllableComplex>>>();
 			this.next.put(race, r);
 		}
-		List<List<Syllable>> g = r.get(gender);
+		List<List<SyllableComplex>> g = r.get(gender);
 		if( g == null ) {
-			g = new Vector<List<Syllable>>();
+			g = new ArrayList<List<SyllableComplex>>();
 			r.put(gender,g);
 		}
-		while( g.size() <= part+1 ) g.add(new Vector<Syllable>());
-		List<Syllable> p = g.get(part);
+		while( g.size() <= part ) g.add(new ArrayList<SyllableComplex>());
+		List<SyllableComplex> p = g.get(part);
 		if( ! p.contains(syl) ) p.add(syl);
 	}
 
-	public List<Syllable> getNext(String race, GenderType gender, int part ) {
-		HashMap<GenderType, List<List<Syllable>>> r = this.next.get(race);
+	public List<SyllableComplex> getNext(String race, GenderType gender, int part ) {
+		HashMap<GenderType, List<List<SyllableComplex>>> r = this.next.get(race);
 		if( r == null ) return null;
-		List<List<Syllable>> g = r.get(gender);
-		return g.get(part);
+		List<SyllableComplex> result = new ArrayList<SyllableComplex>();
+		result.addAll(r.get(gender).get(part));
+		if( gender.equals(GenderType.MINUS) ) return result;
+		List<List<SyllableComplex>> g = r.get(GenderType.MINUS);
+		if( g == null ) return result;
+		List<SyllableComplex> p = g.get(part);
+		if( p == null ) return result;
+		result.addAll(p);
+		return result;
 	}
 
-	public HashMap<GenderType, List<List<Syllable>>> getNext(int race) {
+	public HashMap<GenderType, List<List<SyllableComplex>>> getNext(int race) {
 		String[] raceKeys = (String[]) this.next.keySet().toArray();
 		if( raceKeys.length == 0 ) return null;
 		race %= raceKeys.length;
 		return this.next.get(raceKeys[race]);
 	}
 
-	public List<List<Syllable>> getNext(int race, int gender) {
-		HashMap<GenderType, List<List<Syllable>>> raceValues = this.getNext(race);
+	public List<List<SyllableComplex>> getNext(int race, int gender) {
+		HashMap<GenderType, List<List<SyllableComplex>>> raceValues = this.getNext(race);
 		if( raceValues == null ) return null;
 		GenderType[] genderKeys = (GenderType[]) raceValues.keySet().toArray();
 		if( genderKeys.length == 0 ) return null;
@@ -131,19 +134,19 @@ public class Syllable {
 		return raceValues.get(genderKeys[gender]); 
 	}
 
-	public List<Syllable> getNext(int race, int gender, int part) {
-		List<List<Syllable>> s = this.getNext(race,gender);
+	public List<SyllableComplex> getNext(int race, int gender, int part) {
+		List<List<SyllableComplex>> s = this.getNext(race,gender);
 		part %= s.size();
 		return(s.get(part));
 	}
 
-	public Syllable getNext(int race, int gender, int part, int syllable ) {
-		List<Syllable> s = this.getNext(race,gender,part);
+	public SyllableComplex getNext(int race, int gender, int part, int syllable ) {
+		List<SyllableComplex> s = this.getNext(race,gender,part);
 		syllable %= s.size();
 		return(s.get(syllable));
 	}
 
 	public boolean equals(Object obj) {
-		return (obj instanceof Syllable) && ((Syllable)obj).sSyl.equals(this.sSyl);
+		return (obj instanceof SyllableComplex) && ((SyllableComplex)obj).getSyl().equals(this.syl);
 	}
 }
