@@ -32,8 +32,7 @@
 			1. Vorname (von den Eltern)	Nachname eher selten, wenn es um die Abstammung geht wird dazugesagt "Sohn/ Tochter von ..."; ist aber regional unterschiedlich
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Celina;Galdora;Igna;Kelandra;Nahindra;Ophelia;Quelana</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alachrim;Alvar;Baldred;Cymric;Daylen;Delmor;Elwind;Fenwill;Gandalar;Gillian;Honguth;Hyram;Jel;J’Role;Lamand;Melgador;Pandur;Rigus;Santorano;Timbur;Ulgur;Vendar;Wilbur;Yan;Yanno;Xandir;Zidan;$C$=60;A-de-lo;A-de-lon;A-gi-more;A-gra-men;A-le-ac;Al-kan-dair;Al-kor;An-thros;Apu-li-an;Ar-go;Ar-rald;Ar-tho-nius;Ben-ton;Ber-thon;Be-var-den;Bla-nack;Bo-ram;Bral-toth;Bri-us;Brus-pri;Byth;Ca-en;Cal-vis;Ca-ra-vath;Ce-dric;Ce-vas;Char-ne-ale;Chukh;Cly-stein;Co-dy;Cym-ric;D'-nal;D'-zar;Da-ckus;Da-mi-en;Da-ris;De-lain;Der-fil-lion;Ea-conn;El-ja-zer;E-lom;E-ralk;Fai-ral;Far-lus;Fe-gis;Fi-er;For-tin;Ga-reth;Gar-shin;Ger-rik;Gra-is;Gro-gand;Gur-drim;Gwan-do;Ha-mos;Han-rald;He-ri-zim;Hier-mon;Hu-san;I-lio;Il-kith;I-tien-nie;J'-role;Ja-nus;Ja-ron;Ja-som;Ja-van;Je-renn;Jer-leth;Je-vais;Jo-eb;Jo-sa-ra;Ka-la-rian;Ka-leb;Ka-rim;Kei-nar;Kos-sol;Kui-per;Ku-lul;Kyp-ros;Lan-nen;Les-sar;Lo'-arr;Lor-go;Lu-wen;Lys-ke;M'-da-li;M'-ka-el;Mal-va-ri;Ma-xor;Max-ton;Me-li-as;Me-nach'-me;Mer-vin;Mi-la;Mi-sha;Mor-dain;Mor-vak;Myk;Mys-tal;Na-al;Na-lil;Nee-dren;Ne-ru;No-nan;No-ra-im;O-berh;O-du;Ol-ti-on;O-mag;Pa-trin;Pa-trus;Pin-dre;Pol;Qua-ri-que;Rak-land;Ral-fan-ter;Re-le-el;Sad-du;Sa-ma-el;Sen-dric;Sha-ku-ru;Sha-ryn;Shim-mus;So-go-ra;Sud-low;Tal-lis;Ta-ly-rin;Tar-lanth;Te-le-mir;Tel-la-nion;Te-vern;Thom;Tho-ma-las;Ton-laa;Tor-kel;To-ro-co;Tor-ran;Tre-la-nia;Tri-ann;Tri-bas;Tu-ral;Tu-ran;Ty-rani-sis;Ur-rif;Ur-var;Ve-rin;Vi-dar;War-ris;Wil-lem;Wor-li-as;Yan-no;Ya-rith;Yer-reb</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="1" delimiter=";">Goerm;Jagaro;Lang;Mammo</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alachrim;Alvar;Baldred;Cymric;Daylen;Delmor;Elwind;Fenwill;Gandalar;Gillian;Goerm;Honguth;Hyram;Jagaro;Jel;J’Role;Lamand;Melgador;Pandur;Rigus;Santorano;Timbur;Ulgur;Vendar;Wilbur;Yan;Yanno;Xandir;Zidan</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Ki Mao">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
@@ -71,7 +70,7 @@
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Troll">
 		<COMMENT>
-			"Highland trolls have three Names. A troll’s first Name, like a human’s or dwarf ’s “given” Name, is associated more or less uniquely with that individual and often has some meaning in the language from which it derives. The derivation of the second Name varies from from clan to clan and moot to moot. In some clans it indicates the trolls family or clan; in others, it merely serves as a second personal identifier. The third Name identifies the troll’s clan or moot. The major trollmoots are located in the Twilight Peaks:
+			"Highland trolls have three Names. A troll’s first Name, like a human’s or dwarf ’s “given�? Name, is associated more or less uniquely with that individual and often has some meaning in the language from which it derives. The derivation of the second Name varies from from clan to clan and moot to moot. In some clans it indicates the trolls family or clan; in others, it merely serves as a second personal identifier. The third Name identifies the troll’s clan or moot. The major trollmoots are located in the Twilight Peaks:
 			the Stoneclaws and the Swiftwinds to the East, the Blood Lores and Blackfangs to the West, and the Ironmongers and Thundersky trollmoots in the central peaks.
 			Lowland trolls are known to follow human Naming rituals and pay court in the manner of their human neighbors." (NG p. 138)
 			Hochlandtrolle
@@ -83,7 +82,9 @@
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Skorja</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Barak;Belwharg;Belgaras;Bormak;Chag;Crygath;Dogul;Dul’Gaar;Emkor;Fograk;Ganlor;Holdur;Irrgam;Jarth’d;Jorkaw;Kaan;Karok;Larus;Lorm;Lorrm;Mongur;Narkys;Orrguth;Osker;Pawkarr;Quindor;Rothur;Starrk;Tahst;Targ;Twak’dar;Urdon;Vigord;Wrogath;Yggerg;Zisgul</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="1" delimiter=";">Baldurion;Boneslicer;Skat</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="2" delimiter=";">Baldurion;Boneslicer;Skat</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="3" delimiter=";"></RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="T´skrang">
 		<COMMENT>
@@ -102,6 +103,8 @@
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">Aysusul;Ayapagoam;Aychasu;Ch’isha;D’zurr;Gris’kall;Ka’Daiyen;Kar’rath;Kricklas;Kricklen;Kenshan;Rh’gullian;R’ressnosh;San’t;Segue;P’shalmar;Schlome;Shisa’kas;Ss’kala;Syrkhan;T’aysta;T’sabur;T’shystalan;Vash’sten;V’stogas;Yoke;Z’rrt’shulam</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="2" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="3" delimiter=";"></RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Windling">
 		<COMMENT>
