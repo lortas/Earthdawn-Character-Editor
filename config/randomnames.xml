@@ -5,10 +5,11 @@
 			"Dwarfs usually have two Names. The first Name is chosen by the dwarf ’s parents, the second by the most significant grandparent.
 			It is common for a young dwarf to share one of his Names with a grandparent or parent." (NG p.135)
 			1. Vorname (von den Eltern gewählt)
-			2. Vorame (von den Großeltern)
-			3. Familienname (meist von Eltern, in ausnahmen auch von Großeltern)
+			2. Vorname (von den Großeltern gewählt)
+			3. Familienname (meist von Eltern, in Ausnahmefällen auch von den Großeltern)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ach-a-tell;A-qui-al;Ba-pu-e-a;Ba-puy;Ba-schy;Do-ri-lly;Fan-like;Galfie;Gilly;Igrami;Jaella;Jatraschya;Kiry;Kleiyie;Learka;Maera;Mergrima;Mergrimya;Morianell;Obsidianial;Obsidya;Platinea;Platiny;saphirell;Seadda;Segalnall;Segalnell;Segalnial;Segalnya;Sloncia;Wapargall;Waparge;Yania;Ysilla</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alfregg;Agnar;Arex;Bariv;Baver;Bulim;Carnadan;Dagnus;Del;Egin;Engarim;Etogosch;Fasakel;Fignus;Glorin;Grepius;Grirr;Gumgelf;Himbez;Hofur;Irmeam;Kagrem;Kordur;Lemosch;Levom;Lognar;Lugom;Mekel;Merrox;Moran;Morax;Morram;Myrr;Noran;Obalosch;Ogalme;Parilex;Paranur;Rabogasch;Renar;Schilbimg;Sunar;Thom;Thorek;Thorim;Turweck;Tusur;Tuwer;Ulrun;Varulus;Vignor;Vinelfr;Vunar;Zognar</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Axt-hau-er;Axtschwinger;Bergschmied;Breithelm;Donnerstein;Eisenfaust;Eisenhammer;Eisenheim;Eisenrein;Eisenstolz;Erdauge;Feuerwerk;Gassenzwerg;Goldheim;Goldschmuck;Hammerblade;Hammerblut;Hammertanz;Isenformer;Isenklang;Kupferbart;Kupferblut;Rieka;Schmiedeeisen;Silberblut;Silberfaust;Silberglanz;Silberhaar;Stahlblick;Steinreich</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
@@ -18,14 +19,13 @@
 			Ritual of Passage at the age of twenty, during which they choose their own Names." (NG p. 135)
 			1. Vorname (beim "Ritual of Passage" selbst gewählt)
 		</COMMENT>
-		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ae-lin;Ae-nea;Ai-na;A-la-chia;Al-fa-liel;Al-quar;A-nnon;A-ri-en;A-tar;A-va-ri;Bal-ta-na;Be-al-te;Be-tha-ny;Ba-rad;Bo-ra-rí-na;Bra-gol;Bre-thil;Ca-rak;Ca-ra-kqu-en;Cayn-reth;Ce-leb;Co-ron;Dal-lia;Dal-ya;Den-na;Di-ri-na;Dol-ret-tea;Eir-deth;El-dar;Gae-lin;Glín-rith;Ha-dlon;Laur-wen;Lu-e-vi-a;Ma-rach;Me-lwer;Mo-ri-quen-di;Nai’ara;Nol-dor;Quen-di;Qwaith;Te-lpe;Tyr-ne-a;Va-nyi-ë;$C$=50;</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" delimiter=";">El-be-ria;Ele-the-ria;El-kan-shara;Es-tey-ria;E-the-nia;Fa-il-la;Fal-schi-del;Fec-ti-via;Gel-thrain;Ili-sa;Ja-on;Jo-re-alla;Ju-lea;Kai;Ka-thi-eri;Ke-le-shanne;Kes'-tu-rah;Kle-ve-na;Kor-ren-zia;Le'-a-ra;Le-na-ya;Le-sha;Li-a-ra;Lo-ri-nel;Ly-gis;Lyl-la-ria;Ma-lo-niel;Me'-ga-na;Me-nea;Me-ri-ana;Mi-ne-lius;Mo-nus;Na-ya-de;Ni-al-le;Ni-riame;R'i-al-lan;R'-Mai;Rhen-yia;Ri-an-na;Ris-sa;Se-le-nika;Sha-ne-ra;She-ra-na;Shyn-reth;Ta-liel;Te-lia;Thy-re-sia;Ti-ri-ame;Tu-larch;U-ve-nia;Vae-rin;Yas-sal;Yon-le-diel;</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Adan;Adurídûnê;Aeraias;Aerávién;Alquóque;Argélohar;Atagdûr;Belphegor;Beshar;Caelarion;Caluath;Curánil;Da-gor;Delthrien;Dremnin;Daa;Dimile;Dungâmbar;Earinirist;Erariand;Evensong;Eytherian;Farliv;fingaya;Fithvael;Firnulach;Fuínahel;Gulinost;Hareth;Iathi;Ivênost;Ivreriand;Jaren;Jerreck;Karon;Kermanthil;Lianar;Managorn;Maralan;Mestoph;Mírênael;Morwurúth;Nahála;Námíhabar;Noarethal;Pyrail;Ramadris;Raméler;Ranogdûr;Seróvrin;Siluath;Sulige;Tiathar;Tuminna;Vinálas;Vingálachel;Weng;Yalathael;Zydan;$C$=60;Aith-ne;Al-fa-liel;Al-fa-rel;An-de-riel;An-thyr;A-ris;Ar-lorn;A-ron-dry;Can-trell;Cas-sian;Che-san;Del-thrien;De-ral-lis;De-riel;Dia-nuus;Ed-deth;Ei-chen;E-len-yu;E-lia-nar;E-li-dar;E-lin-drel;En-dar;E-va-get;Fa-fed-riel;Fan-she-rin;Far-liv;Fec-ti-via;Fel-ru;Fom-haar;Fur-ni-thann;Ga-me-lan;Ga-rol-lan;Ge-ve-rian;Grim-mas;Hae-lion;Ham-lin;Il-mo-rian;Ipa-la-nen;Jah-nee;Ja-ven;Jek-ky;Jer-reck;Ka-lou-rin;Ka-ron;Kea-ros;Ke-ris;Ke-thos;Kol-ban;La-gus-tan;Lar-rin;Le-neth-riel;Leo-na-rus;Li-a-nar;Li-an-dra;Lo-cha-riel;Lo-na-irr;Lu-xi;Ly-ran-den;Mas-tha-sherana;Mert;Mes-toph;Mil-lat;Mi-ne-lius;Mi-thran;Mon-tol-do;Mor-drinn;Mor-wen;Nar-rek;Nars-gill;Nel-son;Ne-va-rym;Nur-ya-nel;O-ber-liel;O-ril;Or-lan-do;Or-seth;Par;Prey-stia;Rad-lin;Rad-nar;Ra-duc-til;Ra-ga-liel;Ra-thann;Re-nel;Rhi-si-art;Ri-o-ran;Ro-duc-til;Ros-tal-lian;Sel-si-or;Seo-samh;Su-ra-kina;Sya-la-nar;T'-ra-ya;Ta-ka-ris;Ta-lon-del;Ta-raaq;Ta-rin;Tar-lan;Te-lou-rian;Te-rach;Thea-ri-si;Thrai-le;Tre-bor;Trel-lius;Trui-te-mel;Tyr-la-an;Um-bar-sis;U-thar;Va-cho-ryn;Va-li-an;Va-saa-rius;Vis-trosh;Wil-sa-ron;</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" delimiter=";">Adurídûnê;Aerávién;Alquóque;Curánil;Delthrien;Daa;Dimile;</RANDOMNAME_NAMEPART>
-
+		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ae-lin;Ae-nea;Ai-na;A-la-chia;A-ri-en;A-va-ri;Bal-ta-na;Be-al-te;Be-tha-ny;Bo-ra-rí-na;Cayn-reth;Dal-lia;Dal-ya;Den-na;Di-ri-na;Dol-ret-tea;Eir-deth;El-be-ria;Ele-the-ria;El-kan-sha-ra;Es-tey-ria;E-the-nia;Fa-il-la;Fec-ti-via;Fin-gaya;Ili-sa;Jo-re-alla;Ju-lea;Ke-le-shanne;Kle-ve-na;Kor-ren-zia;Le'-a-ra;Le-na-ya;Le-sha;Li-a-ra;Li-an-dra;Lu-e-vi-a;Lyl-la-ria;Mas-tha-she-ra-na;Me'-ga-na;Me-nea;Me-ri-ana;Na-há-la;Nai’ara;Na-ya-de;Ni-al-le;Ni-riame;Prey-stia;R'-Mai;Rhen-yia;Ri-an-na;Ris-sa;Se-le-nika;Sha-ne-ra;She-ra-na;Shyn-reth;Su-ra-kina;Te-lia;Thy-re-sia;Tu-mi-nna;Tyr-ne-a;U-ve-nia;Vae-rin;Va-nyi-ë;</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";">A-du-rí-dû-nê;Ae-rá-vi-én;Al-quó-que;Bre-thil;Ca-ra-kqu-en;Cu-rá-nil;Daa;Del-thri-en;Di-mi-le;Ed-deth;El-dar;E-len-yu;E-lin-drel;E-va-get;Fan-she-rin;Fal-schi-del;Gae-lin;Gel-thrain;Glín-rith;I-a-thi;Jah-nee;Jek-ky;Kai;Ka-thi-eri;Ke-ris;Kes'-tu-rah;Lar-rin;Laur-wen;Lo-ri-nel;Lu-xi;Ly-gis;Mor-drinn;Mo-ri-quen-di;Mor-wen;Nur-ya-nel;Quen-di;Qwaith;Rad-lin;Ra-ma-dris;Ser-óv-rin;Si-lu-ath;Te-lpe;Ti-ri-ame;Thrai-le;T'-ra-ya;Um-bar-sis;Va-cho-ryn;Va-li-an;Yas-sal;</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">A-dan;Ae-ra-ias;Aith-ne;Al-fa-liel;Al-fa-rel;Al-quar;An-de-riel;A-nnon;An-thyr;A-ris;Ar-lorn;A-ron-dry;A-tar;Ar-gé-loh-ar;A-tag-dûr;Ba-rad;Bel-phe-gor;Bes-har;Bra-gol;Ca-e-la-ri-on;Ca-lu-ath;Can-trell;Ca-rak;Cas-sian;Ce-leb;Che-san;Co-ron;Cu-rá-nil;Da-gor;Del-thri-en;De-ral-lis;De-riel;Dia-nuus;Drem-nin;Dun-gâm-bar;Ea-ri-ni-rist;E-lia-nar;E-li-dar;En-dar;E-ra-ri-and;Ey-the-ri-an;Fa-fed-riel;Far-liv;Fel-ru;Fith-va-el;Fir-nu-lach;Fom-haar;Fuí-na-hel;Fur-ni-thann;Ga-me-lan;Ga-rol-lan;Ge-ve-rian;Grim-mas;Gu-li-nost;Ha-dlon;Ha-eli-on;Ham-lin;Ha-reth;Il-mo-rian;Ipa-la-nen;I-vê-nost;I-vre-ri-and;Ja-on;Ja-ren;Ja-ven;Jer-reck;Ka-lou-rin;Ka-ron;Kea-ros;Ker-man-thil;Ke-thos;Kol-ban;La-gus-tan;Le-neth-riel;Leo-na-rus;Li-a-nar;Lo-cha-riel;Lo-na-irr;Ly-ran-den;Ma-lo-niel;Ma-na-gorn;Ma-rach;Ma-ra-lan;Me-lwer;Mo-nus;Me-stoph;Mil-lat;Mi-ne-lius;Mí-rên-a-el;Mi-thran;Mon-tol-do;Mor-wu-rúth;Ná-mí-ha-bar;Nar-rek;Nars-gill;Ne-va-rym;Noa-re-thal;Nol-dor;O-ril;Or-lan-do;Or-seth;Par;Py-rail;Rad-nar;Ra-duc-til;Ra-ga-liel;Ra-nog-dûr;Ra-thann;Re-nel;R'i-al-lan;Rhi-si-art;Ri-o-ran;Ro-duc-til;Ros-tal-lian;Sel-si-or;Seo-samh;Su-lige;Sya-la-nar;Ta-ka-ris;Ta-liel;Ta-lon-del;Ta-raaq;Ta-rin;Tar-lan;Te-lou-rian;Te-rach;Thea-ri-si;Ti-a-thar;Tre-bor;Trel-lius;Trui-te-mel;Tu-larch;Tyr-la-an;U-thar;Va-saa-rius;Vi-ná-las;Vin-gá-la-chel;Vis-trosh;Weng;Wil-sa-ron;Ya-la-tha-el;Yon-le-diel;Zy-dan;</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Gar">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Naran</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Khan</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
@@ -35,10 +35,12 @@
 			1. Vorname (von den Eltern)	Nachname eher selten, wenn es um die Abstammung geht wird dazugesagt "Sohn/ Tochter von ..."; ist aber regional unterschiedlich
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Celina;Galdora;Igna;Kelandra;Nahindra;Ophelia;Quelana</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Alachrim;Alvar;Baldred;Cymric;Daylen;Delmor;Elwind;Fenwill;Gandalar;Gillian;Honguth;Hyram;Jel;Jâ€™Role;Lamand;Melgador;Pandur;Rigus;Santorano;Timbur;Ulgur;Vendar;Wilbur;Yan;Yanno;Xandir;Zidan;$C$=60;A-de-lo;A-de-lon;A-gi-more;A-gra-men;A-le-ac;Al-kan-dair;Al-kor;An-thros;Apu-li-an;Ar-go;Ar-rald;Ar-tho-nius;Ben-ton;Ber-thon;Be-var-den;Bla-nack;Bo-ram;Bral-toth;Bri-us;Brus-pri;Byth;Ca-en;Cal-vis;Ca-ra-vath;Ce-dric;Ce-vas;Char-ne-ale;Chukh;Cly-stein;Co-dy;Cym-ric;D'-nal;D'-zar;Da-ckus;Da-mi-en;Da-ris;De-lain;Der-fil-lion;Ea-conn;El-ja-zer;E-lom;E-ralk;Fai-ral;Far-lus;Fe-gis;Fi-er;For-tin;Ga-reth;Gar-shin;Ger-rik;Gra-is;Gro-gand;Gur-drim;Gwan-do;Ha-mos;Han-rald;He-ri-zim;Hier-mon;Hu-san;I-lio;Il-kith;I-tien-nie;J'-role;Ja-nus;Ja-ron;Ja-som;Ja-van;Je-renn;Jer-leth;Je-vais;Jo-eb;Jo-sa-ra;Ka-la-rian;Ka-leb;Ka-rim;Kei-nar;Kos-sol;Kui-per;Ku-lul;Kyp-ros;Lan-nen;Les-sar;Lo'-arr;Lor-go;Lu-wen;Lys-ke;M'-da-li;M'-ka-el;Mal-va-ri;Ma-xor;Max-ton;Me-li-as;Me-nach'-me;Mer-vin;Mi-la;Mi-sha;Mor-dain;Mor-vak;Myk;Mys-tal;Na-al;Na-lil;Nee-dren;Ne-ru;No-nan;No-ra-im;O-berh;O-du;Ol-ti-on;O-mag;Pa-trin;Pa-trus;Pin-dre;Pol;Qua-ri-que;Rak-land;Ral-fan-ter;Re-le-el;Sad-du;Sa-ma-el;Sen-dric;Sha-ku-ru;Sha-ryn;Shim-mus;So-go-ra;Sud-low;Tal-lis;Ta-ly-rin;Tar-lanth;Te-le-mir;Tel-la-nion;Te-vern;Thom;Tho-ma-las;Ton-laa;Tor-kel;To-ro-co;Tor-ran;Tre-la-nia;Tri-ann;Tri-bas;Tu-ral;Tu-ran;Ty-rani-sis;Ur-rif;Ur-var;Ve-rin;Vi-dar;War-ris;Wil-lem;Wor-li-as;Yan-no;Ya-rith;Yer-reb;</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Ki Mao">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Jun</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Lu</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
@@ -58,16 +60,19 @@
 			2. Name (von manchen Orks als Beschreibender Zusatz gewählt)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Aluk;Brog;Curst;Drognur;Ekarr;Faghn;Garon;Gors;Gragok;Hamvel;Horak;Jurok;Karoar;Kartos;Kia’k;Kraeg;Krolok;Lorga;Malgat;Mornur;Nago;Orkal;Pahok;Quan;Ristar;Tadhg;Tok;Uvul;Ulag;Venag;Y’lomm;Zugrut</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Manystones;Yelloweye</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Po Na">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Lang</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Hi</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Storm Children">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Fey</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
@@ -84,6 +89,7 @@
 			1. Vorname (von den Eltern bekommen)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Skorja</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Barak;Belwharg;Belgaras;Bormak;Chag;Crygath;Dogul;Dul’Gaar;Emkor;Fograk;Ganlor;Holdur;Irrgam;Jarth’d;Jorkaw;Kaan;Karok;Larus;Lorm;Lorrm;Mongur;Narkys;Orrguth;Osker;Pawkarr;Quindor;Rothur;Starrk;Tahst;Targ;Twak’dar;Urdon;Vigord;Wrogath;Yggerg;Zisgul</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="2" delimiter=";">Baldurion;Boneslicer;Skat</RANDOMNAME_NAMEPART>
@@ -115,6 +121,7 @@
 			1. Vorname (von den Eltern bekommen)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Aylaa;Cydiilya;Nyataij;Vaylaa</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Broomé;Buukh;Daalan;Ekidii;Faylaa;Filtch;Ghooru;Gesaale;Hakudaa;Ijundaa;Joorn;Kaarth;Leeth;Manataas;Osildaas;Poorht;Poosim;Qendaar;Pooth;Seethian;Syildijan;Thalon;Tinsoo;Ukayaar;Xastiin;Zorisanaal</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 </EDRANDOMNAME>
