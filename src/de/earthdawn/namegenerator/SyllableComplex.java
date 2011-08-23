@@ -25,22 +25,11 @@ import de.earthdawn.data.GenderType;
 
 public class SyllableComplex {
 	private String syl;
-	private HashMap<String,HashMap<GenderType,List<List<SyllableComplex>>>> next;
-	private SyllableType type;
+	private List<SyllableAttributes> attributes = new ArrayList<SyllableAttributes>();
+	private List<SyllableComplex> next = new ArrayList<SyllableComplex>();
 
-	public SyllableComplex(String sSyl, String type ) {
-		this(sSyl,SyllableType.fromValue(type));
-	}
-
-	public SyllableComplex(String sSyl, SyllableType type ) {
+	public SyllableComplex(String sSyl) {
 		this.syl = sSyl;
-		this.type = type;
-		this.next = new HashMap<String,HashMap<GenderType,List<List<SyllableComplex>>>>();
-	}
-
-	public void isAlso(SyllableType type) {
-		if( type.equals(this.type) ) return;
-		this.type = SyllableType.MID;
 	}
 
 	public String getSyl() {
@@ -49,104 +38,63 @@ public class SyllableComplex {
 
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		switch( this.type ) {
-		case BEGIN:
-			result.append("$BEGIN$");
-			result.append(syl);
-			result.append(":");
-			break;
-		case END:
-			result.append(syl);
-			result.append("$END$");
-			return result.toString();
-		default:
-			result.append(syl);
-			result.append(":");
-			break;
+		result.append(syl);
+		result.append("$");
+		for( SyllableAttributes a : this.attributes ) {
+			result.append("(");
+			result.append(a.getRace());
+			result.append(",");
+			result.append(a.getGender().value());
+			result.append(",");
+			result.append(a.getNamepart());
+			result.append(",");
+			if( a.isStart() ) result.append("1");
+			else result.append("0");
+			result.append(")");
 		}
-		for( String racename : this.next.keySet() ) {
-			result.append(racename);
-			result.append(":");
-			HashMap<GenderType, List<List<SyllableComplex>>> race = this.next.get(racename);
-			for( GenderType gendertype : race.keySet() ) {
-				result.append(gendertype.value());
-				result.append(":");
-				int partpos = 0;
-				for( List<SyllableComplex> part : race.get(gendertype) ) {
-					result.append(partpos++);
-					for(SyllableComplex s : part) {
-						result.append(";");
-						result.append(s.hashCode());
-					}
-				}
-			}
-		}
+		result.append("$");
 		return result.toString();
 	}
 
-	public void insertNext(String race, GenderType gender, int part, String syl, SyllableType type ) {
-		insertNext(race,gender,part,new SyllableComplex(syl,type));
+	public boolean containsAttribute(SyllableAttributes attr) {
+		return this.attributes.contains(attr);
 	}
 
-	public void insertNext(String race, GenderType gender, int part, SyllableComplex syl ) {
-		HashMap<GenderType, List<List<SyllableComplex>>> r = this.next.get(race);
-		if( r == null ) {
-			r = new HashMap<GenderType,List<List<SyllableComplex>>>();
-			this.next.put(race, r);
-		}
-		List<List<SyllableComplex>> g = r.get(gender);
-		if( g == null ) {
-			g = new ArrayList<List<SyllableComplex>>();
-			r.put(gender,g);
-		}
-		while( g.size() <= part ) g.add(new ArrayList<SyllableComplex>());
-		List<SyllableComplex> p = g.get(part);
-		if( ! p.contains(syl) ) p.add(syl);
+	public void insertNext(SyllableComplex next, String race, GenderType gender, int namepart, boolean start ) {
+		insertNext(next,new SyllableAttributes(race, gender, namepart, start));
 	}
 
-	public List<SyllableComplex> getNext(String race, GenderType gender, int part ) {
-		HashMap<GenderType, List<List<SyllableComplex>>> r = this.next.get(race);
-		if( r == null ) return null;
+	public void insertNext(SyllableComplex next, SyllableAttributes attributes ) {
+		// Füge die nächste Silbe nur ein, wenn Sie noch nicht eingefügt sein sollte
+		if( ! this.next.contains(next) ) this.next.add(next);
+		// Füge die Silbeneigenschaft nur ein, wenn Sie noch nicht vorhanden sein sollte.
+		int idx = this.attributes.indexOf(attributes);
+		if( idx < 0 ) this.attributes.add(attributes);
+		else if( attributes.isStart() ){
+			// Stelle sicher, dass die gespeicherte Silbeneigenschaft auch eine Startsilbe ist,
+			// wenn es die einzugügende auch ist.
+			this.attributes.get(idx).setStart(true);
+		}
+	}
+
+	public List<SyllableComplex> getNext(String race, GenderType gender, int namepart ) {
+		SyllableAttributes attr = new SyllableAttributes(race, gender, namepart, false);
+		return getNext(attr);
+	}
+
+	public List<SyllableComplex> getNext(SyllableAttributes attr) {
 		List<SyllableComplex> result = new ArrayList<SyllableComplex>();
-		result.addAll(r.get(gender).get(part));
-		if( gender.equals(GenderType.MINUS) ) return result;
-		List<List<SyllableComplex>> g = r.get(GenderType.MINUS);
-		if( g == null ) return result;
-		List<SyllableComplex> p = g.get(part);
-		if( p == null ) return result;
-		result.addAll(p);
+		for( SyllableComplex s : this.next ) {
+			if( s.containsAttribute(attr) ) result.add(s);
+		}
 		return result;
 	}
 
-	public HashMap<GenderType, List<List<SyllableComplex>>> getNext(int race) {
-		String[] raceKeys = (String[]) this.next.keySet().toArray();
-		if( raceKeys.length == 0 ) return null;
-		race %= raceKeys.length;
-		return this.next.get(raceKeys[race]);
-	}
-
-	public List<List<SyllableComplex>> getNext(int race, int gender) {
-		HashMap<GenderType, List<List<SyllableComplex>>> raceValues = this.getNext(race);
-		if( raceValues == null ) return null;
-		GenderType[] genderKeys = (GenderType[]) raceValues.keySet().toArray();
-		if( genderKeys.length == 0 ) return null;
-		gender %= genderKeys.length;
-		return raceValues.get(genderKeys[gender]); 
-	}
-
-	public List<SyllableComplex> getNext(int race, int gender, int part) {
-		List<List<SyllableComplex>> s = this.getNext(race,gender);
-		part %= s.size();
-		return(s.get(part));
-	}
-
-	public SyllableComplex getNext(int race, int gender, int part, int syllable ) {
-		List<SyllableComplex> s = this.getNext(race,gender,part);
-		syllable %= s.size();
-		return(s.get(syllable));
-	}
-
 	public boolean equals(Object obj) {
-		return (obj instanceof SyllableComplex) && ((SyllableComplex)obj).getSyl().equals(this.syl);
+		return (obj instanceof SyllableComplex) && ((SyllableComplex)obj).syl.equals(this.syl);
+	}
+
+	public int hashCode() {
+		return 97*this.syl.hashCode();
 	}
 }

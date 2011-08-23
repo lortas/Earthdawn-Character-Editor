@@ -71,35 +71,35 @@ public class NameGenerator {
 				while( creativityByRaceByGender.size() <= currentPart ) creativityByRaceByGender.add(new Integer(0));
 				creativityByRaceByGender.set(currentPart, RandomnameNames.getCreativity());
 				String nameList = RandomnameNames.getValue().trim();
-				for( String s : nameList.split(RandomnameNames.getDelimiter()) ) {
-					if( s.isEmpty() ) continue;
-					SyllableType type = SyllableType.BEGIN;
-					SyllableComplex lastSyl = null;
-					String syllableList = s.trim().toLowerCase();
-					for( String syllable : syllableList.split(RandomnameNames.getSyllabledelimiter()) ) {
-						SyllableComplex syl = new SyllableComplex(syllable.trim(),type);
-						if( randomnamesByRaceByGenderByPart.contains(syl) ) {
-							int sylidx= randomnamesByRaceByGenderByPart.indexOf(syl);
-							syl = randomnamesByRaceByGenderByPart.get(sylidx);
-							syl.isAlso(type);
-						} else {
-							if( randomnameraceList.contains(syl) ) {
-								int sylidx= randomnameraceList.indexOf(syl);
-								syl = randomnameraceList.get(sylidx);
-								syl.isAlso(type);
-							} else {
-								randomnameraceList.add(syl);
-							}
-							randomnamesByRaceByGenderByPart.add(syl);
-						}
-						if( lastSyl != null ) {
-							syl.isAlso(SyllableType.MID);
-							lastSyl.insertNext(currentRaceName, currentGender, currentPart, syl);
-						}
-						lastSyl=syl;
-						if( type == SyllableType.BEGIN ) type = SyllableType.END;
-					}
-				}
+//				for( String s : nameList.split(RandomnameNames.getDelimiter()) ) {
+//					if( s.isEmpty() ) continue;
+//					SyllableType type = SyllableType.BEGIN;
+//					SyllableComplex lastSyl = null;
+//					String syllableList = s.trim().toLowerCase();
+//					for( String syllable : syllableList.split(RandomnameNames.getSyllabledelimiter()) ) {
+//						SyllableComplex syl = new SyllableComplex(syllable.trim(),type);
+//						if( randomnamesByRaceByGenderByPart.contains(syl) ) {
+//							int sylidx= randomnamesByRaceByGenderByPart.indexOf(syl);
+//							syl = randomnamesByRaceByGenderByPart.get(sylidx);
+//							syl.isAlso(type);
+//						} else {
+//							if( randomnameraceList.contains(syl) ) {
+//								int sylidx= randomnameraceList.indexOf(syl);
+//								syl = randomnameraceList.get(sylidx);
+//								syl.isAlso(type);
+//							} else {
+//								randomnameraceList.add(syl);
+//							}
+//							randomnamesByRaceByGenderByPart.add(syl);
+//						}
+//						if( lastSyl != null ) {
+//							syl.isAlso(SyllableType.MID);
+//							lastSyl.insertNext(currentRaceName, currentGender, currentPart, syl);
+//						}
+//						lastSyl=syl;
+//						if( type == SyllableType.BEGIN ) type = SyllableType.END;
+//					}
+//				}
 			}
 		}
 	}

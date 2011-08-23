@@ -23,13 +23,13 @@ class SyllableAttributes {
 	private String race = null;
 	private GenderType gender = null;
 	private int namepart = -1;
-	private SyllableType type=null;
+	private boolean start=false;
 
-	SyllableAttributes(String race,GenderType gender,int namepart, SyllableType type) {
+	SyllableAttributes(String race,GenderType gender,int namepart, boolean start) {
 		this.race=race;
 		this.gender=gender;
 		this.namepart=namepart;
-		this.type=type;
+		this.setStart(start);
 	}
 
 	public String getRace() {
@@ -56,11 +56,24 @@ class SyllableAttributes {
 		this.namepart = namepart;
 	}
 
-	public SyllableType getType() {
-		return type;
+	public void setStart(boolean start) {
+		this.start = start;
 	}
 
-	public void setType(SyllableType type) {
-		this.type = type;
+	public boolean isStart() {
+		return start;
+	}
+
+	public boolean equals(Object obj) {
+		if( ! (obj instanceof SyllableAttributes) ) return false;
+		SyllableAttributes a = ((SyllableAttributes)obj);
+		if( ! a.gender.equals(this.gender) ) return false;
+		if( ! a.race.equals(this.race) ) return false;
+		if( a.namepart != this.namepart ) return false;
+		return true;
+	}
+
+	public int hashCode() {
+		return this.race.hashCode() ^ this.gender.hashCode() ^ namepart;
 	}
 }
