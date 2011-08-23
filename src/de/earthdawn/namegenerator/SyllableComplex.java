@@ -17,7 +17,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -56,17 +55,27 @@ public class SyllableComplex {
 		return result.toString();
 	}
 
-	public boolean containsAttribute(SyllableAttributes attr) {
+	// Prüfe nach, ob die Silbe für eine bestimmt, Rassen, Geschlecht und Namensteil eine Startsilbe ist
+	public boolean isStartFor(String race, GenderType gender, int namepart) {
+		return isStartFor(new SyllableAttributes(race, gender, namepart, false));
+	}
+
+	public boolean isStartFor(SyllableAttributes attr) {
+		int idx=this.attributes.indexOf(attr);
+		if( idx < 0 ) return false;
+		return this.attributes.get(idx).isStart();
+	}
+
+	// Prüfe nach, ob die Silbe für eine bestimmt, Rassen, Geschlecht und Namensteil eine Silbe ist
+	public boolean isSyllableFor(SyllableAttributes attr) {
 		return this.attributes.contains(attr);
 	}
 
-	public void insertNext(SyllableComplex next, String race, GenderType gender, int namepart, boolean start ) {
-		insertNext(next,new SyllableAttributes(race, gender, namepart, start));
+	public void insertAttributes(String race, GenderType gender, int namepart, boolean start) {
+		insertAttributes(new SyllableAttributes(race, gender, namepart, start));
 	}
 
-	public void insertNext(SyllableComplex next, SyllableAttributes attributes ) {
-		// Füge die nächste Silbe nur ein, wenn Sie noch nicht eingefügt sein sollte
-		if( ! this.next.contains(next) ) this.next.add(next);
+	public void insertAttributes(SyllableAttributes attributes) {
 		// Füge die Silbeneigenschaft nur ein, wenn Sie noch nicht vorhanden sein sollte.
 		int idx = this.attributes.indexOf(attributes);
 		if( idx < 0 ) this.attributes.add(attributes);
@@ -77,6 +86,20 @@ public class SyllableComplex {
 		}
 	}
 
+	public void insertNext(SyllableComplex next ) {
+		// Füge die nächste Silbe nur ein, wenn Sie noch nicht eingefügt sein sollte
+		if( ! this.next.contains(next) ) this.next.add(next);
+	}
+
+	public List<SyllableComplex> getNextUnisex(String race, GenderType gender, int namepart ) {
+		List<SyllableComplex> result = new ArrayList<SyllableComplex>();
+		result.addAll(getNext(new SyllableAttributes(race, gender, namepart, false)));
+		for(SyllableComplex syl : getNext(new SyllableAttributes(race, GenderType.MINUS, namepart, false))) {
+			if( ! result.contains(syl) ) result.add(syl); 
+		}
+		return result;
+	}
+
 	public List<SyllableComplex> getNext(String race, GenderType gender, int namepart ) {
 		SyllableAttributes attr = new SyllableAttributes(race, gender, namepart, false);
 		return getNext(attr);
@@ -85,7 +108,7 @@ public class SyllableComplex {
 	public List<SyllableComplex> getNext(SyllableAttributes attr) {
 		List<SyllableComplex> result = new ArrayList<SyllableComplex>();
 		for( SyllableComplex s : this.next ) {
-			if( s.containsAttribute(attr) ) result.add(s);
+			if( s.isSyllableFor(attr) ) result.add(s);
 		}
 		return result;
 	}
