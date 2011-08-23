@@ -26,10 +26,14 @@ class SyllableAttributes {
 	private boolean start=false;
 
 	SyllableAttributes(String race,GenderType gender,int namepart, boolean start) {
+		this(race,gender,namepart);
+		this.setStart(start);
+	}
+
+	SyllableAttributes(String race,GenderType gender,int namepart) {
 		this.race=race;
 		this.gender=gender;
 		this.namepart=namepart;
-		this.setStart(start);
 	}
 
 	public String getRace() {

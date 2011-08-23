@@ -8,10 +8,24 @@
 			- second given Name (chosen by most significant grandparent)
 			- family Name (most often shares its family Name with its parents, though in some cases a young dwarf shares that Name with its grandparents. )
 		</COMMENT>
-		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ach-a-tell;Do-ri-lly;Gal-fie;Gi-lly;Ja-e-lla;Ja-tra-schy-a;Klei-yie;Le-ar-ka;Ma-e-ra;Mer-gri-mya;Mo-ri-a-nell;Ob-si-dya;Pla-ti-nea;Pla-tiny;Se-a-dda;Se-gal-nya;Slon-ci-a;Wa-par-ge;Ya-ni-a;Y-si-lla</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" delimiter=";">A-qui-al;Ba-pu-e-a;Ba-schy;Ba-puy;I-gra-mi;Ki-ry;Mer-gri-ma;Ob-si-dian-ial;O-gal-me;Sa-phi-rell;Se-gal-nall;Se-gal-nell;Su-nar;Wa-par-gall;</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">Al-fregg;Ag-nar;A-rex;Ba-riv;Ba-ver;Bu-lim;Car-na-dan;Dag-nus;Del;Eg-in;En-ga-rim;E-to-gosch;Fa-sa-kel;Fi-gnus;Gl-orin;Gre-pi-us;Grirr;Gum-gelf;Him-bez;Ho-fur;Ir-me-am;Kag-rem;Kor-dur;Le-mosch;Le-vom;Log-nar;Lu-gom;Me-kel;Mer-rox;Mo-ran;Mor-ax;Mor-ram;Myrr;No-ran;O-ba-losch;Pa-ri-lex;Pa-ra-nur;Ra-bo-gasch;Re-nar;Schil-bimg;Se-gal-ni-al;Thom;Tho-rek;Tho-rim;Tur-weck;Tu-sur;Tu-wer;Ul-run;Va-ru-lus;Vi-gnor;Vi-nelfr;Vu-nar;Zo-gnar</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="1" delimiter=";">Axt-hau-er;Axt-schwin-ger;Berg-schmied;Breit-helm;Do-nner-stein;Ei-sen-faust;Ei-sen-ham-mer;Ei-sen-heim;Ei-sen-rein;Ei-sen-stolz;Erd-auge;Feu-er-werk;Ga-ssen-zwerg;Gold-heim;Gold-schmuck;Ham-mer-blade;Ham-mer-blut;Ham-mer-tanz;I-sen-for-mer;I-sen-klang;Ku-pfer-bart;Ku-pfer-blut;Rie-ka;Schmie-de-ei-sen;Sil-ber-blut;Sil-ber-faust;Sil-ber-glanz;Sil-ber-haar;Stahl-blick;Stein-reich</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";" creativity="90">
+			Ach-a-tell;Do-ri-lly;Gal-fie;Gi-lly;Ja-e-lla;Ja-tra-schy-a;Klei-yie;Le-ar-ka;Ma-e-ra;Mer-gri-mya;Mo-ri-a-nell;Ob-si-dya;Pla-ti-nea;
+			Pla-tiny;Se-a-dda;Se-gal-nya;Slon-ci-a;Wa-par-ge;Ya-ni-a;Y-si-lla
+		</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";" creativity="90">
+			A-qui-al;Ba-pu-e-a;Ba-schy;Ba-puy;I-gra-mi;Ki-ry;Mer-gri-ma;Ob-si-dian-ial;O-gal-me;Sa-phi-rell;Se-gal-nall;Se-gal-nell;Su-nar;Wa-par-gall
+		</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";" creativity="90">
+			Al-fregg;Ag-nar;A-rex;Ba-riv;Ba-ver;Bu-lim;Car-na-dan;Dag-nus;Del;Eg-in;En-ga-rim;E-to-gosch;Fa-sa-kel;Fi-gnus;Gl-orin;Gre-pi-us;Grirr;
+			Gum-gelf;Him-bez;Ho-fur;Ir-me-am;Kag-rem;Kor-dur;Le-mosch;Le-vom;Log-nar;Lu-gom;Me-kel;Mer-rox;Mo-ran;Mor-ax;Mor-ram;Myrr;No-ran;O-ba-losch;
+			Pa-ri-lex;Pa-ra-nur;Ra-bo-gasch;Re-nar;Schil-bimg;Se-gal-ni-al;Thom;Tho-rek;Tho-rim;Tur-weck;Tu-sur;Tu-wer;Ul-run;Va-ru-lus;Vi-gnor;
+			Vi-nelfr;Vu-nar;Zo-gnar
+		</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1" delimiter=";" creativity="95">
+			Axt-hau-er;Axt-schwing-er;Berg-schmied;Breit-helm;Do-nner-stein;Ei-sen-faust;Ei-sen-ham-mer;Ei-sen-heim;Ei-sen-rein;Ei-sen-stolz;
+			Erd-auge;Feu-er-werk;Ga-ssen-zwerg;Gold-heim;Gold-schmuck;Ham-mer-blade;Ham-mer-blut;Ham-mer-tanz;I-sen-for-mer;I-sen-klang;Ku-pfer-bart;
+			Ku-pfer-blut;Rie-ka;Schmie-de-ei-sen;Sil-ber-blut;Sil-ber-faust;Sil-ber-glanz;Sil-ber-haar;Stahl-blick;Stein-reich
+		</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Elf">
 		<COMMENT>
@@ -36,8 +50,7 @@
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Ce-li-na;Gal-do-ra;Ig-na;Ke-lan-dra;Na-hin-dra;O-phe-lia;Que-la-na</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">Brus-pri;Byth;Ca-en;Day-len;D'-nal;D'-zar;Da-ris;De-lain;Gan-da-lar;Gar-shin;Gra-is;Gi-lli-an;I-tien-nie;</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";"creativity="70">A-de-lo;A-de-lon;A-gi-more;A-gra-men;A-la-chrim;A-le-ac;Al-kan-dair;Al-kor;Al-var;An-thros;Apu-li-an;Ar-go;Ar-rald;Ar-tho-nius;Bal-dred;Ben-ton;Ber-thon;Be-var-den;Bla-nack;Bo-ram;Bral-toth;Bri-us;Cal-vis;Ca-ra-vath;Ce-dric;Ce-vas;Char-ne-ale;Chukh;Cly-stein;Co-dy;Cy-mric;Da-ckus;Da-mi-en;Del-mor;Der-fil-lion;Ea-conn;El-ja-zer;E-lom;El-wind;E-ralk;Fai-ral;Far-lus;Fe-gis;Fen-will;Fi-er;For-tin;Ga-reth;Ger-rik;Gro-gand;Gur-drim;Gwan-do;Ha-mos;Han-rald;He-ri-zim;Hier-mon;Hon-guth;Hu-san;Hy-ram;I-lio;Il-kith;Jel;J´Role;La-mand;Mel-ga-dor;Pan-dur;Ri-gus;San-to-rano;Tim-bur;Ul-gur;Ven-dar;Wil-bur;Yan;Yan-no;Xan-dir;Zi-dan;</RANDOMNAME_NAMEPART>
-																																																																																																																																											Ja-nus;Ja-ron;Ja-som;Ja-van;Je-renn;Jer-leth;Je-vais;Jo-eb;Jo-sa-ra;Ka-la-rian;Ka-leb;Ka-rim;Kei-nar;Kos-sol;Kui-per;Ku-lul;Kyp-ros;Lan-nen;Les-sar;Lo'-arr;Lor-go;Lu-wen;Lys-ke;M'-da-li;M'-ka-el;Mal-va-ri;Ma-xor;Max-ton;Me-li-as;Me-nach'-me;Mer-vin;Mi-la;Mi-sha;Mor-dain;Mor-vak;Myk;Mys-tal;Na-al;Na-lil;Nee-dren;Ne-ru;No-nan;No-ra-im;O-berh;O-du;Ol-ti-on;O-mag;Pa-trin;Pa-trus;Pin-dre;Pol;Qua-ri-que;Rak-land;Ral-fan-ter;Re-le-el;Sad-du;Sa-ma-el;Sen-dric;Sha-ku-ru;Sha-ryn;Shim-mus;So-go-ra;Sud-low;Tal-lis;Ta-ly-rin;Tar-lanth;Te-le-mir;Tel-la-nion;Te-vern;Thom;Tho-ma-las;Ton-laa;Tor-kel;To-ro-co;Tor-ran;Tre-la-nia;Tri-ann;Tri-bas;Tu-ral;Tu-ran;Ty-rani-sis;Ur-rif;Ur-var;Ve-rin;Vi-dar;War-ris;Wil-lem;Wor-li-as;Yan-no;Ya-rith;Yer-reb;
+		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";" creativity="70">A-de-lo;A-de-lon;A-gi-more;A-gra-men;A-la-chrim;A-le-ac;Al-kan-dair;Al-kor;Al-var;An-thros;Apu-li-an;Ar-go;Ar-rald;Ar-tho-nius;Bal-dred;Ben-ton;Ber-thon;Be-var-den;Bla-nack;Bo-ram;Bral-toth;Bri-us;Cal-vis;Ca-ra-vath;Ce-dric;Ce-vas;Char-ne-ale;Chukh;Cly-stein;Co-dy;Cy-mric;Da-ckus;Da-mi-en;Del-mor;Der-fil-lion;Ea-conn;El-ja-zer;E-lom;El-wind;E-ralk;Fai-ral;Far-lus;Fe-gis;Fen-will;Fi-er;For-tin;Ga-reth;Ger-rik;Gro-gand;Gur-drim;Gwan-do;Ha-mos;Han-rald;He-ri-zim;Hier-mon;Hon-guth;Hu-san;Hy-ram;I-lio;Il-kith;Jel;J´Role;La-mand;Mel-ga-dor;Pan-dur;Ri-gus;San-to-rano;Tim-bur;Ul-gur;Ven-dar;Wil-bur;Yan;Yan-no;Xan-dir;Zi-dan;Ja-nus;Ja-ron;Ja-som;Ja-van;Je-renn;Jer-leth;Je-vais;Jo-eb;Jo-sa-ra;Ka-la-rian;Ka-leb;Ka-rim;Kei-nar;Kos-sol;Kui-per;Ku-lul;Kyp-ros;Lan-nen;Les-sar;Lo'-arr;Lor-go;Lu-wen;Lys-ke;M'-da-li;M'-ka-el;Mal-va-ri;Ma-xor;Max-ton;Me-li-as;Me-nach'-me;Mer-vin;Mi-la;Mi-sha;Mor-dain;Mor-vak;Myk;Mys-tal;Na-al;Na-lil;Nee-dren;Ne-ru;No-nan;No-ra-im;O-berh;O-du;Ol-ti-on;O-mag;Pa-trin;Pa-trus;Pin-dre;Pol;Qua-ri-que;Rak-land;Ral-fan-ter;Re-le-el;Sad-du;Sa-ma-el;Sen-dric;Sha-ku-ru;Sha-ryn;Shim-mus;So-go-ra;Sud-low;Tal-lis;Ta-ly-rin;Tar-lanth;Te-le-mir;Tel-la-nion;Te-vern;Thom;Tho-ma-las;Ton-laa;Tor-kel;To-ro-co;Tor-ran;Tre-la-nia;Tri-ann;Tri-bas;Tu-ral;Tu-ran;Ty-rani-sis;Ur-rif;Ur-var;Ve-rin;Vi-dar;War-ris;Wil-lem;Wor-li-as;Yan-no;Ya-rith;Yer-reb</RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Ki Mao">
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";"></RANDOMNAME_NAMEPART>

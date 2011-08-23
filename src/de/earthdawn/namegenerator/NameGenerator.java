@@ -29,7 +29,6 @@ import de.earthdawn.data.RandomnameNamesType;
 
 public class NameGenerator {
 
-	private final HashMap<String,HashMap<GenderType,List<List<SyllableComplex>>>> randomnameraceMap = new HashMap<String, HashMap<GenderType,List<List<SyllableComplex>>>>();
 	private final HashMap<String,HashMap<GenderType,List<Integer>>> creativityMap = new HashMap<String, HashMap<GenderType,List<Integer>>>();
 	private final List<SyllableComplex> randomnameraceList = new ArrayList<SyllableComplex>();
 	private List<RANDOMNAMERACEType> randomnameraces = null;
@@ -39,101 +38,95 @@ public class NameGenerator {
 		this.randomnameraces  = randomnameraces;
 		for( RANDOMNAMERACEType randomnamerace : randomnameraces ) {
 			String currentRaceName = randomnamerace.getRace();
-			HashMap<GenderType,List<List<SyllableComplex>>> randomnamesByRace = randomnameraceMap.get(currentRaceName);
-			if( randomnamesByRace == null ) {
-				randomnamesByRace = new HashMap<GenderType, List<List<SyllableComplex>>>();
-				randomnameraceMap.put(currentRaceName, randomnamesByRace);
-			}
 			HashMap<GenderType, List<Integer>> creativityByRace = creativityMap.get(currentRaceName);
 			if( creativityByRace == null ) {
 				creativityByRace = new HashMap<GenderType, List<Integer>>();
 				creativityMap.put(currentRaceName, creativityByRace);
 			}
 			for( RandomnameNamesType RandomnameNames : randomnamerace.getRANDOMNAMENAMEPART() ) {
-				GenderType currentGender = RandomnameNames.getGender();
-				List<List<SyllableComplex>> randomnamesByRaceByGender = randomnamesByRace.get(currentGender);
-				if( randomnamesByRaceByGender == null ) {
-					randomnamesByRaceByGender = new ArrayList<List<SyllableComplex>>();
-					randomnamesByRace.put(currentGender, randomnamesByRaceByGender);
-				}
-				List<Integer> creativityByRaceByGender = creativityByRace.get(currentGender);
-				if( creativityByRaceByGender == null ) {
-					creativityByRaceByGender = new ArrayList<Integer>();
-					creativityByRace.put(currentGender, creativityByRaceByGender);
-				}
 				int currentPart = RandomnameNames.getPart();
 				if( currentPart < 0 ) {
 					System.err.println("part number is to low: "+currentPart);
 					continue;
 				}
-				while( randomnamesByRaceByGender.size() <= currentPart ) randomnamesByRaceByGender.add(new ArrayList<SyllableComplex>());
-				List<SyllableComplex> randomnamesByRaceByGenderByPart = randomnamesByRaceByGender.get(currentPart);
+				GenderType currentGender = RandomnameNames.getGender();
+				List<Integer> creativityByRaceByGender = creativityByRace.get(currentGender);
+				if( creativityByRaceByGender == null ) {
+					creativityByRaceByGender = new ArrayList<Integer>();
+					creativityByRace.put(currentGender, creativityByRaceByGender);
+				}
 				while( creativityByRaceByGender.size() <= currentPart ) creativityByRaceByGender.add(new Integer(0));
 				creativityByRaceByGender.set(currentPart, RandomnameNames.getCreativity());
 				String nameList = RandomnameNames.getValue().trim();
-//				for( String s : nameList.split(RandomnameNames.getDelimiter()) ) {
-//					if( s.isEmpty() ) continue;
-//					SyllableType type = SyllableType.BEGIN;
-//					SyllableComplex lastSyl = null;
-//					String syllableList = s.trim().toLowerCase();
-//					for( String syllable : syllableList.split(RandomnameNames.getSyllabledelimiter()) ) {
-//						SyllableComplex syl = new SyllableComplex(syllable.trim(),type);
-//						if( randomnamesByRaceByGenderByPart.contains(syl) ) {
-//							int sylidx= randomnamesByRaceByGenderByPart.indexOf(syl);
-//							syl = randomnamesByRaceByGenderByPart.get(sylidx);
-//							syl.isAlso(type);
-//						} else {
-//							if( randomnameraceList.contains(syl) ) {
-//								int sylidx= randomnameraceList.indexOf(syl);
-//								syl = randomnameraceList.get(sylidx);
-//								syl.isAlso(type);
-//							} else {
-//								randomnameraceList.add(syl);
-//							}
-//							randomnamesByRaceByGenderByPart.add(syl);
-//						}
-//						if( lastSyl != null ) {
-//							syl.isAlso(SyllableType.MID);
-//							lastSyl.insertNext(currentRaceName, currentGender, currentPart, syl);
-//						}
-//						lastSyl=syl;
-//						if( type == SyllableType.BEGIN ) type = SyllableType.END;
-//					}
-//				}
+				for( String name : nameList.split(RandomnameNames.getDelimiter()) ) {
+					if( name.isEmpty() ) continue;
+					SyllableComplex preSyl = null;
+					for( String syllable : name.trim().toLowerCase().split(RandomnameNames.getSyllabledelimiter()) ) {
+						SyllableComplex syl = new SyllableComplex(syllable.trim());
+						int idx = randomnameraceList.indexOf(syl);
+						if( idx < 0 ) {
+							// Silbe ist neu
+							randomnameraceList.add(syl);
+						} else {
+							// hole die bereits existierende Silbe
+							syl = randomnameraceList.get(idx);
+						}
+						if( preSyl == null ) {
+							syl.insertAttributes(currentRaceName, currentGender, currentPart, true);
+						} else {
+							syl.insertAttributes(currentRaceName, currentGender, currentPart, false);
+							preSyl.insertNext(syl);
+						}
+						preSyl=syl;
+					}
+				}
 			}
 		}
 	}
 
 	public String generateName(String race, GenderType gender) {
 		StringBuffer result = new StringBuffer();
-		HashMap<GenderType,List<List<SyllableComplex>>> randomnamesByRace = randomnameraceMap.get(race);
-		List<List<SyllableComplex>> randomnamesByRaceByGender = randomnamesByRace.get(gender);
-		for( int part=0; part<randomnamesByRaceByGender.size(); part++ ) {
+		for( int part=0; part<4; part++ ) {
 			result.append(generateName(race,gender,part));
 			result.append(" ");
 		}
 		return result.toString().trim();
 	}
 
+	public List<SyllableComplex> getAllSyllableWith(SyllableAttributes attributes) {
+		List<SyllableComplex> syllables = new ArrayList<SyllableComplex>();
+		for( SyllableComplex syl : this.randomnameraceList ) {
+			if( syl.isStartFor(attributes) ) syllables.add(syl);
+		}
+		return syllables;
+	}
+
 	public String generateName(String race, GenderType gender, int part) {
+		HashMap<GenderType, List<Integer>> creativityByRace = creativityMap.get(race);
+		if( creativityByRace == null ) return "";
+		List<Integer> creativityByRaceByGender = creativityByRace.get(gender);
+		if( creativityByRaceByGender == null ) return "";
+		if( part >= creativityByRaceByGender.size() ) {
+			// Wenn es den Namensteil für das angegebene Geschlecht nicht gibt,
+			// prüfe ob es den Namensteil als Unixsex gibt.
+			creativityByRaceByGender = creativityByRace.get(GenderType.MINUS);
+			if( part >= creativityByRaceByGender.size() ) return "";
+		}
+		int creativity=creativityByRaceByGender.get(part);
 		StringBuffer result = new StringBuffer();
-		HashMap<GenderType,List<List<SyllableComplex>>> randomnamesByRace = randomnameraceMap.get(race);
 		List<SyllableComplex> syllables = new ArrayList<SyllableComplex>(); 
-		syllables.addAll(randomnamesByRace.get(gender).get(part));
+		SyllableAttributes attributesNormal = new SyllableAttributes(race,gender,part);
+		syllables.addAll(getAllSyllableWith(attributesNormal));
+		SyllableAttributes attributesUnisex = new SyllableAttributes(race,GenderType.MINUS,part);
 		// Falls ein Geschlecht angegeben ist, dann die Silben für Geschlechtsneutral noch mitnehmen.
 		if( ! gender.equals(GenderType.MINUS) ) {
-			List<List<SyllableComplex>> noGenderNames = randomnamesByRace.get(GenderType.MINUS);
-			if( noGenderNames!= null ) {
-				List<SyllableComplex> p = noGenderNames.get(part);
-				if( p!=null ) syllables.addAll(p);
-			}
+			syllables.addAll(getAllSyllableWith(attributesUnisex));
 		}
-		int creativity = creativityMap.get(race).get(gender).get(part);
 		while( (syllables!=null) && (syllables.size()>0) ) {
 			SyllableComplex syl = syllables.get(rand.nextInt(syllables.size()));
 			result.append(syl.getSyl());
-			syllables = syl.getNext(race, gender, part);
-			if( rand.nextInt(101) > creativity) break;
+			syllables = syl.getNextUnisex(race, gender, part);
+			if( rand.nextInt(101) >= creativity) break;
 		};
 		return result.toString();
 	}

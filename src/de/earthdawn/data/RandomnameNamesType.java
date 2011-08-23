@@ -115,7 +115,7 @@ public class RandomnameNamesType
      */
     public int getCreativity() {
         if (creativity == null) {
-            return  50;
+            return  75;
         } else {
             return creativity;
         }

@@ -72,13 +72,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		final APPEARANCEType appearance = getAppearance();
 		final String race = appearance.getRace();
 		final GenderType gender = appearance.getGender();
-
 		NameGenerator namegenerator = new NameGenerator(PROPERTIES.getRandomNamesByRaces());
-
-		System.out.println(namegenerator.generateName(race, gender));
-		System.out.println(namegenerator.generateName2(race, gender));
-
-		String name = namegenerator.generateName3(race,gender);
+		String name = namegenerator.generateName(race,gender);
+		//String name = namegenerator.generateName2(race,gender);
+		//String name = namegenerator.generateName3(race,gender);
 		character.setName(name);
 		return name;
 	}
