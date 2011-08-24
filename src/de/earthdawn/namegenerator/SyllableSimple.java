@@ -44,6 +44,18 @@ public class SyllableSimple {
 		return this.syl;
 	}
 
+	public boolean startsWith(SyllableSimple syl) {
+		return startsWith(syl.syl);
+	}
+
+	public boolean startsWith(SyllableComplex syl) {
+		return startsWith(syl.getSyl());
+	}
+
+	public boolean startsWith(String syl) {
+		return this.syl.startsWith(syl);
+	}
+
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		switch( this.type ) {
@@ -81,5 +93,9 @@ public class SyllableSimple {
 
 	public boolean equals(Object obj) {
 		return (obj instanceof SyllableSimple) && ((SyllableSimple)obj).getSyl().equals(this.syl);
+	}
+
+	public int hashCode() {
+		return 89*this.syl.hashCode();
 	}
 }
