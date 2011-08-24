@@ -35,20 +35,25 @@ public class SyllableComplex {
 		return this.syl;
 	}
 
+	public boolean startsWith(SyllableSimple syl) {
+		return startsWith(syl.getSyl());
+	}
+
+	public boolean startsWith(SyllableComplex syl) {
+		return startsWith(syl.syl);
+	}
+
+	public boolean startsWith(String syl) {
+		return this.syl.startsWith(syl);
+	}
+
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append(syl);
 		result.append("$");
 		for( SyllableAttributes a : this.attributes ) {
 			result.append("(");
-			result.append(a.getRace());
-			result.append(",");
-			result.append(a.getGender().value());
-			result.append(",");
-			result.append(a.getNamepart());
-			result.append(",");
-			if( a.isStart() ) result.append("1");
-			else result.append("0");
+			result.append(a.toStringAll());
 			result.append(")");
 		}
 		result.append("$");

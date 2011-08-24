@@ -77,7 +77,15 @@ class SyllableAttributes {
 		return true;
 	}
 
+	public String toString() {
+		return this.race+";"+this.gender.toString()+";"+String.valueOf(namepart);
+	}
+
+	public String toStringAll() {
+		return toString()+";"+String.valueOf(this.start);
+	}
+
 	public int hashCode() {
-		return this.race.hashCode() ^ this.gender.hashCode() ^ namepart;
+		return toString().hashCode();
 	}
 }
