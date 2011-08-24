@@ -120,5 +120,14 @@
 			<zipfileset file="./license.de.html"/>
 			<zipfileset file="./readme.txt"/>
 		</zip>
+		<copy file="./config/capabilities.xml" todir="./addons/config" overwrite="true"/>
+		<exec executable="ed" input="./addons/config/capabilities.xml.ed_diff">
+			<arg line="./addons/config/capabilities.xml"/>
+		</exec>
+		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="true">
+			<zipfileset file="./addons/config/capabilities.xml" prefix="config"/>
+			<zipfileset dir="./addons/config/disciplines" prefix="config/disciplines"/>
+			<zipfileset file="./readme.txt"/>
+		</zip>
 	</target>
 </project>
