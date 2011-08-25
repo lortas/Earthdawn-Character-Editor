@@ -117,3 +117,30 @@ RANK9.png
 RANKn.png
 
 RANK.png
+
+construct.png
+	edpt.org
+
+critter.png
+	edpt.org
+
+horror.png
+	edpt.org
+
+magic_elementarist.png
+	edpt.org
+
+magic_illusionist.png
+	edpt.org
+
+magic_nethermancy.png
+	edpt.org
+
+magic_wizardry.png
+	edpt.org
+
+npc.png
+	edpt.org
+
+talentknack.png
+	edpt.org
