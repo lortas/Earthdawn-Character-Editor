@@ -116,7 +116,7 @@
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">Ka-an;Nar-kys;</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">
 		Ba-rak;Bel-wharg;Bel-ga-ras;Bor-mak;Chag;Cry-gath;Do-gul;Dul’-Gaar;Em-kor;Fo-grak;Gan-lor;Hol-dur;Irr-gam;Ja-rth’d;Jor-kaw;Ka-rok;La-rus;Lorm;Lorrm;Mon-gur;Orr-guth;Os-ker;Paw-karr;Quin-dor;Ro-thur;Starrk;Tahst;Targ;Twak’-dar;Ur-don;Vi-gord;Wro-gath;Y-ggerg;Zis-gul</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="1" delimiter=";">Baldurion;Boneslicer;Skat/RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="1" delimiter=";">Baldurion;Boneslicer;Skat</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="2" delimiter=";">Stoneclaw;Swiftwind;Blood Lore;Blackfang;Ironmonger;Thundersky;</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="3" delimiter=";"></RANDOMNAME_NAMEPART>
 	</RANDOMNAME_RACE>
