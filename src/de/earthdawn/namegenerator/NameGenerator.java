@@ -93,12 +93,41 @@ public class NameGenerator {
 		return result.toString().trim();
 	}
 
-	public List<SyllableComplex> getAllSyllableWith(SyllableAttributes attributes) {
+	public List<SyllableComplex> getAllSyllablesFrom(String race, GenderType gender, int part) {
+		List<SyllableComplex> result= new ArrayList<SyllableComplex>();
+		result.addAll(getAllSyllablesWith(new SyllableAttributes(race,gender,part)));
+		// Falls ein Geschlecht angegeben ist, dann die Silben für Geschlechtsneutral noch mitnehmen.
+		if( ! gender.equals(GenderType.MINUS) ) {
+			result.addAll(getAllSyllablesWith(new SyllableAttributes(race,GenderType.MINUS,part)));
+		}
+		return result;
+	}
+
+	public List<SyllableComplex> getAllSyllablesWith(SyllableAttributes attributes) {
+		List<SyllableComplex> syllables = new ArrayList<SyllableComplex>();
+		for( SyllableComplex syl : this.randomnameraceList ) {
+			if( syl.isSyllableFor(attributes) ) syllables.add(syl);
+		}
+		return syllables;
+	}
+
+	public List<SyllableComplex> getAllStartSyllablesWith(SyllableAttributes attributes) {
 		List<SyllableComplex> syllables = new ArrayList<SyllableComplex>();
 		for( SyllableComplex syl : this.randomnameraceList ) {
 			if( syl.isStartFor(attributes) ) syllables.add(syl);
 		}
 		return syllables;
+	}
+
+	public List<SyllableComplex> getAllStartSyllablesFrom(String race, GenderType gender, int part) {
+		List<SyllableComplex> result= new ArrayList<SyllableComplex>();
+		SyllableAttributes attributesNormal = new SyllableAttributes(race,gender,part);
+		result.addAll(getAllStartSyllablesWith(attributesNormal));
+		// Falls ein Geschlecht angegeben ist, dann die Silben für Geschlechtsneutral noch mitnehmen.
+		if( ! gender.equals(GenderType.MINUS) ) {
+			result.addAll(getAllStartSyllablesWith(new SyllableAttributes(race,GenderType.MINUS,part)));
+		}
+		return result;
 	}
 
 	public String generateName(String race, GenderType gender, int part) {
@@ -114,18 +143,24 @@ public class NameGenerator {
 		}
 		int creativity=creativityByRaceByGender.get(part);
 		StringBuffer result = new StringBuffer();
-		List<SyllableComplex> syllables = new ArrayList<SyllableComplex>(); 
-		SyllableAttributes attributesNormal = new SyllableAttributes(race,gender,part);
-		syllables.addAll(getAllSyllableWith(attributesNormal));
-		SyllableAttributes attributesUnisex = new SyllableAttributes(race,GenderType.MINUS,part);
-		// Falls ein Geschlecht angegeben ist, dann die Silben für Geschlechtsneutral noch mitnehmen.
-		if( ! gender.equals(GenderType.MINUS) ) {
-			syllables.addAll(getAllSyllableWith(attributesUnisex));
-		}
+		List<SyllableComplex> syllables = getAllStartSyllablesFrom(race,gender,part); 
+		List<SyllableComplex> allSyllables = getAllSyllablesFrom(race,gender,part); 
 		while( (syllables!=null) && (syllables.size()>0) ) {
 			SyllableComplex syl = syllables.get(rand.nextInt(syllables.size()));
 			result.append(syl.getSyl());
-			syllables = syl.getNextUnisex(race, gender, part);
+			syllables = new ArrayList<SyllableComplex>();
+			List<String> found = new ArrayList<String>();
+			// Suche nun von allen Nachfolgersilben alle Silben mit den gleichen zwei Anfangsbuchstaben
+			for( SyllableComplex syllable : syl.getNextUnisex(race, gender, part) ) {
+				String s = syllable.getSyl();
+				if( s.length() > 2 ) s = s.substring(0, 2);
+				if( ! found.contains(s) ) {
+					found.add(s);
+					for( SyllableComplex y : allSyllables ) {
+						if( y.startsWith(s) ) syllables.add(y);
+					}
+				}
+			}
 			if( rand.nextInt(101) >= creativity) break;
 		};
 		return result.toString();
