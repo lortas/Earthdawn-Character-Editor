@@ -22,6 +22,11 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.32-20110828.zip ##
++ Random name data base increased and hyphenation added.
++ Random name generator replaced by a syllable-based random name generator.
++ Comments for rules how specific namegivers do name giving added into the random name data base.
++ More default portraits for different namegivers added.
 ## EarthdawnCharacterEditor-0.31-20110821.zip ##
 + Bugs
 	+ Talents not allowed for versatility are no more missing on the optional talent list.
@@ -116,3 +121,4 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 	- Calculating SpellLP corrected
 	- The form field "brief description" in the Ajfel+Mordom PDF will no be filled
 	- The form fields of the Ajfel+Mordom PDF revised
+
