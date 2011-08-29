@@ -227,7 +227,7 @@ public class ECEWorker {
 				talent.setName(namegivertalents.get(t).getName());
 				talent.setLimitation(namegivertalents.get(t).getLimitation());
 				talent.setCircle(0);
-				enforceCapabilityParams(talent);
+				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
@@ -242,7 +242,7 @@ public class ECEWorker {
 				TALENTType talent = new TALENTType();
 				talent.setName(t);
 				talent.setCircle(circle);
-				enforceCapabilityParams(talent);
+				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
 				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
@@ -336,7 +336,7 @@ public class ECEWorker {
 			rank.setLpcost(lpcostfull-lpcoststart);
 			rank.setBonus(0);
 			calculatedLP.setSkills(calculatedLP.getSkills()+rank.getLpcost());
-			enforceCapabilityParams(skill);
+			capabilities.enforceCapabilityParams(skill);
 			if( skill.getAttribute() != null ) {
 				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 			}
@@ -347,16 +347,20 @@ public class ECEWorker {
 		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
 		if( OptionalRule_ShowDefaultSkills ) {
 			for( CAPABILITYType defaultSkill : defaultSkills ) {
-				SKILLType skill = new SKILLType();
-				RANKType rank = new RANKType();
-				skill.setRANK(rank);
-				skill.setName(defaultSkill.getName());
-				skill.setLimitation(defaultSkill.getLimitation());
-				enforceCapabilityParams(skill);
-				if( skill.getAttribute() != null ) {
-					calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
+				List<String> limitations = defaultSkill.getLIMITATION();
+				if( limitations.size()==0 ) limitations.add("");
+				for( String limitation : limitations ) {
+					SKILLType skill = new SKILLType();
+					RANKType rank = new RANKType();
+					skill.setRANK(rank);
+					skill.setName(defaultSkill.getName());
+					skill.setLimitation(limitation);
+					capabilities.enforceCapabilityParams(skill);
+					if( skill.getAttribute() != null ) {
+						calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
+					}
+					skills.add(skill);
 				}
-				skills.add(skill);
 			}
 		}
 
@@ -461,7 +465,7 @@ public class ECEWorker {
 						bonusTalent.setName(itemtalent.getName());
 						bonusTalent.setLimitation(limitation);
 						bonusTalent.setCircle(0);
-						enforceCapabilityParams(bonusTalent);
+						capabilities.enforceCapabilityParams(bonusTalent);
 						RANKType bonusrank = new RANKType();
 						bonusrank.setRank(0);
 						bonusrank.setBonus(1);
@@ -559,7 +563,7 @@ public class ECEWorker {
 			if( rank.getRank() < rank.getRealignedrank() ) rank.setRank(rank.getRealignedrank());
 			// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
 			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
-			enforceCapabilityParams(talent);
+			capabilities.enforceCapabilityParams(talent);
 			rank.setBonus(talent.getBonus());
 			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
 			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
@@ -799,28 +803,6 @@ public class ECEWorker {
 			talentRank.setStep(talentRank.getRank()+talentRank.getBonus()+attr.getStep());
 		}
 		talentRank.setDice(PROPERTIES.step2Dice(talentRank.getStep()));
-	}
-
-	private void enforceCapabilityParams(CAPABILITYType capability) {
-		CAPABILITYType replacment = null;
-		if( capability instanceof TALENTType ) {
-			replacment=capabilities.getTalent(capability.getName());
-		} else {
-			replacment=capabilities.getSkill(capability.getName());
-		}
-		if( replacment == null ) {
-			errorout.println("Capability '"+capability.getName()+"' not found : "+capability.getClass().getSimpleName());
-		} else {
-			capability.setAction(replacment.getAction());
-			capability.setAttribute(replacment.getAttribute());
-			capability.setBonus(replacment.getBonus());
-			capability.setKarma(replacment.getKarma());
-			capability.setStrain(replacment.getStrain());
-			capability.setBookref(replacment.getBookref());
-			capability.setIsinitiative(replacment.getIsinitiative());
-			capability.setNotbyversatility(replacment.getNotbyversatility());
-			capability.setDefault(replacment.getDefault());
-		}
 	}
 
 	public static List<DISCIPLINEBONUSType> getDisciplineBonuses(DISCIPLINEType discipline) {

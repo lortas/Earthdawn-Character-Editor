@@ -86,15 +86,16 @@ public class EDSkills extends JPanel {
 	protected void do_btnAddSkill_actionPerformed(ActionEvent arg0) {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_SKILLS,0, new Rectangle(100, 100, 450, 300) );
 		dialog.setVisible(true);
-		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
+		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(Object key : selected.keySet()){
-			CAPABILITYType cap = selected.get(key);
+			SKILLType cap = selected.get(key);
 			SKILLType skill = new SKILLType();
 			skill.setAction(cap.getAction());
 			skill.setAttribute(cap.getAttribute());
 			skill.setDefault(cap.getDefault());
 			skill.setStrain(cap.getStrain());
 			skill.setName(cap.getName());
+			skill.setLimitation(cap.getLimitation());
 			RANKType rank = new RANKType();
 			rank.setRank(1);
 			skill.setRANK(rank);

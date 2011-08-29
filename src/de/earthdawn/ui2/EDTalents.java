@@ -22,6 +22,7 @@ import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINE;
+import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.TALENTTEACHERType;
 import de.earthdawn.data.TALENTType;
@@ -143,9 +144,9 @@ public class EDTalents extends JPanel {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_VERSATILITYTALENT,circle,new Rectangle(button.getLocationOnScreen().x, button.getLocationOnScreen().y+button.getHeight(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
-		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
+		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
-			CAPABILITYType cap = selected.get(key);
+			SKILLType cap = selected.get(key);
 			TALENTABILITYType talent = new TALENTABILITYType();
 			talent.setName(cap.getName());
 			talent.setLimitation(cap.getLimitation());
@@ -163,9 +164,9 @@ public class EDTalents extends JPanel {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_TALENT,circle,talentlist,new Rectangle(parentloc.x+source.getX()+source.getWidth(), parentloc.y+source.getY(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
-		HashMap<String, CAPABILITYType> selected = dialog.getSelectedCapabilitytMap();
+		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
-			CAPABILITYType cap = selected.get(key);
+			SKILLType cap = selected.get(key);
 			TALENTABILITYType talent = new TALENTABILITYType();
 			talent.setName(cap.getName());
 			talent.setLimitation(cap.getLimitation());
