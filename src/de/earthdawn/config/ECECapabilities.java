@@ -17,6 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,10 +25,12 @@ import java.util.List;
 import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.CAPABILITYType;
+import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 
 public class ECECapabilities {
-	
+
+	private static PrintStream errorout = System.err;
 	private List<CAPABILITYType> talentList = new ArrayList<CAPABILITYType>();
 	private List<CAPABILITYType> skillList = new ArrayList<CAPABILITYType>();
 	private List<CAPABILITYType> versatilitytalentList = null;
@@ -88,5 +91,27 @@ public class ECECapabilities {
 
 	public CAPABILITYType getSkill(String name) {
 		return skillMap.get(name);
+	}
+
+	public void enforceCapabilityParams(CAPABILITYType capability) {
+		CAPABILITYType replacment = null;
+		if( capability instanceof TALENTType ) {
+			replacment=this.getTalent(capability.getName());
+		} else {
+			replacment=this.getSkill(capability.getName());
+		}
+		if( replacment == null ) {
+			errorout.println("Capability '"+capability.getName()+"' not found : "+capability.getClass().getSimpleName());
+		} else {
+			capability.setAction(replacment.getAction());
+			capability.setAttribute(replacment.getAttribute());
+			capability.setBonus(replacment.getBonus());
+			capability.setKarma(replacment.getKarma());
+			capability.setStrain(replacment.getStrain());
+			capability.setBookref(replacment.getBookref());
+			capability.setIsinitiative(replacment.getIsinitiative());
+			capability.setNotbyversatility(replacment.getNotbyversatility());
+			capability.setDefault(replacment.getDefault());
+		}
 	}
 }

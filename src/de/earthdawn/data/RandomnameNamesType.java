@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="&lt;http://earthdawn.com/datatypes>stringlist_type">
  *       &lt;attribute name="part" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="gender" type="{http://earthdawn.com/datatypes}gender_type" default="-" />
- *       &lt;attribute name="creativity" type="{http://earthdawn.com/datatypes}unsigned_int" default="50" />
+ *       &lt;attribute name="creativity" type="{http://earthdawn.com/datatypes}unsigned_int" default="75" />
  *       &lt;attribute name="syllabledelimiter" type="{http://www.w3.org/2001/XMLSchema}string" default="-" />
  *     &lt;/extension>
  *   &lt;/simpleContent>

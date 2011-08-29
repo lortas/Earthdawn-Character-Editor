@@ -248,13 +248,13 @@
 	<xs:complexType name="CAPABILITY_type">
 		<xs:sequence>
 			<xs:element name="KNACK" type="KNACK_type" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="LIMITATION" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="action" type="action_type" default="standard"/>
 		<xs:attribute default="0" name="strain" type="xs:string"/>
 		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
 		<xs:attribute default="0" name="bonus" type="xs:int"/>
-		<xs:attribute name="limitation" type="xs:string" default=""/>
 		<xs:attribute name="karma" type="yesno_type" default="no"/>
 		<xs:attribute name="default" type="yesno_type" default="no"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
@@ -268,6 +268,7 @@
 				<xs:sequence>
 					<xs:element name="RANK" type="RANK_type" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
+				<xs:attribute name="limitation" type="xs:string" default=""/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

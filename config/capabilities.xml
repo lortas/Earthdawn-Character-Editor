@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/capability earthdawncapabilities.xsd">
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability earthdawncapabilities.xsd">
 	<SKILL name="Acrobatic Strike" attribute="DEX" default="no" action="simple" strain="1" bookref="PG p.91"/>
 	<SKILL name="Acting" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.91"/>
 	<SKILL name="Air Sailing" attribute="WIL" default="no" action="sustained" strain="0" bookref="PG p.91"/>
@@ -72,15 +72,17 @@
 	<SKILL name="Picking Pockets" attribute="DEX" default="no" action="standard" strain="0" bookref="PG p.100"/>
 	<SKILL name="Pilot Boat" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.100"/>
 	<SKILL name="Rapid Strike" attribute="DEX" default="no" action="simple" strain="1" bookref="CPG p.101"/>	
-	<SKILL name="Read/Write Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Dwarf" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Sperethiel" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Human" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Obsidiman" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Or'zet" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Troll" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="T'skrang" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
-	<SKILL name="Read/Write Language" limitation="Windling" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
+	<SKILL name="Read/Write Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100">
+		<edt:LIMITATION></edt:LIMITATION>
+		<edt:LIMITATION>Dwarf</edt:LIMITATION>
+		<edt:LIMITATION>Sperethiel</edt:LIMITATION>
+		<edt:LIMITATION>Human</edt:LIMITATION>
+		<edt:LIMITATION>Obsidiman</edt:LIMITATION>
+		<edt:LIMITATION>Or'zet</edt:LIMITATION>
+		<edt:LIMITATION>Troll</edt:LIMITATION>
+		<edt:LIMITATION>T'skrang</edt:LIMITATION>
+		<edt:LIMITATION>Windling</edt:LIMITATION>
+	</SKILL>
 	<SKILL name="Read/Write Magic" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100"/>
 	<SKILL name="Read River" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.100"/>
 	<SKILL name="Research" attribute="PER" default="yes" action="sustained" strain="0" bookref="PG p.100"/>
@@ -96,15 +98,17 @@
 	<SKILL name="Shield Charge" attribute="STR" default="no" action="free" strain="1" bookref="PG p.102"/>
 	<SKILL name="Silent Walk" attribute="DEX" default="no" action="standard" strain="0" bookref="PG p.102"/>
 	<SKILL name="Slough Blame" attribute="CHA" default="yes" action="standard" strain="2" bookref="PG p.102"/>
-	<SKILL name="Speak Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Dwarf" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Sperethiel" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Human" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Obsidiman" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Or'zet" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Troll" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="T'skrang" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
-	<SKILL name="Speak Language" limitation="Windling" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102"/>
+	<SKILL name="Speak Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102">
+		<edt:LIMITATION></edt:LIMITATION>
+		<edt:LIMITATION>Dwarf</edt:LIMITATION>
+		<edt:LIMITATION>Sperethiel</edt:LIMITATION>
+		<edt:LIMITATION>Human</edt:LIMITATION>
+		<edt:LIMITATION>Obsidiman</edt:LIMITATION>
+		<edt:LIMITATION>Or'zet</edt:LIMITATION>
+		<edt:LIMITATION>Troll</edt:LIMITATION>
+		<edt:LIMITATION>T'skrang</edt:LIMITATION>
+		<edt:LIMITATION>Windling</edt:LIMITATION>
+	</SKILL>
 	<SKILL name="Sprint" attribute="na" default="no" action="simple" strain="3" bookref="PG p.102"/>
 	<SKILL name="Steer Wagon" attribute="PER" default="no" action="simple" strain="0" bookref="CPG p.101"/>
 	<SKILL name="Streetwise" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.102"/>

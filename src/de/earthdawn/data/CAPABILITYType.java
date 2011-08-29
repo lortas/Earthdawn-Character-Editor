@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="KNACK" type="{http://earthdawn.com/datatypes}KNACK_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="LIMITATION" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="action" type="{http://earthdawn.com/datatypes}action_type" default="standard" />
  *       &lt;attribute name="strain" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
  *       &lt;attribute name="attribute" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" />
  *       &lt;attribute name="bonus" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
- *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="karma" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *       &lt;attribute name="default" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
@@ -51,7 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CAPABILITY_type", propOrder = {
-    "knack"
+    "knack",
+    "limitation"
 })
 @XmlSeeAlso({
     SKILLType.class
@@ -60,6 +61,8 @@ public class CAPABILITYType {
 
     @XmlElement(name = "KNACK")
     protected List<KNACKType> knack;
+    @XmlElement(name = "LIMITATION")
+    protected List<String> limitation;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute
@@ -70,8 +73,6 @@ public class CAPABILITYType {
     protected ATTRIBUTENameType attribute;
     @XmlAttribute
     protected Integer bonus;
-    @XmlAttribute
-    protected String limitation;
     @XmlAttribute
     protected YesnoType karma;
     @XmlAttribute(name = "default")
@@ -112,6 +113,35 @@ public class CAPABILITYType {
             knack = new ArrayList<KNACKType>();
         }
         return this.knack;
+    }
+
+    /**
+     * Gets the value of the limitation property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the limitation property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLIMITATION().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getLIMITATION() {
+        if (limitation == null) {
+            limitation = new ArrayList<String>();
+        }
+        return this.limitation;
     }
 
     /**
@@ -244,34 +274,6 @@ public class CAPABILITYType {
      */
     public void setBonus(Integer value) {
         this.bonus = value;
-    }
-
-    /**
-     * Gets the value of the limitation property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLimitation() {
-        if (limitation == null) {
-            return "";
-        } else {
-            return limitation;
-        }
-    }
-
-    /**
-     * Sets the value of the limitation property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLimitation(String value) {
-        this.limitation = value;
     }
 
     /**
