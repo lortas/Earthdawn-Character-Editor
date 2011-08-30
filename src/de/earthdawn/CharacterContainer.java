@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -524,22 +525,24 @@ public class CharacterContainer extends CharChangeRefresh {
 		DISCIPLINEType discipline = new DISCIPLINEType();
 		discipline.setCircle(0);
 		discipline.setName("na");
-		for( DISCIPLINEType d : getDisciplines() ) {
-			if( d.getCircle() > discipline.getCircle() ) {
-				discipline=d;
-			}
-		}
+		for( DISCIPLINEType d : getDisciplines() ) if( d.getCircle() > discipline.getCircle() ) discipline=d;
 		return discipline;
 	}
 
 	public DISCIPLINEType getDisciplineMinCircle() {
+		return getDisciplineMinCircle(0);
+	}
+
+	// Bestimme den Kleinsten Kreis einer Diszipline aber ohen die Disziplin mit der Nummer "notDiscipline"
+	public DISCIPLINEType getDisciplineMinCircle(int notDiscipline) {
 		DISCIPLINEType discipline = new DISCIPLINEType();
 		discipline.setCircle(20);
 		discipline.setName("na");
+		int disciplinenumber=0;
 		for( DISCIPLINEType d : getDisciplines() ) {
-			if( d.getCircle() < discipline.getCircle() ) {
-				discipline=d;
-			}
+			disciplinenumber++;
+			if( disciplinenumber == notDiscipline ) continue;
+			if( d.getCircle() < discipline.getCircle() ) discipline=d;
 		}
 		return discipline;
 	}

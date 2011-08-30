@@ -245,9 +245,12 @@
 		<xs:attribute name="comment" type="xs:string" default=""/>
 		<xs:attribute name="byversatility" type="yesno_type" default="no"/>
 	</xs:complexType>
+	<xs:complexType name="RANKHISTORY_type">
+		<xs:attribute name="rank"  type="unsigned_int" use="required"/>
+		<xs:attribute name="mincircle" type="unsigned_int" use="required"/>
+	</xs:complexType>
 	<xs:complexType name="CAPABILITY_type">
 		<xs:sequence>
-			<xs:element name="KNACK" type="KNACK_type" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="LIMITATION" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -277,6 +280,8 @@
 			<xs:extension base="SKILL_type">
 				<xs:sequence>
 					<xs:element name="TEACHER" type="TALENTTEACHER_type" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="KNACK" type="KNACK_type" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="RANKHISTORY" type="RANKHISTORY_type" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="circle" type="circle_type" use="required"/>
 			</xs:extension>

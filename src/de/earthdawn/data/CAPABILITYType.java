@@ -28,7 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="KNACK" type="{http://earthdawn.com/datatypes}KNACK_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="LIMITATION" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -51,7 +50,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CAPABILITY_type", propOrder = {
-    "knack",
     "limitation"
 })
 @XmlSeeAlso({
@@ -59,8 +57,6 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class CAPABILITYType {
 
-    @XmlElement(name = "KNACK")
-    protected List<KNACKType> knack;
     @XmlElement(name = "LIMITATION")
     protected List<String> limitation;
     @XmlAttribute(required = true)
@@ -85,35 +81,6 @@ public class CAPABILITYType {
     protected YesnoType isinitiative;
     @XmlAttribute
     protected YesnoType notbyversatility;
-
-    /**
-     * Gets the value of the knack property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the knack property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getKNACK().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link KNACKType }
-     * 
-     * 
-     */
-    public List<KNACKType> getKNACK() {
-        if (knack == null) {
-            knack = new ArrayList<KNACKType>();
-        }
-        return this.knack;
-    }
 
     /**
      * Gets the value of the limitation property.

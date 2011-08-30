@@ -218,8 +218,10 @@ public class ECEWorker {
 			TalentsContainer currentTalents = new TalentsContainer(currentDiscipline);
 			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) ensureRankAndTeacher(talent);
 			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
-			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getDisciplinetalents(), true);
-			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentDiscipline.getCircle(), durabilityTalents, currentTalents.getOptionaltalents(), false);
+			int currentCircle = currentDiscipline.getCircle();
+			int minDisciplineCircle=character.getDisciplineMinCircle(disciplinenumber).getCircle();
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getDisciplinetalents(), true);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getOptionaltalents(), false);
 			// Alle Namegiver Talente, die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
@@ -238,7 +240,7 @@ public class ECEWorker {
 			for( String t : defaultOptionalTalents.keySet() ) {
 				// Talente aus späteren Kreisen werden auch erst später eingefügt
 				int circle = defaultOptionalTalents.get(t);
-				if( circle > currentDiscipline.getCircle() ) continue;
+				if( circle > currentCircle ) continue;
 				TALENTType talent = new TALENTType();
 				talent.setName(t);
 				talent.setCircle(circle);
@@ -261,7 +263,7 @@ public class ECEWorker {
 					durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
 				}
 			}
-			diciplineCircle.put(currentDiscipline.getName(), currentDiscipline.getCircle());
+			diciplineCircle.put(currentDiscipline.getName(), currentCircle);
 			// Nur der höchtse Bonus wird gewertet.
 			int currentKarmaStepBonus = getDisciplineKarmaStepBonus(currentDiscipline);
 			if( currentKarmaStepBonus > maxKarmaStepBonus ) maxKarmaStepBonus = currentKarmaStepBonus;
@@ -541,7 +543,7 @@ public class ECEWorker {
 		if( talent.getTEACHER() == null ) talent.setTEACHER(new TALENTTEACHERType());
 	}
 
-	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
+	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, int minDisciplineCircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
 		int totallpcost=0;
 		int startranks=calculatedLP.getUSEDSTARTRANKS().getTalents();
 		for( TALENTType talent : talents ) {
@@ -565,6 +567,35 @@ public class ECEWorker {
 			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
 			capabilities.enforceCapabilityParams(talent);
 			rank.setBonus(talent.getBonus());
+			// Prüfe nach, ob Talente von weiteren Disciplinen gelernt wurden, obwohl der kleinste Disziplinkreis nocht nicht 5 ist.
+			if( (rank.getRank()>0) && (minDisciplineCircle<5) ) {
+				List<RANKHISTORYType> rankHistories = talent.getRANKHISTORY();
+				RANKHISTORYType rankhistory;
+				if( rankHistories.isEmpty() ) {
+					// Wenn noch garkeine Rang-Vergangenheit erfasst wurde füge ein erstes Element ein.
+					rankhistory = new RANKHISTORYType();
+					rankhistory.setMincircle(minDisciplineCircle);
+					rankHistories.add(rankhistory);
+				} else {
+					// Es exisitert beireits eine Rang-Vergangenheit, hole letztes Element
+					rankhistory = rankHistories.get(rankHistories.size()-1);
+					if( (rankhistory.getMincircle() < minDisciplineCircle) && (rankhistory.getRank()!=rank.getRank()) ) {
+						// Sollte das letzte Element nicht dem aktullen Disziplinkreis entsprechen,
+						// dann erstelle ein neues Element. Aber nur wenn sich am Rang auch was geändert hat.
+						rankhistory = new RANKHISTORYType();
+						rankhistory.setMincircle(minDisciplineCircle);
+						rankHistories.add(rankhistory);
+					}
+				}
+				rankhistory.setRank(rank.getRank());
+			}
+			RANKHISTORYType lastrankhistory= new RANKHISTORYType();
+			lastrankhistory.setRank(0);
+			for( RANKHISTORYType rankhistory : talent.getRANKHISTORY() ) {
+				int rankdiff = rankhistory.getRank() - lastrankhistory.getRank();
+				//TODO: LP Berechnung
+				lastrankhistory=rankhistory;
+			}
 			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
 			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 			final int lpcostrealigned=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
