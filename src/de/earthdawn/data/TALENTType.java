@@ -8,6 +8,8 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -26,6 +28,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="{http://earthdawn.com/datatypes}SKILL_type">
  *       &lt;sequence>
  *         &lt;element name="TEACHER" type="{http://earthdawn.com/datatypes}TALENTTEACHER_type"/>
+ *         &lt;element name="KNACK" type="{http://earthdawn.com/datatypes}KNACK_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="RANKHISTORY" type="{http://earthdawn.com/datatypes}RANKHISTORY_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *     &lt;/extension>
@@ -37,7 +41,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TALENT_type", propOrder = {
-    "teacher"
+    "teacher",
+    "knack",
+    "rankhistory"
 })
 public class TALENTType
     extends SKILLType
@@ -45,6 +51,10 @@ public class TALENTType
 
     @XmlElement(name = "TEACHER", required = true)
     protected TALENTTEACHERType teacher;
+    @XmlElement(name = "KNACK")
+    protected List<KNACKType> knack;
+    @XmlElement(name = "RANKHISTORY")
+    protected List<RANKHISTORYType> rankhistory;
     @XmlAttribute(required = true)
     protected int circle;
 
@@ -70,6 +80,64 @@ public class TALENTType
      */
     public void setTEACHER(TALENTTEACHERType value) {
         this.teacher = value;
+    }
+
+    /**
+     * Gets the value of the knack property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the knack property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKNACK().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKType }
+     * 
+     * 
+     */
+    public List<KNACKType> getKNACK() {
+        if (knack == null) {
+            knack = new ArrayList<KNACKType>();
+        }
+        return this.knack;
+    }
+
+    /**
+     * Gets the value of the rankhistory property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rankhistory property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRANKHISTORY().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link RANKHISTORYType }
+     * 
+     * 
+     */
+    public List<RANKHISTORYType> getRANKHISTORY() {
+        if (rankhistory == null) {
+            rankhistory = new ArrayList<RANKHISTORYType>();
+        }
+        return this.rankhistory;
     }
 
     /**
