@@ -33,6 +33,8 @@ import de.earthdawn.data.CHARACTERISTICSDEFENSERAITING;
 import de.earthdawn.data.CHARACTERISTICSHEALTHRATING;
 import de.earthdawn.data.CHARACTERISTICSLEGENDARYSTATUS;
 import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
+import de.earthdawn.data.CHARACTERISTICSNEWDISCIPLINETALENTCOST;
+import de.earthdawn.data.CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE;
 import de.earthdawn.data.CHARACTERISTICSRESULTLEVEL;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
 import de.earthdawn.data.ROLLEDDICEType;
@@ -257,4 +259,17 @@ public class ECECharacteristics {
 		return rolledDice;
 	}
 
+	public List<CHARACTERISTICSCOST> getNewDisciplineTalentCost(int disciplinenumber) {
+		if( disciplinenumber<2 ) return null;
+		disciplinenumber-=2;
+		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
+			if( element.getName().getLocalPart().equals("NEWDISCIPLINETALENTCOST") ) {
+				CHARACTERISTICSNEWDISCIPLINETALENTCOST ndtc = (CHARACTERISTICSNEWDISCIPLINETALENTCOST)element.getValue();
+				List<CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE> costtable = ndtc.getDISCIPLINE();
+				if( costtable.size() < disciplinenumber ) return null;
+				return costtable.get(disciplinenumber).getCOST();
+			}
+		}
+		return null;
+	}
 }

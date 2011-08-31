@@ -591,18 +591,29 @@ public class ECEWorker {
 			}
 			RANKHISTORYType lastrankhistory= new RANKHISTORYType();
 			lastrankhistory.setRank(0);
-			for( RANKHISTORYType rankhistory : talent.getRANKHISTORY() ) {
-				int rankdiff = rankhistory.getRank() - lastrankhistory.getRank();
-				//TODO: LP Berechnung
-				lastrankhistory=rankhistory;
+			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
+			int newDisciplineTalentCost=0;
+			if( newDisciplineTalentCosts != null ) {
+				for( RANKHISTORYType rankhistory : talent.getRANKHISTORY() ) {
+					if( rankhistory.getMincircle() <= newDisciplineTalentCosts.size() ) {
+						int cost = newDisciplineTalentCosts.get(rankhistory.getMincircle()-1).getCost();
+						int rankdiff = rankhistory.getRank() - lastrankhistory.getRank();
+						if( rankdiff>0 ) {
+							newDisciplineTalentCost += rankdiff*cost;
+						} else {
+							errorout.println("rankdiff is negativ or zero!");
+						}
+					}
+					lastrankhistory=rankhistory;
+				}
 			}
 			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
 			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 			final int lpcostrealigned=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
 			if( lpcostrealigned > lpcoststart ) {
-				rank.setLpcost(lpcostfull-lpcostrealigned);
+				rank.setLpcost(newDisciplineTalentCost+lpcostfull-lpcostrealigned);
 			} else {
-				rank.setLpcost(lpcostfull-lpcoststart);
+				rank.setLpcost(newDisciplineTalentCost+lpcostfull-lpcoststart);
 			}
 			totallpcost+=rank.getLpcost();
 			startranks+=rank.getStartrank();
