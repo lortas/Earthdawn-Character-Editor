@@ -64,7 +64,7 @@
 	</xs:complexType>
 	<xs:complexType name="CHARACTERISTICS_NEWDISCIPLINETALENTCOSTDISCIPLINE">
 		<xs:sequence>
-			<xs:element name="COST" type="CHARACTERISTICS_COST" minOccurs="5" maxOccurs="5"/>
+			<xs:element name="COST" type="CHARACTERISTICS_COST" minOccurs="4" maxOccurs="4"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="CHARACTERISTICS">

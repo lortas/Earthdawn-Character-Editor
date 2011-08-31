@@ -434,25 +434,22 @@
 	<RESULTLEVEL poor="30" average="40" good="53" excellent="59" extraordinary="66"/>
 	<NEWDISCIPLINETALENTCOST>
 		<DISCIPLINE>
-			<COST cost="1300"/>
-			<COST cost="800"/>
-			<COST cost="500"/>
-			<COST cost="300"/>
-			<COST cost="200"/>
+			<COST cost="1100"/><!-- 1300-200 -->
+			<COST cost="600"/><!-- 600-200 -->
+			<COST cost="300"/><!-- 500-200 -->
+			<COST cost="100"/><!-- 300-200 -->
 		</DISCIPLINE>
 		<DISCIPLINE>
-			<COST cost="2100"/>
-			<COST cost="1300"/>
-			<COST cost="800"/>
-			<COST cost="500"/>
-			<COST cost="300"/>
+			<COST cost="1800"/><!-- 2100-300 -->
+			<COST cost="1000"/><!-- 1300-300 -->
+			<COST cost="500"/><!-- 800-300 -->
+			<COST cost="100"/><!-- 500-300 -->
 		</DISCIPLINE>
 		<DISCIPLINE>
-			<COST cost="3400"/>
-			<COST cost="2100"/>
-			<COST cost="1300"/>
-			<COST cost="800"/>
-			<COST cost="500"/>
+			<COST cost="2900"/><!-- 3400-500 -->
+			<COST cost="1600"/><!-- 2100-500 -->
+			<COST cost="800"/><!-- 1300-500 -->
+			<COST cost="300"/><!-- 800-500 -->
 		</DISCIPLINE>
 	</NEWDISCIPLINETALENTCOST>
 </CHARACTERISTICS>
