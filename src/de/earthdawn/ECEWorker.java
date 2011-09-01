@@ -567,8 +567,9 @@ public class ECEWorker {
 			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
 			capabilities.enforceCapabilityParams(talent);
 			rank.setBonus(talent.getBonus());
-			// Prüfe nach, ob Talente von weiteren Disciplinen gelernt wurden, obwohl der kleinste Disziplinkreis nocht nicht 5 ist.
-			if( (rank.getRank()>0) && (minDisciplineCircle<5) ) {
+			// Prüfe nach, ob Talente von weiteren (nicht die erste) Disciplinen gelernt wurden,
+			// obwohl der kleinste Disziplinkreis nocht nicht 5 ist.
+			if( (disciplinenumber>1) && (rank.getRank()>0) && (minDisciplineCircle<5) ) {
 				List<RANKHISTORYType> rankHistories = talent.getRANKHISTORY();
 				RANKHISTORYType rankhistory;
 				if( rankHistories.isEmpty() ) {
@@ -607,6 +608,8 @@ public class ECEWorker {
 					lastrankhistory=rankhistory;
 				}
 			}
+			// Nur in der Erstdisziplin kann ein Startrang existieren.
+			if( disciplinenumber!=1 ) rank.setStartrank(0);
 			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
 			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
 			final int lpcostrealigned=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
