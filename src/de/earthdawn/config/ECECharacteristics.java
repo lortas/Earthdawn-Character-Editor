@@ -260,16 +260,22 @@ public class ECECharacteristics {
 	}
 
 	public List<CHARACTERISTICSCOST> getNewDisciplineTalentCost(int disciplinenumber) {
+		// Zusäztliche Kosten fallen erst ab der zweiten Disziplin an.
 		if( disciplinenumber<2 ) return null;
-		disciplinenumber-=2;
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
+			// Suche nach dem XML-Element "NEWDISCIPLINETALENTCOST"
 			if( element.getName().getLocalPart().equals("NEWDISCIPLINETALENTCOST") ) {
 				CHARACTERISTICSNEWDISCIPLINETALENTCOST ndtc = (CHARACTERISTICSNEWDISCIPLINETALENTCOST)element.getValue();
-				List<CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE> costtable = ndtc.getDISCIPLINE();
-				if( costtable.size() < disciplinenumber ) return null;
-				return costtable.get(disciplinenumber).getCOST();
+				// Entnehme den XML-Element die Kostenmatrix
+				List<CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE> costmatrix = ndtc.getDISCIPLINE();
+				// Die erste Dimension in der Matrix ist die Disziplinnummer, angefangen mit der zweiten Diszipline, passe daher index an.
+				disciplinenumber-=2;
+				if( disciplinenumber < costmatrix.size() ) return costmatrix.get(disciplinenumber).getCOST();
+				// Sollte die gesuchte Disziplinnummer größer als die in der Matrix verfügbaren, gilt das letzte Element
+				return costmatrix.get(costmatrix.size()-1).getCOST();
 			}
 		}
+		// Die CHARACTERISTICS enthalten kein XML-Element "NEWDISCIPLINETALENTCOST" :(
 		return null;
 	}
 }
