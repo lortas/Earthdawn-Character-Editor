@@ -123,8 +123,13 @@
 			- first Name (demand by child in dream) 
 			- second Name (usually added by self)
 		</COMMENT>
-		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">Uv-ul;Wal-sha;Wu-dra;Wu-jem-ba;</RANDOMNAME_NAMEPART>
-		<RANDOMNAME_NAMEPART part="0" delimiter=";">Brik-na;Da-kar-ga;Ib-ja;I-ree-ka;Ja-el;Karo-ar;Kia’k;Lor-ga;Nago;Nag-ye-mi;Na-vun-ya;Ris-tar;</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">A-gak;Ar-chi-ana;Ba-za-na;Bo-ja-zi;Brad-da;Bre-nu-la;Bu-na;Cro-si;Cro-ti-as;Da-io-na;Dan-na;Di-scha-ra;Do-ra;Do-ra-zara;E-la;Fi-nalla-greek;
+		Ge-taft;Gok-vyun;Gra-ka;Gras-na-ra;Grel-la;H'-rak;Ha-ra-cha;Ha-scha-gak;He-cra-tinj;He-va;Jark-na;Jes-fuy;Jes-lar;Ka-turn;Kour-ba;
+		Kra-this;Lan-ta;Lee-ba;Le-van-ga;Li-ni-arg;Lo-ra;Mar-ruth;Mar-ta;Me-reel-va;Nor-ga;Od-he-ru;Pe-ron;Rej-ruk;San-dahg;Sor-ga;Ti-rag;
+		Ty-rul;Uv-ul;U-zarg;Va-nyk;Ver-ken;Wal-sha;Wu-dra;Wu-jem-ba;Za-ral;Za-rass;</RANDOMNAME_NAMEPART>
+		<RANDOMNAME_NAMEPART part="0" delimiter=";">Ba-el-tro;Brik-na;Da-kar-ga;Geb-ya;Gur-vesth;Huk-huk;Ib-ja;Im-ur;I-ree-ka;Ja-el;Jur-gan;
+		Kan-tra;Karo-ar;Kia’k;La-lak;Lam-na;Lor-ga;Mun-tak;Nago;Nag-ye-mi;Na-vun-ya;Ni-rag;Nu-kra;Nyk-kra;Qua-an;Rek-rek;Ris-tar;Ru-gaah;Si-lash;
+		Ul-ya;Yib-ya;</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">
 		Aj-mar;Aluk;Asok;Bar-lok;Be-ve-run;Bja-va;Blargh;Boj-mort;Brog;Ca-thon;Ce-ned;Cha-ka-nu;Cha-rok;Curst;Da-brog;Da-jag;Dhul-sek;Do-nack;
 		Drog-nur;Dwey-lis;Ea-ral;Ek-arr;El-vak;Faghn;G'-tuth;G'-zoog;Garl-thik;Gar-muud-ge;Ga-ron;Ga-rus-din;Ge-run;Gna-nagh;
@@ -132,7 +137,7 @@
 		Jo-jok;Jor-kan;Ju-lor;Ju-rok;K'-wamm;Kan-dor;Ka-rak;Kar-tos;Ka-za-gad;Kaz-narth;Ki-las;Ko-dan;Koll-dar;Kra-ag;Kra-eg;Kre-gen;Kro-lok;
 		Kug-tar;Le-mak;Ley-cur;Llwa-yn-do;Lo-ak;Lu-grul;M'-rok;Mal-gat;Mar-dek;Mar-nath;Ma-sant;Mo-grok;Mo-rag;Mor-nur;Mosch-tag;Muk-tar;
 		O-dra;O-grand;Or-guk;Or-kal;Or-te-oll;Os-trall;Pa-hok;Pa-lin-que;Pav-lak;Pil-lad;Po-bov;Quan;Rham-duc;Schan-ga;Schrä-rak;Skarth;Tadhg;
-		Tar-jak;Tarn;Te-rath;Tha-dran;Them-rast;Tok;To-ka-rag;Traj;Ul-ag;Ul-ger;Ur-ghal;Uv-tug;V'-gogh;Va-rok;Va-rull;Ve-nag;Wu-ru-chug;
+		Tar-jak;Tarn;Te-rath;Tha-dran;Them-rast;Tok;To-ka-rag;Traj;Tresgg;Ul-ag;Ul-ger;Ul-rek;Ur-ghal;Uv-tug;V'-gogh;Va-rok;Va-rull;Ve-nag;Wu-ru-chug;
 		Y’lomm;Ya-ra-gend;Ye-lad;Za-jan;Zor-nos;Zra-cken;Zu-grut
 		</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";">Many-stones;Yellow-eye</RANDOMNAME_NAMEPART>
@@ -167,7 +172,8 @@
 			- first given Name (given by parents)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">
-		Skor-ja</RANDOMNAME_NAMEPART>
+		Aba-kule;Drap-tha;F'-wel-la;Gay-le-ar;Ha-ra-cha;Je-dran;Ka-go-la;Ker-ry-un;Lan-far;Li-sar;N'-lor;N'-re-la;Nio-ku;Pa-lay-ja;Quaa-va-mi;
+		Ran-do-va;Skor-ja;Ty-lia;U-lig;Vaa-re;Vo'-tan-na;Vray-ma;Yo-naal;</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">
 		Dre-ga;Drov-ka;Ha-ke-be;Ka-an;M-ra-ga;Nar-kys;Um-na;</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="0" gender="male" delimiter=";">
@@ -198,8 +204,15 @@
 			- fourth Name (if entering an aropagoi gains the aropagoia-Name as a fourth Name, although it often replaces the foundation Name.)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" delimiter=";">
-		Aysu-sul;Ayapa-goam;Ay-chasu;Ch’i-sha;D’zurr;Gris’-kall;Ka’-Dai-yen;Kar’-rath;Krick-las;Krick-len;Ken-shan;Rh’gu-llian;R’ress-nosh;
-		San’t;Segue;P’sha-lmar;Schlome;Shisa’-kas;Ss’ka-la;Syr-khan;T’ay-sta;T’sa-bur;T’shy-sta-lan;Vash’-sten;V’sto-gas;Yoke;Z’rrt’-shu-lam</RANDOMNAME_NAMEPART>
+		A-cha-russ;A-cha-tuss;Ae-mi-lius;An-dr'-ax;Aysu-sul;Ayapa-goam;Ay-chasu;Be-lit;Be-ri-us;Car-nel-lan;Ch’i-sha;D’zurr;Da-rini-naeus;
+		Dun-ka-ch'k;El-lo-ran;Gam-ma-lon;Ghi-kel;Go'-lan;Gor-russ;Gris’-kall;If-fi-on;Je-dai-yen;K'-ne-drick;K'-ree-na;K'-senkt;K's-kir-la;
+		K'-vra-na;Ka’-Dai-yen;Ka-lies-ton;Kar’-rath;Kees-tra;Kel-lis;Ken-shan;Kha-li-fa;Kha-zi-os;Krees-ta;Krick-las;Krick-len;
+		L'-a-nelh;La-dar-rak;Laj-li-on;Lan-teer;Le-ahr;Lo-lo-ish;Lys-te-russ;Ma-gus;Mi-los;Ne-va-yas;Ni-kar;Ni-tha-gi;Nugh;Pa-tro-chian;
+		Pin-tra-el;R'a-sha-ni;R’ress-nosh;R'-sa-las;Ras-s'ka-list;Re-od-lan;Rh'-gul-lian;Ros-sa-russ;Ru-les-ka;San’t;Segue;Sek-ra;Senk-ra;
+		Sess-la-kai;Se-vas-tos;Shai-do;Shib'-as-sera;Shus-tal;Sly-lith;Syl-vi-ril;Sy-no-pae;Sz-dan-zo;P’sha-lmar;Schlome;Shisa’-kas;Ss’ka-la;
+		Syr-khan;T’ay-sta;T'-chai-dos;T'-cha-kru;T'-chal;T'-cha-va;T'-kra-dio;T'-krai-dos;T'-ram-ba;T'-rish-tall;T’sa-bur;T'-se-las;
+		T'-shan;T'sh-lea;T’shy-sta-lan;T's-kriss;T's-lan;T's-siss-kar;T'-ven-yo;The-or-maz;Tu-ram-ba;Ug-lan;V'-lis-kra;Var-de-ghol;Vash’-sten;
+		Vel-lu-nium;Vo-po-nis;Vre-es-fyr;Vy-lir;V’sto-gas;Wi-li-tia;Yoke;Yro-gerg;Yus-traa;Z’rrt’-shu-lam</RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="1" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="2" delimiter=";"></RANDOMNAME_NAMEPART>
 		<RANDOMNAME_NAMEPART part="3" delimiter=";"></RANDOMNAME_NAMEPART>
