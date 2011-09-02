@@ -435,7 +435,7 @@
 	<NEWDISCIPLINETALENTCOST>
 		<DISCIPLINE>
 			<COST cost="1100"/><!-- 1300-200 -->
-			<COST cost="600"/><!-- 600-200 -->
+			<COST cost="600"/><!-- 800-200 -->
 			<COST cost="300"/><!-- 500-200 -->
 			<COST cost="100"/><!-- 300-200 -->
 		</DISCIPLINE>

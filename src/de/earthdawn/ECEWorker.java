@@ -567,22 +567,25 @@ public class ECEWorker {
 			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
 			capabilities.enforceCapabilityParams(talent);
 			rank.setBonus(talent.getBonus());
-			// Prüfe nach, ob Talente von weiteren (nicht die erste) Disciplinen gelernt wurden,
-			// obwohl der kleinste Disziplinkreis nocht nicht 5 ist.
-			if( (disciplinenumber>1) && (rank.getRank()>0) && (minDisciplineCircle<5) ) {
+			if( rank.getRank() < 1 ) {
+				// Wenn kein Rang exisitert, dann auch keine Rangvergangenheit.
+				talent.getRANKHISTORY().clear();
+			} else if( (disciplinenumber>1) && (minDisciplineCircle<5) ) {
+				// Wenn Talente von weiteren (nicht die erste) Disciplinen gelernt wurden,
+				// obwohl der kleinste Disziplinkreis nocht nicht 5 ist, muss dies erfasst werden.
 				List<RANKHISTORYType> rankHistories = talent.getRANKHISTORY();
 				RANKHISTORYType rankhistory;
 				if( rankHistories.isEmpty() ) {
-					// Wenn noch garkeine Rang-Vergangenheit erfasst wurde füge ein erstes Element ein.
+					// Wenn noch garkeine Rang-Vergangenheit erfasst wurde, füge ein erstes Element ein.
 					rankhistory = new RANKHISTORYType();
 					rankhistory.setMincircle(minDisciplineCircle);
 					rankHistories.add(rankhistory);
 				} else {
-					// Es exisitert beireits eine Rang-Vergangenheit, hole letztes Element
+					// Es exisitert bereits eine Rang-Vergangenheit, hole letztes Element
 					rankhistory = rankHistories.get(rankHistories.size()-1);
-					if( (rankhistory.getMincircle() < minDisciplineCircle) && (rankhistory.getRank()!=rank.getRank()) ) {
-						// Sollte das letzte Element nicht dem aktullen Disziplinkreis entsprechen,
-						// dann erstelle ein neues Element. Aber nur wenn sich am Rang auch was geändert hat.
+					if( (rankhistory.getMincircle()!=minDisciplineCircle) && (rankhistory.getRank()!=rank.getRank()) ) {
+						// Sollte das letzte Element nicht dem aktuellen Disziplinkreis entsprechen und der Talentrang
+						// sich verändert haben, dann erstelle ein neues Element.
 						rankhistory = new RANKHISTORYType();
 						rankhistory.setMincircle(minDisciplineCircle);
 						rankHistories.add(rankhistory);
@@ -592,20 +595,18 @@ public class ECEWorker {
 			}
 			RANKHISTORYType lastrankhistory= new RANKHISTORYType();
 			lastrankhistory.setRank(0);
-			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
 			int newDisciplineTalentCost=0;
+			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
+			// Prüfe ob wir ein Kostentabelle haben
 			if( newDisciplineTalentCosts != null ) {
-				for( RANKHISTORYType rankhistory : talent.getRANKHISTORY() ) {
-					if( rankhistory.getMincircle() <= newDisciplineTalentCosts.size() ) {
-						int cost = newDisciplineTalentCosts.get(rankhistory.getMincircle()-1).getCost();
-						int rankdiff = rankhistory.getRank() - lastrankhistory.getRank();
-						if( rankdiff>0 ) {
-							newDisciplineTalentCost += rankdiff*cost;
-						} else {
-							errorout.println("rankdiff is negativ or zero!");
-						}
+				List<RANKHISTORYType> rankhistory = talent.getRANKHISTORY();
+				// Prüfe ob die RangHistory nicht leer ist
+				if( ! rankhistory.isEmpty() ) {
+					// Erstes Element enthält den kleines Disziplinkreis als der erste Ranges dieses Talents gelernt wurde
+					int mincircle = rankhistory.get(0).getMincircle()-1;
+					if( mincircle < newDisciplineTalentCosts.size() ) {
+						newDisciplineTalentCost = newDisciplineTalentCosts.get(mincircle).getCost();
 					}
-					lastrankhistory=rankhistory;
 				}
 			}
 			// Nur in der Erstdisziplin kann ein Startrang existieren.
