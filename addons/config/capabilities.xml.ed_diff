@@ -1,29 +1,29 @@
-433a
+485a
 	<TALENT name="Singular Devotion" attribute="na" action="free" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
 .
-429a
+481a
 	<TALENT name="Shield Mastery" attribute="na" action="simple" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
 	<TALENT name="Shield Rebuke" attribute="DEX" action="free" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
 .
-380a
+432a
 	<TALENT name="Passion's Guard" attribute="WIL" action="standard" karma="yes" strain="1" bookref="www.earthdawncompendium.com"/>
 .
-290a
+342a
 	<TALENT name="Fortify Shield" attribute="WIL" action="standard" karma="yes" strain="0" bookref="www.earthdawncompendium.com"/>
 .
-277a
+329a
 	<TALENT name="Favored Talent 1" attribute="na" action="na" karma="no" strain="0" bookref="www.earthdawncompendium.com"/>
 	<TALENT name="Favored Talent 2" attribute="na" action="na" karma="no" strain="0" bookref="www.earthdawncompendium.com"/>
 	<TALENT name="Favored Talent 3" attribute="na" action="na" karma="no" strain="0" bookref="www.earthdawncompendium.com"/>
 	<TALENT name="Favored Talent 4" attribute="na" action="na" karma="no" strain="0" bookref="www.earthdawncompendium.com"/>
 .
-228a
+280a
 	<TALENT name="Detect Passion's Influence" attribute="PER" action="standard" karma="yes" strain="1" bookref="www.earthdawncompendium.com"/>
 .
-197a
+249a
 	<TALENT name="Call Passion's Avatar" attribute="WIL" action="sustained" karma="yes" strain="6" bookref="www.earthdawncompendium.com"/>
 .
-156a
+208a
 	<TALENT name="Armor Bond" attribute="WIL" action="sustained" karma="yes" strain="0" bookref="www.earthdawncompendium.com"/>
 .
 w

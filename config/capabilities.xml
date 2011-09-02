@@ -9,7 +9,28 @@
 	<SKILL name="Animal Training" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.92"/>
 	<SKILL name="Arcane Mutterings" attribute="CHA" default="no" action="standard" strain="1" bookref="PG p.92"/>
 	<SKILL name="Artisan" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.93">
-		<edt:LIMITATION></edt:LIMITATION>
+		<edt:LIMITATION>Artist</edt:LIMITATION>
+		<edt:LIMITATION>Acting</edt:LIMITATION>
+		<edt:LIMITATION>Basket Weaving</edt:LIMITATION>
+		<edt:LIMITATION>Body Painting</edt:LIMITATION>
+		<edt:LIMITATION>Carving</edt:LIMITATION>
+		<edt:LIMITATION>Cooking</edt:LIMITATION>
+		<edt:LIMITATION>Craftman</edt:LIMITATION>
+		<edt:LIMITATION>Craft Amor</edt:LIMITATION>
+		<edt:LIMITATION>Craft Weapon</edt:LIMITATION>
+		<edt:LIMITATION>Dancing</edt:LIMITATION>
+		<edt:LIMITATION>Embroidery</edt:LIMITATION>
+		<edt:LIMITATION>Entertainer</edt:LIMITATION>
+		<edt:LIMITATION>Juggling</edt:LIMITATION>
+		<edt:LIMITATION>Mapmaking</edt:LIMITATION>
+		<edt:LIMITATION>Musician</edt:LIMITATION>
+		<edt:LIMITATION>Poetry</edt:LIMITATION>
+		<edt:LIMITATION>Rune Carving</edt:LIMITATION>
+		<edt:LIMITATION>Sculpting</edt:LIMITATION>
+		<edt:LIMITATION>Singing</edt:LIMITATION>
+		<edt:LIMITATION>Storytelling</edt:LIMITATION>
+		<edt:LIMITATION>Tattooing</edt:LIMITATION>
+		<edt:LIMITATION>Wardrobe and Style</edt:LIMITATION>
 	</SKILL>
 	<SKILL name="Artist" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.93"/>
 	<SKILL name="Assess Community" attribute="CHA" default="no" action="sustained" strain="0" bookref="CPG p.101"/>
@@ -26,7 +47,13 @@
 	<SKILL name="Conversation" attribute="CHA" default="yes" action="sustained" strain="0" bookref="PG p.94"/>
 	<SKILL name="Craft Armor" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.94"/>
 	<SKILL name="Craftsman" attribute="DEX" default="no" action="sustained" strain="0" bookref="PG p.94">
-		<edt:LIMITATION></edt:LIMITATION>
+		<edt:LIMITATION>SPECIFY</edt:LIMITATION>
+		<edt:LIMITATION>Baker</edt:LIMITATION>
+		<edt:LIMITATION>Blacksmith</edt:LIMITATION>
+		<edt:LIMITATION>Cooper (barrel maker)</edt:LIMITATION>
+		<edt:LIMITATION>Mason</edt:LIMITATION>
+		<edt:LIMITATION>Tailor</edt:LIMITATION>
+		<edt:LIMITATION>Woodworker</edt:LIMITATION>
 	</SKILL>
 	<SKILL name="Craft Weapon" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.95"/>
 	<SKILL name="Dead Fall" attribute="WIL" default="no" action="simple" strain="1" bookref="PG p.95"/>
@@ -60,7 +87,32 @@
 	<SKILL name="Joint Lock" attribute="DEX" default="no" action="standard" strain="1" bookref="CPG p.101"/>
 	<SKILL name="Kiai" attribute="CHA" default="no" action="simple" strain="1" bookref="CPG p.101"/>
 	<SKILL name="Knowledge" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.98">
-		<edt:LIMITATION></edt:LIMITATION>
+		<edt:LIMITATION>SPECIFY</edt:LIMITATION>
+		<edt:LIMITATION>Alchemy and Potions</edt:LIMITATION>
+		<edt:LIMITATION>Ancient Weapons</edt:LIMITATION>
+		<edt:LIMITATION>Baking</edt:LIMITATION>
+		<edt:LIMITATION>Barsaive History</edt:LIMITATION>
+		<edt:LIMITATION>Botany</edt:LIMITATION>
+		<edt:LIMITATION>Court Dancing</edt:LIMITATION>
+		<edt:LIMITATION>Creature Lore</edt:LIMITATION>
+		<edt:LIMITATION>Discipline Lore</edt:LIMITATION>
+		<edt:LIMITATION>Farming</edt:LIMITATION>
+		<edt:LIMITATION>Horror Lore</edt:LIMITATION>
+		<edt:LIMITATION>Legends and Heroes</edt:LIMITATION>
+		<edt:LIMITATION>Military Organizations</edt:LIMITATION>
+		<edt:LIMITATION>Province History</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore general</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Ork</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Dwarf</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Elf</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Human</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Obsidiman</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Troll</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore T'skrang</edt:LIMITATION>
+		<edt:LIMITATION>Racial Lore Windling</edt:LIMITATION>
+		<edt:LIMITATION>Scourge History</edt:LIMITATION>
+		<edt:LIMITATION>Trade Routes</edt:LIMITATION>
+		<edt:LIMITATION>Wild Animals</edt:LIMITATION>
 	</SKILL>
 	<SKILL name="Lip Reading" attribute="CHA" default="no" action="standard" strain="2" bookref="PG p.98"/>
 	<SKILL name="Lock Picking" attribute="DEX" default="no" action="sustained" strain="0" bookref="PG p.98"/>
@@ -79,7 +131,7 @@
 	<SKILL name="Pilot Boat" attribute="PER" default="no" action="sustained" strain="0" bookref="PG p.100"/>
 	<SKILL name="Rapid Strike" attribute="DEX" default="no" action="simple" strain="1" bookref="CPG p.101"/>	
 	<SKILL name="Read/Write Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.100">
-		<edt:LIMITATION></edt:LIMITATION><!-- An empty limitation is necessary to enable the users to choose no limitation -->
+		<edt:LIMITATION>SPECIFY</edt:LIMITATION>
 		<edt:LIMITATION>Dwarf</edt:LIMITATION>
 		<edt:LIMITATION>Sperethiel</edt:LIMITATION>
 		<edt:LIMITATION>Human</edt:LIMITATION>
@@ -105,7 +157,7 @@
 	<SKILL name="Silent Walk" attribute="DEX" default="no" action="standard" strain="0" bookref="PG p.102"/>
 	<SKILL name="Slough Blame" attribute="CHA" default="yes" action="standard" strain="2" bookref="PG p.102"/>
 	<SKILL name="Speak Language" attribute="PER" default="no" action="standard" strain="0" bookref="PG p.102">
-		<edt:LIMITATION></edt:LIMITATION><!-- An empty limitation is necessary to enable the users to choose no limitation -->
+		<edt:LIMITATION>SPECIFY</edt:LIMITATION>
 		<edt:LIMITATION>Dwarf</edt:LIMITATION>
 		<edt:LIMITATION>Sperethiel</edt:LIMITATION>
 		<edt:LIMITATION>Human</edt:LIMITATION>
