@@ -1,12 +1,39 @@
+567a
+	<TALENT name="Work the Crowd" action="standard" attribute="CHA" bookref="Submitted by Flagg @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/603" karma="no" strain="0"/>
+.
+545a
+	<TALENT name="Valiant Defense" action="standard" attribute="CHA" bookref="Submitted by Flagg @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/420" karma="no" strain="0"/>
+	<TALENT name="Vanquishing Blade" action="simple" attribute="STR" bookref="Submitted by Flagg @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/421" karma="yes" strain="1"/>
+.
+536a
+	<TALENT name="Transmutation" action="sustained" attribute="na" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/618" karma="yes" strain="1"/>
+.
 485a
 	<TALENT name="Singular Devotion" attribute="na" action="free" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
 .
+484a
+	<TALENT name="Show Off" action="standard" attribute="CHA" bookref="Submitted by Flagg @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/604" karma="no" strain="1"/>
+.
+482a
+	<TALENT name="Shield Rebuke" attribute="DEX" action="free" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
+.
 481a
 	<TALENT name="Shield Mastery" attribute="na" action="simple" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
-	<TALENT name="Shield Rebuke" attribute="DEX" action="free" karma="no" strain="1" bookref="www.earthdawncompendium.com"/>
+.
+453a
+	<TALENT name="Renew Blood Charm" action="sustained" attribute="PER" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/614" karma="yes" strain="2"/>
 .
 432a
 	<TALENT name="Passion's Guard" attribute="WIL" action="standard" karma="yes" strain="1" bookref="www.earthdawncompendium.com"/>
+.
+413a
+	<TALENT name="Misdirection" action="simple" attribute="na" bookref="Submitted by Stormcrow @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/425" karma="no" strain="1"/>
+.
+383a
+	<TALENT name="Joust" action="simple" attribute="STR" bookref="Submitted by Flagg @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/423" karma="no" strain="1"/>
+.
+371a
+	<TALENT name="Improve Potion" action="standard" attribute="PER" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/612" karma="yes" strain="1"/>
 .
 342a
 	<TALENT name="Fortify Shield" attribute="WIL" action="standard" karma="yes" strain="0" bookref="www.earthdawncompendium.com"/>
@@ -17,13 +44,45 @@
 	<TALENT name="Favored Talent 3" attribute="na" action="na" karma="no" strain="0" bookref="www.earthdawncompendium.com"/>
 	<TALENT name="Favored Talent 4" attribute="na" action="na" karma="no" strain="0" bookref="www.earthdawncompendium.com"/>
 .
+324a
+	<TALENT name="Evaluate Abilities" action="standard" attribute="PER" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/611" karma="no" strain="1"/>
+.
+314a
+	<TALENT name="Encourage" action="standard" attribute="CHA" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/610" karma="no" strain="1"/>
+.
+292a
+	<TALENT name="Divert Attention" action="simple" attribute="CHA" bookref="Submitted by Stormcrow @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/427" karma="no" strain="1"/>
+.
+286a
+	<TALENT name="Dirty Tactics" action="simple" attribute="na" bookref="Submitted by Stormcrow @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/424" karma="yes" strain="1"/>
+.
 280a
 	<TALENT name="Detect Passion's Influence" attribute="PER" action="standard" karma="yes" strain="1" bookref="www.earthdawncompendium.com"/>
+.
+264a
+	<TALENT name="Comprehend Enigma" action="standard" attribute="PER" bookref="Submitted by Stormcrow @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/626" karma="no"/>
+.
+261a
+	<TALENT name="Combat Prescience" action="free" attribute="PER" bookref="Submitted by Stormcrow @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/625" karma="no" strain="1"/>
+.
+252a
+	<TALENT name="Cavalier Attitude" action="free" attribute="na" bookref="Submitted by Flagg @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/422" karma="yes" strain="2"/>
 .
 249a
 	<TALENT name="Call Passion's Avatar" attribute="WIL" action="sustained" karma="yes" strain="6" bookref="www.earthdawncompendium.com"/>
 .
+217a
+	<TALENT name="Avoid Blow Alternatives" action="free" attribute="DEX" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/624" karma="no" strain="1"/>
+.
 208a
 	<TALENT name="Armor Bond" attribute="WIL" action="sustained" karma="yes" strain="0" bookref="www.earthdawncompendium.com"/>
+.
+196a
+	<TALENT name="Alchemy" action="sustained" attribute="PER" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/609" karma="no" strain="0"/>
+	<TALENT name="Alter Potion" action="sustained" attribute="WIL" bookref="Submitted by abandag @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/613" karma="no" strain="2"/>
+.
+192a
+	<TALENT name="Aggravate Wound" action="free" attribute="na" bookref="Submitted by Stormcrow @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/426" karma="no" strain="1"/>
+	<TALENT name="Aid of the Ancestors" action="simple" attribute="WIL" bookref="Submitted by swordchuck11 @ The Earthdawn Compendium -  http://www.earthdawncompendium.com/talents/show/616" karma="yes" strain="1"/>
 .
 w
