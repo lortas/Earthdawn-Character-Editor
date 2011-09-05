@@ -22,6 +22,14 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.33-20110907.zip ##
++ Bugs
+	+ Extra rank cost for new rank 1 talents of multi disciplines works now
++ Name database for random names enhanced
++ Capabilities do now allow a collection of limitations
++ Skills like Artisan+Craftsman+Knowledge do now have a defined list of limitations
++ Do not allow a start rank for second and later disciplines
++ AddOn distribution do now contain more talents from The Earthdawn Compendium
 ## EarthdawnCharacterEditor-0.32-20110828.zip ##
 + Random name data base increased and hyphenation added.
 + Random name generator replaced by a syllable-based random name generator.
