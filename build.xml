@@ -71,7 +71,7 @@
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
-				<attribute name="Class-Path" value="${lib}/iText-5.0.1.jar ${lib}/freemarker.jar"/>
+				<attribute name="Class-Path" value="${lib}/iText-5.0.1.jar ${lib}/freemarker.jar ${lib}/gson-1.7.1.jar ${lib}/miglayout-3.7.1-swing.jar"/>
 				<section name="common">
 					<attribute name="Build-By" value="${imp.build}" />
 					<attribute name="Build-Date" value="${cur.date}" />
@@ -120,9 +120,34 @@
 			<zipfileset file="./license.de.html"/>
 			<zipfileset file="./readme.txt"/>
 		</zip>
+	</target>
+
+	<target name="addon-dist" depends="dist" description="--> Distribution erzeugen">
+<!--
 		<copy file="./config/capabilities.xml" todir="./addons/config" overwrite="true"/>
 		<exec executable="ed" input="./addons/config/capabilities.xml.ed_diff">
 			<arg line="./addons/config/capabilities.xml"/>
+		</exec>
+-->
+		<exec executable="wget">
+			<arg line="-q"/>
+			<arg line="-O"/>
+			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
+			<arg line="http://www.earthdawncompendium.com/talents/ece_xml"/>
+		</exec>
+<!--
+		<java classname="de.earthdawn.tool.JoinCapabilities" failonerror="false" classpath="${build}">
+			<arg line="config/capabilities.xml"/>
+			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
+			<arg line="addons/config/capabilities.xml"/>
+		</java>
+-->
+		<exec executable="java">
+			<arg line="-cp"/>
+			<arg line="temp/bin de.earthdawn.tool.JoinCapabilities"/>
+			<arg line="config/capabilities.xml"/>
+			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
+			<arg line="addons/config/capabilities.xml"/>
 		</exec>
 		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="true">
 			<zipfileset file="./addons/config/capabilities.xml" prefix="config"/>
