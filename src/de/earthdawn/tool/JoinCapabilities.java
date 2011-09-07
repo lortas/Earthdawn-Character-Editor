@@ -23,9 +23,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.TreeSet;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -51,34 +51,47 @@ public class JoinCapabilities {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 			Unmarshaller u = jc.createUnmarshaller();
 			int countInFiles=args.length-1;
-			List<CAPABILITYType> talents = new ArrayList<CAPABILITYType>();
-			List<CAPABILITYType> skills = new ArrayList<CAPABILITYType>();
+			HashMap<String,CAPABILITYType> talents = new HashMap<String,CAPABILITYType>();
+			HashMap<String,CAPABILITYType> skills = new HashMap<String,CAPABILITYType>();
 			String language=null;
 			for( int i=0; i<countInFiles; i++ ) {
-				CAPABILITIES capabilities = (CAPABILITIES) u.unmarshal(new File(args[i]));
+				File inFile = new File(args[i]);
+				System.out.println("Reading Capabilities from "+inFile.getCanonicalFile());
+				CAPABILITIES capabilities = (CAPABILITIES) u.unmarshal(inFile);
 				ECECapabilities caps = new ECECapabilities(capabilities.getSKILLOrTALENT());
 				if( language == null ) language = capabilities.getLang();
 				else if( ! capabilities.getLang().equals(language) ) System.err.println("Languages are not identical: '"+language+"'!='"+capabilities.getLang()+"'");
-				talents.addAll(caps.getTalents());
-				skills.addAll(caps.getSkills());
+				for( CAPABILITYType t : caps.getTalents() ) {
+					String name = t.getName();
+					if( talents.containsKey(name) ) System.out.println("Talent '"+name+"' dupplicated. Keeping previous version.");
+					else talents.put(name, t);
+				}
+				for( CAPABILITYType t : caps.getSkills() ) {
+					String name = t.getName();
+					if( skills.containsKey(name) ) System.out.println("Skill '"+name+"' dupplicated. Keeping previous version.");
+					else skills.put(name, t);
+				}
 			}
 			CAPABILITIES outCapabilities = new CAPABILITIES();
 			outCapabilities.setLang(language);
-			Collections.sort(talents, new CapabilityComparator());
-			Collections.sort(skills, new CapabilityComparator());
+			//Collections.sort(talents, new CapabilityComparator());
+			//Collections.sort(skills, new CapabilityComparator());
 			List<JAXBElement<CAPABILITYType>> skillOrTalent = outCapabilities.getSKILLOrTALENT();
-			for( CAPABILITYType skill : skills ) {
+			TreeSet<String> capnames = new TreeSet<String>(skills.keySet());
+			for( String skillname : capnames ) {
 				QName qName = new QName("http://earthdawn.com/capability","SKILL");
-				JAXBElement<CAPABILITYType> jaxb = new JAXBElement<CAPABILITYType>(qName, CAPABILITYType.class, skill);
+				JAXBElement<CAPABILITYType> jaxb = new JAXBElement<CAPABILITYType>(qName, CAPABILITYType.class, skills.get(skillname));
 				skillOrTalent.add(jaxb);
 			}
-			for( CAPABILITYType talent : talents ) {
+			capnames = new TreeSet<String>(skills.keySet());
+			for( String talentname : capnames ) {
 				QName qName = new QName("http://earthdawn.com/capability","TALENT");
-				JAXBElement<CAPABILITYType> jaxb = new JAXBElement<CAPABILITYType>(qName, CAPABILITYType.class, talent);
+				JAXBElement<CAPABILITYType> jaxb = new JAXBElement<CAPABILITYType>(qName, CAPABILITYType.class, talents.get(talentname));
 				skillOrTalent.add(jaxb);
 			}
 			Marshaller m = jc.createMarshaller();
 			// Das letzte Element ist die Zieldatei, in der die Ausgabe hinein geschrieben wird.
+			System.out.println("Writing Capabilities to "+args[countInFiles]);
 			FileOutputStream out = new FileOutputStream(args[countInFiles]);
 			PrintStream fileio = new PrintStream(out, false, encoding);
 			m.setProperty(Marshaller.JAXB_ENCODING, encoding);

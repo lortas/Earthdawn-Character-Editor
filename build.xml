@@ -138,16 +138,19 @@
 			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
 			<arg line="http://www.earthdawncompendium.com/talents/ece_xml"/>
 		</exec>
+<!-- Funktioniert nicht:
 		<java classname="de.earthdawn.tool.JoinCapabilities" failonerror="false" classpath="${jar.file}">
 			<arg line="config/capabilities.xml"/>
 			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
 			<arg line="addons/config/capabilities.xml"/>
 		</java>
-		<exec executable="java">
+-->
+		<exec executable="java" failonerror="true">
 			<arg line="-cp"/>
 			<arg line="${jar.file}"/>
 			<arg line="de.earthdawn.tool.JoinCapabilities"/>
 			<arg line="config/capabilities.xml"/>
+			<arg line="addons/config/capabilities_stormcrow.xml"/>
 			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
 			<arg line="addons/config/capabilities.xml"/>
 		</exec>
