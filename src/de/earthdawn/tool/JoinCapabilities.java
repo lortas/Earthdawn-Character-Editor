@@ -89,7 +89,7 @@ public class JoinCapabilities {
 				JAXBElement<CAPABILITYType> jaxb = new JAXBElement<CAPABILITYType>(qName, CAPABILITYType.class, skills.get(skillname));
 				skillOrTalent.add(jaxb);
 			}
-			capnames = new TreeSet<String>(skills.keySet());
+			capnames = new TreeSet<String>(talents.keySet());
 			for( String talentname : capnames ) {
 				QName qName = new QName("http://earthdawn.com/capability","TALENT");
 				JAXBElement<CAPABILITYType> jaxb = new JAXBElement<CAPABILITYType>(qName, CAPABILITYType.class, talents.get(talentname));
