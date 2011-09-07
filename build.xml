@@ -86,7 +86,7 @@
 	target: dist
 	-->
 	<target name="dist" depends="jar" description="--> Distribution erzeugen">
-		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="true">
+		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset dir="./config" prefix="config"/>
 			<zipfileset dir="./lib" prefix="lib"/>
@@ -122,6 +122,9 @@
 		</zip>
 	</target>
 
+	<!--
+	target: addon-dist
+	-->
 	<target name="addon-dist" depends="dist" description="--> Distribution erzeugen">
 <!--
 		<copy file="./config/capabilities.xml" todir="./addons/config" overwrite="true"/>
@@ -135,21 +138,20 @@
 			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
 			<arg line="http://www.earthdawncompendium.com/talents/ece_xml"/>
 		</exec>
-<!--
-		<java classname="de.earthdawn.tool.JoinCapabilities" failonerror="false" classpath="${build}">
+		<java classname="de.earthdawn.tool.JoinCapabilities" failonerror="false" classpath="${jar.file}">
 			<arg line="config/capabilities.xml"/>
 			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
 			<arg line="addons/config/capabilities.xml"/>
 		</java>
--->
 		<exec executable="java">
 			<arg line="-cp"/>
-			<arg line="temp/bin de.earthdawn.tool.JoinCapabilities"/>
+			<arg line="${jar.file}"/>
+			<arg line="de.earthdawn.tool.JoinCapabilities"/>
 			<arg line="config/capabilities.xml"/>
 			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
 			<arg line="addons/config/capabilities.xml"/>
 		</exec>
-		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="true">
+		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="false">
 			<zipfileset file="./addons/config/capabilities.xml" prefix="config"/>
 			<zipfileset dir="./addons/config/disciplines" prefix="config/disciplines"/>
 			<zipfileset file="./readme.txt"/>
