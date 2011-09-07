@@ -1,4 +1,4 @@
-﻿===== Why is the Internet Explorer started? =====
+===== Why is the Internet Explorer started? =====
 
 When the Earthdawn character editor start an helper application to render the XML as HTML, the editor ask the Java virtual machine to launch the operation systems linked default application. If you have set e.g. Firefox as default browser. The operation system has linked Firefox to html files. But normally the Internet Explorer is still linked to XML files. By this you need to link the application Firefox to XML files, if you want that the Earthdawn character editor to launch Firefox for rendering a XML file as HTML. 
 
@@ -33,3 +33,11 @@ Another example is, that you can edit the xml-file and add more talents by hand.
 ===== The shown movement rate differs from the race movement rate =====
 
 It is possible to chose different movement rate definitions. The default movement rate definitions is the optional rule for strength based movement. This is configured by the parameter “ATTRIBUTEBASEDMOVEMENT” within the optional optionalrules.xml file. Right now the following modifier are implemented: "STR", "DEX" or "na". The last one means that the namegiver fixed movement rate will be set.
+
+======================================================================
+
+===== How do I merge multiple capabilities XML files =====
+
+The Earthdawn Character Editor contains the tool "JoinCapabilities" to merge multi capabilities XML files. It can be used by executing the flowing command:
+
+java -cp EarthdawnCharacterEditor.jar de.earthdawn.tool.JoinCapabilities NewCapabilities1.xml NewCapabilities2.xml NewCapabilities3.xml MergedCapabilities.xml
