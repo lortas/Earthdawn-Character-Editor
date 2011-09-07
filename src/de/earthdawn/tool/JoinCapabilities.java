@@ -62,20 +62,26 @@ public class JoinCapabilities {
 				if( language == null ) language = capabilities.getLang();
 				else if( ! capabilities.getLang().equals(language) ) System.err.println("Languages are not identical: '"+language+"'!='"+capabilities.getLang()+"'");
 				for( CAPABILITYType t : caps.getTalents() ) {
-					String name = t.getName();
-					if( talents.containsKey(name) ) System.out.println("Talent '"+name+"' dupplicated. Keeping previous version.");
-					else talents.put(name, t);
+					String name = t.getName().replaceAll("[ '()]", "").toUpperCase();
+					if( talents.containsKey(name) ) {
+						System.out.print("Talent '"+t.getName()+"' is dupplicated. Keeping previous version");
+						String prevName = talents.get(name).getName();
+						if( prevName.equals(t.getName()) ) System.out.println(".");
+						else System.out.println(": "+prevName);
+					} else talents.put(name, t);
 				}
 				for( CAPABILITYType t : caps.getSkills() ) {
-					String name = t.getName();
-					if( skills.containsKey(name) ) System.out.println("Skill '"+name+"' dupplicated. Keeping previous version.");
-					else skills.put(name, t);
+					String name = t.getName().replaceAll("[ '()]", "").toUpperCase();
+					if( skills.containsKey(name) ) {
+						System.out.println("Skill '"+t.getName()+"' is dupplicated. Keeping previous version");
+						String prevName = skills.get(name).getName();
+						if( prevName.equals(t.getName()) ) System.out.println(".");
+						else System.out.println(": "+prevName);
+					} else skills.put(name, t);
 				}
 			}
 			CAPABILITIES outCapabilities = new CAPABILITIES();
 			outCapabilities.setLang(language);
-			//Collections.sort(talents, new CapabilityComparator());
-			//Collections.sort(skills, new CapabilityComparator());
 			List<JAXBElement<CAPABILITYType>> skillOrTalent = outCapabilities.getSKILLOrTALENT();
 			TreeSet<String> capnames = new TreeSet<String>(skills.keySet());
 			for( String skillname : capnames ) {
