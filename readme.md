@@ -30,6 +30,7 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 + Skills like Artisan+Craftsman+Knowledge do now have a defined list of limitations
 + Do not allow a start rank for second and later disciplines
 + AddOn distribution do now contain more talents from The Earthdawn Compendium
++ New Tool "JoinCapabilities" to merge multi capabilities XML files.
 ## EarthdawnCharacterEditor-0.32-20110828.zip ##
 + Random name data base increased and hyphenation added.
 + Random name generator replaced by a syllable-based random name generator.
