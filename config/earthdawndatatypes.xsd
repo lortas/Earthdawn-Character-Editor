@@ -305,6 +305,7 @@
 		<xs:attribute name="location" type="xs:string" default="self"/>
 		<xs:attribute name="kind" type="itemkind_type" default="undefined"/>
 		<xs:attribute name="virtual" type="yesno_type" default="no"/>
+		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
 		<xs:attribute name="flight" type="unsigned_int"/>
