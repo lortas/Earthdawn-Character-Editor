@@ -1,0 +1,21 @@
+Here comes the list of abbreviations used in the editor for bookreferences.
+
+PG = Player's Guide—Earthdawn Third Edition
+PC = Player's Companion—Earthdawn Third Edition
+GM = Gamemaster's Guide—Earthdawn Third Edition
+GC = Gamemaster's Companion—Earthdawn Third Edition
+NG = Namegivers of Barsaive
+CPG = Cathay: The Five Kingdoms Player's Guide
+CGG = Cathay: The Five Kingdoms Gamemaster's Guide
+KR = Kratas: City of Thieves
+T = Nations of Barsaive I: Throal
+SR = Nations of Barsaive II: Serpent River
+CF = Nations of Barsaive III: Cara Fahd
+CR = Nations of Barsaive IV: Crystal Raiders
+AR = Ardanyan's Revenge
+SC1 = Shards Collection Volume One
+SC2 = Shards Collection Volume Two
+KA = Kratas Adventures
+BD = Burning Desires
+
+
