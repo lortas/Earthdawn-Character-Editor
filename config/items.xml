@@ -45,7 +45,7 @@
 	<WEAPON kind="melee weapon" size="1" strengthmin="3" dexteritymin="7" damagestep="1" weight="2" name="Sap" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="4" weight="3" name="Short Sword" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Scythan Axe" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="9" damagestep="4" weight="3" name="Spear" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" size="3" strengthmin="9" damagestep="4" weight="3.0" name="Spear" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="4" strengthmin="13" damagestep="6" weight="7" name="Spiked Mace" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="4" strengthmin="11" damagestep="5" weight="4" name="Trispear" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="4" strengthmin="17" damagestep="8" weight="6" name="Troll Battle Axe" bookref="PG p.251"/>
@@ -53,23 +53,61 @@
 	<WEAPON kind="melee weapon" size="5" strengthmin="15" damagestep="7" weight="8" name="Warhammer" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="7" dexteritymin="7" damagestep="3" weight="2" name="Whip" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="2" strengthmin="7" damagestep="4" weight="2" name="Windling Pole Arm" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="4" damagestep="2" weight="0.500" name="Windling Spear" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" size="1" strengthmin="4" damagestep="2" weight="0.5" name="Windling Spear" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="1" strengthmin="6" damagestep="3" weight="1" name="Windling Sword" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="5" strengthmin="12" damagestep="2" weight="3" name="Kampfstab"/>
 	<WEAPON kind="melee weapon" size="1" strengthmin="3"  damagestep="2" weight="0.5" name="Windling dagger"/>
 	
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2.0" name="Throwing Axe"/>
-	<WEAPON kind="throwing weapon" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" name="Spear"/>
-	<WEAPON kind="throwing weapon" longrange="24" shortrange="12" size="3" strengthmin="6"  damagestep="3" weight="2" name="Bola"/>
-	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
-	
+	<WEAPON kind="throwing weapon" longrange="24" shortrange="12" size="3" strengthmin="6" dexteritymin="9" damagestep="3" weight="2" name="Bola" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1" name="Dagger" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="36" shortrange="18" size="1" strengthmin="4" damagestep="1" weight="0.5" name="Dart" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="40" shortrange="20" size="1" strengthmin="4" damagestep="2" weight="0.75" name="Flight Dagger" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="48" shortrange="24" size="3" strengthmin="8" damagestep="4" weight="2" name="Hawk Hatchet" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Knife" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" name="Spear" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2" name="Throwing Axe" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="32" shortrange="16" size="1" strengthmin="4" damagestep="2" weight="0.75" name="Throwing Dagger" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="2" strengthmin="4" dexteritymin="9"damagestep="0" weight="0.75" name="Windling Net" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="16" shortrange="8" size="1" strengthmin="4" damagestep="2" weight="0.5" name="Windling Spear" bookref="PG p.252"/>
+
 	<WEAPON kind="missile weapon" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Blowgun" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="5" strengthmin="11" damagestep="4" weight="4.0" name="Longbow"/>
-	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling"/>
-	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling"/>
+	<WEAPON kind="missile weapon" longrange="96" shortrange="48" size="5" strengthmin="12" dexteritymin="15" damagestep="5" weight="4" name="Elven Warbow" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="64" shortrange="32" size="3" strengthmin="9" damagestep="4" weight="5" name="Light Crossbow" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="5" strengthmin="11" dexteritymin="13" damagestep="4" weight="4" name="Longbow" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="4" strengthmin="12" damagestep="5" weight="7" name="Medium Crossbow" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="3" strengthmin="8" damagestep="3" weight="3" name="Shortbow" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" longrange="48" shortrange="24" size="2" strengthmin="5" damagestep="3" weight="0.875" name="Windling Bow" bookref="PG p.252"/>
 	
 	<AMMUNITION kind="ammunition" name="Box of 10 Needles" weight="0.5" bookref="PG p.252">
 		<edt:WEAPON>Blowgun</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="20 Warbow Arrows" weight="4" bookref="PG p.252">
+		<edt:WEAPON>Elven Warbow</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="15 Light Bolts" weight="3" bookref="PG p.252">
+		<edt:WEAPON>Light Crossbow</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="20 Longbow Arrows" weight="3" bookref="PG p.252">
+		<edt:WEAPON>Longbow</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="15 Medium Bolts" weight="4" bookref="PG p.252">
+		<edt:WEAPON>Medium Crossbow</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="Quiver" weight="2" bookref="PG p.252">
+		<edt:WEAPON>Elven Warbow</edt:WEAPON>
+		<edt:WEAPON>Light Crossbow</edt:WEAPON>
+		<edt:WEAPON>Longbow</edt:WEAPON>
+		<edt:WEAPON>Medium Crossbow</edt:WEAPON>
+		<edt:WEAPON>Shortbow</edt:WEAPON>
+		<edt:WEAPON>Windling Bow</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="20 Shortbow Arrows" weight="2" bookref="PG p.252">
+		<edt:WEAPON>Shortbow</edt:WEAPON>
+	</AMMUNITION>
+	<AMMUNITION kind="ammunition" name="20 Windling Bow Arrows" weight="0.5" bookref="PG p.252">
+		<edt:WEAPON>Windling Bow</edt:WEAPON>
 	</AMMUNITION>
 	
 	<MAGICITEM weight="5.0" name="Counterspell Staff"/>
