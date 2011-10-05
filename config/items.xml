@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items earthdawnitems.xsd">
 	<ARMOR kind="armor" edn="14" penalty="2" mysticarmor="3" physicalarmor="3" weight="20" name="Bark" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="20" penalty="1" mysticarmor="3" physicalarmor="5" weight="na" name="Blood Pebble" bookref="PG p.256"/>
+	<ARMOR kind="armor" edn="20" penalty="1" mysticarmor="3" physicalarmor="5" weight="0" name="Blood Pebble" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="3" mysticarmor="0" physicalarmor="7" weight="40" name="Chain Mail" bookref="PG p.256"/>
 	<ARMOR kind="armor" edn="22" penalty="5" mysticarmor="7" physicalarmor="7" weight="90" name="Crystal Plate" bookref="PG p.256"/>
 	<ARMOR kind="armor" edn="16" penalty="2" mysticarmor="4" physicalarmor="4" weight="45" name="Crystal Ringlet" bookref="PG p.256"/>
@@ -68,7 +68,9 @@
 	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling"/>
 	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling"/>
 	
-	<WEAPON kind="ammunition" usable="Blowgun" weight="0.500" name="Box of 10 Needles" bookref="PG p.252"/>
+	<AMMUNITION kind="ammunition" name="Box of 10 Needles" weight="0.5" bookref="PG p.252">
+		<edt:WEAPON>Blowgun</edt:WEAPON>
+	</AMMUNITION>
 	
 	<MAGICITEM weight="5.0" name="Counterspell Staff"/>
 	

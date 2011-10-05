@@ -7,6 +7,7 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="ARMOR" type="edt:ARMOR_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="SHIELD" type="edt:SHIELD_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="AMMUNITION" type="edt:AMMUNITION_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MAGICITEM" type="edt:MAGICITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="BLOODCHARMITEM" type="edt:BLOODCHARMITEM_type"/>
