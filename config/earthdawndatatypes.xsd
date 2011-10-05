@@ -532,7 +532,7 @@
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
 				<xs:sequence>
-					<xs:element maxOccurs="1" minOccurs="1" name="WEAPON" type="xs:string" />
+					<xs:element minOccurs="1" maxOccurs="unbounded" name="WEAPON" type="xs:string" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
