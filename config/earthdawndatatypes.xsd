@@ -136,6 +136,7 @@
 			<xs:enumeration value="melee weapon"/>
 			<xs:enumeration value="missile weapon"/>
 			<xs:enumeration value="throwing weapon"/>
+			<xs:enumeration value="ammunition"/>
 			<xs:enumeration value="armor"/>
 			<xs:enumeration value="shield"/>
 			<xs:enumeration value="light"/>
@@ -517,12 +518,22 @@
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
 				<xs:attribute name="damagestep" type="unsigned_int" use="required"/>
+				<xs:attribute name="dexteritymin" type="unsigned_int" default="0"/>
 				<xs:attribute name="strengthmin" type="unsigned_int" use="required"/>
 				<xs:attribute name="size" type="xs:int" use="required"/>
 				<xs:attribute name="shortrange" type="unsigned_int" default="0"/>
 				<xs:attribute name="longrange" type="unsigned_int" default="0"/>
 				<xs:attribute name="timesforged" type="unsigned_int" default="0"/>
 				<xs:attribute name="dateforged" type="xs:string" default=""/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AMMUNITION_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="WEAPON" type="xs:string" />
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
