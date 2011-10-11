@@ -747,10 +747,32 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		int circlenr = 0;
+		int mincircle=1;
+		int maxcircle=0;
 		for( DISCIPLINECIRCLEType disciplineCircle : disciplineDefinition.getCIRCLE() ) {
 			circlenr++;
 			if( circlenr > talentCircleNr ) break;
 			for( TALENTABILITYType talent : disciplineCircle.getOPTIONALTALENT()) {
+				String name = getFullTalentname(talent);
+				if( usedTalents.contains(name) ) {
+					usedTalents.remove(name);
+				} else {
+					result.add(talent);
+				}
+			}
+			FOREIGNTALENTSType foreignTalents = disciplineCircle.getFOREIGNTALENTS();
+			if( foreignTalents != null ) {
+				foreignTalents.getMaxcircle();
+				if(foreignTalents.getMincircle()<mincircle) mincircle=foreignTalents.getMincircle();
+				if(foreignTalents.getMaxcircle()>maxcircle) maxcircle=foreignTalents.getMaxcircle();
+			}
+		}
+		if(mincircle<=maxcircle) {
+			HashMap<String, TALENTABILITYType> talents = PROPERTIES.getTalentsByCircle(mincircle,maxcircle);
+			// Füge die entfernten und benutzen Talente wieder hinzu so damit diese wieder entfernt werden könne,
+			// wenn sie doppelt vorkommen.
+			for( TALENTABILITYType talent : result ) usedTalents.add(getFullTalentname(talent));
+			for( TALENTABILITYType talent : talents.values() ) {
 				String name = getFullTalentname(talent);
 				if( usedTalents.contains(name) ) {
 					usedTalents.remove(name);

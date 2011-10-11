@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
  *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}itemkind_type" default="undefined" />
  *       &lt;attribute name="virtual" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
+ *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -42,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     ARMORType.class,
     WEAPONType.class,
+    AMMUNITIONType.class,
     MAGICITEMType.class,
     COINSType.class
 })
@@ -59,6 +61,8 @@ public class ITEMType {
     protected ItemkindType kind;
     @XmlAttribute
     protected YesnoType virtual;
+    @XmlAttribute
+    protected String bookref;
 
     /**
      * Gets the value of the name property.
@@ -210,6 +214,34 @@ public class ITEMType {
      */
     public void setVirtual(YesnoType value) {
         this.virtual = value;
+    }
+
+    /**
+     * Gets the value of the bookref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBookref() {
+        if (bookref == null) {
+            return "";
+        } else {
+            return bookref;
+        }
+    }
+
+    /**
+     * Sets the value of the bookref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBookref(String value) {
+        this.bookref = value;
     }
 
 }

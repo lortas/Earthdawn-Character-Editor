@@ -436,59 +436,68 @@ public class ECEWorker {
 		List<TALENTType> firstDisciplineOptionalTalents = null;
 		if( ! allDisciplines.isEmpty() ) firstDisciplineOptionalTalents = allDisciplines.get(0).getOPTIONALTALENT();
 		for( THREADITEMType item : character.getThreadItem() ) {
-			for( int rank=0; rank<item.getWeaventhreadrank(); rank++ ) {
-				THREADRANKType threadrank = item.getTHREADRANK().get(rank);
+			int rank = item.getWeaventhreadrank();
+			// If no thread is weaven to the this thread item, skip it.
+			if( rank < 1 ) continue;
+			THREADRANKType threadrank = item.getTHREADRANK().get(rank-1);
+			while( (threadrank==null) && (rank>1) ) {
+				// Wenn der Fadenrang nicht definiert ist, obwohl der Rang größer 1 ist, wähle den Fadenrang einen Rang kleiner.
 				if( threadrank == null ) {
 					errorout.println("Undefined Threadrank for "+item.getName()+" for rank "+rank );
-					continue;
 				}
-				for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
-					switch (itemdefense.getKind()) {
-					case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
-					case SPELL: defense.setSpell(defense.getSpell()+1); break;
-					case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
-					}
-				}
-				for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
-					String limitation = itemtalent.getLimitation();
-					boolean notfound=true;
-					for( TALENTType talent : character.getTalentByName(itemtalent.getName()) ) {
-						if( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) {
-							notfound=false;
-							RANKType talentrank = talent.getRANK();
-							talentrank.setBonus(talentrank.getBonus()+1);
-							calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
-						}
-					}
-					if( notfound && (firstDisciplineOptionalTalents!=null) ) {
-						if( limitation.isEmpty() ) limitation ="(#)";
-						else limitation += " (#)";
-						TALENTType bonusTalent = new TALENTType();
-						bonusTalent.setName(itemtalent.getName());
-						bonusTalent.setLimitation(limitation);
-						bonusTalent.setCircle(0);
-						capabilities.enforceCapabilityParams(bonusTalent);
-						RANKType bonusrank = new RANKType();
-						bonusrank.setRank(0);
-						bonusrank.setBonus(1);
-						calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute().value()));
-						bonusTalent.setRANK(bonusrank);
-						TALENTTEACHERType teacher = new TALENTTEACHERType();
-						teacher.setByversatility(YesnoType.NO);
-						teacher.setTalentcircle(rank);
-						teacher.setTeachercircle(rank);
-						teacher.setName(item.getName());
-						bonusTalent.setTEACHER(teacher);
-						firstDisciplineOptionalTalents.add(bonusTalent);
-					}
-				}
-				for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
-					character.readjustInitiativeModifikator(iteminitiative.getCount());
-				}
-				initiative.setStep(initiative.getBase()+initiative.getModification());
-				initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
-				// TODO: other effects of MagicItems
+				rank--;
+				threadrank = item.getTHREADRANK().get(rank-1);
 			}
+			if( threadrank == null ) {
+				errorout.println("No Threadranks for "+item.getName()+" for rank "+item.getWeaventhreadrank()+" or less at all." );
+				continue;
+			}
+			for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
+				switch (itemdefense.getKind()) {
+				case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
+				case SPELL: defense.setSpell(defense.getSpell()+1); break;
+				case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
+				}
+			}
+			for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
+				String limitation = itemtalent.getLimitation();
+				boolean notfound=true;
+				for( TALENTType talent : character.getTalentByName(itemtalent.getName()) ) {
+					if( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) {
+						notfound=false;
+						RANKType talentrank = talent.getRANK();
+						talentrank.setBonus(talentrank.getBonus()+1);
+						calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
+					}
+				}
+				if( notfound && (firstDisciplineOptionalTalents!=null) ) {
+					if( limitation.isEmpty() ) limitation ="(#)";
+					else limitation += " (#)";
+					TALENTType bonusTalent = new TALENTType();
+					bonusTalent.setName(itemtalent.getName());
+					bonusTalent.setLimitation(limitation);
+					bonusTalent.setCircle(0);
+					capabilities.enforceCapabilityParams(bonusTalent);
+					RANKType bonusrank = new RANKType();
+					bonusrank.setRank(0);
+					bonusrank.setBonus(1);
+					calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute().value()));
+					bonusTalent.setRANK(bonusrank);
+					TALENTTEACHERType teacher = new TALENTTEACHERType();
+					teacher.setByversatility(YesnoType.NO);
+					teacher.setTalentcircle(rank);
+					teacher.setTeachercircle(rank);
+					teacher.setName(item.getName());
+					bonusTalent.setTEACHER(teacher);
+					firstDisciplineOptionalTalents.add(bonusTalent);
+				}
+			}
+			for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
+				character.readjustInitiativeModifikator(iteminitiative.getCount());
+			}
+			initiative.setStep(initiative.getBase()+initiative.getModification());
+			initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
+			// TODO: other effects of MagicItems
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
 		}
 

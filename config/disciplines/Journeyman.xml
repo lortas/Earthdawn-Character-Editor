@@ -2,265 +2,82 @@
 <DISCIPLINE name="Journeyman" lang="en" bookref="NG p.153" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
-		<OPTIONALTALENT name="Arcane Mutterings"/>
-		<OPTIONALTALENT name="Acrobatic Strike"/>
-		<OPTIONALTALENT name="Air Dance"/>
-		<OPTIONALTALENT name="Air Sailing"/>
-		<OPTIONALTALENT name="Air Speaking"/>
-		<OPTIONALTALENT name="Animal Bond"/>
-		<OPTIONALTALENT name="Animal Training"/>
-		<OPTIONALTALENT name="Arcane Mutterings"/>
-		<OPTIONALTALENT name="Astral Sight"/>
-		<OPTIONALTALENT name="Avoid Blow"/>
-		<OPTIONALTALENT name="Battle Shout"/>
-		<OPTIONALTALENT name="Charge"/>
-		<OPTIONALTALENT name="Claw Shape"/>
-		<OPTIONALTALENT name="Climbing"/>
-		<OPTIONALTALENT name="Conversation"/>
-		<OPTIONALTALENT name="Create Fetish"/>
-		<OPTIONALTALENT name="Creature Analysis"/>
-		<OPTIONALTALENT name="Emotion Song"/>
-		<OPTIONALTALENT name="Evaluate"/>
-		<OPTIONALTALENT name="Evidence Analysis"/>
-		<OPTIONALTALENT name="Fireblood"/>
-		<OPTIONALTALENT name="First Impression"/>
-		<OPTIONALTALENT name="Forge Weapon"/>
-		<OPTIONALTALENT name="Haggle"/>
-		<OPTIONALTALENT name="Impress"/>
-		<OPTIONALTALENT name="Item History"/>
-		<OPTIONALTALENT name="Lock Picking"/>
-		<OPTIONALTALENT name="Maneuver"/>
-		<OPTIONALTALENT name="Melee Weapons"/>
-		<OPTIONALTALENT name="Mimic Voice"/>
-		<OPTIONALTALENT name="Missile Weapons"/>
-		<OPTIONALTALENT name="Missile Weapons"/>
-		<OPTIONALTALENT name="Mystic Aim"/>
-		<OPTIONALTALENT name="Navigation"/>
-		<OPTIONALTALENT name="Parry"/>
-		<OPTIONALTALENT name="Picking Pockets"/>
-		<OPTIONALTALENT name="Read/Write Language"/>
-		<OPTIONALTALENT name="Read/Write Magic"/>
-		<OPTIONALTALENT name="Search"/>
-		<OPTIONALTALENT name="Sense Danger"/>
-		<OPTIONALTALENT name="Silent Walk"/>
-		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Spellcasting"/>
-		<OPTIONALTALENT name="Spell Fetish"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
-		<OPTIONALTALENT name="Steel Thought"/>
-		<OPTIONALTALENT name="Taunt"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Elementalism"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Illusionism"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Nethermancy"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Shamanism"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Wizardry"/>
-		<OPTIONALTALENT name="Throwing Weapons"/>
-		<OPTIONALTALENT name="Tracking"/>
-		<OPTIONALTALENT name="Trap Initiative"/>
-		<OPTIONALTALENT name="Trick Riding"/>
-		<OPTIONALTALENT name="True Shot"/>
-		<OPTIONALTALENT name="Unarmed Combat"/>
-		<OPTIONALTALENT name="Wilderness Survival"/>
-		<OPTIONALTALENT name="Wood Skin"/>
-		<OPTIONALTALENT name="Wound Balance"/>
-		<DISCIPLINETALENT name="Karma Ritual"/>
+		<FOREIGNTALENTS maxcircle="1"/>
 		<TALENTABILITY count="5"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<OPTIONALTALENT name="Abate Curse"/>
-		<OPTIONALTALENT name="Air Speaking"/>
-		<OPTIONALTALENT name="Animal Possession"/>
-		<OPTIONALTALENT name="Anticipate Blow"/>
-		<OPTIONALTALENT name="Blood Share"/>
-		<OPTIONALTALENT name="Borrow Sense"/>
-		<OPTIONALTALENT name="Detect Weapon"/>
-		<OPTIONALTALENT name="Detect Trap"/>
-		<OPTIONALTALENT name="Detect Weapon"/>
-		<OPTIONALTALENT name="Direction Arrow"/>
-		<OPTIONALTALENT name="Disguise Self"/>
-		<OPTIONALTALENT name="Distract"/>
-		<OPTIONALTALENT name="Dominate Beast"/>
-		<OPTIONALTALENT name="Durability"/>
-		<OPTIONALTALENT name="Empathic Command"/>
-		<OPTIONALTALENT name="Etiquette"/>
-		<OPTIONALTALENT name="Fire Heal"/>
-		<OPTIONALTALENT name="Flame Arrow"/>
-		<OPTIONALTALENT name="Frighten"/>
-		<OPTIONALTALENT name="Frighten Animals"/>
-		<OPTIONALTALENT name="Great Leap"/>
-		<OPTIONALTALENT name="Heartening Laugh"/>
-		<OPTIONALTALENT name="Heartening Laugh"/>
-		<OPTIONALTALENT name="Lasting Impression"/>
-		<OPTIONALTALENT name="Long Shot"/>
-		<OPTIONALTALENT name="Shield Charge"/>
-		<OPTIONALTALENT name="Sprint"/>
-		<OPTIONALTALENT name="Surprise Strike"/>
-		<OPTIONALTALENT name="Swift Kick"/>
-		<OPTIONALTALENT name="Tactics"/>
-		<OPTIONALTALENT name="Tiger Spring"/>
-		<OPTIONALTALENT name="Wind Catcher"/>
-		<OPTIONALTALENT name="Winning Smile"/>
+		<FOREIGNTALENTS maxcircle="2"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<OPTIONALTALENT name="Book Memory"/>
-		<OPTIONALTALENT name="Dead Fall"/>
-		<OPTIONALTALENT name="Disarm Trap"/>
-		<OPTIONALTALENT name="Elemental Tongues"/>
-		<OPTIONALTALENT name="Empathic Sense"/>
-		<OPTIONALTALENT name="Riposte"/>
-		<OPTIONALTALENT name="Spirit Hold"/>
-		<OPTIONALTALENT name="Spirit Talk"/>
-		<OPTIONALTALENT name="Sure Mount"/>
-		<OPTIONALTALENT name="Wound Balance"/>
+		<FOREIGNTALENTS maxcircle="3"/>
 		<TALENTABILITY count="2"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
-		<OPTIONALTALENT name="Elemental Hold"/>
-		<OPTIONALTALENT name="False Sight"/>
-		<OPTIONALTALENT name="Research"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Air Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Arrow Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Beast Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Rider Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Scout Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Sky Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Story Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Thief Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Thread Smithing"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="War Weaving"/>
-		<OPTIONALTALENT name="Thread Weaving" limitation="Weapon Weaving"/>
+		<FOREIGNTALENTS maxcircle="4"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Journey Weaving"/>
 		<TALENTABILITY/>
 		<KARMA spend="choosen Attribute*-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
-		<OPTIONALTALENT name="Animal Companion Durability" limitation="6/5"/>
-		<OPTIONALTALENT name="Battle Bellow"/>
-		<OPTIONALTALENT name="Blade Juggle"/>
-		<OPTIONALTALENT name="Call Animal Companion"/>
-		<OPTIONALTALENT name="Call Missile"/>
-		<OPTIONALTALENT name="Call Missile"/>
-		<OPTIONALTALENT name="Cobra Strike"/>
-		<OPTIONALTALENT name="Cold Purify"/>
-		<OPTIONALTALENT name="Conceal Object"/>
-		<OPTIONALTALENT name="Detect Trap"/>
-		<OPTIONALTALENT name="Diplomacy"/>
-		<OPTIONALTALENT name="Direction Sense"/>
-		<OPTIONALTALENT name="Disarm"/>
-		<OPTIONALTALENT name="Disarm Trap"/>
-		<OPTIONALTALENT name="Engaging Banter"/>
-		<OPTIONALTALENT name="Enhanced Fetish"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Fearsome Charge"/>
-		<OPTIONALTALENT name="Gliding Stride"/>
-		<OPTIONALTALENT name="Graceful Exit"/>
-		<OPTIONALTALENT name="Heal Animal Companion"/>
-		<OPTIONALTALENT name="Hypnotize"/>
-		<OPTIONALTALENT name="Inspire Others"/>
-		<OPTIONALTALENT name="Lasting Impression"/>
-		<OPTIONALTALENT name="Lasting Impression"/>
-		<OPTIONALTALENT name="Leadership"/>
-		<OPTIONALTALENT name="Lifesight"/>
-		<OPTIONALTALENT name="Lion Heart"/>
-		<OPTIONALTALENT name="Lip Reading"/>
-		<OPTIONALTALENT name="Mount Attack"/>
-		<OPTIONALTALENT name="Mount Durability" limitation="6/5"/>
-		<OPTIONALTALENT name="Orbiting Spy"/>
-		<OPTIONALTALENT name="Performance"/>
-		<OPTIONALTALENT name="Poison Resistance"/>
-		<OPTIONALTALENT name="Resist Taunt"/>
-		<OPTIONALTALENT name="Second Weapon"/>
-		<OPTIONALTALENT name="Sense Poison"/>
-		<OPTIONALTALENT name="Shield Charge"/>
-		<OPTIONALTALENT name="Slough Blame"/>
-		<OPTIONALTALENT name="Spirit Mount"/>
-		<OPTIONALTALENT name="Spot Armor Flaw"/>
-		<OPTIONALTALENT name="Steel Thought"/>
-		<OPTIONALTALENT name="Steely Stare"/>
-		<OPTIONALTALENT name="Stopping Aim"/>
-		<OPTIONALTALENT name="Summon" limitation="Ally Spirits"/>
-		<OPTIONALTALENT name="Summon" limitation="Elemental Spirits"/>
-		<OPTIONALTALENT name="Summon" limitation="Nature Spirits"/>
-		<OPTIONALTALENT name="Surprise Strike"/>
-		<OPTIONALTALENT name="Swing Attack"/>
-		<OPTIONALTALENT name="Tactics"/>
-		<OPTIONALTALENT name="Temper Other"/>
-		<OPTIONALTALENT name="Temper Self"/>
-		<OPTIONALTALENT name="True Sight"/>
-		<OPTIONALTALENT name="Wheeling Attack"/>
-		<OPTIONALTALENT name="Willforce"/>
-		<OPTIONALTALENT name="Wood Skin"/>
+		<FOREIGNTALENTS maxcircle="5"/>
 		<TALENTABILITY count="2"/>
 		<ABILITY>Choose the Path</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
-		<OPTIONALTALENT name="Animal Talk"/>
-		<OPTIONALTALENT name="Armor Mount"/>
-		<OPTIONALTALENT name="Bank Shot"/>
-		<OPTIONALTALENT name="Book Recall"/>
-		<OPTIONALTALENT name="Life Check"/>
-		<OPTIONALTALENT name="Steely Stare"/>
+		<FOREIGNTALENTS maxcircle="6"/>
 		<TALENTABILITY count="2"/>
 		<KARMA spend="choosen Attribute*-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
-		<OPTIONALTALENT name="Crushing Blow"/>
-		<OPTIONALTALENT name="Earth Skin"/>
-		<OPTIONALTALENT name="Fast Hand"/>
-		<OPTIONALTALENT name="Impressive Shot"/>
-		<OPTIONALTALENT name="Momentum Attack"/>
-		<OPTIONALTALENT name="Spirit Dodge"/>
-		<OPTIONALTALENT name="Wheeling Defense"/>
+		<FOREIGNTALENTS maxcircle="7"/>
 		<TALENTABILITY count="2"/>
 		<KARMA spend="Learn Somthing New Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
-		<OPTIONALTALENT name="Double-Charge"/>
-		<OPTIONALTALENT name="Down Strike"/>
-		<OPTIONALTALENT name="Forge Armor"/>
-		<OPTIONALTALENT name="Frenzy"/>
-		<OPTIONALTALENT name="Hold Thread"/>
-		<OPTIONALTALENT name="Power Mask"/>
-		<OPTIONALTALENT name="Safe Path"/>
-		<OPTIONALTALENT name="Second Attack"/>
-		<OPTIONALTALENT name="Second Shot"/>
-		<OPTIONALTALENT name="Temperature"/>
+		<FOREIGNTALENTS maxcircle="8"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
+		<FOREIGNTALENTS maxcircle="9"/>
 		<TALENTABILITY count="2"/>
 		<KARMA spend="Recovery Test"/>
 		<ABILITY>Morphism</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 10 -->
+		<FOREIGNTALENTS maxcircle="10"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 		<KARMA spend="choosen Attribute*-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
+		<FOREIGNTALENTS maxcircle="11"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
+		<FOREIGNTALENTS maxcircle="12"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 		<ABILITY>a Charakteristic Bonus</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
+		<FOREIGNTALENTS maxcircle="13"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 		<KARMASTEP/>
 		<ABILITY>Path of all Paths</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 14 -->
+		<FOREIGNTALENTS maxcircle="14"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 		<ABILITY>a Charakteristic Bonus</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
+		<FOREIGNTALENTS maxcircle="15"/>
 		<TALENTABILITY count="2"/>
 		<DEFENSE kind="physical"/>
 		<ABILITY>a Charakteristic Bonus</ABILITY>

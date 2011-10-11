@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="melee weapon"/>
  *     &lt;enumeration value="missile weapon"/>
  *     &lt;enumeration value="throwing weapon"/>
+ *     &lt;enumeration value="ammunition"/>
  *     &lt;enumeration value="armor"/>
  *     &lt;enumeration value="shield"/>
  *     &lt;enumeration value="light"/>
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ring"/>
  *     &lt;enumeration value="brooch"/>
  *     &lt;enumeration value="amulet"/>
+ *     &lt;enumeration value="vambrace"/>
  *     &lt;enumeration value="wand"/>
  *     &lt;enumeration value="animal"/>
  *     &lt;enumeration value="coins"/>
@@ -67,6 +69,8 @@ public enum ItemkindType {
     MISSILE_WEAPON("missile weapon"),
     @XmlEnumValue("throwing weapon")
     THROWING_WEAPON("throwing weapon"),
+    @XmlEnumValue("ammunition")
+    AMMUNITION("ammunition"),
     @XmlEnumValue("armor")
     ARMOR("armor"),
     @XmlEnumValue("shield")
@@ -87,6 +91,8 @@ public enum ItemkindType {
     BROOCH("brooch"),
     @XmlEnumValue("amulet")
     AMULET("amulet"),
+    @XmlEnumValue("vambrace")
+    VAMBRACE("vambrace"),
     @XmlEnumValue("wand")
     WAND("wand"),
     @XmlEnumValue("animal")

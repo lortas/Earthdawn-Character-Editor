@@ -25,7 +25,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="circle_type">
 		<xs:restriction base="xs:int">
-			<xs:minInclusive value="0"/>
+			<xs:minInclusive value="1"/>
 			<xs:maxInclusive value="15"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -259,14 +259,14 @@
 	<xs:complexType name="TALENTTEACHER_type">
 		<xs:attribute name="name" type="xs:string" default=""/>
 		<xs:attribute name="discipline" type="xs:string" default=""/>
-		<xs:attribute name="talentcircle" type="unsigned_int" default="0"/>
-		<xs:attribute name="teachercircle" type="unsigned_int" default="0"/>
+		<xs:attribute name="talentcircle" type="circle_type" default="1"/>
+		<xs:attribute name="teachercircle" type="circle_type" default="1"/>
 		<xs:attribute name="comment" type="xs:string" default=""/>
 		<xs:attribute name="byversatility" type="yesno_type" default="no"/>
 	</xs:complexType>
 	<xs:complexType name="RANKHISTORY_type">
 		<xs:attribute name="rank"  type="unsigned_int" use="required"/>
-		<xs:attribute name="mincircle" type="unsigned_int" use="required"/>
+		<xs:attribute name="mincircle" type="circle_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="CAPABILITY_type">
 		<xs:sequence>
@@ -331,7 +331,7 @@
 		<xs:attribute name="ground" type="unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="DISCIPLINEBONUS_type">
-		<xs:attribute name="circle" type="unsigned_int" use="required"/>
+		<xs:attribute name="circle" type="circle_type" use="required"/>
 		<xs:attribute name="bonus" type="xs:string"  use="required"/>
 	</xs:complexType>
 	<xs:complexType name="DISCIPLINE_type">

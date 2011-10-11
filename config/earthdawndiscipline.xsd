@@ -10,8 +10,13 @@
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="FOREIGNTALENTS_type">
+		<xs:attribute name="maxcircle" type="edt:circle_type" default="1"/>
+		<xs:attribute name="mincircle" type="edt:circle_type" default="1"/>
+	</xs:complexType>
 	<xs:complexType name="DISCIPLINECIRCLE_type">
 		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element minOccurs="0" maxOccurs="1" name="FOREIGNTALENTS" type="FOREIGNTALENTS_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="8" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element minOccurs="1" maxOccurs="1" name="TALENTABILITY" type="edt:DISZIPINABILITY_type"/>

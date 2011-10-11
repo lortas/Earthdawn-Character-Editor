@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="mysticarmor" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="penalty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="edn" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="edn_element" type="{http://earthdawn.com/datatypes}elementkind_type" default="undefined" />
  *       &lt;attribute name="timesforged_physical" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="timesforged_mystic" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="dateforged" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
@@ -55,6 +56,8 @@ public class ARMORType
     protected Integer penalty;
     @XmlAttribute
     protected Integer edn;
+    @XmlAttribute(name = "edn_element")
+    protected ElementkindType ednElement;
     @XmlAttribute(name = "timesforged_physical")
     protected Integer timesforgedPhysical;
     @XmlAttribute(name = "timesforged_mystic")
@@ -172,6 +175,34 @@ public class ARMORType
      */
     public void setEdn(Integer value) {
         this.edn = value;
+    }
+
+    /**
+     * Gets the value of the ednElement property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ElementkindType }
+     *     
+     */
+    public ElementkindType getEdnElement() {
+        if (ednElement == null) {
+            return ElementkindType.UNDEFINED;
+        } else {
+            return ednElement;
+        }
+    }
+
+    /**
+     * Sets the value of the ednElement property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ElementkindType }
+     *     
+     */
+    public void setEdnElement(ElementkindType value) {
+        this.ednElement = value;
     }
 
     /**

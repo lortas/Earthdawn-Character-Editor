@@ -330,8 +330,9 @@
 	</THREADITEM>
 	<THREADITEM name="Devocor Calamitas" weight="0.5" kind="vambrace" lpcostgrowth="1" maxthreads="2" spelldefense="10" enchantingdifficultynumber="30">
 		<edt:description>A vambrace consist of norite, wich is nerverd by many white thin traces. The specimen of the white thin traces eludes any comprehension. Anyone studing the traces get confused more and more. Die vambrace fits the forearm of trolls and obisimen.</edt:description>
-		<edt:THREADRANK effect="optional talent: Bad Luck" keyknowledge="Name of item: Devocor Calamitas">
-			<edt:TALENT name="Bad Luck" limitation="attitude: Neutral or better"/>
+		<edt:THREADRANK effect="optional talent: Cursed Luck" keyknowledge="Name of item: Devocor Calamitas">
+			<edt:TALENT name="Cursed Luck" limitation="attitude: Neutral or better"/>
+			
 		</edt:THREADRANK>
 	</THREADITEM>
 

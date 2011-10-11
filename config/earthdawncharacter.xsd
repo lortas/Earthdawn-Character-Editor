@@ -55,6 +55,7 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGE" type="edt:CHARACTERLANGUAGE_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="AMMUNITION" type="edt:AMMUNITION_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MAGICITEM" type="edt:MAGICITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="BLOODCHARMITEM" type="edt:BLOODCHARMITEM_type"/>
