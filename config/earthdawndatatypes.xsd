@@ -86,6 +86,16 @@
 			<xs:enumeration value="social"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="elementkind_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="undefined"/>
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="earth"/>
+			<xs:enumeration value="water"/>
+			<xs:enumeration value="air"/>
+			<xs:enumeration value="fire"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="dice_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="d6-3"/>
@@ -147,6 +157,7 @@
 			<xs:enumeration value="ring"/>
 			<xs:enumeration value="brooch"/>
 			<xs:enumeration value="amulet"/>
+			<xs:enumeration value="vambrace"/>
 			<xs:enumeration value="wand"/>
 			<xs:enumeration value="animal"/>
 			<xs:enumeration value="coins"/>
@@ -386,6 +397,7 @@
 				<xs:attribute name="mysticarmor" type="unsigned_int" default="0"/>
 				<xs:attribute name="penalty" type="unsigned_int" default="0"/>
 				<xs:attribute name="edn" type="unsigned_int" default="0"/>
+				<xs:attribute name="edn_element" type="elementkind_type" default="undefined"/>
 				<xs:attribute name="timesforged_physical" type="unsigned_int" default="0"/>
 				<xs:attribute name="timesforged_mystic" type="unsigned_int" default="0"/>
 				<xs:attribute name="dateforged" type="xs:string" default=""/>

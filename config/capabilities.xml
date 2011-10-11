@@ -215,6 +215,7 @@
 	<TALENT name="Astral Web" attribute="STR" action="standard" karma="no" strain="3" bookref="PC p.103"/>
 	<TALENT name="Aura Armor" attribute="WIL" action="standard" karma="no" strain="2" bookref="PC p.103"/>
 	<TALENT name="Avoid Blow" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.62"/>
+	<TALENT name="Bad Luck" attribute="WIL" action="simple" karma="no" strain="1" notbyversatility="yes" bookref="none"/>
 	<TALENT name="Bane Strike" attribute="na" action="free" karma="no" strain="2" bookref="NG p.217"/>
 	<TALENT name="Bank Shot" attribute="DEX" action="standard" karma="no" strain="1" bookref="PG p.62"/>
 	<TALENT name="Bardic Voice" attribute="CHA" action="standard" karma="no" strain="1" bookref="PC p.103"/>

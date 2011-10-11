@@ -11,22 +11,21 @@
 	<ARMOR kind="armor" penalty="1" mysticarmor="1" physicalarmor="5" weight="25" name="Hide" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="3" weight="15" name="Leather" bookref="PG p.256"/>
 	<ARMOR kind="armor" edn="22" penalty="2" mysticarmor="3" physicalarmor="6" weight="0.0" name="Living Crystal" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="16E" penalty="1" mysticarmor="4" physicalarmor="4" weight="0.0" name="Living Hair Barding" bookref="PG p.256"/>
+	<ARMOR kind="armor" edn="16" edn_element="earth" penalty="1" mysticarmor="4" physicalarmor="4" weight="0.0" name="Living Hair Barding" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="0" mysticarmor="1" physicalarmor="3" weight="20" name="Obsidiman Skin" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="2" weight="5" name="Padded Cloth" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="4" weight="20" name="Padded Leather"/>
 	<ARMOR kind="armor" penalty="4" mysticarmor="0" physicalarmor="9" weight="60" name="Plate Mail" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="2" mysticarmor="0" physicalarmor="6" weight="30" name="Ring Mail" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="17W" penalty="3" mysticarmor="1" physicalarmor="8" weight="50" name="Wyvern-Skin" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="4" mysticarmor="0" physicalarmor="9" weight="60" name="Schuppenpanzer" bookref="???"/>
-	
+	<ARMOR kind="armor" edn="17" edn_element="water" penalty="3" mysticarmor="1" physicalarmor="8" weight="50" name="Wyvern-Skin" bookref="PG p.256"/>
+
 	<SHIELD kind="shield" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" name="Buckler"/>
 	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="8" name="Rider's"/>
 	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="10" name="Footman's"/>
 	<SHIELD kind="shield" physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5" name="Ferndask"/>
 	<SHIELD kind="shield" physicalarmor="5" penalty="2" physicaldeflectionbonus="4" shatterthreshold="21" weight="15" name="Body"/>
 	<SHIELD kind="shield" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" name="Crystal Buckler"/>
-	
+
 	<WEAPON kind="melee weapon" size="5" strengthmin="13" damagestep="7" weight="6" name="Battle Axe" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Broadsword" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="2" strengthmin="7" damagestep="3" weight="3" name="Club" bookref="PG p.251"/>
@@ -57,7 +56,7 @@
 	<WEAPON kind="melee weapon" size="1" strengthmin="6" damagestep="3" weight="1" name="Windling Sword" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" size="5" strengthmin="12" damagestep="2" weight="3" name="Kampfstab"/>
 	<WEAPON kind="melee weapon" size="1" strengthmin="3"  damagestep="2" weight="0.5" name="Windling dagger"/>
-	
+
 	<WEAPON kind="throwing weapon" longrange="24" shortrange="12" size="3" strengthmin="6" dexteritymin="9" damagestep="3" weight="2" name="Bola" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1" name="Dagger" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" longrange="36" shortrange="18" size="1" strengthmin="4" damagestep="1" weight="0.5" name="Dart" bookref="PG p.252"/>
@@ -67,7 +66,7 @@
 	<WEAPON kind="throwing weapon" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" name="Spear" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2" name="Throwing Axe" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" longrange="32" shortrange="16" size="1" strengthmin="4" damagestep="2" weight="0.75" name="Throwing Dagger" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="2" strengthmin="4" dexteritymin="9"damagestep="0" weight="0.75" name="Windling Net" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="2" strengthmin="4" dexteritymin="9" damagestep="0" weight="0.75" name="Windling Net" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" longrange="16" shortrange="8" size="1" strengthmin="4" damagestep="2" weight="0.5" name="Windling Spear" bookref="PG p.252"/>
 
 	<WEAPON kind="missile weapon" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Blowgun" bookref="PG p.252"/>
@@ -79,7 +78,7 @@
 	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" longrange="48" shortrange="24" size="2" strengthmin="5" damagestep="3" weight="0.875" name="Windling Bow" bookref="PG p.252"/>
-	
+
 	<AMMUNITION kind="ammunition" name="Box of 10 Needles" weight="0.5" bookref="PG p.252">
 		<edt:WEAPON>Blowgun</edt:WEAPON>
 	</AMMUNITION>
@@ -109,15 +108,15 @@
 	<AMMUNITION kind="ammunition" name="20 Windling Bow Arrows" weight="0.5" bookref="PG p.252">
 		<edt:WEAPON>Windling Bow</edt:WEAPON>
 	</AMMUNITION>
-	
+
 	<MAGICITEM weight="5.0" name="Counterspell Staff"/>
-	
+
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" name="Desperate Spell"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" name="Desperate Blow"/>
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" weight="0.1" name="Absorb Blow"/>
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="0" effect="+6" enchantingdifficultynumber="0" weight="0.1" name="Verzweiflungszauber"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="Bei Tod Erholungsprobe+5" enchantingdifficultynumber="14" weight="1.0" name="Last Chance"/>
-	
+
 	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" enchantingdifficultynumber="16" kind="armor" weight="45.0" name="Thread Crystal Ringlet">
 		<edt:description>Made from carved, interlocking rings of living crystal, this armor protects the character's entire body except the legs below the knee</edt:description>
 		<edt:THREADRANK effect="is now max forged">
@@ -329,7 +328,13 @@
 		<edt:THREADRANK effect="SpellMatrix Rank 14"/>
 		<edt:THREADRANK effect="SpellMatrix Rank 15"/>
 	</THREADITEM>
-	
+	<THREADITEM name="Devocor Calamitas" weight="0.5" kind="vambrace" lpcostgrowth="1" maxthreads="2" spelldefense="10" enchantingdifficultynumber="30">
+		<edt:description>A vambrace consist of norite, wich is nerverd by many white thin traces. The specimen of the white thin traces eludes any comprehension. Anyone studing the traces get confused more and more. Die vambrace fits the forearm of trolls and obisimen.</edt:description>
+		<edt:THREADRANK effect="optional talent: Bad Luck" keyknowledge="Name of item: Devocor Calamitas">
+			<edt:TALENT name="Bad Luck" limitation="attitude: Neutral or better"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+
 	<ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
 	<ITEM weight="1.0" name="torch"/>
 	<ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
