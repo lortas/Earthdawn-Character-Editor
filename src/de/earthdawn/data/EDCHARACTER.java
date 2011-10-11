@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}SKILL_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="LANGUAGE" type="{http://earthdawn.com/datatypes}CHARACTERLANGUAGE_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="AMMUNITION" type="{http://earthdawn.com/datatypes}AMMUNITION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="MAGICITEM" type="{http://earthdawn.com/datatypes}MAGICITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="PATTERNITEM" type="{http://earthdawn.com/datatypes}PATTERNITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="BLOODCHARMITEM" type="{http://earthdawn.com/datatypes}BLOODCHARMITEM_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -79,6 +80,7 @@ import javax.xml.bind.annotation.XmlType;
     "skill",
     "language",
     "weapon",
+    "ammunition",
     "magicitem",
     "patternitem",
     "bloodcharmitem",
@@ -121,6 +123,8 @@ public class EDCHARACTER {
     protected List<CHARACTERLANGUAGEType> language;
     @XmlElement(name = "WEAPON", namespace = "http://earthdawn.com/character")
     protected List<WEAPONType> weapon;
+    @XmlElement(name = "AMMUNITION", namespace = "http://earthdawn.com/character")
+    protected List<AMMUNITIONType> ammunition;
     @XmlElement(name = "MAGICITEM", namespace = "http://earthdawn.com/character")
     protected List<MAGICITEMType> magicitem;
     @XmlElement(name = "PATTERNITEM", namespace = "http://earthdawn.com/character")
@@ -467,6 +471,35 @@ public class EDCHARACTER {
             weapon = new ArrayList<WEAPONType>();
         }
         return this.weapon;
+    }
+
+    /**
+     * Gets the value of the ammunition property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ammunition property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAMMUNITION().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AMMUNITIONType }
+     * 
+     * 
+     */
+    public List<AMMUNITIONType> getAMMUNITION() {
+        if (ammunition == null) {
+            ammunition = new ArrayList<AMMUNITIONType>();
+        }
+        return this.ammunition;
     }
 
     /**

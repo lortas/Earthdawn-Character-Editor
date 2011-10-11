@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="FOREIGNTALENTS" type="{http://earthdawn.com/discipline}FOREIGNTALENTS_type" minOccurs="0"/>
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DISCIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="8" minOccurs="0"/>
  *         &lt;element name="TALENTABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/>
@@ -47,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DISCIPLINECIRCLE_type", namespace = "http://earthdawn.com/discipline", propOrder = {
+    "foreigntalents",
     "optionaltalent",
     "disciplinetalent",
     "talentability",
@@ -61,6 +63,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DISCIPLINECIRCLEType {
 
+    @XmlElement(name = "FOREIGNTALENTS")
+    protected FOREIGNTALENTSType foreigntalents;
     @XmlElement(name = "OPTIONALTALENT")
     protected List<TALENTABILITYType> optionaltalent;
     @XmlElement(name = "DISCIPLINETALENT")
@@ -83,6 +87,30 @@ public class DISCIPLINECIRCLEType {
     protected List<DISZIPINABILITYType> karmastep;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
+
+    /**
+     * Gets the value of the foreigntalents property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FOREIGNTALENTSType }
+     *     
+     */
+    public FOREIGNTALENTSType getFOREIGNTALENTS() {
+        return foreigntalents;
+    }
+
+    /**
+     * Sets the value of the foreigntalents property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FOREIGNTALENTSType }
+     *     
+     */
+    public void setFOREIGNTALENTS(FOREIGNTALENTSType value) {
+        this.foreigntalents = value;
+    }
 
     /**
      * Gets the value of the optionaltalent property.

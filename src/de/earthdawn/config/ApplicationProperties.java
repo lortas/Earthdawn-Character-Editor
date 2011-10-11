@@ -50,6 +50,7 @@ public class ApplicationProperties {
     private static HELP HELP = new HELP();
     private static LanguageType LANGUAGE = LanguageType.EN;
     private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
+    private static SPELLDESCRIPTIONS SPELLDESCRIPTIONS = new SPELLDESCRIPTIONS();
     private ECECharacteristics CHARACTERISTICS = null;
     
     /** Singleton-Instanz dieser Klasse. */
@@ -182,11 +183,17 @@ public class ApplicationProperties {
 	}
 
 	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
+		return getTalentsByCircle(1,maxcirclenr);
+	}
+
+	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int mincirclenr, int maxcirclenr) {
 		HashMap<String,TALENTABILITYType> result = new HashMap<String,TALENTABILITYType>();
 		for(DISCIPLINE discipline : getAllDisziplines()) {
-			int circlenr=maxcirclenr;
+			int circlenr=0;
 			for( DISCIPLINECIRCLEType circle : discipline.getCIRCLE() ) {
-				if( circlenr < 1) break;
+				circlenr++;
+				if( circlenr < mincirclenr) continue;
+				if( circlenr > maxcirclenr) break;
 				for( TALENTABILITYType talent : circle.getOPTIONALTALENT() ) {
 					String name = talent.getName();
 					String limitation = talent.getLimitation();
@@ -199,7 +206,6 @@ public class ApplicationProperties {
 					if( limitation.isEmpty() ) result.put(name,talent);
 					else result.put(name+" - "+limitation,talent);
 				}
-				circlenr--;
 			}
 		}
 		return result;
@@ -466,6 +472,15 @@ public class ApplicationProperties {
 			filename="./config/randomnames.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			RANDOMNAMES = (EDRANDOMNAME) u.unmarshal(new File(filename));
+
+			filename="./config/spelldescriptions.xml";
+			File spelldescriptionsfile = new File(filename);
+			if( spelldescriptionsfile.canRead() ) {
+				System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+				SPELLDESCRIPTIONS = (SPELLDESCRIPTIONS) u.unmarshal(spelldescriptionsfile);
+			} else {
+				System.out.println("Überspringe Konfigurationsdatei: '" + filename + "'");
+			}
 
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...

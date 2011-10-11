@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}ITEM_type">
  *       &lt;attribute name="damagestep" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="dexteritymin" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="strengthmin" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="shortrange" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -45,6 +46,8 @@ public class WEAPONType
 
     @XmlAttribute(required = true)
     protected int damagestep;
+    @XmlAttribute
+    protected Integer dexteritymin;
     @XmlAttribute(required = true)
     protected int strengthmin;
     @XmlAttribute(required = true)
@@ -72,6 +75,34 @@ public class WEAPONType
      */
     public void setDamagestep(int value) {
         this.damagestep = value;
+    }
+
+    /**
+     * Gets the value of the dexteritymin property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getDexteritymin() {
+        if (dexteritymin == null) {
+            return  0;
+        } else {
+            return dexteritymin;
+        }
+    }
+
+    /**
+     * Sets the value of the dexteritymin property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setDexteritymin(Integer value) {
+        this.dexteritymin = value;
     }
 
     /**

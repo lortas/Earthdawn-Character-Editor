@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="rank" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="mincircle" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="mincircle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>

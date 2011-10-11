@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="discipline" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
- *       &lt;attribute name="talentcircle" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="teachercircle" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="talentcircle" type="{http://earthdawn.com/datatypes}circle_type" default="1" />
+ *       &lt;attribute name="teachercircle" type="{http://earthdawn.com/datatypes}circle_type" default="1" />
  *       &lt;attribute name="comment" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="byversatility" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *     &lt;/restriction>
@@ -119,7 +119,7 @@ public class TALENTTEACHERType {
      */
     public int getTalentcircle() {
         if (talentcircle == null) {
-            return  0;
+            return  1;
         } else {
             return talentcircle;
         }
@@ -147,7 +147,7 @@ public class TALENTTEACHERType {
      */
     public int getTeachercircle() {
         if (teachercircle == null) {
-            return  0;
+            return  1;
         } else {
             return teachercircle;
         }

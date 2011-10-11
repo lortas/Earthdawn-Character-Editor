@@ -10,12 +10,10 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -29,10 +27,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/choice>
+ *       &lt;sequence>
+ *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}spelldescription_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,47 +40,43 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "skillOrTALENT"
+    "spell"
 })
-@XmlRootElement(name = "CAPABILITIES", namespace = "http://earthdawn.com/capability")
-public class CAPABILITIES {
+@XmlRootElement(name = "SPELLDESCRIPTIONS", namespace = "http://earthdawn.com/spelldescription")
+public class SPELLDESCRIPTIONS {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class),
-        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<CAPABILITYType>> skillOrTALENT;
+    @XmlElement(name = "SPELL", namespace = "http://earthdawn.com/spelldescription")
+    protected List<SpelldescriptionType> spell;
     @XmlAttribute(required = true)
     protected String lang;
 
     /**
-     * Gets the value of the skillOrTALENT property.
+     * Gets the value of the spell property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the skillOrTALENT property.
+     * This is why there is not a <CODE>set</CODE> method for the spell property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSKILLOrTALENT().add(newItem);
+     *    getSPELL().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}
-     * {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}
+     * {@link SpelldescriptionType }
      * 
      * 
      */
-    public List<JAXBElement<CAPABILITYType>> getSKILLOrTALENT() {
-        if (skillOrTALENT == null) {
-            skillOrTALENT = new ArrayList<JAXBElement<CAPABILITYType>>();
+    public List<SpelldescriptionType> getSPELL() {
+        if (spell == null) {
+            spell = new ArrayList<SpelldescriptionType>();
         }
-        return this.skillOrTALENT;
+        return this.spell;
     }
 
     /**
