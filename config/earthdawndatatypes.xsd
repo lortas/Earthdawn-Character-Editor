@@ -94,6 +94,8 @@
 			<xs:enumeration value="water"/>
 			<xs:enumeration value="air"/>
 			<xs:enumeration value="fire"/>
+			<xs:enumeration value="illusion"/>
+			<xs:enumeration value="fear"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dice_type">
@@ -563,6 +565,7 @@
 	</xs:complexType>
 	<xs:complexType name="SPELLDEF_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="element" type="elementkind_type" default="undefined"/>
 		<xs:attribute name="threads" type="xs:string" default="0"/>
 		<xs:attribute name="weavingdifficulty" type="xs:string" default="na"/>
 		<xs:attribute name="reattuningdifficulty" type="unsigned_int" default="0"/>
