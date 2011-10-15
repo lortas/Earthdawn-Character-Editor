@@ -27,6 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="water"/>
  *     &lt;enumeration value="air"/>
  *     &lt;enumeration value="fire"/>
+ *     &lt;enumeration value="illusion"/>
+ *     &lt;enumeration value="fear"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -47,7 +49,11 @@ public enum ElementkindType {
     @XmlEnumValue("air")
     AIR("air"),
     @XmlEnumValue("fire")
-    FIRE("fire");
+    FIRE("fire"),
+    @XmlEnumValue("illusion")
+    ILLUSION("illusion"),
+    @XmlEnumValue("fear")
+    FEAR("fear");
     private final String value;
 
     ElementkindType(String v) {

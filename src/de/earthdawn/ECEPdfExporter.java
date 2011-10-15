@@ -26,6 +26,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
 import com.itextpdf.text.pdf.PdfContentByte;
@@ -1020,5 +1023,94 @@ public class ECEPdfExporter {
 			result+=String.valueOf(e);
 		}
 		return result;
+	}
+
+	public void exportSpellcards(EDCHARACTER edCharakter, File outFile, int version) throws DocumentException, IOException {
+		CharacterContainer character = new CharacterContainer(edCharakter);
+		File template=null; 
+		int maxSpellPerPage=1;
+		switch(version) {
+		case 0:
+		default:
+			template = new File("./templates/spellcards_portrait_2x2.pdf");
+			maxSpellPerPage=4;
+			break;
+		case 1:
+			template = new File("./templates/spellcards_landscape_2x2.pdf");
+			maxSpellPerPage=4;
+			break;
+		}
+		String filename=outFile.getCanonicalPath();
+		String filenameBegin="";
+		String filenameEnd="";
+		int dotPosition = filename.lastIndexOf ( '.' );
+		if ( dotPosition >= 0 ) {
+			filenameBegin = filename.substring( 0, dotPosition );
+			filenameEnd = filename.substring( dotPosition );
+		} else {
+			filenameBegin=filename;
+		}
+		int counterFile=0;
+		int conterSpells=maxSpellPerPage;
+		PdfStamper stamper=null;
+		PdfReader reader=null;
+		
+		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			List<SPELLType> spellList = discipline.getSPELL();
+			Collections.sort(spellList, new SpellComparator());
+			for( SPELLType spell : spellList ) {
+				if( conterSpells < maxSpellPerPage ) {
+					conterSpells++;
+				} else {
+					if( stamper != null ) stamper.close();
+					if( reader != null ) reader.close();
+					reader = new PdfReader(new FileInputStream(template));
+					stamper = new PdfStamper(reader, new FileOutputStream(new File(filenameBegin+String.format("%02d", counterFile)+filenameEnd)));
+					acroFields = stamper.getAcroFields();
+					conterSpells=1;
+					counterFile++;
+				}
+				acroFields.setField( "Discipline"+conterSpells, discipline.getName() );
+				acroFields.setField( "Spell Name"+conterSpells, spell.getName() );
+				acroFields.setField( "Spell Circle"+conterSpells, String.valueOf(spell.getCircle()) );
+				acroFields.setField( "Spellcasting"+conterSpells, spell.getCastingdifficulty() );
+				acroFields.setField( "Threads"+conterSpells, spell.getThreads() );
+				acroFields.setField( "Weaving"+conterSpells, spell.getWeavingdifficulty() );
+				acroFields.setField( "Reattuning"+conterSpells, String.valueOf(spell.getReattuningdifficulty()) );
+				acroFields.setField( "Range"+conterSpells, spell.getRange() );
+				acroFields.setField( "Duration"+conterSpells, spell.getDuration() );
+				acroFields.setField( "Effect"+conterSpells, spell.getEffect() );
+				acroFields.setField( "Spell description"+conterSpells, "" );
+				acroFields.setField( "Page reference"+conterSpells, String.valueOf(spell.getBookref()) );
+				acroFields.setField( "Air"+conterSpells, "No" );
+				acroFields.setField( "Earth"+conterSpells, "No" );
+				acroFields.setField( "Fear"+conterSpells, "No" );
+				acroFields.setField( "Fire"+conterSpells, "No" );
+				acroFields.setField( "Illusion"+conterSpells, "No" );
+				acroFields.setField( "Illusion N"+conterSpells, "Yes" );
+				acroFields.setField( "Water"+conterSpells, "No" );
+				acroFields.setField( "Wood"+conterSpells, "No" );
+				switch(spell.getElement()) {
+				case AIR:
+					acroFields.setField( "Air"+conterSpells, "Yes" ); break;
+				case EARTH:
+					acroFields.setField( "Earth"+conterSpells, "Yes" ); break;
+				case FEAR:
+					acroFields.setField( "Fear"+conterSpells, "Yes" ); break;
+				case FIRE:
+					acroFields.setField( "Fire"+conterSpells, "Yes" ); break;
+				case ILLUSION:
+					acroFields.setField( "Illusion"+conterSpells, "Yes" );
+					acroFields.setField( "Illusion N"+conterSpells, "No" );
+					break;
+				case WATER:
+					acroFields.setField( "Water"+conterSpells, "Yes" ); break;
+				case WOOD:
+					acroFields.setField( "Wood"+conterSpells, "Yes" ); break;
+				}
+			}
+		}
+
+		stamper.close();
 	}
 }

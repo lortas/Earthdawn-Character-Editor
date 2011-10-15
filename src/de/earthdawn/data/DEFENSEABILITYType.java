@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}defensekind_type" default="physical" />
+ *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,6 +40,8 @@ public class DEFENSEABILITYType {
 
     @XmlAttribute
     protected DefensekindType kind;
+    @XmlAttribute
+    protected Integer bonus;
 
     /**
      * Gets the value of the kind property.
@@ -66,6 +69,34 @@ public class DEFENSEABILITYType {
      */
     public void setKind(DefensekindType value) {
         this.kind = value;
+    }
+
+    /**
+     * Gets the value of the bonus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBonus() {
+        if (bonus == null) {
+            return  1;
+        } else {
+            return bonus;
+        }
+    }
+
+    /**
+     * Sets the value of the bonus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBonus(Integer value) {
+        this.bonus = value;
     }
 
 }

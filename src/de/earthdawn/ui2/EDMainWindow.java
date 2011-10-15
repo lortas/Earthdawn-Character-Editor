@@ -198,6 +198,22 @@ public class EDMainWindow {
 		});
 		mntmPdfExport.add(mntmExportAjfelmordom);
 
+		JMenuItem mntmExportSpellcards0 = new JMenuItem(NLS.getString("EDMainWindow.mntmExportSpellcards0.text")); //$NON-NLS-1$
+		mntmExportSpellcards0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExportSpellcards_actionPerformed(arg0,0);
+			}
+		});
+		mntmPdfExport.add(mntmExportSpellcards0);
+
+		JMenuItem mntmExportSpellcards1 = new JMenuItem(NLS.getString("EDMainWindow.mntmExportSpellcards1.text")); //$NON-NLS-1$
+		mntmExportSpellcards1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExportSpellcards_actionPerformed(arg0,1);
+			}
+		});
+		mntmPdfExport.add(mntmExportSpellcards1);
+
 		JMenu mntmCsvExport = new JMenu(NLS.getString("EDMainWindow.mntmCsvExport.text")); //$NON-NLS-1$
 		mntmExport.add(mntmCsvExport);
 
@@ -674,6 +690,22 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
+			} catch (DocumentException e) {
+				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void do_mntmExportSpellcards_actionPerformed(ActionEvent arg0, int version) {
+		File selFile = selectFileName("_Spells.pdf");
+		if( selFile != null ) {
+			try {
+				new ECEPdfExporter().exportSpellcards(character.getEDCHARACTER(), selFile, version);
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());

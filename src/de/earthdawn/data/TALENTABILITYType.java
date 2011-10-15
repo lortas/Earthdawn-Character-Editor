@@ -25,6 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
+ *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -40,6 +42,10 @@ public class TALENTABILITYType {
     protected String name;
     @XmlAttribute
     protected String limitation;
+    @XmlAttribute
+    protected Integer bonus;
+    @XmlAttribute
+    protected String pool;
 
     /**
      * Gets the value of the name property.
@@ -91,6 +97,58 @@ public class TALENTABILITYType {
      */
     public void setLimitation(String value) {
         this.limitation = value;
+    }
+
+    /**
+     * Gets the value of the bonus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBonus() {
+        if (bonus == null) {
+            return  1;
+        } else {
+            return bonus;
+        }
+    }
+
+    /**
+     * Sets the value of the bonus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBonus(Integer value) {
+        this.bonus = value;
+    }
+
+    /**
+     * Gets the value of the pool property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPool() {
+        return pool;
+    }
+
+    /**
+     * Sets the value of the pool property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPool(String value) {
+        this.pool = value;
     }
 
 }
