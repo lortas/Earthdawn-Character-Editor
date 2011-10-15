@@ -610,6 +610,7 @@
 	<xs:complexType name="TALENTABILITY_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="limitation" type="xs:string" default=""/>
+		<xs:attribute name="bonus" type="unsigned_int" default="1"/>
 	</xs:complexType>
 	<xs:complexType name="KARMAABILITY_type">
 		<xs:attribute name="spend" type="xs:string" use="required"/>
@@ -619,6 +620,7 @@
 			<xs:documentation>Indicates which defense type will be increased by one.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
+		<xs:attribute name="bonus" type="unsigned_int" default="1"/>
 	</xs:complexType>
 	<xs:complexType name="USEDSTARTRANKS_type">
 		<xs:attribute name="talents" type="xs:int" default="0"/>
