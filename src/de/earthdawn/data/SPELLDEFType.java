@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="element" type="{http://earthdawn.com/datatypes}elementkind_type" default="undefined" />
  *       &lt;attribute name="threads" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
  *       &lt;attribute name="weavingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="na" />
  *       &lt;attribute name="reattuningdifficulty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -50,6 +51,8 @@ public class SPELLDEFType {
 
     @XmlAttribute(required = true)
     protected String name;
+    @XmlAttribute
+    protected ElementkindType element;
     @XmlAttribute
     protected String threads;
     @XmlAttribute
@@ -91,6 +94,34 @@ public class SPELLDEFType {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the element property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ElementkindType }
+     *     
+     */
+    public ElementkindType getElement() {
+        if (element == null) {
+            return ElementkindType.UNDEFINED;
+        } else {
+            return element;
+        }
+    }
+
+    /**
+     * Sets the value of the element property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ElementkindType }
+     *     
+     */
+    public void setElement(ElementkindType value) {
+        this.element = value;
     }
 
     /**

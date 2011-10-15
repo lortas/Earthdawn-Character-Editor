@@ -416,6 +416,7 @@ public class ECEWorker {
 					spell.setThreads(spelldef.getThreads());
 					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
 					spell.setBookref(spelldef.getBookref());
+					spell.setElement(spelldef.getElement());
 				}
 				if( OptionalRule_SpellLegendPointCost ) {
 					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle

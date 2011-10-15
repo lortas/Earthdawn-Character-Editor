@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="RANKHISTORY" type="{http://earthdawn.com/datatypes}RANKHISTORY_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
+ *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -57,6 +58,8 @@ public class TALENTType
     protected List<RANKHISTORYType> rankhistory;
     @XmlAttribute(required = true)
     protected int circle;
+    @XmlAttribute
+    protected String pool;
 
     /**
      * Gets the value of the teacher property.
@@ -154,6 +157,30 @@ public class TALENTType
      */
     public void setCircle(int value) {
         this.circle = value;
+    }
+
+    /**
+     * Gets the value of the pool property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPool() {
+        return pool;
+    }
+
+    /**
+     * Sets the value of the pool property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPool(String value) {
+        this.pool = value;
     }
 
 }
