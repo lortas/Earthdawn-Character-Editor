@@ -88,7 +88,9 @@
 	<target name="dist" depends="jar" description="--> Distribution erzeugen">
 		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
-			<zipfileset dir="./config" prefix="config"/>
+			<zipfileset dir="./config" prefix="config">
+				<exclude name="spelldescriptions.xml"/>
+			</zipfileset>
 			<zipfileset dir="./lib" prefix="lib"/>
 			<zipfileset dir="./templates" prefix="templates"/>
 			<zipfileset dir="./icons" prefix="icons"/>

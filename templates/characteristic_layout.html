@@ -67,7 +67,7 @@ tr.tfoot { font-style:italic; }
 				</tr>
 				<tr class="tfoot">
 					<td colspan="5">Not Spent Attribute Cost</td>
-					<td>${KARMA.maxmodificator}</td>
+					<#if KARMA.maxmodificator < 0><td class="red"><#else><td></#if>${KARMA.maxmodificator}</td>
 				</tr>
 			</table>
 		</td>
