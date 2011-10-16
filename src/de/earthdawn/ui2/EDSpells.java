@@ -23,10 +23,12 @@ import javax.swing.table.TableRowSorter;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINESPELLType;
+import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.YesnoType;
 
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
@@ -141,7 +143,7 @@ class SpellsTableModel extends AbstractTableModel {
 	private CharacterContainer character;
 	private String discipline;
 	public final ApplicationProperties PROPERTIES = ApplicationProperties.create();
-	private String[] columnNames = {"Learned",  "Circle", "Type", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
+	private String[] columnNames = {"Learned", "Free", "Circle", "Type", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
 
 	List<SPELLType> spelllist;
 
@@ -161,10 +163,10 @@ class SpellsTableModel extends AbstractTableModel {
 		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = PROPERTIES.getSpellsByDiscipline();
 		HashMap<String, SPELLDEFType> spells = PROPERTIES.getSpells();
 		HashMap<SpellkindType, String> spellKindMap = PROPERTIES.getSpellKindMap();
-		int maxCircle=character.getCircleOf(discipline);
-		for( String discipline : spellsByDiscipline.keySet() ) {
+		int maxCircle=character.getCircleOf(this.discipline);
+		for( String disciplinename : spellsByDiscipline.keySet() ) {
 			int circlenr = 0;
-			for( List<DISCIPLINESPELLType> disciplineSpells : spellsByDiscipline.get(discipline)) {
+			for( List<DISCIPLINESPELLType> disciplineSpells : spellsByDiscipline.get(disciplinename)) {
 				circlenr++;
 				if(circlenr>maxCircle) break;
 				for( DISCIPLINESPELLType disciplineSpell : disciplineSpells ) {
@@ -191,7 +193,7 @@ class SpellsTableModel extends AbstractTableModel {
 					spell.setThreads(spelldef.getThreads());
 					spell.setType(disciplineSpell.getType());
 					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
-
+					spell.setElement(spelldef.getElement());
 					spelllist.add(spell);
 				}
 			}
@@ -227,17 +229,20 @@ class SpellsTableModel extends AbstractTableModel {
 			case 0:
 				if(character == null) return false;
 				else return character.hasSpellLearned(discipline, spelllist.get(row) );
-			case 1: return spelllist.get(row).getCircle();
-			case 2: return spelllist.get(row).getType().value();
-			case 3: return spelllist.get(row).getName();
-			case 4: return spelllist.get(row).getCastingdifficulty();
-			case 5: return spelllist.get(row).getThreads();
-			case 6: return spelllist.get(row).getWeavingdifficulty();
-			case 7: return spelllist.get(row).getReattuningdifficulty();
-			case 8: return spelllist.get(row).getEffect();
-			case 9: return spelllist.get(row).getEffectarea();
-			case 10: return spelllist.get(row).getRange();
-			case 11: return spelllist.get(row).getDuration();
+			case 1:
+				if(character == null) return false;
+				else return character.hasSpellLearnedBySpellability(discipline, spelllist.get(row) );
+			case 2: return spelllist.get(row).getCircle();
+			case 3: return spelllist.get(row).getType().value();
+			case 4: return spelllist.get(row).getName();
+			case 5: return spelllist.get(row).getCastingdifficulty();
+			case 6: return spelllist.get(row).getThreads();
+			case 7: return spelllist.get(row).getWeavingdifficulty();
+			case 8: return spelllist.get(row).getReattuningdifficulty();
+			case 9: return spelllist.get(row).getEffect();
+			case 10: return spelllist.get(row).getEffectarea();
+			case 11: return spelllist.get(row).getRange();
+			case 12: return spelllist.get(row).getDuration();
 			default : return new String("Error not defined");
 		}
 	}
@@ -257,9 +262,8 @@ class SpellsTableModel extends AbstractTableModel {
      * editable.
      */
     public boolean isCellEditable(int row, int col) {
-    	if (col == 0 ){
-    		return true;
-    	}
+    	if( col == 0 ) return true;
+    	if( col == 1 ) return true;
     	return false;
     }
 
@@ -269,12 +273,16 @@ class SpellsTableModel extends AbstractTableModel {
      */
 	public void setValueAt(Object value, int row, int col) {
 		if( character == null ) return;
-		if( character.hasSpellLearned(discipline, spelllist.get(row)) ) {
-			character.removeSpell(discipline, spelllist.get(row));
+		SPELLType spell = spelllist.get(row);
+		if( character.hasSpellLearned(discipline, spell) ) {
+			if( col == 1 ) character.toggleSpellLearnedBySpellability(discipline, spell);
+			else character.removeSpell(discipline, spell);
 		} else {
-			character.addSpell(discipline, spelllist.get(row));
+			if( col == 1 ) spell.setByspellability(YesnoType.YES);
+			character.addSpell(discipline, spell);
 		}
 		character.refesh();
-		fireTableCellUpdated(row, col);
+		fireTableCellUpdated(row, 0);
+		fireTableCellUpdated(row, 1);
 	}
 }

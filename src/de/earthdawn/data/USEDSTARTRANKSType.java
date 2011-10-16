@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="talents" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *       &lt;attribute name="skills" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+ *       &lt;attribute name="spells" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -40,6 +41,8 @@ public class USEDSTARTRANKSType {
     protected Integer talents;
     @XmlAttribute
     protected Integer skills;
+    @XmlAttribute
+    protected Integer spells;
 
     /**
      * Gets the value of the talents property.
@@ -95,6 +98,34 @@ public class USEDSTARTRANKSType {
      */
     public void setSkills(Integer value) {
         this.skills = value;
+    }
+
+    /**
+     * Gets the value of the spells property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getSpells() {
+        if (spells == null) {
+            return  0;
+        } else {
+            return spells;
+        }
+    }
+
+    /**
+     * Sets the value of the spells property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setSpells(Integer value) {
+        this.spells = value;
     }
 
 }

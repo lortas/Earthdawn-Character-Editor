@@ -34,6 +34,11 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="unsigned_float">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="plusminus_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="+"/>
@@ -347,6 +352,8 @@
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="circle" type="circle_type" use="required"/>
+		<xs:attribute name="usedstartranks" type="xs:int" default="0"/>
+		<xs:attribute name="usedspellabilities" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="COINS_type">
 		<xs:complexContent>
@@ -354,6 +361,11 @@
 				<xs:attribute name="copper" type="unsigned_int" default="0"/>
 				<xs:attribute name="silver" type="unsigned_int" default="0"/>
 				<xs:attribute name="gold" type="unsigned_int" default="0"/>
+				<xs:attribute name="gem50" type="unsigned_int" default="0"/>
+				<xs:attribute name="gem100" type="unsigned_int" default="0"/>
+				<xs:attribute name="gem200" type="unsigned_int" default="0"/>
+				<xs:attribute name="gem500" type="unsigned_int" default="0"/>
+				<xs:attribute name="gem1000" type="unsigned_int" default="0"/>
 				<xs:attribute name="earth" type="unsigned_int" default="0"/>
 				<xs:attribute name="water" type="unsigned_int" default="0"/>
 				<xs:attribute name="fire" type="unsigned_int" default="0"/>
@@ -581,6 +593,7 @@
 		<xs:complexContent>
 			<xs:extension base="SPELLDEF_type">
 				<xs:attribute name="inmatrix" type="yesno_type" default="no"/>
+				<xs:attribute name="byspellability" type="yesno_type" default="no"/>
 				<xs:attribute name="type" type="spellkind_type" use="required"/>
 				<xs:attribute name="circle" type="circle_type" use="required"/>
 			</xs:extension>
@@ -598,8 +611,8 @@
 	<xs:complexType name="APPEARANCE_type">
 		<xs:attribute name="gender" type="gender_type" use="required"/>
 		<xs:attribute name="age" type="unsigned_int" use="required"/>
-		<xs:attribute name="height" type="unsigned_int" use="required"/>
-		<xs:attribute name="weight" type="unsigned_int" use="required"/>
+		<xs:attribute name="height" type="unsigned_float" use="required"/>
+		<xs:attribute name="weight" type="unsigned_float" use="required"/>
 		<xs:attribute name="eyes" type="xs:string" use="required"/>
 		<xs:attribute name="hair" type="xs:string" use="required"/>
 		<xs:attribute name="skin" type="xs:string" use="required"/>
@@ -627,6 +640,7 @@
 	<xs:complexType name="USEDSTARTRANKS_type">
 		<xs:attribute name="talents" type="xs:int" default="0"/>
 		<xs:attribute name="skills" type="xs:int" default="0"/>
+		<xs:attribute name="spells" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="CHARACTERLANGUAGE_type">
 		<xs:attribute name="language" type="xs:string" use="required"/>

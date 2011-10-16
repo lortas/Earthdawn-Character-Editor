@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="gender" use="required" type="{http://earthdawn.com/datatypes}gender_type" />
  *       &lt;attribute name="age" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="height" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="weight" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="height" use="required" type="{http://earthdawn.com/datatypes}unsigned_float" />
+ *       &lt;attribute name="weight" use="required" type="{http://earthdawn.com/datatypes}unsigned_float" />
  *       &lt;attribute name="eyes" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="hair" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="skin" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -47,9 +47,9 @@ public class APPEARANCEType {
     @XmlAttribute(required = true)
     protected int age;
     @XmlAttribute(required = true)
-    protected int height;
+    protected float height;
     @XmlAttribute(required = true)
-    protected int weight;
+    protected float weight;
     @XmlAttribute(required = true)
     protected String eyes;
     @XmlAttribute(required = true)
@@ -103,7 +103,7 @@ public class APPEARANCEType {
      * Gets the value of the height property.
      * 
      */
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
@@ -111,7 +111,7 @@ public class APPEARANCEType {
      * Sets the value of the height property.
      * 
      */
-    public void setHeight(int value) {
+    public void setHeight(float value) {
         this.height = value;
     }
 
@@ -119,7 +119,7 @@ public class APPEARANCEType {
      * Gets the value of the weight property.
      * 
      */
-    public int getWeight() {
+    public float getWeight() {
         return weight;
     }
 
@@ -127,7 +127,7 @@ public class APPEARANCEType {
      * Sets the value of the weight property.
      * 
      */
-    public void setWeight(int value) {
+    public void setWeight(float value) {
         this.weight = value;
     }
 

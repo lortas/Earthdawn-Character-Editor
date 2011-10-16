@@ -15,25 +15,19 @@ import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 import java.io.File;
 import java.io.IOException;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
 
 public class EDGeneral extends JPanel {
-	
+	private static final long serialVersionUID = 3353372429516944708L;
+
 	private CharacterContainer character;
 	
 	private JLabel lblCharactername;
@@ -172,6 +166,10 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldHaircolor.setColumns(10);
 		textFieldHaircolor.setOpaque(false);
+		
+		JLabel lblSizeMeasure = new JLabel("ft");
+		
+		JLabel lblWeigtmeasure = new JLabel("lb");
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -185,36 +183,39 @@ public class EDGeneral extends JPanel {
 						.addComponent(lblWeight)
 						.addComponent(lblRace))
 					.addGap(6)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(textFieldWeight, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-							.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(rdbtnMale)
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addComponent(rdbtnFemale)
-								.addContainerGap(186, Short.MAX_VALUE))
-							.addGroup(groupLayout.createSequentialGroup()
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-									.addGroup(groupLayout.createSequentialGroup()
-										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-											.addComponent(textFieldAge)
-											.addComponent(textFieldSize))
-										.addGap(30)
-										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-											.addComponent(lblSkincolor)
-											.addComponent(lblEyecolor)
-											.addComponent(lblHaircolor))
-										.addGap(18)
-										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-											.addComponent(textFieldHaircolor, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-											.addComponent(textFieldEyecolor, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-											.addComponent(textFieldSkincolor, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
-										.addPreferredGap(ComponentPlacement.RELATED))
-									.addComponent(textFieldName, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-									.addComponent(comboBoxRace, Alignment.LEADING, 0, 259, Short.MAX_VALUE))
-								.addGap(29)))))
+							.addComponent(rdbtnMale)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(rdbtnFemale)
+							.addContainerGap(184, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(textFieldAge, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+												.addComponent(textFieldWeight, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+												.addComponent(textFieldSize, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
+											.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+												.addComponent(lblSizeMeasure)
+												.addComponent(lblWeigtmeasure))))
+									.addGap(59)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblSkincolor)
+										.addComponent(lblEyecolor)
+										.addComponent(lblHaircolor))
+									.addGap(18)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(textFieldHaircolor, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+										.addComponent(textFieldEyecolor, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+										.addComponent(textFieldSkincolor, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
+									.addPreferredGap(ComponentPlacement.RELATED))
+								.addComponent(textFieldName, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+								.addComponent(comboBoxRace, Alignment.LEADING, 0, 294, Short.MAX_VALUE))
+							.addGap(29))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -252,14 +253,16 @@ public class EDGeneral extends JPanel {
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(textFieldSize, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblEyecolor)
-								.addComponent(textFieldEyecolor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textFieldEyecolor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblSizeMeasure))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(textFieldWeight, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblWeight)
 								.addComponent(lblHaircolor)
-								.addComponent(textFieldHaircolor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-					.addGap(190))
+								.addComponent(textFieldHaircolor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblWeigtmeasure))))
+					.addGap(106))
 		);
 		setLayout(groupLayout);
 	}
@@ -268,9 +271,8 @@ public class EDGeneral extends JPanel {
 		this.character = character;
 		textFieldName.setText(character.getName());
 		textFieldAge.setText(new Integer(character.getAppearance().getAge()).toString());
-		textFieldSize.setText(new Integer(character.getAppearance().getHeight()).toString());
-		textFieldWeight.setText(new Integer(character.getAppearance().getWeight()).toString());
-		
+		textFieldSize.setText(String.format("%1.2f",character.getAppearance().getHeight()));
+		textFieldWeight.setText(String.format("%1.2f",character.getAppearance().getWeight()));
 		textFieldSkincolor.setText(character.getAppearance().getSkin());
 		textFieldEyecolor.setText(character.getAppearance().getEyes());
 		textFieldHaircolor.setText(character.getAppearance().getHair());
@@ -327,13 +329,24 @@ public class EDGeneral extends JPanel {
 		Integer zahl=null;
 		try {
 			zahl = new Integer(text);
-		}
-		catch(NumberFormatException e) {
+		} catch(NumberFormatException e) {
 			// Don't Care
 			return 0;
 		}
 		if( zahl == null ) return 0;
 		return zahl.intValue();
+	}
+
+	protected float textToFloat(String text) {
+		Float zahl=null;
+		try {
+			zahl = new Float(text);
+		} catch(NumberFormatException e) {
+			// Don't Care
+			return 0;
+		}
+		if( zahl == null ) return 0;
+		return zahl.floatValue();
 	}
 
 	protected void do_textFieldAge_caretUpdate(CaretEvent arg0) {
@@ -344,13 +357,13 @@ public class EDGeneral extends JPanel {
 	
 	protected void do_textFieldSize_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			character.getAppearance().setHeight(textToInt(textFieldSize.getText()));
+			character.getAppearance().setHeight(textToFloat(textFieldSize.getText()));
 		}
 	}
 	
 	protected void do_textFieldWeight_caretUpdate(CaretEvent arg0) {
 		if(character != null){
-			character.getAppearance().setWeight(textToInt(textFieldWeight.getText()));
+			character.getAppearance().setWeight(textToFloat(textFieldWeight.getText()));
 		}
 	}
 	

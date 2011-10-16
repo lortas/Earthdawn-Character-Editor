@@ -26,6 +26,11 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="copper" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="silver" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="gold" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="gem50" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="gem100" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="gem200" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="gem500" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="gem1000" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="earth" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="water" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="fire" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -50,6 +55,16 @@ public class COINSType
     protected Integer silver;
     @XmlAttribute
     protected Integer gold;
+    @XmlAttribute
+    protected Integer gem50;
+    @XmlAttribute
+    protected Integer gem100;
+    @XmlAttribute
+    protected Integer gem200;
+    @XmlAttribute
+    protected Integer gem500;
+    @XmlAttribute
+    protected Integer gem1000;
     @XmlAttribute
     protected Integer earth;
     @XmlAttribute
@@ -143,6 +158,146 @@ public class COINSType
      */
     public void setGold(Integer value) {
         this.gold = value;
+    }
+
+    /**
+     * Gets the value of the gem50 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getGem50() {
+        if (gem50 == null) {
+            return  0;
+        } else {
+            return gem50;
+        }
+    }
+
+    /**
+     * Sets the value of the gem50 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setGem50(Integer value) {
+        this.gem50 = value;
+    }
+
+    /**
+     * Gets the value of the gem100 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getGem100() {
+        if (gem100 == null) {
+            return  0;
+        } else {
+            return gem100;
+        }
+    }
+
+    /**
+     * Sets the value of the gem100 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setGem100(Integer value) {
+        this.gem100 = value;
+    }
+
+    /**
+     * Gets the value of the gem200 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getGem200() {
+        if (gem200 == null) {
+            return  0;
+        } else {
+            return gem200;
+        }
+    }
+
+    /**
+     * Sets the value of the gem200 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setGem200(Integer value) {
+        this.gem200 = value;
+    }
+
+    /**
+     * Gets the value of the gem500 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getGem500() {
+        if (gem500 == null) {
+            return  0;
+        } else {
+            return gem500;
+        }
+    }
+
+    /**
+     * Sets the value of the gem500 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setGem500(Integer value) {
+        this.gem500 = value;
+    }
+
+    /**
+     * Gets the value of the gem1000 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getGem1000() {
+        if (gem1000 == null) {
+            return  0;
+        } else {
+            return gem1000;
+        }
+    }
+
+    /**
+     * Sets the value of the gem1000 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setGem1000(Integer value) {
+        this.gem1000 = value;
     }
 
     /**
