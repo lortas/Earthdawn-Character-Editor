@@ -26,7 +26,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -169,6 +168,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( oldstartranks != null ) {
 			newstartranks.setSkills(oldstartranks.getSkills());
 			newstartranks.setTalents(oldstartranks.getTalents());
+			newstartranks.setSpells(oldstartranks.getSpells());
 		}
 		List<CALCULATEDLEGENDPOINTADJUSTMENTType> commonadjustment = result.getCOMMONADJUSTMENT();
 		for( CALCULATEDLEGENDPOINTADJUSTMENTType e : calculatedLP.getCOMMONADJUSTMENT() ) commonadjustment.add(e);
@@ -226,6 +226,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		startranks.setSkills(-OptionalRule_FreeStartRanks.getSkills());
 		startranks.setTalents(-OptionalRule_FreeStartRanks.getTalents());
+		startranks.setSpells(0);
 		return calculatedLP;
 	}
 
