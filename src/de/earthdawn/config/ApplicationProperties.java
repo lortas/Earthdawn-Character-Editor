@@ -225,6 +225,12 @@ public class ApplicationProperties {
 		return spellmap;
 	}
 
+	public HashMap<String,SpelldescriptionType> getSpellDescriptions() {
+		HashMap<String,SpelldescriptionType> spellmap = new HashMap<String,SpelldescriptionType>();
+		for( SpelldescriptionType spell : SPELLDESCRIPTIONS.getSPELL() ) spellmap.put(spell.getName(), spell);
+		return spellmap;
+	}
+
 	public HashMap<String,List<List<DISCIPLINESPELLType>>> getSpellsByDiscipline() {
 		HashMap<String,List<List<DISCIPLINESPELLType>>> result = new HashMap<String,List<List<DISCIPLINESPELLType>>>();
 		for(DISCIPLINE discipline : getAllDisziplines()){
@@ -478,6 +484,7 @@ public class ApplicationProperties {
 			if( spelldescriptionsfile.canRead() ) {
 				System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 				SPELLDESCRIPTIONS = (SPELLDESCRIPTIONS) u.unmarshal(spelldescriptionsfile);
+				fillSpellDescription();
 			} else {
 				System.out.println("Überspringe Konfigurationsdatei: '" + filename + "'");
 			}
@@ -485,6 +492,21 @@ public class ApplicationProperties {
 		} catch (Throwable e) {
 			// Fehler ist grundsätzlicher Natur ...
 			throw new RuntimeException(e);
+		}
+	}
+
+	public void fillSpellDescription() {
+		List<SpelldescriptionType> spells = SPELLDESCRIPTIONS.getSPELL();
+		for( SPELLDEFType spell: SPELLS.getSPELL() ) {
+			String spellname = spell.getName();
+			boolean notfound = true;
+			for( SpelldescriptionType sd : spells ) if( sd.getName().equals(spellname) ) notfound=false;
+			if( notfound ) {
+				SpelldescriptionType sd = new SpelldescriptionType();
+				sd.setName(spellname);
+				sd.setValue("take text from "+spell.getBookref());
+				spells.add(sd);
+			}
 		}
 	}
 }

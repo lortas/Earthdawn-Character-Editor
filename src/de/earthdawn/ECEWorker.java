@@ -389,29 +389,11 @@ public class ECEWorker {
 		// ** SPELLS **
 		// Bestimme die wieviele Zaubersprüche bei der Charactererschaffung kostenlos dazu kamen
 		// und wieviel ein SpellAbility pro Kreis pro Disziplin kostenlos dazukamen.
-		int startingSpellLegendPointCost = 0;
-		if( OptionalRule_SpellLegendPointCost ) {
-			// Starting Spell can be from 1st and 2nd circle. Substact these Legendpoints from the legendpoints spend for spells
-			ATTRIBUTEType per = characterAttributes.get("PER");
-			startingSpellLegendPointCost = 100 * attribute2StepAndDice(per.getBasevalue()).getStep();
-			int lpbonus = 0;
-			for( int spellability : getDisciplineSpellAbility(diciplineCircle) ) {
-				lpbonus += PROPERTIES.getCharacteristics().getSpellLP(spellability);
-			}
-			calculatedLP.setSpells(-lpbonus);
-		} else {
-			calculatedLP.setSpells(0);
-		}
+		int freespellranks = attribute2StepAndDice(characterAttributes.get("PER").getBasevalue()).getStep();
+		for( int sa : getDisciplineSpellAbility(diciplineCircle) ) freespellranks+=sa;
+		calculatedLP.setSpells(0);
 		HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
-		boolean firstDiscipline=true;
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
-			if( firstDiscipline && OptionalRule_SpellLegendPointCost ) {
-				// Wenn die erste Disziplin eine Zauberdisciplin ist und die Optionale Regel, dass Zaubersprüche LP Kosten
-				// gewählt wurde, dann reduziere die ZauberLPKosten um die StartZauber
-				calculatedLP.setSpells(calculatedLP.getSpells()-startingSpellLegendPointCost);
-				// Es ist jetzt schon einmal abgezogen. Stelle nun sicher dass nicht noch ein zweites Mal abgezogen werden kann.
-				startingSpellLegendPointCost=0;
-			}
 			int usedSpellabilities=0;
 			for( SPELLType spell : discipline.getSPELL() ) {
 				SPELLDEFType spelldef = spelllist.get(spell.getName());
@@ -430,16 +412,18 @@ public class ECEWorker {
 					spell.setElement(spelldef.getElement());
 				}
 				// Wenn ein Zauber duch Spellability gelernt wurde, dann kostet er keine LPs
-				if( spell.getByspellability().equals(YesnoType.YES) ) usedSpellabilities++;
-				else if( OptionalRule_SpellLegendPointCost ) {
+				if( spell.getByspellability().equals(YesnoType.YES) ) {
+					usedSpellabilities++;
+					freespellranks-=spell.getCircle();
+				} else if( OptionalRule_SpellLegendPointCost ) {
 					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle
 					int lpcost=PROPERTIES.getCharacteristics().getSpellLP(spell.getCircle());
 					calculatedLP.setSpells(calculatedLP.getSpells()+lpcost);
 				}
 			}
 			discipline.setUsedspellabilities(usedSpellabilities);
-			firstDiscipline=false;
 		}
+		calculatedLP.getUSEDSTARTRANKS().setSpells(-freespellranks);
 
 		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
 			if( item.getUsed().equals(YesnoType.YES) ) {
@@ -481,7 +465,7 @@ public class ECEWorker {
 					if( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) {
 						notfound=false;
 						RANKType talentrank = talent.getRANK();
-						talentrank.setBonus(talentrank.getBonus()+1);
+						talentrank.setBonus(talentrank.getBonus()+itemtalent.getBonus());
 						calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
 					}
 				}

@@ -26,8 +26,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
@@ -36,6 +34,7 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.itextpdf.text.Image;
 
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.*;
 
 public class ECEPdfExporter {
@@ -1054,6 +1053,7 @@ public class ECEPdfExporter {
 		int conterSpells=maxSpellPerPage;
 		PdfStamper stamper=null;
 		PdfReader reader=null;
+		HashMap<String, SpelldescriptionType> spelldescriptions = ApplicationProperties.create().getSpellDescriptions();
 		
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			List<SPELLType> spellList = discipline.getSPELL();
@@ -1080,7 +1080,6 @@ public class ECEPdfExporter {
 				acroFields.setField( "Range"+conterSpells, spell.getRange() );
 				acroFields.setField( "Duration"+conterSpells, spell.getDuration() );
 				acroFields.setField( "Effect"+conterSpells, spell.getEffect() );
-				acroFields.setField( "Spell description"+conterSpells, "" );
 				acroFields.setField( "Page reference"+conterSpells, String.valueOf(spell.getBookref()) );
 				acroFields.setField( "Air"+conterSpells, "No" );
 				acroFields.setField( "Earth"+conterSpells, "No" );
@@ -1108,6 +1107,9 @@ public class ECEPdfExporter {
 				case WOOD:
 					acroFields.setField( "Wood"+conterSpells, "Yes" ); break;
 				}
+				SpelldescriptionType spelldescription = spelldescriptions.get(spell.getName());
+				if( (spelldescription==null) || (spelldescription.getValue()==null) ) acroFields.setField( "Spell description"+conterSpells, "" );
+				else acroFields.setField( "Spell description"+conterSpells, spelldescription.getValue() );
 			}
 		}
 
