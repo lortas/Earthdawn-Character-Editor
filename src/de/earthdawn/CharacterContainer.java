@@ -97,9 +97,9 @@ public class CharacterContainer extends CharChangeRefresh {
 		appearance.setEyes("blue");
 		appearance.setAge(20);
 		appearance.setHair("blond");
-		appearance.setHeight(170);
+		appearance.setHeight(5.5774f);
 		appearance.setSkin("blond");
-		appearance.setWeight(80);
+		appearance.setWeight(176);
 		character.setAPPEARANCE(appearance);
 		return appearance;
 	}
@@ -960,8 +960,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public void addSpell(String discipline, SPELLType spell){
 		for( DISCIPLINEType dis : getDisciplines() ){
 			if(dis.getName().equals(discipline)){
-				List<SPELLType> spells = dis.getSPELL();
-				spells.add(spell);
+				dis.getSPELL().add(spell);
 				return;
 			}
 		}
@@ -1002,6 +1001,41 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		return false;
+	}
+
+	public boolean hasSpellLearnedBySpellability(String disciplinename, SPELLType spelltype) {
+		return hasSpellLearnedBySpellability(disciplinename, spelltype.getName());
+	}
+
+	public boolean hasSpellLearnedBySpellability(String disciplinename, String spellname){
+		for(DISCIPLINEType discipline : getDisciplines()){
+			if( disciplinename.equals(discipline.getName()) ){
+				for(SPELLType spell : discipline.getSPELL()){
+					if( spellname.equals(spell.getName()) ) return spell.getByspellability().equals(YesnoType.YES);
+				}
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public void toggleSpellLearnedBySpellability(String disciplinename, SPELLType spelltype) {
+		toggleSpellLearnedBySpellability(disciplinename, spelltype.getName());
+	}
+
+	public void toggleSpellLearnedBySpellability(String disciplinename, String spellname) {
+		for(DISCIPLINEType discipline : getDisciplines()){
+			if( disciplinename.equals(discipline.getName()) ){
+				for(SPELLType spell : discipline.getSPELL()){
+					if( spellname.equals(spell.getName()) ) {
+						if( spell.getByspellability().equals(YesnoType.YES) ) spell.setByspellability(YesnoType.NO);
+						else                                                  spell.setByspellability(YesnoType.YES);
+						return;
+					}
+				}
+				return;
+			}
+		}
 	}
 
 	public List<ITEMType> getItems() {

@@ -170,13 +170,23 @@ public class ECEWorker {
 		for( COINSType coins : character.getAllCoins() ) {
 			// Mit doppelter Genauigkeit die Gewichte der Münzen addieren,
 			double weight = 0;
-			// Kupfermünzen: 0,5 Unze (oz)
-			weight += coins.getCopper() / 32.0;
-			// Silbermünzen: 0,2 Unze (oz)
-			weight += coins.getSilver() / 80.0;
-			// Goldmünzen: 0,1 Unze (oz)
-			weight += coins.getGold() / 160.0;
-			// Elementarmünzen: 0,1 Unze (oz)
+			// Kupfermünzen: 1/3 Unze (oz)
+			weight += coins.getCopper() / 48.0;
+			// Silbermünzen: 1/4 Unze (oz)
+			weight += coins.getSilver() / 64.0;
+			// Goldmünzen: 1/5 Unze (oz)
+			weight += coins.getGold() / 80.0;
+			// Edelsteine mit Wert 50 Silber : 1/10 Unze (oz)
+			weight += coins.getGem50() / 160.0;
+			// Edelsteine mit Wert 100 Silber : 1/5 Unze (oz)
+			weight += coins.getGem100() / 80.0;
+			// Edelsteine mit Wert 200 Silber : 1/3 Unze (oz)
+			weight += coins.getGem200() / 48.0;
+			// Edelsteine mit Wert 500 Silber : 2/3 Unze (oz)
+			weight += coins.getGem500() / 24.0;
+			// Edelsteine mit Wert 1000 Silber : 1 3/5 Unzen (oz)
+			weight += coins.getGem1000()/ 10.0;
+			// Elementarmünzen: 1/10 Unze (oz)
 			weight += (double)( coins.getAir()+coins.getEarth()+coins.getFire()+coins.getWater()+coins.getOrichalcum() ) / 160.0;
 			// zum Abspeichern langt die einfache Genaugkeit
 			coins.setWeight((float)weight);
@@ -402,6 +412,7 @@ public class ECEWorker {
 				// Es ist jetzt schon einmal abgezogen. Stelle nun sicher dass nicht noch ein zweites Mal abgezogen werden kann.
 				startingSpellLegendPointCost=0;
 			}
+			int usedSpellabilities=0;
 			for( SPELLType spell : discipline.getSPELL() ) {
 				SPELLDEFType spelldef = spelllist.get(spell.getName());
 				if( spelldef == null ) {
@@ -418,12 +429,15 @@ public class ECEWorker {
 					spell.setBookref(spelldef.getBookref());
 					spell.setElement(spelldef.getElement());
 				}
-				if( OptionalRule_SpellLegendPointCost ) {
+				// Wenn ein Zauber duch Spellability gelernt wurde, dann kostet er keine LPs
+				if( spell.getByspellability().equals(YesnoType.YES) ) usedSpellabilities++;
+				else if( OptionalRule_SpellLegendPointCost ) {
 					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle
 					int lpcost=PROPERTIES.getCharacteristics().getSpellLP(spell.getCircle());
 					calculatedLP.setSpells(calculatedLP.getSpells()+lpcost);
 				}
 			}
+			discipline.setUsedspellabilities(usedSpellabilities);
 			firstDiscipline=false;
 		}
 

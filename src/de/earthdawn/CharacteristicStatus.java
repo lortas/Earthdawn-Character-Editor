@@ -155,6 +155,7 @@ public class CharacteristicStatus {
 		USEDSTARTRANKSType usedStartranks = calculatedLegendpoints.getUSEDSTARTRANKS();
 		node.put( "skills", -usedStartranks.getSkills() );
 		node.put( "talents", -usedStartranks.getTalents() );
+		node.put( "spells", -usedStartranks.getSpells() );
 		root.put("USEDSTARTRANKS", node);
 
 		node = new HashMap<String,Object>();

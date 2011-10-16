@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}SPELLDEF_type">
  *       &lt;attribute name="inmatrix" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
+ *       &lt;attribute name="byspellability" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/datatypes}spellkind_type" />
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *     &lt;/extension>
@@ -41,6 +42,8 @@ public class SPELLType
 
     @XmlAttribute
     protected YesnoType inmatrix;
+    @XmlAttribute
+    protected YesnoType byspellability;
     @XmlAttribute(required = true)
     protected SpellkindType type;
     @XmlAttribute(required = true)
@@ -72,6 +75,34 @@ public class SPELLType
      */
     public void setInmatrix(YesnoType value) {
         this.inmatrix = value;
+    }
+
+    /**
+     * Gets the value of the byspellability property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link YesnoType }
+     *     
+     */
+    public YesnoType getByspellability() {
+        if (byspellability == null) {
+            return YesnoType.NO;
+        } else {
+            return byspellability;
+        }
+    }
+
+    /**
+     * Sets the value of the byspellability property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link YesnoType }
+     *     
+     */
+    public void setByspellability(YesnoType value) {
+        this.byspellability = value;
     }
 
     /**

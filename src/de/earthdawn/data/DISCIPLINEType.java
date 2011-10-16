@@ -35,6 +35,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
+ *       &lt;attribute name="usedstartranks" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+ *       &lt;attribute name="usedspellabilities" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -66,6 +68,10 @@ public class DISCIPLINEType {
     protected String name;
     @XmlAttribute(required = true)
     protected int circle;
+    @XmlAttribute
+    protected Integer usedstartranks;
+    @XmlAttribute
+    protected Integer usedspellabilities;
 
     /**
      * Gets the value of the disciplinebonus property.
@@ -245,6 +251,62 @@ public class DISCIPLINEType {
      */
     public void setCircle(int value) {
         this.circle = value;
+    }
+
+    /**
+     * Gets the value of the usedstartranks property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getUsedstartranks() {
+        if (usedstartranks == null) {
+            return  0;
+        } else {
+            return usedstartranks;
+        }
+    }
+
+    /**
+     * Sets the value of the usedstartranks property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setUsedstartranks(Integer value) {
+        this.usedstartranks = value;
+    }
+
+    /**
+     * Gets the value of the usedspellabilities property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getUsedspellabilities() {
+        if (usedspellabilities == null) {
+            return  0;
+        } else {
+            return usedspellabilities;
+        }
+    }
+
+    /**
+     * Sets the value of the usedspellabilities property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setUsedspellabilities(Integer value) {
+        this.usedspellabilities = value;
     }
 
 }
