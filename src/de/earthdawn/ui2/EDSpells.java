@@ -6,41 +6,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JToolBar;
-import javax.swing.RowFilter;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINESPELLType;
-import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 
-import java.awt.event.ItemListener;
-import java.awt.event.ItemEvent;
 
 public class EDSpells extends JPanel {
+	private static final long serialVersionUID = 3430848422226809963L;
 	private String disciplin;
 	private CharacterContainer character;
 	private JScrollPane scrollPane;
-	private JToolBar toolBar;
 	private JTable table;
-	private JLabel lblFilter;
-	private JComboBox comboBox;
 	TableRowSorter<SpellsTableModel> sorter;
 
 	public CharacterContainer getCharacter() {
@@ -80,30 +69,13 @@ public class EDSpells extends JPanel {
 		List <RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>();
 		sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
 		sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
-		sorter.setSortKeys(sortKeys); 
-
-		toolBar = new JToolBar();
-		add(toolBar, BorderLayout.NORTH);
-
-		lblFilter = new JLabel("Filter     ");
-		toolBar.add(lblFilter);
-
-		comboBox = new JComboBox();
-		comboBox.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent arg0) {
-				do_comboBox_itemStateChanged(arg0);
-			}
-		});
+		sorter.setSortKeys(sortKeys);
 
 		Set<String> disciplineset = ApplicationProperties.create().getAllDisziplinNames();
 		ArrayList<String> arrayList =  new ArrayList<String>();
 
 		for ( String dis : disciplineset) arrayList.add(dis);
 		arrayList.add(0, "All");
-		String[] disciplinearray = (String[]) arrayList.toArray(new String[arrayList.size()]);
-
-		comboBox.setModel(new DefaultComboBoxModel(disciplinearray));
-		toolBar.add(comboBox);
 	}
 
 	public String getDisciplin() {
@@ -113,26 +85,7 @@ public class EDSpells extends JPanel {
 	public void setDisciplin(String disciplin) {
 		this.disciplin = disciplin;
 	}
-
-	private void newFilter(String filter) {
-		System.out.println("Filter: " + filter);
-		RowFilter<SpellsTableModel, Object> rf = null;
-		//If current expression doesn't parse, don't update.
-		try {
-			rf = RowFilter.regexFilter( filter);
-		} catch (java.util.regex.PatternSyntaxException e) {
-			return;
-		}
-		sorter.setRowFilter(rf);
-	}
-
-	protected void do_comboBox_itemStateChanged(ItemEvent arg0) {
-		String item = (String) arg0.getItem();
-		if(item.equals("All")) newFilter("");
-		else newFilter(item);
-	}
 }
-
 
 class SpellsTableModel extends AbstractTableModel {
 	
