@@ -43,7 +43,11 @@ public class EDSpells extends JPanel {
 
 	public void refresh() {
 		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
-		((SpellsTableModel)table.getModel()).generateLists(threadweavings);
+		try {
+			((SpellsTableModel)table.getModel()).generateLists(threadweavings);
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println(e.getLocalizedMessage());
+		}
 	}
 
 	/**
@@ -109,10 +113,8 @@ class SpellsTableModel extends AbstractTableModel {
 
 	public void generateLists(List<TALENTType> threadweavings){
 		spelllist = new ArrayList<SPELLType>();
-
 		List<String> threadweavingTypes = new ArrayList<String>();
-		for(TALENTType threadweaving : threadweavings ) threadweavingTypes.add(threadweaving.getLimitation());
-
+		if( threadweavings != null) for(TALENTType threadweaving : threadweavings ) threadweavingTypes.add(threadweaving.getLimitation());
 		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = PROPERTIES.getSpellsByDiscipline();
 		HashMap<String, SPELLDEFType> spells = PROPERTIES.getSpells();
 		HashMap<SpellkindType, String> spellKindMap = PROPERTIES.getSpellKindMap();
