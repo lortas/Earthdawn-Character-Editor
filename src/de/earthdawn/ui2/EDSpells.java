@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -12,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableColumn;
 import javax.swing.table.TableRowSorter;
 
 import de.earthdawn.CharacterContainer;
@@ -22,7 +22,6 @@ import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
-
 
 public class EDSpells extends JPanel {
 	private static final long serialVersionUID = 3430848422226809963L;
@@ -45,6 +44,21 @@ public class EDSpells extends JPanel {
 		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
 		try {
 			((SpellsTableModel)table.getModel()).generateLists(threadweavings);
+			for( int c : new int[] {0,1,2,5,6,7,8} ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				col.setMinWidth(20);
+				col.setMaxWidth(50);
+			}
+			for( int c : new int[] {4,9,10} ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				col.setMinWidth(100);
+				col.setMaxWidth(1000);
+			}
+			for( int c : new int[] {3,11,12} ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				col.setMinWidth(50);
+				col.setMaxWidth(120);
+			}
 		} catch(IndexOutOfBoundsException e) {
 			System.err.println(e.getLocalizedMessage());
 		}
@@ -55,7 +69,7 @@ public class EDSpells extends JPanel {
 	 */
 	public EDSpells(CharacterContainer character,String disciplin) {
 		this.character = character;
-		this.disciplin  = disciplin;
+		this.disciplin = disciplin;
 		setLayout(new BorderLayout(0, 0));
 
 		scrollPane = new JScrollPane();
@@ -74,12 +88,6 @@ public class EDSpells extends JPanel {
 		sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
 		sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
 		sorter.setSortKeys(sortKeys);
-
-		Set<String> disciplineset = ApplicationProperties.create().getAllDisziplinNames();
-		ArrayList<String> arrayList =  new ArrayList<String>();
-
-		for ( String dis : disciplineset) arrayList.add(dis);
-		arrayList.add(0, "All");
 	}
 
 	public String getDisciplin() {
@@ -167,17 +175,17 @@ class SpellsTableModel extends AbstractTableModel {
 		return character;
 	}	
 
-    public int getColumnCount() {
-        return columnNames.length;
-    }
+	public int getColumnCount() {
+		return columnNames.length;
+	}
 
-    public int getRowCount() {
-        return spelllist.size();
-    }
+	public int getRowCount() {
+		return spelllist.size();
+	}
 
-    public String getColumnName(int col) {
-        return columnNames[col];
-    }
+	public String getColumnName(int col) {
+		return columnNames[col];
+	}
 
 	public Object getValueAt(int row, int col) {
 		switch (col) {
