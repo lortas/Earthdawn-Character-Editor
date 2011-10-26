@@ -127,8 +127,9 @@ public class EDMainWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame("Earthdawn Character Editor");
-		frame.setBounds(10, 50, 1020, 740);
-		//frame.setSize(new Dimension(1020,740));
+		//frame.setBounds(10, 50, 1020, 740);
+		frame.setSize(new Dimension(1020,740));
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
