@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ECEGUILAYOUT xmlns="http://earthdawn.com/eceguilayout" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/eceguilayout eceguilayout.xsd">
+	<MAINWINDOW x="1020" y="740"/>
+	<TABLE name="spellselection">
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  0 -->
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  1 -->
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  2 -->
+		<COLUMN min="50"  preferred="70"  max="120"/> <!--  3 -->
+		<COLUMN min="100" preferred="300" max="1000"/><!--  4 -->
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  5 -->
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  6 -->
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  7 -->
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  8 -->
+		<COLUMN min="100" preferred="300" max="1000"/><!--  9 -->
+		<COLUMN min="100" preferred="300" max="1000"/><!-- 10 -->
+		<COLUMN min="50"  preferred="70"  max="120"/> <!-- 11 -->
+		<COLUMN min="50"  preferred="70"  max="120"/> <!-- 12 -->
+	</TABLE>
+	<TABLE name="talentselection">
+		<COLUMN min="20"  preferred="50"  max="30"/>  <!--  0 -->
+	</TABLE>
+</ECEGUILAYOUT>

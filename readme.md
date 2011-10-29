@@ -22,6 +22,32 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.34-20111026.zip ##
++ New disciplines:
+	+ TraveledScholar-Spy
+	+ Taildancer-Kstulaami
+	+ Woodsman-Assassin
+	+ Windmaster-Slasher
+	+ Merchant
+	+ Pugilist
++ New races from Namegivers and Thera Empire
++ More basic names for random name generator
++ XML Schema enhanced:
+	+ All items have now also the attribute bookref
+	+ New item-type AMMUNITION
+	+ spelldef extended by the attribute element
+	+ element-type extended by illusion and fear
+	+ earthdawndiscipline.xsd extended by the element FOREIGNTALENTS
+	+ spells can now be flagged by "learned by spell ability"
++ items.xml extended with more examples from the core books
++ spelldescriptions.xml will now be read if exists, but will not be ditributed (no copyright)
++ New pdf-export: spellcards
++ some horror powers inserted into the capabilities.xml
++ first spells are now flagged which element it uses.
++ filter within the spell-tab removed (depreciated)
++ characteristic statistic layout updated
++ MainWindow will no longer start at position (100,100), it now will be placed by the window manager
++ Tuned the min/max value for column width of the spell table
 ## EarthdawnCharacterEditor-0.33-20110907.zip ##
 + Bugs
 	+ Extra rank cost for new rank 1 talents of multi disciplines works now
@@ -130,4 +156,3 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 	- Calculating SpellLP corrected
 	- The form field "brief description" in the Ajfel+Mordom PDF will no be filled
 	- The form fields of the Ajfel+Mordom PDF revised
-

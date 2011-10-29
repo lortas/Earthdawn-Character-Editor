@@ -57,6 +57,7 @@ import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.LAYOUTDIMENSIONType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.event.CharChangeEventListener;
 
@@ -128,7 +129,8 @@ public class EDMainWindow {
 	private void initialize() {
 		frame = new JFrame("Earthdawn Character Editor");
 		//frame.setBounds(10, 50, 1020, 740);
-		frame.setSize(new Dimension(1020,740));
+		LAYOUTDIMENSIONType dim = PROPERTIES.getGuiLayoutMainWindow();
+		frame.setSize(new Dimension(dim.getX(),dim.getY()));
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
