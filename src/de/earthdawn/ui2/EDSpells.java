@@ -17,6 +17,7 @@ import javax.swing.table.TableRowSorter;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINESPELLType;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
@@ -25,6 +26,7 @@ import de.earthdawn.data.YesnoType;
 
 public class EDSpells extends JPanel {
 	private static final long serialVersionUID = 3430848422226809963L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private String disciplin;
 	private CharacterContainer character;
 	private JScrollPane scrollPane;
@@ -44,23 +46,16 @@ public class EDSpells extends JPanel {
 		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
 		try {
 			((SpellsTableModel)table.getModel()).generateLists(threadweavings);
-			for( int c : new int[] {0,1,2,5,6,7,8} ) {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("spellselection") ) {
 				TableColumn col = table.getColumnModel().getColumn(c);
-				col.setMinWidth(20);
-				col.setMaxWidth(50);
-			}
-			for( int c : new int[] {4,9,10} ) {
-				TableColumn col = table.getColumnModel().getColumn(c);
-				col.setMinWidth(100);
-				col.setMaxWidth(1000);
-			}
-			for( int c : new int[] {3,11,12} ) {
-				TableColumn col = table.getColumnModel().getColumn(c);
-				col.setMinWidth(50);
-				col.setMaxWidth(120);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
 			}
 		} catch(IndexOutOfBoundsException e) {
-			System.err.println(e.getLocalizedMessage());
+			System.err.println("layout spellselection : "+e.getLocalizedMessage());
 		}
 	}
 

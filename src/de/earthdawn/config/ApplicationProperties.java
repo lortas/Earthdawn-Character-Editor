@@ -48,6 +48,7 @@ public class ApplicationProperties {
     private static ITEMS ITEMS = new ITEMS();
     private static NAMES NAMES = new NAMES();
     private static HELP HELP = new HELP();
+    private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
     private static LanguageType LANGUAGE = LanguageType.EN;
     private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
     private static SPELLDESCRIPTIONS SPELLDESCRIPTIONS = new SPELLDESCRIPTIONS();
@@ -414,6 +415,17 @@ public class ApplicationProperties {
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
 	}
 
+	public LAYOUTDIMENSIONType getGuiLayoutMainWindow() {
+		return ECEGUILAYOUT.getMAINWINDOW();
+	}
+
+	public List<LAYOUTTABLECOLUMNType> getGuiLayoutTabel(String name) {
+		for( LAYOUTTABLEType table : ECEGUILAYOUT.getTABLE() ) {
+			if( table.getName().equals(name) ) return table.getCOLUMN();
+		}
+		return new ArrayList<LAYOUTTABLECOLUMNType>();
+	}
+
 	private void init() {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -478,6 +490,9 @@ public class ApplicationProperties {
 			filename="./config/randomnames.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			RANDOMNAMES = (EDRANDOMNAME) u.unmarshal(new File(filename));
+			filename="./config/eceguilayout.xml";
+			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
+			ECEGUILAYOUT = (ECEGUILAYOUT) u.unmarshal(new File(filename));
 
 			filename="./config/spelldescriptions.xml";
 			File spelldescriptionsfile = new File(filename);

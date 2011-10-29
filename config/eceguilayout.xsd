@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/eceguilayout" xmlns="http://earthdawn.com/eceguilayout" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="LAYOUT_DIMENSION_type">
+		<xs:attribute name="x" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="y" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="z" type="edt:unsigned_int" default="0"/>
+	</xs:complexType>
+	<xs:complexType name="LAYOUT_TABLE_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="COLUMN" type="LAYOUT_TABLE_COLUMN_type"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="LAYOUT_TABLE_COLUMN_type">
+		<xs:attribute name="min" type="edt:unsigned_int" use="optional"/>
+		<xs:attribute name="preferred" type="edt:unsigned_int" use="optional"/>
+		<xs:attribute name="max" type="edt:unsigned_int" use="optional"/>
+	</xs:complexType>
+	<xs:element name="ECEGUILAYOUT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="1" name="MAINWINDOW" type="LAYOUT_DIMENSION_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="TABLE" type="LAYOUT_TABLE_type" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -17,11 +17,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableColumn;
+
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINE;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.TALENTTEACHERType;
@@ -33,7 +36,8 @@ public class EDTalents extends JPanel {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -8850440306321140758L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 
 	private CharacterContainer character;
 
@@ -48,6 +52,18 @@ public class EDTalents extends JPanel {
 		table.getColumnModel().getColumn(0).setCellEditor(new SpinnerEditor(0, 15));
 		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 15));
 		table.getColumnModel().getColumn(5).setCellEditor(new SpinnerEditor(0, 15));
+		try {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("talentselection") ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout spellselection : "+e.getLocalizedMessage());
+		}
 	}
 
 	public CharacterContainer getCharacter() {
