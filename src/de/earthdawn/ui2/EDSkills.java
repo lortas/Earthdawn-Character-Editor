@@ -3,7 +3,8 @@ package de.earthdawn.ui2;
 import javax.swing.JPanel;
 
 import de.earthdawn.CharacterContainer;
-import de.earthdawn.data.CAPABILITYType;
+import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
 
@@ -14,6 +15,7 @@ import java.awt.Rectangle;
 
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableColumn;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -23,10 +25,8 @@ import javax.swing.ListSelectionModel;
 
 public class EDSkills extends JPanel {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -8901862501177055512L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
 	private JToolBar toolBar;
 	private JScrollPane scrollPane;
@@ -70,6 +70,8 @@ public class EDSkills extends JPanel {
 		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
 		scrollPane.setViewportView(table);
 		table.setRowSelectionAllowed(false);
+		table.setColumnSelectionAllowed(false);
+		table.getTableHeader().setReorderingAllowed(false);
 	}
 
 	public void setCharacter(final CharacterContainer character) {
@@ -77,6 +79,18 @@ public class EDSkills extends JPanel {
 		((SkillsTableModel)table.getModel()).setCharacter(character);
 		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
 		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
+		try {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout spellselection : "+e.getLocalizedMessage());
+		}
 	}
 
 	public CharacterContainer getCharacter() {
@@ -117,10 +131,7 @@ public class EDSkills extends JPanel {
 
 class SkillsTableModel extends AbstractTableModel {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1321139806762229027L;
 	private CharacterContainer character;
 	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Startrank", "Rank", "Action", "Step", "Dice", "Bookref"};
 

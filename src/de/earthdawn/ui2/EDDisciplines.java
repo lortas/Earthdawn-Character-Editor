@@ -37,6 +37,7 @@ public class EDDisciplines extends JPanel {
 	private JTable table;
 	private JToolBar toolBar;
 	private JButton btnAddDiscipline;
+	private JButton btnRemoveDiscipline;
 	private JPopupMenu popupMenuCircle;
 	private BufferedImage backgroundimage = null;
 
@@ -105,6 +106,14 @@ public class EDDisciplines extends JPanel {
 		});
 		btnAddDiscipline.setOpaque(false);
 		toolBar.add(btnAddDiscipline);
+		btnRemoveDiscipline = new JButton("Remove Last Discipline");
+		btnRemoveDiscipline.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_btnRemoveDiscipline_actionPerformed(arg0);
+			}
+		});
+		btnRemoveDiscipline.setOpaque(false);
+		toolBar.add(btnRemoveDiscipline);
 		popupMenuCircle = mapTreeToMenuTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
 	}
 
@@ -143,6 +152,13 @@ public class EDDisciplines extends JPanel {
 
 	protected void do_btnAddDiscipline_actionPerformed(ActionEvent arg0) {
 		popupMenuCircle.show(btnAddDiscipline, btnAddDiscipline.getX(), btnAddDiscipline.getY()+ btnAddDiscipline.getHeight());
+	}
+
+	protected void do_btnRemoveDiscipline_actionPerformed(ActionEvent arg0) {
+			character.removeLastDiciplin();
+			ECEWorker worker = new ECEWorker();
+			worker.verarbeiteCharakter(character.getEDCHARACTER());
+			character.refesh();
 	}
 
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
