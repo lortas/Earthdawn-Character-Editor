@@ -86,6 +86,9 @@ public class EDTalents extends JPanel {
 		table.setModel(new TalentsTableModel(character, disciplin));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		table.setAutoCreateRowSorter(true);
+		table.setRowSelectionAllowed(false);
+		table.setColumnSelectionAllowed(false);
+		table.getTableHeader().setReorderingAllowed(false);
 
 		scrollPane.setViewportView(table);
 

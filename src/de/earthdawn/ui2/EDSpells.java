@@ -78,6 +78,9 @@ public class EDSpells extends JPanel {
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		sorter = new TableRowSorter<SpellsTableModel>((SpellsTableModel) table.getModel());
 		table.setRowSorter(sorter);
+		table.setRowSelectionAllowed(false);
+		table.setColumnSelectionAllowed(false);
+		table.getTableHeader().setReorderingAllowed(false);
 
 		List <RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>();
 		sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));

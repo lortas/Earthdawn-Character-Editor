@@ -664,12 +664,25 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	/*
+	 * Liefert für jede Diszipline des Charakters pro Kreis eine Auflistung der verwendeten Optionalen Talente
+	 * Die äußere HashMap beinhaltet als Key, den Disziplinnamen. Die Values ist eine Liste,
+	 * wobei nicht der erste Eintrag für den ersten Kreis steht sondern der Eintrag mit dem Index=1,
+	 * das selbe gilt für die anderen Kreise analog
+	 * Die Werte der Liste ist wieder rum eine Liste von Talenten.
+	 * 
+	 */
 	public HashMap<String,List<List<TALENTType>>> getUsedOptionalTalents() {
 		HashMap<String,List<List<TALENTType>>> result = new HashMap<String,List<List<TALENTType>>>();
+		// Schleife über alle Disziplinen des Charakters
 		for(DISCIPLINEType discipline : getDisciplines() ) {
+			// Erstelle schon mal eine Ausreichende Liste von Leeren Listen um die Talente aufzunehmen.
 			List<List<TALENTType>> list = new ArrayList<List<TALENTType>>();
-			for(int i=0;i<20;i++) list.add(new ArrayList<TALENTType>());
+			// !!! ACHTUNG: Kreis 1 hat Index 1 und nicht Index 0 !!!
+			for(int i=0;i<=15;i++) list.add(new ArrayList<TALENTType>());
+			// Schleife über alle Optionalen Talente
 			for( TALENTType talent : discipline.getOPTIONALTALENT()) {
+				// Sollte kein Realignment statt gefunden haben, dann handelt es sich um ein "benutzes" Optionales Talent
 				if( talent.getRealigned() < 1 ) list.get(talent.getCircle()).add(talent);
 			}
 			result.put(discipline.getName(), list);
@@ -788,29 +801,37 @@ public class CharacterContainer extends CharChangeRefresh {
 	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
 		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
 		HashMap<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
+		// Eine Schleife über alle Disciplinenamen des Charakters
 		for(String discipline : talentsMap.keySet() ) {
 			List<Integer> list = new ArrayList<Integer>();
+			// Hole alle benutzen Optionalen Talente der aktuellen Disziplin
 			List<List<TALENTType>> talentsList = talentsMap.get(discipline);
 			if( talentsList == null ) {
 				System.err.println("A talent list for the discipline '"+discipline+"' could not be found.");
 				talentsList = new ArrayList<List<TALENTType>>();
-				for(int i=0;i<20;i++) talentsList.add(new ArrayList<TALENTType>());
+				for(int i=0;i<=15;i++) talentsList.add(new ArrayList<TALENTType>());
 			}
 			int disciplineNumber = getDisciplineOrder(discipline);
+			// Falls in den Optionalen Regel Default Talente festgelegt seine sollte, hole diese
 			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplineNumber);
 			int disciplineCircle = getCircleOf(disciplineNumber);
 			int circlenr=0;
 			for( int numberOfOptionalTalents : PROPERTIES.getNumberOfOptionalTalentsPerCircleByDiscipline(discipline) ) {
 				circlenr++;
 				if( circlenr > disciplineCircle ) break;
-				int freeOptionalTalents=numberOfOptionalTalents;
 				List<TALENTType> talents = new ArrayList<TALENTType>();
 				for( TALENTType talent : talentsList.get(circlenr) ) {
+					// Ermittele den Kreis für ein Default Optional Talent
 					Integer c = defaultOptionalTalents.get(talent.getName());
+					// Wenn der Kreis undefinert ist, dann war es kein Default Optionales Talent, sondern ein normales Optionales Talent
+					// Nur wenn der Kreis bei einem Default Optionalen Talent nicht über dem aktuellen Kreis liegt darf es eingefügt werden
 					if( (c!=null) && (c<=circlenr) ) continue;
 					talents.add(talent);
 				}
-				freeOptionalTalents-=isNotLearnedByVersatility(talents);
+				// Jetzt zählen wir noch wieviele der Optionalen Talente nicht über Vielseitigkeit gelernt wurden
+				// und ziehen diese von der Anzahl der möglichen Optionalen Talente ab
+				int freeOptionalTalents=numberOfOptionalTalents-isNotLearnedByVersatility(talents);
+				// Füge der Anzahl ensprechend viel den aktuellen Kreis in die Ergebnisliste hinzu.
 				for( int i=0; i<freeOptionalTalents; i++ ) list.add(circlenr);
 			}
 			result.put(discipline, list);
@@ -852,6 +873,12 @@ public class CharacterContainer extends CharChangeRefresh {
 		character.getDISCIPLINE().add(discipline);
 		ensureDisciplinTalentsExits();
 		realignOptionalTalents();
+	}
+
+	public void removeLastDiciplin(){
+		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
+		int size = disciplines.size();
+		if( size>0 ) disciplines.remove(size-1);
 	}
 
 	public void ensureDisciplinTalentsExits() {
