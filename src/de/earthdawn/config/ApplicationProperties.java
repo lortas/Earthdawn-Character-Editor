@@ -292,6 +292,10 @@ public class ApplicationProperties {
 		return result;
 	}
 
+	/* 
+	 * Liefert eine HashMap von Talenten die mehr als einmal gelernt werden können.
+	 * Der Key enthält dabei den Talentnamen und das Value den Zähler, wie häufig es gelernt werden darf.
+	 */
 	public HashMap<String,Integer> getMultiUseTalents() {
 		HashMap<String,Integer> result = new HashMap<String,Integer>();
 		for( OPTIONALRULESMULTIUSETALENT talent : OPTIONALRULES.getMULTIUSETALENT() ) {

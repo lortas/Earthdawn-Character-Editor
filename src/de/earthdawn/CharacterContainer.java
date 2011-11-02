@@ -714,45 +714,43 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE disciplineDefinition, int talentCircleNr) {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
-		List<String> usedTalents = new ArrayList<String>();
+		List<TALENTType> usedTalents = new ArrayList<TALENTType>();
+		// multiUseTalents sind Talente die mehr als einmal gelernt werden können
 		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
 		String disciplineName = disciplineDefinition.getName();
+		// Schleife über alle gelernten Disziplinen
 		for( DISCIPLINEType discipline : getDisciplines() ) {
-			if( disciplineName.equals(discipline.getName())) {
+			// Prüfe ob eine der gelernten Disziplinen die Disziplin ist, für die wir die ungenutzen Optionalen Talente ermitteln wollen.
+			if( discipline.getName().equals(disciplineName) ) {
 				// Disziplintalente der selben Disziplin reduzieren zwar den multiUse-Zähler
 				// werden aber in keinem Fall in die usedTalents-Liste aufgenommen
 				for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
 					String name = getFullTalentname(talent);
 					Integer multiUseCount = multiUseTalents.get(name);
-					if( multiUseCount != null ) {
-						multiUseCount--;
-						multiUseTalents.put(name,multiUseCount);
-					}
+					if( multiUseCount != null ) multiUseTalents.put(name,multiUseCount-1);
 				}
 				// Optionaltalente der selben Disziplin reduzieren den multiUse-Zähler
 				// UND werden in jedem Fall in die usedTalents-Liste aufgenommen
 				for( TALENTType talent : discipline.getOPTIONALTALENT() ) {
+					usedTalents.add(talent);
 					String name = getFullTalentname(talent);
-					usedTalents.add(name);
 					Integer multiUseCount = multiUseTalents.get(name);
-					if( multiUseCount != null ) {
-						multiUseCount--;
-						multiUseTalents.put(name,multiUseCount);
-					}
+					if( multiUseCount != null ) multiUseTalents.put(name,multiUseCount-1);
 				}
 			} else {
+				// Diese gelernte Disziplin ist nicht die Disziplin, für die wir die ungenutzen Optionalen Talente ermitteln wollen
 				for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
 					String name = getFullTalentname(talent);
 					Integer multiUseCount = multiUseTalents.get(name);
 					if( multiUseCount == null ) {
 						// Wenn es kein MultiUseTalent ist, dann behandele es ganz normal
 						// und füge es in die Liste der Benutzen Talent hinzu
-						usedTalents.add(name);
+						usedTalents.add(talent);
 					} else {
 						// Wenn es sich aber um ein MultiUseTalent handelt, Zähle den MultiUse-Zähler hinunter,
 						// es sei denn er ist bereits auf Eins, dann füge das Talent in die Liste der Benutzen Talent hinzu
 						if( multiUseCount > 1 ) multiUseCount--;
-						else usedTalents.add(name);
+						else usedTalents.add(talent);
 						// Aktuallisiere den MultiUse-Zähler bzw lösche das Talent aus der MultiUse Liste
 						if( multiUseCount > 0 ) multiUseTalents.put(name,multiUseCount);
 						else multiUseTalents.remove(name);
@@ -760,39 +758,40 @@ public class CharacterContainer extends CharChangeRefresh {
 				}
 			}
 		}
-		int circlenr = 0;
 		int mincircle=1;
 		int maxcircle=0;
-		for( DISCIPLINECIRCLEType disciplineCircle : disciplineDefinition.getCIRCLE() ) {
-			circlenr++;
-			if( circlenr > talentCircleNr ) break;
-			for( TALENTABILITYType talent : disciplineCircle.getOPTIONALTALENT()) {
-				String name = getFullTalentname(talent);
-				if( usedTalents.contains(name) ) {
-					usedTalents.remove(name);
-				} else {
-					result.add(talent);
-				}
+		// Durclaufe die Kreisdefinition des gesuchten Disziplin rückwärts und ermittele alle möglichen Optionaltalente
+		for( int circlenr=talentCircleNr; circlenr>0; circlenr-- ) {
+			DISCIPLINECIRCLEType disciplineCircle = disciplineDefinition.getCIRCLE().get(circlenr-1);
+			for( TALENTABILITYType talent : disciplineCircle.getOPTIONALTALENT() ) {
+				TALENTType found = null;
+				String talentname = getFullTalentname(talent);
+				for( TALENTType ut : usedTalents ) if( (ut.getCircle()>=circlenr) && getFullTalentname(ut).equals(talentname) ) found=ut;
+				// Wenn das Talent nicht gefunden wurde, steht es dem Charakter als weiteres Optionales Talent zur Verfügung
+				if( found == null ) result.add(talent);
+				// Wenn das Talent gefunden wurde, steht es dem Charakter NICHT ein weiteres mal als Optionales Talent zur Verfügung.
+				// Wird aber aus der Liste entfernt falls nochmal danach gesucht werden sollte, damit es dann nicht gefunden wird.
+				else usedTalents.remove(found);
 			}
 			FOREIGNTALENTSType foreignTalents = disciplineCircle.getFOREIGNTALENTS();
 			if( foreignTalents != null ) {
-				foreignTalents.getMaxcircle();
 				if(foreignTalents.getMincircle()<mincircle) mincircle=foreignTalents.getMincircle();
 				if(foreignTalents.getMaxcircle()>maxcircle) maxcircle=foreignTalents.getMaxcircle();
 			}
 		}
 		if(mincircle<=maxcircle) {
+			// Wenn min und max ein gülltiges Intervall ergeben, dann sind FOREIGNTALENTS definiert und müssen eingefügt werden.
+			// Um doppelte Auflistung zu vermeiden Erzeuge ein Liste von allen benutzten Talente sowie den Talenten, die bereits
+			// als Optionale Talente identifiziert wurden.
 			HashMap<String, TALENTABILITYType> talents = PROPERTIES.getTalentsByCircle(mincircle,maxcircle);
-			// Füge die entfernten und benutzen Talente wieder hinzu so damit diese wieder entfernt werden könne,
-			// wenn sie doppelt vorkommen.
-			for( TALENTABILITYType talent : result ) usedTalents.add(getFullTalentname(talent));
+			List<String> potentialTalents = new ArrayList<String>();
+			for( TALENTType talent : usedTalents ) potentialTalents.add(getFullTalentname(talent));
+			for( TALENTABILITYType talent : result ) potentialTalents.add(getFullTalentname(talent));
+			// Erweitere die Ergebnisliste um FOREIGNTALENTS nur wenn diese noch nicht enthalten waren.
 			for( TALENTABILITYType talent : talents.values() ) {
 				String name = getFullTalentname(talent);
-				if( usedTalents.contains(name) ) {
-					usedTalents.remove(name);
-				} else {
-					result.add(talent);
-				}
+				if( potentialTalents.contains(name) ) potentialTalents.remove(name);
+				else result.add(talent);
 			}
 		}
 		return result;
