@@ -423,6 +423,14 @@ public class ApplicationProperties {
 		return ECEGUILAYOUT.getMAINWINDOW();
 	}
 
+	public LAYOUTDIMENSIONType getGuiLayoutStatusWindow() {
+		return ECEGUILAYOUT.getSTATUSWINDOW();
+	}
+
+	public LAYOUTDIMENSIONType getGuiLayoutTabWindow() {
+		return ECEGUILAYOUT.getTABWINDOW();
+	}
+
 	public List<LAYOUTTABLECOLUMNType> getGuiLayoutTabel(String name) {
 		for( LAYOUTTABLEType table : ECEGUILAYOUT.getTABLE() ) {
 			if( table.getName().equals(name) ) return table.getCOLUMN();

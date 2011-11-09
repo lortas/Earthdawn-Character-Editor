@@ -28,6 +28,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="MAINWINDOW" type="{http://earthdawn.com/eceguilayout}LAYOUT_DIMENSION_type"/>
+ *         &lt;element name="STATUSWINDOW" type="{http://earthdawn.com/eceguilayout}LAYOUT_DIMENSION_type"/>
+ *         &lt;element name="TABWINDOW" type="{http://earthdawn.com/eceguilayout}LAYOUT_DIMENSION_type"/>
  *         &lt;element name="TABLE" type="{http://earthdawn.com/eceguilayout}LAYOUT_TABLE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -40,6 +42,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "mainwindow",
+    "statuswindow",
+    "tabwindow",
     "table"
 })
 @XmlRootElement(name = "ECEGUILAYOUT", namespace = "http://earthdawn.com/eceguilayout")
@@ -47,6 +51,10 @@ public class ECEGUILAYOUT {
 
     @XmlElement(name = "MAINWINDOW", namespace = "http://earthdawn.com/eceguilayout", required = true)
     protected LAYOUTDIMENSIONType mainwindow;
+    @XmlElement(name = "STATUSWINDOW", namespace = "http://earthdawn.com/eceguilayout", required = true)
+    protected LAYOUTDIMENSIONType statuswindow;
+    @XmlElement(name = "TABWINDOW", namespace = "http://earthdawn.com/eceguilayout", required = true)
+    protected LAYOUTDIMENSIONType tabwindow;
     @XmlElement(name = "TABLE", namespace = "http://earthdawn.com/eceguilayout")
     protected List<LAYOUTTABLEType> table;
 
@@ -72,6 +80,54 @@ public class ECEGUILAYOUT {
      */
     public void setMAINWINDOW(LAYOUTDIMENSIONType value) {
         this.mainwindow = value;
+    }
+
+    /**
+     * Gets the value of the statuswindow property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LAYOUTDIMENSIONType }
+     *     
+     */
+    public LAYOUTDIMENSIONType getSTATUSWINDOW() {
+        return statuswindow;
+    }
+
+    /**
+     * Sets the value of the statuswindow property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LAYOUTDIMENSIONType }
+     *     
+     */
+    public void setSTATUSWINDOW(LAYOUTDIMENSIONType value) {
+        this.statuswindow = value;
+    }
+
+    /**
+     * Gets the value of the tabwindow property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LAYOUTDIMENSIONType }
+     *     
+     */
+    public LAYOUTDIMENSIONType getTABWINDOW() {
+        return tabwindow;
+    }
+
+    /**
+     * Sets the value of the tabwindow property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LAYOUTDIMENSIONType }
+     *     
+     */
+    public void setTABWINDOW(LAYOUTDIMENSIONType value) {
+        this.tabwindow = value;
     }
 
     /**

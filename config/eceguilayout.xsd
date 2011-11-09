@@ -21,6 +21,8 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="1" maxOccurs="1" name="MAINWINDOW" type="LAYOUT_DIMENSION_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="STATUSWINDOW" type="LAYOUT_DIMENSION_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="TABWINDOW" type="LAYOUT_DIMENSION_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="TABLE" type="LAYOUT_TABLE_type" />
 			</xs:sequence>
 		</xs:complexType>
