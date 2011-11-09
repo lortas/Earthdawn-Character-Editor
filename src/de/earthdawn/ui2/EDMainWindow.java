@@ -31,7 +31,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
@@ -129,8 +128,8 @@ public class EDMainWindow {
 	private void initialize() {
 		frame = new JFrame("Earthdawn Character Editor");
 		//frame.setBounds(10, 50, 1020, 740);
-		LAYOUTDIMENSIONType dim = PROPERTIES.getGuiLayoutMainWindow();
-		frame.setSize(new Dimension(dim.getX(),dim.getY()));
+		LAYOUTDIMENSIONType dimMainWindow = PROPERTIES.getGuiLayoutMainWindow();
+		frame.setSize(new Dimension(dimMainWindow.getX(),dimMainWindow.getY()));
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -332,12 +331,13 @@ public class EDMainWindow {
 		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
 		frame.getContentPane().add(splitPane);
 
+		LAYOUTDIMENSIONType dimTabWindow = PROPERTIES.getGuiLayoutTabWindow();
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		tabbedPane.setMinimumSize(new Dimension(dimTabWindow.getX(),dimTabWindow.getY()));
 		splitPane.setLeftComponent(tabbedPane);
 
 		panelERGeneral = new EDGeneral();
-		panelERGeneral.setMinimumSize(new Dimension(4, 220));
 		panelEDAttributes = new EDAttributes();
 		panelEDDisciplines = new EDDisciplines();
 		panelEDSkills = new EDSkills();
@@ -349,7 +349,8 @@ public class EDMainWindow {
 		paneStatus = new BackgroundEditorPane("templates/characteristic_background.jpg");
 		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
 		editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		editorScrollPane.setMinimumSize(new Dimension(500,300));
+		LAYOUTDIMENSIONType dimStatusWindow = PROPERTIES.getGuiLayoutStatusWindow();
+		editorScrollPane.setMinimumSize(new Dimension(dimStatusWindow.getX(),dimStatusWindow.getY()));
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
 		paneStatus.setEditable(false);

@@ -5,8 +5,10 @@ import javax.swing.JPanel;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.OPTIONALRULEType;
 import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
+import de.earthdawn.data.YesnoType;
 
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
@@ -33,6 +35,7 @@ public class EDSkills extends JPanel {
 	private JTable table;
 	private JButton btnAddSkill;
 	private JButton btnRemoveSkill;
+	private JButton btnToggleDefaultSkill;
 	/**
 	 * Create the panel.
 	 */
@@ -57,6 +60,14 @@ public class EDSkills extends JPanel {
 			}
 		});
 		toolBar.add(btnRemoveSkill);
+
+		btnToggleDefaultSkill = new JButton("Toggle Default Skills");
+		btnToggleDefaultSkill.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_btnToggleDefaultSkill_actionPerformed(arg0);
+			}
+		});
+		toolBar.add(btnToggleDefaultSkill);
 
 		scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
@@ -125,6 +136,20 @@ public class EDSkills extends JPanel {
 			skillsForRemoval.add(skill);
 		}
 		character.getSkills().removeAll(skillsForRemoval);
+		character.refesh();
+	}
+
+	protected void do_btnToggleDefaultSkill_actionPerformed(ActionEvent arg0) {
+		OPTIONALRULEType showdefaultskills = PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS();
+		YesnoType used = showdefaultskills.getUsed();
+		if( used.equals(YesnoType.YES) ) {
+			showdefaultskills.setUsed(YesnoType.NO);
+			btnToggleDefaultSkill.setText("Show Default Skills");
+		}
+		else {
+			showdefaultskills.setUsed(YesnoType.YES);
+			btnToggleDefaultSkill.setText("Hide Default Skills");
+		}
 		character.refesh();
 	}
 }

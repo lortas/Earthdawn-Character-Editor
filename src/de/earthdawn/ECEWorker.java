@@ -40,7 +40,6 @@ public class ECEWorker {
 	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
 	public static final boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-	public static final boolean OptionalRule_ShowDefaultSkills=PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_autoincrementDisciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
@@ -357,7 +356,7 @@ public class ECEWorker {
 		calculatedLP.getUSEDSTARTRANKS().setSkills(skillsStartranks);
 
 		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
-		if( OptionalRule_ShowDefaultSkills ) {
+		if( PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES) ) {
 			for( CAPABILITYType defaultSkill : defaultSkills ) {
 				List<String> limitations = defaultSkill.getLIMITATION();
 				if( limitations.size()==0 ) limitations.add("");
