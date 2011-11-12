@@ -104,7 +104,7 @@ public class EDDisciplines extends JPanel {
 				do_btnAddDiscipline_actionPerformed(arg0);
 			}
 		});
-		btnAddDiscipline.setOpaque(false);
+		btnAddDiscipline.setOpaque(true);
 		toolBar.add(btnAddDiscipline);
 		btnRemoveDiscipline = new JButton("Remove Last Discipline");
 		btnRemoveDiscipline.addActionListener(new ActionListener() {
@@ -112,7 +112,7 @@ public class EDDisciplines extends JPanel {
 				do_btnRemoveDiscipline_actionPerformed(arg0);
 			}
 		});
-		btnRemoveDiscipline.setOpaque(false);
+		btnRemoveDiscipline.setOpaque(true);
 		toolBar.add(btnRemoveDiscipline);
 		popupMenuCircle = mapTreeToMenuTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
 	}
