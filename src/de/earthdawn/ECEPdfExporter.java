@@ -251,12 +251,13 @@ public class ECEPdfExporter {
 				counterKarmaritual++;
 			}
 		}
-		DISCIPLINEType discipline1 = character.getDisciplines().get(0);
-		if( discipline1 != null ) {
-			int counter = 0;
+		List<DISCIPLINEType> disciplines = character.getDisciplines();
+		if( disciplines.size()>0 ) {
+			DISCIPLINEType discipline1=disciplines.get(0);
 			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+			int counter = 0;
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4) && (counter<9) ) {
 					counter = 9;
@@ -296,7 +297,7 @@ public class ECEPdfExporter {
 		}
 
 		int conterSpells=0;
-		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+		for( DISCIPLINEType discipline : disciplines ) {
 			List<SPELLType> spells = discipline.getSPELL();
 			Collections.sort(spells, new SpellComparator());
 			for( SPELLType spell : spells ) {
