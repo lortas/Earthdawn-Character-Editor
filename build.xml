@@ -120,6 +120,7 @@
 			<zipfileset file="./license.en.txt"/>
 			<zipfileset file="./license.en.html"/>
 			<zipfileset file="./license.de.html"/>
+			<zipfileset file="./earthdawn_copyright_note.txt"/>
 			<zipfileset file="./readme.txt"/>
 		</zip>
 	</target>
