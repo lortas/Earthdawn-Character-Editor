@@ -17,6 +17,9 @@ import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.awt.Graphics;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
@@ -50,6 +53,7 @@ public class EDGeneral extends JPanel {
 	private JTextField textFieldEyecolor;
 	private JTextField textFieldHaircolor;
 	private static final String backgroundImage="templates/genralpanel_background.jpg";
+	private NumberFormat numberformat = new DecimalFormat("#.00");
 
 	/**
 	 * Create the panel.
@@ -271,8 +275,8 @@ public class EDGeneral extends JPanel {
 		this.character = character;
 		textFieldName.setText(character.getName());
 		textFieldAge.setText(new Integer(character.getAppearance().getAge()).toString());
-		textFieldSize.setText(String.format("%1.2f",character.getAppearance().getHeight()));
-		textFieldWeight.setText(String.format("%1.2f",character.getAppearance().getWeight()));
+		textFieldSize.setText(numberformat.format(character.getAppearance().getHeight()));
+		textFieldWeight.setText(numberformat.format(character.getAppearance().getWeight()));
 		textFieldSkincolor.setText(character.getAppearance().getSkin());
 		textFieldEyecolor.setText(character.getAppearance().getEyes());
 		textFieldHaircolor.setText(character.getAppearance().getHair());
@@ -326,24 +330,28 @@ public class EDGeneral extends JPanel {
 	}
 
 	protected int textToInt(String text) {
+		if( text == null ) return 0;
+		text=text.trim().replaceAll("[^0-9]", "");
+		if( text.length() == 0 ) return 0;
 		Integer zahl=null;
 		try {
 			zahl = new Integer(text);
 		} catch(NumberFormatException e) {
-			// Don't Care
-			return 0;
+			e.printStackTrace();
 		}
 		if( zahl == null ) return 0;
 		return zahl.intValue();
 	}
 
 	protected float textToFloat(String text) {
-		Float zahl=null;
+		if( text == null ) return 0;
+		text=text.trim();
+		if( text.length() == 0 ) return 0;
+		Number zahl=null;
 		try {
-			zahl = new Float(text);
-		} catch(NumberFormatException e) {
-			// Don't Care
-			return 0;
+			zahl = numberformat.parse(text);
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
 		if( zahl == null ) return 0;
 		return zahl.floatValue();
