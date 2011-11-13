@@ -478,7 +478,7 @@ public class ECEWorker {
 					capabilities.enforceCapabilityParams(bonusTalent);
 					RANKType bonusrank = new RANKType();
 					bonusrank.setRank(0);
-					bonusrank.setBonus(1);
+					bonusrank.setBonus(itemtalent.getBonus());
 					calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute().value()));
 					bonusTalent.setRANK(bonusrank);
 					TALENTTEACHERType teacher = new TALENTTEACHERType();
