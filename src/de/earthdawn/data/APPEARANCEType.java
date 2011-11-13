@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="hair" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="skin" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="race" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="birth" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -58,6 +59,8 @@ public class APPEARANCEType {
     protected String skin;
     @XmlAttribute(required = true)
     protected String race;
+    @XmlAttribute
+    protected String birth;
 
     /**
      * Gets the value of the gender property.
@@ -225,6 +228,34 @@ public class APPEARANCEType {
      */
     public void setRace(String value) {
         this.race = value;
+    }
+
+    /**
+     * Gets the value of the birth property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBirth() {
+        if (birth == null) {
+            return "";
+        } else {
+            return birth;
+        }
+    }
+
+    /**
+     * Sets the value of the birth property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setBirth(String value) {
+        this.birth = value;
     }
 
 }
