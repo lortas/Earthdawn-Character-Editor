@@ -1,5 +1,6 @@
 package de.earthdawn.ui2;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import de.earthdawn.CharacterContainer;
@@ -10,17 +11,24 @@ import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.YesnoType;
 
+import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.Rectangle;
 
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.ListSelectionModel;
@@ -36,13 +44,30 @@ public class EDSkills extends JPanel {
 	private JButton btnAddSkill;
 	private JButton btnRemoveSkill;
 	private JButton btnToggleDefaultSkill;
+	private BufferedImage backgroundimage = null;
+
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/skills_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
 	/**
 	 * Create the panel.
 	 */
 	public EDSkills() {
+		setOpaque(false);
 		setLayout(new BorderLayout(0, 0));
 
 		toolBar = new JToolBar();
+		toolBar.setOpaque(false);
 		add(toolBar, BorderLayout.NORTH);
 
 		btnAddSkill = new JButton("Add Skill");
@@ -70,9 +95,19 @@ public class EDSkills extends JPanel {
 		toolBar.add(btnToggleDefaultSkill);
 
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
 
-		table = new JTable();
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer(renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		table.setOpaque(false);
 		InputMapUtil.setupInputMap(table);	
 
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -80,6 +115,7 @@ public class EDSkills extends JPanel {
 		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
 		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 		table.setRowSelectionAllowed(false);
 		table.setColumnSelectionAllowed(false);
 		table.getTableHeader().setReorderingAllowed(false);

@@ -52,7 +52,7 @@ public class EDExperience extends JPanel {
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
-		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
+		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
 	}
 
 	@Override
@@ -78,7 +78,6 @@ public class EDExperience extends JPanel {
 		add(toolBar, BorderLayout.NORTH);
 		
 		btnAddEXPEntry = new JButton("Add Experience");
-		btnAddEXPEntry.setOpaque(false);
 		btnAddEXPEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddEXPEntry_actionPerformed(arg0);
@@ -87,7 +86,6 @@ public class EDExperience extends JPanel {
 		toolBar.add(btnAddEXPEntry);
 		
 		btnRemoveEXPEntry = new JButton("Remove Experience");
-		btnRemoveEXPEntry.setOpaque(false);
 		btnRemoveEXPEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnRemoveEXPEntry_actionPerformed(arg0);
