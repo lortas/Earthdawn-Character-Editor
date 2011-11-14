@@ -1,15 +1,22 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Container;
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
@@ -17,6 +24,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
 import de.earthdawn.CharacterContainer;
@@ -45,6 +53,7 @@ public class EDTalents extends JPanel {
 	private JTable table;
 	private String disciplin;
 	private JPopupMenu popupMenuCircle;
+	private BufferedImage backgroundimage = null;
 
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
@@ -70,17 +79,43 @@ public class EDTalents extends JPanel {
 		return character;
 	}
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/talents_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
+
 	/**
 	 * Create the panel.
 	 */
 	public EDTalents(String disciplin) {
 		this.disciplin  = disciplin;
+		setOpaque(false);
 		setLayout(new BorderLayout(0, 0));
 
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
 
-		table = new JTable();
+		// Create transperant table
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer( renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		table.setOpaque(false);
 		table.setRowSelectionAllowed(false);
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setModel(new TalentsTableModel(character, disciplin));
@@ -91,6 +126,7 @@ public class EDTalents extends JPanel {
 		table.getTableHeader().setReorderingAllowed(false);
 
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
