@@ -452,9 +452,9 @@ public class ECEWorker {
 			}
 			for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
 				switch (itemdefense.getKind()) {
-				case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
-				case SPELL: defense.setSpell(defense.getSpell()+1); break;
-				case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
+				case PHYSICAL: defense.setPhysical(defense.getPhysical()+itemdefense.getBonus()); break;
+				case SPELL: defense.setSpell(defense.getSpell()+itemdefense.getBonus()); break;
+				case SOCIAL: defense.setSocial(defense.getSocial()+itemdefense.getBonus()); break;
 				}
 			}
 			for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
