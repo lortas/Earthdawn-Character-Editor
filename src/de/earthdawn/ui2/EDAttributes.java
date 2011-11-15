@@ -1,10 +1,18 @@
 package de.earthdawn.ui2;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.JScrollPane;
 import javax.swing.BoxLayout;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
@@ -22,17 +30,42 @@ public class EDAttributes extends JPanel {
 
 	private JScrollPane scrollPane;
 	private JTable table;
+	private BufferedImage backgroundimage = null;
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/attributes_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
 	/**
 	 * Create the panel.
 	 */
 	public EDAttributes() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		setOpaque(false);
 
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane);
 
-		table = new JTable();
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer(renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		table.setOpaque(false);
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new AttributesTableModel());
 		table.getColumnModel().getColumn(2).setCellEditor(new SpinnerEditor(-2, 8));
@@ -40,6 +73,7 @@ public class EDAttributes extends JPanel {
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 	}
 
 	public void setCharacter(CharacterContainer character) {

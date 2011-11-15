@@ -84,7 +84,6 @@ public class EDDevotionPoints extends JPanel {
 		add(toolBar, BorderLayout.NORTH);
 		
 		btnAddDevotionPointsEntry = new JButton("Add DevotionPoints");
-		btnAddDevotionPointsEntry.setOpaque(false);
 		btnAddDevotionPointsEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddDevotionPointsEntry_actionPerformed(arg0);
@@ -93,7 +92,6 @@ public class EDDevotionPoints extends JPanel {
 		toolBar.add(btnAddDevotionPointsEntry);
 
 		btnRemoveDevotionPointsEntry = new JButton("Remove DevotionPoints");
-		btnRemoveDevotionPointsEntry.setOpaque(false);
 		btnRemoveDevotionPointsEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnRemoveDevotionPointsEntry_actionPerformed(arg0);

@@ -1,18 +1,26 @@
 package de.earthdawn.ui2;
 
-import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableRowSorter;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.image.BufferedImage;
+import java.awt.Graphics;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
@@ -31,6 +39,7 @@ public class EDSpells extends JPanel {
 	private CharacterContainer character;
 	private JScrollPane scrollPane;
 	private JTable table;
+	private BufferedImage backgroundimage = null;
 	TableRowSorter<SpellsTableModel> sorter;
 
 	public CharacterContainer getCharacter() {
@@ -59,22 +68,47 @@ public class EDSpells extends JPanel {
 		}
 	}
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/spells_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
 	/**
 	 * Create the panel.
 	 */
 	public EDSpells(CharacterContainer character,String disciplin) {
 		this.character = character;
 		this.disciplin = disciplin;
+		setOpaque(false);
 		setLayout(new BorderLayout(0, 0));
 
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane);
 
 		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
-		table = new JTable();
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer(renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		table.setOpaque(false);
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new SpellsTableModel(character,disciplin,threadweavings));
 		scrollPane.setViewportView(table);
+		scrollPane.getViewport().setOpaque(false);
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		sorter = new TableRowSorter<SpellsTableModel>((SpellsTableModel) table.getModel());
 		table.setRowSorter(sorter);

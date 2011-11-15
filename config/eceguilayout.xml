@@ -13,9 +13,9 @@
 		<!--  6 --><COLUMN min="50"  preferred="50"  max="50"/>
 		<!--  7 --><COLUMN min="60"  preferred="60"  max="60"/>
 		<!--  8 --><COLUMN min="52"  preferred="52"  max="52"/>
-		<!--  9 --><COLUMN min="350" preferred="350" max="350"/>
+		<!--  9 --><COLUMN min="330" preferred="330" max="330"/>
 		<!-- 10 --><COLUMN min="140" preferred="140" max="140"/>
-		<!-- 11 --><COLUMN min="120" preferred="120" max="120"/>
+		<!-- 11 --><COLUMN min="70"  preferred="70"  max="70"/>
 		<!-- 12 --><COLUMN min="85"  preferred="85"  max="85"/>
 	</TABLE>
 	<TABLE name="talentselection">

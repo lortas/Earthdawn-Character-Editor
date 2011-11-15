@@ -1,20 +1,22 @@
 package de.earthdawn.ui2;
 
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
@@ -25,13 +27,15 @@ import de.earthdawn.ui2.tree.ItemTreeModel;
 import de.earthdawn.data.*;
 
 public class EDInventory extends JPanel {
+	private static final long serialVersionUID = 2284943257141442648L;
 	private JScrollPane scrollPane;
 	private JTree tree;
 
 	private CharacterContainer character;
 	private Object currentNode; 
 	private TreePath currentPath;
-	
+	private BufferedImage backgroundimage = null;
+
 	public CharacterContainer getCharacter() {
 		return character;
 		
@@ -39,43 +43,61 @@ public class EDInventory extends JPanel {
 
 	public void setCharacter(CharacterContainer character) {	
 		this.character = character;
-		//initTree();
-		tree = new BackgroundTree(new ItemTreeModel(character),"templates/inventory_background.jpg");
+		tree = new JTree(new ItemTreeModel(character));
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				do_tree_mouseReleased(arg0);
 			}
 		});
+		tree.setOpaque(false);
 		tree.setRootVisible(false);
 		System.out.println("Set:" + character);
 		scrollPane.setViewportView(tree);
+		scrollPane.getViewport().setOpaque(false);
 		tree.setEditable(true);
 		tree.setCellRenderer(new ItemTreeCellRenderer());
 		tree.setCellEditor(new ItemTreeCellEditor());
-		tree.setInvokesStopCellEditing(true); 
+		tree.setInvokesStopCellEditing(true);
 	}
 
+	@Override
+	protected void paintComponent(Graphics g) {
+		if( backgroundimage == null ) {
+			File file = new File("templates/inventory_background.jpg");
+			try {
+				backgroundimage = ImageIO.read(file);
+			} catch (IOException e) {
+				System.err.println("can not read background image : "+file.getAbsolutePath());
+			}
+		}
+		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
+		super.paintComponent(g);
+	}
 	/**
 	 * Create the panel.
 	 */
 	public EDInventory() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		setOpaque(false);
 
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		add(scrollPane);
-			
-		tree = new BackgroundTree(new DefaultMutableTreeNode("Empty"),"templates/inventory_background.jpg");
+
+		tree = new JTree(new ItemTreeModel(character));
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				do_tree_mouseReleased(arg0);
 			}
 		});
+		tree.setOpaque(false);
 		scrollPane.add(tree);
 		scrollPane.setViewportView(tree);
+		scrollPane.getViewport().setOpaque(false);
 	}
-	
+
 	protected void do_tree_mouseReleased(MouseEvent event) {
 		if(event.getButton() > 1){
 			JPopupMenu popup = new JPopupMenu();
@@ -161,13 +183,13 @@ public class EDInventory extends JPanel {
 			//remove
 			Object parent = currentPath.getParentPath().getLastPathComponent();
 			if(parent instanceof String){
-				List temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+				List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
 				if(temp != null){
 					JMenuItem menuitem = new JMenuItem("Remove");
 					menuitem.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							Object parent = currentPath.getParentPath().getLastPathComponent();
-							List temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+							List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
 							temp.remove(currentNode); 
 							((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode, 0);
 							

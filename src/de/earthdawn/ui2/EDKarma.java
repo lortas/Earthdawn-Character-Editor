@@ -50,7 +50,7 @@ public class EDKarma extends JPanel {
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
-		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
+		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
 	}
 
 	@Override
@@ -73,23 +73,22 @@ public class EDKarma extends JPanel {
 		toolBar = new JToolBar();
 		add(toolBar, BorderLayout.NORTH);
 		btnAddKarmaEntry = new JButton("Add Karma");
+		btnAddKarmaEntry.setOpaque(true);
 		btnAddKarmaEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnAddKarmaEntry_actionPerformed(arg0);
 			}
 		});
-		btnAddKarmaEntry.setOpaque(false);
-		toolBar.add(btnAddKarmaEntry);
 		btnRemoveKarmaEntry = new JButton("Remove Karma");
 		btnRemoveKarmaEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_btnRemoveKarmaEntry_actionPerformed(arg0);
 			}
 		});
-		btnRemoveKarmaEntry.setOpaque(false);
+		toolBar.add(btnAddKarmaEntry);
 		toolBar.add(btnRemoveKarmaEntry);
 		toolBar.setOpaque(false);
-		
+
 		scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
