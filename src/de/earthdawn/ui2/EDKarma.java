@@ -21,16 +21,18 @@ import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ACCOUNTINGType;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.PlusminusType;
 
 public class EDKarma extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
+	private static final long serialVersionUID = -6560310823885670305L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
 	private JToolBar toolBar;
 	private JScrollPane scrollPane;
@@ -44,13 +46,24 @@ public class EDKarma extends JPanel {
 	}
 
 	public void setCharacter(CharacterContainer character) {
-		
 		this.character = character;
 		((KarmaTableModel)table.getModel()).setCharacter(character);
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
+		try {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("karmaselection") ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout spellselection : "+e.getLocalizedMessage());
+		}
 	}
 
 	@Override

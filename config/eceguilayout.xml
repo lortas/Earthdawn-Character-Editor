@@ -32,4 +32,13 @@
 		<!--  7 --><COLUMN min="40"  preferred="60"  max="100"/>
 		<!--  7 --><COLUMN min="40"  preferred="60"  max="100"/>
 	</TABLE>
+	<TABLE name="experienceselection">
+		<!--  0 --><COLUMN min="20"  preferred="200"  max="1000"/>
+	</TABLE>
+	<TABLE name="karmaselection">
+		<!--  0 --><COLUMN min="20"  preferred="200"  max="1000"/>
+	</TABLE>
+	<TABLE name="devotionpointselection">
+		<!--  0 --><COLUMN min="20"  preferred="200"  max="1000"/>
+	</TABLE>
 </ECEGUILAYOUT>
