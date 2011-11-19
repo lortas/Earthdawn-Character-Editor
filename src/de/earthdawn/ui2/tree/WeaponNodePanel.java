@@ -3,30 +3,20 @@ package de.earthdawn.ui2.tree;
 import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.data.ItemkindType;
-import de.earthdawn.ui2.SpinnerRenderer;
-
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
-import javax.swing.JList;
 import javax.swing.JCheckBox;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.FlowLayout;
 import net.miginfocom.swing.MigLayout;
-import javax.swing.JPanel;
-
 
 public class WeaponNodePanel extends AbstractNodePanel<WEAPONType> {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -8431309392002111880L;
 	private JLabel lblName;
 	private JTextField textFieldName;
 	private JLabel lblWeight;
@@ -134,6 +124,7 @@ public class WeaponNodePanel extends AbstractNodePanel<WEAPONType> {
 	public void updateObject() {
 		nodeObject.setKind((ItemkindType) comboBoxType.getSelectedItem());
 		nodeObject.setName(textFieldName.getText());
+		nodeObject.setDamagestep((Integer) spinnerDamage.getValue());
 		nodeObject.setWeight(((Double) spinnerWeight.getValue()).floatValue());
 		nodeObject.setLocation(textFieldLocation.getText());
 		nodeObject.setStrengthmin((Integer) spinnerStrMin.getValue());
