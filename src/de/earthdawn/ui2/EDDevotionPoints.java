@@ -26,18 +26,19 @@ import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ACCOUNTINGType;
 import de.earthdawn.data.DEVOTIONType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.PlusminusType;
 
 public class EDDevotionPoints extends JPanel {
-
-	/**
-	 * Create the panel.
-	 */
+	private static final long serialVersionUID = -9156447851725574501L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
 	private JToolBar toolBar;
 	private JScrollPane scrollPane;
@@ -52,14 +53,25 @@ public class EDDevotionPoints extends JPanel {
 	}
 
 	public void setCharacter(CharacterContainer character) {
-		
 		this.character = character;
 		((DevotionPointsTableModel)table.getModel()).setCharacter(character);
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
-	}
+		try {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("devotionpointselection") ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout spellselection : "+e.getLocalizedMessage());
+		}
+}
 
 	@Override
 	protected void paintComponent(Graphics g) {

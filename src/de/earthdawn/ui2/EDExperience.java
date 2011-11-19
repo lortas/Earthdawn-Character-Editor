@@ -1,17 +1,5 @@
 package de.earthdawn.ui2;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -23,16 +11,27 @@ import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ACCOUNTINGType;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.PlusminusType;
 
 public class EDExperience extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
+	private static final long serialVersionUID = 3341440760130899020L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
 	private JToolBar toolBar;
 	private JScrollPane scrollPane;
@@ -53,6 +52,18 @@ public class EDExperience extends JPanel {
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
+		try {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("experienceselection") ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout spellselection : "+e.getLocalizedMessage());
+		}
 	}
 
 	@Override
@@ -98,7 +109,7 @@ public class EDExperience extends JPanel {
 		add(scrollPane, BorderLayout.CENTER);
 
 		// Create transperant table
-		table = new JTable(){
+		table = new JTable() {
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer( renderer, row, column);
@@ -143,23 +154,16 @@ public class EDExperience extends JPanel {
 }
 
 class ExperienceTableModel extends AbstractTableModel {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = -6994769801045790956L;
 	private CharacterContainer character;
-    private String[] columnNames = {"Date", "Comment",  "Type", "Value"};
-
-
-    
-    
+	private String[] columnNames = {"Date", "Comment",  "Type", "Value"};
 
 	public ExperienceTableModel(CharacterContainer character) {
 		super();
 		this.character = character;
-	}    
-  
+	}
+
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		fireTableStructureChanged();
@@ -254,4 +258,3 @@ class ExperienceTableModel extends AbstractTableModel {
     }
 
 }
-
