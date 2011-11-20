@@ -108,7 +108,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<KARMASTEP/>
-		<ABILITY>Wisdom of the Ages:</ABILITY>
+		<ABILITY>Wisdom of the Ages</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Multi-Tongue"/>
