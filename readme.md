@@ -72,7 +72,7 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 + spelldescriptions.xml will now be read if exists, but will not be ditributed (no copyright)
 + New pdf-export: spellcards
 + some horror powers inserted into the capabilities.xml
-+ first spells are now flagged which element it uses.
++ first spells are now flagged which element it uses
 + filter within the spell-tab removed (depreciated)
 + characteristic statistic layout updated
 + MainWindow will no longer start at position (100,100), it now will be placed by the window manager
