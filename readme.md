@@ -22,6 +22,35 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.35-20111201.zip ##
++ Bugs
+	+ Fixating column order of the tables skill, spell and talent
+	+ optional talent spell matrix now works again for circle 1 if circle 2 is in use
+	+ Now Redbrick PDF export works even if no discipline was chosen
+	+ Parsing problems with weight and size field solved
+	+ TalentAbility of thread items now with correct bonus
+	+ Defence calculation of thread items corrected
+	+ Background picture of inventory tab will no longer scale with inventory
+	+ Row mismatch off the optional talents area within the Ajfel+Mordom PDF export solved
+	+ DamageStep of weapons will now be recognise
++ New disciplines:
+	+ Monk
+	+ Samurai
+	+ Scholar
++ XML Schema enhanced
+	+ Attribute 'birth' added to element APPEARANCE 
++ For all columns of the tables within the GUI, the width can be configured: eceguilayout.xml
++ Main window size and sub window size can now be configured: eceguilayout.xml
++ Add more comments within the source code for optional talents procedures
++ Add RemoveLastDiscipline button within the discipline tab
++ Add Show/Hide Default Skills button within the skill tab
++ Buttons within the discipline tab are no longer transparent
++ Now all tabs have background pictures
++ New background pictures
++ New default window and columns sizes
++ All yard entries removed and replaced by hex entries
++ SpellEffekt font size within the Ajfel+Mordom PDF export re adjusted
++ Example characters updated
 ## EarthdawnCharacterEditor-0.34-20111026.zip ##
 + New disciplines:
 	+ TraveledScholar-Spy
