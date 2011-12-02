@@ -872,6 +872,7 @@ public class EDMainWindow {
 	protected void do_mntmNew_actionPerformed(ActionEvent arg0) {
 		ec = new EDCHARACTER();
 		character = new CharacterContainer(ec);
+		file = null;
 		ECEWorker worker = new ECEWorker();
 		worker.verarbeiteCharakter(character.getEDCHARACTER());
 		this.character.addCharChangeEventListener(new CharChangeEventListener() {
