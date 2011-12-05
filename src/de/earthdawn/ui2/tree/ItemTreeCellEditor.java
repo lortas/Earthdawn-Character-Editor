@@ -16,6 +16,7 @@ import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.WEAPONType;
+import de.earthdawn.data.YesnoType;
 
 public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements TreeCellEditor {
 	private static final long serialVersionUID = 1L;
@@ -61,13 +62,17 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 				TreePath path = tree.getPathForLocation(mouseEvent.getX(), mouseEvent.getY());
 				if (path != null) {
 					Object node = path.getLastPathComponent();
-					if (node != null)  {
+					if (node != null) {
 						returnValue = (registerEditors.containsKey(node.getClass()));
-					}				
+						if(returnValue && (node instanceof ITEMType)) {
+							ITEMType item = (ITEMType)node;
+							returnValue = item.getVirtual().equals(YesnoType.NO);
+						}
+					}
 				}
 			}
 		}
-		return returnValue;	
+		return returnValue;
 	}
 
 	@Override
