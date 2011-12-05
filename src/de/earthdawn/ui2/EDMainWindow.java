@@ -338,8 +338,8 @@ public class EDMainWindow {
 		splitPane.setLeftComponent(tabbedPane);
 
 		panelERGeneral = new EDGeneral();
-		panelEDAttributes = new EDAttributes();
 		panelEDDisciplines = new EDDisciplines();
+		panelEDAttributes = new EDAttributes();
 		panelEDSkills = new EDSkills();
 		panelEDExperience = new EDExperience();
 		panelEDKarma = new EDKarma();
@@ -359,8 +359,8 @@ public class EDMainWindow {
 		characteristicStatus.setCharacter(character);
 
 		tabbedPane.addTab("General", null, panelERGeneral, null);
-		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
+		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
