@@ -310,6 +310,7 @@ public class ECEWorker {
 				physicalarmor+=armor.getPhysicalarmor();
 				protectionpenalty+=armor.getPenalty();
 			}
+			if(armor.getKind().equals(ItemkindType.UNDEFINED)) armor.setKind(ItemkindType.ARMOR);
 		}
 		PROTECTIONType protection = character.getProtection();
 		protection.setMysticarmor(mysticalarmor);

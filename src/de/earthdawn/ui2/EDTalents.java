@@ -356,7 +356,9 @@ class TalentsTableModel extends AbstractTableModel {
 	        	}
 	        	break;
 	        case 6: return talent.getRANK().getStep();
-	        case 7: return talent.getRANK().getDice().value();
+	        case 7:
+	        	if( talent.getRANK().getDice() == null ) return "";
+	        	return talent.getRANK().getDice().value();
 	        case 8: return talent.getAction().value();
 	        case 9:
 	        	try{
