@@ -27,9 +27,10 @@
 		<!--  5 --><COLUMN min="70"  preferred="70"  max="70"/>
 		<!--  6 --><COLUMN min="70"  preferred="70"  max="70"/>
 		<!--  7 --><COLUMN min="90"  preferred="90"  max="90"/>
-		<!--  8 --><COLUMN min="220" preferred="220" max="220"/>
-		<!--  9 --><COLUMN min="130" preferred="130" max="130"/>
-		<!-- 10 --><COLUMN min="90"  preferred="90"  max="95"/>
+		<!--  8 --><COLUMN min="90"  preferred="90"  max="90"/>
+		<!--  9 --><COLUMN min="220" preferred="220" max="220"/>
+		<!-- 10 --><COLUMN min="130" preferred="130" max="130"/>
+		<!-- 11 --><COLUMN min="90"  preferred="90"  max="95"/>
 	</TABLE>
 	<TABLE name="skillselection">
 		<!--  0 --><COLUMN min="300" preferred="300" max="300"/>
