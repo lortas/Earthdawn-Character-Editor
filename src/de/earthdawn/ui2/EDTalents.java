@@ -2,7 +2,6 @@ package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -30,7 +29,6 @@ import javax.swing.table.TableColumn;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 import de.earthdawn.data.SKILLType;
@@ -239,7 +237,7 @@ class TalentsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 	private TalentsContainer talents;
-	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Startrank", "Rank", "Step", "Action", "Teacher Dis", "Type", "BookRef" };
+	private String[] columnNames = {"Circle", "Talentname", "Limitation", "Attribute", "Startrank", "Rank", "Step", "Dice", "Action", "Teacher Dis", "Type", "BookRef" };
 	private String disciplin = "";
 
 	public String getDisciplin() {
@@ -358,8 +356,9 @@ class TalentsTableModel extends AbstractTableModel {
 	        	}
 	        	break;
 	        case 6: return talent.getRANK().getStep();
-	        case 7: return talent.getAction().value();
-	        case 8:
+	        case 7: return talent.getRANK().getDice().value();
+	        case 8: return talent.getAction().value();
+	        case 9:
 	        	try{
 	        		TALENTTEACHERType teacher = talent.getTEACHER();
 	        		if( teacher == null ) {
@@ -372,7 +371,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 9:
+	        case 10:
 	        	try{
 	        		TALENTTEACHERType teacher = talent.getTEACHER();
 	        		if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) {
@@ -387,7 +386,7 @@ class TalentsTableModel extends AbstractTableModel {
 	        		//System.err.println("Error: " + talent.getName());
 	        	}
 	        	break;
-	        case 10: return talent.getBookref();
+	        case 11: return talent.getBookref();
 	        default: return new Integer(0);
 		}
 		return result;
@@ -419,7 +418,7 @@ class TalentsTableModel extends AbstractTableModel {
 			return true;
 		}
 		if( col == 5 ) return true;
-		if( col == 8 ) return true;
+		if( col == 9 ) return true;
 		if( col == 0 ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) return true;
@@ -445,7 +444,7 @@ class TalentsTableModel extends AbstractTableModel {
 		case 5:
 			talent.getRANK().setRank((Integer)value);
 			break;
-		case 8:
+		case 9:
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( teacher == null ) {
 				teacher = new TALENTTEACHERType();
