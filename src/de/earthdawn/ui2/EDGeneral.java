@@ -30,9 +30,7 @@ import javax.swing.event.CaretEvent;
 
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
-
 	private CharacterContainer character;
-	
 	private JLabel lblCharactername;
 	private JTextField textFieldName;
 	private JLabel lblRace;
@@ -53,7 +51,7 @@ public class EDGeneral extends JPanel {
 	private JTextField textFieldEyecolor;
 	private JTextField textFieldHaircolor;
 	private static final String backgroundImage="templates/genralpanel_background.jpg";
-	private NumberFormat numberformat = new DecimalFormat("#.00");
+	private NumberFormat numberformat = new DecimalFormat("0.00");
 
 	/**
 	 * Create the panel.
