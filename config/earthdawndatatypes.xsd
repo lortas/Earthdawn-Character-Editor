@@ -332,6 +332,8 @@
 		<xs:attribute name="location" type="xs:string" default="self"/>
 		<xs:attribute name="kind" type="itemkind_type" default="undefined"/>
 		<xs:attribute name="virtual" type="yesno_type" default="no"/>
+		<xs:attribute name="blooddamage" type="unsigned_int" default="0"/>
+		<xs:attribute name="depatterningrate" type="unsigned_int" default="0"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
@@ -510,14 +512,6 @@
 		<xs:complexContent>
 			<xs:extension base="MAGICITEM_type">
 				<xs:attribute name="type" type="xs:string" default=""/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="BLOODCHARMITEM_type">
-		<xs:complexContent>
-			<xs:extension base="MAGICITEM_type">
-				<xs:attribute name="blooddamage" type="unsigned_int" default="0"/>
-				<xs:attribute name="depatterningrate" type="unsigned_int" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

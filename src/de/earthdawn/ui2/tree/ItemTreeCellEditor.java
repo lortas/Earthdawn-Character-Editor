@@ -11,7 +11,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
 import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.BLOODCHARMITEMType;
+import de.earthdawn.data.MAGICITEMType;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.THREADITEMType;
@@ -30,7 +30,7 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(WEAPONType.class,WeaponNodePanel.class);
 		registerEditors.put(ARMORType.class,ArmorNodePanel.class);
 		registerEditors.put(SHIELDType.class,ShieldNodePanel.class);
-		registerEditors.put(BLOODCHARMITEMType.class,BloodcharmNodePanel.class);
+		registerEditors.put(MAGICITEMType.class,BloodcharmNodePanel.class);
 		registerEditors.put(THREADITEMType.class,ThreadItemNodePanel.class);
 	}
 	

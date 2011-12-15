@@ -168,7 +168,7 @@ public class EDInventory extends JPanel {
 					JMenuItem menuitem = new JMenuItem("Add Bloodcharms");
 					menuitem.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
-							BLOODCHARMITEMType bloodcharm = new BLOODCHARMITEMType();
+							MAGICITEMType bloodcharm = new MAGICITEMType();
 							bloodcharm.setName("New Bloodcharm");
 							character.getBloodCharmItem().add(bloodcharm);
 							((ItemTreeModel) tree.getModel()).fireAdd(currentPath,bloodcharm, character.getBloodCharmItem().indexOf(bloodcharm));

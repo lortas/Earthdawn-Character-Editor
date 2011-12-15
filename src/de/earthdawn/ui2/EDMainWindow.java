@@ -546,9 +546,6 @@ public class EDMainWindow {
 			if(co.getClass() == EDItems.class){
 				((EDItems)co).setCharacter(character);
 			}
-			if(co.getClass() == EDBloodCharmItems.class){
-				((EDBloodCharmItems)co).setCharacter(character);
-			}
 			if(co.getClass() == EDWeapons.class){
 				((EDWeapons)co).setCharacter(character);
 			}

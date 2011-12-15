@@ -405,7 +405,7 @@ public class ECEPdfExporter {
 		}
 
 		int counterBloodCharms=0;
-		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+		for( MAGICITEMType item : character.getBloodCharmItem() ) {
 			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
 			if( item.getUsed().equals(YesnoType.YES)) {
 				acroFields.setField( "BloodMagicDamage."+counterBloodCharms, String.valueOf(item.getBlooddamage()) );
@@ -669,7 +669,7 @@ public class ECEPdfExporter {
 		}
 
 		int counterBloodCharms=0;
-		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+		for( MAGICITEMType item : character.getBloodCharmItem() ) {
 			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
 			if( item.getUsed().equals(YesnoType.YES)) {
 				acroFields.setField( "BloodMagicDamage."+counterBloodCharms, String.valueOf(item.getBlooddamage()) );
@@ -898,7 +898,7 @@ public class ECEPdfExporter {
 		}
 
 		int counterBloodCharms=0;
-		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+		for( MAGICITEMType item : character.getBloodCharmItem() ) {
 			acroFields.setField( "BloodMagicType."+counterBloodCharms, item.getName() );
 			String used ="";
 			if( item.getUsed().equals(YesnoType.YES)) used=" (in use)";
