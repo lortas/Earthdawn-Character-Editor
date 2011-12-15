@@ -58,14 +58,14 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="AMMUNITION" type="edt:AMMUNITION_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MAGICITEM" type="edt:MAGICITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PATTERNITEM" type="edt:PATTERNITEM_type"/>
-				<xs:element minOccurs="0" maxOccurs="unbounded" name="BLOODCHARMITEM" type="edt:BLOODCHARMITEM_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="BLOODCHARMITEM" type="edt:MAGICITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="THREADITEM" type="edt:THREADITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="COINS" type="edt:COINS_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="ITEM" type="edt:ITEM_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="KARMA" type="edt:KARMA_type"/>
-				<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string"/>
-				<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string"/>
-				<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string" default=""/>
+				<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string" default=""/>
+				<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string" default=""/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PORTRAIT" type="edt:base64binary_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>

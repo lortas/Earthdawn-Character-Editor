@@ -425,7 +425,7 @@ public class ECEWorker {
 		}
 		calculatedLP.getUSEDSTARTRANKS().setSpells(-freespellranks);
 
-		for( BLOODCHARMITEMType item : character.getBloodCharmItem() ) {
+		for( MAGICITEMType item : character.getBloodCharmItem() ) {
 			if( item.getUsed().equals(YesnoType.YES) ) {
 				death.setAdjustment(death.getAdjustment()-item.getBlooddamage());
 				unconsciousness.setAdjustment(unconsciousness.getAdjustment()-item.getBlooddamage());

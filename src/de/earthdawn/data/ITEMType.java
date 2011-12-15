@@ -30,6 +30,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
  *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}itemkind_type" default="undefined" />
  *       &lt;attribute name="virtual" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
+ *       &lt;attribute name="blooddamage" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="depatterningrate" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -61,6 +63,10 @@ public class ITEMType {
     protected ItemkindType kind;
     @XmlAttribute
     protected YesnoType virtual;
+    @XmlAttribute
+    protected Integer blooddamage;
+    @XmlAttribute
+    protected Integer depatterningrate;
     @XmlAttribute
     protected String bookref;
 
@@ -214,6 +220,62 @@ public class ITEMType {
      */
     public void setVirtual(YesnoType value) {
         this.virtual = value;
+    }
+
+    /**
+     * Gets the value of the blooddamage property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBlooddamage() {
+        if (blooddamage == null) {
+            return  0;
+        } else {
+            return blooddamage;
+        }
+    }
+
+    /**
+     * Sets the value of the blooddamage property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBlooddamage(Integer value) {
+        this.blooddamage = value;
+    }
+
+    /**
+     * Gets the value of the depatterningrate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getDepatterningrate() {
+        if (depatterningrate == null) {
+            return  0;
+        } else {
+            return depatterningrate;
+        }
+    }
+
+    /**
+     * Sets the value of the depatterningrate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setDepatterningrate(Integer value) {
+        this.depatterningrate = value;
     }
 
     /**

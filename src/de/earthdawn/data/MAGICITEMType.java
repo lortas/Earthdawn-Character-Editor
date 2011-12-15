@@ -37,7 +37,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "MAGICITEM_type")
 @XmlSeeAlso({
     PATTERNITEMType.class,
-    BLOODCHARMITEMType.class,
     THREADITEMType.class
 })
 public class MAGICITEMType

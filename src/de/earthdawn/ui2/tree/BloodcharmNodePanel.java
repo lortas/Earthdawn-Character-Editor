@@ -1,9 +1,8 @@
 package de.earthdawn.ui2.tree;
 
-import de.earthdawn.data.BLOODCHARMITEMType;
+import de.earthdawn.data.MAGICITEMType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.data.ItemkindType;
-
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
@@ -16,8 +15,7 @@ import java.awt.Font;
 import javax.swing.border.LineBorder;
 import net.miginfocom.swing.MigLayout;
 
-
-public class BloodcharmNodePanel extends AbstractNodePanel<BLOODCHARMITEMType> {
+public class BloodcharmNodePanel extends AbstractNodePanel<MAGICITEMType> {
 	private static final long serialVersionUID = 1L;
 	private JLabel lblName;
 	private JTextField textFieldName;
@@ -37,7 +35,7 @@ public class BloodcharmNodePanel extends AbstractNodePanel<BLOODCHARMITEMType> {
 	private JLabel lblEnchantingDn;
 	private JSpinner spinnerEnchantingdifficultynumber;
 
-	public BloodcharmNodePanel(BLOODCHARMITEMType node) {
+	public BloodcharmNodePanel(MAGICITEMType node) {
 		super(node);
 		this.setPreferredSize(new Dimension(770, 91));
 		//this.setOpaque(true);

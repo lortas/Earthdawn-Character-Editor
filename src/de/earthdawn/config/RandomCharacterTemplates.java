@@ -279,7 +279,7 @@ public class RandomCharacterTemplates {
 					}
 				}
 				if( found ) continue;
-				for( BLOODCHARMITEMType item : items.getBLOODCHARMITEM() ) {
+				for( MAGICITEMType item : items.getBLOODCHARMITEM() ) {
 					if( item.getName().equals(itemname) ) {
 						character.getBloodCharmItem().add(item);
 						found=true;

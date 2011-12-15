@@ -1075,6 +1075,20 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	public void setDESCRIPTION(String description) {
+		character.setDESCRIPTION(description);
+	}
+
+	public String getCOMMENT() {
+		String result=character.getCOMMENT();
+		if( result == null ) return "";
+		return result;
+	}
+
+	public void setCOMMENT(String comment) {
+		character.setCOMMENT(comment);
+	}
+
 	public List<MAGICITEMType> getMagicItem() {
 		return character.getMAGICITEM();
 	}
@@ -1083,7 +1097,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		return character.getTHREADITEM();
 	}
 
-	public List<BLOODCHARMITEMType> getBloodCharmItem() {
+	public List<MAGICITEMType> getBloodCharmItem() {
 		return character.getBLOODCHARMITEM();
 	}
 

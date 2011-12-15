@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AMMUNITION" type="{http://earthdawn.com/datatypes}AMMUNITION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="MAGICITEM" type="{http://earthdawn.com/datatypes}MAGICITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="PATTERNITEM" type="{http://earthdawn.com/datatypes}PATTERNITEM_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="BLOODCHARMITEM" type="{http://earthdawn.com/datatypes}BLOODCHARMITEM_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="BLOODCHARMITEM" type="{http://earthdawn.com/datatypes}MAGICITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="THREADITEM" type="{http://earthdawn.com/datatypes}THREADITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ITEM" type="{http://earthdawn.com/datatypes}ITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -74,7 +74,7 @@ public class ITEMS {
     @XmlElement(name = "PATTERNITEM", namespace = "http://earthdawn.com/items")
     protected List<PATTERNITEMType> patternitem;
     @XmlElement(name = "BLOODCHARMITEM", namespace = "http://earthdawn.com/items")
-    protected List<BLOODCHARMITEMType> bloodcharmitem;
+    protected List<MAGICITEMType> bloodcharmitem;
     @XmlElement(name = "THREADITEM", namespace = "http://earthdawn.com/items")
     protected List<THREADITEMType> threaditem;
     @XmlElement(name = "ITEM", namespace = "http://earthdawn.com/items")
@@ -274,13 +274,13 @@ public class ITEMS {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link BLOODCHARMITEMType }
+     * {@link MAGICITEMType }
      * 
      * 
      */
-    public List<BLOODCHARMITEMType> getBLOODCHARMITEM() {
+    public List<MAGICITEMType> getBLOODCHARMITEM() {
         if (bloodcharmitem == null) {
-            bloodcharmitem = new ArrayList<BLOODCHARMITEMType>();
+            bloodcharmitem = new ArrayList<MAGICITEMType>();
         }
         return this.bloodcharmitem;
     }
