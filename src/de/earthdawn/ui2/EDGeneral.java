@@ -3,6 +3,7 @@ package de.earthdawn.ui2;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
 import javax.imageio.ImageIO;
@@ -15,12 +16,13 @@ import java.awt.Graphics;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.image.BufferedImage;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
 import javax.swing.JTextArea;
@@ -29,7 +31,6 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JScrollPane;
-import javax.swing.JEditorPane;
 
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
@@ -57,6 +58,9 @@ public class EDGeneral extends JPanel {
 	private NumberFormat numberformat = new DecimalFormat("0.00");
 	private JTextArea charComment;
 	private JTextArea charDescription;
+	private JLabel lblRaceAbilities;
+	private JTextField txtRaceabilities;
+	private JRadioButton rdbtnNoGender;
 
 	/**
 	 * Create the panel.
@@ -65,7 +69,7 @@ public class EDGeneral extends JPanel {
 		setOpaque(false);
 		JLabel lblSizeMeasure = new JLabel("ft");
 		JLabel lblWeigtmeasure = new JLabel("lb");
-		setLayout(new MigLayout("", "[110px][60px][100px][15px][364.00px,grow,fill]", "[20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][]"));
+		setLayout(new MigLayout("", "[110px][150px,grow][15px][364.00px,grow,fill]", "[20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][][]"));
 		lblCharactername = new JLabel("Charactername");
 		add(lblCharactername, "cell 0 0,alignx left,aligny center");
 
@@ -79,7 +83,7 @@ public class EDGeneral extends JPanel {
 
 		textFieldName.setColumns(10);
 		textFieldName.setOpaque(false);
-		add(textFieldName, "cell 1 0 3 1,growx,aligny top");
+		add(textFieldName, "cell 1 0 2 1,growx,aligny top");
 
 		lblRace = new JLabel("Race");
 		add(lblRace, "cell 0 1,alignx left,aligny center");
@@ -91,7 +95,7 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		comboBoxRace.setOpaque(false);
-		add(comboBoxRace, "cell 1 1 3 1,growx,aligny top");
+		add(comboBoxRace, "cell 1 1 2 1,growx,aligny top");
 		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers()) {
 			comboBoxRace.addItem(n.getName());
 		}
@@ -99,7 +103,7 @@ public class EDGeneral extends JPanel {
 		JScrollPane charDescriptionPanel = new JScrollPane();
 		charDescriptionPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Description", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
 		charDescriptionPanel.setOpaque(false);
-		add(charDescriptionPanel, "cell 4 0 1 5,grow");
+		add(charDescriptionPanel, "cell 3 0 1 6,grow");
 
 		charDescription = new JTextArea();
 		charDescription.setLineWrap(true);
@@ -112,10 +116,28 @@ public class EDGeneral extends JPanel {
 		charDescriptionPanel.setViewportView(charDescription);
 		charDescriptionPanel.getViewport().setOpaque(false);
 
+		rdbtnFemale = new JRadioButton("Female");
+		rdbtnFemale.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				do_rdbtnSex_itemStateChanged(arg0);
+			}
+		});
+		rdbtnFemale.setOpaque(false);
+		add(rdbtnFemale, "cell 1 3,alignx left,aligny center");
+		
+		rdbtnNoGender = new JRadioButton("No Gender");
+		rdbtnNoGender.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				do_rdbtnSex_itemStateChanged(arg0);
+			}
+		});
+		rdbtnNoGender.setOpaque(false);
+		add(rdbtnNoGender, "cell 1 4,alignx left,aligny center");
+
 		JScrollPane charCommentPanel = new JScrollPane();
 		charCommentPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Comment", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
 		charCommentPanel.setOpaque(false);
-		add(charCommentPanel, "cell 4 5 1 4,grow");
+		add(charCommentPanel, "cell 3 6 1 5,grow");
 
 		charComment = new JTextArea();
 		charComment.setLineWrap(true);
@@ -135,23 +157,14 @@ public class EDGeneral extends JPanel {
 		rdbtnMale = new JRadioButton("Male");
 		rdbtnMale.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
-				do_rdbtnMale_itemStateChanged(arg0);
+				do_rdbtnSex_itemStateChanged(arg0);
 			}
 		});
 		rdbtnMale.setOpaque(false);
-		add(rdbtnMale, "cell 1 2,alignx center,aligny center");
-
-		rdbtnFemale = new JRadioButton("Female");
-		rdbtnFemale.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent arg0) {
-				do_rdbtnFemale_itemStateChanged(arg0);
-			}
-		});
-		rdbtnFemale.setOpaque(false);
-		add(rdbtnFemale, "cell 2 2,alignx center,aligny center");
+		add(rdbtnMale, "cell 1 2,alignx left,aligny center");
 
 		lblAge = new JLabel("Age");
-		add(lblAge, "cell 0 3,alignx left,aligny center");
+		add(lblAge, "cell 0 5,alignx left,aligny center");
 
 		textFieldAge = new JTextField();
 		textFieldAge.addCaretListener(new CaretListener() {
@@ -161,10 +174,10 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldAge.setColumns(10);
 		textFieldAge.setOpaque(false);
-		add(textFieldAge, "cell 1 3 3 1,growx,aligny top");
+		add(textFieldAge, "cell 1 5 2 1,growx,aligny top");
 
 		lblSize = new JLabel("Size");
-		add(lblSize, "cell 0 4,alignx left,aligny center");
+		add(lblSize, "cell 0 6,alignx left,aligny center");
 
 		textFieldSize = new JTextField();
 		textFieldSize.addCaretListener(new CaretListener() {
@@ -174,10 +187,10 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldSize.setColumns(10);
 		textFieldSize.setOpaque(false);
-		add(textFieldSize, "cell 1 4 2 1,growx,aligny top");
+		add(textFieldSize, "cell 1 6,growx,aligny top");
 
 		lblWeight = new JLabel("Weight");
-		add(lblWeight, "cell 0 5,alignx left,aligny center");
+		add(lblWeight, "cell 0 7,alignx left,aligny center");
 
 		textFieldWeight = new JTextField();
 		textFieldWeight.addCaretListener(new CaretListener() {
@@ -187,12 +200,12 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldWeight.setColumns(10);
 		textFieldWeight.setOpaque(false);
-		add(textFieldWeight, "cell 1 5 2 1,growx,aligny top");
+		add(textFieldWeight, "cell 1 7,growx,aligny top");
 
 		lblSkincolor = new JLabel("Skincolor");
-		add(lblSkincolor, "cell 0 6,alignx left,aligny center");
-		add(lblSizeMeasure, "cell 3 4,alignx left,aligny center");
-		add(lblWeigtmeasure, "cell 3 5,alignx left,aligny center");
+		add(lblSkincolor, "cell 0 8,alignx left,aligny center");
+		add(lblSizeMeasure, "cell 2 6,alignx left,aligny center");
+		add(lblWeigtmeasure, "cell 2 7,alignx left,aligny center");
 
 		textFieldSkincolor = new JTextField();
 		textFieldSkincolor.addCaretListener(new CaretListener() {
@@ -202,10 +215,10 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldSkincolor.setColumns(10);
 		textFieldSkincolor.setOpaque(false);
-		add(textFieldSkincolor, "cell 1 6 3 1,growx,aligny top");
+		add(textFieldSkincolor, "cell 1 8 2 1,growx,aligny top");
 
 		lblEyecolor = new JLabel("Eyecolor");
-		add(lblEyecolor, "cell 0 7,alignx left,aligny center");
+		add(lblEyecolor, "cell 0 9,alignx left,aligny center");
 
 		textFieldEyecolor = new JTextField();
 		textFieldEyecolor.addCaretListener(new CaretListener() {
@@ -215,10 +228,10 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldEyecolor.setColumns(10);
 		textFieldEyecolor.setOpaque(false);
-		add(textFieldEyecolor, "cell 1 7 3 1,growx,aligny top");
+		add(textFieldEyecolor, "cell 1 9 2 1,growx,aligny top");
 
 		lblHaircolor = new JLabel("Haircolor");
-		add(lblHaircolor, "cell 0 8,alignx left,aligny center");
+		add(lblHaircolor, "cell 0 10,alignx left,aligny center");
 
 		textFieldHaircolor = new JTextField();
 		textFieldHaircolor.addCaretListener(new CaretListener() {
@@ -228,7 +241,21 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldHaircolor.setColumns(10);
 		textFieldHaircolor.setOpaque(false);
-		add(textFieldHaircolor, "cell 1 8 3 1,growx,aligny top");
+		add(textFieldHaircolor, "cell 1 10 2 1,growx,aligny top");
+
+		lblRaceAbilities = new JLabel("Race Abilities");
+		add(lblRaceAbilities, "cell 0 11,alignx left,aligny center");
+
+		txtRaceabilities = new JTextField();
+		txtRaceabilities.setEditable(false);
+		add(txtRaceabilities, "cell 1 11 3 1,growx,aligny center");
+		txtRaceabilities.setColumns(10);
+		txtRaceabilities.setOpaque(false);
+
+		ButtonGroup group = new ButtonGroup();
+		group.add(rdbtnMale);
+		group.add(rdbtnFemale);
+		group.add(rdbtnNoGender);
 	}
 
 	public void setCharacter(CharacterContainer character) {
@@ -242,11 +269,14 @@ public class EDGeneral extends JPanel {
 		textFieldHaircolor.setText(character.getAppearance().getHair());
 		charDescription.setText(character.getDESCRIPTION());
 		charComment.setText(character.getCOMMENT());
+		txtRaceabilities.setText(character.getAbilities());
 
 		if(character.getAppearance().getGender().equals(GenderType.MALE)){
 			rdbtnMale.getModel().setSelected(true);
-		} else{
+		} else if(character.getAppearance().getGender().equals(GenderType.FEMALE)){
 			rdbtnFemale.getModel().setSelected(true);
+		} else {
+			rdbtnNoGender.getModel().setSelected(true);
 		}
 
 		comboBoxRace.setSelectedItem(character.getAppearance().getRace());
@@ -262,28 +292,26 @@ public class EDGeneral extends JPanel {
 				character.getAppearance().setRace((String)arg0.getItem());
 				ECEWorker worker = new ECEWorker();
 				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				txtRaceabilities.setText(character.getAbilities());
+				character.refesh();
 			}
 		}
 	}
 
-
-	protected void do_rdbtnMale_itemStateChanged(ItemEvent arg0) {
-		rdbtnFemale.getModel().setSelected(!((JRadioButton)arg0.getItem()).getModel().isSelected());
+	protected void do_rdbtnSex_itemStateChanged(ItemEvent arg0) {
+		if( character == null ) return;
+		JRadioButton radioButton = (JRadioButton)arg0.getItem();
+		if( radioButton == null ) return;
+		GenderType gender = GenderType.MINUS;
+		if( radioButton.equals(rdbtnFemale)) gender = GenderType.FEMALE;
+		if( radioButton.equals(rdbtnMale)) gender = GenderType.MALE;
+		APPEARANCEType appearance = character.getAppearance();
+		if( appearance.getGender().equals(gender) ) return;
+		appearance.setGender(gender);
+		ECEWorker worker = new ECEWorker();
+		worker.verarbeiteCharakter(character.getEDCHARACTER());		
+		character.refesh();
 	}
-	protected void do_rdbtnFemale_itemStateChanged(ItemEvent arg0) {
-		rdbtnMale.getModel().setSelected(!((JRadioButton)arg0.getItem()).getModel().isSelected());
-		if(character != null){
-			if (((JRadioButton)arg0.getItem()).getModel().isSelected()) {
-				character.getAppearance().setGender(GenderType.FEMALE);
-			} else {
-				character.getAppearance().setGender(GenderType.MALE);
-			}
-			ECEWorker worker = new ECEWorker();
-			worker.verarbeiteCharakter(character.getEDCHARACTER());		
-		}
-	}
-
-
 
 	protected void do_textFieldName_caretUpdate(CaretEvent arg0) {
 		if(character != null){
