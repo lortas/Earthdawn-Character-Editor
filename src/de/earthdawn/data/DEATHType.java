@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="DEATH_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="base" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="adjustment" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="value" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="base" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="adjustment" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+ *       &lt;attribute name="value" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -37,42 +37,66 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DEATH_type")
 public class DEATHType {
 
-    @XmlAttribute(required = true)
-    protected int base;
-    @XmlAttribute(required = true)
-    protected int adjustment;
+    @XmlAttribute
+    protected Integer base;
+    @XmlAttribute
+    protected Integer adjustment;
     @XmlAttribute
     protected Integer value;
 
     /**
      * Gets the value of the base property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getBase() {
-        return base;
+        if (base == null) {
+            return  0;
+        } else {
+            return base;
+        }
     }
 
     /**
      * Sets the value of the base property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setBase(int value) {
+    public void setBase(Integer value) {
         this.base = value;
     }
 
     /**
      * Gets the value of the adjustment property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getAdjustment() {
-        return adjustment;
+        if (adjustment == null) {
+            return  0;
+        } else {
+            return adjustment;
+        }
     }
 
     /**
      * Sets the value of the adjustment property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setAdjustment(int value) {
+    public void setAdjustment(Integer value) {
         this.adjustment = value;
     }
 
@@ -84,8 +108,12 @@ public class DEATHType {
      *     {@link Integer }
      *     
      */
-    public Integer getValue() {
-        return value;
+    public int getValue() {
+        if (value == null) {
+            return  0;
+        } else {
+            return value;
+        }
     }
 
     /**

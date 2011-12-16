@@ -30,7 +30,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DEATH" type="{http://earthdawn.com/datatypes}DEATH_type"/>
  *         &lt;element name="WOUNDS" type="{http://earthdawn.com/datatypes}WOUND_type"/>
  *       &lt;/sequence>
- *       &lt;attribute name="damage" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="damage" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="blooddamage" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="depatterningrate" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -55,8 +57,12 @@ public class HEALTHType {
     protected DEATHType death;
     @XmlElement(name = "WOUNDS", required = true)
     protected WOUNDType wounds;
-    @XmlAttribute(required = true)
-    protected int damage;
+    @XmlAttribute
+    protected Integer damage;
+    @XmlAttribute
+    protected Integer blooddamage;
+    @XmlAttribute
+    protected Integer depatterningrate;
 
     /**
      * Gets the value of the recovery property.
@@ -157,17 +163,85 @@ public class HEALTHType {
     /**
      * Gets the value of the damage property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getDamage() {
-        return damage;
+        if (damage == null) {
+            return  0;
+        } else {
+            return damage;
+        }
     }
 
     /**
      * Sets the value of the damage property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setDamage(int value) {
+    public void setDamage(Integer value) {
         this.damage = value;
+    }
+
+    /**
+     * Gets the value of the blooddamage property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getBlooddamage() {
+        if (blooddamage == null) {
+            return  0;
+        } else {
+            return blooddamage;
+        }
+    }
+
+    /**
+     * Sets the value of the blooddamage property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setBlooddamage(Integer value) {
+        this.blooddamage = value;
+    }
+
+    /**
+     * Gets the value of the depatterningrate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getDepatterningrate() {
+        if (depatterningrate == null) {
+            return  0;
+        } else {
+            return depatterningrate;
+        }
+    }
+
+    /**
+     * Sets the value of the depatterningrate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setDepatterningrate(Integer value) {
+        this.depatterningrate = value;
     }
 
 }

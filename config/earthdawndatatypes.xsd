@@ -321,9 +321,9 @@
 		<xs:attribute name="penalties" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="DEATH_type">
-		<xs:attribute name="base" type="unsigned_int" use="required"/>
-		<xs:attribute name="adjustment" type="xs:int" use="required"/>
-		<xs:attribute name="value" type="unsigned_int"/>
+		<xs:attribute name="base" type="unsigned_int" default="0"/>
+		<xs:attribute name="adjustment" type="xs:int" default="0"/>
+		<xs:attribute name="value" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -540,7 +540,9 @@
 			<xs:element maxOccurs="1" minOccurs="1" name="DEATH" type="DEATH_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="WOUNDS" type="WOUND_type"/>
 		</xs:sequence>
-		<xs:attribute name="damage" type="xs:int" use="required"/>
+		<xs:attribute name="damage" type="unsigned_int" default="0"/>
+		<xs:attribute name="blooddamage" type="unsigned_int" default="0"/>
+		<xs:attribute name="depatterningrate" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="WEAPON_type">
 		<xs:complexContent>
