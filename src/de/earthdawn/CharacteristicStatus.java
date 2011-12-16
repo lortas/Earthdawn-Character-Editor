@@ -160,6 +160,8 @@ public class CharacteristicStatus {
 
 		node = new HashMap<String,Object>();
 		node.put( "damage", character.getHealth().getDamage() );
+		node.put( "blooddamage", character.getHealth().getBlooddamage() );
+		node.put( "depatterningrate", character.getHealth().getDepatterningrate() );
 		root.put("HEALTH", node);
 
 		node = new HashMap<String,Object>();

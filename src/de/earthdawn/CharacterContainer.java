@@ -1591,4 +1591,31 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		return bereich-1;
 	}
+
+	public void clearBloodDamage() {
+		HEALTHType health = getHealth();
+		// Ermittle aktuellen Blutschaden um die Anpassung der Todes und Bewustlosigkeitsschwelle zu korrigieren
+		int blooddamge=health.getBlooddamage();
+		DEATHType death = getDeath();
+		death.setValue(death.getValue()+blooddamge);
+		death.setAdjustment(death.getAdjustment()+blooddamge);
+		DEATHType unconsciousness = getUnconsciousness();
+		unconsciousness.setValue(unconsciousness.getValue()+blooddamge);
+		unconsciousness.setAdjustment(unconsciousness.getAdjustment()+blooddamge);
+		// Jetzt setze den Blutschaden auf 0
+		health.setBlooddamage(0);
+		// Ohne Blutschaden gibts auch keine "Zerfallsrate"
+		health.setDepatterningrate(0);
+	}
+
+	public void addBloodDamgeFrom(ITEMType item) {
+		HEALTHType health = getHealth();
+		int itemBloodDamge = item.getBlooddamage();
+		health.setBlooddamage(health.getBlooddamage()+itemBloodDamge);
+		health.setDepatterningrate(health.getDepatterningrate()+item.getDepatterningrate());
+		DEATHType death = health.getDEATH();
+		death.setAdjustment(death.getAdjustment()-itemBloodDamge);
+		DEATHType unconsciousness = health.getUNCONSCIOUSNESS();
+		unconsciousness.setAdjustment(unconsciousness.getAdjustment()-itemBloodDamge);
+	}
 }
