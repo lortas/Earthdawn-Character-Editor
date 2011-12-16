@@ -245,11 +245,17 @@ tr.tfoot { font-style:italic; }
 				</tr>
 				<tr>
 					<td>Current Wounds</td>
-					<td>${HEALTH.WOUNDS.normal}</td>
+					<td>
+						${HEALTH.WOUNDS.normal}
+						<#if HEALTH.WOUNDS.blood != 0>(+${HEALTH.WOUNDS.blood})</#if>
+					</td>
 				</tr>
 				<tr>
-					<td>Bloodwounds</td>
-					<td>${HEALTH.WOUNDS.blood}</td>
+					<td>Blood Damage</td>
+					<td>
+						${HEALTH.blooddamage}
+						<#if HEALTH.depatterningrate != 0>(${HEALTH.depatterningrate})</#if>
+					</td>
 				</tr>
 				<tr>
 					<td>Wound Penalties</td>

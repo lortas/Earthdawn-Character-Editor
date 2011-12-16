@@ -123,6 +123,7 @@ public class ECEWorker {
 
 		// **HEALTH**
 		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(characterAttributes.get("TOU").getCurrentvalue());
+		character.clearBloodDamage();
 		DEATHType death=character.getDeath();
 		DEATHType unconsciousness=character.getUnconsciousness();
 		death.setBase(newhealth.getDeath());
@@ -309,6 +310,9 @@ public class ECEWorker {
 				mysticalarmor+=armor.getMysticarmor();
 				physicalarmor+=armor.getPhysicalarmor();
 				protectionpenalty+=armor.getPenalty();
+				if( armor.getVirtual().equals(YesnoType.NO) ) {
+					character.addBloodDamgeFrom(armor);
+				}
 			}
 			if(armor.getKind().equals(ItemkindType.UNDEFINED)) armor.setKind(ItemkindType.ARMOR);
 		}
@@ -425,18 +429,27 @@ public class ECEWorker {
 		}
 		calculatedLP.getUSEDSTARTRANKS().setSpells(-freespellranks);
 
-		for( MAGICITEMType item : character.getBloodCharmItem() ) {
-			if( item.getUsed().equals(YesnoType.YES) ) {
-				death.setAdjustment(death.getAdjustment()-item.getBlooddamage());
-				unconsciousness.setAdjustment(unconsciousness.getAdjustment()-item.getBlooddamage());
+		for( ITEMType item : character.getBloodCharmItem() ) {
+			if( item.getUsed().equals(YesnoType.YES) && item.getVirtual().equals(YesnoType.NO) ) {
+				character.addBloodDamgeFrom(item);
+			}
+		}
+		for( ITEMType item : character.getItems() ) {
+			if( item.getUsed().equals(YesnoType.YES) && item.getVirtual().equals(YesnoType.NO) ) {
+				character.addBloodDamgeFrom(item);
 			}
 		}
 
 		List<TALENTType> firstDisciplineOptionalTalents = null;
 		if( ! allDisciplines.isEmpty() ) firstDisciplineOptionalTalents = allDisciplines.get(0).getOPTIONALTALENT();
 		for( THREADITEMType item : character.getThreadItem() ) {
+			// Falls es Fadengegenstände gibt die man mit Blutmagie noch erst aktivieren muss
+			// prüfe, ob genutzt
+			if( item.getUsed().equals(YesnoType.YES) && item.getVirtual().equals(YesnoType.NO) ) {
+				character.addBloodDamgeFrom(item);
+			}
 			int rank = item.getWeaventhreadrank();
-			// If no thread is weaven to the this thread item, skip it.
+			// If no thread is weaven to the this thread item, skip the rest
 			if( rank < 1 ) continue;
 			THREADRANKType threadrank = item.getTHREADRANK().get(rank-1);
 			while( (threadrank==null) && (rank>1) ) {
