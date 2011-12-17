@@ -38,7 +38,7 @@ public class EDInventory extends JPanel {
 
 	public CharacterContainer getCharacter() {
 		return character;
-		
+
 	}
 
 	public void setCharacter(CharacterContainer character) {	
@@ -103,7 +103,7 @@ public class EDInventory extends JPanel {
 			JPopupMenu popup = new JPopupMenu();
 			currentPath = tree.getPathForLocation(event.getX(), event.getY());
 			currentNode = currentPath.getLastPathComponent();
-			
+
 			// Popup for group nodes
 			if(currentNode instanceof String){
 				String str = (String)currentNode;
@@ -134,7 +134,7 @@ public class EDInventory extends JPanel {
 						}
 					});
 					popup.add(menuitem);
-				}		
+				}
 				//add threaditem
 				if(str.equals("Thread Items")){
 					JMenuItem menuitem = new JMenuItem("Add Thread Item");
@@ -148,7 +148,7 @@ public class EDInventory extends JPanel {
 						}
 					});
 					popup.add(menuitem);
-				}	
+				}
 				// add armor
 				if(str.equals("Armor")){
 					JMenuItem menuitem = new JMenuItem("Add Armor");
@@ -162,7 +162,7 @@ public class EDInventory extends JPanel {
 						}
 					});
 					popup.add(menuitem);
-				}	
+				}
 				// add bloodcharm
 				if(str.equals("Bloodcharms")){
 					JMenuItem menuitem = new JMenuItem("Add Bloodcharms");
@@ -176,10 +176,9 @@ public class EDInventory extends JPanel {
 						}
 					});
 					popup.add(menuitem);
-				}				
-				
+				}
 			}
-			
+
 			//remove
 			Object parent = currentPath.getParentPath().getLastPathComponent();
 			if(parent instanceof String){
@@ -192,13 +191,12 @@ public class EDInventory extends JPanel {
 							List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
 							temp.remove(currentNode); 
 							((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode, 0);
-							
 						}
 					});
 					popup.add(menuitem);	
 				}
 			}
-			
+
 			tree.add(popup);
 			popup.show(tree, event.getX(), event.getY());
 		}
