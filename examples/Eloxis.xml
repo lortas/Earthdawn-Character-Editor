@@ -18,7 +18,7 @@
 		<RECOVERY testsperday="3" dice="2d6" step="8"/>
 		<UNCONSCIOUSNESS value="81" adjustment="46" base="35"/>
 		<DEATH value="103" adjustment="60" base="43"/>
-		<WOUNDS blood="3" normal="0" threshold="12"/>
+		<WOUNDS blood="0" normal="0" threshold="12"/>
 	</ns3:HEALTH>
 	<ns3:MOVEMENT ground="8" flight="0"/>
 	<ns3:INITIATIVE modification="-2" base="8" dice="d10" step="6"/>
