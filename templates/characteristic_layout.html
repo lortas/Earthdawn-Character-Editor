@@ -251,7 +251,10 @@ tr.tfoot { font-style:italic; }
 					</td>
 				</tr>
 				<tr>
-					<td>Blood Damage</td>
+					<td>
+						Blood Damage
+						<#if HEALTH.depatterningrate != 0>(DR)</#if>
+					</td>
 					<td>
 						${HEALTH.blooddamage}
 						<#if HEALTH.depatterningrate != 0>(${HEALTH.depatterningrate})</#if>
