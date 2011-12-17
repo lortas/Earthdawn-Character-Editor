@@ -15,7 +15,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 import net.miginfocom.swing.MigLayout;
-import javax.swing.SpinnerModel;
 
 public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 	private static final long serialVersionUID = -8722091567075441494L;
@@ -137,11 +136,7 @@ public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 		nodeObject.setBlooddamage((Integer)spinnerBloodDamage.getValue());
 		nodeObject.setDepatterningrate((Integer)spinnerDepatterningrate.getValue());
 		nodeObject.setBookref(textFieldBookRef.getText());
-		if(chckbxUsed.isSelected()){
-			nodeObject.setUsed(YesnoType.YES);
-		}
-		else{
-			nodeObject.setUsed(YesnoType.NO);
-		}
+		if(chckbxUsed.isSelected()) nodeObject.setUsed(YesnoType.YES);
+		else nodeObject.setUsed(YesnoType.NO);
 	}
 }

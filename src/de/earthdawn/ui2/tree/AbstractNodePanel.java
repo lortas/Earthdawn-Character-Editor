@@ -14,10 +14,8 @@ public abstract class AbstractNodePanel<Type> extends JPanel {
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		this.setOpaque(false);
 	}
-	
+
 	public abstract void updateObject();
-		
-	
 
 	public void setNodeObject(Type nodeObject) {
 		this.nodeObject = nodeObject;
@@ -26,6 +24,4 @@ public abstract class AbstractNodePanel<Type> extends JPanel {
 	public Type getNodeObject() {
 		return nodeObject;
 	}
-	
-
 }
