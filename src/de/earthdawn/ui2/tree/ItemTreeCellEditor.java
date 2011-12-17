@@ -30,7 +30,7 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(WEAPONType.class,WeaponNodePanel.class);
 		registerEditors.put(ARMORType.class,ArmorNodePanel.class);
 		registerEditors.put(SHIELDType.class,ShieldNodePanel.class);
-		registerEditors.put(MAGICITEMType.class,BloodcharmNodePanel.class);
+		registerEditors.put(MAGICITEMType.class,MagicitemNodePanel.class);
 		registerEditors.put(THREADITEMType.class,ThreadItemNodePanel.class);
 	}
 	
