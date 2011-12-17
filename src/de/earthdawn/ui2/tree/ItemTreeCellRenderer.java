@@ -13,10 +13,14 @@ import javax.swing.JTree;
 import javax.swing.tree.TreeCellRenderer;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ARMORType;
+import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.ITEMType;
+import de.earthdawn.data.MAGICITEMType;
+import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
+import de.earthdawn.data.YesnoType;
 
 public class ItemTreeCellRenderer implements TreeCellRenderer {
 	private HashMap<String, ImageIcon> treeIcons;
@@ -98,20 +102,44 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			}
 		}
 
-		if(value instanceof ITEMType){	
+		if(value instanceof ITEMType) {
 			ITEMType item = (ITEMType)value;
 			label.setText(item.getName());
 			label.setIcon((ImageIcon)treeIcons.get(item.getKind().toString()));
 		}
 
-		if (value instanceof WEAPONType){	
+		if (value instanceof WEAPONType) {
 			WEAPONType weapon = (WEAPONType)value;
-			label.setText(weapon.getName() +  " - (Damage: " +  weapon.getDamagestep() + ")" );
+			label.setText(weapon.getName() +  " - (Damage: " +  weapon.getDamagestep() + ")" + (weapon.getUsed().equals(YesnoType.YES)?" - inuse":"") );
 		}
 
-		if (value instanceof ARMORType){	
+		if (value instanceof ARMORType) {
 			ARMORType armor = (ARMORType)value;
-			label.setText(armor.getName() +  " - (" +  armor.getPhysicalarmor() + "/" + armor.getMysticarmor() + "/" + armor.getPenalty()  + ")" );
+			label.setText(armor.getName() +  " - (" +  armor.getPhysicalarmor() + "/" + armor.getMysticarmor() + "/" + armor.getPenalty()  + ")" + (armor.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+		}
+
+		if( value instanceof MAGICITEMType ) {
+			MAGICITEMType magicitem = (MAGICITEMType)value;
+			label.setText(magicitem.getName() +" - ("+ magicitem.getBlooddamage() +"/"+ magicitem.getDepatterningrate() +"/"+ magicitem.getEnchantingdifficultynumber() +")" + (magicitem.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+		}
+
+		if( value instanceof THREADITEMType ) {
+			THREADITEMType threaditem = (THREADITEMType)value;
+			label.setText(threaditem.getName() +" - ("+ threaditem.getSpelldefense() +"/"+ threaditem.getMaxthreads() +"/"+ threaditem.getWeaventhreadrank() +")" + (threaditem.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+		}
+
+		if( value instanceof TALENTABILITYType ) {
+			TALENTABILITYType ta = (TALENTABILITYType)value;
+			if( (ta.getLimitation() == null) || ta.getLimitation().isEmpty() ) {
+				label.setText(ta.getName() +" : "+ ta.getBonus());
+			} else {
+				label.setText(ta.getName() +" - "+ ta.getLimitation() +" : "+ ta.getBonus());
+			}
+		}
+
+		if( value instanceof DEFENSEABILITYType ) {
+			DEFENSEABILITYType da = (DEFENSEABILITYType)value;
+			label.setText(da.getKind().value() +" defense : "+ da.getBonus());
 		}
 
 		return label;
