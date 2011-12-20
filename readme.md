@@ -22,6 +22,41 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.36-20111220.zip ##
++ Bugs
+	+ if creating a new character the file handle will also be reset. So "Save" will no longer automatically overwrite the previous saved character
+	+ BloodDamage will no correct calculated
+	+ Ajfel+Mordom PDF form fields updated
++ FAQ file is now formatted as HTML
++ The Tabs Attributes and Disciplines have swapped their places
++ Additional column 'Dice' within the talent tabular and the attribute tabular
++ New column width for the columns of the talent tablle
++ If a armor item have an undefined type, it will now be set to 'ARMOR'
++ Inventory Tab
+	+ GUI layout of armor updated and enhanced
+	+ Items flagged as 'virtual' are now longer editable
+	+ GUI layout of blood charms updated and enhanced
+	+ GUI layout of items updated and enhanced
+	+ GUI layout of weapons updated and enhanced
+	+ MAGICITEMType, THREADITEMType, TALENTABILITYType, DEFENSEABILITYType will now be displayed if part of a thread item. Editing will follow later
++ The GUI Layout of the General Tab substantial updated
++ New edit fields with in the General Tab
+	+ Player name
+	+ Birth (day)
+	+ Description
+	+ Comment
+	+ Blood wound
+	+ No gender
++ Race abilities will now be shown on the General Tab, including those which have already take account by the editor
++ XML Schema enhanced
+	+ No extra BloodCharm Type any more. All Items can have blood damage
+	+ Blood charms are now from type MagicItem
+	+ The attributes of DEATHType are now longer requiered. The have now an default value
+	+ HEALTH enhanced with blooddamage and depatterningrate
++ New icon for item type 'AMMUNITION'
++ Example Character Eloxis updated.
++ Some more item kinds
++ New icons for ARTISAN, POT, LIGHT, TOOL, AMMUNITION, RATION, UNDEFINED, INSTRUMENT, GRIMOIRE
 ## EarthdawnCharacterEditor-0.35-20111201.zip ##
 + Bugs
 	+ Fixating column order of the tables skill, spell and talent
