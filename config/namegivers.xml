@@ -226,8 +226,7 @@
 		<ATTRIBUTE name="CHA" value="12" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
-		<DEFENSE kind="physical"/>
-		<DEFENSE kind="physical"/>
+		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>
 		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
