@@ -51,15 +51,28 @@ public class EDGeneral extends JPanel {
 	private JSpinner spinnerSize;
 	private JSpinner spinnerWeight;
 	private JSpinner spinnerAge;
+	private JTextField textFieldPlayer;
+	private JTextField textFieldBirth;
 
 	/**
 	 * Create the panel.
 	 */
 	public EDGeneral() {
 		setOpaque(false);
-		setLayout(new MigLayout("", "[110px][100px][15px,grow 10][364.00px,grow,fill]", "[20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[110px][100px,grow][15px,grow 10][364.00px,grow,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		
+		add(new JLabel("Playername"), "cell 0 0,alignx right,aligny center");
+		textFieldPlayer = new JTextField();
+		textFieldPlayer.addCaretListener(new CaretListener() {
+			public void caretUpdate(CaretEvent arg0) {
+				do_textFieldPlayer_caretUpdate(arg0);
+			}
+		});
+		textFieldPlayer.setColumns(10);
+		textFieldPlayer.setOpaque(false);
+		add(textFieldPlayer, "cell 1 0 2 1,growx,aligny center");
 
-		add(new JLabel("Charactername"), "cell 0 0,alignx left,aligny center");
+		add(new JLabel("Charactername"), "cell 0 1,alignx right,aligny center");
 		textFieldName = new JTextField();
 		textFieldName.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -68,9 +81,9 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldName.setColumns(10);
 		textFieldName.setOpaque(false);
-		add(textFieldName, "cell 1 0 2 1,growx,aligny top");
+		add(textFieldName, "cell 1 1 2 1,growx,aligny center");
 
-		add(new JLabel("Race"), "cell 0 1,alignx left,aligny center");
+		add(new JLabel("Race"), "cell 0 2,alignx right,aligny center");
 		comboBoxRace = new JComboBox();
 		comboBoxRace.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
@@ -78,7 +91,7 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		comboBoxRace.setOpaque(false);
-		add(comboBoxRace, "cell 1 1 2 1,growx,aligny top");
+		add(comboBoxRace, "cell 1 2 2 1,growx,aligny center");
 		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers()) {
 			comboBoxRace.addItem(n.getName());
 		}
@@ -86,7 +99,7 @@ public class EDGeneral extends JPanel {
 		JScrollPane charDescriptionPanel = new JScrollPane();
 		charDescriptionPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Description", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
 		charDescriptionPanel.setOpaque(false);
-		add(charDescriptionPanel, "cell 3 0 1 6,grow");
+		add(charDescriptionPanel, "cell 3 0 1 7,grow");
 
 		charDescription = new JTextArea();
 		charDescription.setLineWrap(true);
@@ -106,7 +119,7 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		rdbtnFemale.setOpaque(false);
-		add(rdbtnFemale, "cell 1 3,alignx left,aligny center");
+		add(rdbtnFemale, "cell 1 4,alignx left,aligny center");
 		
 		rdbtnNoGender = new JRadioButton("No Gender");
 		rdbtnNoGender.addItemListener(new ItemListener() {
@@ -115,12 +128,23 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		rdbtnNoGender.setOpaque(false);
-		add(rdbtnNoGender, "cell 1 4,alignx left,aligny center");
-		
+		add(rdbtnNoGender, "cell 1 5,alignx left,aligny center");
+
+		add(new JLabel("Birth"), "cell 0 6,alignx trailing,aligny center");
+		textFieldBirth = new JTextField();
+		textFieldBirth.addCaretListener(new CaretListener() {
+			public void caretUpdate(CaretEvent arg0) {
+				do_textFieldBirth_caretUpdate(arg0);
+			}
+		});
+		textFieldBirth.setOpaque(false);
+		textFieldBirth.setColumns(10);
+		add(textFieldBirth, "cell 1 6 2 1,growx,aligny center");
+
 		JScrollPane charCommentPanel = new JScrollPane();
 		charCommentPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Comment", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
 		charCommentPanel.setOpaque(false);
-		add(charCommentPanel, "cell 3 6 1 6,grow");
+		add(charCommentPanel, "cell 3 7 1 7,grow");
 
 		charComment = new JTextArea();
 		charComment.setLineWrap(true);
@@ -134,7 +158,7 @@ public class EDGeneral extends JPanel {
 		charCommentPanel.getViewport().setOpaque(false);
 		charCommentPanel.setOpaque(false);
 
-		add(new JLabel("Sex"), "cell 0 2,alignx left,aligny center");
+		add(new JLabel("Sex"), "cell 0 3,alignx right,aligny center");
 
 		rdbtnMale = new JRadioButton("Male");
 		rdbtnMale.addItemListener(new ItemListener() {
@@ -143,9 +167,9 @@ public class EDGeneral extends JPanel {
 			}
 		});
 		rdbtnMale.setOpaque(false);
-		add(rdbtnMale, "cell 1 2,alignx left,aligny center");
+		add(rdbtnMale, "cell 1 3,alignx left,aligny center");
 
-		add(new JLabel("Skincolor"), "cell 0 8,alignx left,aligny center");
+		add(new JLabel("Skincolor"), "cell 0 10,alignx right,aligny center");
 		textFieldSkincolor = new JTextField();
 		textFieldSkincolor.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -154,9 +178,9 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldSkincolor.setColumns(10);
 		textFieldSkincolor.setOpaque(false);
-		add(textFieldSkincolor, "cell 1 8 2 1,growx,aligny top");
+		add(textFieldSkincolor, "cell 1 10 2 1,growx,aligny center");
 
-		add(new JLabel("Eyecolor"), "cell 0 9,alignx left,aligny center");
+		add(new JLabel("Eyecolor"), "cell 0 11,alignx right,aligny center");
 		textFieldEyecolor = new JTextField();
 		textFieldEyecolor.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -165,9 +189,9 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldEyecolor.setColumns(10);
 		textFieldEyecolor.setOpaque(false);
-		add(textFieldEyecolor, "cell 1 9 2 1,growx,aligny top");
+		add(textFieldEyecolor, "cell 1 11 2 1,growx,aligny center");
 
-		add(new JLabel("Haircolor"), "cell 0 10,alignx left,aligny center");
+		add(new JLabel("Haircolor"), "cell 0 12,alignx right,aligny center");
 		textFieldHaircolor = new JTextField();
 		textFieldHaircolor.addCaretListener(new CaretListener() {
 			public void caretUpdate(CaretEvent arg0) {
@@ -176,10 +200,10 @@ public class EDGeneral extends JPanel {
 		});
 		textFieldHaircolor.setColumns(10);
 		textFieldHaircolor.setOpaque(false);
-		add(textFieldHaircolor, "cell 1 10 2 1,growx,aligny top");
+		add(textFieldHaircolor, "cell 1 12 2 1,growx,aligny center");
 
-		add(new JLabel("Size"), "cell 0 6,alignx left,aligny center");
-		add(new JLabel("foot"), "cell 2 6,alignx left,aligny center");
+		add(new JLabel("Size"), "cell 0 8,alignx right,aligny center");
+		add(new JLabel("foot"), "cell 2 8,alignx left,aligny center");
 		spinnerSize = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerSize.setOpaque(false);
 		spinnerSize.addChangeListener(new ChangeListener() {
@@ -187,10 +211,10 @@ public class EDGeneral extends JPanel {
 				do_spinnerSize_stateChanged(arg0);
 			}
 		});
-		add(spinnerSize, "cell 1 6,alignx left,aligny center");
+		add(spinnerSize, "cell 1 8,alignx left,aligny center");
 
-		add(new JLabel("Weight"), "cell 0 7,alignx left,aligny center");
-		add(new JLabel("pound"), "cell 2 7,alignx left,aligny center");
+		add(new JLabel("Weight"), "cell 0 9,alignx right,aligny center");
+		add(new JLabel("pound"), "cell 2 9,alignx left,aligny center");
 		spinnerWeight = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerWeight.setOpaque(false);
 		spinnerWeight.addChangeListener(new ChangeListener() {
@@ -198,9 +222,9 @@ public class EDGeneral extends JPanel {
 				do_spinnerWeight_stateChanged(arg0);
 			}
 		});
-		add(spinnerWeight, "cell 1 7,alignx left,aligny center");
+		add(spinnerWeight, "cell 1 9,alignx left,aligny center");
 
-		add(new JLabel("BloodWounds"), "cell 0 11,alignx left,aligny center");
+		add(new JLabel("BloodWounds"), "cell 0 13,alignx right,aligny center");
 		spinnerBloodWounds = new JSpinner(new SpinnerNumberModel(0, 0, 1000, 1));
 		spinnerBloodWounds.setOpaque(false);
 		spinnerBloodWounds.addChangeListener(new ChangeListener() {
@@ -208,10 +232,10 @@ public class EDGeneral extends JPanel {
 				do_spinnerBloodWounds_stateChanged(arg0);
 			}
 		});
-		add(spinnerBloodWounds, "cell 1 11,alignx left,aligny center");
+		add(spinnerBloodWounds, "cell 1 13,alignx left,aligny center");
 
-		add(new JLabel("Age"), "cell 0 5,alignx left,aligny center");
-		add(new JLabel("year"), "cell 2 5,alignx left,aligny center");
+		add(new JLabel("Age"), "cell 0 7,alignx right,aligny center");
+		add(new JLabel("year"), "cell 2 7,alignx left,aligny center");
 		spinnerAge = new JSpinner(new SpinnerNumberModel(0, 0, 1000, 1));
 		spinnerAge.setOpaque(false);
 		spinnerAge.addChangeListener(new ChangeListener() {
@@ -219,13 +243,13 @@ public class EDGeneral extends JPanel {
 				do_spinnerAge_stateChanged(arg0);
 			}
 		});
-		add(spinnerAge, "cell 1 5,alignx left,aligny center");
+		add(spinnerAge, "cell 1 7,alignx left,aligny center");
 
-		add(new JLabel("Race Abilities"), "cell 0 12,alignx left,aligny center");
+		add(new JLabel("Race Abilities"), "cell 0 14,alignx right,aligny center");
 
 		txtRaceabilities = new JTextField();
 		txtRaceabilities.setEditable(false);
-		add(txtRaceabilities, "cell 1 12 3 1,growx,aligny center");
+		add(txtRaceabilities, "cell 1 14 3 1,growx,aligny center");
 		txtRaceabilities.setColumns(10);
 		txtRaceabilities.setOpaque(false);
 
@@ -291,6 +315,16 @@ public class EDGeneral extends JPanel {
 		character.refesh();
 	}
 
+	protected void do_textFieldBirth_caretUpdate(CaretEvent arg0) {
+		if( character == null ) return;
+		character.getAppearance().setBirth(textFieldBirth.getText());
+	}
+
+	protected void do_textFieldPlayer_caretUpdate(CaretEvent arg0) {
+		if( character == null ) return;
+		character.getEDCHARACTER().setPlayer(textFieldPlayer.getText());
+	}
+
 	protected void do_textFieldName_caretUpdate(CaretEvent arg0) {
 		if(character != null){
 			character.getEDCHARACTER().setName(textFieldName.getText());
@@ -314,6 +348,7 @@ public class EDGeneral extends JPanel {
 			character.getAppearance().setHair(textFieldHaircolor.getText());
 		}
 	}
+
 	protected void do_charDescription_caretUpdate(CaretEvent arg0) {
 		if(character != null){
 			character.setDESCRIPTION(charDescription.getText());

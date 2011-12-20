@@ -731,7 +731,7 @@ public class ECEPdfExporter {
 		//	acroFields.setField( fieldName, fieldName );
 		//}
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		exportCommonFields(character,16,17);
+		exportCommonFields(character,16,40);
 		setButtons(character.getWound().getNormal(), "Wound.", 7);
 
 		// Charakter Potrait-Bild einfügen
@@ -997,7 +997,7 @@ public class ECEPdfExporter {
 	}
 
 	public static List<String> wrapString(int maxLength, String string) {
-		String wrapChar = " -	"; // Liste von Zeichen wo ein Umbruch erlaubt ist
+		String wrapChar = ", -	"; // Liste von Zeichen wo ein Umbruch erlaubt ist
 		List<String> result = new ArrayList<String>();
 		if( string == null ) return result;
 		while(string.length() > maxLength) {

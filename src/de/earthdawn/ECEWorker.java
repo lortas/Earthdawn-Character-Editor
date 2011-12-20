@@ -61,6 +61,8 @@ public class ECEWorker {
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		NAMEGIVERABILITYType namegiver = character.getRace();
+		List<String> namegiverAbilities = new ArrayList<String>();
+		for( String a : namegiver.getABILITY() ) namegiverAbilities.add(a);
 
 		// Startgegenstände aus der Charaktererschaffung setzen, wenn gar kein Invetar vorhanden
 		List<ITEMType> itemList = character.getItems();
@@ -106,9 +108,18 @@ public class ECEWorker {
 		defense.setSocial(berechneWiederstandskraft(characterAttributes.get("CHA").getCurrentvalue()));
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
-			case PHYSICAL: defense.setPhysical(defense.getPhysical()+1); break;
-			case SPELL: defense.setSpell(defense.getSpell()+1); break;
-			case SOCIAL: defense.setSocial(defense.getSocial()+1); break;
+			case PHYSICAL:
+				defense.setPhysical(defense.getPhysical()+racedefense.getBonus());
+				namegiverAbilities.add("physical defense +"+racedefense.getBonus()+" (*)");
+				break;
+			case SPELL:
+				defense.setSpell(defense.getSpell()+racedefense.getBonus());
+				namegiverAbilities.add("spell defense +"+racedefense.getBonus()+" (*)");
+				break;
+			case SOCIAL:
+				defense.setSocial(defense.getSocial()+racedefense.getBonus());
+				namegiverAbilities.add("social defense +"+racedefense.getBonus()+" (*)");
+				break;
 			}
 		}
 
@@ -130,7 +141,10 @@ public class ECEWorker {
 		death.setAdjustment(0);
 		unconsciousness.setBase(newhealth.getUnconsciousness());
 		unconsciousness.setAdjustment(0);
-		character.getWound().setThreshold(newhealth.getWound()+namegiver.getWOUND().getThreshold());
+		int namegiverWoundThresholdBonus = namegiver.getWOUND().getThreshold();
+		character.getWound().setThreshold(newhealth.getWound()+namegiverWoundThresholdBonus);
+		if( namegiverWoundThresholdBonus > 0) namegiverAbilities.add("wound threshold +"+namegiverWoundThresholdBonus);
+		else if( namegiverWoundThresholdBonus < 0) namegiverAbilities.add("wound threshold "+namegiverWoundThresholdBonus);
 		RECOVERYType recovery = character.getRecovery();
 		recovery.setTestsperday(newhealth.getRecovery());
 		recovery.setStep(characterAttributes.get("TOU").getStep());
@@ -192,8 +206,6 @@ public class ECEWorker {
 			coins.setWeight((float)weight);
 		}
 
-		character.setAbilities(concatStrings(namegiver.getABILITY()));
-
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
 		character.clearDisciplineBonuses();
 		// Stelle sicher dass ale Disziplin Talent eingügt werden
@@ -208,7 +220,9 @@ public class ECEWorker {
 		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
 		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
-			namegivertalents.put(t.getName(), t);
+			String name = t.getName();
+			namegivertalents.put(name, t);
+			namegiverAbilities.add("extra optional talent '"+name+"' (*)");
 		}
 		// Wenn ein Charakter Weihepunkte erhalten hat, dann steht ihm  das Questorentalent zur Verfügung
 		DEVOTIONType devotionPoints = character.getDevotionPoints();
@@ -289,11 +303,20 @@ public class ECEWorker {
 		List<ARMORType> totalarmor = character.removeVirtualArmorFromNormalArmorList();
 		// natural ARMOR bestimmen
 		ARMORType namegiverArmor = namegiver.getARMOR();
+		int namegiverPhysicalArmor = namegiverArmor.getPhysicalarmor();
+		int namegiverMysticArmor = namegiverArmor.getMysticarmor();
+		int namgiverArmorPenalty = namegiverArmor.getPenalty();
+		if(namegiverPhysicalArmor>0) namegiverAbilities.add("physical armor +"+namegiverPhysicalArmor+" (*)");
+		else if(namegiverPhysicalArmor<0) namegiverAbilities.add("physical armor "+namegiverPhysicalArmor+" (*)");
+		if(namegiverMysticArmor>0) namegiverAbilities.add("mystic armor +"+namegiverMysticArmor+" (*)");
+		else if(namegiverMysticArmor<0) namegiverAbilities.add("mystic armor "+namegiverMysticArmor+" (*)");
+		if(namgiverArmorPenalty>0) namegiverAbilities.add("armor penalty +"+namgiverArmorPenalty+" (*)");
+		else if(namgiverArmorPenalty<0) namegiverAbilities.add("armor penalty "+namgiverArmorPenalty+" (*)");
 		ARMORType naturalArmor = new ARMORType();
 		naturalArmor.setName(namegiverArmor.getName());
-		naturalArmor.setMysticarmor(namegiverArmor.getMysticarmor()+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
-		naturalArmor.setPhysicalarmor(namegiverArmor.getPhysicalarmor());
-		naturalArmor.setPenalty(namegiverArmor.getPenalty());
+		naturalArmor.setMysticarmor(namegiverMysticArmor+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
+		naturalArmor.setPhysicalarmor(namegiverPhysicalArmor);
+		naturalArmor.setPenalty(namgiverArmorPenalty);
 		naturalArmor.setUsed(namegiverArmor.getUsed());
 		naturalArmor.setWeight(namegiverArmor.getWeight());
 		naturalArmor.setVirtual(YesnoType.YES);
@@ -342,7 +365,9 @@ public class ECEWorker {
 				skills.add(skill);
 			}
 		}
-		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namegiver.getNOTDEFAULTSKILL());
+		List<String> namgiverNotdefaultskills = namegiver.getNOTDEFAULTSKILL();
+		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill (*)");
+		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namgiverNotdefaultskills);
 		for( SKILLType skill : skills ) {
 			RANKType rank = skill.getRANK();
 			int startrank = rank.getStartrank();
@@ -516,6 +541,8 @@ public class ECEWorker {
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden
 		death.setValue(death.getBase()+death.getAdjustment());
 		unconsciousness.setValue(unconsciousness.getBase()+unconsciousness.getAdjustment());
+
+		character.setAbilities(concatStrings(namegiverAbilities));
 
 		if( calculatedLP.getSpells() < 0 ) calculatedLP.setSpells(0);
 		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
