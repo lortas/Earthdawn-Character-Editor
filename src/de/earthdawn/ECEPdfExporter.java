@@ -188,7 +188,7 @@ public class ECEPdfExporter {
 				}
 			}
 		}
-		acroFields.setField( "Racial Abilities", character.getAbilities() );
+		acroFields.setField( "RacialAbilities", character.getAbilities() );
 		int counterRacialAbilities=0;
 		for( String ability : wrapString(raceAbilitiesLineLength, character.getAbilities()) ) {
 			acroFields.setField( "RacialAbilities."+counterRacialAbilities, ability );
