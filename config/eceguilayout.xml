@@ -19,17 +19,17 @@
 		<!-- 12 --><COLUMN min="85"  preferred="85"  max="90"/>
 	</TABLE>
 	<TABLE name="talentselection">
-		<!--  0 --><COLUMN min="50"  preferred="50"  max="50"/>
+		<!--  0 --><COLUMN min="40"  preferred="40"  max="40"/>
 		<!--  1 --><COLUMN min="190" preferred="190" max="190"/>
 		<!--  2 --><COLUMN min="120" preferred="120" max="120"/>
-		<!--  3 --><COLUMN min="70"  preferred="70"  max="70"/>
-		<!--  4 --><COLUMN min="70"  preferred="70"  max="70"/>
-		<!--  5 --><COLUMN min="70"  preferred="70"  max="70"/>
-		<!--  6 --><COLUMN min="70"  preferred="70"  max="70"/>
-		<!--  7 --><COLUMN min="90"  preferred="90"  max="90"/>
-		<!--  8 --><COLUMN min="90"  preferred="90"  max="90"/>
-		<!--  9 --><COLUMN min="220" preferred="220" max="220"/>
-		<!-- 10 --><COLUMN min="130" preferred="130" max="130"/>
+		<!--  3 --><COLUMN min="60"  preferred="60"  max="60"/>
+		<!--  4 --><COLUMN min="60"  preferred="60"  max="60"/>
+		<!--  5 --><COLUMN min="60"  preferred="60"  max="60"/>
+		<!--  6 --><COLUMN min="60"  preferred="60"  max="60"/>
+		<!--  7 --><COLUMN min="95"  preferred="95"  max="95"/>
+		<!--  8 --><COLUMN min="80"  preferred="80"  max="80"/>
+		<!--  9 --><COLUMN min="210" preferred="210" max="210"/>
+		<!-- 10 --><COLUMN min="120" preferred="120" max="120"/>
 		<!-- 11 --><COLUMN min="90"  preferred="90"  max="95"/>
 	</TABLE>
 	<TABLE name="skillselection">
