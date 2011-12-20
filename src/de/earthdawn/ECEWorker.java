@@ -21,11 +21,9 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.*;
-
 
 /**
  * Hilfsklasse zur Verarbeitung eines Earthdawn-Charakters. 
@@ -110,15 +108,15 @@ public class ECEWorker {
 			switch (racedefense.getKind()) {
 			case PHYSICAL:
 				defense.setPhysical(defense.getPhysical()+racedefense.getBonus());
-				namegiverAbilities.add("physical defense +"+racedefense.getBonus()+" (*)");
+				namegiverAbilities.add("physical defense +"+racedefense.getBonus()+" *");
 				break;
 			case SPELL:
 				defense.setSpell(defense.getSpell()+racedefense.getBonus());
-				namegiverAbilities.add("spell defense +"+racedefense.getBonus()+" (*)");
+				namegiverAbilities.add("spell defense +"+racedefense.getBonus()+" *");
 				break;
 			case SOCIAL:
 				defense.setSocial(defense.getSocial()+racedefense.getBonus());
-				namegiverAbilities.add("social defense +"+racedefense.getBonus()+" (*)");
+				namegiverAbilities.add("social defense +"+racedefense.getBonus()+" *");
 				break;
 			}
 		}
@@ -143,8 +141,8 @@ public class ECEWorker {
 		unconsciousness.setAdjustment(0);
 		int namegiverWoundThresholdBonus = namegiver.getWOUND().getThreshold();
 		character.getWound().setThreshold(newhealth.getWound()+namegiverWoundThresholdBonus);
-		if( namegiverWoundThresholdBonus > 0) namegiverAbilities.add("wound threshold +"+namegiverWoundThresholdBonus);
-		else if( namegiverWoundThresholdBonus < 0) namegiverAbilities.add("wound threshold "+namegiverWoundThresholdBonus);
+		if( namegiverWoundThresholdBonus > 0) namegiverAbilities.add("wound threshold +"+namegiverWoundThresholdBonus+" *");
+		else if( namegiverWoundThresholdBonus < 0) namegiverAbilities.add("wound threshold "+namegiverWoundThresholdBonus+" *");
 		RECOVERYType recovery = character.getRecovery();
 		recovery.setTestsperday(newhealth.getRecovery());
 		recovery.setStep(characterAttributes.get("TOU").getStep());
@@ -222,7 +220,7 @@ public class ECEWorker {
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			String name = t.getName();
 			namegivertalents.put(name, t);
-			namegiverAbilities.add("extra optional talent '"+name+"' (*)");
+			namegiverAbilities.add("extra optional talent '"+name+"' *");
 		}
 		// Wenn ein Charakter Weihepunkte erhalten hat, dann steht ihm  das Questorentalent zur Verfügung
 		DEVOTIONType devotionPoints = character.getDevotionPoints();
@@ -306,12 +304,12 @@ public class ECEWorker {
 		int namegiverPhysicalArmor = namegiverArmor.getPhysicalarmor();
 		int namegiverMysticArmor = namegiverArmor.getMysticarmor();
 		int namgiverArmorPenalty = namegiverArmor.getPenalty();
-		if(namegiverPhysicalArmor>0) namegiverAbilities.add("physical armor +"+namegiverPhysicalArmor+" (*)");
-		else if(namegiverPhysicalArmor<0) namegiverAbilities.add("physical armor "+namegiverPhysicalArmor+" (*)");
-		if(namegiverMysticArmor>0) namegiverAbilities.add("mystic armor +"+namegiverMysticArmor+" (*)");
-		else if(namegiverMysticArmor<0) namegiverAbilities.add("mystic armor "+namegiverMysticArmor+" (*)");
-		if(namgiverArmorPenalty>0) namegiverAbilities.add("armor penalty +"+namgiverArmorPenalty+" (*)");
-		else if(namgiverArmorPenalty<0) namegiverAbilities.add("armor penalty "+namgiverArmorPenalty+" (*)");
+		if(namegiverPhysicalArmor>0) namegiverAbilities.add("physical armor +"+namegiverPhysicalArmor+" *");
+		else if(namegiverPhysicalArmor<0) namegiverAbilities.add("physical armor "+namegiverPhysicalArmor+" *");
+		if(namegiverMysticArmor>0) namegiverAbilities.add("mystic armor +"+namegiverMysticArmor+" *");
+		else if(namegiverMysticArmor<0) namegiverAbilities.add("mystic armor "+namegiverMysticArmor+" *");
+		if(namgiverArmorPenalty>0) namegiverAbilities.add("armor penalty +"+namgiverArmorPenalty+" *");
+		else if(namgiverArmorPenalty<0) namegiverAbilities.add("armor penalty "+namgiverArmorPenalty+" *");
 		ARMORType naturalArmor = new ARMORType();
 		naturalArmor.setName(namegiverArmor.getName());
 		naturalArmor.setMysticarmor(namegiverMysticArmor+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
@@ -366,7 +364,7 @@ public class ECEWorker {
 			}
 		}
 		List<String> namgiverNotdefaultskills = namegiver.getNOTDEFAULTSKILL();
-		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill (*)");
+		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill");
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namgiverNotdefaultskills);
 		for( SKILLType skill : skills ) {
 			RANKType rank = skill.getRANK();
