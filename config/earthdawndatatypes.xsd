@@ -82,6 +82,7 @@
 			<xs:enumeration value="illusion"/>
 			<xs:enumeration value="wizard"/>
 			<xs:enumeration value="shamane"/>
+			<xs:enumeration value="sorcery"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="defensekind_type">
