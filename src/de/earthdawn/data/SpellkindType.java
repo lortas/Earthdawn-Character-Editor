@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="illusion"/>
  *     &lt;enumeration value="wizard"/>
  *     &lt;enumeration value="shamane"/>
+ *     &lt;enumeration value="sorcery"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -44,7 +45,9 @@ public enum SpellkindType {
     @XmlEnumValue("wizard")
     WIZARD("wizard"),
     @XmlEnumValue("shamane")
-    SHAMANE("shamane");
+    SHAMANE("shamane"),
+    @XmlEnumValue("sorcery")
+    SORCERY("sorcery");
     private final String value;
 
     SpellkindType(String v) {
