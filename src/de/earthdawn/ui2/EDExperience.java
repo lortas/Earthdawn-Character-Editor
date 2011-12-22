@@ -103,7 +103,15 @@ public class EDExperience extends JPanel {
 			}
 		});
 		toolBar.add(btnRemoveEXPEntry);
-		
+
+		JButton btnResetSpentLP = new JButton("Reset Spent LP");
+		btnResetSpentLP.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_btnResetSpentLP_actionPerformed(arg0);
+			}
+		});
+		toolBar.add(btnResetSpentLP);
+
 		scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
@@ -148,7 +156,12 @@ public class EDExperience extends JPanel {
 			ACCOUNTINGType exp  =character.getEDCHARACTER().getEXPERIENCE().getLEGENDPOINTS().get(row);
 			expForRemoval.add(exp);
 		}
-		character.getEDCHARACTER().getEXPERIENCE().getLEGENDPOINTS().removeAll(expForRemoval);		
+		character.getEDCHARACTER().getEXPERIENCE().getLEGENDPOINTS().removeAll(expForRemoval);
+		character.refesh();
+	}
+	protected void do_btnResetSpentLP_actionPerformed(ActionEvent arg0) {
+		character.clearSpentLegendPoints();
+		character.getLegendPoints().getLEGENDPOINTS().addAll(character.getCalculatedLegendpoints().getCALCULATIONLP());
 		character.refesh();
 	}
 }

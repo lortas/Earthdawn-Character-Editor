@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="USEDSTARTRANKS" type="{http://earthdawn.com/datatypes}USEDSTARTRANKS_type"/>
  *         &lt;element name="COMMONADJUSTMENT" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTADJUSTMENT_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="NEWDISCIPLINETALENTADJUSTMENT" type="{http://earthdawn.com/character}NEWDISCIPLINETALENTADJUSTMENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="CALCULATIONLP" type="{http://earthdawn.com/datatypes}ACCOUNTING_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="attributes" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="disciplinetalents" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -51,7 +52,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "CALCULATEDLEGENDPOINTS_type", namespace = "http://earthdawn.com/character", propOrder = {
     "usedstartranks",
     "commonadjustment",
-    "newdisciplinetalentadjustment"
+    "newdisciplinetalentadjustment",
+    "calculationlp"
 })
 public class CALCULATEDLEGENDPOINTSType {
 
@@ -61,6 +63,8 @@ public class CALCULATEDLEGENDPOINTSType {
     protected List<CALCULATEDLEGENDPOINTADJUSTMENTType> commonadjustment;
     @XmlElement(name = "NEWDISCIPLINETALENTADJUSTMENT")
     protected List<NEWDISCIPLINETALENTADJUSTMENTType> newdisciplinetalentadjustment;
+    @XmlElement(name = "CALCULATIONLP")
+    protected List<ACCOUNTINGType> calculationlp;
     @XmlAttribute
     protected Integer attributes;
     @XmlAttribute
@@ -160,6 +164,35 @@ public class CALCULATEDLEGENDPOINTSType {
             newdisciplinetalentadjustment = new ArrayList<NEWDISCIPLINETALENTADJUSTMENTType>();
         }
         return this.newdisciplinetalentadjustment;
+    }
+
+    /**
+     * Gets the value of the calculationlp property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the calculationlp property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCALCULATIONLP().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ACCOUNTINGType }
+     * 
+     * 
+     */
+    public List<ACCOUNTINGType> getCALCULATIONLP() {
+        if (calculationlp == null) {
+            calculationlp = new ArrayList<ACCOUNTINGType>();
+        }
+        return this.calculationlp;
     }
 
     /**

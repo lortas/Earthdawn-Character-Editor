@@ -43,7 +43,7 @@ public class ECEWorker {
 	public static final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
-	CALCULATEDLEGENDPOINTSType calculatedLP = null;
+	CalculatedLPContainer calculatedLP = null;
 	private static PrintStream errorout = System.err;
 
 	/**
@@ -53,9 +53,10 @@ public class ECEWorker {
 		CharacterContainer character = new CharacterContainer(charakter);
 
 		// Orignal berechnete LP sichern
-		CALCULATEDLEGENDPOINTSType oldcalculatedLP = character.getCopyOfCalculatedLegendpoints();
+		calculatedLP = new CalculatedLPContainer(character.getCalculatedLegendpoints());
+		CalculatedLPContainer oldcalculatedLP = calculatedLP.copy();
 		// Berechnete LP erstmal zurücksetzen
-		calculatedLP = character.resetCalculatedLegendpoints();
+		calculatedLP.clear();
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		NAMEGIVERABILITYType namegiver = character.getRace();
@@ -93,7 +94,12 @@ public class ECEWorker {
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
 			karmaMaxBonus-=attribute.getCost();
-			if( OptionalRule_LegendpointsForAttributeIncrease ) calculatedLP.setAttributes(calculatedLP.getAttributes()+PROPERTIES.getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()));
+			if( OptionalRule_LegendpointsForAttributeIncrease ) {
+				calculatedLP.addAttribute(
+						PROPERTIES.getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()),
+						"Attribute "+attribute.getName().value()+" increased by one"
+						);
+			}
 		}
 		if( karmaMaxBonus <0 ) {
 			errorout.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
@@ -166,10 +172,7 @@ public class ECEWorker {
 		}
 		int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
 		if( OptionalRule_KarmaLegendPointCost ) {
-			calculatedLP.setKarma(calculatedLP.getKarma()+calculatedKarmaLP);
-		} else {
-			calculatedKarmaLP=0;
-			calculatedLP.setKarma(0);
+			calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
 		}
 
 		// **MOVEMENT**
@@ -348,7 +351,7 @@ public class ECEWorker {
 		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
 		karma.setDice(PROPERTIES.step2Dice(karma.getStep()));
 
-		int skillsStartranks=calculatedLP.getUSEDSTARTRANKS().getSkills();
+		int skillsStartranks=calculatedLP.getUsedSkillsStartRanks();
 		character.removeEmptySkills();
 		List<SKILLType> skills = character.getSkills();
 		if( skills.isEmpty() ) {
@@ -374,14 +377,18 @@ public class ECEWorker {
 			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
 			rank.setLpcost(lpcostfull-lpcoststart);
 			rank.setBonus(0);
-			calculatedLP.setSkills(calculatedLP.getSkills()+rank.getLpcost());
+			if( skill.getLimitation().isEmpty() ) {
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+"'");
+			} else {
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+" ("+skill.getLimitation()+")'");
+			}
 			capabilities.enforceCapabilityParams(skill);
 			if( skill.getAttribute() != null ) {
 				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 			}
 			removeIfContains(defaultSkills,skill.getName());
 		}
-		calculatedLP.getUSEDSTARTRANKS().setSkills(skillsStartranks);
+		calculatedLP.setUsedSkillsStartRanks(skillsStartranks);
 
 		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
 		if( PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES) ) {
@@ -418,7 +425,6 @@ public class ECEWorker {
 		// und wieviel ein SpellAbility pro Kreis pro Disziplin kostenlos dazukamen.
 		int freespellranks = attribute2StepAndDice(characterAttributes.get("PER").getBasevalue()).getStep();
 		for( int sa : getDisciplineSpellAbility(diciplineCircle) ) freespellranks+=sa;
-		calculatedLP.setSpells(0);
 		HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			int usedSpellabilities=0;
@@ -445,12 +451,12 @@ public class ECEWorker {
 				} else if( OptionalRule_SpellLegendPointCost ) {
 					// The cost of spells are equivalent to the cost of increasing a Novice Talent to a Rank equal to the Spell Circle
 					int lpcost=PROPERTIES.getCharacteristics().getSpellLP(spell.getCircle());
-					calculatedLP.setSpells(calculatedLP.getSpells()+lpcost);
+					calculatedLP.addSpells(lpcost,"LPs for spell '"+spell.getName()+"' circle "+spell.getCircle());
 				}
 			}
 			discipline.setUsedspellabilities(usedSpellabilities);
 		}
-		calculatedLP.getUSEDSTARTRANKS().setSpells(-freespellranks);
+		calculatedLP.setUsedSpellsStartRanks(-freespellranks);
 
 		for( ITEMType item : character.getBloodCharmItem() ) {
 			if( item.getUsed().equals(YesnoType.YES) && item.getVirtual().equals(YesnoType.NO) ) {
@@ -542,12 +548,10 @@ public class ECEWorker {
 
 		character.setAbilities(concatStrings(namegiverAbilities));
 
-		if( calculatedLP.getSpells() < 0 ) calculatedLP.setSpells(0);
-		calculatedLP.setTotal(calculatedLP.getAttributes()+calculatedLP.getDisciplinetalents()+
-				calculatedLP.getKarma()+calculatedLP.getMagicitems()+calculatedLP.getOptionaltalents()+
-				calculatedLP.getSkills()+calculatedLP.getSpells()+calculatedLP.getKnacks());
+		calculatedLP.addThreadItems(character.getThreadItem());
+		calculatedLP.calclulateTotal();
 
-		if( OptionalRule_AutoInsertLegendPointSpent ) character.addLegendPointsSpent(oldcalculatedLP);
+		if( OptionalRule_AutoInsertLegendPointSpent ) character.addLegendPointsSpent(oldcalculatedLP.getCalculatedLP());
 		character.calculateLegendPointsAndStatus();
 		character.calculateDevotionPoints();
 
@@ -579,7 +583,7 @@ public class ECEWorker {
 			if( knackcost == null ) {
 				errorout.println("Could not get knack lp costs for disciplinenumber="+disciplinenumber+", talent_circle="+talent.getCircle()+" and knackminrank="+knackminrank);
 			} else {
-				calculatedLP.setKnacks(calculatedLP.getKnacks()+knackcost.getCost());
+				calculatedLP.addKnacks(knackcost.getCost(),"LPs for talent knack '"+knack.getName()+"' of talent '"+talent.getName()+"'");
 			}
 		}
 	}
@@ -590,8 +594,7 @@ public class ECEWorker {
 	}
 
 	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, int minDisciplineCircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
-		int totallpcost=0;
-		int startranks=calculatedLP.getUSEDSTARTRANKS().getTalents();
+		int startranks=calculatedLP.getUsedTalentsStartRanks();
 		for( TALENTType talent : talents ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
 			if( teacher == null ) {
@@ -665,7 +668,11 @@ public class ECEWorker {
 			} else {
 				rank.setLpcost(newDisciplineTalentCost+lpcostfull-lpcoststart);
 			}
-			totallpcost+=rank.getLpcost();
+			if( disTalents ) {
+				calculatedLP.addDisciplinetalents(rank.getLpcost(),"LPs for discipline talent '"+talent.getName()+"'");
+			} else {
+				calculatedLP.addOptionaltalents(rank.getLpcost(),"LPs for optional talent '"+talent.getName()+"'");
+			}
 			startranks+=rank.getStartrank();
 			ATTRIBUTENameType attr = talent.getAttribute();
 			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr.value()));
@@ -682,12 +689,7 @@ public class ECEWorker {
 				errorout.println("Talent '"+talentname+"' was lernead by versatility, but is not allowed to be learned by versatility.");
 			}
 		}
-		calculatedLP.getUSEDSTARTRANKS().setTalents(startranks);
-		if( disTalents ) {
-			calculatedLP.setDisciplinetalents(calculatedLP.getDisciplinetalents()+totallpcost);
-		} else {
-			calculatedLP.setOptionaltalents(calculatedLP.getOptionaltalents()+totallpcost);
-		}
+		calculatedLP.setUsedTalentsStartRanks(startranks);
 	}
 
 	public static void removeIfContains(List<CAPABILITYType> defaultSkills, String name) {
@@ -728,7 +730,7 @@ public class ECEWorker {
 						+rank+" vs. "+knack.getMinrank());
 			}
 			int lp = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
-			calculatedLP.setKnacks(calculatedLP.getKnacks()+lp);
+			calculatedLP.addKnacks(lp,"LPs for talent knack '"+knack.getName()+"' of talent '"+talent.getName()+"'");
 		}
 	}
 

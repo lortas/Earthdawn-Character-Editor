@@ -43,7 +43,6 @@ public class CharacterContainer extends CharChangeRefresh {
 	public static final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public static final String durabilityName = PROPERTIES.getDurabilityName();
-	public static final USEDSTARTRANKSType OptionalRule_FreeStartRanks = PROPERTIES.getOptionalRules().getSTARTRANKS();
 	public static final String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
 
 	public static String getCurrentDateTime() {
@@ -148,86 +147,6 @@ public class CharacterContainer extends CharChangeRefresh {
 			character.setCALCULATEDLEGENDPOINTS(calculatedLegendpoints);
 		}
 		return calculatedLegendpoints;
-	}
-
-	public CALCULATEDLEGENDPOINTSType getCopyOfCalculatedLegendpoints() {
-		CALCULATEDLEGENDPOINTSType calculatedLP = getCalculatedLegendpoints();
-		CALCULATEDLEGENDPOINTSType result = new CALCULATEDLEGENDPOINTSType();
-		result.setAttributes(calculatedLP.getAttributes());
-		result.setDisciplinetalents(calculatedLP.getDisciplinetalents());
-		result.setKarma(calculatedLP.getKarma());
-		result.setKnacks(calculatedLP.getKnacks());
-		result.setMagicitems(calculatedLP.getMagicitems());
-		result.setOptionaltalents(calculatedLP.getOptionaltalents());
-		result.setSkills(calculatedLP.getSkills());
-		result.setSpells(calculatedLP.getSpells());
-		result.setTotal(calculatedLP.getTotal());
-		USEDSTARTRANKSType oldstartranks = calculatedLP.getUSEDSTARTRANKS();
-		USEDSTARTRANKSType newstartranks = new USEDSTARTRANKSType();
-		calculatedLP.setUSEDSTARTRANKS(newstartranks);
-		if( oldstartranks != null ) {
-			newstartranks.setSkills(oldstartranks.getSkills());
-			newstartranks.setTalents(oldstartranks.getTalents());
-			newstartranks.setSpells(oldstartranks.getSpells());
-		}
-		List<CALCULATEDLEGENDPOINTADJUSTMENTType> commonadjustment = result.getCOMMONADJUSTMENT();
-		for( CALCULATEDLEGENDPOINTADJUSTMENTType e : calculatedLP.getCOMMONADJUSTMENT() ) commonadjustment.add(e);
-		List<NEWDISCIPLINETALENTADJUSTMENTType> newdisciplietalentadjustment = result.getNEWDISCIPLINETALENTADJUSTMENT();
-		for( NEWDISCIPLINETALENTADJUSTMENTType e : calculatedLP.getNEWDISCIPLINETALENTADJUSTMENT() ) newdisciplietalentadjustment.add(e);
-		return result;
-	}
-
-	public CALCULATEDLEGENDPOINTSType resetCalculatedLegendpoints() {
-		CALCULATEDLEGENDPOINTSType calculatedLP = getCalculatedLegendpoints();
-		int attributes=0;
-		int disciplinetalents=0;
-		int karma=0;
-		int knacks=0;
-		int magicitems=0;
-		int optionaltalents=0;
-		int skills=0;
-		int spells=0;
-		for( CALCULATEDLEGENDPOINTADJUSTMENTType adjustment : calculatedLP.getCOMMONADJUSTMENT() ) {
-			switch(adjustment.getType()) {
-			case ATTRIBUTES:        attributes       +=adjustment.getValue(); break;
-			case DISCIPLINETALENTS: disciplinetalents+=adjustment.getValue(); break;
-			case KARMA:             karma            +=adjustment.getValue(); break;
-			case KNACKS:            knacks           +=adjustment.getValue(); break;
-			case MAGICITEMS:        magicitems       +=adjustment.getValue(); break;
-			case OPTIONALTALENTS:   optionaltalents  +=adjustment.getValue(); break;
-			case SKILLS:            skills           +=adjustment.getValue(); break;
-			case SPELLS:            spells           +=adjustment.getValue(); break;
-			}
-		}
-		for( NEWDISCIPLINETALENTADJUSTMENTType adjustment : calculatedLP.getNEWDISCIPLINETALENTADJUSTMENT() ) {
-			switch(adjustment.getType()) {
-			case ATTRIBUTES:        attributes       +=adjustment.getValue(); break;
-			case DISCIPLINETALENTS: disciplinetalents+=adjustment.getValue(); break;
-			case KARMA:             karma            +=adjustment.getValue(); break;
-			case KNACKS:            knacks           +=adjustment.getValue(); break;
-			case MAGICITEMS:        magicitems       +=adjustment.getValue(); break;
-			case OPTIONALTALENTS:   optionaltalents  +=adjustment.getValue(); break;
-			case SKILLS:            skills           +=adjustment.getValue(); break;
-			case SPELLS:            spells           +=adjustment.getValue(); break;
-			}
-		}
-		calculatedLP.setAttributes(attributes);
-		calculatedLP.setDisciplinetalents(disciplinetalents);
-		calculatedLP.setKarma(karma);
-		calculatedLP.setKnacks(knacks);
-		calculatedLP.setMagicitems(magicitems);
-		calculatedLP.setOptionaltalents(optionaltalents);
-		calculatedLP.setSkills(skills);
-		calculatedLP.setSpells(spells);
-		USEDSTARTRANKSType startranks = calculatedLP.getUSEDSTARTRANKS();
-		if( startranks==null ) {
-			startranks = new USEDSTARTRANKSType();
-			calculatedLP.setUSEDSTARTRANKS(startranks);
-		}
-		startranks.setSkills(-OptionalRule_FreeStartRanks.getSkills());
-		startranks.setTalents(-OptionalRule_FreeStartRanks.getTalents());
-		startranks.setSpells(0);
-		return calculatedLP;
 	}
 
 	public void addLegendPointsSpent(CALCULATEDLEGENDPOINTSType oldLP) {
@@ -623,6 +542,17 @@ public class CharacterContainer extends CharChangeRefresh {
 			character.setEXPERIENCE(experience);
 		}
 		return experience;
+	}
+
+	public void clearSpentLegendPoints() {
+		EXPERIENCEType experience = getLegendPoints();
+		List<ACCOUNTINGType> legendpoints = experience.getLEGENDPOINTS();
+		List<ACCOUNTINGType> remove =  new ArrayList<ACCOUNTINGType>();
+		for( ACCOUNTINGType a : legendpoints ) {
+			if( a.getType().equals(PlusminusType.MINUS) ) remove.add(a);
+		}
+		legendpoints.removeAll(remove);
+		experience.setCurrentlegendpoints(experience.getTotallegendpoints());
 	}
 
 	public List<WEAPONType> getWeapons() {
@@ -1107,7 +1037,6 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<ARMORType> getMagicArmor() {
 		List<ARMORType> magicarmor = new ArrayList<ARMORType>();
-		int calculatedLP=0;
 		for( THREADITEMType magicitem : getThreadItem() ) {
 			String name = magicitem.getName();
 			float weight = magicitem.getWeight();
@@ -1145,13 +1074,11 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicshield=shield;
 				}
-				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
 				weaven--;
 			}
 			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
 			if( newmagicshield != null ) magicarmor.add(newmagicshield);
 		}
-		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
 		return magicarmor;
 	}
 
@@ -1165,7 +1092,6 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<WEAPONType> getMagicWeapon() {
 		List<WEAPONType> magicweapon = new ArrayList<WEAPONType>();
-		int calculatedLP=0;
 		for( THREADITEMType magicitem : getThreadItem() ) {
 			String name = magicitem.getName();
 			float weight = magicitem.getWeight();
@@ -1185,12 +1111,10 @@ public class CharacterContainer extends CharChangeRefresh {
 					weapon.setKind(magicitem.getKind());
 					if( weaven > 0 ) newmagicweapon=weapon;
 				}
-				if( weaven > 0 ) calculatedLP+=threadrank.getLpcost();
 				weaven--;
 			}
 			if( newmagicweapon != null ) magicweapon.add(newmagicweapon);
 		}
-		character.getCALCULATEDLEGENDPOINTS().setMagicitems(calculatedLP);
 		return magicweapon;
 	}
 
