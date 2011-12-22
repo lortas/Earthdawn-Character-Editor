@@ -145,10 +145,10 @@
 	<SPELL name="Doom Missile" threads="3" weavingdifficulty="10" reattuningdifficulty="21" range="20 hex" duration="R rnd" effect="WIL + 5/Mystic" bookref="PG p.164"/>
 	<SPELL name="Dragon Blows out Flame" threads="0" reattuningdifficulty="6" castingdifficulty="TSD*" range="10 hex" duration="1 rnd" effect="Target becomes Harried" bookref="CPG p.105"/>
 	<SPELL name="Dragon Brings Rain" threads="2" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="12" range="35 hex" duration="R min" effect="Summons dark clouds and rain" effectarea="Spellcasting Rank diameter cloud" bookref="CPG p.105"/>
-	<SPELL name="Dragon Returns to his Lair" threads="0" reattuningdifficulty="9" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL + 5" bookref="CPG p.106"/>
+	<SPELL name="Dragon Returns to His Lair" threads="0" reattuningdifficulty="9" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL + 5" bookref="CPG p.106"/>
 	<SPELL name="Dragon Walks on Air" threads="4" weavingdifficulty="12" reattuningdifficulty="23" castingdifficulty="6" range="touch" duration="R+10 min" effect="Summons smoke bridge" effectarea="50-hex square area smoke bridge" bookref="CPG p.106"/>
-	<SPELL name="Dragons Nose Smells Magic" threads="2" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician" bookref="CPG p.106"/>
-	<SPELL name="Dragons Tongue Licks Palm" threads="2" weavingdifficulty="13" reattuningdifficulty="25" castingdifficulty="TSD*" range="18 hex" duration="1 rnd" effect="WIL + 7/Non-metal Physical" bookref="CPG p.106"/>
+	<SPELL name="Dragon’s Nose Smells Magic" threads="2" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician" bookref="CPG p.106"/>
+	<SPELL name="Dragon’s Tongue Licks Palm" threads="2" weavingdifficulty="13" reattuningdifficulty="25" castingdifficulty="TSD*" range="18 hex" duration="1 rnd" effect="WIL + 7/Non-metal Physical" bookref="CPG p.106"/>
 	<SPELL name="Dragon's Breath" threads="3" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="TSD*" range="25 hex" duration="1 round (s. text)" effect="WIL+12/Physical" element="fire"/>
 	<SPELL name="Draining Eye" threads="4" weavingdifficulty="14" reattuningdifficulty="15" castingdifficulty="TSD*" range="30 hex (s. text)" duration="R min" effect="WIL+10"/>
 	<SPELL name="Drastic Temperature" threads="2" weavingdifficulty="11" reattuningdifficulty="19" castingdifficulty="6" range="20 hex" duration="R+3 min" effect="WIL + 3/NA" effectarea="1-hex radius sphere from center" bookref="PG p.164" element="fire"/>
@@ -192,7 +192,7 @@
 	<SPELL name="Experience Death" threads="1" weavingdifficulty="6" reattuningdifficulty="12" range="10 hex" duration="R+3 rnd" effect="WIL + 5" bookref="PG p.168"/>
 	<SPELL name="Eye of Truth" threads="1" weavingdifficulty="11" reattuningdifficulty="18" range="self" duration="R+5 min" effect="+10 bonus to Disbelief Tests" bookref="PG p.168"/>
 	<SPELL name="Eyes Have It" threads="3" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6*" range="12 hex" duration="R+1 min" effect="WIL + 4" bookref="PG p.168"/>
-	<SPELL name="Falcon's Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="self" duration="R hr" effect="Turns caster into a falcon" bookref="PG p.168"/>
+	<SPELL name="Falcon’s Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="self" duration="R hr" effect="Turns caster into a falcon" bookref="PG p.168"/>
 	<SPELL name="False Aura" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 min" effect="WIL + 6" bookref="PG p.168"/>
 	<SPELL name="False Enchantment" threads="5" weavingdifficulty="8" reattuningdifficulty="20" castingdifficulty="6*" range="touch" duration="R+7 days" effect="Gives an item fake magical abilities;  +5 to the illusion's Disbelief Difficulty" bookref="PG p.168" element="illusion"/>
 	<SPELL name="False Floor" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="R+1 hr" effect="WIL + 6" effectarea="3-hex radius from center" bookref="PG p.169" element="illusion"/>
@@ -227,7 +227,7 @@
 	<SPELL name="Gadfly" threads="1" weavingdifficulty="6" reattuningdifficulty="14" castingdifficulty="TSD*" range="6 hex" duration="R+4 rnd" effect="Harries target" bookref="PG p.173"/>
 	<SPELL name="Gateway" threads="5" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="5,000 miles" duration="R rnd" effect="WIL+10"/>
 	<SPELL name="Giant Size" threads="2" weavingdifficulty="11" reattuningdifficulty="18" range="touch" duration="R+2 rnd" effect="+5 bonus to Strength- and Toughness-only Tests" bookref="PG p.174"/>
-	<SPELL name="Giant Stomps his Feet" threads="3" weavingdifficulty="16" reattuningdifficulty="28" castingdifficulty="12" range="touch" duration="1 rnd" effect="WIL + 11" effectarea="20-hex centered on touched origin hex" bookref="CPG p.107"/>
+	<SPELL name="Giant Stomps His Feet" threads="3" weavingdifficulty="16" reattuningdifficulty="28" castingdifficulty="12" range="touch" duration="1 rnd" effect="WIL + 11" effectarea="20-hex centered on touched origin hex" bookref="CPG p.107"/>
 	<SPELL name="Giant Takes One Step" threads="2" weavingdifficulty="11" reattuningdifficulty="21" castingdifficulty="TSD*" range="self" duration="1 rnd" effect="Instantly transports the sorcerer within 40 hex" bookref="CPG p.107"/>
 	<SPELL name="Gills" threads="2" weavingdifficulty="4" reattuningdifficulty="13" range="touch" duration="R+10 min" effect="Allows target to breathe underwater" bookref="PG p.174" element="air"/>
 	<SPELL name="Giu Makes Many Pots" threads="s. text" weavingdifficulty="10" reattuningdifficulty="20" castingdifficulty="TSD*" range="4 hex" duration="R+6 hours" effect="Transforms multiple mundane objects" bookref="CPG p.107"/>
@@ -263,7 +263,7 @@
 	<SPELL name="Improve Karma" threads="3" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+6 rnd" effect="+4 Karma Steps" bookref="PG p.178"/>
 	<SPELL name="Improved Alarm" threads="3" weavingdifficulty="8" reattuningdifficulty="19" range="60 hex" duration="R+1 hr" effect="WIL + 5" effectarea="2-hex radius from origin" bookref="PG p.178"/>
 	<SPELL name="Incessant Talking" threads="3" weavingdifficulty="14" reattuningdifficulty="18" range="8 hex" duration="R+1 min" effect="Makes target babble nonsense" bookref="PG p.178"/>
-	<SPELL name="Infant Opens and Closes its Eye" threads="2" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R rnd" effect="Temporarily imbues plant or animal with sentience" bookref="CPG p.108"/>
+	<SPELL name="Infant Opens and Closes Its Eyes" threads="2" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R rnd" effect="Temporarily imbues plant or animal with sentience" bookref="CPG p.108"/>
 	<SPELL name="Infant Takes First Step" threads="3" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="TSD*" range="touch" duration="R+10 min" effect="Transforms object into an animal" bookref="CPG p.108"/>
 	<SPELL name="Inflame Self" threads="3" weavingdifficulty="8" reattuningdifficulty="15" range="self" duration="R+1 rnd" effect="WIL + 8/Physical" bookref="PG p.178" element="fire"/>
 	<SPELL name="Innocent Activity" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="touch" duration="R+12 rnd" effect="Covers up true activity" bookref="PG p.178" element="illusion"/>
@@ -303,7 +303,7 @@
 	<SPELL name="Lodestone's Touch" threads="2" weavingdifficulty="13" reattuningdifficulty="17" range="3 hex" duration="R+5 min" effect="WIL + 3" effectarea="1-hex radius around target" bookref="PG p.183" element="earth"/>
 	<SPELL name="Mage Armor" threads="1" weavingdifficulty="12" reattuningdifficulty="16" range="touch" duration="R+7 min" effect="+4 Physical Armor" bookref="PG p.183"/>
 	<SPELL name="Mai-Lo Becomes a Teacup" threads="2" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="self" duration="R+6 hours" effect="Transforms caster into mundane object" bookref="CPG p.110"/>
-	<SPELL name="Mao Tends the Hero" threads="s. text" weavingdifficulty="16" reattuningdifficulty="28" castingdifficulty="TSD*" range="2 hex" duration="R+20 min" effect="Transforms targets into animals" bookref="CPG p.110"/>
+	<SPELL name="Mao Tends the Herd" threads="s. text" weavingdifficulty="16" reattuningdifficulty="28" castingdifficulty="TSD*" range="2 hex" duration="R+20 min" effect="Transforms targets into animals" bookref="CPG p.110"/>
 	<SPELL name="Makeshift Missile" threads="1" weavingdifficulty="9" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+2 rnd" effect="WIL + 6/Physical" bookref="PG p.184"/>
 	<SPELL name="Makeshift Weapon" threads="1" weavingdifficulty="10" reattuningdifficulty="15" range="touch" duration="R+5 rnd" effect="WIL + 8/Physical" bookref="PG p.184"/>
 	<SPELL name="Marathon Run" threads="3" weavingdifficulty="13" reattuningdifficulty="20" range="16 hex" duration="R+1 min" effect="Forces target to flee" bookref="PG p.184"/>
@@ -336,7 +336,7 @@
 	<SPELL name="Notice Not" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+1 min" effect="+3 bonus to stealthy Action Tests" bookref="PG p.187"/>
 	<SPELL name="Nutritious Earth" threads="4" weavingdifficulty="8" reattuningdifficulty="15" range="touch" duration="A year and a day" effect="Makes land fertile" effectarea="50-hex radius circle from magician" bookref="PG p.187" element="earth"/>
 	<SPELL name="Observe Event" threads="5" weavingdifficulty="14" reattuningdifficulty="15" range="touch" duration="Variable (s. text)" effect="WIL+3" effectarea="5-hex radius"/>
-	<SPELL name="Old Man Wear Shoe on Hand" threads="2" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="TSD*" range="18 hex" duration="R+1 min" effect="WIL + 6" bookref="CPG p.111"/>
+	<SPELL name="Old Man Wears Shoe on Hand" threads="2" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="TSD*" range="18 hex" duration="R+1 min" effect="WIL + 6" bookref="CPG p.111"/>
 	<SPELL name="One of the Crowd" threads="5" weavingdifficulty="14" reattuningdifficulty="21" castingdifficulty="TSD*" range="7,5 hex" duration="R+1 hr" effect="WIL+10" element="illusion"/>
 	<SPELL name="Onion Blood" threads="4" weavingdifficulty="16" reattuningdifficulty="19" range="50 hex" duration="R rnd" effect="WIL+6/Mystic" bookref="PC p.147" element="fear"/>
 	<SPELL name="Ork Stoke" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="15 hex" duration="Instant" effect="Sets off orkish gahad" bookref="PG p.187"/>
@@ -347,7 +347,7 @@
 	<SPELL name="Panther Stalks Silently" threads="2" weavingdifficulty="8" reattuningdifficulty="16" castingdifficulty="TSD*" range="touch" duration="R+4 min" effect="+3 bonus to Tracking Tests and Attack and Damage Tests on Surprised Targets" bookref="CPG p.111"/>
 	<SPELL name="Paper Masters the River" threads="s. text" weavingdifficulty="13" reattuningdifficulty="25" castingdifficulty="6" range="touch" duration="1 day" effect="Create a riverboat made of paper" bookref="CPG p.111"/>
 	<SPELL name="Pass Ward" threads="s. text" weavingdifficulty="13" reattuningdifficulty="21" castingdifficulty="6*" range="touch" duration="R weeks (s. text)" effect="WIL + 12/Mystic" effectarea="2-hex radius from center" bookref="PG p.188"/>
-	<SPELL name="Passions Eyes See Below" threads="2" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R min" effect="WIL + 3" bookref="CPG p.112"/>
+	<SPELL name="Passion’s Eyes See Below" threads="2" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="6" range="touch" duration="R min" effect="WIL + 3" bookref="CPG p.112"/>
 	<SPELL name="Path Home" threads="2" weavingdifficulty="7" reattuningdifficulty="14" castingdifficulty="TSD*" range="30 hex" duration="R+20 min" effect="Summons spirit wings to guide the caster home" bookref="PG p.188"/>
 	<SPELL name="Pauper's Purse" threads="0" reattuningdifficulty="7" range="touch" duration="R+1 min" effect="WIL + 4" bookref="PG p.188"/>
 	<SPELL name="Peacebond" threads="3" weavingdifficulty="11" reattuningdifficulty="21" range="touch" duration="R+5 min" effect="WIL + 10/NA" bookref="PG p.188"/>
@@ -487,7 +487,7 @@
 	<SPELL name="The Fog of Con-Sha" threads="2" weavingdifficulty="9" reattuningdifficulty="18" castingdifficulty="6" range="10 hex" duration="R+2 rnd" effect="WIL" effectarea="3-hex radius sphere" bookref="CPG p.115"/>
 	<SPELL name="The Grip of Chi" threads="0" reattuningdifficulty="13" castingdifficulty="TSD*" range="6 hex" duration="R rnd" effect="WIL + 6" bookref="CPG p.115"/>
 	<SPELL name="The Hand of Chi" threads="2" weavingdifficulty="13" reattuningdifficulty="25" castingdifficulty="TSD*" range="24 hex" duration="1 rnd" effect="WIL + 6/Physical" bookref="CPG p.115"/>
-	<SPELL name="The Thousand Faces of Cheune" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="TSD*" range="touch" duration="R+1 hours" effect="Temporarily alters the appearance of subject" bookref="CPG p.115"/>
+	<SPELL name="The Thousand Faces of Cheung" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="TSD*" range="touch" duration="R+1 hours" effect="Temporarily alters the appearance of subject" bookref="CPG p.115"/>
 	<SPELL name="Thorny Retreat" threads="1" weavingdifficulty="11" reattuningdifficulty="13" castingdifficulty="6" range="8 hex" duration="R+7 rnd" effect="WIL + 2" effectarea="2-hex tall, 1-hex thick sections" bookref="PG p.204" element="wood"/>
 	<SPELL name="Thrive" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="8" range="touch" duration="1 rnd" effect="Accelerates plant growth" effectarea="1-hex radius circle from center" bookref="PG p.204" element="wood"/>
 	<SPELL name="Throne of Air" threads="2" weavingdifficulty="8" reattuningdifficulty="17" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 7" bookref="PG p.204" element="air"/>
