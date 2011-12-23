@@ -114,7 +114,6 @@ public class EDTalents extends JPanel {
 			}
 		};
 		table.setOpaque(false);
-		table.setRowSelectionAllowed(false);
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setModel(new TalentsTableModel(character, disciplin));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);

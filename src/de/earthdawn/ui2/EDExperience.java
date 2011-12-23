@@ -134,6 +134,9 @@ public class EDExperience extends JPanel {
 		scrollPane.setViewportView(table);
 		scrollPane.getViewport().setOpaque(false);
 		table.setRowSelectionAllowed(false);
+		table.setColumnSelectionAllowed(false);
+		table.getTableHeader().setReorderingAllowed(false);
+		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		JComboBox comboBoxPlusMinus = new JComboBox();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
