@@ -4,18 +4,24 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.APPEARANCEType;
+import de.earthdawn.data.Base64BinaryType;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
+import java.util.List;
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -31,6 +37,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
@@ -53,13 +63,15 @@ public class EDGeneral extends JPanel {
 	private JSpinner spinnerAge;
 	private JTextField textFieldPlayer;
 	private JTextField textFieldBirth;
+	private JPanel pnlPortrait;
+	private JLabel lblPortrait;
 
 	/**
 	 * Create the panel.
 	 */
 	public EDGeneral() {
 		setOpaque(false);
-		setLayout(new MigLayout("", "[110px][100px,grow][15px,grow 10][364.00px,grow,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[110px][100px,grow 50,fill][15px,grow 10,fill][150.00px,grow,fill][100.00px,grow 10,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 		
 		add(new JLabel("Playername"), "cell 0 0,alignx right,aligny center");
 		textFieldPlayer = new JTextField();
@@ -99,7 +111,7 @@ public class EDGeneral extends JPanel {
 		JScrollPane charDescriptionPanel = new JScrollPane();
 		charDescriptionPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Description", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
 		charDescriptionPanel.setOpaque(false);
-		add(charDescriptionPanel, "cell 3 0 1 7,grow");
+		add(charDescriptionPanel, "cell 3 0 2 7,grow");
 
 		charDescription = new JTextArea();
 		charDescription.setLineWrap(true);
@@ -168,6 +180,23 @@ public class EDGeneral extends JPanel {
 		});
 		rdbtnMale.setOpaque(false);
 		add(rdbtnMale, "cell 1 3,alignx left,aligny center");
+		
+		pnlPortrait = new JPanel();
+		pnlPortrait.setBorder(new TitledBorder(null, "Portrait", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlPortrait.setOpaque(false);
+		add(pnlPortrait, "cell 4 7 1 8,grow");
+
+		lblPortrait = new JLabel();
+		pnlPortrait.add(lblPortrait);
+		lblPortrait.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if( e.getButton() == 1 ) do_updatePortrait();
+			}
+		});
+		lblPortrait.setVerticalAlignment(JLabel.BOTTOM);
+		lblPortrait.setHorizontalAlignment(JLabel.CENTER);
+		lblPortrait.setOpaque(false);
 
 		add(new JLabel("Skincolor"), "cell 0 10,alignx right,aligny center");
 		textFieldSkincolor = new JTextField();
@@ -282,6 +311,15 @@ public class EDGeneral extends JPanel {
 		}
 
 		comboBoxRace.setSelectedItem(character.getAppearance().getRace());
+
+		List<Base64BinaryType> potraits = character.getPortrait();
+		if( ! potraits.isEmpty() ) {
+			ImageIcon icon = new ImageIcon(potraits.get(0).getValue());
+			int width = new Double(0.8*lblPortrait.getWidth()).intValue();
+			if( width<100 ) width = 100;
+			Image image = icon.getImage().getScaledInstance(200, -1, Image.SCALE_SMOOTH);
+			lblPortrait.setIcon(new ImageIcon(image));
+		}
 	}
 
 	public CharacterContainer getCharacter() {
@@ -295,6 +333,7 @@ public class EDGeneral extends JPanel {
 				ECEWorker worker = new ECEWorker();
 				worker.verarbeiteCharakter(character.getEDCHARACTER());
 				txtRaceabilities.setText(character.getAbilities());
+				character.getPortrait().clear();
 				character.refesh();
 			}
 		}
@@ -408,6 +447,32 @@ public class EDGeneral extends JPanel {
 		int age = (Integer)spinnerAge.getValue();
 		character.getAppearance().setAge(age);
 		character.refesh();
+	}
+
+	protected void do_updatePortrait() {
+		JFileChooser fc = new JFileChooser(new File("templates"));
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG-GIF-PNG Images", "jpg", "gif", "png", "jpeg");
+		fc.setFileFilter(filter);
+		int returnVal = fc.showOpenDialog(this);
+		if(returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = fc.getSelectedFile();
+			try {
+				FileInputStream fileInputStream = new FileInputStream(file);
+				byte[] data = new byte[(int) file.length()];
+				fileInputStream.read(data);
+				fileInputStream.close();
+				Base64BinaryType base64bin = new Base64BinaryType();
+				base64bin.setValue(data);
+				final String[] filename = file.getName().split("\\.");
+				base64bin.setContenttype("image/"+filename[filename.length-1]);
+				character.getPortrait().set(0, base64bin);
+				character.refesh();
+			} catch (FileNotFoundException e1) {
+				System.err.println(e1.getLocalizedMessage());
+			} catch (IOException e2) {
+				System.err.println(e2.getLocalizedMessage());
+			}
+		}
 	}
 
 	@Override
