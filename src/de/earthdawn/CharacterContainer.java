@@ -379,7 +379,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public List<String> getKarmarituals() {
+	public List<String> getAllKarmaritual() {
 		List<String> result = new ArrayList<String>();
 		for( DISCIPLINEType discipline : getDisciplines() ) {
 			String karmaritual = discipline.getKARMARITUAL();
@@ -390,6 +390,23 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		return result;
+	}
+
+	public String getAllHalfMagic() {
+		StringBuilder result = new StringBuilder();
+		for( DISCIPLINEType discipline : getDisciplines() ) {
+			String halfmagic = discipline.getHALFMAGIC();
+			result.append("[");
+			result.append(discipline.getName());
+			result.append("]: ");
+			if( halfmagic == null ) {
+				result.append("NA");
+			} else {
+				result.append(halfmagic);
+			}
+			result.append("; ");
+		}
+		return result.toString();
 	}
 
 	public List<Integer> getDisciplineCircles() {

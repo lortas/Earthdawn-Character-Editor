@@ -350,6 +350,7 @@
 		<xs:sequence>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISCIPLINEBONUS" type="DISCIPLINEBONUS_type"/>
 			<xs:element minOccurs="0" maxOccurs="1" name="KARMARITUAL" type="xs:string"/>
+			<xs:element minOccurs="0" maxOccurs="1" name="HALFMAGIC" type="xs:string"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISZIPLINETALENT" type="TALENT_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="TALENT_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="SPELL_type"/>

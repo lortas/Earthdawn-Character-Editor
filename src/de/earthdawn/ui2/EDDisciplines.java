@@ -23,15 +23,18 @@ import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
+import de.earthdawn.data.LAYOUTTABLECOLUMNType;
 
 public class EDDisciplines extends JPanel {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -6521194520616767955L;
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
 	private JScrollPane scrollPane;
 	private JTable table;
@@ -44,12 +47,30 @@ public class EDDisciplines extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
-		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0, 15));
+		table.setRowHeight(70);
+		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0,15));
+		table.setFillsViewportHeight(true);
+		table.getColumnModel().getColumn(2).setCellEditor(new TextTableCellEditor());
+		table.getColumnModel().getColumn(2).setCellRenderer(new TextTableCellEditor());
+		table.getColumnModel().getColumn(3).setCellEditor(new TextTableCellEditor());
+		table.getColumnModel().getColumn(3).setCellRenderer(new TextTableCellEditor());
+		try {
+			int c=0;
+			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("disciplineselection") ) {
+				TableColumn col = table.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout disciplineselection : "+e.getLocalizedMessage());
+		}
 	}
 
 	public CharacterContainer getCharacter() {
 		return character;
-	}	
+	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -90,6 +111,9 @@ public class EDDisciplines extends JPanel {
 		table.setModel(new DisciplinesTableModel(character));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		table.setOpaque(false);
+		table.getTableHeader().setReorderingAllowed(false);
+		table.setRowSelectionAllowed(false);
+		table.setColumnSelectionAllowed(false);
 		scrollPane.setViewportView(table);
 		scrollPane.getViewport().setOpaque(false);
 
@@ -175,7 +199,7 @@ class DisciplinesTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 
-	private String[] columnNames = {"Discipline Name", "Circle"};
+	private String[] columnNames = {"Discipline Name", "Circle", "Karmaritual", "Halfmagic"};
 
 	public DisciplinesTableModel(CharacterContainer character) {
 		super();
@@ -207,9 +231,20 @@ class DisciplinesTableModel extends AbstractTableModel {
 	public Object getValueAt(int row, int col) {
 		DISCIPLINEType discipline = character.getDisciplines().get(row);
 		switch (col) {
-		case 0:  return discipline.getName();
-		case 1:  return new Integer(discipline.getCircle());
-		default: return new Integer(0);
+		case 0:
+			return discipline.getName();
+		case 1:
+			return new Integer(discipline.getCircle());
+		case 2:
+			String karmaritual = discipline.getKARMARITUAL();
+			if( karmaritual == null ) return "";
+			return karmaritual;
+		case 3:
+			String halfmagic = discipline.getHALFMAGIC();
+			if( halfmagic == null ) return "";
+			return halfmagic;
+		default:
+			return new Integer(0);
 		}
 	}
 
@@ -228,8 +263,8 @@ class DisciplinesTableModel extends AbstractTableModel {
 	 * editable.
 	 */
 	public boolean isCellEditable(int row, int col) {
-		if( col == 1 ) return true;
-		return false;
+		if( col == 0 ) return false;
+		return true;
 	}
 
 	/*
@@ -239,11 +274,12 @@ class DisciplinesTableModel extends AbstractTableModel {
 	public void setValueAt(Object value, int row, int col) {  
 		DISCIPLINEType discipline = character.getDisciplines().get(row);
 		switch (col) {
-		case 0: discipline.setName((String)value);
-		case 1: discipline.setCircle((Integer)value);
+		case 0: discipline.setName((String)value);        break;
+		case 1: discipline.setCircle((Integer)value);     break;
+		case 2: discipline.setKARMARITUAL((String)value); break;
+		case 3: discipline.setHALFMAGIC((String)value);   break;
 		}
 		character.refesh();
-		fireTableCellUpdated(row, col);
+		fireTableRowsUpdated(row, row);
 	}
-
 }

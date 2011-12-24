@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ECEGUILAYOUT xmlns="http://earthdawn.com/eceguilayout" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/eceguilayout eceguilayout.xsd">
 	<MAINWINDOW x="1200" y="1000"/>
-	<STATUSWINDOW x="1200" y="450"/>
-	<TABWINDOW x="1200" y="450"/>
+	<STATUSWINDOW x="500" y="300"/>
+	<TABWINDOW x="500" y="300"/>
 	<TABLE name="spellselection">
 		<!--  0 --><COLUMN min="50"  preferred="50"  max="50"/>
 		<!--  1 --><COLUMN min="30"  preferred="30"  max="30"/>
@@ -60,5 +60,11 @@
 		<!--  1 --><COLUMN min="600" preferred="600"  max="600"/>
 		<!--  2 --><COLUMN min="80"  preferred="80"   max="80"/>
 		<!--  3 --><COLUMN min="160" preferred="160"  max="170"/>
+	</TABLE>
+	<TABLE name="disciplineselection">
+		<!-- 0 --><COLUMN min="60" preferred="100" max="300"/>
+		<!-- 1 --><COLUMN min="20" preferred="30" max="100"/>
+		<!-- 2 --><COLUMN min="80" preferred="100" max="1000"/>
+		<!-- 3 --><COLUMN min="80" preferred="100" max="1000"/>
 	</TABLE>
 </ECEGUILAYOUT>

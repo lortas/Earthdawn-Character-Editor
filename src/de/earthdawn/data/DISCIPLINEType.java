@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="DISCIPLINEBONUS" type="{http://earthdawn.com/datatypes}DISCIPLINEBONUS_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="HALFMAGIC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="DISZIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}SPELL_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -48,6 +49,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DISCIPLINE_type", propOrder = {
     "disciplinebonus",
     "karmaritual",
+    "halfmagic",
     "disziplinetalent",
     "optionaltalent",
     "spell"
@@ -58,6 +60,8 @@ public class DISCIPLINEType {
     protected List<DISCIPLINEBONUSType> disciplinebonus;
     @XmlElement(name = "KARMARITUAL")
     protected String karmaritual;
+    @XmlElement(name = "HALFMAGIC")
+    protected String halfmagic;
     @XmlElement(name = "DISZIPLINETALENT")
     protected List<TALENTType> disziplinetalent;
     @XmlElement(name = "OPTIONALTALENT")
@@ -124,6 +128,30 @@ public class DISCIPLINEType {
      */
     public void setKARMARITUAL(String value) {
         this.karmaritual = value;
+    }
+
+    /**
+     * Gets the value of the halfmagic property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getHALFMAGIC() {
+        return halfmagic;
+    }
+
+    /**
+     * Sets the value of the halfmagic property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setHALFMAGIC(String value) {
+        this.halfmagic = value;
     }
 
     /**

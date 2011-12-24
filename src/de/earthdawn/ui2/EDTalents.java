@@ -39,14 +39,10 @@ import de.earthdawn.data.YesnoType;
 
 public class EDTalents extends JPanel {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8850440306321140758L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 
 	private CharacterContainer character;
-
 	private JScrollPane scrollPane;
 	private JTable table;
 	private String disciplin;
@@ -69,7 +65,7 @@ public class EDTalents extends JPanel {
 				c++;
 			}
 		} catch(IndexOutOfBoundsException e) {
-			System.err.println("layout spellselection : "+e.getLocalizedMessage());
+			System.err.println("layout talentselection : "+e.getLocalizedMessage());
 		}
 	}
 
