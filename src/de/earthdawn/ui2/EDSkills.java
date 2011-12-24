@@ -221,8 +221,6 @@ class SkillsTableModel extends AbstractTableModel {
     	else{
     		return 0;
     	}
-    		
-        
     }
 
     public String getColumnName(int col) {
@@ -280,14 +278,14 @@ class SkillsTableModel extends AbstractTableModel {
 		if(col == 1) character.getSkills().get(row).setLimitation((String)value);
 		if(col == 4) character.getSkills().get(row).getRANK().setRank((Integer) value);
 		if( col == 3 ) {
-			character.getSkills().get(row).getRANK().setStartrank((Integer) value);
-			if( character.getSkills().get(row).getRANK().getRank() < (Integer) value ) {
-				character.getSkills().get(row).getRANK().setRank((Integer) value);
+			int v = (Integer)value;
+			RANKType rank = character.getSkills().get(row).getRANK();
+			if( (rank.getRank()<v) || (rank.getRank()==rank.getStartrank()) ) {
+				rank.setRank(v);
 			}
+			rank.setStartrank(v);
 		}
 		character.refesh();
-		fireTableCellUpdated(row, 6);
-		fireTableCellUpdated(row, 7);
-		fireTableCellUpdated(row, col);
+		fireTableRowsUpdated(row, row);
 	}
 }

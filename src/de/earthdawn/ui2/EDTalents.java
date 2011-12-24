@@ -31,6 +31,7 @@ import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.TALENTTEACHERType;
@@ -435,8 +436,12 @@ class TalentsTableModel extends AbstractTableModel {
 			talent.setCircle((Integer)value);
 			break;
 		case 4:
-			talent.getRANK().setStartrank((Integer)value);
-			if( talent.getRANK().getStartrank() > talent.getRANK().getRank() ) talent.getRANK().setRank(talent.getRANK().getStartrank());
+			int v = (Integer)value;
+			RANKType rank = talent.getRANK();
+			if( (rank.getRank()<v) || (rank.getRank()==rank.getStartrank()) ) {
+				rank.setRank(v);
+			}
+			rank.setStartrank(v);
 			break;
 		case 5:
 			talent.getRANK().setRank((Integer)value);
