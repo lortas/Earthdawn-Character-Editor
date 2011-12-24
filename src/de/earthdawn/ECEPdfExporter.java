@@ -241,7 +241,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 		int counterKarmaritual=0;
-		for( String karmaritual : character.getKarmarituals() ) {
+		for( String karmaritual : character.getAllKarmaritual() ) {
 			for( String description : wrapString(50,karmaritual) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
@@ -471,7 +471,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
 		int counterKarmaritual=0;
-		for( String karmaritual : character.getKarmarituals() ) {
+		for( String karmaritual : character.getAllKarmaritual() ) {
 			for( String description : wrapString(50,karmaritual) ) {
 				if( counterKarmaritual > 11 ) {
 					System.err.println("Karmaritual description is to long. Only first 12 lines were displayed.");
@@ -758,9 +758,9 @@ public class ECEPdfExporter {
 			counterArmor++;
 		}
 
-		
 		acroFields.setField( "Discipline", concat(" / ",character.getDisciplineNames()) );
 		acroFields.setField( "Circle", concat(" / ",character.getDisciplineCircles()) );
+		acroFields.setField( "HalfMagic", character.getAllHalfMagic() );
 
 		List<WEAPONType> weapons = character.getWeapons();
 		if( weapons != null ) {
