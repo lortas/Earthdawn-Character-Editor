@@ -74,6 +74,7 @@ public class EDMainWindow {
 	private EDAttributes panelEDAttributes;
 	private EDDisciplines panelEDDisciplines;
 	private EDExperience panelEDExperience;
+	private EDLanguages panelEDLanguages;
 	private EDKarma panelEDKarma;
 	private EDDevotionPoints panelEDDevotionPoints;
 	private EDInventory panelEDThreadItems;
@@ -345,6 +346,7 @@ public class EDMainWindow {
 		panelEDKarma = new EDKarma();
 		panelEDDevotionPoints = new EDDevotionPoints();
 		panelEDThreadItems = new EDInventory();
+		panelEDLanguages = new EDLanguages();
 
 		paneStatus = new BackgroundEditorPane("templates/characteristic_background.jpg");
 		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
@@ -362,6 +364,7 @@ public class EDMainWindow {
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
+		tabbedPane.addTab("Languages", null, panelEDLanguages, null);
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
 		tabbedPane.addTab("DevotionPoints", null, panelEDDevotionPoints , null);
@@ -536,6 +539,9 @@ public class EDMainWindow {
 			}
 			if(co.getClass() == EDExperience.class){
 				((EDExperience)co).setCharacter(character);
+			}
+			if(co.getClass() == EDLanguages.class){
+				((EDLanguages)co).setCharacter(character);
 			}
 			if(co.getClass() == EDKarma.class){
 				((EDKarma)co).setCharacter(character);
