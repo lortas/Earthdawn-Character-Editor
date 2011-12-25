@@ -30,6 +30,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="DURABILITY" type="{http://earthdawn.com/discipline}DISCIPLINEDURABILITY_type"/>
  *         &lt;element name="CIRCLE" type="{http://earthdawn.com/discipline}DISCIPLINECIRCLE_type" maxOccurs="15" minOccurs="8"/>
+ *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="HALFMAGIC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -44,7 +46,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "durability",
-    "circle"
+    "circle",
+    "karmaritual",
+    "halfmagic"
 })
 @XmlRootElement(name = "DISCIPLINE", namespace = "http://earthdawn.com/discipline")
 public class DISCIPLINE {
@@ -53,6 +57,10 @@ public class DISCIPLINE {
     protected DISCIPLINEDURABILITYType durability;
     @XmlElement(name = "CIRCLE", namespace = "http://earthdawn.com/discipline", required = true)
     protected List<DISCIPLINECIRCLEType> circle;
+    @XmlElement(name = "KARMARITUAL", namespace = "http://earthdawn.com/discipline")
+    protected String karmaritual;
+    @XmlElement(name = "HALFMAGIC", namespace = "http://earthdawn.com/discipline")
+    protected String halfmagic;
     @XmlAttribute(required = true)
     protected LanguageType lang;
     @XmlAttribute(required = true)
@@ -111,6 +119,54 @@ public class DISCIPLINE {
             circle = new ArrayList<DISCIPLINECIRCLEType>();
         }
         return this.circle;
+    }
+
+    /**
+     * Gets the value of the karmaritual property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getKARMARITUAL() {
+        return karmaritual;
+    }
+
+    /**
+     * Sets the value of the karmaritual property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setKARMARITUAL(String value) {
+        this.karmaritual = value;
+    }
+
+    /**
+     * Gets the value of the halfmagic property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getHALFMAGIC() {
+        return halfmagic;
+    }
+
+    /**
+     * Sets the value of the halfmagic property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setHALFMAGIC(String value) {
+        this.halfmagic = value;
     }
 
     /**

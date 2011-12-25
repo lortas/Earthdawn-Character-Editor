@@ -276,16 +276,24 @@ public class ECEWorker {
 				talent.setRANK(rank);
 				currentTalents.getOptionaltalents().add(talent);
 			}
-			// Wenn Durability-Talente gefunden wurden, berechnen aus dessen Rank
-			// die Erhöhung von Todes- und Bewustlosigkeitsschwelle
-			for( TALENTType durabilityTalent : durabilityTalents ) {
-				DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(currentDiscipline.getName());
-				if( disziplinProperties != null ) {
+			DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(currentDiscipline.getName());
+			if( disziplinProperties != null ) {
+				// Wenn Durability-Talente gefunden wurden, berechnen aus dessen Rank
+				// die Erhöhung von Todes- und Bewustlosigkeitsschwelle
+				for( TALENTType durabilityTalent : durabilityTalents ) {
 					DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
 					int rank = durabilityTalent.getRANK().getRank()-durabilityTalent.getRANK().getRealignedrank();
 					death.setAdjustment(death.getAdjustment()+(durability.getDeath()*rank));
 					unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*rank));
 					durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
+				}
+				String halfmagic=currentDiscipline.getHALFMAGIC();
+				if( (halfmagic==null) || (halfmagic.isEmpty()) ) {
+					currentDiscipline.setHALFMAGIC(disziplinProperties.getHALFMAGIC());
+				}
+				String karmaritual=currentDiscipline.getKARMARITUAL();
+				if( (karmaritual==null) || (karmaritual.isEmpty()) ) {
+					currentDiscipline.setKARMARITUAL(disziplinProperties.getKARMARITUAL());
 				}
 			}
 			diciplineCircle.put(currentDiscipline.getName(), currentCircle);
