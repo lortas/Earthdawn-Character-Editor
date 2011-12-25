@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="language" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="speak" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *       &lt;attribute name="readwrite" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
+ *       &lt;attribute name="notlearnedbyskill" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -47,6 +48,8 @@ public class CHARACTERLANGUAGEType {
     protected YesnoType speak;
     @XmlAttribute
     protected YesnoType readwrite;
+    @XmlAttribute
+    protected YesnoType notlearnedbyskill;
 
     /**
      * Gets the value of the language property.
@@ -126,6 +129,34 @@ public class CHARACTERLANGUAGEType {
      */
     public void setReadwrite(YesnoType value) {
         this.readwrite = value;
+    }
+
+    /**
+     * Gets the value of the notlearnedbyskill property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link YesnoType }
+     *     
+     */
+    public YesnoType getNotlearnedbyskill() {
+        if (notlearnedbyskill == null) {
+            return YesnoType.NO;
+        } else {
+            return notlearnedbyskill;
+        }
+    }
+
+    /**
+     * Sets the value of the notlearnedbyskill property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link YesnoType }
+     *     
+     */
+    public void setNotlearnedbyskill(YesnoType value) {
+        this.notlearnedbyskill = value;
     }
 
 }
