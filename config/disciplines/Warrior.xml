@@ -120,4 +120,6 @@
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
+	<KARMARITUAL>To Perform his Karmaritual, a Warrior sits cross-legged, holding a weapon above his knees. After a few minutes of meditation he levitates, as if using the Air Dance talent; the ritual use of this talent does not cause him any Strain damage. The Warrior then performs a series of four exercises: the earth defense, the water defense, the fire attack, and the air attack. The ritual ends half an hour later, as soon as the Warrior completes the final move of the air attack.</KARMARITUAL>
+	<HALFMAGIC>Warriors can use half-magic when caring for or repairing their weapons and armor, knowledge of military tactics and strategy (recognizing the safest approach to a target when planning a battle, for instance) and to recall events of Barsaive's military history.</HALFMAGIC>
 </DISCIPLINE>
