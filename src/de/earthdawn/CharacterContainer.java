@@ -155,7 +155,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		String currentDateTime=getCurrentDateTime();
 		String comment = "-LP spent (automaticly added by ECE)";
 		int diff=0;
-		
+
 		diff=calculatedLP.getAttributes()-oldLP.getAttributes();
 		if( diff>0 ) {
 			ACCOUNTINGType entry = new ACCOUNTINGType();
@@ -1062,6 +1062,9 @@ public class CharacterContainer extends CharChangeRefresh {
 			int weaven = magicitem.getWeaventhreadrank();
 			String location = magicitem.getLocation();
 			int edn=magicitem.getEnchantingdifficultynumber();
+			int blooddamage = magicitem.getBlooddamage();
+			int dr = magicitem.getDepatterningrate();
+			String bookref = magicitem.getBookref();
 			int rank=0;
 			ARMORType newmagicarmor = null;
 			SHIELDType newmagicshield = null;
@@ -1077,7 +1080,9 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setKind(kind);
 					armor.setLocation(location);
 					armor.setEdn(edn);
-					armor.setVirtual(YesnoType.YES);
+					armor.setBlooddamage(blooddamage);
+					armor.setDepatterningrate(dr);
+					armor.setBookref(bookref);
 					if( weaven > 0 ) newmagicarmor=armor;
 				}
 				SHIELDType shield = threadrank.getSHIELD();
@@ -1088,15 +1093,47 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setKind(kind);
 					shield.setLocation(location);
 					shield.setEdn(edn);
-					shield.setVirtual(YesnoType.YES);
+					shield.setBlooddamage(blooddamage);
+					shield.setDepatterningrate(dr);
+					shield.setBookref(bookref);
 					if( weaven > 0 ) newmagicshield=shield;
 				}
 				weaven--;
 			}
-			if( newmagicarmor != null ) magicarmor.add(newmagicarmor);
-			if( newmagicshield != null ) magicarmor.add(newmagicshield);
+			if( newmagicarmor != null ) magicarmor.add(copyArmor(newmagicarmor,true));
+			if( newmagicshield != null ) magicarmor.add(copyArmor(newmagicshield,true));
 		}
 		return magicarmor;
+	}
+
+	public static ARMORType copyArmor(ARMORType armor, boolean setvirtual) {
+		ARMORType newarmor;
+		if( armor instanceof SHIELDType ) newarmor = new SHIELDType();
+		else newarmor = new ARMORType();
+		newarmor.setBlooddamage(armor.getBlooddamage());
+		newarmor.setBookref(armor.getBookref());
+		newarmor.setDateforged(armor.getDateforged());
+		newarmor.setDepatterningrate(armor.getDepatterningrate());
+		newarmor.setEdn(armor.getEdn());
+		newarmor.setEdnElement(armor.getEdnElement());
+		newarmor.setKind(armor.getKind());
+		newarmor.setLocation(armor.getLocation());
+		newarmor.setMysticarmor(armor.getMysticarmor());
+		newarmor.setName(armor.getName());
+		newarmor.setPenalty(armor.getPenalty());
+		newarmor.setPhysicalarmor(armor.getPhysicalarmor());
+		newarmor.setTimesforgedMystic(armor.getTimesforgedMystic());
+		newarmor.setTimesforgedPhysical(armor.getPhysicalarmor());
+		newarmor.setUsed(armor.getUsed());
+		newarmor.setWeight(armor.getWeight());
+		if( newarmor instanceof SHIELDType ) {
+			((SHIELDType)newarmor).setMysticdeflectionbonus(((SHIELDType)armor).getMysticdeflectionbonus());
+			((SHIELDType)newarmor).setPhysicaldeflectionbonus(((SHIELDType)armor).getPhysicaldeflectionbonus());
+			((SHIELDType)newarmor).setShatterthreshold(((SHIELDType)armor).getShatterthreshold());
+		}
+		if( setvirtual ) newarmor.setVirtual(YesnoType.YES);
+		else newarmor.setVirtual(armor.getVirtual());
+		return armor;
 	}
 
 	public List<ARMORType> removeVirtualArmorFromNormalArmorList() {
@@ -1114,6 +1151,9 @@ public class CharacterContainer extends CharChangeRefresh {
 			float weight = magicitem.getWeight();
 			YesnoType used = magicitem.getUsed();
 			int weaven = magicitem.getWeaventhreadrank();
+			int blooddamage = magicitem.getBlooddamage();
+			int dr = magicitem.getDepatterningrate();
+			String bookref = magicitem.getBookref();
 			int rank=0;
 			WEAPONType newmagicweapon = null;
 			List<CHARACTERISTICSCOST> LpCosts = PROPERTIES_Characteristics.getTalentRankLPIncreaseTable(1,magicitem.getLpcostgrowth() );
@@ -1126,13 +1166,39 @@ public class CharacterContainer extends CharChangeRefresh {
 					weapon.setWeight(weight);
 					weapon.setUsed(used);
 					weapon.setKind(magicitem.getKind());
+					weapon.setBlooddamage(blooddamage);
+					weapon.setDepatterningrate(dr);
+					weapon.setBookref(bookref);
 					if( weaven > 0 ) newmagicweapon=weapon;
 				}
 				weaven--;
 			}
-			if( newmagicweapon != null ) magicweapon.add(newmagicweapon);
+			if( newmagicweapon != null ) magicweapon.add(copyWeapon(newmagicweapon,true));
 		}
 		return magicweapon;
+	}
+
+	public static WEAPONType copyWeapon(WEAPONType weapon, boolean setvirtual) {
+		WEAPONType newweapon = new WEAPONType();
+		newweapon.setBlooddamage(weapon.getBlooddamage());
+		newweapon.setBookref(weapon.getBookref());
+		newweapon.setDateforged(weapon.getDateforged());
+		newweapon.setDepatterningrate(weapon.getDepatterningrate());
+		newweapon.setKind(weapon.getKind());
+		newweapon.setLocation(weapon.getLocation());
+		newweapon.setName(weapon.getName());
+		newweapon.setUsed(weapon.getUsed());
+		newweapon.setWeight(weapon.getWeight());
+		newweapon.setDamagestep(weapon.getDamagestep());
+		newweapon.setDexteritymin(weapon.getDexteritymin());
+		newweapon.setLongrange(weapon.getLongrange());
+		newweapon.setShortrange(weapon.getShortrange());
+		newweapon.setSize(weapon.getSize());
+		newweapon.setStrengthmin(weapon.getStrengthmin());
+		newweapon.setTimesforged(weapon.getTimesforged());
+		if( setvirtual ) newweapon.setVirtual(YesnoType.YES);
+		else newweapon.setVirtual(weapon.getVirtual());
+		return newweapon;
 	}
 
 	public List<WEAPONType> cutMagicWeaponFromNormalWeaponList() {
@@ -1351,7 +1417,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		MOVEMENTType movement = getMovement();
 		movement.setFlight(movementFlight);
 		movement.setGround(movementGround);
-		
+
 	}
 
 	public void calculateCarrying() {
