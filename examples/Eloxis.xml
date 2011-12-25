@@ -227,22 +227,22 @@
 			<WEAPON size="5" strengthmin="13" damagestep="14" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 		<THREADRANK effect="Damage +1" lpcost="800">
-			<WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
+			<WEAPON size="5" strengthmin="13" damagestep="15" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
 	<ns3:THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" weaventhreadrank="4" kind="shield" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio">
 		<description>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</description>
 		<THREADRANK effect="max Forge Defense" lpcost="200" keyknowledge="Name of the Item: Sylvio">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="2" mysticarmor="5" physicalarmor="5" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="2" mysticarmor="5" physicalarmor="5" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 		<THREADRANK effect="Intiative Penalty -1" lpcost="300">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="1" mysticarmor="5" physicalarmor="5" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="1" mysticarmor="5" physicalarmor="5" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 		<THREADRANK effect="Physical Armor +1, Mystic Armor +1" lpcost="500">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="1" mysticarmor="6" physicalarmor="6" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="1" mysticarmor="6" physicalarmor="6" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 		<THREADRANK effect="Intiative Penalty -1" lpcost="800">
-			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="0" mysticarmor="6" physicalarmor="6" virtual="yes" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
+			<SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="0" mysticarmor="6" physicalarmor="6" kind="shield" location="self" used="yes" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</THREADRANK>
 	</ns3:THREADITEM>
 	<ns3:THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="3" kind="potion" location="self" used="yes" weight="6.0" name="Silverins Heiltrank">
@@ -283,19 +283,19 @@
 	<ns3:THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" weaventhreadrank="0" kind="brooch" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra">
 		<description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</description>
 		<THREADRANK effect="Physical Armor +3" lpcost="200" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
-			<ARMOR edn="0" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" physicalarmor="3" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 		</THREADRANK>
 		<THREADRANK effect="Mystic Armor +2" lpcost="300">
-			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 		</THREADRANK>
 		<THREADRANK effect="Für eine Überanstr.schaden ein Heiltrank (1x pro Tag)" lpcost="500" keyknowledge="Name of hero: Dirac Tol Amarra">
-			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 	</THREADRANK>
 		<THREADRANK effect="Für zwei Überanstr.schaden ein Wiederbelebungssalbe im Augenblick des Todes (1x pro Tag)" lpcost="800">
-			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 	</THREADRANK>
 		<THREADRANK effect="Verzweiflungsschlag+Verzweiflungszauber Blutamulett (inkl Blutschaden) aber nur gegen Dämonen oder Wesen von Dämonen" lpcost="1300" keyknowledge="Name of slayed daemon: Adugank">
-			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" virtual="yes" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+			<ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" location="self" used="no" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
 	</THREADRANK>
 	</ns3:THREADITEM>
 	<ns3:COINS silver="100" location="self" used="yes" weight="1.25" name=""/>
