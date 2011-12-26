@@ -166,7 +166,7 @@ public class EDExperience extends JPanel {
 	protected void do_btnResetSpentLP_actionPerformed(ActionEvent arg0) {
 		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
-				"If you continue, you will loose all entries for spent LP within your accounting.\nAre you sure you want to replace your 'LP spent entries' by what was automaticly calculated?",
+				"If you continue, your manual calculation will be replaced by automatic calculation.\nDo you want continue?",
 				"Are you sure?",
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
