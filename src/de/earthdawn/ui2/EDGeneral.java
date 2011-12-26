@@ -7,6 +7,8 @@ import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.Base64BinaryType;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
+
+import java.util.HashMap;
 import java.util.List;
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -15,15 +17,19 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 import javax.swing.ButtonGroup;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
@@ -41,13 +47,13 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
 	private static final String backgroundImage="templates/genralpanel_background.jpg";
 	private CharacterContainer character;
 	private JTextField textFieldName;
-	private JComboBox comboBoxRace;
 	private JRadioButton rdbtnMale;
 	private JRadioButton rdbtnFemale;
 	private JTextField textFieldSkincolor;
@@ -65,6 +71,8 @@ public class EDGeneral extends JPanel {
 	private JTextField textFieldBirth;
 	private JPanel pnlPortrait;
 	private JLabel lblPortrait;
+	private JButton btnRace;
+	private JPopupMenu popupMenuRace;
 
 	/**
 	 * Create the panel.
@@ -72,7 +80,7 @@ public class EDGeneral extends JPanel {
 	public EDGeneral() {
 		setOpaque(false);
 		setLayout(new MigLayout("", "[110px][100px,grow 50,fill][15px,grow 10,fill][150.00px,grow,fill][100.00px,grow 10,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
-		
+
 		add(new JLabel("Playername"), "cell 0 0,alignx right,aligny center");
 		textFieldPlayer = new JTextField();
 		textFieldPlayer.addCaretListener(new CaretListener() {
@@ -96,17 +104,37 @@ public class EDGeneral extends JPanel {
 		add(textFieldName, "cell 1 1 2 1,growx,aligny center");
 
 		add(new JLabel("Race"), "cell 0 2,alignx right,aligny center");
-		comboBoxRace = new JComboBox();
-		comboBoxRace.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent arg0) {
-				do_comboBoxRace_itemStateChanged(arg0);
+		btnRace = new JButton("Change Race");
+		add(btnRace, "cell 1 2 2 1,grow");
+		btnRace.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_btnChangeRace_actionPerformed(arg0);
 			}
 		});
-		comboBoxRace.setOpaque(false);
-		add(comboBoxRace, "cell 1 2 2 1,growx,aligny center");
-		for (NAMEGIVERABILITYType n : ApplicationProperties.create().getNamegivers()) {
-			comboBoxRace.addItem(n.getName());
+		btnRace.setOpaque(false);
+		btnRace.setContentAreaFilled(false);
+		
+		JMenu menuRace = new JMenu();
+		HashMap<String, List<NAMEGIVERABILITYType>> namegivers = ApplicationProperties.create().getNamgiversByType();
+		for( String namegiverstype : namegivers.keySet() ) {
+			List<NAMEGIVERABILITYType> namegiverList = namegivers.get(namegiverstype);
+			JMenu menu;
+			if( namegiverList.size() == 1 ) menu = menuRace;
+			else {
+				menu = new JMenu(namegiverstype);
+				menuRace.add(menu);
+			}
+			for( NAMEGIVERABILITYType n : namegiverList ) {
+				JMenuItem menuItem = new JMenuItem(n.getName());
+				menuItem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						do_Race_Changed(((JMenuItem)arg0.getSource()).getText());
+					}
+				});
+				menu.add(menuItem);
+			}
 		}
+		popupMenuRace = menuRace.getPopupMenu();
 
 		JScrollPane charDescriptionPanel = new JScrollPane();
 		charDescriptionPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Description", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
@@ -130,9 +158,10 @@ public class EDGeneral extends JPanel {
 				do_rdbtnSex_itemStateChanged(arg0);
 			}
 		});
+
 		rdbtnFemale.setOpaque(false);
 		add(rdbtnFemale, "cell 1 4,alignx left,aligny center");
-		
+
 		rdbtnNoGender = new JRadioButton("No Gender");
 		rdbtnNoGender.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
@@ -180,7 +209,7 @@ public class EDGeneral extends JPanel {
 		});
 		rdbtnMale.setOpaque(false);
 		add(rdbtnMale, "cell 1 3,alignx left,aligny center");
-		
+
 		pnlPortrait = new JPanel();
 		pnlPortrait.setBorder(new TitledBorder(null, "Portrait", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlPortrait.setOpaque(false);
@@ -301,6 +330,7 @@ public class EDGeneral extends JPanel {
 		charDescription.setText(character.getDESCRIPTION());
 		charComment.setText(character.getCOMMENT());
 		txtRaceabilities.setText(character.getAbilities());
+		btnRace.setText(character.getAppearance().getRace());
 
 		if(character.getAppearance().getGender().equals(GenderType.MALE)){
 			rdbtnMale.getModel().setSelected(true);
@@ -309,8 +339,6 @@ public class EDGeneral extends JPanel {
 		} else {
 			rdbtnNoGender.getModel().setSelected(true);
 		}
-
-		comboBoxRace.setSelectedItem(character.getAppearance().getRace());
 
 		List<Base64BinaryType> potraits = character.getPortrait();
 		if( ! potraits.isEmpty() ) {
@@ -325,18 +353,15 @@ public class EDGeneral extends JPanel {
 	public CharacterContainer getCharacter() {
 		return character;
 	}
-
-	protected void do_comboBoxRace_itemStateChanged(ItemEvent arg0) {
-		if(character != null){
-			if(arg0.getStateChange() == 1) {
-				character.getAppearance().setRace((String)arg0.getItem());
-				ECEWorker worker = new ECEWorker();
-				worker.verarbeiteCharakter(character.getEDCHARACTER());
-				txtRaceabilities.setText(character.getAbilities());
-				character.getPortrait().clear();
-				character.refesh();
-			}
-		}
+	protected void do_Race_Changed(String race) {
+		if( character == null ) return;
+		APPEARANCEType appearance = character.getAppearance();
+		if( race.equals(appearance.getRace()) ) return;
+		btnRace.setText(race);
+		appearance.setRace(race);
+		character.getPortrait().clear();
+		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());
+		character.refesh();
 	}
 
 	protected void do_rdbtnSex_itemStateChanged(ItemEvent arg0) {
@@ -349,8 +374,8 @@ public class EDGeneral extends JPanel {
 		APPEARANCEType appearance = character.getAppearance();
 		if( appearance.getGender().equals(gender) ) return;
 		appearance.setGender(gender);
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(character.getEDCHARACTER());		
+		character.getPortrait().clear();
+		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());		
 		character.refesh();
 	}
 
@@ -473,6 +498,10 @@ public class EDGeneral extends JPanel {
 				System.err.println(e2.getLocalizedMessage());
 			}
 		}
+	}
+
+	protected void do_btnChangeRace_actionPerformed(ActionEvent arg0) {
+		popupMenuRace.show(this, btnRace.getX(), btnRace.getY()+btnRace.getHeight());
 	}
 
 	@Override
