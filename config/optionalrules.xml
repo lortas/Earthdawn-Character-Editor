@@ -68,5 +68,4 @@
 	<!-- By the following rule you can define if if a specific talent will be added automatically and will not cost an optional talent slot -->
 	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as an extra talent-->
 	<DEFAULTLANGUAGE lang="en" language="Dwarf" readwrite="yes" speak="yes"/>
-	<DEFAULTLANGUAGE lang="en" language="_own_race_language_" readwrite="no" speak="yes"/>
 </OPTIONALRULES>
