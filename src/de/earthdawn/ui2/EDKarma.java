@@ -26,7 +26,7 @@ import javax.swing.table.TableColumn;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ACCOUNTINGType;
-import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.PlusminusType;
 
 public class EDKarma extends JPanel {
@@ -54,7 +54,7 @@ public class EDKarma extends JPanel {
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
 		try {
 			int c=0;
-			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("karmaselection") ) {
+			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("karmaselection") ) {
 				TableColumn col = table.getColumnModel().getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());

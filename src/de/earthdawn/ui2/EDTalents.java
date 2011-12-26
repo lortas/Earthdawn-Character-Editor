@@ -30,7 +30,7 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINE;
-import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.TALENTABILITYType;
@@ -58,7 +58,7 @@ public class EDTalents extends JPanel {
 		table.getColumnModel().getColumn(5).setCellEditor(new SpinnerEditor(0, 15));
 		try {
 			int c=0;
-			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("talentselection") ) {
+			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("talentselection") ) {
 				TableColumn col = table.getColumnModel().getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());

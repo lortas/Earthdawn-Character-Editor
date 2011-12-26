@@ -441,11 +441,11 @@ public class ApplicationProperties {
 		return ECEGUILAYOUT.getTABWINDOW();
 	}
 
-	public List<LAYOUTTABLECOLUMNType> getGuiLayoutTabel(String name) {
+	public List<LAYOUTSIZESType> getGuiLayoutTabel(String name) {
 		for( LAYOUTTABLEType table : ECEGUILAYOUT.getTABLE() ) {
 			if( table.getName().equals(name) ) return table.getCOLUMN();
 		}
-		return new ArrayList<LAYOUTTABLECOLUMNType>();
+		return new ArrayList<LAYOUTSIZESType>();
 	}
 
 	private void init() {

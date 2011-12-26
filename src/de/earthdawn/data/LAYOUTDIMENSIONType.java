@@ -10,7 +10,7 @@ package de.earthdawn.data;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -23,9 +23,11 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="LAYOUT_DIMENSION_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="x" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="y" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="z" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;sequence>
+ *         &lt;element name="X" type="{http://earthdawn.com/eceguilayout}LAYOUT_SIZES_type" minOccurs="0"/>
+ *         &lt;element name="Y" type="{http://earthdawn.com/eceguilayout}LAYOUT_SIZES_type" minOccurs="0"/>
+ *         &lt;element name="Z" type="{http://earthdawn.com/eceguilayout}LAYOUT_SIZES_type" minOccurs="0"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,30 +36,30 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LAYOUT_DIMENSION_type", namespace = "http://earthdawn.com/eceguilayout")
+@XmlType(name = "LAYOUT_DIMENSION_type", namespace = "http://earthdawn.com/eceguilayout", propOrder = {
+    "x",
+    "y",
+    "z"
+})
 public class LAYOUTDIMENSIONType {
 
-    @XmlAttribute
-    protected Integer x;
-    @XmlAttribute
-    protected Integer y;
-    @XmlAttribute
-    protected Integer z;
+    @XmlElement(name = "X")
+    protected LAYOUTSIZESType x;
+    @XmlElement(name = "Y")
+    protected LAYOUTSIZESType y;
+    @XmlElement(name = "Z")
+    protected LAYOUTSIZESType z;
 
     /**
      * Gets the value of the x property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link LAYOUTSIZESType }
      *     
      */
-    public int getX() {
-        if (x == null) {
-            return  0;
-        } else {
-            return x;
-        }
+    public LAYOUTSIZESType getX() {
+        return x;
     }
 
     /**
@@ -65,10 +67,10 @@ public class LAYOUTDIMENSIONType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link LAYOUTSIZESType }
      *     
      */
-    public void setX(Integer value) {
+    public void setX(LAYOUTSIZESType value) {
         this.x = value;
     }
 
@@ -77,15 +79,11 @@ public class LAYOUTDIMENSIONType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link LAYOUTSIZESType }
      *     
      */
-    public int getY() {
-        if (y == null) {
-            return  0;
-        } else {
-            return y;
-        }
+    public LAYOUTSIZESType getY() {
+        return y;
     }
 
     /**
@@ -93,10 +91,10 @@ public class LAYOUTDIMENSIONType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link LAYOUTSIZESType }
      *     
      */
-    public void setY(Integer value) {
+    public void setY(LAYOUTSIZESType value) {
         this.y = value;
     }
 
@@ -105,15 +103,11 @@ public class LAYOUTDIMENSIONType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link LAYOUTSIZESType }
      *     
      */
-    public int getZ() {
-        if (z == null) {
-            return  0;
-        } else {
-            return z;
-        }
+    public LAYOUTSIZESType getZ() {
+        return z;
     }
 
     /**
@@ -121,10 +115,10 @@ public class LAYOUTDIMENSIONType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link LAYOUTSIZESType }
      *     
      */
-    public void setZ(Integer value) {
+    public void setZ(LAYOUTSIZESType value) {
         this.z = value;
     }
 

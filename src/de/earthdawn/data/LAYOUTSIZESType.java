@@ -15,12 +15,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for LAYOUT_TABLE_COLUMN_type complex type.
+ * <p>Java class for LAYOUT_SIZES_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LAYOUT_TABLE_COLUMN_type">
+ * &lt;complexType name="LAYOUT_SIZES_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="min" type="{http://earthdawn.com/datatypes}unsigned_int" />
@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "LAYOUT_TABLE_COLUMN_type", namespace = "http://earthdawn.com/eceguilayout")
-public class LAYOUTTABLECOLUMNType {
+@XmlType(name = "LAYOUT_SIZES_type", namespace = "http://earthdawn.com/eceguilayout")
+public class LAYOUTSIZESType {
 
     @XmlAttribute
     protected Integer min;

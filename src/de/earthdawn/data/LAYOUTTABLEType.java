@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="COLUMN" type="{http://earthdawn.com/eceguilayout}LAYOUT_TABLE_COLUMN_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="COLUMN" type="{http://earthdawn.com/eceguilayout}LAYOUT_SIZES_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
@@ -44,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 public class LAYOUTTABLEType {
 
     @XmlElement(name = "COLUMN")
-    protected List<LAYOUTTABLECOLUMNType> column;
+    protected List<LAYOUTSIZESType> column;
     @XmlAttribute(required = true)
     protected String name;
 
@@ -66,13 +66,13 @@ public class LAYOUTTABLEType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link LAYOUTTABLECOLUMNType }
+     * {@link LAYOUTSIZESType }
      * 
      * 
      */
-    public List<LAYOUTTABLECOLUMNType> getCOLUMN() {
+    public List<LAYOUTSIZESType> getCOLUMN() {
         if (column == null) {
-            column = new ArrayList<LAYOUTTABLECOLUMNType>();
+            column = new ArrayList<LAYOUTSIZESType>();
         }
         return this.column;
     }
