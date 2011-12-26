@@ -37,7 +37,7 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
-		<DEFAULTLANGUAGE language="Human" speak="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Cathan" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -50,6 +50,8 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Dinganni" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -61,6 +63,8 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Galeb" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="9" />
@@ -72,6 +76,8 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Klek" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -83,6 +89,8 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Riders of the Scorched Plain" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -94,6 +102,8 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Scavians" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -104,7 +114,9 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
-		<TALENT name="Versatility"/>
+		<TALENT name="Versatility"/>		
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Vorst" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="9" />
@@ -116,6 +128,8 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="6" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -130,6 +144,8 @@
 		<TALENT name="Versatility"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Hidden Physical Deformity</ABILITY>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5" type="Obsidiman">
 		<ATTRIBUTE name="DEX" value="8" />
@@ -182,7 +198,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
-		<DEFAULTLANGUAGE language="T'skrang" speak="yes"/>
+		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jungle T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -195,7 +211,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
-		<DEFAULTLANGUAGE language="T'skrang" speak="yes"/>
+		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Sea T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -209,7 +225,7 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Water Breath</ABILITY>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
-		<DEFAULTLANGUAGE language="T'skrang" speak="yes"/>
+		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="K'stulaami" karmamodifier="4" movement_ground="6" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -223,7 +239,7 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Gliding</ABILITY>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
-		<DEFAULTLANGUAGE language="T'skrang" speak="yes"/>
+		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Pale Ones" karmamodifier="4" movement_ground="6" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -237,7 +253,7 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Heat Sight</ABILITY>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
-		<DEFAULTLANGUAGE language="T'skrang" speak="yes"/>
+		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8" type="Windling">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -255,7 +271,7 @@
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Windling" speak="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Gar" karmamodifier="4" movement_ground="7">
+	<NAMEGIVER lang="en" name="Gar" karmamodifier="4" movement_ground="7" type="Elf">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="11" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -265,8 +281,9 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<DEFAULTLANGUAGE language="new Gar" speak="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="7">
+	<NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="7" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
 		<ATTRIBUTE name="STR" value="9" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -276,6 +293,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Po Na" karmamodifier="5" movement_ground="6">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -287,8 +305,9 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Prehensile Tail</ABILITY>
+		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="6">
+	<NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="6" type="Storm Children">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -298,6 +317,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Lightning Born"/>
+		<DEFAULTLANGUAGE language="Cathayan" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="dragon">
 		<ATTRIBUTE name="DEX" value="28" />
@@ -309,7 +329,7 @@
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6">
+	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6" type="Jackalmen">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="12" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -320,8 +340,11 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Bite Attack</ABILITY>
+		<DEFAULTLANGUAGE language="Theran" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Jackalmen" speak="yes"/>
+		<DEFAULTLANGUAGE language="Creana" speak="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Jubruq" karmamodifier="6" movement_ground="5">
+	<NAMEGIVER lang="en" name="Jubruq" karmamodifier="6" movement_ground="5" type="Jubruq">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="8" />
 		<ATTRIBUTE name="TOU" value="9" />
@@ -331,9 +354,12 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Defense Bonus against Horrors</ABILITY>
-		<ABILITY>Need 12 hours sleep per day</ABILITY>	
+		<ABILITY>Need 12 hours sleep per day</ABILITY>
+		<DEFAULTLANGUAGE language="Theran" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Sulfiki" speak="yes"/>
+		<DEFAULTLANGUAGE language="Maracan" speak="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Leafers" karmamodifier="5" movement_ground="5">
+	<NAMEGIVER lang="en" name="Leafers" karmamodifier="5" movement_ground="5" type="Leafers">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="9" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -344,9 +370,11 @@
 		<WOUND threshold="0"/>
 		<ABILITY>No wound penalties</ABILITY>
 		<ABILITY>Sensible for extreme temperatures</ABILITY>
-		<ABILITY>Leafer Pods</ABILITY>	
+		<ABILITY>Leafer Pods</ABILITY>
+		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Leafer" speak="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="5">
+	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="5" type="Ulk-Men">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="12" />
 		<ATTRIBUTE name="TOU" value="13" />
@@ -356,5 +384,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Gain Horror Powers</ABILITY>
+		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="Ulk" speak="yes"/>
 	</NAMEGIVER>
 </NAMEGIVERS>
