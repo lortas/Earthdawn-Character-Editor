@@ -1557,6 +1557,22 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<CHARACTERLANGUAGEType> languages = character.getLANGUAGE();
 		if( languages.isEmpty() ) {
 			for( CHARACTERLANGUAGEType l : PROPERTIES.getDefaultLanguage() ) languages.add(l);
+			String race = getAppearance().getRace();
+			for( NAMEGIVERABILITYType namegiver : PROPERTIES.getNamegivers() ) {
+				if( namegiver.getName().equals(race) ) {
+					for( CHARACTERLANGUAGEType l : namegiver.getDEFAULTLANGUAGE() ) {
+						boolean notfound=true;
+						for( CHARACTERLANGUAGEType i : languages ) {
+							if( i.getLanguage().equals(l.getLanguage()) && i.getNotlearnedbyskill().equals(l.getNotlearnedbyskill())) {
+								notfound=false;
+								if( l.getSpeak().equals(YesnoType.YES) ) i.setSpeak(YesnoType.YES);
+								if( l.getReadwrite().equals(YesnoType.YES) ) i.setReadwrite(YesnoType.YES);
+							}
+						}
+						if( notfound ) languages.add(l);
+					}
+				}
+			}
 		}
 		return languages;
 	}
