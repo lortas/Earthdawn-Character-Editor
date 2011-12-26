@@ -94,6 +94,7 @@ public class MagicitemNodePanel extends AbstractNodePanel<MAGICITEMType> {
 		nodeObject.setBlooddamage((Integer) spinnerBloodDamage.getValue());
 		nodeObject.setDepatterningrate((Integer) spinnerDepatterningrate.getValue());
 		nodeObject.setEnchantingdifficultynumber((Integer) spinnerEdn.getValue());
+		nodeObject.setEffect(textFieldEffect.getText());
 		if(chckbxUsed.isSelected()) nodeObject.setUsed(YesnoType.YES);
 		else nodeObject.setUsed(YesnoType.NO);
 	}

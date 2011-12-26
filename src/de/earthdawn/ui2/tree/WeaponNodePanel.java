@@ -120,7 +120,7 @@ public class WeaponNodePanel extends AbstractNodePanel<WEAPONType> {
 		nodeObject.setBlooddamage((Integer)spinnerBloodDamage.getValue());
 		nodeObject.setBookref(textFieldBookRef.getText());
 		nodeObject.setDamagestep((Integer) spinnerDamage.getValue());
-		nodeObject.setDateforged(nodeObject.getDateforged());
+		nodeObject.setDateforged(textFieldDateForged.getText());
 		nodeObject.setDepatterningrate((Integer)spinnerDepatterningrate.getValue());
 		nodeObject.setDexteritymin((Integer) spinnerDexMin.getValue());
 		nodeObject.setKind((ItemkindType) comboBoxType.getSelectedItem());
