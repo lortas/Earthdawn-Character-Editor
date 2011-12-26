@@ -170,7 +170,17 @@ public class ApplicationProperties {
 		}
 		return result;
 	}
-	
+
+	public HashMap<String,List<NAMEGIVERABILITYType>> getNamgiversByType() {
+		HashMap<String,List<NAMEGIVERABILITYType>> result = new HashMap<String,List<NAMEGIVERABILITYType>>();
+		for( NAMEGIVERABILITYType namegiver : getNamegivers() ) {
+			String type = namegiver.getType();
+			if( ! result.containsKey(type) ) result.put(type,new ArrayList<NAMEGIVERABILITYType>());
+			result.get(type).add(namegiver);
+		}
+		return result;
+	}
+
 	public ECECharacteristics getCharacteristics() {
 		return CHARACTERISTICS;
 	}
