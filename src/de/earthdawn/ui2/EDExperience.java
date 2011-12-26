@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -163,6 +164,16 @@ public class EDExperience extends JPanel {
 		character.refesh();
 	}
 	protected void do_btnResetSpentLP_actionPerformed(ActionEvent arg0) {
+		String[] options = {"Yes","No"};
+		int a = JOptionPane.showOptionDialog(this,
+				"If you continue, you will loose all entries for spent LP within your accounting.\nAre you sure you want to replace your 'LP spent entries' by what was automaticly calculated?",
+				"Are you sure?",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]);
+		if( a != 0 ) return;
 		character.clearSpentLegendPoints();
 		character.getLegendPoints().getLEGENDPOINTS().addAll(character.getCalculatedLegendpoints().getCALCULATIONLP());
 		character.refesh();
