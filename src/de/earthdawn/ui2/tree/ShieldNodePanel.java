@@ -1,7 +1,5 @@
 package de.earthdawn.ui2.tree;
 
-import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.data.ItemkindType;
@@ -9,7 +7,6 @@ import de.earthdawn.data.ItemkindType;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
-import javax.swing.JList;
 import javax.swing.JCheckBox;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;

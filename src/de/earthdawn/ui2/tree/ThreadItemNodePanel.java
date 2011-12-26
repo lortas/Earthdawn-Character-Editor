@@ -11,12 +11,8 @@ import javax.swing.JCheckBox;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
-
-import com.sun.java.swing.plaf.gtk.GTKConstants.TextDirection;
-
 import net.miginfocom.swing.MigLayout;
 
 public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
@@ -126,6 +122,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		nodeObject.setBlooddamage((Integer) spinnerBloodDamage.getValue());
 		nodeObject.setDepatterningrate((Integer) spinnerDepatterningrate.getValue());
 		nodeObject.setEnchantingdifficultynumber((Integer) spinnerEdn.getValue());
+		nodeObject.setEffect(textFieldEffect.getText());
 		if(chckbxUsed.isSelected()) nodeObject.setUsed(YesnoType.YES);
 		else nodeObject.setUsed(YesnoType.NO);
 		nodeObject.setDescription(textFieldDescription.getText());
