@@ -152,7 +152,7 @@ class LanguagesTableModel extends AbstractTableModel {
 
 	private static final long serialVersionUID = -2330554075615304424L;
 	private CharacterContainer character;
-	private String[] columnNames = {"Language", "Speak",  "Read/Write", "NotLearnedBySkill"};
+	private String[] columnNames = {"Language", "Speak",  "Read/Write", "Not Learned By Skill"};
 
 	public LanguagesTableModel(CharacterContainer character) {
 		super();
