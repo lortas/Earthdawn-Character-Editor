@@ -92,11 +92,11 @@ public class CharacterContainer extends CharChangeRefresh {
 		appearance = new APPEARANCEType();
 		appearance.setRace("Human");
 		appearance.setGender(GenderType.MALE);
-		appearance.setEyes("blue");
+		appearance.setEyes("brown");
 		appearance.setAge(20);
-		appearance.setHair("blond");
-		appearance.setHeight(5.5774f);
-		appearance.setSkin("blond");
+		appearance.setHair("black");
+		appearance.setHeight(5.5f);
+		appearance.setSkin("caucasian");
 		appearance.setWeight(176);
 		character.setAPPEARANCE(appearance);
 		return appearance;
