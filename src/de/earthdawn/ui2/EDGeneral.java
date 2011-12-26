@@ -28,6 +28,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JRadioButton;
@@ -113,7 +114,7 @@ public class EDGeneral extends JPanel {
 		});
 		btnRace.setOpaque(false);
 		btnRace.setContentAreaFilled(false);
-		
+
 		JMenu menuRace = new JMenu();
 		HashMap<String, List<NAMEGIVERABILITYType>> namegivers = ApplicationProperties.create().getNamgiversByType();
 		for( String namegiverstype : namegivers.keySet() ) {
@@ -359,7 +360,19 @@ public class EDGeneral extends JPanel {
 		if( race.equals(appearance.getRace()) ) return;
 		btnRace.setText(race);
 		appearance.setRace(race);
-		character.getPortrait().clear();
+		String[] options = {"Yes","No"};
+		int a = JOptionPane.showOptionDialog(this,
+				"Do you also want to reset your portrait picture and reset your known languages to default?",
+				"Reset portrait and languages?",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]);
+		if( a == 0 ) {
+			character.getPortrait().clear();
+			character.getLanguages().clear();
+		}
 		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());
 		character.refesh();
 	}
@@ -374,7 +387,16 @@ public class EDGeneral extends JPanel {
 		APPEARANCEType appearance = character.getAppearance();
 		if( appearance.getGender().equals(gender) ) return;
 		appearance.setGender(gender);
-		character.getPortrait().clear();
+		String[] options = {"Yes","No"};
+		int a = JOptionPane.showOptionDialog(this,
+				"Do you also want to reset your portrait picture?",
+				"Change Portrait?",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]);
+		if( a == 0 ) character.getPortrait().clear();
 		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());		
 		character.refesh();
 	}
