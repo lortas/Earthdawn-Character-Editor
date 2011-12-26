@@ -25,7 +25,7 @@ import javax.imageio.ImageIO;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINESPELLType;
-import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.SpellkindType;
@@ -56,7 +56,7 @@ public class EDSpells extends JPanel {
 		try {
 			((SpellsTableModel)table.getModel()).generateLists(threadweavings);
 			int c=0;
-			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("spellselection") ) {
+			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("spellselection") ) {
 				TableColumn col = table.getColumnModel().getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());

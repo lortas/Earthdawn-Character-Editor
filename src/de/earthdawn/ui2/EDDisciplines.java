@@ -29,7 +29,7 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
-import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.LAYOUTSIZESType;
 
 public class EDDisciplines extends JPanel {
 
@@ -56,7 +56,7 @@ public class EDDisciplines extends JPanel {
 		table.getColumnModel().getColumn(3).setCellRenderer(new TextTableCellEditor());
 		try {
 			int c=0;
-			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("disciplineselection") ) {
+			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("disciplineselection") ) {
 				TableColumn col = table.getColumnModel().getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());

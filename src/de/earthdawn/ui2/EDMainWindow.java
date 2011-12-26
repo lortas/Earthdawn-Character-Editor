@@ -57,6 +57,7 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.LAYOUTDIMENSIONType;
+import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.event.CharChangeEventListener;
 
@@ -130,16 +131,31 @@ public class EDMainWindow {
 		frame = new JFrame("Earthdawn Character Editor");
 		//frame.setBounds(10, 50, 1020, 740);
 		LAYOUTDIMENSIONType dimMainWindow = PROPERTIES.getGuiLayoutMainWindow();
-		frame.setSize(new Dimension(dimMainWindow.getX(),dimMainWindow.getY()));
+		LAYOUTSIZESType dimMainWindow_X = dimMainWindow.getX();
+		LAYOUTSIZESType dimMainWindow_Y = dimMainWindow.getY();
+		if( (dimMainWindow_X!=null) && (dimMainWindow_Y!=null) ) {
+			Integer x = dimMainWindow_X.getPreferred();
+			Integer y = dimMainWindow_X.getPreferred();
+			if( (x!=null) && (y!=null) ) {
+				frame.setSize(new Dimension(x,y));
+				frame.setPreferredSize(new Dimension(x,y));
+			}
+			x = dimMainWindow_X.getMin();
+			y = dimMainWindow_X.getMin();
+			if( (x!=null) && (y!=null) ) frame.setMinimumSize(new Dimension(x,y));
+			x = dimMainWindow_X.getMax();
+			y = dimMainWindow_X.getMax();
+			if( (x!=null) && (y!=null) ) frame.setMaximumSize(new Dimension(x,y));
+		}
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
-		
+
 		JMenu mnFile = new JMenu(NLS.getString("EDMainWindow.mnFile.text")); //$NON-NLS-1$
 		menuBar.add(mnFile);
-		
+
 		JMenuItem mntmNew = new JMenuItem(NLS.getString("EDMainWindow.mntmNew.text"));
 		mntmNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -147,7 +163,7 @@ public class EDMainWindow {
 			}
 		});
 		mnFile.add(mntmNew);
-		
+
 		JMenuItem mntmOpen = new JMenuItem(NLS.getString("EDMainWindow.mntmOpen.text")); //$NON-NLS-1$
 		mntmOpen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -155,7 +171,7 @@ public class EDMainWindow {
 			}
 		});
 		mnFile.add(mntmOpen);
-		
+
 		JMenuItem mntmSave = new JMenuItem(NLS.getString("EDMainWindow.mntmSave.text")); //$NON-NLS-1$
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -163,7 +179,7 @@ public class EDMainWindow {
 			}
 		});
 		mnFile.add(mntmSave);
-		
+
 		JMenuItem mntmSaveAs = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveAs.text")); //$NON-NLS-1$
 		mntmSaveAs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -335,7 +351,22 @@ public class EDMainWindow {
 		LAYOUTDIMENSIONType dimTabWindow = PROPERTIES.getGuiLayoutTabWindow();
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		tabbedPane.setMinimumSize(new Dimension(dimTabWindow.getX(),dimTabWindow.getY()));
+		LAYOUTSIZESType dimTabWindow_X = dimTabWindow.getX();
+		LAYOUTSIZESType dimTabWindow_Y = dimTabWindow.getY();
+		if( (dimTabWindow_X!=null) && (dimTabWindow_Y!=null) ) {
+			Integer x = dimTabWindow_X.getPreferred();
+			Integer y = dimTabWindow_X.getPreferred();
+			if( (x!=null) && (y!=null) ) {
+				tabbedPane.setSize(new Dimension(x,y));
+				tabbedPane.setPreferredSize(new Dimension(x,y));
+			}
+			x = dimTabWindow_X.getMin();
+			y = dimTabWindow_X.getMin();
+			if( (x!=null) && (y!=null) ) tabbedPane.setMinimumSize(new Dimension(x,y));
+			x = dimTabWindow_X.getMax();
+			y = dimTabWindow_X.getMax();
+			if( (x!=null) && (y!=null) ) tabbedPane.setMaximumSize(new Dimension(x,y));
+		}
 		splitPane.setLeftComponent(tabbedPane);
 
 		panelERGeneral = new EDGeneral();
@@ -352,7 +383,22 @@ public class EDMainWindow {
 		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
 		editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		LAYOUTDIMENSIONType dimStatusWindow = PROPERTIES.getGuiLayoutStatusWindow();
-		editorScrollPane.setMinimumSize(new Dimension(dimStatusWindow.getX(),dimStatusWindow.getY()));
+		LAYOUTSIZESType dimStatusWindow_X = dimStatusWindow.getX();
+		LAYOUTSIZESType dimStatusWindow_Y = dimStatusWindow.getY();
+		if( (dimStatusWindow_X!=null) && (dimStatusWindow_Y!=null) ) {
+			Integer x = dimStatusWindow_X.getPreferred();
+			Integer y = dimStatusWindow_X.getPreferred();
+			if( (x!=null) && (y!=null) ) {
+				editorScrollPane.setSize(new Dimension(x,y));
+				editorScrollPane.setPreferredSize(new Dimension(x,y));
+			}
+			x = dimStatusWindow_X.getMin();
+			y = dimStatusWindow_X.getMin();
+			if( (x!=null) && (y!=null) ) editorScrollPane.setMinimumSize(new Dimension(x,y));
+			x = dimStatusWindow_X.getMax();
+			y = dimStatusWindow_X.getMax();
+			if( (x!=null) && (y!=null) ) editorScrollPane.setMaximumSize(new Dimension(x,y));
+		}
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
 		paneStatus.setEditorKit(kit);
 		paneStatus.setEditable(false);
@@ -373,7 +419,7 @@ public class EDMainWindow {
 		//tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
 		//tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
 		tabbedPane.addTab("Inventory", null, panelEDThreadItems , null);
-		
+
 		splitPane.setRightComponent(editorScrollPane);
 	}
 
@@ -854,7 +900,7 @@ public class EDMainWindow {
 			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			e.printStackTrace();
 		}
-}
+	}
 
 	protected String chopFilename(File f){
 		String choppedFilename;

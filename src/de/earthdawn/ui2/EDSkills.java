@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.LAYOUTTABLECOLUMNType;
+import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.OPTIONALRULEType;
 import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
@@ -128,7 +128,7 @@ public class EDSkills extends JPanel {
 		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
 		try {
 			int c=0;
-			for( LAYOUTTABLECOLUMNType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {
+			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {
 				TableColumn col = table.getColumnModel().getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
