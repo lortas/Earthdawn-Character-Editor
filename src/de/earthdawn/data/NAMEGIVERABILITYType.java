@@ -34,12 +34,14 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="NOTDEFAULTSKILL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="DEFAULTLANGUAGE" type="{http://earthdawn.com/datatypes}CHARACTERLANGUAGE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="karmamodifier" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="movement_ground" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="movement_flight" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
+ *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -55,7 +57,8 @@ import javax.xml.bind.annotation.XmlType;
     "defense",
     "talent",
     "ability",
-    "notdefaultskill"
+    "notdefaultskill",
+    "defaultlanguage"
 })
 public class NAMEGIVERABILITYType {
 
@@ -73,6 +76,8 @@ public class NAMEGIVERABILITYType {
     protected List<String> ability;
     @XmlElement(name = "NOTDEFAULTSKILL")
     protected List<String> notdefaultskill;
+    @XmlElement(name = "DEFAULTLANGUAGE")
+    protected List<CHARACTERLANGUAGEType> defaultlanguage;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute
@@ -83,6 +88,8 @@ public class NAMEGIVERABILITYType {
     protected Integer movementFlight;
     @XmlAttribute(required = true)
     protected LanguageType lang;
+    @XmlAttribute
+    protected String type;
 
     /**
      * Gets the value of the attribute property.
@@ -278,6 +285,35 @@ public class NAMEGIVERABILITYType {
     }
 
     /**
+     * Gets the value of the defaultlanguage property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the defaultlanguage property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEFAULTLANGUAGE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CHARACTERLANGUAGEType }
+     * 
+     * 
+     */
+    public List<CHARACTERLANGUAGEType> getDEFAULTLANGUAGE() {
+        if (defaultlanguage == null) {
+            defaultlanguage = new ArrayList<CHARACTERLANGUAGEType>();
+        }
+        return this.defaultlanguage;
+    }
+
+    /**
      * Gets the value of the name property.
      * 
      * @return
@@ -407,6 +443,34 @@ public class NAMEGIVERABILITYType {
      */
     public void setLang(LanguageType value) {
         this.lang = value;
+    }
+
+    /**
+     * Gets the value of the type property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getType() {
+        if (type == null) {
+            return "";
+        } else {
+            return type;
+        }
+    }
+
+    /**
+     * Sets the value of the type property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setType(String value) {
+        this.type = value;
     }
 
 }
