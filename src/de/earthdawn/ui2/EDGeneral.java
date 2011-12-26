@@ -320,6 +320,7 @@ public class EDGeneral extends JPanel {
 
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
+		textFieldPlayer.setText(character.getPlayer());
 		textFieldName.setText(character.getName());
 		spinnerAge.setValue(character.getAppearance().getAge());
 		spinnerSize.setValue(character.getAppearance().getHeight());
