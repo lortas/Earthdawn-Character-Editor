@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="ORIGIN" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="NOTDEFAULTSKILL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTLANGUAGE" type="{http://earthdawn.com/datatypes}CHARACTERLANGUAGE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -57,6 +58,7 @@ import javax.xml.bind.annotation.XmlType;
     "defense",
     "talent",
     "ability",
+    "origin",
     "notdefaultskill",
     "defaultlanguage"
 })
@@ -74,6 +76,8 @@ public class NAMEGIVERABILITYType {
     protected List<TALENTABILITYType> talent;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
+    @XmlElement(name = "ORIGIN")
+    protected List<String> origin;
     @XmlElement(name = "NOTDEFAULTSKILL")
     protected List<String> notdefaultskill;
     @XmlElement(name = "DEFAULTLANGUAGE")
@@ -253,6 +257,35 @@ public class NAMEGIVERABILITYType {
             ability = new ArrayList<String>();
         }
         return this.ability;
+    }
+
+    /**
+     * Gets the value of the origin property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the origin property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getORIGIN().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getORIGIN() {
+        if (origin == null) {
+            origin = new ArrayList<String>();
+        }
+        return this.origin;
     }
 
     /**

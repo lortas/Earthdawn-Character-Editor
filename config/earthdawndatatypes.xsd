@@ -617,6 +617,7 @@
 		<xs:attribute name="skin" type="xs:string" use="required"/>
 		<xs:attribute name="race" type="xs:string" use="required"/>
 		<xs:attribute name="birth" type="xs:string" default=""/>
+		<xs:attribute name="origin" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="DISZIPINABILITY_type">
 		<xs:attribute name="count" type="unsigned_int" default="1"/>
