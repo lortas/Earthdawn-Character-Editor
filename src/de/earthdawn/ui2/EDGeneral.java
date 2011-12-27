@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -115,27 +116,42 @@ public class EDGeneral extends JPanel {
 		btnRace.setOpaque(false);
 		btnRace.setContentAreaFilled(false);
 
-		JMenu menuRace = new JMenu();
-		HashMap<String, List<NAMEGIVERABILITYType>> namegivers = ApplicationProperties.create().getNamgiversByType();
-		for( String namegiverstype : namegivers.keySet() ) {
-			List<NAMEGIVERABILITYType> namegiverList = namegivers.get(namegiverstype);
-			JMenu menu;
-			if( namegiverList.size() == 1 ) menu = menuRace;
-			else {
-				menu = new JMenu(namegiverstype);
-				menuRace.add(menu);
-			}
-			for( NAMEGIVERABILITYType n : namegiverList ) {
-				JMenuItem menuItem = new JMenuItem(n.getName());
-				menuItem.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						do_Race_Changed(((JMenuItem)arg0.getSource()).getText());
-					}
-				});
-				menu.add(menuItem);
+		popupMenuRace = new JPopupMenu();
+		HashMap<String, HashMap<String, List<NAMEGIVERABILITYType>>> namegivers = ApplicationProperties.create().getNamgiversByType();
+		for( String namegiversorigin : namegivers.keySet() ) {
+			JMenu menuRace = new JMenu(namegiversorigin);
+			popupMenuRace.add(menuRace);
+			HashMap<String, List<NAMEGIVERABILITYType>> namegiverByOrigin = namegivers.get(namegiversorigin);
+			for( String namegiverstype : namegiverByOrigin.keySet() ) {
+				List<NAMEGIVERABILITYType> namegiverList = namegiverByOrigin.get(namegiverstype);
+				JMenu menu;
+				if( namegiverList.size() == 1 ) menu = menuRace;
+				else {
+					menu = new JMenu(namegiverstype);
+					menuRace.add(menu);
+				}
+				for( NAMEGIVERABILITYType n : namegiverList ) {
+					JMenuItem menuItem = new JMenuItem(n.getName());
+					menuItem.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							JMenuItem race = (JMenuItem)arg0.getSource();
+							Component racetype = ((JPopupMenu)race.getParent()).getInvoker();
+							if( (racetype==null) || !(racetype instanceof JMenu) ) {
+								do_Race_Changed(race.getText(),"");
+								return;
+							}
+							Component raceorigin = ((JPopupMenu)racetype.getParent()).getInvoker();
+							if( (raceorigin==null) || !(raceorigin instanceof JMenu) ) {
+								do_Race_Changed(race.getText(),((JMenu)racetype).getText());
+								return;
+							}
+							do_Race_Changed(race.getText(),((JMenu)raceorigin).getText());
+						}
+					});
+					menu.add(menuItem);
+				}
 			}
 		}
-		popupMenuRace = menuRace.getPopupMenu();
 
 		JScrollPane charDescriptionPanel = new JScrollPane();
 		charDescriptionPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Description", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
@@ -322,21 +338,22 @@ public class EDGeneral extends JPanel {
 		this.character = character;
 		textFieldPlayer.setText(character.getPlayer());
 		textFieldName.setText(character.getName());
-		spinnerAge.setValue(character.getAppearance().getAge());
-		spinnerSize.setValue(character.getAppearance().getHeight());
-		spinnerWeight.setValue(character.getAppearance().getWeight());
-		textFieldSkincolor.setText(character.getAppearance().getSkin());
-		textFieldEyecolor.setText(character.getAppearance().getEyes());
-		textFieldHaircolor.setText(character.getAppearance().getHair());
+		APPEARANCEType appearance = character.getAppearance();
+		spinnerAge.setValue(appearance.getAge());
+		spinnerSize.setValue(appearance.getHeight());
+		spinnerWeight.setValue(appearance.getWeight());
+		textFieldSkincolor.setText(appearance.getSkin());
+		textFieldEyecolor.setText(appearance.getEyes());
+		textFieldHaircolor.setText(appearance.getHair());
 		spinnerBloodWounds.setValue(character.getWound().getBlood());
 		charDescription.setText(character.getDESCRIPTION());
 		charComment.setText(character.getCOMMENT());
 		txtRaceabilities.setText(character.getAbilities());
-		btnRace.setText(character.getAppearance().getRace());
+		btnRace.setText(appearance.getOrigin()+":"+appearance.getRace());
 
-		if(character.getAppearance().getGender().equals(GenderType.MALE)){
+		if(appearance.getGender().equals(GenderType.MALE)){
 			rdbtnMale.getModel().setSelected(true);
-		} else if(character.getAppearance().getGender().equals(GenderType.FEMALE)){
+		} else if(appearance.getGender().equals(GenderType.FEMALE)){
 			rdbtnFemale.getModel().setSelected(true);
 		} else {
 			rdbtnNoGender.getModel().setSelected(true);
@@ -355,12 +372,13 @@ public class EDGeneral extends JPanel {
 	public CharacterContainer getCharacter() {
 		return character;
 	}
-	protected void do_Race_Changed(String race) {
+	protected void do_Race_Changed(String race,String origin) {
 		if( character == null ) return;
 		APPEARANCEType appearance = character.getAppearance();
 		if( race.equals(appearance.getRace()) ) return;
-		btnRace.setText(race);
+		btnRace.setText(origin+":"+race);
 		appearance.setRace(race);
+		appearance.setOrigin(origin);
 		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
 				"Do you also want to reset your portrait picture and reset your known languages to default?",

@@ -171,12 +171,18 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	public HashMap<String,List<NAMEGIVERABILITYType>> getNamgiversByType() {
-		HashMap<String,List<NAMEGIVERABILITYType>> result = new HashMap<String,List<NAMEGIVERABILITYType>>();
+	public HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> getNamgiversByType() {
+		HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> result = new HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>>();
 		for( NAMEGIVERABILITYType namegiver : getNamegivers() ) {
 			String type = namegiver.getType();
-			if( ! result.containsKey(type) ) result.put(type,new ArrayList<NAMEGIVERABILITYType>());
-			result.get(type).add(namegiver);
+			List<String> originList = namegiver.getORIGIN();
+			if( originList.isEmpty() ) originList.add("");
+			for( String origin : originList ) {
+				if( ! result.containsKey(origin) ) result.put(origin,new HashMap<String,List<NAMEGIVERABILITYType>>());
+				HashMap<String, List<NAMEGIVERABILITYType>> o = result.get(origin);
+				if( ! o.containsKey(type) ) o.put(type,new ArrayList<NAMEGIVERABILITYType>());
+				o.get(type).add(namegiver);
+			}
 		}
 		return result;
 	}
