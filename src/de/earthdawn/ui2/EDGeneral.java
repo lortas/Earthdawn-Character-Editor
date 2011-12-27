@@ -2,14 +2,16 @@ package de.earthdawn.ui2;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
+import de.earthdawn.NamegiverComparator;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.Base64BinaryType;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
-
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.TreeSet;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.FileInputStream;
@@ -118,12 +120,13 @@ public class EDGeneral extends JPanel {
 
 		popupMenuRace = new JPopupMenu();
 		HashMap<String, HashMap<String, List<NAMEGIVERABILITYType>>> namegivers = ApplicationProperties.create().getNamgiversByType();
-		for( String namegiversorigin : namegivers.keySet() ) {
+		for( String namegiversorigin : new TreeSet<String>(namegivers.keySet()) ) {
 			JMenu menuRace = new JMenu(namegiversorigin);
 			popupMenuRace.add(menuRace);
 			HashMap<String, List<NAMEGIVERABILITYType>> namegiverByOrigin = namegivers.get(namegiversorigin);
-			for( String namegiverstype : namegiverByOrigin.keySet() ) {
+			for( String namegiverstype : new TreeSet<String>(namegiverByOrigin.keySet()) ) {
 				List<NAMEGIVERABILITYType> namegiverList = namegiverByOrigin.get(namegiverstype);
+				Collections.sort(namegiverList, new NamegiverComparator());
 				JMenu menu;
 				if( namegiverList.size() == 1 ) menu = menuRace;
 				else {

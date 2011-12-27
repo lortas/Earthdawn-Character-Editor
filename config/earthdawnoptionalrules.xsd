@@ -30,6 +30,12 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="OPTIONALRULES_ORIGIN">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTLANGUAGE" type="OPTIONALRULES_DEFAULTLANGUAGE"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
 			<xs:sequence>
@@ -47,7 +53,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="DATEFORMAT" type="xs:string"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MULTIUSETALENT" type="OPTIONALRULES_MULTIUSETALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
-				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTLANGUAGE" type="OPTIONALRULES_DEFAULTLANGUAGE"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="ORIGIN" type="OPTIONALRULES_ORIGIN"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

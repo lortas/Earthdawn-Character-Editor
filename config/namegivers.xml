@@ -11,7 +11,6 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="7" type="Elf">
@@ -25,7 +24,6 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="6" type="Human">
@@ -39,7 +37,6 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Cathan" karmamodifier="5" movement_ground="6" type="Human">
@@ -145,10 +142,9 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Astral Sight"/>
 		<TALENT name="Versatility"/>
-		<ORIGIN>Barsaive</ORIGIN>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Hidden Physical Deformity</ABILITY>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5" type="Obsidiman">
@@ -162,7 +158,6 @@
 		<WOUND threshold="3"/>
 		<ABILITY>Can only wear Living Armor</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Obsidiman" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="6" type="Ork">
@@ -177,7 +172,6 @@
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7" type="Troll">
@@ -191,7 +185,6 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Troll" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -205,7 +198,6 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jungle T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -219,7 +211,6 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Sea T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -234,7 +225,6 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Water Breath</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="K'stulaami" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -249,7 +239,6 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Gliding</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Pale Ones" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -279,9 +268,8 @@
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>
-		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Gar" karmamodifier="4" movement_ground="7" type="Elf">
@@ -332,7 +320,7 @@
 		<TALENT name="Lightning Born"/>
 		<DEFAULTLANGUAGE language="Cathayan" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="dragon">
+	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="Dragon">
 		<ATTRIBUTE name="DEX" value="28" />
 		<ATTRIBUTE name="STR" value="37" />
 		<ATTRIBUTE name="TOU" value="28" />
@@ -340,8 +328,8 @@
 		<ATTRIBUTE name="WIL" value="40" />
 		<ATTRIBUTE name="CHA" value="31" />
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
-		<ORIGIN>Barsaive</ORIGIN>
 		<WOUND threshold="0"/>
+		<ORIGIN>Barsaive</ORIGIN>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6" type="Jackalmen">
 		<ATTRIBUTE name="DEX" value="10" />
