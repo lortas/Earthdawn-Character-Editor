@@ -72,4 +72,10 @@
 	</ORIGIN>
 	<ORIGIN name="Cathay">
 	</ORIGIN>
+	<ORIGIN name="Thera">
+		<DEFAULTLANGUAGE lang="en" language="Theran" speak="yes" readwrite="yes"/>
+	</ORIGIN>
+	<ORIGIN name="Vasgothia">
+		<DEFAULTLANGUAGE lang="en" language="Vasgothia" speak="yes" readwrite="yes"/>
+	</ORIGIN>
 </OPTIONALRULES>

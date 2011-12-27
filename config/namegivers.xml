@@ -11,6 +11,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="7" type="Elf">
@@ -24,6 +25,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="6" type="Human">
@@ -37,6 +39,7 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Cathan" karmamodifier="5" movement_ground="6" type="Human">
@@ -158,6 +161,7 @@
 		<WOUND threshold="3"/>
 		<ABILITY>Can only wear Living Armor</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Obsidiman" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="6" type="Ork">
@@ -185,6 +189,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Troll" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -198,6 +203,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jungle T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -269,6 +275,7 @@
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
 		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="yes"/>
 	</NAMEGIVER>
@@ -342,7 +349,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Bite Attack</ABILITY>
-		<DEFAULTLANGUAGE language="Theran" speak="yes" readwrite="yes"/>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Jackalmen" speak="yes"/>
 		<DEFAULTLANGUAGE language="Creana" speak="yes"/>
 	</NAMEGIVER>
@@ -357,7 +364,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Defense Bonus against Horrors</ABILITY>
 		<ABILITY>Need 12 hours sleep per day</ABILITY>
-		<DEFAULTLANGUAGE language="Theran" speak="yes" readwrite="yes"/>
+		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Sulfiki" speak="yes"/>
 		<DEFAULTLANGUAGE language="Maracan" speak="yes"/>
 	</NAMEGIVER>
@@ -373,7 +380,8 @@
 		<ABILITY>No wound penalties</ABILITY>
 		<ABILITY>Sensible for extreme temperatures</ABILITY>
 		<ABILITY>Leafer Pods</ABILITY>
-		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
+		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Vasgothia</ORIGIN>
 		<DEFAULTLANGUAGE language="Leafer" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="5" type="Ulk-Men">
@@ -386,7 +394,8 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Gain Horror Powers</ABILITY>
-		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
+		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Vasgothia</ORIGIN>
 		<DEFAULTLANGUAGE language="Ulk" speak="yes"/>
 	</NAMEGIVER>
 </NAMEGIVERS>
