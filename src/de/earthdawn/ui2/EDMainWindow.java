@@ -135,16 +135,16 @@ public class EDMainWindow {
 		LAYOUTSIZESType dimMainWindow_Y = dimMainWindow.getY();
 		if( (dimMainWindow_X!=null) && (dimMainWindow_Y!=null) ) {
 			Integer x = dimMainWindow_X.getPreferred();
-			Integer y = dimMainWindow_X.getPreferred();
+			Integer y = dimMainWindow_Y.getPreferred();
 			if( (x!=null) && (y!=null) ) {
-				frame.setSize(new Dimension(x,y));
 				frame.setPreferredSize(new Dimension(x,y));
+				frame.setSize(new Dimension(x,y));
 			}
 			x = dimMainWindow_X.getMin();
-			y = dimMainWindow_X.getMin();
+			y = dimMainWindow_Y.getMin();
 			if( (x!=null) && (y!=null) ) frame.setMinimumSize(new Dimension(x,y));
 			x = dimMainWindow_X.getMax();
-			y = dimMainWindow_X.getMax();
+			y = dimMainWindow_Y.getMax();
 			if( (x!=null) && (y!=null) ) frame.setMaximumSize(new Dimension(x,y));
 		}
 		frame.setLocationRelativeTo(null);
@@ -355,16 +355,16 @@ public class EDMainWindow {
 		LAYOUTSIZESType dimTabWindow_Y = dimTabWindow.getY();
 		if( (dimTabWindow_X!=null) && (dimTabWindow_Y!=null) ) {
 			Integer x = dimTabWindow_X.getPreferred();
-			Integer y = dimTabWindow_X.getPreferred();
+			Integer y = dimTabWindow_Y.getPreferred();
 			if( (x!=null) && (y!=null) ) {
 				tabbedPane.setSize(new Dimension(x,y));
 				tabbedPane.setPreferredSize(new Dimension(x,y));
 			}
 			x = dimTabWindow_X.getMin();
-			y = dimTabWindow_X.getMin();
+			y = dimTabWindow_Y.getMin();
 			if( (x!=null) && (y!=null) ) tabbedPane.setMinimumSize(new Dimension(x,y));
 			x = dimTabWindow_X.getMax();
-			y = dimTabWindow_X.getMax();
+			y = dimTabWindow_Y.getMax();
 			if( (x!=null) && (y!=null) ) tabbedPane.setMaximumSize(new Dimension(x,y));
 		}
 		splitPane.setLeftComponent(tabbedPane);
@@ -387,16 +387,16 @@ public class EDMainWindow {
 		LAYOUTSIZESType dimStatusWindow_Y = dimStatusWindow.getY();
 		if( (dimStatusWindow_X!=null) && (dimStatusWindow_Y!=null) ) {
 			Integer x = dimStatusWindow_X.getPreferred();
-			Integer y = dimStatusWindow_X.getPreferred();
+			Integer y = dimStatusWindow_Y.getPreferred();
 			if( (x!=null) && (y!=null) ) {
 				editorScrollPane.setSize(new Dimension(x,y));
 				editorScrollPane.setPreferredSize(new Dimension(x,y));
 			}
 			x = dimStatusWindow_X.getMin();
-			y = dimStatusWindow_X.getMin();
+			y = dimStatusWindow_Y.getMin();
 			if( (x!=null) && (y!=null) ) editorScrollPane.setMinimumSize(new Dimension(x,y));
 			x = dimStatusWindow_X.getMax();
-			y = dimStatusWindow_X.getMax();
+			y = dimStatusWindow_Y.getMax();
 			if( (x!=null) && (y!=null) ) editorScrollPane.setMaximumSize(new Dimension(x,y));
 		}
 		EditorKit kit = paneStatus.getEditorKitForContentType("text/html");
