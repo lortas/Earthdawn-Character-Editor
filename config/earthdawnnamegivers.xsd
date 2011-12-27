@@ -23,6 +23,7 @@
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="xs:string"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ORIGIN" type="xs:string"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="NOTDEFAULTSKILL" type="xs:string"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFAULTLANGUAGE" type="edt:CHARACTERLANGUAGE_type"/>
 		</xs:sequence>
