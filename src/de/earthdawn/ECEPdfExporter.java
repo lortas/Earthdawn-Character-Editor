@@ -45,14 +45,16 @@ public class ECEPdfExporter {
 	private void exportCommonFields(CharacterContainer character, int maxSkillSpace, int raceAbilitiesLineLength) throws IOException, DocumentException {
 		acroFields.setField( "ExportDate", CharacterContainer.getCurrentDateTime());
 		acroFields.setField( "Name", character.getName() );
-		acroFields.setField( "Race", character.getAppearance().getRace() );
-		acroFields.setField( "Age", String.valueOf(character.getAppearance().getAge()) );
-		acroFields.setField( "Eyes", character.getAppearance().getEyes() );
-		acroFields.setField( "Gender", character.getAppearance().getGender().value() );
-		acroFields.setField( "Hair", character.getAppearance().getHair() );
-		acroFields.setField( "Height", String.valueOf(character.getAppearance().getHeight()) );
-		acroFields.setField( "Skin", character.getAppearance().getSkin() );
-		acroFields.setField( "CharacterWeight" , String.valueOf(character.getAppearance().getWeight()) );
+		APPEARANCEType appearance = character.getAppearance();
+		if( appearance.getOrigin().isEmpty() ) acroFields.setField( "Race", appearance.getRace() );
+		else acroFields.setField( "Race", appearance.getRace()+" ("+appearance.getOrigin()+")" );
+		acroFields.setField( "Age", String.valueOf(appearance.getAge()) );
+		acroFields.setField( "Eyes", appearance.getEyes() );
+		acroFields.setField( "Gender", appearance.getGender().value() );
+		acroFields.setField( "Hair", appearance.getHair() );
+		acroFields.setField( "Height", String.valueOf(appearance.getHeight()) );
+		acroFields.setField( "Skin", appearance.getSkin() );
+		acroFields.setField( "CharacterWeight" , String.valueOf(appearance.getWeight()) );
 		acroFields.setField( "Passion" , character.getPassion() );
 		acroFields.setField( "PlayerName" , character.getPlayer() );
 		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
