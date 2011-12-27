@@ -67,4 +67,9 @@
 	<MULTIUSETALENT talent="Shared Matrix" lang="en" count="3"/>
 	<!-- By the following rule you can define if if a specific talent will be added automatically and will not cost an optional talent slot -->
 	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as an extra talent-->
+	<ORIGIN name="Barsaive">
+		<DEFAULTLANGUAGE lang="en" language="Dwarf" speak="yes" readwrite="yes"/>
+	</ORIGIN>
+	<ORIGIN name="Cathay">
+	</ORIGIN>
 </OPTIONALRULES>

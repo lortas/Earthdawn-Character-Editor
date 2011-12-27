@@ -91,6 +91,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		// If not found: create
 		appearance = new APPEARANCEType();
 		appearance.setRace("Human");
+		appearance.setOrigin("Barsaive");
 		appearance.setGender(GenderType.MALE);
 		appearance.setEyes("brown");
 		appearance.setAge(20);
@@ -1563,8 +1564,9 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<CHARACTERLANGUAGEType> getLanguages() {
 		List<CHARACTERLANGUAGEType> languages = character.getLANGUAGE();
+		String origin = getAppearance().getOrigin();
 		if( languages.isEmpty() ) {
-			for( CHARACTERLANGUAGEType l : PROPERTIES.getDefaultLanguage() ) languages.add(l);
+			for( CHARACTERLANGUAGEType l : PROPERTIES.getDefaultLanguage(origin) ) languages.add(l);
 			String race = getAppearance().getRace();
 			for( NAMEGIVERABILITYType namegiver : PROPERTIES.getNamegivers() ) {
 				if( namegiver.getName().equals(race) ) {

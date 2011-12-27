@@ -322,15 +322,17 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	public List<CHARACTERLANGUAGEType> getDefaultLanguage() {
+	public List<CHARACTERLANGUAGEType> getDefaultLanguage(String origin) {
 		List<CHARACTERLANGUAGEType> result = new ArrayList<CHARACTERLANGUAGEType>();
-		for( OPTIONALRULESDEFAULTLANGUAGE language : OPTIONALRULES.getDEFAULTLANGUAGE() ) {
-			if( language.getLang().equals(LANGUAGE) ) {
-				CHARACTERLANGUAGEType l = new CHARACTERLANGUAGEType();
-				l.setLanguage(language.getLanguage());
-				l.setReadwrite(language.getReadwrite());
-				l.setSpeak(language.getSpeak());
-				result.add(language);
+		for( OPTIONALRULESORIGIN o : OPTIONALRULES.getORIGIN() ) {
+			if( o.getName().equals(origin) ) for( OPTIONALRULESDEFAULTLANGUAGE language : o.getDEFAULTLANGUAGE() ) {
+				if( language.getLang().equals(LANGUAGE) ) {
+					CHARACTERLANGUAGEType l = new CHARACTERLANGUAGEType();
+					l.setLanguage(language.getLanguage());
+					l.setReadwrite(language.getReadwrite());
+					l.setSpeak(language.getSpeak());
+					result.add(language);
+				}
 			}
 		}
 		return result;
