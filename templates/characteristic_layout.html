@@ -12,7 +12,8 @@ tr.tfoot { font-style:italic; }
 <table class="invis">
 	<tr>
 		<td colspan="2">
-			${APPEARANCE.race} (${APPEARANCE.gender}, ${APPEARANCE.age})<br/>
+			${APPEARANCE.race}<#if APPEARANCE.origin != "">,${APPEARANCE.origin}</#if>
+			(${APPEARANCE.gender}, ${APPEARANCE.age})<br/>
 			<table>
 				<tr class="thead">
 					<td colspan="6">Attributes</td>

@@ -1370,12 +1370,20 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public NAMEGIVERABILITYType getRace() {
-		String race = getAppearance().getRace();
+		APPEARANCEType appearance = getAppearance();
+		String race = appearance.getRace();
+		String origin = appearance.getOrigin();
+		NAMEGIVERABILITYType fallback = null;
 		for (NAMEGIVERABILITYType n : PROPERTIES.getNamegivers()) {
-			if( n.getName().equals(race)) return n;
+			if( n.getName().equals(race)) {
+				// wenn der Rassenname übereinstimmt, dann könnte es schon mal passen
+				// und da wir "first-match" und nicht "last-match" haben wollen, setzen wir den fallback nur wenn er noch nicht gesetzt wurde
+				if( fallback==null ) fallback = n;
+				// aber erst wenn auch das Ursprungsgebiet zusammen passt haben wir unsere Rassendefinition
+				if( n.getORIGIN().contains(origin) ) return n;
+			}
 		}
-		// not found
-		return null;
+		return fallback;
 	}
 
 	public void calculateMovement() {

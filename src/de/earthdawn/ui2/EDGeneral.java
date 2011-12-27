@@ -349,7 +349,9 @@ public class EDGeneral extends JPanel {
 		charDescription.setText(character.getDESCRIPTION());
 		charComment.setText(character.getCOMMENT());
 		txtRaceabilities.setText(character.getAbilities());
-		btnRace.setText(appearance.getOrigin()+":"+appearance.getRace());
+		String origin = appearance.getOrigin();
+		if( origin.isEmpty() ) btnRace.setText(appearance.getRace());
+		else btnRace.setText(appearance.getRace()+" ("+origin+")");
 
 		if(appearance.getGender().equals(GenderType.MALE)){
 			rdbtnMale.getModel().setSelected(true);
@@ -375,8 +377,9 @@ public class EDGeneral extends JPanel {
 	protected void do_Race_Changed(String race,String origin) {
 		if( character == null ) return;
 		APPEARANCEType appearance = character.getAppearance();
-		if( race.equals(appearance.getRace()) ) return;
-		btnRace.setText(origin+":"+race);
+		if( race.equals(appearance.getRace()) && origin.equals(appearance.getOrigin())) return;
+		if( origin.isEmpty() ) btnRace.setText(race);
+		else btnRace.setText(race+" ("+origin+")");
 		appearance.setRace(race);
 		appearance.setOrigin(origin);
 		String[] options = {"Yes","No"};

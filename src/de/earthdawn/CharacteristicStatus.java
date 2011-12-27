@@ -69,6 +69,7 @@ public class CharacteristicStatus {
 		node = new HashMap<String,Object>();
 		APPEARANCEType appearance = character.getAppearance();
 		node.put( "race", appearance.getRace() );
+		node.put( "origin", appearance.getOrigin() );
 		node.put( "age", appearance.getAge() );
 		node.put( "gender", appearance.getGender().value() );
 		node.put( "weight", appearance.getWeight() );
