@@ -10,6 +10,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>
 	</NAMEGIVER>
@@ -23,6 +24,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="yes"/>
 	</NAMEGIVER>
@@ -36,6 +38,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
@@ -142,6 +145,7 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Astral Sight"/>
 		<TALENT name="Versatility"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Hidden Physical Deformity</ABILITY>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
@@ -157,6 +161,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self" physicalarmor="3"/>
 		<WOUND threshold="3"/>
 		<ABILITY>Can only wear Living Armor</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Obsidiman" speak="yes"/>
 	</NAMEGIVER>
@@ -171,6 +176,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="yes"/>
 	</NAMEGIVER>
@@ -184,6 +190,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Troll" speak="yes"/>
 	</NAMEGIVER>
@@ -197,6 +204,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
@@ -210,6 +218,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
@@ -224,6 +233,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Water Breath</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
@@ -238,6 +248,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Gliding</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
@@ -252,6 +263,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Heat Sight</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
@@ -268,6 +280,7 @@
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>
 		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Windling" speak="yes"/>
 	</NAMEGIVER>
@@ -327,6 +340,7 @@
 		<ATTRIBUTE name="WIL" value="40" />
 		<ATTRIBUTE name="CHA" value="31" />
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<WOUND threshold="0"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6" type="Jackalmen">
