@@ -121,4 +121,6 @@
 		<DEFENSE kind="physical"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>seeking knowledge Horrors, Horror constructs, the Scourge, kaers/ citadels, magic used by Horrors or devised protect against them, Names and legends of those who have fought the Horrors; Willpower-based Half-Magic Tests resist lure of Horrors, effects placed upon them against their will, if resisting not covered by their abilities; Perception-based Half-Magic Tests detect presence of Horrors/Constructs within 15 hex (Detection Difficulty: Horror/Construct Spell Defense, test succeeds: adept senses target’s presence, not exact location or nature</HALFMAGIC>
 </DISCIPLINE>
