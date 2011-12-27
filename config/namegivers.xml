@@ -245,7 +245,7 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Gliding</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
+		<DEFAULTLANGUAGE language="K´stulaami" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Pale Ones" karmamodifier="4" movement_ground="6" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />

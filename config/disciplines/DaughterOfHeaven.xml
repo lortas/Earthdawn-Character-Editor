@@ -123,5 +123,7 @@
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: Namegiver physiology, illnesses, diseases, poisons and how to treat them, medicinal herbs and plants; craft simple healing aids (bandages, splints, etc.); Alchemy skill for Analysis/Gathering Ingredients, requires to produce improvised poultices</HALFMAGIC>
 </DISCIPLINE>
 

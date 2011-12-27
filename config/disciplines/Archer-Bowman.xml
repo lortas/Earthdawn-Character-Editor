@@ -123,4 +123,6 @@
 		<DEFENSE kind="social"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC></HALFMAGIC>
 </DISCIPLINE>
