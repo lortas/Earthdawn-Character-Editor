@@ -44,6 +44,8 @@ public class CharacterContainer extends CharChangeRefresh {
 	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public static final String durabilityName = PROPERTIES.getDurabilityName();
 	public static final String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
+	public static final List<String> languageSkillSpeakNames = PROPERTIES.getLanguageSkillSpeakName();
+	public static final List<String> languageSkillReadWriteNames = PROPERTIES.getLanguageSkillReadWriteName();
 
 	public static String getCurrentDateTime() {
 		DateFormat dateFormat = new SimpleDateFormat(DATEFORMAT);
@@ -549,6 +551,22 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<SKILLType> getSkills() {
 		return character.getSKILL();
+	}
+
+	public List<SKILLType> getNonLanguageSkills() {
+		List<SKILLType> result = new ArrayList<SKILLType>();
+		for( SKILLType skill : character.getSKILL() ) {
+			result.add(skill);
+		}
+		return result;
+	}
+
+	public List<SKILLType> getOnlyLanguageSkills() {
+		List<SKILLType> result = new ArrayList<SKILLType>();
+		for( SKILLType skill : character.getSKILL() ) {
+			if( languageSkillSpeakNames.contains(skill.getName()) || languageSkillReadWriteNames.contains(skill.getName()) ) result.add(skill);
+		}
+		return result;
 	}
 
 	public EXPERIENCEType getLegendPoints() {
