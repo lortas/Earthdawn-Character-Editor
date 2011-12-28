@@ -28,6 +28,8 @@
 	<QUESTORTALENT name="Questor" lang="de"/>
 	<THREADWEAVING name="Thread Weaving" lang="en"/>
 	<THREADWEAVING name="Fadenweben" lang="de"/>
+	<LANGUAGESKILLSPEAK name="Speak Language" lang="en"/>
+	<LANGUAGESKILLREADWRITE name="Read/Write Language" lang="en"/>
 	<SPELLWEAVING lang="en">
 		<SPELLKIND type="elemental" weaving="Elementalism"/>
 		<SPELLKIND type="illusion" weaving="Illusionism"/>
