@@ -166,7 +166,7 @@ public class EDExperience extends JPanel {
 	protected void do_btnResetSpentLP_actionPerformed(ActionEvent arg0) {
 		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
-				"If you continue, your manual calculation will be replaced by automatic calculation.\nDo you want continue?",
+				"Your manual calculation will be replaced by automatic calculation.\nDo you want continue?",
 				"Are you sure?",
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
