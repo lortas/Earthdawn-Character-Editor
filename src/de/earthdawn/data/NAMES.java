@@ -34,6 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ARTISAN" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="QUESTORTALENT" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="THREADWEAVING" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="LANGUAGESKILLSPEAK" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="LANGUAGESKILLREADWRITE" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/names}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/>
  *         &lt;element name="STARTINGWEAPONS" type="{http://earthdawn.com/names}NAME_STARTINGWEAPONS_type" maxOccurs="unbounded"/>
  *         &lt;element name="STARTINGITEMS" type="{http://earthdawn.com/names}NAME_STARTINGITEMS_type" maxOccurs="unbounded"/>
@@ -55,6 +57,8 @@ import javax.xml.bind.annotation.XmlType;
     "artisan",
     "questortalent",
     "threadweaving",
+    "languageskillspeak",
+    "languageskillreadwrite",
     "spellweaving",
     "startingweapons",
     "startingitems",
@@ -77,6 +81,10 @@ public class NAMES {
     protected List<NAMELANGType> questortalent;
     @XmlElement(name = "THREADWEAVING", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMELANGType> threadweaving;
+    @XmlElement(name = "LANGUAGESKILLSPEAK", namespace = "http://earthdawn.com/names")
+    protected List<NAMELANGType> languageskillspeak;
+    @XmlElement(name = "LANGUAGESKILLREADWRITE", namespace = "http://earthdawn.com/names")
+    protected List<NAMELANGType> languageskillreadwrite;
     @XmlElement(name = "SPELLWEAVING", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMESPELLWEAVINGType> spellweaving;
     @XmlElement(name = "STARTINGWEAPONS", namespace = "http://earthdawn.com/names", required = true)
@@ -287,6 +295,64 @@ public class NAMES {
             threadweaving = new ArrayList<NAMELANGType>();
         }
         return this.threadweaving;
+    }
+
+    /**
+     * Gets the value of the languageskillspeak property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the languageskillspeak property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLANGUAGESKILLSPEAK().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getLANGUAGESKILLSPEAK() {
+        if (languageskillspeak == null) {
+            languageskillspeak = new ArrayList<NAMELANGType>();
+        }
+        return this.languageskillspeak;
+    }
+
+    /**
+     * Gets the value of the languageskillreadwrite property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the languageskillreadwrite property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLANGUAGESKILLREADWRITE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMELANGType }
+     * 
+     * 
+     */
+    public List<NAMELANGType> getLANGUAGESKILLREADWRITE() {
+        if (languageskillreadwrite == null) {
+            languageskillreadwrite = new ArrayList<NAMELANGType>();
+        }
+        return this.languageskillreadwrite;
     }
 
     /**
