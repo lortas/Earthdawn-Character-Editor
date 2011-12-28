@@ -2,6 +2,7 @@ package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,9 +34,8 @@ public class EDLanguages extends JPanel {
 	private static final long serialVersionUID = -3029891477607441807L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
-	private JToolBar toolBar;
-	private JScrollPane scrollPane;
-	private JTable table;
+	private JTable tableLanguages;
+	private JTable tableLanguageSkills;
 	private JButton btnAddLanguage;
 	private JButton btnRemoveLanguages;
 	private BufferedImage backgroundimage = null;
@@ -46,11 +46,11 @@ public class EDLanguages extends JPanel {
 
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
-		((LanguagesTableModel)table.getModel()).setCharacter(character);
+		((LanguagesTableModel)tableLanguages.getModel()).setCharacter(character);
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("languageselection") ) {
-				TableColumn col = table.getColumnModel().getColumn(c);
+				TableColumn col = tableLanguages.getColumnModel().getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
 				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
@@ -58,6 +58,19 @@ public class EDLanguages extends JPanel {
 			}
 		} catch(IndexOutOfBoundsException e) {
 			System.err.println("layout languageselection : "+e.getLocalizedMessage());
+		}
+		((SkillsTableModel)tableLanguageSkills.getModel()).setCharacter(character);
+		try {
+			int c=0;
+			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {
+				TableColumn col = tableLanguageSkills.getColumnModel().getColumn(c);
+				if( width.getMin() != null ) col.setMinWidth(width.getMin());
+				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
+				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
+				c++;
+			}
+		} catch(IndexOutOfBoundsException e) {
+			System.err.println("layout skillselection : "+e.getLocalizedMessage());
 		}
 	}
 
@@ -79,9 +92,8 @@ public class EDLanguages extends JPanel {
 		setOpaque(false);
 		setLayout(new BorderLayout(0,0));
 
-		toolBar = new JToolBar();
+		JToolBar toolBar = new JToolBar();
 		toolBar.setOpaque(false);
-		add(toolBar, BorderLayout.NORTH);
 
 		btnAddLanguage = new JButton("Add Language");
 		btnAddLanguage.addActionListener(new ActionListener() {
@@ -99,12 +111,7 @@ public class EDLanguages extends JPanel {
 		});
 		toolBar.add(btnRemoveLanguages);
 
-		scrollPane = new JScrollPane();
-		scrollPane.setOpaque(false);
-		add(scrollPane, BorderLayout.CENTER);
-
-		// Create transperant table
-		table = new JTable(){
+		tableLanguages = new JTable(){
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer( renderer, row, column);
@@ -113,15 +120,45 @@ public class EDLanguages extends JPanel {
 				return component;
 			}
 		};
-		table.setOpaque(false);
-		InputMapUtil.setupInputMap(table);
+		tableLanguages.setOpaque(false);
+		tableLanguages.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tableLanguages.setModel(new LanguagesTableModel(character));
+		tableLanguages.setRowSelectionAllowed(false);
+		tableLanguages.setColumnSelectionAllowed(false);
+		tableLanguages.getTableHeader().setReorderingAllowed(false);
+		InputMapUtil.setupInputMap(tableLanguages);
 
-		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setModel(new LanguagesTableModel(character));
-		scrollPane.setViewportView(table);
-		table.setRowSelectionAllowed(false);
-		table.setColumnSelectionAllowed(false);
-		scrollPane.getViewport().setOpaque(false);
+		tableLanguageSkills = new JTable(){
+			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
+			{
+				Component component = super.prepareRenderer(renderer, row, column);
+				if( component instanceof JComponent )
+					((JComponent)component).setOpaque(false);
+				return component;
+			}
+		};
+		tableLanguageSkills.setOpaque(false);
+		tableLanguageSkills.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tableLanguageSkills.setModel(new SkillsTableModel(character,true));
+		tableLanguageSkills.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
+		tableLanguageSkills.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
+		tableLanguageSkills.setRowSelectionAllowed(false);
+		tableLanguageSkills.setColumnSelectionAllowed(false);
+		tableLanguageSkills.getTableHeader().setReorderingAllowed(false);
+
+		JScrollPane scrollPaneLanguages = new JScrollPane();
+		scrollPaneLanguages.setOpaque(false);
+		scrollPaneLanguages.setViewportView(tableLanguages);
+		scrollPaneLanguages.getViewport().setOpaque(false);
+
+		JScrollPane southPanel = new JScrollPane();
+		southPanel.setOpaque(false);
+		southPanel.setViewportView(tableLanguageSkills);
+		southPanel.getViewport().setOpaque(false);
+
+		add(toolBar, BorderLayout.NORTH);
+		add(scrollPaneLanguages, BorderLayout.CENTER);
+		//add(southPanel, BorderLayout.SOUTH);
 	}
 
 	protected void do_btnAddLanguage_actionPerformed(ActionEvent arg0) {
@@ -139,7 +176,7 @@ public class EDLanguages extends JPanel {
 		if( character == null ) return;
 		ArrayList<CHARACTERLANGUAGEType> expForRemoval = new ArrayList<CHARACTERLANGUAGEType> ();
 		List<CHARACTERLANGUAGEType> languages = character.getLanguages();
-		for(int row :table.getSelectedRows()){
+		for(int row :tableLanguages.getSelectedRows()){
 			CHARACTERLANGUAGEType language = languages.get(row);
 			expForRemoval.add(language);
 		}
@@ -183,13 +220,36 @@ class LanguagesTableModel extends AbstractTableModel {
 
 	public Object getValueAt(int row, int col) {
 		if( character == null ) return 0;
-		CHARACTERLANGUAGEType language = character.getLanguages().get(row);
-		switch (col) {
-		case 0: return language.getLanguage();
-		case 1: return language.getSpeak().equals(YesnoType.YES);
-		case 2: return language.getReadwrite().equals(YesnoType.YES);
-		case 3: return language.getNotlearnedbyskill().equals(YesnoType.YES);
-		default : return new String("Error not defined");
+		if( row < character.getLanguages().size() ) {
+			CHARACTERLANGUAGEType language = character.getLanguages().get(row);
+			switch (col) {
+			case 0: return language.getLanguage();
+			case 1: return language.getSpeak().equals(YesnoType.YES);
+			case 2: return language.getReadwrite().equals(YesnoType.YES);
+			case 3: return language.getNotlearnedbyskill().equals(YesnoType.YES);
+			default : return "Error not defined";
+			}
+		} else {
+			int i=0;
+			switch (col) {
+			case 1:
+				for( CHARACTERLANGUAGEType lang : character.getLanguages() ) {
+					if( lang.getSpeak().equals(YesnoType.YES) ) i++;
+				}
+				break;
+			case 2:
+				for( CHARACTERLANGUAGEType lang : character.getLanguages() ) {
+					if( lang.getReadwrite().equals(YesnoType.YES) ) i++;
+				}
+				break;
+			case 3:
+				for( CHARACTERLANGUAGEType lang : character.getLanguages() ) {
+					if( lang.getNotlearnedbyskill().equals(YesnoType.YES) ) i++;
+				}
+				break;
+			default : return "";
+			}
+			return i;
 		}
 	}
 
@@ -204,7 +264,8 @@ class LanguagesTableModel extends AbstractTableModel {
 	}
 
 	public boolean isCellEditable(int row, int col) {
-		return true;
+		if( row < character.getLanguages().size() ) return true;
+		return false;
 	}
 
 	public void setValueAt(Object value, int row, int col) { 

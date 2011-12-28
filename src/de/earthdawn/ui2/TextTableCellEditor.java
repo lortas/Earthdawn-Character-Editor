@@ -1,16 +1,12 @@
 package de.earthdawn.ui2;
 
 import java.awt.Component;
-import java.awt.ScrollPane;
-
 import javax.swing.AbstractCellEditor;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
-
-import sun.org.mozilla.javascript.tools.shell.JSConsole;
 
 public class TextTableCellEditor extends AbstractCellEditor implements
 		TableCellEditor, TableCellRenderer {
