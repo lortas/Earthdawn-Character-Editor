@@ -370,6 +370,22 @@ public class ApplicationProperties {
 		return "";
 	}
 
+	public List<String> getLanguageSkillSpeakName() {
+		List<String> result = new ArrayList<String>();
+		for( NAMELANGType name : NAMES.getLANGUAGESKILLSPEAK() ) {
+			if( name.getLang().equals(LANGUAGE) ) result.add(name.getName());
+		}
+		return result;
+	}
+
+	public List<String> getLanguageSkillReadWriteName() {
+		List<String> result = new ArrayList<String>();
+		for( NAMELANGType name : NAMES.getLANGUAGESKILLREADWRITE() ) {
+			if( name.getLang().equals(LANGUAGE) ) result.add(name.getName());
+		}
+		return result;
+	}
+
 	public List<ITEMType> getStartingItems() {
 		for( NAMESTARTINGITEMSType name : NAMES.getSTARTINGITEMS() ) {
 			if( name.getLang().equals(LANGUAGE) ) return name.getITEM();
