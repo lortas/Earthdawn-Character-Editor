@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="LANGUAGESASINDIVIDUALSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="DATEFORMAT" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
@@ -63,6 +64,7 @@ import javax.xml.bind.annotation.XmlType;
     "showdefaultskills",
     "questortalentneedlegendpoints",
     "autoinsertlegendpointspent",
+    "languagesasindividualskills",
     "dateformat",
     "multiusetalent",
     "defaultoptionaltalent",
@@ -93,6 +95,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType questortalentneedlegendpoints;
     @XmlElement(name = "AUTOINSERTLEGENDPOINTSPENT", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType autoinsertlegendpointspent;
+    @XmlElement(name = "LANGUAGESASINDIVIDUALSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType languagesasindividualskills;
     @XmlElement(name = "DATEFORMAT", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected String dateformat;
     @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
@@ -364,6 +368,30 @@ public class OPTIONALRULES {
      */
     public void setAUTOINSERTLEGENDPOINTSPENT(OPTIONALRULEType value) {
         this.autoinsertlegendpointspent = value;
+    }
+
+    /**
+     * Gets the value of the languagesasindividualskills property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getLANGUAGESASINDIVIDUALSKILLS() {
+        return languagesasindividualskills;
+    }
+
+    /**
+     * Sets the value of the languagesasindividualskills property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setLANGUAGESASINDIVIDUALSKILLS(OPTIONALRULEType value) {
+        this.languagesasindividualskills = value;
     }
 
     /**
