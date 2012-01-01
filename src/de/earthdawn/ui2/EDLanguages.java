@@ -25,6 +25,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.LanguageContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.CHARACTERLANGUAGEType;
 import de.earthdawn.data.LAYOUTSIZESType;
@@ -184,16 +185,16 @@ public class EDLanguages extends JPanel {
 		l.setReadwrite(YesnoType.NO);
 		l.setNotlearnedbyskill(YesnoType.NO);
 		l.setLanguage("to be specified");
-		character.getLanguages().add(l);
+		character.getLanguages().insertLanguage(l);
 		character.refesh();
 	}
 
 	protected void do_btnRemoveLanguages_actionPerformed(ActionEvent arg0) {
 		if( character == null ) return;
 		ArrayList<CHARACTERLANGUAGEType> expForRemoval = new ArrayList<CHARACTERLANGUAGEType> ();
-		List<CHARACTERLANGUAGEType> languages = character.getLanguages();
+		LanguageContainer languages = character.getLanguages();
 		for(int row :tableLanguages.getSelectedRows()){
-			CHARACTERLANGUAGEType language = languages.get(row);
+			CHARACTERLANGUAGEType language = languages.getLanguage(row);
 			expForRemoval.add(language);
 		}
 		languages.removeAll(expForRemoval);	
@@ -235,36 +236,13 @@ class LanguagesTableModel extends AbstractTableModel {
 
 	public Object getValueAt(int row, int col) {
 		if( character == null ) return 0;
-		if( row < character.getLanguages().size() ) {
-			CHARACTERLANGUAGEType language = character.getLanguages().get(row);
-			switch (col) {
-			case 0: return language.getLanguage();
-			case 1: return language.getSpeak().equals(YesnoType.YES);
-			case 2: return language.getReadwrite().equals(YesnoType.YES);
-			case 3: return language.getNotlearnedbyskill().equals(YesnoType.YES);
-			default : return "Error not defined";
-			}
-		} else {
-			int i=0;
-			switch (col) {
-			case 1:
-				for( CHARACTERLANGUAGEType lang : character.getLanguages() ) {
-					if( lang.getSpeak().equals(YesnoType.YES) ) i++;
-				}
-				break;
-			case 2:
-				for( CHARACTERLANGUAGEType lang : character.getLanguages() ) {
-					if( lang.getReadwrite().equals(YesnoType.YES) ) i++;
-				}
-				break;
-			case 3:
-				for( CHARACTERLANGUAGEType lang : character.getLanguages() ) {
-					if( lang.getNotlearnedbyskill().equals(YesnoType.YES) ) i++;
-				}
-				break;
-			default : return "";
-			}
-			return i;
+		CHARACTERLANGUAGEType language = character.getLanguages().getLanguage(row);
+		switch (col) {
+		case 0: return language.getLanguage();
+		case 1: return language.getSpeak().equals(YesnoType.YES);
+		case 2: return language.getReadwrite().equals(YesnoType.YES);
+		case 3: return language.getNotlearnedbyskill().equals(YesnoType.YES);
+		default : return "Error not defined";
 		}
 	}
 
@@ -285,7 +263,7 @@ class LanguagesTableModel extends AbstractTableModel {
 
 	public void setValueAt(Object value, int row, int col) { 
 		if( character == null ) return;
-		CHARACTERLANGUAGEType language = character.getLanguages().get(row);
+		CHARACTERLANGUAGEType language = character.getLanguages().getLanguage(row);
 		switch (col) {
 		case 0:
 			language.setLanguage((String)value);

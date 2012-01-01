@@ -396,7 +396,7 @@ public class EDGeneral extends JPanel {
 				options[0]);
 		if( a == 0 ) {
 			character.getPortrait().clear();
-			character.getLanguages().clear();
+			character.clearLanguages();
 		}
 		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());
 		character.refesh();

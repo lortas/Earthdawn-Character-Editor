@@ -1580,28 +1580,21 @@ public class CharacterContainer extends CharChangeRefresh {
 		rank.setDice(PROPERTIES.step2Dice(rank.getStep()));
 	}
 
-	public List<CHARACTERLANGUAGEType> getLanguages() {
-		List<CHARACTERLANGUAGEType> languages = character.getLANGUAGE();
+	public void clearLanguages() {
+		character.getLANGUAGE().clear();
+	}
+
+	public LanguageContainer getLanguages() {
 		String origin = getAppearance().getOrigin();
-		if( languages.isEmpty() ) {
-			for( CHARACTERLANGUAGEType l : PROPERTIES.getDefaultLanguage(origin) ) languages.add(l);
-			String race = getAppearance().getRace();
-			for( NAMEGIVERABILITYType namegiver : PROPERTIES.getNamegivers() ) {
-				if( namegiver.getName().equals(race) ) {
-					for( CHARACTERLANGUAGEType l : namegiver.getDEFAULTLANGUAGE() ) {
-						boolean notfound=true;
-						for( CHARACTERLANGUAGEType i : languages ) {
-							if( i.getLanguage().equals(l.getLanguage()) && i.getNotlearnedbyskill().equals(l.getNotlearnedbyskill())) {
-								notfound=false;
-								if( l.getSpeak().equals(YesnoType.YES) ) i.setSpeak(YesnoType.YES);
-								if( l.getReadwrite().equals(YesnoType.YES) ) i.setReadwrite(YesnoType.YES);
-							}
-						}
-						if( notfound ) languages.add(l);
-					}
-				}
+		String race = getAppearance().getRace();
+		LanguageContainer defaultlanguages = new LanguageContainer(PROPERTIES.getDefaultLanguage(origin));
+		for( NAMEGIVERABILITYType namegiver : PROPERTIES.getNamegivers() ) {
+			if( namegiver.getName().equals(race) ) {
+				defaultlanguages.insertLanguages(namegiver.getDEFAULTLANGUAGE());
 			}
 		}
+		LanguageContainer languages = new LanguageContainer(character.getLANGUAGE());
+		languages.insertLanguages(defaultlanguages.copy().getLanguages());
 		return languages;
 	}
 

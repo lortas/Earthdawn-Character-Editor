@@ -913,7 +913,7 @@ public class ECEPdfExporter {
 
 		int counterLanguageSpeak=0;
 		int counterLanguageReadwrite=0;
-		for( CHARACTERLANGUAGEType language : character.getLanguages() ) {
+		for( CHARACTERLANGUAGEType language : character.getLanguages().getLanguages() ) {
 			if( language.getSpeak().equals(YesnoType.YES) ) {
 				acroFields.setField( "LanguagesSpeak."+counterLanguageSpeak, language.getLanguage() );
 				counterLanguageSpeak++;
