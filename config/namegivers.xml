@@ -365,8 +365,9 @@
 		<ABILITY>Defense Bonus against Horrors</ABILITY>
 		<ABILITY>Need 12 hours sleep per day</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
+		<DEFAULTLANGUAGE language="Dwarf" speak="yes" />
 		<DEFAULTLANGUAGE language="Sulfiki" speak="yes"/>
-		<DEFAULTLANGUAGE language="Maracan" speak="yes"/>
+		<DEFAULTLANGUAGE language="Maracan" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Leafers" karmamodifier="5" movement_ground="5" type="Leafers">
 		<ATTRIBUTE name="DEX" value="9" />
@@ -382,6 +383,7 @@
 		<ABILITY>Leafer Pods</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Vasgothia</ORIGIN>
+		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Leafer" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="5" type="Ulk-Men">
@@ -396,6 +398,7 @@
 		<ABILITY>Gain Horror Powers</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Vasgothia</ORIGIN>
+		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Ulk" speak="yes"/>
 	</NAMEGIVER>
 </NAMEGIVERS>
