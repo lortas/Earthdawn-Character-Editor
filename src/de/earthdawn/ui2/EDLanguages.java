@@ -1,9 +1,9 @@
 package de.earthdawn.ui2;
 
-import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -60,6 +60,8 @@ public class EDLanguages extends JPanel {
 			System.err.println("layout languageselection : "+e.getLocalizedMessage());
 		}
 		((SkillsTableModel)tableLanguageSkills.getModel()).setCharacter(character);
+		tableLanguageSkills.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
+		tableLanguageSkills.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {
@@ -90,7 +92,7 @@ public class EDLanguages extends JPanel {
 
 	public EDLanguages() {
 		setOpaque(false);
-		setLayout(new BorderLayout(0,0));
+		setLayout(new GridBagLayout());
 
 		JToolBar toolBar = new JToolBar();
 		toolBar.setOpaque(false);
@@ -114,7 +116,7 @@ public class EDLanguages extends JPanel {
 		tableLanguages = new JTable(){
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
-				Component component = super.prepareRenderer( renderer, row, column);
+				Component component = super.prepareRenderer(renderer, row, column);
 				if( component instanceof JComponent )
 					((JComponent)component).setOpaque(false);
 				return component;
@@ -156,9 +158,23 @@ public class EDLanguages extends JPanel {
 		southPanel.setViewportView(tableLanguageSkills);
 		southPanel.getViewport().setOpaque(false);
 
-		add(toolBar, BorderLayout.NORTH);
-		add(scrollPaneLanguages, BorderLayout.CENTER);
-		//add(southPanel, BorderLayout.SOUTH);
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gbc.weightx = 1;
+		gbc.weighty = 0;
+		gbc.fill = GridBagConstraints.BOTH;
+		add(toolBar, gbc);
+
+		gbc = (GridBagConstraints) gbc.clone();
+		gbc.gridy = 1;
+		gbc.weighty = 10;
+		add(scrollPaneLanguages, gbc);
+
+		gbc = (GridBagConstraints) gbc.clone();
+		gbc.gridy = 2;
+		gbc.weighty = 3;
+		add(southPanel, gbc);
 	}
 
 	protected void do_btnAddLanguage_actionPerformed(ActionEvent arg0) {
@@ -186,7 +202,6 @@ public class EDLanguages extends JPanel {
 }
 
 class LanguagesTableModel extends AbstractTableModel {
-
 	private static final long serialVersionUID = -2330554075615304424L;
 	private CharacterContainer character;
 	private String[] columnNames = {"Language", "Speak",  "Read/Write", "Not Learned By Skill"};
