@@ -12,6 +12,7 @@
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="7" type="Elf">
@@ -26,6 +27,7 @@
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="6" type="Human">
@@ -40,6 +42,7 @@
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Cathan" karmamodifier="5" movement_ground="6" type="Human">
@@ -53,7 +56,7 @@
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
 		<ABILITY>Low-Light Vision</ABILITY>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Dinganni" karmamodifier="5" movement_ground="6" type="Human">
@@ -66,7 +69,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Galeb" karmamodifier="5" movement_ground="6" type="Human">
@@ -79,7 +82,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Klek" karmamodifier="5" movement_ground="6" type="Human">
@@ -92,7 +95,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Riders of the Scorched Plain" karmamodifier="5" movement_ground="6" type="Human">
@@ -105,7 +108,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Scavians" karmamodifier="5" movement_ground="6" type="Human">
@@ -118,7 +121,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>		
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Vorst" karmamodifier="5" movement_ground="6" type="Human">
@@ -131,7 +134,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Versatility"/>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
+		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="6" type="Human">
@@ -162,6 +165,7 @@
 		<ABILITY>Can only wear Living Armor</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Obsidiman" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="6" type="Ork">
@@ -176,6 +180,8 @@
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7" type="Troll">
@@ -190,6 +196,7 @@
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Troll" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -204,6 +211,7 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jungle T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
@@ -289,6 +297,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="new Gar" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="7" type="Elf">
@@ -301,6 +310,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
+		<ORIGIN>Cathay</ORIGIN>		
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Po Na" karmamodifier="5" movement_ground="6">
@@ -313,6 +323,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Prehensile Tail</ABILITY>
+		<ORIGIN>Cathay</ORIGIN>		
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="6" type="Storm Children">
@@ -325,6 +336,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<TALENT name="Lightning Born"/>
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Cathayan" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="Dragon">
@@ -337,6 +349,7 @@
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ORIGIN>Barsaive</ORIGIN>
+		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6" type="Jackalmen">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -350,6 +363,7 @@
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Bite Attack</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
+		<ORIGIN>Indrisa</ORIGIN>
 		<DEFAULTLANGUAGE language="Jackalmen" speak="yes"/>
 		<DEFAULTLANGUAGE language="Creana" speak="yes"/>
 	</NAMEGIVER>
@@ -365,7 +379,7 @@
 		<ABILITY>Defense Bonus against Horrors</ABILITY>
 		<ABILITY>Need 12 hours sleep per day</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" />
+		<ORIGIN>Marac</ORIGIN>
 		<DEFAULTLANGUAGE language="Sulfiki" speak="yes"/>
 		<DEFAULTLANGUAGE language="Maracan" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
