@@ -267,7 +267,6 @@
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="Dwarf" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8" type="Windling">
@@ -298,7 +297,8 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Cathay</ORIGIN>
-		<DEFAULTLANGUAGE language="new Gar" speak="yes"/>
+		<DEFAULTLANGUAGE language="New Gar" speak="yes"/>
+		<!-- get only one free Rang for speak language (New Gar); NO free Rank for read/write language -->
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="7" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
@@ -312,6 +312,7 @@
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Cathay</ORIGIN>		
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="yes" readwrite="yes"/>
+		<!-- get only one free Rang for speak language and read/write language (Cathayan respective dialect) -->
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Po Na" karmamodifier="5" movement_ground="6">
 		<ATTRIBUTE name="DEX" value="11" />
@@ -325,6 +326,7 @@
 		<ABILITY>Prehensile Tail</ABILITY>
 		<ORIGIN>Cathay</ORIGIN>		
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="yes" readwrite="yes"/>
+		<!-- get only one free Rang for speak language and read/write language (Cathayan respective dialect) -->
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="6" type="Storm Children">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -338,6 +340,7 @@
 		<TALENT name="Lightning Born"/>
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Cathayan" speak="yes" readwrite="yes"/>
+		<!-- get only one free Rang for speak language and read/write language (Cathayan) -->
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="Dragon">
 		<ATTRIBUTE name="DEX" value="28" />
@@ -348,8 +351,9 @@
 		<ATTRIBUTE name="CHA" value="31" />
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
-		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>
+		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE language="FREE CHOISE" speak="yes"/>				
+		<!-- two free Ranks, no default language -->
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6" type="Jackalmen">
 		<ATTRIBUTE name="DEX" value="10" />
@@ -363,9 +367,8 @@
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Bite Attack</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
-		<ORIGIN>Indrisa</ORIGIN>
-		<DEFAULTLANGUAGE language="Jackalmen" speak="yes"/>
-		<DEFAULTLANGUAGE language="Creana" speak="yes"/>
+		<ORIGIN>Creana</ORIGIN>
+		<DEFAULTLANGUAGE language="Jackalmen" speak="yes" />
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Jubruq" karmamodifier="6" movement_ground="5" type="Jubruq">
 		<ATTRIBUTE name="DEX" value="9" />
@@ -381,7 +384,6 @@
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Marac</ORIGIN>
 		<DEFAULTLANGUAGE language="Sulfiki" speak="yes"/>
-		<DEFAULTLANGUAGE language="Maracan" speak="yes" readwrite="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Leafers" karmamodifier="5" movement_ground="5" type="Leafers">
 		<ATTRIBUTE name="DEX" value="9" />
@@ -397,7 +399,6 @@
 		<ABILITY>Leafer Pods</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Vasgothia</ORIGIN>
-		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Leafer" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="5" type="Ulk-Men">
@@ -412,7 +413,6 @@
 		<ABILITY>Gain Horror Powers</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Vasgothia</ORIGIN>
-		<DEFAULTLANGUAGE language="Vasgothia" speak="yes" readwrite="yes"/>
 		<DEFAULTLANGUAGE language="Ulk" speak="yes"/>
 	</NAMEGIVER>
 </NAMEGIVERS>
