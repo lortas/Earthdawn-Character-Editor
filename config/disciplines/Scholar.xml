@@ -123,4 +123,6 @@
 		<DEFENSE kind="physical"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>produce writing materials needed to produce books and scrolls; Perception-based Tests draw sketches, retrieve information from any Moon Staff; skills: Navigation, Mapmaking; (CPG p.61)</HALFMAGIC>
 </DISCIPLINE>

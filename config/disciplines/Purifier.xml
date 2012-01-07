@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE  name="Purifier" lang="en" bookref="NG p.173" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+<DISCIPLINE  name="Purifier" lang="en" bookref="NG p.172" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY death="7" unconsciousness="6"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Acrobatic Strike"/>
@@ -122,4 +122,6 @@
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: all aspects of nature, preserving natural environs, all that tends to currupt nature (including Horrors, misdeeds of Namegiver civilization); skills: Navigation, Wilderness Survival; (NG p.175)</HALFMAGIC>
 </DISCIPLINE>

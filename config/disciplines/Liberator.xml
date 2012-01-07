@@ -121,4 +121,6 @@
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>gathering intelligence to inspire rebellion; knowledge: slaver tactics/ strategy; recall events of the Great Uprising and Hrak Gron’s life; (NG p.159)</HALFMAGIC>
 </DISCIPLINE>

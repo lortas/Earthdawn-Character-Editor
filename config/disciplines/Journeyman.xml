@@ -82,4 +82,6 @@
 		<DEFENSE kind="physical"/>
 		<ABILITY>a Charakteristic Bonus</ABILITY>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>learn about/ recognize ways of different Disciplines, races, cultures; knowledge: any Disciplines, races, culture already familiar with; (NG p.155)</HALFMAGIC>
 </DISCIPLINE>
