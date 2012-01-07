@@ -82,4 +82,10 @@
 	<ORIGIN name="Vasgothia">
 		<DEFAULTLANGUAGE lang="en" language="Vasgothia" speak="yes" readwrite="yes"/>
 	</ORIGIN>
+	<ORIGIN name="Creana">
+		<DEFAULTLANGUAGE lang="en" language="Creana" speak="yes" readwrite="yes"/>
+	</ORIGIN>
+	<ORIGIN name="Marac">
+		<DEFAULTLANGUAGE lang="en" language="Maracan" speak="yes" readwrite="yes"/>
+	</ORIGIN>
 </OPTIONALRULES>
