@@ -90,6 +90,7 @@ public class EDItems extends JPanel {
 		for(int row :table.getSelectedRows()){
 			ITEMType item = character.getItems().get(row);
 			itemsForRemoval.add(item);
+			System.out.println(row);
 		}
 		character.getItems().removeAll(itemsForRemoval);	
 		character.refesh();

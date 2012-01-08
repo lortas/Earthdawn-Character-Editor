@@ -191,8 +191,9 @@ public class EDInventory extends JPanel {
 					public void actionPerformed(ActionEvent arg0) {
 						Object parent = currentPath.getParentPath().getLastPathComponent();
 						List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+						int i =  temp.indexOf(currentNode);
 						temp.remove(currentNode);
-						((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode, 0);
+						((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode,i );
 					}
 				});
 				popup.add(menuitem);	
