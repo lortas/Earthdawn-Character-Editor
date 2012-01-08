@@ -122,4 +122,6 @@
 		<DEFENSE kind="spell"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>maintain sword; recognize/ rate types of swords; knowledge: pertaining different kwoons, which kwoon Sword Dancer studied, famous swordsmen and their exploits (from history/ tales/ legends); (CPG p.73)</HALFMAGIC>
 </DISCIPLINE>

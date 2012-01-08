@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE name="Shaman" lang="en" bookref="NG p.179" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+<DISCIPLINE name="Shaman" lang="en" bookref="NG p.176" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY circle="1" death="4" unconsciousness="3"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Creature Analysis"/>
@@ -234,4 +234,6 @@
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: all aspects nature; skills: Alchemy for producing potions/ salves, to gather ingredients for them; sense presence of nature spirits within 15 hex; (NG p.178)</HALFMAGIC>
 </DISCIPLINE>

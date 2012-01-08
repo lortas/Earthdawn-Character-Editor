@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <DISCIPLINE name="Scout-Burglar" lang="en" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+	<!--bookref missing -->
 	<DURABILITY death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Avoid Blow"/>
@@ -123,4 +124,6 @@
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>recognize tracks/ trails different animals, Namegivers in wilderness/ urban environments; skills: Search, Detect Trap, Navigation, Mapmaking; (PG p.49)</HALFMAGIC>
 </DISCIPLINE>
