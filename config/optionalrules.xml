@@ -88,4 +88,7 @@
 	<ORIGIN name="Marac">
 		<DEFAULTLANGUAGE lang="en" language="Maracan" speak="yes" readwrite="yes"/>
 	</ORIGIN>
+	<ORIGIN name="Indrisa">
+		<DEFAULTLANGUAGE lang="en" language="Indrisan" speak="yes" readwrite="yes"/>
+	</ORIGIN>
 </OPTIONALRULES>
