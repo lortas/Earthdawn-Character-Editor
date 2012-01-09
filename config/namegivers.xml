@@ -238,7 +238,7 @@
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Water Breath</ABILITY>
-		<ORIGIN>Barsaive</ORIGIN>
+		<ORIGIN>Indrisa</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="yes"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="en" name="K'stulaami" karmamodifier="4" movement_ground="6" type="T'skrang">
