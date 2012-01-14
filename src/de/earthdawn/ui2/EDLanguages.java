@@ -10,7 +10,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -184,7 +183,7 @@ public class EDLanguages extends JPanel {
 		l.setSpeak(YesnoType.NO);
 		l.setReadwrite(YesnoType.NO);
 		l.setNotlearnedbyskill(YesnoType.NO);
-		l.setLanguage("to be specified");
+		l.setLanguage("");
 		character.getLanguages().insertLanguage(l);
 		character.refesh();
 	}

@@ -43,6 +43,8 @@ public class CharacterContainer extends CharChangeRefresh {
 	public static final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public static final String durabilityName = PROPERTIES.getDurabilityName();
+	public static final List<String> speakSkillName = PROPERTIES.getLanguageSkillSpeakName();
+	public static final List<String> readwriteSkillName = PROPERTIES.getLanguageSkillReadWriteName();
 	public static final String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
 	public static final List<String> languageSkillSpeakNames = PROPERTIES.getLanguageSkillSpeakName();
 	public static final List<String> languageSkillReadWriteNames = PROPERTIES.getLanguageSkillReadWriteName();
@@ -551,6 +553,22 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<SKILLType> getSkills() {
 		return character.getSKILL();
+	}
+
+	public List<SKILLType> getSpeakSkills() {
+		List<SKILLType> result = new ArrayList<SKILLType>();
+		for( SKILLType skill : getSkills() ) {
+			if( speakSkillName.contains(skill.getName()) ) result.add(skill);
+		}
+		return result;
+	}
+
+	public List<SKILLType> getReadWriteSkills() {
+		List<SKILLType> result = new ArrayList<SKILLType>();
+		for( SKILLType skill : getSkills() ) {
+			if( readwriteSkillName.contains(skill.getName()) ) result.add(skill);
+		}
+		return result;
 	}
 
 	public List<SKILLType> getNonLanguageSkills() {
@@ -1594,7 +1612,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		character.getLANGUAGE().clear();
 	}
 
-	public LanguageContainer getLanguages() {
+	public LanguageContainer getDefaultLanguages() {
 		String origin = getAppearance().getOrigin();
 		String race = getAppearance().getRace();
 		LanguageContainer defaultlanguages = new LanguageContainer(PROPERTIES.getDefaultLanguage(origin));
@@ -1603,8 +1621,19 @@ public class CharacterContainer extends CharChangeRefresh {
 				defaultlanguages.insertLanguages(namegiver.getDEFAULTLANGUAGE());
 			}
 		}
+		return defaultlanguages;
+	}
+
+	public LanguageContainer getLanguages() {
+		LanguageContainer defaultlanguages = getDefaultLanguages().copy();
+		int[] defaultCountOfSpeakReadWrite = defaultlanguages.getCountOfSpeakReadWrite();
 		LanguageContainer languages = new LanguageContainer(character.getLANGUAGE());
-		languages.insertLanguages(defaultlanguages.copy().getLanguages());
+		for( CHARACTERLANGUAGEType l : defaultlanguages.getLanguages() ) {
+			int[] currentCountOfSpeakReadWrite = languages.getCountOfSpeakReadWrite();
+			if( (currentCountOfSpeakReadWrite[0]>=defaultCountOfSpeakReadWrite[0]) &&
+					(currentCountOfSpeakReadWrite[1]>=defaultCountOfSpeakReadWrite[1]) ) break;
+			languages.insertLanguage(l);
+		}
 		return languages;
 	}
 
