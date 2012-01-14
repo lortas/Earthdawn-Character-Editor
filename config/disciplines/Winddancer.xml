@@ -124,4 +124,6 @@
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>whenever perform for audiences; knowledge: legends, myths, rites, traditions, folklore of windling culture/ cultures studied personally; (NG p.203)</HALFMAGIC>
 </DISCIPLINE>
