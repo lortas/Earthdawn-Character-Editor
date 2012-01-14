@@ -98,4 +98,13 @@ public class LanguageContainer {
 		}
 		return newlang;
 	}
+
+	public int[] getCountOfSpeakReadWrite() {
+		int[] result = {0,0};
+		for( CHARACTERLANGUAGEType l : languages ) {
+			if( l.getSpeak().equals(YesnoType.YES) ) result[0]++;
+			if( l.getReadwrite().equals(YesnoType.YES) ) result[1]++;
+		}
+		return result;
+	}
 }
