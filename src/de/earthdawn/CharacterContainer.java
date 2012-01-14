@@ -878,35 +878,45 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public void realignOptionalTalents() {
+		// Talentname von Unempfindlichkeit ermitteln
 		final String durabilityName = PROPERTIES.getDurabilityName();
+		// Talente ermitteln die mehrfach verwendet werden dürfen.
 		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
-		List<DISCIPLINEType> allDisciplines = character.getDISCIPLINE();
-		int maxDisciplineOrder=allDisciplines.size();
-		List<DISCIPLINEType> disciplines = getDisciplines();
-		for( DISCIPLINEType discipline1 : disciplines ) {
-			int disciplineOrder=0;
-			for( TALENTType disTalent : discipline1.getDISZIPLINETALENT() ) {
-				disciplineOrder++;
+		// Liste alle vom Charakter gelernter Disziplinen
+		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
+		// Wenn man bei Eins anfängt zu nummerieren, dann ist die Anzahl der Disziplinen auch gleichzeitig die Nummer der letzten Disziplin.
+		int maxDisciplineOrder=disciplines.size();
+		int disciplineOrder=0;
+		for( DISCIPLINEType discipline : disciplines ) {
+			// Die Nummerierung der Disziplinen fängt bei Eins an, daher zälen wir hier schon hoch
+			disciplineOrder++;
+			for( TALENTType disTalent : discipline.getDISZIPLINETALENT() ) {
 				// Disziplinetalente können nicht realigned werden, daher ist auch keine gesonderte Prüfung
-				// ob dieses Talent bereits ge-realigned ist nicht notwendig und unsinnig
+				// ob dieses Talent bereits ge-realigned ist nicht notwendig und wäre unsinnig
+				// Ermittle für spätere Vergleiche den vollständigen Diszipline namen (mit Limitation Bezeichnung)
 				String disTalentName=getFullTalentname(disTalent);
-				for( DISCIPLINEType discipline2 : disciplines ) {
-					// Talentlisten nicht mit sich selbst vergleichen
-					if( discipline1 == discipline2 ) continue;
-					for( TALENTType optTalent : discipline2.getOPTIONALTALENT() ) {
-						String name = getFullTalentname(optTalent);
-						if( multiUseTalents.containsKey(name) ) {
+				for( DISCIPLINEType compareDiscipline : disciplines ) {
+					// Talentlisten nicht mit sich selbst vergleichen, daher Schleife überspringen, wenn es die selbe Disziplin ist.
+					if( discipline == compareDiscipline ) continue;
+					for( TALENTType optTalent : compareDiscipline.getOPTIONALTALENT() ) {
+						String optTalentName = getFullTalentname(optTalent);
+						if( multiUseTalents.containsKey(optTalentName) ) {
 							// MultiUseTalents können nicht realigned werden.
+							// Prüfe, ob es eventuell doch gemacht wurde, wenn ja korigieren wir es hier
 							if( optTalent.getRealigned() > 0 ) optTalent.setRealigned(0);
+							// Springe zum nächsten Talent, führ diesen Schleifen durchlauf nicht fort.
 							continue;
 						}
 						// Sollte das Optinaltalent auf ein Talent einer nicht mehr exisiterenden Disziplin realgined sind,
 						// kann dieses Realgined entfernt werden
 						if( optTalent.getRealigned() > maxDisciplineOrder ) optTalent.setRealigned(0);
+						// Unterscheide, ob das Disziplintalent das Unempfindlichkeit-Talent ist
 						if( durabilityName.equals(disTalent.getName()) ) {
+							// Wenn ja, dann ist die Limitation nicht wichtig und wir prüfen nur ob das vergleichende Talent eben falls das Unempfindlichkeit-Talent ist.
 							if( durabilityName.equals(optTalent.getName()) ) optTalent.setRealigned(disciplineOrder);
 						} else {
-							if( disTalentName.equals(name) ) optTalent.setRealigned(disciplineOrder);
+							// Wenn nein, dann ist die Limitation wichtig und muss identisch sein. Daher werden die "vollstädnige" Talentnamen verglichen
+							if( disTalentName.equals(optTalentName) ) optTalent.setRealigned(disciplineOrder);
 						}
 					}
 				}
