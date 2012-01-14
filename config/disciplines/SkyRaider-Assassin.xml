@@ -122,5 +122,5 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
-	<HALFMAGIC>tasks upkeep, repair, building of drakkar-sized airships; knowledge: airship designs, recognition airship types, commonly flight paths, crew complements according types of airships; skills: Climbing, Navigation while aboard airship; (PG p.50)</HALFMAGIC>
+	<HALFMAGIC>upkeep, repair, building of drakkar-sized airships; knowledge: airship designs, airship types, commonly flight paths, crew complements according types of airships; Skill: Climbing, Navigation while aboard airship;(PG p.50)</HALFMAGIC>
 </DISCIPLINE>

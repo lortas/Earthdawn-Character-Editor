@@ -120,10 +120,6 @@
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
-	<KARMARITUAL>To Perform his Karmaritual, a Warrior sits cross-legged, holding a weapon above his knees. After a few minutes of 
-	meditation he levitates, as if using the Air Dance talent; the ritual use of this talent does not cause him any Strain damage. 
-	The Warrior then performs a series of four exercises: the earth defense, the water defense, the fire attack, and the air attack. 
-	The ritual ends half an hour later, as soon as the Warrior completes the final move of the air attack.</KARMARITUAL>
-	<HALFMAGIC>caring for or repairing their weapons and armor; knowledge of military tactics and strategy; recall events of Barsaive's military history;
-	recognize warrior orders, famous ancient Warriors, and ancient arms and armor; Tactics skill via half-magi</HALFMAGIC>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>caring for/ repairing their weapons/ armor; knowledge: military tactics/ strategy, events Barsaive's military history, warrior orders, famous ancient Warriors, ancient arms/ armor; Skill: Tactics; (PG p.54)</HALFMAGIC>
 </DISCIPLINE>

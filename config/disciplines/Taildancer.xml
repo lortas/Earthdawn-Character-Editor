@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE  name="Taildancer" lang="en" bookref="NG p.191" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
+<DISCIPLINE  name="Taildancer" lang="en" bookref="NG p.189" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../earthdawndiscipline.xsd">
 	<DURABILITY death="7" unconsciousness="6"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Impress"/>
@@ -122,4 +122,6 @@
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>identify Taildancer’s fighting techniques, including prominent Taildancers have shaped individual’s style; knowledge: dances; Skill:Etiquette for situations involve dancing; (NG p.192)</HALFMAGIC>
 </DISCIPLINE>

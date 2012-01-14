@@ -123,4 +123,6 @@
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>recognize scents, tracks, trails left by animals, plants, Namegivers in wilderness environments; Skill: Search, Detect Trap, Navigation; (NG p.211)</HALFMAGIC>
 </DISCIPLINE>
