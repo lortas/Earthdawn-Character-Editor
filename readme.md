@@ -22,6 +22,29 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.37-20120114.zip ##
++ Bugs
+	+ Now, player name will also be loaded
+	+ Remove function now delete the selected item in the inventor no longer the first
+	+ Realign of talents should now work
++ New disciplines
+	+ Sword Dancer
+	+ War Rider
+	+ Sorcerer
++ New spell type sorcery
++ General-Tab enhanced: Portrait is displayed and can now be changed
++ LP calculation will be detailed in the XML and can used view a Reset Spent LP button
++ For each discipline the half magic and karmaritual definition can be edit, default comes from the discipline definition
++ Halfmagic text will be print into the PDFs if there is a place for it
++ More dependencies between startrank and rank
++ LANGUAGE has the new attribute "notlearnedbyskill"
++ New tab "Languages", for editing languages and languages skills
++ Layout of almost all item types with in the inventory tab updated.
++ Default languages can now be defined for each namegiver
++ Race selection order by origin and race kind
++ Portrait and Language can be reset by changing race or gender
++ Config Syntax for GUI layout updated
++ Adding for almost all discipline half magic text templates
 ## EarthdawnCharacterEditor-0.36-20111220.zip ##
 + Bugs
 	+ if creating a new character the file handle will also be reset. So "Save" will no longer automatically overwrite the previous saved character
