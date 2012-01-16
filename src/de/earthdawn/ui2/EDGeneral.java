@@ -404,6 +404,7 @@ public class EDGeneral extends JPanel {
 
 	protected void do_rdbtnSex_itemStateChanged(ItemEvent arg0) {
 		if( character == null ) return;
+		if( arg0.getStateChange() != ItemEvent.SELECTED ) return;
 		JRadioButton radioButton = (JRadioButton)arg0.getItem();
 		if( radioButton == null ) return;
 		GenderType gender = GenderType.MINUS;
