@@ -192,7 +192,7 @@
 	<SPELL name="Experience Death" threads="1" weavingdifficulty="6" reattuningdifficulty="12" range="10 hex" duration="R+3 rnd" effect="WIL + 5" bookref="PG p.168"/>
 	<SPELL name="Eye of Truth" threads="1" weavingdifficulty="11" reattuningdifficulty="18" range="self" duration="R+5 min" effect="+10 bonus to Disbelief Tests" bookref="PG p.168"/>
 	<SPELL name="Eyes Have It" threads="3" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6*" range="12 hex" duration="R+1 min" effect="WIL + 4" bookref="PG p.168"/>
-	<SPELL name="Falcon’s Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="self" duration="R hr" effect="Turns caster into a falcon" bookref="PG p.168"/>
+	<SPELL name="Falcon's Cloak" threads="2" weavingdifficulty="10" reattuningdifficulty="20" range="self" duration="R hr" effect="Turns caster into a falcon" bookref="PG p.168"/>
 	<SPELL name="False Aura" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 min" effect="WIL + 6" bookref="PG p.168"/>
 	<SPELL name="False Enchantment" threads="5" weavingdifficulty="8" reattuningdifficulty="20" castingdifficulty="6*" range="touch" duration="R+7 days" effect="Gives an item fake magical abilities;  +5 to the illusion's Disbelief Difficulty" bookref="PG p.168" element="illusion"/>
 	<SPELL name="False Floor" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="R+1 hr" effect="WIL + 6" effectarea="3-hex radius from center" bookref="PG p.169" element="illusion"/>
