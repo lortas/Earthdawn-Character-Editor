@@ -151,7 +151,11 @@
 		<SPELL type="elemental" name="Death Rain"/>
 		<SPELL type="elemental" name="Earth Q'wril"/>
 		<SPELL type="elemental" name="Earth Surfing"/>
-		<SPELL type="elemental" name="Engulf [Element]"/>
+		<SPELL type="elemental" name="Engulf Air"/>
+		<SPELL type="elemental" name="Engulf Earth"/>
+		<SPELL type="elemental" name="Engulf Fire"/>
+		<SPELL type="elemental" name="Engulf Water"/>
+		<SPELL type="elemental" name="Engulf Wood"/>
 		<SPELL type="elemental" name="Fire Hounds"/>
 		<SPELL type="elemental" name="Flame Darts"/>
 		<SPELL type="elemental" name="Grasping Hand of Earth"/>
