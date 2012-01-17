@@ -99,11 +99,13 @@ public class LanguageContainer {
 		return newlang;
 	}
 
-	public int[] getCountOfSpeakReadWrite() {
+	public int[] getCountOfSpeakReadWrite(YesnoType skill) {
 		int[] result = {0,0};
 		for( CHARACTERLANGUAGEType l : languages ) {
-			if( l.getSpeak().equals(YesnoType.YES) ) result[0]++;
-			if( l.getReadwrite().equals(YesnoType.YES) ) result[1]++;
+			if( (skill==null) || skill.equals(YesnoType.NA) || l.getNotlearnedbyskill().equals(skill) ) {
+				if( l.getSpeak().equals(YesnoType.YES) ) result[0]++;
+				if( l.getReadwrite().equals(YesnoType.YES) ) result[1]++;
+			}
 		}
 		return result;
 	}
