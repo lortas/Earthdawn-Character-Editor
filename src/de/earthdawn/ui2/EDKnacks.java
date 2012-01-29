@@ -113,7 +113,7 @@ class KnacksTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -2103405769857336996L;
 	private CharacterContainer character;
 	public final ApplicationProperties PROPERTIES = ApplicationProperties.create();
-	private String[] columnNames = {"Learned", "Knack Name", "Talent Name", "Limitation", "Rank", "Strain", "BookRef"};
+	private String[] columnNames = {"Learned", "Knack Name", "Limitation", "Talent Name", "Rank", "Strain", "BookRef"};
 
 	HashMap<String,KNACKBASEType> knacklist;
 	List<String> knacknames;
@@ -129,14 +129,16 @@ class KnacksTableModel extends AbstractTableModel {
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
 				int talentrank=talent.getRANK().getRank()+2;
+				String limitation = talent.getLimitation();
 				for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-					if( knack.getMinrank() <= talentrank ) knacklist.put(knack.getName(), knack);
+					if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
 				}
 			}
 			for( TALENTType talent : discipline.getOPTIONALTALENT() ) {
 				int talentrank=talent.getRANK().getRank();
+				String limitation = talent.getLimitation();
 				for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-					if( knack.getMinrank() <= talentrank ) knacklist.put(knack.getName(), knack);
+					if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
 				}
 			}
 		}
@@ -170,10 +172,10 @@ class KnacksTableModel extends AbstractTableModel {
 		switch (col) {
 			case 0:
 				if(character == null) return false;
-				else return true; //character.hasSpellLearned(discipline, spelllist.get(row) );
+				else return character.hasKnackLearned(knack);
 			case 1: return knack.getName();
-			case 2: return knack.getBasename();
-			case 3: return knack.getLimitation();
+			case 2: return knack.getLimitation();
+			case 3: return knack.getBasename();
 			case 4: return knack.getMinrank();
 			case 5: return knack.getStrain();
 			case 6: return knack.getBookref();

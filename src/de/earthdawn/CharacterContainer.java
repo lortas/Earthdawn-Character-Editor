@@ -696,6 +696,17 @@ public class CharacterContainer extends CharChangeRefresh {
 		return name + " : "+limitation;
 	}
 
+	public static String getFullTalentname(KNACKBASEType knack) {
+		String name = knack.getName();
+		// Falls es das DurabilityTalent ist, dann ignoriere die Limitationsangabe
+		if( name.equals(durabilityName) ) return durabilityName;
+
+		String limitation = knack.getLimitation();
+		if( limitation == null ) return name;
+		if( limitation.isEmpty() ) return name;
+		return name + " : "+limitation;
+	}
+
 	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE disciplineDefinition, int talentCircleNr) {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
 		List<TALENTType> usedTalents = new ArrayList<TALENTType>();
@@ -1057,6 +1068,20 @@ public class CharacterContainer extends CharChangeRefresh {
 				return;
 			}
 		}
+	}
+
+	public boolean hasKnackLearned(KNACKBASEType knack) {
+		String knackName = knack.getName();
+		String knackLimitation = knack.getLimitation();
+		boolean noKnackLimitation = knackLimitation.isEmpty();
+		for( TalentsContainer talents : getAllTalents() ) {
+			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+				if( noKnackLimitation || talent.getLimitation().equals(knackLimitation)) for( KNACKType k : talent.getKNACK() ) {
+					if( k.getName().equals(knackName) ) return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public List<ITEMType> getItems() {
