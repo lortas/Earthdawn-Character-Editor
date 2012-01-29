@@ -76,4 +76,6 @@
 		<!-- 2 --><COLUMN min="80" preferred="100" max="1000"/>
 		<!-- 3 --><COLUMN min="80" preferred="100" max="1000"/>
 	</TABLE>
+	<TABLE name="knackselection">
+	</TABLE>
 </ECEGUILAYOUT>
