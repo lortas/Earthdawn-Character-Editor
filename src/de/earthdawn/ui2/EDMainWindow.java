@@ -80,6 +80,7 @@ public class EDMainWindow {
 	private EDDevotionPoints panelEDDevotionPoints;
 	private EDInventory panelEDThreadItems;
 	private EDSpells panelEDSpells;
+	private EDKnacks panelEDKnacks;
 	private EDTalents panelEDTalents;
 	private File file = null;
 	private JSplitPane splitPane;
@@ -372,6 +373,7 @@ public class EDMainWindow {
 		panelERGeneral = new EDGeneral();
 		panelEDDisciplines = new EDDisciplines();
 		panelEDAttributes = new EDAttributes();
+		panelEDKnacks = new EDKnacks(character);
 		panelEDSkills = new EDSkills();
 		panelEDExperience = new EDExperience();
 		panelEDKarma = new EDKarma();
@@ -409,6 +411,7 @@ public class EDMainWindow {
 		tabbedPane.addTab("General", null, panelERGeneral, null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
+		tabbedPane.addTab("Knacks", null, panelEDKnacks, null);
 		tabbedPane.addTab("Skills", null, panelEDSkills, null);
 		tabbedPane.addTab("Languages", null, panelEDLanguages, null);
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
@@ -579,6 +582,9 @@ public class EDMainWindow {
 			}
 			if(co.getClass() == EDSpells.class){
 				((EDSpells)co).setCharacter(character);
+			}
+			if(co.getClass() == EDKnacks.class){
+				((EDKnacks)co).setCharacter(character);
 			}
 			if(co.getClass() == EDSkills.class){
 				((EDSkills)co).setCharacter(character);
