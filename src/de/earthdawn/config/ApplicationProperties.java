@@ -232,6 +232,14 @@ public class ApplicationProperties {
 		return KNACKS.getTALENTKNACK();
 	}
 
+	public List<KNACKBASEType> getTalentKnacks(String talent) {
+		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
+		for( KNACKBASEType knack : KNACKS.getTALENTKNACK() ) {
+			if( knack.getBasename().equals(talent) ) knacks.add(knack);
+		}
+		return knacks;
+	}
+
 	// Liefert die Definition aller verfügbarer Zauber zurück.
 	// Unabhängig von der Diszipin oder dem Fadenweben-Talent
 	public HashMap<String,SPELLDEFType> getSpells() {
