@@ -659,7 +659,7 @@ public class ECEWorker {
 				rankhistory.setRank(rank.getRank());
 			}
 			// Disziplintalente mir Rank 0 darf es nicht geben.
-			if( disTalents && (rank.getRank()<1) ) rank.setRank(1);
+			if( disTalents && (rank.getRank()<1) && (talent.getCircle()>1) ) rank.setRank(1);
 			int newDisciplineTalentCost=0;
 			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
 			// Prüfe ob wir ein Kostentabelle haben
