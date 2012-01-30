@@ -584,10 +584,13 @@ public class ECEWorker {
 
 	private void checkTalentKnacks(TALENTType talent, int disciplinenumber) {
 		String talentname = talent.getName();
+		String limitation = talent.getLimitation();
 		for( KNACKType knack : talent.getKNACK() ) {
 			String knackname = knack.getName();
 			for( KNACKBASEType k : globalTalentKnackList ) {
-				if( k.getName().equals(knackname) ) {
+				String lim = k.getLimitation();
+				boolean nolim = lim.isEmpty();
+				if( k.getName().equals(knackname) &&(nolim||lim.equals(limitation))) {
 					if( k.getBasename().equals(talentname) ) {
 						knack.setBookref(k.getBookref());
 						knack.setMinrank(k.getMinrank());
@@ -597,17 +600,6 @@ public class ECEWorker {
 						errorout.println("The knack '"+knackname+"' was learned for the talent '"+talentname+"', but should be learned for talent '"+k.getBasename()+"'. Will not enforce knack default values!");
 					}
 				}
-			}
-			int talentrank = talent.getRANK().getRank();
-			int knackminrank = knack.getMinrank();
-			if( talentrank < knackminrank ) {
-				errorout.println("The knack '"+knackname+"' was learned for the talent '"+talentname+"', but talent rank ("+talentrank+") is less than the knack minimum talent rank ("+knackminrank+")!");
-			}
-			CHARACTERISTICSCOST knackcost = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knackminrank);
-			if( knackcost == null ) {
-				errorout.println("Could not get knack lp costs for disciplinenumber="+disciplinenumber+", talent_circle="+talent.getCircle()+" and knackminrank="+knackminrank);
-			} else {
-				calculatedLP.addKnacks(knackcost.getCost(),"LPs for talent knack '"+knack.getName()+"' of talent '"+talent.getName()+"'");
 			}
 		}
 	}
@@ -666,8 +658,8 @@ public class ECEWorker {
 				}
 				rankhistory.setRank(rank.getRank());
 			}
-			RANKHISTORYType lastrankhistory= new RANKHISTORYType();
-			lastrankhistory.setRank(0);
+			// Disziplintalente mir Rank 0 darf es nicht geben.
+			if( disTalents && (rank.getRank()<1) ) rank.setRank(1);
 			int newDisciplineTalentCost=0;
 			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
 			// Prüfe ob wir ein Kostentabelle haben
@@ -702,7 +694,7 @@ public class ECEWorker {
 			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr.value()));
 			String talentname = talent.getName();
 			if( talentname.equals(durabilityTalentName)) durabilityTalents.add(talent);
-			calculateKnacks(disciplinenumber, talent, rank.getRank());
+			calculateKnacks(disciplinenumber, talent, disTalents);
 			if( namegivertalents.containsKey(talentname) ) {
 				namegivertalents.remove(talentname);
 			}
@@ -747,13 +739,16 @@ public class ECEWorker {
 		return 10*k.get(0); // KarmaLP
 	}
 
-	private void calculateKnacks(int disciplinenumber, TALENTType talent, int rank) {
+	private void calculateKnacks(int disciplinenumber, TALENTType talent, boolean disTalents) {
+		int trank=talent.getRANK().getRank();
 		for( KNACKType knack : talent.getKNACK() ) {
-			if( knack.getMinrank() > rank ) {
+			int krank = knack.getMinrank();
+			if( disTalents ) krank -= 2;
+			if( krank > trank ) {
 				errorout.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
-						+rank+" vs. "+knack.getMinrank());
+						+trank+" vs. "+krank);
 			}
-			int lp = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(knack.getMinrank()).getCost();
+			int lp = PROPERTIES.getCharacteristics().getTalentRankLPIncreaseTable(disciplinenumber,talent.getCircle()).get(krank).getCost();
 			calculatedLP.addKnacks(lp,"LPs for talent knack '"+knack.getName()+"' of talent '"+talent.getName()+"'");
 		}
 	}
