@@ -832,6 +832,7 @@ public class ECEPdfExporter {
 		int conterSpells=0;
 		int counterDisciplinetalent=0;
 		int counterOthertalent=0;
+		int counterKnack=0;
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			List<TALENTType> disziplinetalents = discipline.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
@@ -840,6 +841,11 @@ public class ECEPdfExporter {
 				if( counterDisciplinetalent>20 ) break;
 				setTalent(counterDisciplinetalent, talent, character.getAttributes());
 				counterDisciplinetalent++;
+				for( KNACKType knack : talent.getKNACK() ) {
+					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
+					acroFields.setField( "TalentKnackName."+counterKnack, knack.getName()+" ["+knack.getStrain()+"]" );
+					counterKnack++;
+				}
 			}
 			List<TALENTType> optionaltalents = discipline.getOPTIONALTALENT();
 			Collections.sort(optionaltalents, new TalentComparator());
@@ -851,6 +857,11 @@ public class ECEPdfExporter {
 					acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
 				}
 				counterOthertalent++;
+				for( KNACKType knack : talent.getKNACK() ) {
+					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
+					acroFields.setField( "TalentKnackName."+counterKnack, knack.getName()+" ["+knack.getStrain()+"]" );
+					counterKnack++;
+				}
 			}
 			List<SPELLType> spellList = discipline.getSPELL();
 			Collections.sort(spellList, new SpellComparator());
