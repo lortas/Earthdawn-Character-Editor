@@ -209,6 +209,7 @@ class KnacksTableModel extends AbstractTableModel {
 	public void setValueAt(Object value, int row, int col) {
 		if( character == null ) return;
 		KNACKBASEType knack = knacklist.get(knacknames.get(row));
+		character.insertKnack(knack);
 		character.refesh();
 		fireTableCellUpdated(row, 0);
 		fireTableCellUpdated(row, 1);

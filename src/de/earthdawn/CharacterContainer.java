@@ -1726,4 +1726,25 @@ public class CharacterContainer extends CharChangeRefresh {
 		DEATHType unconsciousness = health.getUNCONSCIOUSNESS();
 		unconsciousness.setAdjustment(unconsciousness.getAdjustment()-itemBloodDamge);
 	}
+
+	public void insertKnack(KNACKBASEType knack) {
+		String limitation=knack.getLimitation();
+		String knackname = knack.getName();
+		boolean noLimitation=limitation.isEmpty();
+		for( TALENTType talent : getTalentByName(knack.getBasename()) ) {
+			if( noLimitation || talent.getLimitation().equals(limitation) ) {
+				List<KNACKType> talentknacks = talent.getKNACK();
+				for( KNACKType k : talentknacks ) {
+					if( k.getName().equals(knackname) ) return;
+				}
+				KNACKType k = new KNACKType();
+				k.setName(knackname);
+				k.setMinrank(knack.getMinrank());
+				k.setStrain(knack.getStrain());
+				k.setBookref(knack.getBookref());
+				talentknacks.add(k);
+				return;
+			}
+		}
+	}
 }
