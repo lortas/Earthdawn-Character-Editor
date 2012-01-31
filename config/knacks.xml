@@ -5,7 +5,7 @@
 	<TALENTKNACK name="Air Legs" basename="Air Sailing" minrank="4" strain="2" bookref="PC p.xxx"/>
 	<TALENTKNACK name="Air Mount" basename="Spirit Mount" minrank="13" strain="6"/>
 	<TALENTKNACK name="Adept's Best Friend" basename="Tracking" minrank="6" strain="3"/>
-	<TALENTKNACK name="Anchored Spell" basename="Spellcasting" minrank="8" strain="1 Blood Wound (see text)"/>
+	<TALENTKNACK name="Anchored Spell" basename="Spellcasting" minrank="8" strain="1 Blood Wound (s.text)"/>
 	<TALENTKNACK name="Angelic Appearance" basename="Disguise Self" minrank="7" strain="1"/>
 	<TALENTKNACK name="Animal's Best Friend" basename="Tracking" minrank="6" strain="4"/>
 	<TALENTKNACK name="Arcane Curses" basename="Arcane Mutterings" minrank="7" strain="1"/>
@@ -14,8 +14,8 @@
 	<TALENTKNACK name="Arrow Cutting" basename="Parry" minrank="9" strain="2"/>
 	<TALENTKNACK name="Arrow Stop" basename="Impressive Shot" minrank="7" strain="2"/>
 	<TALENTKNACK name="Assault" basename="Air Sailing" minrank="8" strain="4"/>
-	<TALENTKNACK name="Astral Hideout" basename="Astral Pocket" minrank="10" strain="1 Wound - see text" bookref="KR p.226"/>
-	<TALENTKNACK name="Astral Spy" basename="Orbiting Spy" minrank="9" strain="1+ (see text)"/>
+	<TALENTKNACK name="Astral Hideout" basename="Astral Pocket" minrank="10" strain="1 Wound (s.text)" bookref="KR p.226"/>
+	<TALENTKNACK name="Astral Spy" basename="Orbiting Spy" minrank="9" strain="1+ (s.text)"/>
 	<TALENTKNACK name="Astral Tracking" basename="Tracking" minrank="9" strain="2"/>
 	<TALENTKNACK name="Attribute Pattern" basename="Thread Weaving" minrank="15" strain="2"/>
 	<TALENTKNACK name="Backbiter" basename="Bank Shot" minrank="7" strain="3"/>
@@ -37,27 +37,29 @@
 	<TALENTKNACK name="Broadside" basename="Pilot Boat" minrank="8" strain="4" bookref="NG p.225"/>
 	<TALENTKNACK name="By the Fingernails" basename="Climbing" minrank="7" strain="4"/>
 	<TALENTKNACK name="Calm Herd" basename="Incite Stampede" minrank="8" strain="2"/>
-	<TALENTKNACK name="Change Protagonist" basename="Legendary Blades" minrank="10" strain="1+ (see text)" bookref="CPG p.94"/>
+	<TALENTKNACK name="Change Protagonist" basename="Legendary Blades" minrank="10" strain="1+ (s.text)" bookref="CPG p.94"/>
 	<TALENTKNACK name="Claw Riposte" basename="Riposte" minrank="9" strain="3"/>
-	<TALENTKNACK name="Claw Tool" basename="Claw Shape" minrank="4" strain="2 per minute"/>
-	<TALENTKNACK name="Clay Blend" basename="Clay Skin" minrank="8" strain="2 (see text)" bookref="NG p.225"/>
+	<TALENTKNACK name="Claw Tool" basename="Claw Shape" minrank="4" strain="2 p. min"/>
+	<TALENTKNACK name="Clay Blend" basename="Clay Skin" minrank="8" strain="2 (s.text)" bookref="NG p.225"/>
 	<TALENTKNACK name="Clinch" basename="Thread Weaving" limitation="Fist Weaving" minrank="9" strain="2" bookref="CPG p.94"/>
-	<TALENTKNACK name="Collective Beating" basename="Hoard Blows" minrank="9" strain="1 (see text)" bookref="NG p.225"/>
+	<TALENTKNACK name="Collective Beating" basename="Hoard Blows" minrank="9" strain="1 (s.text)" bookref="NG p.225"/>
 	<TALENTKNACK name="Commanding Gaze" basename="Steely Stare" minrank="8" strain="2" bookref="KR p.226"/>
 	<TALENTKNACK name="Come to Terms" basename="Duel" minrank="6" strain="0" bookref="CPG p.94"/>
 	<TALENTKNACK name="Committed Throw" basename="Takedown" minrank="8" strain="3" bookref="CPG p.94"/>
 	<TALENTKNACK name="Conceal Bow" basename="Conceal Object" minrank="12" strain="2" bookref="CPG p.94"/>
 	<TALENTKNACK name="Corner of the Eye" basename="Lip Reading" minrank="9" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="Cosmetics" basename="Fire Heal" minrank="9" strain="2 (see text)"/>
+	<TALENTKNACK name="Cosmetics" basename="Fire Heal" minrank="9" strain="2 (s.text)"/>
 	<TALENTKNACK name="Cover" basename="Avoid Blow" minrank="6" strain="1" bookref="NG p.225"/>
 	<TALENTKNACK name="Covet Item" basename="Haggle" minrank="7" strain="4"/>
-	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving (magicians)" minrank="12" strain="2"/>
-	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving (magicians), Thread Smithing" minrank="5" strain="2"/>
-	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving (magicians)" minrank="8" strain="2"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="12" strain="2"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" limitation="magicians" minrank="5" strain="2"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" limitation="Thread Smithing" minrank="5" strain="2"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="8" strain="2"/>
 	<TALENTKNACK name="Create Orichalcum" basename="Elementalism" minrank="11" strain="2"/>
-	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving (magicians)" minrank="15" strain="2"/>
-	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving (magicians)" minrank="5" strain="2"/>
-	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving (magicians), Thread Smithing" minrank="7" strain="2"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="15" strain="2"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="5" strain="2"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" limitation="magicians" minrank="7" strain="2"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" limitation="Thread Smithing" minrank="7" strain="2"/>
 	<TALENTKNACK name="Creature Remains" basename="Creature Analysis" minrank="7" strain="2"/>
 	<TALENTKNACK name="Deathbed" basename="Dead Fall" minrank="7" strain="1 per minute"/>
 	<TALENTKNACK name="Deathsight" basename="Lifesight" minrank="9" strain="3"/>
@@ -71,18 +73,18 @@
 	<TALENTKNACK name="Dive" basename="Swimming" minrank="8" strain="2" bookref="NG p.225"/>
 	<TALENTKNACK name="Dragging Parry" basename="Cast Net" minrank="8" strain="2" bookref="NG p.225"/>
 	<TALENTKNACK name="Empathic Connection" basename="Empathic Command" minrank="8" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="Encrypt Staff" basename="Store Knowledge" minrank="6" strain="2 (see text)" bookref="CPG p.95"/>
+	<TALENTKNACK name="Encrypt Staff" basename="Store Knowledge" minrank="6" strain="2 (s.text)" bookref="CPG p.95"/>
 	<TALENTKNACK name="Endure Heat" basename="Endure Cold" minrank="5" strain="0" bookref="NG p.226"/>
 	<TALENTKNACK name="Explosive Flame Arrow" basename="Flame Arrow" minrank="8" strain="4"/>
 	<TALENTKNACK name="Extend Range" basename="Long Shot" minrank="10" strain="3"/>
 	<TALENTKNACK name="Fake Thought" basename="Safe Thought" minrank="9" strain="2" bookref="NG p.226"/>
-	<TALENTKNACK name="False Evidence" basename="Evidence Analysis" minrank="9" strain="2 - see text" bookref="KR p.227"/>
+	<TALENTKNACK name="False Evidence" basename="Evidence Analysis" minrank="9" strain="2 (s.text)" bookref="KR p.227"/>
 	<TALENTKNACK name="Far Speaking" basename="Air Speaking" minrank="7" strain="2"/>
 	<TALENTKNACK name="Fast Grab" basename="Disarm" minrank="9" strain="2" bookref="NG p.226"/>
 	<TALENTKNACK name="Fast Talk" basename="Conversation" minrank="6" strain="2" bookref="NG p.226"/>
 	<TALENTKNACK name="Faulty Bowyer" basename="Warp Missile" minrank="9" strain="4"/>
 	<TALENTKNACK name="Faulty Goods" basename="Haggle" minrank="9" strain="2"/>
-	<TALENTKNACK name="Favored Mount" basename="Spirit Mount" minrank="4" strain="2 (see text)"/>
+	<TALENTKNACK name="Favored Mount" basename="Spirit Mount" minrank="4" strain="2 (s.text)"/>
 	<TALENTKNACK name="Feign Hit" basename="Avoid Blow" minrank="9" strain="2" bookref="KR p.227"/>
 	<TALENTKNACK name="Feinting Lunge" basename="Trick Riding" minrank="8" strain="3"/>
 	<TALENTKNACK name="Feinting Retreat" basename="Trick Riding" minrank="7" strain="3"/>
@@ -94,7 +96,7 @@
 	<TALENTKNACK name="Fraud Mastery" basename="Performance" minrank="3" strain="3" bookref="KR p.227"/>
 	<TALENTKNACK name="Fragile Blade" basename="Infuse Weapon" minrank="8" strain="2" bookref="KR p.228"/>
 	<TALENTKNACK name="Gaping Wounds" basename="Spellcasting" minrank="9" strain="2"/>
-	<TALENTKNACK name="Ghost Master Ritual" basename="Thread Weaving (see text)" minrank="7" strain="0"/>
+	<TALENTKNACK name="Ghost Master Ritual" basename="Thread Weaving" limitation="(s.text)" minrank="7" strain="0"/>
 	<TALENTKNACK name="Gift of the Tempest" basename="Lightning Born" minrank="5" strain="4" bookref="CPG p.98"/>
 	<TALENTKNACK name="Glide" basename="Wind Catcher" minrank="8" strain="2"/>
 	<TALENTKNACK name="Gory Shot" basename="Mystic Aim" minrank="9" strain="6" bookref="KR p.228"/>
@@ -102,14 +104,14 @@
 	<TALENTKNACK name="Halt Disease" basename="Cold Purify" minrank="6" strain="2"/>
 	<TALENTKNACK name="Hard Glare" basename="Steely Stare" minrank="10" strain="4"/>
 	<TALENTKNACK name="Head Butt" basename="Unarmed Combat" minrank="7" strain="2"/>
-	<TALENTKNACK name="Heal Others" basename="Fire Heal" minrank="7" strain="1+ (see text)"/>
+	<TALENTKNACK name="Heal Others" basename="Fire Heal" minrank="7" strain="1+ (s.text)"/>
 	<TALENTKNACK name="Hibernate" basename="Animal Slumber" minrank="7" strain="1" bookref="CPG p.95"/>
-	<TALENTKNACK name="Hide Warband" basename="Ambush" minrank="11" strain="2 (see text)" bookref="CPG p.95"/>
+	<TALENTKNACK name="Hide Warband" basename="Ambush" minrank="11" strain="2 (s.text)" bookref="CPG p.95"/>
 	<TALENTKNACK name="Hiking" basename="Woodwalk" minrank="9" strain="3" bookref="NG p.226"/>
 	<TALENTKNACK name="History Skit" basename="Truth Skit" minrank="11" strain="4" bookref="NG p.226"/>
 	<TALENTKNACK name="Hoard Spells" basename="Hoard Blows" minrank="9" strain="1" bookref="NG p.226"/>
-	<TALENTKNACK name="Hoarded Haunting" basename="Hoard Blows" minrank="8" strain="2 (see text)" bookref="NG p.226"/>
-	<TALENTKNACK name="Hold Multiple Threads" basename="Hold Thread" minrank="10" strain="2+ (see text)"/>
+	<TALENTKNACK name="Hoarded Haunting" basename="Hoard Blows" minrank="8" strain="2 (s.text)" bookref="NG p.226"/>
+	<TALENTKNACK name="Hold Multiple Threads" basename="Hold Thread" minrank="10" strain="2+ (s.text)"/>
 	<TALENTKNACK name="Horror Analysis" basename="Creature Analysis" minrank="9" strain="1"/>
 	<TALENTKNACK name="Identify Tracks" basename="Tracking" minrank="7" strain="2"/>
 	<TALENTKNACK name="Incite Monologue" basename="Engaging Banter" minrank="7" strain="3" bookref="NG p.226"/>
@@ -124,11 +126,11 @@
 	<TALENTKNACK name="Lift the Curtain" basename="Astral Sight" minrank="9" strain="1 per minute"/>
 	<TALENTKNACK name="Lightning Leap" basename="Lightning Born" minrank="13" strain="8" bookref="CPG p.98"/>
 	<TALENTKNACK name="Liquid Shelter" basename="Liquid Prison" minrank="10" strain="4" bookref="CPG p.95"/>
-	<TALENTKNACK name="Listen" basename="Search" minrank="7" strain="2, 4 - see text" bookref="KR p.229"/>
+	<TALENTKNACK name="Listen" basename="Search" minrank="7" strain="2,4 (s.text)" bookref="KR p.229"/>
 	<TALENTKNACK name="Locate Horror" basename="Bear Mark" minrank="7" strain="4" bookref="NG p.226"/>
 	<TALENTKNACK name="Lock Guard" basename="Thief Weaving" minrank="8" strain="3" bookref="KR p.229"/>
-	<TALENTKNACK name="Maim" basename="Down Strike" minrank="10" strain="6 - see text" bookref="KR p.229"/>
-	<TALENTKNACK name="Maintain Spell Threads" basename="Spellcasting" minrank="8" strain="1+ (see text)"/>
+	<TALENTKNACK name="Maim" basename="Down Strike" minrank="10" strain="6 (s.text)" bookref="KR p.229"/>
+	<TALENTKNACK name="Maintain Spell Threads" basename="Spellcasting" minrank="8" strain="1+ (s.text)"/>
 	<TALENTKNACK name="Masterminds Plan" basename="Safe Path" minrank="9" strain="5" bookref="KR p.229"/>
 	<TALENTKNACK name="Mighty Throw" basename="Unarmed Combat" minrank="8" strain="2"/>
 	<TALENTKNACK name="Mimic Music" basename="Mimic Voice" minrank="8" strain="2"/>
@@ -137,20 +139,20 @@
 	<TALENTKNACK name="Mold Spirit" basename="Summoning" minrank="11" strain="2"/>
 	<TALENTKNACK name="Moon Blast" basename="Moon Ray" minrank="11" strain="6" bookref="CPG p.96"/>
 	<TALENTKNACK name="Mount Leap" basename="Trick Riding" minrank="6" strain="2" bookref="CPG p.96"/>
-	<TALENTKNACK name="Mountain Hoof" basename="Trick Riding" minrank="8" strain="2 per round (see text)"/>
+	<TALENTKNACK name="Mountain Hoof" basename="Trick Riding" minrank="8" strain="2 per round (s.text)"/>
 	<TALENTKNACK name="Mystic Mind Armor" basename="Mind Armor" minrank="8" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Name Spell" basename="Spellcasting" minrank="8" strain="1+ (see text)"/>
+	<TALENTKNACK name="Name Spell" basename="Spellcasting" minrank="8" strain="1+ (s.text)"/>
 	<TALENTKNACK name="Nether Sextant" basename="Bone Compass" minrank="12" strain="3"/>
 	<TALENTKNACK name="Not so Fast" basename="Fast Hand" minrank="7" strain="2" bookref="KR p.230"/>
 	<TALENTKNACK name="Offguard" basename="Picking Pockets" minrank="7" strain="4"/>
 	<TALENTKNACK name="Orbiting Watcher" basename="Orbiting Spy" minrank="8" strain="1"/>
 	<TALENTKNACK name="Photographic Memory" basename="Book Memory" minrank="10" strain="3"/>
-	<TALENTKNACK name="Pick Up" basename="Lightning Combo" minrank="7" strain="+2 (see text)" bookref="CPG p.96"/>
+	<TALENTKNACK name="Pick Up" basename="Lightning Combo" minrank="7" strain="+2 (s.text)" bookref="CPG p.96"/>
 	<TALENTKNACK name="Pin Down" basename="Unarmed Combat" minrank="7" strain="2"/>
 	<TALENTKNACK name="Pin Up" basename="Throwing Weapons" minrank="8" strain="2"/>
 	<TALENTKNACK name="Placed Shot" basename="Missile Weapons" minrank="7" strain="2 per attack"/>
 	<TALENTKNACK name="Placed Throw" basename="Throwing Weapons" minrank="7" strain="2 per attack"/>
-	<TALENTKNACK name="Plant Prison" basename="Plant Shelter" minrank="9" strain="4 - see text" bookref="KR p.230"/>
+	<TALENTKNACK name="Plant Prison" basename="Plant Shelter" minrank="9" strain="4 (s.text)" bookref="KR p.230"/>
 	<TALENTKNACK name="Poisoned Influence" basename="Diplomacy" minrank="6" strain="1"/>
 	<TALENTKNACK name="Rapier Wit" basename="Resist Taunt" minrank="9" strain="2"/>
 	<TALENTKNACK name="Request Donation" basename="Bardic Voice" minrank="9" strain="2" bookref="KR p.230"/>
@@ -159,8 +161,8 @@
 	<TALENTKNACK name="Ridicule" basename="Performance" minrank="6" strain="1" bookref="CPG p.96"/>
 	<TALENTKNACK name="Scorn" basename="Performance" minrank="7" strain="2" bookref="NG p.227"/>
 	<TALENTKNACK name="Second Riposte" basename="Second Weapon" minrank="9" strain="4"/>
-	<TALENTKNACK name="Secure Footing" basename="Guard Stance" minrank="9" strain="1 (see text)" bookref="CPG p.96"/>
-	<TALENTKNACK name="Send Knowledge" basename="Commune" minrank="6" strain="1 Wound (see text)" bookref="CPG p.96"/>
+	<TALENTKNACK name="Secure Footing" basename="Guard Stance" minrank="9" strain="1 (s.text)" bookref="CPG p.96"/>
+	<TALENTKNACK name="Send Knowledge" basename="Commune" minrank="6" strain="1 Wound (s.text)" bookref="CPG p.96"/>
 	<TALENTKNACK name="Send Them Running" basename="Kiai" minrank="11" strain="2" bookref="CPG p.96"/>
 	<TALENTKNACK name="Setup" basename="Maneuver" minrank="8" strain="1"/>
 	<TALENTKNACK name="Shadow Hide" basename="Silent Walk" minrank="4" strain="1"/>
@@ -169,7 +171,7 @@
 	<TALENTKNACK name="Signature Spells" basename="Spellcasting" minrank="7" strain="1"/>
 	<TALENTKNACK name="Smooth Armor" basename="Forge Armor" minrank="9" strain="4"/>
 	<TALENTKNACK name="Snake Milking" basename="Counteract" minrank="8" strain="2" bookref="CPG p.97"/>
-	<TALENTKNACK name="Spell Stacking" basename="Spellcasting" minrank="10" strain="2+ (see text)"/>
+	<TALENTKNACK name="Spell Stacking" basename="Spellcasting" minrank="10" strain="2+ (s.text)"/>
 	<TALENTKNACK name="Spider-walk Mount" basename="Trick Riding" minrank="13" strain="4" bookref="CPG p.97"/>
 	<TALENTKNACK name="Spirit Flame" basename="Flame Arrow" minrank="9" strain="4"/>
 	<TALENTKNACK name="Stalk" basename="Tracking" minrank="8" strain="3" bookref="KR p.230"/>
@@ -178,22 +180,22 @@
 	<TALENTKNACK name="Storm Visits Your Home" basename="Lightning Born" minrank="10" strain="6" bookref="CPG p.98"/>	
 	<TALENTKNACK name="Summon Blade" basename="Fiery Blade" minrank="8" strain="3" bookref="CPG p.97"/>
 	<TALENTKNACK name="Swab the Deck" basename="Air Sailing" minrank="9" strain="1"/>
-	<TALENTKNACK name="Swift Hoof" basename="Trick Riding" minrank="5" strain="1 (see text)"/>
-	<TALENTKNACK name="Swinging Move" basename="Climbing" minrank="5" strain="0+ (see text)"/>
+	<TALENTKNACK name="Swift Hoof" basename="Trick Riding" minrank="5" strain="1 (s.text)"/>
+	<TALENTKNACK name="Swinging Move" basename="Climbing" minrank="5" strain="0+ (s.text)"/>
 	<TALENTKNACK name="Tail Sweep" basename="Unarmed Combat" minrank="9" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Talent Linking" basename="Thread Weaving" minrank="8" strain="2+ (see text)"/>
+	<TALENTKNACK name="Talent Linking" basename="Thread Weaving" minrank="8" strain="2+ (s.text)"/>
 	<TALENTKNACK name="Talent Pattern" basename="Thread Weaving" minrank="13" strain="2"/>
 	<TALENTKNACK name="Tale of Terror" basename="Creature Analysis" minrank="7" strain="2" bookref="KR p.231"/>
 	<TALENTKNACK name="Telling the Tale" basename="Emotion Song" minrank="5" strain="0"/>
 	<TALENTKNACK name="Thread Masking" basename="Thread Weaving" minrank="7" strain="2"/>
 	<TALENTKNACK name="Threatening Aura" basename="Power Mask" minrank="9" strain="2" bookref="NG p.227"/>
 	<TALENTKNACK name="Traceless Stride" basename="Silent Walk" minrank="8" strain="1"/>
-	<TALENTKNACK name="Traceless Wagon" basename="Conceal Caravan" minrank="9" strain="1 (see text)" bookref="CPG p.97"/>
+	<TALENTKNACK name="Traceless Wagon" basename="Conceal Caravan" minrank="9" strain="1 (s.text)" bookref="CPG p.97"/>
 	<TALENTKNACK name="Track Mount" basename="Call Mount" minrank="9" strain="4" bookref="KR p.231"/>
 	<TALENTKNACK name="Translator" basename="Spirit Talk" minrank="9" strain="1 per minute"/>
 	<TALENTKNACK name="Treetrap" basename="Thread Weaving" limitation="Forest Weaving" minrank="7" strain="2" bookref="NG p.227"/>
 	<TALENTKNACK name="Unequal Fight" basename="Absorb Blow" minrank="10" strain="2" bookref="CPG p.97"/>
-	<TALENTKNACK name="Unraveling" basename="Thread Weaving" minrank="7" strain="2+ (see text)"/>
+	<TALENTKNACK name="Unraveling" basename="Thread Weaving" minrank="7" strain="2+ (s.text)"/>
 	<TALENTKNACK name="Water Mount" basename="Spirit Mount" minrank="11" strain="4"/>
 	<TALENTKNACK name="Weapon Block" basename="Block and Counter" minrank="8" strain="3" bookref="CPG p.97"/>
 	<TALENTKNACK name="Weapon Smash" basename="Momentum Attack" minrank="9" strain="2"/>
@@ -203,6 +205,6 @@
 	<TALENTKNACK name="Whispered Conversation" basename="Air Speaking" minrank="7" strain="1"/>
 	<TALENTKNACK name="Wood Wings" basename="Wood Skin" minrank="6" strain="1" bookref="NG p.227"/>
 	<TALENTKNACK name="Wound Blow" basename="Flowing Blow" minrank="12" strain="2" bookref="CPG p.97"/>
-	<TALENTKNACK name="Wound Heal" basename="Fire Heal" minrank="6" strain="2 (see text)"/>
+	<TALENTKNACK name="Wound Heal" basename="Fire Heal" minrank="6" strain="2 (s.text)"/>
 	<TALENTKNACK name="Wound Share" basename="Blood Share" minrank="8" strain="4"/>
 </KNACKS>
