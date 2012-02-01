@@ -51,15 +51,45 @@
 	<TALENTKNACK name="Cosmetics" basename="Fire Heal" minrank="9" strain="2 (s.text)"/>
 	<TALENTKNACK name="Cover" basename="Avoid Blow" minrank="6" strain="1" bookref="NG p.225"/>
 	<TALENTKNACK name="Covet Item" basename="Haggle" minrank="7" strain="4"/>
-	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="12" strain="2"/>
-	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" limitation="magicians" minrank="5" strain="2"/>
-	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" limitation="Thread Smithing" minrank="5" strain="2"/>
-	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="8" strain="2"/>
-	<TALENTKNACK name="Create Orichalcum" basename="Elementalism" minrank="11" strain="2"/>
-	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="15" strain="2"/>
-	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" limitation="magicians" minrank="5" strain="2"/>
-	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" limitation="magicians" minrank="7" strain="2"/>
-	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" limitation="Thread Smithing" minrank="7" strain="2"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" minrank="12" strain="2" limitation="Elementalism"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" minrank="12" strain="2" limitation="Illusionism"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" minrank="12" strain="2" limitation="Nethermancy"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" minrank="12" strain="2" limitation="Shamanism"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" minrank="12" strain="2" limitation="Sorcery"/>
+	<TALENTKNACK name="Create Armored Matrix Object" basename="Thread Weaving" minrank="12" strain="2" limitation="Wizardry"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Elementalism"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Illusionism"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Nethermancy"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Shamanism"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Sorcery"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Thread Smithing"/>
+	<TALENTKNACK name="Create Common Magic Item" basename="Thread Weaving" minrank="5" strain="2" limitation="Wizardry"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" minrank="8" strain="2" limitation="Elementalism"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" minrank="8" strain="2" limitation="Illusionism"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" minrank="8" strain="2" limitation="Nethermancy"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" minrank="8" strain="2" limitation="Shamanism"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" minrank="8" strain="2" limitation="Sorcery"/>
+	<TALENTKNACK name="Create Enhanced Matrix Object" basename="Thread Weaving" minrank="8" strain="2" limitation="Wizardry"/>
+	<TALENTKNACK name="Create Orichalcum" basename="Thread Weaving" limitation="Elementalism" minrank="11" strain="2"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" minrank="15" strain="2" limitation="Elementalism"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" minrank="15" strain="2" limitation="Illusionism"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" minrank="15" strain="2" limitation="Nethermancy"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" minrank="15" strain="2" limitation="Shamanism"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" minrank="15" strain="2" limitation="Sorcery"/>
+	<TALENTKNACK name="Create Shared Matrix Object" basename="Thread Weaving" minrank="15" strain="2" limitation="Wizardry"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" minrank="5" strain="2" limitation="Elementalism"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" minrank="5" strain="2" limitation="Illusionism"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" minrank="5" strain="2" limitation="Nethermancy"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" minrank="5" strain="2" limitation="Shamanism"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" minrank="5" strain="2" limitation="Sorcery"/>
+	<TALENTKNACK name="Create Spell Matrix Object" basename="Thread Weaving" minrank="5" strain="2" limitation="Wizardry"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Elementalism"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Illusionism"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Nethermancy"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Shamanism"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Sorcery"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Thread Smithing"/>
+	<TALENTKNACK name="Create Thread Item" basename="Thread Weaving" minrank="7" strain="2" limitation="Wizardry"/>
 	<TALENTKNACK name="Creature Remains" basename="Creature Analysis" minrank="7" strain="2"/>
 	<TALENTKNACK name="Deathbed" basename="Dead Fall" minrank="7" strain="1 per minute"/>
 	<TALENTKNACK name="Deathsight" basename="Lifesight" minrank="9" strain="3"/>
