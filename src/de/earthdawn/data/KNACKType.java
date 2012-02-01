@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="strain" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="mincircle" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="learnedbymincircle" type="{http://earthdawn.com/datatypes}circle_type" default="0" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -50,7 +50,7 @@ public class KNACKType {
     @XmlAttribute
     protected Integer minrank;
     @XmlAttribute
-    protected Integer mincircle;
+    protected Integer learnedbymincircle;
     @XmlAttribute
     protected String bookref;
 
@@ -135,31 +135,31 @@ public class KNACKType {
     }
 
     /**
-     * Gets the value of the mincircle property.
+     * Gets the value of the learnedbymincircle property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public int getMincircle() {
-        if (mincircle == null) {
+    public int getLearnedbymincircle() {
+        if (learnedbymincircle == null) {
             return  0;
         } else {
-            return mincircle;
+            return learnedbymincircle;
         }
     }
 
     /**
-     * Sets the value of the mincircle property.
+     * Sets the value of the learnedbymincircle property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setMincircle(Integer value) {
-        this.mincircle = value;
+    public void setLearnedbymincircle(Integer value) {
+        this.learnedbymincircle = value;
     }
 
     /**
