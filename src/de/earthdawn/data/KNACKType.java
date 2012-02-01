@@ -25,8 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="strain" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="strain" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="mincircle" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,10 +45,12 @@ public class KNACKType {
 
     @XmlAttribute(required = true)
     protected String name;
-    @XmlAttribute(required = true)
+    @XmlAttribute
     protected String strain;
     @XmlAttribute
     protected Integer minrank;
+    @XmlAttribute
+    protected Integer mincircle;
     @XmlAttribute
     protected String bookref;
 
@@ -84,7 +87,11 @@ public class KNACKType {
      *     
      */
     public String getStrain() {
-        return strain;
+        if (strain == null) {
+            return "0";
+        } else {
+            return strain;
+        }
     }
 
     /**
@@ -125,6 +132,34 @@ public class KNACKType {
      */
     public void setMinrank(Integer value) {
         this.minrank = value;
+    }
+
+    /**
+     * Gets the value of the mincircle property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getMincircle() {
+        if (mincircle == null) {
+            return  0;
+        } else {
+            return mincircle;
+        }
+    }
+
+    /**
+     * Sets the value of the mincircle property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setMincircle(Integer value) {
+        this.mincircle = value;
     }
 
     /**
