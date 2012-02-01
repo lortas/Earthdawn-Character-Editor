@@ -261,8 +261,9 @@
 	</xs:complexType>
 	<xs:complexType name="KNACK_type">
 		<xs:attribute name="name"  type="xs:string" use="required"/>
-		<xs:attribute name="strain" type="xs:string" use="required"/>
+		<xs:attribute name="strain" type="xs:string" default="0"/>
 		<xs:attribute name="minrank" type="unsigned_int" default="0"/>
+		<xs:attribute name="mincircle" type="unsigned_int" default="0"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="TALENTTEACHER_type">
