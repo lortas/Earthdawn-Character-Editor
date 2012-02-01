@@ -304,7 +304,7 @@ public class ECEWorker {
 			currentBonuses.clear();
 			currentBonuses.addAll(getDisciplineBonuses(currentDiscipline));
 			// TALENT KNACKS
-			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) checkTalentKnacks(talent,disciplinenumber);
+			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) checkTalentKnacks(talent,disciplinenumber,minDisciplineCircle);
 		}
 
 		// ** ARMOR **
@@ -582,9 +582,11 @@ public class ECEWorker {
 		return charakter;
 	}
 
-	private void checkTalentKnacks(TALENTType talent, int disciplinenumber) {
+	private void checkTalentKnacks(TALENTType talent, int disciplinenumber, int minDisciplineCircle) {
 		String talentname = talent.getName();
 		String limitation = talent.getLimitation();
+		//Kleinster-Kreis-Angabe nur bei Knacks für Talente aus zweiter,dritter,... Disziplin relevant
+		if(disciplinenumber<2) minDisciplineCircle=0;
 		for( KNACKType knack : talent.getKNACK() ) {
 			String knackname = knack.getName();
 			for( KNACKBASEType k : globalTalentKnackList ) {
@@ -595,7 +597,9 @@ public class ECEWorker {
 						knack.setBookref(k.getBookref());
 						knack.setMinrank(k.getMinrank());
 						knack.setStrain(k.getStrain());
-						break; // Wenn er einmal gefunden wurde, brauch nicht mehr weitergesucht werden.
+						//Wenn der kleinste Kreis wann dieser Knack gelernt wurde noch nicht gesetzt ist, dann bestimme ihn jetzt
+						//if( knack.getMincircle()<1 ) knack.setMincircle(minDisciplineCircle);
+						break; // Wenn der Knack gefunden wurde, brauch nicht mehr weitergesucht werden
 					} else {
 						errorout.println("The knack '"+knackname+"' was learned for the talent '"+talentname+"', but should be learned for talent '"+k.getBasename()+"'. Will not enforce knack default values!");
 					}
