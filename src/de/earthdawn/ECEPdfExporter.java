@@ -925,11 +925,11 @@ public class ECEPdfExporter {
 		int counterLanguageSpeak=0;
 		int counterLanguageReadwrite=0;
 		for( CHARACTERLANGUAGEType language : character.getLanguages().getLanguages() ) {
-			if( language.getSpeak().equals(YesnoType.YES) ) {
+			if( ! language.getSpeak().equals(LearnedbyType.NO) ) {
 				acroFields.setField( "LanguagesSpeak."+counterLanguageSpeak, language.getLanguage() );
 				counterLanguageSpeak++;
 			}
-			if( language.getReadwrite().equals(YesnoType.YES) ) {
+			if( ! language.getReadwrite().equals(LearnedbyType.NO) ) {
 				acroFields.setField( "LanguagesReadWrite."+counterLanguageReadwrite, language.getLanguage() );
 				counterLanguageReadwrite++;
 			}

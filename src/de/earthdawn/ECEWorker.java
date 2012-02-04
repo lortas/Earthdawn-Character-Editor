@@ -360,18 +360,18 @@ public class ECEWorker {
 		karma.setDice(PROPERTIES.step2Dice(karma.getStep()));
 
 		// StartRänge und MindestRänge für die SprachenSkills bestimmen
-		int[] startSpeakReadWrite = character.getDefaultLanguages().getCountOfSpeakReadWrite(YesnoType.NO);
-		int[] currentSpeakReadWrite = character.getLanguages().getCountOfSpeakReadWrite(YesnoType.NO);
+		int[] startSpeakReadWrite = character.getDefaultLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
+		int[] currentSpeakReadWrite = character.getLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
 		List<SKILLType> speakSkills = character.getSpeakSkills();
 		List<SKILLType> readwriteSkills = character.getReadWriteSkills();
 		if( ! speakSkills.isEmpty() ) {
 			RANKType rank = speakSkills.get(0).getRANK();
-			rank.setStartrank(startSpeakReadWrite[0]);
+			if( rank.getStartrank() < startSpeakReadWrite[0] ) rank.setStartrank(startSpeakReadWrite[0]);
 			if( rank.getRank() < currentSpeakReadWrite[0] ) rank.setRank(currentSpeakReadWrite[0]);
 		}
 		if( ! readwriteSkills.isEmpty() ) {
 			RANKType rank = readwriteSkills.get(0).getRANK();
-			rank.setStartrank(startSpeakReadWrite[1]);
+			if( rank.getStartrank() < startSpeakReadWrite[1] ) rank.setStartrank(startSpeakReadWrite[1]);
 			if( rank.getRank() < currentSpeakReadWrite[1] ) rank.setRank(currentSpeakReadWrite[1]);
 		}
 

@@ -25,9 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="language" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="speak" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
- *       &lt;attribute name="readwrite" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
- *       &lt;attribute name="notlearnedbyskill" type="{http://earthdawn.com/datatypes}yesno_type" default="no" />
+ *       &lt;attribute name="speak" type="{http://earthdawn.com/datatypes}learnedby_type" default="no" />
+ *       &lt;attribute name="readwrite" type="{http://earthdawn.com/datatypes}learnedby_type" default="no" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -45,11 +44,9 @@ public class CHARACTERLANGUAGEType {
     @XmlAttribute(required = true)
     protected String language;
     @XmlAttribute
-    protected YesnoType speak;
+    protected LearnedbyType speak;
     @XmlAttribute
-    protected YesnoType readwrite;
-    @XmlAttribute
-    protected YesnoType notlearnedbyskill;
+    protected LearnedbyType readwrite;
 
     /**
      * Gets the value of the language property.
@@ -80,12 +77,12 @@ public class CHARACTERLANGUAGEType {
      * 
      * @return
      *     possible object is
-     *     {@link YesnoType }
+     *     {@link LearnedbyType }
      *     
      */
-    public YesnoType getSpeak() {
+    public LearnedbyType getSpeak() {
         if (speak == null) {
-            return YesnoType.NO;
+            return LearnedbyType.NO;
         } else {
             return speak;
         }
@@ -96,10 +93,10 @@ public class CHARACTERLANGUAGEType {
      * 
      * @param value
      *     allowed object is
-     *     {@link YesnoType }
+     *     {@link LearnedbyType }
      *     
      */
-    public void setSpeak(YesnoType value) {
+    public void setSpeak(LearnedbyType value) {
         this.speak = value;
     }
 
@@ -108,12 +105,12 @@ public class CHARACTERLANGUAGEType {
      * 
      * @return
      *     possible object is
-     *     {@link YesnoType }
+     *     {@link LearnedbyType }
      *     
      */
-    public YesnoType getReadwrite() {
+    public LearnedbyType getReadwrite() {
         if (readwrite == null) {
-            return YesnoType.NO;
+            return LearnedbyType.NO;
         } else {
             return readwrite;
         }
@@ -124,39 +121,11 @@ public class CHARACTERLANGUAGEType {
      * 
      * @param value
      *     allowed object is
-     *     {@link YesnoType }
+     *     {@link LearnedbyType }
      *     
      */
-    public void setReadwrite(YesnoType value) {
+    public void setReadwrite(LearnedbyType value) {
         this.readwrite = value;
-    }
-
-    /**
-     * Gets the value of the notlearnedbyskill property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link YesnoType }
-     *     
-     */
-    public YesnoType getNotlearnedbyskill() {
-        if (notlearnedbyskill == null) {
-            return YesnoType.NO;
-        } else {
-            return notlearnedbyskill;
-        }
-    }
-
-    /**
-     * Sets the value of the notlearnedbyskill property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link YesnoType }
-     *     
-     */
-    public void setNotlearnedbyskill(YesnoType value) {
-        this.notlearnedbyskill = value;
     }
 
 }

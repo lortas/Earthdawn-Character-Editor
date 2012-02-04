@@ -1654,7 +1654,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		int[] defaultCountOfSpeakReadWrite = defaultlanguages.getCountOfSpeakReadWrite(null);
 		LanguageContainer languages = new LanguageContainer(character.getLANGUAGE());
 		for( CHARACTERLANGUAGEType l : defaultlanguages.getLanguages() ) {
-			int[] currentCountOfSpeakReadWrite = languages.getCountOfSpeakReadWrite(YesnoType.NO);
+			int[] currentCountOfSpeakReadWrite = languages.getCountOfSpeakReadWrite(null);
 			if( (currentCountOfSpeakReadWrite[0]>=defaultCountOfSpeakReadWrite[0]) &&
 					(currentCountOfSpeakReadWrite[1]>=defaultCountOfSpeakReadWrite[1]) ) break;
 			languages.insertLanguage(l);
