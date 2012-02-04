@@ -59,6 +59,14 @@
 			<xs:enumeration value="depends"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="learnedby_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="no"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="skill"/>
+			<xs:enumeration value="talent"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="action_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sustained"/>
@@ -646,8 +654,7 @@
 	</xs:complexType>
 	<xs:complexType name="CHARACTERLANGUAGE_type">
 		<xs:attribute name="language" type="xs:string" use="required"/>
-		<xs:attribute name="speak" type="yesno_type" default="no"/>
-		<xs:attribute name="readwrite" type="yesno_type" default="no"/>
-		<xs:attribute name="notlearnedbyskill" type="yesno_type" default="no"/>
+		<xs:attribute name="speak" type="learnedby_type" default="no"/>
+		<xs:attribute name="readwrite" type="learnedby_type" default="no"/>
 	</xs:complexType>
 </xs:schema>

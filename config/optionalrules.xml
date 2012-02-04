@@ -72,23 +72,23 @@
 	<!-- By the following rule you can define if if a specific talent will be added automatically and will not cost an optional talent slot -->
 	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as an extra talent-->
 	<ORIGIN name="Barsaive">
-		<DEFAULTLANGUAGE lang="en" language="Dwarf" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE lang="en" language="Dwarf" speak="skill" readwrite="skill"/>
 	</ORIGIN>
 	<ORIGIN name="Cathay">
 	</ORIGIN>
 	<ORIGIN name="Thera">
-		<DEFAULTLANGUAGE lang="en" language="Theran" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE lang="en" language="Theran" speak="skill" readwrite="skill"/>
 	</ORIGIN>
 	<ORIGIN name="Vasgothia">
-		<DEFAULTLANGUAGE lang="en" language="Vasgothia" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE lang="en" language="Vasgothia" speak="skill" readwrite="skill"/>
 	</ORIGIN>
 	<ORIGIN name="Creana">
-		<DEFAULTLANGUAGE lang="en" language="Creana" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE lang="en" language="Creana" speak="skill" readwrite="skill"/>
 	</ORIGIN>
 	<ORIGIN name="Marac">
-		<DEFAULTLANGUAGE lang="en" language="Maracan" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE lang="en" language="Maracan" speak="skill" readwrite="skill"/>
 	</ORIGIN>
 	<ORIGIN name="Indrisa">
-		<DEFAULTLANGUAGE lang="en" language="Indrisan" speak="yes" readwrite="yes"/>
+		<DEFAULTLANGUAGE lang="en" language="Indrisan" speak="skill" readwrite="skill"/>
 	</ORIGIN>
 </OPTIONALRULES>

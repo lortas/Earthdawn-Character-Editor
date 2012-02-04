@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -28,7 +29,7 @@ import de.earthdawn.LanguageContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.CHARACTERLANGUAGEType;
 import de.earthdawn.data.LAYOUTSIZESType;
-import de.earthdawn.data.YesnoType;
+import de.earthdawn.data.LearnedbyType;
 
 public class EDLanguages extends JPanel {
 	private static final long serialVersionUID = -3029891477607441807L;
@@ -47,6 +48,10 @@ public class EDLanguages extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((LanguagesTableModel)tableLanguages.getModel()).setCharacter(character);
+		JComboBox comboBoxLearnedby = new JComboBox();
+		for( LearnedbyType item : LearnedbyType.values() ) comboBoxLearnedby.addItem(item.value());
+		tableLanguages.getColumnModel().getColumn(1).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
+		tableLanguages.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("languageselection") ) {
@@ -129,6 +134,10 @@ public class EDLanguages extends JPanel {
 		tableLanguages.setColumnSelectionAllowed(false);
 		tableLanguages.getTableHeader().setReorderingAllowed(false);
 		InputMapUtil.setupInputMap(tableLanguages);
+		JComboBox comboBoxLearnedby = new JComboBox();
+		for( LearnedbyType item : LearnedbyType.values() ) comboBoxLearnedby.addItem(item.value());
+		tableLanguages.getColumnModel().getColumn(1).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
+		tableLanguages.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
 
 		tableLanguageSkills = new JTable(){
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
@@ -180,9 +189,8 @@ public class EDLanguages extends JPanel {
 	protected void do_btnAddLanguage_actionPerformed(ActionEvent arg0) {
 		if( character == null ) return;
 		CHARACTERLANGUAGEType l = new CHARACTERLANGUAGEType();
-		l.setSpeak(YesnoType.NO);
-		l.setReadwrite(YesnoType.NO);
-		l.setNotlearnedbyskill(YesnoType.NO);
+		l.setSpeak(LearnedbyType.SKILL);
+		l.setReadwrite(LearnedbyType.NO);
 		l.setLanguage("");
 		character.getLanguages().insertLanguage(l);
 		character.refesh();
@@ -204,7 +212,7 @@ public class EDLanguages extends JPanel {
 class LanguagesTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -2330554075615304424L;
 	private CharacterContainer character;
-	private String[] columnNames = {"Language", "Speak",  "Read/Write", "Not Learned By Skill"};
+	private String[] columnNames = {"Language", "Speak learned by", "Read/Write learned by"};
 
 	public LanguagesTableModel(CharacterContainer character) {
 		super();
@@ -238,9 +246,8 @@ class LanguagesTableModel extends AbstractTableModel {
 		CHARACTERLANGUAGEType language = character.getLanguages().getLanguage(row);
 		switch (col) {
 		case 0: return language.getLanguage();
-		case 1: return language.getSpeak().equals(YesnoType.YES);
-		case 2: return language.getReadwrite().equals(YesnoType.YES);
-		case 3: return language.getNotlearnedbyskill().equals(YesnoType.YES);
+		case 1: return language.getSpeak().value();
+		case 2: return language.getReadwrite().value();
 		default : return "Error not defined";
 		}
 	}
@@ -268,16 +275,10 @@ class LanguagesTableModel extends AbstractTableModel {
 			language.setLanguage((String)value);
 			break;
 		case 1:
-			if( (Boolean)value ) language.setSpeak(YesnoType.YES);
-			else language.setSpeak(YesnoType.NO);
+			language.setSpeak(LearnedbyType.fromValue((String)value));
 			break;
 		case 2:
-			if( (Boolean)value ) language.setReadwrite(YesnoType.YES);
-			else language.setReadwrite(YesnoType.NO);
-			break;
-		case 3:
-			if( (Boolean)value ) language.setNotlearnedbyskill(YesnoType.YES);
-			else language.setNotlearnedbyskill(YesnoType.NO);
+			language.setReadwrite(LearnedbyType.fromValue((String)value));
 			break;
 		}
 		character.refesh();

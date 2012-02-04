@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.earthdawn.data.CHARACTERLANGUAGEType;
+import de.earthdawn.data.LearnedbyType;
 import de.earthdawn.data.YesnoType;
 
 public class LanguageContainer {
@@ -49,27 +50,59 @@ public class LanguageContainer {
 
 	public void insertLanguage(CHARACTERLANGUAGEType language) {
 		if( language == null ) return;
-		String lang = language.getLanguage();
-		YesnoType skill = language.getNotlearnedbyskill();
+		String langName = language.getLanguage();
+		LearnedbyType speak = language.getSpeak();
+		LearnedbyType readwrite = language.getReadwrite();
 		for( CHARACTERLANGUAGEType l : this.languages ) {
-			if( l.getLanguage().equals(lang) && l.getNotlearnedbyskill().equals(skill)) {
-				if( language.getSpeak().equals(YesnoType.YES) ) l.setSpeak(YesnoType.YES);
-				if( language.getReadwrite().equals(YesnoType.YES) ) l.setReadwrite(YesnoType.YES);
-				return;
+			if( l.getLanguage().equals(langName) ) {
+				if( speak.equals(LearnedbyType.SKILL) ) switch( l.getSpeak() ) {
+				case NO:
+					l.setSpeak(LearnedbyType.SKILL);
+					speak = LearnedbyType.NO;
+					break;
+				case SKILL:
+					speak = LearnedbyType.NO;
+					break;
+				}
+				if( readwrite.equals(LearnedbyType.SKILL) ) switch( l.getReadwrite() ) {
+				case NO:
+					l.setReadwrite(LearnedbyType.SKILL);
+					readwrite=LearnedbyType.NO;
+					break;
+				case SKILL:
+					readwrite=LearnedbyType.NO;
+					break;
+				}
 			}
 		}
-		this.languages.add(copyOfLanguage(language));
+		if( speak.equals(LearnedbyType.NO) && readwrite.equals(LearnedbyType.NO) ) return;
+		CHARACTERLANGUAGEType l=new CHARACTERLANGUAGEType();
+		l.setLanguage(langName);
+		l.setSpeak(speak);
+		l.setReadwrite(readwrite);
+		this.languages.add(l);
 	}
 
 	public void removeLanguage(CHARACTERLANGUAGEType language) {
 		if( language == null ) return;
-		String lang = language.getLanguage();
+		String langName = language.getLanguage();
+		LearnedbyType speak = language.getSpeak();
+		LearnedbyType readwrite = language.getReadwrite();
+		List<CHARACTERLANGUAGEType> remove = new ArrayList<CHARACTERLANGUAGEType>();
 		for( CHARACTERLANGUAGEType l : languages ) {
-			if( l.getLanguage().equals(lang) && l.getNotlearnedbyskill().equals(language.getNotlearnedbyskill())) {
-				languages.remove(l);
-				return;
+			if( l.getLanguage().equals(langName) ) {
+				if( l.getSpeak().equals(speak) ) {
+					l.setSpeak(LearnedbyType.NO);
+					speak=LearnedbyType.NO;
+				}
+				if( l.getReadwrite().equals(readwrite) ) {
+					l.setReadwrite(LearnedbyType.NO);
+					readwrite=LearnedbyType.NO;
+				}
 			}
+			if( l.getSpeak().equals(LearnedbyType.NO) && l.getReadwrite().equals(LearnedbyType.NO) ) remove.add(l);
 		}
+		languages.removeAll(remove);
 	}
 
 	public void insertLanguages(List<CHARACTERLANGUAGEType> languages) {
@@ -92,20 +125,21 @@ public class LanguageContainer {
 		CHARACTERLANGUAGEType newlang = new CHARACTERLANGUAGEType();
 		if(oldlang!=null) {
 			newlang.setLanguage(oldlang.getLanguage());
-			newlang.setNotlearnedbyskill(oldlang.getNotlearnedbyskill());
 			newlang.setReadwrite(oldlang.getReadwrite());
 			newlang.setSpeak(oldlang.getSpeak());
 		}
 		return newlang;
 	}
 
-	public int[] getCountOfSpeakReadWrite(YesnoType skill) {
+	public int[] getCountOfSpeakReadWrite(LearnedbyType learnedby) {
 		int[] result = {0,0};
-		for( CHARACTERLANGUAGEType l : languages ) {
-			if( (skill==null) || skill.equals(YesnoType.NA) || l.getNotlearnedbyskill().equals(skill) ) {
-				if( l.getSpeak().equals(YesnoType.YES) ) result[0]++;
-				if( l.getReadwrite().equals(YesnoType.YES) ) result[1]++;
-			}
+		if( learnedby==null ) for( CHARACTERLANGUAGEType l : languages ) {
+			if( ! l.getSpeak().equals(LearnedbyType.NO) ) result[0]++;
+			if( ! l.getReadwrite().equals(LearnedbyType.NO) ) result[1]++;
+		}
+		else for( CHARACTERLANGUAGEType l : languages ) {
+			if( l.getSpeak().equals(learnedby) ) result[0]++;
+			if( l.getReadwrite().equals(learnedby) ) result[1]++;
 		}
 		return result;
 	}

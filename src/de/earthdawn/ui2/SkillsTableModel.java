@@ -89,13 +89,13 @@ public class SkillsTableModel extends AbstractTableModel {
 	}
 
 	public boolean isCellEditable(int row, int col) {
+		if( col == 3 ) return true;
 		if( col == 4 ) return true;
 		if( languageSkills ) return false;
 		SKILLType skill = character.getSkills().get(row);
 		if( languageSkillSpeakNames.contains(skill.getName()) ) return false;
 		if( languageSkillReadWriteNames.contains(skill.getName()) ) return false;
 		if( col==1 ) return true;
-		if( col==3 ) return true;
 		return false;
 	}
 
@@ -104,7 +104,7 @@ public class SkillsTableModel extends AbstractTableModel {
 		if( languageSkills ) skill = character.getOnlyLanguageSkills().get(row);
 		else skill = character.getSkills().get(row);
 		if( (col==1) && !languageSkills ) skill.setLimitation((String)value);
-		if( (col==3) && !languageSkills ) {
+		if( col == 3 ) {
 			int v = (Integer)value;
 			RANKType rank = skill.getRANK();
 			if( (rank.getRank()<v) || (rank.getRank()==rank.getStartrank()) ) {
