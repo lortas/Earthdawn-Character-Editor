@@ -527,6 +527,9 @@ public class EDGeneral extends JPanel {
 		JFileChooser fc = new JFileChooser(new File("templates"));
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG-GIF-PNG Images", "jpg", "gif", "png", "jpeg");
 		fc.setFileFilter(filter);
+		ImagePreview imagepreview = new ImagePreview(lblPortrait.getWidth(),lblPortrait.getHeight());
+		fc.setAccessory(imagepreview);
+		fc.addPropertyChangeListener(imagepreview);
 		int returnVal = fc.showOpenDialog(this);
 		if(returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fc.getSelectedFile();
