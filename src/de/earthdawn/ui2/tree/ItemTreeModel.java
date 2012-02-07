@@ -33,6 +33,7 @@ public class ItemTreeModel  implements TreeModel {
 			displayedNodes.put("Weapons", character.getWeapons());
 			displayedNodes.put("Armor", character.getProtection().getARMOROrSHIELD());
 			displayedNodes.put("Thread Items", character.getThreadItem());
+			displayedNodes.put("Purse", character.getAllCoins());
 			displayKeys = new ArrayList<String>(displayedNodes.keySet());
 		}
 	}
