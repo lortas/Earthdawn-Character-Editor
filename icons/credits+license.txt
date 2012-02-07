@@ -78,6 +78,11 @@ FOOD.png
 WAND.png
 	Pixel Art Icon for RPG by Ails
 
+PURSE.png
+	Part of: Pretty office 4 icon pack
+	Author: CustomIconDesign, http://www.customicondesign.com
+	License: Free for non commercial use.
+
 ANIMAL.png
 
 KIT.png
