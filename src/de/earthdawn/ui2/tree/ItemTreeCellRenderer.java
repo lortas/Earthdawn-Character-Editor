@@ -13,6 +13,7 @@ import javax.swing.JTree;
 import javax.swing.tree.TreeCellRenderer;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.ARMORType;
+import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.MAGICITEMType;
@@ -89,6 +90,12 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			}
 		}
 
+		// Coins
+		if( value == "Purse" ) {
+			label.setText("Purse");
+			label.setIcon((ImageIcon)treeIcons.get("PURSE"));
+		}
+
 		// ThreadRank
 		if(value instanceof THREADRANKType){
 			THREADRANKType rank = (THREADRANKType)value;
@@ -140,6 +147,19 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		if( value instanceof DEFENSEABILITYType ) {
 			DEFENSEABILITYType da = (DEFENSEABILITYType)value;
 			label.setText(da.getKind().value() +" defense : "+ da.getBonus());
+		}
+
+		if( value instanceof COINSType ) {
+			COINSType coins = (COINSType)value;
+			String text = coins.getName()+" (";
+			text += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
+			if( coins.getEarth()>0 )      text += " e:"+coins.getEarth();
+			if( coins.getWater()>0 )      text += " w:"+coins.getWater();
+			if( coins.getAir()>0 )        text += " a:"+coins.getAir();
+			if( coins.getFire()>0 )       text += " f:"+coins.getFire();
+			if( coins.getOrichalcum()>0 ) text += " o:"+coins.getOrichalcum();
+			text +=")";
+			label.setText(text);
 		}
 
 		return label;

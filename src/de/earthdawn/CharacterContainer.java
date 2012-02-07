@@ -634,6 +634,8 @@ public class CharacterContainer extends CharChangeRefresh {
 			coins.setSilver(100); // Startguthaben
 			coins.setLocation("self");
 			coins.setUsed(YesnoType.YES);
+			coins.setName("Purse #1");
+			coins.setKind(ItemkindType.GEMS);
 			allCoins.add(coins);
 		}
 		return allCoins;
