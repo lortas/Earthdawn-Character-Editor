@@ -158,6 +158,11 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			if( coins.getAir()>0 )        text += " a:"+coins.getAir();
 			if( coins.getFire()>0 )       text += " f:"+coins.getFire();
 			if( coins.getOrichalcum()>0 ) text += " o:"+coins.getOrichalcum();
+			if( coins.getGem50()>0)       text += " g50:"+coins.getGem50();
+			if( coins.getGem100()>0)      text += " g100:"+coins.getGem100();
+			if( coins.getGem200()>0)      text += " g200:"+coins.getGem200();
+			if( coins.getGem500()>0)      text += " g500:"+coins.getGem500();
+			if( coins.getGem1000()>0)     text += " g1000:"+coins.getGem1000();
 			text +=")";
 			label.setText(text);
 		}

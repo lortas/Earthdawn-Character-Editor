@@ -350,6 +350,11 @@ public class ECEPdfExporter {
 			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
 			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
 			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
+			if( coins.getGem50()>0)       name += " g50:"+coins.getGem50();
+			if( coins.getGem100()>0)      name += " g100:"+coins.getGem100();
+			if( coins.getGem200()>0)      name += " g200:"+coins.getGem200();
+			if( coins.getGem500()>0)      name += " g500:"+coins.getGem500();
+			if( coins.getGem1000()>0)     name += " g1000:"+coins.getGem1000();
 			name +=")";
 			addEquipment(name,coins.getWeight(),true);
 			copperPieces += coins.getCopper();
