@@ -33,11 +33,12 @@ public class CoinsNodePanel extends AbstractNodePanel<COINSType> {
 	private JSpinner spinnerGem100;
 	private JSpinner spinnerGem200;
 	private JSpinner spinnerGem500;
+	private JSpinner spinnerGem1000;
 
 	public CoinsNodePanel(COINSType node) {
 		super(node);
 		setBorder(new LineBorder(new Color(0, 0, 0)));
-		setLayout(new MigLayout("", "[100px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[100px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx right,aligny center");
 		comboBoxType = new JComboBox(ItemkindType.values());
@@ -63,61 +64,65 @@ public class CoinsNodePanel extends AbstractNodePanel<COINSType> {
 		add(textFieldBookRef, "cell 1 3,growx,aligny center");
 		textFieldBookRef.setColumns(10);
 
-		add(new JLabel("Blood Damage"), "cell 0 4,alignx right,aligny center");
+		add(new JLabel("Blood Damage"), "cell 8 2,alignx right,aligny center");
 		spinnerBloodDamage = new JSpinner(new SpinnerNumberModel(node.getBlooddamage(), 0, 100, 1));
-		add(spinnerBloodDamage, "cell 1 4,alignx left,aligny center");
+		add(spinnerBloodDamage, "cell 9 2,alignx left,aligny center");
 
-		add(new JLabel("Depatterningrate"), "cell 0 5,alignx right");
+		add(new JLabel("Depatterningrate"), "cell 8 3,alignx right");
 		spinnerDepatterningrate = new JSpinner(new SpinnerNumberModel(node.getDepatterningrate(), 0, 100, 1));
-		add(spinnerDepatterningrate, "cell 1 5,alignx left,aligny center");
+		add(spinnerDepatterningrate, "cell 9 3,alignx left,aligny center");
 
 		add(new JLabel("Copper"), "cell 2 0,alignx right,aligny center");
-		spinnerCopper = new JSpinner(new SpinnerNumberModel(node.getCopper(), 0, 1000, 1));
+		spinnerCopper = new JSpinner(new SpinnerNumberModel(node.getCopper(), 0, 9999, 1));
 		add(spinnerCopper, "cell 3 0,alignx left,aligny center");
 
 		add(new JLabel("Silver"), "cell 2 1,alignx right,aligny center");
-		spinnerSilver = new JSpinner(new SpinnerNumberModel(node.getSilver(), 0, 1000, 1));
+		spinnerSilver = new JSpinner(new SpinnerNumberModel(node.getSilver(), 0, 9999, 1));
 		add(spinnerSilver, "cell 3 1,alignx left,aligny center");
 
 		add(new JLabel("Gold"), "cell 2 2,alignx right,aligny center");
-		spinnerGold = new JSpinner(new SpinnerNumberModel(node.getGold(), 0, 1000, 1));
+		spinnerGold = new JSpinner(new SpinnerNumberModel(node.getGold(), 0, 9999, 1));
 		add(spinnerGold, "cell 3 2,alignx left,aligny center");
 
 		add(new JLabel("Earth"), "cell 2 3,alignx right,aligny center");
-		spinnerEarth = new JSpinner(new SpinnerNumberModel(node.getEarth(), 0, 1000, 1));
+		spinnerEarth = new JSpinner(new SpinnerNumberModel(node.getEarth(), 0, 9999, 1));
 		add(spinnerEarth, "cell 3 3,alignx left,aligny center");
 
-		add(new JLabel("Water"), "cell 2 4,alignx right,aligny center");
-		spinnerWater = new JSpinner(new SpinnerNumberModel(node.getWater(), 0, 1000, 1));
-		add(spinnerWater, "cell 3 4,alignx left,aligny center");
+		add(new JLabel("Water"), "cell 4 0,alignx right,aligny center");
+		spinnerWater = new JSpinner(new SpinnerNumberModel(node.getWater(), 0, 9999, 1));
+		add(spinnerWater, "cell 5 0,alignx left,aligny center");
 
-		add(new JLabel("Air"), "cell 2 5,alignx right,aligny center");
-		spinnerAir = new JSpinner(new SpinnerNumberModel(node.getAir(), 0, 1000, 1));
-		add(spinnerAir, "cell 3 5,alignx left,aligny center");
+		add(new JLabel("Air"), "cell 4 1,alignx right,aligny center");
+		spinnerAir = new JSpinner(new SpinnerNumberModel(node.getAir(), 0, 9999, 1));
+		add(spinnerAir, "cell 5 1,alignx left,aligny center");
 
-		add(new JLabel("Fire"), "cell 4 0,alignx right,aligny center");
-		spinnerFire = new JSpinner(new SpinnerNumberModel(node.getFire(), 0, 1000, 1));
-		add(spinnerFire, "cell 5 0,alignx left,aligny center");
+		add(new JLabel("Fire"), "cell 4 2,alignx right,aligny center");
+		spinnerFire = new JSpinner(new SpinnerNumberModel(node.getFire(), 0, 9999, 1));
+		add(spinnerFire, "cell 5 2,alignx left,aligny center");
 
-		add(new JLabel("Orichalcum"), "cell 4 1,alignx right,aligny center");
-		spinnerOrichalcum = new JSpinner(new SpinnerNumberModel(node.getOrichalcum(), 0, 1000, 1));
-		add(spinnerOrichalcum, "cell 5 1,alignx left,aligny center");
+		add(new JLabel("Orichalcum"), "cell 4 3,alignx right,aligny center");
+		spinnerOrichalcum = new JSpinner(new SpinnerNumberModel(node.getOrichalcum(), 0, 9999, 1));
+		add(spinnerOrichalcum, "cell 5 3,alignx left,aligny center");
 
-		add(new JLabel("Gem (50)"), "cell 4 2,alignx right,aligny center");
-		spinnerGem50 = new JSpinner(new SpinnerNumberModel(node.getGem50(), 0, 1000, 1));
-		add(spinnerGem50, "cell 5 2,alignx left,aligny center");
+		add(new JLabel("Gem (50)"), "cell 6 0,alignx right,aligny center");
+		spinnerGem50 = new JSpinner(new SpinnerNumberModel(node.getGem50(), 0, 9999, 1));
+		add(spinnerGem50, "cell 7 0,alignx left,aligny center");
 
-		add(new JLabel("Gem (100)"), "cell 4 3,alignx right,aligny center");
-		spinnerGem100 = new JSpinner(new SpinnerNumberModel(node.getGem100(), 0, 1000, 1));
-		add(spinnerGem100, "cell 5 3,alignx left,aligny center");
+		add(new JLabel("Gem (100)"), "cell 6 1,alignx right,aligny center");
+		spinnerGem100 = new JSpinner(new SpinnerNumberModel(node.getGem100(), 0, 9999, 1));
+		add(spinnerGem100, "cell 7 1,alignx left,aligny center");
 
-		add(new JLabel("Gem (200)"), "cell 4 4,alignx right,aligny center");
-		spinnerGem200 = new JSpinner(new SpinnerNumberModel(node.getGem200(), 0, 1000, 1));
-		add(spinnerGem200, "cell 5 4,alignx left,aligny center");
+		add(new JLabel("Gem (200)"), "cell 6 2,alignx right,aligny center");
+		spinnerGem200 = new JSpinner(new SpinnerNumberModel(node.getGem200(), 0, 9999, 1));
+		add(spinnerGem200, "cell 7 2,alignx left,aligny center");
 
-		add(new JLabel("Gem (500)"), "cell 4 5,alignx right,aligny center");
-		spinnerGem500 = new JSpinner(new SpinnerNumberModel(node.getGem500(), 0, 1000, 1));
-		add(spinnerGem500, "cell 5 5,alignx left,aligny center");
+		add(new JLabel("Gem (500)"), "cell 6 3,alignx right,aligny center");
+		spinnerGem500 = new JSpinner(new SpinnerNumberModel(node.getGem500(), 0, 9999, 1));
+		add(spinnerGem500, "cell 7 3,alignx left,aligny center");
+
+		add(new JLabel("Gem (1000)"), "cell 8 0,alignx right,aligny center");
+		spinnerGem1000 = new JSpinner(new SpinnerNumberModel(node.getGem1000(), 0, 9999, 1));
+		add(spinnerGem1000, "cell 9 0,alignx left,aligny center");
 	}
 
 	@Override
@@ -141,6 +146,6 @@ public class CoinsNodePanel extends AbstractNodePanel<COINSType> {
 		nodeObject.setGem100((Integer)spinnerGem100.getValue());
 		nodeObject.setGem200((Integer)spinnerGem200.getValue());
 		nodeObject.setGem500((Integer)spinnerGem500.getValue());
-		//nodeObject.setGem1000(value);
+		nodeObject.setGem1000((Integer)spinnerGem1000.getValue());
 	}
 }

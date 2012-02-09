@@ -52,7 +52,6 @@ public class EDInventory extends JPanel {
 		});
 		tree.setOpaque(false);
 		tree.setRootVisible(false);
-		System.out.println("Set:" + character);
 		scrollPane.setViewportView(tree);
 		scrollPane.getViewport().setOpaque(false);
 		tree.setEditable(true);
@@ -175,6 +174,21 @@ public class EDInventory extends JPanel {
 						character.getBloodCharmItem().add(bloodcharm);
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,bloodcharm, character.getBloodCharmItem().indexOf(bloodcharm));
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(bloodcharm));
+					}
+				});
+				popup.add(menuitem);
+			}
+			// add purse
+			if(str.equals("Purse")){
+				JMenuItem menuitem = new JMenuItem("Add Purse");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						COINSType coins = new COINSType();
+						coins.setKind(ItemkindType.GEMS);
+						character.getAllCoins().add(coins);
+						coins.setName("Purse #"+(1+character.getAllCoins().indexOf(coins)));
+						((ItemTreeModel) tree.getModel()).fireNewCoins(currentPath,character.getAllCoins());
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(coins));
 					}
 				});
 				popup.add(menuitem);

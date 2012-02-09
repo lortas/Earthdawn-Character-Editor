@@ -8,6 +8,7 @@ import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.data.COINSType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 
@@ -36,6 +37,12 @@ public class ItemTreeModel  implements TreeModel {
 			displayedNodes.put("Purse", character.getAllCoins());
 			displayKeys = new ArrayList<String>(displayedNodes.keySet());
 		}
+	}
+
+	public void fireNewCoins(TreePath parent, List<COINSType> coins) {
+		displayedNodes.put("Purse", coins);
+		TreeModelEvent event = new TreeModelEvent(this,parent,null,null);
+		for( TreeModelListener listener : listeners ) listener.treeStructureChanged(event);
 	}
 
 	public Object getParent(Object child){
@@ -84,7 +91,7 @@ public class ItemTreeModel  implements TreeModel {
 		}
 		if(parent instanceof THREADRANKType){
 			return getEffectNodes((THREADRANKType)parent).size();
-		}	
+		}
 		return 0;
 	}
 
