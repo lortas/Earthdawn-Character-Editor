@@ -101,7 +101,7 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			THREADRANKType rank = (THREADRANKType)value;
 			THREADITEMType item = (THREADITEMType)((ItemTreeModel)tree.getModel()).getParent(value);
 			int rankindex =  (item.getTHREADRANK().indexOf(rank) +1);
-			label.setText("Rank " + rankindex + ": " + rank.getEffect());	
+			label.setText("Rank " + rankindex + ": " + rank.getEffect()+" - "+rank.getKeyknowledge());
 			if(treeIcons.containsKey("RANK" + rankindex)){	
 				label.setIcon((ImageIcon)treeIcons.get("RANK" + rankindex));
 			} else {

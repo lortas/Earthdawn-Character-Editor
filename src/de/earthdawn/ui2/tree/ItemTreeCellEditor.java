@@ -16,6 +16,7 @@ import de.earthdawn.data.MAGICITEMType;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.THREADITEMType;
+import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.YesnoType;
 
@@ -34,6 +35,7 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(MAGICITEMType.class,MagicitemNodePanel.class);
 		registerEditors.put(THREADITEMType.class,ThreadItemNodePanel.class);
 		registerEditors.put(COINSType.class,CoinsNodePanel.class);
+		registerEditors.put(THREADRANKType.class, ThreadRankNodePanel.class);
 	}
 	
 	@Override
