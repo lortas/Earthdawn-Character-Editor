@@ -209,6 +209,37 @@ public class EDInventory extends JPanel {
 			});
 			popup.add(menuitem);
 		}
+		if( currentNode instanceof THREADRANKType ) {
+			THREADRANKType threadrank = (THREADRANKType) currentNode;
+			if( threadrank.getARMOR() == null ) {
+				JMenuItem menuitem = new JMenuItem("Has Armor");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADRANKType rank = (THREADRANKType) currentNode;
+						ARMORType armor = new ARMORType();
+						armor.setName("New Armor");
+						rank.setARMOR(armor);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,0); //TODO: Welcher Index???
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
+					}
+				});
+				popup.add(menuitem);
+			}
+			if( threadrank.getSHIELD() == null ) {
+				JMenuItem menuitem = new JMenuItem("Has Shield");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADRANKType rank = (THREADRANKType) currentNode;
+						SHIELDType shield = new SHIELDType();
+						shield.setName("New Shield");
+						rank.setSHIELD(shield);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,0); //TODO: Welcher Index???
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(shield));
+					}
+				});
+				popup.add(menuitem);
+			}
+		}
 
 		//remove
 		Object parent = currentPath.getParentPath().getLastPathComponent();
