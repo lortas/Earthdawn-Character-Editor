@@ -194,6 +194,21 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 		}
+		if(currentNode instanceof THREADITEMType) {
+			JMenuItem menuitem = new JMenuItem("Add Rank");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADITEMType item = (THREADITEMType) currentNode;
+					THREADRANKType rank = new THREADRANKType();
+					rank.setEffect("");
+					rank.setKeyknowledge("");
+					item.getTHREADRANK().add(rank);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,item, item.getTHREADRANK().indexOf(rank));
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(rank));
+				}
+			});
+			popup.add(menuitem);
+		}
 
 		//remove
 		Object parent = currentPath.getParentPath().getLastPathComponent();
