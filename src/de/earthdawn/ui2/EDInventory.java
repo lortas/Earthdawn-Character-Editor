@@ -256,27 +256,13 @@ public class EDInventory extends JPanel {
 				});
 				popup.add(menuitem);
 			}
-			if( threadrank.getWOUND() == null ) {
-				JMenuItem menuitem = new JMenuItem("Cause Wound");
-				menuitem.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						THREADRANKType rank = (THREADRANKType) currentNode;
-						WOUNDType wound = new WOUNDType();
-						rank.setWOUND(wound);
-						int idx=ItemTreeModel.getEffectIndex(rank, 3);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
-						tree.scrollPathToVisible(currentPath.pathByAddingChild(wound));
-					}
-				});
-				popup.add(menuitem);
-			}
 			JMenuItem menuitem = new JMenuItem("Add Defense");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
 					DEFENSEABILITYType defense = new DEFENSEABILITYType();
 					rank.getDEFENSE().add(defense);
-					int idx=ItemTreeModel.getEffectIndex(rank, 4);
+					int idx=ItemTreeModel.getEffectIndex(rank, 3);
 					idx += rank.getDEFENSE().indexOf(defense);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(defense));
