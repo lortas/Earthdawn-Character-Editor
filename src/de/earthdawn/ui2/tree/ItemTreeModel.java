@@ -8,9 +8,15 @@ import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.COINSType;
+import de.earthdawn.data.DEFENSEType;
+import de.earthdawn.data.RECOVERYType;
+import de.earthdawn.data.SHIELDType;
+import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
+import de.earthdawn.data.WEAPONType;
 
 public class ItemTreeModel  implements TreeModel {
 	private CharacterContainer character;
@@ -142,15 +148,11 @@ public class ItemTreeModel  implements TreeModel {
 
 	private List getEffectNodes(THREADRANKType rank){
 		ArrayList<Object> list = new ArrayList<Object>();
-		if(rank.getARMOR() != null){
-			list.add(rank.getARMOR());
-		}
-		if(rank.getWEAPON() != null){
-			list.add(rank.getWEAPON());
-		}
-		if(rank.getSHIELD() != null){
-			list.add(rank.getSHIELD());
-		}
+		if( rank.getARMOR() != null )  list.add(rank.getARMOR());
+		if( rank.getSHIELD() != null ) list.add(rank.getSHIELD());
+		if( rank.getWEAPON() != null ) list.add(rank.getWEAPON());
+		if( rank.getWOUND() != null )  list.add(rank.getWOUND());
+		list.addAll(rank.getDEFENSE());
 		list.addAll(rank.getSPELL());
 		list.addAll(rank.getABILITY());
 		list.addAll(rank.getRECOVERYTEST());
@@ -158,9 +160,34 @@ public class ItemTreeModel  implements TreeModel {
 		list.addAll(rank.getKARMASTEP());
 		list.addAll(rank.getSPELLABILITY());
 		list.addAll(rank.getINITIATIVE());
-		list.addAll(rank.getDEFENSE());
 		return list;
+	}
 
+	public static int getEffectIndex(THREADRANKType rank, int effect) {
+		int idx =0;
+		if( effect==0 ) return idx;
+		if( rank.getARMOR() != null ) idx++;
+		if( effect==1 ) return idx;
+		if( rank.getSHIELD() != null ) idx++;
+		if( effect==2 ) return idx;
+		if( rank.getWEAPON() != null ) idx++;
+		if( effect==3 ) return idx;
+		if( rank.getWOUND() != null ) idx++;
+		if( effect==4 ) return idx;
+		idx += rank.getDEFENSE().size();
+		if( effect==5 ) return idx;
+		idx += rank.getSPELL().size();
+		if( effect==6 ) return idx;
+		idx += rank.getRECOVERYTEST().size();
+		if( effect==7 ) return idx;
+		idx += rank.getTALENT().size();
+		if( effect==8 ) return idx;
+		idx += rank.getKARMASTEP().size();
+		if( effect==9 ) return idx;
+		idx += rank.getABILITY().size();
+		if( effect==10 ) return idx;
+		idx += rank.getSPELLABILITY().size();
+		return idx;
 	}
 
 	@Override

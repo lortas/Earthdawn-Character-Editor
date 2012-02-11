@@ -21,6 +21,7 @@ import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
+import de.earthdawn.data.WOUNDType;
 import de.earthdawn.data.YesnoType;
 
 public class ItemTreeCellRenderer implements TreeCellRenderer {
@@ -147,6 +148,11 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		if( value instanceof DEFENSEABILITYType ) {
 			DEFENSEABILITYType da = (DEFENSEABILITYType)value;
 			label.setText(da.getKind().value() +" defense : "+ da.getBonus());
+		}
+
+		if( value instanceof WOUNDType ) {
+			WOUNDType w = (WOUNDType)value;
+			label.setText("normal:"+w.getNormal()+", threshold:"+w.getThreshold()+", penalties:"+w.getPenalties()+", blood:"+w.getBlood());
 		}
 
 		if( value instanceof COINSType ) {

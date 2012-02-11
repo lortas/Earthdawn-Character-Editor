@@ -212,33 +212,77 @@ public class EDInventory extends JPanel {
 		if( currentNode instanceof THREADRANKType ) {
 			THREADRANKType threadrank = (THREADRANKType) currentNode;
 			if( threadrank.getARMOR() == null ) {
-				JMenuItem menuitem = new JMenuItem("Has Armor");
+				JMenuItem menuitem = new JMenuItem("Is Armor");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						THREADRANKType rank = (THREADRANKType) currentNode;
 						ARMORType armor = new ARMORType();
 						armor.setName("New Armor");
+						int idx=ItemTreeModel.getEffectIndex(rank, 0);
 						rank.setARMOR(armor);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,0); //TODO: Welcher Index???
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
 					}
 				});
 				popup.add(menuitem);
 			}
 			if( threadrank.getSHIELD() == null ) {
-				JMenuItem menuitem = new JMenuItem("Has Shield");
+				JMenuItem menuitem = new JMenuItem("Is Shield");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						THREADRANKType rank = (THREADRANKType) currentNode;
 						SHIELDType shield = new SHIELDType();
 						shield.setName("New Shield");
 						rank.setSHIELD(shield);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,0); //TODO: Welcher Index???
+						int idx=ItemTreeModel.getEffectIndex(rank, 1);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(shield));
 					}
 				});
 				popup.add(menuitem);
 			}
+			if( threadrank.getWEAPON() == null ) {
+				JMenuItem menuitem = new JMenuItem("Is Weapon");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADRANKType rank = (THREADRANKType) currentNode;
+						WEAPONType weapon = new WEAPONType();
+						weapon.setName("New Weapon");
+						rank.setWEAPON(weapon);
+						int idx=ItemTreeModel.getEffectIndex(rank, 2);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(weapon));
+					}
+				});
+				popup.add(menuitem);
+			}
+			if( threadrank.getWOUND() == null ) {
+				JMenuItem menuitem = new JMenuItem("Cause Wound");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADRANKType rank = (THREADRANKType) currentNode;
+						WOUNDType wound = new WOUNDType();
+						rank.setWOUND(wound);
+						int idx=ItemTreeModel.getEffectIndex(rank, 3);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(wound));
+					}
+				});
+				popup.add(menuitem);
+			}
+			JMenuItem menuitem = new JMenuItem("Add Defense");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					DEFENSEABILITYType defense = new DEFENSEABILITYType();
+					rank.getDEFENSE().add(defense);
+					int idx=ItemTreeModel.getEffectIndex(rank, 4);
+					idx += rank.getDEFENSE().indexOf(defense);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(defense));
+				}
+			});
+			popup.add(menuitem);
 		}
 
 		//remove
