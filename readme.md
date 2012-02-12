@@ -22,6 +22,22 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.38-20120212.zip ##
++ Bugs
+	+ The "Birth" field was not shown from loaded character within the general tab.
+	+ Typos with the elemental spells corrected
+	+ No unneeded confirmation for updating the portrait if character will be loaded
++ Inventory
+	+ The ThreadItem context menu contains now Refresh Character
+	+ ThreadRanks can be added to a ThreadItem
+	+ DefenseAbility can be inserted to a ThreadRank and edited
+	+ Weapon can be inserted to a ThreadRank and edited
+	+ Armor can be inserted to a ThreadRank and edited
+	+ Shield can be inserted to a ThreadRank and edited
+	+ Coins can now be noted within purses
++ Picture preview while choosing a portrait picture
++ Re-design for the character languages. The LearnedBySkill-Flags has moved and for each speak and read/write the source can be chosen.
++ New Tab Knacks to select learned knacks. Currently only the Ajfel+Mordom PDF export contains learned knacks.
 ## EarthdawnCharacterEditor-0.37-20120114.zip ##
 + Bugs
 	+ Now, player name will also be loaded
