@@ -20,6 +20,7 @@ import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.ECEWorker;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
@@ -195,7 +196,15 @@ public class EDInventory extends JPanel {
 			}
 		}
 		if(currentNode instanceof THREADITEMType) {
-			JMenuItem menuitem = new JMenuItem("Add Rank");
+			JMenuItem menuitem = new JMenuItem("Refresh Character");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());
+					character.refesh();
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Rank");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADITEMType item = (THREADITEMType) currentNode;
@@ -269,6 +278,19 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
+//			menuitem = new JMenuItem("Add Spell");
+//			menuitem.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent arg0) {
+//					THREADRANKType rank = (THREADRANKType) currentNode;
+//					String spell = "Spell #"+rank.getSPELL().size();
+//					rank.getSPELL().add(spell);
+//					int idx=ItemTreeModel.getEffectIndex(rank, 4);
+//					idx += rank.getSPELL().indexOf(spell);
+//					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+//					tree.scrollPathToVisible(currentPath.pathByAddingChild(spell));
+//				}
+//			});
+//			popup.add(menuitem);
 		}
 
 		//remove
