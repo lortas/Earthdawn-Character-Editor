@@ -24,6 +24,7 @@ import de.earthdawn.ECEWorker;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
+import de.earthdawn.ui2.tree.ThreadRankSpellNode;
 
 import de.earthdawn.data.*;
 
@@ -278,19 +279,20 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
-//			menuitem = new JMenuItem("Add Spell");
-//			menuitem.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					THREADRANKType rank = (THREADRANKType) currentNode;
-//					String spell = "Spell #"+rank.getSPELL().size();
-//					rank.getSPELL().add(spell);
-//					int idx=ItemTreeModel.getEffectIndex(rank, 4);
-//					idx += rank.getSPELL().indexOf(spell);
-//					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
-//					tree.scrollPathToVisible(currentPath.pathByAddingChild(spell));
-//				}
-//			});
-//			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Spell");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					String spell = "Spell #"+rank.getSPELL().size();
+					rank.getSPELL().add(spell);
+					int spellidx = rank.getSPELL().indexOf(spell);
+					int idx=spellidx+ItemTreeModel.getEffectIndex(rank, 4);
+					ThreadRankSpellNode spellnode = new ThreadRankSpellNode(rank, spellidx);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(spellnode));
+				}
+			});
+			popup.add(menuitem);
 		}
 
 		//remove
