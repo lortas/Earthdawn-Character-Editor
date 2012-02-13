@@ -154,7 +154,14 @@ public class ItemTreeModel  implements TreeModel {
 			list.add(spellnode);
 			idx++;
 		}
-		list.addAll(rank.getABILITY());
+		idx=0;
+		List<String> ability = rank.getABILITY();
+		for( String s : ability ) {
+			ThreadRankAbilityNode spellnode = new ThreadRankAbilityNode(ability,idx);
+			spellnode.setAbility(s);
+			list.add(spellnode);
+			idx++;
+		}
 		list.addAll(rank.getRECOVERYTEST());
 		list.addAll(rank.getTALENT());
 		list.addAll(rank.getKARMASTEP());
