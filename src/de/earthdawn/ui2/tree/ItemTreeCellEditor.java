@@ -16,6 +16,7 @@ import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.MAGICITEMType;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.SHIELDType;
+import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
@@ -39,6 +40,8 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(THREADRANKType.class,ThreadRankNodePanel.class);
 		registerEditors.put(DEFENSEABILITYType.class, DefenseAbilityNodePanel.class);
 		registerEditors.put(ThreadRankSpellNode.class, ThreadRankSpellNodePanel.class);
+		registerEditors.put(ThreadRankAbilityNode.class,ThreadRankAbilityNodePanel.class);
+		registerEditors.put(TALENTABILITYType.class,ThreadRankTalentNodePanel.class);
 	}
 	
 	@Override

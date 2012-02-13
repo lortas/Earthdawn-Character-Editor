@@ -24,6 +24,7 @@ import de.earthdawn.ECEWorker;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
+import de.earthdawn.ui2.tree.ThreadRankAbilityNode;
 import de.earthdawn.ui2.tree.ThreadRankSpellNode;
 
 import de.earthdawn.data.*;
@@ -291,6 +292,35 @@ public class EDInventory extends JPanel {
 					spellnode.setSpell(spell);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,spellnode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(spellnode));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Ability");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					String ability = "Ability #"+rank.getABILITY().size();
+					int abilityidx = rank.getABILITY().size();
+					rank.getABILITY().add(ability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 5);
+					ThreadRankAbilityNode abilitynode = new ThreadRankAbilityNode(rank.getABILITY(), abilityidx);
+					abilitynode.setAbility(ability);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Talent");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					TALENTABILITYType talentability = new TALENTABILITYType();
+					talentability.setName("Talent #"+rank.getABILITY().size());
+					int abilityidx = rank.getABILITY().size();
+					rank.getTALENT().add(talentability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 7);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,talentability,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(talentability));
 				}
 			});
 			popup.add(menuitem);
