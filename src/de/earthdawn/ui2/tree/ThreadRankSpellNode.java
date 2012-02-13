@@ -1,21 +1,20 @@
 package de.earthdawn.ui2.tree;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
-
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.SPELLDEFType;
-import de.earthdawn.data.THREADRANKType;
 
 public class ThreadRankSpellNode {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
-	public static final HashMap<String, SPELLDEFType> spells = PROPERTIES.getSpells();
-	private THREADRANKType threadrank;
+	public static final HashMap<String, SPELLDEFType> spelldefs = PROPERTIES.getSpells();
+	private List<String> spelllist;
 	private int spellindex;
 	private SPELLDEFType spell;
 
-	public ThreadRankSpellNode(THREADRANKType threadrank, int spellindex) {
-		this.threadrank=threadrank;
+	public ThreadRankSpellNode(List<String> list, int spellindex) {
+		this.spelllist=list;
 		this.spellindex=spellindex;
 	}
 
@@ -23,16 +22,20 @@ public class ThreadRankSpellNode {
 		return spell.getName();
 	}
 
+	public String getSpellname() {
+		return spell.getName();
+	}
+
 	public void setSpell(String spellname) {
-		if( spells.containsKey(spellname) ) spell = spells.get(spellname);
+		if( spelldefs.containsKey(spellname) ) spell = spelldefs.get(spellname);
 		else {
 			spell = new SPELLDEFType();
 			spell.setName(spellname);
 		}
-		threadrank.getSPELL().set(spellindex, spell.getName());
+		spelllist.set(spellindex, spell.getName());
 	}
 
 	public static Set<String> getSpellList() {
-		return spells.keySet();
+		return spelldefs.keySet();
 	}
 }

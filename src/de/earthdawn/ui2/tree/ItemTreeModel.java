@@ -8,15 +8,9 @@ import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import de.earthdawn.CharacterContainer;
-import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.COINSType;
-import de.earthdawn.data.DEFENSEType;
-import de.earthdawn.data.RECOVERYType;
-import de.earthdawn.data.SHIELDType;
-import de.earthdawn.data.SPELLType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
-import de.earthdawn.data.WEAPONType;
 
 public class ItemTreeModel  implements TreeModel {
 	private CharacterContainer character;
@@ -146,13 +140,20 @@ public class ItemTreeModel  implements TreeModel {
 	}
 
 
-	private List getEffectNodes(THREADRANKType rank){
+	public static List<?> getEffectNodes(THREADRANKType rank){
 		ArrayList<Object> list = new ArrayList<Object>();
 		if( rank.getARMOR() != null )  list.add(rank.getARMOR());
 		if( rank.getSHIELD() != null ) list.add(rank.getSHIELD());
 		if( rank.getWEAPON() != null ) list.add(rank.getWEAPON());
 		list.addAll(rank.getDEFENSE());
-		list.addAll(rank.getSPELL());
+		int idx=0;
+		List<String> spell = rank.getSPELL();
+		for( String s : spell ) {
+			ThreadRankSpellNode spellnode = new ThreadRankSpellNode(spell,idx);
+			spellnode.setSpell(s);
+			list.add(spellnode);
+			idx++;
+		}
 		list.addAll(rank.getABILITY());
 		list.addAll(rank.getRECOVERYTEST());
 		list.addAll(rank.getTALENT());

@@ -230,7 +230,7 @@ public class EDInventory extends JPanel {
 						armor.setName("New Armor");
 						int idx=ItemTreeModel.getEffectIndex(rank, 0);
 						rank.setARMOR(armor);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,armor,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
 					}
 				});
@@ -245,7 +245,7 @@ public class EDInventory extends JPanel {
 						shield.setName("New Shield");
 						rank.setSHIELD(shield);
 						int idx=ItemTreeModel.getEffectIndex(rank, 1);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,shield,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(shield));
 					}
 				});
@@ -260,7 +260,7 @@ public class EDInventory extends JPanel {
 						weapon.setName("New Weapon");
 						rank.setWEAPON(weapon);
 						int idx=ItemTreeModel.getEffectIndex(rank, 2);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,weapon,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(weapon));
 					}
 				});
@@ -274,7 +274,7 @@ public class EDInventory extends JPanel {
 					rank.getDEFENSE().add(defense);
 					int idx=ItemTreeModel.getEffectIndex(rank, 3);
 					idx += rank.getDEFENSE().indexOf(defense);
-					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,defense,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(defense));
 				}
 			});
@@ -284,11 +284,12 @@ public class EDInventory extends JPanel {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
 					String spell = "Spell #"+rank.getSPELL().size();
+					int spellidx = rank.getSPELL().size();
 					rank.getSPELL().add(spell);
-					int spellidx = rank.getSPELL().indexOf(spell);
 					int idx=spellidx+ItemTreeModel.getEffectIndex(rank, 4);
-					ThreadRankSpellNode spellnode = new ThreadRankSpellNode(rank, spellidx);
-					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank,idx);
+					ThreadRankSpellNode spellnode = new ThreadRankSpellNode(rank.getSPELL(), spellidx);
+					spellnode.setSpell(spell);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,spellnode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(spellnode));
 				}
 			});

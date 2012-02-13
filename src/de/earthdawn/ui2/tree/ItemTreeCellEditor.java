@@ -23,7 +23,7 @@ import de.earthdawn.data.YesnoType;
 
 public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements TreeCellEditor {
 	private static final long serialVersionUID = 1L;
-	private AbstractNodePanel editorPanel ;
+	private AbstractNodePanel<?> editorPanel ;
 	@SuppressWarnings("rawtypes")
 	private HashMap<Class,Class> registerEditors;
 	
@@ -38,6 +38,7 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(COINSType.class,CoinsNodePanel.class);
 		registerEditors.put(THREADRANKType.class,ThreadRankNodePanel.class);
 		registerEditors.put(DEFENSEABILITYType.class, DefenseAbilityNodePanel.class);
+		registerEditors.put(ThreadRankSpellNode.class, ThreadRankSpellNodePanel.class);
 	}
 	
 	@Override
@@ -105,12 +106,11 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		
 		if (registerEditors.containsKey(value.getClass())){
 			try {
-				Class editorclass = registerEditors.get(value.getClass());
-				Constructor constructor = editorclass.getConstructor(value.getClass());
-				editorPanel = (AbstractNodePanel) constructor.newInstance(value);
+				Class<?> editorclass = registerEditors.get(value.getClass());
+				Constructor<?> constructor = editorclass.getConstructor(value.getClass());
+				editorPanel = (AbstractNodePanel<?>) constructor.newInstance(value);
 				return editorPanel;
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
