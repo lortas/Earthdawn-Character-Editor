@@ -71,7 +71,6 @@
 		<OPTIONALTALENT name="Life Check"/>
 		<OPTIONALTALENT name="Pin"/>
 		<OPTIONALTALENT name="Rally"/>
-		<OPTIONALTALENT name="v"/>
 		<OPTIONALTALENT name="Vitality"/>
 		<DISCIPLINETALENT name="Liquid Prison"/>
 		<TALENTABILITY/>
@@ -85,7 +84,7 @@
 		<KARMA spend="Strength-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
-		<DISCIPLINETALENT name=" Fiery Blade"/>
+		<DISCIPLINETALENT name="Fiery Blade"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
