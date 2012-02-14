@@ -138,11 +138,20 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 
 		if( value instanceof TALENTABILITYType ) {
 			TALENTABILITYType ta = (TALENTABILITYType)value;
-			if( (ta.getLimitation() == null) || ta.getLimitation().isEmpty() ) {
-				label.setText(ta.getName() +" : "+ ta.getBonus());
-			} else {
-				label.setText(ta.getName() +" - "+ ta.getLimitation() +" : "+ ta.getBonus());
+			StringBuffer out = new StringBuffer();
+			out.append(ta.getName());
+			if( (ta.getLimitation()!=null) && !ta.getLimitation().isEmpty() ) {
+				out.append(" - ");
+				out.append(ta.getLimitation());
 			}
+			if( (ta.getPool()!=null) && !ta.getPool().isEmpty() ) {
+				out.append(" - ");
+				out.append(ta.getPool());
+				
+			}
+			out.append(" : ");
+			out.append(ta.getBonus());
+			label.setText(out.toString());
 		}
 
 		if( value instanceof DEFENSEABILITYType ) {

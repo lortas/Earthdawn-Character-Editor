@@ -1,4 +1,4 @@
-package de.earthdawn.ui2;
+package de.earthdawn.ui2.tree;
 
 public enum StringNodeType {
 	SPELL("Spell"),ABILITY("Ability");

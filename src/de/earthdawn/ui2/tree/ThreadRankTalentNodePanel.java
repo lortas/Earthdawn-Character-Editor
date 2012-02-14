@@ -2,6 +2,7 @@ package de.earthdawn.ui2.tree;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -24,11 +25,12 @@ public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYTy
 	private HashMap<String,String[]> talenthash;
 	private JComboBox comboBoxTalent;
 	private JSpinner spinnerBonus;
+	private JTextField textFieldPool;
 
 	public ThreadRankTalentNodePanel(TALENTABILITYType node) {
 		super(node);
 		setBorder(new LineBorder(new Color(0, 0, 0)));
-		setLayout(new MigLayout("", "[90px][200px,grow][90px][90px][90px][90px]", "[20px:20px:20px]"));
+		setLayout(new MigLayout("", "[50px][200px,grow][50px][50px][50px][200px,grow]", "[20px:20px:20px]"));
 
 		add(new JLabel("Talent"), "cell 0 0,alignx right,aligny center");
 		talenthash = new HashMap<String,String[]>();
@@ -50,22 +52,29 @@ public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYTy
 		comboBoxTalent = new JComboBox(array);
 		comboBoxTalent.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxTalent, "cell 1 0,growx,aligny center");
-		comboBoxTalent.setSelectedItem(nodeObject.getName());
+		if( (nodeObject.getLimitation()==null) ||  nodeObject.getLimitation().isEmpty() ) {
+			comboBoxTalent.setSelectedItem(nodeObject.getName());
+		} else {
+			comboBoxTalent.setSelectedItem(nodeObject.getName()+" - "+nodeObject.getLimitation());
+		}
 
 		add(new JLabel("Bonus"), "cell 2 0,alignx right,aligny center");
 		spinnerBonus = new JSpinner(new SpinnerNumberModel(nodeObject.getBonus(), -99, 99, 1));
 		add(spinnerBonus, "cell 3 0");
 
 		add(new JLabel("Pool"), "cell 4 0,alignx right,aligny center");
+		textFieldPool = new JTextField();
+		add(textFieldPool, "cell 5 0,growx,aligny center");
+		textFieldPool.setColumns(12);
 	}
 
 	@Override
 	public void updateObject() {
+		nodeObject.setPool(textFieldPool.getText());
+		nodeObject.setBonus((Integer)spinnerBonus.getValue());
 		String[] tal = talenthash.get(comboBoxTalent.getSelectedItem());
 		if( tal == null ) return;
 		nodeObject.setName(tal[0]);
 		nodeObject.setLimitation(tal[1]);
-		nodeObject.setBonus((Integer)spinnerBonus.getValue());
-		//nodeObject.setPool(value);
 	}
 }

@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.SPELLDEFType;
-import de.earthdawn.ui2.StringNodeType;
+import de.earthdawn.ui2.tree.StringNodeType;
 import net.miginfocom.swing.MigLayout;
 
 public class StringNodePanel extends AbstractNodePanel<StringNode> {
