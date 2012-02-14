@@ -635,7 +635,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			coins.setLocation("self");
 			coins.setUsed(YesnoType.YES);
 			coins.setName("Starting Purse");
-			coins.setKind(ItemkindType.GEMS);
+			coins.setKind(ItemkindType.COINS);
 			allCoins.add(coins);
 		}
 		return allCoins;

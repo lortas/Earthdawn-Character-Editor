@@ -190,7 +190,7 @@ public class EDInventory extends JPanel {
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						COINSType coins = new COINSType();
-						coins.setKind(ItemkindType.GEMS);
+						coins.setKind(ItemkindType.COINS);
 						character.getAllCoins().add(coins);
 						coins.setName("Purse #"+(1+character.getAllCoins().indexOf(coins)));
 						((ItemTreeModel) tree.getModel()).fireNewCoins(currentPath,character.getAllCoins());
