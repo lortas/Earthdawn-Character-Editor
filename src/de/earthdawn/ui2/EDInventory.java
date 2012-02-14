@@ -24,8 +24,7 @@ import de.earthdawn.ECEWorker;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
-import de.earthdawn.ui2.tree.ThreadRankAbilityNode;
-import de.earthdawn.ui2.tree.ThreadRankSpellNode;
+import de.earthdawn.ui2.tree.StringNode;
 
 import de.earthdawn.data.*;
 
@@ -288,8 +287,8 @@ public class EDInventory extends JPanel {
 					int spellidx = rank.getSPELL().size();
 					rank.getSPELL().add(spell);
 					int idx=spellidx+ItemTreeModel.getEffectIndex(rank, 4);
-					ThreadRankSpellNode spellnode = new ThreadRankSpellNode(rank.getSPELL(), spellidx);
-					spellnode.setSpell(spell);
+					StringNode spellnode = new StringNode(rank.getSPELL(),spellidx,StringNodeType.SPELL);
+					spellnode.setString(spell);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,spellnode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(spellnode));
 				}
@@ -303,8 +302,8 @@ public class EDInventory extends JPanel {
 					int abilityidx = rank.getABILITY().size();
 					rank.getABILITY().add(ability);
 					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 5);
-					ThreadRankAbilityNode abilitynode = new ThreadRankAbilityNode(rank.getABILITY(), abilityidx);
-					abilitynode.setAbility(ability);
+					StringNode abilitynode = new StringNode(rank.getABILITY(), abilityidx,StringNodeType.ABILITY);
+					abilitynode.setString(ability);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
 				}
