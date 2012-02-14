@@ -217,7 +217,7 @@
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
-		<DISCIPLINETALENT name=" Effect Pattern"/>
+		<DISCIPLINETALENT name="Effect Pattern"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="physical"/>
