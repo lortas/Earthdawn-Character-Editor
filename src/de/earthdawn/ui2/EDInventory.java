@@ -13,6 +13,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -21,6 +22,8 @@ import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
+import de.earthdawn.ui2.tree.DisziplinAbilityNode;
+import de.earthdawn.ui2.tree.DisziplinAbilityNodeType;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
@@ -295,16 +298,15 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
-			menuitem = new JMenuItem("Add Ability");
+			menuitem = new JMenuItem("Add Recovery Test");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
-					String ability = "Ability #"+rank.getABILITY().size();
-					int abilityidx = rank.getABILITY().size();
-					rank.getABILITY().add(ability);
-					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 8);
-					StringNode abilitynode = new StringNode(rank.getABILITY(), abilityidx,StringNodeType.ABILITY);
-					abilitynode.setString(ability);
+					DISZIPINABILITYType disziplinability = new DISZIPINABILITYType();
+					int abilityidx=rank.getRECOVERYTEST().size();
+					rank.getRECOVERYTEST().add(disziplinability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 5);
+					DisziplinAbilityNode abilitynode = new DisziplinAbilityNode(rank.getKARMASTEP(), abilityidx, DisziplinAbilityNodeType.RECOVERYTEST);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
 				}
@@ -324,6 +326,63 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Karma Step");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					DISZIPINABILITYType disziplinability = new DISZIPINABILITYType();
+					int abilityidx = rank.getKARMASTEP().size();
+					rank.getKARMASTEP().add(disziplinability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 7);
+					DisziplinAbilityNode abilitynode = new DisziplinAbilityNode(rank.getKARMASTEP(), abilityidx, DisziplinAbilityNodeType.KARMASTEP);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Ability");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					String ability = "Ability #"+rank.getABILITY().size();
+					int abilityidx = rank.getABILITY().size();
+					rank.getABILITY().add(ability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 8);
+					StringNode abilitynode = new StringNode(rank.getABILITY(), abilityidx,StringNodeType.ABILITY);
+					abilitynode.setString(ability);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Spell Ability");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					DISZIPINABILITYType disziplinability = new DISZIPINABILITYType();
+					int abilityidx=rank.getSPELLABILITY().size();
+					rank.getSPELLABILITY().add(disziplinability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 9);
+					DisziplinAbilityNode abilitynode = new DisziplinAbilityNode(rank.getKARMASTEP(), abilityidx, DisziplinAbilityNodeType.SPELLABILITY);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Initiative");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					DISZIPINABILITYType disziplinability = new DISZIPINABILITYType();
+					int abilityidx=rank.getINITIATIVE().size();
+					rank.getINITIATIVE().add(disziplinability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 10);
+					DisziplinAbilityNode abilitynode = new DisziplinAbilityNode(rank.getKARMASTEP(), abilityidx, DisziplinAbilityNodeType.INITIATIVE);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
+				}
+			});
+			popup.add(menuitem);
 		}
 
 		//remove
@@ -337,8 +396,19 @@ public class EDInventory extends JPanel {
 						Object parent = currentPath.getParentPath().getLastPathComponent();
 						List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
 						int i =  temp.indexOf(currentNode);
-						temp.remove(currentNode);
-						((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode,i );
+						String[] options = {"Yes","No"};
+						int a = JOptionPane.showOptionDialog(tree,
+								"Do really want to remove this node?",
+								"Change Portrait?",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE,
+								null,
+								options,
+								options[0]);
+						if( a == 0 ) {
+							temp.remove(currentNode);
+							((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode,i );
+						}
 					}
 				});
 				popup.add(menuitem);	

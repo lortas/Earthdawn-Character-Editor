@@ -9,6 +9,7 @@ import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.COINSType;
+import de.earthdawn.data.DISZIPINABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.ui2.tree.StringNodeType;
@@ -163,37 +164,65 @@ public class ItemTreeModel  implements TreeModel {
 			list.add(stringnode);
 			idx++;
 		}
-		list.addAll(rank.getRECOVERYTEST());
+		idx=0;
+		List<DISZIPINABILITYType> recoverytest = rank.getRECOVERYTEST();
+		for( DISZIPINABILITYType d : recoverytest ) {
+			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(recoverytest,idx,DisziplinAbilityNodeType.RECOVERYTEST);
+			disziplinabilitynode.setSiziplinAbility(d);
+			list.add(disziplinabilitynode);
+			idx++;
+		}
 		list.addAll(rank.getTALENT());
-		list.addAll(rank.getKARMASTEP());
-		list.addAll(rank.getSPELLABILITY());
-		list.addAll(rank.getINITIATIVE());
+		idx=0;
+		List<DISZIPINABILITYType> karmastep = rank.getKARMASTEP();
+		for( DISZIPINABILITYType d : karmastep ) {
+			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(karmastep,idx,DisziplinAbilityNodeType.KARMASTEP);
+			disziplinabilitynode.setSiziplinAbility(d);
+			list.add(disziplinabilitynode);
+			idx++;
+		}
+		idx=0;
+		List<DISZIPINABILITYType> spellability = rank.getSPELLABILITY();
+		for( DISZIPINABILITYType d : spellability ) {
+			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(spellability,idx,DisziplinAbilityNodeType.SPELLABILITY);
+			disziplinabilitynode.setSiziplinAbility(d);
+			list.add(disziplinabilitynode);
+			idx++;
+		}
+		idx=0;
+		List<DISZIPINABILITYType> initiative = rank.getINITIATIVE();
+		for( DISZIPINABILITYType d : initiative ) {
+			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(initiative,idx,DisziplinAbilityNodeType.INITIATIVE);
+			disziplinabilitynode.setSiziplinAbility(d);
+			list.add(disziplinabilitynode);
+			idx++;
+		}
 		return list;
 	}
 
 	public static int getEffectIndex(THREADRANKType rank, int effect) {
 		int idx =0;
-		if( effect==0 ) return idx;  // ARMOR
+		if( effect==0 ) return idx;  // 0  : ARMOR
 		if( rank.getARMOR() != null ) idx++;
-		if( effect==1 ) return idx;  // SHIELD
+		if( effect==1 ) return idx;  // 1  : SHIELD
 		if( rank.getSHIELD() != null ) idx++;
-		if( effect==2 ) return idx;  // WEAPON
+		if( effect==2 ) return idx;  // 2  : WEAPON
 		if( rank.getWEAPON() != null ) idx++;
-		if( effect==3 ) return idx;  // DEFENSE
+		if( effect==3 ) return idx;  // 3  : DEFENSE
 		idx += rank.getDEFENSE().size();
-		if( effect==4 ) return idx;  // SPELL
+		if( effect==4 ) return idx;  // 4  : SPELL
 		idx += rank.getSPELL().size();
-		if( effect==5 ) return idx;  // RECOVERYTEST
+		if( effect==5 ) return idx;  // 5  : RECOVERYTEST
 		idx += rank.getRECOVERYTEST().size();
-		if( effect==6 ) return idx;  // TALENT
+		if( effect==6 ) return idx;  // 6  : TALENT
 		idx += rank.getTALENT().size();
-		if( effect==7 ) return idx;  // KARMASTEP
+		if( effect==7 ) return idx;  // 7  : KARMASTEP
 		idx += rank.getKARMASTEP().size();
-		if( effect==8 ) return idx;  // ABILITY
+		if( effect==8 ) return idx;  // 8  : ABILITY
 		idx += rank.getABILITY().size();
-		if( effect==9 ) return idx; // SPELLABILITY
+		if( effect==9 ) return idx; // 9  : SPELLABILITY
 		idx += rank.getSPELLABILITY().size();
-		return idx;
+		return idx;                 // 10 : INITIATIVE
 	}
 
 	@Override
