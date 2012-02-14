@@ -33,7 +33,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final ApplicationProperties  PROPERTIES = ApplicationProperties.create();
-	private static final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
+	private static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
 	private final JPanel contentPanel = new JPanel();
 	private JScrollPane scrollPane;
 	private JList list;
