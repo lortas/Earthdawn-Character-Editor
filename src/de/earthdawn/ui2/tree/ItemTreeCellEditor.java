@@ -39,8 +39,7 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(COINSType.class,CoinsNodePanel.class);
 		registerEditors.put(THREADRANKType.class,ThreadRankNodePanel.class);
 		registerEditors.put(DEFENSEABILITYType.class, DefenseAbilityNodePanel.class);
-		registerEditors.put(ThreadRankSpellNode.class, ThreadRankSpellNodePanel.class);
-		registerEditors.put(ThreadRankAbilityNode.class,ThreadRankAbilityNodePanel.class);
+		registerEditors.put(StringNode.class, StringNodePanel.class);
 		registerEditors.put(TALENTABILITYType.class,ThreadRankTalentNodePanel.class);
 	}
 	

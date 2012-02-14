@@ -11,6 +11,7 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.COINSType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
+import de.earthdawn.ui2.StringNodeType;
 
 public class ItemTreeModel  implements TreeModel {
 	private CharacterContainer character;
@@ -149,17 +150,17 @@ public class ItemTreeModel  implements TreeModel {
 		int idx=0;
 		List<String> spell = rank.getSPELL();
 		for( String s : spell ) {
-			ThreadRankSpellNode spellnode = new ThreadRankSpellNode(spell,idx);
-			spellnode.setSpell(s);
-			list.add(spellnode);
+			StringNode stringnode = new StringNode(spell,idx,StringNodeType.SPELL);
+			stringnode.setString(s);
+			list.add(stringnode);
 			idx++;
 		}
 		idx=0;
 		List<String> ability = rank.getABILITY();
 		for( String s : ability ) {
-			ThreadRankAbilityNode spellnode = new ThreadRankAbilityNode(ability,idx);
-			spellnode.setAbility(s);
-			list.add(spellnode);
+			StringNode stringnode = new StringNode(ability,idx,StringNodeType.ABILITY);
+			stringnode.setString(s);
+			list.add(stringnode);
 			idx++;
 		}
 		list.addAll(rank.getRECOVERYTEST());
