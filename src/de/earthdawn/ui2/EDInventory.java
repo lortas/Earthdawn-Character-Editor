@@ -25,6 +25,7 @@ import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
 import de.earthdawn.ui2.tree.StringNode;
+import de.earthdawn.ui2.tree.StringNodeType;
 
 import de.earthdawn.data.*;
 

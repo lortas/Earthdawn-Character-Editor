@@ -2,7 +2,7 @@ package de.earthdawn.ui2.tree;
 
 import java.util.List;
 
-import de.earthdawn.ui2.StringNodeType;
+import de.earthdawn.ui2.tree.StringNodeType;
 
 public class StringNode {
 	private List<String> stringlist;

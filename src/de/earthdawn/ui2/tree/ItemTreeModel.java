@@ -11,7 +11,7 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.COINSType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
-import de.earthdawn.ui2.StringNodeType;
+import de.earthdawn.ui2.tree.StringNodeType;
 
 public class ItemTreeModel  implements TreeModel {
 	private CharacterContainer character;
