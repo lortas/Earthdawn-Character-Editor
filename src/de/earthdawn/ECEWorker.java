@@ -34,7 +34,7 @@ public class ECEWorker {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final String durabilityTalentName = PROPERTIES.getDurabilityName();
 	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
-	public static final ECECapabilities capabilities = new ECECapabilities(PROPERTIES.getCapabilities().getSKILLOrTALENT());
+	public static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
 	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
 	public static final boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);

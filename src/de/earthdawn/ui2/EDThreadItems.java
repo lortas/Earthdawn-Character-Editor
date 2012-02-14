@@ -320,7 +320,7 @@ public class EDThreadItems extends JPanel {
 		if (userObject instanceof ThreadRankInfo){
 			THREADRANKType rank = (THREADRANKType)((ThreadRankInfo)userObject).getUserObject();
 			TALENTABILITYType talent = new TALENTABILITYType();
-			ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
+			ECECapabilities capabilities = ApplicationProperties.create().getCapabilities();
 			talent.setName(capabilities.getTalents().get(1).getName());
 			rank.getTALENT().add(talent);
 		}
@@ -844,7 +844,7 @@ public class EDThreadItems extends JPanel {
 
 			comboBoxTalent = new JComboBox();
 			editor.add(comboBoxTalent);
-			ECECapabilities capabilities = new ECECapabilities(ApplicationProperties.create().getCapabilities().getSKILLOrTALENT());
+			ECECapabilities capabilities = ApplicationProperties.create().getCapabilities();
 			for (CAPABILITYType capability : capabilities.getTalents()) comboBoxTalent.addItem(capability.getName());
 			comboBoxTalent.setSelectedItem(talent.getName());
 

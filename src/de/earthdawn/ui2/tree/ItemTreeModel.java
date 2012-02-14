@@ -173,25 +173,25 @@ public class ItemTreeModel  implements TreeModel {
 
 	public static int getEffectIndex(THREADRANKType rank, int effect) {
 		int idx =0;
-		if( effect==0 ) return idx;
+		if( effect==0 ) return idx;  // ARMOR
 		if( rank.getARMOR() != null ) idx++;
-		if( effect==1 ) return idx;
+		if( effect==1 ) return idx;  // SHIELD
 		if( rank.getSHIELD() != null ) idx++;
-		if( effect==2 ) return idx;
+		if( effect==2 ) return idx;  // WEAPON
 		if( rank.getWEAPON() != null ) idx++;
-		if( effect==3 ) return idx;
+		if( effect==3 ) return idx;  // DEFENSE
 		idx += rank.getDEFENSE().size();
-		if( effect==4 ) return idx;
+		if( effect==4 ) return idx;  // SPELL
 		idx += rank.getSPELL().size();
-		if( effect==5 ) return idx;
+		if( effect==5 ) return idx;  // RECOVERYTEST
 		idx += rank.getRECOVERYTEST().size();
-		if( effect==6 ) return idx;
+		if( effect==6 ) return idx;  // TALENT
 		idx += rank.getTALENT().size();
-		if( effect==7 ) return idx;
+		if( effect==7 ) return idx;  // KARMASTEP
 		idx += rank.getKARMASTEP().size();
-		if( effect==8 ) return idx;
+		if( effect==8 ) return idx;  // ABILITY
 		idx += rank.getABILITY().size();
-		if( effect==9 ) return idx;
+		if( effect==9 ) return idx; // SPELLABILITY
 		idx += rank.getSPELLABILITY().size();
 		return idx;
 	}

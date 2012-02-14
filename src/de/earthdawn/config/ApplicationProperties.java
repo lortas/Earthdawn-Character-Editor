@@ -195,8 +195,8 @@ public class ApplicationProperties {
 		return getCharacteristics().getSTEPDICEbyStep(value).getDice();
 	}
 
-	public CAPABILITIES getCapabilities() {
-		return CAPABILITIES;
+	public ECECapabilities getCapabilities() {
+		return new ECECapabilities(CAPABILITIES.getSKILLOrTALENT());
 	}
 
 	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
@@ -456,7 +456,7 @@ public class ApplicationProperties {
 		if( template == null ) return null; 
 		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
 		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.getSPELL());
-		RANDOMCHARACTERTEMPLATES.setCapabilities(new ECECapabilities(getCapabilities().getSKILLOrTALENT()));
+		RANDOMCHARACTERTEMPLATES.setCapabilities(getCapabilities());
 		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES);
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
 	}

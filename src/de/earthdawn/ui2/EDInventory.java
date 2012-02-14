@@ -301,7 +301,7 @@ public class EDInventory extends JPanel {
 					String ability = "Ability #"+rank.getABILITY().size();
 					int abilityidx = rank.getABILITY().size();
 					rank.getABILITY().add(ability);
-					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 5);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 8);
 					StringNode abilitynode = new StringNode(rank.getABILITY(), abilityidx,StringNodeType.ABILITY);
 					abilitynode.setString(ability);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
@@ -317,7 +317,7 @@ public class EDInventory extends JPanel {
 					talentability.setName("Talent #"+rank.getABILITY().size());
 					int abilityidx = rank.getABILITY().size();
 					rank.getTALENT().add(talentability);
-					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 7);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 6);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,talentability,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(talentability));
 				}
