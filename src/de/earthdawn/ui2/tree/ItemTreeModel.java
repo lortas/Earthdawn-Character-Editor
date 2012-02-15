@@ -157,14 +157,6 @@ public class ItemTreeModel  implements TreeModel {
 			idx++;
 		}
 		idx=0;
-		List<String> ability = rank.getABILITY();
-		for( String s : ability ) {
-			StringNode stringnode = new StringNode(ability,idx,StringNodeType.ABILITY);
-			stringnode.setString(s);
-			list.add(stringnode);
-			idx++;
-		}
-		idx=0;
 		List<DISZIPINABILITYType> recoverytest = rank.getRECOVERYTEST();
 		for( DISZIPINABILITYType d : recoverytest ) {
 			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(recoverytest,idx,DisziplinAbilityNodeType.RECOVERYTEST);
@@ -179,6 +171,14 @@ public class ItemTreeModel  implements TreeModel {
 			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(karmastep,idx,DisziplinAbilityNodeType.KARMASTEP);
 			disziplinabilitynode.setSiziplinAbility(d);
 			list.add(disziplinabilitynode);
+			idx++;
+		}
+		idx=0;
+		List<String> ability = rank.getABILITY();
+		for( String s : ability ) {
+			StringNode stringnode = new StringNode(ability,idx,StringNodeType.ABILITY);
+			stringnode.setString(s);
+			list.add(stringnode);
 			idx++;
 		}
 		idx=0;
@@ -220,9 +220,9 @@ public class ItemTreeModel  implements TreeModel {
 		idx += rank.getKARMASTEP().size();
 		if( effect==8 ) return idx;  // 8  : ABILITY
 		idx += rank.getABILITY().size();
-		if( effect==9 ) return idx; // 9  : SPELLABILITY
+		if( effect==9 ) return idx;  // 9  : SPELLABILITY
 		idx += rank.getSPELLABILITY().size();
-		return idx;                 // 10 : INITIATIVE
+		return idx;                  // 10 : INITIATIVE
 	}
 
 	@Override
