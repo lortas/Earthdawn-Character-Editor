@@ -245,6 +245,7 @@ public class EDInventory extends JPanel {
 						THREADRANKType rank = (THREADRANKType) currentNode;
 						ARMORType armor = new ARMORType();
 						armor.setName("New Armor");
+						armor.setKind(ItemkindType.ARMOR);
 						int idx=ItemTreeModel.getEffectIndex(rank, 0);
 						rank.setARMOR(armor);
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,armor,idx);
@@ -260,6 +261,7 @@ public class EDInventory extends JPanel {
 						THREADRANKType rank = (THREADRANKType) currentNode;
 						SHIELDType shield = new SHIELDType();
 						shield.setName("New Shield");
+						shield.setKind(ItemkindType.SHIELD);
 						rank.setSHIELD(shield);
 						int idx=ItemTreeModel.getEffectIndex(rank, 1);
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,shield,idx);
@@ -357,12 +359,12 @@ public class EDInventory extends JPanel {
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
-					String ability = "Ability #"+rank.getABILITY().size();
 					int abilityidx = rank.getABILITY().size();
+					String ability = "Ability #"+abilityidx;
 					rank.getABILITY().add(ability);
-					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 8);
-					StringNode abilitynode = new StringNode(rank.getABILITY(), abilityidx,StringNodeType.ABILITY);
+					StringNode abilitynode = new StringNode(rank.getABILITY(),abilityidx,StringNodeType.ABILITY);
 					abilitynode.setString(ability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 8);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
 				}

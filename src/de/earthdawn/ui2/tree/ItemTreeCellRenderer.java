@@ -158,6 +158,7 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		if( value instanceof DEFENSEABILITYType ) {
 			DEFENSEABILITYType da = (DEFENSEABILITYType)value;
 			label.setText(da.getKind().value() +" defense : "+ da.getBonus());
+			label.setIcon((ImageIcon)treeIcons.get("DEFENSE"));
 		}
 
 		if( value instanceof WOUNDType ) {
@@ -184,6 +185,13 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		}
 		if( value instanceof DisziplinAbilityNode ) {
 			label.setIcon((ImageIcon)treeIcons.get("DISZIPLINABILITY"));
+		}
+
+		if( value instanceof StringNode ) {
+			switch( ((StringNode)value).getType() ) {
+			case ABILITY: label.setIcon((ImageIcon)treeIcons.get("ABILITY")); break;
+			case SPELL:   label.setIcon((ImageIcon)treeIcons.get("SPELL"));   break;
+			}
 		}
 
 		return label;
