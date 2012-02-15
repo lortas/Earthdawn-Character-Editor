@@ -152,6 +152,7 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			out.append(" : ");
 			out.append(ta.getBonus());
 			label.setText(out.toString());
+			label.setIcon((ImageIcon)treeIcons.get("TALENTABILITY"));
 		}
 
 		if( value instanceof DEFENSEABILITYType ) {
@@ -180,6 +181,9 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			if( coins.getGem1000()>0)     text += " g1000:"+coins.getGem1000();
 			text +=")";
 			label.setText(text);
+		}
+		if( value instanceof DisziplinAbilityNode ) {
+			label.setIcon((ImageIcon)treeIcons.get("DISZIPLINABILITY"));
 		}
 
 		return label;

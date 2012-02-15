@@ -163,9 +163,22 @@ public class EDInventory extends JPanel {
 					public void actionPerformed(ActionEvent arg0) {
 						ARMORType armor = new ARMORType();
 						armor.setName("New Armor");
+						armor.setKind(ItemkindType.ARMOR);
 						character.getProtection().getARMOROrSHIELD().add(armor);
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,armor, character.getProtection().getARMOROrSHIELD().indexOf(armor));
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
+					}
+				});
+				popup.add(menuitem);
+				menuitem = new JMenuItem("Add Shield");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						SHIELDType shield = new SHIELDType();
+						shield.setName("New Shield");
+						shield.setKind(ItemkindType.SHIELD);
+						character.getProtection().getARMOROrSHIELD().add(shield);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,shield, character.getProtection().getARMOROrSHIELD().indexOf(shield));
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(shield));
 					}
 				});
 				popup.add(menuitem);
@@ -317,8 +330,8 @@ public class EDInventory extends JPanel {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
 					TALENTABILITYType talentability = new TALENTABILITYType();
-					talentability.setName("Talent #"+rank.getABILITY().size());
-					int abilityidx = rank.getABILITY().size();
+					int abilityidx=rank.getTALENT().size();
+					talentability.setName("Talent #"+abilityidx);
 					rank.getTALENT().add(talentability);
 					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 6);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,talentability,idx);
