@@ -1157,6 +1157,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setBlooddamage(blooddamage);
 					armor.setDepatterningrate(dr);
 					armor.setBookref(bookref);
+					armor.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicarmor=armor;
 				}
 				SHIELDType shield = threadrank.getSHIELD();
@@ -1170,6 +1171,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setBlooddamage(blooddamage);
 					shield.setDepatterningrate(dr);
 					shield.setBookref(bookref);
+					shield.setVirtual(YesnoType.YES);
 					if( weaven > 0 ) newmagicshield=shield;
 				}
 				weaven--;

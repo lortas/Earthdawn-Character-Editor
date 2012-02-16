@@ -21,10 +21,8 @@ import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 
 import de.earthdawn.CharacterContainer;
-import de.earthdawn.ECEWorker;
 import de.earthdawn.ui2.tree.DisziplinAbilityNode;
 import de.earthdawn.ui2.tree.DisziplinAbilityNodeType;
-import de.earthdawn.ui2.tree.ItemStoreTreeModel;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
@@ -230,7 +228,6 @@ public class EDInventory extends JPanel {
 			JMenuItem menuitem = new JMenuItem("Refresh Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());
 					character.refesh();
 				}
 			});
