@@ -500,6 +500,30 @@ public class ApplicationProperties {
 				DISCIPLINES.put(dis.getName(), dis);
 			}
 
+			// itemstore laden
+			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
+			files = new File("./config/itemstore").listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name != null && name.endsWith(".xml");
+				}
+			});
+			// --- Einlesen der Dateien
+			ITEMS=new ITEMS();
+			for(File items : files) {
+				System.out.println("Lese Konfigurationsdatei: '" + items.getCanonicalPath() + "'");
+				ITEMS i = (ITEMS) u.unmarshal(items);
+				if( i != null ) {
+					ITEMS.getARMOR().addAll(i.getARMOR());
+					ITEMS.getBLOODCHARMITEM().addAll(i.getBLOODCHARMITEM());
+					ITEMS.getITEM().addAll(i.getITEM());
+					ITEMS.getMAGICITEM().addAll(i.getMAGICITEM());
+					ITEMS.getPATTERNITEM().addAll(i.getPATTERNITEM());
+					ITEMS.getSHIELD().addAll(i.getSHIELD());
+					ITEMS.getTHREADITEM().addAll(i.getTHREADITEM());
+					ITEMS.getWEAPON().addAll(i.getWEAPON());
+				}
+			}
+
 			// randomcharactertemplates laden
 			// --- Bestimmen aller Dateien im Unterordner 'randomcharactertemplates'
 			files = new File("./config/randomcharactertemplates").listFiles(new FilenameFilter() {
@@ -532,9 +556,6 @@ public class ApplicationProperties {
 			filename="./config/optionalrules.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			OPTIONALRULES = (OPTIONALRULES) u.unmarshal(new File(filename));
-			filename="./config/items.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			ITEMS = (ITEMS) u.unmarshal(new File(filename));
 			filename="./config/names.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMES = (NAMES) u.unmarshal(new File(filename));
