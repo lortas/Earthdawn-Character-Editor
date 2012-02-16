@@ -54,7 +54,6 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
 		JLabel label = new JLabel();
 		label.setText(value.toString());
-		CharacterContainer character = (CharacterContainer)tree.getModel().getRoot();
 
 		// Items
 		if(value == "Items"){
@@ -66,6 +65,12 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		if(value == "Armor"){
 			label.setText("Armor");
 			label.setIcon((ImageIcon)treeIcons.get("HELM"));
+		}	
+
+		// Shield
+		if(value == "Shield"){
+			label.setText("Shield");
+			label.setIcon((ImageIcon)treeIcons.get("SHIELD"));
 		}	
 
 		// Weapons
