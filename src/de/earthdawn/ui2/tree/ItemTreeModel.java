@@ -68,7 +68,7 @@ public class ItemTreeModel  implements TreeModel {
 			return  displayKeys.get(index);
 		}
 		if(parent instanceof String){
-			return ((List)displayedNodes.get(parent)).get(index);
+			return ((List<?>)displayedNodes.get(parent)).get(index);
 		}
 		if(parent instanceof THREADITEMType){
 			return ((THREADITEMType)parent).getTHREADRANK().get(index);
@@ -85,7 +85,7 @@ public class ItemTreeModel  implements TreeModel {
 			return displayedNodes.size();
 		}
 		if(parent instanceof String){
-			return ((List)displayedNodes.get(parent)).size();
+			return ((List<?>)displayedNodes.get(parent)).size();
 		}
 		if(parent instanceof THREADITEMType){
 			return ((THREADITEMType)parent).getTHREADRANK().size();
@@ -102,7 +102,7 @@ public class ItemTreeModel  implements TreeModel {
 			return displayKeys.indexOf(child);
 		}
 		if(parent instanceof String){
-			return ((List)displayedNodes.get(parent)).indexOf(child);
+			return ((List<?>)displayedNodes.get(parent)).indexOf(child);
 		}
 		if(parent instanceof THREADITEMType){
 			return ((THREADITEMType)parent).getTHREADRANK().indexOf(child);
@@ -120,26 +120,12 @@ public class ItemTreeModel  implements TreeModel {
 
 	@Override
 	public boolean isLeaf(Object node) {
-
-		if(node == character){
-			return false;
-		}
-
-		if(node instanceof String){
-			return ((List)displayedNodes.get(node)).isEmpty();
-		}
-
-		if(node instanceof THREADITEMType){
-			return ((THREADITEMType)node).getTHREADRANK().isEmpty();
-		}
-
-		if(node instanceof THREADRANKType){
-			return getEffectNodes((THREADRANKType)node).isEmpty();
-		}
-
+		if(node == character)              return false;
+		if(node instanceof String)         return ((List<?>)displayedNodes.get(node)).isEmpty();
+		if(node instanceof THREADITEMType) return ((THREADITEMType)node).getTHREADRANK().isEmpty();
+		if(node instanceof THREADRANKType) return getEffectNodes((THREADRANKType)node).isEmpty();
 		return true;
 	}
-
 
 	public static List<?> getEffectNodes(THREADRANKType rank){
 		ArrayList<Object> list = new ArrayList<Object>();

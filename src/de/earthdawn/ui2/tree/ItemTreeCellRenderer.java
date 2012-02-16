@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTree;
 import javax.swing.tree.TreeCellRenderer;
-import de.earthdawn.CharacterContainer;
+import javax.swing.tree.TreeModel;
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DEFENSEABILITYType;
@@ -31,9 +31,7 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 
 	public ItemTreeCellRenderer() {
 		super();
-		System.out.println("Init");
 		File icondir = new File("icons");
-
 		treeIcons = new HashMap<String, ImageIcon>();
 		for(File file : icondir.listFiles()) {
 			String strFilename=file.getName();
@@ -105,12 +103,20 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		// ThreadRank
 		if(value instanceof THREADRANKType){
 			THREADRANKType rank = (THREADRANKType)value;
-			THREADITEMType item = (THREADITEMType)((ItemTreeModel)tree.getModel()).getParent(value);
-			int rankindex =  (item.getTHREADRANK().indexOf(rank) +1);
-			label.setText("Rank " + rankindex + ": " + rank.getEffect()+" - "+rank.getKeyknowledge());
-			if(treeIcons.containsKey("RANK" + rankindex)){	
-				label.setIcon((ImageIcon)treeIcons.get("RANK" + rankindex));
+			TreeModel treemodel = tree.getModel();
+			THREADITEMType item = null;
+			if( treemodel instanceof ItemTreeModel ) item = (THREADITEMType)((ItemTreeModel)treemodel).getParent(value);
+			if( treemodel instanceof ItemStoreTreeModel ) item = (THREADITEMType)((ItemStoreTreeModel)treemodel).getParent(value);
+			if( item != null ) {
+				int rankindex =  (item.getTHREADRANK().indexOf(rank) +1);
+				label.setText("Rank " + rankindex + ": " + rank.getEffect()+" - "+rank.getKeyknowledge());
+				if(treeIcons.containsKey("RANK" + rankindex)){	
+					label.setIcon((ImageIcon)treeIcons.get("RANK" + rankindex));
+				} else {
+					label.setIcon((ImageIcon)treeIcons.get("RANKN"));
+				}
 			} else {
+				label.setText("Rank n: " + rank.getEffect()+" - "+rank.getKeyknowledge());
 				label.setIcon((ImageIcon)treeIcons.get("RANKN"));
 			}
 		}
@@ -123,17 +129,17 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 
 		if (value instanceof WEAPONType) {
 			WEAPONType weapon = (WEAPONType)value;
-			label.setText(weapon.getName() +  " - (Damage: " +  weapon.getDamagestep() + ")" + (weapon.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+			label.setText(weapon.getName() +  " - (Damage: " +  weapon.getDamagestep() + ")" + (weapon.getUsed().equals(YesnoType.YES)?" - inuse":"") + (weapon.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
 		}
 
 		if (value instanceof ARMORType) {
 			ARMORType armor = (ARMORType)value;
-			label.setText(armor.getName() +  " - (" +  armor.getPhysicalarmor() + "/" + armor.getMysticarmor() + "/" + armor.getPenalty()  + ")" + (armor.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+			label.setText(armor.getName() +  " - (" +  armor.getPhysicalarmor() + "/" + armor.getMysticarmor() + "/" + armor.getPenalty()  + ")" + (armor.getUsed().equals(YesnoType.YES)?" - inuse":"") + (armor.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
 		}
 
 		if( value instanceof MAGICITEMType ) {
 			MAGICITEMType magicitem = (MAGICITEMType)value;
-			label.setText(magicitem.getName() +" - ("+ magicitem.getBlooddamage() +"/"+ magicitem.getDepatterningrate() +"/"+ magicitem.getEnchantingdifficultynumber() +")" + (magicitem.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+			label.setText(magicitem.getName() +" - ("+ magicitem.getBlooddamage() +"/"+ magicitem.getDepatterningrate() +"/"+ magicitem.getEnchantingdifficultynumber() +")" + (magicitem.getUsed().equals(YesnoType.YES)?" - inuse":"") + (magicitem.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
 		}
 
 		if( value instanceof THREADITEMType ) {
@@ -205,8 +211,7 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 	private String stripExtension(String pResourceName ) {
 		final int i = pResourceName.lastIndexOf('.');
 		if (i < 0) return pResourceName;
-		final String withoutExtension = pResourceName.substring(0, i);
-		return withoutExtension;
+		return pResourceName.substring(0,i);
 	}
 
 	private ImageIcon scale(Image src) {
