@@ -28,17 +28,16 @@ public class ItemTreeModel  implements TreeModel {
 		super();
 
 		this.character = character;
+		this.displayedNodes = new HashMap<String, Object>();
 		if(this.character != null) {
-			// set displayed nodes
-			displayedNodes = new HashMap<String, Object>();
 			displayedNodes.put("Items", character.getItems());
 			displayedNodes.put("Bloodcharms", character.getBloodCharmItem());
 			displayedNodes.put("Weapons", character.getWeapons());
 			displayedNodes.put("Armor", character.getProtection().getARMOROrSHIELD());
 			displayedNodes.put("Thread Items", character.getThreadItem());
 			displayedNodes.put("Purse", character.getAllCoins());
-			displayKeys = new ArrayList<String>(displayedNodes.keySet());
 		}
+		this.displayKeys = new ArrayList<String>(displayedNodes.keySet());
 	}
 
 	public void fireNewCoins(TreePath parent, List<COINSType> coins) {
