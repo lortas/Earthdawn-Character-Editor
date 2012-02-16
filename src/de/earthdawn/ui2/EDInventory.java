@@ -24,6 +24,7 @@ import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.ui2.tree.DisziplinAbilityNode;
 import de.earthdawn.ui2.tree.DisziplinAbilityNodeType;
+import de.earthdawn.ui2.tree.ItemStoreTreeModel;
 import de.earthdawn.ui2.tree.ItemTreeCellEditor;
 import de.earthdawn.ui2.tree.ItemTreeCellRenderer;
 import de.earthdawn.ui2.tree.ItemTreeModel;
@@ -41,6 +42,7 @@ public class EDInventory extends JPanel {
 	private Object currentNode; 
 	private TreePath currentPath;
 	private BufferedImage backgroundimage = null;
+	private EDItemStore itemstore = new EDItemStore(this);
 
 	public CharacterContainer getCharacter() {
 		return character;
@@ -212,6 +214,13 @@ public class EDInventory extends JPanel {
 				});
 				popup.add(menuitem);
 			}
+			JMenuItem menuitem = new JMenuItem("Open store");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					itemstore.setVisible(true);
+				}
+			});
+			popup.add(menuitem);
 		}
 		if(currentNode instanceof THREADITEMType) {
 			JMenuItem menuitem = new JMenuItem("Refresh Character");
