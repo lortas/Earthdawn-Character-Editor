@@ -66,6 +66,8 @@ public class EDInventory extends JPanel {
 		tree.setCellRenderer(new ItemTreeCellRenderer());
 		tree.setCellEditor(new ItemTreeCellEditor());
 		tree.setInvokesStopCellEditing(true);
+
+		itemstore.setCharacter(character);
 	}
 
 	@Override
@@ -103,6 +105,8 @@ public class EDInventory extends JPanel {
 		scrollPane.add(tree);
 		scrollPane.setViewportView(tree);
 		scrollPane.getViewport().setOpaque(false);
+
+		itemstore.setCharacter(character);
 	}
 
 	protected void do_tree_mouseReleased(MouseEvent event) {
