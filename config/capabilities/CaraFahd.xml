@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+	<SKILL name="Guhvuul" attribute="WIL" default="no" action="free" strain="1" bookref="CF p.xxx"/>
+	<SKILL name="Thunderer's Astrology" attribute="PER" default="no" action="standard" strain="0" bookref="CF p.xxx"/>
+</CAPABILITIES>

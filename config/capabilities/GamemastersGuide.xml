@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+	<TALENT name="Animated Dead" attribute="WIL" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.270"/>
+	<TALENT name="Astral Camouflage" attribute="WIL" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.270"/>
+	<TALENT name="Aura Of Awe" attribute="CHA" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Corrupt Karma" attribute="CHA" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Corrupt Reality" attribute="WIL" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Create Shadow" attribute="na" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Cursed Luck" attribute="WIL" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Damage Shift" attribute="WIL" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Disease" attribute="na" action="na" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+	<TALENT name="Displace" attribute="PER" action="standard" karma="no" strain="0" notbyversatility="yes" bookref="GM p.271"/>
+</CAPABILITIES>

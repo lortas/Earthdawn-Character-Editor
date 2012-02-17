@@ -500,6 +500,22 @@ public class ApplicationProperties {
 				DISCIPLINES.put(dis.getName(), dis);
 			}
 
+			// capabilities laden
+			// --- Bestimmen aller Dateien im Unterordner 'capabilities'
+			files = new File("./config/capabilities").listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name != null && name.endsWith(".xml");
+				}
+			});
+			// --- Einlesen der Dateien
+			CAPABILITIES=new CAPABILITIES();
+			for(File capa : files) {
+				System.out.println("Lese Konfigurationsdatei: '" + capa.getCanonicalPath() + "'");
+				CAPABILITIES c = (CAPABILITIES) u.unmarshal(capa);
+				CAPABILITIES.getSKILLOrTALENT().addAll(c.getSKILLOrTALENT());
+				CAPABILITIES.setLang(c.getLang()); //TODO: Nur die Capabilites Auslesen die zur gewählten Sprache passen
+			}
+
 			// itemstore laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
 			files = new File("./config/itemstore").listFiles(new FilenameFilter() {
@@ -541,9 +557,6 @@ public class ApplicationProperties {
 			filename="./config/characteristics.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) u.unmarshal(new File(filename)));
-			filename="./config/capabilities.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			CAPABILITIES = (CAPABILITIES) u.unmarshal(new File(filename));
 			filename="./config/knacks.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			KNACKS = (KNACKS) u.unmarshal(new File(filename));
