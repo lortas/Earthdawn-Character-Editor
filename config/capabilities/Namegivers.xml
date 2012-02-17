@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+	<TALENT name="Applied Science" attribute="CHA" action="standard" karma="no" strain="1" bookref="NG p.217"/>
+	<TALENT name="Armored Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.217"/>
+	<TALENT name="Bane Strike" attribute="na" action="free" karma="no" strain="2" bookref="NG p.217"/>
+	<TALENT name="Bear Mark" attribute="WIL" action="free" karma="no" strain="1" bookref="NG p.217"/>
+	<TALENT name="Bedazzle" attribute="CHA" action="free" karma="no" strain="1" bookref="NG p.218"/>
+	<TALENT name="Bird Song" attribute="PER" action="standard" karma="no" strain="1" bookref="NG p.218"/>
+	<TALENT name="Body Control" attribute="STR" action="simple" karma="yes" strain="0" bookref="NG p.218"/>
+	<TALENT name="Buzz" attribute="DEX" action="standard" karma="no" strain="0" bookref="NG p.218"/>
+	<TALENT name="Call of Harrow" attribute="PER" action="standard" karma="no" strain="1" bookref="NG p.218"/>
+	<TALENT name="Cast Net" attribute="DEX" action="free" karma="no" strain="1" bookref="NG p.218"/>
+	<TALENT name="Clay Skin" attribute="TOU" action="standard" karma="yes" strain="0" bookref="NG p.219"/>
+	<TALENT name="Create Fetish" attribute="PER" action="standard" karma="no" strain="0" bookref="NG p.219"/>
+	<TALENT name="Dive Attack" attribute="STR" action="free" karma="no" strain="1" bookref="NG p.219"/>
+	<TALENT name="Earth Bond" attribute="TOU" action="standard" karma="no" strain="0" bookref="NG p.219"/>
+	<TALENT name="Engaging Dance" attribute="CHA" action="standard" karma="no" strain="1" bookref="NG p.220"/>
+	<TALENT name="Enhanced Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.220"/>
+	<TALENT name="False Shackles" attribute="DEX" action="standard" karma="no" strain="1" bookref="NG p.220"/>
+	<TALENT name="Free Mind" attribute="CHA" action="sustained" karma="no" strain="0" bookref="NG p.220"/>
+	<TALENT name="Freedom Search" attribute="PER" action="sustained" karma="no" strain="1" bookref="NG p.220"/>
+	<TALENT name="Gliding" attribute="DEX" action="simple" karma="no" strain="0" bookref="NG p.220"/>
+	<TALENT name="Heal Slave" attribute="WIL" action="standard" karma="no" strain="0" bookref="NG p.220"/>
+	<TALENT name="Heart of Freedom" attribute="WIL" action="standard" karma="yes" strain="1" bookref="NG p.220"/>
+	<TALENT name="Hoard Blows" attribute="WIL" action="free" karma="yes" strain="0" bookref="NG p.221"/>
+	<TALENT name="Missile Path" attribute="PER" action="simple" karma="no" strain="1" bookref="NG p.221"/>
+	<TALENT name="Pilot Boat" attribute="PER" karma="no" action="sustained" strain="0" bookref="NG p.221"/>
+	<TALENT name="Prison Call" attribute="PER" action="standard" karma="yes" strain="0" bookref="NG p.221"/>
+	<TALENT name="Read River" attribute="PER" action="standard" karma="no" strain="0" bookref="NG p.221"/>
+	<TALENT name="Shared Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.221"/>
+	<TALENT name="Shout of Jusice" attribute="CHA" action="standard" karma="yes" strain="0" bookref="NG p.221"/>
+	<TALENT name="Spell Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.221"/>
+	<TALENT name="Suppress Influence" attribute="WIL" action="standard" karma="yes" strain="0" bookref="NG p.222"/>
+	<TALENT name="Swimming" attribute="STR" action="standard" karma="no" strain="0" bookref="NG p.222"/>
+	<TALENT name="Tail Dance" attribute="DEX" action="simple" karma="no" strain="1" bookref="NG p.222"/>
+	<TALENT name="Wind Dance" attribute="PER" action="simple" karma="no" strain="1" bookref="NG p.222"/>
+	<TALENT name="Woodspeak" attribute="PER" action="standard" karma="no" strain="1" bookref="NG p.223"/>
+	<TALENT name="Woodwalk" attribute="WIL" action="sustained" karma="yes" strain="1" bookref="NG p.223"/>
+</CAPABILITIES>
