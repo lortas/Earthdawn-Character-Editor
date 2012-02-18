@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="de"/>
  *     &lt;enumeration value="en"/>
+ *     &lt;enumeration value="pl"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -35,7 +36,9 @@ public enum LanguageType {
     @XmlEnumValue("de")
     DE("de"),
     @XmlEnumValue("en")
-    EN("en");
+    EN("en"),
+    @XmlEnumValue("pl")
+    PL("pl");
     private final String value;
 
     LanguageType(String v) {

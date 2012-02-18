@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
+	<TALENTKNACK name="Act on Instinct" basename="Trap Initiative" minrank="8" strain="2" bookref="KR p.226"/>
+	<TALENTKNACK name="Arrow Catch" basename="Avoid Blow" minrank="9" strain="2" bookref="KR p.226"/>
+	<TALENTKNACK name="Astral Hideout" basename="Astral Pocket" minrank="10" strain="1 Wound (s.text)" bookref="KR p.226"/>
+	<TALENTKNACK name="Commanding Gaze" basename="Steely Stare" minrank="8" strain="2" bookref="KR p.226"/>
+	<TALENTKNACK name="Corner of the Eye" basename="Lip Reading" minrank="9" strain="2" bookref="KR p.226"/>
+	<TALENTKNACK name="Empathic Connection" basename="Empathic Command" minrank="8" strain="2" bookref="KR p.226"/>
+	<TALENTKNACK name="False Evidence" basename="Evidence Analysis" minrank="9" strain="2 (s.text)" bookref="KR p.227"/>
+	<TALENTKNACK name="Feign Hit" basename="Avoid Blow" minrank="9" strain="2" bookref="KR p.227"/>
+	<TALENTKNACK name="Fool Thief" basename="Evaluate" minrank="7" strain="1" bookref="KR p.227"/>
+	<TALENTKNACK name="Fraud Mastery" basename="Performance" minrank="3" strain="3" bookref="KR p.227"/>
+	<TALENTKNACK name="Fragile Blade" basename="Infuse Weapon" minrank="8" strain="2" bookref="KR p.228"/>
+	<TALENTKNACK name="Gory Shot" basename="Mystic Aim" minrank="9" strain="6" bookref="KR p.228"/>
+	<TALENTKNACK name="Guard Pockets" basename="Picking Pockets" minrank="6" strain="2" bookref="KR p.229"/>
+	<TALENTKNACK name="Improvised Shield" basename="Shield Charge" minrank="8" strain="2" bookref="KR p.229"/>
+	<TALENTKNACK name="Listen" basename="Search" minrank="7" strain="2,4 (s.text)" bookref="KR p.229"/>
+	<TALENTKNACK name="Lock Guard" basename="Thief Weaving" minrank="8" strain="3" bookref="KR p.229"/>
+	<TALENTKNACK name="Maim" basename="Down Strike" minrank="10" strain="6 (s.text)" bookref="KR p.229"/>
+	<TALENTKNACK name="Masterminds Plan" basename="Safe Path" minrank="9" strain="5" bookref="KR p.229"/>
+	<TALENTKNACK name="Not so Fast" basename="Fast Hand" minrank="7" strain="2" bookref="KR p.230"/>
+	<TALENTKNACK name="Plant Prison" basename="Plant Shelter" minrank="9" strain="4 (s.text)" bookref="KR p.230"/>
+	<TALENTKNACK name="Request Donation" basename="Bardic Voice" minrank="9" strain="2" bookref="KR p.230"/>
+	<TALENTKNACK name="Stalk" basename="Tracking" minrank="8" strain="3" bookref="KR p.230"/>
+	<TALENTKNACK name="Tale of Terror" basename="Creature Analysis" minrank="7" strain="2" bookref="KR p.231"/>
+	<TALENTKNACK name="Track Mount" basename="Call Mount" minrank="9" strain="4" bookref="KR p.231"/>
+</KNACKS>

@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
- *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -49,12 +49,12 @@ import javax.xml.bind.annotation.XmlType;
 public class CAPABILITIES {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class),
-        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class)
+        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class),
+        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class)
     })
     protected List<JAXBElement<CAPABILITYType>> skillOrTALENT;
     @XmlAttribute(required = true)
-    protected String lang;
+    protected LanguageType lang;
 
     /**
      * Gets the value of the skillOrTALENT property.
@@ -91,10 +91,10 @@ public class CAPABILITIES {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public String getLang() {
+    public LanguageType getLang() {
         return lang;
     }
 
@@ -103,10 +103,10 @@ public class CAPABILITIES {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public void setLang(String value) {
+    public void setLang(LanguageType value) {
         this.lang = value;
     }
 

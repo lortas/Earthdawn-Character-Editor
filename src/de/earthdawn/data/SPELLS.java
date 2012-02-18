@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;choice maxOccurs="unbounded">
  *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}SPELLDEF_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
- *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -48,7 +48,7 @@ public class SPELLS {
     @XmlElement(name = "SPELL", namespace = "http://earthdawn.com/spell")
     protected List<SPELLDEFType> spell;
     @XmlAttribute(required = true)
-    protected String lang;
+    protected LanguageType lang;
 
     /**
      * Gets the value of the spell property.
@@ -84,10 +84,10 @@ public class SPELLS {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public String getLang() {
+    public LanguageType getLang() {
         return lang;
     }
 
@@ -96,10 +96,10 @@ public class SPELLS {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public void setLang(String value) {
+    public void setLang(LanguageType value) {
         this.lang = value;
     }
 

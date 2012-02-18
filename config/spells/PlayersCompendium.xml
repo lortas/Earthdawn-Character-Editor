@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell ../earthdawnspells.xsd">
+	<SPELL name="Alter Form" threads="s. text" weavingdifficulty="16" reattuningdifficulty="26" castingdifficulty="TSD*" range="touch*" duration="1 rnd" effect="Alters the nature and pattern of the target" bookref="PC p.135"/>
+	<SPELL name="Call Forth the Army of Decay" threads="s. text" weavingdifficulty="21" reattuningdifficulty="29" castingdifficulty="10" range="touch" duration="R days" effect="Summons an army of cadaver men" effectarea="5-mile radius of caster" bookref="PC p.137"/>
+	<SPELL name="Cloud Banish" threads="3" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="8+*" range="touch" duration="R+1 hr" effect="WIL+8" effectarea="1-mile radius of ground" bookref="PC p.138" element="air"/>
+	<SPELL name="Council of the Forest" threads="s. text" weavingdifficulty="18" reattuningdifficulty="32" castingdifficulty="10" range="self" duration="1 day" effect="Summons tree/plant spirits" effectarea="1-mile radius from magician" bookref="PC p.139" element="wood"/>
+	<SPELL name="Crop Blight" threads="s. text" weavingdifficulty="21" reattuningdifficulty="26" castingdifficulty="6" range="touch" duration="A year and a day" effect="Destroys plant life" effectarea="10 square miles" bookref="PC p.139" element="wood"/>
+	<SPELL name="Damage Transfer" threads="3" weavingdifficulty="14" reattuningdifficulty="19" castingdifficulty="TSD*" range="50 hex" duration="1 rnd" effect="WIL+10/Mystic" bookref="PC p.140"/>
+	<SPELL name="Death Vow" threads="3" weavingdifficulty="13" reattuningdifficulty="22" castingdifficulty="TSD*" range="touch" duration="R weeks" effect="WIL+10/NA" bookref="PC p.140"/>
+	<SPELL name="Eclipse" threads="6" weavingdifficulty="15" reattuningdifficulty="21" castingdifficulty="6" range="20 miles" duration="R days" effect="WIL+8" bookref="PC p.142" element="illusion"/>
+	<SPELL name="Eternal Day" threads="5" weavingdifficulty="18" reattuningdifficulty="21" castingdifficulty="6" range="20 miles" duration="R days" effect="WIL+8" bookref="PC p.143" element="illusion"/>
+	<SPELL name="Glowing Swarm" threads="4" weavingdifficulty="12" reattuningdifficulty="22" castingdifficulty="TSD*" range="5 hex" duration="R+3 rnd" effect="Creates a swarm of glowing insects" bookref="PC p.145"/>
+	<SPELL name="Journey to Life" threads="s. text" weavingdifficulty="14" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R days" effect="WIL+15" bookref="PC p.145"/>
+	<SPELL name="Moon Shadow" threads="5" weavingdifficulty="16" reattuningdifficulty="22" range="50 hex" duration="1 month" effect="WIL+10/NA" bookref="PC p.146"/>
+	<SPELL name="Onion Blood" threads="4" weavingdifficulty="16" reattuningdifficulty="19" range="50 hex" duration="R rnd" effect="WIL+6/Mystic" bookref="PC p.147" element="fear"/>
+	<SPELL name="Purify Forest" threads="s. text" weavingdifficulty="28" reattuningdifficulty="33" castingdifficulty="TSD*" range="touch" duration="Permanent" effect="Cleanses astral space over forested areas" effectarea="10-mile radius from magician" bookref="PC p.147" element="wood"/>
+	<SPELL name="Reattach Limb" threads="6" weavingdifficulty="15" reattuningdifficulty="15" range="touch" duration="1 rnd" effect="WIL/NA" bookref="PC p.147"/>
+	<SPELL name="Tell Tale" threads="3" weavingdifficulty="12" reattuningdifficulty="15" range="touch" duration="1 min" effect="Gains the answer to a question" bookref="PC p.150"/>
+	<SPELL name="Water Wall" threads="4" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="25 hex" duration="R+1 hr" effect="WIL+10" effectarea="1-hex) tall, 1-hex) wide sections" bookref="PC p.152" element="water"/>
+	<SPELL name="Weather Change" threads="5" weavingdifficulty="13" reattuningdifficulty="20" castingdifficulty="6" range="touch" duration="R+10 hr" effect="WIL+8" effectarea="10-mile radius from magician" bookref="PC p.152" element="air"/>
+	<SPELL name="Wood Blade" threads="4" weavingdifficulty="22" reattuningdifficulty="28" castingdifficulty="6" range="touch" duration="R+8 hr" effect="WIL+16/Physical" bookref="PC p.152" element="wood"/>
+</SPELLS>

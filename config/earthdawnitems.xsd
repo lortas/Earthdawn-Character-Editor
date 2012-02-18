@@ -14,7 +14,7 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="THREADITEM" type="edt:THREADITEM_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="ITEM" type="edt:ITEM_type"/>
 			</xs:sequence>
-			<xs:attribute name="lang" type="xs:string" use="required"/>
+			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
