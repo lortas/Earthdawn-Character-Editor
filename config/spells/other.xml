@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell ../earthdawnspells.xsd">
+	<SPELL name="Absorbing Sphere" threads="3" weavingdifficulty="13" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="R+12 rnd" effect="WIL+8/Mystic"/>
+	<SPELL name="Afterlife" threads="5" weavingdifficulty="16" reattuningdifficulty="21" range="10 hex" duration="R min" effect="WIL+14" element="illusion"/>
+	<SPELL name="Air Fortress" threads="s. text" weavingdifficulty="17" reattuningdifficulty="23" castingdifficulty="8" range="touch" duration="Rank×10 hr" effect="WIL+12" element="air"/>
+	<SPELL name="Alter Life" threads="s. text" weavingdifficulty="21" reattuningdifficulty="26" range="touch" duration="R+7 years" effect="Alters life form's pattern"/>
+	<SPELL name="Animate Dead" threads="3" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="TSD*" range="touch" duration="R+5 days" effect="Creates cadaver men"/>
+	<SPELL name="Astral Beacon" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="8 hex" duration="1 rnd" effect="Creates a beacon in astral space"/>
+	<SPELL name="Astral Materialization" threads="4" weavingdifficulty="15" reattuningdifficulty="22" range="15 hex" duration="1 hour" effect="WIL+13"/>
+	<SPELL name="Astral Slice" threads="5" weavingdifficulty="13" reattuningdifficulty="26" castingdifficulty="TSD (Excellent Result)" range="40 hex" duration="1 rnd" effect="WIL+15/NA"/>
+	<SPELL name="Block Magic" threads="4" weavingdifficulty="16" reattuningdifficulty="25" castingdifficulty="10" range="20 hex" duration="R+3 min" effect="-10 penalty to magic-related Action Tests" effectarea="5-hex"/>
+	<SPELL name="Burning Water" threads="5" weavingdifficulty="15" reattuningdifficulty="25" castingdifficulty="6" range="10 hex" duration="R min" effect="Creates flammable water" effectarea="50 square hex of water" element="water"/>
+	<SPELL name="Call Forth the Maelstrom" threads="s. text" weavingdifficulty="25" reattuningdifficulty="33" castingdifficulty="10" range="touch" duration="R hr" effect="WIL/NA" effectarea="100 square miles" element="air"/>
+	<SPELL name="Channel Raw Magic" threads="2" weavingdifficulty="12" reattuningdifficulty="25" range="15 hex" duration="3 rnd" effect="Channels astral energy through target"/>
+	<SPELL name="City in a Bottle" threads="s. text" weavingdifficulty="18" reattuningdifficulty="33" castingdifficulty="12" range="25 miles" duration="R+1 days" effect="Captures terrain in a bottle" effectarea="100 square miles"/>
+	<SPELL name="Cleanse Astral Space" threads="s. text" weavingdifficulty="20" reattuningdifficulty="28" castingdifficulty="10" range="touch" duration="1 rnd" effect="WIL+12" effectarea="1-mile radius"/>
+	<SPELL name="Cold Embers" threads="4" weavingdifficulty="18" reattuningdifficulty="25" castingdifficulty="6" range="touch" duration="1 rnd" effect="Extinguishes open flames" effectarea="50 x 50 hex" element="air"/>
+	<SPELL name="Create Life" threads="s. text" weavingdifficulty="21" reattuningdifficulty="26" range="touch" duration="R+7 years" effect="Creates a life form"/>
+	<SPELL name="Dark Sword" threads="6" weavingdifficulty="15" reattuningdifficulty="19" range="touch" duration="R days" effect="WIL+8/Physical" effectarea="5 hex radius of wearer"/>
+	<SPELL name="Delay Blow" threads="2" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+10 rnd" effect="WIL + 15/Physical"/>
+	<SPELL name="Detect Shamanism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician"/>
+	<SPELL name="Dispel Shamanism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
+	<SPELL name="Disrupt Magic" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="1 rnd" effect="WIL/Mystic"/>
+	<SPELL name="Do Unto Others" threads="3" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="varies*" range="10 hex*" duration="R rnd" effect="Creates illusory spell effects" element="illusion"/>
+	<SPELL name="Dragon's Breath" threads="3" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="TSD*" range="25 hex" duration="1 round (s. text)" effect="WIL+12/Physical" element="fire"/>
+	<SPELL name="Draining Eye" threads="4" weavingdifficulty="14" reattuningdifficulty="15" castingdifficulty="TSD*" range="30 hex (s. text)" duration="R min" effect="WIL+10"/>
+	<SPELL name="Draw and Quarter" threads="4" weavingdifficulty="16" reattuningdifficulty="26" range="touch" duration="1 rnd" effect="WIL+15/Mystic"/>
+	<SPELL name="Earth and Air" threads="3" weavingdifficulty="16" reattuningdifficulty="20" range="60 hex" duration="R+1 hr" effect="WIL+10" element="air"/>
+	<SPELL name="Elemental Merchant" threads="3" weavingdifficulty="15" reattuningdifficulty="19" castingdifficulty="TSD*" range="touch" duration="R+1 days" effect="WIL+5" element="fire"/>
+	<SPELL name="Erase Horror Mark" threads="s. text" weavingdifficulty="17" reattuningdifficulty="22" castingdifficulty="HSD*" range="touch" duration="1 rnd" effect="Removes Horror mark"/>
+	<SPELL name="Eternal Youth" threads="s. text" weavingdifficulty="17" reattuningdifficulty="31" castingdifficulty="12" range="self" duration="R years" effect="Temporarily stops the magician aging"/>
+	<SPELL name="Fire and Water" threads="3" weavingdifficulty="17" reattuningdifficulty="20" range="60 hex" duration="R+1 hr" effect="WIL+9" element="fire"/>
+	<SPELL name="Fire Wall" threads="4" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="15" range="25 hex" duration="R+1 hr" effect="WIL+10/Physical" effectarea="1-hex tall, 1-hex wide sections" element="fire"/>
+	<SPELL name="Forge Falsemen" threads="s. text" weavingdifficulty="20" reattuningdifficulty="29" castingdifficulty="TSD*" range="touch" duration="R years" effect="Creates falsemen"/>
+	<SPELL name="Fragile Pattern" threads="7" weavingdifficulty="14" reattuningdifficulty="23" range="50 hex" duration="1 rnd" effect="WIL+12"/>
+	<SPELL name="Frozen Harbor" threads="s. text" weavingdifficulty="16" reattuningdifficulty="29" castingdifficulty="9" range="15 hex" duration="1 round (s. text)" effect="Freezes expanse of water" effectarea="1-mile diameter area of water" element="water"/>
+	<SPELL name="Gateway" threads="5" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="5,000 miles" duration="R rnd" effect="WIL+10"/>
+	<SPELL name="Grim Reaper" threads="5" weavingdifficulty="13" reattuningdifficulty="21" range="touch" duration="Rank x 10 min" effect="WIL+13" element="illusion"/>
+	<SPELL name="Haunted House" threads="5" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="6" range="35 hex" duration="R days" effect="WIL+11/Physical" element="illusion"/>
+	<SPELL name="Hold Pattern" threads="6" weavingdifficulty="14" reattuningdifficulty="23" castingdifficulty="6" range="touch" duration="R days" effect="WIL+8"/>
+	<SPELL name="Mystic Vessel" threads="3" weavingdifficulty="15" reattuningdifficulty="23" castingdifficulty="TSD*" range="touch" duration="R+1 hr" effect="WIL+10"/>
+	<SPELL name="Observe Event" threads="5" weavingdifficulty="14" reattuningdifficulty="15" range="touch" duration="Variable (s. text)" effect="WIL+3" effectarea="5-hex radius"/>
+	<SPELL name="One of the Crowd" threads="5" weavingdifficulty="14" reattuningdifficulty="21" castingdifficulty="TSD*" range="7,5 hex" duration="R+1 hr" effect="WIL+10" element="illusion"/>
+	<SPELL name="Pervert Emotion" threads="10" weavingdifficulty="23" reattuningdifficulty="29" range="touch" duration="R+1 days" effect="Twists the target's thoughts and emotions"/>
+	<SPELL name="Petrify" threads="4" weavingdifficulty="19" reattuningdifficulty="26" range="10 hex" duration="R days" effect="WIL+5" element="earth"/>
+	<SPELL name="Restore Pattern" threads="s. text" weavingdifficulty="20" reattuningdifficulty="31" range="touch" duration="1 rnd" effect="WIL+15"/>
+	<SPELL name="Revulsion" threads="4" weavingdifficulty="15" reattuningdifficulty="21" range="touch" duration="R+1 min" effect="WIL+13" element="illusion"/>
+	<SPELL name="Shadow Palace" threads="s. text" weavingdifficulty="21" reattuningdifficulty="32" castingdifficulty="8" range="touch" duration="R days" effect="WIL+10"/>
+	<SPELL name="Shatter Pattern" threads="s. text" weavingdifficulty="TSD" reattuningdifficulty="23" range="touch" duration="varies*" effect="WIL+15/NA"/>
+	<SPELL name="Shift Skin" threads="2" weavingdifficulty="17" reattuningdifficulty="18" range="touch" duration="R rnd" effect="WIL+4/NA"/>
+	<SPELL name="Shift Walls" threads="5" weavingdifficulty="15" reattuningdifficulty="21" castingdifficulty="TSD*" range="10 hex" duration="R+3 hr" effect="WIL+9"/>
+	<SPELL name="Silent Darkness" threads="3" weavingdifficulty="15" reattuningdifficulty="22" castingdifficulty="TSD*" range="self" duration="R+5 rnd" effect="WIL+8" effectarea="5-hex radius from magician"/>
+	<SPELL name="Soul Trap" threads="6" weavingdifficulty="13" reattuningdifficulty="23" range="touch" duration="R hr" effect="Traps deceased's soul"/>
+	<SPELL name="Spell Fusion" threads="4" weavingdifficulty="16" reattuningdifficulty="26" castingdifficulty="6; TSD; 12 (s. text)" range="20 hex" duration="3 rnd" effect="WIL+3" effectarea="10-hex radius from magician"/>
+	<SPELL name="Spirit Tempest" threads="4" weavingdifficulty="16" reattuningdifficulty="23" range="15 hex" duration="R rnd" effect="WIL+5/Mystic" effectarea="5x5x5 hex area placed in Range"/>
+	<SPELL name="Strong Pattern" threads="6" weavingdifficulty="18" reattuningdifficulty="23" range="touch" duration="R+7 years" effect="WIL+12"/>
+	<SPELL name="Talent Shredder" threads="1" weavingdifficulty="17" reattuningdifficulty="19" range="50 hex" duration="1 rnd" effect="WIL"/>
+	<SPELL name="Tap Horror Karma" threads="2" weavingdifficulty="18" reattuningdifficulty="20" range="25 hex" duration="2 rnd" effect="WIL+10"/>
+	<SPELL name="Thundering Walls" threads="3" weavingdifficulty="15" reattuningdifficulty="21" castingdifficulty="6" range="40 hex" duration="R+7 rnd" effect="WIL+9/Mystic" element="air"/>
+	<SPELL name="Unnatural Life" threads="s. text" weavingdifficulty="19" reattuningdifficulty="25" range="touch*" duration="R years" effect="Restores target to unnatural life"/>
+	<SPELL name="Void Wave" threads="4" weavingdifficulty="15" reattuningdifficulty="22" range="50 hex" duration="1 rnd" effect="WIL+13/Mystic"/>
+	<SPELL name="Walking Dead" threads="4" weavingdifficulty="13" reattuningdifficulty="19" castingdifficulty="TSD*" range="touch" duration="R days" effect="WIL"/>
+	<SPELL name="Warp Astral Space" threads="3" weavingdifficulty="17" reattuningdifficulty="23" castingdifficulty="15" range="touch" duration="R+5 rnd" effect="Warps astral space; 8 penalty to Spellcasting Tests through or in the warped area" effectarea="25-hex radius sphere from point of casting"/>
+	<SPELL name="Wipe Matrices" threads="s. text" weavingdifficulty="12" reattuningdifficulty="22" range="30 hex" duration="1 rnd" effect="WIL+12"/>
+</SPELLS>

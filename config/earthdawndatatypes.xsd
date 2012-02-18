@@ -49,6 +49,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="de"/>
 			<xs:enumeration value="en"/>
+			<xs:enumeration value="pl"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="yesno_type">

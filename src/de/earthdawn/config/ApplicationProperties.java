@@ -19,6 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -29,6 +30,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import de.earthdawn.CharacterContainer;
@@ -75,10 +77,7 @@ public class ApplicationProperties {
 	 * @return Instanz der Applikations-Konstanten.
 	 */
 	public static ApplicationProperties create() {
-		if (theProps == null) {
-			theProps = new ApplicationProperties();
-		}
-		
+		if( theProps == null ) theProps = new ApplicationProperties();
 		return theProps;
 	}
 
@@ -481,11 +480,15 @@ public class ApplicationProperties {
 	}
 
 	private void init() {
+		Unmarshaller unmarshaller;
 		try {
-			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-			Unmarshaller u = jc.createUnmarshaller();
-			String filename="";
-
+			unmarshaller = JAXBContext.newInstance("de.earthdawn.data").createUnmarshaller();
+		} catch (JAXBException e) {
+			e.printStackTrace();
+			unmarshaller=null;
+			return;
+		}
+		try {
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
 			File[] files = new File("./config/disciplines").listFiles(new FilenameFilter() {
@@ -496,7 +499,7 @@ public class ApplicationProperties {
 			// --- Einlesen der Dateien
 			for(File disConfigFile : files) {
 				System.out.println("Lese Konfigurationsdatei: '" + disConfigFile.getCanonicalPath() + "'");
-				DISCIPLINE dis = (DISCIPLINE) u.unmarshal(disConfigFile);
+				DISCIPLINE dis = (DISCIPLINE) unmarshaller.unmarshal(disConfigFile);
 				DISCIPLINES.put(dis.getName(), dis);
 			}
 
@@ -509,11 +512,62 @@ public class ApplicationProperties {
 			});
 			// --- Einlesen der Dateien
 			CAPABILITIES=new CAPABILITIES();
+			CAPABILITIES.setLang(LANGUAGE);
 			for(File capa : files) {
-				System.out.println("Lese Konfigurationsdatei: '" + capa.getCanonicalPath() + "'");
-				CAPABILITIES c = (CAPABILITIES) u.unmarshal(capa);
-				CAPABILITIES.getSKILLOrTALENT().addAll(c.getSKILLOrTALENT());
-				CAPABILITIES.setLang(c.getLang()); //TODO: Nur die Capabilites Auslesen die zur gewählten Sprache passen
+				System.out.print("Reading config file '" + capa.getCanonicalPath() + "' ...");
+				CAPABILITIES c = (CAPABILITIES) unmarshaller.unmarshal(capa);
+				if( c == null ) { System.out.println(" parse error."); continue; }
+				if( c.getLang().equals(LANGUAGE) ) {
+					CAPABILITIES.getSKILLOrTALENT().addAll(c.getSKILLOrTALENT());
+					System.out.println(" done.");
+				} else {
+					System.out.println(" skipped. Wrong language: "+c.getLang().value()+" != "+LANGUAGE.value() );
+				}
+			}
+
+			// spells laden
+			// --- Bestimmen aller Dateien im Unterordner 'spells'
+			files = new File("./config/spells").listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name != null && name.endsWith(".xml");
+				}
+			});
+			// --- Einlesen der Dateien
+			SPELLS=new SPELLS();
+			SPELLS.setLang(LANGUAGE);
+			for(File spells : files) {
+				System.out.print("Reading config file '" + spells.getCanonicalPath() + "' ...");
+				SPELLS s = (SPELLS) unmarshaller.unmarshal(spells);
+				if( s == null ) { System.out.println(" parse error."); continue; }
+				if( s.getLang().equals(LANGUAGE) ) {
+					SPELLS.getSPELL().addAll(s.getSPELL());
+					System.out.println(" done.");
+				} else {
+					System.out.println(" skipped. Wrong language: "+s.getLang().value()+" != "+LANGUAGE.value() );
+				}
+			}
+
+			// knacks laden
+			// --- Bestimmen aller Dateien im Unterordner 'knacks'
+			files = new File("./config/knacks").listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name != null && name.endsWith(".xml");
+				}
+			});
+			// --- Einlesen der Dateien
+			KNACKS=new KNACKS();
+			KNACKS.setLang(LANGUAGE);
+			for(File knacks : files) {
+				System.out.print("Reading config file '" + knacks.getCanonicalPath() + "' ...");
+				KNACKS k = (KNACKS) unmarshaller.unmarshal(knacks);
+				if( k == null ) { System.out.println(" parse error."); continue; }
+				if( k.getLang().equals(LANGUAGE) ) {
+					KNACKS.getTALENTKNACK().addAll(k.getTALENTKNACK());
+					KNACKS.getSKILLKNACK().addAll(k.getSKILLKNACK());
+					System.out.println(" done.");
+				} else {
+					System.out.println(" skipped. Wrong language: "+k.getLang().value()+" != "+LANGUAGE.value() );
+				}
 			}
 
 			// itemstore laden
@@ -525,10 +579,12 @@ public class ApplicationProperties {
 			});
 			// --- Einlesen der Dateien
 			ITEMS=new ITEMS();
+			ITEMS.setLang(LANGUAGE);
 			for(File items : files) {
-				System.out.println("Lese Konfigurationsdatei: '" + items.getCanonicalPath() + "'");
-				ITEMS i = (ITEMS) u.unmarshal(items);
-				if( i != null ) {
+				System.out.println("Reading config file '" + items.getCanonicalPath() + "' ...");
+				ITEMS i = (ITEMS) unmarshaller.unmarshal(items);
+				if( i == null ) { System.out.println(" parse error."); continue; }
+				if( i.getLang().equals(LANGUAGE) ) {
 					ITEMS.getARMOR().addAll(i.getARMOR());
 					ITEMS.getBLOODCHARMITEM().addAll(i.getBLOODCHARMITEM());
 					ITEMS.getITEM().addAll(i.getITEM());
@@ -537,6 +593,9 @@ public class ApplicationProperties {
 					ITEMS.getSHIELD().addAll(i.getSHIELD());
 					ITEMS.getTHREADITEM().addAll(i.getTHREADITEM());
 					ITEMS.getWEAPON().addAll(i.getWEAPON());
+					System.out.println(" done.");
+				} else {
+					System.out.println(" skipped. Wrong language: "+i.getLang().value()+" != "+LANGUAGE.value() );
 				}
 			}
 
@@ -550,51 +609,45 @@ public class ApplicationProperties {
 			// --- Einlesen der Dateien
 			for(File configFile : files) {
 				System.out.println("Lese Konfigurationsdatei: '" + configFile.getCanonicalPath() + "'");
-				EDRANDOMCHARACTERTEMPLATE t = (EDRANDOMCHARACTERTEMPLATE) u.unmarshal(configFile);
+				EDRANDOMCHARACTERTEMPLATE t = (EDRANDOMCHARACTERTEMPLATE) unmarshaller.unmarshal(configFile);
 				if( t.getLang().equals(LANGUAGE) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
 			}
 
-			filename="./config/characteristics.xml";
+			String filename="./config/characteristics.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) u.unmarshal(new File(filename)));
-			filename="./config/knacks.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			KNACKS = (KNACKS) u.unmarshal(new File(filename));
-			filename="./config/spells.xml";
-			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			SPELLS = (SPELLS) u.unmarshal(new File(filename));
+			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) unmarshaller.unmarshal(new File(filename)));
 			filename="./config/namegivers.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			NAMEGIVERS = (NAMEGIVERS) u.unmarshal(new File(filename));
+			NAMEGIVERS = (NAMEGIVERS) unmarshaller.unmarshal(new File(filename));
 			filename="./config/optionalrules.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			OPTIONALRULES = (OPTIONALRULES) u.unmarshal(new File(filename));
+			OPTIONALRULES = (OPTIONALRULES) unmarshaller.unmarshal(new File(filename));
 			filename="./config/names.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			NAMES = (NAMES) u.unmarshal(new File(filename));
+			NAMES = (NAMES) unmarshaller.unmarshal(new File(filename));
 			filename="./config/help.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			HELP = (HELP) u.unmarshal(new File(filename));
+			HELP = (HELP) unmarshaller.unmarshal(new File(filename));
 			filename="./config/randomnames.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			RANDOMNAMES = (EDRANDOMNAME) u.unmarshal(new File(filename));
+			RANDOMNAMES = (EDRANDOMNAME) unmarshaller.unmarshal(new File(filename));
 			filename="./config/eceguilayout.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-			ECEGUILAYOUT = (ECEGUILAYOUT) u.unmarshal(new File(filename));
+			ECEGUILAYOUT = (ECEGUILAYOUT) unmarshaller.unmarshal(new File(filename));
 
 			filename="./config/spelldescriptions.xml";
 			File spelldescriptionsfile = new File(filename);
 			if( spelldescriptionsfile.canRead() ) {
 				System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-				SPELLDESCRIPTIONS = (SPELLDESCRIPTIONS) u.unmarshal(spelldescriptionsfile);
+				SPELLDESCRIPTIONS = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
 				fillSpellDescription();
 			} else {
 				System.out.println("Überspringe Konfigurationsdatei: '" + filename + "'");
 			}
-
-		} catch (Throwable e) {
-			// Fehler ist grundsätzlicher Natur ...
-			throw new RuntimeException(e);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			e.printStackTrace();
 		}
 	}
 

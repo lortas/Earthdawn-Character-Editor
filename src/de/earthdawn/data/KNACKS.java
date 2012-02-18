@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SKILLKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TALENTKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -52,7 +52,7 @@ public class KNACKS {
     @XmlElement(name = "TALENTKNACK", namespace = "http://earthdawn.com/knack")
     protected List<KNACKBASEType> talentknack;
     @XmlAttribute(required = true)
-    protected String lang;
+    protected LanguageType lang;
 
     /**
      * Gets the value of the skillknack property.
@@ -117,10 +117,10 @@ public class KNACKS {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public String getLang() {
+    public LanguageType getLang() {
         return lang;
     }
 
@@ -129,10 +129,10 @@ public class KNACKS {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public void setLang(String value) {
+    public void setLang(LanguageType value) {
         this.lang = value;
     }
 

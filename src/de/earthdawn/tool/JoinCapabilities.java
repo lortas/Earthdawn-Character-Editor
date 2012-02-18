@@ -37,6 +37,7 @@ import javax.xml.namespace.QName;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.CAPABILITIES;
 import de.earthdawn.data.CAPABILITYType;
+import de.earthdawn.data.LanguageType;
 
 public class JoinCapabilities {
 	private static final String encoding="UTF-8";
@@ -53,14 +54,14 @@ public class JoinCapabilities {
 			int countInFiles=args.length-1;
 			HashMap<String,CAPABILITYType> talents = new HashMap<String,CAPABILITYType>();
 			HashMap<String,CAPABILITYType> skills = new HashMap<String,CAPABILITYType>();
-			String language=null;
+			LanguageType language=null;
 			for( int i=0; i<countInFiles; i++ ) {
 				File inFile = new File(args[i]);
 				System.out.println("Reading Capabilities from "+inFile.getCanonicalFile());
 				CAPABILITIES capabilities = (CAPABILITIES) u.unmarshal(inFile);
 				ECECapabilities caps = new ECECapabilities(capabilities.getSKILLOrTALENT());
 				if( language == null ) language = capabilities.getLang();
-				else if( ! capabilities.getLang().equals(language) ) System.err.println("Languages are not identical: '"+language+"'!='"+capabilities.getLang()+"'");
+				else if( ! capabilities.getLang().equals(language) ) System.err.println("Languages are not identical: '"+language.value()+"'!='"+capabilities.getLang().value()+"'");
 				for( CAPABILITYType t : caps.getTalents() ) {
 					String name = t.getName().replaceAll("[ '()]", "").toUpperCase();
 					if( talents.containsKey(name) ) {

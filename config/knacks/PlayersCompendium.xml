@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
+	<TALENTKNACK name="Air Legs" basename="Air Sailing" minrank="4" strain="2" bookref="PC p.xxx"/>
+</KNACKS>

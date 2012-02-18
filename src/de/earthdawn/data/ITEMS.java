@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="THREADITEM" type="{http://earthdawn.com/datatypes}THREADITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ITEM" type="{http://earthdawn.com/datatypes}ITEM_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="lang" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -80,7 +80,7 @@ public class ITEMS {
     @XmlElement(name = "ITEM", namespace = "http://earthdawn.com/items")
     protected List<ITEMType> item;
     @XmlAttribute(required = true)
-    protected String lang;
+    protected LanguageType lang;
 
     /**
      * Gets the value of the armor property.
@@ -348,10 +348,10 @@ public class ITEMS {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public String getLang() {
+    public LanguageType getLang() {
         return lang;
     }
 
@@ -360,10 +360,10 @@ public class ITEMS {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link LanguageType }
      *     
      */
-    public void setLang(String value) {
+    public void setLang(LanguageType value) {
         this.lang = value;
     }
 
