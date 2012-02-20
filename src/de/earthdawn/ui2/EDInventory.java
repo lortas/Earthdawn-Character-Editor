@@ -436,11 +436,15 @@ public class EDInventory extends JPanel {
 						}
 					}
 				});
-				popup.add(menuitem);	
+				popup.add(menuitem);
 			}
 		}
 
 		tree.add(popup);
 		popup.show(tree, event.getX(), event.getY());
+	}
+
+	public void scrollPathToVisible(Object node) {
+		
 	}
 }
