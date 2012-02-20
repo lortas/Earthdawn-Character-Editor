@@ -1,33 +1,38 @@
 @CHARSET "UTF-8";
 
 .sup {
-    font-size:0.6em;
-    vertical-align:top
+	font-size:0.6em;
+	vertical-align:top
 }
 
 .edBody {
-    font-family:Helvetica,Helv;
-    background-color: #FFFFFF;
+	font-family:Helvetica,Helv,sans-serif;
+	background-color: #FFFFFF;
+	font-size: 8pt;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
 }
 
 .edHeader {
-    text-align: center;
-    font-size: 300%;
-    border-style: solid;
-    border-width: thick;
+	text-align: center;
+	font-family: Georgia,"Century Schoolbook",serif;
+	font-size: 300%;
+	font-weight: bolder;
+	border-style: solid;
+	border-width: thick;
 }
 
 .edSubHeader {
-    text-align: center;
-    font-size: 135%;
-    margin-bottom: 2px;
-    border-bottom-style: solid;
-    border-bottom-width: thin;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 2px;
+	border-bottom-style: solid;
+	border-bottom-width: thin;
 }
 
 .edSubSubHeader {
     text-align: center;
-    font-size: 120%;
     margin-bottom: 15px;
     border-bottom-style: solid;
     border-bottom-width: thin;
@@ -39,7 +44,6 @@
 }
 
 .edHeaderCell {
-	font-size: 110%;
 	text-align: center;
 	vertical-align:bottom;
 	border-bottom-style: solid;
@@ -58,6 +62,7 @@
 }
 
 .edCapabCell {
+	font-size: 80%;
 	border-style: hidden;
 	border-width: 1px;
 	text-align: center;
@@ -66,14 +71,15 @@
 }
 
 .edLPCell {
+	font-size: 80%;
 	border-style: solid;
 	text-align: center;
 	border-style: hidden;
 }
 
 .edKeyCell {
-    font-size: 105%;
-    text-align: left;
+	text-align: right;
+	font-family: cursive;
 }
 
 .edValueCell {
@@ -98,13 +104,16 @@
 }
 
 .edMiscellaneous,
-.edAttributes {
+.edAttributes,
+.edDefense {
     border-style: solid;
     border-width: thin;
     vertical-align: top;
-    width: 50%;
+    width: 33%;
 }
 
+.edHealth,
+.edKarma,
 .edCharacteristics {
     border-style: solid;
     border-width: thin;
@@ -114,11 +123,8 @@
 
 .edInitiative,
 .edMovement,
-.edKarma,
 .edCarrying,
-.edHealth,
 .edDamage,
-.edDefense,
 .edProtection  {
     border-style: solid;
     border-width: thin;
