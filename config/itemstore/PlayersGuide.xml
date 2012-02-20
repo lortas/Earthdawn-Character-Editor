@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items earthdawnitems.xsd">
+<ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 	<ARMOR kind="armor" edn="14" penalty="2" mysticarmor="3" physicalarmor="3" weight="20" name="Bark" bookref="PG p.256"/>
 	<ARMOR kind="armor" edn="20" penalty="1" mysticarmor="3" physicalarmor="5" weight="0" name="Blood Pebble" bookref="PG p.256"/>
 	<ARMOR kind="armor" penalty="3" mysticarmor="0" physicalarmor="7" weight="40" name="Chain Mail" bookref="PG p.256"/>
@@ -118,7 +118,6 @@
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" name="Desperate Spell"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" name="Desperate Blow"/>
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absrbing 12 damage once" enchantingdifficultynumber="11" weight="0.1" name="Absorb Blow"/>
-	<BLOODCHARMITEM depatterningrate="0" blooddamage="0" effect="+6" enchantingdifficultynumber="0" weight="0.1" name="Verzweiflungszauber"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="Bei Tod Erholungsprobe+5" enchantingdifficultynumber="14" weight="1.0" name="Last Chance"/>
 
 	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" enchantingdifficultynumber="16" kind="armor" weight="45.0" name="Thread Crystal Ringlet">
@@ -178,68 +177,6 @@
 			<edt:DEFENSE kind="physical"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="9" spelldefense="20" maxthreads="1" weaventhreadrank="4" kind="ring" weight="0.1" name="Thermail Schutz der Plage">
-		<edt:description>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</edt:description>
-		<edt:THREADRANK effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
-		<edt:THREADRANK effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
-			<edt:TALENT name="Avoid Blow"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Steel Thought erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges " keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" keyknowledge="Rasse des Dracheneierdiebs">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Antimagische Waffe, alle geführten Waffen sind für 4 Überanstregungsschaden (pro Waffen und Runde) durch keinen magischen Effekt zu beeinflussen. (Achtung, nur die Waffe(n))">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
-		</edt:THREADRANK>
-	</THREADITEM>
 	<THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0" name="Thread CrystalWaraxt">
 		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
 		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
@@ -270,13 +207,6 @@
 			<edt:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="0" mysticarmor="6" physicalarmor="6" kind="shield" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" kind="potion" weight="6.0" name="Silverins Heiltrank">
-		<edt:description>1 x Anwendung täglich</edt:description>
-		<edt:THREADRANK effect="Heiltrank +4" keyknowledge="name of the item"/>
-		<edt:THREADRANK effect="Heiltrank +5"/>
-		<edt:THREADRANK effect="Heiltrank +6, Erholungstrank +4"/>
-		<edt:THREADRANK effect="Heiltrank +8, Erholungstrank +4"/>
-	</THREADITEM>
 	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="brooch" weight="6.0" name="Thread Brooch">
 		<edt:description>Schwarzer Stein mit goldener Verzierung</edt:description>
 		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="name of the item">
@@ -302,51 +232,10 @@
 			<edt:DEFENSE kind="spell"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra">
-		<edt:description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</edt:description>
-		<edt:THREADRANK effect="Physical Armor +3" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
-			<edt:ARMOR edn="0" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Mystic Armor +3">
-			<edt:ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Für eine Überanstr.schaden ein Heiltrank (1x pro Tag)" keyknowledge="Name of Heror: Dirac Tol Amarra"/>
-		<edt:THREADRANK effect="Für zwei Überanstr.schaden ein Wiederbelebungssalbe im Augenblick des Todes (1x pro Tag)"/>
-		<edt:THREADRANK effect="Verzweiflungsschlag+Verzweiflungszauber Blutamulett (inkl Blutschaden) aber nur gegen Dämonen oder Wesen von Dämonen" keyknowledge="Name of slayed daemon: Adugank"/>
-	</THREADITEM>
-	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" effect="Spellmatrix" kind="wand" weight="1.0" name="Thread Matrix Wand">
-		<edt:description>schwarzer 2m-Stab, der "aufgeladen" blutrot ist; Der Stab ist Theranischer Herkunft die eingebaute Zaubermatrix ist zwar echt aber eher ein Gimmik um die wahre Funktion zu verschleiern; Der Stab muss mit der gesamten Blutmagie eines beliebigen Namensgeber aufladen, d.h. der Stab muss durch das Herz eines lebenden Namensgebers gestossen werden und dort solange verweilen bis dieser ausgeblutet ist.</edt:description>
-		<edt:THREADRANK effect="SpellMatrix Rank 1"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 2"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 3"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 4"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 5"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 6"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 7"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 9"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 9"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 10"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 11"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 12"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 13"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 14"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 15"/>
-	</THREADITEM>
-	<THREADITEM name="Devocor Calamitas" weight="0.5" kind="vambrace" lpcostgrowth="1" maxthreads="2" spelldefense="10" enchantingdifficultynumber="30">
-		<edt:description>A vambrace consist of norite, which is nerverd by many white thin traces. The specimen of the white thin traces eludes any comprehension. Anyone studding the traces get confused more and more. The vambrace fits the forearm of Trolls and Obsidimen.</edt:description>
-		<edt:THREADRANK effect="optional talent: Cursed Luck" keyknowledge="Name of item: Devocor Calamitas">
-			<edt:TALENT name="Cursed Luck" limitation="attitude: neutral or better" bonus="1"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="10 Nethermancer spells circle 1-8. Horror Call must be included.">
-			<edt:TALENT name="Cursed Luck" limitation="attitude: neutral or better" bonus="1"/>
-			<edt:SPELLABILITY count="10"/>
-		</edt:THREADRANK>
-	</THREADITEM>
 	<ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
 	<ITEM weight="1.0" name="torch"/>
 	<ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
 	<ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
-	<ITEM weight="0.0" name="anschaltbarer Lichtquarz"/>
 	<ITEM weight="0.0" name="cursed ring"/>
 	<ITEM weight="1.0" name="Trail Rations (1 week)"/>
 	<ITEM weight="1.0" name="torch"/>
@@ -361,7 +250,6 @@
 	<ITEM weight="1.0" name="map or scroll case"/>
 	<ITEM weight="1.0" name="belt pouche (5 pound)"/>
 	<ITEM weight="3.0" name="dry bag"/>
-	<ITEM weight="1.0" name="Last Chance Salve"/>
 	<ITEM weight="1.0" name="Salve of Clasure"/>
 	<ITEM weight="1.0" name="winter clouthes"/>
 </ITEMS>
