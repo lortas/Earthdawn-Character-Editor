@@ -146,9 +146,13 @@ public class ECEWorker {
 		unconsciousness.setBase(newhealth.getUnconsciousness());
 		unconsciousness.setAdjustment(0);
 		int namegiverWoundThresholdBonus = namegiver.getWOUND().getThreshold();
-		character.getWound().setThreshold(newhealth.getWound()+namegiverWoundThresholdBonus);
+		WOUNDType wound = character.getWound();
+		wound.setThreshold(newhealth.getWound()+namegiverWoundThresholdBonus);
 		if( namegiverWoundThresholdBonus > 0) namegiverAbilities.add("wound threshold +"+namegiverWoundThresholdBonus+" *");
 		else if( namegiverWoundThresholdBonus < 0) namegiverAbilities.add("wound threshold "+namegiverWoundThresholdBonus+" *");
+		int totalwounds=wound.getNormal()+wound.getBlood();
+		if( totalwounds>1 ) wound.setPenalties(totalwounds-1);
+		else wound.setPenalties(0);
 		RECOVERYType recovery = character.getRecovery();
 		recovery.setTestsperday(newhealth.getRecovery());
 		recovery.setStep(characterAttributes.get("TOU").getStep());
