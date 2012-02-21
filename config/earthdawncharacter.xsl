@@ -47,10 +47,22 @@
 		</div>
 		<!-- Health -->
 		<xsl:call-template name="health"/>
-		<!-- Karma -->
-		<xsl:apply-templates select="//edc:KARMA"/>	
-		<!-- Characteristics -->
-		<xsl:call-template name="characteristics"/>
+		<table class="invisible" width="100%">
+			<tr class="invisible">
+				<td class="invisible">
+					<!-- Karma -->
+					<xsl:apply-templates select="//edc:KARMA"/>	
+				</td>
+				<td class="invisible">
+					<!-- Initiative -->
+					<xsl:apply-templates select="//edc:INITIATIVE"/>	
+				</td>
+				<td class="invisible">
+					<!-- Carrying -->
+					<xsl:apply-templates select="//edc:CARRYING"/>	
+				</td>
+			</tr>
+		</table>
 		<div class="edLayoutRow">
 		<table width="100%">
 			<tr>
@@ -197,8 +209,8 @@
 </xsl:template>
 
 <xsl:template name="defense">
-	<div class="edSubSubHeader">Defense/Armor Ratings</div>
-	<table>
+	<div class="edSubHeader">Defense/Armor Rating</div>
+	<table width="100%">
 		<xsl:apply-templates select="//edc:DEFENSE"/>	
 		<xsl:apply-templates select="//edc:PROTECTION"/>
 		<xsl:apply-templates select="//edc:MOVEMENT"/>	
@@ -242,24 +254,6 @@
 	</tr>
 </xsl:template>
 
-<xsl:template name="characteristics">
-	<div class="edCharacteristics">
-		<div class="edSubHeader">Characteristics</div>
-		<table width="100%">
-			<tr>
-				<!-- Initiative -->
-				<td class="edInitiative">
-					<xsl:apply-templates select="//edc:INITIATIVE"/>	
-				</td>
-				<!-- Carrying -->
-				<td class="edCarrying">
-					<xsl:apply-templates select="//edc:CARRYING"/>	
-				</td>
-			</tr>
-		</table>		
-	</div> 
-</xsl:template>
-
 <xsl:template name="health">
 	<div class="edHealth">
 		<div class="edSubHeader">Health</div>
@@ -295,8 +289,8 @@
 <xsl:template match="//edc:KARMA">
 	<div class="edKarma">
 		<div class="edSubHeader">Karma</div>
-		<table width="100%">
-			<tr>
+		<table class="invisible" width="100%"><tbody class="invisible">
+			<tr class="invisible">
 				<td class="edKeyCell" width="90em">Karma Points:</td>
 				<td class="edValueCell"><xsl:value-of select="@current" /></td>
 				<td class="edKeyCell">Max:</td>
@@ -307,32 +301,36 @@
 				<td class="edValueCell"><xsl:value-of select="@dice" /></td>
 				<td width="5%">&#160;</td>
 			</tr>
-		</table>
+		</tbody></table>
 	</div>
 </xsl:template>
 
 <xsl:template match="//edc:INITIATIVE">
-	<div class="edSubSubHeader">Initiative</div>
-	<table>
-		<tr>
-			<td class="edKeyCell">Step:</td>
-			<td class="edValueCell"><xsl:value-of select="@step" /></td>
-			<td class="edKeyCell">Dice:</td>
-			<td class="edValueCell"><xsl:value-of select="@dice" /></td>
-		</tr>
-	</table>
+	<div class="edInitiative">
+		<div class="edSubHeader">Initiative</div>
+		<table width="100%">
+			<tr>
+				<td class="edKeyCell">Step:</td>
+				<td class="edValueCell"><xsl:value-of select="@step" /></td>
+				<td class="edKeyCell">Dice:</td>
+				<td class="edValueCell"><xsl:value-of select="@dice" /></td>
+			</tr>
+		</table>
+	</div>
 </xsl:template>
 
 <xsl:template match="//edc:CARRYING">
-	<div class="edSubSubHeader">Carrying</div>
-	<table>
-		<tr>
-			<td class="edKeyCell">Carrying:</td>
-			<td class="edValueCell"><xsl:value-of select="@carrying" /></td>
-			<td class="edKeyCell">Lifting:</td>
-			<td class="edValueCell"><xsl:value-of select="@lifting" /></td>
-		</tr>
-	</table>
+	<div class="edCarrying">
+		<div class="edSubHeader">Carrying</div>
+		<table width="100%">
+			<tr>
+				<td class="edKeyCell">Carrying:</td>
+				<td class="edValueCell"><xsl:value-of select="@carrying" /></td>
+				<td class="edKeyCell">Lifting:</td>
+				<td class="edValueCell"><xsl:value-of select="@lifting" /></td>
+			</tr>
+		</table>
+	</div>
 </xsl:template>
 
 <xsl:template match="//edt:SHIELD">
