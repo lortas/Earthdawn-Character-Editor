@@ -274,13 +274,13 @@
 				<td class="edKeyCell">Current Damage</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/@damage" /></td>
 				<td class="edKeyCell">Current Wounds</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/WOUNDS/@nomal" /></td>
-				<td class="edKeyCell">Bloodwounds</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/WOUNDS/@blood" /></td>
+				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@normal" /></td>
+				<td class="edKeyCell">Blood Wounds</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@blood" /></td>
 				<td class="edKeyCell">Wound Penalties</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/WOUNDS/@penalties" /></td>
+				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@penalties" /></td>
 				<td class="edKeyCell">Wound Threshold</td>
-				<td class="edValueCell"><xsl:value-of select="//edt:WOUNDS/@threshold" /></td>
+				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@threshold" /></td>
 			</tr>
 		</table>
 	</div>
