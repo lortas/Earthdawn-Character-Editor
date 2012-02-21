@@ -8,6 +8,8 @@ import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.Base64BinaryType;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
+import de.earthdawn.data.WOUNDType;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -65,8 +67,10 @@ public class EDGeneral extends JPanel {
 	private JTextField textFieldHaircolor;
 	private JTextArea charComment;
 	private JTextArea charDescription;
-	private JTextField txtRaceabilities;
+	private JTextArea txtRaceabilities;
 	private JRadioButton rdbtnNoGender;
+	private JSpinner spinnerDamage;
+	private JSpinner spinnerNormalWounds;
 	private JSpinner spinnerBloodWounds;
 	private JSpinner spinnerSize;
 	private JSpinner spinnerWeight;
@@ -83,7 +87,7 @@ public class EDGeneral extends JPanel {
 	 */
 	public EDGeneral() {
 		setOpaque(false);
-		setLayout(new MigLayout("", "[110px][100px,grow 50,fill][15px,grow 10,fill][150.00px,grow,fill][100.00px,grow 10,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[110px][100px,grow 50,fill][15px,grow 10,fill][150.00px,grow,fill][100.00px,grow 10,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Playername"), "cell 0 0,alignx right,aligny center");
 		textFieldPlayer = new JTextField();
@@ -205,7 +209,7 @@ public class EDGeneral extends JPanel {
 		JScrollPane charCommentPanel = new JScrollPane();
 		charCommentPanel.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Comment", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
 		charCommentPanel.setOpaque(false);
-		add(charCommentPanel, "cell 3 7 1 7,grow");
+		add(charCommentPanel, "cell 3 7 1 6,grow");
 
 		charComment = new JTextArea();
 		charComment.setLineWrap(true);
@@ -233,7 +237,7 @@ public class EDGeneral extends JPanel {
 		pnlPortrait = new JPanel();
 		pnlPortrait.setBorder(new TitledBorder(null, "Portrait", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlPortrait.setOpaque(false);
-		add(pnlPortrait, "cell 4 7 1 8,grow");
+		add(pnlPortrait, "cell 4 7 1 9,grow");
 
 		lblPortrait = new JLabel();
 		pnlPortrait.add(lblPortrait);
@@ -302,7 +306,27 @@ public class EDGeneral extends JPanel {
 		});
 		add(spinnerWeight, "cell 1 9,alignx left,aligny center");
 
-		add(new JLabel("BloodWounds"), "cell 0 13,alignx right,aligny center");
+		add(new JLabel("Damage"), "cell 0 13,alignx right,aligny center");
+		spinnerDamage = new JSpinner(new SpinnerNumberModel(0, 0, 1000, 1));
+		spinnerDamage.setOpaque(false);
+		spinnerDamage.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				do_spinnerDamage_stateChanged(arg0);
+			}
+		});
+		add(spinnerDamage, "cell 1 13,alignx left,aligny center");
+
+		add(new JLabel("NormalWounds"), "cell 0 14,alignx right,aligny center");
+		spinnerNormalWounds = new JSpinner(new SpinnerNumberModel(0, 0, 1000, 1));
+		spinnerNormalWounds.setOpaque(false);
+		spinnerNormalWounds.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				do_spinnerNormalWounds_stateChanged(arg0);
+			}
+		});
+		add(spinnerNormalWounds, "cell 1 14,alignx left,aligny center");
+
+		add(new JLabel("BloodWounds"), "cell 0 15,alignx right,aligny center");
 		spinnerBloodWounds = new JSpinner(new SpinnerNumberModel(0, 0, 1000, 1));
 		spinnerBloodWounds.setOpaque(false);
 		spinnerBloodWounds.addChangeListener(new ChangeListener() {
@@ -310,7 +334,7 @@ public class EDGeneral extends JPanel {
 				do_spinnerBloodWounds_stateChanged(arg0);
 			}
 		});
-		add(spinnerBloodWounds, "cell 1 13,alignx left,aligny center");
+		add(spinnerBloodWounds, "cell 1 15,alignx left,aligny center");
 
 		add(new JLabel("Age"), "cell 0 7,alignx right,aligny center");
 		add(new JLabel("year"), "cell 2 7,alignx left,aligny center");
@@ -323,13 +347,16 @@ public class EDGeneral extends JPanel {
 		});
 		add(spinnerAge, "cell 1 7,alignx left,aligny center");
 
-		add(new JLabel("Race Abilities"), "cell 0 14,alignx right,aligny center");
-
-		txtRaceabilities = new JTextField();
-		txtRaceabilities.setEditable(false);
-		add(txtRaceabilities, "cell 1 14 3 1,growx,aligny center");
-		txtRaceabilities.setColumns(10);
+		txtRaceabilities = new JTextArea();
+		txtRaceabilities.setLineWrap(true);
 		txtRaceabilities.setOpaque(false);
+		txtRaceabilities.setEditable(false);
+		JScrollPane panelRaceabilities = new JScrollPane();
+		panelRaceabilities.setBorder(new TitledBorder(new LineBorder(new Color(184, 207, 229)), "Race Abilities", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(51, 51, 51)));
+		panelRaceabilities.setOpaque(false);
+		panelRaceabilities.setViewportView(txtRaceabilities);
+		panelRaceabilities.getViewport().setOpaque(false);
+		add(panelRaceabilities, "cell 2 13 2 3,grow");
 
 		ButtonGroup group = new ButtonGroup();
 		group.add(rdbtnMale);
@@ -349,6 +376,8 @@ public class EDGeneral extends JPanel {
 		textFieldSkincolor.setText(appearance.getSkin());
 		textFieldEyecolor.setText(appearance.getEyes());
 		textFieldHaircolor.setText(appearance.getHair());
+		spinnerDamage.setValue(character.getHealth().getDamage());
+		spinnerNormalWounds.setValue(character.getWound().getNormal());
 		spinnerBloodWounds.setValue(character.getWound().getBlood());
 		charDescription.setText(character.getDESCRIPTION());
 		charComment.setText(character.getCOMMENT());
@@ -472,6 +501,18 @@ public class EDGeneral extends JPanel {
 		if(character != null){
 			character.setCOMMENT(charComment.getText());
 		}
+	}
+
+	protected void do_spinnerDamage_stateChanged(ChangeEvent arg0) {
+		if( character == null ) return;
+		character.getHealth().setDamage((Integer)spinnerDamage.getValue());
+		character.refesh();
+	}
+
+	protected void do_spinnerNormalWounds_stateChanged(ChangeEvent arg0) {
+		if( character == null ) return;
+		character.getWound().setNormal((Integer)spinnerNormalWounds.getValue());
+		character.refesh();
 	}
 
 	protected void do_spinnerBloodWounds_stateChanged(ChangeEvent arg0) {
