@@ -129,36 +129,14 @@
 	target: addon-dist
 	-->
 	<target name="addon-dist" depends="dist" description="--> Distribution erzeugen">
-<!--
-		<copy file="./config/capabilities.xml" todir="./addons/config" overwrite="true"/>
-		<exec executable="ed" input="./addons/config/capabilities.xml.ed_diff">
-			<arg line="./addons/config/capabilities.xml"/>
-		</exec>
--->
 		<exec executable="wget">
 			<arg line="-q"/>
 			<arg line="-O"/>
-			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
+			<arg line="addons/config/capabilities/earthdawncompendium.xml"/>
 			<arg line="http://www.earthdawncompendium.com/talents/ece_xml"/>
 		</exec>
-<!-- Funktioniert nicht:
-		<java classname="de.earthdawn.tool.JoinCapabilities" failonerror="false" classpath="${jar.file}">
-			<arg line="config/capabilities.xml"/>
-			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
-			<arg line="addons/config/capabilities.xml"/>
-		</java>
--->
-		<exec executable="java" failonerror="true">
-			<arg line="-cp"/>
-			<arg line="${jar.file}"/>
-			<arg line="de.earthdawn.tool.JoinCapabilities"/>
-			<arg line="config/capabilities.xml"/>
-			<arg line="addons/config/capabilities_stormcrow.xml"/>
-			<arg line="addons/config/capabilities_earthdawncompendium.xml"/>
-			<arg line="addons/config/capabilities.xml"/>
-		</exec>
 		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="false">
-			<zipfileset file="./addons/config/capabilities.xml" prefix="config"/>
+			<zipfileset dir="./addons/config/capabilities" prefix="config/capabilities"/>
 			<zipfileset dir="./addons/config/disciplines" prefix="config/disciplines"/>
 			<zipfileset file="./readme.txt"/>
 		</zip>
