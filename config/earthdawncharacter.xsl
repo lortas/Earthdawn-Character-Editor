@@ -526,14 +526,17 @@
 			<thead><tr>
 				<td class="edHeaderCell" style="text-align: right;">Talentname</td>
 				<td class="edHeaderCell">Action</td>
-				<td class="edHeaderCell">S</td>
+				<td class="edHeaderCell">Strain</td>
 				<td class="edHeaderCell">Attr.</td>
 				<td class="edHeaderCell">Rank</td>
 				<td class="edHeaderCell">Step</td>
 				<td class="edHeaderCell">Dice</td>
+				<td class="edHeaderCell">Ini.</td>
+				<td class="edHeaderCell">Realign</td>
 				<td class="edHeaderCell">Book</td>
 			</tr></thead>
 			<xsl:apply-templates select="./edt:DISZIPLINETALENT">
+				<xsl:sort select="@circle" data-type="number" order="ascending"/>
 				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
 				<xsl:sort select="@name"/>
@@ -545,16 +548,19 @@
 		<table width="100%">
 			<thead><tr>
 				<td class="edHeaderCell" style="text-align: right;">Talent Name</td>
-				<td class="edHeaderCell">K?</td>
+				<td class="edHeaderCell">Karma</td>
 				<td class="edHeaderCell">Action</td>
-				<td class="edHeaderCell">S</td>
+				<td class="edHeaderCell">Strain</td>
 				<td class="edHeaderCell">Attr.</td>
 				<td class="edHeaderCell">Rank</td>
 				<td class="edHeaderCell">Step</td>
 				<td class="edHeaderCell">Dice</td>
+				<td class="edHeaderCell">Ini.</td>
+				<td class="edHeaderCell">Realign</td>
 				<td class="edHeaderCell">Book</td>
 			</tr></thead>
 			<xsl:apply-templates select="./edt:OPTIONALTALENT">
+				<xsl:sort select="@circle" data-type="number" order="ascending"/>
 				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
 				<xsl:sort select="@name"/>
@@ -571,16 +577,43 @@
 			<xsl:if test="@limitation!=''">: <xsl:value-of select="@limitation"/></xsl:if>
 			<xsl:if test="./edt:TEACHER/@byversatility!='yes'"> (v)</xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@action='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="@action"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="@attribute"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
 			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
-		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@realigned>0">yes</xsl:when>
+				<xsl:otherwise>no</xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
@@ -600,8 +633,25 @@
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
 			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
-		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">-</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">-</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@realigned>0">yes</xsl:when>
+				<xsl:otherwise>no</xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
@@ -880,13 +930,15 @@
 	<div class="edSubHeader" style="text-align:left">Skills :</div>
 	<table width="100%">
 		<thead><tr>
-			<td class="edHeaderCell" style="text-align: right;">Skillname</td>
+			<td class="edHeaderCell" style="text-align: right;">Skill Name</td>
 			<td class="edHeaderCell">Action</td>
-			<td class="edHeaderCell">S</td>
+			<td class="edHeaderCell">Strain</td>
 			<td class="edHeaderCell">Attr</td>
 			<td class="edHeaderCell">Rank</td>
 			<td class="edHeaderCell">Step</td>
 			<td class="edHeaderCell">Dice</td>
+			<td class="edHeaderCell">Ini.</td>
+			<td class="edHeaderCell">Realign</td>
 			<td class="edHeaderCell">Book</td>
 		</tr></thead>
 		<xsl:apply-templates select="//edc:SKILL">
@@ -909,9 +961,26 @@
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
 			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@step"/></td>
-		<td class="edCapabCell"><xsl:value-of select="./edt:RANK/@dice"/></td>   
-		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>   
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@realigned>0">yes</xsl:when>
+				<xsl:otherwise>no</xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
 
