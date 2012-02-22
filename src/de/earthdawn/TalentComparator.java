@@ -27,4 +27,10 @@ public class TalentComparator implements Comparator<TALENTType> {
 		// Bei gleicher Stufe sortiere nach TalentName
 		return arg0.getName().compareTo(arg1.getName());
 	}
+
+	static public boolean equal(TALENTType arg0, TALENTType arg1) {
+		if( ! arg0.getName().equals(arg1.getName()) ) return false;
+		if( ! arg0.getLimitation().equals(arg1.getLimitation()) ) return false;
+		return true;
+	}
 }
