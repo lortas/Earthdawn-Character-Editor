@@ -261,30 +261,28 @@
 				</td>
 			</tr>
 		</table>
-		<div class="edLayoutRow">
-			<div class="edLanguages"><xsl:call-template name="languages"/></div>
-			<div class="edCoins"><xsl:call-template name="coins"/></div>
-			<div class="edWeapons"><xsl:call-template name="weapons"/></div>
-			<div class="edArmor"><xsl:call-template name="armor"/></div>
-			<div class="edMagicItems"><xsl:call-template name="magicItems"/></div>
-			<div class="edPatternItems"><xsl:call-template name="patternItems"/></div>
-			<div class="edBloodItems"><xsl:call-template name="bloodItems"/></div>
-			<div class="edThreadItems" width="100%"><xsl:call-template name="threadItems"/></div>
-			<div class="edEquipment" width="100%"><xsl:call-template name="equipment"/></div>
-			<table width="100%">
-				<tr>
-					<td valign="top">
-						<xsl:call-template name="portraits"/>
-					</td>
-					<td valign="top">
-						<xsl:call-template name="description"/>
-					</td>
-					<td valign="top">
-						<xsl:call-template name="comment"/>
-					</td>
-				</tr>
-			</table>
-		</div>
+		<div class="edLanguages"><xsl:call-template name="languages"/></div>
+		<div class="edCoins"><xsl:call-template name="coins"/></div>
+		<div class="edWeapons"><xsl:call-template name="weapons"/></div>
+		<div class="edArmor"><xsl:call-template name="armor"/></div>
+		<div class="edEquipment" width="100%"><xsl:call-template name="equipment"/></div>
+		<!-- <div class="edMagicItems"><xsl:call-template name="magicItems"/></div> -->
+		<!-- <div class="edPatternItems"><xsl:call-template name="patternItems"/></div> -->
+		<div class="edBloodItems"><xsl:call-template name="bloodItems"/></div>
+		<div class="edThreadItems" width="100%"><xsl:call-template name="threadItems"/></div>
+		<table width="100%">
+			<tr>
+				<td valign="top">
+					<xsl:call-template name="portraits"/>
+				</td>
+				<td valign="top">
+					<xsl:call-template name="description"/>
+				</td>
+				<td valign="top">
+					<xsl:call-template name="comment"/>
+				</td>
+			</tr>
+		</table>
 		<!-- DisciplineSpells -->
 		<xsl:call-template name="disciplinespells"/>
 	</body> 
@@ -537,8 +535,8 @@
 			</tr></thead>
 			<xsl:apply-templates select="./edt:DISZIPLINETALENT">
 				<xsl:sort select="@circle" data-type="number" order="ascending"/>
-				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
+				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="@name"/>
 				<xsl:sort select="@limitation"/>
 			</xsl:apply-templates>
@@ -561,8 +559,8 @@
 			</tr></thead>
 			<xsl:apply-templates select="./edt:OPTIONALTALENT">
 				<xsl:sort select="@circle" data-type="number" order="ascending"/>
-				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
+				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="@name"/>
 				<xsl:sort select="@limitation"/>
 			</xsl:apply-templates>
@@ -731,26 +729,36 @@
 			<td class="edHeaderCell">Sz</td>
 			<td class="edHeaderCell">Short</td>
 			<td class="edHeaderCell">Long</td>
+			<td class="edHeaderCell">STR min</td>
+			<td class="edHeaderCell">DEX min</td>
 			<td class="edHeaderCell">Forged</td>
 			<td class="edHeaderCell">Date</td>
 			<td class="edHeaderCell">Location</td>
 			<td class="edHeaderCell">Weight</td>
+			<td class="edHeaderCell">Used</td>
 		</tr>
-		<xsl:apply-templates select="//edc:WEAPON"/>
+		<xsl:apply-templates select="//edc:WEAPON">
+				<xsl:sort select="@used"/>
+				<xsl:sort select="@damagestep"/>
+				<xsl:sort select="@name"/>
+		</xsl:apply-templates>
 	</table>
 </xsl:template>
 
 <xsl:template match="//edc:WEAPON">
 	<tr>
-		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name"/></td>
+		<td class="edKeyCell" style="text-align: right;"><xsl:value-of select="@name"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@damagestep"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@size"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@shortrange"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@longrange"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@dexteritymin"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@strengthmin"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@timesforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
 
@@ -828,35 +836,41 @@
 </xsl:template>
 
 <xsl:template name="armor">
-	<div class="edSubHeader">Armor</div>
-	<table width="100%">
-		<tr>
-			<td class="edHeaderCell" style="text-align: left;">Name</td>
-			<td class="edHeaderCell">protect</td>
-			<td class="edHeaderCell">edn</td>
-			<td class="edHeaderCell">date</td>
-			<td class="edHeaderCell">location</td>
-			<td class="edHeaderCell">weight</td>
-			<td class="edHeaderCell">used?</td>
-		</tr>
-		<xsl:apply-templates select="//edc:PROTECTION/edt:ARMOR[position()  > 1]"/>
-	</table>
-	<div class="edSubHeader">Shield</div>
-	<table width="100%">
-		<tr>
-			<td class="edHeaderCell" style="text-align: left;">Name</td>
-			<td class="edHeaderCell">protect</td>
-			<td class="edHeaderCell">edn</td>
-			<td class="edHeaderCell">shatter</td>
-			<td class="edHeaderCell">pdb</td>
-			<td class="edHeaderCell">mdb</td>
-			<td class="edHeaderCell">date</td>
-			<td class="edHeaderCell">location</td>
-			<td class="edHeaderCell">weight</td>
-			<td class="edHeaderCell">used?</td>
-		</tr>
-		<xsl:apply-templates select="//edc:PROTECTION/edt:SHIELD"/>
-	</table>
+	<table width="100%"><tr>
+		<td valign="top">
+			<div class="edSubHeader">Armor</div>
+			<table width="100%">
+				<thead><tr>
+					<td class="edHeaderCell" style="text-align: left;">Name</td>
+					<td class="edHeaderCell">protect</td>
+					<td class="edHeaderCell">edn</td>
+					<td class="edHeaderCell">date</td>
+					<td class="edHeaderCell">location</td>
+					<td class="edHeaderCell">weight</td>
+					<td class="edHeaderCell">Used</td>
+				</tr></thead>
+				<xsl:apply-templates select="//edc:PROTECTION/edt:ARMOR[position()  > 1]"/>
+			</table>
+		</td>
+		<td valign="top">
+			<div class="edSubHeader">Shield</div>
+			<table width="100%">
+				<thead><tr>
+					<td class="edHeaderCell" style="text-align: left;">Name</td>
+					<td class="edHeaderCell">protect</td>
+					<td class="edHeaderCell">edn</td>
+					<td class="edHeaderCell">shatter</td>
+					<td class="edHeaderCell">pdb</td>
+					<td class="edHeaderCell">mdb</td>
+					<td class="edHeaderCell">date</td>
+					<td class="edHeaderCell">location</td>
+					<td class="edHeaderCell">weight</td>
+					<td class="edHeaderCell">Used</td>
+				</tr></thead>
+				<xsl:apply-templates select="//edc:PROTECTION/edt:SHIELD"/>
+			</table>
+		</td>
+	</tr></table>
 </xsl:template>
 
 <xsl:template match="//edc:PROTECTION/edt:ARMOR">
@@ -942,8 +956,8 @@
 			<td class="edHeaderCell">Book</td>
 		</tr></thead>
 		<xsl:apply-templates select="//edc:SKILL">
-			<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 			<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
+			<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 			<xsl:sort select="@name"/>
 			<xsl:sort select="@limitation"/>
 		</xsl:apply-templates>
@@ -998,31 +1012,67 @@
 </xsl:template>
 
 <xsl:template name="coins">
-	<xsl:if test="//edc:COINS">
-		<div class="edSubHeader">Coins</div>
-			<table>
-				<tr>
-					<td class="edKeyCell">Gold:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@gold)"/></td>
-					<td class="edKeyCell">Silver:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@silver)"/></td>
-					<td class="edKeyCell">Copper:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@copper)"/></td>
-				</tr>
-				<tr>
-					<td class="edKeyCell">Earth:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@earth)"/></td>
-					<td class="edKeyCell">Water:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@water)"/></td>
-					<td class="edKeyCell">Fire:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@fire)"/></td>
-					<td class="edKeyCell">Air:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@air)"/></td>
-					<td class="edKeyCell">Orichalcum:</td>
-					<td class="edValueCell"><xsl:value-of select="sum(//edc:COINS/@orichalcum)"/></td>
-				</tr>
-			</table>
-	</xsl:if>	
+	<table class="invisible" width="100%">
+		<thead><tr>
+			<td class="edHeaderCell" style="text-align: right;">Purse Name</td>
+			<td class="edHeaderCell">Location</td>
+			<td class="edHeaderCell">Copper (1/10)</td>
+			<td class="edHeaderCell">Silver (1)</td>
+			<td class="edHeaderCell">Gold (10)</td>
+			<xsl:if test="sum(//edc:COINS/@gem50)>0"><td class="edHeaderCell">Gem (50)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@earth)>0"><td class="edHeaderCell">Earth (100)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@water)>0"><td class="edHeaderCell">Water (100)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@gem100)>0"><td class="edHeaderCell">Gem (100)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@gem200)>0"><td class="edHeaderCell">Gem (200)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@gem500)>0"><td class="edHeaderCell">Gem (500)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@air)>0"><td class="edHeaderCell">Air (1000)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@fire)>0"><td class="edHeaderCell">Fire (1000)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@gem1000)>0"><td class="edHeaderCell">Gem (1000)</td></xsl:if>
+			<xsl:if test="sum(//edc:COINS/@orichalcum)>0"><td class="edHeaderCell">Oiricgalcum (10000)</td></xsl:if>
+		</tr></thead>
+		<xsl:apply-templates select="//edc:COINS">
+			<xsl:sort select="@name"/>
+		</xsl:apply-templates>
+		<!--
+		<tr>
+			<td class="edKeyCell" style="text-align: right">Sum</td>
+			<td class="edCapabCell"></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@copper)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@silver)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@gold)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@gem50)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@earth)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@water)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@gem100)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@gem200)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@gem500)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@air)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@fire)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@gem1000)"/></td>
+			<td class="edCapabCell"><xsl:value-of select="sum(//edc:COINS/@orichalcum)"/></td>
+		</tr>
+		-->
+	</table>
+</xsl:template>
+
+<xsl:template match="//edc:COINS">
+	<tr>
+		<td class="edKeyCell" style="text-align: right;"><xsl:value-of select="@name"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@copper"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@silver"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@gold"/></td>
+		<xsl:if test="sum(//edc:COINS/@gem50)>0"><td class="edCapabCell"><xsl:value-of select="@gem50"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@earth)>0"><td class="edCapabCell"><xsl:value-of select="@earth"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@water)>0"><td class="edCapabCell"><xsl:value-of select="@water"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@gem100)>0"><td class="edCapabCell"><xsl:value-of select="@gem100"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@gem200)>0"><td class="edCapabCell"><xsl:value-of select="@gem200"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@gem500)>0"><td class="edCapabCell"><xsl:value-of select="@gem500"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@air)>0"><td class="edCapabCell"><xsl:value-of select="@air"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@fire)>0"><td class="edCapabCell"><xsl:value-of select="@fire"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@gem1000)>0"><td class="edCapabCell"><xsl:value-of select="@gem1000"/></td></xsl:if>
+		<xsl:if test="sum(//edc:COINS/@orichalcum)>0"><td class="edCapabCell"><xsl:value-of select="@orichalcum"/></td></xsl:if>
+	</tr>
 </xsl:template>
 
 <xsl:template name="equipment">
@@ -1037,7 +1087,9 @@
 				<td class="edHeaderCell" width="5%">Weight</td>
 				<td class="edHeaderCell" width="5%">Location</td>
 			</tr>
-			<xsl:apply-templates select="//edc:ITEM[(position() mod 2) = 1]" /> 
+			<xsl:apply-templates select="//edc:ITEM[(position() mod 2) = 1]"> 
+				<xsl:sort select="@name"/>
+			</xsl:apply-templates>
 		</table>
 	</xsl:if>
 </xsl:template>
@@ -1045,9 +1097,9 @@
 <xsl:template match="//edc:ITEM">
 	<tr>
 		<xsl:for-each select=". | following-sibling::edc:ITEM[position() &lt; 2]">
-			<td class="edCell"><xsl:value-of select="@name" /></td>
-			<td class="edCell"><xsl:value-of select="@weight" /></td>
-			<td class="edCell"><xsl:value-of select="@location" /></td>
+			<td class="edItemCell" style="text-align: left;"><xsl:value-of select="@name" /></td>
+			<td class="edItemCell"><xsl:value-of select="@weight" /></td>
+			<td class="edItemCell"><xsl:value-of select="@location" /></td>
 		</xsl:for-each>
 	 </tr>
 </xsl:template>

@@ -61,6 +61,7 @@
     text-align: center;
 }
 
+.edItemCell,
 .edCapabCell {
 	font-size: 80%;
 	border-style: hidden;
@@ -236,6 +237,7 @@
     border-width: thin;
     text-align: center;
     vertical-align: top;
+    margin-bottom: 2px;
 }
 
 .edSpells {
