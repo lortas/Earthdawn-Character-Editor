@@ -22,6 +22,23 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.39-20120222.zip ##
++ Bugs
+	+ Typos within two discipline definitions corrected
+	+ Now Thread Items which are also Armor/Shield will flagged as virtual within the Armor/Shield section
++ ThreadItems Editor enhanced
+	+ Spells can be added and edited
+	+ Talents can be added and edited
+	+ Abilities can be added and edited
+	+ ...
++ Within the Armor Node of the inventory now shields can be added too
++ Now Items can be selected from an item store
++ The capabilities (talents+skills) are no longer contained within one file. Now they are spread in multiple files within one directory
++ The spells are no longer contained within one file. Now they are spread in multiple files within one directory
++ The knacks are no longer contained within one file. Now they are spread in multiple files within one directory
++ AddOn distribution will no longer replace files from the base distribution. It places new files into the folders, where they will be found by the ECE
++ The XSLT and CSS are massively updated and the new HTML-view is better optimised for printing
++ Damages and Wounds can now be edited within the General-tab
 ## EarthdawnCharacterEditor-0.38-20120212.zip ##
 + Bugs
 	+ The "Birth" field was not shown from loaded character within the general tab.
