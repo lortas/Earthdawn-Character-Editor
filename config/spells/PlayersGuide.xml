@@ -100,6 +100,7 @@
 	<SPELL name="Dispel Illusionism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
 	<SPELL name="Dispel Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
 	<SPELL name="Dispel Nethermancy Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL" bookref="PG p.163"/>
+	<SPELL name="Dispel Shamanism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/ bookref="PG p. 163,NG p.180">
 	<SPELL name="Displace Image" threads="1" weavingdifficulty="7" reattuningdifficulty="15" range="touch" duration="R+7 rnd" effect="Projects image of the target" bookref="PG p.163" element="illusion"/>
 	<SPELL name="Displace Self" threads="2" weavingdifficulty="9" reattuningdifficulty="16" range="self" duration="R+5 rnd" effect="WIL + 7" bookref="PG p.164"/>
 	<SPELL name="Divine Aura" threads="1" weavingdifficulty="6" reattuningdifficulty="14" range="12 hex" duration="R+5 min" effect="WIL + 5" bookref="PG p.164"/>

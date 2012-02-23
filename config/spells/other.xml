@@ -18,8 +18,6 @@
 	<SPELL name="Create Life" threads="s. text" weavingdifficulty="21" reattuningdifficulty="26" range="touch" duration="R+7 years" effect="Creates a life form"/>
 	<SPELL name="Dark Sword" threads="6" weavingdifficulty="15" reattuningdifficulty="19" range="touch" duration="R days" effect="WIL+8/Physical" effectarea="5 hex radius of wearer"/>
 	<SPELL name="Delay Blow" threads="2" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+10 rnd" effect="WIL + 15/Physical"/>
-	<SPELL name="Detect Shamanism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician"/>
-	<SPELL name="Dispel Shamanism Magic" threads="1" weavingdifficulty="6" reattuningdifficulty="13" castingdifficulty="6" range="15 hex" duration="1 rnd" effect="WIL"/>
 	<SPELL name="Disrupt Magic" threads="2" weavingdifficulty="12" reattuningdifficulty="19" castingdifficulty="TSD*" range="30 hex" duration="1 rnd" effect="WIL/Mystic"/>
 	<SPELL name="Do Unto Others" threads="3" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="varies*" range="10 hex*" duration="R rnd" effect="Creates illusory spell effects" element="illusion"/>
 	<SPELL name="Dragon's Breath" threads="3" weavingdifficulty="15" reattuningdifficulty="20" castingdifficulty="TSD*" range="25 hex" duration="1 round (s. text)" effect="WIL+12/Physical" element="fire"/>
