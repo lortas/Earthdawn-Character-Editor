@@ -805,7 +805,6 @@
 	<div class="edSubHeader">Blood Items</div>
 	<table width="100%">
 		<tr>
-			<td class="edHeaderCell">Kind</td>
 			<td class="edHeaderCell" style="text-align: left;">Name</td>
 			<td class="edHeaderCell">Type</td>
 			<td class="edHeaderCell">EDN</td>
@@ -822,8 +821,14 @@
 
 <xsl:template match="//edc:BLOODCHARMITEM">
 	<tr>
-		<td class="edCapabCell"><xsl:value-of select="@kind"/></td>
-		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name"/></td>
+		<td class="edCapabCell" style="text-align: left;">
+			<img class="edIcon">
+				<xsl:attribute name="src">
+					<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
+				</xsl:attribute>
+			</img>
+			<xsl:value-of select="@name"/>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@type"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@enchantingdifficultynumber"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@blooddamage"/></td>
@@ -1057,7 +1062,14 @@
 
 <xsl:template match="//edc:COINS">
 	<tr>
-		<td class="edKeyCell" style="text-align: right;"><xsl:value-of select="@name"/></td>
+		<td class="edKeyCell" style="text-align: right;">
+			<img class="edIcon">
+				<xsl:attribute name="src">
+					<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
+				</xsl:attribute>
+			</img>
+			<xsl:value-of select="@name"/>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@copper"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@silver"/></td>
@@ -1097,7 +1109,14 @@
 <xsl:template match="//edc:ITEM">
 	<tr>
 		<xsl:for-each select=". | following-sibling::edc:ITEM[position() &lt; 2]">
-			<td class="edItemCell" style="text-align: left;"><xsl:value-of select="@name" /></td>
+			<td class="edItemCell" style="text-align: left;">
+				<img class="edIcon">
+					<xsl:attribute name="src">
+						<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
+					</xsl:attribute>
+				</img>
+				<xsl:value-of select="@name" />
+			</td>
 			<td class="edItemCell"><xsl:value-of select="@weight" /></td>
 			<td class="edItemCell"><xsl:value-of select="@location" /></td>
 		</xsl:for-each>
@@ -1121,7 +1140,14 @@
 					<table width="100%">
 						<tr>
 							<td class="edKeyCell">Name:</td>
-							<td class="edValueCell" colspan="3"><xsl:value-of select="@name" /></td>
+							<td class="edValueCell" colspan="3">
+								<img class="edIcon">
+									<xsl:attribute name="src">
+										<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="@kind=''">UNDEFINED</xsl:if>.png
+									</xsl:attribute>
+								</img>
+								<xsl:value-of select="@name" />
+							</td>
 						</tr>
 						<tr>
 							<td class="edKeyCell">Max Threads:</td>
@@ -1252,4 +1278,6 @@
 	</div>
 </xsl:template>
 
+<xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz'" />
+<xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
 </xsl:stylesheet>
