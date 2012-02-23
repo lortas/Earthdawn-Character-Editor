@@ -1143,7 +1143,7 @@
 							<td class="edValueCell" colspan="3">
 								<img class="edIcon">
 									<xsl:attribute name="src">
-										<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="@kind=''">UNDEFINED</xsl:if>.png
+										<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
 									</xsl:attribute>
 								</img>
 								<xsl:value-of select="@name" />
