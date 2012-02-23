@@ -408,7 +408,7 @@ public class EDMainWindow {
 		characteristicStatus = new CharacteristicStatus("characteristic_layout.html");
 		characteristicStatus.setCharacter(character);
 
-		tabbedPane.addTab("General", null, panelERGeneral, null);
+		tabbedPane.addTab("General", null, new JScrollPane(panelERGeneral), null);
 		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
 		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
 		tabbedPane.addTab("Knacks", null, panelEDKnacks, null);
@@ -562,58 +562,28 @@ public class EDMainWindow {
 		StringWriter out = new StringWriter();
 		characteristicStatus.parseTo(out);
 		paneStatus.setText(out.toString());
+		for(Component co : tabbedPane.getComponents() ) componentSetCharacter(co);
+	}
 
-		for(Component co  : tabbedPane.getComponents() )
-		{
-			if(co.getClass() == EDTalents.class){
-				((EDTalents)co).setCharacter(character);
-			}
-			if(co.getClass() == EDGeneral.class){
-				((EDGeneral)co).setCharacter(character);
-			}
-			if(co.getClass() == EDAttributes.class){
-				((EDAttributes)co).setCharacter(character);
-			}
-			if(co.getClass() == EDDisciplines.class){
-				((EDDisciplines)co).setCharacter(character);
-			}
-			if(co.getClass() == EDStatus.class){
-				((EDStatus)co).setCharacter(character);
-			}
-			if(co.getClass() == EDSpells.class){
-				((EDSpells)co).setCharacter(character);
-			}
-			if(co.getClass() == EDKnacks.class){
-				((EDKnacks)co).setCharacter(character);
-			}
-			if(co.getClass() == EDSkills.class){
-				((EDSkills)co).setCharacter(character);
-			}
-			if(co.getClass() == EDExperience.class){
-				((EDExperience)co).setCharacter(character);
-			}
-			if(co.getClass() == EDLanguages.class){
-				((EDLanguages)co).setCharacter(character);
-			}
-			if(co.getClass() == EDKarma.class){
-				((EDKarma)co).setCharacter(character);
-			}
-			if(co.getClass() == EDDevotionPoints.class){
-				((EDDevotionPoints)co).setCharacter(character);
-			}
-			if(co.getClass() == EDItems.class){
-				((EDItems)co).setCharacter(character);
-			}
-			if(co.getClass() == EDWeapons.class){
-				((EDWeapons)co).setCharacter(character);
-			}
-			if(co.getClass() == EDArmor.class){
-				((EDArmor)co).setCharacter(character);
-			}
-			if(co.getClass() == EDInventory.class){
-				((EDInventory)co).setCharacter(character);
-			}
-		}
+	private void componentSetCharacter(Component co) {
+		if(co.getClass() == EDTalents.class)        { ((EDTalents)co).setCharacter(character); return; }
+		if(co.getClass() == EDGeneral.class)        { ((EDGeneral)co).setCharacter(character); return; }
+		if(co.getClass() == EDAttributes.class)     { ((EDAttributes)co).setCharacter(character); return; }
+		if(co.getClass() == EDDisciplines.class)    { ((EDDisciplines)co).setCharacter(character); return; }
+		if(co.getClass() == EDStatus.class)         { ((EDStatus)co).setCharacter(character); return; }
+		if(co.getClass() == EDSpells.class)         { ((EDSpells)co).setCharacter(character); return; }
+		if(co.getClass() == EDKnacks.class)         { ((EDKnacks)co).setCharacter(character);  return; }
+		if(co.getClass() == EDSkills.class)         { ((EDSkills)co).setCharacter(character); return; }
+		if(co.getClass() == EDExperience.class)     { ((EDExperience)co).setCharacter(character); return; }
+		if(co.getClass() == EDLanguages.class)      { ((EDLanguages)co).setCharacter(character); return; }
+		if(co.getClass() == EDKarma.class)          { ((EDKarma)co).setCharacter(character); return; }
+		if(co.getClass() == EDDevotionPoints.class) { ((EDDevotionPoints)co).setCharacter(character); return; }
+		if(co.getClass() == EDItems.class)          { ((EDItems)co).setCharacter(character); return; }
+		if(co.getClass() == EDWeapons.class)        { ((EDWeapons)co).setCharacter(character); return; }
+		if(co.getClass() == EDArmor.class)          { ((EDArmor)co).setCharacter(character); return; }
+		if(co.getClass() == EDInventory.class)      { ((EDInventory)co).setCharacter(character); return; }
+
+		if(co.getClass() == JScrollPane.class) componentSetCharacter(((JScrollPane)co).getViewport().getView());
 	}
 
 	protected void do_mntmSave_actionPerformed(ActionEvent arg0) {
