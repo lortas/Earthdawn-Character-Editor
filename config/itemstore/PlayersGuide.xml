@@ -27,9 +27,9 @@
 	<SHIELD kind="shield" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" name="Buckler" bookref="PG p.257"/>
 	<SHIELD kind="shield" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" name="Crystal Buckler" bookref="PG p.257"/>
 	<SHIELD kind="shield" physicalarmor="3" mysticarmor="3" penalty="2" physicaldeflectionbonus="3" mysticdeflectionbonus="3" shatterthreshold="18" edn="14" weight="15" name="Crystal Raider" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5" name="Ferndask"bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="10" name="Footman's"bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="8" name="Rider's"bookref="PG p.257"/>
+	<SHIELD kind="shield" physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5" name="Ferndask" bookref="PG p.257"/>
+	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="10" name="Footman's" bookref="PG p.257"/>
+	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="8" name="Rider's" bookref="PG p.257"/>
 
 <!--  melee weapon vollständig PG	-->
 	
@@ -95,7 +95,6 @@
 	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" longrange="48" shortrange="24" size="2" strengthmin="5" damagestep="3" weight="0.875" name="Windling Bow" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon"  weight="2" name="Quiver" bookref="PG p.252"/>
 
 <!--  ammunition vollständig PG	-->
 
@@ -139,9 +138,9 @@
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="like Astral Sight (PG p. 61) +1 Step bonus; 1 Strain per use" enchantingdifficultynumber="13" weight="1" name="Astral-Sensitive Eye" bookref="PG p.257"/>
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="1" effect="spend multiple Karma Points on Talent Test, one point at a time, until test successful; 1 Strain per Point" enchantingdifficultynumber="16" weight="1" name="Blood Karma" bookref="PG p.257"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="+2 unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="11" weight="1" name="Blood Knuckles" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific spell matrix; 2 Strain casting spell" enchantingdifficultynumber="PG p.257" weight="1" name="Blood Matrix" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific enhanced spell matrix; 3 Strain casting spell" enchantingdifficultynumber="PG p.257" weight="1" name="Enhanced Blood Matrix" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific armored spell matrix; 4 Strain casting spell" enchantingdifficultynumber="PG p.257" weight="1" name="Armored Blood Matrix" bookref="PG p.257"/>
+	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific spell matrix; 2 Strain casting spell" enchantingdifficultynumber="0" weight="1" name="Blood Matrix" bookref="PG p.257"/>
+	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific enhanced spell matrix; 3 Strain casting spell" enchantingdifficultynumber="0" weight="1" name="Enhanced Blood Matrix" bookref="PG p.257"/>
+	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific armored spell matrix; 4 Strain casting spell" enchantingdifficultynumber="0" weight="1" name="Armored Blood Matrix" bookref="PG p.257"/>
 	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+4 to unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="20" weight="3" name="Blood Weapon" bookref="PG p.257"/>
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="1" effect="+1 to Recovery Tests" enchantingdifficultynumber="12" weight="1" name="Common Bone Charm" bookref="PG p.257"/>
 	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" name="Shaped Bone Charm" bookref="PG p.258"/>
