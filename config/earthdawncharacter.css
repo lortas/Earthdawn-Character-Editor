@@ -51,14 +51,40 @@
 }
 
 .edCell {
-    border-style: solid;
-    border-width: 1px;
+	text-align: left;
+	vertical-align:bottom;
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-width: thin;
+}
+
+.edThreadrank {
+	width: 10ex;
+	text-align: center;
+	vertical-align: top;
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-width: thin;
+}
+
+.edThreaditemdescription {
+	text-align: justify;
+	vertical-align: bottom;
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-width: thin;
 }
 
 .edMidCell {
-    border-style: solid;
-    border-width: 1px;
-    text-align: center;
+	text-align: center;
+	vertical-align: bottom;
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-width: thin;
 }
 
 .edItemCell,
@@ -203,6 +229,7 @@
     border-right-width: thin;
     border-right-style: solid;
     vertical-align: top;
+	width: 50%;
 }
 .edThreadItemBottom {
     border-left-width: thin;

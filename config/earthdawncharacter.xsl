@@ -325,9 +325,9 @@
 	</tr>
 	<tr>
 		<td class="edKeyCell">Weight:</td>
-		<td class="edValueCell"><xsl:value-of select="@weight" /></td>
+		<td class="edValueCell"><xsl:value-of select="format-number(@weight,'##')" />lb (<xsl:value-of select="format-number(@weight*0.453592,'##')" />kg)</td>
 		<td class="edKeyCell">Height:</td>
-		<td class="edValueCell"><xsl:value-of select="@height" /></td>
+		<td class="edValueCell"><xsl:value-of select="format-number(@height,'##')" />ft (<xsl:value-of select="format-number(@height*0.3048,'##.00')" />m)</td>
 		<td class="edKeyCell">Birth:</td>
 		<td class="edValueCell"><xsl:value-of select="@birth" /></td>
 	</tr>
@@ -1137,10 +1137,10 @@
 		<tr>
 			<xsl:for-each select=". | following-sibling::edc:THREADITEM[position() &lt; 2]">
 				<td class="edThreadItemTop">
-					<table width="100%">
+					<table width="100%" style="page-break-inside:avoid">
 						<tr>
 							<td class="edKeyCell">Name:</td>
-							<td class="edValueCell" colspan="3">
+							<td class="edValueCell" colspan="3" style="text-align: left;">
 								<img class="edIcon">
 									<xsl:attribute name="src">
 										<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
@@ -1157,7 +1157,7 @@
 						</tr>
 						<tr>
 							<td class="edKeyCell">Description:</td>
-							<td class="edValueCell" colspan="3"><xsl:value-of select="./edt:description" /></td>
+							<td class="edThreaditemdescription" colspan="3"><xsl:value-of select="./edt:description"/></td>
 						</tr>
 					</table>
 				</td>
@@ -1176,10 +1176,8 @@
 							<td>
 								<table width="100%">
 									<tr>
-										<td class="edHeaderCell">Rank</td>
-										<td class="edHeaderCell">Knowledge/Deed</td>
-										<td class="edHeaderCell">LPCost</td>
-										<td class="edHeaderCell">Effect</td>
+										<td class="edHeaderCell">Rank (LPCost)</td>
+										<td class="edHeaderCell">Knowledge / Effect</td>
 									</tr>
 									<xsl:apply-templates select="./edt:THREADRANK"/>
 								</table>
@@ -1194,9 +1192,10 @@
 
 <xsl:template match="//edt:THREADRANK">
 	<tr>
-		<td class="edCell"><xsl:value-of select="position()" /></td>
+		<td class="edThreadrank" rowspan="2" valign="middle"><xsl:value-of select="position()"/> (<xsl:value-of select="@lpcost"/>)</td>
 		<td class="edCell"><xsl:value-of select="@keyknowledge" /></td>
-		<td class="edCell"><xsl:value-of select="@lpcost" /></td>
+	</tr>
+	<tr>
 		<td class="edCell"><xsl:value-of select="@effect" /></td>
 	</tr>
 </xsl:template>
