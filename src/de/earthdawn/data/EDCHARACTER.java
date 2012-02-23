@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -59,6 +60,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="player" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="xsd-version" use="required" type="{http://www.w3.org/2001/XMLSchema}string" fixed="1.0" />
+ *       &lt;attribute name="editorpath" type="{http://www.w3.org/2001/XMLSchema}anyURI" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -159,6 +161,9 @@ public class EDCHARACTER {
     protected String player;
     @XmlAttribute(name = "xsd-version", required = true)
     protected String xsdVersion;
+    @XmlAttribute
+    @XmlSchemaType(name = "anyURI")
+    protected String editorpath;
 
     /**
      * Gets the value of the appearance property.
@@ -947,6 +952,34 @@ public class EDCHARACTER {
      */
     public void setXsdVersion(String value) {
         this.xsdVersion = value;
+    }
+
+    /**
+     * Gets the value of the editorpath property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEditorpath() {
+        if (editorpath == null) {
+            return "";
+        } else {
+            return editorpath;
+        }
+    }
+
+    /**
+     * Sets the value of the editorpath property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEditorpath(String value) {
+        this.editorpath = value;
     }
 
 }

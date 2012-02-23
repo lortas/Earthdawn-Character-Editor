@@ -655,6 +655,7 @@ public class EDMainWindow {
 	}
 
 	private void writeToXml(File file) throws JAXBException, IOException {
+		if( ec == null ) return;
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
 		FileOutputStream out = new FileOutputStream(file);
@@ -664,12 +665,14 @@ public class EDMainWindow {
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 		m.setProperty(Marshaller.JAXB_FRAGMENT, true);
 		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
+		ec.setEditorpath((new File("")).toURI().getRawPath());
 		m.marshal(ec,fileio);
 		fileio.close();
 		out.close();
 	}
 
 	private void writeToJson(File file) throws JAXBException, JSONException, IOException {
+		if( ec == null ) return;
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -677,6 +680,7 @@ public class EDMainWindow {
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
+		ec.setEditorpath((new File("")).toURI().getRawPath());
 		m.marshal(ec,baos);
 		JSONObject json = XML.toJSONObject(baos.toString());
 		baos.close();
@@ -688,9 +692,11 @@ public class EDMainWindow {
 	}
 
 	private void writeToGson(File file) throws IOException {
+		if( ec == null ) return;
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		FileOutputStream out = new FileOutputStream(file);
 		OutputStreamWriter fileio = new OutputStreamWriter(out,encoding);
+		ec.setEditorpath((new File("")).toURI().getRawPath());
 		gson.toJson(ec,fileio);
 		fileio.close();
 		out.close();
