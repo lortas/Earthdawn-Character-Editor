@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,6 +40,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -288,6 +292,14 @@ public class EDMainWindow {
 			}
 		});
 		mntmJsonExport.add(mntmGson);
+
+		JMenuItem mntmHtml = new JMenuItem(NLS.getString("EDMainWindow.mntmXML2Html.text")); //$NON-NLS-1$
+		mntmHtml.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmHtml_actionPerformed(arg0);
+			}
+		});
+		mntmExport.add(mntmHtml);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
@@ -672,6 +684,24 @@ public class EDMainWindow {
 		out.close();
 	}
 
+	private void writeToHtml(File file) throws JAXBException, IOException, TransformerException {
+		if( ec == null ) return;
+		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+		Marshaller m = jc.createMarshaller();
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
+		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
+		ec.setEditorpath((new File("")).toURI().getRawPath());
+		m.marshal(ec,baos);
+
+		TransformerFactory tFactory = TransformerFactory.newInstance();
+		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
+		FileOutputStream out = new FileOutputStream(file);
+		transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(out));
+	}
+
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
 		String filename = "."; 
 		JFileChooser fc = new JFileChooser(new File(filename)); 
@@ -841,6 +871,29 @@ public class EDMainWindow {
 			try {
 				writeToGson(selFile);
 			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void do_mntmHtml_actionPerformed(ActionEvent arg0) {
+		File selFile = selectFileName(".html");
+		if( selFile != null ) {
+			try {
+				writeToHtml(selFile);
+				copyFile("./config/earthdawncharacter.css",new File(selFile.getParentFile(),"earthdawncharacter.css").getCanonicalPath());
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (JAXBException e) {
+				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
+				e.printStackTrace();
+			} catch (TransformerException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
