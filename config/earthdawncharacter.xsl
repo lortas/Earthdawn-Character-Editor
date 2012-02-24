@@ -22,7 +22,6 @@
 	<head>
 		<title><xsl:value-of select="/edc:EDCHARACTER/@name" /></title>
 		<link rel="stylesheet" type="text/css" href="earthdawncharacter.css"/>
-		<!-- <style type="text/css"><xsl:value-of select="unparsed-text('earthdawncharacter.css','utf-8')"/></style>-->
 	</head>
 	<body class="edBody">
 		<!-- div needed for layout purposes -->
