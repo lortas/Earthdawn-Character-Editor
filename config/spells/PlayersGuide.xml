@@ -10,6 +10,7 @@
 	<SPELL name="Animate Spirit Object" threads="3" weavingdifficulty="10" reattuningdifficulty="19" castingdifficulty="9" range="5 hex" duration="R x 10 min" effect="WIL + 5" bookref="PG p.147"/>
 	<SPELL name="Arrow of Night" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="6" range="touch" duration="1 rnd" effect="+8 missile Damage Test bonus" bookref="PG p.148"/>
 	<SPELL name="Assuring Touch" threads="0" reattuningdifficulty="7" range="touch" duration="R+12 rnd" effect="+3 to Spell and Social Defense; +3 Willpower Test bonus against fear" bookref="PG p.148"/>
+	<SPELL name="Astral Beacon" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="8 hex" duration="1 rnd" effect="Creates a beacon in astral space" bookref="PG p.148"/>
 	<SPELL name="Astral Flare" threads="2" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="self" duration="R+5 rnd" effect="WIL + 6" effectarea="5-hex radius" bookref="PG p.148"/>
 	<SPELL name="Astral Gift" threads="3" weavingdifficulty="13" reattuningdifficulty="23" range="15 hex" duration="R hr" effect="Gives the target Astral Sight" bookref="PG p.148"/>
 	<SPELL name="Astral Horror" threads="3" weavingdifficulty="9" reattuningdifficulty="19" castingdifficulty="TSD*" range="24 hex" duration="R+1 min" effect="WIL + 6" bookref="PG p.148" element="illusion"/>
@@ -89,6 +90,7 @@
 	<SPELL name="Death Rain" threads="1" weavingdifficulty="15" reattuningdifficulty="18" castingdifficulty="TSD*" range="self" duration="R+12 rnd" effect="Step 5/D8 acid damage (WIL + 5; s. text)" effectarea="15-hex radius of magician" bookref="PG p.161" element="water"/>
 	<SPELL name="Death Trance" threads="2" weavingdifficulty="7" reattuningdifficulty="12" range="touch" duration="R+3 hr" effect="Puts target into hibernation" bookref="PG p.161"/>
 	<SPELL name="Death's Head" threads="1" weavingdifficulty="7" reattuningdifficulty="14" castingdifficulty="TSD*" range="self*" duration="R+5 rnd" effect="WIL + 5" bookref="PG p.162" element="fear"/>
+	<SPELL name="Delay Blow" threads="2" weavingdifficulty="14" reattuningdifficulty="20" castingdifficulty="TSD*" range="touch" duration="R+10 rnd" effect="WIL + 15/Physical" bookref="PG p.162"/>
 	<SPELL name="Detect Elementalism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician" bookref="PG p.162"/>
 	<SPELL name="Detect Illusionism Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician" bookref="PG p.162"/>
 	<SPELL name="Detect Nethermancy Magic" threads="2" weavingdifficulty="5" reattuningdifficulty="15" castingdifficulty="6" range="self" duration="R+10 min" effect="WIL + 6" effectarea="15-hex radius from magician" bookref="PG p.162"/>
