@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -698,8 +699,22 @@ public class EDMainWindow {
 
 		TransformerFactory tFactory = TransformerFactory.newInstance();
 		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
-		FileOutputStream out = new FileOutputStream(file);
-		transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(out));
+		ByteArrayOutputStream html = new ByteArrayOutputStream();
+		transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
+		String htmlstring=html.toString(encoding);
+		BufferedReader cssio = new BufferedReader(new FileReader("config/earthdawncharacter.css"));
+		StringBuilder css = new StringBuilder();
+		css.append("<style type=\"text/css\">");
+		String line = null;
+		final String systemlineseparator = System.getProperty("line.separator");
+		while( (line=cssio.readLine() ) != null ) {
+			css.append(line);
+			css.append(systemlineseparator);
+		}
+		css.append("</style>");
+		htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", css.toString());
+		PrintStream out = new PrintStream(new FileOutputStream(file), false, encoding);
+		out.print(htmlstring);
 	}
 
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
