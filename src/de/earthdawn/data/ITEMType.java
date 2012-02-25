@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="blooddamage" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="depatterningrate" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="price" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -69,6 +70,8 @@ public class ITEMType {
     protected Integer depatterningrate;
     @XmlAttribute
     protected String bookref;
+    @XmlAttribute
+    protected Integer price;
 
     /**
      * Gets the value of the name property.
@@ -304,6 +307,34 @@ public class ITEMType {
      */
     public void setBookref(String value) {
         this.bookref = value;
+    }
+
+    /**
+     * Gets the value of the price property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getPrice() {
+        if (price == null) {
+            return  0;
+        } else {
+            return price;
+        }
+    }
+
+    /**
+     * Sets the value of the price property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setPrice(Integer value) {
+        this.price = value;
     }
 
 }
