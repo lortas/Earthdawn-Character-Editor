@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 <!--  Armor vollständig PG	-->
-	<ARMOR kind="armor" edn="14" penalty="2" mysticarmor="3" physicalarmor="3" weight="20" name="Bark" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="20" penalty="1" mysticarmor="3" physicalarmor="5" weight="0" name="Blood Pebble" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="3" mysticarmor="0" physicalarmor="7" weight="40" name="Chain Mail" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="22" penalty="5" mysticarmor="7" physicalarmor="7" weight="90" name="Crystal Plate" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="16" penalty="2" mysticarmor="4" physicalarmor="4" weight="45" name="Crystal Ringlet" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="1" mysticarmor="1" physicalarmor="3" weight="0.0" name="Espagra-Scale Cloak" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="13" penalty="0" mysticarmor="3" physicalarmor="2" weight="3.0" name="Fernweave" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="1" mysticarmor="0" physicalarmor="5" weight="20" name="Hardened Leather" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="1" mysticarmor="1" physicalarmor="5" weight="25" name="Hide" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="3" weight="15" name="Leather" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="22" penalty="2" mysticarmor="3" physicalarmor="6" weight="0.0" name="Living Crystal" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="16" edn_element="earth" penalty="1" mysticarmor="4" physicalarmor="4" weight="0.0" name="Living Hair Barding" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="0" mysticarmor="1" physicalarmor="3" weight="20" name="Obsidiman Skin" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="2" weight="5" name="Padded Cloth" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="0" mysticarmor="0" physicalarmor="4" weight="20" name="Padded Leather"/>
-	<ARMOR kind="armor" penalty="4" mysticarmor="0" physicalarmor="9" weight="60" name="Plate Mail" bookref="PG p.256"/>
-	<ARMOR kind="armor" penalty="2" mysticarmor="0" physicalarmor="6" weight="30" name="Ring Mail" bookref="PG p.256"/>
-	<ARMOR kind="armor" edn="17" edn_element="water" penalty="3" mysticarmor="1" physicalarmor="8" weight="50" name="Wyvern-Skin" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Bark" edn="14" penalty="2" mysticarmor="3" physicalarmor="3" weight="20" price="100" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Blood Pebble" edn="20" penalty="1" mysticarmor="3" physicalarmor="5" weight="0" price="300" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Chain Mail" penalty="3" mysticarmor="0" physicalarmor="7" weight="40" price="180" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Crystal Plate" edn="22" penalty="5" mysticarmor="7" physicalarmor="7" weight="90" price="12000" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Crystal Ringlet" edn="16" penalty="2" mysticarmor="4" physicalarmor="4" weight="45" price="500" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Espagra-Scale Cloak" penalty="1" mysticarmor="1" physicalarmor="3" weight="0.0" price="200" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Fernweave" edn="13" penalty="0" mysticarmor="3" physicalarmor="2" weight="3.0" price="125" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Hardened Leather" penalty="1" mysticarmor="0" physicalarmor="5" weight="20" price="40" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Hide" penalty="1" mysticarmor="1" physicalarmor="5" weight="25" price="50" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Leather" penalty="0" mysticarmor="0" physicalarmor="3" weight="15" price="10" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Living Crystal" edn="22" penalty="2" mysticarmor="3" physicalarmor="6" weight="0.0" price="1100" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Living Hair Barding" edn="16" edn_element="earth" penalty="1" mysticarmor="4" physicalarmor="4" weight="0.0" price="350" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Obsidiman Skin" penalty="0" mysticarmor="1" physicalarmor="3" weight="20" price="100" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Padded Cloth" penalty="0" mysticarmor="0" physicalarmor="2" weight="5" price="2" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Padded Leather" penalty="0" mysticarmor="0" physicalarmor="4" weight="20" price="20" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Plate Mail" penalty="4" mysticarmor="0" physicalarmor="9" weight="60" price="3000" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Ring Mail" penalty="2" mysticarmor="0" physicalarmor="6" weight="30" price="110" bookref="PG p.256"/>
+	<ARMOR kind="armor" name="Wyvern-Skin" edn="17" edn_element="water" penalty="3" mysticarmor="1" physicalarmor="8" weight="50" price="2000" bookref="PG p.256"/>
 
 <!--  Shield vollständig PG	-->
 	
-	<SHIELD kind="shield" physicalarmor="2" mysticarmor="1" penalty="1" physicaldeflectionbonus="2" mysticdeflectionbonus="1" shatterthreshold="14" edn="11" weight="5" name="Bark" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="5"  penalty="2" physicaldeflectionbonus="4" shatterthreshold="21" weight="15" name="Body" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" name="Buckler" bookref="PG p.257"/>
-	<SHIELD kind="shield" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" name="Crystal Buckler" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="3" mysticarmor="3" penalty="2" physicaldeflectionbonus="3" mysticdeflectionbonus="3" shatterthreshold="18" edn="14" weight="15" name="Crystal Raider" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5" name="Ferndask" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="10" name="Footman's" bookref="PG p.257"/>
-	<SHIELD kind="shield" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="8" name="Rider's" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Bark" physicalarmor="2" mysticarmor="1" penalty="1" physicaldeflectionbonus="2" mysticdeflectionbonus="1" shatterthreshold="14" edn="11" weight="5" price="15" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Body" physicalarmor="5"  penalty="2" physicaldeflectionbonus="4" shatterthreshold="21" weight="15" name="Body" price="50" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Buckler" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" price="5" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Crystal Buckler" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" price="50" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Crystal Raider" physicalarmor="3" mysticarmor="3" penalty="2" physicaldeflectionbonus="3" mysticdeflectionbonus="3" shatterthreshold="18" edn="14" weight="15" price="150" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Ferndask" physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5" price="22" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Footman's" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="10" price="15" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Rider's" physicalarmor="3" penalty="1" physicaldeflectionbonus="2" shatterthreshold="19" weight="8" price="20" bookref="PG p.257"/>
 
 <!--  melee weapon vollständig PG	-->
 	
-	<WEAPON kind="melee weapon" size="5" strengthmin="13" damagestep="7" weight="6" name="Battle Axe" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Broadsword" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="2" strengthmin="7" damagestep="3" weight="3" name="Club" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="4" damagestep="2" weight="1" name="Dagger" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="2" strengthmin="12" damagestep="4" weight="2" name="Dwarf Sword" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="10" dexteritymin="7" damagestep="5" weight="5" name="Flail" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="2" strengthmin="8" damagestep="4" weight="3" name="Hand-Axe" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Knife" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="6" strengthmin="14" damagestep="6" weight="10" name="Lance" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="5" strengthmin="13" damagestep="5" weight="7" name="Long-Spear" bookref="PG p.251"/>	
-	<WEAPON kind="melee weapon" size="3" strengthmin="13" damagestep="4" weight="5" name="Mace" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="5" strengthmin="14" damagestep="7" weight="9" name="Pole Arm" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="6" strengthmin="16" damagestep="8" weight="10" name="Pole-Axe" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="5" strengthmin="6" dexteritymin="7" damagestep="4" weight="4" name="Quaterstaff" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="7" strengthmin="16" damagestep="7" weight="12" name="Raid Spear" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="3" dexteritymin="7" damagestep="1" weight="2" name="Sap" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="4" weight="3" name="Short Sword" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="12" damagestep="5" weight="4" name="Scythan Axe" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="9" damagestep="4" weight="3.0" name="Spear" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="4" strengthmin="13" damagestep="6" weight="7" name="Spiked Mace" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="4" strengthmin="11" damagestep="5" weight="4" name="Trispear" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="4" strengthmin="17" damagestep="8" weight="6" name="Troll Battle Axe" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="6" strengthmin="15" damagestep="8" weight="7" name="Two-Handed Sword" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="5" strengthmin="15" damagestep="7" weight="8" name="Warhammer" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="3" strengthmin="7" dexteritymin="7" damagestep="3" weight="2" name="Whip" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="2" strengthmin="7" damagestep="4" weight="2" name="Windling Pole Arm" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="4" damagestep="2" weight="0.5" name="Windling Spear" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="6" damagestep="3" weight="1" name="Windling Sword" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" size="5" strengthmin="12" damagestep="2" weight="3" name="Kampfstab" bookref="FanWork"/>
-	<WEAPON kind="melee weapon" size="1" strengthmin="3"  damagestep="2" weight="0.5" name="Windling Dagger" bookref="FanWork"/>
+	<WEAPON kind="melee weapon" name="Battle Axe" size="5" strengthmin="13" damagestep="7" weight="6" price="35" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Broadsword" size="3" strengthmin="12" damagestep="5" weight="4" price="25" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Club"size="2" strengthmin="7" damagestep="3" weight="3" price="2" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Dagger" size="1" strengthmin="4" damagestep="2" weight="1" price="0" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Dwarf Sword" size="2" strengthmin="12" damagestep="4" weight="2" price="6" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Flail" size="3" strengthmin="10" dexteritymin="7" damagestep="5" weight="5" price="35" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Hand-Axe" size="2" strengthmin="8" damagestep="4" weight="3" price="15" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Knife"size="1" strengthmin="3" damagestep="1" weight="0.625" price="0" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Lance" size="6" strengthmin="14" damagestep="6" weight="10" price="150" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Long-Spear" size="5" strengthmin="13" damagestep="5" weight="7" price="15" bookref="PG p.251"/>	
+	<WEAPON kind="melee weapon" name="Mace" size="3" strengthmin="13" damagestep="4" weight="5" price="20" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Pole Arm" size="5" strengthmin="14" damagestep="7" weight="9" price="145" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Pole-Axe" size="6" strengthmin="16" damagestep="8" weight="10" price="150" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Quaterstaff" size="5" strengthmin="6" dexteritymin="7" damagestep="4" weight="4" price="5" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Raid Spear" size="7" strengthmin="16" damagestep="7" weight="12" price="10" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Sap" size="1" strengthmin="3" dexteritymin="7" damagestep="1" weight="2" price="3" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Short Sword" size="3" strengthmin="12" damagestep="4" weight="3" price="16" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Scythan Axe" size="3" strengthmin="12" damagestep="5" weight="4" price="20" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Spear" size="3" strengthmin="9" damagestep="4" weight="3.0" price="9" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Spiked Mace" size="4" strengthmin="13" damagestep="6" weight="7" price="40" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Trispear" size="4" strengthmin="11" damagestep="5" weight="4" price="25" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Troll Battle Axe" size="4" strengthmin="17" damagestep="8" weight="6" price="45" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Troll Sword" size="4" strengthmin="13" damagestep="6" weight="6" price="50" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Two-Handed Sword" size="6" strengthmin="15" damagestep="8" weight="7" price="125" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Warhammer" size="5" strengthmin="15" damagestep="7" weight="8" price="95" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Whip" size="3" strengthmin="7" dexteritymin="7" damagestep="3" weight="2" price="10" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Windling Pole Arm" size="2" strengthmin="7" damagestep="4" weight="2" price="55" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Windling Spear" size="1" strengthmin="4" damagestep="2" weight="0.5" price="25" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Windling Sword" size="1" strengthmin="6" damagestep="3" weight="1" price="45" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Kampfstab" size="5" strengthmin="12" damagestep="2" weight="3" price="12" bookref="FanWork"/>
+	<WEAPON kind="melee weapon" name="Windling Dagger" size="1" strengthmin="3"  damagestep="2" weight="0.5" price="1" bookref="FanWork"/>
 
 <!--  throwing weapon vollständig PG	-->
 	
-	<WEAPON kind="throwing weapon" longrange="24" shortrange="12" size="3" strengthmin="6" dexteritymin="9" damagestep="3" weight="2" name="Bola" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1" name="Dagger" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="36" shortrange="18" size="1" strengthmin="4" damagestep="1" weight="0.5" name="Dart" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="40" shortrange="20" size="1" strengthmin="4" damagestep="2" weight="0.75" name="Flight Dagger" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="48" shortrange="24" size="3" strengthmin="8" damagestep="4" weight="2" name="Hawk Hatchet" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Knife" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="4" damagestep="0" weight="5" name="Net (light)" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="4" strengthmin="5" damagestep="0" weight="7" name="Net (medium)" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="5" strengthmin="7" damagestep="0" weight="10" name="Net (large)" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="6" strengthmin="8" damagestep="0" weight="12" name="Net (huge)" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" name="Spear" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2" name="Throwing Axe" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="32" shortrange="16" size="1" strengthmin="4" damagestep="2" weight="0.75" name="Throwing Dagger" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="12" shortrange="6" size="2" strengthmin="4" dexteritymin="9" damagestep="0" weight="0.75" name="Windling Net" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" longrange="16" shortrange="8" size="1" strengthmin="4" damagestep="2" weight="0.5" name="Windling Spear" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Bola" longrange="24" shortrange="12" size="3" strengthmin="6" dexteritymin="9" damagestep="3" weight="2" price="10" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Dagger" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1" price="0" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Dart" longrange="36" shortrange="18" size="1" strengthmin="4" damagestep="1" weight="0.5" price="0" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Flight Dagger" longrange="40" shortrange="20" size="1" strengthmin="4" damagestep="2" weight="0.75" price="25" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Hawk Hatchet" longrange="48" shortrange="24" size="3" strengthmin="8" damagestep="4" weight="2" price="75" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Knife" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" price="0" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Net (light)" longrange="12" shortrange="6" size="3" strengthmin="4" damagestep="0" weight="5" price="15" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Net (medium)" longrange="12" shortrange="6" size="4" strengthmin="5" damagestep="0" weight="7" price="20" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Net (large)" longrange="12" shortrange="6" size="5" strengthmin="7" damagestep="0" weight="10" price="25" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Net (huge)" longrange="12" shortrange="6" size="6" strengthmin="8" damagestep="0" weight="12" price="40" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Spear" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" price="9" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Throwing Axe" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2" price="25" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Throwing Dagger" longrange="32" shortrange="16" size="1" strengthmin="4" damagestep="2" weight="0.75" price="2" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Windling Net" longrange="12" shortrange="6" size="2" strengthmin="4" dexteritymin="9" damagestep="0" weight="0.75" price="15" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Windling Spear" longrange="16" shortrange="8" size="1" strengthmin="4" damagestep="2" weight="0.5" price="25" bookref="PG p.252"/>
 
 <!--  missile weapon vollständig PG	-->
 
 	
-	<WEAPON kind="missile weapon" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Blowgun" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="96" shortrange="48" size="5" strengthmin="12" dexteritymin="15" damagestep="5" weight="4" name="Elven Warbow" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="64" shortrange="32" size="3" strengthmin="9" damagestep="4" weight="5" name="Light Crossbow" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="5" strengthmin="11" dexteritymin="13" damagestep="4" weight="4" name="Longbow" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="80" shortrange="40" size="4" strengthmin="12" damagestep="5" weight="7" name="Medium Crossbow" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" name="Blowgun" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="3" strengthmin="8" damagestep="3" weight="3" name="Shortbow" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" name="Sling" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" name="Troll Sling" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" longrange="48" shortrange="24" size="2" strengthmin="5" damagestep="3" weight="0.875" name="Windling Bow" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Blowgun" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" price="2" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Elven Warbow" longrange="96" shortrange="48" size="5" strengthmin="12" dexteritymin="15" damagestep="5" weight="4" price="200" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Light Crossbow"longrange="64" shortrange="32" size="3" strengthmin="9" damagestep="4" weight="5" price="50" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Longbow" longrange="80" shortrange="40" size="5" strengthmin="11" dexteritymin="13" damagestep="4" weight="4" price="60" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Medium Crossbow" longrange="80" shortrange="40" size="4" strengthmin="12" damagestep="5" weight="7" price="100" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Shortbow" longrange="60" shortrange="30" size="3" strengthmin="8" damagestep="3" weight="3" price="15" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Sling" longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" weight="1" price="3" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Troll Sling" longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" weight="4" price="15" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Windling Bow" longrange="48" shortrange="24" size="2" strengthmin="5" damagestep="3" weight="0.875" price="25" bookref="PG p.252"/>
 
 <!--  ammunition vollständig PG	-->
 
 	
-	<AMMUNITION kind="ammunition" name="Box of 10 Needles" weight="0.5" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="Box of 10 Needles" weight="0.5" price="1" bookref="PG p.252">
 		<edt:WEAPON>Blowgun</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="20 Warbow Arrows" weight="4" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="20 Warbow Arrows" weight="4" price="25" bookref="PG p.252">
 		<edt:WEAPON>Elven Warbow</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="15 Light Bolts" weight="3" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="15 Light Bolts" weight="3" price="15" bookref="PG p.252">
 		<edt:WEAPON>Light Crossbow</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="20 Longbow Arrows" weight="3" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="20 Longbow Arrows" weight="3" price="10" bookref="PG p.252">
 		<edt:WEAPON>Longbow</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="15 Medium Bolts" weight="4" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="15 Medium Bolts" weight="4" price="20" bookref="PG p.252">
 		<edt:WEAPON>Medium Crossbow</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="Quiver" weight="2" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="Quiver" weight="2" price="2" bookref="PG p.252">
 		<edt:WEAPON>Elven Warbow</edt:WEAPON>
 		<edt:WEAPON>Light Crossbow</edt:WEAPON>
 		<edt:WEAPON>Longbow</edt:WEAPON>
@@ -122,35 +122,57 @@
 		<edt:WEAPON>Shortbow</edt:WEAPON>
 		<edt:WEAPON>Windling Bow</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="20 Shortbow Arrows" weight="2" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="20 Shortbow Arrows" weight="2" price="5" bookref="PG p.252">
 		<edt:WEAPON>Shortbow</edt:WEAPON>
 	</AMMUNITION>
-	<AMMUNITION kind="ammunition" name="20 Windling Bow Arrows" weight="0.5" bookref="PG p.252">
+	<AMMUNITION kind="ammunition" name="20 Windling Bow Arrows" weight="0.5" price="5" bookref="PG p.252">
 		<edt:WEAPON>Windling Bow</edt:WEAPON>
 	</AMMUNITION>
+
+<!-- bloodcharm fertig	-->
+
+	<BLOODCHARMITEM name="Absorb Blow" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="100" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Astral-Sensitive Eye" depatterningrate="0" blooddamage="2" effect="like Astral Sight (PG p. 61) +1 Step bonus; 1 Strain per use" enchantingdifficultynumber="13" weight="1" price="325" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Blood Karma" depatterningrate="0" blooddamage="1" effect="spend multiple Karma Points on Talent Test, one point at a time, until test successful; 1 Strain per Point" enchantingdifficultynumber="16" weight="1" price="2000" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Blood Knuckles" depatterningrate="1" blooddamage="2" effect="+2 unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="11" weight="1" price="180" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Blood Matrix" depatterningrate="1" blooddamage="2" effect="acts as spell-specific spell matrix; 2 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="1500" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Enhanced Blood Matrix"  depatterningrate="1" blooddamage="2" effect="acts as spell-specific enhanced spell matrix; 3 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="2500" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Armored Blood Matrix" depatterningrate="1" blooddamage="2" effect="acts as spell-specific armored spell matrix; 4 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="3500" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Blood Weapon" depatterningrate="1" blooddamage="3" effect="+4 to unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="20" weight="3" price="500" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Common Bone Charm" depatterningrate="0" blooddamage="1" effect="+1 to Recovery Tests" enchantingdifficultynumber="12" weight="1" price="175" bookref="PG p.257"/>
+	<BLOODCHARMITEM name="Shaped Bone Charm" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="175" bookref="PG p.258"/>
+	<BLOODCHARMITEM name="Crystal Arm" depatterningrate="2" blooddamage="3" effect="see text; 1 Strain, make one more unarmed combat Attack but suffers –2 penalty all Action Tests" enchantingdifficultynumber="18" weight="1" price="1700" bookref="PG p.258"/>
+	<BLOODCHARMITEM name="Darksight Eye" depatterningrate="0" blooddamage="2" effect="Low Light Vision" enchantingdifficultynumber="11" weight="1" price="200" bookref="PG p.258"/>
+	<BLOODCHARMITEM name="Death Cheat" depatterningrate="0" blooddamage="3" effect="in case of death allows Recovery Test with +6; no Recovery Tests available get bonus Recovery Test Step 6" enchantingdifficultynumber="17" weight="1" price="450" bookref="PG p.259"/>
+	<BLOODCHARMITEM name="Desperate Blow" depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" price="275" bookref="PG p.259"/>
+	<BLOODCHARMITEM name="Desperate Spell" depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" price="300" bookref="PG p.259"/>
+	<BLOODCHARMITEM name="Disturbing Appearance" depatterningrate="3" blooddamage="1" effect="1 Strain, +2 Interaction Tests" enchantingdifficultynumber="20" weight="1" price="1000" bookref="PG p.259"/>
+	<BLOODCHARMITEM name="Elemental Fend Air" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst air spirits" enchantingdifficultynumber="17" weight="1" price="250" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Elemental Fend Earth" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst earth spirits" enchantingdifficultynumber="17" weight="1" price="200" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Elemental Fend Fire" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst fire spirits" enchantingdifficultynumber="17" weight="1" price="350" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Elemental Fend Water" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst water spirits" enchantingdifficultynumber="17" weight="1" price="300" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Elemental Fend Wood" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst wood spirits" enchantingdifficultynumber="17" weight="1" price="400" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Garlen Stone" depatterningrate="0" blooddamage="4" effect="2 Strain, use Recovery Tests heal Wound instead Damage" enchantingdifficultynumber="15" weight="1" price="250" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Horn Needle" depatterningrate="1" blooddamage="3" effect="2 Strain, +3 Toughness-based Tests or +3 Spell Defense resisting poison/ disease"  enchantingdifficultynumber="14" weight="1" price="450" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Horror Fend" depatterningrate="0" blooddamage="3" effect="1 Strain per round, +3 Physical and Spell Defense against Horrors/ Horror constructs" enchantingdifficultynumber="17" weight="1" price="500" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Initiative Booster" depatterningrate="1" blooddamage="4" effect="each point Strain, +1 Initiative Test" enchantingdifficultynumber="21" weight="1" price="600" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Karma" depatterningrate="2" blooddamage="3" effect="2 Strain + Strain cost talent, spend Karma Point on talent" enchantingdifficultynumber="16" weight="1" price="1000" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Karma Absorber" depatterningrate="3" blooddamage="3" effect="successfully strikes opponent, 2 Strain gain one of opponent’s Karma Points" enchantingdifficultynumber="20" weight="0" price="500" bookref="PG p.260"/>
+	<BLOODCHARMITEM name="Poison Sac" depatterningrate="2" blooddamage="1" effect="attached to blood weapons; causes Wound victim is poisoned" enchantingdifficultynumber="18" weight="1" price="1000" bookref="PG p.261"/>
+	<BLOODCHARMITEM name="Spore Glands" depatterningrate="2" blooddamage="2" effect="Step 4 damage to unconscious character, Toughness Step damage to all living targets 10-yard radius" enchantingdifficultynumber="19" weight="0" price="300" bookref="PG p.261"/>
+	<BLOODCHARMITEM name="Strength Booster" depatterningrate="1" blooddamage="2" effect="for every 2 Strain, +1 Strength-only Tests; no Damage Tests" enchantingdifficultynumber="13" weight="1" price="300" bookref="PG p.261"/>
+	<BLOODCHARMITEM name="Targeting Eye" depatterningrate="0" blooddamage="2" effect="1 Strain, +2 ranged combat Attack" enchantingdifficultynumber="13" weight="1" price="450" bookref="PG p.261"/>
+	<BLOODCHARMITEM name="Wings of Fire" depatterningrate="2" blooddamage="3" effect="can fly Toughness Step rounds; 1 Strain per round" enchantingdifficultynumber="18" weight="3" price="1000" bookref="PG p.261"/>
+	<BLOODCHARMITEM name="Wound Balance" depatterningrate="1" blooddamage="3" effect="1 Strain, +3 Knockdown Test" enchantingdifficultynumber="14" weight="1" price="200" bookref="PG p.261"/>
+
+	
+	<!--  hier geht´s weiter	-->
+	
 
 	<MAGICITEM weight="5.0" name="Counterspell Staff" bookref="FanWork PG p.116"/>
-
-<!--  in Arbeit: bis Shaped Bone Charm (PG p. 258 fertig)	-->
-
 	
-	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" name="Absorb Blow" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="like Astral Sight (PG p. 61) +1 Step bonus; 1 Strain per use" enchantingdifficultynumber="13" weight="1" name="Astral-Sensitive Eye" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="0" blooddamage="1" effect="spend multiple Karma Points on Talent Test, one point at a time, until test successful; 1 Strain per Point" enchantingdifficultynumber="16" weight="1" name="Blood Karma" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="+2 unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="11" weight="1" name="Blood Knuckles" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific spell matrix; 2 Strain casting spell" enchantingdifficultynumber="0" weight="1" name="Blood Matrix" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific enhanced spell matrix; 3 Strain casting spell" enchantingdifficultynumber="0" weight="1" name="Enhanced Blood Matrix" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="2" effect="acts as spell-specific armored spell matrix; 4 Strain casting spell" enchantingdifficultynumber="0" weight="1" name="Armored Blood Matrix" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+4 to unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="20" weight="3" name="Blood Weapon" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="0" blooddamage="1" effect="+1 to Recovery Tests" enchantingdifficultynumber="12" weight="1" name="Common Bone Charm" bookref="PG p.257"/>
-	<BLOODCHARMITEM depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" name="Shaped Bone Charm" bookref="PG p.258"/>
-<!--  hier geht´s weiter	-->
 	
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" name="Desperate Spell"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" name="Desperate Blow"/>
-	<BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="Bei Tod Erholungsprobe+5" enchantingdifficultynumber="14" weight="1.0" name="Last Chance"/>
-
-	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" enchantingdifficultynumber="16" kind="armor" weight="45.0" name="Thread Crystal Ringlet">
+	<THREADITEM name="Thread Crystal Ringlet" lpcostgrowth="1" spelldefense="13" maxthreads="2" enchantingdifficultynumber="16" kind="armor" weight="45.0">
 		<edt:description>Made from carved, interlocking rings of living crystal, this armor protects the character's entire body except the legs below the knee</edt:description>
 		<edt:THREADRANK effect="is now max forged">
 			<edt:ARMOR edn="16" penalty="2" mysticarmor="6" physicalarmor="6" kind="armor" weight="45.0" name="Thread Crystal Ringlet"/>
@@ -165,7 +187,7 @@
 			<edt:ARMOR edn="16" penalty="0" mysticarmor="6" physicalarmor="7" kind="armor" weight="45.0" name="Thread Crystal Ringlet"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="armor" weight="10.0" name="Thread Espagra-Scale Cloak">
+	<THREADITEM name="Thread Espagra-Scale Cloak" lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="armor" weight="10.0">
 		<edt:description>-</edt:description>
 		<edt:THREADRANK effect="max forged" keyknowledge="name of item">
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="2" physicalarmor="5" kind="armor" weight="10.0" name="Thread Espagra-Scale Cloak"/>
@@ -180,7 +202,7 @@
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="4" physicalarmor="6" kind="armor" weight="10.0" name="Thread Espagra-Scale Cloak"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="5" spelldefense="13" maxthreads="2" weaventhreadrank="3" weight="0.0" name="Thread Stirnreif">
+	<THREADITEM name="Thread Stirnreif" lpcostgrowth="5" spelldefense="13" maxthreads="2" weaventhreadrank="3" weight="0.0" >
 		<edt:description>Stirnreif, aus Bronze, ohne Verzierung</edt:description>
 		<edt:THREADRANK effect="Initiative +1" keyknowledge="name of item">
 			<edt:INITIATIVE/>
@@ -192,7 +214,7 @@
 			<edt:INITIATIVE/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" weight="0.1" name="Thread Ring">
+	<THREADITEM name="Thread Ring" lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" weight="0.1">
 		<edt:description>silberner Ring mit Schlangenlinien verziert</edt:description>
 		<edt:THREADRANK effect="social defenese+1" keyknowledge="name of item">
 			<edt:DEFENSE kind="social"/>
@@ -207,7 +229,7 @@
 			<edt:DEFENSE kind="physical"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0" name="Thread CrystalWaraxt">
+	<THREADITEM name="Thread CrystalWaraxt" lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0">
 		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
 		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
@@ -222,7 +244,7 @@
 			<edt:WEAPON size="5" strengthmin="13" damagestep="15" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="shield" weight="6.0" name="Thread CrystalRaider">
+	<THREADITEM name="Thread CrystalRaider" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="shield" weight="6.0">
 		<edt:description>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</edt:description>
 		<edt:THREADRANK effect="max Forge Defense" keyknowledge="Name of the Item: Sylvio">
 			<edt:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="2" mysticarmor="5" physicalarmor="5" kind="shield" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
@@ -237,7 +259,7 @@
 			<edt:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="0" mysticarmor="6" physicalarmor="6" kind="shield" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="brooch" weight="6.0" name="Thread Brooch">
+	<THREADITEM name="Thread Brooch" lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="brooch" weight="6.0">
 		<edt:description>Schwarzer Stein mit goldener Verzierung</edt:description>
 		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="name of the item">
 			<edt:DEFENSE kind="social"/>
@@ -247,7 +269,7 @@
 			<edt:DEFENSE kind="social"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="ring" weight="6.0" name="Thread Ring">
+	<THREADITEM name="Thread Ring" lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="ring" weight="6.0">
 		<edt:description></edt:description>
 		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="name of the item">
 			<edt:DEFENSE kind="social"/>
@@ -262,7 +284,10 @@
 			<edt:DEFENSE kind="spell"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<ITEM weight="13.0" name="backpack, bedroll, flint&amp;steel, waterskin, large sack"/>
+	
+<!--  hier geht´s weiter	-->
+
+	<ITEM name="backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="13.0" price=""/>
 	<ITEM weight="1.0" name="torch"/>
 	<ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
 	<ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
@@ -282,4 +307,5 @@
 	<ITEM weight="3.0" name="dry bag"/>
 	<ITEM weight="1.0" name="Salve of Clasure"/>
 	<ITEM weight="1.0" name="winter clouthes"/>
+
 </ITEMS>
