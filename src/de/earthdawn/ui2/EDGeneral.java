@@ -8,7 +8,6 @@ import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.Base64BinaryType;
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
-import de.earthdawn.data.WOUNDType;
 
 import java.util.Collections;
 import java.util.HashMap;

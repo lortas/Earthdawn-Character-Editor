@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -52,6 +53,7 @@ import org.json.XML;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.itextpdf.text.DocumentException;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.util.BASE64EncoderStream;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.CharacteristicStatus;
@@ -687,6 +689,7 @@ public class EDMainWindow {
 
 	private void writeToHtml(File file) throws JAXBException, IOException, TransformerException {
 		if( ec == null ) return;
+		// Erzeuge Character XML
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -696,23 +699,38 @@ public class EDMainWindow {
 		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
 		ec.setEditorpath((new File("")).toURI().getRawPath());
 		m.marshal(ec,baos);
-
+		// Transformiere das Character XML mit hilfe des XSLT nach HTML
 		TransformerFactory tFactory = TransformerFactory.newInstance();
 		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
 		ByteArrayOutputStream html = new ByteArrayOutputStream();
 		transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
 		String htmlstring=html.toString(encoding);
-		BufferedReader cssio = new BufferedReader(new FileReader("config/earthdawncharacter.css"));
-		StringBuilder css = new StringBuilder();
-		css.append("<style type=\"text/css\">");
-		String line = null;
-		final String systemlineseparator = System.getProperty("line.separator");
-		while( (line=cssio.readLine() ) != null ) {
-			css.append(line);
-			css.append(systemlineseparator);
+		// Lese CSS ein um die referenz im HTML durch inline zu ersetzen
+		File cssfile=new File("config/earthdawncharacter.css");
+		byte[] cssdata = new byte[(int) cssfile.length()];
+		FileInputStream cssio = new FileInputStream(cssfile);
+		cssio.read(cssdata);
+		cssio.close();
+		// Ersetzte CSS link durch CSS inline
+		htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", "<style type=\"text/css\">"+new String(cssdata)+"</style>");
+		// Entferne XSLT Fehler
+		htmlstring=htmlstring.replaceAll(" src=\"(%0A|%09)*", " src=\"");
+		htmlstring=htmlstring.replaceAll("(%0A|%09)*\" *>", "\">");
+		// Ersetze alle Icon Links durch inline Bilder
+		for(File iconfile : (new File("icons")).listFiles()) {
+			if( iconfile.getName().endsWith(".png") ) {
+				try {
+					FileInputStream fileInputStream = new FileInputStream(iconfile);
+					byte[] data = new byte[(int) iconfile.length()];
+					fileInputStream.read(data);
+					fileInputStream.close();
+					htmlstring=htmlstring.replace(iconfile.toURI().getRawPath(),"data:image/png;base64,"+new String(BASE64EncoderStream.encode(data)));
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+				}
+			}
 		}
-		css.append("</style>");
-		htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", css.toString());
+		//Schreibe Ergebnis weg
 		PrintStream out = new PrintStream(new FileOutputStream(file), false, encoding);
 		out.print(htmlstring);
 	}
@@ -1001,6 +1019,5 @@ public class EDMainWindow {
 		copyFile("./config/earthdawncharacter.xsd",new File( path, "earthdawncharacter.xsd" ).getCanonicalPath());
 		copyFile("./config/earthdawncharacter.xsl",new File( path, "earthdawncharacter.xsl" ).getCanonicalPath());
 		copyFile("./config/earthdawncharacter.css",new File( path, "earthdawncharacter.css" ).getCanonicalPath());
-		copyFile("./config/earthdawndatatypes.xsd",new File( path, "earthdawndatatypes.xsd" ).getCanonicalPath());
 	}
 }

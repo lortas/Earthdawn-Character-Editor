@@ -1277,6 +1277,6 @@
 	</div>
 </xsl:template>
 
-<xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz'" />
-<xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
+<xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz '" />
+<xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ_'" />
 </xsl:stylesheet>
