@@ -69,18 +69,6 @@
 		<edt:THREADRANK effect="Heiltrank +6, Erholungstrank +4"/>
 		<edt:THREADRANK effect="Heiltrank +8, Erholungstrank +4"/>
 	</THREADITEM>
-	<THREADITEM lpcostgrowth="5" spelldefense="14" maxthreads="2" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra">
-		<edt:description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</edt:description>
-		<edt:THREADRANK effect="Physical Armor +3" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
-			<edt:ARMOR edn="0" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Mystic Armor +3">
-			<edt:ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Für eine Überanstr.schaden ein Heiltrank (1x pro Tag)" keyknowledge="Name of Heror: Dirac Tol Amarra"/>
-		<edt:THREADRANK effect="Für zwei Überanstr.schaden ein Wiederbelebungssalbe im Augenblick des Todes (1x pro Tag)"/>
-		<edt:THREADRANK effect="Verzweiflungsschlag+Verzweiflungszauber Blutamulett (inkl Blutschaden) aber nur gegen Dämonen oder Wesen von Dämonen" keyknowledge="Name of slayed daemon: Adugank"/>
-	</THREADITEM>
 	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" effect="Spellmatrix" kind="wand" weight="1.0" name="Thread Matrix Wand">
 		<edt:description>schwarzer 2m-Stab, der "aufgeladen" blutrot ist; Der Stab ist Theranischer Herkunft die eingebaute Zaubermatrix ist zwar echt aber eher ein Gimmik um die wahre Funktion zu verschleiern; Der Stab muss mit der gesamten Blutmagie eines beliebigen Namensgeber aufladen, d.h. der Stab muss durch das Herz eines lebenden Namensgebers gestossen werden und dort solange verweilen bis dieser ausgeblutet ist.</edt:description>
 		<edt:THREADRANK effect="SpellMatrix Rank 1"/>
