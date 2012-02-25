@@ -52,7 +52,7 @@ import org.json.XML;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.itextpdf.text.DocumentException;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.BASE64EncoderStream;
+import com.itextpdf.text.pdf.codec.Base64;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.CharacteristicStatus;
@@ -719,11 +719,7 @@ public class EDMainWindow {
 		for(File iconfile : (new File("icons")).listFiles()) {
 			if( iconfile.getName().endsWith(".png") ) {
 				try {
-					FileInputStream fileInputStream = new FileInputStream(iconfile);
-					byte[] data = new byte[(int) iconfile.length()];
-					fileInputStream.read(data);
-					fileInputStream.close();
-					htmlstring=htmlstring.replace(iconfile.toURI().getRawPath(),"data:image/png;base64,"+new String(BASE64EncoderStream.encode(data)));
+					htmlstring=htmlstring.replace(iconfile.toURI().getRawPath(),"data:image/png;base64,"+Base64.encodeFromFile(iconfile.getCanonicalPath()).replace("\r", "").replace("\n", ""));
 				} catch (IOException e) {
 					System.err.println(e.getMessage());
 				}
