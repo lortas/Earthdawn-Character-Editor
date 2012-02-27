@@ -76,6 +76,11 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			label.setText("Weapons");
 			label.setIcon((ImageIcon)treeIcons.get("MELEE_WEAPON"));
 		}
+		//Common Magic Items
+		if(value == "Common Magic Items"){
+			label.setText("Common Magic Items");	
+			label.setIcon((ImageIcon)treeIcons.get("MAGIC_ITEM"));
+		}
 
 		// Bloodcharms
 		if(value == "Bloodcharms"){

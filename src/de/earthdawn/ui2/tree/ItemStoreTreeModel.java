@@ -28,6 +28,7 @@ public class ItemStoreTreeModel implements TreeModel {
 		this.displayedNodes = new HashMap<String, Object>();
 		if(this.itemstore != null) {
 			displayedNodes.put("Items", itemstore.getITEM());
+			displayedNodes.put("Common Magic Items", itemstore.getMAGICITEM());
 			displayedNodes.put("Bloodcharms", itemstore.getBLOODCHARMITEM());
 			displayedNodes.put("Weapons", itemstore.getWEAPON());
 			displayedNodes.put("Armor", itemstore.getARMOR());

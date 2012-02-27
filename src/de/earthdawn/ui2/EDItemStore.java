@@ -1,6 +1,5 @@
 package de.earthdawn.ui2;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GraphicsConfiguration;
@@ -24,7 +23,6 @@ import javax.swing.tree.TreePath;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ARMORType;
-import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.ITEMS;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.MAGICITEMType;
@@ -165,6 +163,16 @@ public class EDItemStore extends JFrame {
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						character.getBloodCharmItem().add((MAGICITEMType)currentNode);
+						character.refesh();
+					}
+				});
+				popup.add(menuitem);
+			} else
+			if( (parrentNode instanceof String) && ((String)parrentNode).equals("Common Magic Items")) {
+				JMenuItem menuitem = new JMenuItem("Add to Character");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						character.getMagicItem().add((MAGICITEMType)currentNode);
 						character.refesh();
 					}
 				});

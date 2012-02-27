@@ -31,6 +31,7 @@ public class ItemTreeModel  implements TreeModel {
 		this.displayedNodes = new HashMap<String, Object>();
 		if(this.character != null) {
 			displayedNodes.put("Items", character.getItems());
+			displayedNodes.put("Common Magic Items", character.getMagicItem());
 			displayedNodes.put("Bloodcharms", character.getBloodCharmItem());
 			displayedNodes.put("Weapons", character.getWeapons());
 			displayedNodes.put("Armor", character.getProtection().getARMOROrSHIELD());
