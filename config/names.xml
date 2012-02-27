@@ -22,8 +22,10 @@
 	<VERSATILITY name="Versatility" lang="en"/>
 	<KARMARUTUAL name="Karma Ritual" lang="de"/>
 	<KARMARUTUAL name="Karma Ritual" lang="en"/>
-	<ARTISAN name="Kunsthandwerk" lang="de"/>
-	<ARTISAN name="Artisan" lang="en"/>
+	<ARTISAN name="Kunsthandwerk" shortcut="K" lang="de"/>
+	<ARTISAN name="Artisan" shortcut="A" lang="en"/>
+	<KNOWLEDGE name="Wissen" shortcut="W" lang="de"/>
+	<KNOWLEDGE name="Knowledge" shortcut="K" lang="en"/>
 	<QUESTORTALENT name="Questor" lang="en"/>
 	<QUESTORTALENT name="Questor" lang="de"/>
 	<THREADWEAVING name="Thread Weaving" lang="en"/>

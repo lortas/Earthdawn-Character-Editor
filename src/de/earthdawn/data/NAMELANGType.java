@@ -11,6 +11,7 @@ package de.earthdawn.data;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -34,6 +35,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NAME_LANG_type", namespace = "http://earthdawn.com/names")
+@XmlSeeAlso({
+    NAMESHORTCUTType.class
+})
 public class NAMELANGType {
 
     @XmlAttribute(required = true)

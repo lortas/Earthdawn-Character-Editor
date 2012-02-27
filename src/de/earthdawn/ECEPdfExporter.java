@@ -38,6 +38,9 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.*;
 
 public class ECEPdfExporter {
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public static final String[] ARTISAN = PROPERTIES.getArtisanName();
+	public static final String[] KNOWLEDGE = PROPERTIES.getKnowledgeName();
 	private int counterEquipment=0;
 	private int rowEquipment=0;
 	private AcroFields acroFields = null;
@@ -158,9 +161,12 @@ public class ECEPdfExporter {
 			int counter = 0;
 			Collections.sort(skills, new SkillComparator());
 			for( SKILLType skill : skills ) {
-				RANKType skillrank = skill.getRANK();
-				String skillName=skill.getName();;
-				if( ! skill.getLimitation().isEmpty() ) skillName += ":"+skill.getLimitation();
+				String skillName=skill.getName();
+				if( ! skill.getLimitation().isEmpty() ) {
+					if( skillName.equals(ARTISAN[0]) ) skillName = ARTISAN[1];
+					else if( skillName.equals(KNOWLEDGE[0]) ) skillName = KNOWLEDGE[1];
+					skillName += " : "+skill.getLimitation();
+				}
 				if( ! skill.getBookref().isEmpty() ) skillName += " ["+skill.getBookref()+"]";
 				acroFields.setField( "Skill."+counter, skillName);
 				acroFields.setField( "SkillStrain."+counter, skill.getStrain() );
@@ -170,6 +176,7 @@ public class ECEPdfExporter {
 				case SUSTAINED : acroFields.setField( "SkillAction."+counter, "sstnd" ); break;
 				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
 				}
+				RANKType skillrank = skill.getRANK();
 				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
 				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
 				if( skillrank.getBonus() > 0 ) acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );

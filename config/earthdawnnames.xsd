@@ -15,6 +15,13 @@
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="NAME_SHORTCUT_type">
+		<xs:complexContent>
+			<xs:extension base="NAME_LANG_type">
+				<xs:attribute name="shortcut" type="xs:string" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="NAME_SPELLWEAVING_type">
 		<xs:sequence>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLKIND" type="NAME_SPELLKIND_type"/>
@@ -50,7 +57,8 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="DURABILITY" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="VERSATILITY" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="KARMARUTUAL" type="NAME_LANG_type"/>
-				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARTISAN" type="NAME_LANG_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARTISAN" type="NAME_SHORTCUT_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="KNOWLEDGE" type="NAME_SHORTCUT_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="QUESTORTALENT" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="THREADWEAVING" type="NAME_LANG_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGESKILLSPEAK" type="NAME_LANG_type"/>
