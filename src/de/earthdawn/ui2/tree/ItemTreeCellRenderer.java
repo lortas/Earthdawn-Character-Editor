@@ -126,31 +126,7 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			}
 		}
 
-		if(value instanceof ITEMType) {
-			ITEMType item = (ITEMType)value;
-			label.setText(item.getName());
-			label.setIcon((ImageIcon)treeIcons.get(item.getKind().toString()));
-		}
-
-		if (value instanceof WEAPONType) {
-			WEAPONType weapon = (WEAPONType)value;
-			label.setText(weapon.getName() +  " - (Damage: " +  weapon.getDamagestep() + ")" + (weapon.getUsed().equals(YesnoType.YES)?" - inuse":"") + (weapon.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
-		}
-
-		if (value instanceof ARMORType) {
-			ARMORType armor = (ARMORType)value;
-			label.setText(armor.getName() +  " - (" +  armor.getPhysicalarmor() + "/" + armor.getMysticarmor() + "/" + armor.getPenalty()  + ")" + (armor.getUsed().equals(YesnoType.YES)?" - inuse":"") + (armor.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
-		}
-
-		if( value instanceof MAGICITEMType ) {
-			MAGICITEMType magicitem = (MAGICITEMType)value;
-			label.setText(magicitem.getName() +" - ("+ magicitem.getBlooddamage() +"/"+ magicitem.getDepatterningrate() +"/"+ magicitem.getEnchantingdifficultynumber() +")" + (magicitem.getUsed().equals(YesnoType.YES)?" - inuse":"") + (magicitem.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
-		}
-
-		if( value instanceof THREADITEMType ) {
-			THREADITEMType threaditem = (THREADITEMType)value;
-			label.setText(threaditem.getName() +" - ("+ threaditem.getSpelldefense() +"/"+ threaditem.getMaxthreads() +"/"+ threaditem.getWeaventhreadrank() +")" + (threaditem.getUsed().equals(YesnoType.YES)?" - inuse":"") );
-		}
+		renderItems(value, label);
 
 		if( value instanceof TALENTABILITYType ) {
 			TALENTABILITYType ta = (TALENTABILITYType)value;
@@ -211,6 +187,34 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		}
 
 		return label;
+	}
+
+	public void renderItems(Object value, JLabel label) {
+		if(value instanceof ITEMType) {
+			ITEMType item = (ITEMType)value;
+			label.setText(item.getName());
+			label.setIcon((ImageIcon)treeIcons.get(item.getKind().toString()));
+		}
+
+		if (value instanceof WEAPONType) {
+			WEAPONType weapon = (WEAPONType)value;
+			label.setText(weapon.getName() +  " - (Damage: " +  weapon.getDamagestep() + ")" + (weapon.getUsed().equals(YesnoType.YES)?" - inuse":"") + (weapon.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
+		}
+
+		if (value instanceof ARMORType) {
+			ARMORType armor = (ARMORType)value;
+			label.setText(armor.getName() +  " - (" +  armor.getPhysicalarmor() + "/" + armor.getMysticarmor() + "/" + armor.getPenalty()  + ")" + (armor.getUsed().equals(YesnoType.YES)?" - inuse":"") + (armor.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
+		}
+
+		if( value instanceof MAGICITEMType ) {
+			MAGICITEMType magicitem = (MAGICITEMType)value;
+			label.setText(magicitem.getName() +" - ("+ magicitem.getBlooddamage() +"/"+ magicitem.getDepatterningrate() +"/"+ magicitem.getEnchantingdifficultynumber() +")" + (magicitem.getUsed().equals(YesnoType.YES)?" - inuse":"") + (magicitem.getVirtual().equals(YesnoType.YES)?" - virtual":"") );
+		}
+
+		if( value instanceof THREADITEMType ) {
+			THREADITEMType threaditem = (THREADITEMType)value;
+			label.setText(threaditem.getName() +" - ("+ threaditem.getSpelldefense() +"/"+ threaditem.getMaxthreads() +"/"+ threaditem.getWeaventhreadrank() +")" + (threaditem.getUsed().equals(YesnoType.YES)?" - inuse":"") );
+		}
 	}
 
 	private String stripExtension(String pResourceName ) {
