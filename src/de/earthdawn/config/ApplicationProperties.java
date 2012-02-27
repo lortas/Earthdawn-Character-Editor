@@ -413,7 +413,6 @@ public class ApplicationProperties {
 		for( NAMESTARTINGSKILLSType skills : NAMES.getSTARTINGSKILLS() ) {
 			if( skills.getLang().equals(LANGUAGE) ) return skills.getSKILL();
 		}
-		// Not found
 		return null;
 	}
 
@@ -427,7 +426,6 @@ public class ApplicationProperties {
 				return spellTypeMap;
 			}
 		}
-		// Not found
 		return null;
 	}
 
@@ -439,8 +437,25 @@ public class ApplicationProperties {
 		for( NAMELANGType name : NAMES.getQUESTORTALENT() ) {
 			if( name.getLang().equals(LANGUAGE) ) return name.getName();
 		}
-		// Not found
 		return "";
+	}
+
+	public String[] getArtisanName() {
+		for( NAMESHORTCUTType name : NAMES.getARTISAN() ) {
+			if( name.getLang().equals(LANGUAGE) ) {
+				return new String[]{name.getName(),name.getShortcut()};
+			}
+		}
+		return new String[]{"",""};
+	}
+
+	public String[] getKnowledgeName() {
+		for( NAMESHORTCUTType name : NAMES.getKNOWLEDGE() ) {
+			if( name.getLang().equals(LANGUAGE) ) {
+				return new String[]{name.getName(),name.getShortcut()};
+			}
+		}
+		return new String[]{"",""};
 	}
 
 	public ITEMS getItems() {

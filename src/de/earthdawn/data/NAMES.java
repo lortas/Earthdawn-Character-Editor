@@ -31,7 +31,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DURABILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
- *         &lt;element name="ARTISAN" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ARTISAN" type="{http://earthdawn.com/names}NAME_SHORTCUT_type" maxOccurs="unbounded"/>
+ *         &lt;element name="KNOWLEDGE" type="{http://earthdawn.com/names}NAME_SHORTCUT_type" maxOccurs="unbounded"/>
  *         &lt;element name="QUESTORTALENT" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="THREADWEAVING" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="LANGUAGESKILLSPEAK" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -55,6 +56,7 @@ import javax.xml.bind.annotation.XmlType;
     "versatility",
     "karmarutual",
     "artisan",
+    "knowledge",
     "questortalent",
     "threadweaving",
     "languageskillspeak",
@@ -76,7 +78,9 @@ public class NAMES {
     @XmlElement(name = "KARMARUTUAL", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMELANGType> karmarutual;
     @XmlElement(name = "ARTISAN", namespace = "http://earthdawn.com/names", required = true)
-    protected List<NAMELANGType> artisan;
+    protected List<NAMESHORTCUTType> artisan;
+    @XmlElement(name = "KNOWLEDGE", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESHORTCUTType> knowledge;
     @XmlElement(name = "QUESTORTALENT", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMELANGType> questortalent;
     @XmlElement(name = "THREADWEAVING", namespace = "http://earthdawn.com/names", required = true)
@@ -228,15 +232,44 @@ public class NAMES {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link NAMELANGType }
+     * {@link NAMESHORTCUTType }
      * 
      * 
      */
-    public List<NAMELANGType> getARTISAN() {
+    public List<NAMESHORTCUTType> getARTISAN() {
         if (artisan == null) {
-            artisan = new ArrayList<NAMELANGType>();
+            artisan = new ArrayList<NAMESHORTCUTType>();
         }
         return this.artisan;
+    }
+
+    /**
+     * Gets the value of the knowledge property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the knowledge property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKNOWLEDGE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESHORTCUTType }
+     * 
+     * 
+     */
+    public List<NAMESHORTCUTType> getKNOWLEDGE() {
+        if (knowledge == null) {
+            knowledge = new ArrayList<NAMESHORTCUTType>();
+        }
+        return this.knowledge;
     }
 
     /**
