@@ -22,7 +22,7 @@
 
 <!--  Shield vollständig PG	-->
 	<SHIELD kind="shield" name="Bark" physicalarmor="2" mysticarmor="1" penalty="1" physicaldeflectionbonus="2" mysticdeflectionbonus="1" shatterthreshold="14" edn="11" weight="5" price="15" bookref="PG p.257"/>
-	<SHIELD kind="shield" name="Body" physicalarmor="5"  penalty="2" physicaldeflectionbonus="4" shatterthreshold="21" weight="15" name="Body" price="50" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Body" physicalarmor="5"  penalty="2" physicaldeflectionbonus="4" shatterthreshold="21" weight="15" price="50" bookref="PG p.257"/>
 	<SHIELD kind="shield" name="Buckler" physicalarmor="1" penalty="0" physicaldeflectionbonus="1" shatterthreshold="17" weight="3" price="5" bookref="PG p.257"/>
 	<SHIELD kind="shield" name="Crystal Buckler" mysticdeflectionbonus="1" physicaldeflectionbonus="1" penalty="0" mysticarmor="1" physicalarmor="1" weight="5.0" price="50" bookref="PG p.257"/>
 	<SHIELD kind="shield" name="Crystal Raider" physicalarmor="3" mysticarmor="3" penalty="2" physicaldeflectionbonus="3" mysticdeflectionbonus="3" shatterthreshold="18" edn="14" weight="15" price="150" bookref="PG p.257"/>
@@ -33,12 +33,12 @@
 <!--  melee weapon vollständig PG	-->
 	<WEAPON kind="melee weapon" name="Battle Axe" size="5" strengthmin="13" damagestep="7" weight="6" price="35" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Broadsword" size="3" strengthmin="12" damagestep="5" weight="4" price="25" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" name="Club"size="2" strengthmin="7" damagestep="3" weight="3" price="2" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Club" size="2" strengthmin="7" damagestep="3" weight="3" price="2" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Dagger" size="1" strengthmin="4" damagestep="2" weight="1" price="0" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Dwarf Sword" size="2" strengthmin="12" damagestep="4" weight="2" price="6" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Flail" size="3" strengthmin="10" dexteritymin="7" damagestep="5" weight="5" price="35" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Hand-Axe" size="2" strengthmin="8" damagestep="4" weight="3" price="15" bookref="PG p.251"/>
-	<WEAPON kind="melee weapon" name="Knife"size="1" strengthmin="3" damagestep="1" weight="0.625" price="0" bookref="PG p.251"/>
+	<WEAPON kind="melee weapon" name="Knife" size="1" strengthmin="3" damagestep="1" weight="0.625" price="0" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Lance" size="6" strengthmin="14" damagestep="6" weight="10" price="150" bookref="PG p.251"/>
 	<WEAPON kind="melee weapon" name="Long-Spear" size="5" strengthmin="13" damagestep="5" weight="7" price="15" bookref="PG p.251"/>	
 	<WEAPON kind="melee weapon" name="Mace" size="3" strengthmin="13" damagestep="4" weight="5" price="20" bookref="PG p.251"/>
@@ -83,7 +83,7 @@
 <!--  missile weapon vollständig PG	-->
 	<WEAPON kind="missile weapon" name="Blowgun" longrange="16" shortrange="8" size="1" strengthmin="3" damagestep="1" weight="0.625" price="2" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" name="Elven Warbow" longrange="96" shortrange="48" size="5" strengthmin="12" dexteritymin="15" damagestep="5" weight="4" price="200" bookref="PG p.252"/>
-	<WEAPON kind="missile weapon" name="Light Crossbow"longrange="64" shortrange="32" size="3" strengthmin="9" damagestep="4" weight="5" price="50" bookref="PG p.252"/>
+	<WEAPON kind="missile weapon" name="Light Crossbow" longrange="64" shortrange="32" size="3" strengthmin="9" damagestep="4" weight="5" price="50" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" name="Longbow" longrange="80" shortrange="40" size="5" strengthmin="11" dexteritymin="13" damagestep="4" weight="4" price="60" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" name="Medium Crossbow" longrange="80" shortrange="40" size="4" strengthmin="12" damagestep="5" weight="7" price="100" bookref="PG p.252"/>
 	<WEAPON kind="missile weapon" name="Shortbow" longrange="60" shortrange="30" size="3" strengthmin="8" damagestep="3" weight="3" price="15" bookref="PG p.252"/>
@@ -122,6 +122,51 @@
 		<edt:WEAPON>Windling Bow</edt:WEAPON>
 	</AMMUNITION>
 
+	<MAGICITEM name="Air Elevator" enchantingdifficultynumber="12" price="3000" weight="0" bookref="PG p.264"/>
+	<MAGICITEM name="Bedroll of Comfort" enchantingdifficultynumber="11" price="340" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Dry Boots" enchantingdifficultynumber="12" price="250" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Huntsman’s Boots" enchantingdifficultynumber="11" price="700" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Chair of Comfort (Standard-sized)" enchantingdifficultynumber="13" price="600" weight="6" bookref="PG p.264"/>
+	<MAGICITEM name="Chair of Comfort (Troll/Obsidiman-sized)" enchantingdifficultynumber="14" price="900" weight="9" bookref="PG p.264"/>
+	<MAGICITEM name="Cleaning Broom" enchantingdifficultynumber="11" price="25" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Dwarf Winternight Cloak" enchantingdifficultynumber="12" price="275" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Everclean Cloak" enchantingdifficultynumber="11" price="275" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Oak-Leaf Cloak" enchantingdifficultynumber="12" price="800" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Warm Cloak" enchantingdifficultynumber="11" price="300" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Cloaksense Brooch" enchantingdifficultynumber="13" price="350" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Divining Rod" enchantingdifficultynumber="12" price="75" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Elfweave Robe" enchantingdifficultynumber="13" price="80" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Fire Starter" enchantingdifficultynumber="12" price="100" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Firefly Chalk (per stick)" enchantingdifficultynumber="12" price="12" weight="0" bookref="PG p.264"/>
+	<MAGICITEM name="Floating Chair (Standard-sized)" enchantingdifficultynumber="12" price="250" weight="0" bookref="PG p.264"/>
+	<MAGICITEM name="Floating Chair (Troll/Obsidiman-sized)" enchantingdifficultynumber="13" price="600" weight="0" bookref="PG p.264"/>
+	<MAGICITEM name="Hambrell’s Contract" price="700" weight="0" bookref="PG p.264"/>
+	<MAGICITEM name="Heat Stone" enchantingdifficultynumber="11" price="100" weight="3" bookref="PG p.264"/>
+	<MAGICITEM name="Hot Pot" enchantingdifficultynumber="12" price="100" weight="8" bookref="PG p.264"/>
+	<MAGICITEM name="Small Light Quartz" enchantingdifficultynumber="13" price="75" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Medium Light Quartz" enchantingdifficultynumber="14" price="125" weight="6" bookref="PG p.264"/>
+	<MAGICITEM name="Large Light Quartz" enchantingdifficultynumber="15" price="200" weight="20" bookref="PG p.264"/>
+	<MAGICITEM name="Light Quartz Weapon" enchantingdifficultynumber="13" price="100" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Message Stone" enchantingdifficultynumber="10" price="300" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Message Stone (Warded)" enchantingdifficultynumber="20" price="600" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="One-Size (fits all) Hat" enchantingdifficultynumber="13" price="35" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Orichalcum Container" enchantingdifficultynumber="10" price="5000" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Pot of Grumbah (1 foot diameter)" enchantingdifficultynumber="12" price="75" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Pot of Grumbah (1 yard diameter)" enchantingdifficultynumber="13" price="200" weight="5" bookref="PG p.264"/>
+	<MAGICITEM name="Pure Water Pot" enchantingdifficultynumber="16" price="150" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Quiet-Fingers Gloves" enchantingdifficultynumber="13" price="140" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Quiet Pouch" enchantingdifficultynumber="13" price="65" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Season Lamp" enchantingdifficultynumber="11" price="350" weight="0" bookref="PG p.264"/>
+	<MAGICITEM name="Talisman First Circle" enchantingdifficultynumber="16" price="150" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Talisman Second Circle" enchantingdifficultynumber="18" price="300" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Talisman Third Circle" enchantingdifficultynumber="19" price="450" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Talisman Fourth Circle" enchantingdifficultynumber="21" price="600" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Talisman Fifth Circle" enchantingdifficultynumber="22" price="750" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Traveler’s Mug" enchantingdifficultynumber="12" price="350" weight="1" bookref="PG p.264"/>
+	<MAGICITEM name="Upandal’s Blessings" enchantingdifficultynumber="11" price="275" weight="3" bookref="PG p.264"/>
+	<MAGICITEM name="Volus Brooch" enchantingdifficultynumber="11" price="500" weight="2" bookref="PG p.264"/>
+	<MAGICITEM name="Wind Instrument" enchantingdifficultynumber="12" price="250" weight="2" bookref="PG p.264"/>	
+
 <!-- bloodcharm fertig	-->
 	<BLOODCHARMITEM name="Absorb Blow" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="100" bookref="PG p.257"/>
 	<BLOODCHARMITEM name="Astral-Sensitive Eye" depatterningrate="0" blooddamage="2" effect="like Astral Sight (PG p. 61) +1 Step bonus; 1 Strain per use" enchantingdifficultynumber="13" weight="1" price="325" bookref="PG p.257"/>
@@ -156,52 +201,6 @@
 	<BLOODCHARMITEM name="Targeting Eye" depatterningrate="0" blooddamage="2" effect="1 Strain, +2 ranged combat Attack" enchantingdifficultynumber="13" weight="1" price="450" bookref="PG p.261"/>
 	<BLOODCHARMITEM name="Wings of Fire" depatterningrate="2" blooddamage="3" effect="can fly Toughness Step rounds; 1 Strain per round" enchantingdifficultynumber="18" weight="3" price="1000" bookref="PG p.261"/>
 	<BLOODCHARMITEM name="Wound Balance" depatterningrate="1" blooddamage="3" effect="1 Strain, +3 Knockdown Test" enchantingdifficultynumber="14" weight="1" price="200" bookref="PG p.261"/>
-	
-<!--  fertig	-->
-	<MAGICITEM name="Air Elevator" edn="12" price="3000" weight="0" bookref="PG p.264"/>
-	<MAGICITEM name="Bedroll of Comfort" edn="11" price="340" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Dry Boots" edn="12" price="250" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Huntsman’s Boots" edn="11" price="700" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Chair of Comfort (Standard-sized)" edn="13" price="600" weight="6" bookref="PG p.264"/>
-	<MAGICITEM name="Chair of Comfort (Troll/Obsidiman-sized)" edn="14" price="900" weight="9" bookref="PG p.264"/>
-	<MAGICITEM name="Cleaning Broom" edn="11" price="25" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Dwarf Winternight Cloak" edn="12" price="275" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Everclean Cloak" edn="11" price="275" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Oak-Leaf Cloak" edn="12" price="800" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Warm Cloak" edn="11" price="300" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Cloaksense Brooch" edn="13" price="350" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Divining Rod" edn="12" price="75" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Elfweave Robe" edn="13" price="80" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Fire Starter" edn="12" price="100" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Firefly Chalk (per stick)" edn="12" price="12" weight="0" bookref="PG p.264"/>
-	<MAGICITEM name="Floating Chair (Standard-sized)" edn="12" price="250" weight="0" bookref="PG p.264"/>
-	<MAGICITEM name="Floating Chair (Troll/Obsidiman-sized)" edn="13" price="600" weight="0" bookref="PG p.264"/>
-	<MAGICITEM name="Hambrell’s Contract" price="700" weight="0" bookref="PG p.264"/>
-	<MAGICITEM name="Heat Stone" edn="11" price="100" weight="3" bookref="PG p.264"/>
-	<MAGICITEM name="Hot Pot" edn="12" price="100" weight="8" bookref="PG p.264"/>
-	<MAGICITEM name="Small Light Quartz" edn="13" price="75" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Medium Light Quartz" edn="14" price="125" weight="6" bookref="PG p.264"/>
-	<MAGICITEM name="Large Light Quartz" edn="15" price="200" weight="20" bookref="PG p.264"/>
-	<MAGICITEM name="Light Quartz Weapon" edn="13" price="100" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Message Stone" edn="10" price="300" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Message Stone (Warded)" edn="20" price="600" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="One-Size (fits all) Hat" edn="13" price="35" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Orichalcum Container" edn="10" price="5000" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Pot of Grumbah (1 foot diameter)" edn="12" price="75" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Pot of Grumbah (1 yard diameter)" edn="13" price="200" weight="5" bookref="PG p.264"/>
-	<MAGICITEM name="Pure Water Pot" edn="16" price="150" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Quiet-Fingers Gloves" edn="13" price="140" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Quiet Pouch" edn="13" price="65" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Season Lamp" edn="11" price="350" weight="0" bookref="PG p.264"/>
-	<MAGICITEM name="Talisman First Circle" edn="16" price="150" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Talisman Second Circle" edn="18" price="300" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Talisman Third Circle" edn="19" price="450" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Talisman Fourth Circle" edn="21" price="600" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Talisman Fifth Circle" edn="22" price="750" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Traveler’s Mug" edn="12" price="350" weight="1" bookref="PG p.264"/>
-	<MAGICITEM name="Upandal’s Blessings" edn="11" price="275" weight="3" bookref="PG p.264"/>
-	<MAGICITEM name="Volus Brooch" edn="11" price="500" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Wind Instrument" edn="12" price="250" weight="2" bookref="PG p.264"/>	
 
 	<!--  hier gehts weiter	-->
 	
@@ -305,7 +304,7 @@
 	
 <!--  hier geht´s weiter	-->
 
-	<ITEM name="backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="13.0" price=""/>
+	<ITEM name="backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="13.0"/>
 	<ITEM weight="1.0" name="torch"/>
 	<ITEM weight="5.0" name="artisan tool (Runenschnitzen)"/>
 	<ITEM weight="3.0" name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"/>
