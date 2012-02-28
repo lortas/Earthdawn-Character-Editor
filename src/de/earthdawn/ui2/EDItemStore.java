@@ -1,5 +1,6 @@
 package de.earthdawn.ui2;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GraphicsConfiguration;
@@ -10,15 +11,21 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.tree.TreePath;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
@@ -195,5 +202,35 @@ public class EDItemStore extends JFrame {
 
 		tree.add(popup);
 		popup.show(tree, event.getX(), event.getY());
+	}
+
+	public static void saveItems(Component parent, ITEMS items) {
+		File xmlFile = new File("config"+File.separatorChar+"itemstore","characteritems.xml");
+		JFileChooser fc = new JFileChooser(new File("config"+File.separatorChar+"itemstore"));
+		fc.setSelectedFile(xmlFile);
+
+		// Show open dialog; this method does not return until the dialog is closed
+		if( fc.showSaveDialog(parent) != JFileChooser.APPROVE_OPTION ) return;
+		// Only Save file if OK/Yes was pressed
+		File file = fc.getSelectedFile();
+		if( file != null ) {
+			try {
+				final String encoding = EDMainWindow.encoding;
+				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+				Marshaller m = jc.createMarshaller();
+				FileOutputStream out = new FileOutputStream(file);
+				PrintStream fileio = new PrintStream(out, false, encoding);
+				m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/items ../earthdawnitems.xsd");
+				m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+				fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>");
+				m.marshal(items,fileio);
+			}
+			catch(Exception e){
+				JOptionPane.showMessageDialog(parent, e.getLocalizedMessage());
+				e.printStackTrace();
+			}
+		}
 	}
 }
