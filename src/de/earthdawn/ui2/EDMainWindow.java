@@ -60,10 +60,14 @@ import de.earthdawn.ECECsvExporter;
 import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
+import de.earthdawn.data.ITEMS;
 import de.earthdawn.data.LAYOUTDIMENSIONType;
 import de.earthdawn.data.LAYOUTSIZESType;
+import de.earthdawn.data.LanguageType;
+import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.event.CharChangeEventListener;
 
@@ -71,7 +75,7 @@ public class EDMainWindow {
 
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
-	private static final String encoding="UTF-8";
+	public static final String encoding="UTF-8";
 
 	private JFrame frame;
 	private EDCHARACTER ec;
@@ -302,6 +306,14 @@ public class EDMainWindow {
 			}
 		});
 		mntmExport.add(mntmHtml);
+
+		JMenuItem mntmItems = new JMenuItem(NLS.getString("EDMainWindow.mntmItemExport.text")); //$NON-NLS-1$
+		mntmItems.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmItems_actionPerformed(arg0);
+			}
+		});
+		mntmExport.add(mntmItems);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
 		mntmClose.addActionListener(new ActionListener() {
@@ -926,6 +938,24 @@ public class EDMainWindow {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	protected void do_mntmItems_actionPerformed(ActionEvent arg0) {
+		if( ec == null ) return;
+		ITEMS items=new ITEMS();
+		items.setLang(LanguageType.EN);
+		items.getAMMUNITION().addAll(ec.getAMMUNITION());
+		items.getBLOODCHARMITEM().addAll(ec.getBLOODCHARMITEM());
+		items.getITEM().addAll(ec.getITEM());
+		items.getMAGICITEM().addAll(ec.getMAGICITEM());
+		items.getPATTERNITEM().addAll(ec.getPATTERNITEM());
+		items.getTHREADITEM().addAll(ec.getTHREADITEM());
+		items.getWEAPON().addAll(ec.getWEAPON());
+		for( ARMORType as : ec.getPROTECTION().getARMOROrSHIELD() ) {
+			if( as instanceof SHIELDType ) items.getSHIELD().add((SHIELDType)as);
+			else items.getARMOR().add(as);
+		}
+		EDItemStore.saveItems(frame, items);
 	}
 
 	private File selectFileName(String extention) {
