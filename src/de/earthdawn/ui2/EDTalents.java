@@ -77,7 +77,7 @@ public class EDTalents extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		if( backgroundimage == null ) {
-			File file = new File("templates/talents_background.jpg");
+			File file = new File("images/background/talents.jpg");
 			try {
 				backgroundimage = ImageIO.read(file);
 			} catch (IOException e) {

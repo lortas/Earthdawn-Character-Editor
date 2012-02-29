@@ -56,7 +56,7 @@ import javax.swing.JButton;
 
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
-	private static final String backgroundImage="templates/genralpanel_background.jpg";
+	private static final String backgroundImage="images/background/genralpanel.jpg";
 	private CharacterContainer character;
 	private JTextField textFieldName;
 	private JRadioButton rdbtnMale;
@@ -564,7 +564,7 @@ public class EDGeneral extends JPanel {
 	}
 
 	protected void do_updatePortrait() {
-		JFileChooser fc = new JFileChooser(new File("templates"));
+		JFileChooser fc = new JFileChooser(new File("images/character"));
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG-GIF-PNG Images", "jpg", "gif", "png", "jpeg");
 		fc.setFileFilter(filter);
 		ImagePreview imagepreview = new ImagePreview(lblPortrait.getWidth(),lblPortrait.getHeight());

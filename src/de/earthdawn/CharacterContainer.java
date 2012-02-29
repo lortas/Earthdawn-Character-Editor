@@ -1583,13 +1583,13 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( result.isEmpty() ) {
 			File file;
 			APPEARANCEType appearance = getAppearance();
-			file = new File("templates/default_character_portrait_"+appearance.getRace().toLowerCase()+"_"+appearance.getGender().value().toLowerCase()+".jpg");
+			file = new File("images/character/default_portrait_"+appearance.getRace().toLowerCase()+"_"+appearance.getGender().value().toLowerCase()+".jpg");
 			if( ! file.canRead() ) {
 				System.out.println("can not read file "+file.getAbsolutePath());
-				file = new File("templates/default_character_portrait_"+appearance.getRace().toLowerCase()+".jpg");
+				file = new File("images/character/default_portrait_"+appearance.getRace().toLowerCase()+".jpg");
 				if( ! file.canRead() ) {
 					System.out.println("can not read file "+file.getAbsolutePath());
-					file = new File("templates/default_character_portrait.jpg");
+					file = new File("images/character/default_portrait.jpg");
 				}
 			}
 			try {

@@ -65,7 +65,7 @@ public class EDKnacks extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		if( backgroundimage == null ) {
-			File file = new File("templates/knacks_background.jpg");
+			File file = new File("images/background/knacks.jpg");
 			try {
 				backgroundimage = ImageIO.read(file);
 			} catch (IOException e) {

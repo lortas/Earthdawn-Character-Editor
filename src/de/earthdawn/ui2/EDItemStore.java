@@ -75,7 +75,7 @@ public class EDItemStore extends JFrame {
 		Graphics g = getGraphics();
 		if( g == null ) return;
 		if( backgroundimage == null ) {
-			File file = new File("templates/itemstore_background.jpg");
+			File file = new File("images/background/itemstore.jpg");
 			try {
 				backgroundimage = ImageIO.read(file);
 			} catch (IOException e) {

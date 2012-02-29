@@ -70,7 +70,7 @@ public class EDExperience extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		if( backgroundimage == null ) {
-			File file = new File("templates/experience_background.jpg");
+			File file = new File("images/background/experience.jpg");
 			try {
 				backgroundimage = ImageIO.read(file);
 			} catch (IOException e) {
