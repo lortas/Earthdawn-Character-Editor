@@ -407,7 +407,7 @@ public class EDMainWindow {
 		panelEDThreadItems = new EDInventory();
 		panelEDLanguages = new EDLanguages();
 
-		paneStatus = new BackgroundEditorPane("templates/characteristic_background.jpg");
+		paneStatus = new BackgroundEditorPane("images/background/characteristic.jpg");
 		JScrollPane editorScrollPane = new JScrollPane(paneStatus);
 		editorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		LAYOUTDIMENSIONType dimStatusWindow = PROPERTIES.getGuiLayoutStatusWindow();

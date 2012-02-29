@@ -69,7 +69,7 @@ public class EDKarma extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		if( backgroundimage == null ) {
-			File file = new File("templates/karma_background.jpg");
+			File file = new File("images/background/karma.jpg");
 			try {
 				backgroundimage = ImageIO.read(file);
 			} catch (IOException e) {
