@@ -71,6 +71,7 @@
 				<xs:element minOccurs="0" maxOccurs="1" name="CALCULATEDLEGENDPOINTS" type="CALCULATEDLEGENDPOINTS_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="EXPERIENCE" type="edt:EXPERIENCE_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="DEVOTION" type="edt:DEVOTION_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="CREATURE" type="edt:CREATURE_type"/>
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="player" type="xs:string" use="optional"/>
