@@ -1,9 +1,13 @@
 package de.earthdawn.ui2.tree;
 
+import de.earthdawn.data.Base64BinaryType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.data.ItemkindType;
+import de.earthdawn.ui2.ImagePreview;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
@@ -12,7 +16,18 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
 import javax.swing.border.LineBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import net.miginfocom.swing.MigLayout;
 
 public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
@@ -32,11 +47,12 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 	private JSpinner spinnerEdn;
 	private JTextField textFieldEffect;
 	private JSpinner spinnerWeaventhreadrank;
+	private JLabel lblImage;
 
 	public ThreadItemNodePanel(THREADITEMType node) {
 		super(node);
 		setBorder(new LineBorder(new Color(0, 0, 0)));
-		setLayout(new MigLayout("", "[24px][128px,grow][24px][60px:60px:60px][30px][60px:60px:60px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[24px][128px,grow][24px][60px:60px:60px][30px][60px:60px:60px][150px:150px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
 		comboBoxType = new JComboBox(ItemkindType.values());
@@ -47,6 +63,28 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		add(new JLabel("EDN"), "cell 2 0,alignx left,aligny center");
 		spinnerEdn = new JSpinner(new SpinnerNumberModel(node.getEnchantingdifficultynumber(), 0, 99, 1));
 		add(spinnerEdn, "cell 3 0,alignx left,aligny center");
+
+		lblImage = new JLabel();
+//		List<Base64BinaryType> images = node.getImage();
+//		if( ! images.isEmpty() ) {
+//			ImageIcon icon = new ImageIcon(images.get(0).getValue());
+//			Image image = icon.getImage().getScaledInstance(120, -1, Image.SCALE_SMOOTH);
+//			lblImage.setIcon(new ImageIcon(image));
+//		} else {
+			ImageIcon icon = new ImageIcon(new byte[]{0});
+			Image image = icon.getImage().getScaledInstance(-1, 150, Image.SCALE_SMOOTH);
+			lblImage.setIcon(new ImageIcon(image));
+//		}
+		lblImage.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				if( e.getButton() == 1 ) do_updateImage();
+			}
+		});
+		lblImage.setVerticalAlignment(JLabel.BOTTOM);
+		lblImage.setHorizontalAlignment(JLabel.CENTER);
+		lblImage.setOpaque(false);
+		add(lblImage, "cell 6 0 1 6,grow,alignx center, aligny center");
 
 		add(new JLabel("Weight"), "cell 2 1,alignx left,aligny center");
 		spinnerWeight = new JSpinner(new SpinnerNumberModel(node.getWeight(), 0, 99, 1));
@@ -131,5 +169,36 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		nodeObject.setMaxthreads((Integer)spinnerMaxThreads.getValue());
 		nodeObject.setSpelldefense((Integer)spinnerSpellDefense.getValue());
 		nodeObject.setWeaventhreadrank((Integer)spinnerWeaventhreadrank.getValue());
+	}
+
+	protected void do_updateImage() {
+		JFileChooser fc = new JFileChooser(new File("images"));
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG-GIF-PNG Images", "jpg", "gif", "png", "jpeg");
+		fc.setFileFilter(filter);
+		ImagePreview imagepreview = new ImagePreview(150,150);
+		fc.setAccessory(imagepreview);
+		fc.addPropertyChangeListener(imagepreview);
+		int returnVal = fc.showOpenDialog(this);
+		if(returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = fc.getSelectedFile();
+			try {
+				FileInputStream fileInputStream = new FileInputStream(file);
+				byte[] data = new byte[(int) file.length()];
+				fileInputStream.read(data);
+				fileInputStream.close();
+				Base64BinaryType base64bin = new Base64BinaryType();
+				base64bin.setValue(data);
+				final String[] filename = file.getName().split("\\.");
+				base64bin.setContenttype("image/"+filename[filename.length-1]);
+				//nodeObject.getImage().set(0, base64bin);
+				ImageIcon icon = new ImageIcon(data);
+				Image image = icon.getImage().getScaledInstance(-1, 150, Image.SCALE_SMOOTH);
+				lblImage.setIcon(new ImageIcon(image));
+			} catch (FileNotFoundException e1) {
+				System.err.println(e1.getLocalizedMessage());
+			} catch (IOException e2) {
+				System.err.println(e2.getLocalizedMessage());
+			}
+		}
 	}
 }
