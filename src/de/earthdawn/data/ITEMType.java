@@ -8,9 +8,12 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,6 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="ITEM_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="IMAGE" type="{http://earthdawn.com/datatypes}base64binary_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
@@ -42,16 +49,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ITEM_type")
+@XmlType(name = "ITEM_type", propOrder = {
+    "description",
+    "image"
+})
 @XmlSeeAlso({
     ARMORType.class,
     WEAPONType.class,
     AMMUNITIONType.class,
     MAGICITEMType.class,
-    COINSType.class
+    COINSType.class,
+    CREATUREType.class
 })
 public class ITEMType {
 
+    protected String description;
+    @XmlElement(name = "IMAGE")
+    protected List<Base64BinaryType> image;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
@@ -72,6 +86,59 @@ public class ITEMType {
     protected String bookref;
     @XmlAttribute
     protected Integer price;
+
+    /**
+     * Gets the value of the description property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Sets the value of the description property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /**
+     * Gets the value of the image property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the image property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getIMAGE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Base64BinaryType }
+     * 
+     * 
+     */
+    public List<Base64BinaryType> getIMAGE() {
+        if (image == null) {
+            image = new ArrayList<Base64BinaryType>();
+        }
+        return this.image;
+    }
 
     /**
      * Gets the value of the name property.
