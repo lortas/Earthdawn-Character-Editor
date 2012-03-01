@@ -109,7 +109,8 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		textFieldDescription = new JTextField();
 		add(textFieldDescription, "cell 1 5 5 1,growx,aligny center");
 		textFieldDescription.setColumns(12);
-		textFieldDescription.setText(nodeObject.getDescription());
+		String description = nodeObject.getDescription();
+		if( description != null ) textFieldDescription.setText(description);
 	}
 
 	@Override

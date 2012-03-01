@@ -338,6 +338,10 @@
 		<xs:attribute name="value" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="IMAGE" type="base64binary_type"/>
+		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="weight" type="xs:float" use="required"/>
 		<xs:attribute name="used" type="yesno_type" default="yes"/>
@@ -533,8 +537,7 @@
 		<xs:complexContent>
 			<xs:extension base="MAGICITEM_type">
 				<xs:sequence>
-					<xs:element maxOccurs="1" minOccurs="1" name="description" type="xs:string"/>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="THREADRANK" type="THREADRANK_type"/>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="THREADRANK" type="THREADRANK_type"/>
 				</xs:sequence>
 				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
 				<xs:attribute name="maxthreads" type="unsigned_int" default="2"/>
@@ -658,5 +661,26 @@
 		<xs:attribute name="language" type="xs:string" use="required"/>
 		<xs:attribute name="speak" type="learnedby_type" default="no"/>
 		<xs:attribute name="readwrite" type="learnedby_type" default="no"/>
+	</xs:complexType>
+	<xs:complexType name="CREATURE_type">
+		<xs:complexContent>
+			<xs:extension base="ITEM_type">
+				<xs:sequence>
+					<xs:element minOccurs="1" maxOccurs="1" name="APPEARANCE" type="APPEARANCE_type"/>
+					<xs:element minOccurs="6" maxOccurs="6" name="ATTRIBUTE" type="ATTRIBUTE_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="DEFENSE" type="DEFENSE_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="PROTECTION" type="PROTECTION_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="HEALTH" type="HEALTH_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="MOVEMENT" type="MOVEMENT_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="INITIATIVE" type="INITIATIVE_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="CARRYING" type="CARRYING_type"/>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="SKILL_type"/>
+					<xs:element minOccurs="1" maxOccurs="1" name="KARMA" type="KARMA_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string" default=""/>
+					<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string" default=""/>
+					<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string" default=""/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 </xs:schema>
