@@ -56,6 +56,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="CALCULATEDLEGENDPOINTS" type="{http://earthdawn.com/character}CALCULATEDLEGENDPOINTS_type" minOccurs="0"/>
  *         &lt;element name="EXPERIENCE" type="{http://earthdawn.com/datatypes}EXPERIENCE_type"/>
  *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}DEVOTION_type" minOccurs="0"/>
+ *         &lt;element name="CREATURE" type="{http://earthdawn.com/datatypes}CREATURE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="player" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -96,7 +97,8 @@ import javax.xml.bind.annotation.XmlType;
     "portrait",
     "calculatedlegendpoints",
     "experience",
-    "devotion"
+    "devotion",
+    "creature"
 })
 @XmlRootElement(name = "EDCHARACTER", namespace = "http://earthdawn.com/character")
 public class EDCHARACTER {
@@ -155,6 +157,8 @@ public class EDCHARACTER {
     protected EXPERIENCEType experience;
     @XmlElement(name = "DEVOTION", namespace = "http://earthdawn.com/character")
     protected DEVOTIONType devotion;
+    @XmlElement(name = "CREATURE", namespace = "http://earthdawn.com/character")
+    protected List<CREATUREType> creature;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute
@@ -876,6 +880,35 @@ public class EDCHARACTER {
      */
     public void setDEVOTION(DEVOTIONType value) {
         this.devotion = value;
+    }
+
+    /**
+     * Gets the value of the creature property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the creature property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCREATURE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CREATUREType }
+     * 
+     * 
+     */
+    public List<CREATUREType> getCREATURE() {
+        if (creature == null) {
+            creature = new ArrayList<CREATUREType>();
+        }
+        return this.creature;
     }
 
     /**

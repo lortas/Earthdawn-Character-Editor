@@ -27,7 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}MAGICITEM_type">
  *       &lt;sequence>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="THREADRANK" type="{http://earthdawn.com/datatypes}THREADRANK_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="weaventhreadrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -43,15 +42,12 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "THREADITEM_type", propOrder = {
-    "description",
     "threadrank"
 })
 public class THREADITEMType
     extends MAGICITEMType
 {
 
-    @XmlElement(required = true)
-    protected String description;
     @XmlElement(name = "THREADRANK")
     protected List<THREADRANKType> threadrank;
     @XmlAttribute
@@ -62,30 +58,6 @@ public class THREADITEMType
     protected Integer spelldefense;
     @XmlAttribute
     protected Integer lpcostgrowth;
-
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
 
     /**
      * Gets the value of the threadrank property.
