@@ -65,16 +65,26 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		add(spinnerEdn, "cell 3 0,alignx left,aligny center");
 
 		lblImage = new JLabel();
-//		List<Base64BinaryType> images = node.getImage();
-//		if( ! images.isEmpty() ) {
-//			ImageIcon icon = new ImageIcon(images.get(0).getValue());
-//			Image image = icon.getImage().getScaledInstance(120, -1, Image.SCALE_SMOOTH);
-//			lblImage.setIcon(new ImageIcon(image));
-//		} else {
-			ImageIcon icon = new ImageIcon(new byte[]{0});
-			Image image = icon.getImage().getScaledInstance(-1, 150, Image.SCALE_SMOOTH);
+		List<Base64BinaryType> images = node.getIMAGE();
+		if( ! images.isEmpty() ) {
+			ImageIcon icon = new ImageIcon(images.get(0).getValue());
+			Image image = icon.getImage().getScaledInstance(120, -1, Image.SCALE_SMOOTH);
 			lblImage.setIcon(new ImageIcon(image));
-//		}
+		} else {
+			byte[] data = new byte[]{0};
+			File file = new File("images/nopicture.png");
+			try {
+				FileInputStream fileInputStream = new FileInputStream(file);
+				data = new byte[(int) file.length()];
+				fileInputStream.read(data);
+				fileInputStream.close();
+			} catch (FileNotFoundException e) {
+				System.err.println(e.getLocalizedMessage());
+			} catch (IOException e) {
+				System.err.println(e.getLocalizedMessage());
+			}
+			lblImage.setIcon(new ImageIcon((new ImageIcon(data)).getImage().getScaledInstance(-1, 150, Image.SCALE_SMOOTH)));
+		}
 		lblImage.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
@@ -190,7 +200,9 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 				base64bin.setValue(data);
 				final String[] filename = file.getName().split("\\.");
 				base64bin.setContenttype("image/"+filename[filename.length-1]);
-				//nodeObject.getImage().set(0, base64bin);
+				List<Base64BinaryType> objectimages = nodeObject.getIMAGE();
+				if( objectimages.isEmpty() ) objectimages.add(base64bin);
+				else objectimages.set(0, base64bin);
 				ImageIcon icon = new ImageIcon(data);
 				Image image = icon.getImage().getScaledInstance(-1, 150, Image.SCALE_SMOOTH);
 				lblImage.setIcon(new ImageIcon(image));
