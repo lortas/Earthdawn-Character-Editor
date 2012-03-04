@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.io.StringWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -97,6 +99,7 @@ public class EDMainWindow {
 	private EDSkills panelEDSkills;
 	private JEditorPane paneStatus;
 	private CharacteristicStatus characteristicStatus;
+	private About aboutwindow;
 
 	/**
 	 * Launch the application.
@@ -361,13 +364,65 @@ public class EDMainWindow {
 		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
 
+		aboutwindow = new About(frame);
 		JMenuItem mntmAbout= new JMenuItem(NLS.getString("EDMainWindow.mntmAbout.text")); //$NON-NLS-1$
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				do_mntmAbout_actionPerformed(arg0);
+				aboutwindow.setVisible(true);
 			}
 		});
 		mnHelp.add(mntmAbout);
+
+		JMenuItem mntmFAQ= new JMenuItem(NLS.getString("EDMainWindow.mntmFAQ.text")); //$NON-NLS-1$
+		mntmFAQ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					try {
+						desktop.browse(new URI("http://sourceforge.net/apps/trac/ed-char-editor/wiki/FAQ"));
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (URISyntaxException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		mnHelp.add(mntmFAQ);
+
+		JMenuItem mntmNewVersion= new JMenuItem(NLS.getString("EDMainWindow.mntmNewVersion.text")); //$NON-NLS-1$
+		mntmNewVersion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					try {
+						desktop.browse(new URI("http://sourceforge.net/projects/ed-char-editor/files/"));
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (URISyntaxException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		mnHelp.add(mntmNewVersion);
+
+		JMenuItem mntmReportBug= new JMenuItem(NLS.getString("EDMainWindow.mntmReportBug.text")); //$NON-NLS-1$
+		mntmReportBug.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					try {
+						desktop.browse(new URI("http://sourceforge.net/apps/trac/ed-char-editor/report/1"));
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (URISyntaxException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		mnHelp.add(mntmReportBug);
 
 		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
 
@@ -445,7 +500,6 @@ public class EDMainWindow {
 		tabbedPane.addTab("DevotionPoints", null, panelEDDevotionPoints , null);
 		//tabbedPane.addTab("Items", null, panelEDItems , null);
 		//tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
-		//tabbedPane.addTab("Weapons", null, panelEDWeapons , null);
 		//tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
 		tabbedPane.addTab("Inventory", null, panelEDThreadItems , null);
 
@@ -483,12 +537,6 @@ public class EDMainWindow {
 			}
 		}
 		return result;
-	}
-
-	private void do_mntmAbout_actionPerformed(ActionEvent arg0) {
-		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
-		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
-		//TODO Fenster öffnen und HELP.ABOUT darin anzeigen
 	}
 
 	private void do_mntmDicing_actionPerformed(ActionEvent arg0) {
@@ -596,7 +644,6 @@ public class EDMainWindow {
 		if(co.getClass() == EDGeneral.class)        { ((EDGeneral)co).setCharacter(character); return; }
 		if(co.getClass() == EDAttributes.class)     { ((EDAttributes)co).setCharacter(character); return; }
 		if(co.getClass() == EDDisciplines.class)    { ((EDDisciplines)co).setCharacter(character); return; }
-		if(co.getClass() == EDStatus.class)         { ((EDStatus)co).setCharacter(character); return; }
 		if(co.getClass() == EDSpells.class)         { ((EDSpells)co).setCharacter(character); return; }
 		if(co.getClass() == EDKnacks.class)         { ((EDKnacks)co).setCharacter(character);  return; }
 		if(co.getClass() == EDSkills.class)         { ((EDSkills)co).setCharacter(character); return; }
@@ -604,9 +651,6 @@ public class EDMainWindow {
 		if(co.getClass() == EDLanguages.class)      { ((EDLanguages)co).setCharacter(character); return; }
 		if(co.getClass() == EDKarma.class)          { ((EDKarma)co).setCharacter(character); return; }
 		if(co.getClass() == EDDevotionPoints.class) { ((EDDevotionPoints)co).setCharacter(character); return; }
-		if(co.getClass() == EDItems.class)          { ((EDItems)co).setCharacter(character); return; }
-		if(co.getClass() == EDWeapons.class)        { ((EDWeapons)co).setCharacter(character); return; }
-		if(co.getClass() == EDArmor.class)          { ((EDArmor)co).setCharacter(character); return; }
 		if(co.getClass() == EDInventory.class)      { ((EDInventory)co).setCharacter(character); return; }
 
 		if(co.getClass() == JScrollPane.class) componentSetCharacter(((JScrollPane)co).getViewport().getView());

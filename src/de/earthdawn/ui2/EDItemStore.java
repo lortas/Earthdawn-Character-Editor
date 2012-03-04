@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -43,6 +42,7 @@ public class EDItemStore extends JFrame {
 	private static final long serialVersionUID = 7590657160227976859L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final ITEMS items = PROPERTIES.getItems();
+	public static final String title="Earthdawn Character -- Item Store";
 	private JTree tree;
 	private BufferedImage backgroundimage = null;
 	private Object currentNode; 
@@ -50,24 +50,16 @@ public class EDItemStore extends JFrame {
 	private EDInventory parent;
 	private CharacterContainer character=null;
 
-	public EDItemStore(EDInventory parent) throws HeadlessException {
-		super("Earthdawn Character Item Store");
-		initialize(parent);
+	public EDItemStore(EDInventory parent) {
+		super(title);
+		this.parent=parent;
+		initialize();
 	}
 
 	public EDItemStore(EDInventory parent, GraphicsConfiguration gc) {
-		super(gc);
-		initialize(parent);
-	}
-
-	public EDItemStore(EDInventory parent, String title) throws HeadlessException {
-		super(title);
-		initialize(parent);
-	}
-
-	public EDItemStore(EDInventory parent, String title, GraphicsConfiguration gc) {
-		super(title, gc);
-		initialize(parent);
+		super(title,gc);
+		this.parent=parent;
+		initialize();
 	}
 
 	public void setVisible(boolean visible) {
@@ -85,8 +77,7 @@ public class EDItemStore extends JFrame {
 		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
 	}
 
-	private void initialize(EDInventory parent) {
-		this.parent=parent;
+	private void initialize() {
 		tree = new JTree(new ItemStoreTreeModel(items));
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
