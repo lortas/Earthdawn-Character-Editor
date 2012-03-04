@@ -1,9 +1,12 @@
 package de.earthdawn.ui2;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
@@ -33,17 +36,6 @@ public class About extends JFrame {
 
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
-		Graphics g = getGraphics();
-		if( g == null ) return;
-		if( backgroundimage == null ) {
-			File file = new File("images/background/about.jpg");
-			try {
-				backgroundimage = ImageIO.read(file);
-			} catch (IOException e) {
-				System.err.println("can not read background image : "+file.getAbsolutePath());
-			}
-		}
-		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
 	}
 
 	public void setParent(JFrame parent) {
@@ -51,7 +43,9 @@ public class About extends JFrame {
 	}
 
 	private void initialize() {
+		
 		JEditorPane editorpane = new JEditorPane();
+		
 		File file = new File("documentation/about.html");
 		try {
 			FileInputStream fileInputStream = new FileInputStream(file);
@@ -67,13 +61,31 @@ public class About extends JFrame {
 		editorpane.setEditable(false);
 		editorpane.setFocusable(false);
 		editorpane.setOpaque(false);
-
+		
 		JScrollPane scrollPane = new JScrollPane(editorpane);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setOpaque(false);
-		setContentPane(scrollPane);
+		// this is the key !!!
+		scrollPane.getViewport().setOpaque(false);
+		
+		Image image = null;
+		try {
+			 image = ImageIO.read(new File("images/background/genralpanel.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		EDBackGroundPanel bp = new EDBackGroundPanel(image);
+		bp.setLayout( new BorderLayout() );
+		bp.add(scrollPane);
+		
+		
+		setContentPane(bp); 
 		setLocationRelativeTo(this.parent);
 		setSize(new Dimension(500,500));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
 	}
+	
+
+	
 }
