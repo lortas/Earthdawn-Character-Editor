@@ -44,7 +44,6 @@ public class EDInventory extends JPanel {
 
 	public CharacterContainer getCharacter() {
 		return character;
-
 	}
 
 	public void setCharacter(CharacterContainer character) {	
