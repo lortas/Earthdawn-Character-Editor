@@ -1,14 +1,14 @@
 package de.earthdawn.ui2;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GraphicsConfiguration;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,7 +44,6 @@ public class EDItemStore extends JFrame {
 	public static final ITEMS items = PROPERTIES.getItems();
 	public static final String title="Earthdawn Character -- Item Store";
 	private JTree tree;
-	private BufferedImage backgroundimage = null;
 	private Object currentNode; 
 	private TreePath currentPath;
 	private EDInventory parent;
@@ -60,21 +59,6 @@ public class EDItemStore extends JFrame {
 		super(title,gc);
 		this.parent=parent;
 		initialize();
-	}
-
-	public void setVisible(boolean visible) {
-		super.setVisible(visible);
-		Graphics g = getGraphics();
-		if( g == null ) return;
-		if( backgroundimage == null ) {
-			File file = new File("images/background/itemstore.jpg");
-			try {
-				backgroundimage = ImageIO.read(file);
-			} catch (IOException e) {
-				System.err.println("can not read background image : "+file.getAbsolutePath());
-			}
-		}
-		if( backgroundimage != null ) g.drawImage(backgroundimage, 0, 0, getWidth(), getHeight(), this);
 	}
 
 	private void initialize() {
@@ -95,9 +79,20 @@ public class EDItemStore extends JFrame {
 		scrollPane.setOpaque(false);
 		scrollPane.setViewportView(tree);
 		scrollPane.getViewport().setOpaque(false);
-		setContentPane(scrollPane);
+
+		Image image = null;
+		try {
+			 image = ImageIO.read(new File("images/background/itemstore.jpg"));
+		} catch (IOException e) {
+			System.err.println(e.getLocalizedMessage());
+		}
+		EDBackGroundPanel bp = new EDBackGroundPanel(image);
+		bp.setLayout( new BorderLayout() );
+		bp.add(scrollPane);
+
+		setContentPane(bp); 
+		setSize(new Dimension(466,672));
 		setLocationRelativeTo(this.parent);
-		setSize(new Dimension(500,500));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 

@@ -1,13 +1,9 @@
 package de.earthdawn.ui2;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -18,11 +14,10 @@ import javax.imageio.ImageIO;
 
 public class About extends JFrame {
 	private static final long serialVersionUID = -2055110507521896101L;
-	private BufferedImage backgroundimage = null;
 	private JFrame parent;
 	public static final String title="Earthdawn Character Editor -- About";
 
-	public About(JFrame parent) throws HeadlessException {
+	public About(JFrame parent) {
 		super(title);
 		this.parent=parent;
 		initialize();
@@ -34,18 +29,12 @@ public class About extends JFrame {
 		initialize();
 	}
 
-	public void setVisible(boolean visible) {
-		super.setVisible(visible);
-	}
-
 	public void setParent(JFrame parent) {
 		this.parent=parent;
 	}
 
 	private void initialize() {
-		
 		JEditorPane editorpane = new JEditorPane();
-		
 		File file = new File("documentation/about.html");
 		try {
 			FileInputStream fileInputStream = new FileInputStream(file);
@@ -61,31 +50,25 @@ public class About extends JFrame {
 		editorpane.setEditable(false);
 		editorpane.setFocusable(false);
 		editorpane.setOpaque(false);
-		
+
 		JScrollPane scrollPane = new JScrollPane(editorpane);
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setOpaque(false);
-		// this is the key !!!
 		scrollPane.getViewport().setOpaque(false);
-		
+
 		Image image = null;
 		try {
-			 image = ImageIO.read(new File("images/background/genralpanel.jpg"));
+			 image = ImageIO.read(new File("images/background/about.jpg"));
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.err.println(e.getLocalizedMessage());
 		}
 		EDBackGroundPanel bp = new EDBackGroundPanel(image);
 		bp.setLayout( new BorderLayout() );
 		bp.add(scrollPane);
-		
-		
+
 		setContentPane(bp); 
 		setLocationRelativeTo(this.parent);
 		setSize(new Dimension(500,500));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
 	}
-	
-
-	
 }
