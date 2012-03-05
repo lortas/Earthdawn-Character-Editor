@@ -12,6 +12,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import de.earthdawn.EarthdawnCharacterEditor;
+
 public class About extends JFrame {
 	private static final long serialVersionUID = -2055110507521896101L;
 	private JFrame parent;
@@ -42,7 +44,7 @@ public class About extends JFrame {
 			fileInputStream.read(data);
 			fileInputStream.close();
 			editorpane.setEditorKit(editorpane.getEditorKitForContentType("text/html"));
-			editorpane.setText(new String(data));
+			editorpane.setText((new String(data)).replace("###", EarthdawnCharacterEditor.VERSION));
 		} catch (IOException e) {
 			editorpane.setEditorKit(editorpane.getEditorKitForContentType("text"));
 			editorpane.setText(e.getLocalizedMessage());
@@ -68,7 +70,7 @@ public class About extends JFrame {
 
 		setContentPane(bp); 
 		setLocationRelativeTo(this.parent);
-		setSize(new Dimension(500,500));
+		setSize(new Dimension(500,700));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 }

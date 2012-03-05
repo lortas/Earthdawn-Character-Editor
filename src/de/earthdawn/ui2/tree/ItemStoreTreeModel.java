@@ -60,7 +60,7 @@ public class ItemStoreTreeModel implements TreeModel {
 			return  displayKeys.get(index);
 		}
 		if(parent instanceof String){
-			return ((List)displayedNodes.get(parent)).get(index);
+			return ((List<?>)displayedNodes.get(parent)).get(index);
 		}
 		if(parent instanceof THREADITEMType){
 			return ((THREADITEMType)parent).getTHREADRANK().get(index);
@@ -77,7 +77,7 @@ public class ItemStoreTreeModel implements TreeModel {
 			return displayedNodes.size();
 		}
 		if(parent instanceof String){
-			return ((List)displayedNodes.get(parent)).size();
+			return ((List<?>)displayedNodes.get(parent)).size();
 		}
 		if(parent instanceof THREADITEMType){
 			return ((THREADITEMType)parent).getTHREADRANK().size();
@@ -94,7 +94,7 @@ public class ItemStoreTreeModel implements TreeModel {
 			return displayKeys.indexOf(child);
 		}
 		if(parent instanceof String){
-			return ((List)displayedNodes.get(parent)).indexOf(child);
+			return ((List<?>)displayedNodes.get(parent)).indexOf(child);
 		}
 		if(parent instanceof THREADITEMType){
 			return ((THREADITEMType)parent).getTHREADRANK().indexOf(child);
@@ -118,7 +118,7 @@ public class ItemStoreTreeModel implements TreeModel {
 		}
 
 		if(node instanceof String){
-			return ((List)displayedNodes.get(node)).isEmpty();
+			return ((List<?>)displayedNodes.get(node)).isEmpty();
 		}
 
 		if(node instanceof THREADITEMType){
