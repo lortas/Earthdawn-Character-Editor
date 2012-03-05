@@ -109,6 +109,12 @@ public class EDItemStore extends JFrame {
 		if( currentNode == null ) return;
 		JPopupMenu popup = new JPopupMenu();
 
+		Object parrentNode = currentPath.getParentPath().getLastPathComponent();
+		// Wenn es kein Eltern gibt, dann sind wir an der Wurzel und eine Wurzel kann nicht eingefügt werden;
+		if( parrentNode == null ) return;
+		// Wenn der Elternknoten kein String ist, dann ist das Eltern kein Wurzelknoten und wir sind zutief im Baum
+		if( !(parrentNode instanceof String) ) return;
+
 		if(currentNode instanceof THREADITEMType) {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
@@ -150,8 +156,7 @@ public class EDItemStore extends JFrame {
 			popup.add(menuitem);
 		}
 		if(currentNode instanceof MAGICITEMType) {
-			Object parrentNode = currentPath.getParentPath().getLastPathComponent();
-			if( (parrentNode instanceof String) && ((String)parrentNode).equals("Bloodcharms")) {
+			if( ((String)parrentNode).equals("Bloodcharms") ) {
 				JMenuItem menuitem = new JMenuItem("Add to Character");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -161,7 +166,7 @@ public class EDItemStore extends JFrame {
 				});
 				popup.add(menuitem);
 			} else
-			if( (parrentNode instanceof String) && ((String)parrentNode).equals("Common Magic Items")) {
+			if( ((String)parrentNode).equals("Common Magic Items")) {
 				JMenuItem menuitem = new JMenuItem("Add to Character");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -172,18 +177,15 @@ public class EDItemStore extends JFrame {
 				popup.add(menuitem);
 			}
 		}
-		if(currentNode instanceof ITEMType) {
-			Object parrentNode = currentPath.getParentPath().getLastPathComponent();
-			if( (parrentNode instanceof String) && ((String)parrentNode).equals("Items")) {
-				JMenuItem menuitem = new JMenuItem("Add to Character");
-				menuitem.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						character.getItems().add((ITEMType)currentNode);
-						character.refesh();
-					}
-				});
-				popup.add(menuitem);
-			}
+		if(currentNode instanceof ITEMType && ((String)parrentNode).equals("Items") ) {
+			JMenuItem menuitem = new JMenuItem("Add to Character");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					character.getItems().add((ITEMType)currentNode);
+					character.refesh();
+				}
+			});
+			popup.add(menuitem);
 		}
 
 		tree.add(popup);
