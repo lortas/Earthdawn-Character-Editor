@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -1581,18 +1582,43 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<Base64BinaryType> getPortrait() {
 		List<Base64BinaryType> result = character.getPORTRAIT();
 		if( result.isEmpty() ) {
-			File file;
 			APPEARANCEType appearance = getAppearance();
-			file = new File("images/character/default_portrait_"+appearance.getRace().toLowerCase()+"_"+appearance.getGender().value().toLowerCase()+".jpg");
-			if( ! file.canRead() ) {
-				System.out.println("can not read file "+file.getAbsolutePath());
-				file = new File("images/character/default_portrait_"+appearance.getRace().toLowerCase()+".jpg");
-				if( ! file.canRead() ) {
-					System.out.println("can not read file "+file.getAbsolutePath());
-					file = new File("images/character/default_portrait.jpg");
+			File[] files = new File("images/character").listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					if( name==null ) return false;
+					name=name.toLowerCase();
+					if( !name.startsWith("portrait_") ) return false;
+					if( name.endsWith(".jpg") ) return true;
+					if( name.endsWith(".png") ) return true;
+					if( name.endsWith(".gif") ) return true;
+					return false;
+				}
+			});
+			List<List<File>> filescore = new ArrayList<List<File>>();
+			filescore.add(new ArrayList<File>()); // 0
+			filescore.add(new ArrayList<File>()); // 1
+			filescore.add(new ArrayList<File>()); // 2
+			filescore.add(new ArrayList<File>()); // 3
+			filescore.get(0).add(new File("images/character/portrait.jpg"));
+			String race="_"+appearance.getRace().toLowerCase()+"_";
+			String gender="_"+appearance.getGender().value().toLowerCase()+"_";
+			String origin="_"+appearance.getOrigin().toLowerCase()+"_";
+			for( File f : files ) {
+				String name=f.getName().toLowerCase().replace(".", "_");
+				if( name.contains(race) ) {
+					int score=1;
+					if( name.contains(gender) ) score++;
+					if( name.contains(origin) ) score++;
+					filescore.get(score).add(f);
 				}
 			}
-			try {
+			File file=null;
+			for(int score=3;score>=0;score--) {
+				if( file != null ) break;
+				List<File> fileset = filescore.get(score);
+				if( !fileset.isEmpty() ) file = fileset.get(rand.nextInt(fileset.size()));
+			}
+			if( file!=null ) try {
 				FileInputStream fileInputStream = new FileInputStream(file);
 				byte[] data = new byte[(int) file.length()];
 				fileInputStream.read(data);
