@@ -613,6 +613,14 @@ public class ApplicationProperties {
 					System.out.println(" skipped. Wrong language: "+i.getLang().value()+" != "+LANGUAGE.value() );
 				}
 			}
+			for( ITEMType i : ITEMS.getARMOR() )          { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getBLOODCHARMITEM() ) { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getITEM() )           { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getMAGICITEM() )      { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getPATTERNITEM() )    { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getSHIELD() )         { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getTHREADITEM() )     { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
+			for( ITEMType i : ITEMS.getWEAPON() )         { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
 
 			// randomcharactertemplates laden
 			// --- Bestimmen aller Dateien im Unterordner 'randomcharactertemplates'
