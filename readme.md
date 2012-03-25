@@ -22,6 +22,26 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.40-201203xx.zip ##
++ XML
+	+ New attribute EditorPath within the character xml to find image dependencies
+	+ New attribute price for ITEMType
+	+ New xml element NAMESHORTCUTType for knowledge and artisan skills
+	+ THREADITEM description moved to parent ITEM and set to optional
+	+ ITEM enhanced with element IMAGE
+	+ new element CREATURE within ECCHARACTER
++ Icons of the Items are shown within the HTML view of the character XMLs
++ Tuning of HTML view of the character XMLs
++ Character can now be exported to an all-in-one/standalone HTML file (pictures and CSS are in-line)
++ A few new portrait pictures
++ More items from the players guide insert into the itemstore
++ thread item, knack and spell lists slitted into multiple files
++ Common Magic Items can now be added
++ The inventory of a character can now be exported as itemstore file
++ Image files moved from the directory template into its own folder
++ Thread Items can now have their own images
++ credits are now shown in the about window
++ if multiple character portraits are matching to race and gender, one is randomly chosen
 ## EarthdawnCharacterEditor-0.39-20120222.zip ##
 + Bugs
 	+ Typos within two discipline definitions corrected
