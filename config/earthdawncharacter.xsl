@@ -823,9 +823,7 @@
 	<tr>
 		<td class="edCapabCell" style="text-align: left;">
 			<img class="edIcon">
-				<xsl:attribute name="src">
-					<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
-				</xsl:attribute>
+				<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
 			</img>
 			<xsl:value-of select="@name"/>
 		</td>
@@ -1064,9 +1062,7 @@
 	<tr>
 		<td class="edKeyCell" style="text-align: right;">
 			<img class="edIcon">
-				<xsl:attribute name="src">
-					<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
-				</xsl:attribute>
+				<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
 			</img>
 			<xsl:value-of select="@name"/>
 		</td>
@@ -1111,9 +1107,7 @@
 		<xsl:for-each select=". | following-sibling::edc:ITEM[position() &lt; 2]">
 			<td class="edItemCell" style="text-align: left;">
 				<img class="edIcon">
-					<xsl:attribute name="src">
-						<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
-					</xsl:attribute>
+					<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
 				</img>
 				<xsl:value-of select="@name" />
 			</td>
@@ -1127,7 +1121,7 @@
 	<div class="edSubHeader">Thread Items</div>
 	<xsl:if test="//edc:THREADITEM">
 		<table width="100%">
-			<xsl:apply-templates select="//edc:THREADITEM[(position() mod 2) = 1]" /> 
+			<xsl:apply-templates select="//edc:THREADITEM[(position() mod 2) = 1]" />
 		</table>
 	</xsl:if>
 </xsl:template>
@@ -1142,9 +1136,7 @@
 							<td class="edKeyCell">Name:</td>
 							<td class="edValueCell" colspan="3" style="text-align: left;">
 								<img class="edIcon">
-									<xsl:attribute name="src">
-										<xsl:value-of select="/edc:EDCHARACTER/@editorpath"/>icons/<xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if>.png
-									</xsl:attribute>
+									<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
 								</img>
 								<xsl:value-of select="@name" />
 							</td>
@@ -1254,13 +1246,16 @@
 	<xsl:if test="//edc:PORTRAIT">
 		<div class="edPortraits">
 			<div class="edSubHeader">Portraits</div>
-			<img class="edPortraitImages">
-				<xsl:attribute name="src">
-					data:<xsl:value-of select="//edc:PORTRAIT/@contenttype"/>;base64,<xsl:value-of select="//edc:PORTRAIT"/>
-				</xsl:attribute>
-			</img>
+			<xsl:apply-templates select="//edc:PORTRAIT"/>
 		</div>
 	</xsl:if>
+</xsl:template>
+
+<xsl:template match="//edc:PORTRAIT">
+	<xsl:element name="img">
+		<xsl:attribute name="class">edPortraitImages</xsl:attribute>
+		<xsl:attribute name="src">data:<xsl:value-of select="@contenttype"/>;base64,<xsl:value-of select="."/></xsl:attribute>
+	</xsl:element>
 </xsl:template>
 
 <xsl:template name="description">
