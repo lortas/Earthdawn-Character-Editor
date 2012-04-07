@@ -22,7 +22,7 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
-## EarthdawnCharacterEditor-0.40-201203xx.zip ##
+## EarthdawnCharacterEditor-0.40-20120325.zip ##
 + XML
 	+ New attribute EditorPath within the character xml to find image dependencies
 	+ New attribute price for ITEMType
@@ -40,8 +40,8 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 + The inventory of a character can now be exported as itemstore file
 + Image files moved from the directory template into its own folder
 + Thread Items can now have their own images
-+ credits are now shown in the about window
-+ if multiple character portraits are matching to race and gender, one is randomly chosen
++ Credits are now shown in the about window
++ If multiple default character portraits are matching to characters race and gender, one is randomly chosen
 ## EarthdawnCharacterEditor-0.39-20120222.zip ##
 + Bugs
 	+ Typos within two discipline definitions corrected
