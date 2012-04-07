@@ -769,8 +769,7 @@ public class EDMainWindow {
 		// Ersetzte CSS link durch CSS inline
 		htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", "<style type=\"text/css\">"+new String(cssdata)+"</style>");
 		// Entferne XSLT Fehler
-		htmlstring=htmlstring.replaceAll(" src=\"(%0A|%09)*", " src=\"");
-		htmlstring=htmlstring.replaceAll("(%0A|%09)*\" *>", "\">");
+		htmlstring=htmlstring.replaceAll("(%0A|%09)*;base64,(%0A|%09)*", ";base64,");
 		// Ersetze alle Icon Links durch inline Bilder
 		for(File iconfile : (new File("icons")).listFiles()) {
 			if( iconfile.getName().endsWith(".png") ) {

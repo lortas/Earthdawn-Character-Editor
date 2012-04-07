@@ -1254,7 +1254,12 @@
 <xsl:template match="//edc:PORTRAIT">
 	<xsl:element name="img">
 		<xsl:attribute name="class">edPortraitImages</xsl:attribute>
-		<xsl:attribute name="src">data:<xsl:value-of select="@contenttype"/>;base64,<xsl:value-of select="."/></xsl:attribute>
+		<xsl:attribute name="src">
+			<xsl:text>data:</xsl:text>
+			<xsl:value-of select="@contenttype"/>
+			;base64,
+			<xsl:value-of select="."/>
+		</xsl:attribute>
 	</xsl:element>
 </xsl:template>
 
