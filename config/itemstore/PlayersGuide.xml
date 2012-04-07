@@ -165,7 +165,10 @@
 	<MAGICITEM name="Traveler’s Mug" enchantingdifficultynumber="12" price="350" weight="1" bookref="PG p.264"/>
 	<MAGICITEM name="Upandal’s Blessings" enchantingdifficultynumber="11" price="275" weight="3" bookref="PG p.264"/>
 	<MAGICITEM name="Volus Brooch" enchantingdifficultynumber="11" price="500" weight="2" bookref="PG p.264"/>
-	<MAGICITEM name="Wind Instrument" enchantingdifficultynumber="12" price="250" weight="2" bookref="PG p.264"/>	
+	<MAGICITEM name="Wind Instrument" enchantingdifficultynumber="12" price="250" weight="2" bookref="PG p.264"/>
+
+<!-- Healing Aid -->
+	<MAGICITEM name="Anti-Sporific" weight="1" enchantingdifficultynumber="13" price="250" kind="potion" effect="8h +5 resist spore-based attacks" bookref="PG p.266"/>
 
 <!-- bloodcharm fertig	-->
 	<BLOODCHARMITEM name="Absorb Blow" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="100" bookref="PG p.257"/>
