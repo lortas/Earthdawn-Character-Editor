@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="blooddamage" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="depatterningrate" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
- *       &lt;attribute name="price" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="price" type="{http://www.w3.org/2001/XMLSchema}float" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -85,7 +85,7 @@ public class ITEMType {
     @XmlAttribute
     protected String bookref;
     @XmlAttribute
-    protected Integer price;
+    protected Float price;
 
     /**
      * Gets the value of the description property.
@@ -381,12 +381,12 @@ public class ITEMType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Float }
      *     
      */
-    public int getPrice() {
+    public float getPrice() {
         if (price == null) {
-            return  0;
+            return  0.0F;
         } else {
             return price;
         }
@@ -397,10 +397,10 @@ public class ITEMType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Float }
      *     
      */
-    public void setPrice(Integer value) {
+    public void setPrice(Float value) {
         this.price = value;
     }
 
