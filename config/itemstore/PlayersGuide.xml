@@ -371,29 +371,65 @@
 	<ITEM name="Water or Wine Skin" weight="4.0" price="2" bookref="PG p.268"/>
 	<ITEM name="Writing Ink (per vial)" weight="0.5" price="10" bookref="PG p.268"/>
 	<ITEM name="Writing Kit:Quill Pen, Writing Ink, 10 Sheets of Parchment or Paper, 2 Candles, 10 Pieces of Chalk" weight="2.0" price="23" bookref="PG p.268"/>
+
+	<!-- Seite 271	"Provender Tabel" vollständig; nur transportable Gegenstände -->
+	<ITEM name="Wine:Average (per bottle)" weight="1.0" price="0.5" bookref="PG p.271"/>
+	<ITEM name="Wine:Fine (per bottle)" weight="1.0" price="5" bookref="PG p.271"/>
+	<ITEM name="Rations:Dwarf Mine (1 week)" weight="6.0" price="25" bookref="PG p.271"/>
+	<ITEM name="Rations:Trail (1 week)" weight="8.0" price="10" bookref="PG p.271"/>	
 	
-	<!--  hier geht´s weiter	
-Item 								Cost 		Weight 		
-
--->
-
-	<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-		<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-		<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-		<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-		<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-		<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
+	<!--  Clothes Seite 281 vollständig -->
+	<ITEM name="Belt" price="0.5" bookref="PG p.281"/>
+	<ITEM name="Boots:Soft" weight="1.0" price="1" bookref="PG p.281"/>
+	<ITEM name="Boots:Riding" weight="2.0" price="4" bookref="PG p.281"/>
+	<ITEM name="Boots:Mountain" weight="2.0" price="8" bookref="PG p.281"/>
+	<ITEM name="Breeches:Peasant’s" weight="1.0" price="0.4" bookref="PG p.281"/>
+	<ITEM name="Breeches:Merchant’s" weight="1.0" price="1" bookref="PG p.281"/>
+	<ITEM name="Breeches:Guild Member’s" weight="1.0" price="7" bookref="PG p.281"/>
+	<ITEM name="Brooch:Plain Brass" weight="1.0" price="2" bookref="PG p.281"/>
+	<ITEM name="Brooch:Ornamental" weight="1.0" price="12" bookref="PG p.281"/>
+	<ITEM name="Brooch:Silver" weight="1.0" price="15" bookref="PG p.281"/>
+	<ITEM name="Brooch:Gold" weight="2.0" price="120" bookref="PG p.281"/>
+	<ITEM name="Cloak:Wool" weight="1.0" price="5" bookref="PG p.281"/>
+	<ITEM name="Cloak:Satin- or Silk-lined" weight="1.0" price="14" bookref="PG p.281"/>
+	<ITEM name="Cloak:Traveler’s" weight="1.0" price="8" bookref="PG p.281"/>
+	<ITEM name="Cloak:Fur-trimmed" weight="1.0" price="50" bookref="PG p.281"/>
+	<ITEM name="Cloak:Theran" weight="2.0" price="380" bookref="PG p.281"/>
+	<ITEM name="Dress:Plain" weight="1.0" price="2" bookref="PG p.281"/>
+	<ITEM name="Dress:Patterned" weight="1.0" price="7" bookref="PG p.281"/>
+	<ITEM name="Dress:Embroidered" weight="2.0" price="22" bookref="PG p.281"/>
+	<ITEM name="Dress:Satin" weight="2.0" price="100" bookref="PG p.281"/>
+	<ITEM name="Dress:Ballroom Gown" weight="4.0" price="250" bookref="PG p.281"/>
+	<ITEM name="Dress:Theran" weight="6.0" price="560" bookref="PG p.281"/>
+	<ITEM name="Gloves" price="2" bookref="PG p.281"/>
+	<ITEM name="Hat:Felt" price="0.4" bookref="PG p.281"/>
+	<ITEM name="Hat:Woolen" price="1.2" bookref="PG p.281"/>
+	<ITEM name="Hat:Fine Quality" price="9" bookref="PG p.281"/>
+	<ITEM name="Hat:Courtier Quality" weight="1.0" price="18" bookref="PG p.281"/>
+	<ITEM name="Hooded Mask" price="3" bookref="PG p.281"/>
+	<ITEM name="Hosiery:Plain" price="0.5" bookref="PG p.281"/>
+	<ITEM name="Hosiery:Silk" price="20" bookref="PG p.281"/>
+	<ITEM name="Jacket:Wool" weight="1.0" price="12" bookref="PG p.281"/>
+	<ITEM name="Jacket:Silk" weight="1.0" price="90" bookref="PG p.281"/>
+	<ITEM name="Jacket:Courtier’s" weight="2.0" price="170" bookref="PG p.281"/>
+	<ITEM name="Peasant’s Garb (breeches):Shirt, belt, sandals and breeches" weight="1.0" price="1.2" bookref="PG p.281"/>
+	<ITEM name="Peasant’s Garb (robe or dress):Shirt, belt, sandals and robe or dress" weight="1.0" price="3" bookref="PG p.281"/>
+	<ITEM name="Pin or Clasp" price="1" bookref="PG p.281"/>
+	<ITEM name="Robe:Linen" weight="1.0" price="1.5" bookref="PG p.281"/>
+	<ITEM name="Robe:Embroidered" weight="1.0" price="15" bookref="PG p.281"/>
+	<ITEM name="Sandals" price="0.2" bookref="PG p.281"/>
+	<ITEM name="Shirt:Plain" weight="1.0" price="0.2" bookref="PG p.281"/>
+	<ITEM name="Shirt:Patterned" weight="1.0" price="1" bookref="PG p.281"/>
+	<ITEM name="Shirt:Silk" weight="1.0" price="45" bookref="PG p.281"/>
+	<ITEM name="Shoes:Merchant’s" weight="1.0" price="2" bookref="PG p.281"/>
+	<ITEM name="Shoes:Courtier’s" weight="1.0" price="40" bookref="PG p.281"/>
+	<ITEM name="Scabbard (blade)" weight="1.0" price="5" bookref="PG p.281"/>
+	<ITEM name="Scarf" price="5" bookref="PG p.281"/>
+	<ITEM name="Toga" weight="1.0" price="0.6" bookref="PG p.281"/>
+	<ITEM name="Traveler ’s Garb (breeches):Soft boots, belt, shirt, breeches and cloak" weight="3.0" price="8" bookref="PG p.281"/>
+	<ITEM name="Traveler ’s Garb (robe or dress):Soft boots, belt, shirt, cloak and robe or dress" weight="3.0" price="9" bookref="PG p.281"/>
+	<ITEM name="Tunic" weight="1.0" price="0.4" bookref="PG p.281"/>
+	<ITEM name="Wealthy Traveler’s Garb (breeches):Riding boots, belt, shoes, three patterned shirts and guild breeches or patterned dress, fine hat, satin-lined cloak and an ornamental brooch" weight="5.0" price="40" bookref="PG p.281"/>
+	<ITEM name="Wealthy Traveler’s Garb (robe):Riding boots, belt, shoes, three patterned shirts and fine hat, satin-lined cloak, an ornamental brooch and embroidered robe" weight="5.0" price="50" bookref="PG p.281"/>
 		
-	<!--  
-	<ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)"weight="3.0"/>
-	<ITEM name="cursed ring"weight="0.0"/>
-	<ITEM name="Trail Rations (1 week)"weight="1.0"/>
-	<ITEM name="grimoire (magicans only)" weight="3.0"/>
-	<ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3.0"/>
-	<ITEM name="Trail Rations (1 week)"weight="1.0"/>
-	<ITEM name="navigation charts" weight="2.0"/>
-	<ITEM name="light bag" weight="3.0"/>
-	<ITEM name="dry bag" weight="3.0"/>
--->
-
 </ITEMS>
