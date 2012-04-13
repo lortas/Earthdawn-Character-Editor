@@ -506,16 +506,21 @@ public class ECEWorker {
 				character.addBloodDamgeFrom(item);
 			}
 			int rank = item.getWeaventhreadrank();
+			List<THREADRANKType> threadranks = item.getTHREADRANK();
+			if( rank > threadranks.size() ) {
+				rank=threadranks.size();
+				item.setWeaventhreadrank(rank);
+			}
 			// If no thread is weaven to the this thread item, skip the rest
 			if( rank < 1 ) continue;
-			THREADRANKType threadrank = item.getTHREADRANK().get(rank-1);
+			THREADRANKType threadrank = threadranks.get(rank-1);
 			while( (threadrank==null) && (rank>1) ) {
 				// Wenn der Fadenrang nicht definiert ist, obwohl der Rang größer 1 ist, wähle den Fadenrang einen Rang kleiner.
 				if( threadrank == null ) {
 					errorout.println("Undefined Threadrank for "+item.getName()+" for rank "+rank );
 				}
 				rank--;
-				threadrank = item.getTHREADRANK().get(rank-1);
+				threadrank = threadranks.get(rank-1);
 			}
 			if( threadrank == null ) {
 				errorout.println("No Threadranks for "+item.getName()+" for rank "+item.getWeaventhreadrank()+" or less at all." );
