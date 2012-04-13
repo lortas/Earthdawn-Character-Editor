@@ -178,7 +178,7 @@
 	<MAGICITEM name="Halt Illness Potion" weight="1" enchantingdifficultynumber="11" price="100" kind="potion" effect="8h stops all disease’s effects" bookref="PG p.266"/>
 	<MAGICITEM name="Healing Potion" weight="2" enchantingdifficultynumber="13" price="300" kind="potion" effect="heals 1 Wound; +8 next Recovery Test within 24 hours or immediate Recovery Tests Step 8" bookref="PG p.266"/>
 	<MAGICITEM name="Kelia’s Antidote" weight="2" enchantingdifficultynumber="13" price="125" kind="potion" effect="neutralizes effects of poison" bookref="PG p.266"/>
-	<MAGICITEM name="Kelix’s Poultice" weight="1" enchantingdifficultynumber="11" price="50" kind="poultice" effect="24h +5 resist poison if applied to injury where poison entered character’s system; if not only +3" bookref="PG p.266"/>
+	<MAGICITEM name="Kelix’s Poultice" weight="1" enchantingdifficultynumber="11" price="50" kind="potion" effect="24h +5 resist poison if applied to injury where poison entered character’s system; if not only +3" bookref="PG p.266"/>
 	<MAGICITEM name="Last Chance Salve" weight="1" enchantingdifficultynumber="13" price="600" kind="salve" effect="use all remaining Recovery Tests; If no Recovery Tests available, salve grants bonus Recovery Test" bookref="PG p.266"/>
 	<MAGICITEM name="Resist Disease Potion" weight="2" enchantingdifficultynumber="13" price="75" kind="potion" effect="8h +3 avoid becoming diseased or ill" bookref="PG p.266"/>
 	<MAGICITEM name="Resist Poison Potion" weight="1" enchantingdifficultynumber="12" price="125" kind="potion" effect="4h +5 avoid becoming poisoned" bookref="PG p.266"/>
@@ -323,7 +323,7 @@
 	<ITEM name="Adventurer’s Kit: backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="14.0" price="15" bookref="PG p.268"/>
 	<ITEM name="Adventurer’s Kit plus tent: backpack, bedroll, flint&amp;steel, waterskin, large sack, tent" weight="34.0" price="40" bookref="PG p.268"/>
 	<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-	<ITEM name="Alchemist’s Shop" price="2000" bookref="PG p.268"/>
+	<ITEM name="Alchemist’s Shop" price="2000" weight="0" bookref="PG p.268"/>
 	<ITEM name="Artisan Tools:Carving" weight="3.0" price="15" bookref="PG p.268"/>
 	<ITEM name="Artisan Tools:Embroidery/Sewing" weight="1.0" price="25" bookref="PG p.268"/>
 	<ITEM name="Artisan Tools:Forge" weight="20.0" price="100" bookref="PG p.268"/>
@@ -345,7 +345,7 @@
 	<ITEM name="Flint and Steel" weight="0.5" price="1" bookref="PG p.268"/>
 	<ITEM name="Grappling Hook" weight="5.0" price="10" bookref="PG p.268"/>
 	<ITEM name="Healing Kit:Basic (3 applications)" weight="5.0" price="75" bookref="PG p.268"/>
-	<ITEM name="Healing Kit:Refill (3 applications)" price="50" bookref="PG p.268"/>
+	<ITEM name="Healing Kit:Refill (3 applications)" weight="0" price="50" bookref="PG p.268"/>
 	<ITEM name="Iron Pot" weight="8.0" price="20" bookref="PG p.268"/>
 	<ITEM name="Lantern:Hooded" weight="3.0" price="93" bookref="PG p.268"/>
 	<ITEM name="Lantern:Bull’s-Eye" weight="3.0" price="27" bookref="PG p.268"/>
@@ -358,10 +358,10 @@
 	<ITEM name="Musical Instrument:Whistle" weight="1.0" price="0.2" bookref="PG p.268"/>
 	<ITEM name="Navigation Charts" weight="2.0" price="15" bookref="PG p.268"/>
 	<ITEM name="Oil Flask" weight="1.0" price="6" bookref="PG p.268"/>
-	<ITEM name="Paper/Parchment (sheet)" price="1" bookref="PG p.268"/>
+	<ITEM name="Paper/Parchment (sheet)" weight="0" price="1" bookref="PG p.268"/>
 	<ITEM name="Physician’s Kit:Basic (3 applications)" weight="3.0" price="50" bookref="PG p.268"/>
 	<ITEM name="Physician’s Kit:Refill (3 applications)" weight="1.0" price="25" bookref="PG p.268"/>
-	<ITEM name="Quill Pen" price="1" bookref="PG p.268"/>
+	<ITEM name="Quill Pen" weight="0" price="1" bookref="PG p.268"/>
 	<ITEM name="Rope, per yard" weight="1.0" price="3" bookref="PG p.268"/>
 	<ITEM name="Sack" weight="2.0" price="2" bookref="PG p.268"/>
 	<ITEM name="Tent" weight="20.0" price="30" bookref="PG p.268"/>

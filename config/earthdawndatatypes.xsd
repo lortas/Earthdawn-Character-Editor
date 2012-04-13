@@ -351,7 +351,7 @@
 		<xs:attribute name="blooddamage" type="unsigned_int" default="0"/>
 		<xs:attribute name="depatterningrate" type="unsigned_int" default="0"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
-		<xs:attribute name="price" type="unsigned_int" default="0"/>
+		<xs:attribute name="price" type="xs:float" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
 		<xs:attribute name="flight" type="unsigned_int"/>
