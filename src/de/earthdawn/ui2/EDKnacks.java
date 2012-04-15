@@ -193,23 +193,16 @@ class KnacksTableModel extends AbstractTableModel {
         return getValueAt(0, c).getClass();
     }
 
-    /*
-     * Don't need to implement this method unless your table's
-     * editable.
-     */
-    public boolean isCellEditable(int row, int col) {
-    	if( col == 0 ) return true;
-    	return false;
-    }
+	public boolean isCellEditable(int row, int col) {
+		if( col == 0 ) return true;
+		return false;
+	}
 
-    /*
-     * Don't need to implement this method unless your table's
-     * data can change.
-     */
 	public void setValueAt(Object value, int row, int col) {
 		if( character == null ) return;
 		KNACKBASEType knack = knacklist.get(knacknames.get(row));
-		character.insertKnack(knack);
+		if( character.hasKnackLearned(knack) ) character.removeKnack(knack);
+		else character.insertKnack(knack);
 		character.refesh();
 		fireTableCellUpdated(row, 0);
 		fireTableCellUpdated(row, 1);
