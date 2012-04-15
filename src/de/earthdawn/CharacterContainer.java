@@ -1087,6 +1087,22 @@ public class CharacterContainer extends CharChangeRefresh {
 		return false;
 	}
 
+	public void removeKnack(KNACKBASEType knack) {
+		String knackName = knack.getName();
+		String knackLimitation = knack.getLimitation();
+		boolean noKnackLimitation = knackLimitation.isEmpty();
+		for( TalentsContainer talents : getAllTalents() ) {
+			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+				if( noKnackLimitation || talent.getLimitation().equals(knackLimitation)) {
+					List<KNACKType> talentknacks = talent.getKNACK();
+					List<KNACKType> remove = new ArrayList<KNACKType>();
+					for( KNACKType k : talentknacks ) if( k.getName().equals(knackName) ) remove.add(k);
+					talentknacks.removeAll(remove);
+				}
+			}
+		}
+	}
+
 	public List<ITEMType> getItems() {
 		return character.getITEM();
 	}
