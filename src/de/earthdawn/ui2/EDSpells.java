@@ -140,7 +140,7 @@ class SpellsTableModel extends AbstractTableModel {
 	private CharacterContainer character;
 	private String discipline;
 	public final ApplicationProperties PROPERTIES = ApplicationProperties.create();
-	private String[] columnNames = {"Learned", "Free", "Circle", "Type", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
+	private String[] columnNames = {"Learned", "Free", "Circle", "Element", "Name", "Castingdifficulty", "Threads", "Weavingdifficulty", "Reattuningdifficulty", "Effect", "Effectarea","Range", "Duration"};
 
 	List<SPELLType> spelllist;
 
@@ -228,7 +228,7 @@ class SpellsTableModel extends AbstractTableModel {
 				if(character == null) return false;
 				else return character.hasSpellLearnedBySpellability(discipline, spelllist.get(row) );
 			case 2: return spelllist.get(row).getCircle();
-			case 3: return spelllist.get(row).getType().value();
+			case 3: return spelllist.get(row).getElement().value();
 			case 4: return spelllist.get(row).getName();
 			case 5: return spelllist.get(row).getCastingdifficulty();
 			case 6: return spelllist.get(row).getThreads();
