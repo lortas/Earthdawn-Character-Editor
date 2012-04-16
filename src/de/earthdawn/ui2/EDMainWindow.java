@@ -747,6 +747,7 @@ public class EDMainWindow {
 		// Erzeuge Character XML
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
+		jc=null;
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -754,11 +755,13 @@ public class EDMainWindow {
 		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
 		ec.setEditorpath((new File("")).toURI().getRawPath());
 		m.marshal(ec,baos);
+		m=null;
 		// Transformiere das Character XML mit hilfe des XSLT nach HTML
 		TransformerFactory tFactory = TransformerFactory.newInstance();
 		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
 		ByteArrayOutputStream html = new ByteArrayOutputStream();
 		transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
+		baos=null;
 		String htmlstring=html.toString(encoding);
 		// Lese CSS ein um die referenz im HTML durch inline zu ersetzen
 		File cssfile=new File("config/earthdawncharacter.css");
@@ -768,6 +771,7 @@ public class EDMainWindow {
 		cssio.close();
 		// Ersetzte CSS link durch CSS inline
 		htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", "<style type=\"text/css\">"+new String(cssdata)+"</style>");
+		cssdata=null;
 		// Entferne XSLT Fehler
 		htmlstring=htmlstring.replaceAll("(%0A|%09)*;base64,(%0A|%09)*", ";base64,");
 		// Ersetze alle Icon Links durch inline Bilder
