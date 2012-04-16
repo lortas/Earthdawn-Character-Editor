@@ -244,6 +244,7 @@ public class EDGeneral extends JPanel {
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				if( e.getButton() == 1 ) do_updatePortrait();
+				else setEmptyPortrait();
 			}
 		});
 		lblPortrait.setVerticalAlignment(JLabel.BOTTOM);
@@ -590,6 +591,27 @@ public class EDGeneral extends JPanel {
 				System.err.println(e2.getLocalizedMessage());
 			}
 		}
+	}
+
+	protected void setEmptyPortrait() {
+		String[] options = {"Yes","No"};
+		int a = JOptionPane.showOptionDialog(this,
+				"Do you also want to clear your portrait picture?",
+				"Empty Portrait?",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]);
+		if( a != 0 ) return;
+		Base64BinaryType base64bin = new Base64BinaryType();
+		base64bin.setValue(new byte[]{-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,1,
+				0,0,0,1,1,3,0,0,0,37,-37,86,-54,0,0,0,1,115,82,71,66,0,-82,-50,28,-23,0,0,0,3,
+				80,76,84,69,-1,-1,-1,-89,-60,27,-56,0,0,0,10,73,68,65,84,8,-41,99,96,0,0,0,2,0,
+				1,-30,33,-68,51,0,0,0,0,73,69,78,68,-82,66,96,-126});
+		base64bin.setContenttype("image/png");
+		character.getPortrait().set(0, base64bin);
+		character.refesh();
 	}
 
 	protected void do_btnChangeRace_actionPerformed(ActionEvent arg0) {
