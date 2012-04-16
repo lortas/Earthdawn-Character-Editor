@@ -885,14 +885,16 @@ public class ECEPdfExporter {
 				} else {
 					acroFields.setField( "SpellInMatrix."+conterSpells, "" );
 				}
-				switch( spell.getType() ) {
-				case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
-				case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
-				case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
-				case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
-				case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
-				default:        acroFields.setField( "SpellType."+conterSpells, "" ); break;
-				}
+				if( spell.getElement().equals(ElementkindType.UNDEFINED) ) {
+					switch( spell.getType() ) {
+					case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
+					case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
+					case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
+					case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
+					case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
+					default:        acroFields.setField( "SpellType."+conterSpells, "" ); break;
+					}
+				} else acroFields.setField( "SpellType."+conterSpells, spell.getElement().value() );
 				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
 				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
 				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
