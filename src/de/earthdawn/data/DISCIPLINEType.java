@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *       &lt;attribute name="usedstartranks" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *       &lt;attribute name="usedspellabilities" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+ *       &lt;attribute name="primelement" type="{http://earthdawn.com/datatypes}elementkind_type" default="undefined" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -76,6 +77,8 @@ public class DISCIPLINEType {
     protected Integer usedstartranks;
     @XmlAttribute
     protected Integer usedspellabilities;
+    @XmlAttribute
+    protected ElementkindType primelement;
 
     /**
      * Gets the value of the disciplinebonus property.
@@ -335,6 +338,34 @@ public class DISCIPLINEType {
      */
     public void setUsedspellabilities(Integer value) {
         this.usedspellabilities = value;
+    }
+
+    /**
+     * Gets the value of the primelement property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ElementkindType }
+     *     
+     */
+    public ElementkindType getPrimelement() {
+        if (primelement == null) {
+            return ElementkindType.UNDEFINED;
+        } else {
+            return primelement;
+        }
+    }
+
+    /**
+     * Sets the value of the primelement property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ElementkindType }
+     *     
+     */
+    public void setPrimelement(ElementkindType value) {
+        this.primelement = value;
     }
 
 }

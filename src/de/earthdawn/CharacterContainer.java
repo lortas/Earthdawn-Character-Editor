@@ -622,6 +622,14 @@ public class CharacterContainer extends CharChangeRefresh {
 		return bonuses;
 	}
 
+	public List<ElementkindType> getDisciplinePrimElements() {
+		List<ElementkindType> elements = new ArrayList<ElementkindType>();
+		for( DISCIPLINEType discipline : character.getDISCIPLINE() ) {
+			elements.add(discipline.getPrimelement());
+		}
+		return elements;
+	}
+
 	public void clearDisciplineBonuses() {
 		for( DISCIPLINEType discipline : character.getDISCIPLINE() ) {
 			discipline.getDISCIPLINEBONUS().clear();
