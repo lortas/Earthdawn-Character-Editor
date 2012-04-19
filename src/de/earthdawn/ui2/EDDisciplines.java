@@ -13,6 +13,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -24,11 +25,13 @@ import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
+import de.earthdawn.data.ElementkindType;
 import de.earthdawn.data.LAYOUTSIZESType;
 
 public class EDDisciplines extends JPanel {
@@ -48,16 +51,24 @@ public class EDDisciplines extends JPanel {
 		this.character = character;
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
 		table.setRowHeight(70);
-		table.getColumnModel().getColumn(1).setCellEditor(new SpinnerEditor(0,15));
+		TableColumnModel columnModel = table.getColumnModel();
+		columnModel.getColumn(1).setCellEditor(new SpinnerEditor(0,15));
 		table.setFillsViewportHeight(true);
-		table.getColumnModel().getColumn(2).setCellEditor(new TextTableCellEditor());
-		table.getColumnModel().getColumn(2).setCellRenderer(new TextTableCellEditor());
-		table.getColumnModel().getColumn(3).setCellEditor(new TextTableCellEditor());
-		table.getColumnModel().getColumn(3).setCellRenderer(new TextTableCellEditor());
+		JComboBox comboBoxPrimElement = new JComboBox();
+		for( ElementkindType element : ElementkindType.values() ) {
+			if( element.equals(ElementkindType.FEAR) ) continue;
+			if( element.equals(ElementkindType.ILLUSION) ) continue;
+			comboBoxPrimElement.addItem(element.value());
+		}
+		columnModel.getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPrimElement));
+		columnModel.getColumn(3).setCellEditor(new TextTableCellEditor());
+		columnModel.getColumn(3).setCellRenderer(new TextTableCellEditor());
+		columnModel.getColumn(4).setCellEditor(new TextTableCellEditor());
+		columnModel.getColumn(4).setCellRenderer(new TextTableCellEditor());
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("disciplineselection") ) {
-				TableColumn col = table.getColumnModel().getColumn(c);
+				TableColumn col = columnModel.getColumn(c);
 				if( width.getMin() != null ) col.setMinWidth(width.getMin());
 				if( width.getMax() != null ) col.setMaxWidth(width.getMax());
 				if( width.getPreferred() != null ) col.setPreferredWidth(width.getPreferred());
@@ -199,7 +210,7 @@ class DisciplinesTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private CharacterContainer character;
 
-	private String[] columnNames = {"Discipline Name", "Circle", "Karmaritual", "Halfmagic"};
+	private String[] columnNames = {"Discipline Name", "Circle", "Prim Element", "Karmaritual", "Halfmagic"};
 
 	public DisciplinesTableModel(CharacterContainer character) {
 		super();
@@ -236,10 +247,12 @@ class DisciplinesTableModel extends AbstractTableModel {
 		case 1:
 			return new Integer(discipline.getCircle());
 		case 2:
+			return discipline.getPrimelement().value();
+		case 3:
 			String karmaritual = discipline.getKARMARITUAL();
 			if( karmaritual == null ) return "";
 			return karmaritual;
-		case 3:
+		case 4:
 			String halfmagic = discipline.getHALFMAGIC();
 			if( halfmagic == null ) return "";
 			return halfmagic;
@@ -276,8 +289,9 @@ class DisciplinesTableModel extends AbstractTableModel {
 		switch (col) {
 		case 0: discipline.setName((String)value);        break;
 		case 1: discipline.setCircle((Integer)value);     break;
-		case 2: discipline.setKARMARITUAL((String)value); break;
-		case 3: discipline.setHALFMAGIC((String)value);   break;
+		case 2: discipline.setPrimelement(ElementkindType.fromValue((String)value)); break;
+		case 3: discipline.setKARMARITUAL((String)value); break;
+		case 4: discipline.setHALFMAGIC((String)value);   break;
 		}
 		character.refesh();
 		fireTableRowsUpdated(row, row);

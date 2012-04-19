@@ -73,8 +73,9 @@
 	<TABLE name="disciplineselection">
 		<!-- 0 --><COLUMN min="60" preferred="100" max="300"/>
 		<!-- 1 --><COLUMN min="20" preferred="30" max="100"/>
-		<!-- 2 --><COLUMN min="80" preferred="100" max="1000"/>
+		<!-- 2 --><COLUMN min="20" preferred="50" max="150"/>
 		<!-- 3 --><COLUMN min="80" preferred="100" max="1000"/>
+		<!-- 4 --><COLUMN min="80" preferred="100" max="1000"/>
 	</TABLE>
 	<TABLE name="knackselection">
 	</TABLE>

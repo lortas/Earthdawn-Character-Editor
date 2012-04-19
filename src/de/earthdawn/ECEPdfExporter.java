@@ -141,17 +141,26 @@ public class ECEPdfExporter {
 		acroFields.setField( "Physical Armor", String.valueOf(protection.getPhysicalarmor()) );
 		acroFields.setField( "Penalty Armor", String.valueOf(protection.getPenalty()) );
 
+		int counterBonusAbility=0;
+		List<ElementkindType> elements = character.getDisciplinePrimElements();
+		if( elements != null ) {
+			for( ElementkindType element : elements ) {
+				if( element.equals(ElementkindType.UNDEFINED)) continue;
+				acroFields.setField("DiscBonusCircle."+counterBonusAbility, "-" );
+				acroFields.setField("DiscBonusAbility."+counterBonusAbility, "+2 to all talents, spells, ... relatet to '"+element.value()+"' and -2 to all other" );
+				counterBonusAbility++;
+			}
+		}
 		List<DISCIPLINEBONUSType> bonuses = character.getDisciplineBonuses();
 		if( bonuses != null ) {
-			int counter=0;
 			for( DISCIPLINEBONUSType bonus : bonuses ) {
-				acroFields.setField("DiscBonusAbility."+counter, bonus.getBonus() );
+				acroFields.setField("DiscBonusAbility."+counterBonusAbility, bonus.getBonus() );
 				if( bonus.getCircle() > 1 ) {
-					acroFields.setField("DiscBonusCircle."+counter, String.valueOf(bonus.getCircle()) );
+					acroFields.setField("DiscBonusCircle."+counterBonusAbility, String.valueOf(bonus.getCircle()) );
 				} else {
-					acroFields.setField("DiscBonusCircle."+counter, "-" );
+					acroFields.setField("DiscBonusCircle."+counterBonusAbility, "-" );
 				}
-				counter++;
+				counterBonusAbility++;
 			}
 		}
 

@@ -374,6 +374,7 @@
 		<xs:attribute name="circle" type="circle_type" use="required"/>
 		<xs:attribute name="usedstartranks" type="xs:int" default="0"/>
 		<xs:attribute name="usedspellabilities" type="xs:int" default="0"/>
+		<xs:attribute name="primelement" type="elementkind_type" default="undefined"/>
 	</xs:complexType>
 	<xs:complexType name="COINS_type">
 		<xs:complexContent>
