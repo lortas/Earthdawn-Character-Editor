@@ -37,6 +37,7 @@
 		<SPELLKIND type="illusion" weaving="Illusionism"/>
 		<SPELLKIND type="nether" weaving="Nethermancy"/>
 		<SPELLKIND type="shamane" weaving="Shamanism"/>
+		<SPELLKIND type="sorcery" weaving="Sorcery"/>
 		<SPELLKIND type="wizard" weaving="Wizardry"/>
 	</SPELLWEAVING>
 	<STARTINGWEAPONS lang="de">
