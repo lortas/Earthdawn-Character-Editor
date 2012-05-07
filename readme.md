@@ -22,6 +22,21 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.41-20120507.zip ##
++ Bugs
+	+ Talent knacks can now also be removed
+	+ The possibility to have more woven thread ranks than the items total thread rank is now removed
+	+ No you can also have an empty portrait if you really want.
+	+ spell kind sorcery definition was missing in names.xml
++ More pictures with in the character portraits
++ Item store
+	+ All healing aid from PG added
+	+ All adventurers equipment from PG added
++ Own category clothes with in the inventory and item store
++ Where type of spell was shown, now element of spell will be shown
++ While elementalist can have an primary element, you can note your primary element, bonus and penalty are shown but not calculated
++ Thread item ranks can now be: delete, moved up, moved down
++ The status shield/armor/weapon can now also be removed again from a item thread rank
 ## EarthdawnCharacterEditor-0.40-20120325.zip ##
 + XML
 	+ New attribute EditorPath within the character xml to find image dependencies
