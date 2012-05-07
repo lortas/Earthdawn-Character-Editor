@@ -274,6 +274,12 @@ public class EDInventory extends JPanel {
 					}
 				});
 				popup.add(menuitem);
+			} else {
+				JMenuItem menuitem = new JMenuItem("No Armor");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadRankArmor(currentPath); }
+				});
+				popup.add(menuitem);
 			}
 			if( threadrank.getSHIELD() == null ) {
 				JMenuItem menuitem = new JMenuItem("Is Shield");
@@ -290,6 +296,12 @@ public class EDInventory extends JPanel {
 					}
 				});
 				popup.add(menuitem);
+			} else {
+				JMenuItem menuitem = new JMenuItem("No Shield");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadRankShield(currentPath); }
+				});
+				popup.add(menuitem);
 			}
 			if( threadrank.getWEAPON() == null ) {
 				JMenuItem menuitem = new JMenuItem("Is Weapon");
@@ -303,6 +315,12 @@ public class EDInventory extends JPanel {
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,weapon,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(weapon));
 					}
+				});
+				popup.add(menuitem);
+			} else {
+				JMenuItem menuitem = new JMenuItem("No Weapon");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadRankWeapon(currentPath); }
 				});
 				popup.add(menuitem);
 			}
@@ -501,6 +519,26 @@ public class EDInventory extends JPanel {
 				});
 				popup.add(menuitem);
 			}
+		} else if( parent instanceof THREADRANKType ) {
+			if( currentNode instanceof SHIELDType ) {
+				JMenuItem menuitem = new JMenuItem("No Shield");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadRankShield(currentPath.getParentPath()); }
+				});
+				popup.add(menuitem);
+			} else if( currentNode instanceof ARMORType ) {
+				JMenuItem menuitem = new JMenuItem("No Armor");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadRankArmor(currentPath.getParentPath()); }
+				});
+				popup.add(menuitem);
+			} else if( currentNode instanceof WEAPONType ) {
+				JMenuItem menuitem = new JMenuItem("No Armor");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadRankWeapon(currentPath.getParentPath()); }
+				});
+				popup.add(menuitem);
+			}
 		}
 
 		tree.add(popup);
@@ -508,6 +546,24 @@ public class EDInventory extends JPanel {
 	}
 
 	public void scrollPathToVisible(Object node) {
-		
+	}
+
+	private void clearThreadRankShield(TreePath path) {
+		THREADRANKType rank = (THREADRANKType) path.getLastPathComponent();
+		rank.setSHIELD(null);
+		character.refesh();
+		tree.scrollPathToVisible(path);
+	}
+	private void clearThreadRankArmor(TreePath path) {
+		THREADRANKType rank = (THREADRANKType) path.getLastPathComponent();
+		rank.setARMOR(null);
+		character.refesh();
+		tree.scrollPathToVisible(path);
+	}
+	private void clearThreadRankWeapon(TreePath path) {
+		THREADRANKType rank = (THREADRANKType) path.getLastPathComponent();
+		rank.setWEAPON(null);
+		character.refesh();
+		tree.scrollPathToVisible(path);
 	}
 }
