@@ -228,6 +228,7 @@ public class EDInventory extends JPanel {
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					character.refesh();
+					tree.scrollPathToVisible(currentPath);
 				}
 			});
 			popup.add(menuitem);
@@ -241,6 +242,17 @@ public class EDInventory extends JPanel {
 					item.getTHREADRANK().add(rank);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,item, item.getTHREADRANK().indexOf(rank));
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(rank));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Remove Last Rank");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADITEMType item = (THREADITEMType) currentNode;
+					int last=item.getTHREADRANK().size()-1;
+					item.getTHREADRANK().remove(last);
+					((ItemTreeModel) tree.getModel()).fireRemove(currentPath,item, last);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(item.getTHREADRANK().get(last-1)));
 				}
 			});
 			popup.add(menuitem);
@@ -407,6 +419,58 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
+			menuitem = new JMenuItem("Remove This Rank");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					TreePath parentPath = currentPath.getParentPath();
+					THREADITEMType item = (THREADITEMType) (parentPath.getLastPathComponent());
+					int idx = item.getTHREADRANK().indexOf(rank);
+					((ItemTreeModel) tree.getModel()).fireRemove(parentPath, rank, idx);
+					item.getTHREADRANK().remove(rank);
+				}
+			});
+			popup.add(menuitem);
+			THREADITEMType threaditem = (THREADITEMType) (currentPath.getParentPath().getLastPathComponent());
+			int idx = threaditem.getTHREADRANK().indexOf(threadrank);
+			if( idx > 0 ) {
+				menuitem = new JMenuItem("Move This Rank Up");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADRANKType[] rank = new THREADRANKType[2];
+						int[] idx = new int[2];
+						rank[0] = (THREADRANKType) currentNode;
+						THREADITEMType threaditem = (THREADITEMType) (currentPath.getParentPath().getLastPathComponent());
+						idx[1] = threaditem.getTHREADRANK().indexOf(rank[0]);
+						idx[0] = idx[1]-1;
+						rank[1] = threaditem.getTHREADRANK().get(idx[0]);
+						threaditem.getTHREADRANK().set(idx[0], rank[0]);
+						threaditem.getTHREADRANK().set(idx[1], rank[1]);
+						character.refesh();
+						tree.scrollPathToVisible(currentPath.getParentPath().pathByAddingChild(threaditem.getTHREADRANK().get(threaditem.getTHREADRANK().size()-1)));
+					}
+				});
+				popup.add(menuitem);
+			}
+			if( idx < threaditem.getTHREADRANK().size()-1 ) {
+				menuitem = new JMenuItem("Move This Rank Down");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADRANKType[] rank = new THREADRANKType[2];
+						int[] idx = new int[2];
+						rank[1] = (THREADRANKType) currentNode;
+						THREADITEMType threaditem = (THREADITEMType) (currentPath.getParentPath().getLastPathComponent());
+						idx[0] = threaditem.getTHREADRANK().indexOf(rank[1]);
+						idx[1] = idx[0]+1;
+						rank[0] = threaditem.getTHREADRANK().get(idx[1]);
+						threaditem.getTHREADRANK().set(idx[0], rank[0]);
+						threaditem.getTHREADRANK().set(idx[1], rank[1]);
+						character.refesh();
+						tree.scrollPathToVisible(currentPath.getParentPath().pathByAddingChild(threaditem.getTHREADRANK().get(threaditem.getTHREADRANK().size()-1)));
+					}
+				});
+				popup.add(menuitem);
+			}
 		}
 
 		//remove
@@ -414,7 +478,7 @@ public class EDInventory extends JPanel {
 		if(parent instanceof String){
 			List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
 			if(temp != null){
-				JMenuItem menuitem = new JMenuItem("Remove");
+				JMenuItem menuitem = new JMenuItem("Remove Node");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						Object parent = currentPath.getParentPath().getLastPathComponent();

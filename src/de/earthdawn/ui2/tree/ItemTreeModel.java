@@ -227,10 +227,7 @@ public class ItemTreeModel  implements TreeModel {
 				parent,
 				new int[] {index},
 				new Object[]{ child } );
-
-		for( TreeModelListener listener : listeners ){
-			listener.treeNodesInserted( event );
-		}
+		for( TreeModelListener listener : listeners ) listener.treeNodesInserted( event );
 	}
 
 	public void fireRemove( TreePath parent, Object child, int index ){
@@ -239,9 +236,11 @@ public class ItemTreeModel  implements TreeModel {
 				parent,
 				new int[] {index},
 				new Object[]{ child } );
-		System.out.println("fire");
-		for( TreeModelListener listener : listeners ){
-			listener.treeNodesRemoved( event );
-		}
+		for( TreeModelListener listener : listeners ) listener.treeNodesRemoved( event );
+	}
+
+	public void fireChange( TreePath parent, Object[] child, int[] index ){
+		TreeModelEvent event = new TreeModelEvent( this, parent, index, child );
+		for( TreeModelListener listener : listeners ) listener.treeNodesChanged( event );
 	}
 }
