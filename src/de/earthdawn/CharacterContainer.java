@@ -659,6 +659,18 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
+	public void clearOpenSpellList() {
+		character.getOPENSPELL().clear();
+	}
+
+	public void addOpenSpell(SPELLType spell) {
+		character.getOPENSPELL().add(spell);
+	}
+
+	public List<SPELLType> getOpenSpellList() {
+		return character.getOPENSPELL();
+	}
+
 	/*
 	 * Liefert für jede Diszipline des Charakters pro Kreis eine Auflistung der verwendeten Optionalen Talente
 	 * Die äußere HashMap beinhaltet als Key, den Disziplinnamen. Die Values ist eine Liste,

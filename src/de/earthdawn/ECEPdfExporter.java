@@ -307,37 +307,10 @@ public class ECEPdfExporter {
 			}
 		}
 
-		int conterSpells=0;
-		for( DISCIPLINEType discipline : disciplines ) {
-			List<SPELLType> spells = discipline.getSPELL();
-			Collections.sort(spells, new SpellComparator());
-			for( SPELLType spell : spells ) {
-				String spellname = spell.getName();
-				if( ! spell.getBookref().isEmpty() ) spellname += " ["+spell.getBookref()+"]";
-				acroFields.setField( "SpellName."+conterSpells, spellname );
-				if( spell.getInmatrix().equals(YesnoType.YES)) {
-					acroFields.setField( "InMatrix."+conterSpells, "Yes" );
-				} else {
-					acroFields.setField( "InMatrix."+conterSpells, "" );
-				}
-				switch( spell.getType() ) {
-				case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
-				case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
-				case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
-				case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
-				case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
-				default:   acroFields.setField( "SpellType."+conterSpells, "" ); break;
-				}
-				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
-				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
-				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
-				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
-				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
-				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
-				acroFields.setField( "Effect."+conterSpells, spell.getEffect() );
-				conterSpells++;
-			}
-		}
+		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
+		spellslist.add(character.getOpenSpellList());
+		for( DISCIPLINEType discipline : disciplines ) spellslist.add(discipline.getSPELL());
+		setSpellRedbrick(spellslist);
 
 		counterEquipment=0;
 		for( ITEMType item : listArmorAndWeapon(character) ) addEquipment(item.getName(),item.getWeight());
@@ -585,37 +558,11 @@ public class ECEPdfExporter {
 			}
 		}
 
-		int conterSpells=0;
-		for( DISCIPLINEType discipline : disciplines ) {
-			List<SPELLType> spellList = discipline.getSPELL();
-			Collections.sort(spellList, new SpellComparator());
-			for( SPELLType spell : spellList ) {
-				String spellname = spell.getName();
-				if( ! spell.getBookref().isEmpty() ) spellname += " ["+spell.getBookref()+"]";
-				acroFields.setField( "SpellName."+conterSpells, spellname );
-				if( spell.getInmatrix().equals(YesnoType.YES)) {
-					acroFields.setField( "InMatrix."+conterSpells, "Yes" );
-				} else {
-					acroFields.setField( "InMatrix."+conterSpells, "" );
-				}
-				switch( spell.getType() ) {
-				case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
-				case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
-				case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
-				case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
-				case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
-				default:   acroFields.setField( "SpellType."+conterSpells, "" ); break;
-				}
-				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
-				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
-				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
-				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
-				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
-				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
-				acroFields.setField( "Effect."+conterSpells, spell.getEffect() );
-				conterSpells++;
-			}
-		}
+		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
+		spellslist.add(character.getOpenSpellList());
+		for( DISCIPLINEType discipline : disciplines ) spellslist.add(discipline.getSPELL());
+		setSpellRedbrick(spellslist);
+
 		counterEquipment=0;
 		for( ITEMType item : listArmorAndWeapon(character) ) addEquipment(item.getName(),item.getWeight());
 		for( ITEMType item : character.getItems() ) addEquipment(item.getName(),item.getWeight());
@@ -861,7 +808,8 @@ public class ECEPdfExporter {
 		acroFields.setField( "SilverPieces.0", silverPieces );
 		acroFields.setField( "GoldPieces", goldPieces );
 
-		int conterSpells=0;
+		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
+		spellslist.add(character.getOpenSpellList());
 		int counterDisciplinetalent=0;
 		int counterOthertalent=0;
 		int counterKnack=0;
@@ -895,36 +843,10 @@ public class ECEPdfExporter {
 					counterKnack++;
 				}
 			}
-			List<SPELLType> spellList = discipline.getSPELL();
-			Collections.sort(spellList, new SpellComparator());
-			for( SPELLType spell : spellList ) {
-				acroFields.setField( "SpellName."+conterSpells, spell.getName() );
-				acroFields.setField( "SpellBookref."+conterSpells, String.valueOf(spell.getBookref()) );
-				if( spell.getInmatrix().equals(YesnoType.YES) ) {
-					acroFields.setField( "SpellInMatrix."+conterSpells, "X" );
-				} else {
-					acroFields.setField( "SpellInMatrix."+conterSpells, "" );
-				}
-				if( spell.getElement().equals(ElementkindType.UNDEFINED) ) {
-					switch( spell.getType() ) {
-					case ELEMENTAL: acroFields.setField( "SpellType."+conterSpells, "ele" ); break;
-					case ILLUSION:  acroFields.setField( "SpellType."+conterSpells, "illu" ); break;
-					case NETHER:    acroFields.setField( "SpellType."+conterSpells, "neth" ); break;
-					case SHAMANE:   acroFields.setField( "SpellType."+conterSpells, "sham" ); break;
-					case WIZARD:    acroFields.setField( "SpellType."+conterSpells, "wiz" ); break;
-					default:        acroFields.setField( "SpellType."+conterSpells, "" ); break;
-					}
-				} else acroFields.setField( "SpellType."+conterSpells, spell.getElement().value() );
-				acroFields.setField( "SpellCircle."+conterSpells, String.valueOf(spell.getCircle()) );
-				acroFields.setField( "SpellThreads."+conterSpells, spell.getThreads() );
-				acroFields.setField( "WeavingDifficulty."+conterSpells, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
-				acroFields.setField( "CastingDifficulty."+conterSpells, spell.getCastingdifficulty() );
-				acroFields.setField( "SpellRange."+conterSpells, spell.getRange() );
-				acroFields.setField( "Duration."+conterSpells, spell.getDuration() );
-				acroFields.setField( "SpellEffect."+conterSpells, spell.getEffect() );
-				conterSpells++;
-			}
+			spellslist.add(discipline.getSPELL());
 		}
+		setSpellAjfelMordom(spellslist);
+
 		// Die eventuell gesetzte KarmaBenötigtHarken löschen
 		while( counterOthertalent < 17 ) {
 			acroFields.setField( "KarmaRequired."+counterOthertalent, "" );
@@ -970,6 +892,77 @@ public class ECEPdfExporter {
 		}
 
 		stamper.close();
+	}
+
+	private void setSpellAjfelMordom(List<List<SPELLType>> spellslist) throws IOException, DocumentException {
+		int pos=0;
+		for( List<SPELLType> spells : spellslist ) {
+			Collections.sort(spells, new SpellComparator());
+			for( SPELLType spell: spells ) {
+				acroFields.setField( "SpellName."+pos, spell.getName() );
+				acroFields.setField( "SpellBookref."+pos, String.valueOf(spell.getBookref()) );
+				if( spell.getInmatrix().equals(YesnoType.YES) ) {
+					acroFields.setField( "SpellInMatrix."+pos, "X" );
+				} else {
+					acroFields.setField( "SpellInMatrix."+pos, "" );
+				}
+				if( spell.getElement().equals(ElementkindType.UNDEFINED) ) {
+					SpellkindType type = spell.getType();
+					if( type == null ) acroFields.setField( "SpellType."+pos, "" );
+					else switch( type ) {
+					case ELEMENTAL: acroFields.setField( "SpellType."+pos, "ele" ); break;
+					case ILLUSION:  acroFields.setField( "SpellType."+pos, "illu" ); break;
+					case NETHER:    acroFields.setField( "SpellType."+pos, "neth" ); break;
+					case SHAMANE:   acroFields.setField( "SpellType."+pos, "sham" ); break;
+					case WIZARD:    acroFields.setField( "SpellType."+pos, "wiz" ); break;
+					default:        acroFields.setField( "SpellType."+pos, "" ); break;
+					}
+				} else acroFields.setField( "SpellType."+pos, spell.getElement().value() );
+				acroFields.setField( "SpellCircle."+pos, String.valueOf(spell.getCircle()) );
+				acroFields.setField( "SpellThreads."+pos, spell.getThreads() );
+				acroFields.setField( "WeavingDifficulty."+pos, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
+				acroFields.setField( "CastingDifficulty."+pos, spell.getCastingdifficulty() );
+				acroFields.setField( "SpellRange."+pos, spell.getRange() );
+				acroFields.setField( "Duration."+pos, spell.getDuration() );
+				acroFields.setField( "SpellEffect."+pos, spell.getEffect() );
+				pos++;
+			}
+		}
+	}
+
+	private void setSpellRedbrick(List<List<SPELLType>> spellslist) throws IOException, DocumentException {
+		int pos=0;
+		for( List<SPELLType> spells : spellslist ) {
+			Collections.sort(spells, new SpellComparator());
+			for( SPELLType spell: spells ) {
+				String spellname = spell.getName();
+				if( ! spell.getBookref().isEmpty() ) spellname += " ["+spell.getBookref()+"]";
+				acroFields.setField( "SpellName."+pos, spellname );
+				if( spell.getInmatrix().equals(YesnoType.YES)) {
+					acroFields.setField( "InMatrix."+pos, "Yes" );
+				} else {
+					acroFields.setField( "InMatrix."+pos, "" );
+				}
+				SpellkindType type = spell.getType();
+				if( type == null ) acroFields.setField( "SpellType."+pos, "" );
+				else switch( type ) {
+				case ELEMENTAL: acroFields.setField( "SpellType."+pos, "ele" ); break;
+				case ILLUSION:  acroFields.setField( "SpellType."+pos, "illu" ); break;
+				case NETHER:    acroFields.setField( "SpellType."+pos, "neth" ); break;
+				case SHAMANE:   acroFields.setField( "SpellType."+pos, "sham" ); break;
+				case WIZARD:    acroFields.setField( "SpellType."+pos, "wiz" ); break;
+				default:   acroFields.setField( "SpellType."+pos, "" ); break;
+				}
+				acroFields.setField( "SpellCircle."+pos, String.valueOf(spell.getCircle()) );
+				acroFields.setField( "SpellThreads."+pos, spell.getThreads() );
+				acroFields.setField( "WeavingDifficulty."+pos, spell.getWeavingdifficulty()+"/"+spell.getReattuningdifficulty() );
+				acroFields.setField( "CastingDifficulty."+pos, spell.getCastingdifficulty() );
+				acroFields.setField( "SpellRange."+pos, spell.getRange() );
+				acroFields.setField( "Duration."+pos, spell.getDuration() );
+				acroFields.setField( "Effect."+pos, spell.getEffect() );
+				pos++;
+			}
+		}
 	}
 
 	private void setLpincreaseButtons( int value, int attribute ) throws IOException, DocumentException {
@@ -1084,69 +1077,77 @@ public class ECEPdfExporter {
 			filenameBegin=filename;
 		}
 		int counterFile=0;
-		int conterSpells=maxSpellPerPage;
+		int counterSpells=maxSpellPerPage;
 		PdfStamper stamper=null;
 		PdfReader reader=null;
 		HashMap<String, SpelldescriptionType> spelldescriptions = ApplicationProperties.create().getSpellDescriptions();
 		
+		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
+		List<String> disciplineNames = new ArrayList<String>();
+		spellslist.add(character.getOpenSpellList());
+		disciplineNames.add("");
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
-			List<SPELLType> spellList = discipline.getSPELL();
-			Collections.sort(spellList, new SpellComparator());
-			for( SPELLType spell : spellList ) {
-				if( conterSpells < maxSpellPerPage ) {
-					conterSpells++;
+			spellslist.add(discipline.getSPELL());
+			disciplineNames.add(discipline.getName());
+		}
+		int spelllistnr=0;
+		for( List<SPELLType> spells : spellslist ) {
+			Collections.sort(spells, new SpellComparator());
+			for( SPELLType spell: spells ) {
+				if( counterSpells < maxSpellPerPage ) {
+					counterSpells++;
 				} else {
 					if( stamper != null ) stamper.close();
 					if( reader != null ) reader.close();
 					reader = new PdfReader(new FileInputStream(template));
 					stamper = new PdfStamper(reader, new FileOutputStream(new File(filenameBegin+String.format("%02d", counterFile)+filenameEnd)));
 					acroFields = stamper.getAcroFields();
-					conterSpells=1;
+					counterSpells=1;
 					counterFile++;
 				}
-				acroFields.setField( "Discipline"+conterSpells, discipline.getName() );
-				acroFields.setField( "Spell Name"+conterSpells, spell.getName() );
-				acroFields.setField( "Spell Circle"+conterSpells, String.valueOf(spell.getCircle()) );
-				acroFields.setField( "Spellcasting"+conterSpells, spell.getCastingdifficulty() );
-				acroFields.setField( "Threads"+conterSpells, spell.getThreads() );
-				acroFields.setField( "Weaving"+conterSpells, spell.getWeavingdifficulty() );
-				acroFields.setField( "Reattuning"+conterSpells, String.valueOf(spell.getReattuningdifficulty()) );
-				acroFields.setField( "Range"+conterSpells, spell.getRange() );
-				acroFields.setField( "Duration"+conterSpells, spell.getDuration() );
-				acroFields.setField( "Effect"+conterSpells, spell.getEffect() );
-				acroFields.setField( "Page reference"+conterSpells, String.valueOf(spell.getBookref()) );
-				acroFields.setField( "Air"+conterSpells, "No" );
-				acroFields.setField( "Earth"+conterSpells, "No" );
-				acroFields.setField( "Fear"+conterSpells, "No" );
-				acroFields.setField( "Fire"+conterSpells, "No" );
-				acroFields.setField( "Illusion"+conterSpells, "No" );
-				acroFields.setField( "Illusion N"+conterSpells, "Yes" );
-				acroFields.setField( "Water"+conterSpells, "No" );
-				acroFields.setField( "Wood"+conterSpells, "No" );
+				acroFields.setField( "Discipline"+counterSpells, disciplineNames.get(spelllistnr) );
+				acroFields.setField( "Spell Name"+counterSpells, spell.getName() );
+				acroFields.setField( "Spell Circle"+counterSpells, String.valueOf(spell.getCircle()) );
+				acroFields.setField( "Spellcasting"+counterSpells, spell.getCastingdifficulty() );
+				acroFields.setField( "Threads"+counterSpells, spell.getThreads() );
+				acroFields.setField( "Weaving"+counterSpells, spell.getWeavingdifficulty() );
+				acroFields.setField( "Reattuning"+counterSpells, String.valueOf(spell.getReattuningdifficulty()) );
+				acroFields.setField( "Range"+counterSpells, spell.getRange() );
+				acroFields.setField( "Duration"+counterSpells, spell.getDuration() );
+				acroFields.setField( "Effect"+counterSpells, spell.getEffect() );
+				acroFields.setField( "Page reference"+counterSpells, String.valueOf(spell.getBookref()) );
+				acroFields.setField( "Air"+counterSpells, "No" );
+				acroFields.setField( "Earth"+counterSpells, "No" );
+				acroFields.setField( "Fear"+counterSpells, "No" );
+				acroFields.setField( "Fire"+counterSpells, "No" );
+				acroFields.setField( "Illusion"+counterSpells, "No" );
+				acroFields.setField( "Illusion N"+counterSpells, "Yes" );
+				acroFields.setField( "Water"+counterSpells, "No" );
+				acroFields.setField( "Wood"+counterSpells, "No" );
 				switch(spell.getElement()) {
 				case AIR:
-					acroFields.setField( "Air"+conterSpells, "Yes" ); break;
+					acroFields.setField( "Air"+counterSpells, "Yes" ); break;
 				case EARTH:
-					acroFields.setField( "Earth"+conterSpells, "Yes" ); break;
+					acroFields.setField( "Earth"+counterSpells, "Yes" ); break;
 				case FEAR:
-					acroFields.setField( "Fear"+conterSpells, "Yes" ); break;
+					acroFields.setField( "Fear"+counterSpells, "Yes" ); break;
 				case FIRE:
-					acroFields.setField( "Fire"+conterSpells, "Yes" ); break;
+					acroFields.setField( "Fire"+counterSpells, "Yes" ); break;
 				case ILLUSION:
-					acroFields.setField( "Illusion"+conterSpells, "Yes" );
-					acroFields.setField( "Illusion N"+conterSpells, "No" );
+					acroFields.setField( "Illusion"+counterSpells, "Yes" );
+					acroFields.setField( "Illusion N"+counterSpells, "No" );
 					break;
 				case WATER:
-					acroFields.setField( "Water"+conterSpells, "Yes" ); break;
+					acroFields.setField( "Water"+counterSpells, "Yes" ); break;
 				case WOOD:
-					acroFields.setField( "Wood"+conterSpells, "Yes" ); break;
+					acroFields.setField( "Wood"+counterSpells, "Yes" ); break;
 				}
 				SpelldescriptionType spelldescription = spelldescriptions.get(spell.getName());
-				if( (spelldescription==null) || (spelldescription.getValue()==null) ) acroFields.setField( "Spell description"+conterSpells, "" );
-				else acroFields.setField( "Spell description"+conterSpells, spelldescription.getValue() );
+				if( (spelldescription==null) || (spelldescription.getValue()==null) ) acroFields.setField( "Spell description"+counterSpells, "" );
+				else acroFields.setField( "Spell description"+counterSpells, spelldescription.getValue() );
 			}
+			spelllistnr++;
 		}
-
 		stamper.close();
 	}
 }

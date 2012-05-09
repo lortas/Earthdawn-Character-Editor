@@ -283,6 +283,8 @@
 				</td>
 			</tr>
 		</table>
+		<!-- OpenSpells -->
+		<xsl:call-template name="openspells"/>
 		<!-- DisciplineSpells -->
 		<xsl:call-template name="disciplinespells"/>
 	</body> 
@@ -666,6 +668,42 @@
 		<xsl:if test="./following::edt:DISCIPLINEBONUS">; </xsl:if>
 </xsl:template>
 
+<xsl:template name="openspells">
+	<xsl:if test="//edc:OPENSPELL">
+		<div class="edDiscipline">
+			<div class="edSubHeader">Open Spells</div>
+			<div class="edSpells">
+				<div class="edSubSubHeader">Spells</div>
+				<table width="100%">
+					<thead><tr>
+						<td class="edHeaderCell">Spellname</td>
+						<td class="edHeaderCell">M<sup>1)</sup></td>
+						<td class="edHeaderCell">Type</td>
+						<td class="edHeaderCell">Element</td>
+						<td class="edHeaderCell">Circle</td>
+						<td class="edHeaderCell">T<sup>2)</sup></td>
+						<td class="edHeaderCell">WD<sup>3)</sup></td>
+						<td class="edHeaderCell">RD<sup>4)</sup></td>
+						<td class="edHeaderCell">CD<sup>5)</sup></td>
+						<td class="edHeaderCell">Range</td>
+						<td class="edHeaderCell">Duration</td>
+						<td class="edHeaderCell">Effect</td>
+						<td class="edHeaderCell">Book</td>
+					</tr></thead>
+					<xsl:apply-templates select="//edc:OPENSPELL"/>
+				</table>
+				<div>
+					<span class="sup">1)</span>In Matrix?;
+					<span class="sup">2)</span>Threads;
+					<span class="sup">3)</span>Weaving Difficulty;
+					<span class="sup">4)</span>Reattuning Difficulty;
+					<span class="sup">5)</span>Casting Difficulty;
+				</div>
+			</div>
+		</div>
+	</xsl:if>
+</xsl:template>
+
 <xsl:template name="disciplinespells">
 	<xsl:for-each select="//edc:DISCIPLINE">
 		<xsl:if test="./edt:SPELL">
@@ -674,10 +712,11 @@
 				<div class="edSpells">
 					<div class="edSubSubHeader">Spells</div>
 					<table width="100%">
-						<tr>
+						<thead><tr>
 							<td class="edHeaderCell">Spellname</td>
 							<td class="edHeaderCell">M<sup>1)</sup></td>
 							<td class="edHeaderCell">Type</td>
+							<td class="edHeaderCell">Element</td>
 							<td class="edHeaderCell">Circle</td>
 							<td class="edHeaderCell">T<sup>2)</sup></td>
 							<td class="edHeaderCell">WD<sup>3)</sup></td>
@@ -687,7 +726,7 @@
 							<td class="edHeaderCell">Duration</td>
 							<td class="edHeaderCell">Effect</td>
 							<td class="edHeaderCell">Book</td>
-						</tr>
+						</tr></thead>
 						<xsl:apply-templates select="./edt:SPELL"/>
 					</table>
 					<div>
@@ -703,11 +742,12 @@
 	</xsl:for-each>
 </xsl:template>
 
-<xsl:template match="//edt:SPELL">
+<xsl:template match="//edt:SPELL | //edc:OPENSPELL">
 	<tr>
 		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name" /></td>
 		<td class="edCapabCell"><xsl:if test="@inmatrix='yes'">X</xsl:if></td>
 		<td class="edCapabCell"><xsl:value-of select="@type" /></td>
+		<td class="edCapabCell"><xsl:value-of select="@element" /></td>
 		<td class="edCapabCell"><xsl:value-of select="@circle" /></td>
 		<td class="edCapabCell"><xsl:value-of select="@threads" /></td>
 		<td class="edCapabCell"><xsl:value-of select="@weavingdifficulty" /></td>
