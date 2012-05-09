@@ -45,7 +45,6 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 
 	public ShieldNodePanel(SHIELDType node) {
 		super(node);
-		this.setPreferredSize(new Dimension(710, 85));
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setLayout(new MigLayout("", "[24px][128px][27px][86px][34px][47px,grow][40px][86px][49px]", "[23px][][]"));
 		
@@ -81,7 +80,7 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 		textFieldLocation.setText(node.getLocation());
 		
 		chckbxUsed = new JCheckBox("Used");
-		chckbxUsed.setBackground(Color.WHITE);
+		chckbxUsed.setOpaque(false);
 		add(chckbxUsed, "cell 8 0,alignx left,aligny top");
 		chckbxUsed.setSelected(node.getUsed() == YesnoType.YES);
 		
