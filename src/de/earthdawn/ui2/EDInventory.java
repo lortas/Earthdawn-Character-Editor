@@ -215,6 +215,20 @@ public class EDInventory extends JPanel {
 				});
 				popup.add(menuitem);
 			}
+			// add common magic item
+			if(str.equals("Common Magic Items")){
+				JMenuItem menuitem = new JMenuItem("Add Common Magic Item");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						MAGICITEMType magicitem = new MAGICITEMType();
+						character.getMagicItem().add(magicitem);
+						magicitem.setName("Magic Item #"+(1+character.getMagicItem().indexOf(magicitem)));
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,magicitem,character.getMagicItem().indexOf(magicitem));
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(magicitem));
+					}
+				});
+				popup.add(menuitem);
+			}
 			JMenuItem menuitem = new JMenuItem("Open store");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
