@@ -42,6 +42,7 @@ public class ECEWorker {
 	public static final boolean OptionalRule_autoincrementDisciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
 	private static PrintStream errorout = System.err;
@@ -57,6 +58,9 @@ public class ECEWorker {
 		CalculatedLPContainer oldcalculatedLP = calculatedLP.copy();
 		// Berechnete LP erstmal zurücksetzen
 		calculatedLP.clear();
+	
+		// Die OpenSpell List ist eine generiete Liste und muss daher am Anfang gelöscht werden
+		character.clearOpenSpellList();
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
 		NAMEGIVERABILITYType namegiver = character.getRace();
@@ -453,25 +457,10 @@ public class ECEWorker {
 		// und wieviel ein SpellAbility pro Kreis pro Disziplin kostenlos dazukamen.
 		int freespellranks = attribute2StepAndDice(characterAttributes.get("PER").getBasevalue()).getStep();
 		for( int sa : getDisciplineSpellAbility(diciplineCircle) ) freespellranks+=sa;
-		HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			int usedSpellabilities=0;
 			for( SPELLType spell : discipline.getSPELL() ) {
-				SPELLDEFType spelldef = spelllist.get(spell.getName());
-				if( spelldef == null ) {
-					errorout.println("Unknown Spell '"+spell.getName()+"' in grimour found. Spell is left unmodified in grimour.");
-				} else {
-					spell.setCastingdifficulty(spelldef.getCastingdifficulty());
-					spell.setDuration(spelldef.getDuration());
-					spell.setEffect(spelldef.getEffect());
-					spell.setEffectarea(spelldef.getEffectarea());
-					spell.setRange(spelldef.getRange());
-					spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
-					spell.setThreads(spelldef.getThreads());
-					spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
-					spell.setBookref(spelldef.getBookref());
-					spell.setElement(spelldef.getElement());
-				}
+				updateSpell(spell);
 				// Wenn ein Zauber duch Spellability gelernt wurde, dann kostet er keine LPs
 				if( spell.getByspellability().equals(YesnoType.YES) ) {
 					usedSpellabilities++;
@@ -571,6 +560,12 @@ public class ECEWorker {
 			}
 			initiative.setStep(initiative.getBase()+initiative.getModification());
 			initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
+			for( String spellname : threadrank.getSPELL() ) {
+				SPELLType spell = new SPELLType();
+				spell.setName(spellname);
+				updateSpell(spell);
+				character.addOpenSpell(spell);
+			}
 			// TODO: other effects of MagicItems
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
 		}
@@ -589,6 +584,24 @@ public class ECEWorker {
 		character.calculateDevotionPoints();
 
 		return charakter;
+	}
+
+	private void updateSpell(SPELLType spell) {
+		SPELLDEFType spelldef = spelllist.get(spell.getName());
+		if( spelldef == null ) {
+			errorout.println("Unknown Spell '"+spell.getName()+"' in grimour found. Spell is left unmodified in grimour.");
+		} else {
+			spell.setCastingdifficulty(spelldef.getCastingdifficulty());
+			spell.setDuration(spelldef.getDuration());
+			spell.setEffect(spelldef.getEffect());
+			spell.setEffectarea(spelldef.getEffectarea());
+			spell.setRange(spelldef.getRange());
+			spell.setReattuningdifficulty(spelldef.getReattuningdifficulty());
+			spell.setThreads(spelldef.getThreads());
+			spell.setWeavingdifficulty(spelldef.getWeavingdifficulty());
+			spell.setBookref(spelldef.getBookref());
+			spell.setElement(spelldef.getElement());
+		}
 	}
 
 	private void checkTalentKnacks(TALENTType talent, int disciplinenumber, int minDisciplineCircle) {

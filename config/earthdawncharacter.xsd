@@ -54,6 +54,7 @@
 				<xs:element minOccurs="0" maxOccurs="1" name="CARRYING" type="edt:CARRYING_type"/>
 				<xs:element minOccurs="0" maxOccurs="3" name="DISCIPLINE" type="edt:DISCIPLINE_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="OPENSPELL" type="edt:SPELL_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGE" type="edt:CHARACTERLANGUAGE_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="AMMUNITION" type="edt:AMMUNITION_type"/>
