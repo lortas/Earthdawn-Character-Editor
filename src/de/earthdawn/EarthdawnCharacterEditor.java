@@ -29,7 +29,7 @@ import de.earthdawn.ui2.EDMainWindow;
 
 
 public class EarthdawnCharacterEditor {
-	public static final String VERSION="0.40";
+	public static final String VERSION="0.42";
 	/**
 	 * Main-Funktion. 
 	 */
@@ -41,7 +41,7 @@ public class EarthdawnCharacterEditor {
 			if( args.length > 0 ) {
 				System.out.println("Lese Charaker aus " + args[0]);
 				// Einlesen des Charakters
-				Unmarshaller u = jc.createUnmarshaller();			
+				Unmarshaller u = jc.createUnmarshaller();
 				ec =(EDCHARACTER)u.unmarshal(new File(args[0]));
 			}
 			// Verarbeiten
@@ -66,7 +66,8 @@ public class EarthdawnCharacterEditor {
 				new ECEPdfExporter().exportRedbrickExtended(ec, new File(outFile.getParentFile(), chopFilename(outFile)+ ".pdf"));
 			} else {
 				// Anzeigen des Hauptdialogs.
-				EDMainWindow.main(args);
+				EDMainWindow window = new EDMainWindow();
+				window.setVisible(true);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
