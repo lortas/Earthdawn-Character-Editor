@@ -37,7 +37,6 @@ public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 
 	public ArmorNodePanel(ARMORType node) {
 		super(node);
-		this.setPreferredSize(new Dimension(850, 113));
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setLayout(new MigLayout("", "[24px][128px,grow][27px][60px][34px][47px,grow][40px][86px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
