@@ -42,7 +42,6 @@ public class ECEPdfExporter {
 	public static final String[] ARTISAN = PROPERTIES.getArtisanName();
 	public static final String[] KNOWLEDGE = PROPERTIES.getKnowledgeName();
 	private int counterEquipment=0;
-	private int rowEquipment=0;
 	private AcroFields acroFields = null;
 
 	private void exportCommonFields(CharacterContainer character, int maxSkillSpace, int raceAbilitiesLineLength) throws IOException, DocumentException {
@@ -165,7 +164,6 @@ public class ECEPdfExporter {
 		}
 
 		List<SKILLType> skills = character.getSkills();
-		String notShownSkills="";
 		if( (skills != null) && (! skills.isEmpty()) ) {
 			int counter = 0;
 			Collections.sort(skills, new SkillComparator());
@@ -199,11 +197,6 @@ public class ECEPdfExporter {
 					acroFields.setField( "SkillAttributeStep."+counter, String.valueOf(attributes.get(attribute.value()).getStep()) );
 				}
 				counter++;
-				if( counter > maxSkillSpace ) {
-					notShownSkills += skillName.replaceAll(" ", "")+"("+skill.getAttribute().value();
-					if( skillrank.getRank() > 0 ) notShownSkills += "+"+skillrank.getRank();
-					notShownSkills += ") ";
-				}
 			}
 		}
 		acroFields.setField( "RacialAbilities", character.getAbilities() );
@@ -347,12 +340,18 @@ public class ECEPdfExporter {
 		}
 
 		counterEquipment=0;
-		rowEquipment=0;
-		for( ITEMType item : listArmorAndWeapon(character) ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
-		}
-		for( ITEMType item : character.getItems() ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
+		for( ITEMType item : listArmorAndWeapon(character) ) addEquipment(item.getName(),item.getWeight());
+		for( ITEMType item : character.getItems() ) addEquipment(item.getName(),item.getWeight());
+		for( MAGICITEMType item : character.getMagicItem() ) {
+			StringBuffer text=new StringBuffer(item.getName());
+			text.append(" (");
+			text.append(item.getBlooddamage());
+			text.append("/");
+			text.append(item.getDepatterningrate());
+			text.append("/");
+			text.append(item.getEnchantingdifficultynumber());
+			text.append(")");
+			addEquipment(text.toString(),item.getWeight());
 		}
 
 		int copperPieces = 0;
@@ -372,7 +371,7 @@ public class ECEPdfExporter {
 			if( coins.getGem500()>0)      name += " g500:"+coins.getGem500();
 			if( coins.getGem1000()>0)     name += " g1000:"+coins.getGem1000();
 			name +=")";
-			addEquipment(name,coins.getWeight(),true);
+			addEquipment(name,coins.getWeight());
 			copperPieces += coins.getCopper();
 			silverPieces += coins.getSilver();
 			goldPieces += coins.getGold();
@@ -505,8 +504,8 @@ public class ECEPdfExporter {
 			}
 		}
 		List<DISCIPLINEType> disciplines = character.getDisciplines();
-		DISCIPLINEType discipline1 = disciplines.get(0);
-		if( discipline1 != null ) {
+		if( ! disciplines.isEmpty() ) {
+			DISCIPLINEType discipline1 = disciplines.get(0);
 			int counter = 0;
 			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
@@ -618,12 +617,18 @@ public class ECEPdfExporter {
 			}
 		}
 		counterEquipment=0;
-		rowEquipment=0;
-		for( ITEMType item : listArmorAndWeapon(character) ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),false) ) break;
-		}
-		for( ITEMType item : character.getItems() ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),false) ) break;
+		for( ITEMType item : listArmorAndWeapon(character) ) addEquipment(item.getName(),item.getWeight());
+		for( ITEMType item : character.getItems() ) addEquipment(item.getName(),item.getWeight());
+		for( MAGICITEMType item : character.getMagicItem() ) {
+			StringBuffer text=new StringBuffer(item.getName());
+			text.append(" (");
+			text.append(item.getBlooddamage());
+			text.append("/");
+			text.append(item.getDepatterningrate());
+			text.append("/");
+			text.append(item.getEnchantingdifficultynumber());
+			text.append(")");
+			addEquipment(text.toString(),item.getWeight());
 		}
 
 		int copperPieces = 0;
@@ -638,7 +643,7 @@ public class ECEPdfExporter {
 			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
 			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
 			name +=")";
-			addEquipment(name,coins.getWeight(),false);
+			addEquipment(name,coins.getWeight());
 			copperPieces += coins.getCopper();
 			silverPieces += coins.getSilver();
 			goldPieces += coins.getGold();
@@ -800,12 +805,18 @@ public class ECEPdfExporter {
 		}
 
 		counterEquipment=0;
-		rowEquipment=0;
-		for( ITEMType item : listArmorAndWeapon(character) ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
-		}
-		for( ITEMType item : character.getItems() ) {
-			if( ! addEquipment(item.getName(),item.getWeight(),true) ) break;
+		for( ITEMType item : listArmorAndWeapon(character) ) addEquipment(item.getName(),item.getWeight());
+		for( ITEMType item : character.getItems() ) addEquipment(item.getName(),item.getWeight());
+		for( MAGICITEMType item : character.getMagicItem() ) {
+			StringBuffer text=new StringBuffer(item.getName());
+			text.append(" (");
+			text.append(item.getBlooddamage());
+			text.append("/");
+			text.append(item.getDepatterningrate());
+			text.append("/");
+			text.append(item.getEnchantingdifficultynumber());
+			text.append(")");
+			addEquipment(text.toString(),item.getWeight());
 		}
 
 		String copperPieces = null;
@@ -973,24 +984,10 @@ public class ECEPdfExporter {
 		}
 	}
 
-	private boolean addEquipment(String name, float weight, boolean singlerow) throws IOException, DocumentException {
-		if( counterEquipment > 33 ) {
-			System.err.println("To many equipment, can not insert \""+name+"\"");
-			return false;
-		}
-		if( singlerow ) {
-			acroFields.setField( "Equipment."+counterEquipment, name );
-			acroFields.setField( "Weight."+counterEquipment, (new DecimalFormat("0.##")).format(weight) );
-		} else {
-			acroFields.setField( "Equipment."+counterEquipment+"."+rowEquipment, name );
-			acroFields.setField( "Weight."+counterEquipment+"."+rowEquipment, (new DecimalFormat("0.##")).format(weight) );
-		}
-		if( counterEquipment > 33 ) {
-			counterEquipment=0;
-			if( rowEquipment == 1 ) return false;
-			else rowEquipment=1;
-		} else counterEquipment++;
-		return true;
+	private void addEquipment(String name, float weight) throws IOException, DocumentException {
+		acroFields.setField( "Equipment."+counterEquipment, name );
+		acroFields.setField( "Weight."+counterEquipment, (new DecimalFormat("0.##")).format(weight) );
+		counterEquipment++;
 	}
 
 	private void setTalent(int counter, TALENTType talent, HashMap<String,ATTRIBUTEType> attributes) throws DocumentException, IOException {
