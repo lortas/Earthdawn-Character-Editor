@@ -117,6 +117,10 @@ public class EDMainWindow {
 		});
 	}
 
+	public void setVisible(boolean isVisible) {
+		frame.setVisible(isVisible);
+	}
+
 	/**
 	 * Create the application.
 	 */
