@@ -771,15 +771,20 @@ public class ECEPdfExporter {
 		String silverPieces = null;
 		int otherPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
-			String other = "";
-			if( coins.getEarth()>0 )      other += " earth:"+coins.getEarth();
-			if( coins.getWater()>0 )      other += " water:"+coins.getWater();
-			if( coins.getAir()>0 )        other += " air:"+coins.getAir();
-			if( coins.getFire()>0 )       other += " fire:"+coins.getFire();
-			if( coins.getOrichalcum()>0 ) other += " orichalcum:"+coins.getOrichalcum();
-			if( ! other.isEmpty() ) {
-				if( ! coins.getName().isEmpty() ) other += " ["+coins.getName()+"]";
-				acroFields.setField( "Coins."+String.valueOf(otherPieces), other );
+			StringBuffer other=new StringBuffer();
+			if( coins.getEarth()>0 )      other.append(" earth:"+coins.getEarth());
+			if( coins.getWater()>0 )      other.append(" water:"+coins.getWater());
+			if( coins.getAir()>0 )        other.append(" air:"+coins.getAir());
+			if( coins.getFire()>0 )       other.append(" fire:"+coins.getFire());
+			if( coins.getOrichalcum()>0 ) other.append(" orichalcum:"+coins.getOrichalcum());
+			if( coins.getGem50()>0)       other.append(" gem50:"+coins.getGem50());
+			if( coins.getGem100()>0)      other.append(" gem100:"+coins.getGem100());
+			if( coins.getGem200()>0)      other.append(" gem200:"+coins.getGem200());
+			if( coins.getGem500()>0)      other.append(" gem500:"+coins.getGem500());
+			if( coins.getGem1000()>0)     other.append(" gem1000:"+coins.getGem1000());
+			if( ! other.toString().isEmpty() ) {
+				if( ! coins.getName().isEmpty() ) other.append(" ["+coins.getName()+"]");
+				acroFields.setField( "Coins."+String.valueOf(otherPieces), other.toString() );
 				otherPieces++;
 			}
 			if( coins.getCopper() != 0 ) {
