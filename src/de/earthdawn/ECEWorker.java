@@ -566,6 +566,9 @@ public class ECEWorker {
 				updateSpell(spell);
 				character.addOpenSpell(spell);
 			}
+			for( DISZIPINABILITYType recov : threadrank.getRECOVERYTEST() ) {
+				recovery.setTestsperday(recovery.getTestsperday()+recov.getCount());
+			}
 			// TODO: other effects of MagicItems
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
 		}
