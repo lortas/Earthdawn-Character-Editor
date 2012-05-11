@@ -246,6 +246,15 @@ public class CharacterContainer extends CharChangeRefresh {
 		legendpoints.setReputation(legendstatus.getReputation());
 	}
 
+	public void resetInitiative(STEPDICEType value) {
+		INITIATIVEType initiative = new INITIATIVEType();
+		initiative.setModification(0);
+		initiative.setBase(value.getStep());
+		initiative.setStep(value.getStep());
+		initiative.setDice(value.getDice());
+		character.setINITIATIVE(initiative);
+	}
+
 	public INITIATIVEType getInitiative() {
 		INITIATIVEType initiative = character.getINITIATIVE();
 		if( initiative == null ) {

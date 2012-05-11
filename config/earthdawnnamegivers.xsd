@@ -31,6 +31,7 @@
 		<xs:attribute name="karmamodifier" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="movement_ground" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="movement_flight" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="enduringarmorfactor" type="xs:float" default="1.0"/>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 		<xs:attribute name="type" type="xs:string" default=""/>
 	</xs:complexType>
