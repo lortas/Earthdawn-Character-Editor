@@ -242,7 +242,9 @@ public class EDInventory extends JPanel {
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					character.refesh();
-					tree.scrollPathToVisible(currentPath);
+					List<THREADRANKType> ranks = ((THREADITEMType)currentNode).getTHREADRANK();
+					if( ranks.isEmpty() ) tree.scrollPathToVisible(currentPath);
+					else tree.scrollPathToVisible(currentPath.pathByAddingChild(ranks.get(ranks.size()-1)));
 				}
 			});
 			popup.add(menuitem);
@@ -266,7 +268,7 @@ public class EDInventory extends JPanel {
 					int last=item.getTHREADRANK().size()-1;
 					item.getTHREADRANK().remove(last);
 					((ItemTreeModel) tree.getModel()).fireRemove(currentPath,item, last);
-					tree.scrollPathToVisible(currentPath.pathByAddingChild(item.getTHREADRANK().get(last-1)));
+					if( last>0 ) tree.scrollPathToVisible(currentPath.pathByAddingChild(item.getTHREADRANK().get(last-1)));
 				}
 			});
 			popup.add(menuitem);
