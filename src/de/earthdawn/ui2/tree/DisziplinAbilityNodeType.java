@@ -1,7 +1,7 @@
 package de.earthdawn.ui2.tree;
 
 public enum DisziplinAbilityNodeType {
-	RECOVERYTEST("Recovery Test"),KARMASTEP("Karma Step"),SPELLABILITY("Spell Ability"),INITIATIVE("Initiative");
+	RECOVERYTEST("Recovery Test"),KARMASTEP("Karma Step"),MAXKARMA("Max Karma"),SPELLABILITY("Spell Ability"),INITIATIVE("Initiative");
 	private final String value;
 
 	DisziplinAbilityNodeType(String v) {

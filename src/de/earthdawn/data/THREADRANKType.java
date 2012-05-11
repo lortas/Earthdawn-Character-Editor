@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="RECOVERYTEST" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="MAXKARMA" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="keyknowledge" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
@@ -63,6 +64,7 @@ import javax.xml.bind.annotation.XmlType;
     "initiative",
     "recoverytest",
     "karmastep",
+    "maxkarma",
     "ability"
 })
 public class THREADRANKType {
@@ -89,6 +91,8 @@ public class THREADRANKType {
     protected List<DISZIPINABILITYType> recoverytest;
     @XmlElement(name = "KARMASTEP")
     protected List<DISZIPINABILITYType> karmastep;
+    @XmlElement(name = "MAXKARMA")
+    protected List<DISZIPINABILITYType> maxkarma;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
     @XmlAttribute
@@ -395,6 +399,35 @@ public class THREADRANKType {
             karmastep = new ArrayList<DISZIPINABILITYType>();
         }
         return this.karmastep;
+    }
+
+    /**
+     * Gets the value of the maxkarma property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the maxkarma property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getMAXKARMA().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link DISZIPINABILITYType }
+     * 
+     * 
+     */
+    public List<DISZIPINABILITYType> getMAXKARMA() {
+        if (maxkarma == null) {
+            maxkarma = new ArrayList<DISZIPINABILITYType>();
+        }
+        return this.maxkarma;
     }
 
     /**

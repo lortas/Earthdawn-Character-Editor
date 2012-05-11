@@ -183,6 +183,14 @@ public class ItemTreeModel  implements TreeModel {
 			list.add(disziplinabilitynode);
 			idx++;
 		}
+		idx=0;
+		List<DISZIPINABILITYType> maxkarma = rank.getMAXKARMA();
+		for( DISZIPINABILITYType d : maxkarma ) {
+			DisziplinAbilityNode disziplinabilitynode = new DisziplinAbilityNode(maxkarma,idx,DisziplinAbilityNodeType.MAXKARMA);
+			disziplinabilitynode.setSiziplinAbility(d);
+			list.add(disziplinabilitynode);
+			idx++;
+		}
 		return list;
 	}
 
@@ -208,7 +216,9 @@ public class ItemTreeModel  implements TreeModel {
 		idx += rank.getABILITY().size();
 		if( effect==9 ) return idx;  // 9  : SPELLABILITY
 		idx += rank.getSPELLABILITY().size();
-		return idx;                  // 10 : INITIATIVE
+		if( effect==10 ) return idx; // 10 : INITIATIVE
+		idx += rank.getMAXKARMA().size();
+		return idx;                  // 11 : MAX KARMA
 	}
 
 	@Override
