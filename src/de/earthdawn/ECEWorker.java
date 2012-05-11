@@ -42,6 +42,7 @@ public class ECEWorker {
 	public static final boolean OptionalRule_autoincrementDisciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	public static final boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+	public static final boolean OptionalRule_EnduringArmorByStrength=PROPERTIES.getOptionalRules().getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
 	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
@@ -132,13 +133,8 @@ public class ECEWorker {
 		}
 
 		// **INITIATIVE**
-		STEPDICEType initiativeStepdice=attribute2StepAndDice(characterAttributes.get("DEX").getCurrentvalue());
-		INITIATIVEType initiative = character.getInitiative();
 		// Setze alle Initiative Modifikatoren zurück, da diese im folgenden neu bestimmt werden.
-		initiative.setModification(0);
-		initiative.setBase(initiativeStepdice.getStep());
-		initiative.setStep(initiativeStepdice.getStep());
-		initiative.setDice(initiativeStepdice.getDice());
+		character.resetInitiative(attribute2StepAndDice(characterAttributes.get("DEX").getCurrentvalue()));
 
 		// **HEALTH**
 		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(characterAttributes.get("TOU").getCurrentvalue());
@@ -558,8 +554,6 @@ public class ECEWorker {
 			for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
 				character.readjustInitiativeModifikator(iteminitiative.getCount());
 			}
-			initiative.setStep(initiative.getBase()+initiative.getModification());
-			initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
 			for( String spellname : threadrank.getSPELL() ) {
 				SPELLType spell = new SPELLType();
 				spell.setName(spellname);
@@ -579,6 +573,20 @@ public class ECEWorker {
 			}
 			// TODO: other effects of MagicItems
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
+		}
+
+		if( OptionalRule_EnduringArmorByStrength ) {
+			int currentmodificator = -character.getInitiative().getModification();
+			if( currentmodificator>0 ) {
+				float strength = characterAttributes.get("STR").getCurrentvalue();
+				strength *= namegiver.getEnduringarmorfactor();
+				// neuer Stärkewert aufrunden und in der Tabelle für Mystische Armor nachschlagen
+				int relief=berechneMysticArmor(new Double(Math.ceil(strength)).intValue());
+				// Dies stellt nun den Stärke bassierenden Modifikator dar, mit dem der Charakter besser mit einer Rüstung zurecht kommt
+				// Da es keine negative Initiative Behinderung geben darf, wird auf die aktuelle Behinderung limitiert
+				if( currentmodificator < relief ) relief = currentmodificator;
+				character.readjustInitiativeModifikator(relief);
+			}
 		}
 
 		// Veränderungen am death/unconsciousness adjustment sollen beachtet werden

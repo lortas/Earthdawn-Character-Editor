@@ -41,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="karmamodifier" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="movement_ground" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="movement_flight" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
+ *       &lt;attribute name="enduringarmorfactor" type="{http://www.w3.org/2001/XMLSchema}float" default="1.0" />
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
@@ -90,6 +91,8 @@ public class NAMEGIVERABILITYType {
     protected Integer movementGround;
     @XmlAttribute(name = "movement_flight")
     protected Integer movementFlight;
+    @XmlAttribute
+    protected Float enduringarmorfactor;
     @XmlAttribute(required = true)
     protected LanguageType lang;
     @XmlAttribute
@@ -452,6 +455,34 @@ public class NAMEGIVERABILITYType {
      */
     public void setMovementFlight(Integer value) {
         this.movementFlight = value;
+    }
+
+    /**
+     * Gets the value of the enduringarmorfactor property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Float }
+     *     
+     */
+    public float getEnduringarmorfactor() {
+        if (enduringarmorfactor == null) {
+            return  1.0F;
+        } else {
+            return enduringarmorfactor;
+        }
+    }
+
+    /**
+     * Sets the value of the enduringarmorfactor property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Float }
+     *     
+     */
+    public void setEnduringarmorfactor(Float value) {
+        this.enduringarmorfactor = value;
     }
 
     /**

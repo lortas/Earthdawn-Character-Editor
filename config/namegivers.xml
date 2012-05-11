@@ -153,7 +153,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5" type="Obsidiman">
+	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5" enduringarmorfactor="0.8" type="Obsidiman">
 		<ATTRIBUTE name="DEX" value="8" />
 		<ATTRIBUTE name="STR" value="18" />
 		<ATTRIBUTE name="TOU" value="13" />
@@ -184,7 +184,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7" type="Troll">
+	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7" enduringarmorfactor="0.8" type="Troll">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="14" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -269,7 +269,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8" type="Windling">
+	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8" enduringarmorfactor="1.5" type="Windling">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="4" />
 		<ATTRIBUTE name="TOU" value="8" />

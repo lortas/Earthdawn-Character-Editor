@@ -39,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="LANGUAGESASINDIVIDUALSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="ENDURINGARMORBYSTRENGTH" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="DATEFORMAT" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
@@ -65,6 +66,7 @@ import javax.xml.bind.annotation.XmlType;
     "questortalentneedlegendpoints",
     "autoinsertlegendpointspent",
     "languagesasindividualskills",
+    "enduringarmorbystrength",
     "dateformat",
     "multiusetalent",
     "defaultoptionaltalent",
@@ -97,6 +99,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType autoinsertlegendpointspent;
     @XmlElement(name = "LANGUAGESASINDIVIDUALSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType languagesasindividualskills;
+    @XmlElement(name = "ENDURINGARMORBYSTRENGTH", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType enduringarmorbystrength;
     @XmlElement(name = "DATEFORMAT", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected String dateformat;
     @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
@@ -392,6 +396,30 @@ public class OPTIONALRULES {
      */
     public void setLANGUAGESASINDIVIDUALSKILLS(OPTIONALRULEType value) {
         this.languagesasindividualskills = value;
+    }
+
+    /**
+     * Gets the value of the enduringarmorbystrength property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getENDURINGARMORBYSTRENGTH() {
+        return enduringarmorbystrength;
+    }
+
+    /**
+     * Sets the value of the enduringarmorbystrength property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setENDURINGARMORBYSTRENGTH(OPTIONALRULEType value) {
+        this.enduringarmorbystrength = value;
     }
 
     /**

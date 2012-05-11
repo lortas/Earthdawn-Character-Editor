@@ -12,6 +12,7 @@ import de.earthdawn.data.CALCULATEDLEGENDPOINTSType;
 import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.DEVOTIONType;
+import de.earthdawn.data.DiceType;
 import de.earthdawn.data.EXPERIENCEType;
 import de.earthdawn.data.INITIATIVEType;
 import de.earthdawn.data.KARMAType;
@@ -97,7 +98,9 @@ public class CharacteristicStatus {
 		node.put( "base", initiative.getBase() );
 		node.put( "modification", initiative.getModification() );
 		node.put( "step", initiative.getStep() );
-		node.put( "dice", initiative.getDice().value() );
+		DiceType initiativedice = initiative.getDice();
+		if( initiativedice == null ) node.put( "dice", "-" );
+		else node.put( "dice", initiativedice.value() );
 		root.put("INITIATIVE", node);
 
 		node = new HashMap<String,Object>();
