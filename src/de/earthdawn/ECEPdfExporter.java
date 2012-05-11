@@ -331,20 +331,7 @@ public class ECEPdfExporter {
 		int goldPieces = 0;
 		int silverPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
-			String name = "Purse "+coins.getName()+" (";
-			name += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
-			if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
-			if( coins.getWater()>0 )      name += " w:"+coins.getWater();
-			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
-			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
-			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
-			if( coins.getGem50()>0)       name += " g50:"+coins.getGem50();
-			if( coins.getGem100()>0)      name += " g100:"+coins.getGem100();
-			if( coins.getGem200()>0)      name += " g200:"+coins.getGem200();
-			if( coins.getGem500()>0)      name += " g500:"+coins.getGem500();
-			if( coins.getGem1000()>0)     name += " g1000:"+coins.getGem1000();
-			name +=")";
-			addEquipment(name,coins.getWeight());
+			addEquipment(coinsToString(coins),coins.getWeight());
 			copperPieces += coins.getCopper();
 			silverPieces += coins.getSilver();
 			goldPieces += coins.getGold();
@@ -413,6 +400,29 @@ public class ECEPdfExporter {
 		}
 
 		stamper.close();
+	}
+
+	private String coinsToString(COINSType coins) {
+		StringBuffer name=new StringBuffer("Purse ");
+		name.append(coins.getName());
+		name.append(" (c:");
+		name.append(coins.getCopper());
+		name.append(" s:");
+		name.append(coins.getSilver());
+		name.append(" g:");
+		name.append(coins.getGold());
+		if( coins.getEarth()>0 )      name.append(" e:"+coins.getEarth());
+		if( coins.getWater()>0 )      name.append(" w:"+coins.getWater());
+		if( coins.getAir()>0 )        name.append(" a:"+coins.getAir());
+		if( coins.getFire()>0 )       name.append(" f:"+coins.getFire());
+		if( coins.getOrichalcum()>0 ) name.append(" o:"+coins.getOrichalcum());
+		if( coins.getGem50()>0)       name.append(" g50:"+coins.getGem50());
+		if( coins.getGem100()>0)      name.append(" g100:"+coins.getGem100());
+		if( coins.getGem200()>0)      name.append(" g200:"+coins.getGem200());
+		if( coins.getGem500()>0)      name.append(" g500:"+coins.getGem500());
+		if( coins.getGem1000()>0)     name.append(" g1000:"+coins.getGem1000());
+		name.append(")");
+		return name.toString();
 	}
 
 	public void exportRedbrickExtended(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
@@ -582,15 +592,7 @@ public class ECEPdfExporter {
 		int goldPieces = 0;
 		int silverPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
-			String name = "Purse "+coins.getName()+" (";
-			name += "c:"+coins.getCopper()+" s:"+coins.getSilver()+" g:"+coins.getGold();
-			if( coins.getEarth()>0 )      name += " e:"+coins.getEarth();
-			if( coins.getWater()>0 )      name += " w:"+coins.getWater();
-			if( coins.getAir()>0 )        name += " a:"+coins.getAir();
-			if( coins.getFire()>0 )       name += " f:"+coins.getFire();
-			if( coins.getOrichalcum()>0 ) name += " o:"+coins.getOrichalcum();
-			name +=")";
-			addEquipment(name,coins.getWeight());
+			addEquipment(coinsToString(coins),coins.getWeight());
 			copperPieces += coins.getCopper();
 			silverPieces += coins.getSilver();
 			goldPieces += coins.getGold();
