@@ -261,17 +261,19 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
-			menuitem = new JMenuItem("Remove Last Rank");
-			menuitem.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					THREADITEMType item = (THREADITEMType) currentNode;
-					int last=item.getTHREADRANK().size()-1;
-					item.getTHREADRANK().remove(last);
-					((ItemTreeModel) tree.getModel()).fireRemove(currentPath,item, last);
-					if( last>0 ) tree.scrollPathToVisible(currentPath.pathByAddingChild(item.getTHREADRANK().get(last-1)));
-				}
-			});
-			popup.add(menuitem);
+			if( ! ((THREADITEMType)currentNode).getTHREADRANK().isEmpty() ) {
+				menuitem = new JMenuItem("Remove Last Rank");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADITEMType item = (THREADITEMType) currentNode;
+						int last=item.getTHREADRANK().size()-1;
+						item.getTHREADRANK().remove(last);
+						((ItemTreeModel) tree.getModel()).fireRemove(currentPath,item, last);
+						if( last>0 ) tree.scrollPathToVisible(currentPath.pathByAddingChild(item.getTHREADRANK().get(last-1)));
+					}
+				});
+				popup.add(menuitem);
+			}
 		}
 		if( currentNode instanceof THREADRANKType ) {
 			THREADRANKType threadrank = (THREADRANKType) currentNode;
@@ -405,6 +407,20 @@ public class EDInventory extends JPanel {
 					rank.getKARMASTEP().add(disziplinability);
 					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 7);
 					DisziplinAbilityNode abilitynode = new DisziplinAbilityNode(rank.getKARMASTEP(), abilityidx, DisziplinAbilityNodeType.KARMASTEP);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
+					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
+				}
+			});
+			popup.add(menuitem);
+			menuitem = new JMenuItem("Add Karma Max");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					THREADRANKType rank = (THREADRANKType) currentNode;
+					DISZIPINABILITYType disziplinability = new DISZIPINABILITYType();
+					int abilityidx = rank.getMAXKARMA().size();
+					rank.getMAXKARMA().add(disziplinability);
+					int idx=abilityidx+ItemTreeModel.getEffectIndex(rank, 11);
+					DisziplinAbilityNode abilitynode = new DisziplinAbilityNode(rank.getMAXKARMA(), abilityidx, DisziplinAbilityNodeType.MAXKARMA);
 					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,abilitynode,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(abilitynode));
 				}

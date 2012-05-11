@@ -502,7 +502,12 @@
 			</xs:element>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMASTEP" type="DISZIPINABILITY_type">
 				<xs:annotation>
-					<xs:documentation>Increased the karma step by one.</xs:documentation>
+					<xs:documentation>Increased the karma step.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="MAXKARMA" type="DISZIPINABILITY_type">
+				<xs:annotation>
+					<xs:documentation>Increased the max karma value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>

@@ -569,6 +569,14 @@ public class ECEWorker {
 			for( DISZIPINABILITYType recov : threadrank.getRECOVERYTEST() ) {
 				recovery.setTestsperday(recovery.getTestsperday()+recov.getCount());
 			}
+			for( DISZIPINABILITYType k : threadrank.getKARMASTEP() ) {
+				karma.setStep(karma.getStep() + k.getCount());
+				karma.setDice(PROPERTIES.step2Dice(karma.getStep()));
+			}
+			for( DISZIPINABILITYType k : threadrank.getMAXKARMA() ) {
+				karma.setMax(karma.getMax() + k.getCount());
+				karma.setMaxmodificator(karma.getMaxmodificator() + k.getCount());
+			}
 			// TODO: other effects of MagicItems
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
 		}
