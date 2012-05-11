@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+	<SKILL name="Buzz" attribute="DEX" default="no" action="standard" strain="0" bookref="NG p.228"/>
+	<SKILL name="Cast Net" attribute="DEX" default="no" action="free" strain="1" bookref="NG p.228"/>
+	<SKILL name="Dive Attack" attribute="STR" default="no" action="free" strain="1" bookref="NG p.228"/>
+	<SKILL name="False Shackles" attribute="DEX" default="no" action="sustained" strain="1" bookref="NG p.228"/>
+	<SKILL name="Gliding" attribute="DEX" default="yes" action="simple" strain="0" bookref="NG p.228"/>
+	<SKILL name="Tail Dance" attribute="DEX" default="no" action="simple" strain="1" bookref="NG p.228"/>
+	<SKILL name="Wind Dance" attribute="PER" default="no" action="simple" strain="1" bookref="NG p.228"/>
 	<TALENT name="Applied Science" attribute="CHA" action="standard" karma="no" strain="1" bookref="NG p.217"/>
 	<TALENT name="Armored Fetish" attribute="na" action="na" karma="no" strain="0" bookref="NG p.217"/>
 	<TALENT name="Bane Strike" attribute="na" action="free" karma="no" strain="2" bookref="NG p.217"/>
