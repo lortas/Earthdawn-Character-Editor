@@ -22,6 +22,20 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.42-20120512.zip ##
++ Bugs
+	+ Common Magic Items will now be shown on the PDF-export
+	+ Armor node panel and shield node panel will now bee completely shown
+	+ Gems were missing in Ajfels and RB-extended PDF export
+	+ Removing last thread item rank had result in null pointer exception
+	+ Recovery test modification from thread items will no be respected
++ Spells from thread items will be shown within the exports
++ Now you have also an "Add Entry" for "Common Magic Items"
++ The characters maximal karma can now be modified by thread items
++ New optional rule: ENDURINGARMORBYSTRENGTH
++ Skills from the book Namgivers are added
++ Character items can now be individual exported
++ Adding a new thread rank for a thread item will use the previous rank as template
 ## EarthdawnCharacterEditor-0.41-20120507.zip ##
 + Bugs
 	+ Talent knacks can now also be removed
