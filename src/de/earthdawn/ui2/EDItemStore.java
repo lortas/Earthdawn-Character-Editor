@@ -202,6 +202,18 @@ public class EDItemStore extends JFrame {
 		// Only Save file if OK/Yes was pressed
 		File file = fc.getSelectedFile();
 		if( file != null ) {
+			if( file.exists() ) {
+				String[] options = {"Continue","Cancel"};
+				int a = JOptionPane.showOptionDialog(parent,
+						"The file '"+file.getName()+"' already exists and will be overwritten.\nDo you really want to continue?",
+						"Overwrite File?",
+						JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null,
+						options,
+						options[0]);
+				if( a != 0 ) return;
+			}
 			try {
 				final String encoding = EDMainWindow.encoding;
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
