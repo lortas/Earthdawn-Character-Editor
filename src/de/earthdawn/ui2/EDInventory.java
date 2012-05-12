@@ -252,11 +252,17 @@ public class EDInventory extends JPanel {
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADITEMType item = (THREADITEMType) currentNode;
-					THREADRANKType rank = new THREADRANKType();
-					rank.setEffect("");
-					rank.setKeyknowledge("");
-					item.getTHREADRANK().add(rank);
-					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,item, item.getTHREADRANK().indexOf(rank));
+					List<THREADRANKType> threadranks = item.getTHREADRANK();
+					int lastrank = threadranks.size()-1;
+					THREADRANKType rank;
+					if( threadranks.isEmpty() ) {
+						rank = new THREADRANKType();
+						rank.setEffect("");
+						rank.setKeyknowledge("");
+					}
+					else rank = CharacterContainer.copyThreadRank(threadranks.get(lastrank));
+					threadranks.add(rank);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank, lastrank+1);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(rank));
 				}
 			});
@@ -526,9 +532,30 @@ public class EDInventory extends JPanel {
 		//remove
 		Object parent = currentPath.getParentPath().getLastPathComponent();
 		if(parent instanceof String){
-			List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+			final String category=(String)parent;
+			List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode(category);
 			if(temp != null){
-				JMenuItem menuitem = new JMenuItem("Remove Node");
+				JMenuItem menuitem = new JMenuItem("Export as ItemStore file");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						ITEMS items=new ITEMS();
+						items.setLang(LanguageType.EN);
+						if( currentNode instanceof AMMUNITIONType ) items.getAMMUNITION().add((AMMUNITIONType)currentNode);
+						else if( currentNode instanceof PATTERNITEMType) items.getPATTERNITEM().add((PATTERNITEMType)currentNode);
+						else if( currentNode instanceof THREADITEMType) items.getTHREADITEM().add((THREADITEMType)currentNode);
+						else if( currentNode instanceof WEAPONType) items.getWEAPON().add((WEAPONType)currentNode);
+						else if( currentNode instanceof SHIELDType) items.getSHIELD().add((SHIELDType)currentNode);
+						else if( currentNode instanceof ARMORType) items.getARMOR().add((ARMORType)currentNode);
+						else if( currentNode instanceof MAGICITEMType ) {
+							if( category.equals("Bloodcharms") ) items.getBLOODCHARMITEM().add((MAGICITEMType)currentNode);
+							else items.getMAGICITEM().add((MAGICITEMType)currentNode);
+						}
+						else if( currentNode instanceof ITEMType ) items.getITEM().add((ITEMType)currentNode);
+						EDItemStore.saveItems(null, items);
+					}
+				});
+				popup.add(menuitem);
+				menuitem = new JMenuItem("Remove Node");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						Object parent = currentPath.getParentPath().getLastPathComponent();

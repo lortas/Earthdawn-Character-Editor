@@ -1203,8 +1203,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setBlooddamage(blooddamage);
 					armor.setDepatterningrate(dr);
 					armor.setBookref(bookref);
-					armor.setVirtual(YesnoType.YES);
-					if( weaven > 0 ) newmagicarmor=armor;
+					if( weaven == rank ) newmagicarmor=armor;
 				}
 				SHIELDType shield = threadrank.getSHIELD();
 				if( shield != null ) {
@@ -1217,10 +1216,8 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setBlooddamage(blooddamage);
 					shield.setDepatterningrate(dr);
 					shield.setBookref(bookref);
-					shield.setVirtual(YesnoType.YES);
-					if( weaven > 0 ) newmagicshield=shield;
+					if( weaven == rank ) newmagicshield=shield;
 				}
-				weaven--;
 			}
 			if( newmagicarmor != null ) magicarmor.add(copyArmor(newmagicarmor,true));
 			if( newmagicshield != null ) magicarmor.add(copyArmor(newmagicshield,true));
@@ -1229,6 +1226,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public static ARMORType copyArmor(ARMORType armor, boolean setvirtual) {
+		if( armor == null ) return null;
 		ARMORType newarmor;
 		if( armor instanceof SHIELDType ) newarmor = new SHIELDType();
 		else newarmor = new ARMORType();
@@ -1255,7 +1253,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		if( setvirtual ) newarmor.setVirtual(YesnoType.YES);
 		else newarmor.setVirtual(armor.getVirtual());
-		return armor;
+		return newarmor;
 	}
 
 	public List<ARMORType> removeVirtualArmorFromNormalArmorList() {
@@ -1301,6 +1299,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public static WEAPONType copyWeapon(WEAPONType weapon, boolean setvirtual) {
+		if( weapon == null ) return null;
 		WEAPONType newweapon = new WEAPONType();
 		newweapon.setBlooddamage(weapon.getBlooddamage());
 		newweapon.setBookref(weapon.getBookref());
@@ -1321,6 +1320,63 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( setvirtual ) newweapon.setVirtual(YesnoType.YES);
 		else newweapon.setVirtual(weapon.getVirtual());
 		return newweapon;
+	}
+
+	public static WOUNDType copyWound(WOUNDType wound) {
+		if( wound == null ) return null;
+		WOUNDType newwound = new WOUNDType();
+		newwound.setBlood(wound.getBlood());
+		newwound.setNormal(wound.getNormal());
+		newwound.setPenalties(wound.getPenalties());
+		newwound.setThreshold(wound.getThreshold());
+		return newwound;
+	}
+
+	public static DISZIPINABILITYType copyDisciplineAbility(DISZIPINABILITYType disciplineability) {
+		if( disciplineability == null ) return null;
+		DISZIPINABILITYType newdisciplineability = new DISZIPINABILITYType();
+		newdisciplineability.setCount(disciplineability.getCount());
+		return disciplineability;
+	}
+
+	public static DEFENSEABILITYType copyDefenseAbility(DEFENSEABILITYType defenseability) {
+		if( defenseability == null ) return null;
+		DEFENSEABILITYType newdefenseability = new DEFENSEABILITYType();
+		newdefenseability.setBonus(defenseability.getBonus());
+		newdefenseability.setKind(defenseability.getKind());
+		return defenseability;
+	}
+
+	public static TALENTABILITYType copyTalentAbility(TALENTABILITYType talentability) {
+		if( talentability == null ) return null;
+		TALENTABILITYType newtalentability = new TALENTABILITYType();
+		newtalentability.setBonus(talentability.getBonus());
+		newtalentability.setLimitation(talentability.getLimitation());
+		newtalentability.setName(talentability.getName());
+		newtalentability.setPool(talentability.getPool());
+		return newtalentability;
+	}
+
+	public static THREADRANKType copyThreadRank(THREADRANKType rank) {
+		if( rank == null ) return null;
+		THREADRANKType newrank = new THREADRANKType();
+		newrank.setEffect(rank.getEffect());
+		newrank.setLpcost(rank.getLpcost());
+		newrank.setKeyknowledge(rank.getKeyknowledge());
+		newrank.setARMOR(copyArmor(rank.getARMOR(),false));
+		newrank.setSHIELD((SHIELDType)copyArmor(rank.getSHIELD(),false));
+		newrank.setWEAPON(copyWeapon(rank.getWEAPON(),false));
+		newrank.setWOUND(copyWound(rank.getWOUND()));
+		for( String i : rank.getABILITY() ) newrank.getABILITY().add(i);
+		for( String i : rank.getSPELL() ) newrank.getSPELL().add(i);
+		for( DISZIPINABILITYType i : rank.getINITIATIVE() ) newrank.getINITIATIVE().add(copyDisciplineAbility(i));
+		for( DISZIPINABILITYType i : rank.getKARMASTEP() ) newrank.getKARMASTEP().add(copyDisciplineAbility(i));
+		for( DISZIPINABILITYType i : rank.getMAXKARMA() ) newrank.getINITIATIVE().add(copyDisciplineAbility(i));
+		for( DISZIPINABILITYType i : rank.getRECOVERYTEST() ) newrank.getMAXKARMA().add(copyDisciplineAbility(i));
+		for( DISZIPINABILITYType i : rank.getSPELLABILITY() ) newrank.getSPELLABILITY().add(copyDisciplineAbility(i));
+		for( DEFENSEABILITYType i : rank.getDEFENSE() ) newrank.getDEFENSE().add(copyDefenseAbility(i));
+		for( TALENTABILITYType i : rank.getTALENT() ) newrank.getTALENT().add(copyTalentAbility(i));
+		return newrank;
 	}
 
 	public List<WEAPONType> cutMagicWeaponFromNormalWeaponList() {
