@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="TEACHER" type="{http://earthdawn.com/datatypes}TALENTTEACHER_type"/>
  *         &lt;element name="KNACK" type="{http://earthdawn.com/datatypes}KNACK_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="RANKHISTORY" type="{http://earthdawn.com/datatypes}RANKHISTORY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="ALIGNEDSKILL" type="{http://earthdawn.com/datatypes}SKILL_type" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="circle" use="required" type="{http://earthdawn.com/datatypes}circle_type" />
  *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -44,7 +45,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "TALENT_type", propOrder = {
     "teacher",
     "knack",
-    "rankhistory"
+    "rankhistory",
+    "alignedskill"
 })
 public class TALENTType
     extends SKILLType
@@ -56,6 +58,8 @@ public class TALENTType
     protected List<KNACKType> knack;
     @XmlElement(name = "RANKHISTORY")
     protected List<RANKHISTORYType> rankhistory;
+    @XmlElement(name = "ALIGNEDSKILL")
+    protected SKILLType alignedskill;
     @XmlAttribute(required = true)
     protected int circle;
     @XmlAttribute
@@ -141,6 +145,30 @@ public class TALENTType
             rankhistory = new ArrayList<RANKHISTORYType>();
         }
         return this.rankhistory;
+    }
+
+    /**
+     * Gets the value of the alignedskill property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SKILLType }
+     *     
+     */
+    public SKILLType getALIGNEDSKILL() {
+        return alignedskill;
+    }
+
+    /**
+     * Sets the value of the alignedskill property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SKILLType }
+     *     
+     */
+    public void setALIGNEDSKILL(SKILLType value) {
+        this.alignedskill = value;
     }
 
     /**
