@@ -29,7 +29,7 @@ import de.earthdawn.ui2.EDMainWindow;
 
 
 public class EarthdawnCharacterEditor {
-	public static final String VERSION="0.42";
+	public static final String VERSION="0.43";
 	/**
 	 * Main-Funktion. 
 	 */
