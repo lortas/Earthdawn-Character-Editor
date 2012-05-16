@@ -113,7 +113,7 @@
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERY/>
+		<RECOVERYTEST/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Call Passion's Avatar"/>
