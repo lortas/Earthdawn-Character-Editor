@@ -64,6 +64,12 @@
 	-->
 	<ENDURINGARMORBYSTRENGTH used="no"/>
 	<!--
+	By the following rule you can define if skill will be aligned to talents.
+	In case of 'yes', learning a talent which is already learned as skill will not necessarily start with rank 1.
+	Players Guide page 240
+	-->
+	<ALIGNINGTALENTSANDSKILLS used="yes"/>
+	<!--
 	If a date should be printed this defines the format of the date and time
 	http://download.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
 	-->

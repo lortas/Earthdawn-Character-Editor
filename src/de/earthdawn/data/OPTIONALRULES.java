@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="LANGUAGESASINDIVIDUALSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="ENDURINGARMORBYSTRENGTH" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="ALIGNINGTALENTSANDSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="DATEFORMAT" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
@@ -67,6 +68,7 @@ import javax.xml.bind.annotation.XmlType;
     "autoinsertlegendpointspent",
     "languagesasindividualskills",
     "enduringarmorbystrength",
+    "aligningtalentsandskills",
     "dateformat",
     "multiusetalent",
     "defaultoptionaltalent",
@@ -101,6 +103,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType languagesasindividualskills;
     @XmlElement(name = "ENDURINGARMORBYSTRENGTH", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType enduringarmorbystrength;
+    @XmlElement(name = "ALIGNINGTALENTSANDSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType aligningtalentsandskills;
     @XmlElement(name = "DATEFORMAT", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected String dateformat;
     @XmlElement(name = "MULTIUSETALENT", namespace = "http://earthdawn.com/optionalrules")
@@ -420,6 +424,30 @@ public class OPTIONALRULES {
      */
     public void setENDURINGARMORBYSTRENGTH(OPTIONALRULEType value) {
         this.enduringarmorbystrength = value;
+    }
+
+    /**
+     * Gets the value of the aligningtalentsandskills property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getALIGNINGTALENTSANDSKILLS() {
+        return aligningtalentsandskills;
+    }
+
+    /**
+     * Sets the value of the aligningtalentsandskills property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setALIGNINGTALENTSANDSKILLS(OPTIONALRULEType value) {
+        this.aligningtalentsandskills = value;
     }
 
     /**
