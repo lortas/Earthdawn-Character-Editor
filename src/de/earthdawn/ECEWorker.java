@@ -391,7 +391,7 @@ public class ECEWorker {
 				rank.setRank(skilltemplate.getRANK().getRank());
 				rank.setStartrank(skilltemplate.getRANK().getStartrank());
 				skill.setRANK(rank);
-				skills.add(skill);
+				character.addSkill(skill);
 			}
 		}
 		List<String> namgiverNotdefaultskills = namegiver.getNOTDEFAULTSKILL();
@@ -433,7 +433,7 @@ public class ECEWorker {
 					if( skill.getAttribute() != null ) {
 						calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 					}
-					skills.add(skill);
+					character.addSkill(skill);
 				}
 			}
 		}

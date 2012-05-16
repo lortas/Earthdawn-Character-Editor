@@ -232,7 +232,7 @@ public class RandomCharacterTemplates {
 							if( rankvalue > 10 ) rankvalue=10;
 							rank.setRank(rankvalue);
 							skill.setRANK(rank);
-							character.getSkills().add(skill);
+							character.addSkill(skill);
 							skillMin--;
 							skillMax--;
 							skillnames.remove(skillname);

@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -562,7 +563,22 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public List<SKILLType> getSkills() {
-		return character.getSKILL();
+		List<SKILLType> skills = new ArrayList<SKILLType>();
+		skills.addAll(character.getSKILL());
+		Collections.sort(skills, new SkillComparator());
+		return skills;
+	}
+
+	public void addSkill(SKILLType skill) {
+		character.getSKILL().add(skill);
+	}
+
+	public void removeSkill(SKILLType skill) {
+		character.getSKILL().remove(skill);
+	}
+
+	public void removeSkill(List<SKILLType> skills) {
+		character.getSKILL().removeAll(skills);
 	}
 
 	public List<SKILLType> getSpeakSkills() {
@@ -1462,7 +1478,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			if( (rank != null) && (rank.getRank() > 0) ) continue;
 			remove.add(skill);
 		}
-		skills.removeAll(remove);
+		removeSkill(remove);
 	}
 
 	public void updateRealignedTalents() {
