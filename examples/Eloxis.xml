@@ -151,8 +151,8 @@
 	<ns3:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="no" karma="no" bonus="0" attribute="na" strain="1" action="simple" name="Mount Attack">
 		<RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
 	</ns3:SKILL>
-	<ns3:LANGUAGE readwrite="yes" speak="yes" language="Dwarf"/>
-	<ns3:LANGUAGE readwrite="no" speak="yes" language="Troll"/>
+	<ns3:LANGUAGE readwrite="skill" speak="skill" language="Dwarf"/>
+	<ns3:LANGUAGE readwrite="no" speak="skill" language="Troll"/>
 	<ns3:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1.0" name="Dagger"/>
 	<ns3:WEAPON size="5" strengthmin="13" damagestep="15" virtual="yes" kind="melee weapon" used="yes" weight="6.0" name="Thread CrystalWaraxt: Gratü"/>
 	<ns3:BLOODCHARMITEM depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" location="self" used="yes" weight="1.0" name="Desperate Blow"/>

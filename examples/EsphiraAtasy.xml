@@ -331,8 +331,8 @@
     <ns4:SKILL limitation="" notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
         <RANK dice="2d6" step="8"/>
     </ns4:SKILL>
-    <ns4:LANGUAGE readwrite="yes" speak="yes" language="Dwarf"/>
-    <ns4:LANGUAGE readwrite="no" speak="yes" language="_own_race_language_"/>
+    <ns4:LANGUAGE readwrite="skill" speak="skill" language="Dwarf"/>
+    <ns4:LANGUAGE readwrite="no" speak="skill" language="_own_race_language_"/>
     <ns4:WEAPON size="1" strengthmin="3" damagestep="2" location="self" used="yes" weight="0.0" name="windling dagger"/>
     <ns4:THREADITEM lpcostgrowth="9" spelldefense="21" maxthreads="2" weaventhreadrank="4" kind="potion" location="self" used="yes" weight="0.0" name="Silverin">
         <description>Heiltrank fuer 1 silber</description>

@@ -197,8 +197,8 @@
     <ns10:SKILL limitation="" notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
         <ns2:RANK dice="d10" step="6"/>
     </ns10:SKILL>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Dwarf/Throalic"/>
-    <ns10:LANGUAGE speak="yes" language="Ork"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Dwarf/Throalic"/>
+    <ns10:LANGUAGE speak="skill" language="Ork"/>
     <ns10:WEAPON timesforged="6" size="4" strengthmin="17" damagestep="14" weight="6.0" name="Troll Battle Axe mit Lindwurmgriff (beidhändig)"/>
     <ns10:WEAPON timesforged="3" size="5" strengthmin="13" damagestep="10" weight="6.0" name="Battle Axe (beidhändig)"/>
     <ns10:WEAPON timesforged="3" size="3" strengthmin="12" damagestep="8" weight="4.0" name="Broadsword"/>
