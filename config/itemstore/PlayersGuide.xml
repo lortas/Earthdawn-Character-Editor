@@ -377,9 +377,9 @@
 	<ITEM name="Wine:Fine (per bottle)" weight="1.0" price="5" bookref="PG p.271"/>
 	<ITEM name="Rations:Dwarf Mine (1 week)" weight="6.0" price="25" bookref="PG p.271"/>
 	<ITEM name="Rations:Trail (1 week)" weight="8.0" price="10" bookref="PG p.271"/>	
-	
+
 	<!--  Clothes Seite 281 vollständig -->
-	<ITEM name="Belt" price="0.5" bookref="PG p.281"/>
+	<ITEM name="Belt" weight="0.0" price="0.5" bookref="PG p.281"/>
 	<ITEM name="Boots:Soft" weight="1.0" price="1" bookref="PG p.281"/>
 	<ITEM name="Boots:Riding" weight="2.0" price="4" bookref="PG p.281"/>
 	<ITEM name="Boots:Mountain" weight="2.0" price="8" bookref="PG p.281"/>
@@ -401,30 +401,30 @@
 	<ITEM name="Dress:Satin" weight="2.0" price="100" bookref="PG p.281"/>
 	<ITEM name="Dress:Ballroom Gown" weight="4.0" price="250" bookref="PG p.281"/>
 	<ITEM name="Dress:Theran" weight="6.0" price="560" bookref="PG p.281"/>
-	<ITEM name="Gloves" price="2" bookref="PG p.281"/>
-	<ITEM name="Hat:Felt" price="0.4" bookref="PG p.281"/>
-	<ITEM name="Hat:Woolen" price="1.2" bookref="PG p.281"/>
-	<ITEM name="Hat:Fine Quality" price="9" bookref="PG p.281"/>
+	<ITEM name="Gloves" weight="0.0" price="2" bookref="PG p.281"/>
+	<ITEM name="Hat:Felt" weight="0.0" price="0.4" bookref="PG p.281"/>
+	<ITEM name="Hat:Woolen" weight="0.0" price="1.2" bookref="PG p.281"/>
+	<ITEM name="Hat:Fine Quality" weight="0.0" price="9" bookref="PG p.281"/>
 	<ITEM name="Hat:Courtier Quality" weight="1.0" price="18" bookref="PG p.281"/>
-	<ITEM name="Hooded Mask" price="3" bookref="PG p.281"/>
-	<ITEM name="Hosiery:Plain" price="0.5" bookref="PG p.281"/>
-	<ITEM name="Hosiery:Silk" price="20" bookref="PG p.281"/>
+	<ITEM name="Hooded Mask" weight="0.0" price="3" bookref="PG p.281"/>
+	<ITEM name="Hosiery:Plain" weight="0.0" price="0.5" bookref="PG p.281"/>
+	<ITEM name="Hosiery:Silk" weight="0.0" price="20" bookref="PG p.281"/>
 	<ITEM name="Jacket:Wool" weight="1.0" price="12" bookref="PG p.281"/>
 	<ITEM name="Jacket:Silk" weight="1.0" price="90" bookref="PG p.281"/>
 	<ITEM name="Jacket:Courtier’s" weight="2.0" price="170" bookref="PG p.281"/>
 	<ITEM name="Peasant’s Garb (breeches):Shirt, belt, sandals and breeches" weight="1.0" price="1.2" bookref="PG p.281"/>
 	<ITEM name="Peasant’s Garb (robe or dress):Shirt, belt, sandals and robe or dress" weight="1.0" price="3" bookref="PG p.281"/>
-	<ITEM name="Pin or Clasp" price="1" bookref="PG p.281"/>
+	<ITEM name="Pin or Clasp" weight="0.0" price="1" bookref="PG p.281"/>
 	<ITEM name="Robe:Linen" weight="1.0" price="1.5" bookref="PG p.281"/>
 	<ITEM name="Robe:Embroidered" weight="1.0" price="15" bookref="PG p.281"/>
-	<ITEM name="Sandals" price="0.2" bookref="PG p.281"/>
+	<ITEM name="Sandals" weight="0.0" price="0.2" bookref="PG p.281"/>
 	<ITEM name="Shirt:Plain" weight="1.0" price="0.2" bookref="PG p.281"/>
 	<ITEM name="Shirt:Patterned" weight="1.0" price="1" bookref="PG p.281"/>
 	<ITEM name="Shirt:Silk" weight="1.0" price="45" bookref="PG p.281"/>
 	<ITEM name="Shoes:Merchant’s" weight="1.0" price="2" bookref="PG p.281"/>
 	<ITEM name="Shoes:Courtier’s" weight="1.0" price="40" bookref="PG p.281"/>
 	<ITEM name="Scabbard (blade)" weight="1.0" price="5" bookref="PG p.281"/>
-	<ITEM name="Scarf" price="5" bookref="PG p.281"/>
+	<ITEM name="Scarf" weight="0.0" price="5" bookref="PG p.281"/>
 	<ITEM name="Toga" weight="1.0" price="0.6" bookref="PG p.281"/>
 	<ITEM name="Traveler ’s Garb (breeches):Soft boots, belt, shirt, breeches and cloak" weight="3.0" price="8" bookref="PG p.281"/>
 	<ITEM name="Traveler ’s Garb (robe or dress):Soft boots, belt, shirt, cloak and robe or dress" weight="3.0" price="9" bookref="PG p.281"/>
