@@ -159,7 +159,7 @@ public class EDSkills extends JPanel {
 			RANKType rank = new RANKType();
 			rank.setRank(1);
 			skill.setRANK(rank);
-			character.getSkills().add(skill);
+			character.addSkill(skill);
 			character.refesh();
 		}
 	}
@@ -170,7 +170,7 @@ public class EDSkills extends JPanel {
 			SKILLType skill = character.getSkills().get(row);
 			skillsForRemoval.add(skill);
 		}
-		character.getSkills().removeAll(skillsForRemoval);
+		character.removeSkill(skillsForRemoval);
 		character.refesh();
 	}
 
