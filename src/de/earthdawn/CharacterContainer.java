@@ -565,6 +565,17 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<SKILLType> getSkills() {
 		List<SKILLType> skills = new ArrayList<SKILLType>();
 		skills.addAll(character.getSKILL());
+		int discount=1;
+		for( DISCIPLINEType discipline : getDisciplines() ) {
+			for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+				SKILLType skill = talent.getALIGNEDSKILL();
+				if( skill != null ) {
+					if( skill.getRealigned() == 0 ) skill.setRealigned(discount);
+					skills.add(skill);
+				}
+			}
+			discount++;
+		}
 		Collections.sort(skills, new SkillComparator());
 		return skills;
 	}
