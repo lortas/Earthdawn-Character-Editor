@@ -121,6 +121,7 @@ public class EDItemStore extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					character.getThreadItem().add((THREADITEMType)currentNode);
 					character.refesh();
+					parent.scrollPathToVisible(currentNode);
 				}
 			});
 			popup.add(menuitem);

@@ -23,6 +23,7 @@ import de.earthdawn.data.THREADRANKType;
 import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.WOUNDType;
 import de.earthdawn.data.YesnoType;
+import de.earthdawn.ui2.EDInventoryRootNodeType;
 
 public class ItemTreeCellRenderer implements TreeCellRenderer {
 	private HashMap<String, ImageIcon> treeIcons;
@@ -54,14 +55,14 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		label.setText(value.toString());
 
 		// Items
-		if(value == "Items"){
-			label.setText("Items");
+		if(value == EDInventoryRootNodeType.ITEMS){
+			label.setText(EDInventoryRootNodeType.ITEMS.value());
 			label.setIcon((ImageIcon)treeIcons.get("BACKPACK"));
 		}
 
 		// Armor
-		if(value == "Armor"){
-			label.setText("Armor");
+		if(value == EDInventoryRootNodeType.ARMOR){
+			label.setText(EDInventoryRootNodeType.ARMOR.value());
 			label.setIcon((ImageIcon)treeIcons.get("HELM"));
 		}	
 
@@ -72,25 +73,25 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		}	
 
 		// Weapons
-		if(value == "Weapons"){
-			label.setText("Weapons");
+		if(value == EDInventoryRootNodeType.WEAPONS){
+			label.setText(EDInventoryRootNodeType.WEAPONS.value());
 			label.setIcon((ImageIcon)treeIcons.get("MELEE_WEAPON"));
 		}
 		//Common Magic Items
-		if(value == "Common Magic Items"){
-			label.setText("Common Magic Items");	
+		if(value == EDInventoryRootNodeType.COMMONMAGICITEMS){
+			label.setText(EDInventoryRootNodeType.COMMONMAGICITEMS.value());	
 			label.setIcon((ImageIcon)treeIcons.get("MAGIC_ITEM"));
 		}
 
 		// Bloodcharms
-		if(value == "Bloodcharms"){
-			label.setText("Bloodcharms");	
+		if(value == EDInventoryRootNodeType.BLOODCHARMS){
+			label.setText(EDInventoryRootNodeType.BLOODCHARMS.value());	
 			label.setIcon((ImageIcon)treeIcons.get("BLOOD_CHARM"));
 		}
 
 		// ThreadItems
-		if(value == "Thread Items"){
-			label.setText("Thread Items");	
+		if(value == EDInventoryRootNodeType.THREADITEMS){
+			label.setText(EDInventoryRootNodeType.THREADITEMS.value());	
 			if(expanded){
 				label.setIcon((ImageIcon)treeIcons.get("CHEST_OPEN"));
 			}
@@ -100,8 +101,8 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		}
 
 		// Coins
-		if( value == "Purse" ) {
-			label.setText("Purse");
+		if( value == EDInventoryRootNodeType.PURSE ) {
+			label.setText(EDInventoryRootNodeType.PURSE.value());
 			label.setIcon((ImageIcon)treeIcons.get("PURSE"));
 		}
 
