@@ -12,15 +12,16 @@ import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DISZIPINABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
+import de.earthdawn.ui2.EDInventoryRootNodeType;
 import de.earthdawn.ui2.tree.StringNodeType;
 
 public class ItemTreeModel  implements TreeModel {
 	private CharacterContainer character;
-	private HashMap<String, Object> displayedNodes;
-	private ArrayList<String> displayKeys;
+	private HashMap<EDInventoryRootNodeType, Object> displayedNodes;
+	private ArrayList<EDInventoryRootNodeType> displayKeys;
 	protected ArrayList<TreeModelListener> listeners  = new ArrayList<TreeModelListener>();
 
-	public List<?> getListForGroupNode(String groupkey){
+	public List<?> getListForGroupNode(EDInventoryRootNodeType groupkey){
 		return (List<?>)displayedNodes.get(groupkey);
 	}
 
@@ -28,21 +29,21 @@ public class ItemTreeModel  implements TreeModel {
 		super();
 
 		this.character = character;
-		this.displayedNodes = new HashMap<String, Object>();
+		this.displayedNodes = new HashMap<EDInventoryRootNodeType, Object>();
 		if(this.character != null) {
-			displayedNodes.put("Items", character.getItems());
-			displayedNodes.put("Common Magic Items", character.getMagicItem());
-			displayedNodes.put("Bloodcharms", character.getBloodCharmItem());
-			displayedNodes.put("Weapons", character.getWeapons());
-			displayedNodes.put("Armor", character.getProtection().getARMOROrSHIELD());
-			displayedNodes.put("Thread Items", character.getThreadItem());
-			displayedNodes.put("Purse", character.getAllCoins());
+			displayedNodes.put(EDInventoryRootNodeType.ITEMS, character.getItems());
+			displayedNodes.put(EDInventoryRootNodeType.COMMONMAGICITEMS, character.getMagicItem());
+			displayedNodes.put(EDInventoryRootNodeType.BLOODCHARMS, character.getBloodCharmItem());
+			displayedNodes.put(EDInventoryRootNodeType.WEAPONS, character.getWeapons());
+			displayedNodes.put(EDInventoryRootNodeType.ARMOR, character.getProtection().getARMOROrSHIELD());
+			displayedNodes.put(EDInventoryRootNodeType.THREADITEMS, character.getThreadItem());
+			displayedNodes.put(EDInventoryRootNodeType.PURSE, character.getAllCoins());
 		}
-		this.displayKeys = new ArrayList<String>(displayedNodes.keySet());
+		this.displayKeys = new ArrayList<EDInventoryRootNodeType>(displayedNodes.keySet());
 	}
 
 	public void fireNewCoins(TreePath parent, List<COINSType> coins) {
-		displayedNodes.put("Purse", coins);
+		displayedNodes.put(EDInventoryRootNodeType.PURSE, coins);
 		TreeModelEvent event = new TreeModelEvent(this,parent,null,null);
 		for( TreeModelListener listener : listeners ) listener.treeStructureChanged(event);
 	}
@@ -68,7 +69,7 @@ public class ItemTreeModel  implements TreeModel {
 		if(parent instanceof CharacterContainer){
 			return  displayKeys.get(index);
 		}
-		if(parent instanceof String){
+		if(parent instanceof EDInventoryRootNodeType){
 			return ((List<?>)displayedNodes.get(parent)).get(index);
 		}
 		if(parent instanceof THREADITEMType){
@@ -85,7 +86,7 @@ public class ItemTreeModel  implements TreeModel {
 		if(parent instanceof CharacterContainer){
 			return displayedNodes.size();
 		}
-		if(parent instanceof String){
+		if(parent instanceof EDInventoryRootNodeType){
 			return ((List<?>)displayedNodes.get(parent)).size();
 		}
 		if(parent instanceof THREADITEMType){
@@ -102,7 +103,7 @@ public class ItemTreeModel  implements TreeModel {
 		if(parent instanceof CharacterContainer){
 			return displayKeys.indexOf(child);
 		}
-		if(parent instanceof String){
+		if(parent instanceof EDInventoryRootNodeType){
 			return ((List<?>)displayedNodes.get(parent)).indexOf(child);
 		}
 		if(parent instanceof THREADITEMType){
@@ -122,7 +123,7 @@ public class ItemTreeModel  implements TreeModel {
 	@Override
 	public boolean isLeaf(Object node) {
 		if(node == character)              return false;
-		if(node instanceof String)         return ((List<?>)displayedNodes.get(node)).isEmpty();
+		if(node instanceof EDInventoryRootNodeType) return ((List<?>)displayedNodes.get(node)).isEmpty();
 		if(node instanceof THREADITEMType) return ((THREADITEMType)node).getTHREADRANK().isEmpty();
 		if(node instanceof THREADRANKType) return getEffectNodes((THREADRANKType)node).isEmpty();
 		return true;

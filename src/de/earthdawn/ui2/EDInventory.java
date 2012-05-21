@@ -115,10 +115,10 @@ public class EDInventory extends JPanel {
 		JPopupMenu popup = new JPopupMenu();
 
 		// Popup for group nodes
-		if(currentNode instanceof String){
-			String str = (String)currentNode;
+		if(currentNode instanceof EDInventoryRootNodeType){
+			EDInventoryRootNodeType rootnode = (EDInventoryRootNodeType)currentNode;
 			// add item
-			if(str.equals("Items")){
+			if(rootnode.equals(EDInventoryRootNodeType.ITEMS)){
 				JMenuItem menuitem = new JMenuItem("Add item");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -132,7 +132,7 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 			// add weapon
-			if(str.equals("Weapons")){
+			if(rootnode.equals(EDInventoryRootNodeType.WEAPONS)){
 				JMenuItem menuitem = new JMenuItem("Add weapon");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -146,7 +146,7 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 			//add threaditem
-			if(str.equals("Thread Items")){
+			if(rootnode.equals(EDInventoryRootNodeType.THREADITEMS)){
 				JMenuItem menuitem = new JMenuItem("Add Thread Item");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -160,7 +160,7 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 			// add armor
-			if(str.equals("Armor")){
+			if(rootnode.equals(EDInventoryRootNodeType.ARMOR)){
 				JMenuItem menuitem = new JMenuItem("Add Armor");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -187,7 +187,7 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 			// add bloodcharm
-			if(str.equals("Bloodcharms")){
+			if(rootnode.equals(EDInventoryRootNodeType.BLOODCHARMS)){
 				JMenuItem menuitem = new JMenuItem("Add Bloodcharms");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -201,7 +201,7 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 			// add purse
-			if(str.equals("Purse")){
+			if(rootnode.equals(EDInventoryRootNodeType.PURSE)){
 				JMenuItem menuitem = new JMenuItem("Add Purse");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -216,7 +216,7 @@ public class EDInventory extends JPanel {
 				popup.add(menuitem);
 			}
 			// add common magic item
-			if(str.equals("Common Magic Items")){
+			if(rootnode.equals(EDInventoryRootNodeType.COMMONMAGICITEMS)){
 				JMenuItem menuitem = new JMenuItem("Add Common Magic Item");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -531,8 +531,8 @@ public class EDInventory extends JPanel {
 
 		//remove
 		Object parent = currentPath.getParentPath().getLastPathComponent();
-		if(parent instanceof String){
-			final String category=(String)parent;
+		if(parent instanceof EDInventoryRootNodeType){
+			final EDInventoryRootNodeType category=(EDInventoryRootNodeType)parent;
 			List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode(category);
 			if(temp != null){
 				JMenuItem menuitem = new JMenuItem("Export as ItemStore file");
@@ -559,7 +559,7 @@ public class EDInventory extends JPanel {
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						Object parent = currentPath.getParentPath().getLastPathComponent();
-						List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((String)parent);
+						List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((EDInventoryRootNodeType)parent);
 						int i =  temp.indexOf(currentNode);
 						String[] options = {"Yes","No"};
 						int a = JOptionPane.showOptionDialog(tree,
@@ -605,6 +605,7 @@ public class EDInventory extends JPanel {
 	}
 
 	public void scrollPathToVisible(Object node) {
+		tree.getLeadSelectionPath();
 	}
 
 	private void clearThreadRankShield(TreePath path) {
