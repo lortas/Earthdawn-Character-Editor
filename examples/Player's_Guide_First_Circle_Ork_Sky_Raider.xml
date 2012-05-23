@@ -139,8 +139,8 @@
     <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
         <RANK dice="d8" step="5"/>
     </ns10:SKILL>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Dwarf/Throalic"/>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Or'zet"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Dwarf/Throalic"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Or'zet"/>
     <ns10:WEAPON size="3" strengthmin="10" damagestep="5" kind="melee weapon" weight="5.0" name="Flail"/>
     <ns10:WEAPON longrange="40" shortrange="20" size="2" strengthmin="5" damagestep="2" kind="missile weapon" weight="1.0" name="Sling"/>
     <ns10:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" kind="melee weapon" weight="1.0" name="Dagger"/>
