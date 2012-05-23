@@ -138,8 +138,8 @@
     <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
         <RANK dice="d8" step="5"/>
     </ns10:SKILL>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Dwarf/Throalic"/>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Obsidiman"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Dwarf/Throalic"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Obsidiman"/>
     <ns10:WEAPON size="5" strengthmin="13" damagestep="7" kind="melee weapon" weight="6.0" name="Battle Axe"/>
     <ns10:WEAPON longrange="20" shortrange="10" size="3" strengthmin="9" damagestep="4" kind="throwing weapon" weight="3.0" name="Spear"/>
     <ns10:WEAPON longrange="20" shortrange="10" size="3" strengthmin="9" damagestep="4" kind="throwing weapon" weight="3.0" name="Spear"/>

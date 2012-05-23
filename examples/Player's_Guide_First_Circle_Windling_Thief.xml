@@ -145,8 +145,8 @@
     <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
         <RANK dice="d10" step="6"/>
     </ns10:SKILL>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Dwarf/Throalic"/>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Windling"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Dwarf/Throalic"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Windling"/>
     <ns10:WEAPON size="1" strengthmin="6" damagestep="3" kind="melee weapon" weight="1.0" name="Windling Sword"/>
     <ns10:WEAPON size="1" strengthmin="3" damagestep="1" kind="melee weapon" weight="2.0" name="Sap"/>
     <ns10:COINS gold="4" silver="4" copper="2" location="self" used="yes" weight="0.1375" name="Purse #1"/>

@@ -148,8 +148,8 @@
     <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
         <RANK dice="d12" step="7"/>
     </ns10:SKILL>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Dwarf/Throalic"/>
-    <ns10:LANGUAGE readwrite="yes" speak="yes" language="Obsidiman"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Dwarf/Throalic"/>
+    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Obsidiman"/>
     <ns10:WEAPON size="3" strengthmin="13" damagestep="4" kind="melee weapon" weight="5.0" name="Mace"/>
     <ns10:WEAPON longrange="60" shortrange="30" size="4" strengthmin="10" damagestep="4" kind="missile weapon" weight="4.0" name="Troll Sling"/>
     <ns10:WEAPON longrange="20" shortrange="10" size="3" strengthmin="9" damagestep="4" kind="throwing weapon" weight="3.0" name="Spear"/>
