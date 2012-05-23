@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
+		
+	<!-- Gamemastes Compendium Seite 132 -->
+		<THREADITEM name="Bracers of Aras" lpcostgrowth="2" spelldefense="14" maxthreads="3" kind="bracers" weight="6.0"  bookref="GMG p.132">
+		<edt:description>Bracers of Aras are made of flexible, silvery metal that wraps around the wrists and forearms of the wearer. The flexibility is a result of the elemental water that has been forged into the bracers. The elemental water pieces used in the crafting of the bracers resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are made from metals found only in mines located along the shore of the Aras Sea, and are encrusted with pieces of elemental water. The color of the elemental water gems constantly changes, oscillating with a swirling effect across the spectrum from deep aqua to bright blue.</edt:description>
+		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Each set of bracers is Named by their creator. The wearer must learn the Name of the bracers.">
+			<edt:DEFENSE kind="physical"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Physical Defense +2">
+			<edt:DEFENSE kind="physical"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Spell Defense +1" keyknowledge="The wearer must learn the Name of the mine from which came the metals used to create the bracers.">
+			<edt:DEFENSE kind="spell"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Spell Defense +2">
+			<edt:DEFENSE kind="spell"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Cast the Gills Spell on himself for 2 Strain" keyknowledge="As mundane water contains oxygen, elemental water contains elemental air.The creators of the Bracers of Aras formed the gems from a mixture of elemental air and water.The ratio of water to air varies for each set of bracers. The wearer must learn the ratio of water to air used to create the bracers he wears.">
+			<edt:SPELL name="Gills"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	
+	<!-- weiter GMG Seite 132 -->
+</ITEMS>
