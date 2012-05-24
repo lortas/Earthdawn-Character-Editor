@@ -18,15 +18,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.io.File;
-import java.io.FileWriter;
-
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.ui2.EDMainWindow;
-
 
 public class EarthdawnCharacterEditor {
 	public static final String VERSION="0.43";
@@ -39,35 +34,24 @@ public class EarthdawnCharacterEditor {
 			EDCHARACTER ec = new EDCHARACTER();
 			// Erster Parameter wenn vorhanden ist der einzulesende Charakterbogen
 			if( args.length > 0 ) {
-				System.out.println("Lese Charaker aus " + args[0]);
+				System.out.println("Read character from " + args[0]);
 				// Einlesen des Charakters
 				Unmarshaller u = jc.createUnmarshaller();
 				ec =(EDCHARACTER)u.unmarshal(new File(args[0]));
+				System.out.println("Processing the character: '" + ec.getName() + "'");
 			}
 			// Verarbeiten
-			System.out.println("Verarbeite Charaker: '" + ec.getName() + "'");
 			EDCHARACTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
 			ec=ecOut;
-			// Wenn noch ein Zweiter Parameter übergeben wurde schreibe Charakter dort rein
-			if (args.length == 2) { 
-				// Ausgabe
-				File outFile = new File(args[1]);
-				System.out.println("Speichere Charakter in " + outFile);
-				Marshaller m = jc.createMarshaller();
-				FileWriter fileio = new FileWriter(outFile);
-				m.setProperty(Marshaller.JAXB_ENCODING, fileio.getEncoding());
-				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-				m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
-				fileio.write("<?xml version=\"1.0\" encoding=\""+fileio.getEncoding()+"\" standalone=\"no\"?>\n");
-				fileio.write("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>\n");
-				m.marshal(ec,fileio);
-				// Ausgabe (PDF)
-				new ECEPdfExporter().exportRedbrickExtended(ec, new File(outFile.getParentFile(), chopFilename(outFile)+ ".pdf"));
-			} else {
-				// Anzeigen des Hauptdialogs.
-				EDMainWindow window = new EDMainWindow();
+			EDMainWindow window = new EDMainWindow(ec);
+			if( args.length < 2 ) { 
+				// Anzeigen des Hauptdialogs, wenn nur maximal ein Parameter übergeben wurde
 				window.setVisible(true);
+			} else {
+				// Wenn noch ein zweiter Parameter übergeben wurde, schreibe Charakter dort rein
+				window.writeToXml(new File(args[1]));
+				// Wenn noch ein dritter Parameter übergeben wurde, schreibe pdf export dort rein
+				if( args.length > 2 ) new ECEPdfExporter().exportRedbrickExtended(ec,new File(args[2]));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,5 +63,4 @@ public class EarthdawnCharacterEditor {
 		if( dotPlace >= 0 ) return filename.substring( 0, dotPlace );
 		return filename;
 	}
-
 }

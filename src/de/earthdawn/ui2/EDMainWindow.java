@@ -108,7 +108,7 @@ public class EDMainWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EDMainWindow window = new EDMainWindow();
+					EDMainWindow window = new EDMainWindow(new EDCHARACTER());
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -124,9 +124,9 @@ public class EDMainWindow {
 	/**
 	 * Create the application.
 	 */
-	public EDMainWindow() {
-		ec = new EDCHARACTER();
-		character = new CharacterContainer(ec);
+	public EDMainWindow(EDCHARACTER ec) {
+		this.ec = ec;
+		this.character = new CharacterContainer(ec);
 		ECEWorker worker = new ECEWorker();
 		worker.verarbeiteCharakter(character.getEDCHARACTER());
 		initialize();
@@ -138,7 +138,7 @@ public class EDMainWindow {
 				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}
-		});		
+		});
 		refreshTabs();
 	}
 
@@ -698,7 +698,7 @@ public class EDMainWindow {
 		}
 	}
 
-	private void writeToXml(File file) throws JAXBException, IOException {
+	public void writeToXml(File file) throws JAXBException, IOException {
 		if( ec == null ) return;
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
