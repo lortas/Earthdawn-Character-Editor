@@ -159,24 +159,27 @@ public class ECEWorker {
 		recovery.setDice(characterAttributes.get("TOU").getDice());
 
 		// **KARMA**
-		TALENTType karmaritualTalent = null;
-		final String KARMARITUAL = PROPERTIES.getKarmaritualName(); 
-		if( KARMARITUAL == null ) {
-			errorout.println("Karmaritual talent name is not defined for selected language.");
-		} else {
-			for( TALENTType talent : character.getTalentByName(KARMARITUAL) ) {
-				if( talent.getRealigned() == 0 ) {
-					karmaritualTalent=talent;
-					break;
+		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
+		if( ! allDisciplines.isEmpty() ) {
+			TALENTType karmaritualTalent = null;
+			final String KARMARITUAL = PROPERTIES.getKarmaritualName(); 
+			if( KARMARITUAL == null ) {
+				errorout.println("Karmaritual talent name is not defined for selected language.");
+			} else {
+				for( TALENTType talent : character.getTalentByName(KARMARITUAL) ) {
+					if( talent.getRealigned() == 0 ) {
+						karmaritualTalent=talent;
+						break;
+					}
+				}
+				if(karmaritualTalent == null ) {
+					errorout.println("No Karmaritual ("+KARMARITUAL+") could be found.");
 				}
 			}
-			if(karmaritualTalent == null ) {
-				errorout.println("No Karmaritual ("+KARMARITUAL+") could be found.");
+			int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
+			if( OptionalRule_KarmaLegendPointCost ) {
+				calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
 			}
-		}
-		int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
-		if( OptionalRule_KarmaLegendPointCost ) {
-			calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
 		}
 
 		// **MOVEMENT**
@@ -238,7 +241,6 @@ public class ECEWorker {
 			namegivertalents.put(questorTalentName, talent);
 		}
 		int maxKarmaStepBonus=0;
-		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
 		HashMap<String,Integer> diciplineCircle = new HashMap<String, Integer>();
 		int disciplinenumber=0;
 		for( DISCIPLINEType currentDiscipline : allDisciplines ) {
