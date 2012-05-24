@@ -356,7 +356,7 @@ public class ECEWorker {
 		protection.setMysticarmor(mysticalarmor);
 		protection.setPenalty(protectionpenalty);
 		protection.setPhysicalarmor(physicalarmor);
-		character.readjustInitiativeModifikator(-protectionpenalty);
+		character.readjustInitiativeModifikator(-protectionpenalty,true);
 
 		// ** KARMA STEP **
 		KARMAType karma = character.getKarma();
@@ -446,7 +446,7 @@ public class ECEWorker {
 		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
 		recovery.setDice(PROPERTIES.step2Dice(recovery.getStep()));
 
-		character.readjustInitiativeModifikator(getDisciplineInitiative(diciplineCircle));
+		character.readjustInitiativeModifikator(getDisciplineInitiative(diciplineCircle),false);
 
 		// ** SPELLS **
 		// Bestimme die wieviele Zaubersprüche bei der Charactererschaffung kostenlos dazu kamen
@@ -552,7 +552,7 @@ public class ECEWorker {
 				}
 			}
 			for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
-				character.readjustInitiativeModifikator(iteminitiative.getCount());
+				character.readjustInitiativeModifikator(iteminitiative.getCount(),false);
 			}
 			for( String spellname : threadrank.getSPELL() ) {
 				SPELLType spell = new SPELLType();
@@ -576,16 +576,16 @@ public class ECEWorker {
 		}
 
 		if( OptionalRule_EnduringArmorByStrength ) {
-			int currentmodificator = -character.getInitiative().getModification();
-			if( currentmodificator>0 ) {
+			int currentarmorpenalty = character.getInitiative().getArmorpenalty();
+			if( currentarmorpenalty>0 ) {
 				float strength = characterAttributes.get("STR").getCurrentvalue();
 				strength *= namegiver.getEnduringarmorfactor();
 				// neuer Stärkewert aufrunden und in der Tabelle für Mystische Armor nachschlagen
 				int relief=berechneMysticArmor(new Double(Math.ceil(strength)).intValue());
 				// Dies stellt nun den Stärke bassierenden Modifikator dar, mit dem der Charakter besser mit einer Rüstung zurecht kommt
-				// Da es keine negative Initiative Behinderung geben darf, wird auf die aktuelle Behinderung limitiert
-				if( currentmodificator < relief ) relief = currentmodificator;
-				character.readjustInitiativeModifikator(relief);
+				// Es darf keine negative Rüstungsbehinderung geben
+				if( currentarmorpenalty < relief ) relief = currentarmorpenalty;
+				character.readjustInitiativeModifikator(relief,true);
 			}
 		}
 

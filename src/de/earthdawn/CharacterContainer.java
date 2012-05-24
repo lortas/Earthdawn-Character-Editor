@@ -249,6 +249,7 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public void resetInitiative(STEPDICEType value) {
 		INITIATIVEType initiative = new INITIATIVEType();
+		initiative.setArmorpenalty(0);
 		initiative.setModification(0);
 		initiative.setBase(value.getStep());
 		initiative.setStep(value.getStep());
@@ -1766,8 +1767,9 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public void readjustInitiativeModifikator(int adjustment) {
+	public void readjustInitiativeModifikator(int adjustment, boolean armor) {
 		INITIATIVEType initiative = getInitiative();
+		if( armor ) initiative.setArmorpenalty(initiative.getArmorpenalty()-adjustment);
 		initiative.setModification(initiative.getModification()+adjustment);
 		initiative.setStep(initiative.getBase()+initiative.getModification());
 		initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
