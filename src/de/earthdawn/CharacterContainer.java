@@ -1769,7 +1769,16 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public void readjustInitiativeModifikator(int adjustment, boolean armor) {
 		INITIATIVEType initiative = getInitiative();
-		if( armor ) initiative.setArmorpenalty(initiative.getArmorpenalty()-adjustment);
+		if( armor ) {
+			int currentarmorpenalty = initiative.getArmorpenalty();
+			if( adjustment > currentarmorpenalty ) {
+				initiative.setArmorpenalty(0);
+				System.err.println("Armor penalty can not be negativ. Reduce initiative adjustment from "+adjustment+" to "+currentarmorpenalty);
+				adjustment=currentarmorpenalty;
+			} else {
+				initiative.setArmorpenalty(currentarmorpenalty-adjustment);
+			}
+		}
 		initiative.setModification(initiative.getModification()+adjustment);
 		initiative.setStep(initiative.getBase()+initiative.getModification());
 		initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
