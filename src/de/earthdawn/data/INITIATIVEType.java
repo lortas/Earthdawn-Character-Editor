@@ -24,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}STEPDICE_type">
  *       &lt;attribute name="base" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="modification" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="modification" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+ *       &lt;attribute name="armorpenalty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -40,8 +41,10 @@ public class INITIATIVEType
 
     @XmlAttribute(required = true)
     protected int base;
-    @XmlAttribute(required = true)
-    protected int modification;
+    @XmlAttribute
+    protected Integer modification;
+    @XmlAttribute
+    protected Integer armorpenalty;
 
     /**
      * Gets the value of the base property.
@@ -62,17 +65,57 @@ public class INITIATIVEType
     /**
      * Gets the value of the modification property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public int getModification() {
-        return modification;
+        if (modification == null) {
+            return  0;
+        } else {
+            return modification;
+        }
     }
 
     /**
      * Sets the value of the modification property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setModification(int value) {
+    public void setModification(Integer value) {
         this.modification = value;
+    }
+
+    /**
+     * Gets the value of the armorpenalty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getArmorpenalty() {
+        if (armorpenalty == null) {
+            return  0;
+        } else {
+            return armorpenalty;
+        }
+    }
+
+    /**
+     * Sets the value of the armorpenalty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setArmorpenalty(Integer value) {
+        this.armorpenalty = value;
     }
 
 }

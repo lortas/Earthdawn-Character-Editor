@@ -253,7 +253,8 @@
 		<xs:complexContent>
 			<xs:extension base="STEPDICE_type">
 				<xs:attribute name="base" type="unsigned_int" use="required"/>
-				<xs:attribute name="modification" type="xs:int" use="required"/>
+				<xs:attribute name="modification" type="xs:int" default="0"/>
+				<xs:attribute name="armorpenalty" type="unsigned_int" default="0"/>
 		</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
