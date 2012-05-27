@@ -1364,7 +1364,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( disciplineability == null ) return null;
 		DISZIPINABILITYType newdisciplineability = new DISZIPINABILITYType();
 		newdisciplineability.setCount(disciplineability.getCount());
-		return disciplineability;
+		return newdisciplineability;
 	}
 
 	public static DEFENSEABILITYType copyDefenseAbility(DEFENSEABILITYType defenseability) {
@@ -1372,7 +1372,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		DEFENSEABILITYType newdefenseability = new DEFENSEABILITYType();
 		newdefenseability.setBonus(defenseability.getBonus());
 		newdefenseability.setKind(defenseability.getKind());
-		return defenseability;
+		return newdefenseability;
 	}
 
 	public static TALENTABILITYType copyTalentAbility(TALENTABILITYType talentability) {
