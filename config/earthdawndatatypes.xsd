@@ -346,7 +346,7 @@
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="weight" type="xs:float" use="required"/>
-		<xs:attribute name="size" type="unsigned_int" default="3"/>
+		<xs:attribute name="size" type="unsigned_int" default="0"/>
 		<xs:attribute name="used" type="yesno_type" default="yes"/>
 		<xs:attribute name="location" type="xs:string" default="self"/>
 		<xs:attribute name="kind" type="itemkind_type" default="undefined"/>

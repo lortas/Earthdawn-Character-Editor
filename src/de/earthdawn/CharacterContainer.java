@@ -1213,6 +1213,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			int blooddamage = magicitem.getBlooddamage();
 			int dr = magicitem.getDepatterningrate();
 			String bookref = magicitem.getBookref();
+			int size = magicitem.getSize();
 			int rank=0;
 			ARMORType newmagicarmor = null;
 			SHIELDType newmagicshield = null;
@@ -1231,6 +1232,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					armor.setBlooddamage(blooddamage);
 					armor.setDepatterningrate(dr);
 					armor.setBookref(bookref);
+					armor.setSize(size);
 					if( weaven == rank ) newmagicarmor=armor;
 				}
 				SHIELDType shield = threadrank.getSHIELD();
@@ -1244,6 +1246,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					shield.setBlooddamage(blooddamage);
 					shield.setDepatterningrate(dr);
 					shield.setBookref(bookref);
+					shield.setSize(size);
 					if( weaven == rank ) newmagicshield=shield;
 				}
 			}
@@ -1274,6 +1277,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		newarmor.setTimesforgedPhysical(armor.getPhysicalarmor());
 		newarmor.setUsed(armor.getUsed());
 		newarmor.setWeight(armor.getWeight());
+		newarmor.setSize(armor.getSize());
 		if( newarmor instanceof SHIELDType ) {
 			((SHIELDType)newarmor).setMysticdeflectionbonus(((SHIELDType)armor).getMysticdeflectionbonus());
 			((SHIELDType)newarmor).setPhysicaldeflectionbonus(((SHIELDType)armor).getPhysicaldeflectionbonus());
@@ -1302,6 +1306,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			int blooddamage = magicitem.getBlooddamage();
 			int dr = magicitem.getDepatterningrate();
 			String bookref = magicitem.getBookref();
+			int size = magicitem.getSize();
 			int rank=0;
 			WEAPONType newmagicweapon = null;
 			List<CHARACTERISTICSCOST> LpCosts = PROPERTIES_Characteristics.getTalentRankLPIncreaseTable(1,magicitem.getLpcostgrowth() );
@@ -1317,6 +1322,7 @@ public class CharacterContainer extends CharChangeRefresh {
 					weapon.setBlooddamage(blooddamage);
 					weapon.setDepatterningrate(dr);
 					weapon.setBookref(bookref);
+					weapon.setSize(size);
 					if( weaven > 0 ) newmagicweapon=weapon;
 				}
 				weaven--;
