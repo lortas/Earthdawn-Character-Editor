@@ -26,7 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="damagestep" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
  *       &lt;attribute name="dexteritymin" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="strengthmin" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
- *       &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="shortrange" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="longrange" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="timesforged" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -50,8 +49,6 @@ public class WEAPONType
     protected Integer dexteritymin;
     @XmlAttribute(required = true)
     protected int strengthmin;
-    @XmlAttribute(required = true)
-    protected int size;
     @XmlAttribute
     protected Integer shortrange;
     @XmlAttribute
@@ -119,22 +116,6 @@ public class WEAPONType
      */
     public void setStrengthmin(int value) {
         this.strengthmin = value;
-    }
-
-    /**
-     * Gets the value of the size property.
-     * 
-     */
-    public int getSize() {
-        return size;
-    }
-
-    /**
-     * Sets the value of the size property.
-     * 
-     */
-    public void setSize(int value) {
-        this.size = value;
     }
 
     /**

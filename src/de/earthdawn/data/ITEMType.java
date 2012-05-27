@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       &lt;attribute name="size" type="{http://earthdawn.com/datatypes}unsigned_int" default="3" />
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
  *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}itemkind_type" default="undefined" />
@@ -70,6 +71,8 @@ public class ITEMType {
     protected String name;
     @XmlAttribute(required = true)
     protected float weight;
+    @XmlAttribute
+    protected Integer size;
     @XmlAttribute
     protected YesnoType used;
     @XmlAttribute
@@ -178,6 +181,34 @@ public class ITEMType {
      */
     public void setWeight(float value) {
         this.weight = value;
+    }
+
+    /**
+     * Gets the value of the size property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getSize() {
+        if (size == null) {
+            return  3;
+        } else {
+            return size;
+        }
+    }
+
+    /**
+     * Sets the value of the size property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setSize(Integer value) {
+        this.size = value;
     }
 
     /**
