@@ -29,17 +29,24 @@ public class ItemTreeModel  implements TreeModel {
 		super();
 
 		this.character = character;
-		this.displayedNodes = new HashMap<EDInventoryRootNodeType, Object>();
+		displayedNodes = new HashMap<EDInventoryRootNodeType, Object>();
+		displayKeys = new ArrayList<EDInventoryRootNodeType>();
 		if(this.character != null) {
 			displayedNodes.put(EDInventoryRootNodeType.ITEMS, character.getItems());
+			displayKeys.add(EDInventoryRootNodeType.ITEMS);
 			displayedNodes.put(EDInventoryRootNodeType.COMMONMAGICITEMS, character.getMagicItem());
+			displayKeys.add(EDInventoryRootNodeType.COMMONMAGICITEMS);
 			displayedNodes.put(EDInventoryRootNodeType.BLOODCHARMS, character.getBloodCharmItem());
+			displayKeys.add(EDInventoryRootNodeType.BLOODCHARMS);
 			displayedNodes.put(EDInventoryRootNodeType.WEAPONS, character.getWeapons());
+			displayKeys.add(EDInventoryRootNodeType.WEAPONS);
 			displayedNodes.put(EDInventoryRootNodeType.ARMOR, character.getProtection().getARMOROrSHIELD());
+			displayKeys.add(EDInventoryRootNodeType.ARMOR);
 			displayedNodes.put(EDInventoryRootNodeType.THREADITEMS, character.getThreadItem());
+			displayKeys.add(EDInventoryRootNodeType.THREADITEMS);
 			displayedNodes.put(EDInventoryRootNodeType.PURSE, character.getAllCoins());
+			displayKeys.add(EDInventoryRootNodeType.PURSE);
 		}
-		this.displayKeys = new ArrayList<EDInventoryRootNodeType>(displayedNodes.keySet());
 	}
 
 	public void fireNewCoins(TreePath parent, List<COINSType> coins) {
