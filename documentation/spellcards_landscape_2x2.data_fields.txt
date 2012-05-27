@@ -1,0 +1,503 @@
+---
+FieldType: Text
+FieldName: Page reference1
+FieldFlags: 8388608
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Spell description1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Effect1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Threads1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Weaving1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spell Name1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Discipline1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration1
+FieldFlags: 8388608
+FieldValue:  
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Range1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Wood1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Water1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Earth1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Air1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fire1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fear1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Disbelief1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Sensing1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Discipline2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Name2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration2
+FieldFlags: 8388608
+FieldValue:  
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Weaving2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Threads2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spell description2
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Effect2
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Page reference2
+FieldFlags: 8388608
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Sensing2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Disbelief2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Range2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Wood2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Water2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Earth2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Air2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fire2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fear2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Discipline3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Name3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Weaving3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Threads3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spell Circle3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration3
+FieldFlags: 8388608
+FieldValue:  
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Range3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Wood3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Water3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Earth3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Air3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fire3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fear3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Sensing3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Disbelief3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Effect3
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell description3
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Page reference3
+FieldFlags: 8388608
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Discipline4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Name4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Button
+FieldName: Wood4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Earth4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Water4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Air4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fire4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Fear4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Disbelief4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Sensing4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration4
+FieldFlags: 8388608
+FieldValue:  
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Range4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Weaving4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Threads4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Effect4
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Page reference4
+FieldFlags: 8388608
+FieldJustification: Left
+FieldMaxLength: 3

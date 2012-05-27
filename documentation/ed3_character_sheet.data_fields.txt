@@ -3390,12 +3390,6 @@ FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Racial Abilities
-FieldNameAlt: Racial Abilities
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
 FieldName: Skill.0
 FieldNameAlt: Skill Name
 FieldFlags: 0
@@ -3820,3 +3814,9 @@ FieldType: Text
 FieldName: ExportDate
 FieldFlags: 0
 FieldJustification: Right
+---
+FieldType: Text
+FieldName: RacialAbilities
+FieldNameAlt: Racial Abilities
+FieldFlags: 0
+FieldJustification: Left

@@ -1,0 +1,312 @@
+---
+FieldType: Text
+FieldName: Discipline1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Name1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Threads1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Weaving1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning1
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Range1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Effect1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell description1
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Illusion1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion N1
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Page reference1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Discipline2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Threads2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Range2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Weaving2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning2
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Effect2
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Illusion2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Discipline3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Name3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Range3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Threads3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Weaving3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning3
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Effect3
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell description3
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Illusion3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion N3
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Page reference3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Discipline4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Circle4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spell Name4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Threads4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Weaving4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Reattuning4
+FieldFlags: 8388608
+FieldJustification: Center
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Spellcasting4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Range4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Duration4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Effect4
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell description4
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Illusion4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Button
+FieldName: Illusion N4
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
+---
+FieldType: Text
+FieldName: Page reference4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell Name2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Spell description2
+FieldFlags: 8392704
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Page reference2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Illusion N2
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Off
+FieldStateOption: Yes
