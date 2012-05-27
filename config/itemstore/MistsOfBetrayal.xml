@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
+	
+	<THREADITEM name="Amulet of Dirac Tol Amarra" lpcostgrowth="5" spelldefense="14" maxthreads="2" kind="brooch" weight="6.0"  bookref="ED1: Mists of Betrayal p.98">
+		<edt:description>The Amulett of Dirac Tol Amarra is a finely crafted silver starburst, stained crimson on a silver neck chain. The stain on the starburst does not wash off.</edt:description>
+		<edt:THREADRANK effect="Physical Armor +3" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
+			<edt:ARMOR edn="0" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Mystic Armor +3">
+			<edt:ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="For one Strain healing in manner of healing potion (1x per day)" keyknowledge="Name of Hero: Dirac Tol Amarra"/>
+		<edt:THREADRANK effect="For two Strain the brooch acts like a Last Chance Potion inmoment of death (1x per day)"/>
+		<edt:THREADRANK effect="Desperat Blow/ Desperate Spell blood charm (Strain like blood charm) only against Horros and Horror construct" keyknowledge="Name of slayed Horror: Adugank"/>
+	</THREADITEM>
+	
+	<!--  Deutsch
+	<THREADITEM name="Amulet of Dirac Tol Amarra" lpcostgrowth="5" spelldefense="14" maxthreads="2" kind="brooch" weight="6.0"  bookref="ED1:Nebel über dem Blutwald S. 91">
+		<edt:description>Das Amulett von Dirac Tol Amarra ist ein fein gearbeiteter Silberstern an einer feinen silber Halskette. Ein dunkelroter Fleck, der das Schmuckstück verunziert, läßt sich nicht abwaschen.</edt:description>
+		<edt:THREADRANK effect="Physical Armor +3" keyknowledge="Name of the Item: Amulet of Dirac Tol Amarra">
+			<edt:ARMOR edn="0" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Mystic Armor +3">
+			<edt:ARMOR edn="0" mysticarmor="2" physicalarmor="3" kind="brooch" weight="6.0" name="Amulet of Dirac Tol Amarra"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Für eine Überanstr.schaden ein Heiltrank (1x pro Tag)" keyknowledge="Name of Hero: Dirac Tol Amarra"/>
+		<edt:THREADRANK effect="Für zwei Überanstr.schaden ein Wiederbelebungssalbe im Augenblick des Todes (1x pro Tag)"/>
+		<edt:THREADRANK effect="Verzweiflungsschlag+Verzweiflungszauber Blutamulett (inkl Blutschaden) aber nur gegen Dämonen oder Wesen von Dämonen" keyknowledge="Name of slayed Horror: Adugank"/>
+	</THREADITEM>
+	-->
+	
+</ITEMS>
