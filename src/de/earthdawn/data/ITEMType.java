@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="weight" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       &lt;attribute name="size" type="{http://earthdawn.com/datatypes}unsigned_int" default="3" />
+ *       &lt;attribute name="size" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="used" type="{http://earthdawn.com/datatypes}yesno_type" default="yes" />
  *       &lt;attribute name="location" type="{http://www.w3.org/2001/XMLSchema}string" default="self" />
  *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}itemkind_type" default="undefined" />
@@ -193,7 +193,7 @@ public class ITEMType {
      */
     public int getSize() {
         if (size == null) {
-            return  3;
+            return  0;
         } else {
             return size;
         }

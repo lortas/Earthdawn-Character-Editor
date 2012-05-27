@@ -47,12 +47,13 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 	private JSpinner spinnerEdn;
 	private JTextField textFieldEffect;
 	private JSpinner spinnerWeaventhreadrank;
+	private JSpinner spinnerSize;
 	private JLabel lblImage;
 
 	public ThreadItemNodePanel(THREADITEMType node) {
 		super(node);
 		setBorder(new LineBorder(new Color(0, 0, 0)));
-		setLayout(new MigLayout("", "[24px][128px,grow][24px][60px:60px:60px][30px][60px:60px:60px][150px:150px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[24px][128px,grow][24px][60px:60px:60px][30px][60px:60px:60px][150px:150px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
 		comboBoxType = new JComboBox(ItemkindType.values());
@@ -94,7 +95,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		lblImage.setVerticalAlignment(JLabel.BOTTOM);
 		lblImage.setHorizontalAlignment(JLabel.CENTER);
 		lblImage.setOpaque(false);
-		add(lblImage, "cell 6 0 1 6,grow,alignx center, aligny center");
+		add(lblImage, "cell 6 0 1 7,alignx center,aligny center,grow");
 
 		add(new JLabel("Weight"), "cell 2 1,alignx left,aligny center");
 		spinnerWeight = new JSpinner(new SpinnerNumberModel(node.getWeight(), 0, 99, 1));
@@ -122,6 +123,10 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		spinnerWeaventhreadrank = new JSpinner(new SpinnerNumberModel(node.getWeaventhreadrank(), 0, 15, 1));
 		add(spinnerWeaventhreadrank, "cell 3 3,alignx left,aligny center");
 
+		add(new JLabel("Size"), "cell 2 4");
+		spinnerSize = new JSpinner(new SpinnerNumberModel(node.getSize(), 0, 99, 1));
+		add(spinnerSize, "cell 3 4,alignx left,aligny center");
+
 		add(new JLabel("Name"), "cell 0 2,alignx left,aligny center");
 		textFieldName = new JTextField();
 		add(textFieldName, "cell 1 2,growx,aligny center");
@@ -142,9 +147,9 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		spinnerDepatterningrate = new JSpinner(new SpinnerNumberModel(node.getDepatterningrate(), 0, 99, 1));
 		add(spinnerDepatterningrate, "cell 5 1,alignx left,aligny center");
 
-		add(new JLabel("Effect"), "cell 0 4");
+		add(new JLabel("Effect"), "cell 0 5");
 		textFieldEffect = new JTextField();
-		add(textFieldEffect, "cell 1 4 4 1,growx,aligny center");
+		add(textFieldEffect, "cell 1 5 5 1,growx,aligny center");
 		textFieldEffect.setColumns(12);
 		textFieldEffect.setText(nodeObject.getEffect());
 
@@ -153,9 +158,9 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		add(chckbxUsed, "cell 5 4,alignx right,aligny center");
 		chckbxUsed.setSelected(node.getUsed() == YesnoType.YES);
 
-		add(new JLabel("Description"), "cell 0 5");
+		add(new JLabel("Description"), "cell 0 6");
 		textFieldDescription = new JTextField();
-		add(textFieldDescription, "cell 1 5 5 1,growx,aligny center");
+		add(textFieldDescription, "cell 1 6 5 1,growx,aligny center");
 		textFieldDescription.setColumns(12);
 		String description = nodeObject.getDescription();
 		if( description != null ) textFieldDescription.setText(description);
@@ -179,6 +184,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		nodeObject.setMaxthreads((Integer)spinnerMaxThreads.getValue());
 		nodeObject.setSpelldefense((Integer)spinnerSpellDefense.getValue());
 		nodeObject.setWeaventhreadrank((Integer)spinnerWeaventhreadrank.getValue());
+		nodeObject.setSize((Integer)spinnerSize.getValue());
 	}
 
 	protected void do_updateImage() {
