@@ -1,7 +1,7 @@
 package de.earthdawn.ui2;
 
 public enum EDInventoryRootNodeType {
-	ITEMS("Items"),COMMONMAGICITEMS("Common Magic Items"),BLOODCHARMS("Bloodcharms"),WEAPONS("Weapons"),ARMOR("Armor"),THREADITEMS("Thread Items"),PURSE("Purse");
+	ITEMS("Items"),COMMONMAGICITEMS("Common Magic Items"),BLOODCHARMS("Bloodcharms"),WEAPONS("Weapons"),ARMOR("Armor"),SHIELD("Shield"),THREADITEMS("Thread Items"),PURSE("Purse");
 	private final String value;
 
 	EDInventoryRootNodeType(String v) { value = v; }

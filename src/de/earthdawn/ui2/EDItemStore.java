@@ -113,7 +113,7 @@ public class EDItemStore extends JFrame {
 		// Wenn es kein Eltern gibt, dann sind wir an der Wurzel und eine Wurzel kann nicht eingefügt werden;
 		if( parrentNode == null ) return;
 		// Wenn der Elternknoten kein String ist, dann ist das Eltern kein Wurzelknoten und wir sind zutief im Baum
-		if( !(parrentNode instanceof String) ) return;
+		if( !(parrentNode instanceof EDInventoryRootNodeType) ) return;
 
 		if(currentNode instanceof THREADITEMType) {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
@@ -126,7 +126,7 @@ public class EDItemStore extends JFrame {
 			});
 			popup.add(menuitem);
 		}
-		if(currentNode instanceof ARMORType) {
+		if( (currentNode instanceof ARMORType) && ((EDInventoryRootNodeType)parrentNode).equals(EDInventoryRootNodeType.ARMOR) ) {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -136,7 +136,7 @@ public class EDItemStore extends JFrame {
 			});
 			popup.add(menuitem);
 		}
-		if(currentNode instanceof SHIELDType) {
+		if( (currentNode instanceof SHIELDType) && ((EDInventoryRootNodeType)parrentNode).equals(EDInventoryRootNodeType.SHIELD) ) {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -157,7 +157,7 @@ public class EDItemStore extends JFrame {
 			popup.add(menuitem);
 		}
 		if(currentNode instanceof MAGICITEMType) {
-			if( ((String)parrentNode).equals("Bloodcharms") ) {
+			if( ((EDInventoryRootNodeType)parrentNode).equals(EDInventoryRootNodeType.BLOODCHARMS) ) {
 				JMenuItem menuitem = new JMenuItem("Add to Character");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -167,7 +167,7 @@ public class EDItemStore extends JFrame {
 				});
 				popup.add(menuitem);
 			} else
-			if( ((String)parrentNode).equals("Common Magic Items")) {
+			if( ((EDInventoryRootNodeType)parrentNode).equals(EDInventoryRootNodeType.COMMONMAGICITEMS) ) {
 				JMenuItem menuitem = new JMenuItem("Add to Character");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -178,7 +178,7 @@ public class EDItemStore extends JFrame {
 				popup.add(menuitem);
 			}
 		}
-		if(currentNode instanceof ITEMType && ((String)parrentNode).equals("Items") ) {
+		if(currentNode instanceof ITEMType && ((EDInventoryRootNodeType)parrentNode).equals(EDInventoryRootNodeType.ITEMS) ) {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
