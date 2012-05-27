@@ -1495,12 +1495,12 @@ FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Step.36
+FieldName: Step.35
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Step.35
+FieldName: Step.36
 FieldFlags: 0
 FieldJustification: Center
 ---
@@ -1692,22 +1692,22 @@ FieldJustification: Center
 FieldType: Text
 FieldName: RecoveryTestsPerDay
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Right
 ---
 FieldType: Text
 FieldName: WoundThreshold
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Right
 ---
 FieldType: Text
 FieldName: UnconsciousnessValue
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Right
 ---
 FieldType: Text
 FieldName: DeathValue
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Right
 ---
 FieldType: Text
 FieldName: RecoveryDice
@@ -2278,36 +2278,6 @@ FieldJustification: Left
 ---
 FieldType: Text
 FieldName: DiscBonusAbility.13
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: RacialAbilities.0
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: RacialAbilities.1
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: RacialAbilities.2
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: RacialAbilities.3
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: RacialAbilities.4
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: RacialAbilities.5
 FieldFlags: 0
 FieldJustification: Left
 ---
@@ -3791,10 +3761,165 @@ FieldName: SpellInMatrix.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: SpellInMatrix
+FieldType: Text
+FieldName: SpellInMatrix.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellInMatrix.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: SpellType.0
@@ -3956,10 +4081,165 @@ FieldName: SpellType.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: SpellType
+FieldType: Text
+FieldName: SpellType.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellType.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: SpellCircle.0
@@ -4121,10 +4401,165 @@ FieldName: SpellCircle.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: SpellCircle
+FieldType: Text
+FieldName: SpellCircle.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellCircle.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: SpellThreads.0
@@ -4286,10 +4721,165 @@ FieldName: SpellThreads.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: SpellThreads
+FieldType: Text
+FieldName: SpellThreads.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellThreads.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: WeavingDifficulty.0
@@ -4451,10 +5041,165 @@ FieldName: WeavingDifficulty.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: WeavingDifficulty
+FieldType: Text
+FieldName: WeavingDifficulty.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: WeavingDifficulty.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: CastingDifficulty.0
@@ -4616,10 +5361,165 @@ FieldName: CastingDifficulty.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: CastingDifficulty
+FieldType: Text
+FieldName: CastingDifficulty.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: CastingDifficulty.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: SpellRange.0
@@ -4781,10 +5681,165 @@ FieldName: SpellRange.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: SpellRange
+FieldType: Text
+FieldName: SpellRange.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.33
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.34
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.35
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.36
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.37
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.38
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.39
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.40
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.41
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.42
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.43
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.44
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.45
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.46
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.47
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.48
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.49
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.50
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.51
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.52
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.53
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.54
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.55
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.56
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.57
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.58
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.59
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.60
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.61
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.62
+FieldFlags: 0
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: SpellRange.63
+FieldFlags: 0
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: Duration.0
@@ -4946,345 +6001,165 @@ FieldName: Duration.31
 FieldFlags: 0
 FieldJustification: Center
 ---
-FieldType: 
-FieldName: Duration
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.0
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.1
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.2
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.3
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.4
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.5
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.6
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.7
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.8
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.9
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.10
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.11
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.12
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.13
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.14
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.15
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.16
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.17
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.18
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.19
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.20
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.21
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.22
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.23
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.24
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.25
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.26
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.27
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.28
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.29
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.30
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: SpellEffect.0.31
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: 
-FieldName: SpellEffect.0
-FieldFlags: 0
-FieldJustification: Left
----
 FieldType: Text
-FieldName: SpellEffect.1.0
+FieldName: Duration.32
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.1
+FieldName: Duration.33
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.2
+FieldName: Duration.34
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.3
+FieldName: Duration.35
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.4
+FieldName: Duration.36
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.5
+FieldName: Duration.37
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.6
+FieldName: Duration.38
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.7
+FieldName: Duration.39
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.8
+FieldName: Duration.40
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.9
+FieldName: Duration.41
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.10
+FieldName: Duration.42
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.11
+FieldName: Duration.43
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.12
+FieldName: Duration.44
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.13
+FieldName: Duration.49
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.14
+FieldName: Duration.45
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.15
+FieldName: Duration.46
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.16
+FieldName: Duration.47
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.17
+FieldName: Duration.48
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.18
+FieldName: Duration.50
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.19
+FieldName: Duration.51
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.20
+FieldName: Duration.52
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.21
+FieldName: Duration.53
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.22
+FieldName: Duration.54
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.23
+FieldName: Duration.55
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.24
+FieldName: Duration.56
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.25
+FieldName: Duration.57
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.26
+FieldName: Duration.58
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.27
+FieldName: Duration.59
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.28
+FieldName: Duration.60
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.29
+FieldName: Duration.61
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.30
+FieldName: Duration.62
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
-FieldName: SpellEffect.1.31
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: 
-FieldName: SpellEffect.1
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: 
-FieldName: SpellEffect
+FieldName: Duration.63
 FieldFlags: 0
-FieldJustification: Left
+FieldJustification: Center
 ---
 FieldType: Text
 FieldName: WaterAndFood.0
@@ -5298,21 +6173,6 @@ FieldJustification: Left
 ---
 FieldType: Text
 FieldName: WaterAndFood.2
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: HalfMagic.0
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: HalfMagic.1
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: HalfMagic.2
 FieldFlags: 0
 FieldJustification: Left
 ---
@@ -6667,5 +7527,335 @@ FieldJustification: Left
 ---
 FieldType: Text
 FieldName: ShortDescription
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.0
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.1
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.2
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.3
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.4
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.5
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.6
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.7
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.8
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.9
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.10
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.11
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.12
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.13
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.14
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.15
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.16
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.17
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.18
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.19
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.20
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.21
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.22
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.23
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.24
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.25
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.26
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.27
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.28
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.29
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.30
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.31
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.32
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.33
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.34
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.35
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.36
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.37
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.38
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.39
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.40
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.41
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.42
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.43
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.44
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.45
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.46
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.47
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.48
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.49
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.50
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.51
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.52
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.53
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.54
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.55
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.56
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.57
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.58
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.59
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.60
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.61
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.62
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: SpellEffect.63
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: RacialAbilities
+FieldFlags: 4096
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: HalfMagic
 FieldFlags: 4096
 FieldJustification: Left

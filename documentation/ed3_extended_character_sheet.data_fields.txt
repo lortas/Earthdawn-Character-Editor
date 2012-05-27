@@ -6996,830 +6996,814 @@ FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.0.0
+FieldName: Equipment.34
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.0.1
+FieldName: Equipment.35
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.1.0
+FieldName: Equipment.36
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.1.1
+FieldName: Equipment.3
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.2.0
+FieldName: Equipment.0
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.2.1
+FieldName: Equipment.1
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.3.0
+FieldName: Equipment.2
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.3.1
+FieldName: Equipment.37
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.4.0
+FieldName: Equipment.4
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.4.1
+FieldName: Equipment.38
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.5.0
+FieldName: Equipment.5
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.5.1
+FieldName: Equipment.39
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.6.0
+FieldName: Equipment.6
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.6.1
+FieldName: Equipment.40
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.7.0
+FieldName: Equipment.7
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.7.1
+FieldName: Equipment.41
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.8.0
+FieldName: Equipment.8
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.8.1
+FieldName: Equipment.42
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.9.0
+FieldName: Equipment.9
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.9.1
+FieldName: Equipment.43
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.10.0
+FieldName: Equipment.10
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.10.1
+FieldName: Equipment.44
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.11.0
+FieldName: Equipment.11
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.11.1
+FieldName: Equipment.45
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.12.0
+FieldName: Equipment.12
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.12.1
+FieldName: Equipment.46
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.13.0
+FieldName: Equipment.13
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.13.1
+FieldName: Equipment.47
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.14.0
+FieldName: Equipment.14
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.14.1
+FieldName: Equipment.48
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.15.0
+FieldName: Equipment.15
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.15.1
+FieldName: Equipment.49
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.16.0
+FieldName: Equipment.16
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.16.1
+FieldName: Equipment.50
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.17.0
+FieldName: Equipment.17
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.17.1
+FieldName: Equipment.19
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.18.0
+FieldName: Equipment.20
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.18.1
+FieldName: Equipment.21
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.19.0
+FieldName: Equipment.22
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.19.1
+FieldName: Equipment.23
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.20.0
+FieldName: Equipment.24
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.20.1
+FieldName: Equipment.25
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.21.0
+FieldName: Equipment.26
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.21.1
+FieldName: Equipment.27
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.22.0
+FieldName: Equipment.28
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.22.1
+FieldName: Equipment.29
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.23.0
+FieldName: Equipment.30
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.23.1
+FieldName: Equipment.31
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.24.0
+FieldName: Equipment.51
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.24.1
+FieldName: Equipment.18
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.25.0
+FieldName: Equipment.52
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.25.1
+FieldName: Equipment.53
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.26.0
+FieldName: Equipment.54
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.26.1
+FieldName: Equipment.55
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.27.0
+FieldName: Equipment.56
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.27.1
+FieldName: Equipment.57
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.28.0
+FieldName: Equipment.58
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.28.1
+FieldName: Equipment.59
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.29.0
+FieldName: Equipment.60
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.29.1
+FieldName: Equipment.61
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.30.0
+FieldName: Equipment.62
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.30.1
+FieldName: Equipment.63
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.31.0
+FieldName: Equipment.64
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.31.1
+FieldName: Equipment.65
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.32.0
+FieldName: Equipment.32
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.32.1
+FieldName: Equipment.33
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.33.1
+FieldName: Equipment.66
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: Equipment.34.1
+FieldName: Equipment.67
 FieldNameAlt: Equipment
 FieldFlags: 0
 FieldJustification: Left
 ---
-FieldType: 
-FieldName: Equipment
-FieldFlags: 0
-FieldJustification: Left
----
-FieldType: Text
-FieldName: Weight.0.0
-FieldNameAlt: Weight
-FieldFlags: 0
-FieldJustification: Center
----
 FieldType: Text
-FieldName: Weight.0.1
+FieldName: Weight.64
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.1.0
+FieldName: Weight.63
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.1.1
+FieldName: Weight.62
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.2.0
+FieldName: Weight.61
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.2.1
+FieldName: Weight.60
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.3.0
+FieldName: Weight.59
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.3.1
+FieldName: Weight.58
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.4.0
+FieldName: Weight.57
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.4.1
+FieldName: Weight.56
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.5.0
+FieldName: Weight.55
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.5.1
+FieldName: Weight.54
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.6.0
+FieldName: Weight.53
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.6.1
+FieldName: Weight.52
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.7.0
+FieldName: Weight.51
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.7.1
+FieldName: Weight.50
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.8.0
+FieldName: Weight.49
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.8.1
+FieldName: Weight.48
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.9.0
+FieldName: Weight.31
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.9.1
+FieldName: Weight.30
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.10.0
+FieldName: Weight.29
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.10.1
+FieldName: Weight.27
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.11.0
+FieldName: Weight.26
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.11.1
+FieldName: Weight.25
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.12.0
+FieldName: Weight.24
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.12.1
+FieldName: Weight.23
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.13.0
+FieldName: Weight.22
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.13.1
+FieldName: Weight.21
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.14.0
+FieldName: Weight.20
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.14.1
+FieldName: Weight.19
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.15.0
+FieldName: Weight.18
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.15.1
+FieldName: Weight.17
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.16.0
+FieldName: Weight.16
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.16.1
+FieldName: Weight.15
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.17.0
+FieldName: Weight.0
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.17.1
+FieldName: Weight.34
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.18.0
+FieldName: Weight.1
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.18.1
+FieldName: Weight.43
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.19.0
+FieldName: Weight.10
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.19.1
+FieldName: Weight.44
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.20.0
+FieldName: Weight.11
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.20.1
+FieldName: Weight.12
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.21.0
+FieldName: Weight.45
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.21.1
+FieldName: Weight.46
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.22.0
+FieldName: Weight.13
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.22.1
+FieldName: Weight.47
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.23.0
+FieldName: Weight.14
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.23.1
+FieldName: Weight.35
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.24.0
+FieldName: Weight.2
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.24.1
+FieldName: Weight.28
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.25.0
+FieldName: Weight.36
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.25.1
+FieldName: Weight.3
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.26.0
+FieldName: Weight.37
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.26.1
+FieldName: Weight.4
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.27.0
+FieldName: Weight.38
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.27.1
+FieldName: Weight.5
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.28.0
+FieldName: Weight.39
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.28.1
+FieldName: Weight.6
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.29.0
+FieldName: Weight.40
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.29.1
+FieldName: Weight.7
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.30.0
+FieldName: Weight.41
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.30.1
+FieldName: Weight.8
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.31.0
+FieldName: Weight.42
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.31.1
+FieldName: Weight.9
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.32.0
+FieldName: Weight.32
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.32.1
+FieldName: Weight.33
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.33.1
+FieldName: Weight.66
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
 ---
 FieldType: Text
-FieldName: Weight.34.1
+FieldName: Weight.67
 FieldNameAlt: Weight
 FieldFlags: 0
 FieldJustification: Center
----
-FieldType: 
-FieldName: Weight
-FieldFlags: 0
-FieldJustification: Left
 ---
 FieldType: Text
 FieldName: BloodMagicDamage.0
