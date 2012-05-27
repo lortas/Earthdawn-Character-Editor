@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -352,11 +353,30 @@ public class EDInventory extends JPanel {
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
-					DEFENSEABILITYType defense = new DEFENSEABILITYType();
-					rank.getDEFENSE().add(defense);
-					int idx=ItemTreeModel.getEffectIndex(rank, 3);
-					idx += rank.getDEFENSE().indexOf(defense);
-					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,defense,idx);
+					List<DEFENSEABILITYType> currentdefenses = rank.getDEFENSE();
+					List<DefensekindType> freedefinsekinds = new ArrayList<DefensekindType>();
+					for( DefensekindType definsekind : DefensekindType.values() ) {
+						boolean notfound=true;
+						for( DEFENSEABILITYType currentdefense : currentdefenses ) {
+							if( currentdefense.getKind().equals(definsekind) ) notfound=false;
+						}
+						if( notfound ) freedefinsekinds.add(definsekind);
+					}
+					DEFENSEABILITYType defense = null;
+					if( freedefinsekinds.isEmpty() ) {
+						for( DEFENSEABILITYType d : currentdefenses ) {
+							if( defense == null ) defense=d;
+							else if( defense.getBonus() > d.getBonus()) defense=d;
+						}
+						defense.setBonus(defense.getBonus()+1);
+					} else {
+						defense = new DEFENSEABILITYType();
+						defense.setKind(freedefinsekinds.get(0));
+						currentdefenses.add(defense);
+						int idx=ItemTreeModel.getEffectIndex(rank, 3);
+						idx += currentdefenses.indexOf(defense);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,defense,idx);
+					}
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(defense));
 				}
 			});
