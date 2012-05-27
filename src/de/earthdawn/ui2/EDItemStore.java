@@ -132,6 +132,7 @@ public class EDItemStore extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					character.getProtection().getARMOROrSHIELD().add((ARMORType)currentNode);
 					character.refesh();
+					parent.scrollPathToVisible(currentNode);
 				}
 			});
 			popup.add(menuitem);
@@ -142,6 +143,7 @@ public class EDItemStore extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					character.getProtection().getARMOROrSHIELD().add((SHIELDType)currentNode);
 					character.refesh();
+					parent.scrollPathToVisible(currentNode);
 				}
 			});
 			popup.add(menuitem);
@@ -152,6 +154,7 @@ public class EDItemStore extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					character.getWeapons().add((WEAPONType)currentNode);
 					character.refesh();
+					parent.scrollPathToVisible(currentNode);
 				}
 			});
 			popup.add(menuitem);
@@ -163,6 +166,7 @@ public class EDItemStore extends JFrame {
 					public void actionPerformed(ActionEvent arg0) {
 						character.getBloodCharmItem().add((MAGICITEMType)currentNode);
 						character.refesh();
+						parent.scrollPathToVisible(currentNode);
 					}
 				});
 				popup.add(menuitem);
@@ -173,6 +177,7 @@ public class EDItemStore extends JFrame {
 					public void actionPerformed(ActionEvent arg0) {
 						character.getMagicItem().add((MAGICITEMType)currentNode);
 						character.refesh();
+						parent.scrollPathToVisible(currentNode);
 					}
 				});
 				popup.add(menuitem);
@@ -184,6 +189,7 @@ public class EDItemStore extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					character.getItems().add((ITEMType)currentNode);
 					character.refesh();
+					parent.scrollPathToVisible(currentNode);
 				}
 			});
 			popup.add(menuitem);

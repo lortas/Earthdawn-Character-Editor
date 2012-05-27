@@ -625,7 +625,25 @@ public class EDInventory extends JPanel {
 	}
 
 	public void scrollPathToVisible(Object node) {
-		tree.getLeadSelectionPath();
+		if( tree == null ) return;
+		int row=-1;
+		TreePath path = null;
+		while( path == null ) {
+			row++;
+			path=tree.getPathForRow(row);
+		}
+		while( path.getParentPath() != null ) path=path.getParentPath();
+		if( node instanceof THREADITEMType ) path=path.pathByAddingChild(EDInventoryRootNodeType.THREADITEMS);
+		else if( node instanceof ARMORType ) path=path.pathByAddingChild(EDInventoryRootNodeType.ARMOR);
+		else if( node instanceof WEAPONType ) path=path.pathByAddingChild(EDInventoryRootNodeType.WEAPONS);
+		else if( node instanceof MAGICITEMType ) {
+			if( character.getBloodCharmItem().contains(node) ) path=path.pathByAddingChild(EDInventoryRootNodeType.BLOODCHARMS);
+			if( character.getMagicItem().contains(node) ) path=path.pathByAddingChild(EDInventoryRootNodeType.COMMONMAGICITEMS);
+		}
+		else if( node instanceof ITEMType ) path=path.pathByAddingChild(EDInventoryRootNodeType.ITEMS);
+
+		tree.scrollPathToVisible(path.pathByAddingChild(node));
+		tree.expandPath(path.pathByAddingChild(node));
 	}
 
 	private void clearThreadRankShield(TreePath path) {
