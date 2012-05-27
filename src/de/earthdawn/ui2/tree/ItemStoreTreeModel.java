@@ -10,11 +10,12 @@ import javax.swing.tree.TreePath;
 import de.earthdawn.data.ITEMS;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
+import de.earthdawn.ui2.EDInventoryRootNodeType;
 
 public class ItemStoreTreeModel implements TreeModel {
 	private ITEMS itemstore;
-	private HashMap<String, Object> displayedNodes;
-	private ArrayList<String> displayKeys;
+	private HashMap<EDInventoryRootNodeType, Object> displayedNodes;
+	private ArrayList<EDInventoryRootNodeType> displayKeys;
 	protected ArrayList<TreeModelListener> listeners  = new ArrayList<TreeModelListener>();
 
 	public List<?> getListForGroupNode(String groupkey){
@@ -25,17 +26,24 @@ public class ItemStoreTreeModel implements TreeModel {
 		super();
 
 		this.itemstore = itemstore;
-		this.displayedNodes = new HashMap<String, Object>();
+		displayedNodes = new HashMap<EDInventoryRootNodeType, Object>();
+		displayKeys = new ArrayList<EDInventoryRootNodeType>();
 		if(this.itemstore != null) {
-			displayedNodes.put("Items", itemstore.getITEM());
-			displayedNodes.put("Common Magic Items", itemstore.getMAGICITEM());
-			displayedNodes.put("Bloodcharms", itemstore.getBLOODCHARMITEM());
-			displayedNodes.put("Weapons", itemstore.getWEAPON());
-			displayedNodes.put("Armor", itemstore.getARMOR());
-			displayedNodes.put("Shield", itemstore.getSHIELD());
-			displayedNodes.put("Thread Items", itemstore.getTHREADITEM());
+			displayedNodes.put(EDInventoryRootNodeType.ITEMS, itemstore.getITEM());
+			displayKeys.add(EDInventoryRootNodeType.ITEMS);
+			displayedNodes.put(EDInventoryRootNodeType.COMMONMAGICITEMS, itemstore.getMAGICITEM());
+			displayKeys.add(EDInventoryRootNodeType.COMMONMAGICITEMS);
+			displayedNodes.put(EDInventoryRootNodeType.BLOODCHARMS, itemstore.getBLOODCHARMITEM());
+			displayKeys.add(EDInventoryRootNodeType.BLOODCHARMS);
+			displayedNodes.put(EDInventoryRootNodeType.WEAPONS, itemstore.getWEAPON());
+			displayKeys.add(EDInventoryRootNodeType.WEAPONS);
+			displayedNodes.put(EDInventoryRootNodeType.ARMOR, itemstore.getARMOR());
+			displayKeys.add(EDInventoryRootNodeType.ARMOR);
+			displayedNodes.put(EDInventoryRootNodeType.SHIELD, itemstore.getSHIELD());
+			displayKeys.add(EDInventoryRootNodeType.SHIELD);
+			displayedNodes.put(EDInventoryRootNodeType.THREADITEMS, itemstore.getTHREADITEM());
+			displayKeys.add(EDInventoryRootNodeType.THREADITEMS);
 		}
-		this.displayKeys = new ArrayList<String>(displayedNodes.keySet());
 	}
 
 	public Object getParent(Object child){
@@ -59,7 +67,7 @@ public class ItemStoreTreeModel implements TreeModel {
 		if(parent instanceof ITEMS){
 			return  displayKeys.get(index);
 		}
-		if(parent instanceof String){
+		if(parent instanceof EDInventoryRootNodeType){
 			return ((List<?>)displayedNodes.get(parent)).get(index);
 		}
 		if(parent instanceof THREADITEMType){
@@ -76,7 +84,7 @@ public class ItemStoreTreeModel implements TreeModel {
 		if(parent instanceof ITEMS){
 			return displayedNodes.size();
 		}
-		if(parent instanceof String){
+		if(parent instanceof EDInventoryRootNodeType){
 			return ((List<?>)displayedNodes.get(parent)).size();
 		}
 		if(parent instanceof THREADITEMType){
@@ -93,7 +101,7 @@ public class ItemStoreTreeModel implements TreeModel {
 		if(parent instanceof ITEMS){
 			return displayKeys.indexOf(child);
 		}
-		if(parent instanceof String){
+		if(parent instanceof EDInventoryRootNodeType){
 			return ((List<?>)displayedNodes.get(parent)).indexOf(child);
 		}
 		if(parent instanceof THREADITEMType){
@@ -106,29 +114,14 @@ public class ItemStoreTreeModel implements TreeModel {
 	}
 
 	@Override
-	public Object getRoot() {	
-		return itemstore;
-	}
+	public Object getRoot() { return itemstore; }
 
 	@Override
 	public boolean isLeaf(Object node) {
-
-		if(node == itemstore){
-			return false;
-		}
-
-		if(node instanceof String){
-			return ((List<?>)displayedNodes.get(node)).isEmpty();
-		}
-
-		if(node instanceof THREADITEMType){
-			return ((THREADITEMType)node).getTHREADRANK().isEmpty();
-		}
-
-		if(node instanceof THREADRANKType){
-			return ItemTreeModel.getEffectNodes((THREADRANKType)node).isEmpty();
-		}
-
+		if(node == itemstore) return false;
+		if(node instanceof EDInventoryRootNodeType) return ((List<?>)displayedNodes.get(node)).isEmpty();
+		if(node instanceof THREADITEMType) return ((THREADITEMType)node).getTHREADRANK().isEmpty();
+		if(node instanceof THREADRANKType) return ItemTreeModel.getEffectNodes((THREADRANKType)node).isEmpty();
 		return true;
 	}
 

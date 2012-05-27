@@ -64,19 +64,20 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		if(value == EDInventoryRootNodeType.ARMOR){
 			label.setText(EDInventoryRootNodeType.ARMOR.value());
 			label.setIcon((ImageIcon)treeIcons.get("HELM"));
-		}	
+		}
 
 		// Shield
-		if(value == "Shield"){
+		if(value == EDInventoryRootNodeType.SHIELD){
 			label.setText("Shield");
 			label.setIcon((ImageIcon)treeIcons.get("SHIELD"));
-		}	
+		}
 
 		// Weapons
 		if(value == EDInventoryRootNodeType.WEAPONS){
 			label.setText(EDInventoryRootNodeType.WEAPONS.value());
 			label.setIcon((ImageIcon)treeIcons.get("MELEE_WEAPON"));
 		}
+
 		//Common Magic Items
 		if(value == EDInventoryRootNodeType.COMMONMAGICITEMS){
 			label.setText(EDInventoryRootNodeType.COMMONMAGICITEMS.value());	
