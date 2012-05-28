@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 	
-	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" weaventhreadrank="4" kind="bracers" weight="6.0" bookref="GM p.132">
+	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" weaventhreadrank="4" kind="vambrace" weight="6.0" bookref="GM p.132">
 		<edt:description>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:description>		
 		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Name of bracers">
 			<edt:DEFENSE kind="physical" bonus="1"/>
@@ -61,82 +61,47 @@
 		<edt:THREADRANK effect="For 5 Strain, cause fear in enemies and rally own troops. Effect causes spear to glow bright white, pulsing like heartbeat. All allies within 100 yards receive: +1 to Initiative and Attack Tests and +1 to Physical, Spell, and Social Defense. Additionally, increase result level to hit spear’s wielder by one level. Effect lasts for rounds equal Thread Rank or until attack with spear, whichever comes first" keyknowledge="Deed: Must command airship in an attack. During attack he must invoke Names of weapon’s creator, original owner and trollmoot from which they came">
 		</edt:THREADRANK>
 	</THREADITEM>
-
-<!--	
-	<ns12:THREADITEM weaventhreadrank="0" maxthreads="2" spelldefense="0" lpcostgrowth="5" enchantingdifficultynumber="0" effect="to test all Options of thread Items" name="Overview" weight="0.0" used="yes" location="" kind="undefined" blooddamage="0" depatterningrate="0" bookref="test">
-        <ns3:THREADRANK keyknowledge="" lpcost="200" effect="">
-            <ns3:ARMOR physicalarmor="0" mysticarmor="0" penalty="0" edn="0" edn_element="undefined" timesforged_physical="0" timesforged_mystic="0" dateforged="" name="Overview" weight="0.0" used="yes" location="" kind="undefined" blooddamage="0" depatterningrate="0" bookref="test"/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="300" effect="">
-            <ns3:SHIELD physicalarmor="0" mysticarmor="0" penalty="0" edn="0" timesforged_physical="0" timesforged_mystic="0" dateforged="" name="Overview" weight="0.0" used="yes" location="" kind="undefined" blooddamage="0" depatterningrate="0" bookref="test"/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:WEAPON damagestep="0" strengthmin="0" dexteritymin="7" size="0" name="New Weapon" weight="0.0"/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:DEFENSE kind="physical" bonus="1"/>
-            <ns3:DEFENSE kind="spell" bonus="1"/>
-            <ns3:DEFENSE kind="social" bonus="1"/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:SPELL>Absorbing Sphere</ns3:SPELL>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:TALENT name="Abate Curse" limitation="" bonus="1" pool=""/>
-            <ns3:RECOVERYTEST count="1"/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:KARMASTEP count="1"/>
-            <ns3:MAXKARMA/>
-            <ns3:MAXKARMA/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:MAXKARMA count="1"/>
-        </ns3:THREADRANK>
-        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
-            <ns3:SPELLABILITY count="1"/>
-            <ns3:INITIATIVE/>
-            <ns3:ABILITY>test</ns3:ABILITY>
-        </ns3:THREADRANK>
-    </ns12:THREADITEM>
--->
-	
-	<THREADITEM name="Thread Crystal Waraxt" lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0">
-		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
-		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+	<THREADITEM name="Crystal Spell Box" lpcostgrowth="5" spelldefense="15" maxthreads="2" kind="tool" weight="3.0" bookref="GM p.133">
+		<edt:description>Small box made of crystal and metal. The sides, top, and bottom are all solid pieces of crystal, with seams between the pieces made of precious metals, most often silver or gold. Box not designed to be opened. Crystal used is usually deep amber in color, though clear or blackened crystal is used occasionally. Measures roughly 8 inches long, 5 inches wide and 3 inches high. Box containing a spell, radiates faint glow, which intensifies as more spells captured within. Were designed by great mage Masym.</edt:description>
+		<edt:THREADRANK effect="Can capture spell that is being cast by making Spellcasting Test against caster’s Spellcasting Test. If successful, spell is captured in box. Can hold 1 spell. Spell released by making Spellcasting Test (no threads need be); Spell’s effect as if cast normal. Once released, spell gone; new spell may be captured." keyknowledge="box’s Name">
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage +1">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		<edt:THREADRANK effect="+2 Rank to Spellcasting talent when capturing spells into or casting spells from box">
+			<edt:TALENT name="Spellcasting" limitation="" bonus="2" pool=""/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage +1">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="14" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		<edt:THREADRANK effect="Can hold 2 spells" keyknowledge="Deed: discover Name of an apprentice; take box to grave (or final resting place) of apprentice; leave  othering of thanks">
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage +1">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="15" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		<edt:THREADRANK effect="+4 Rank to Spellcasting talent when capturing spells into or casting spells from box">
+			<edt:TALENT name="Spellcasting" limitation="" bonus="4" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Can hold 3 spells" keyknowledge="Name of mountain which crystal originated">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="+6 Rank to Spellcasting talent when capturing spells into or casting spells from box">
+			<edt:TALENT name="Spellcasting" limitation="" bonus="6" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Can hold 4 spells" keyknowledge="Name of person who commissioned box">
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM name="Thread Crystal Waraxt" lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0">
-		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
-		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+	<THREADITEM name="Elemental Long-Spear" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="melee weapon" weight="7.0" bookref="GM p.134">
+		<edt:description>Six- to eight-foot-long wooden long-spears incorporate each of the five True Elements. Shafts are woven with True Wood, hollow cores filled with True Air, and spears’ metal tips woven with True Earth. Each spear is soaked in liquid rich in True Water and hardened in flames fueled by True Fire. Spears float in water. No threads, same characteristics as long-spear.</edt:description>
+		<edt:THREADRANK effect="Damage Step 10; immune fire and from effects of spells or abilities that damage; keeps spear from splintering when making Charging Attacks" keyknowledge="spear’s Name">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage +1">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		<edt:THREADRANK effect="+2 Rank to Initiative Tests">
+            <edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage +1">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="14" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		<edt:THREADRANK effect="Damage Step 11; Tip glows red hot; 1 Strain: roll adittional D6 with weapon’s Damage Tests that round" keyknowledge="Name of the spear’s creator">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="11" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage +1">
-			<edt:WEAPON size="5" strengthmin="13" damagestep="15" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		<edt:THREADRANK effect="Damage Step 12; +1 Rank to Riposte talent">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="7.0" name="Elemental Long-Spear"/>
+            <edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 13; It becomes extremely resilient (strength of dragon cannot harm spear); +1 Rank to Wound Balance talent" keyknowledge="type of wood spear haft is constructed from and where it was grown">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="7.0" name="Elemental Long-Spear"/>
+            <edt:TALENT name="Wound Balance" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 	</THREADITEM>
 
+<!--	weiter mit Espargra Boots -->
 	
-	<!-- Einarbeiten 
-	  
-
-	-->
-	
-	<!-- weiter GMG Seite 13 -->
 </ITEMS>
