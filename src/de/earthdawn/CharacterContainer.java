@@ -1397,6 +1397,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		newrank.setEffect(rank.getEffect());
 		newrank.setLpcost(rank.getLpcost());
 		newrank.setKeyknowledge(rank.getKeyknowledge());
+		newrank.setDeed(rank.getDeed());
 		newrank.setARMOR(copyArmor(rank.getARMOR(),false));
 		newrank.setSHIELD((SHIELDType)copyArmor(rank.getSHIELD(),false));
 		newrank.setWEAPON(copyWeapon(rank.getWEAPON(),false));
