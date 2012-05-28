@@ -525,7 +525,8 @@
 				<xs:documentation>Is calculated by the attribute lpcostgrowth.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="effect" type="xs:string" use="required"/>
+		<xs:attribute name="deed" type="xs:string" default=""/>
+		<xs:attribute name="effect" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="MAGICITEM_type">
 		<xs:complexContent>
