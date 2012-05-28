@@ -22,6 +22,30 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.43-201205xx.zip ##
++ Bugs
+	+ Pdf Ajfel Forms were not storable
+	+ Initiative bonus conform with optional rule ENDURINGARMORBYSTRENGTH
+	+ Error message for karma calculation even if no discipline yet defined
+	+ Adding a new thread rank will now be in all cases no link to previous entries
+	+ Strange resizing effects in the general tab change to be more static
++ Library Update
+	+ miglayout : 3.7.1 --> 4.0
+	+ gson : 1.7.1 --> 2.2.1
+	+ itext : 5.0.1 --> 5.2.1
++ optional rule ALIGNINGTALENTSANDSKILLS prepared but not yet functional
++ XML
+	+ New element ALIGNEDSKILL for element TALENT
+	+ Element RECOVERY renamed to RECOVERYTEST
+	+ New attribute “armorpenalty” in element 'INITIATIVE'
+	+ Attribute "size" moved up from child "weapon" to parent "item"
+	+ New attribute "deed" for Threadranks
++ Interface getSkills changed and new interfaces for skill handling added
++ Inventory and ItemStore root element type changed
++ Items added by ItemStore will now be shown after it was inserted
++ More Thread Items within the ItemStore, eg. from GMG
++ change and define item tree root element order
++ updated files "*.data_fields.txt" within the documentation folder
 ## EarthdawnCharacterEditor-0.42-20120512.zip ##
 + Bugs
 	+ Common Magic Items will now be shown on the PDF-export
