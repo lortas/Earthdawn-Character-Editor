@@ -1,38 +1,142 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
-		
-	<!-- Gamemastes Compendium Seite 132 -->
-		<THREADITEM name="Bracers of Aras" lpcostgrowth="2" spelldefense="14" maxthreads="3" kind="bracers" weight="6.0"  bookref="GM p.132">
-		<edt:description>Bracers of Aras are made of flexible, silvery metal that wraps around the wrists and forearms of the wearer. The flexibility is a result of the elemental water that has been forged into the bracers. The elemental water pieces used in the crafting of the bracers resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are made from metals found only in mines located along the shore of the Aras Sea, and are encrusted with pieces of elemental water. The color of the elemental water gems constantly changes, oscillating with a swirling effect across the spectrum from deep aqua to bright blue.</edt:description>
-		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Each set of bracers is Named by their creator. The wearer must learn the Name of the bracers.">
-			<edt:DEFENSE kind="physical"/>
+	
+	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" weaventhreadrank="4" kind="bracers" weight="6.0" bookref="GM p.132">
+		<edt:description>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:description>		
+		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Name of bracers">
+			<edt:DEFENSE kind="physical" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Physical Defense +2">
-			<edt:DEFENSE kind="physical"/>
+			<edt:DEFENSE kind="physical" bonus="2"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Spell Defense +1" keyknowledge="The wearer must learn the Name of the mine from which came the metals used to create the bracers.">
-			<edt:DEFENSE kind="spell"/>
+		<edt:THREADRANK effect="Spell Defense +1" keyknowledge="Name of mine from which the metals came used to create bracers">
+			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Spell Defense +2">
-			<edt:DEFENSE kind="spell"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Cast the Gills Spell on himself for 2 Strain" keyknowledge="As mundane water contains oxygen, elemental water contains elemental air.The creators of the Bracers of Aras formed the gems from a mixture of elemental air and water.The ratio of water to air varies for each set of bracers. The wearer must learn the ratio of water to air used to create the bracers he wears.">
+		<edt:THREADRANK effect="Cast Gills Spell on himself for 2 Strain" keyknowledge="As mundane water contains oxygen, elemental water contains elemental air. Creators of Bracers of Aras formed gems from a mixture of elemental air and water. Ratio of water to air varies for each set of bracers. Wearer must learn ratio of water to air used for his bracers">
 			<edt:SPELL name="Gills"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	    <THREADITEM name="Counterspell Staff" lpcostgrowth="2" spelldefense="16" maxthreads="2" kind="wand" weight="4.0" effect="like quarterstaff" bookref="GM p.132">
-        <edt:THREADRANK keyknowledge="staffs name" lpcost="100" effect="+1 Spell Defense">
-            <edt:DEFENSE kind="spell" bonus="1"/>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="where crystal atop staff came from" lpcost="200" effect="Damage Step 5; cast Counterspell spell up to thread Rank times each day">
-            <edt:SPELL>Counterspell</edt:SPELL>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="Name of  artisan who carved crystal on staff" lpcost="300" effect="Counterspell’s Effect improves to +3 per Result Level"/>
-        <edt:THREADRANK keyknowledge="Deed:Ritual (2 Blood Magic Damage) leaves a scar that occasionally oozes a drop of blood which is magically drawn to a  notch in the staff every 3 hours; Deed must be performed in jungle or  forest where wood the staff was created from was grown" lpcost="500" effect="Damage Step 6; Counterspell’s Effect  improves to +4 per Result Level"/>
-        <edt:THREADRANK keyknowledge="Name of  magician who created the staff" lpcost="800" effect="Counterspell’s Effect improves to +5 per Result Level"/>
-        <edt:THREADRANK keyknowledge="" lpcost="1300" effect="Damage Step 7; Counterspell’s Effect  improves to +6 per Result Level"/>
-    </THREADITEM>
+	<THREADITEM name="Counterspell Staff" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="wand" weight="4.0" effect="like quarterstaff" bookref="GM p.132">
+		<edt:description>A quarterstaff, topped with a crystal carved into any of shapes or figures. Most commonly made of wood, usually mahogany. With no threads like characteristics as normal quarterstaff</edt:description>
+		<edt:THREADRANK effect="+1 Spell Defense" keyknowledge="staffs name">
+			<edt:DEFENSE kind="spell" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 5; cast Counterspell spell up to thread Rank times each day" keyknowledge="where crystal atop staff came from">
+			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Counterspell’s Effect improves to +3 per Result Level" keyknowledge="Name of artisan who carved crystal on staff">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 6; Counterspell’s Effect improves to +4 per Result Level" keyknowledge="Deed:Ritual (2 Blood Magic Damage) leaves a scar that occasionally oozes a drop of blood which is magically drawn to a notch in staff every 3 hours; Deed must be performed in jungle or forest where wood staff was created from was grown">
+			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Counterspell’s Effect improves to +5 per Result Level" keyknowledge="Name of magician who created the staff">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 7; Counterspell’s Effect improves to +6 per Result Level">
+			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="7" weight="4.0" name="Counterspell Staff"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Crystal Spear" lpcostgrowth="5" spelldefense="18" maxthreads="2" kind="melee weapon" weight="3.0" effect="without threads like normal spear" bookref="GM p.133">
+		<edt:description>These magical spears are made of solid crystal. The shaft of spear is pentagonal and polished to fine sheen. Magic of spear keeps its blade razor sharp, despite is rough finish. With no threads characteristics as normal spear</edt:description>
+		<edt:THREADRANK effect="Damage Step 7" keyknowledge="spear’s name">
+			<edt:WEAPON size="3" strengthmin="9" damagestep="7" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 8" keyknowledge="Name of the spear’s creator">
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="thread Rank increases range one quarter for each Range category" keyknowledge="Name of troll Sky Raider for whom spear was created (spear’s first owner)">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="+1 to Initiative Step">
+            <edt:INITIATIVE count="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="For 2 Strain, +2 to Physical and Spell Defense for number of rounds equal to thread Rank or until Attack Test with spear, whichever comes first. Spear glows pale blue while bonus is in effect" keyknowledge="what historic assault and which first wielder spear was crafted for">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="For 1 Strain, +3 bonus to next Damage Test with spear. Spear glows bright red when bonus is in effect">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Lower result level required for Armor-Defeating Hit by one level. For 3 Strain, spear causes 1 additional Wound on next Damage Test, so long as inflicts at least 1 Damage Point" keyknowledge="Deed: Must make pilgrimage to trollmoot of spear’s creator belonged. Character must swear Blood Oath with trollmoot’s leader. Damage taken for Oath is Permanent instead of Blood Magic Damage. If Oath is violated, spear immediately shatters beyond repair">
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="For 5 Strain, cause fear in enemies and rally own troops. Effect causes spear to glow bright white, pulsing like heartbeat. All allies within 100 yards receive: +1 to Initiative and Attack Tests and +1 to Physical, Spell, and Social Defense. Additionally, increase result level to hit spear’s wielder by one level. Effect lasts for rounds equal Thread Rank or until attack with spear, whichever comes first" keyknowledge="Deed: Must command airship in an attack. During attack he must invoke Names of weapon’s creator, original owner and trollmoot from which they came">
+		</edt:THREADRANK>
+	</THREADITEM>
 
+<!--	
+	<ns12:THREADITEM weaventhreadrank="0" maxthreads="2" spelldefense="0" lpcostgrowth="5" enchantingdifficultynumber="0" effect="to test all Options of thread Items" name="Overview" weight="0.0" used="yes" location="" kind="undefined" blooddamage="0" depatterningrate="0" bookref="test">
+        <ns3:THREADRANK keyknowledge="" lpcost="200" effect="">
+            <ns3:ARMOR physicalarmor="0" mysticarmor="0" penalty="0" edn="0" edn_element="undefined" timesforged_physical="0" timesforged_mystic="0" dateforged="" name="Overview" weight="0.0" used="yes" location="" kind="undefined" blooddamage="0" depatterningrate="0" bookref="test"/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="300" effect="">
+            <ns3:SHIELD physicalarmor="0" mysticarmor="0" penalty="0" edn="0" timesforged_physical="0" timesforged_mystic="0" dateforged="" name="Overview" weight="0.0" used="yes" location="" kind="undefined" blooddamage="0" depatterningrate="0" bookref="test"/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:WEAPON damagestep="0" strengthmin="0" dexteritymin="7" size="0" name="New Weapon" weight="0.0"/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:DEFENSE kind="physical" bonus="1"/>
+            <ns3:DEFENSE kind="spell" bonus="1"/>
+            <ns3:DEFENSE kind="social" bonus="1"/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:SPELL>Absorbing Sphere</ns3:SPELL>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:TALENT name="Abate Curse" limitation="" bonus="1" pool=""/>
+            <ns3:RECOVERYTEST count="1"/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:KARMASTEP count="1"/>
+            <ns3:MAXKARMA/>
+            <ns3:MAXKARMA/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:MAXKARMA count="1"/>
+        </ns3:THREADRANK>
+        <ns3:THREADRANK keyknowledge="" lpcost="500" effect="">
+            <ns3:SPELLABILITY count="1"/>
+            <ns3:INITIATIVE/>
+            <ns3:ABILITY>test</ns3:ABILITY>
+        </ns3:THREADRANK>
+    </ns12:THREADITEM>
+-->
+	
+	<THREADITEM name="Thread Crystal Waraxt" lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0">
+		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
+		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage +1">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage +1">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="14" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage +1">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="15" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Thread Crystal Waraxt" lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0">
+		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
+		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage +1">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage +1">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="14" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage +1">
+			<edt:WEAPON size="5" strengthmin="13" damagestep="15" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+
+	
+	<!-- Einarbeiten 
+	  
+
+	-->
 	
 	<!-- weiter GMG Seite 13 -->
 </ITEMS>
