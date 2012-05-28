@@ -1209,7 +1209,7 @@
 								<table width="100%">
 									<tr>
 										<td class="edHeaderCell">Rank (LPCost)</td>
-										<td class="edHeaderCell">Knowledge / Effect</td>
+										<td class="edHeaderCell">Knowledge / Effect / Deed</td>
 									</tr>
 									<xsl:apply-templates select="./edt:THREADRANK"/>
 								</table>
@@ -1224,8 +1224,11 @@
 
 <xsl:template match="//edt:THREADRANK">
 	<tr>
-		<td class="edThreadrank" rowspan="2" valign="middle"><xsl:value-of select="position()"/> (<xsl:value-of select="@lpcost"/>)</td>
+		<td class="edThreadrank" rowspan="3" valign="middle"><xsl:value-of select="position()"/> (<xsl:value-of select="@lpcost"/>)</td>
 		<td class="edCell"><xsl:value-of select="@keyknowledge" /></td>
+	</tr>
+	<tr>
+		<td class="edCell"><xsl:value-of select="@deed" /></td>
 	</tr>
 	<tr>
 		<td class="edCell"><xsl:value-of select="@effect" /></td>

@@ -260,6 +260,7 @@ public class EDInventory extends JPanel {
 						rank = new THREADRANKType();
 						rank.setEffect("");
 						rank.setKeyknowledge("");
+						rank.setDeed("");
 					}
 					else rank = CharacterContainer.copyThreadRank(threadranks.get(lastrank));
 					threadranks.add(rank);
