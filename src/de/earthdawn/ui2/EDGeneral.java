@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -86,7 +87,7 @@ public class EDGeneral extends JPanel {
 	 */
 	public EDGeneral() {
 		setOpaque(false);
-		setLayout(new MigLayout("", "[110px][100px,grow 50,fill][15px,grow 10,fill][150.00px,grow,fill][100.00px,grow 10,fill]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[110px][50px:70px:100px,grow][15px][200px:200px:500px,grow][230px:230px:230px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Playername"), "cell 0 0,alignx right,aligny center");
 		textFieldPlayer = new JTextField();
@@ -236,7 +237,7 @@ public class EDGeneral extends JPanel {
 		pnlPortrait = new JPanel();
 		pnlPortrait.setBorder(new TitledBorder(null, "Portrait", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlPortrait.setOpaque(false);
-		add(pnlPortrait, "cell 4 7 1 9,grow");
+		add(pnlPortrait, "cell 4 7 1 9,alignx center,aligny center");
 
 		lblPortrait = new JLabel();
 		pnlPortrait.add(lblPortrait);
@@ -397,8 +398,6 @@ public class EDGeneral extends JPanel {
 		List<Base64BinaryType> potraits = character.getPortrait();
 		if( ! potraits.isEmpty() ) {
 			ImageIcon icon = new ImageIcon(potraits.get(0).getValue());
-			int width = new Double(0.8*lblPortrait.getWidth()).intValue();
-			if( width<100 ) width = 100;
 			Image image = icon.getImage().getScaledInstance(200, -1, Image.SCALE_SMOOTH);
 			lblPortrait.setIcon(new ImageIcon(image));
 		}
@@ -568,7 +567,7 @@ public class EDGeneral extends JPanel {
 		JFileChooser fc = new JFileChooser(new File("images/character"));
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG-GIF-PNG Images", "jpg", "gif", "png", "jpeg");
 		fc.setFileFilter(filter);
-		ImagePreview imagepreview = new ImagePreview(lblPortrait.getWidth(),lblPortrait.getHeight());
+		ImagePreview imagepreview = new ImagePreview(200,200);
 		fc.setAccessory(imagepreview);
 		fc.addPropertyChangeListener(imagepreview);
 		int returnVal = fc.showOpenDialog(this);
@@ -584,7 +583,9 @@ public class EDGeneral extends JPanel {
 				final String[] filename = file.getName().split("\\.");
 				base64bin.setContenttype("image/"+filename[filename.length-1]);
 				character.getPortrait().set(0, base64bin);
-				character.refesh();
+				ImageIcon icon = new ImageIcon(data);
+				Image image = icon.getImage().getScaledInstance(200, -1, Image.SCALE_SMOOTH);
+				lblPortrait.setIcon(new ImageIcon(image));
 			} catch (FileNotFoundException e1) {
 				System.err.println(e1.getLocalizedMessage());
 			} catch (IOException e2) {
