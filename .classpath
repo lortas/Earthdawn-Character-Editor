@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/iText-5.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/itextpdf-5.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/itext-xtra-5.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/freemarker.jar"/>
 	<classpathentry kind="lib" path="lib/miglayout-4.0-swing.jar"/>
 	<classpathentry kind="lib" path="lib/gson-2.2.1.jar"/>

@@ -71,7 +71,7 @@
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
-				<attribute name="Class-Path" value="${lib}/iText-5.0.1.jar ${lib}/freemarker.jar ${lib}/gson-2.2.1.jar ${lib}/miglayout-4.0-swing.jar"/>
+				<attribute name="Class-Path" value="${lib}/itextpdf-5.2.1.jar ${lib}/itext-xtra-5.2.1.jar ${lib}/freemarker.jar ${lib}/gson-2.2.1.jar ${lib}/miglayout-4.0-swing.jar"/>
 				<section name="common">
 					<attribute name="Build-By" value="${imp.build}" />
 					<attribute name="Build-Date" value="${cur.date}" />
