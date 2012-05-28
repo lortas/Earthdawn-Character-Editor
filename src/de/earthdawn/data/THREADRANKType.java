@@ -43,7 +43,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="keyknowledge" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="lpcost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="effect" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="deed" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="effect" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -99,7 +100,9 @@ public class THREADRANKType {
     protected String keyknowledge;
     @XmlAttribute
     protected Integer lpcost;
-    @XmlAttribute(required = true)
+    @XmlAttribute
+    protected String deed;
+    @XmlAttribute
     protected String effect;
 
     /**
@@ -516,6 +519,34 @@ public class THREADRANKType {
     }
 
     /**
+     * Gets the value of the deed property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDeed() {
+        if (deed == null) {
+            return "";
+        } else {
+            return deed;
+        }
+    }
+
+    /**
+     * Sets the value of the deed property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDeed(String value) {
+        this.deed = value;
+    }
+
+    /**
      * Gets the value of the effect property.
      * 
      * @return
@@ -524,7 +555,11 @@ public class THREADRANKType {
      *     
      */
     public String getEffect() {
-        return effect;
+        if (effect == null) {
+            return "";
+        } else {
+            return effect;
+        }
     }
 
     /**
