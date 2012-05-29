@@ -19,7 +19,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -87,7 +86,7 @@ public class EDGeneral extends JPanel {
 	 */
 	public EDGeneral() {
 		setOpaque(false);
-		setLayout(new MigLayout("", "[110px][50px:70px:100px,grow][15px][200px:200px:500px,grow][230px:230px:230px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
+		setLayout(new MigLayout("", "[150px:150px:150px][50px:70px:80px][50px:100px:100px][200px:200px:500px,grow][230px:230px:230px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Playername"), "cell 0 0,alignx right,aligny center");
 		textFieldPlayer = new JTextField();
