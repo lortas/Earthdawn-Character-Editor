@@ -16,7 +16,7 @@
 			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Cast Gills Spell on himself for 2 Strain" keyknowledge="As mundane water contains oxygen, elemental water contains elemental air. Creators of Bracers of Aras formed gems from a mixture of elemental air and water. Ratio of water to air varies for each set of bracers. Wearer must learn ratio of water to air used for his bracers">
-			<edt:SPELL name="Gills"/>
+			<edt:SPELL>Gills"</edt:SPELL>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Counterspell Staff" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="wand" weight="4.0" effect="like quarterstaff" bookref="GM p.132">
