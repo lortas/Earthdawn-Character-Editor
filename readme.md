@@ -22,7 +22,7 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
-## EarthdawnCharacterEditor-0.43-201205xx.zip ##
+## EarthdawnCharacterEditor-0.43-20120529.zip ##
 + Bugs
 	+ Pdf Ajfel Forms were not storable
 	+ Initiative bonus conform with optional rule ENDURINGARMORBYSTRENGTH
