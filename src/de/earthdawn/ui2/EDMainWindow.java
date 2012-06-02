@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.ByteArrayInputStream;
@@ -17,9 +18,12 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +31,9 @@ import java.util.ResourceBundle;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -35,6 +41,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
@@ -63,19 +70,25 @@ import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ARMORType;
+import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.data.ITEMS;
 import de.earthdawn.data.LAYOUTDIMENSIONType;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.LanguageType;
+import de.earthdawn.data.OPTIONALRULES;
+import de.earthdawn.data.OPTIONALRULEType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.YesnoType;
 import de.earthdawn.event.CharChangeEventListener;
 
 public class EDMainWindow {
 
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public static final OPTIONALRULES OPTIONALRULES = PROPERTIES.getOptionalRules();
+	public static final List<Method> optionalrulesMethods = Arrays.asList(OPTIONALRULES.class.getMethods());
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
 	public static final String encoding="UTF-8";
 
@@ -100,6 +113,8 @@ public class EDMainWindow {
 	private JEditorPane paneStatus;
 	private CharacteristicStatus characteristicStatus;
 	private About aboutwindow;
+	private ImageIcon yesIcon=null;
+	private ImageIcon noIcon=null;
 
 	/**
 	 * Launch the application.
@@ -364,6 +379,7 @@ public class EDMainWindow {
 		mntmRandomCharacter.setText(NLS.getString("EDMainWindow.mntmRandomCharacter.text"));
 		mnExtra.add(mntmRandomCharacter);
 
+		menuBar.add(createOptionalRuleMenu());
 
 		JMenu mnHelp = new JMenu(NLS.getString("EDMainWindow.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
@@ -1095,5 +1111,119 @@ public class EDMainWindow {
 		copyFile("./config/earthdawncharacter.xsd",new File( path, "earthdawncharacter.xsd" ).getCanonicalPath());
 		copyFile("./config/earthdawncharacter.xsl",new File( path, "earthdawncharacter.xsl" ).getCanonicalPath());
 		copyFile("./config/earthdawncharacter.css",new File( path, "earthdawncharacter.css" ).getCanonicalPath());
+	}
+
+	public JMenu createOptionalRuleMenu() {
+		JMenu mnOptRules = new JMenu(NLS.getString("EDMainWindow.mntmOptRules.text")); //$NON-NLS-1$
+
+		try {
+			yesIcon = new ImageIcon(ImageIO.read(new File("icons/YES.png")).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
+		} catch (IOException e) {
+			System.err.println(e.getLocalizedMessage());
+		}
+		try {
+			noIcon = new ImageIcon(ImageIO.read(new File("icons/NO.png")).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
+		} catch (IOException e) {
+			System.err.println(e.getLocalizedMessage());
+		}
+		for( Method method : optionalrulesMethods ) {
+			if( ! method.getReturnType().equals(OPTIONALRULEType.class) ) continue;
+			String rulename = method.getName().substring(3);
+			JMenuItem mntmRule= new JMenuItem();
+			mntmRule.setName(rulename);
+			mntmRule.setText(NLS.getString("EDMainWindow.mntmOptRule"+rulename+".text")); //$NON-NLS-1$
+			try {
+				OPTIONALRULEType r =(OPTIONALRULEType)method.invoke(OPTIONALRULES);
+				if( r.getUsed().equals(YesnoType.YES) ) {
+					mntmRule.setIcon(yesIcon);
+				} else {
+					mntmRule.setIcon(noIcon);
+				}
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+			mntmRule.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					JMenuItem menuitem = (JMenuItem)arg0.getSource();
+					final String optionalrule = menuitem.getName();
+					final String gettername="get"+optionalrule;
+					Method getter = null;
+					for( Method method : optionalrulesMethods ) {
+						if( method.getName().equals(gettername) ) getter=method;
+					}
+					if( getter != null ) try {
+						OPTIONALRULEType r =(OPTIONALRULEType)getter.invoke(OPTIONALRULES);
+						if( r.getUsed().equals(YesnoType.YES) ) {
+							r.setUsed(YesnoType.NO);
+							menuitem.setIcon(noIcon);
+						} else {
+							r.setUsed(YesnoType.YES);
+							menuitem.setIcon(yesIcon);
+						}
+						ECEWorker.refreshOptionalRules();
+						character.refesh();
+					} catch (IllegalArgumentException e) {
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+					} catch (InvocationTargetException e) {
+						e.printStackTrace();
+					}
+				}
+			});
+			mnOptRules.add(mntmRule);
+		}
+
+		JMenu mnMovmentRule= new JMenu();
+		mnMovmentRule.setName("ATTRIBUTEBASEDMOVEMENT");
+		mnMovmentRule.setText(NLS.getString("EDMainWindow.mntmOptRuleATTRIBUTEBASEDMOVEMENT.text")); //$NON-NLS-1$
+		ATTRIBUTENameType attribute = OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().getAttribute();
+
+		HashMap<ATTRIBUTENameType, String> attributes = PROPERTIES.getAttributeNames();
+		for( ATTRIBUTENameType a : new ATTRIBUTENameType[]{ATTRIBUTENameType.NA,ATTRIBUTENameType.STR,ATTRIBUTENameType.DEX} ) {
+			JMenuItem item = new JMenuItem();
+			item.setName(a.name());
+			item.setText(attributes.get(a));
+			if( a.equals(attribute) ) item.setIcon(yesIcon);
+			else item.setIcon(noIcon);
+			item.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					JMenuItem menuitem = (JMenuItem)arg0.getSource();
+					JPopupMenu pmenu = (JPopupMenu)menuitem.getParent();
+					for( Component item : pmenu.getComponents() ) {
+						if( item instanceof JMenuItem ) ((JMenuItem)item).setIcon(noIcon);
+					}
+					menuitem.setIcon(yesIcon);
+					ATTRIBUTENameType newattribute = ATTRIBUTENameType.valueOf(menuitem.getName());
+					if( newattribute != null ) {
+						OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().setAttribute(newattribute);
+						CharacterContainer.OptionalRule_AttributeBasedMovement=newattribute;
+						character.refesh();
+					}
+				}
+			});
+			mnMovmentRule.add(item);
+		}
+		mnOptRules.add(mnMovmentRule);
+
+		JMenuItem mntmSaveOptRules = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveOptRules.text")); //$NON-NLS-1$
+		mntmSaveOptRules.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					PROPERTIES.saveOptionalRules();
+				} catch (JAXBException e) {
+					System.err.println(e.getLocalizedMessage());
+				} catch (IOException e) {
+					System.err.println(e.getLocalizedMessage());
+				}
+			}
+		});
+		mnOptRules.add(mntmSaveOptRules);
+
+		return(mnOptRules);
 	}
 }

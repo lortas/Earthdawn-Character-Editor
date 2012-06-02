@@ -18,8 +18,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -31,10 +34,12 @@ import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.data.*;
+import de.earthdawn.ui2.EDMainWindow;
 
 /** 
  * Klasse mit Konfigurations-Parametern 
@@ -345,6 +350,37 @@ public class ApplicationProperties {
 		return result;
 	}
 
+	public void saveOptionalRules() throws JAXBException, IOException {
+		if( OPTIONALRULES == null ) return;
+		final String file="config/optionalrules.xml";
+		System.out.println("Scheibe Konfigurationsdatei: '" + file + "'");
+		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+		Marshaller m = jc.createMarshaller();
+		FileOutputStream out = new FileOutputStream(file);
+		PrintStream fileio = new PrintStream(out, false, EDMainWindow.encoding);
+		m.setProperty(Marshaller.JAXB_ENCODING, EDMainWindow.encoding);
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/optionalrules earthdawnoptionalrules.xsd");
+		m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+		fileio.print("<?xml version=\"1.0\" encoding=\""+EDMainWindow.encoding+"\" standalone=\"no\"?>");
+		m.marshal(OPTIONALRULES,fileio);
+		fileio.close();
+		out.close();
+	}
+
+	public HashMap<ATTRIBUTENameType,String> getAttributeNames() {
+		HashMap<ATTRIBUTENameType,String> result = new HashMap<ATTRIBUTENameType,String>();
+		for( ATTRIBUTENameType attr : ATTRIBUTENameType.values() ) result.put(attr,attr.value());
+		for( NAMESATTRIBUTESType attributes : NAMES.getATTRIBUTES() ) {
+			if( attributes.getLang().equals(LANGUAGE) ) {
+				for( NAMESATTRIBUTEType attribute : attributes.getATTRIBUTE() ) {
+					result.put(attribute.getAttribute(),attribute.getName());
+				}
+			}
+		}
+		return result;
+	}
+
 	public String getKarmaritualName() {
 		for( NAMELANGType name : NAMES.getKARMARUTUAL() ) {
 			if( name.getLang().equals(LANGUAGE) ) return name.getName();
@@ -642,7 +678,7 @@ public class ApplicationProperties {
 			filename="./config/namegivers.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			NAMEGIVERS = (NAMEGIVERS) unmarshaller.unmarshal(new File(filename));
-			filename="./config/optionalrules.xml";
+			filename="config/optionalrules.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			OPTIONALRULES = (OPTIONALRULES) unmarshaller.unmarshal(new File(filename));
 			filename="./config/names.xml";

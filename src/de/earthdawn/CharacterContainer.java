@@ -42,12 +42,12 @@ public class CharacterContainer extends CharChangeRefresh {
 	private static Random rand = new Random();
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
-	public static final ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
+	public static ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public static final String durabilityName = PROPERTIES.getDurabilityName();
 	public static final List<String> speakSkillName = PROPERTIES.getLanguageSkillSpeakName();
 	public static final List<String> readwriteSkillName = PROPERTIES.getLanguageSkillReadWriteName();
-	public static final String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
+	public static String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
 	public static final List<String> languageSkillSpeakNames = PROPERTIES.getLanguageSkillSpeakName();
 	public static final List<String> languageSkillReadWriteNames = PROPERTIES.getLanguageSkillReadWriteName();
 
