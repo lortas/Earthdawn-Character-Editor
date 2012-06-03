@@ -27,6 +27,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}MAGICITEM_type">
  *       &lt;sequence>
+ *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type" minOccurs="0"/>
+ *         &lt;element name="SHIELD" type="{http://earthdawn.com/datatypes}SHIELD_type" minOccurs="0"/>
+ *         &lt;element name="WEAPON" type="{http://earthdawn.com/datatypes}WEAPON_type" minOccurs="0"/>
  *         &lt;element name="THREADRANK" type="{http://earthdawn.com/datatypes}THREADRANK_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="weaventhreadrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -42,12 +45,21 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "THREADITEM_type", propOrder = {
+    "armor",
+    "shield",
+    "weapon",
     "threadrank"
 })
 public class THREADITEMType
     extends MAGICITEMType
 {
 
+    @XmlElement(name = "ARMOR")
+    protected ARMORType armor;
+    @XmlElement(name = "SHIELD")
+    protected SHIELDType shield;
+    @XmlElement(name = "WEAPON")
+    protected WEAPONType weapon;
     @XmlElement(name = "THREADRANK")
     protected List<THREADRANKType> threadrank;
     @XmlAttribute
@@ -58,6 +70,78 @@ public class THREADITEMType
     protected Integer spelldefense;
     @XmlAttribute
     protected Integer lpcostgrowth;
+
+    /**
+     * Gets the value of the armor property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ARMORType }
+     *     
+     */
+    public ARMORType getARMOR() {
+        return armor;
+    }
+
+    /**
+     * Sets the value of the armor property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ARMORType }
+     *     
+     */
+    public void setARMOR(ARMORType value) {
+        this.armor = value;
+    }
+
+    /**
+     * Gets the value of the shield property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SHIELDType }
+     *     
+     */
+    public SHIELDType getSHIELD() {
+        return shield;
+    }
+
+    /**
+     * Sets the value of the shield property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SHIELDType }
+     *     
+     */
+    public void setSHIELD(SHIELDType value) {
+        this.shield = value;
+    }
+
+    /**
+     * Gets the value of the weapon property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link WEAPONType }
+     *     
+     */
+    public WEAPONType getWEAPON() {
+        return weapon;
+    }
+
+    /**
+     * Sets the value of the weapon property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link WEAPONType }
+     *     
+     */
+    public void setWEAPON(WEAPONType value) {
+        this.weapon = value;
+    }
 
     /**
      * Gets the value of the threadrank property.

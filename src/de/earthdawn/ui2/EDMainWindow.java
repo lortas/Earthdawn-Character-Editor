@@ -251,6 +251,14 @@ public class EDMainWindow {
 		});
 		mntmPdfExport.add(mntmExportAjfelmordom);
 
+		JMenuItem mntmExportAjfelmordomPl = new JMenuItem(NLS.getString("EDMainWindow.mntmExportAjfelmordomPl.text")); //$NON-NLS-1$
+		mntmExportAjfelmordomPl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,3);
+			}
+		});
+		mntmPdfExport.add(mntmExportAjfelmordomPl);
+
 		JMenuItem mntmExportSpellcards0 = new JMenuItem(NLS.getString("EDMainWindow.mntmExportSpellcards0.text")); //$NON-NLS-1$
 		mntmExportSpellcards0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -856,7 +864,8 @@ public class EDMainWindow {
 			try {
 				switch(v) {
 				case 1 : new ECEPdfExporter().exportRedbrickSimple(character.getEDCHARACTER(), selFile); break;
-				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), selFile); break;
+				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 0, selFile); break;
+				case 3 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 1, selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 				if( Desktop.isDesktopSupported() ) {

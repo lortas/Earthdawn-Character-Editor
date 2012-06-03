@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="ATTRIBUTES" type="{http://earthdawn.com/names}NAMES_ATTRIBUTES_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ACTIONS" type="{http://earthdawn.com/names}NAMES_ACTIONS_type" maxOccurs="unbounded"/>
  *         &lt;element name="DURABILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
  *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/names}NAME_LANG_type" maxOccurs="unbounded"/>
@@ -52,6 +53,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "attributes",
+    "actions",
     "durability",
     "versatility",
     "karmarutual",
@@ -71,6 +73,8 @@ public class NAMES {
 
     @XmlElement(name = "ATTRIBUTES", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMESATTRIBUTESType> attributes;
+    @XmlElement(name = "ACTIONS", namespace = "http://earthdawn.com/names", required = true)
+    protected List<NAMESACTIONSType> actions;
     @XmlElement(name = "DURABILITY", namespace = "http://earthdawn.com/names", required = true)
     protected List<NAMELANGType> durability;
     @XmlElement(name = "VERSATILITY", namespace = "http://earthdawn.com/names", required = true)
@@ -125,6 +129,35 @@ public class NAMES {
             attributes = new ArrayList<NAMESATTRIBUTESType>();
         }
         return this.attributes;
+    }
+
+    /**
+     * Gets the value of the actions property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the actions property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getACTIONS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESACTIONSType }
+     * 
+     * 
+     */
+    public List<NAMESACTIONSType> getACTIONS() {
+        if (actions == null) {
+            actions = new ArrayList<NAMESACTIONSType>();
+        }
+        return this.actions;
     }
 
     /**
