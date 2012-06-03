@@ -4,10 +4,22 @@
 	<xs:complexType name="NAMES_ATTRIBUTE_type">
 		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
 		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="acronym" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="NAMES_ATTRIBUTES_type">
 		<xs:sequence>
 			<xs:element name="ATTRIBUTE" type="NAMES_ATTRIBUTE_type" minOccurs="6" maxOccurs="6"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAMES_ACTION_type">
+		<xs:attribute name="action" type="edt:action_type" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="acronym" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAMES_ACTIONS_type">
+		<xs:sequence>
+			<xs:element name="ACTION" type="NAMES_ACTION_type" minOccurs="5" maxOccurs="5"/>
 		</xs:sequence>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
@@ -54,6 +66,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="ATTRIBUTES" type="NAMES_ATTRIBUTES_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ACTIONS" type="NAMES_ACTIONS_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="DURABILITY" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="VERSATILITY" type="NAME_LANG_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="KARMARUTUAL" type="NAME_LANG_type"/>
