@@ -1261,30 +1261,20 @@ public class CharacterContainer extends CharChangeRefresh {
 		ARMORType newarmor;
 		if( armor instanceof SHIELDType ) newarmor = new SHIELDType();
 		else newarmor = new ARMORType();
-		newarmor.setBlooddamage(armor.getBlooddamage());
-		newarmor.setBookref(armor.getBookref());
+		copyItem(armor, newarmor, setvirtual);
 		newarmor.setDateforged(armor.getDateforged());
-		newarmor.setDepatterningrate(armor.getDepatterningrate());
 		newarmor.setEdn(armor.getEdn());
 		newarmor.setEdnElement(armor.getEdnElement());
-		newarmor.setKind(armor.getKind());
-		newarmor.setLocation(armor.getLocation());
 		newarmor.setMysticarmor(armor.getMysticarmor());
-		newarmor.setName(armor.getName());
 		newarmor.setPenalty(armor.getPenalty());
 		newarmor.setPhysicalarmor(armor.getPhysicalarmor());
 		newarmor.setTimesforgedMystic(armor.getTimesforgedMystic());
 		newarmor.setTimesforgedPhysical(armor.getPhysicalarmor());
-		newarmor.setUsed(armor.getUsed());
-		newarmor.setWeight(armor.getWeight());
-		newarmor.setSize(armor.getSize());
 		if( newarmor instanceof SHIELDType ) {
 			((SHIELDType)newarmor).setMysticdeflectionbonus(((SHIELDType)armor).getMysticdeflectionbonus());
 			((SHIELDType)newarmor).setPhysicaldeflectionbonus(((SHIELDType)armor).getPhysicaldeflectionbonus());
 			((SHIELDType)newarmor).setShatterthreshold(((SHIELDType)armor).getShatterthreshold());
 		}
-		if( setvirtual ) newarmor.setVirtual(YesnoType.YES);
-		else newarmor.setVirtual(armor.getVirtual());
 		return newarmor;
 	}
 
@@ -1335,24 +1325,15 @@ public class CharacterContainer extends CharChangeRefresh {
 	public static WEAPONType copyWeapon(WEAPONType weapon, boolean setvirtual) {
 		if( weapon == null ) return null;
 		WEAPONType newweapon = new WEAPONType();
-		newweapon.setBlooddamage(weapon.getBlooddamage());
-		newweapon.setBookref(weapon.getBookref());
+		copyItem(weapon, newweapon, setvirtual);
 		newweapon.setDateforged(weapon.getDateforged());
 		newweapon.setDepatterningrate(weapon.getDepatterningrate());
-		newweapon.setKind(weapon.getKind());
-		newweapon.setLocation(weapon.getLocation());
-		newweapon.setName(weapon.getName());
-		newweapon.setUsed(weapon.getUsed());
-		newweapon.setWeight(weapon.getWeight());
 		newweapon.setDamagestep(weapon.getDamagestep());
 		newweapon.setDexteritymin(weapon.getDexteritymin());
 		newweapon.setLongrange(weapon.getLongrange());
 		newweapon.setShortrange(weapon.getShortrange());
-		newweapon.setSize(weapon.getSize());
 		newweapon.setStrengthmin(weapon.getStrengthmin());
 		newweapon.setTimesforged(weapon.getTimesforged());
-		if( setvirtual ) newweapon.setVirtual(YesnoType.YES);
-		else newweapon.setVirtual(weapon.getVirtual());
 		return newweapon;
 	}
 
@@ -1922,5 +1903,49 @@ public class CharacterContainer extends CharChangeRefresh {
 				return;
 			}
 		}
+	}
+
+	public static void makeMaxForge(ARMORType armor) {
+		if( armor == null ) return;
+		int physicalarmor = armor.getPhysicalarmor();
+		Double p=Math.ceil(Double.valueOf(physicalarmor)/2.0d);
+		armor.setPhysicalarmor(physicalarmor+p.intValue());
+		int mysticarmor = armor.getMysticarmor();
+		Double m=Math.ceil(Double.valueOf(mysticarmor)/2.0d);
+		armor.setMysticarmor(mysticarmor+m.intValue());
+	}
+
+	public static void makeMaxForge(WEAPONType weapon) {
+		if( weapon == null ) return;
+		weapon.setDamagestep(weapon.getDamagestep()+weapon.getSize());
+	}
+	public static void copyItem(ITEMType src, ITEMType dst) {
+		copyItem(src,dst,false);
+	}
+
+	public static void copyItem(ITEMType src, ITEMType dst, boolean setvirtual) {
+		dst.setBlooddamage(src.getBlooddamage());
+		dst.setBookref(src.getBookref());
+		dst.setDepatterningrate(src.getDepatterningrate());
+		dst.setDescription(src.getDescription());
+		dst.setKind(src.getKind());
+		dst.setLocation(src.getLocation());
+		dst.setName(src.getName());
+		dst.setPrice(src.getPrice());
+		dst.setSize(src.getSize());
+		dst.setUsed(src.getUsed());
+		dst.setWeight(src.getWeight());
+		if( setvirtual ) dst.setVirtual(YesnoType.YES);
+		else dst.setVirtual(src.getVirtual());
+		List<Base64BinaryType> images = dst.getIMAGE();
+		for( Base64BinaryType image : src.getIMAGE()) images.add(copyImage(image));
+	}
+
+	public static Base64BinaryType copyImage(Base64BinaryType image) {
+		if( image == null ) return null;
+		Base64BinaryType result = new Base64BinaryType();
+		result.setContenttype(image.getContenttype());
+		result.setValue(image.getValue());
+		return result;
 	}
 }

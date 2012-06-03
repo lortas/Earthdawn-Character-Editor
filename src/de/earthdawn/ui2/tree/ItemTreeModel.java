@@ -80,7 +80,7 @@ public class ItemTreeModel  implements TreeModel {
 			return ((List<?>)displayedNodes.get(parent)).get(index);
 		}
 		if(parent instanceof THREADITEMType){
-			return ((THREADITEMType)parent).getTHREADRANK().get(index);
+			return getThreadItemNodes((THREADITEMType)parent).get(index);
 		}
 		if(parent instanceof THREADRANKType){
 			return getEffectNodes((THREADRANKType)parent).get(index);
@@ -97,7 +97,7 @@ public class ItemTreeModel  implements TreeModel {
 			return ((List<?>)displayedNodes.get(parent)).size();
 		}
 		if(parent instanceof THREADITEMType){
-			return ((THREADITEMType)parent).getTHREADRANK().size();
+			return getThreadItemNodes((THREADITEMType)parent).size();
 		}
 		if(parent instanceof THREADRANKType){
 			return getEffectNodes((THREADRANKType)parent).size();
@@ -114,7 +114,7 @@ public class ItemTreeModel  implements TreeModel {
 			return ((List<?>)displayedNodes.get(parent)).indexOf(child);
 		}
 		if(parent instanceof THREADITEMType){
-			return ((THREADITEMType)parent).getTHREADRANK().indexOf(child);
+			return getThreadItemNodes((THREADITEMType)parent).indexOf(child);
 		}
 		if(parent instanceof THREADRANKType){
 			return getEffectNodes((THREADRANKType)parent).indexOf(child);
@@ -123,7 +123,7 @@ public class ItemTreeModel  implements TreeModel {
 	}
 
 	@Override
-	public Object getRoot() {	
+	public Object getRoot() {
 		return character;
 	}
 
@@ -131,7 +131,7 @@ public class ItemTreeModel  implements TreeModel {
 	public boolean isLeaf(Object node) {
 		if(node == character)              return false;
 		if(node instanceof EDInventoryRootNodeType) return ((List<?>)displayedNodes.get(node)).isEmpty();
-		if(node instanceof THREADITEMType) return ((THREADITEMType)node).getTHREADRANK().isEmpty();
+		if(node instanceof THREADITEMType) return getThreadItemNodes((THREADITEMType)node).isEmpty();
 		if(node instanceof THREADRANKType) return getEffectNodes((THREADRANKType)node).isEmpty();
 		return true;
 	}
@@ -202,6 +202,15 @@ public class ItemTreeModel  implements TreeModel {
 		return list;
 	}
 
+	public static List<?> getThreadItemNodes(THREADITEMType item){
+		ArrayList<Object> list = new ArrayList<Object>();
+		if( item.getARMOR() != null )  list.add(item.getARMOR());
+		if( item.getSHIELD() != null ) list.add(item.getSHIELD());
+		if( item.getWEAPON() != null ) list.add(item.getWEAPON());
+		list.addAll(item.getTHREADRANK());
+		return list;
+	}
+
 	public static int getEffectIndex(THREADRANKType rank, int effect) {
 		int idx =0;
 		if( effect==0 ) return idx;  // 0  : ARMOR
@@ -227,6 +236,17 @@ public class ItemTreeModel  implements TreeModel {
 		if( effect==10 ) return idx; // 10 : INITIATIVE
 		idx += rank.getMAXKARMA().size();
 		return idx;                  // 11 : MAX KARMA
+	}
+
+	public static int getThreadItemIndex(THREADITEMType item, int effect) {
+		int idx =0;
+		if( effect==0 ) return idx;  // 0  : ARMOR
+		if( item.getARMOR() != null ) idx++;
+		if( effect==1 ) return idx;  // 1  : SHIELD
+		if( item.getSHIELD() != null ) idx++;
+		if( effect==2 ) return idx;  // 2  : WEAPON
+		if( item.getWEAPON() != null ) idx++;
+		return idx;                  // 3  : RANK
 	}
 
 	@Override

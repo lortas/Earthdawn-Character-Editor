@@ -115,6 +115,15 @@ public class EDInventory extends JPanel {
 		if( currentNode == null ) return;
 		JPopupMenu popup = new JPopupMenu();
 
+		JMenuItem openstore = new JMenuItem("Open store");
+		openstore.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				itemstore.setVisible(true);
+			}
+		});
+		popup.add(openstore);
+		if( ! popup.getComponent(popup.getComponentCount()-1).getClass().getName().endsWith("Separator") ) popup.addSeparator();
+
 		// Popup for group nodes
 		if(currentNode instanceof EDInventoryRootNodeType){
 			EDInventoryRootNodeType rootnode = (EDInventoryRootNodeType)currentNode;
@@ -230,15 +239,9 @@ public class EDInventory extends JPanel {
 				});
 				popup.add(menuitem);
 			}
-			JMenuItem menuitem = new JMenuItem("Open store");
-			menuitem.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					itemstore.setVisible(true);
-				}
-			});
-			popup.add(menuitem);
 		}
 		if(currentNode instanceof THREADITEMType) {
+			THREADITEMType threaditem = (THREADITEMType)currentNode;
 			JMenuItem menuitem = new JMenuItem("Refresh Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -249,6 +252,81 @@ public class EDInventory extends JPanel {
 				}
 			});
 			popup.add(menuitem);
+			if( ! popup.getComponent(popup.getComponentCount()-1).getClass().getName().endsWith("Separator") ) popup.addSeparator();
+
+			if( threaditem.getARMOR() == null ) {
+				menuitem = new JMenuItem("Is Armor");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADITEMType threaditem = (THREADITEMType)currentNode;
+						ARMORType armor = new ARMORType();
+						armor.setName(threaditem.getName());
+						if( threaditem.getKind().equals(ItemkindType.UNDEFINED) ) {
+							armor.setKind(ItemkindType.ARMOR);
+							threaditem.setKind(ItemkindType.ARMOR);
+						} else armor.setKind(threaditem.getKind());
+						threaditem.setARMOR(armor);
+						int idx=ItemTreeModel.getThreadItemIndex(threaditem, 0);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,armor,idx);
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
+					}
+				});
+				popup.add(menuitem);
+			} else {
+				menuitem = new JMenuItem("No Armor");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadItemArmor(currentPath); }
+				});
+				popup.add(menuitem);
+			}
+			if( threaditem.getSHIELD() == null ) {
+				menuitem = new JMenuItem("Is Shield");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADITEMType threaditem = (THREADITEMType)currentNode;
+						SHIELDType shield = new SHIELDType();
+						shield.setName(threaditem.getName());
+						if( threaditem.getKind().equals(ItemkindType.UNDEFINED) ) {
+							shield.setKind(ItemkindType.SHIELD);
+							threaditem.setKind(ItemkindType.SHIELD);
+						} else shield.setKind(threaditem.getKind());
+						threaditem.setSHIELD(shield);
+						int idx=ItemTreeModel.getThreadItemIndex(threaditem, 1);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,shield,idx);
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(shield));
+					}
+				});
+				popup.add(menuitem);
+			} else {
+				menuitem = new JMenuItem("No Shield");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadItemShield(currentPath); }
+				});
+				popup.add(menuitem);
+			}
+			if( threaditem.getWEAPON() == null ) {
+				menuitem = new JMenuItem("Is Weapon");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						THREADITEMType threaditem = (THREADITEMType)currentNode;
+						WEAPONType weapon = new WEAPONType();
+						weapon.setName(threaditem.getName());
+						weapon.setKind(threaditem.getKind());
+						threaditem.setWEAPON(weapon);
+						int idx=ItemTreeModel.getThreadItemIndex(threaditem, 2);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,weapon,idx);
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(weapon));
+					}
+				});
+				popup.add(menuitem);
+			} else {
+				menuitem = new JMenuItem("No Weapon");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) { clearThreadItemWeapon(currentPath); }
+				});
+				popup.add(menuitem);
+			}
+
 			menuitem = new JMenuItem("Add Rank");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -261,10 +339,21 @@ public class EDInventory extends JPanel {
 						rank.setEffect("");
 						rank.setKeyknowledge("");
 						rank.setDeed("");
+						ARMORType armor = CharacterContainer.copyArmor(item.getARMOR(), false);
+						CharacterContainer.makeMaxForge(armor);
+						rank.setARMOR(armor);
+						SHIELDType shield = (SHIELDType)CharacterContainer.copyArmor(item.getSHIELD(), false);
+						CharacterContainer.makeMaxForge(shield);
+						rank.setSHIELD(shield);
+						WEAPONType weapon = CharacterContainer.copyWeapon(item.getWEAPON(), false);
+						CharacterContainer.makeMaxForge(weapon);
+						rank.setWEAPON(weapon);
 					}
 					else rank = CharacterContainer.copyThreadRank(threadranks.get(lastrank));
 					threadranks.add(rank);
-					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank, lastrank+1);
+					int idx=ItemTreeModel.getThreadItemIndex(item, 3);
+					idx += threadranks.indexOf(rank);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,rank, idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(rank));
 				}
 			});
@@ -293,8 +382,8 @@ public class EDInventory extends JPanel {
 						ARMORType armor = new ARMORType();
 						armor.setName("New Armor");
 						armor.setKind(ItemkindType.ARMOR);
-						int idx=ItemTreeModel.getEffectIndex(rank, 0);
 						rank.setARMOR(armor);
+						int idx=ItemTreeModel.getEffectIndex(rank, 0);
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,armor,idx);
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(armor));
 					}
@@ -550,55 +639,101 @@ public class EDInventory extends JPanel {
 			}
 		}
 
-		//remove
 		Object parent = currentPath.getParentPath().getLastPathComponent();
 		if(parent instanceof EDInventoryRootNodeType){
+			if( ! popup.getComponent(popup.getComponentCount()-1).getClass().getName().endsWith("Separator") ) popup.addSeparator();
+			JMenuItem menuitem;
 			final EDInventoryRootNodeType category=(EDInventoryRootNodeType)parent;
-			List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode(category);
-			if(temp != null){
-				JMenuItem menuitem = new JMenuItem("Export as ItemStore file");
+			if( (currentNode instanceof SHIELDType) && ((ITEMType)currentNode).getVirtual().equals(YesnoType.NO) ) {
+				menuitem= new JMenuItem("Clone shield as thread item");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						ITEMS items=new ITEMS();
-						items.setLang(LanguageType.EN);
-						if( currentNode instanceof AMMUNITIONType ) items.getAMMUNITION().add((AMMUNITIONType)currentNode);
-						else if( currentNode instanceof PATTERNITEMType) items.getPATTERNITEM().add((PATTERNITEMType)currentNode);
-						else if( currentNode instanceof THREADITEMType) items.getTHREADITEM().add((THREADITEMType)currentNode);
-						else if( currentNode instanceof WEAPONType) items.getWEAPON().add((WEAPONType)currentNode);
-						else if( currentNode instanceof SHIELDType) items.getSHIELD().add((SHIELDType)currentNode);
-						else if( currentNode instanceof ARMORType) items.getARMOR().add((ARMORType)currentNode);
-						else if( currentNode instanceof MAGICITEMType ) {
-							if( category.equals("Bloodcharms") ) items.getBLOODCHARMITEM().add((MAGICITEMType)currentNode);
-							else items.getMAGICITEM().add((MAGICITEMType)currentNode);
-						}
-						else if( currentNode instanceof ITEMType ) items.getITEM().add((ITEMType)currentNode);
-						EDItemStore.saveItems(null, items);
+						SHIELDType shield = (SHIELDType)currentNode;
+						THREADITEMType threaditem = new THREADITEMType();
+						CharacterContainer.copyItem(shield,threaditem);
+						threaditem.setSHIELD((SHIELDType)CharacterContainer.copyArmor(shield, false));
+						threaditem.setVirtual(YesnoType.NO);
+						character.getThreadItem().add(threaditem);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,threaditem, character.getThreadItem().indexOf(threaditem));
+						scrollPathToVisible(threaditem);
 					}
 				});
 				popup.add(menuitem);
-				menuitem = new JMenuItem("Remove Node");
+			} else if( (currentNode instanceof ARMORType) && ((ITEMType)currentNode).getVirtual().equals(YesnoType.NO) ) {
+				menuitem= new JMenuItem("Clone armor as thread item");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						Object parent = currentPath.getParentPath().getLastPathComponent();
-						List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((EDInventoryRootNodeType)parent);
-						int i =  temp.indexOf(currentNode);
-						String[] options = {"Yes","No"};
-						int a = JOptionPane.showOptionDialog(tree,
-								"Do really want to remove this node?",
-								"Change Portrait?",
-								JOptionPane.YES_NO_OPTION,
-								JOptionPane.QUESTION_MESSAGE,
-								null,
-								options,
-								options[0]);
-						if( a == 0 ) {
-							temp.remove(currentNode);
-							((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode,i );
-						}
+						ARMORType armor = (ARMORType)currentNode;
+						THREADITEMType threaditem = new THREADITEMType();
+						CharacterContainer.copyItem(armor,threaditem);
+						threaditem.setARMOR(CharacterContainer.copyArmor(armor, false));
+						threaditem.setVirtual(YesnoType.NO);
+						character.getThreadItem().add(threaditem);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,threaditem, character.getThreadItem().indexOf(threaditem));
+						scrollPathToVisible(threaditem);
+					}
+				});
+				popup.add(menuitem);
+			} else if( (currentNode instanceof WEAPONType) && ((ITEMType)currentNode).getVirtual().equals(YesnoType.NO) ) {
+				menuitem= new JMenuItem("Clone weapon as thread item");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						WEAPONType weapon = (WEAPONType)currentNode;
+						THREADITEMType threaditem = new THREADITEMType();
+						CharacterContainer.copyItem(weapon,threaditem);
+						threaditem.setWEAPON(CharacterContainer.copyWeapon(weapon, false));
+						threaditem.setVirtual(YesnoType.NO);
+						character.getThreadItem().add(threaditem);
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,threaditem, character.getThreadItem().indexOf(threaditem));
+						scrollPathToVisible(threaditem);
 					}
 				});
 				popup.add(menuitem);
 			}
+			menuitem = new JMenuItem("Export as ItemStore file");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					ITEMS items=new ITEMS();
+					items.setLang(LanguageType.EN);
+					if( currentNode instanceof AMMUNITIONType ) items.getAMMUNITION().add((AMMUNITIONType)currentNode);
+					else if( currentNode instanceof PATTERNITEMType) items.getPATTERNITEM().add((PATTERNITEMType)currentNode);
+					else if( currentNode instanceof THREADITEMType) items.getTHREADITEM().add((THREADITEMType)currentNode);
+					else if( currentNode instanceof WEAPONType) items.getWEAPON().add((WEAPONType)currentNode);
+					else if( currentNode instanceof SHIELDType) items.getSHIELD().add((SHIELDType)currentNode);
+					else if( currentNode instanceof ARMORType) items.getARMOR().add((ARMORType)currentNode);
+					else if( currentNode instanceof MAGICITEMType ) {
+						if( category.equals("Bloodcharms") ) items.getBLOODCHARMITEM().add((MAGICITEMType)currentNode);
+						else items.getMAGICITEM().add((MAGICITEMType)currentNode);
+					}
+					else if( currentNode instanceof ITEMType ) items.getITEM().add((ITEMType)currentNode);
+					EDItemStore.saveItems(null, items);
+				}
+			});
+			popup.add(menuitem);
+			//remove
+			if( ! popup.getComponent(popup.getComponentCount()-1).getClass().getName().endsWith("Separator") ) popup.addSeparator();
+			menuitem = new JMenuItem("Remove Node");
+			menuitem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					Object parent = currentPath.getParentPath().getLastPathComponent();
+					List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((EDInventoryRootNodeType)parent);
+					int i =  temp.indexOf(currentNode);
+					String[] options = {"Yes","No"};
+					int a = JOptionPane.showOptionDialog(tree,
+							"Do really want to remove this node?",
+							"Change Portrait?",
+							JOptionPane.YES_NO_OPTION,
+							JOptionPane.QUESTION_MESSAGE,
+							null,
+							options,
+							options[0]);
+					if( a == 0 ) {
+						temp.remove(currentNode);
+						((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode,i );
+					}
+				}
+			});
+			popup.add(menuitem);
 		} else if( parent instanceof THREADRANKType ) {
 			if( currentNode instanceof SHIELDType ) {
 				JMenuItem menuitem = new JMenuItem("No Shield");
@@ -647,21 +782,31 @@ public class EDInventory extends JPanel {
 		tree.expandPath(path.pathByAddingChild(node));
 	}
 
+	private void clearThreadItemShield(TreePath path) {
+		((THREADITEMType)path.getLastPathComponent()).setSHIELD(null);
+		refreshcharacter(path);
+	}
 	private void clearThreadRankShield(TreePath path) {
-		THREADRANKType rank = (THREADRANKType) path.getLastPathComponent();
-		rank.setSHIELD(null);
-		character.refesh();
-		tree.scrollPathToVisible(path);
+		((THREADRANKType)path.getLastPathComponent()).setSHIELD(null);
+		refreshcharacter(path);
+	}
+	private void clearThreadItemArmor(TreePath path) {
+		((THREADITEMType)path.getLastPathComponent()).setARMOR(null);
+		refreshcharacter(path);
 	}
 	private void clearThreadRankArmor(TreePath path) {
-		THREADRANKType rank = (THREADRANKType) path.getLastPathComponent();
-		rank.setARMOR(null);
-		character.refesh();
-		tree.scrollPathToVisible(path);
+		((THREADRANKType)path.getLastPathComponent()).setARMOR(null);
+		refreshcharacter(path);
+	}
+	private void clearThreadItemWeapon(TreePath path) {
+		((THREADITEMType)path.getLastPathComponent()).setWEAPON(null);
+		refreshcharacter(path);
 	}
 	private void clearThreadRankWeapon(TreePath path) {
-		THREADRANKType rank = (THREADRANKType) path.getLastPathComponent();
-		rank.setWEAPON(null);
+		((THREADRANKType)path.getLastPathComponent()).setWEAPON(null);
+		refreshcharacter(path);
+	}
+	private void refreshcharacter(TreePath path) {
 		character.refesh();
 		tree.scrollPathToVisible(path);
 	}
