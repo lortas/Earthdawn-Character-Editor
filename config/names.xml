@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <NAMES xmlns="http://earthdawn.com/names" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/names earthdawnnames.xsd">
 	<ATTRIBUTES lang="de">
-		<ATTRIBUTE attribute="DEX" name="Geschicklichkeit"/>
-		<ATTRIBUTE attribute="STR" name="Stärke"/>
-		<ATTRIBUTE attribute="TOU" name="Zähigkeit"/>
-		<ATTRIBUTE attribute="PER" name="Wahrnehmung"/>
-		<ATTRIBUTE attribute="WIL" name="Willenskraft"/>
-		<ATTRIBUTE attribute="CHA" name="Charisma"/>
+		<ATTRIBUTE attribute="DEX" acronym="GES" name="Geschicklichkeit"/>
+		<ATTRIBUTE attribute="STR" acronym="STÄ" name="Stärke"/>
+		<ATTRIBUTE attribute="TOU" acronym="ZÄH" name="Zähigkeit"/>
+		<ATTRIBUTE attribute="PER" acronym="WAH" name="Wahrnehmung"/>
+		<ATTRIBUTE attribute="WIL" acronym="WIL" name="Willenskraft"/>
+		<ATTRIBUTE attribute="CHA" acronym="CHA" name="Charisma"/>
 	</ATTRIBUTES>
 	<ATTRIBUTES lang="en">
-		<ATTRIBUTE attribute="DEX" name="Dexterity"/>
-		<ATTRIBUTE attribute="STR" name="Strength"/>
-		<ATTRIBUTE attribute="TOU" name="Toughness"/>
-		<ATTRIBUTE attribute="PER" name="Perception"/>
-		<ATTRIBUTE attribute="WIL" name="Willenpower"/>
-		<ATTRIBUTE attribute="CHA" name="Charisma"/>
+		<ATTRIBUTE attribute="DEX" acronym="DEX" name="Dexterity"/>
+		<ATTRIBUTE attribute="STR" acronym="STR" name="Strength"/>
+		<ATTRIBUTE attribute="TOU" acronym="TOU" name="Toughness"/>
+		<ATTRIBUTE attribute="PER" acronym="PER" name="Perception"/>
+		<ATTRIBUTE attribute="WIL" acronym="WIL" name="Willenpower"/>
+		<ATTRIBUTE attribute="CHA" acronym="CHA" name="Charisma"/>
 	</ATTRIBUTES>
+	<ACTIONS lang="de">
+		<ACTION action="sustained" acronym="and" name="Andauernd"/>
+		<ACTION action="standard" acronym="std" name="Standard"/>
+		<ACTION action="simple" acronym="einf" name="Einfach"/>
+		<ACTION action="free" acronym="frei" name="Frei"/>
+		<ACTION action="na" acronym="nv" name="Nicht Verfügbar"/>
+	</ACTIONS>
+	<ACTIONS lang="en">
+		<ACTION action="sustained" acronym="sust" name="Sustained"/>
+		<ACTION action="standard" acronym="std" name="Standard"/>
+		<ACTION action="simple" acronym="smpl" name="Simple"/>
+		<ACTION action="free" acronym="free" name="Free"/>
+		<ACTION action="na" acronym="na" name="Not Avialabel"/>
+	</ACTIONS>
 	<DURABILITY name="Unempfindlichkeit" lang="de"/>
 	<DURABILITY name="Durability" lang="en"/>
 	<VERSATILITY name="Vielseitigkeit" lang="de"/>
