@@ -696,8 +696,11 @@ public class ECEPdfExporter {
 		return result;
 	}
 
-	public void exportAjfelMordom(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
-		PdfReader reader = new PdfReader(new FileInputStream(new File("./templates/ed3_character_sheet_Ajfel+Mordom.pdf")));
+	public void exportAjfelMordom(EDCHARACTER edCharakter, int pdftype, File outFile) throws DocumentException, IOException {
+		File pdfinputfile;
+		if( pdftype == 1 ) pdfinputfile = new File("templates/ed3_character_sheet_Ajfel+Mordom_pl.pdf");
+		else pdfinputfile = new File("templates/ed3_character_sheet_Ajfel+Mordom.pdf");
+		PdfReader reader = new PdfReader(new FileInputStream(pdfinputfile));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
 		acroFields = stamper.getAcroFields();
 		CharacterContainer character = new CharacterContainer(edCharakter);

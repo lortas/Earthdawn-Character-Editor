@@ -15,15 +15,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NAMES_ATTRIBUTE_type complex type.
+ * <p>Java class for NAMES_ACTION_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="NAMES_ATTRIBUTE_type">
+ * &lt;complexType name="NAMES_ACTION_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="attribute" use="required" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" />
+ *       &lt;attribute name="action" use="required" type="{http://earthdawn.com/datatypes}action_type" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="acronym" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
@@ -34,38 +34,38 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAMES_ATTRIBUTE_type", namespace = "http://earthdawn.com/names")
-public class NAMESATTRIBUTEType {
+@XmlType(name = "NAMES_ACTION_type", namespace = "http://earthdawn.com/names")
+public class NAMESACTIONType {
 
     @XmlAttribute(required = true)
-    protected ATTRIBUTENameType attribute;
+    protected ActionType action;
     @XmlAttribute(required = true)
     protected String name;
     @XmlAttribute(required = true)
     protected String acronym;
 
     /**
-     * Gets the value of the attribute property.
+     * Gets the value of the action property.
      * 
      * @return
      *     possible object is
-     *     {@link ATTRIBUTENameType }
+     *     {@link ActionType }
      *     
      */
-    public ATTRIBUTENameType getAttribute() {
-        return attribute;
+    public ActionType getAction() {
+        return action;
     }
 
     /**
-     * Sets the value of the attribute property.
+     * Sets the value of the action property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ATTRIBUTENameType }
+     *     {@link ActionType }
      *     
      */
-    public void setAttribute(ATTRIBUTENameType value) {
-        this.attribute = value;
+    public void setAction(ActionType value) {
+        this.action = value;
     }
 
     /**
