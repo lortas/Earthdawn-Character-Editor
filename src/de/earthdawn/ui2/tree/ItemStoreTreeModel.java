@@ -71,7 +71,7 @@ public class ItemStoreTreeModel implements TreeModel {
 			return ((List<?>)displayedNodes.get(parent)).get(index);
 		}
 		if(parent instanceof THREADITEMType){
-			return ((THREADITEMType)parent).getTHREADRANK().get(index);
+			return ItemTreeModel.getThreadItemNodes((THREADITEMType)parent).get(index);
 		}
 		if(parent instanceof THREADRANKType){
 			return ItemTreeModel.getEffectNodes((THREADRANKType)parent).get(index);
@@ -88,7 +88,7 @@ public class ItemStoreTreeModel implements TreeModel {
 			return ((List<?>)displayedNodes.get(parent)).size();
 		}
 		if(parent instanceof THREADITEMType){
-			return ((THREADITEMType)parent).getTHREADRANK().size();
+			return ItemTreeModel.getThreadItemNodes((THREADITEMType)parent).size();
 		}
 		if(parent instanceof THREADRANKType){
 			return ItemTreeModel.getEffectNodes((THREADRANKType)parent).size();
@@ -105,7 +105,7 @@ public class ItemStoreTreeModel implements TreeModel {
 			return ((List<?>)displayedNodes.get(parent)).indexOf(child);
 		}
 		if(parent instanceof THREADITEMType){
-			return ((THREADITEMType)parent).getTHREADRANK().indexOf(child);
+			return ItemTreeModel.getThreadItemNodes((THREADITEMType)parent).indexOf(child);
 		}
 		if(parent instanceof THREADRANKType){
 			return ItemTreeModel.getEffectNodes((THREADRANKType)parent).indexOf(child);
@@ -120,7 +120,7 @@ public class ItemStoreTreeModel implements TreeModel {
 	public boolean isLeaf(Object node) {
 		if(node == itemstore) return false;
 		if(node instanceof EDInventoryRootNodeType) return ((List<?>)displayedNodes.get(node)).isEmpty();
-		if(node instanceof THREADITEMType) return ((THREADITEMType)node).getTHREADRANK().isEmpty();
+		if(node instanceof THREADITEMType) return ItemTreeModel.getThreadItemNodes((THREADITEMType)node).isEmpty();
 		if(node instanceof THREADRANKType) return ItemTreeModel.getEffectNodes((THREADRANKType)node).isEmpty();
 		return true;
 	}
