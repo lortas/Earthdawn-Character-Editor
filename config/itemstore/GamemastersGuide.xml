@@ -101,7 +101,32 @@
             <edt:TALENT name="Wound Balance" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 	</THREADITEM>
+	<THREADITEM name="Espagra Boots" lpcostgrowth="5" spelldefense="17" maxthreads="2" weight="0.0" kind="boots" bookref="GM p.134">
+		<edt:description>Boots made from hides of espagra are usually bright blue, interwoven with brown leather. Espagra scales give boots brilliant luster, trademark of espagra-skin products.</edt:description>
+		<edt:THREADRANK keyknowledge="boots’ Name" lpcost="200" deed="" effect="+1 Rank to Avoid Blow">
+            <edt:TALENT name="Avoid Blow" limitation="" bonus="1" pool=""/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Avoid Blow">
+            <edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge=" Name of the person  who created the boots" lpcost="300" deed="" effect="+1 Rank to Silent Walk">
+            <edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+            <edt:TALENT name="Silent Walk" limitation="" bonus="1" pool=""/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Silent Walk">
+            <edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+            <edt:TALENT name="Silent Walk" limitation="" bonus="2" pool=""/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="number of espagra hides used to create boots" lpcost="300" deed="" effect="+3 Rank to Avoid Blow and Silent Walk ">
+            <edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
+            <edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of place where espagra whose hide was used for boots originally made its home" lpcost="300" deed="" effect="2 Strain: wearer gains ability to fly at Movement Rate of 5. adding +2 to Movement Rate for every 1 Strain. Ability cannot  be combined with talents or skills">
+            <edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
+            <edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
+        </edt:THREADRANK>
+    </THREADITEM>
 
-<!--	weiter mit Espargra Boots -->
+<!--	weiter mit Espargra Saddle -->
 	
 </ITEMS>
