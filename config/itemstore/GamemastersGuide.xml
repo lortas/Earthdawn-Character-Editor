@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
-	
 	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" weaventhreadrank="4" kind="vambrace" weight="6.0" bookref="GM p.132">
 		<edt:description>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:description>		
 		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Name of bracers">
@@ -50,7 +49,7 @@
 		<edt:THREADRANK effect="thread Rank increases range one quarter for each Range category" keyknowledge="Name of troll Sky Raider for whom spear was created (spear’s first owner)">
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+1 to Initiative Step">
-            <edt:INITIATIVE count="1"/>
+			<edt:INITIATIVE count="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="For 2 Strain, +2 to Physical and Spell Defense for number of rounds equal to thread Rank or until Attack Test with spear, whichever comes first. Spear glows pale blue while bonus is in effect" keyknowledge="what historic assault and which first wielder spear was crafted for">
 		</edt:THREADRANK>
@@ -87,46 +86,44 @@
 			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 Rank to Initiative Tests">
-            <edt:INITIATIVE count="2"/>
+			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 11; Tip glows red hot; 1 Strain: roll adittional D6 with weapon’s Damage Tests that round" keyknowledge="Name of the spear’s creator">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="11" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 12; +1 Rank to Riposte talent">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="7.0" name="Elemental Long-Spear"/>
-            <edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 13; It becomes extremely resilient (strength of dragon cannot harm spear); +1 Rank to Wound Balance talent" keyknowledge="type of wood spear haft is constructed from and where it was grown">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="7.0" name="Elemental Long-Spear"/>
-            <edt:TALENT name="Wound Balance" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Wound Balance" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM name="Espagra Boots" lpcostgrowth="5" spelldefense="17" maxthreads="2" weight="0.0" kind="boots" bookref="GM p.134">
+	<THREADITEM name="Espagra Boots" lpcostgrowth="5" spelldefense="17" maxthreads="2" weight="0.0" kind="cloth" bookref="GM p.134">
 		<edt:description>Boots made from hides of espagra are usually bright blue, interwoven with brown leather. Espagra scales give boots brilliant luster, trademark of espagra-skin products.</edt:description>
 		<edt:THREADRANK keyknowledge="boots’ Name" lpcost="200" deed="" effect="+1 Rank to Avoid Blow">
-            <edt:TALENT name="Avoid Blow" limitation="" bonus="1" pool=""/>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Avoid Blow">
-            <edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge=" Name of the person  who created the boots" lpcost="300" deed="" effect="+1 Rank to Silent Walk">
-            <edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
-            <edt:TALENT name="Silent Walk" limitation="" bonus="1" pool=""/>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Silent Walk">
-            <edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
-            <edt:TALENT name="Silent Walk" limitation="" bonus="2" pool=""/>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="number of espagra hides used to create boots" lpcost="300" deed="" effect="+3 Rank to Avoid Blow and Silent Walk ">
-            <edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
-            <edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
-        </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="Name of place where espagra whose hide was used for boots originally made its home" lpcost="300" deed="" effect="2 Strain: wearer gains ability to fly at Movement Rate of 5. adding +2 to Movement Rate for every 1 Strain. Ability cannot  be combined with talents or skills">
-            <edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
-            <edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
-        </edt:THREADRANK>
-    </THREADITEM>
-
+			<edt:TALENT name="Avoid Blow" limitation="" bonus="1" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Avoid Blow">
+			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK keyknowledge=" Name of the person  who created the boots" lpcost="300" deed="" effect="+1 Rank to Silent Walk">
+			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+			<edt:TALENT name="Silent Walk" limitation="" bonus="1" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Silent Walk">
+			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+			<edt:TALENT name="Silent Walk" limitation="" bonus="2" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK keyknowledge="number of espagra hides used to create boots" lpcost="300" deed="" effect="+3 Rank to Avoid Blow and Silent Walk ">
+			<edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK keyknowledge="Name of place where espagra whose hide was used for boots originally made its home" lpcost="300" deed="" effect="2 Strain: wearer gains ability to fly at Movement Rate of 5. adding +2 to Movement Rate for every 1 Strain. Ability cannot  be combined with talents or skills">
+			<edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
+		</edt:THREADRANK>
+	</THREADITEM>
 <!--	weiter mit Espargra Saddle -->
-	
 </ITEMS>
