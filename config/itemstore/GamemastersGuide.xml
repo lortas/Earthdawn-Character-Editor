@@ -9,12 +9,16 @@
 			<edt:DEFENSE kind="physical" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Spell Defense +1" keyknowledge="Name of mine from which the metals came used to create bracers">
+			<edt:DEFENSE kind="physical" bonus="2"/>
 			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Spell Defense +2">
+			<edt:DEFENSE kind="physical" bonus="2"/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Cast Gills Spell on himself for 2 Strain" keyknowledge="As mundane water contains oxygen, elemental water contains elemental air. Creators of Bracers of Aras formed gems from a mixture of elemental air and water. Ratio of water to air varies for each set of bracers. Wearer must learn ratio of water to air used for his bracers">
+			<edt:DEFENSE kind="physical" bonus="2"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
 			<edt:SPELL>Gills"</edt:SPELL>
 		</edt:THREADRANK>
 	</THREADITEM>
@@ -125,5 +129,16 @@
 			<edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
 		</edt:THREADRANK>
 	</THREADITEM>
-<!--	weiter mit Espargra Saddle -->
+	<THREADITEM name="Espagra Saddle" maxthreads="2" spelldefense="14" lpcostgrowth="5" weight="24.0" kind="tool" bookref="GM p.135">
+        <edt:description>Saddles are constructed using combination of hide and scales of espagra. Shimmering blue espagra scales give these saddles a beautiful luster while Hanging flaps are made of creatures’ hide. One saddle requires three to seven hides.</edt:description>
+		<edt:THREADRANK keyknowledge="saddle’s Name" lpcost="200" deed="" effect="mount adds +1 to Movement Rate at rider’s choice"/>
+        <edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="mount adds +1 to Physical Armor while rider is in saddle"/>
+        <edt:THREADRANK keyknowledge="how many espagra hides were used to create saddle" lpcost="500" deed="" effect="mount adds up to +2 to Movement Rate at  rider’s choice"/>
+        <edt:THREADRANK keyknowledge="" lpcost="500" deed="" effect="mount adds +2 Physical Armor and +1 Physical Defense while rider in saddle; rider adds +1 Physical Armor while in saddle"/>
+        <edt:THREADRANK keyknowledge="Name of the person  who made the saddle" lpcost="500" deed="" effect="mount gains ability to fly at natural Movement Rate while carrying rider, with rider taking 2 Strain per round of flight"/>
+        <edt:THREADRANK keyknowledge="" lpcost="500" deed="" effect="rider and mount add +1 Recovery Test per day; saddle must be used by both parties for at least an hour each day  to gain bonus"/>
+        <edt:THREADRANK keyknowledge="Name of person who commissioned saddle" lpcost="500" deed="" effect="mount is able to fly at increased speed, (adds Movement rate bonuses by lower Ranks); mount adds +5 Physical Armor while rider in saddle"/>
+        <edt:THREADRANK keyknowledge="" lpcost="500" deed="" effect="rider and mount add +2 Physical, Spell and  Social Defense while rider in saddle"/>
+    </THREADITEM>
+<!--	weiter mit Forest Robes p135 -->
 </ITEMS>
