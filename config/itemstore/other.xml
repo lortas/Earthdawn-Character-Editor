@@ -5,62 +5,56 @@
 		<edt:description>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</edt:description>
 		<edt:THREADRANK effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
 		<edt:THREADRANK effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
-			<edt:TALENT name="Avoid Blow"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Avoid Blow" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Steel Thought erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="3"/>
+			<edt:TALENT name="Avoid Blow" bonus="3"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges " keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="4"/>
+			<edt:TALENT name="Avoid Blow" bonus="4"/>
+			<edt:TALENT name="Second Attack" bonus="4"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="5"/>
+			<edt:TALENT name="Avoid Blow" bonus="5"/>
+			<edt:TALENT name="Second Attack" bonus="5"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="-" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="6"/>
+			<edt:TALENT name="Avoid Blow" bonus="6"/>
+			<edt:TALENT name="Second Attack" bonus="6"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="7"/>
+			<edt:TALENT name="Avoid Blow" bonus="7"/>
+			<edt:TALENT name="Second Attack" bonus="7"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="8"/>
+			<edt:TALENT name="Avoid Blow" bonus="8"/>
+			<edt:TALENT name="Second Attack" bonus="8"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="9"/>
+			<edt:TALENT name="Avoid Blow" bonus="9"/>
+			<edt:TALENT name="Second Attack" bonus="9"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="10"/>
+			<edt:TALENT name="Avoid Blow" bonus="10"/>
+			<edt:TALENT name="Second Attack" bonus="10"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" keyknowledge="Rasse des Dracheneierdiebs">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="11"/>
+			<edt:TALENT name="Avoid Blow" bonus="11"/>
+			<edt:TALENT name="Second Attack" bonus="11"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Antimagische Waffe, alle geführten Waffen sind für 4 Überanstregungsschaden (pro Waffen und Runde) durch keinen magischen Effekt zu beeinflussen. (Achtung, nur die Waffe(n))">
-			<edt:TALENT name="Second Attack"/>
-			<edt:TALENT name="Steel Thought"/>
-			<edt:TALENT name="Avoid Blow"/>
+			<edt:TALENT name="Steel Thought" bonus="12"/>
+			<edt:TALENT name="Avoid Blow" bonus="12"/>
+			<edt:TALENT name="Second Attack" bonus="12"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Silverins Heiltrank" lpcostgrowth="9" spelldefense="21" maxthreads="2" kind="potion" weight="6.0"  bookref="FanWork">
