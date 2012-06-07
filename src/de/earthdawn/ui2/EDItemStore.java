@@ -119,7 +119,9 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getThreadItem().add((THREADITEMType)currentNode);
+					THREADITEMType item = new THREADITEMType();
+					CharacterContainer.copyItem((THREADITEMType)currentNode, item);
+					character.getThreadItem().add(item);
 					character.refesh();
 					parent.scrollPathToVisible(currentNode);
 				}
@@ -130,7 +132,7 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getProtection().getARMOROrSHIELD().add((ARMORType)currentNode);
+					character.getProtection().getARMOROrSHIELD().add(CharacterContainer.copyArmor((ARMORType)currentNode,false));
 					character.refesh();
 					parent.scrollPathToVisible(currentNode);
 				}
@@ -141,7 +143,7 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getProtection().getARMOROrSHIELD().add((SHIELDType)currentNode);
+					character.getProtection().getARMOROrSHIELD().add(CharacterContainer.copyArmor((SHIELDType)currentNode,false));
 					character.refesh();
 					parent.scrollPathToVisible(currentNode);
 				}
@@ -152,7 +154,7 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getWeapons().add((WEAPONType)currentNode);
+					character.getWeapons().add(CharacterContainer.copyWeapon((WEAPONType)currentNode,false));
 					character.refesh();
 					parent.scrollPathToVisible(currentNode);
 				}
@@ -164,7 +166,9 @@ public class EDItemStore extends JFrame {
 				JMenuItem menuitem = new JMenuItem("Add to Character");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						character.getBloodCharmItem().add((MAGICITEMType)currentNode);
+						MAGICITEMType item = new MAGICITEMType();
+						CharacterContainer.copyItem((MAGICITEMType)currentNode,item);
+						character.getBloodCharmItem().add(item);
 						character.refesh();
 						parent.scrollPathToVisible(currentNode);
 					}
@@ -175,7 +179,9 @@ public class EDItemStore extends JFrame {
 				JMenuItem menuitem = new JMenuItem("Add to Character");
 				menuitem.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						character.getMagicItem().add((MAGICITEMType)currentNode);
+						MAGICITEMType item = new MAGICITEMType();
+						CharacterContainer.copyItem((MAGICITEMType)currentNode,item);
+						character.getMagicItem().add(item);
 						character.refesh();
 						parent.scrollPathToVisible(currentNode);
 					}
@@ -187,7 +193,9 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getItems().add((ITEMType)currentNode);
+					ITEMType item = new ITEMType();
+					CharacterContainer.copyItem((ITEMType)currentNode,item);
+					character.getItems().add(item);
 					character.refesh();
 					parent.scrollPathToVisible(currentNode);
 				}

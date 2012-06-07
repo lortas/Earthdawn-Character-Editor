@@ -110,20 +110,29 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		// ThreadRank
 		if(value instanceof THREADRANKType){
 			THREADRANKType rank = (THREADRANKType)value;
+			StringBuffer labeltext = new StringBuffer(rank.getEffect());
+			if( ! rank.getKeyknowledge().isEmpty() ) {
+				labeltext.append(" -- ");
+				labeltext.append(rank.getKeyknowledge());
+			}
+			if( ! rank.getDeed().isEmpty() ) {
+				labeltext.append(" -- ");
+				labeltext.append(rank.getDeed());
+			}
 			TreeModel treemodel = tree.getModel();
 			THREADITEMType item = null;
 			if( treemodel instanceof ItemTreeModel ) item = (THREADITEMType)((ItemTreeModel)treemodel).getParent(value);
 			if( treemodel instanceof ItemStoreTreeModel ) item = (THREADITEMType)((ItemStoreTreeModel)treemodel).getParent(value);
 			if( item != null ) {
 				int rankindex =  (item.getTHREADRANK().indexOf(rank) +1);
-				label.setText("Rank " + rankindex + ": " + rank.getEffect()+" - "+rank.getKeyknowledge());
+				label.setText("Rank "+rankindex+": "+labeltext.toString());
 				if(treeIcons.containsKey("RANK" + rankindex)){	
 					label.setIcon((ImageIcon)treeIcons.get("RANK" + rankindex));
 				} else {
 					label.setIcon((ImageIcon)treeIcons.get("RANKN"));
 				}
 			} else {
-				label.setText("Rank n: " + rank.getEffect()+" - "+rank.getKeyknowledge());
+				label.setText("Rank n: " + labeltext.toString());
 				label.setIcon((ImageIcon)treeIcons.get("RANKN"));
 			}
 		}
