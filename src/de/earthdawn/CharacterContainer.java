@@ -1919,10 +1919,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( weapon == null ) return;
 		weapon.setDamagestep(weapon.getDamagestep()+weapon.getSize());
 	}
-	public static void copyItem(ITEMType src, ITEMType dst) {
-		copyItem(src,dst,false);
-	}
 
+	public static void copyItem(ITEMType src, ITEMType dst) { copyItem(src,dst,false); }
 	public static void copyItem(ITEMType src, ITEMType dst, boolean setvirtual) {
 		dst.setBlooddamage(src.getBlooddamage());
 		dst.setBookref(src.getBookref());
@@ -1939,6 +1937,35 @@ public class CharacterContainer extends CharChangeRefresh {
 		else dst.setVirtual(src.getVirtual());
 		List<Base64BinaryType> images = dst.getIMAGE();
 		for( Base64BinaryType image : src.getIMAGE()) images.add(copyImage(image));
+	}
+
+	public static void copyItem(MAGICITEMType src, MAGICITEMType dst) { copyItem(src,dst,false); }
+	public static void copyItem(MAGICITEMType src, MAGICITEMType dst, boolean setvirtual) {
+		copyItem((ITEMType)src,(ITEMType)dst,setvirtual);
+		dst.setEnchantingdifficultynumber(src.getEnchantingdifficultynumber());
+		dst.setEffect(src.getEffect());
+	}
+
+	public static void copyItem(PATTERNITEMType src, PATTERNITEMType dst) { copyItem(src,dst,false); }
+	public static void copyItem(PATTERNITEMType src, PATTERNITEMType dst, boolean setvirtual) {
+		copyItem((MAGICITEMType)src,(MAGICITEMType)dst,setvirtual);
+		dst.setType(src.getType());
+	}
+
+	public static void copyItem(THREADITEMType src, THREADITEMType dst) { copyItem(src,dst,false); }
+	public static void copyItem(THREADITEMType src, THREADITEMType dst, boolean setvirtual) {
+		copyItem((MAGICITEMType)src,(MAGICITEMType)dst,setvirtual);
+		dst.setLpcostgrowth(src.getLpcostgrowth());
+		dst.setMaxthreads(src.getMaxthreads());
+		dst.setSpelldefense(src.getSpelldefense());
+		dst.setWeaventhreadrank(src.getWeaventhreadrank());
+		dst.setARMOR(copyArmor(src.getARMOR(), setvirtual));
+		dst.setSHIELD((SHIELDType)copyArmor(src.getSHIELD(), setvirtual));
+		dst.setWEAPON(copyWeapon(src.getWEAPON(), setvirtual));
+		List<THREADRANKType> ranks = dst.getTHREADRANK();
+		for( THREADRANKType rank : src.getTHREADRANK() ) {
+			ranks.add(copyThreadRank(rank));
+		}
 	}
 
 	public static Base64BinaryType copyImage(Base64BinaryType image) {
