@@ -484,8 +484,6 @@ public class ECEWorker {
 			}
 		}
 
-		List<TALENTType> firstDisciplineOptionalTalents = null;
-		if( ! allDisciplines.isEmpty() ) firstDisciplineOptionalTalents = allDisciplines.get(0).getOPTIONALTALENT();
 		for( THREADITEMType item : character.getThreadItem() ) {
 			// Falls es Fadengegenstände gibt die man mit Blutmagie noch erst aktivieren muss
 			// prüfe, ob genutzt
@@ -520,18 +518,34 @@ public class ECEWorker {
 				case SOCIAL: defense.setSocial(defense.getSocial()+itemdefense.getBonus()); break;
 				}
 			}
-			for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
+			if( ! allDisciplines.isEmpty() ) for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
 				String limitation = itemtalent.getLimitation();
-				boolean notfound=true;
-				for( TALENTType talent : character.getTalentByName(itemtalent.getName()) ) {
-					if( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) {
-						notfound=false;
-						RANKType talentrank = talent.getRANK();
-						talentrank.setBonus(talentrank.getBonus()+itemtalent.getBonus());
-						calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
+				String talentname = itemtalent.getName();
+				int itembonus = itemtalent.getBonus();
+				boolean found=false;
+				for( DISCIPLINEType discipline : allDisciplines ) {
+					DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(discipline.getName());
+					for( TALENTType talent : (new TalentsContainer(discipline).getDisciplineAndOptionaltalents()) ) {
+						if( talent.getName().equals(talentname) && ( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) ) {
+							found=true;
+							RANKType talentrank = talent.getRANK();
+							talentrank.setBonus(talentrank.getBonus()+itembonus);
+							calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
+							if( talentname.equals(durabilityTalentName) && (disziplinProperties!=null) ) {
+								// Wenn Durability-Talente gefunden wurden, berechnen die Erhöhung von Todes- und Bewustlosigkeitsschwelle
+								DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
+								death.setAdjustment(death.getAdjustment()+(durability.getDeath()*itembonus));
+								unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*itembonus));
+							}
+							break;
+						}
+						if( found ) break;
 					}
+					if( found ) break;
 				}
-				if( notfound && (firstDisciplineOptionalTalents!=null) ) {
+				if( !found ) {
+					DISCIPLINEType discipline = allDisciplines.get(0);
+					DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(discipline.getName());
 					if( limitation.isEmpty() ) limitation ="(#)";
 					else limitation += " (#)";
 					TALENTType bonusTalent = new TALENTType();
@@ -541,7 +555,7 @@ public class ECEWorker {
 					capabilities.enforceCapabilityParams(bonusTalent);
 					RANKType bonusrank = new RANKType();
 					bonusrank.setRank(0);
-					bonusrank.setBonus(itemtalent.getBonus());
+					bonusrank.setBonus(itembonus);
 					calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute().value()));
 					bonusTalent.setRANK(bonusrank);
 					TALENTTEACHERType teacher = new TALENTTEACHERType();
@@ -550,7 +564,13 @@ public class ECEWorker {
 					teacher.setTeachercircle(rank);
 					teacher.setName(item.getName());
 					bonusTalent.setTEACHER(teacher);
-					firstDisciplineOptionalTalents.add(bonusTalent);
+					if( talentname.equals(durabilityTalentName) && (disziplinProperties!=null) ) {
+						// Wenn Durability-Talente gefunden wurden, berechnen die Erhöhung von Todes- und Bewustlosigkeitsschwelle
+						DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
+						death.setAdjustment(death.getAdjustment()+(durability.getDeath()*itembonus));
+						unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*itembonus));
+					}
+					discipline.getOPTIONALTALENT().add(bonusTalent);
 				}
 			}
 			for(DISZIPINABILITYType iteminitiative : threadrank.getINITIATIVE() ) {
@@ -572,6 +592,15 @@ public class ECEWorker {
 			for( DISZIPINABILITYType k : threadrank.getMAXKARMA() ) {
 				karma.setMax(karma.getMax() + k.getCount());
 				karma.setMaxmodificator(karma.getMaxmodificator() + k.getCount());
+			}
+			WOUNDType threadwound = threadrank.getWOUND();
+			if( threadwound != null ) {
+				wound.setBlood(wound.getBlood()+threadwound.getBlood());
+				wound.setNormal(wound.getNormal()+threadwound.getNormal());
+				wound.setThreshold(wound.getThreshold()+threadwound.getThreshold());
+				totalwounds=wound.getNormal()+wound.getBlood();
+				if( totalwounds>1 ) wound.setPenalties(totalwounds-1+threadwound.getPenalties());
+				else wound.setPenalties(threadwound.getPenalties());
 			}
 			// TODO: other effects of MagicItems
 			// TODO:List<TALENTType> optTalents = allTalents.get(disciplinenumber).getOPTIONALTALENT();
