@@ -74,7 +74,7 @@ public class ThreadRankNodePanel extends AbstractNodePanel<THREADRANKType> {
 		wound.setNormal((Integer)spinnerNormalWounds.getValue());
 		wound.setBlood((Integer)spinnerBloodWounds.getValue());
 		wound.setPenalties((Integer)spinnerWoundPenalties.getValue());
-		wound.setThreshold((Integer)spinnerWoundPenalties.getValue());
+		wound.setThreshold((Integer)spinnerWoundThreshold.getValue());
 		if( (wound.getNormal()==0) && (wound.getBlood()==0) && (wound.getPenalties()==0) && (wound.getThreshold()==0) ) wound=null;
 		nodeObject.setWOUND(wound);
 	}
