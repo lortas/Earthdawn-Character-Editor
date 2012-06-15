@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
-	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" weaventhreadrank="4" kind="vambrace" weight="6.0" bookref="GM p.132">
+	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" kind="vambrace" weight="6.0" bookref="GM p.132">
 		<edt:description>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:description>		
 		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Name of bracers">
 			<edt:DEFENSE kind="physical" bonus="1"/>
@@ -24,23 +24,35 @@
 	</THREADITEM>
 	<THREADITEM name="Counterspell Staff" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="wand" weight="4.0" effect="like quarterstaff" bookref="GM p.132">
 		<edt:description>A quarterstaff, topped with a crystal carved into any of shapes or figures. Most commonly made of wood, usually mahogany. With no threads like characteristics as normal quarterstaff</edt:description>
+			<edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="6" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Counterspell Staff" weight="4.0" size="5" kind="wand" bookref="GM p.132"/>
 		<edt:THREADRANK effect="+1 Spell Defense" keyknowledge="staffs name">
 			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 5; cast Counterspell spell up to thread Rank times each day" keyknowledge="where crystal atop staff came from">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
 			<edt:SPELL>Counterspell</edt:SPELL>
+			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Counterspell’s Effect improves to +3 per Result Level" keyknowledge="Name of artisan who carved crystal on staff">
+			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
+			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Damage Step 6; Counterspell’s Effect improves to +4 per Result Level" keyknowledge="Deed:Ritual (2 Blood Magic Damage) leaves a scar that occasionally oozes a drop of blood which is magically drawn to a notch in staff every 3 hours; Deed must be performed in jungle or forest where wood staff was created from was grown">
+		<edt:THREADRANK effect="Damage Step 6; Counterspell’s Effect improves to +4 per Result Level" keyknowledge="" deed="Ritual (2 Blood Magic Damage) leaves a scar that occasionally oozes a drop of blood which is magically drawn to a notch in staff every 3 hours; Deed must be performed in jungle or forest where wood staff was created from was grown">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
+			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Counterspell’s Effect improves to +5 per Result Level" keyknowledge="Name of magician who created the staff">
+			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
+			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 7; Counterspell’s Effect improves to +6 per Result Level">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="7" weight="4.0" name="Counterspell Staff"/>
-		</edt:THREADRANK>
+			<edt:SPELL>Counterspell</edt:SPELL>
+			<edt:DEFENSE kind="spell" bonus="1"/>
+			</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Crystal Spear" lpcostgrowth="5" spelldefense="18" maxthreads="2" kind="melee weapon" weight="3.0" effect="without threads like normal spear" bookref="GM p.133">
 		<edt:description>These magical spears are made of solid crystal. The shaft of spear is pentagonal and polished to fine sheen. Magic of spear keeps its blade razor sharp, despite is rough finish. With no threads characteristics as normal spear</edt:description>
@@ -51,17 +63,27 @@
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="thread Rank increases range one quarter for each Range category" keyknowledge="Name of troll Sky Raider for whom spear was created (spear’s first owner)">
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+1 to Initiative Step">
 			<edt:INITIATIVE count="1"/>
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="For 2 Strain, +2 to Physical and Spell Defense for number of rounds equal to thread Rank or until Attack Test with spear, whichever comes first. Spear glows pale blue while bonus is in effect" keyknowledge="what historic assault and which first wielder spear was crafted for">
+			<edt:INITIATIVE count="1"/>
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="For 1 Strain, +3 bonus to next Damage Test with spear. Spear glows bright red when bonus is in effect">
+			<edt:INITIATIVE count="1"/>
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Lower result level required for Armor-Defeating Hit by one level. For 3 Strain, spear causes 1 additional Wound on next Damage Test, so long as inflicts at least 1 Damage Point" keyknowledge="Deed: Must make pilgrimage to trollmoot of spear’s creator belonged. Character must swear Blood Oath with trollmoot’s leader. Damage taken for Oath is Permanent instead of Blood Magic Damage. If Oath is violated, spear immediately shatters beyond repair">
+		<edt:THREADRANK effect="Lower result level required for Armor-Defeating Hit by one level. For 3 Strain, spear causes 1 additional Wound on next Damage Test, so long as inflicts at least 1 Damage Point" keyknowledge="" deed="Must make pilgrimage to trollmoot of spear’s creator belonged. Character must swear Blood Oath with trollmoot’s leader. Damage taken for Oath is Permanent instead of Blood Magic Damage. If Oath is violated, spear immediately shatters beyond repair">
+			<edt:INITIATIVE count="1"/>
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="For 5 Strain, cause fear in enemies and rally own troops. Effect causes spear to glow bright white, pulsing like heartbeat. All allies within 100 yards receive: +1 to Initiative and Attack Tests and +1 to Physical, Spell, and Social Defense. Additionally, increase result level to hit spear’s wielder by one level. Effect lasts for rounds equal Thread Rank or until attack with spear, whichever comes first" keyknowledge="Deed: Must command airship in an attack. During attack he must invoke Names of weapon’s creator, original owner and trollmoot from which they came">
+		<edt:THREADRANK effect="For 5 Strain, cause fear in enemies and rally own troops. Effect causes spear to glow bright white, pulsing like heartbeat. All allies within 100 yards receive: +1 to Initiative and Attack Tests and +1 to Physical, Spell, and Social Defense. Additionally, increase result level to hit spear’s wielder by one level. Effect lasts for rounds equal Thread Rank or until attack with spear, whichever comes first" keyknowledge="" deed="Must command airship in an attack. During attack he must invoke Names of weapon’s creator, original owner and trollmoot from which they came">
+			<edt:INITIATIVE count="1"/>
+			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Crystal Spell Box" lpcostgrowth="5" spelldefense="15" maxthreads="2" kind="tool" weight="3.0" bookref="GM p.133">
@@ -69,17 +91,14 @@
 		<edt:THREADRANK effect="Can capture spell that is being cast by making Spellcasting Test against caster’s Spellcasting Test. If successful, spell is captured in box. Can hold 1 spell. Spell released by making Spellcasting Test (no threads need be); Spell’s effect as if cast normal. Once released, spell gone; new spell may be captured." keyknowledge="box’s Name">
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 Rank to Spellcasting talent when capturing spells into or casting spells from box">
-			<edt:TALENT name="Spellcasting" limitation="" bonus="2" pool=""/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Can hold 2 spells" keyknowledge="Deed: discover Name of an apprentice; take box to grave (or final resting place) of apprentice; leave  othering of thanks">
+		<edt:THREADRANK effect="Can hold 2 spells" keyknowledge="" deed="discover Name of an apprentice; take box to grave (or final resting place) of apprentice; leave  othering of thanks">
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+4 Rank to Spellcasting talent when capturing spells into or casting spells from box">
-			<edt:TALENT name="Spellcasting" limitation="" bonus="4" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Can hold 3 spells" keyknowledge="Name of mountain which crystal originated">
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+6 Rank to Spellcasting talent when capturing spells into or casting spells from box">
-			<edt:TALENT name="Spellcasting" limitation="" bonus="6" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Can hold 4 spells" keyknowledge="Name of person who commissioned box">
 		</edt:THREADRANK>
@@ -91,17 +110,22 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 Rank to Initiative Tests">
 			<edt:INITIATIVE count="2"/>
+			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 11; Tip glows red hot; 1 Strain: roll adittional D6 with weapon’s Damage Tests that round" keyknowledge="Name of the spear’s creator">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="11" weight="7.0" name="Elemental Long-Spear"/>
+			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 12; +1 Rank to Riposte talent">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="7.0" name="Elemental Long-Spear"/>
 			<edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
+			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 13; It becomes extremely resilient (strength of dragon cannot harm spear); +1 Rank to Wound Balance talent" keyknowledge="type of wood spear haft is constructed from and where it was grown">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="7.0" name="Elemental Long-Spear"/>
 			<edt:TALENT name="Wound Balance" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
+			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Espagra Boots" lpcostgrowth="5" spelldefense="17" maxthreads="2" weight="0.0" kind="cloth" bookref="GM p.134">
@@ -140,5 +164,32 @@
         <edt:THREADRANK keyknowledge="Name of person who commissioned saddle" lpcost="500" deed="" effect="mount is able to fly at increased speed, (adds Movement rate bonuses by lower Ranks); mount adds +5 Physical Armor while rider in saddle"/>
         <edt:THREADRANK keyknowledge="" lpcost="500" deed="" effect="rider and mount add +2 Physical, Spell and  Social Defense while rider in saddle"/>
     </THREADITEM>
-<!--	weiter mit Forest Robes p135 -->
+	<THREADITEM name="Forest Robes" lpcostgrowth="5" spelldefense="16" maxthreads="1" kind="cloth" weight="1.0" bookref="GM p.135">
+		<edt:description>Forest robes take their name from woodland patterns they are decorated with. Individual robes were often Named after creator or owner.Typically, robe patterns appear three-dimensional, as if one might reach inside and touch branches and leaves. Each robe looks slightly different from every other; designs often depict the native forest of creator or wearer, or display a jewelers’ collage of branches, leaves, and vines. A forest robe can be worn over armor without any ill effects.</edt:description>		
+		<edt:THREADRANK effect="+1 to Spellcasting" keyknowledge="robe’s Name">
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Mystic Armor 1, +1 Spell Defense">
+			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:ARMOR edn="0" penalty="0" mysticarmor="1" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Mystic Armor 2, +2 Spell Defense" keyknowledge="when and where robe was made">			
+			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="robe holds a spell matrix permanently attuned to Earth Blend spell">			
+			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Mystic Armor 3, +3 Spell Defense." keyknowledge="Name of the robe’s creator">
+			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="may hide objects (no greater 6 feet long, 3 feet wide) within robe. Robe wraps itself around hidden objects. To hide something within robe, wearer must make successful Thread Weaving Test against Diffculty equal number of objects hidden in robe +9. Robe can conceal max. four objects at one time. Wearer can remove object anytime; replacing object requires another successful Thread Weaving Test. Others than wearer can only remove hidden objects by achieving a Good Result with Willpower Test against robe’s Spell Defense. Robe’s Spell Defense is Detection Diffculty for objects hidden within folds" keyknowledge="types of plants depicted in robe’s pattern">
+			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+		</edt:THREADRANK>
+	</THREADITEM>	
+	
+<!--	weiter mit Frost Pouch p136 -->
 </ITEMS>
