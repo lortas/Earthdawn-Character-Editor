@@ -30,29 +30,29 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 5; cast Counterspell spell up to thread Rank times each day" keyknowledge="where crystal atop staff came from">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
-			<edt:SPELL>Counterspell</edt:SPELL>
 			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Counterspell’s Effect improves to +3 per Result Level" keyknowledge="Name of artisan who carved crystal on staff">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
-			<edt:SPELL>Counterspell</edt:SPELL>
 			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 6; Counterspell’s Effect improves to +4 per Result Level" keyknowledge="" deed="Ritual (2 Blood Magic Damage) leaves a scar that occasionally oozes a drop of blood which is magically drawn to a notch in staff every 3 hours; Deed must be performed in jungle or forest where wood staff was created from was grown">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
-			<edt:SPELL>Counterspell</edt:SPELL>
 			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Counterspell’s Effect improves to +5 per Result Level" keyknowledge="Name of magician who created the staff">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
-			<edt:SPELL>Counterspell</edt:SPELL>
 			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 7; Counterspell’s Effect improves to +6 per Result Level">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="7" weight="4.0" name="Counterspell Staff"/>
-			<edt:SPELL>Counterspell</edt:SPELL>
 			<edt:DEFENSE kind="spell" bonus="1"/>
-			</edt:THREADRANK>
+			<edt:SPELL>Counterspell</edt:SPELL>
+		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Crystal Spear" lpcostgrowth="5" spelldefense="18" maxthreads="2" kind="melee weapon" weight="3.0" effect="without threads like normal spear" bookref="GM p.133">
 		<edt:description>These magical spears are made of solid crystal. The shaft of spear is pentagonal and polished to fine sheen. Magic of spear keeps its blade razor sharp, despite is rough finish. With no threads characteristics as normal spear</edt:description>
@@ -66,24 +66,24 @@
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+1 to Initiative Step">
-			<edt:INITIATIVE count="1"/>
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+			<edt:INITIATIVE count="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="For 2 Strain, +2 to Physical and Spell Defense for number of rounds equal to thread Rank or until Attack Test with spear, whichever comes first. Spear glows pale blue while bonus is in effect" keyknowledge="what historic assault and which first wielder spear was crafted for">
-			<edt:INITIATIVE count="1"/>
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+			<edt:INITIATIVE count="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="For 1 Strain, +3 bonus to next Damage Test with spear. Spear glows bright red when bonus is in effect">
-			<edt:INITIATIVE count="1"/>
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+			<edt:INITIATIVE count="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Lower result level required for Armor-Defeating Hit by one level. For 3 Strain, spear causes 1 additional Wound on next Damage Test, so long as inflicts at least 1 Damage Point" keyknowledge="" deed="Must make pilgrimage to trollmoot of spear’s creator belonged. Character must swear Blood Oath with trollmoot’s leader. Damage taken for Oath is Permanent instead of Blood Magic Damage. If Oath is violated, spear immediately shatters beyond repair">
-			<edt:INITIATIVE count="1"/>
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+			<edt:INITIATIVE count="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="For 5 Strain, cause fear in enemies and rally own troops. Effect causes spear to glow bright white, pulsing like heartbeat. All allies within 100 yards receive: +1 to Initiative and Attack Tests and +1 to Physical, Spell, and Social Defense. Additionally, increase result level to hit spear’s wielder by one level. Effect lasts for rounds equal Thread Rank or until attack with spear, whichever comes first" keyknowledge="" deed="Must command airship in an attack. During attack he must invoke Names of weapon’s creator, original owner and trollmoot from which they came">
-			<edt:INITIATIVE count="1"/>
 			<edt:WEAPON size="3" strengthmin="9" damagestep="8" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
+			<edt:INITIATIVE count="1"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Crystal Spell Box" lpcostgrowth="5" spelldefense="15" maxthreads="2" kind="tool" weight="3.0" bookref="GM p.133">
@@ -109,8 +109,8 @@
 			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 Rank to Initiative Tests">
-			<edt:INITIATIVE count="2"/>
 			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
+			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 11; Tip glows red hot; 1 Strain: roll adittional D6 with weapon’s Damage Tests that round" keyknowledge="Name of the spear’s creator">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="11" weight="7.0" name="Elemental Long-Spear"/>
@@ -170,24 +170,24 @@
 			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 1, +1 Spell Defense">
-			<edt:DEFENSE kind="spell" bonus="1"/>
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="1" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 2, +2 Spell Defense" keyknowledge="when and where robe was made">			
-			<edt:DEFENSE kind="spell" bonus="2"/>
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="robe holds a spell matrix permanently attuned to Earth Blend spell">			
-			<edt:DEFENSE kind="spell" bonus="2"/>
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 3, +3 Spell Defense." keyknowledge="Name of the robe’s creator">
-			<edt:DEFENSE kind="spell" bonus="3"/>
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:DEFENSE kind="spell" bonus="3"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="may hide objects (no greater 6 feet long, 3 feet wide) within robe. Robe wraps itself around hidden objects. To hide something within robe, wearer must make successful Thread Weaving Test against Diffculty equal number of objects hidden in robe +9. Robe can conceal max. four objects at one time. Wearer can remove object anytime; replacing object requires another successful Thread Weaving Test. Others than wearer can only remove hidden objects by achieving a Good Result with Willpower Test against robe’s Spell Defense. Robe’s Spell Defense is Detection Diffculty for objects hidden within folds" keyknowledge="types of plants depicted in robe’s pattern">
-			<edt:DEFENSE kind="spell" bonus="3"/>
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:DEFENSE kind="spell" bonus="3"/>
 		</edt:THREADRANK>
 	</THREADITEM>	
 	
