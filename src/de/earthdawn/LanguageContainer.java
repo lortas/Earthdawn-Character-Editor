@@ -19,10 +19,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.util.ArrayList;
 import java.util.List;
-
 import de.earthdawn.data.CHARACTERLANGUAGEType;
 import de.earthdawn.data.LearnedbyType;
-import de.earthdawn.data.YesnoType;
 
 public class LanguageContainer {
 	private List<CHARACTERLANGUAGEType> languages;
