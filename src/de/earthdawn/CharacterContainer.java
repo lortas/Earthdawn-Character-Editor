@@ -1535,9 +1535,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public void removeIllegalTalents() {
-		int disciplineOrder=0;
 		for( DISCIPLINEType discipline : getDisciplines() ) {
-			disciplineOrder++;
 			int disciplineCircleNr = discipline.getCircle();
 			List<TALENTType> remove = new ArrayList<TALENTType>();
 			List<TALENTType> disciplineTalents = discipline.getDISZIPLINETALENT();
