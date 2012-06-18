@@ -131,16 +131,16 @@ public class ECECharacteristics {
 		return null;
 	}
 
-	public int getTalentRankTotalLP(int discipline, int circle, int rank) {
-		if( rank < 1 ) return 0;
+	public int getTalentRankTotalLP(int discipline, int circle, int rank) { return getTalentRankTotalLP(discipline, circle, 0, rank); }
+	public int getTalentRankTotalLP(int discipline, int circle, int startrank, int stoprank) {
 		List<CHARACTERISTICSCOST> costs = getTalentRankLPIncreaseTable(discipline,circle);
 		if( costs == null ) return 0;
+		int maxrank = costs.size();
+		if( stoprank > maxrank ) stoprank=maxrank;
+		if( startrank > stoprank ) startrank=stoprank;
+		if( startrank < 0 ) startrank=0;
 		int result = 0;
-		for( CHARACTERISTICSCOST talentcost : costs ) {
-			result += talentcost.getCost();
-			rank--;
-			if( rank < 1 ) break;
-		}
+		for( int rank=startrank; rank<stoprank; rank++ ) result += costs.get(rank).getCost();
 		return result;
 	}
 
