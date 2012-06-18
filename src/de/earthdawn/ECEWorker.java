@@ -36,6 +36,7 @@ public class ECEWorker {
 	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
 	public static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
 	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
+	public static final String karmaritualName = PROPERTIES.getKarmaritualName(); 
 	public static boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
@@ -160,21 +161,18 @@ public class ECEWorker {
 
 		// **KARMA**
 		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
-		if( ! allDisciplines.isEmpty() ) {
+		if( (karmaritualName==null)||(karmaritualName.isEmpty()) ) {
+			errorout.println("Karmaritual talent name is not defined for selected language.");
+		} else if( ! allDisciplines.isEmpty() ) {
 			TALENTType karmaritualTalent = null;
-			final String KARMARITUAL = PROPERTIES.getKarmaritualName(); 
-			if( KARMARITUAL == null ) {
-				errorout.println("Karmaritual talent name is not defined for selected language.");
-			} else {
-				for( TALENTType talent : character.getTalentByName(KARMARITUAL) ) {
-					if( talent.getRealigned() == 0 ) {
-						karmaritualTalent=talent;
-						break;
-					}
+			for( TALENTType talent : character.getTalentByName(karmaritualName) ) {
+				if( talent.getRealigned() == 0 ) {
+					karmaritualTalent=talent;
+					break;
 				}
-				if(karmaritualTalent == null ) {
-					errorout.println("No Karmaritual ("+KARMARITUAL+") could be found.");
-				}
+			}
+			if(karmaritualTalent == null ) {
+				errorout.println("No Karmaritual ("+karmaritualName+") could be found.");
 			}
 			int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
 			if( OptionalRule_KarmaLegendPointCost ) {
@@ -232,7 +230,7 @@ public class ECEWorker {
 			namegivertalents.put(name, t);
 			namegiverAbilities.add("extra optional talent '"+name+"' *");
 		}
-		// Wenn ein Charakter Weihepunkte erhalten hat, dann steht ihm  das Questorentalent zur Verfügung
+		// Wenn ein Charakter Weihepunkte erhalten hat, dann steht ihm das Questorentalent zur Verfügung
 		DEVOTIONType devotionPoints = character.getDevotionPoints();
 		if( (devotionPoints!=null) && (devotionPoints.getValue()>0) ) {
 			TALENTABILITYType talent = new TALENTABILITYType();
@@ -736,6 +734,7 @@ public class ECEWorker {
 			}
 			// Disziplintalente mir Rank 0 darf es nicht geben.
 			if( disTalents && (rank.getRank()<1) && (talent.getCircle()>1) ) rank.setRank(1);
+			// Prüfe ob extra LP Kosten entstanden sind, da eine neue Disziplin "zu früh" erlernt wurde.
 			int newDisciplineTalentCost=0;
 			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
 			// Prüfe ob wir ein Kostentabelle haben
@@ -752,14 +751,24 @@ public class ECEWorker {
 			}
 			// Nur in der Erstdisziplin kann ein Startrang existieren.
 			if( disciplinenumber!=1 ) rank.setStartrank(0);
-			final int lpcostfull=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRank());
-			final int lpcoststart=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getStartrank());
-			final int lpcostrealigned=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),rank.getRealignedrank());
-			if( lpcostrealigned > lpcoststart ) {
-				rank.setLpcost(newDisciplineTalentCost+lpcostfull-lpcostrealigned);
-			} else {
-				rank.setLpcost(newDisciplineTalentCost+lpcostfull-lpcoststart);
+			// Der Startrank bassiert entweder von dem gesetzen "Startrank" (bei Charaktererschaffung) oder auf dem Rank ab Realigned
+			int startrank=rank.getStartrank();
+			if( startrank < rank.getRealignedrank() ) startrank = rank.getRealignedrank();
+			SKILLType skill = talent.getALIGNEDSKILL();
+			if( skill != null ) {
+				RANKType skillRank = skill.getRANK();
+				if( skillRank != null ) {
+					int skillRealignedRank = skillRank.getRank();
+					// Je höherstufig das Talent ist desto weniger zählen die Skillränge
+					if( talent.getCircle() > 4 ) skillRealignedRank--;
+					if( talent.getCircle() > 8 ) skillRealignedRank--;
+					if( talent.getCircle() > 12 ) skillRealignedRank--;
+					// Man zahlt LP für Rang 0 auf 1 bekomt aber den Talentrang auf "skillRealignedRank"
+					newDisciplineTalentCost+=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),0,1);
+					if( skillRealignedRank > startrank ) startrank=skillRealignedRank;
+				}
 			}
+			rank.setLpcost(newDisciplineTalentCost+PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),startrank,rank.getRank()));
 			if( disTalents ) {
 				calculatedLP.addDisciplinetalents(rank.getLpcost(),"LPs for discipline talent '"+talent.getName()+"'");
 			} else {
