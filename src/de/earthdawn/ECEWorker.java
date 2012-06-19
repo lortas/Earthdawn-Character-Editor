@@ -212,6 +212,9 @@ public class ECEWorker {
 			coins.setWeight((float)weight);
 		}
 
+		// **SKILL**
+		calculateSkills(character, characterAttributes, namegiverAbilities, calculatedLP);
+
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
 		character.clearDisciplineBonuses();
 		// Stelle sicher dass ale Disziplin Talent eingügt werden
@@ -362,81 +365,6 @@ public class ECEWorker {
 		KARMAType karma = character.getKarma();
 		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
 		karma.setDice(PROPERTIES.step2Dice(karma.getStep()));
-
-		// StartRänge und MindestRänge für die SprachenSkills bestimmen
-		int[] startSpeakReadWrite = character.getDefaultLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
-		int[] currentSpeakReadWrite = character.getLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
-		List<SKILLType> speakSkills = character.getSpeakSkills();
-		List<SKILLType> readwriteSkills = character.getReadWriteSkills();
-		if( ! speakSkills.isEmpty() ) {
-			RANKType rank = speakSkills.get(0).getRANK();
-			if( rank.getStartrank() < startSpeakReadWrite[0] ) rank.setStartrank(startSpeakReadWrite[0]);
-			if( rank.getRank() < currentSpeakReadWrite[0] ) rank.setRank(currentSpeakReadWrite[0]);
-		}
-		if( ! readwriteSkills.isEmpty() ) {
-			RANKType rank = readwriteSkills.get(0).getRANK();
-			if( rank.getStartrank() < startSpeakReadWrite[1] ) rank.setStartrank(startSpeakReadWrite[1]);
-			if( rank.getRank() < currentSpeakReadWrite[1] ) rank.setRank(currentSpeakReadWrite[1]);
-		}
-
-		int skillsStartranks=calculatedLP.getUsedSkillsStartRanks();
-		character.removeEmptySkills();
-		List<SKILLType> skills = character.getSkills();
-		if( skills.isEmpty() ) {
-			for(SKILLType skilltemplate : PROPERTIES.getStartingSkills() ) {
-				SKILLType skill = new SKILLType();
-				skill.setName(skilltemplate.getName());
-				skill.setLimitation(skilltemplate.getLimitation());
-				RANKType rank = new RANKType();
-				rank.setRank(skilltemplate.getRANK().getRank());
-				rank.setStartrank(skilltemplate.getRANK().getStartrank());
-				skill.setRANK(rank);
-				character.addSkill(skill);
-			}
-		}
-		List<String> namgiverNotdefaultskills = namegiver.getNOTDEFAULTSKILL();
-		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill");
-		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namgiverNotdefaultskills);
-		for( SKILLType skill : skills ) {
-			RANKType rank = skill.getRANK();
-			int startrank = rank.getStartrank();
-			skillsStartranks+=startrank;
-			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(rank.getRank());
-			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
-			rank.setLpcost(lpcostfull-lpcoststart);
-			rank.setBonus(0);
-			if( skill.getLimitation().isEmpty() ) {
-				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+"'");
-			} else {
-				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+" ("+skill.getLimitation()+")'");
-			}
-			capabilities.enforceCapabilityParams(skill);
-			if( skill.getAttribute() != null ) {
-				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
-			}
-			removeIfContains(defaultSkills,skill.getName());
-		}
-		calculatedLP.setUsedSkillsStartRanks(skillsStartranks);
-
-		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
-		if( PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES) ) {
-			for( CAPABILITYType defaultSkill : defaultSkills ) {
-				List<String> limitations = defaultSkill.getLIMITATION();
-				if( limitations.size()==0 ) limitations.add("");
-				for( String limitation : limitations ) {
-					SKILLType skill = new SKILLType();
-					RANKType rank = new RANKType();
-					skill.setRANK(rank);
-					skill.setName(defaultSkill.getName());
-					skill.setLimitation(limitation);
-					capabilities.enforceCapabilityParams(skill);
-					if( skill.getAttribute() != null ) {
-						calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
-					}
-					character.addSkill(skill);
-				}
-			}
-		}
 
 		DEFENSEType disciplineDefense = getDisciplineDefense(diciplineCircle);
 		defense.setPhysical(defense.getPhysical()+disciplineDefense.getPhysical());
@@ -632,6 +560,83 @@ public class ECEWorker {
 		character.calculateDevotionPoints();
 
 		return charakter;
+	}
+
+	public static void calculateSkills(CharacterContainer character, HashMap<String, ATTRIBUTEType> characterAttributes, List<String> namegiverAbilities, CalculatedLPContainer calculatedLP) {
+		// StartRänge und MindestRänge für die SprachenSkills bestimmen
+		int[] startSpeakReadWrite = character.getDefaultLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
+		int[] currentSpeakReadWrite = character.getLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
+		List<SKILLType> speakSkills = character.getSpeakSkills();
+		List<SKILLType> readwriteSkills = character.getReadWriteSkills();
+		if( ! speakSkills.isEmpty() ) {
+			RANKType rank = speakSkills.get(0).getRANK();
+			if( rank.getStartrank() < startSpeakReadWrite[0] ) rank.setStartrank(startSpeakReadWrite[0]);
+			if( rank.getRank() < currentSpeakReadWrite[0] ) rank.setRank(currentSpeakReadWrite[0]);
+		}
+		if( ! readwriteSkills.isEmpty() ) {
+			RANKType rank = readwriteSkills.get(0).getRANK();
+			if( rank.getStartrank() < startSpeakReadWrite[1] ) rank.setStartrank(startSpeakReadWrite[1]);
+			if( rank.getRank() < currentSpeakReadWrite[1] ) rank.setRank(currentSpeakReadWrite[1]);
+		}
+
+		int skillsStartranks=calculatedLP.getUsedSkillsStartRanks();
+		character.removeEmptySkills();
+		List<SKILLType> skills = character.getSkills();
+		if( skills.isEmpty() ) {
+			for(SKILLType skilltemplate : PROPERTIES.getStartingSkills() ) {
+				SKILLType skill = new SKILLType();
+				skill.setName(skilltemplate.getName());
+				skill.setLimitation(skilltemplate.getLimitation());
+				RANKType rank = new RANKType();
+				rank.setRank(skilltemplate.getRANK().getRank());
+				rank.setStartrank(skilltemplate.getRANK().getStartrank());
+				skill.setRANK(rank);
+				character.addSkill(skill);
+			}
+		}
+		List<String> namgiverNotdefaultskills = character.getRace().getNOTDEFAULTSKILL();
+		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill");
+		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namgiverNotdefaultskills);
+		for( SKILLType skill : skills ) {
+			RANKType rank = skill.getRANK();
+			int startrank = rank.getStartrank();
+			skillsStartranks+=startrank;
+			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(rank.getRank());
+			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
+			rank.setLpcost(lpcostfull-lpcoststart);
+			rank.setBonus(0);
+			if( skill.getLimitation().isEmpty() ) {
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+"'");
+			} else {
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+" ("+skill.getLimitation()+")'");
+			}
+			capabilities.enforceCapabilityParams(skill);
+			if( skill.getAttribute() != null ) {
+				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
+			}
+			removeIfContains(defaultSkills,skill.getName());
+		}
+		calculatedLP.setUsedSkillsStartRanks(skillsStartranks);
+
+		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
+		if( PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES) ) {
+			for( CAPABILITYType defaultSkill : defaultSkills ) {
+				List<String> limitations = defaultSkill.getLIMITATION();
+				if( limitations.size()==0 ) limitations.add("");
+				for( String limitation : limitations ) {
+					SKILLType skill = new SKILLType();
+					RANKType rank = new RANKType();
+					skill.setRANK(rank);
+					skill.setName(defaultSkill.getName());
+					skill.setLimitation(limitation);
+					capabilities.enforceCapabilityParams(skill);
+					if( skill.getAttribute() != null ) {
+						calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
+					}
+					character.addSkill(skill);
+				}
+			}
+		}
 	}
 
 	private void updateSpell(SPELLType spell) {
@@ -992,7 +997,7 @@ public class ECEWorker {
 		return null;
 	}
 
-	public void calculateCapabilityRank(RANKType talentRank, ATTRIBUTEType attr) {
+	public static void calculateCapabilityRank(RANKType talentRank, ATTRIBUTEType attr) {
 		// Da der talent.bonus bereits im talent.rank.bonus enhalten ist, muss er hier
 		// explizit nicht mehr weiter beachtet werden.
 		if( attr == null ) {
