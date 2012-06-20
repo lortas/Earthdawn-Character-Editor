@@ -119,6 +119,7 @@ public class EDExperience extends JPanel {
 
 		// Create transperant table
 		table = new JTable() {
+			private static final long serialVersionUID = -8524288405534860950L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer( renderer, row, column);
@@ -247,7 +248,7 @@ class ExperienceTableModel extends AbstractTableModel {
      * then the last column would contain text ("true"/"false"),
      * rather than a check box.
      */
-    public Class getColumnClass(int c) {
+    public Class<?> getColumnClass(int c) {
         return getValueAt(0, c).getClass();
     }
 

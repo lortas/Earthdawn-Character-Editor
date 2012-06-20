@@ -41,9 +41,7 @@ public class EDKarma extends JPanel {
 	private JButton btnRemoveKarmaEntry;
 	private BufferedImage backgroundimage = null;
 
-	public CharacterContainer getCharacter() {
-		return character;
-	}
+	public CharacterContainer getCharacter() { return character; }
 
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
@@ -106,8 +104,9 @@ public class EDKarma extends JPanel {
 		scrollPane.setOpaque(false);
 		add(scrollPane, BorderLayout.CENTER);
 
-		// Create transperant table
+		// Create transparent table
 		table = new JTable(){
+			private static final long serialVersionUID = -6132298112451086676L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer( renderer, row, column);
@@ -153,115 +152,70 @@ public class EDKarma extends JPanel {
 }
 
 class KarmaTableModel extends AbstractTableModel {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5997526498986521423L;
 	private CharacterContainer character;
-    private String[] columnNames = {"Date", "Comment",  "Type", "Value"};
-
-
-    
-    
+	private String[] columnNames = {"Date", "Comment",  "Type", "Value"};
 
 	public KarmaTableModel(CharacterContainer character) {
 		super();
 		this.character = character;
-	}    
-  
+	}
+
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		fireTableStructureChanged();
 	}
 
-	public CharacterContainer getCharacter() {
-		return character;
-	}	
+	public CharacterContainer getCharacter() { return character; }
 
-    public int getColumnCount() {
-        return columnNames.length;
-    }
+	public int getColumnCount() { return columnNames.length; }
 
-    public int getRowCount() {
-    	if(character != null){
-    		return character.getEDCHARACTER().getKARMA().getKARMAPOINTS().size();
-    	}
-    	else{
-    		return 0;
-    	}
-    		
-        
-    }
+	public int getRowCount() {
+		if( character == null ) return 0;
+		return character.getEDCHARACTER().getKARMA().getKARMAPOINTS().size();
+	}
 
-    public String getColumnName(int col) {
-        return columnNames[col];
-    }
+	public String getColumnName(int col) { return columnNames[col]; }
 
-    public Object getValueAt(int row, int col) {
-        // {"Date", "Comment",  "Type", "Value"}
-        if(character != null){ 
-	    	switch (col) {
-	    		case 0: return character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getWhen();
-	    		case 1: return character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getComment();
-	    		case 2: if (character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getType().equals(PlusminusType.PLUS)) {
-	    					return new String("+");
-	    				}
-	    				else{
-	    					return new String("-");
-	    				}
-	    		
-	    		case 3: return new Integer(character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getValue());
-	    		default : return new String("Error not defined");
-	    	}
-        }
-	    else{
-	    	return 0;
-	    }
-    }
+	public Object getValueAt(int row, int col) {
+		if( character == null) return 0; 
+		// {"Date", "Comment",  "Type", "Value"}
+		switch (col) {
+		case 0:
+			return character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getWhen();
+		case 1:
+			return character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getComment();
+		case 2:
+			if (character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getType().equals(PlusminusType.PLUS)) return new String("+");
+			else return new String("-");
+		case 3:
+			return new Integer(character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getValue());
+		default :
+			return new String("Error not defined");
+		}
+	}
 
-    /*
-     * JTable uses this method to determine the default renderer/
-     * editor for each cell.  If we didn't implement this method,
-     * then the last column would contain text ("true"/"false"),
-     * rather than a check box.
-     */
-    public Class getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
-    }
+	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
-    /*
-     * Don't need to implement this method unless your table's
-     * editable.
-     */
-    public boolean isCellEditable(int row, int col) {
-    	return true;
-    }
+	public boolean isCellEditable(int row, int col) { return true; }
 
-    /*
-     * Don't need to implement this method unless your table's
-     * data can change.
-     */
-    
-    
-    public void setValueAt(Object value, int row, int col) { 
-    	 // {"Date", "Comment",  "Type", "Value"}
-    	switch (col) {    		
-			case 0: character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setWhen((String)value); break;
-			case 1: character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setComment((String)value);  break;
-			case 2: if (((String)value).equals("+")) {
-						System.out.println("+");
-						character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setType(PlusminusType.PLUS);
-					}
-					else{
-						System.out.println("-");
-						character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setType(PlusminusType.MINUS);
-					}
-					break;
-			case 3: character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setValue(((Integer)value).intValue());  break;
-    	}
-    	character.refesh();	
-    }
-
+	public void setValueAt(Object value, int row, int col) { 
+		// {"Date", "Comment",  "Type", "Value"}
+		switch (col) {
+		case 0:
+			character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setWhen((String)value);
+			break;
+		case 1:
+			character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setComment((String)value);
+			break;
+		case 2:
+			if( ((String)value).equals("+") ) character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setType(PlusminusType.PLUS);
+			else character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setType(PlusminusType.MINUS);
+			break;
+		case 3:
+			character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).setValue(((Integer)value).intValue());
+			break;
+		}
+		character.refesh();	
+	}
 }
-

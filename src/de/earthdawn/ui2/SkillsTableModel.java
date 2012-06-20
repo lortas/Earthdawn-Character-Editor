@@ -84,9 +84,7 @@ public class SkillsTableModel extends AbstractTableModel {
 		}
 	}
 
-	public Class getColumnClass(int c) {
-		return getValueAt(0, c).getClass();
-	}
+	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
 	public boolean isCellEditable(int row, int col) {
 		if( col == 3 ) return true;

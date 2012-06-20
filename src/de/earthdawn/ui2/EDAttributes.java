@@ -52,6 +52,7 @@ public class EDAttributes extends JPanel {
 		add(scrollPane);
 
 		table = new JTable(){
+			private static final long serialVersionUID = -8611738411462826052L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer(renderer, row, column);
@@ -82,9 +83,8 @@ public class EDAttributes extends JPanel {
 }
 
 class AttributesTableModel extends AbstractTableModel {
-	
+	private static final long serialVersionUID = -6909371939387453930L;
 	private CharacterContainer character;
-	
 	private String[] columnNames = {"Attribute", "Base", "Buy", "LP increase", "Final", "Step", "Dice"};
 	private Object[][] data = {
 	{"Dexterity"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
@@ -137,7 +137,7 @@ class AttributesTableModel extends AbstractTableModel {
 	 * then the last column would contain text ("true"/"false"),
 	 * rather than a check box.
 	 */
-	public Class getColumnClass(int c) {
+	public Class<?> getColumnClass(int c) {
 		return getValueAt(0, c).getClass();
 	}
 
