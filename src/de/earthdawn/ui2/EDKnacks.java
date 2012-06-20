@@ -88,6 +88,7 @@ public class EDKnacks extends JPanel {
 		add(scrollPane);
 
 		table = new JTable(){
+			private static final long serialVersionUID = -1156606156873620781L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer(renderer, row, column);
@@ -189,9 +190,7 @@ class KnacksTableModel extends AbstractTableModel {
      * then the last column would contain text ("true"/"false"),
      * rather than a check box.
      */
-    public Class getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
-    }
+	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
 	public boolean isCellEditable(int row, int col) {
 		if( col == 0 ) return true;

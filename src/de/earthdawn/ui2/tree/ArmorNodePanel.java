@@ -11,7 +11,6 @@ import javax.swing.JCheckBox;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 import net.miginfocom.swing.MigLayout;

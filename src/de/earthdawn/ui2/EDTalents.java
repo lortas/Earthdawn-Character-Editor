@@ -102,6 +102,7 @@ public class EDTalents extends JPanel {
 
 		// Create transperant table
 		table = new JTable(){
+			private static final long serialVersionUID = -4787240966765482373L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer( renderer, row, column);
@@ -396,9 +397,7 @@ class TalentsTableModel extends AbstractTableModel {
      * then the last column would contain text ("true"/"false"),
      * rather than a check box.
      */
-	public Class getColumnClass(int c) {
-		return getValueAt(0, c).getClass();
-	}
+	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
 	public boolean isCellEditable(int row, int col) {
 		TALENTType talent = null;

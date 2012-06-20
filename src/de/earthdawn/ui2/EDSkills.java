@@ -98,6 +98,7 @@ public class EDSkills extends JPanel {
 		add(scrollPane, BorderLayout.CENTER);
 
 		table = new JTable(){
+			private static final long serialVersionUID = -3036298052577825970L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer(renderer, row, column);

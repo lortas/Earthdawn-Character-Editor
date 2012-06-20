@@ -23,11 +23,12 @@ import de.earthdawn.data.WEAPONType;
 import de.earthdawn.data.YesnoType;
 
 public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements TreeCellEditor {
-	private static final long serialVersionUID = 1L;
-	private AbstractNodePanel<?> editorPanel ;
+	private static final long serialVersionUID = 4228894595876362173L;
+	private AbstractNodePanel<?> editorPanel;
 	@SuppressWarnings("rawtypes")
 	private HashMap<Class,Class> registerEditors;
 	
+	@SuppressWarnings("rawtypes")
 	public ItemTreeCellEditor(){
 		registerEditors = new  HashMap<Class,Class>();
 		registerEditors.put(ITEMType.class,ItemNodePanel.class);
@@ -46,19 +47,14 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 	
 	@Override
 	public void addCellEditorListener(CellEditorListener arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void cancelCellEditing() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public Object getCellEditorValue() {
-		// TODO Auto-generated method stub
 		return editorPanel.getNodeObject();
 	}
 
@@ -87,13 +83,10 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 
 	@Override
 	public void removeCellEditorListener(CellEditorListener arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public boolean shouldSelectCell(EventObject arg0) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

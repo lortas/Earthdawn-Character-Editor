@@ -96,6 +96,7 @@ public class EDSpells extends JPanel {
 
 		List<TALENTType> threadweavings = character.getThreadWeavingTalents().get(disciplin);
 		table = new JTable(){
+			private static final long serialVersionUID = 4544018746309317528L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer(renderer, row, column);
@@ -248,24 +249,13 @@ class SpellsTableModel extends AbstractTableModel {
      * then the last column would contain text ("true"/"false"),
      * rather than a check box.
      */
-    public Class getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
-    }
+	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
-    /*
-     * Don't need to implement this method unless your table's
-     * editable.
-     */
-    public boolean isCellEditable(int row, int col) {
-    	if( col == 0 ) return true;
-    	if( col == 1 ) return true;
-    	return false;
-    }
+	public boolean isCellEditable(int row, int col) {
+		if( (col==0) || (col==1) ) return true;
+		return false;
+	}
 
-    /*
-     * Don't need to implement this method unless your table's
-     * data can change.
-     */
 	public void setValueAt(Object value, int row, int col) {
 		if( character == null ) return;
 		SPELLType spell = spelllist.get(row);

@@ -119,6 +119,7 @@ public class EDLanguages extends JPanel {
 		toolBar.add(btnRemoveLanguages);
 
 		tableLanguages = new JTable(){
+			private static final long serialVersionUID = 5610503410969779287L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer(renderer, row, column);
@@ -140,6 +141,7 @@ public class EDLanguages extends JPanel {
 		tableLanguages.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
 
 		tableLanguageSkills = new JTable(){
+			private static final long serialVersionUID = 7932454339380763724L;
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int column) 
 			{
 				Component component = super.prepareRenderer(renderer, row, column);
@@ -258,11 +260,10 @@ class LanguagesTableModel extends AbstractTableModel {
 	 * then the last column would contain text ("true"/"false"),
 	 * rather than a check box.
 	 */
-	public Class getColumnClass(int c) {
-		return getValueAt(0, c).getClass();
-	}
+	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
 	public boolean isCellEditable(int row, int col) {
+		if( character == null ) return false;
 		if( row < character.getLanguages().size() ) return true;
 		return false;
 	}

@@ -146,7 +146,6 @@ public class EDCapabilitySelectDialog extends JDialog {
 			for( TALENTABILITYType talentabilitiy : talentabilities ) {
 				String talentabilityName = talentabilitiy.getName();
 				String limitation = talentabilitiy.getLimitation();
-				int found=0;
 				CAPABILITYType capability = capabilities.getTalent(talentabilityName);
 				if( capability == null ) {
 					System.err.println( "Talent '"+talentabilityName+"' not found in capability list." );
@@ -166,7 +165,6 @@ public class EDCapabilitySelectDialog extends JDialog {
 					cap.setStrain(capability.getStrain());
 					if( limitation.isEmpty() ) capabilityMap.put(talentabilityName,cap);
 					else capabilityMap.put(talentabilityName+" - "+limitation,cap);
-					found++;
 				}
 			}
 		}
