@@ -57,13 +57,20 @@ public class SpentCoins extends JFrame {
 		JPanel coinpanel = new CoinsNodePanel(coins);
 		getContentPane().add(coinpanel, BorderLayout.CENTER);
 
+		ItemTreeCellRenderer renderer = new ItemTreeCellRenderer();
 		JPanel infopanel = new JPanel();
-		infopanel.setLayout(new MigLayout("", "[grow]", "[20px:20px:20px][20px:20px:20px]"));
+		infopanel.setLayout(new MigLayout("", "[grow 10][grow 100]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 		JLabel lblItem = new JLabel();
-		(new ItemTreeCellRenderer()).renderItems(item, lblItem);
-		infopanel.add(lblItem, "cell 0 0,alignx center,aligny center");
-		JLabel lblPrice = new JLabel("Price: "+String.valueOf(item.getPrice())+" Silver");
-		infopanel.add(lblPrice, "cell 0 1,alignx center,aligny center");
+		renderer.renderItems(item, lblItem);
+		infopanel.add(lblItem, "cell 1 0,alignx center,aligny center");
+		infopanel.add(new JLabel("Item:"), "cell 0 0,alignx right,aligny center");
+		JLabel lblPrice = new JLabel(String.valueOf(item.getPrice())+" Silver");
+		infopanel.add(lblPrice, "cell 1 1,alignx center,aligny center");
+		infopanel.add(new JLabel("Price:"), "cell 0 1,alignx right,aligny center");
+		JLabel lblMaxCoins = new JLabel();
+		renderer.renderItems(maxcoins, lblMaxCoins);
+		infopanel.add(lblMaxCoins, "cell 1 2,alignx center,aligny center");
+		infopanel.add(new JLabel("Your Coins:"), "cell 0 2,alignx right,aligny center");
 		getContentPane().add(infopanel, BorderLayout.NORTH);
 	}
 }
