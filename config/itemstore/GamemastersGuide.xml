@@ -104,6 +104,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Elemental Long-Spear" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="melee weapon" weight="7.0" bookref="GM p.134">
+			<edt:WEAPON strengthmin="13" damagestep="5" name="Elemental Long-Spear" weight="7.0" size="5" kind="melee weapon" bookref="GM p.134"/>
 		<edt:description>Six- to eight-foot-long wooden long-spears incorporate each of the five True Elements. Shafts are woven with True Wood, hollow cores filled with True Air, and spears’ metal tips woven with True Earth. Each spear is soaked in liquid rich in True Water and hardened in flames fueled by True Fire. Spears float in water. No threads, same characteristics as long-spear.</edt:description>
 		<edt:THREADRANK effect="Damage Step 10; immune fire and from effects of spells or abilities that damage; keeps spear from splintering when making Charging Attacks" keyknowledge="spear’s Name">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
@@ -189,7 +190,50 @@
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
 		</edt:THREADRANK>
-	</THREADITEM>	
-	
-<!--	weiter mit Frost Pouch p136 -->
+	</THREADITEM>
+	<THREADITEM name="Frost Pouch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="tool" bookref="GM p.136">
+		<edt:description>small pouches, usually 3 by 5 inches in size made of white or blue cloth. Pouches always feel cool</edt:description>		
+		<edt:THREADRANK effect="Owner reaches into pouch, grabs handful frost, hurls it at opponent, making thrown Attack Test against target. If test succeeds, Willpower+5 Effect Test as Damage Test. Physical Armor protects. Each use causes 1 Strain. The thrown Range equals that of dagger." keyknowledge="pouch’s Name"/>
+		<edt:THREADRANK effect="The thrown Range of frost equals a throwing dagger."/>
+		<edt:THREADRANK effect="Effect Step of Willpower+6" keyknowledge=" Frost originally came from mountain snow or glacier ice. Name of mountain or glacier"/>			
+		<edt:THREADRANK effect="Frost gains power called Freezing Frost. Choose to use power instead of normal frost attack. If Attack Test is successful, compare Effect Test result against target’s Spell Defense. If test succeeds, target takes no damage, instead locked into position as if frozen; target can take no Actions while in this state and is other wise considered Knocked Down for all actions except Willpower Tests to break free. Effect lasts for number of rounds equal to Thread Rank. Each round, frozen victim makes Willpower Test against frost’s Effect Step. If test succeeds, character breaks free. Successful Dispel Magic Test against pouch’s Spell Defense will end effect of Freezing Frost." deed="Return to mountain or glacier of origin and fill pouch with snow or ice"/>			
+		<edt:THREADRANK effect="Effect Step of Willpower+7" keyknowledge="Name of air elemental who lent its power to pouch"/>
+		<edt:THREADRANK effect="Effect Step of Willpower+8"/>
+	</THREADITEM>
+    <THREADITEM name="Lightning Mace" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="5.0" kind="melee weapon" bookref="GM p.136">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="4" weight="5.0" kind="melee weapon" name="Lightning Mace" bookref="GM p.136"/>
+		<edt:description>Lightning maces can be of as many different shapes and sizes as normal maces. Head of a lightning mace is always made of metal and often shows many small burn marks. Activated the head of mace crackles with small bolts of lightning.With no threads attached, lightning maces have same characteristics as normal maces.</edt:description>
+		<edt:THREADRANK effect="Damage Step 7" keyknowledge="mace’s Name">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="7" weight="5.0" name="Lightning Mace"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="1 Strain; mace crackles with lightning; +3 to Damage Tests for number of rounds equal to Thread Rank">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="7" weight="5.0" name="Lightning Mace"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 8" deed="Must visit site where previous owner lost weapon. Must make pledge to never part with mace, using blood oath">			
+			<edt:WEAPON size="3" strengthmin="13" damagestep="8" weight="5.0" name="Lightning Mace"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="2 Strain, may shoot bolts of lightning from mace; Each bolt is directed toward different target, to maximum number of bolts equal to Thread Rank. Makes a Spellcasting Test and compares result against Spell Defense of each target. Use Perception Step to make Spellcasting Test if does not know the Spellcasting talent. If test succeeds, lightning bolt hits. Willpower+5 Effect Test to determine how much damage on each target. Non-metal Physical Armor protects against this damage">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="8" weight="5.0" name="Lightning Mace"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Lightning bolt Effect Step is now Willpower+7." keyknowledge="Name of mace’s creator">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="8" weight="5.0" name="Lightning Mace"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Mace produces flashes of lightning that deflect physical and magical attacks. Adds +1 to Physical and Spell Defense.">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="8" weight="5.0" name="Lightning Mace"/>
+			<edt:DEFENSE kind="physical" bonus="1"/>
+			<edt:DEFENSE kind="spell" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Damage Step 9" keyknowledge="Enchantment of lightning maces is always completed during severe storm. Must learn about storm during which mace was completed.">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="9" weight="5.0" name="Lightning Mace"/>
+			<edt:DEFENSE kind="physical" bonus="1"/>
+			<edt:DEFENSE kind="spell" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Flashes of lightning increase in intensity. Adds +2 to Physical and Spell Defense. Lightning bolt Effect Step is now Willpower+9" keyknowledge="Enchantment of lightning maces is always completed during severe storm. Must learn about storm during which mace was completed.">
+			<edt:WEAPON size="3" strengthmin="13" damagestep="9" weight="5.0" name="Lightning Mace"/>
+			<edt:DEFENSE kind="physical" bonus="2"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+		
+<!--	weiter mit Naga-Scale Brooch p137 -->
 </ITEMS>
