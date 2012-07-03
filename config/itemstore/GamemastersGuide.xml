@@ -104,8 +104,8 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Elemental Long-Spear" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="melee weapon" weight="7.0" bookref="GM p.134">
-			<edt:WEAPON strengthmin="13" damagestep="5" name="Elemental Long-Spear" weight="7.0" size="5" kind="melee weapon" bookref="GM p.134"/>
 		<edt:description>Six- to eight-foot-long wooden long-spears incorporate each of the five True Elements. Shafts are woven with True Wood, hollow cores filled with True Air, and spears’ metal tips woven with True Earth. Each spear is soaked in liquid rich in True Water and hardened in flames fueled by True Fire. Spears float in water. No threads, same characteristics as long-spear.</edt:description>
+		<edt:WEAPON strengthmin="13" damagestep="5" name="Elemental Long-Spear" weight="7.0" size="5" kind="melee weapon" bookref="GM p.134"/>
 		<edt:THREADRANK effect="Damage Step 10; immune fire and from effects of spells or abilities that damage; keeps spear from splintering when making Charging Attacks" keyknowledge="spear’s Name">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
 		</edt:THREADRANK>
@@ -200,9 +200,9 @@
 		<edt:THREADRANK effect="Effect Step of Willpower+7" keyknowledge="Name of air elemental who lent its power to pouch"/>
 		<edt:THREADRANK effect="Effect Step of Willpower+8"/>
 	</THREADITEM>
-    <THREADITEM name="Lightning Mace" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="5.0" kind="melee weapon" bookref="GM p.136">
-			<edt:WEAPON size="3" strengthmin="13" damagestep="4" weight="5.0" kind="melee weapon" name="Lightning Mace" bookref="GM p.136"/>
+	<THREADITEM name="Lightning Mace" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="5.0" kind="melee weapon" bookref="GM p.136">
 		<edt:description>Lightning maces can be of as many different shapes and sizes as normal maces. Head of a lightning mace is always made of metal and often shows many small burn marks. Activated the head of mace crackles with small bolts of lightning.With no threads attached, lightning maces have same characteristics as normal maces.</edt:description>
+		<edt:WEAPON size="3" strengthmin="13" damagestep="4" weight="5.0" kind="melee weapon" name="Lightning Mace" bookref="GM p.136"/>
 		<edt:THREADRANK effect="Damage Step 7" keyknowledge="mace’s Name">
 			<edt:WEAPON size="3" strengthmin="13" damagestep="7" weight="5.0" name="Lightning Mace"/>
 		</edt:THREADRANK>
