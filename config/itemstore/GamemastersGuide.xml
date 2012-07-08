@@ -172,22 +172,27 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 1, +1 Spell Defense">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="1" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 2, +2 Spell Defense" keyknowledge="when and where robe was made">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="robe holds a spell matrix permanently attuned to Earth Blend spell">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 3, +3 Spell Defense." keyknowledge="Name of the robe’s creator">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="may hide objects (no greater 6 feet long, 3 feet wide) within robe. Robe wraps itself around hidden objects. To hide something within robe, wearer must make successful Thread Weaving Test against Diffculty equal number of objects hidden in robe +9. Robe can conceal max. four objects at one time. Wearer can remove object anytime; replacing object requires another successful Thread Weaving Test. Others than wearer can only remove hidden objects by achieving a Good Result with Willpower Test against robe’s Spell Defense. Robe’s Spell Defense is Detection Diffculty for objects hidden within folds" keyknowledge="types of plants depicted in robe’s pattern">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
 		</edt:THREADRANK>
 	</THREADITEM>
@@ -234,6 +239,59 @@
 			<edt:DEFENSE kind="spell" bonus="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-		
-<!--	weiter mit Naga-Scale Brooch p137 -->
+	<THREADITEM name="Naga-Scale Brooch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="brooch" bookref="GM p.137">
+		<edt:description>Brooches are made from single naga scale, set into gold or silver backing often engraved with serpent motif. Scale changes color to blend with wearer’s clothing.</edt:description>
+		<edt:THREADRANK effect="+1 to Charisma-only Tests" keyknowledge="Can be made only with scales willingly donated. Each brooch is Named after naga from whom its scale came. Brooch’s Name."/>
+		<edt:THREADRANK effect="+2 to Charisma-only Tests"/>
+		<edt:THREADRANK effect="+1 to Social Defense" keyknowledge="Name of person who obtained scale and created brooch">			
+			<edt:DEFENSE kind="social" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="+3 to Charisma-only Tests" keyknowledge="Where naga who supplied scales for brooch lived.">
+			<edt:DEFENSE kind="social" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Grants power similar to naga’s power of entrancement; +1 Hypnotize talent" deed="Must befriend a naga">
+			<edt:TALENT name="Hypnotize" limitation="" bonus="1" pool=""/>
+			<edt:DEFENSE kind="social" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="+2 to Hypnotize talent, +2 to Social Defense">
+			<edt:TALENT name="Hypnotize" limitation="" bonus="2" pool=""/>
+			<edt:DEFENSE kind="social" bonus="2"/>		
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Orichalcum Shield" lpcostgrowth="13" spelldefense="18" maxthreads="1" weight="15.0" kind="shield" bookref="GM p.137">
+		<edt:description>Similar in size and shape to crystal raider shields, orichalcum shields are made of orichalcum-lined wooden and metal plates. Physical Armor 4, Mystic Armor 4, Initiative Penalty 3, Deflection Bonus 5</edt:description>
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="4" mysticarmor="4" penalty="3" weight="15.0" kind="shield"/>
+		<edt:THREADRANK effect="Physical Armor 6; Mystic Armor 6" keyknowledge="shield’s Name">
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="6" mysticarmor="6" penalty="3" weight="15.0" kind="shield"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Initiative Penalty 2">
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="6" mysticarmor="6" penalty="2" weight="15.0" kind="shield"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Physical Armor 7; Mystic Armor 7; +1 to Spell Defense." keyknowledge="Names of Weaponsmith and Elementalist who created the shield">			
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="7" mysticarmor="7" penalty="2" weight="15.0" kind="shield"/>
+			<edt:DEFENSE kind="spell" bonus="1"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Initiative Penalty 1; Deflection Bonus 7">
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="7" mysticarmor="7" penalty="1" weight="15.0" kind="shield"/>
+			<edt:DEFENSE kind="spell" bonus="1"/>	
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Physical Armor 8; Mystic Armor 8; +2 to Spell Defense." keyknowledge="Name of the place where the shield was created">
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="8" mysticarmor="8" penalty="1" weight="15.0" kind="shield"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Initiative Penalty 0; Deflection Bonus 9">
+			<edt:SHIELD name="Orichalcum Shield" physicalarmor="8" mysticarmor="8" penalty="0" weight="15.0" kind="shield"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Potion of Life" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="1.0" kind="potion" bookref="GM p.138">
+		<edt:description>Potions of life vary greatly in color and consistency, depending on the alchemists who create them. A potion of life is stored in a magical flask. The containers holding these potions are most often porcelain, but are sometimes made from glass or metal.</edt:description>
+		<edt:THREADRANK effect="Owner tosses silver coin over his shoulder, proposing toast to the alchemist. Flask fills with healing potion with a +6 bonus. Potion must be consumed immediately. No other magiccan enhance the Recovery Test the potion isused to enhance. Flask can produce two potions per day." keyknowledge="flask ’s Name"/>
+		<edt:THREADRANK effect="Healing potion now has +8"/>
+		<edt:THREADRANK effect="Healing potion now has +10. Flask can now also produce a Cure Disease Potion. Owner cannot use any other magic to enhance a test enhanced by this potion. Flask can produce three potions per day." keyknowledge="Name of alchemist who created potion"/>			
+		<edt:THREADRANK effect="Healing potion has +10; Cure disease potion +6"/>
+		<edt:THREADRANK effect="Cure disease potion now +7; Flask can produce cleanse poison potion, the owner cannot use any other magic to enhance a test granted by this potion. Flask can produce five potions per day"/>
+	</THREADITEM>
+
+<!--	weiter mit Puppet Familiar p138 -->
 </ITEMS>
