@@ -292,6 +292,22 @@
 		<edt:THREADRANK effect="Healing potion has +10; Cure disease potion +6"/>
 		<edt:THREADRANK effect="Cure disease potion now +7; Flask can produce cleanse poison potion, the owner cannot use any other magic to enhance a test granted by this potion. Flask can produce five potions per day"/>
 	</THREADITEM>
+	<THREADITEM name="Puppet Familiar" lpcostgrowth="9" spelldefense="15" maxthreads="2" weight="5.0" kind="artisan" bookref="GM p.138">
+		<edt:description>Puppet familiars consist of small puppets formed in the shape of one of the Namegiver races. Puppets usually measure only 12 to 18 inches in height. The faces of puppet familiars usually express an exaggerated emotion, ranging from astonishment to fear to joy.</edt:description>
+		<edt:THREADRANK effect="spell matrix of Rank equal to Thread Rank" keyknowledge="puppet’s Name"/>
+		<edt:THREADRANK effect="two spell matrices of Rank equal to Thread Rank"/>
+		<edt:THREADRANK effect="now 1 spell matrix and 1 enhanced matrix." keyknowledge="Name of person who created puppet familiar"/>			
+		<edt:THREADRANK effect="now 2 enhanced matrices"/>
+		<edt:THREADRANK effect="Puppet comes to life with no talents other than its spell matrices; Attribute steps equal to owner’s corresponding natural Attribute step–2; same Death Rating and Wound Threshold as its owner and shares owner’s Recovery Tests; completely loyal to owner; may possess many of owner’s personality traits" deed="must re-Name puppet familiar; blood magic ritual animates puppet for a year and a day; Owner Names puppet and sacrifices six drops of blood that cause 1 Blood Magic Damage; Owner may repeat ritual at end of duration, but need not re-Name puppet"/>
+		<edt:THREADRANK effect="spell matrices are now ArmoredMatrices"/>
+		<edt:THREADRANK effect="By hour-long ritual and taking 1 Blood Magic Damage, owner can convert one of puppet’s Armored Matrices into Shared Matrix; another ritual is required to turn it back, allowing to heal damage." keyknowledge="what type of wood was used and Name of forest or woods where wood originated"/>
+	</THREADITEM>
 
-<!--	weiter mit Puppet Familiar p138 -->
+
+
+<!-- 
+
+-->	
+	
+<!--	weiter mit Purse Ever Bountiful p139 -->
 </ITEMS>
