@@ -141,6 +141,7 @@
 		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="false">
 			<zipfileset dir="./addons/config/capabilities" prefix="config/capabilities"/>
 			<zipfileset dir="./addons/config/disciplines" prefix="config/disciplines"/>
+			<zipfileset dir="./addons/config/spells" prefix="config/spells"/>
 			<zipfileset file="./readme.txt"/>
 		</zip>
 	</target>
