@@ -172,28 +172,28 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 1, +1 Spell Defense">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="1" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 2, +2 Spell Defense" keyknowledge="when and where robe was made">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="robe holds a spell matrix permanently attuned to Earth Blend spell">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 3, +3 Spell Defense." keyknowledge="Name of the robe’s creator">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="may hide objects (no greater 6 feet long, 3 feet wide) within robe. Robe wraps itself around hidden objects. To hide something within robe, wearer must make successful Thread Weaving Test against Diffculty equal number of objects hidden in robe +9. Robe can conceal max. four objects at one time. Wearer can remove object anytime; replacing object requires another successful Thread Weaving Test. Others than wearer can only remove hidden objects by achieving a Good Result with Willpower Test against robe’s Spell Defense. Robe’s Spell Defense is Detection Diffculty for objects hidden within folds" keyknowledge="types of plants depicted in robe’s pattern">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Frost Pouch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="tool" bookref="GM p.136">
@@ -250,12 +250,12 @@
 			<edt:DEFENSE kind="social" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Grants power similar to naga’s power of entrancement; +1 Hypnotize talent" deed="Must befriend a naga">
-			<edt:TALENT name="Hypnotize" limitation="" bonus="1" pool=""/>
 			<edt:DEFENSE kind="social" bonus="1"/>
+			<edt:TALENT name="Hypnotize" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 to Hypnotize talent, +2 to Social Defense">
-			<edt:TALENT name="Hypnotize" limitation="" bonus="2" pool=""/>
 			<edt:DEFENSE kind="social" bonus="2"/>		
+			<edt:TALENT name="Hypnotize" limitation="" bonus="2" pool=""/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Orichalcum Shield" lpcostgrowth="13" spelldefense="18" maxthreads="1" weight="15.0" kind="shield" bookref="GM p.137">
