@@ -376,11 +376,11 @@
 	<THREADITEM name="Silvered Shield" lpcostgrowth="5" spelldefense="18" maxthreads="4" weight="10.0" kind="shield" bookref="GM p.140">
 		<edt:description>Typically a footman’s shield. Silvered Shields have fine silver lines decorating their edges, making them appear of more than average worth. Many of these shields have sigils and designs outlined in silver. With no threads attached, shield has same characteristics as normal footman’s shield, with Mystic Armor 1</edt:description>
 			<edt:SHIELD name="Silvered Shield" physicalarmor="3" mysticarmor="1" penalty="1" weight="10.0" kind="shield"/>
-		<edt:THREADRANK effect="Physical Armor 5; Mystic Armor 2" keyknowledge="shield’s Name">
-			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="2" penalty="1" weight="10.0" kind="shield"/>
+		<edt:THREADRANK effect="Physical Armor 5" keyknowledge="shield’s Name">
+			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="1" penalty="1" weight="10.0" kind="shield"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Mystic Armor 3">
-			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="3" penalty="1" weight="10.0" kind="shield"/>
+		<edt:THREADRANK effect="Mystic Armor 2">
+			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="2" penalty="1" weight="10.0" kind="shield"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="1 Strain; deflect visible combat spell directed at him (requires to Reserve action until spell is cast); Spellcasting Test against spell caster’s Spellcasting Test result; If test succeeds, spell is directed against its caster; use wielder’s Spellcasting Test result to determine if spell affects original caster" keyknowledge="Name of shield’s creator">	
 			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="3" penalty="1" weight="10.0" kind="shield"/>
