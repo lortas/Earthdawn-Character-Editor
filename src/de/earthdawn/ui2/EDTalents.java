@@ -211,7 +211,7 @@ public class EDTalents extends JPanel {
 		int circle = Integer.valueOf(source.getText());
 		DISCIPLINE d = ApplicationProperties.create().getDisziplin(disciplin);
 		List<TALENTABILITYType> talentlist = character.getUnusedOptionalTalents(d,circle);
-		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_TALENT,circle,talentlist,new Rectangle(parentloc.x+source.getX()+source.getWidth(), parentloc.y+source.getY(), 450, 300));
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_TALENT,circle,talentlist,null,new Rectangle(parentloc.x+source.getX()+source.getWidth(), parentloc.y+source.getY(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
 		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();

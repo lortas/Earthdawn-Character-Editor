@@ -145,7 +145,7 @@ public class EDSkills extends JPanel {
 	}
 
 	protected void do_btnAddSkill_actionPerformed(ActionEvent arg0) {
-		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_SKILLS,0, new Rectangle(100, 100, 450, 300) );
+		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_SKILLS,0,character.getSkills(),new Rectangle(100, 100, 450, 300) );
 		dialog.setVisible(true);
 		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(Object key : selected.keySet()){
