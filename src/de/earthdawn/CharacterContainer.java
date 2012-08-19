@@ -611,7 +611,9 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<SKILLType> getNonLanguageSkills() {
 		List<SKILLType> result = new ArrayList<SKILLType>();
-		for( SKILLType skill : character.getSKILL() ) {
+		for( SKILLType skill : getSkills() ) {
+			if( languageSkillSpeakNames.contains(skill.getName()) ) continue;
+			if( languageSkillReadWriteNames.contains(skill.getName()) ) continue;
 			result.add(skill);
 		}
 		return result;
@@ -619,10 +621,35 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public List<SKILLType> getOnlyLanguageSkills() {
 		List<SKILLType> result = new ArrayList<SKILLType>();
-		for( SKILLType skill : character.getSKILL() ) {
+		for( SKILLType skill : getSkills() ) {
 			if( languageSkillSpeakNames.contains(skill.getName()) || languageSkillReadWriteNames.contains(skill.getName()) ) result.add(skill);
 		}
 		return result;
+	}
+
+	public void updateAlignedSkills() {
+		List<SKILLType> alignedskills = new ArrayList<SKILLType>();
+		for( SKILLType skill : character.getSKILL() ) {
+			// Skills die keinen Rang haben können übersprungen werden.
+			if( (skill.getRANK()==null) || (skill.getRANK().getRank()<1) ) continue;
+			String skillname=skill.getName();
+			String skilllimitation=skill.getLimitation();
+			int discount=0;
+			for( DISCIPLINEType discipline : getDisciplines() ) {
+				if( skill == null ) break;
+				discount++;
+				for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+					if( talent.getName().equals(skillname) && talent.getLimitation().equals(skilllimitation) ) {
+						skill.setRealigned(discount);
+						alignedskills.add(skill);
+						talent.setALIGNEDSKILL(skill);
+						skill=null;
+						break;
+					}
+				}
+			}
+		}
+		character.getSKILL().removeAll(alignedskills);
 	}
 
 	public EXPERIENCEType getLegendPoints() {
@@ -1481,24 +1508,30 @@ public class CharacterContainer extends CharChangeRefresh {
 		removeSkill(remove);
 	}
 
+	// Finde zu allen Talenten, ob es Realigned Talente dazu gibt und aktuallisiere deren Realigned Rank
 	public void updateRealignedTalents() {
 		HashMap<String, List<TALENTType>> realignedTalentHash = new HashMap<String, List<TALENTType>>();
+		// Finde alle Talente die als Realigned makiert sind
 		for( TalentsContainer talents : getAllTalents() ) {
 			insertIfRealigned(realignedTalentHash, talents.getDisciplineAndOptionaltalents() );
 		}
 		for( String talentName : realignedTalentHash.keySet() ) {
+			// Wurde ein Talent Realigned, dann gibt es das Talent unter gleichen Namen mehrfach.
 			List<TALENTType> talentsByName = getTalentByName(talentName);
 			List<TALENTType> realignedTalentList = realignedTalentHash.get(talentName);
-			// Entferne alle Talente die wir bereits haben.
+			// Entferne unter der gleichnamigen Talenten alle die realgined wurden
 			talentsByName.removeAll(realignedTalentList);
-			// Theoretisch sollte in talentsByName nur noch ein Element übrig bleiben.
+			// Theoretisch sollte in talentsByName nun genau ein Element übrig bleiben.
+			// Bestimme für dieses nun den Realigned-Rang
 			int maxRealignedRank=0;
 			for( TALENTType talent : realignedTalentList ) {
 				int currentRealignedRank = talent.getRANK().getRank();
 				if( maxRealignedRank < currentRealignedRank ) maxRealignedRank=currentRealignedRank;
 			}
+			// Auch wenn nur genau ein Talent betroffen sein dürfte, nutzen wir eine Schleife.
 			for( TALENTType talent : talentsByName ) {
 				RANKType rank = talent.getRANK();
+				// An dieser Stelle sollte der rank nicht 'null' sein können, aber eine Prüfung schadet nicht.
 				if( rank == null ) {
 					rank = new RANKType();
 					talent.setRANK(rank);
