@@ -40,6 +40,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 
 	private TreeMap<String,SKILLType> capabilityMap = new TreeMap<String,SKILLType>();
 	private HashMap<String,SKILLType> selectedCapabilityMap = new HashMap<String,SKILLType>();
+	private List<SKILLType> excludedSkills = new ArrayList<SKILLType>();
 
 	public HashMap<String, SKILLType> getSelectedCapabilitytMap() {
 		return selectedCapabilityMap;
@@ -52,10 +53,14 @@ public class EDCapabilitySelectDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	public EDCapabilitySelectDialog(int talent,int maxcirclenr,Rectangle dim) {
-		this(talent,maxcirclenr,null,dim);
+		this(talent,maxcirclenr,null,null,dim);
 	}
 
-	public EDCapabilitySelectDialog(int talent,int maxcirclenr, List<TALENTABILITYType> talentabilities,Rectangle dim) {
+	public EDCapabilitySelectDialog(int talent,int maxcirclenr,List<SKILLType> exclude,Rectangle dim) {
+		this(talent,maxcirclenr,null,exclude,dim);
+	}
+
+	public EDCapabilitySelectDialog(int talent,int maxcirclenr, List<TALENTABILITYType> talentabilities, List<SKILLType> exclude, Rectangle dim) {
 		switch( talent ) {
 		case SELECT_SKILLS: setTitle("Select one or more skills"); break;
 		case SELECT_TALENT: setTitle("Select one talent"); break;
@@ -64,6 +69,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setAlwaysOnTop(true);
 		setBounds(dim);
+		if( exclude != null ) this.excludedSkills.addAll(exclude);
 		selectedCapabilityMap = new HashMap<String,SKILLType>();
 		initCapabilityList(talent,maxcirclenr,talentabilities);
 		getContentPane().setLayout(new BorderLayout());
@@ -121,18 +127,18 @@ public class EDCapabilitySelectDialog extends JDialog {
 	public void initCapabilityList(int talent,int maxcirclenr, List<TALENTABILITYType> talentabilities){
 		if( talent == SELECT_SKILLS ) {
 			for (CAPABILITYType capability : capabilities.getSkills()) {
+				String name = capability.getName();
 				List<String> limitations = capability.getLIMITATION();
 				if( limitations.size()==0 ) limitations.add("");
-				for( String limitation : limitations ) {
+				for( String limitation : limitations ) if( !skillIsExcluded(name, limitation) ) {
 					SKILLType skill = new SKILLType();
 					RANKType rank = new RANKType();
 					skill.setRANK(rank);
-					skill.setName(capability.getName());
+					skill.setName(name);
 					skill.setLimitation(limitation);
 					capabilities.enforceCapabilityParams(skill);
-					String name = capability.getName();
-					if( ! limitation.isEmpty() ) name += " : "+ limitation;
-					capabilityMap.put(name,skill);
+					if( ! limitation.isEmpty() ) capabilityMap.put(name+" : "+limitation,skill);
+					else capabilityMap.put(name,skill);
 				}
 			}
 		} else {
@@ -146,6 +152,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 			for( TALENTABILITYType talentabilitiy : talentabilities ) {
 				String talentabilityName = talentabilitiy.getName();
 				String limitation = talentabilitiy.getLimitation();
+				if( skillIsExcluded(talentabilityName, limitation) ) continue;
 				CAPABILITYType capability = capabilities.getTalent(talentabilityName);
 				if( capability == null ) {
 					System.err.println( "Talent '"+talentabilityName+"' not found in capability list." );
@@ -188,5 +195,21 @@ public class EDCapabilitySelectDialog extends JDialog {
 		} else {
 			list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		}
+	}
+
+	public boolean skillIsExcluded(SKILLType skill) {
+		return skillIsExcluded(skill.getName(),skill.getLimitation());
+	}
+
+	public boolean skillIsExcluded(String skillname,String skilllimitation) {
+		if( (skillname==null) || skillname.isEmpty() ) return true;
+		for( SKILLType e : excludedSkills ) {
+			if( e.getName().equals(skillname) ) {
+				String limitation = e.getLimitation();
+				if( (limitation==null) || (limitation.isEmpty()) ) return true;
+				else if( limitation.equals(skilllimitation) ) return true;
+			}
+		}
+		return false;
 	}
 }
