@@ -309,7 +309,7 @@
 		<edt:THREADRANK effect="can duplicate silver coins; 2 Strain; Willpower+2; how many duplicates are created" keyknowledge="Name of Elementalist who created purse"/>			
 		<edt:THREADRANK effect="Willpower+4; how many duplicates are created"/>
 		<edt:THREADRANK effect="Willpower+5; how many duplicates are created" deed="Must obtain coin of same type, same era and same denomination as first dublicated by purse. Duplicate it."/>
-		<edt:THREADRANK effect="can duplicate gold coins; 3 Strain; Willpower+6; how many duplicates are created" keyknoledge="Name of last person to own purse"/>
+		<edt:THREADRANK effect="can duplicate gold coins; 3 Strain; Willpower+6; how many duplicates are created" keyknowledge="Name of last person to own purse"/>
 	</THREADITEM>
 	<THREADITEM name="Rapier of Wit" lpcostgrowth="13" spelldefense="16" maxthreads="2" weight="1.0" kind="melee weapon" bookref="GM p.139">
 		<edt:description>If legends are to be believed, the queen of windlings has held an annual Swordmaster tournament at her palace ever since the end of the Scourge, in mockery of the tournament held in Blood Wood. The winner is said to receive a special threaded windling sword, tapering to so thin a point it can split a hair with a thrust. Either this story is true or it is the fabrication of the finest Weaponsmith among windlings, if not all Namegivers, for the purpose of being left alone to work in peace. Without a thread attached to it, the weapon is treated as a windling sword.</edt:description>
@@ -348,27 +348,27 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="claws on hide’s paws can be used as weapons in unarmed combat; Damage Step is 3" keyknowledge="Name of tribe that is source of armor">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="8" kind="armor" weight="25.0" name="Savage Hide"/>
-			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="" name="Savag Hide Paw Claws" bookref="GM p.139"/>
+			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Physical Armor 9; Mystic Armor 3">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="9" kind="armor" weight="25.0" name="Savage Hide"/>
-			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="" name="Savag Hide Paw Claws" bookref="GM p.139"/>
+			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect=" +3 bonus to Hunting Tests; +2 bonus to Tracking Tests; +1 Surprise Strike; +1 Mystic Aim" keyknowledge="learn tale of hunt for animal that provided hide.">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="9" kind="armor" weight="25.0" name="Savage Hide"/>
-			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="" name="Savag Hide Paw Claws" bookref="GM p.139"/>
+			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
 			<edt:TALENT name="Surprise Strike" limitation="" bonus="1" pool=""/>
 			<edt:TALENT name="Mystic Aim" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Physical Armor 10; Mystic Armor 4">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="4" physicalarmor="10" kind="armor" weight="25.0" name="Savage Hide"/>
-			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="" name="Savag Hide Paw Claws" bookref="GM p.139"/>
+			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
 			<edt:TALENT name="Surprise Strike" limitation="" bonus="1" pool=""/>
 			<edt:TALENT name="Mystic Aim" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+3 Surprise Strike; +3 Mystic Aim" deed="single-handedly hunt and kill animal of type that provided hide for armor">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="4" physicalarmor="10" kind="armor" weight="25.0" name="Savage Hide"/>
-			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="" name="Savag Hide Paw Claws" bookref="GM p.139"/>
+			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
 			<edt:TALENT name="Surprise Strike" limitation="" bonus="3" pool=""/>
 			<edt:TALENT name="Mystic Aim" limitation="" bonus="3" pool=""/>
 		</edt:THREADRANK>
