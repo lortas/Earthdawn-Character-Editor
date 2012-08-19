@@ -22,6 +22,22 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.44-20120819.zip ##
++ Bugs
+	+ ThreadRankNodePanel: WoundThreshold und WoundPenalties mismatch
+	+ taking an item from the item store multible times had lead to the effect that changing one does change the other ones too
++ Multiple magic items of the Gamemasters Guide insert into the item store
++ Code beautifying and adding more comments
++ Spells from earthdawncompendium.com included into the addon archive
++ Optional rule "Align Skills and Talents" added (including correct LP calculation)
++ Pop-up to choose Skills show now only Skill which are not taken
++ Thread item ability "wound" will now take account
++ Thread items now have a thread rank independent way to mark them self as weapon/armor/shield
++ Normal weapon/armor/shield can now be cloned to a thread item
++ Polish pdf character export added
++ The most of the optional rules settings can now be modified via menu entries in the GUI instead of editing the xml file
++ Layout of the general tab updated
++ Action types spelling can now be defined within the configuration file names.xml
 ## EarthdawnCharacterEditor-0.43-20120529.zip ##
 + Bugs
 	+ Pdf Ajfel Forms were not storable
