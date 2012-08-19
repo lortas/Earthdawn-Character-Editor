@@ -36,18 +36,32 @@ public class ECEWorker {
 	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
 	public static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
 	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
-	public static final String karmaritualName = PROPERTIES.getKarmaritualName(); 
-	public static boolean OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_autoincrementDisciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_EnduringArmorByStrength=PROPERTIES.getOptionalRules().getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
+	public static final String karmaritualName = PROPERTIES.getKarmaritualName();
+	public static OPTIONALRULES OptionalRule=PROPERTIES.getOptionalRules();
+	public static boolean OptionalRule_SpellLegendPointCost=OptionalRule.getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_KarmaLegendPointCost=OptionalRule.getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_QuestorTalentNeedLegendpoints=OptionalRule.getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_autoincrementDisciplinetalents=OptionalRule.getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_LegendpointsForAttributeIncrease=OptionalRule.getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_AutoInsertLegendPointSpent=OptionalRule.getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_EnduringArmorByStrength=OptionalRule.getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
 	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
 	private static PrintStream errorout = System.err;
+
+	public static void refreshOptionalRules() {
+		OptionalRule=PROPERTIES.getOptionalRules();
+		OptionalRule_SpellLegendPointCost=OptionalRule.getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
+		OptionalRule_KarmaLegendPointCost=OptionalRule.getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
+		OptionalRule_QuestorTalentNeedLegendpoints=OptionalRule.getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
+		OptionalRule_autoincrementDisciplinetalents=OptionalRule.getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
+		OptionalRule_LegendpointsForAttributeIncrease=OptionalRule.getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
+		OptionalRule_AutoInsertLegendPointSpent=OptionalRule.getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+		OptionalRule_EnduringArmorByStrength=OptionalRule.getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
+		OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
+	}
 
 	/**
 	 * Verabeiten eines Charakters.
@@ -61,7 +75,7 @@ public class ECEWorker {
 		// Berechnete LP erstmal zurücksetzen
 		calculatedLP.clear();
 	
-		// Die OpenSpell List ist eine generiete Liste und muss daher am Anfang gelöscht werden
+		// Die OpenSpell List ist eine generierte Liste und muss daher am Anfang gelöscht werden
 		character.clearOpenSpellList();
 
 		// Benötige Rasseneigenschaften der gewählten Rasse im Objekt "charakter":
@@ -215,7 +229,7 @@ public class ECEWorker {
 		// **SKILL**
 		calculateSkills(character, characterAttributes, namegiverAbilities, calculatedLP);
 
-		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf duplikate Achten zu müssen
+		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf Duplikate achten zu müssen
 		character.clearDisciplineBonuses();
 		// Stelle sicher dass ale Disziplin Talent eingügt werden
 		character.ensureDisciplinTalentsExits();
@@ -225,6 +239,7 @@ public class ECEWorker {
 		character.removeZeroRankOptionalTalents();
 		// Prüfe ob Talente realigned weren müssen.
 		character.realignOptionalTalents();
+		// Finde zu allen Talenten, ob es Realigned Talente dazu gibt und aktuallisiere deren Realigned Rank
 		character.updateRealignedTalents();
 		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
 		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
@@ -580,7 +595,9 @@ public class ECEWorker {
 		}
 
 		int skillsStartranks=calculatedLP.getUsedSkillsStartRanks();
+		// Entferne alle Skills mit Rang 0, wenn voranden.
 		character.removeEmptySkills();
+		// Sollte die Skillliste leer sein, füge die Startskills ein
 		List<SKILLType> skills = character.getSkills();
 		if( skills.isEmpty() ) {
 			for(SKILLType skilltemplate : PROPERTIES.getStartingSkills() ) {
@@ -594,11 +611,15 @@ public class ECEWorker {
 				character.addSkill(skill);
 			}
 		}
+		// Die DefaultSkills werden ermittelt
 		List<String> namgiverNotdefaultskills = character.getRace().getNOTDEFAULTSKILL();
 		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill");
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namgiverNotdefaultskills);
+		// Berechne nun alle LP und Ränge aller vorhandenen Skills und entferne diese aus der Liste der Defaultskills, dabereits vorhanden.
 		for( SKILLType skill : skills ) {
 			RANKType rank = skill.getRANK();
+			if( rank == null ) continue;
+			if( rank.getRank() < 1) continue;
 			int startrank = rank.getStartrank();
 			skillsStartranks+=startrank;
 			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(rank.getRank());
@@ -618,8 +639,8 @@ public class ECEWorker {
 		}
 		calculatedLP.setUsedSkillsStartRanks(skillsStartranks);
 
-		// Wenn gewünscht dann zeige auch die DefaultSkills mit an
-		if( PROPERTIES.getOptionalRules().getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES) ) {
+		// Wenn gewünscht dann füge auch die bis jetzt noch nicht vorhanden DefaultSkills ein
+		if( OptionalRule.getSHOWDEFAULTSKILLS().getUsed().equals(YesnoType.YES) ) {
 			for( CAPABILITYType defaultSkill : defaultSkills ) {
 				List<String> limitations = defaultSkill.getLIMITATION();
 				if( limitations.size()==0 ) limitations.add("");
@@ -637,6 +658,8 @@ public class ECEWorker {
 				}
 			}
 		}
+		// Wenn die optionale Regel "AligningTalensAndSkills" ausgewält wurde, dann Ordner die Skills ihren Talenten zu.
+		if( OptionalRule_AligningTalentsAndSkills ) character.updateAlignedSkills();
 	}
 
 	private void updateSpell(SPELLType spell) {
@@ -759,18 +782,21 @@ public class ECEWorker {
 			// Der Startrank bassiert entweder von dem gesetzen "Startrank" (bei Charaktererschaffung) oder auf dem Rank ab Realigned
 			int startrank=rank.getStartrank();
 			if( startrank < rank.getRealignedrank() ) startrank = rank.getRealignedrank();
-			SKILLType skill = talent.getALIGNEDSKILL();
-			if( skill != null ) {
-				RANKType skillRank = skill.getRANK();
-				if( skillRank != null ) {
-					int skillRealignedRank = skillRank.getRank();
-					// Je höherstufig das Talent ist desto weniger zählen die Skillränge
-					if( talent.getCircle() > 4 ) skillRealignedRank--;
-					if( talent.getCircle() > 8 ) skillRealignedRank--;
-					if( talent.getCircle() > 12 ) skillRealignedRank--;
-					// Man zahlt LP für Rang 0 auf 1 bekomt aber den Talentrang auf "skillRealignedRank"
-					newDisciplineTalentCost+=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),0,1);
-					if( skillRealignedRank > startrank ) startrank=skillRealignedRank;
+			// Skill Realigned nur wenn OptionalRegel aktiv ist
+			if( OptionalRule_AligningTalentsAndSkills ) {
+				SKILLType skill = talent.getALIGNEDSKILL();
+				if( skill != null ) {
+					RANKType skillRank = skill.getRANK();
+					if( skillRank != null ) {
+						int skillRealignedRank = skillRank.getRank();
+						// Je höherstufig das Talent ist desto weniger zählen die Skillränge
+						if( talent.getCircle() > 4 ) skillRealignedRank--;
+						if( talent.getCircle() > 8 ) skillRealignedRank--;
+						if( talent.getCircle() > 12 ) skillRealignedRank--;
+						// Man zahlt LP für Rang 0 auf 1 bekomt aber den Talentrang auf "skillRealignedRank"
+						newDisciplineTalentCost+=PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),0,1);
+						if( skillRealignedRank > startrank ) startrank=skillRealignedRank;
+					}
 				}
 			}
 			rank.setLpcost(newDisciplineTalentCost+PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),startrank,rank.getRank()));
@@ -1038,15 +1064,5 @@ public class ECEWorker {
 
 	public void setErrorout(PrintStream stream) {
 		errorout = stream;
-	}
-
-	public static void refreshOptionalRules() {
-		OptionalRule_SpellLegendPointCost=PROPERTIES.getOptionalRules().getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-		OptionalRule_KarmaLegendPointCost=PROPERTIES.getOptionalRules().getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-		OptionalRule_QuestorTalentNeedLegendpoints=PROPERTIES.getOptionalRules().getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
-		OptionalRule_autoincrementDisciplinetalents=PROPERTIES.getOptionalRules().getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
-		OptionalRule_LegendpointsForAttributeIncrease=PROPERTIES.getOptionalRules().getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
-		OptionalRule_AutoInsertLegendPointSpent=PROPERTIES.getOptionalRules().getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
-		OptionalRule_EnduringArmorByStrength=PROPERTIES.getOptionalRules().getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
 	}
 }
