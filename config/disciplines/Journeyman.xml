@@ -3,6 +3,7 @@
 	<DURABILITY circle="1" death="6" unconsciousness="5"/>
 	<CIRCLE><!-- 1 -->
 		<FOREIGNTALENTS maxcircle="1"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
 		<TALENTABILITY count="5"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
