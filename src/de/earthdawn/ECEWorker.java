@@ -50,6 +50,7 @@ public class ECEWorker {
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
 	private static PrintStream errorout = System.err;
+	private CharacterContainer character;
 
 	public static void refreshOptionalRules() {
 		OptionalRule=PROPERTIES.getOptionalRules();
@@ -63,12 +64,18 @@ public class ECEWorker {
 		OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
 	}
 
+	public ECEWorker(CharacterContainer character) {
+		super();
+		this.character = character;
+	}
+	public ECEWorker(EDCHARACTER charakter) {
+		this(new CharacterContainer(charakter));
+	}
+
 	/**
 	 * Verabeiten eines Charakters.
 	 */
-	public EDCHARACTER verarbeiteCharakter(EDCHARACTER charakter) {
-		CharacterContainer character = new CharacterContainer(charakter);
-
+	public EDCHARACTER verarbeiteCharakter() {
 		// Orignal berechnete LP sichern
 		calculatedLP = new CalculatedLPContainer(character.getCalculatedLegendpoints());
 		CalculatedLPContainer oldcalculatedLP = calculatedLP.copy();
@@ -574,7 +581,7 @@ public class ECEWorker {
 		character.calculateLegendPointsAndStatus();
 		character.calculateDevotionPoints();
 
-		return charakter;
+		return character.getEDCHARACTER();
 	}
 
 	public static void calculateSkills(CharacterContainer character, HashMap<String, ATTRIBUTEType> characterAttributes, List<String> namegiverAbilities, CalculatedLPContainer calculatedLP) {
@@ -737,6 +744,12 @@ public class ECEWorker {
 			if( rank.getRank() < 1 ) {
 				// Wenn kein Rang exisitert, dann auch keine Rangvergangenheit.
 				talent.getRANKHISTORY().clear();
+				// Sollte ein Skill zu diesem Tallent Realigned sein, dann löse diese Verbindung bei Rank 0
+				SKILLType skill = talent.getALIGNEDSKILL();
+				if( skill != null ) {
+					talent.setALIGNEDSKILL(null);
+					character.addSkill(skill);
+				}
 			} else if( (disciplinenumber>1) && (minDisciplineCircle<5) ) {
 				// Wenn Talente von weiteren (nicht die erste) Disciplinen gelernt wurden,
 				// obwohl der kleinste Disziplinkreis nocht nicht 5 ist, muss dies erfasst werden.
@@ -778,12 +791,21 @@ public class ECEWorker {
 				}
 			}
 			// Nur in der Erstdisziplin kann ein Startrang existieren.
-			if( disciplinenumber!=1 ) rank.setStartrank(0);
+			if( disciplinenumber!=1 ) {
+				rank.setStartrank(0);
+				errorout.println("The talent '"+talent.getName()+"' is from "+disciplinenumber+". discipline and can't have any start rank. Clear start rank.");
+			}
+			// Wenn zu dem Talent ein Skill aligned wurde, dann kann es dazu keinen Startrank geben.
+			if( talent.getALIGNEDSKILL() != null ) {
+				rank.setStartrank(0);
+				errorout.println("The talent '"+talent.getName()+"' has an aligned skill and can't have any start rank. Clear start rank.");
+			}
 			// Der Startrank bassiert entweder von dem gesetzen "Startrank" (bei Charaktererschaffung) oder auf dem Rank ab Realigned
 			int startrank=rank.getStartrank();
 			if( startrank < rank.getRealignedrank() ) startrank = rank.getRealignedrank();
-			// Skill Realigned nur wenn OptionalRegel aktiv ist
-			if( OptionalRule_AligningTalentsAndSkills ) {
+			// Sind Skills bereits Realigned dann beachte es auch
+			// Unabhängig von der Optionalen Regel. Die bestimmt nur ob Skills Realigned werden.
+			if( rank.getRank()>0 ) {
 				SKILLType skill = talent.getALIGNEDSKILL();
 				if( skill != null ) {
 					RANKType skillRank = skill.getRANK();

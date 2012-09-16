@@ -1,106 +1,73 @@
 package de.earthdawn.ui2;
 
+import java.util.ResourceBundle;
+import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
-import javax.swing.Box;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
-import de.earthdawn.DiceCups;
-import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.DiceType;
-import de.earthdawn.data.ROLLEDDICEType;
+import net.miginfocom.swing.MigLayout;
 
-public class EDDicing {
+public class EDDicing extends JFrame {
+	private static final long serialVersionUID = 3273868958993125914L;
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
-	private JFrame frame;
-	private JScrollPane scrollPane;
-	private Box topPanel;
-	private Box leftPanel;
-	private JTable table;
+	private static final String frameName = NLS.getString("EDMainWindow.mntmDicing.text"); //$NON-NLS-1$
+	private JPanel panelTop = new JPanel();
+	private JPanel panelLeft = new JPanel();
+	private JPanel panelRight = new JPanel();
+	private JScrollPane scrollPane = new JScrollPane();
 	JComboBox comboBoxNewDiceStep = new JComboBox();
 	JComboBox comboBoxDestinationDiceCup = new JComboBox();
 
-	public EDDicing() {
-		String frameName = NLS.getString("EDMainWindow.mntmDicing.text"); //$NON-NLS-1$
-		JLabel lbl_amountdicecup = new JLabel(NLS.getString("EDDicingWindow.amountdicecup.text"));
-		JLabel lbl_stepselection = new JLabel(NLS.getString("EDDicingWindow.stepselection.text"));
-		JLabel lbl_dicecupselection = new JLabel(NLS.getString("EDDicingWindow.dicecupselection.text"));
-		frame = new JFrame(frameName);
-		frame.setBounds(200, 200, 900, 500);
-		frame.setVisible(true);
-		frame.setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	public EDDicing(JFrame parent) {
+		super(frameName);
+		setSize(new Dimension(672, 672));
+		setLocationRelativeTo(parent);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		getContentPane().setLayout(new BorderLayout());
+		getContentPane().add(panelLeft, BorderLayout.WEST);
+		getContentPane().add(panelRight, BorderLayout.EAST);
+		getContentPane().add(panelTop, BorderLayout.NORTH);
+		panelRight.add(scrollPane);
+		panelRight.setMinimumSize(new Dimension(300,300));
 
-		scrollPane = new JScrollPane();
+		panelLeft.setLayout(new MigLayout("", "[100px:n]", "[20px:n][20px:n][20px:n][20px:n][20px:n][20px:n]"));
 
-		leftPanel = Box.createVerticalBox();
-		leftPanel.add(lbl_amountdicecup);
 		JComboBox comboBoxAmountDiceCup = new JComboBox();
-		comboBoxAmountDiceCup.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent arg0) {
-				do_comboBoxAmountDiceCup_itemStateChanged(arg0);
-			}
-		});
 		for( int i=1; i<20; i++ ) {
 			comboBoxAmountDiceCup.addItem(String.valueOf(i));
 		}
-		leftPanel.add(comboBoxAmountDiceCup);
-		leftPanel.add(lbl_stepselection);
-		for( int i=4; i<41; i++ ) {
-			comboBoxNewDiceStep.addItem(String.valueOf(i));
-		}
-		leftPanel.add(comboBoxNewDiceStep);
-		leftPanel.add(lbl_dicecupselection);
-		leftPanel.add(comboBoxDestinationDiceCup);
-		Button insertSelectionButton = new Button(NLS.getString("EDDicingWindow.insertselection.text"));
-		insertSelectionButton.addActionListener(null);//TODO: ActionListener
-		leftPanel.add(insertSelectionButton);
 
-		topPanel = Box.createHorizontalBox();
-		for (int i = 1; i < 6; i++) {
-			topPanel.add(createCupButton(i));
-		}
+		JTextArea descriptionText = new JTextArea();
+		descriptionText.setLineWrap(true);
+		descriptionText.setText("Folgende Würfelstufe einem Würfelbecher beifügen");
+		panelLeft.add(descriptionText, "cell 0 0");
+		panelLeft.add(new JLabel(NLS.getString("EDDicingWindow.stepselection.text")), "cell 0 1");
+		panelLeft.add(new JLabel(NLS.getString("EDDicingWindow.dicecupselection.text")), "cell 0 2");
+		panelLeft.add(new JLabel(NLS.getString("EDDicingWindow.amountdicecup.text")), "cell 0 4");
+		panelLeft.add(comboBoxAmountDiceCup, "cell 0 5");
 
-		frame.add(scrollPane, BorderLayout.CENTER);
-		frame.add(topPanel,BorderLayout.NORTH);
-		frame.add(leftPanel,BorderLayout.WEST);
+		panelTop.setLayout(new MigLayout("", "[][][][][][][][]", "[20px:n]"));
 
-		table = new JTable();
+		JTable table = new JTable();
+		table.setFillsViewportHeight(true);
 		table.setRowSelectionAllowed(false);
 		table.setSurrendersFocusOnKeystroke(true);
 		table.putClientProperty("terminateEditOnFocusLost", true);
 		table.setAutoCreateRowSorter(false);
-		DicingTableModel dicingTable = new DicingTableModel();
-		table.setModel(dicingTable);
-		table.getColumnModel().getColumn(0).setMaxWidth(60);
-		table.getColumnModel().getColumn(1).setMaxWidth(200);
-		table.getColumnModel().getColumn(3).setMaxWidth(60);
-		table.getColumnModel().getColumn(4).setMaxWidth(60);
-		table.getColumnModel().getColumn(5).setMaxWidth(60);
-		table.getColumnModel().getColumn(6).setMaxWidth(60);
-		table.getColumnModel().getColumn(7).setMaxWidth(60);
-		table.getColumnModel().getColumn(8).setMaxWidth(60);
-		table.getColumnModel().getColumn(9).setMaxWidth(60);
+		table.setModel(new DicingTableModel());
+		scrollPane.setMinimumSize(new Dimension(200, 100));
 		scrollPane.setViewportView(table);
-		for(int j=0; j<5;j++) {
-			int step=4;
-			for(int i=0; i<10; i++) {
-				int[] steps={step++,step++};
-				dicingTable.add(steps,(new DiceCups(steps)).toss());
-			}
-		}
 	}
 
 	private Component createCupButton(int i) {
@@ -111,84 +78,17 @@ public class EDDicing {
 	}
 
 	private void do_comboBoxAmountDiceCup_itemStateChanged(ItemEvent arg0) {
-		if( topPanel == null ) return;
+		if( panelTop == null ) return;
 		if( arg0 == null ) return;
 		if(arg0.getStateChange() == 1) {
 			int amount = Integer.valueOf((String)arg0.getItem());
-			while( topPanel.getComponentCount() < amount ) {
-				topPanel.add(createCupButton(topPanel.getComponentCount()+1));
+			while( panelTop.getComponentCount() < amount ) {
+				panelTop.add(createCupButton(panelTop.getComponentCount()+1));
 			}
-			while( topPanel.getComponentCount() > amount ) {
-				topPanel.remove(topPanel.getComponentCount()-1);
+			while( panelTop.getComponentCount() > amount ) {
+				panelTop.remove(panelTop.getComponentCount()-1);
 			}
-			topPanel.validate();
+			panelTop.validate();
 		}
-	}
-}
-
-class DicingTableModel extends AbstractTableModel {
-	private static final long serialVersionUID = 1L;
-	private static final int columnCount=10;
-	private static final String[] columnNames = {"Step","Dice","Rolling","Result","pathetic","poor","average","good","excellent","extraordinary"};
-	private int indexCounter=0;
-	private List<Integer> index = new ArrayList<Integer>();
-	private List<int[]> steps = new ArrayList<int[]>();
-	private List<DiceType[]> dices = new ArrayList<DiceType[]>();
-	private List<ROLLEDDICEType> rolledDices = new ArrayList<ROLLEDDICEType>();
-
-	@Override
-	public int getColumnCount() {
-		return columnCount;
-	}
-
-	@Override
-	public int getRowCount() {
-		return index.size();
-	}
-
-	public String getColumnName(int col) {
-		return columnNames[col];
-	}
-
-	@Override
-	public Object getValueAt(int row, int col) {
-		ROLLEDDICEType rowData = rolledDices.get(row);
-		switch(col) {
-		case  0: {
-			int[] rowSteps = steps.get(row);
-			if( rowSteps == null ) return "NULL";
-			String stepresult=String.valueOf(rowSteps[0]);
-			for(int i=1; i<rowSteps.length;i++) stepresult += " + "+String.valueOf(rowSteps[i]);
-			return stepresult;
-		}
-		case  1: {
-			DiceType[] rowDices = dices.get(row);
-			if( rowDices == null ) return "NULL";
-			String dicesresult=rowDices[0].value();
-			for(int i=1; i<rowDices.length;i++) dicesresult += " + "+rowDices[i].value();
-			return dicesresult;
-		}
-		case  2: return rowData.getRolling();
-		case  3: return rowData.getResult();
-		case  4: return rowData.getPathetic();
-		case  5: return rowData.getPoor();
-		case  6: return rowData.getAverage();
-		case  7: return rowData.getGood();
-		case  8: return rowData.getExcellent();
-		case  9: return rowData.getExtraordinary();
-		}
-		return "UNDEF";
-	}
-
-	public void add(int[] steps, ROLLEDDICEType rolledDice) {
-		this.index.add(indexCounter++);
-		this.steps.add(steps);
-		DiceType[] diceset = new DiceType[steps.length];
-		for(int i=0; i<steps.length;i++) {
-			diceset[i] = ApplicationProperties.create().getCharacteristics().getSTEPDICEbyStep(steps[i]).getDice();
-		}
-		this.dices.add(diceset);
-		this.rolledDices.add(rolledDice);
-		fireTableRowsInserted(index.size()-1, index.size()-1);
 	}
 }

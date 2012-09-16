@@ -426,7 +426,7 @@ public class EDGeneral extends JPanel {
 			character.getPortrait().clear();
 			character.clearLanguages();
 		}
-		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());
+		new ECEWorker(character).verarbeiteCharakter();
 		character.refesh();
 	}
 
@@ -451,7 +451,7 @@ public class EDGeneral extends JPanel {
 				options,
 				options[0]);
 		if( a == 0 ) character.getPortrait().clear();
-		(new ECEWorker()).verarbeiteCharakter(character.getEDCHARACTER());		
+		new ECEWorker(character).verarbeiteCharakter();
 		character.refesh();
 	}
 

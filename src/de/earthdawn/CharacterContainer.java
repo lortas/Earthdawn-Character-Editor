@@ -639,6 +639,8 @@ public class CharacterContainer extends CharChangeRefresh {
 				if( skill == null ) break;
 				discount++;
 				for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+					// Talente die keine Rang haben können übersprungen werden
+					if( (talent.getRANK()==null) || (talent.getRANK().getRank()<1) ) continue;
 					if( talent.getName().equals(skillname) && talent.getLimitation().equals(skilllimitation) ) {
 						skill.setRealigned(discount);
 						alignedskills.add(skill);
@@ -959,7 +961,18 @@ public class CharacterContainer extends CharChangeRefresh {
 	public void removeLastDiciplin(){
 		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
 		int size = disciplines.size();
-		if( size>0 ) disciplines.remove(size-1);
+		if( size<1) return;
+		// Falls zu Talenten der zu löschenden Disziplin zugeordnete Skill enthalten sind,
+		// müssen die Skills zu Skillliste verschoben werden.
+		TalentsContainer talents = new TalentsContainer(disciplines.get(size-1));
+		for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+			SKILLType skill = talent.getALIGNEDSKILL();
+			if( skill != null ) {
+				talent.setALIGNEDSKILL(null);
+				addSkill(skill);
+			}
+		}
+		disciplines.remove(size-1);
 	}
 
 	public void ensureDisciplinTalentsExits() {
@@ -1561,7 +1574,15 @@ public class CharacterContainer extends CharChangeRefresh {
 			List<TALENTType> optionalTalents = talents.getOptionaltalents();
 			for( TALENTType talent : optionalTalents ) {
 				RANKType rank = talent.getRANK();
-				if( (rank == null) || (rank.getRank() < 1) ) rankZeroTalents.add(talent);
+				if( (rank == null) || (rank.getRank() < 1) ) {
+					rankZeroTalents.add(talent);
+					// Sollte ein Skill zu diesem Tallent Realigned sein, dann löse diese Verbindung bei Rank 0
+					SKILLType skill = talent.getALIGNEDSKILL();
+					if( skill != null ) {
+						talent.setALIGNEDSKILL(null);
+						addSkill(skill);
+					}
+				}
 			}
 			optionalTalents.removeAll(rankZeroTalents);
 		}
