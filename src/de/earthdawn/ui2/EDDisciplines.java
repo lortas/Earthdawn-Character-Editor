@@ -192,16 +192,14 @@ public class EDDisciplines extends JPanel {
 
 	protected void do_btnRemoveDiscipline_actionPerformed(ActionEvent arg0) {
 			character.removeLastDiciplin();
-			ECEWorker worker = new ECEWorker();
-			worker.verarbeiteCharakter(character.getEDCHARACTER());
+			new ECEWorker(character).verarbeiteCharakter();
 			character.refesh();
 	}
 
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
 		System.out.println(((JMenuItem)arg0.getSource()).getText());
 		character.addDiciplin(((JMenuItem)arg0.getSource()).getText());
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(character.getEDCHARACTER());
+		new ECEWorker(character).verarbeiteCharakter();
 		character.refesh();
 	}
 }

@@ -41,7 +41,7 @@ public class EarthdawnCharacterEditor {
 				System.out.println("Processing the character: '" + ec.getName() + "'");
 			}
 			// Verarbeiten
-			EDCHARACTER ecOut = new ECEWorker().verarbeiteCharakter(ec);
+			EDCHARACTER ecOut = new ECEWorker(ec).verarbeiteCharakter();
 			ec=ecOut;
 			EDMainWindow window = new EDMainWindow(ec);
 			if( args.length < 2 ) { 

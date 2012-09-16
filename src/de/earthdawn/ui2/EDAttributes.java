@@ -158,8 +158,7 @@ class AttributesTableModel extends AbstractTableModel {
 			case 3:  character.getAttributes().get(columnKey[row]).setLpincrease((Integer)value); break;
 			default: break;
 		}
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(character.getEDCHARACTER());
+		new ECEWorker(character).verarbeiteCharakter();
 		character.refesh();
 		fireTableCellUpdated(row, col);
 		fireTableCellUpdated(row, 4);

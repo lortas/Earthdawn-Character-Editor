@@ -7,6 +7,7 @@ import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -45,6 +46,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
+import javax.swing.KeyStroke;
 import javax.swing.text.EditorKit;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -83,6 +85,7 @@ import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.event.CharChangeEventListener;
+import java.awt.event.InputEvent;
 
 public class EDMainWindow {
 
@@ -115,6 +118,7 @@ public class EDMainWindow {
 	private About aboutwindow;
 	private ImageIcon yesIcon=null;
 	private ImageIcon noIcon=null;
+	private EDDicing dicingWindow=null;
 
 	/**
 	 * Launch the application.
@@ -142,14 +146,12 @@ public class EDMainWindow {
 	public EDMainWindow(EDCHARACTER ec) {
 		this.ec = ec;
 		this.character = new CharacterContainer(ec);
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(character.getEDCHARACTER());
+		new ECEWorker(character).verarbeiteCharakter();
 		initialize();
 		this.character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
-				ECEWorker worker = new ECEWorker();
-				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				new ECEWorker(character).verarbeiteCharakter();
 				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}
@@ -198,6 +200,7 @@ public class EDMainWindow {
 		mnFile.add(mntmNew);
 
 		JMenuItem mntmOpen = new JMenuItem(NLS.getString("EDMainWindow.mntmOpen.text")); //$NON-NLS-1$
+		mntmOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
 		mntmOpen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmOpen_actionPerformed(arg0);
@@ -206,6 +209,7 @@ public class EDMainWindow {
 		mnFile.add(mntmOpen);
 
 		JMenuItem mntmSave = new JMenuItem(NLS.getString("EDMainWindow.mntmSave.text")); //$NON-NLS-1$
+		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmSave_actionPerformed(arg0);
@@ -214,6 +218,7 @@ public class EDMainWindow {
 		mnFile.add(mntmSave);
 
 		JMenuItem mntmSaveAs = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveAs.text")); //$NON-NLS-1$
+		mntmSaveAs.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK|InputEvent.SHIFT_MASK));
 		mntmSaveAs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmSaveAs_actionPerformed(arg0);
@@ -330,6 +335,7 @@ public class EDMainWindow {
 		mntmJsonExport.add(mntmGson);
 
 		JMenuItem mntmHtml = new JMenuItem(NLS.getString("EDMainWindow.mntmXML2Html.text")); //$NON-NLS-1$
+		mntmHtml.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_MASK));
 		mntmHtml.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmHtml_actionPerformed(arg0);
@@ -346,6 +352,7 @@ public class EDMainWindow {
 		mntmExport.add(mntmItems);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
+		mntmClose.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		mntmClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmClose_actionPerformed(arg0);
@@ -357,6 +364,7 @@ public class EDMainWindow {
 		menuBar.add(mnView);
 
 		JMenuItem mntmWebBrowser= new JMenuItem(NLS.getString("EDMainWindow.mntmWebBrowser.text")); //$NON-NLS-1$
+		mntmWebBrowser.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_MASK));
 		mntmWebBrowser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmWebBrowser_actionPerformed(arg0);
@@ -368,6 +376,7 @@ public class EDMainWindow {
 		menuBar.add(mnExtra);
 
 		JMenuItem mntmDicing= new JMenuItem(NLS.getString("EDMainWindow.mntmDicing.text")); //$NON-NLS-1$
+		mntmDicing.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_MASK));
 		mntmDicing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmDicing_actionPerformed(arg0);
@@ -568,10 +577,13 @@ public class EDMainWindow {
 	}
 
 	private void do_mntmDicing_actionPerformed(ActionEvent arg0) {
-		// http://download.oracle.com/javase/tutorial/uiswing/components/dialog.html
-		JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
-		@SuppressWarnings("unused")
-		EDDicing dicingWindow = new EDDicing();
+		//@SuppressWarnings("unused")
+		//EDDicingOld dicingWindowOld = new EDDicingOld();
+		if( dicingWindow == null ) {
+			JOptionPane.showMessageDialog(frame, "This menu item is under construction.");
+			dicingWindow = new EDDicing(frame);
+		}
+		dicingWindow.setVisible(true);
 	}
 
 	private void do_mntmRandomName_actionPerformed(ActionEvent arg0) {
@@ -584,14 +596,12 @@ public class EDMainWindow {
 		if( menuitem == null ) return;
 		CharacterContainer c = PROPERTIES.getRandomCharacter(menuitem.getText());
 		if( c == null ) return;
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(c.getEDCHARACTER());
 		this.character=c;
+		new ECEWorker(character).verarbeiteCharakter();
 		this.character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
-				ECEWorker worker = new ECEWorker();
-				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				new ECEWorker(character).verarbeiteCharakter();
 				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}
@@ -838,13 +848,11 @@ public class EDMainWindow {
 			}
 
 			character = new CharacterContainer(ec);
-			ECEWorker worker = new ECEWorker();
-			worker.verarbeiteCharakter(character.getEDCHARACTER());
+			new ECEWorker(character).verarbeiteCharakter();
 			this.character.addCharChangeEventListener(new CharChangeEventListener() {
 				@Override
 				public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
-					ECEWorker worker = new ECEWorker();
-					worker.verarbeiteCharakter(character.getEDCHARACTER());
+					new ECEWorker(character).verarbeiteCharakter();
 					addTalentsAndSpellsTabs();
 					refreshTabs();
 				}
@@ -1088,16 +1096,13 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmNew_actionPerformed(ActionEvent arg0) {
-		ec = new EDCHARACTER();
-		character = new CharacterContainer(ec);
 		file = null;
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(character.getEDCHARACTER());
-		this.character.addCharChangeEventListener(new CharChangeEventListener() {
+		character = new CharacterContainer(new EDCHARACTER());
+		new ECEWorker(character).verarbeiteCharakter();
+		character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
-				ECEWorker worker = new ECEWorker();
-				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				new ECEWorker(character).verarbeiteCharakter();
 				addTalentsAndSpellsTabs();
 				refreshTabs();
 			}

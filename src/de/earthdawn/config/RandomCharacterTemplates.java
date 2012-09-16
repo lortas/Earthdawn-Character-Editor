@@ -70,8 +70,7 @@ public class RandomCharacterTemplates {
 		EDRANDOMCHARACTERTEMPLATE template = get(templateName);
 		if( template == null ) return null;
 		CharacterContainer character = new CharacterContainer(new EDCHARACTER());
-		ECEWorker worker = new ECEWorker();
-		worker.verarbeiteCharakter(character.getEDCHARACTER());
+		new ECEWorker(character.getEDCHARACTER()).verarbeiteCharakter();
 		character.setRandomName();
 		APPEARANCEType appearance = character.getAppearance();
 		String race = rollSingle(template.getRACES());
@@ -90,7 +89,7 @@ public class RandomCharacterTemplates {
 			choosenDiscipline = character.getDisciplines().get(0);
 			choosenDiscipline.setCircle(circle);
 			character.fillOptionalTalentsRandom(disciplineName);
-			worker.verarbeiteCharakter(character.getEDCHARACTER());
+			new ECEWorker(character.getEDCHARACTER()).verarbeiteCharakter();
 			for( TALENTType talent : choosenDiscipline.getDISZIPLINETALENT() ) {
 				if( talent.getCircle() < circle ) talent.getRANK().setRank(circle);
 				else talent.getRANK().setRank(1+rand.nextInt(circle));
@@ -166,11 +165,11 @@ public class RandomCharacterTemplates {
 					break;
 				}
 			}
-			worker.verarbeiteCharakter(character.getEDCHARACTER());
+			new ECEWorker(character.getEDCHARACTER()).verarbeiteCharakter();
 			if( a!= null && character.getKarma().getMaxmodificator() < 0 ) {
 				// Um eine Endlosschleife unwahrscheinlcher zu machen, gehe 2 Stufen runter
 				a.setGenerationvalue(a.getGenerationvalue()-2);
-				worker.verarbeiteCharakter(character.getEDCHARACTER());
+				new ECEWorker(character.getEDCHARACTER()).verarbeiteCharakter();
 			}
 		}
 		for( int i=0; i<circle; ) {
