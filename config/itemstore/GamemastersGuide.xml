@@ -402,7 +402,8 @@
 		</edt:THREADRANK>
 	</THREADITEM>
     <THREADITEM weaventhreadrank="0" maxthreads="3" spelldefense="0" lpcostgrowth="13" enchantingdifficultynumber="0" effect="" name="Spell Sword" weight="4.0" size="3" used="no" location="self" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="GM p.140">
-        <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="yes" location="" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="PG p.251"/>
+        <edt:description>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:description>
+		<edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="yes" location="" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="PG p.251"/>
         <edt:THREADRANK keyknowledge="must learn sword’s Name" lpcost="500" deed="" effect="contains spell matrix of  Rank equal to Thread Rank; may place spell in matrix; wielder may cast spell as if casting from matrix">
             <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
         </edt:THREADRANK>
