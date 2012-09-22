@@ -401,9 +401,31 @@
 			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="5" penalty="0" weight="10.0" kind="shield"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-
-<!-- 
--->	
+    <THREADITEM weaventhreadrank="0" maxthreads="3" spelldefense="0" lpcostgrowth="13" enchantingdifficultynumber="0" effect="" name="Spell Sword" weight="4.0" size="3" used="no" location="self" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="GM p.140">
+        <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="yes" location="" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="PG p.251"/>
+        <edt:THREADRANK keyknowledge="must learn sword’s Name" lpcost="500" deed="" effect="contains spell matrix of  Rank equal to Thread Rank; may place spell in matrix; wielder may cast spell as if casting from matrix">
+            <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" lpcost="800" deed="" effect="Damage Step 6.">
+            <edt:WEAPON damagestep="6" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of the sword’s creator" lpcost="1300" deed="" effect="holds second spell matrix; Rank of  each spell matrix equals Thread Rank;">
+            <edt:WEAPON damagestep="6" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" lpcost="2100" deed="" effect="Damage Step 7">
+            <edt:WEAPON damagestep="7" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" lpcost="3400" deed="must decide upon Deed using blade; then publicly declare intention of doing Deed;" effect="+1 to Physical and Spell Defense">
+            <edt:WEAPON damagestep="7" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
+            <edt:DEFENSE kind="physical" bonus="1"/>
+            <edt:DEFENSE kind="spell"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="must determine exact percentages of magical elements used to create sword" lpcost="3400" deed="" effect="Damage Step 8; holds 3 matrices; Rank of each matrix equals Thread Rank">
+            <edt:WEAPON damagestep="8" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
+            <edt:DEFENSE kind="physical" bonus="1"/>
+            <edt:DEFENSE kind="spell" bonus="1"/>
+        </edt:THREADRANK>
+    </THREADITEM>
 	
-<!-- 	weiter mit Spell Sword p140 -->
+<!-- 	weiter mit Spike Bomb p141 -->
 </ITEMS>
