@@ -119,6 +119,7 @@ public class EDMainWindow {
 	private ImageIcon yesIcon=null;
 	private ImageIcon noIcon=null;
 	private EDDicing dicingWindow=null;
+	private DefaultOptionalTalent defaultoptionaltalent = null;
 
 	/**
 	 * Launch the application.
@@ -863,7 +864,18 @@ public class EDMainWindow {
 		}
 	}
 	protected void do_mntmClose_actionPerformed(ActionEvent arg0) {
+		String[] options = {"Yes","No"};
+		int a = JOptionPane.showOptionDialog(frame,
+				"Do you really want to quit? Any changes will be lost.",
+				"Quit?",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]);
+		if( a != 0 ) return;
 		frame.dispose();
+		if(defaultoptionaltalent!=null) defaultoptionaltalent.dispose();
 	}
 
 	protected void do_mntmExport_actionPerformed(ActionEvent arg0, int v) {
@@ -1096,6 +1108,16 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmNew_actionPerformed(ActionEvent arg0) {
+		String[] options = {"Yes","No"};
+		int a = JOptionPane.showOptionDialog(frame,
+				"Do you really want to create a new character? Any changes of the current character will be lost!",
+				"New character?",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				options,
+				options[0]);
+		if( a != 0 ) return;
 		file = null;
 		character = new CharacterContainer(new EDCHARACTER());
 		new ECEWorker(character).verarbeiteCharakter();
@@ -1223,6 +1245,18 @@ public class EDMainWindow {
 			mnMovmentRule.add(item);
 		}
 		mnOptRules.add(mnMovmentRule);
+
+		JMenuItem mntmDefaultOptionalTalent= new JMenuItem(NLS.getString("EDMainWindow.mntmOptRuleDEFAULTOPTIONALTALENT.text"));
+		mntmDefaultOptionalTalent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( defaultoptionaltalent != null ) {
+					defaultoptionaltalent.dispose();
+				}
+				defaultoptionaltalent = new DefaultOptionalTalent();
+				defaultoptionaltalent.setVisible(true);
+			}
+		});
+		mnOptRules.add(mntmDefaultOptionalTalent);
 
 		JMenuItem mntmSaveOptRules = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveOptRules.text")); //$NON-NLS-1$
 		mntmSaveOptRules.addActionListener(new ActionListener() {
