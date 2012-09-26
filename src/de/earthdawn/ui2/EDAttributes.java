@@ -1,5 +1,6 @@
 package de.earthdawn.ui2;
 
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -64,8 +65,14 @@ public class EDAttributes extends JPanel {
 		table.setOpaque(false);
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new AttributesTableModel());
-		table.getColumnModel().getColumn(2).setCellEditor(new SpinnerEditor(-2, 8));
-		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, lpincrease_max));
+
+		JComboBox comboBoxBuyPoints = new JComboBox();
+		for(int i=-2; i<=8;i++) comboBoxBuyPoints.addItem(i);
+		JComboBox comboBoxLpincrease = new JComboBox();
+		for(int i=0; i<=lpincrease_max;i++) comboBoxLpincrease.addItem(i);
+
+		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxBuyPoints));
+		table.getColumnModel().getColumn(3).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLpincrease));
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 
 		scrollPane.setViewportView(table);
