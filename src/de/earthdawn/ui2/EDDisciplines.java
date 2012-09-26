@@ -52,7 +52,9 @@ public class EDDisciplines extends JPanel {
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
 		table.setRowHeight(70);
 		TableColumnModel columnModel = table.getColumnModel();
-		columnModel.getColumn(1).setCellEditor(new SpinnerEditor(0,15));
+		JComboBox comboBoxOneToFithteen = new JComboBox();
+		for(int i=1; i<16;i++) comboBoxOneToFithteen.addItem(i);
+		columnModel.getColumn(1).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxOneToFithteen));
 		table.setFillsViewportHeight(true);
 		JComboBox comboBoxPrimElement = new JComboBox();
 		for( ElementkindType element : ElementkindType.values() ) {
