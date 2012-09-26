@@ -15,6 +15,7 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -53,9 +54,13 @@ public class EDTalents extends JPanel {
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((TalentsTableModel)table.getModel()).setCharacter(character);
-		table.getColumnModel().getColumn(0).setCellEditor(new SpinnerEditor(0, 15));
-		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 15));
-		table.getColumnModel().getColumn(5).setCellEditor(new SpinnerEditor(0, 15));
+		JComboBox comboBoxZeroToFithteen = new JComboBox();
+		for(int i=0; i<=15;i++) comboBoxZeroToFithteen.addItem(i);
+		JComboBox comboBoxZeroToThree = new JComboBox();
+		for(int i=0; i<=3;i++) comboBoxZeroToThree.addItem(i);
+		table.getColumnModel().getColumn(0).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToFithteen));
+		table.getColumnModel().getColumn(4).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToThree));
+		table.getColumnModel().getColumn(5).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToFithteen));
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("talentselection") ) {
