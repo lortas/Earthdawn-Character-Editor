@@ -801,50 +801,29 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<TALENTType> usedTalents = new ArrayList<TALENTType>();
 		// multiUseTalents sind Talente die mehr als einmal gelernt werden können
 		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
-		String disciplineName = disciplineDefinition.getName();
 		// Schleife über alle gelernten Disziplinen
 		for( DISCIPLINEType discipline : getDisciplines() ) {
-			// Prüfe ob eine der gelernten Disziplinen die Disziplin ist, für die wir die ungenutzen Optionalen Talente ermitteln wollen.
-			if( discipline.getName().equals(disciplineName) ) {
-				// Disziplintalente der selben Disziplin reduzieren zwar den multiUse-Zähler
-				// werden aber in keinem Fall in die usedTalents-Liste aufgenommen
-				for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
-					String name = getFullTalentname(talent);
-					Integer multiUseCount = multiUseTalents.get(name);
-					if( multiUseCount != null ) multiUseTalents.put(name,multiUseCount-1);
-				}
-				// Optionaltalente der selben Disziplin reduzieren den multiUse-Zähler
-				// UND werden in jedem Fall in die usedTalents-Liste aufgenommen
-				for( TALENTType talent : discipline.getOPTIONALTALENT() ) {
+			for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+				String name = getFullTalentname(talent);
+				Integer multiUseCount = multiUseTalents.get(name);
+				if( multiUseCount == null ) {
+					// Wenn es kein MultiUseTalent ist, dann behandele es ganz normal
+					// und füge es in die Liste der Benutzen Talent hinzu
 					usedTalents.add(talent);
-					String name = getFullTalentname(talent);
-					Integer multiUseCount = multiUseTalents.get(name);
-					if( multiUseCount != null ) multiUseTalents.put(name,multiUseCount-1);
-				}
-			} else {
-				// Diese gelernte Disziplin ist nicht die Disziplin, für die wir die ungenutzen Optionalen Talente ermitteln wollen
-				for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
-					String name = getFullTalentname(talent);
-					Integer multiUseCount = multiUseTalents.get(name);
-					if( multiUseCount == null ) {
-						// Wenn es kein MultiUseTalent ist, dann behandele es ganz normal
-						// und füge es in die Liste der Benutzen Talent hinzu
-						usedTalents.add(talent);
-					} else {
-						// Wenn es sich aber um ein MultiUseTalent handelt, Zähle den MultiUse-Zähler hinunter,
-						// es sei denn er ist bereits auf Eins, dann füge das Talent in die Liste der Benutzen Talent hinzu
-						if( multiUseCount > 1 ) multiUseCount--;
-						else usedTalents.add(talent);
-						// Aktuallisiere den MultiUse-Zähler bzw lösche das Talent aus der MultiUse Liste
-						if( multiUseCount > 0 ) multiUseTalents.put(name,multiUseCount);
-						else multiUseTalents.remove(name);
-					}
+				} else {
+					// Wenn es sich aber um ein MultiUseTalent handelt, Zähle den MultiUse-Zähler hinunter,
+					// es sei denn er ist bereits auf Eins, dann füge das Talent in die Liste der Benutzen Talent hinzu
+					if( multiUseCount > 1 ) multiUseCount--;
+					else usedTalents.add(talent);
+					// Aktuallisiere den MultiUse-Zähler bzw lösche das Talent aus der MultiUse Liste
+					if( multiUseCount > 0 ) multiUseTalents.put(name,multiUseCount);
+					else multiUseTalents.remove(name);
 				}
 			}
 		}
 		int mincircle=1;
 		int maxcircle=0;
-		// Durclaufe die Kreisdefinition des gesuchten Disziplin rückwärts und ermittele alle möglichen Optionaltalente
+		// Durchlaufe die Kreisdefinition des gesuchten Disziplin rückwärts und ermittele alle möglichen Optionaltalente
 		for( int circlenr=talentCircleNr; circlenr>0; circlenr-- ) {
 			DISCIPLINECIRCLEType disciplineCircle = disciplineDefinition.getCIRCLE().get(circlenr-1);
 			for( TALENTABILITYType talent : disciplineCircle.getOPTIONALTALENT() ) {
