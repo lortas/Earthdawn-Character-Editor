@@ -585,6 +585,8 @@ public class ApplicationProperties {
 			// --- Einlesen der Dateien
 			SPELLS=new SPELLS();
 			SPELLS.setLang(LANGUAGE);
+			SPELLDESCRIPTIONS=new SPELLDESCRIPTIONS();
+			SPELLDESCRIPTIONS.setLang(LANGUAGE);
 			for(File spells : files) {
 				System.out.print("Reading config file '" + spells.getCanonicalPath() + "' ...");
 				SPELLS s = (SPELLS) unmarshaller.unmarshal(spells);
@@ -592,6 +594,44 @@ public class ApplicationProperties {
 				if( s.getLang().equals(LANGUAGE) ) {
 					SPELLS.getSPELL().addAll(s.getSPELL());
 					System.out.println(" done.");
+					String filebasename=spells.getName();
+					File parentdir = spells.getParentFile().getParentFile();
+					File spelldescriptionsdir = new File(parentdir, "spelldescriptions");
+					if( spelldescriptionsdir.isDirectory() || spelldescriptionsdir.mkdir() ) {
+						File spelldescriptionsfile = new File(spelldescriptionsdir, filebasename);
+						boolean neworchanged=false;
+						SPELLDESCRIPTIONS spelldescriptions;
+						if( spelldescriptionsfile.canRead() ) {
+							System.out.println("Lese Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "'");
+							spelldescriptions = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
+							if( fillSpellDescription(spelldescriptions,s) ) {
+								// Nicht zu allen Spells eine SpellDescriptions gefunden.
+								neworchanged=true;
+							}
+							SPELLDESCRIPTIONS.getSPELL().addAll(spelldescriptions.getSPELL());
+						} else {
+							System.out.println("Überspringe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "'");
+							spelldescriptions = new SPELLDESCRIPTIONS();
+							spelldescriptions.setLang(LANGUAGE);
+							fillSpellDescription(spelldescriptions,s);
+							neworchanged=true;
+						}
+						if( neworchanged ) {
+							System.out.println("Scheibe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "'");
+							JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+							Marshaller m = jc.createMarshaller();
+							FileOutputStream out = new FileOutputStream(spelldescriptionsfile);
+							PrintStream fileio = new PrintStream(out, false, EDMainWindow.encoding);
+							m.setProperty(Marshaller.JAXB_ENCODING, EDMainWindow.encoding);
+							m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+							m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/spelldescription spelldescription.xsd");
+							m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+							fileio.print("<?xml version=\"1.0\" encoding=\""+EDMainWindow.encoding+"\" standalone=\"no\"?>");
+							m.marshal(spelldescriptions,fileio);
+							fileio.close();
+							out.close();
+						}
+					}
 				} else {
 					System.out.println(" skipped. Wrong language: "+s.getLang().value()+" != "+LANGUAGE.value() );
 				}
@@ -692,16 +732,6 @@ public class ApplicationProperties {
 			filename="./config/eceguilayout.xml";
 			System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
 			ECEGUILAYOUT = (ECEGUILAYOUT) unmarshaller.unmarshal(new File(filename));
-
-			filename="./config/spelldescriptions.xml";
-			File spelldescriptionsfile = new File(filename);
-			if( spelldescriptionsfile.canRead() ) {
-				System.out.println("Lese Konfigurationsdatei: '" + filename + "'");
-				SPELLDESCRIPTIONS = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
-				fillSpellDescription();
-			} else {
-				System.out.println("Überspringe Konfigurationsdatei: '" + filename + "'");
-			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (JAXBException e) {
@@ -709,18 +739,21 @@ public class ApplicationProperties {
 		}
 	}
 
-	public void fillSpellDescription() {
-		List<SpelldescriptionType> spells = SPELLDESCRIPTIONS.getSPELL();
-		for( SPELLDEFType spell: SPELLS.getSPELL() ) {
+	public static boolean fillSpellDescription(SPELLDESCRIPTIONS spelldescriptions, SPELLS spelllist) {
+		boolean modified=false;
+		List<SpelldescriptionType> spelldesciptionspells = spelldescriptions.getSPELL();
+		for( SPELLDEFType spell: spelllist.getSPELL() ) {
 			String spellname = spell.getName();
 			boolean notfound = true;
-			for( SpelldescriptionType sd : spells ) if( sd.getName().equals(spellname) ) notfound=false;
+			for( SpelldescriptionType sd : spelldesciptionspells ) if( sd.getName().equals(spellname) ) notfound=false;
 			if( notfound ) {
+				modified=true;
 				SpelldescriptionType sd = new SpelldescriptionType();
 				sd.setName(spellname);
 				sd.setValue("take text from "+spell.getBookref());
-				spells.add(sd);
+				spelldesciptionspells.add(sd);
 			}
 		}
+		return modified;
 	}
 }
