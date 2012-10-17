@@ -53,6 +53,7 @@
 		<SPELL type="elemental" name="Small Slayer"/>
 		<SPELL type="elemental" name="Sterilize Object"/>
 		<SPELL type="elemental" name="Stick Together"/>
+		<SPELLABILITY/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
@@ -77,6 +78,7 @@
 		<SPELL type="elemental" name="Thrive"/>
 		<SPELL type="elemental" name="Throne of Air"/>
 		<SPELL type="elemental" name="Winds of Deflection"/>
+		<SPELLABILITY/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Elemental Hold"/>
@@ -102,6 +104,7 @@
 		<SPELL type="elemental" name="Suffocating Paste"/>
 		<SPELL type="elemental" name="Uneven Ground"/>
 		<SPELL type="elemental" name="Weapon Back"/>
+		<SPELLABILITY/>
 		<KARMA spend="Perception-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
@@ -126,6 +129,7 @@
 		<SPELL type="elemental" name="Resist Poison"/>
 		<SPELL type="elemental" name="Shattering Stone"/>
 		<SPELL type="elemental" name="Stone Cage"/>
+		<SPELLABILITY/>
 		<ABILITY>Fire and Ice</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
