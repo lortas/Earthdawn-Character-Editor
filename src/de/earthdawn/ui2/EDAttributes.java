@@ -68,6 +68,7 @@ public class EDAttributes extends JPanel {
 
 		JComboBox comboBoxBuyPoints = new JComboBox();
 		for(int i=-2; i<=8;i++) comboBoxBuyPoints.addItem(i);
+		comboBoxBuyPoints.setMaximumRowCount(11);
 		JComboBox comboBoxLpincrease = new JComboBox();
 		for(int i=0; i<=lpincrease_max;i++) comboBoxLpincrease.addItem(i);
 
