@@ -713,6 +713,7 @@ public class ECEPdfExporter {
 // +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		exportCommonFields(character,16,40);
 		setButtons(character.getWound().getNormal(), "Wound.", 7);
+		acroFields.setField( "BloodWound" , "D:"+character.getHealth().getBlooddamage()+", W:"+character.getWound().getBlood()+", DR:"+character.getHealth().getDepatterningrate() );
 
 		// Charakter Potrait-Bild einfügen
 		List<Base64BinaryType> potraits = character.getPortrait();
