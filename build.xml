@@ -89,7 +89,7 @@
 		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset dir="./config" prefix="config">
-				<exclude name="spelldescriptions.xml"/>
+				<exclude name="spelldescriptions/**"/>
 			</zipfileset>
 			<zipfileset dir="./lib" prefix="lib"/>
 			<zipfileset dir="./templates" prefix="templates"/>
