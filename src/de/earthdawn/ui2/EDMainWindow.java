@@ -137,6 +137,19 @@ public class EDMainWindow {
 		});
 	}
 
+	protected void finalize() throws Throwable {
+		super.finalize();
+		if( dicingWindow!=null) {
+			dicingWindow.setVisible(false);
+			dicingWindow.dispose();
+			dicingWindow=null;
+		}
+		if( panelEDThreadItems!=null ) {
+			panelEDThreadItems.setVisible(false);
+			panelEDThreadItems=null;
+		}
+	}
+
 	public void setVisible(boolean isVisible) {
 		frame.setVisible(isVisible);
 	}

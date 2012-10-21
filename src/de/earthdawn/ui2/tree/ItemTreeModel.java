@@ -44,6 +44,8 @@ public class ItemTreeModel  implements TreeModel {
 			displayKeys.add(EDInventoryRootNodeType.ARMOR);
 			displayedNodes.put(EDInventoryRootNodeType.THREADITEMS, character.getThreadItem());
 			displayKeys.add(EDInventoryRootNodeType.THREADITEMS);
+			displayedNodes.put(EDInventoryRootNodeType.PATTERNITEMS, character.getPatternItem());
+			displayKeys.add(EDInventoryRootNodeType.PATTERNITEMS);
 			displayedNodes.put(EDInventoryRootNodeType.PURSE, character.getAllCoins());
 			displayKeys.add(EDInventoryRootNodeType.PURSE);
 		}

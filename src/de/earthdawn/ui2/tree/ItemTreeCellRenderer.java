@@ -17,6 +17,7 @@ import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.ITEMType;
 import de.earthdawn.data.MAGICITEMType;
+import de.earthdawn.data.PATTERNITEMType;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
 import de.earthdawn.data.THREADRANKType;
@@ -99,6 +100,12 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 			else{
 				label.setIcon((ImageIcon)treeIcons.get("CHEST_CLOSED"));
 			}
+		}
+
+		//Pattern Items
+		if(value == EDInventoryRootNodeType.PATTERNITEMS){
+			label.setText(EDInventoryRootNodeType.PATTERNITEMS.value());	
+			label.setIcon((ImageIcon)treeIcons.get("MAGIC_ITEM"));
 		}
 
 		// Coins
@@ -224,12 +231,26 @@ public class ItemTreeCellRenderer implements TreeCellRenderer {
 		if( item instanceof MAGICITEMType ) {
 			MAGICITEMType magicitem = (MAGICITEMType)item;
 			text.append(" (");
+			text.append(magicitem.getSpelldefense());
+			text.append("/");
 			text.append(magicitem.getBlooddamage());
 			text.append("/");
 			text.append(magicitem.getDepatterningrate());
 			text.append("/");
 			text.append(magicitem.getEnchantingdifficultynumber());
 			text.append(")");
+			if( ! magicitem.getEffect().isEmpty() ) {
+				text.append(" -- ");
+				text.append(magicitem.getEffect());
+			}
+		}
+
+		if( item instanceof PATTERNITEMType ) {
+			PATTERNITEMType patternitem = (PATTERNITEMType)item;
+			if( ! patternitem.getTruepattern().isEmpty() ) {
+				text.append(" -- ");
+				text.append(patternitem.getTruepattern());
+			}
 		}
 
 		if( item instanceof THREADITEMType ) {
