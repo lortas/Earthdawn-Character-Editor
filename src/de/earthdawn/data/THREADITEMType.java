@@ -34,7 +34,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;/sequence>
  *       &lt;attribute name="weaventhreadrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="maxthreads" type="{http://earthdawn.com/datatypes}unsigned_int" default="2" />
- *       &lt;attribute name="spelldefense" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="lpcostgrowth" type="{http://earthdawn.com/datatypes}unsigned_int" default="5" />
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -66,8 +65,6 @@ public class THREADITEMType
     protected Integer weaventhreadrank;
     @XmlAttribute
     protected Integer maxthreads;
-    @XmlAttribute
-    protected Integer spelldefense;
     @XmlAttribute
     protected Integer lpcostgrowth;
 
@@ -226,34 +223,6 @@ public class THREADITEMType
      */
     public void setMaxthreads(Integer value) {
         this.maxthreads = value;
-    }
-
-    /**
-     * Gets the value of the spelldefense property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public int getSpelldefense() {
-        if (spelldefense == null) {
-            return  0;
-        } else {
-            return spelldefense;
-        }
-    }
-
-    /**
-     * Sets the value of the spelldefense property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setSpelldefense(Integer value) {
-        this.spelldefense = value;
     }
 
     /**
