@@ -23,7 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="PATTERNITEM_type">
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}MAGICITEM_type">
- *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="patternkind" type="{http://earthdawn.com/datatypes}patternkind_type" default="minor" />
+ *       &lt;attribute name="truepattern" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="keyknowledge" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="weaventhreadrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -38,34 +41,124 @@ public class PATTERNITEMType
 {
 
     @XmlAttribute
-    protected String type;
+    protected PatternkindType patternkind;
+    @XmlAttribute
+    protected String truepattern;
+    @XmlAttribute
+    protected String keyknowledge;
+    @XmlAttribute
+    protected Integer weaventhreadrank;
 
     /**
-     * Gets the value of the type property.
+     * Gets the value of the patternkind property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PatternkindType }
+     *     
+     */
+    public PatternkindType getPatternkind() {
+        if (patternkind == null) {
+            return PatternkindType.MINOR;
+        } else {
+            return patternkind;
+        }
+    }
+
+    /**
+     * Sets the value of the patternkind property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PatternkindType }
+     *     
+     */
+    public void setPatternkind(PatternkindType value) {
+        this.patternkind = value;
+    }
+
+    /**
+     * Gets the value of the truepattern property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getType() {
-        if (type == null) {
+    public String getTruepattern() {
+        if (truepattern == null) {
             return "";
         } else {
-            return type;
+            return truepattern;
         }
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the value of the truepattern property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setType(String value) {
-        this.type = value;
+    public void setTruepattern(String value) {
+        this.truepattern = value;
+    }
+
+    /**
+     * Gets the value of the keyknowledge property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getKeyknowledge() {
+        if (keyknowledge == null) {
+            return "";
+        } else {
+            return keyknowledge;
+        }
+    }
+
+    /**
+     * Sets the value of the keyknowledge property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setKeyknowledge(String value) {
+        this.keyknowledge = value;
+    }
+
+    /**
+     * Gets the value of the weaventhreadrank property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getWeaventhreadrank() {
+        if (weaventhreadrank == null) {
+            return  0;
+        } else {
+            return weaventhreadrank;
+        }
+    }
+
+    /**
+     * Sets the value of the weaventhreadrank property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setWeaventhreadrank(Integer value) {
+        this.weaventhreadrank = value;
     }
 
 }

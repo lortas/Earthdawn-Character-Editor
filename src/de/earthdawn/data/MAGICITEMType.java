@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="MAGICITEM_type">
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}ITEM_type">
+ *       &lt;attribute name="spelldefense" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="enchantingdifficultynumber" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="effect" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/extension>
@@ -44,9 +45,39 @@ public class MAGICITEMType
 {
 
     @XmlAttribute
+    protected Integer spelldefense;
+    @XmlAttribute
     protected Integer enchantingdifficultynumber;
     @XmlAttribute
     protected String effect;
+
+    /**
+     * Gets the value of the spelldefense property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getSpelldefense() {
+        if (spelldefense == null) {
+            return  0;
+        } else {
+            return spelldefense;
+        }
+    }
+
+    /**
+     * Sets the value of the spelldefense property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setSpelldefense(Integer value) {
+        this.spelldefense = value;
+    }
 
     /**
      * Gets the value of the enchantingdifficultynumber property.

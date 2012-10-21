@@ -193,6 +193,13 @@
 			<xs:enumeration value="wand"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="patternkind_type"> 
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minor"/>
+			<xs:enumeration value="major"/>
+			<xs:enumeration value="core"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="stringlist_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -531,6 +538,7 @@
 	<xs:complexType name="MAGICITEM_type">
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
+				<xs:attribute name="spelldefense" type="unsigned_int" default="0"/>
 				<xs:attribute name="enchantingdifficultynumber" type="unsigned_int" default="0"/>
 				<xs:attribute name="effect" type="xs:string" default=""/>
 			</xs:extension>
@@ -539,7 +547,10 @@
 	<xs:complexType name="PATTERNITEM_type">
 		<xs:complexContent>
 			<xs:extension base="MAGICITEM_type">
-				<xs:attribute name="type" type="xs:string" default=""/>
+				<xs:attribute name="patternkind" type="patternkind_type" default="minor"/>
+				<xs:attribute name="truepattern" type="xs:string" default=""/>
+				<xs:attribute name="keyknowledge" type="xs:string" default=""/>
+				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -566,7 +577,6 @@
 				</xs:sequence>
 				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
 				<xs:attribute name="maxthreads" type="unsigned_int" default="2"/>
-				<xs:attribute name="spelldefense" type="unsigned_int" default="0"/>
 				<xs:attribute name="lpcostgrowth" type="unsigned_int" default="5">
 					<xs:annotation>
 						<xs:documentation>Determines the amount of legend points a character has to spend to waeve the individual thread ranks. These correlate to the cost for increasing talent ranks of talents with the named number as talent circle.</xs:documentation>
