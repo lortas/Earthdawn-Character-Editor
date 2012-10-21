@@ -35,6 +35,8 @@ public class ItemStoreTreeModel implements TreeModel {
 			displayKeys.add(EDInventoryRootNodeType.COMMONMAGICITEMS);
 			displayedNodes.put(EDInventoryRootNodeType.BLOODCHARMS, itemstore.getBLOODCHARMITEM());
 			displayKeys.add(EDInventoryRootNodeType.BLOODCHARMS);
+			displayedNodes.put(EDInventoryRootNodeType.PATTERNITEMS, itemstore.getPATTERNITEM());
+			displayKeys.add(EDInventoryRootNodeType.PATTERNITEMS);
 			displayedNodes.put(EDInventoryRootNodeType.WEAPONS, itemstore.getWEAPON());
 			displayKeys.add(EDInventoryRootNodeType.WEAPONS);
 			displayedNodes.put(EDInventoryRootNodeType.ARMOR, itemstore.getARMOR());

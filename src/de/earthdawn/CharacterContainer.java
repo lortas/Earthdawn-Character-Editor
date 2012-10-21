@@ -1975,12 +1975,16 @@ public class CharacterContainer extends CharChangeRefresh {
 		copyItem((ITEMType)src,(ITEMType)dst,setvirtual);
 		dst.setEnchantingdifficultynumber(src.getEnchantingdifficultynumber());
 		dst.setEffect(src.getEffect());
+		dst.setSpelldefense(src.getSpelldefense());
 	}
 
 	public static void copyItem(PATTERNITEMType src, PATTERNITEMType dst) { copyItem(src,dst,false); }
 	public static void copyItem(PATTERNITEMType src, PATTERNITEMType dst, boolean setvirtual) {
 		copyItem((MAGICITEMType)src,(MAGICITEMType)dst,setvirtual);
-		dst.setType(src.getType());
+		dst.setPatternkind(src.getPatternkind());
+		dst.setTruepattern(src.getTruepattern());
+		dst.setKeyknowledge(src.getKeyknowledge());
+		dst.setWeaventhreadrank(src.getWeaventhreadrank());
 	}
 
 	public static void copyItem(THREADITEMType src, THREADITEMType dst) { copyItem(src,dst,false); }
@@ -1988,7 +1992,6 @@ public class CharacterContainer extends CharChangeRefresh {
 		copyItem((MAGICITEMType)src,(MAGICITEMType)dst,setvirtual);
 		dst.setLpcostgrowth(src.getLpcostgrowth());
 		dst.setMaxthreads(src.getMaxthreads());
-		dst.setSpelldefense(src.getSpelldefense());
 		dst.setWeaventhreadrank(src.getWeaventhreadrank());
 		dst.setARMOR(copyArmor(src.getARMOR(), setvirtual));
 		dst.setSHIELD((SHIELDType)copyArmor(src.getSHIELD(), setvirtual));

@@ -15,6 +15,7 @@ import de.earthdawn.data.COINSType;
 import de.earthdawn.data.DEFENSEABILITYType;
 import de.earthdawn.data.MAGICITEMType;
 import de.earthdawn.data.ITEMType;
+import de.earthdawn.data.PATTERNITEMType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.TALENTABILITYType;
 import de.earthdawn.data.THREADITEMType;
@@ -36,6 +37,7 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 		registerEditors.put(ARMORType.class,ArmorNodePanel.class);
 		registerEditors.put(SHIELDType.class,ShieldNodePanel.class);
 		registerEditors.put(MAGICITEMType.class,MagicitemNodePanel.class);
+		registerEditors.put(PATTERNITEMType.class,PatternitemNodePanel.class);
 		registerEditors.put(THREADITEMType.class,ThreadItemNodePanel.class);
 		registerEditors.put(COINSType.class,CoinsNodePanel.class);
 		registerEditors.put(THREADRANKType.class,ThreadRankNodePanel.class);

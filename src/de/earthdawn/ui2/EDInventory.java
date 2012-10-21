@@ -47,6 +47,15 @@ public class EDInventory extends JPanel {
 		return character;
 	}
 
+	protected void finalize() throws Throwable {
+		super.finalize();
+		if( itemstore!=null ) {
+			itemstore.setVisible(false);
+			itemstore.dispose();
+			itemstore=null;
+		}
+	}
+
 	public void setCharacter(CharacterContainer character) {	
 		this.character = character;
 		tree = new JTree(new ItemTreeModel(character));
@@ -235,6 +244,20 @@ public class EDInventory extends JPanel {
 						magicitem.setName("Magic Item #"+(1+character.getMagicItem().indexOf(magicitem)));
 						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,magicitem,character.getMagicItem().indexOf(magicitem));
 						tree.scrollPathToVisible(currentPath.pathByAddingChild(magicitem));
+					}
+				});
+				popup.add(menuitem);
+			}
+			// add pattern item
+			if(rootnode.equals(EDInventoryRootNodeType.PATTERNITEMS)){
+				JMenuItem menuitem = new JMenuItem("Add Pattern Item");
+				menuitem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						PATTERNITEMType patternitem = new PATTERNITEMType();
+						character.getPatternItem().add(patternitem);
+						patternitem.setName("Pattern Item #"+(1+character.getPatternItem().indexOf(patternitem)));
+						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,patternitem,character.getPatternItem().indexOf(patternitem));
+						tree.scrollPathToVisible(currentPath.pathByAddingChild(patternitem));
 					}
 				});
 				popup.add(menuitem);

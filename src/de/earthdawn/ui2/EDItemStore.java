@@ -65,8 +65,8 @@ public class EDItemStore extends JFrame {
 		tree = new JTree(new ItemStoreTreeModel(items));
 		tree.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				do_tree_mouseReleased(arg0);
+			public void mouseClicked(MouseEvent arg0) {
+				do_tree_mouseClicked(arg0);
 			}
 		});
 		tree.setOpaque(false);
@@ -100,9 +100,9 @@ public class EDItemStore extends JFrame {
 		this.character=character;
 	}
 
-	protected void do_tree_mouseReleased(MouseEvent event) {
+	protected void do_tree_mouseClicked(MouseEvent event) {
 		if( character == null ) return;
-		if( event.getButton() < 2 ) return;
+		if( event.getButton() != MouseEvent.BUTTON3 ) return;
 		currentPath = tree.getPathForLocation(event.getX(), event.getY());
 		if( currentPath == null ) return;
 		currentNode = currentPath.getLastPathComponent();
@@ -112,7 +112,7 @@ public class EDItemStore extends JFrame {
 		Object parrentNode = currentPath.getParentPath().getLastPathComponent();
 		// Wenn es kein Eltern gibt, dann sind wir an der Wurzel und eine Wurzel kann nicht eingefügt werden;
 		if( parrentNode == null ) return;
-		// Wenn der Elternknoten kein String ist, dann ist das Eltern kein Wurzelknoten und wir sind zutief im Baum
+		// Prüfe obr Elternknoten ein Wurzelknoten ist, dann sind wir zutief im Baum
 		if( !(parrentNode instanceof EDInventoryRootNodeType) ) return;
 
 		if(currentNode instanceof THREADITEMType) {
@@ -123,7 +123,7 @@ public class EDItemStore extends JFrame {
 					CharacterContainer.copyItem((THREADITEMType)currentNode, item);
 					character.getThreadItem().add(item);
 					character.refesh();
-					parent.scrollPathToVisible(currentNode);
+					parent.scrollPathToVisible(item);
 				}
 			});
 			popup.add(menuitem);
@@ -132,9 +132,10 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getProtection().getARMOROrSHIELD().add(CharacterContainer.copyArmor((ARMORType)currentNode,false));
+					ARMORType item = CharacterContainer.copyArmor((ARMORType)currentNode,false);
+					character.getProtection().getARMOROrSHIELD().add(item);
 					character.refesh();
-					parent.scrollPathToVisible(currentNode);
+					parent.scrollPathToVisible(item);
 				}
 			});
 			popup.add(menuitem);
@@ -143,9 +144,10 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getProtection().getARMOROrSHIELD().add(CharacterContainer.copyArmor((SHIELDType)currentNode,false));
+					ARMORType item = CharacterContainer.copyArmor((ARMORType)currentNode,false);
+					character.getProtection().getARMOROrSHIELD().add(item);
 					character.refesh();
-					parent.scrollPathToVisible(currentNode);
+					parent.scrollPathToVisible(item);
 				}
 			});
 			popup.add(menuitem);
@@ -154,9 +156,10 @@ public class EDItemStore extends JFrame {
 			JMenuItem menuitem = new JMenuItem("Add to Character");
 			menuitem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					character.getWeapons().add(CharacterContainer.copyWeapon((WEAPONType)currentNode,false));
+					WEAPONType item = CharacterContainer.copyWeapon((WEAPONType)currentNode,false);
+					character.getWeapons().add(item);
 					character.refesh();
-					parent.scrollPathToVisible(currentNode);
+					parent.scrollPathToVisible(item);
 				}
 			});
 			popup.add(menuitem);
@@ -170,7 +173,7 @@ public class EDItemStore extends JFrame {
 						CharacterContainer.copyItem((MAGICITEMType)currentNode,item);
 						character.getBloodCharmItem().add(item);
 						character.refesh();
-						parent.scrollPathToVisible(currentNode);
+						parent.scrollPathToVisible(item);
 					}
 				});
 				popup.add(menuitem);
@@ -183,7 +186,7 @@ public class EDItemStore extends JFrame {
 						CharacterContainer.copyItem((MAGICITEMType)currentNode,item);
 						character.getMagicItem().add(item);
 						character.refesh();
-						parent.scrollPathToVisible(currentNode);
+						parent.scrollPathToVisible(item);
 					}
 				});
 				popup.add(menuitem);
@@ -197,7 +200,7 @@ public class EDItemStore extends JFrame {
 					CharacterContainer.copyItem((ITEMType)currentNode,item);
 					character.getItems().add(item);
 					character.refesh();
-					parent.scrollPathToVisible(currentNode);
+					parent.scrollPathToVisible(item);
 				}
 			});
 			popup.add(menuitem);
