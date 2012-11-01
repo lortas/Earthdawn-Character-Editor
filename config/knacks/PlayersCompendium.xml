@@ -88,7 +88,7 @@
 	<TALENTKNACK name="Forge Arrow" basename="Forge Weapon" minrank="5" strain="2" bookref="PC p.126"/>
 	<TALENTKNACK name="Gaping Wounds" basename="Spellcasting" minrank="9" strain="2" bookref="PC p.126"/>
 	<TALENTKNACK name="Glide" basename="Wind Catcher" minrank="8" strain="2" bookref="PC p.126"/>
-	<TALENTKNACK name="Ghost Master Ritual" basename="Thread Weaving" limitation="(s.text)" minrank="7" strain="0" bookref="PC p.126"/>
+	<TALENTKNACK name="Ghost Master Ritual" basename="Thread Weaving" limitation="" minrank="7" strain="0" bookref="PC p.126"/>
 	<TALENTKNACK name="Halt Disease" basename="Cold Purify" minrank="6" strain="2" bookref="PC p.126"/>
 	<TALENTKNACK name="Hard Glare" basename="Steely Stare" minrank="10" strain="4" bookref="PC p.126"/>
 	<TALENTKNACK name="Head Butt" basename="Unarmed Combat" minrank="7" strain="2" bookref="PC p.126"/>

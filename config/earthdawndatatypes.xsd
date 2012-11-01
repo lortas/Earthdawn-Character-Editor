@@ -714,6 +714,7 @@
 					<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string" default=""/>
 					<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string" default=""/>
 				</xs:sequence>
+				<xs:attribute name="familiar" type="yesno_type" default="no"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
