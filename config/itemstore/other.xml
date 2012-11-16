@@ -191,6 +191,22 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	
+    <THREADITEM name="Thread Hardened Leather" lpcostgrowth="1" spelldefense="12" maxthreads="2" kind="armor" weight="20.0">
+        <edt:ARMOR penalty="1" physicalarmor="5" kind="armor" weight="20.0" name="Thread Hardened Leather"/>
+        <edt:THREADRANK effect="max forged" deed="" lpcost="100" keyknowledge="">
+            <edt:ARMOR penalty="1" physicalarmor="8" kind="armor" weight="20.0" name="Thread Hardened Leather"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="phy+1" deed="" lpcost="200" keyknowledge="">
+            <edt:ARMOR penalty="1" physicalarmor="9" kind="armor" weight="20.0" name="Thread Hardened Leather"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="phy+1" deed="" lpcost="300" keyknowledge="">
+            <edt:ARMOR penalty="1" physicalarmor="10" kind="armor" weight="20.0" name="Thread Hardened Leather"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="phy+1" deed="" lpcost="500" keyknowledge="">
+            <edt:ARMOR penalty="1" physicalarmor="11" kind="armor" weight="20.0" name="Thread Hardened Leather"/>
+        </edt:THREADRANK>
+    </THREADITEM>
+
 	<ITEM name="anschaltbarer Lichtquarz" weight="0.0" />
 	
 	
