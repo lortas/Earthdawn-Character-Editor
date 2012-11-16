@@ -244,11 +244,13 @@ public class RandomCharacterTemplates {
 		}
 		for( RANDOMITEMCATEGORYType itemcategory : template.getITEMCATEGORY() ) {
 			//String categoryname=itemcategory.getName();
-			for( String itemname : rollMulti(itemcategory.getITEMS(),itemcategory.getMin(),itemcategory.getMin()) ) {
+			for( String itemname : rollMulti(itemcategory.getITEMS(),itemcategory.getMin(),itemcategory.getMax()) ) {
 				boolean found=false;
 				for( WEAPONType item : items.getWEAPON() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getWeapons().add(item);
+						WEAPONType w = CharacterContainer.copyWeapon(item,false);
+						w.setUsed(YesnoType.YES);
+						character.getWeapons().add(w);
 						found=true;
 						break;
 					}
@@ -256,7 +258,9 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( ARMORType item : items.getARMOR() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getProtection().getARMOROrSHIELD().add(item);
+						ARMORType a = CharacterContainer.copyArmor(item, false);
+						a.setUsed(YesnoType.YES);
+						character.getProtection().getARMOROrSHIELD().add(a);
 						found=true;
 						break;
 					}
@@ -264,7 +268,9 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( SHIELDType item : items.getSHIELD() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getProtection().getARMOROrSHIELD().add(item);
+						ARMORType s = CharacterContainer.copyArmor(item, false);
+						s.setUsed(YesnoType.YES);
+						character.getProtection().getARMOROrSHIELD().add(s);
 						found=true;
 						break;
 					}
@@ -272,7 +278,11 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( THREADITEMType item : items.getTHREADITEM() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getThreadItem().add(item);
+						THREADITEMType dst=new THREADITEMType();
+						CharacterContainer.copyItem(item, dst);
+						dst.setUsed(YesnoType.YES);
+						dst.setWeaventhreadrank(dst.getTHREADRANK().size());
+						character.getThreadItem().add(dst);
 						found=true;
 						break;
 					}
@@ -280,7 +290,10 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( MAGICITEMType item : items.getBLOODCHARMITEM() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getBloodCharmItem().add(item);
+						MAGICITEMType dst=new MAGICITEMType();
+						CharacterContainer.copyItem(item, dst);
+						dst.setUsed(YesnoType.YES);
+						character.getBloodCharmItem().add(dst);
 						found=true;
 						break;
 					}
@@ -288,7 +301,10 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( PATTERNITEMType item : items.getPATTERNITEM() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getPatternItem().add(item);
+						PATTERNITEMType dst=new PATTERNITEMType();
+						CharacterContainer.copyItem(item, dst);
+						dst.setUsed(YesnoType.YES);
+						character.getPatternItem().add(dst);
 						found=true;
 						break;
 					}
@@ -296,7 +312,10 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( MAGICITEMType item : items.getMAGICITEM() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getMagicItem().add(item);
+						MAGICITEMType dst=new MAGICITEMType();
+						CharacterContainer.copyItem(item, dst);
+						dst.setUsed(YesnoType.YES);
+						character.getMagicItem().add(dst);
 						found=true;
 						break;
 					}
@@ -304,11 +323,18 @@ public class RandomCharacterTemplates {
 				if( found ) continue;
 				for( ITEMType item : items.getITEM() ) {
 					if( item.getName().equals(itemname) ) {
-						character.getItems().add(item);
+						ITEMType dst=new ITEMType();
+						CharacterContainer.copyItem(item, dst);
+						dst.setUsed(YesnoType.YES);
+						character.getItems().add(dst);
 						found=true;
 						break;
 					}
 				}
+				ITEMType unkownitem=new ITEMType();
+				unkownitem.setName(itemname);
+				unkownitem.setUsed(YesnoType.YES);
+				character.getItems().add(unkownitem);
 			}
 		}
 		return character;
