@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EDRANDOMCHARACTERTEMPLATE lang="en" name="Scorcher c5-10" circle_min="5" circle_max="10" xmlns="http://earthdawn.com/randomcharactertemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/randomcharactertemplate ../earthdawnrandomcharactertemplate.xsd">
+	<RACES weight="20">Ork</RACES>
+	<RACES weight="1">Human</RACES>
+	<RACES weight="1">Troll</RACES>
+	<ATTRIBUTES attribute="DEX" weight="10" />
+	<ATTRIBUTES attribute="STR" weight="7" />
+	<ATTRIBUTES attribute="TOU" weight="7" />
+	<ATTRIBUTES attribute="PER" weight="3" />
+	<ATTRIBUTES attribute="WIL" weight="1" />
+	<ATTRIBUTES attribute="CHA" weight="10" />
+	<DISCIPLINES weight="12">Cavalryman</DISCIPLINES>
+	<DISCIPLINES weight="6">Warrior</DISCIPLINES>
+	<DISCIPLINES weight="2">Beastmaster</DISCIPLINES>
+	<DISCIPLINES weight="2" delimiter=",">Sky Raider</DISCIPLINES>
+	<SKILLS delimiter=";">Detect Trap;Disarm Trap;Surprise Strike;Trap Initiative;Search;Tracking;Haggle;Animal Handling;Avoid Blow</SKILLS>
+	<ITEMCATEGORY name="weapon" min="1" max="3">
+		<ITEMS delimiter=",">Broadsword,Battle Axe,Short Sword</ITEMS>
+	</ITEMCATEGORY>
+	<ITEMCATEGORY name="armor" min="1" max="1">
+		<ITEMS delimiter=",">Hardened Leather,Padded Leather,Hide</ITEMS>
+	</ITEMCATEGORY>
+	<ITEMCATEGORY name="shield" min="1" max="1">
+		<ITEMS>Buckler Bark Rider's</ITEMS>
+	</ITEMCATEGORY>
+	<ITEMCATEGORY name="utils">
+		<ITEMS delimiter=",">Bedroll,Artisan Tool (rune carving)</ITEMS>
+	</ITEMCATEGORY>
+</EDRANDOMCHARACTERTEMPLATE>
