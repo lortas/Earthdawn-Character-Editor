@@ -92,7 +92,7 @@ public class EDMainWindow {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final OPTIONALRULES OPTIONALRULES = PROPERTIES.getOptionalRules();
 	public static final List<Method> optionalrulesMethods = Arrays.asList(OPTIONALRULES.class.getMethods());
-	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
+	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS");
 	public static final String encoding="UTF-8";
 
 	private JFrame frame;
@@ -1163,7 +1163,7 @@ public class EDMainWindow {
 	}
 
 	public JMenu createOptionalRuleMenu() {
-		JMenu mnOptRules = new JMenu(NLS.getString("EDMainWindow.mntmOptRules.text")); //$NON-NLS-1$
+		JMenu mnOptRules = new JMenu(NLS.getString("EDMainWindow.mntmOptRules.text"));
 
 		try {
 			yesIcon = new ImageIcon(ImageIO.read(new File("icons/YES.png")).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
@@ -1180,7 +1180,7 @@ public class EDMainWindow {
 			String rulename = method.getName().substring(3);
 			JMenuItem mntmRule= new JMenuItem();
 			mntmRule.setName(rulename);
-			mntmRule.setText(NLS.getString("EDMainWindow.mntmOptRule"+rulename+".text")); //$NON-NLS-1$
+			mntmRule.setText(NLS.getString("EDMainWindow.mntmOptRule"+rulename+".text"));
 			try {
 				OPTIONALRULEType r =(OPTIONALRULEType)method.invoke(OPTIONALRULES);
 				if( r.getUsed().equals(YesnoType.YES) ) {
@@ -1214,6 +1214,7 @@ public class EDMainWindow {
 							menuitem.setIcon(yesIcon);
 						}
 						ECEWorker.refreshOptionalRules();
+						new ECEWorker(character).verarbeiteCharakter();
 						character.refesh();
 					} catch (IllegalArgumentException e) {
 						e.printStackTrace();
@@ -1229,7 +1230,7 @@ public class EDMainWindow {
 
 		JMenu mnMovmentRule= new JMenu();
 		mnMovmentRule.setName("ATTRIBUTEBASEDMOVEMENT");
-		mnMovmentRule.setText(NLS.getString("EDMainWindow.mntmOptRuleATTRIBUTEBASEDMOVEMENT.text")); //$NON-NLS-1$
+		mnMovmentRule.setText(NLS.getString("EDMainWindow.mntmOptRuleATTRIBUTEBASEDMOVEMENT.text"));
 		ATTRIBUTENameType attribute = OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().getAttribute();
 
 		HashMap<ATTRIBUTENameType, String> attributes = PROPERTIES.getAttributeNames();
@@ -1251,6 +1252,7 @@ public class EDMainWindow {
 					if( newattribute != null ) {
 						OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().setAttribute(newattribute);
 						CharacterContainer.OptionalRule_AttributeBasedMovement=newattribute;
+						new ECEWorker(character).verarbeiteCharakter();
 						character.refesh();
 					}
 				}
@@ -1271,7 +1273,7 @@ public class EDMainWindow {
 		});
 		mnOptRules.add(mntmDefaultOptionalTalent);
 
-		JMenuItem mntmSaveOptRules = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveOptRules.text")); //$NON-NLS-1$
+		JMenuItem mntmSaveOptRules = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveOptRules.text"));
 		mntmSaveOptRules.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
