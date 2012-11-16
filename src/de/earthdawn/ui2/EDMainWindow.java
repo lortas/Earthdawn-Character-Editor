@@ -96,7 +96,6 @@ public class EDMainWindow {
 	public static final String encoding="UTF-8";
 
 	private JFrame frame;
-	private EDCHARACTER ec;
 	private CharacterContainer character;
 	private JTabbedPane tabbedPane;
 	private EDGeneral panelERGeneral;
@@ -158,11 +157,14 @@ public class EDMainWindow {
 	 * Create the application.
 	 */
 	public EDMainWindow(EDCHARACTER ec) {
-		this.ec = ec;
-		this.character = new CharacterContainer(ec);
+		this(new CharacterContainer(ec));
+	}
+
+	public EDMainWindow(CharacterContainer c) {
+		character = c;
 		new ECEWorker(character).verarbeiteCharakter();
 		initialize();
-		this.character.addCharChangeEventListener(new CharChangeEventListener() {
+		character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 				new ECEWorker(character).verarbeiteCharakter();
@@ -610,9 +612,9 @@ public class EDMainWindow {
 		if( menuitem == null ) return;
 		CharacterContainer c = PROPERTIES.getRandomCharacter(menuitem.getText());
 		if( c == null ) return;
-		this.character=c;
+		character=c;
 		new ECEWorker(character).verarbeiteCharakter();
-		this.character.addCharChangeEventListener(new CharChangeEventListener() {
+		character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override
 			public void CharChanged(de.earthdawn.event.CharChangeEvent evt) {
 				new ECEWorker(character).verarbeiteCharakter();
@@ -747,6 +749,8 @@ public class EDMainWindow {
 	}
 
 	public void writeToXml(File file) throws JAXBException, IOException {
+		if( character == null ) return;
+		EDCHARACTER ec = character.getEDCHARACTER();
 		if( ec == null ) return;
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
@@ -764,6 +768,8 @@ public class EDMainWindow {
 	}
 
 	private void writeToJson(File file) throws JAXBException, JSONException, IOException {
+		if( character == null ) return;
+		EDCHARACTER ec = character.getEDCHARACTER();
 		if( ec == null ) return;
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
@@ -784,6 +790,8 @@ public class EDMainWindow {
 	}
 
 	private void writeToGson(File file) throws IOException {
+		if( character == null ) return;
+		EDCHARACTER ec = character.getEDCHARACTER();
 		if( ec == null ) return;
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		FileOutputStream out = new FileOutputStream(file);
@@ -795,6 +803,8 @@ public class EDMainWindow {
 	}
 
 	private void writeToHtml(File file) throws JAXBException, IOException, TransformerException {
+		if( character == null ) return;
+		EDCHARACTER ec = character.getEDCHARACTER();
 		if( ec == null ) return;
 		// Erzeuge Character XML
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
@@ -851,6 +861,7 @@ public class EDMainWindow {
 		File selFile = fc.getSelectedFile();
 		if(selFile != null){
 			file = selFile;
+			EDCHARACTER ec=null;
 			try{
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Unmarshaller u = jc.createUnmarshaller();
@@ -860,7 +871,6 @@ public class EDMainWindow {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
-
 			character = new CharacterContainer(ec);
 			new ECEWorker(character).verarbeiteCharakter();
 			this.character.addCharChangeEventListener(new CharChangeEventListener() {
@@ -1050,6 +1060,8 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmItems_actionPerformed(ActionEvent arg0) {
+		if( character == null ) return;
+		EDCHARACTER ec = character.getEDCHARACTER();
 		if( ec == null ) return;
 		ITEMS items=new ITEMS();
 		items.setLang(LanguageType.EN);
