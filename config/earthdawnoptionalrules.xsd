@@ -50,6 +50,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="SHOWDEFAULTSKILLS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="QUESTORTALENTNEEDLEGENDPOINTS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="AUTOINSERTLEGENDPOINTSPENT" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="KEEPLEGENDPOINTSYNC" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="LANGUAGESASINDIVIDUALSKILLS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="ENDURINGARMORBYSTRENGTH" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="ALIGNINGTALENTSANDSKILLS" type="OPTIONALRULE_type"/>

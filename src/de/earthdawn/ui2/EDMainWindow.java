@@ -388,6 +388,19 @@ public class EDMainWindow {
 		});
 		mnView.add(mntmWebBrowser);
 
+		JMenuItem mntmFullscreen = new JMenuItem(NLS.getString("EDMainWindow.mntmFullscreen.text")); //$NON-NLS-1$
+		mntmFullscreen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_MASK));
+		mntmFullscreen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( frame.getExtendedState() == JFrame.NORMAL ) {
+					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				} else {
+					frame.setExtendedState(JFrame.NORMAL);
+				}
+			}
+		});
+		mnView.add(mntmFullscreen);
+
 		JMenu mnExtra = new JMenu(NLS.getString("EDMainWindow.mnExtra.text")); //$NON-NLS-1$
 		menuBar.add(mnExtra);
 

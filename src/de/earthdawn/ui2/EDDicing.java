@@ -7,7 +7,6 @@ import java.awt.Button;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
