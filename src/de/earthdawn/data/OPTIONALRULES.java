@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SHOWDEFAULTSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="QUESTORTALENTNEEDLEGENDPOINTS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="AUTOINSERTLEGENDPOINTSPENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
+ *         &lt;element name="KEEPLEGENDPOINTSYNC" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="LANGUAGESASINDIVIDUALSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="ENDURINGARMORBYSTRENGTH" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
  *         &lt;element name="ALIGNINGTALENTSANDSKILLS" type="{http://earthdawn.com/optionalrules}OPTIONALRULE_type"/>
@@ -66,6 +67,7 @@ import javax.xml.bind.annotation.XmlType;
     "showdefaultskills",
     "questortalentneedlegendpoints",
     "autoinsertlegendpointspent",
+    "keeplegendpointsync",
     "languagesasindividualskills",
     "enduringarmorbystrength",
     "aligningtalentsandskills",
@@ -99,6 +101,8 @@ public class OPTIONALRULES {
     protected OPTIONALRULEType questortalentneedlegendpoints;
     @XmlElement(name = "AUTOINSERTLEGENDPOINTSPENT", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType autoinsertlegendpointspent;
+    @XmlElement(name = "KEEPLEGENDPOINTSYNC", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected OPTIONALRULEType keeplegendpointsync;
     @XmlElement(name = "LANGUAGESASINDIVIDUALSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
     protected OPTIONALRULEType languagesasindividualskills;
     @XmlElement(name = "ENDURINGARMORBYSTRENGTH", namespace = "http://earthdawn.com/optionalrules", required = true)
@@ -376,6 +380,30 @@ public class OPTIONALRULES {
      */
     public void setAUTOINSERTLEGENDPOINTSPENT(OPTIONALRULEType value) {
         this.autoinsertlegendpointspent = value;
+    }
+
+    /**
+     * Gets the value of the keeplegendpointsync property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public OPTIONALRULEType getKEEPLEGENDPOINTSYNC() {
+        return keeplegendpointsync;
+    }
+
+    /**
+     * Sets the value of the keeplegendpointsync property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OPTIONALRULEType }
+     *     
+     */
+    public void setKEEPLEGENDPOINTSYNC(OPTIONALRULEType value) {
+        this.keeplegendpointsync = value;
     }
 
     /**

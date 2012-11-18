@@ -44,6 +44,7 @@ public class ECEWorker {
 	public static boolean OptionalRule_autoincrementDisciplinetalents=OptionalRule.getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_LegendpointsForAttributeIncrease=OptionalRule.getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_AutoInsertLegendPointSpent=OptionalRule.getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_KeepLegendPointSync=OptionalRule.getKEEPLEGENDPOINTSYNC().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_EnduringArmorByStrength=OptionalRule.getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
 	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
@@ -60,6 +61,7 @@ public class ECEWorker {
 		OptionalRule_autoincrementDisciplinetalents=OptionalRule.getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 		OptionalRule_LegendpointsForAttributeIncrease=OptionalRule.getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 		OptionalRule_AutoInsertLegendPointSpent=OptionalRule.getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
+		OptionalRule_KeepLegendPointSync=OptionalRule.getKEEPLEGENDPOINTSYNC().getUsed().equals(YesnoType.YES);
 		OptionalRule_EnduringArmorByStrength=OptionalRule.getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
 		OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
 	}
@@ -578,6 +580,10 @@ public class ECEWorker {
 		calculatedLP.calclulateTotal();
 
 		if( OptionalRule_AutoInsertLegendPointSpent ) character.addLegendPointsSpent(oldcalculatedLP.getCalculatedLP());
+		if( OptionalRule_KeepLegendPointSync ) {
+			character.clearSpentLegendPoints();
+			character.getLegendPoints().getLEGENDPOINTS().addAll(character.getCalculatedLegendpoints().getCALCULATIONLP());
+		}
 		character.calculateLegendPointsAndStatus();
 		character.calculateDevotionPoints();
 

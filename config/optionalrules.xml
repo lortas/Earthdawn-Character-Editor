@@ -54,7 +54,8 @@
 	E.g., if you increase and reduce steps form talents you will get multiple entries and you have to decide
 	which is the right one and which can be deleted. You still in response for your legend point entries.
 	 -->
-	<AUTOINSERTLEGENDPOINTSPENT used="yes"/>
+	<AUTOINSERTLEGENDPOINTSPENT used="no"/>
+	<KEEPLEGENDPOINTSYNC used="yes"/>
 	<!--
 	By the following rule you can define if the editor will request a skill for each learned languages.
 	-->
