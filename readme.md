@@ -22,6 +22,28 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.45-20121119.zip ##
++ Bugs
+	+ Karma Ritual was missing in Discipline Journeyman
+	+ Aligned Skill
+	+ spellability for circle 2 to 5 were missing for the discipline elementalist
+	+ Knack Ghost Master had wrong value in attribute "limitation"
+	+ Small bugs within random character generatore removed
+	+ Blood damage was not shown within the Ajfel+Mordom PDF
++ Multiple menu entries have now key short cuts
++ Added Spell Sword
++ Multiple SpinnerEditor changed to JComboBox
++ Confirmation for exit added
++ Confirmation for create new character added
++ New menu entry switch window to fullscreen
++ New menu entry for editing DefaultOptionalTalents
++ Create for every spell an empty spelldiscription, if no spell description exists
++ PatternItem enhanced
++ If an optional rule is changed, refresh character
++ New random character template scorcher added
++ Optional Rule ALIGNINGTALENTSANDSKILLS default value is "no"
++ Optional Rule AUTOINSERTLEGENDPOINTSPENT default value is "no"
++ New Optional Rule KEEPLEGENDPOINTSYNC
 ## EarthdawnCharacterEditor-0.44-20120819.zip ##
 + Bugs
 	+ ThreadRankNodePanel: WoundThreshold und WoundPenalties mismatch

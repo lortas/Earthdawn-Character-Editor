@@ -445,7 +445,7 @@ public class EDMainWindow {
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					try {
-						desktop.browse(new URI("http://sourceforge.net/apps/trac/ed-char-editor/wiki/FAQ"));
+						desktop.browse(new URI("https://sourceforge.net/p/ed-char-editor/wiki/FAQ/"));
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (URISyntaxException e) {
@@ -462,7 +462,7 @@ public class EDMainWindow {
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					try {
-						desktop.browse(new URI("http://sourceforge.net/projects/ed-char-editor/files/"));
+						desktop.browse(new URI("https://sourceforge.net/projects/ed-char-editor/files/"));
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (URISyntaxException e) {
@@ -479,7 +479,7 @@ public class EDMainWindow {
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					try {
-						desktop.browse(new URI("http://sourceforge.net/apps/trac/ed-char-editor/report/1"));
+						desktop.browse(new URI("https://sourceforge.net/p/ed-char-editor/tickets/"));
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (URISyntaxException e) {
