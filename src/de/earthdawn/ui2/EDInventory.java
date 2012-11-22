@@ -741,15 +741,14 @@ public class EDInventory extends JPanel {
 					Object parent = currentPath.getParentPath().getLastPathComponent();
 					List<?> temp = ((ItemTreeModel) tree.getModel()).getListForGroupNode((EDInventoryRootNodeType)parent);
 					int i =  temp.indexOf(currentNode);
-					String[] options = {"Yes","No"};
 					int a = JOptionPane.showOptionDialog(tree,
-							"Do really want to remove this node?",
-							"Change Portrait?",
+							EDMainWindow.NLS.getString("Confirmation.RemoveNode.text"),
+							EDMainWindow.NLS.getString("Confirmation.RemoveNode.title"),
 							JOptionPane.YES_NO_OPTION,
 							JOptionPane.QUESTION_MESSAGE,
 							null,
-							options,
-							options[0]);
+							EDMainWindow.OptionDialog_YesNoOptions,
+							EDMainWindow.OptionDialog_YesNoOptions[0]);
 					if( a == 0 ) {
 						temp.remove(currentNode);
 						((ItemTreeModel) tree.getModel()).fireRemove(currentPath.getParentPath(),currentNode,i );

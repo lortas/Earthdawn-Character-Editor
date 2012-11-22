@@ -24,34 +24,44 @@ import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.ui2.EDMainWindow;
 
 public class EarthdawnCharacterEditor {
-	public static final String VERSION="0.45";
+	private static final File LASTEDITEDCHARACTER = new File("lasteditedcharacter.xml");
+	public static final String VERSION="0.46";
 	/**
 	 * Main-Funktion. 
 	 */
 	public static void main(String[] args) {
 		try {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-			EDCHARACTER ec = new EDCHARACTER();
+			EDCHARACTER ec;
+			File infile;
 			// Erster Parameter wenn vorhanden ist der einzulesende Charakterbogen
 			if( args.length > 0 ) {
-				System.out.println("Read character from " + args[0]);
+				infile=new File(args[0]);
+			} else {
+				infile=LASTEDITEDCHARACTER;
+			}
+			if( infile.canRead() ) {
+				System.out.println("Read character from "+infile.getCanonicalPath());
 				// Einlesen des Charakters
 				Unmarshaller u = jc.createUnmarshaller();
-				ec =(EDCHARACTER)u.unmarshal(new File(args[0]));
+				ec =(EDCHARACTER)u.unmarshal(infile);
 				System.out.println("Processing the character: '" + ec.getName() + "'");
+			} else {
+				ec = new EDCHARACTER();
 			}
 			// Verarbeiten
-			EDCHARACTER ecOut = new ECEWorker(ec).verarbeiteCharakter();
-			ec=ecOut;
-			EDMainWindow window = new EDMainWindow(ec);
+			EDMainWindow window = new EDMainWindow(new ECEWorker(ec).verarbeiteCharakter());
 			if( args.length < 2 ) { 
 				// Anzeigen des Hauptdialogs, wenn nur maximal ein Parameter übergeben wurde
 				window.setVisible(true);
+				while( window.isDisplayable() ) Thread.sleep(500);
+				//Speichere letzten Charakter extra ab
+				window.writeToXml(LASTEDITEDCHARACTER);
 			} else {
 				// Wenn noch ein zweiter Parameter übergeben wurde, schreibe Charakter dort rein
 				window.writeToXml(new File(args[1]));
 				// Wenn noch ein dritter Parameter übergeben wurde, schreibe pdf export dort rein
-				if( args.length > 2 ) new ECEPdfExporter().exportRedbrickExtended(ec,new File(args[2]));
+				if( args.length > 2 ) new ECEPdfExporter().exportRedbrickExtended(window.getEDCharacter(),new File(args[2]));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

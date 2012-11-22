@@ -413,15 +413,14 @@ public class EDGeneral extends JPanel {
 		else btnRace.setText(race+" ("+origin+")");
 		appearance.setRace(race);
 		appearance.setOrigin(origin);
-		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
-				"Do you also want to reset your portrait picture and reset your known languages to default?",
-				"Reset portrait and languages?",
+				EDMainWindow.NLS.getString("Confirmation.ResetPortraitAndLanguages.text"),
+				EDMainWindow.NLS.getString("Confirmation.ResetPortraitAndLanguages.title"),
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
-				options,
-				options[0]);
+				EDMainWindow.OptionDialog_YesNoOptions,
+				EDMainWindow.OptionDialog_YesNoOptions[0]);
 		if( a == 0 ) {
 			character.getPortrait().clear();
 			character.clearLanguages();
@@ -441,15 +440,14 @@ public class EDGeneral extends JPanel {
 		APPEARANCEType appearance = character.getAppearance();
 		if( appearance.getGender().equals(gender) ) return;
 		appearance.setGender(gender);
-		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
-				"Do you also want to reset your portrait picture?",
-				"Change Portrait?",
+				EDMainWindow.NLS.getString("Confirmation.ChangePortrait.text"),
+				EDMainWindow.NLS.getString("Confirmation.ChangePortrait.title"),
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
-				options,
-				options[0]);
+				EDMainWindow.OptionDialog_YesNoOptions,
+				EDMainWindow.OptionDialog_YesNoOptions[0]);
 		if( a == 0 ) character.getPortrait().clear();
 		new ECEWorker(character).verarbeiteCharakter();
 		character.refesh();
@@ -594,15 +592,14 @@ public class EDGeneral extends JPanel {
 	}
 
 	protected void setEmptyPortrait() {
-		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
-				"Do you also want to clear your portrait picture?",
-				"Empty Portrait?",
+				EDMainWindow.NLS.getString("Confirmation.EmptyPortrait.text"),
+				EDMainWindow.NLS.getString("Confirmation.EmptyPortrait.title"),
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
-				options,
-				options[0]);
+				EDMainWindow.OptionDialog_YesNoOptions,
+				EDMainWindow.OptionDialog_YesNoOptions[0]);
 		if( a != 0 ) return;
 		Base64BinaryType base64bin = new Base64BinaryType();
 		base64bin.setValue(new byte[]{-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,1,

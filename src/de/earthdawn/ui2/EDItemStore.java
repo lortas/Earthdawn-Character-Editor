@@ -221,15 +221,14 @@ public class EDItemStore extends JFrame {
 		File file = fc.getSelectedFile();
 		if( file != null ) {
 			if( file.exists() ) {
-				String[] options = {"Continue","Cancel"};
 				int a = JOptionPane.showOptionDialog(parent,
-						"The file '"+file.getName()+"' already exists and will be overwritten.\nDo you really want to continue?",
-						"Overwrite File?",
+						EDMainWindow.NLS.getString("Confirmation.Overwrite.text").replace("##FILE##", file.getName()),
+						EDMainWindow.NLS.getString("Confirmation.Overwrite.title"),
 						JOptionPane.YES_NO_OPTION,
 						JOptionPane.QUESTION_MESSAGE,
 						null,
-						options,
-						options[0]);
+						EDMainWindow.OptionDialog_YesNoOptions,
+						EDMainWindow.OptionDialog_YesNoOptions[0]);
 				if( a != 0 ) return;
 			}
 			try {
