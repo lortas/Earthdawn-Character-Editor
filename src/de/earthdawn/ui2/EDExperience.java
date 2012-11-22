@@ -165,15 +165,14 @@ public class EDExperience extends JPanel {
 		character.refesh();
 	}
 	protected void do_btnResetSpentLP_actionPerformed(ActionEvent arg0) {
-		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(this,
-				"Your manual calculation will be replaced by automatic calculation.\nDo you want continue?",
-				"Are you sure?",
+				EDMainWindow.NLS.getString("Confirmation.ResetSpentLP.text"),
+				EDMainWindow.NLS.getString("Confirmation.ResetSpentLP.title"),
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
-				options,
-				options[0]);
+				EDMainWindow.OptionDialog_YesNoOptions,
+				EDMainWindow.OptionDialog_YesNoOptions[0]);
 		if( a != 0 ) return;
 		character.clearSpentLegendPoints();
 		character.getLegendPoints().getLEGENDPOINTS().addAll(character.getCalculatedLegendpoints().getCALCULATIONLP());

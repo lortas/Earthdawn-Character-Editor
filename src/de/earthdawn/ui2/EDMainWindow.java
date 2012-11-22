@@ -92,8 +92,9 @@ public class EDMainWindow {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final OPTIONALRULES OPTIONALRULES = PROPERTIES.getOptionalRules();
 	public static final List<Method> optionalrulesMethods = Arrays.asList(OPTIONALRULES.class.getMethods());
-	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS");
+	public static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS");
 	public static final String encoding="UTF-8";
+	public static final String[] OptionDialog_YesNoOptions = {NLS.getString("Button.Yes.text"),NLS.getString("Button.No.text")};
 
 	private JFrame frame;
 	private CharacterContainer character;
@@ -153,6 +154,10 @@ public class EDMainWindow {
 		frame.setVisible(isVisible);
 	}
 
+	public boolean isDisplayable() {
+		return frame.isDisplayable();
+	}
+
 	/**
 	 * Create the application.
 	 */
@@ -173,6 +178,10 @@ public class EDMainWindow {
 			}
 		});
 		refreshTabs();
+	}
+
+	public EDCHARACTER getEDCharacter() {
+		return character.getEDCHARACTER();
 	}
 
 	/**
@@ -208,6 +217,7 @@ public class EDMainWindow {
 		menuBar.add(mnFile);
 
 		JMenuItem mntmNew = new JMenuItem(NLS.getString("EDMainWindow.mntmNew.text"));
+		mntmNew.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
 		mntmNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmNew_actionPerformed(arg0);
@@ -862,6 +872,7 @@ public class EDMainWindow {
 		//Schreibe Ergebnis weg
 		PrintStream out = new PrintStream(new FileOutputStream(file), false, encoding);
 		out.print(htmlstring);
+		out.close();
 	}
 
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
@@ -900,15 +911,14 @@ public class EDMainWindow {
 		}
 	}
 	protected void do_mntmClose_actionPerformed(ActionEvent arg0) {
-		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(frame,
-				"Do you really want to quit? Any changes will be lost.",
-				"Quit?",
+				NLS.getString("Confirmation.Quit.text"),
+				NLS.getString("Confirmation.Quit.title"),
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
-				options,
-				options[0]);
+				OptionDialog_YesNoOptions,
+				OptionDialog_YesNoOptions[0]);
 		if( a != 0 ) return;
 		frame.dispose();
 		if(defaultoptionaltalent!=null) defaultoptionaltalent.dispose();
@@ -1146,15 +1156,14 @@ public class EDMainWindow {
 	}
 
 	protected void do_mntmNew_actionPerformed(ActionEvent arg0) {
-		String[] options = {"Yes","No"};
 		int a = JOptionPane.showOptionDialog(frame,
-				"Do you really want to create a new character? Any changes of the current character will be lost!",
-				"New character?",
+				NLS.getString("Confirmation.NewChar.text"),
+				NLS.getString("Confirmation.NewChar.title"),
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
-				options,
-				options[0]);
+				OptionDialog_YesNoOptions,
+				OptionDialog_YesNoOptions[0]);
 		if( a != 0 ) return;
 		file = null;
 		character = new CharacterContainer(new EDCHARACTER());
@@ -1189,14 +1198,14 @@ public class EDMainWindow {
 
 	public JMenu createOptionalRuleMenu() {
 		JMenu mnOptRules = new JMenu(NLS.getString("EDMainWindow.mntmOptRules.text"));
-
+		File iconfolder = new File("icons");
 		try {
-			yesIcon = new ImageIcon(ImageIO.read(new File("icons/YES.png")).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
+			yesIcon = new ImageIcon(ImageIO.read(new File(iconfolder,NLS.getString("Button.Yes.icon"))).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
 		} catch (IOException e) {
 			System.err.println(e.getLocalizedMessage());
 		}
 		try {
-			noIcon = new ImageIcon(ImageIO.read(new File("icons/NO.png")).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
+			noIcon = new ImageIcon(ImageIO.read(new File(iconfolder,NLS.getString("Button.No.icon"))).getScaledInstance(-1, 10, Image.SCALE_SMOOTH));
 		} catch (IOException e) {
 			System.err.println(e.getLocalizedMessage());
 		}
