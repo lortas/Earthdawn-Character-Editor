@@ -28,13 +28,17 @@ HELM.png
 	Pixel Art Icon for RPG by Ails
 
 LIGHT.png
-	Pixel Art Icon for RPG by Ails
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 MELEE_WEAPON.png
 	Pixel Art Icon for RPG by Ails
 
 MISSILE_WEAPON.png
-	Pixel Art Icon for RPG by Ails
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 POTION.png
 	Pixel Art Icon for RPG by Ails
@@ -84,22 +88,38 @@ PURSE.png
 	License: Free for non commercial use.
 
 ANIMAL.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 KIT.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
+
 
 POT.png
 
 TOOL.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 INSTRUMENT.png
 
 DRINK.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 RATION.png
 
 MOUNT.png
 
 TRANSPORT.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 RANK1.png
 
@@ -122,6 +142,21 @@ RANK9.png
 RANKn.png
 
 RANK.png
+
+DISZIPLINABILITY.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
+
+TALENTABILITY.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
+
+VAMBRACE.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 construct.png
 	edpt.org
