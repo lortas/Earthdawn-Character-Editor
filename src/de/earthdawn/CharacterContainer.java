@@ -1646,6 +1646,8 @@ public class CharacterContainer extends CharChangeRefresh {
 			break;
 		case WIL:
 			break;
+		case NA:
+			break;
 		}
 		MOVEMENTType movement = getMovement();
 		movement.setFlight(movementFlight);
