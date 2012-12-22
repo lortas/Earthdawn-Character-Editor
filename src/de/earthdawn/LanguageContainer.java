@@ -61,6 +61,10 @@ public class LanguageContainer {
 				case SKILL:
 					speak = LearnedbyType.NO;
 					break;
+				case TALENT:
+					break;
+				case OTHER:
+					break;
 				}
 				if( readwrite.equals(LearnedbyType.SKILL) ) switch( l.getReadwrite() ) {
 				case NO:
@@ -69,6 +73,10 @@ public class LanguageContainer {
 					break;
 				case SKILL:
 					readwrite=LearnedbyType.NO;
+					break;
+				case TALENT:
+					break;
+				case OTHER:
 					break;
 				}
 			}
