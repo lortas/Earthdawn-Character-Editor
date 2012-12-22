@@ -6,8 +6,23 @@ BACKPACK.png
 	Author: Harwen Zhang, http://harwen.net/
 	License: Free for non commercial use.
 
+ABILITY.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
+
+ARTISAN.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
+
 ARMOR.png
 	Pixel Art Icon for RPG by Ails
+
+AMMUNITION.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 BLOOD_CHARM.png
 	Pixel Art Icon for RPG by Ails
@@ -47,22 +62,32 @@ RING.png
 	Pixel Art Icon for RPG by Ails
 
 SALVE.png
-	Pixel Art Icon for RPG by Ails
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lortas
 
 SHIELD.png
 	Pixel Art Icon for RPG by Ails
+
+SPELL.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 TALISMAN.png
 	Pixel Art Icon for RPG by Ails
 
 THROWING_WEAPON.png
-	Pixel Art Icon for RPG by Ails
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 CLOTH.png
 	Pixel Art Icon for RPG by Ails
 
 COINS.png
-	Pixel Art Icon for RPG by Ails
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 AMULET.png
 	Pixel Art Icon for RPG by Ails
@@ -106,6 +131,9 @@ TOOL.png
 	More info and icons available at game-icons.net
 
 INSTRUMENT.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Designed by Lorc
+	More info and icons available at game-icons.net
 
 DRINK.png
 	Icons provided under the Creative Commons 3.0 BY license.
