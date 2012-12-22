@@ -1152,6 +1152,8 @@ public class ECEPdfExporter {
 					acroFields.setField( "Water"+counterSpells, "Yes" ); break;
 				case WOOD:
 					acroFields.setField( "Wood"+counterSpells, "Yes" ); break;
+				case UNDEFINED:
+					break;
 				}
 				SpelldescriptionType spelldescription = spelldescriptions.get(spell.getName());
 				if( (spelldescription==null) || (spelldescription.getValue()==null) ) acroFields.setField( "Spell description"+counterSpells, "" );

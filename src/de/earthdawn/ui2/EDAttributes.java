@@ -66,10 +66,10 @@ public class EDAttributes extends JPanel {
 		InputMapUtil.setupInputMap(table);
 		table.setModel(new AttributesTableModel());
 
-		JComboBox comboBoxBuyPoints = new JComboBox();
+		JComboBox<Integer> comboBoxBuyPoints = new JComboBox<Integer>();
 		for(int i=-2; i<=8;i++) comboBoxBuyPoints.addItem(i);
 		comboBoxBuyPoints.setMaximumRowCount(11);
-		JComboBox comboBoxLpincrease = new JComboBox();
+		JComboBox<Integer> comboBoxLpincrease = new JComboBox<Integer>();
 		for(int i=0; i<=lpincrease_max;i++) comboBoxLpincrease.addItem(i);
 
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxBuyPoints));

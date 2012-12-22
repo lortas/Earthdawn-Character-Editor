@@ -46,7 +46,7 @@ public class EDKarma extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((KarmaTableModel)table.getModel()).setCharacter(character);
-		JComboBox comboBoxPlusMinus = new JComboBox();
+		JComboBox<String> comboBoxPlusMinus = new JComboBox<String>();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
@@ -124,7 +124,7 @@ public class EDKarma extends JPanel {
 		scrollPane.getViewport().setOpaque(false);
 		table.setRowSelectionAllowed(false);
 		table.setOpaque(false);
-		JComboBox comboBoxPlusMinus = new JComboBox();
+		JComboBox<String> comboBoxPlusMinus = new JComboBox<String>();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));

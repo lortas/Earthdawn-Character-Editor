@@ -20,7 +20,7 @@ public class WeaponNodePanel extends AbstractNodePanel<WEAPONType> {
 	private JTextField textFieldName;
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
-	private JComboBox comboBoxType;
+	private JComboBox<ItemkindType> comboBoxType;
 	private JSpinner spinnerWeight;
 	private JSpinner spinnerSize;
 	private JSpinner spinnerDamage;
@@ -40,7 +40,7 @@ public class WeaponNodePanel extends AbstractNodePanel<WEAPONType> {
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setLayout(new MigLayout("", "[24px][128px,grow][27px][60px][34px][68.00px][40px][86px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 		add(new JLabel("Type"), "cell 0 0,alignx right,aligny center");
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,growx,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());

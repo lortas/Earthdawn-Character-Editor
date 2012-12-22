@@ -20,8 +20,8 @@ public class PatternitemNodePanel extends AbstractNodePanel<PATTERNITEMType> {
 	private JSpinner spinnerWeight;
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
-	private JComboBox comboBoxType;
-	private JComboBox comboBoxPatternKind;
+	private JComboBox<ItemkindType> comboBoxType;
+	private JComboBox<PatternkindType> comboBoxPatternKind;
 	private JTextField textFieldBookRef;
 	private JSpinner spinnerDepatterningrate;
 	private JSpinner spinnerBloodDamage;
@@ -40,13 +40,13 @@ public class PatternitemNodePanel extends AbstractNodePanel<PATTERNITEMType> {
 		setLayout(new MigLayout("", "[24px][128px,grow][24px][128px,grow 20][27px][60px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,growx,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());
 
 		add(new JLabel("Pattern Type"), "cell 2 0,alignx left,aligny center");
-		comboBoxPatternKind = new JComboBox(PatternkindType.values());
+		comboBoxPatternKind = new JComboBox<PatternkindType>(PatternkindType.values());
 		comboBoxPatternKind.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxPatternKind, "cell 3 0,growx,aligny center");
 		comboBoxPatternKind.setSelectedItem(nodeObject.getPatternkind());

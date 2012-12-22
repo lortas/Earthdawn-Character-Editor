@@ -19,7 +19,7 @@ public class MagicitemNodePanel extends AbstractNodePanel<MAGICITEMType> {
 	private JSpinner spinnerWeight;
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
-	private JComboBox comboBoxType;
+	private JComboBox<ItemkindType> comboBoxType;
 	private JTextField textFieldBookRef;
 	private JSpinner spinnerDepatterningrate;
 	private JSpinner spinnerBloodDamage;
@@ -36,7 +36,7 @@ public class MagicitemNodePanel extends AbstractNodePanel<MAGICITEMType> {
 		setLayout(new MigLayout("", "[24px][128px,grow][24px][128px,grow 20][27px][60px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,growx,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());

@@ -54,9 +54,9 @@ public class EDTalents extends JPanel {
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((TalentsTableModel)table.getModel()).setCharacter(character);
-		JComboBox comboBoxZeroToFithteen = new JComboBox();
+		JComboBox<Integer> comboBoxZeroToFithteen = new JComboBox<Integer>();
 		for(int i=0; i<=15;i++) comboBoxZeroToFithteen.addItem(i);
-		JComboBox comboBoxZeroToThree = new JComboBox();
+		JComboBox<Integer> comboBoxZeroToThree = new JComboBox<Integer>();
 		for(int i=0; i<=3;i++) comboBoxZeroToThree.addItem(i);
 		table.getColumnModel().getColumn(0).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToFithteen));
 		table.getColumnModel().getColumn(4).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToThree));

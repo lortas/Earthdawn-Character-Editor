@@ -55,7 +55,7 @@ public class EDDevotionPoints extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((DevotionPointsTableModel)table.getModel()).setCharacter(character);
-		JComboBox comboBoxPlusMinus = new JComboBox();
+		JComboBox<String> comboBoxPlusMinus = new JComboBox<String>();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));		
@@ -135,7 +135,7 @@ public class EDDevotionPoints extends JPanel {
 		table.setRowSelectionAllowed(false);
 		scrollPane.getViewport().setOpaque(false);
 
-		JComboBox comboBoxPlusMinus = new JComboBox();
+		JComboBox<String> comboBoxPlusMinus = new JComboBox<String>();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));

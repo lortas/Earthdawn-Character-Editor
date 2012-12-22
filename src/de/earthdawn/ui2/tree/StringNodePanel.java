@@ -18,7 +18,7 @@ public class StringNodePanel extends AbstractNodePanel<StringNode> {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final HashMap<String, SPELLDEFType> spelldefs = PROPERTIES.getSpells();
 	private StringNodeType nodeType;
-	private JComboBox comboBoxString;
+	private JComboBox<String> comboBoxString;
 	private JTextField textFieldString;
 
 	public StringNodePanel(StringNode node) {
@@ -30,9 +30,9 @@ public class StringNodePanel extends AbstractNodePanel<StringNode> {
 		switch( nodeType ) {
 		case SPELL:
 			add(new JLabel("Spell"), "cell 0 0,alignx right,aligny center");
-			Object[] array = spelldefs.keySet().toArray();
+			String[] array = (String[]) spelldefs.keySet().toArray();
 			Arrays.sort(array);
-			comboBoxString = new JComboBox(array);
+			comboBoxString = new JComboBox<String>(array);
 			comboBoxString.setFont(new Font("Tahoma", Font.PLAIN, 10));
 			add(comboBoxString, "cell 1 0,alignx left,aligny center");
 			comboBoxString.setSelectedItem(nodeObject.getString());

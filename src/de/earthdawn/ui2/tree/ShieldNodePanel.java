@@ -26,7 +26,7 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
 	private JLabel lblType;
-	private JComboBox comboBoxType;
+	private JComboBox<ItemkindType> comboBoxType;
 	private JLabel lblPhysicalArmor;
 	private JSpinner spinnerPhysical;
 	private JLabel lblMysticArmor;
@@ -50,7 +50,7 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 		lblType = new JLabel("Type");
 		add(lblType, "cell 0 0,alignx left,aligny center");
 		
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,alignx left,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());

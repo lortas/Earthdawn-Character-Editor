@@ -33,11 +33,11 @@ public class DefaultOptionalTalent extends JFrame {
 	private static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS"); //$NON-NLS-1$
 	private static LanguageType LANGUAGE = LanguageType.EN;
 	private String title=NLS.getString("DefaultOptionalTalent.Title.text");
-	private static DefaultListModel chosenTalents;
-	private JList chosenTalentList;
-	private JComboBox cbxDiscipline = new JComboBox();
-	private JComboBox cbxCircle = new JComboBox();
-	private JComboBox cbxTalent = new JComboBox();
+	private static DefaultListModel<de.earthdawn.config.DefaultOptionalTalent> chosenTalents;
+	private JList<de.earthdawn.config.DefaultOptionalTalent> chosenTalentList;
+	private JComboBox<Integer> cbxDiscipline = new JComboBox<Integer>();
+	private JComboBox<Integer> cbxCircle = new JComboBox<Integer>();
+	private JComboBox<String> cbxTalent = new JComboBox<String>();
 
 	public DefaultOptionalTalent() throws HeadlessException {
 		initiate();
@@ -87,8 +87,7 @@ public class DefaultOptionalTalent extends JFrame {
 		JButton btnRemoveTalent = new JButton(NLS.getString("DefaultOptionalTalent.btnRemove.text"));
 		btnRemoveTalent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				for( Object t : chosenTalentList.getSelectedValues() ) {
-					de.earthdawn.config.DefaultOptionalTalent talentcomponent = (de.earthdawn.config.DefaultOptionalTalent)t;
+				for( de.earthdawn.config.DefaultOptionalTalent talentcomponent : chosenTalentList.getSelectedValuesList() ) {
 					PROPERTIES.getOptionalRules().getDEFAULTOPTIONALTALENT().remove(talentcomponent.getTalent());
 				}
 				updateTalents();
@@ -105,14 +104,14 @@ public class DefaultOptionalTalent extends JFrame {
 			if( ! talentnames.contains(name) ) talentnames.add(name);
 		}
 		Collections.sort(talentnames);
-		cbxTalent.setModel(new DefaultComboBoxModel(talentnames.toArray()));
+		cbxTalent.setModel(new DefaultComboBoxModel<String>((String[]) talentnames.toArray()));
 		cbxDiscipline.removeAllItems();
 		for(int i=1; i<10;i++) cbxDiscipline.addItem(i);
 		cbxCircle.removeAllItems();
 		for(int i=1; i<=15;i++) cbxCircle.addItem(i);
 
-		chosenTalents = new DefaultListModel();
-		chosenTalentList = new JList(chosenTalents);
+		chosenTalents = new DefaultListModel<de.earthdawn.config.DefaultOptionalTalent>();
+		chosenTalentList = new JList<de.earthdawn.config.DefaultOptionalTalent>(chosenTalents);
 		JTextArea description = new JTextArea("Description");
 		description.setLineWrap(true);
 		description.setEditable(false);
