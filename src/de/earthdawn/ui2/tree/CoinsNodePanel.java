@@ -17,7 +17,7 @@ public class CoinsNodePanel extends AbstractNodePanel<COINSType> {
 	private static final long serialVersionUID = -2763493441410217313L;
 	private JTextField textFieldName;
 	private JTextField textFieldLocation;
-	private JComboBox comboBoxType;
+	private JComboBox<ItemkindType> comboBoxType;
 	private JTextField textFieldBookRef;
 	private JSpinner spinnerDepatterningrate;
 	private JSpinner spinnerBloodDamage;
@@ -41,7 +41,7 @@ public class CoinsNodePanel extends AbstractNodePanel<COINSType> {
 		setLayout(new MigLayout("", "[100px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow][30px,grow]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx right,aligny center");
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,growx,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());

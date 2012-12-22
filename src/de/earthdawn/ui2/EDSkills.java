@@ -11,6 +11,7 @@ import de.earthdawn.data.RANKType;
 import de.earthdawn.data.SKILLType;
 import de.earthdawn.data.YesnoType;
 
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
@@ -112,8 +113,12 @@ public class EDSkills extends JPanel {
 
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new SkillsTableModel(character,false));
-		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
-		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
+		JComboBox<Integer> comboBoxZeroToTen = new JComboBox<Integer>();
+		for(int i=0; i<=10;i++) comboBoxZeroToTen.addItem(i);
+		JComboBox<Integer> comboBoxZeroToSix = new JComboBox<Integer>();
+		for(int i=0; i<=6;i++) comboBoxZeroToSix.addItem(i);
+		table.getColumnModel().getColumn(3).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToSix));
+		table.getColumnModel().getColumn(4).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToTen));
 		scrollPane.setViewportView(table);
 		scrollPane.getViewport().setOpaque(false);
 		table.setRowSelectionAllowed(false);
@@ -124,8 +129,12 @@ public class EDSkills extends JPanel {
 	public void setCharacter(final CharacterContainer character) {
 		this.character = character;
 		((SkillsTableModel)table.getModel()).setCharacter(character);
-		table.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
-		table.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
+		JComboBox<Integer> comboBoxZeroToTen = new JComboBox<Integer>();
+		for(int i=0; i<=10;i++) comboBoxZeroToTen.addItem(i);
+		JComboBox<Integer> comboBoxZeroToSix = new JComboBox<Integer>();
+		for(int i=0; i<=6;i++) comboBoxZeroToSix.addItem(i);
+		table.getColumnModel().getColumn(3).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToSix));
+		table.getColumnModel().getColumn(4).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToTen));
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {

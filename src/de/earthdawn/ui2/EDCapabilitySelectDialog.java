@@ -36,7 +36,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 	private static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
 	private final JPanel contentPanel = new JPanel();
 	private JScrollPane scrollPane;
-	private JList list;
+	private JList<String> list;
 
 	private TreeMap<String,SKILLType> capabilityMap = new TreeMap<String,SKILLType>();
 	private HashMap<String,SKILLType> selectedCapabilityMap = new HashMap<String,SKILLType>();
@@ -80,18 +80,15 @@ public class EDCapabilitySelectDialog extends JDialog {
 		scrollPane = new JScrollPane();
 		contentPanel.add(scrollPane, BorderLayout.CENTER);
 
-		list = new JList();
-		list.setModel(new AbstractListModel() {
-			/**
-			 * 
-			 */
+		list = new JList<String>();
+		list.setModel(new AbstractListModel<String>() {
 			private static final long serialVersionUID = 1L;
 			Set<String> keys = capabilityMap.keySet();
 			String[] array = keys.toArray(new String[0]);
 			public int getSize() {
 				return array.length;
 			}
-			public Object getElementAt(int index) {
+			public String getElementAt(int index) {
 				return array[index];
 			}
 		});
@@ -179,7 +176,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 
 	protected void do_okButton_actionPerformed(ActionEvent arg0) {
 		selectedCapabilityMap.clear();
-		for(Object capabilityname : list.getSelectedValues()){
+		for(Object capabilityname : list.getSelectedValuesList()){
 			selectedCapabilityMap.put((String)capabilityname,capabilityMap.get((String)capabilityname));
 		}
 		this.dispose();	

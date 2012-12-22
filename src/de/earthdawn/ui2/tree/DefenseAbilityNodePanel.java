@@ -14,7 +14,7 @@ import javax.swing.JSpinner;
 public class DefenseAbilityNodePanel extends AbstractNodePanel<DEFENSEABILITYType> {
 	private static final long serialVersionUID = 6601843917581431482L;
 	private JSpinner spinnerBonus;
-	private JComboBox comboBoxType;
+	private JComboBox<DefensekindType> comboBoxType;
 
 	public DefenseAbilityNodePanel(DEFENSEABILITYType node) {
 		super(node);
@@ -22,7 +22,7 @@ public class DefenseAbilityNodePanel extends AbstractNodePanel<DEFENSEABILITYTyp
 		setLayout(new MigLayout("", "[90px][20px][90px][20]", "[20px:20px:20px]"));
 
 		add(new JLabel("Defense"), "cell 0 0,alignx right,aligny center");
-		comboBoxType = new JComboBox(DefensekindType.values());
+		comboBoxType = new JComboBox<DefensekindType>(DefensekindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,alignx left,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());

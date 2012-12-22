@@ -49,7 +49,7 @@ public class EDExperience extends JPanel {
 		
 		this.character = character;
 		((ExperienceTableModel)table.getModel()).setCharacter(character);
-		JComboBox comboBoxPlusMinus = new JComboBox();
+		JComboBox<String> comboBoxPlusMinus = new JComboBox<String>();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));
@@ -139,7 +139,7 @@ public class EDExperience extends JPanel {
 		table.setColumnSelectionAllowed(false);
 		table.getTableHeader().setReorderingAllowed(false);
 		table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
-		JComboBox comboBoxPlusMinus = new JComboBox();
+		JComboBox<String> comboBoxPlusMinus = new JComboBox<String>();
 		comboBoxPlusMinus.addItem("+");
 		comboBoxPlusMinus.addItem("-");
 		table.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPlusMinus));

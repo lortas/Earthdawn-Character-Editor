@@ -48,7 +48,7 @@ public class EDLanguages extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((LanguagesTableModel)tableLanguages.getModel()).setCharacter(character);
-		JComboBox comboBoxLearnedby = new JComboBox();
+		JComboBox<String> comboBoxLearnedby = new JComboBox<String>();
 		for( LearnedbyType item : LearnedbyType.values() ) comboBoxLearnedby.addItem(item.value());
 		tableLanguages.getColumnModel().getColumn(1).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
 		tableLanguages.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
@@ -65,8 +65,12 @@ public class EDLanguages extends JPanel {
 			System.err.println("layout languageselection : "+e.getLocalizedMessage());
 		}
 		((SkillsTableModel)tableLanguageSkills.getModel()).setCharacter(character);
-		tableLanguageSkills.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
-		tableLanguageSkills.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
+		JComboBox<Integer> comboBoxZeroToTen = new JComboBox<Integer>();
+		for(int i=0; i<=10;i++) comboBoxZeroToTen.addItem(i);
+		JComboBox<Integer> comboBoxZeroToSix = new JComboBox<Integer>();
+		for(int i=0; i<=6;i++) comboBoxZeroToSix.addItem(i);
+		tableLanguageSkills.getColumnModel().getColumn(3).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToSix));
+		tableLanguageSkills.getColumnModel().getColumn(4).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToTen));
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("skillselection") ) {
@@ -135,7 +139,7 @@ public class EDLanguages extends JPanel {
 		tableLanguages.setColumnSelectionAllowed(false);
 		tableLanguages.getTableHeader().setReorderingAllowed(false);
 		InputMapUtil.setupInputMap(tableLanguages);
-		JComboBox comboBoxLearnedby = new JComboBox();
+		JComboBox<String> comboBoxLearnedby = new JComboBox<String>();
 		for( LearnedbyType item : LearnedbyType.values() ) comboBoxLearnedby.addItem(item.value());
 		tableLanguages.getColumnModel().getColumn(1).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
 		tableLanguages.getColumnModel().getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxLearnedby));
@@ -153,8 +157,12 @@ public class EDLanguages extends JPanel {
 		tableLanguageSkills.setOpaque(false);
 		tableLanguageSkills.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tableLanguageSkills.setModel(new SkillsTableModel(character,true));
-		tableLanguageSkills.getColumnModel().getColumn(3).setCellEditor(new SpinnerEditor(0, 10));
-		tableLanguageSkills.getColumnModel().getColumn(4).setCellEditor(new SpinnerEditor(0, 10));
+		JComboBox<Integer> comboBoxZeroToTen = new JComboBox<Integer>();
+		for(int i=0; i<=10;i++) comboBoxZeroToTen.addItem(i);
+		JComboBox<Integer> comboBoxZeroToSix = new JComboBox<Integer>();
+		for(int i=0; i<=6;i++) comboBoxZeroToSix.addItem(i);
+		tableLanguageSkills.getColumnModel().getColumn(3).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToSix));
+		tableLanguageSkills.getColumnModel().getColumn(4).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxZeroToTen));
 		tableLanguageSkills.setRowSelectionAllowed(false);
 		tableLanguageSkills.setColumnSelectionAllowed(false);
 		tableLanguageSkills.getTableHeader().setReorderingAllowed(false);

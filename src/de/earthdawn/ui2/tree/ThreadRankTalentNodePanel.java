@@ -23,7 +23,7 @@ public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYTy
 	public static final HashMap<String, TALENTABILITYType> talentByCircle = PROPERTIES.getTalentsByCircle(15);
 	public static final List<CAPABILITYType> talents = PROPERTIES.getCapabilities().getTalents();
 	private HashMap<String,String[]> talenthash;
-	private JComboBox comboBoxTalent;
+	private JComboBox<String> comboBoxTalent;
 	private JSpinner spinnerBonus;
 	private JTextField textFieldPool;
 
@@ -47,9 +47,9 @@ public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYTy
 			TALENTABILITYType t = talentByCircle.get(talent);
 			talenthash.put(talent, new String[]{t.getName(),t.getLimitation(),t.getPool()});
 		}
-		Object[] array = talenthash.keySet().toArray();
+		String[] array = (String[]) talenthash.keySet().toArray();
 		Arrays.sort(array);
-		comboBoxTalent = new JComboBox(array);
+		comboBoxTalent = new JComboBox<String>(array);
 		comboBoxTalent.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxTalent, "cell 1 0,growx,aligny center");
 		if( (nodeObject.getLimitation()==null) ||  nodeObject.getLimitation().isEmpty() ) {

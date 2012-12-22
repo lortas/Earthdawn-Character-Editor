@@ -36,7 +36,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 	private JSpinner spinnerWeight;
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
-	private JComboBox comboBoxType;
+	private JComboBox<ItemkindType> comboBoxType;
 	private JTextField textFieldDescription;
 	private JSpinner spinnerSpellDefense;
 	private JSpinner spinnerMaxThreads;
@@ -56,7 +56,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		setLayout(new MigLayout("", "[24px][128px,grow][24px][60px:60px:60px][30px][60px:60px:60px][150px:150px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px][][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,growx,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());

@@ -68,6 +68,7 @@ public class ECECsvExporter {
 			row.add( spell.getBookref() );
 			out.println(generaterow(row));
 		}
+		out.close();
 	}
 
 	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws IOException {
@@ -126,6 +127,7 @@ public class ECECsvExporter {
 				out.println(generaterow(row));
 			}
 		}
+		out.close();
 	}
 
 	public void exportItems(EDCHARACTER edCharakter, File outFile) throws IOException {
@@ -161,6 +163,7 @@ public class ECECsvExporter {
 			row.add( item.getClass().getSimpleName() );
 			out.println(generaterow(row));
 		}
+		out.close();
 	}
 
 	private void printTalents(PrintStream out, List<TALENTType> talents, boolean discipline) {

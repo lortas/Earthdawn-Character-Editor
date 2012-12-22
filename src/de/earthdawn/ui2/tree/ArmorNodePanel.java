@@ -21,7 +21,7 @@ public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 	private JSpinner spinnerWeight;
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
-	private JComboBox comboBoxType;
+	private JComboBox<ItemkindType> comboBoxType;
 	private JSpinner spinnerPhysical;
 	private JSpinner spinnerMystic;
 	private JSpinner spinnerPenalty;
@@ -31,7 +31,7 @@ public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 	private JTextField textFieldDateForged;
 	private JSpinner spinnerBloodDamage;
 	private JTextField textFieldBookRef;
-	private JComboBox comboBoxEdnElement;
+	private JComboBox<ElementkindType> comboBoxEdnElement;
 	private JSpinner spinnerDepatterningrate;
 
 	public ArmorNodePanel(ARMORType node) {
@@ -40,7 +40,7 @@ public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 		setLayout(new MigLayout("", "[24px][128px,grow][27px][60px][34px][47px,grow][40px][86px]", "[20px:20px:20px][20px:20px:20px][20px:20px:20px][20px:20px:20px]"));
 
 		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
-		comboBoxType = new JComboBox(ItemkindType.values());
+		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,growx,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());
@@ -102,7 +102,7 @@ public class ArmorNodePanel extends AbstractNodePanel<ARMORType> {
 		add(spinnerWeight, "cell 3 3,alignx left,aligny center");
 
 		add(new JLabel("Edn Element"), "cell 4 1,alignx left,aligny center");
-		comboBoxEdnElement = new JComboBox(ElementkindType.values());
+		comboBoxEdnElement = new JComboBox<ElementkindType>(ElementkindType.values());
 		comboBoxEdnElement.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxEdnElement, "cell 5 1,growx,aligny center");
 		comboBoxEdnElement.setSelectedItem(nodeObject.getEdnElement());
