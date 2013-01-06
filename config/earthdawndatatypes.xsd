@@ -317,7 +317,6 @@
 				<xs:sequence>
 					<xs:element name="RANK" type="RANK_type" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
-				<xs:attribute name="limitation" type="xs:string" default=""/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -348,7 +347,7 @@
 	</xs:complexType>
 	<xs:complexType name="ITEM_type">
 		<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string"/>
+			<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="IMAGE" type="base64binary_type"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -710,7 +709,6 @@
 					<xs:element minOccurs="0" maxOccurs="1" name="CARRYING" type="CARRYING_type"/>
 					<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="SKILL_type"/>
 					<xs:element minOccurs="1" maxOccurs="1" name="KARMA" type="KARMA_type"/>
-					<xs:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="xs:string" default=""/>
 					<xs:element minOccurs="0" maxOccurs="1" name="RACEABILITES" type="xs:string" default=""/>
 					<xs:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xs:string" default=""/>
 				</xs:sequence>
