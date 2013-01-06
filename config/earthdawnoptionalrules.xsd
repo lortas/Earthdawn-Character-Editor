@@ -54,6 +54,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="LANGUAGESASINDIVIDUALSKILLS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="ENDURINGARMORBYSTRENGTH" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="ALIGNINGTALENTSANDSKILLS" type="OPTIONALRULE_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="TRAVELEDSCOLAR" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="DATEFORMAT" type="xs:string"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MULTIUSETALENT" type="OPTIONALRULES_MULTIUSETALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
