@@ -18,9 +18,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.io.File;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import de.earthdawn.data.EDCHARACTER;
 import de.earthdawn.ui2.EDMainWindow;
 
 public class EarthdawnCharacterEditor {
@@ -31,8 +28,7 @@ public class EarthdawnCharacterEditor {
 	 */
 	public static void main(String[] args) {
 		try {
-			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-			EDCHARACTER ec;
+			CharacterContainer ec;
 			File infile;
 			// Erster Parameter wenn vorhanden ist der einzulesende Charakterbogen
 			if( args.length > 0 ) {
@@ -42,12 +38,10 @@ public class EarthdawnCharacterEditor {
 			}
 			if( infile.canRead() ) {
 				System.out.println("Read character from "+infile.getCanonicalPath());
-				// Einlesen des Charakters
-				Unmarshaller u = jc.createUnmarshaller();
-				ec =(EDCHARACTER)u.unmarshal(infile);
+				ec=new CharacterContainer(infile);
 				System.out.println("Processing the character: '" + ec.getName() + "'");
 			} else {
-				ec = new EDCHARACTER();
+				ec = new CharacterContainer();
 			}
 			// Verarbeiten
 			EDMainWindow window = new EDMainWindow(new ECEWorker(ec).verarbeiteCharakter());

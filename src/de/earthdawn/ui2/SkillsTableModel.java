@@ -72,7 +72,9 @@ public class SkillsTableModel extends AbstractTableModel {
 		else skill = character.getSkills().get(row);
 		switch (col) {
 		case 0: return skill.getName();
-		case 1: return skill.getLimitation();
+		case 1:
+			if( skill.getLIMITATION().size()<1 ) return "-";
+			return skill.getLIMITATION().get(0);
 		case 2: return skill.getAttribute();
 		case 3: return new Integer(skill.getRANK().getStartrank());
 		case 4: return new Integer(skill.getRANK().getRank());
@@ -80,7 +82,7 @@ public class SkillsTableModel extends AbstractTableModel {
 		case 6: return skill.getRANK().getStep();
 		case 7: return skill.getRANK().getDice().value();
 		case 8: return skill.getBookref();
-		default : return new String("Error not defined");
+		default : return "Error: not defined";
 		}
 	}
 
@@ -101,7 +103,10 @@ public class SkillsTableModel extends AbstractTableModel {
 		SKILLType skill;
 		if( languageSkills ) skill = character.getOnlyLanguageSkills().get(row);
 		else skill = character.getSkills().get(row);
-		if( (col==1) && !languageSkills ) skill.setLimitation((String)value);
+		if( (col==1) && !languageSkills ) {
+			skill.getLIMITATION().clear();
+			skill.getLIMITATION().add((String)value);
+		}
 		if( col == 3 ) {
 			int v = (Integer)value;
 			RANKType rank = skill.getRANK();

@@ -446,7 +446,13 @@ public class ApplicationProperties {
 
 	public List<SKILLType> getStartingSkills() {
 		for( NAMESTARTINGSKILLSType skills : NAMES.getSTARTINGSKILLS() ) {
-			if( skills.getLang().equals(LANGUAGE) ) return skills.getSKILL();
+			if( skills.getLang().equals(LANGUAGE) ) {
+				List<SKILLType> skill = skills.getSKILL();
+				for( SKILLType s : skill ) {
+					while( s.getLIMITATION().remove("") );
+				}
+				return skill;
+			}
 		}
 		return null;
 	}

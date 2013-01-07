@@ -17,19 +17,42 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+
+import com.itextpdf.text.pdf.codec.Base64;
 
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECharacteristics;
@@ -57,12 +80,146 @@ public class CharacterContainer extends CharChangeRefresh {
 		return dateFormat.format(date);
 	}
 
-	public CharacterContainer( EDCHARACTER c) {
+	public CharacterContainer() {
+		character = new EDCHARACTER();
+	}
+
+	public CharacterContainer(EDCHARACTER c) {
 		character = c;
+	}
+
+	public CharacterContainer(File xmlfile) throws IOException,JAXBException, ParserConfigurationException, SAXException, TransformerException {
+		// XML-Daten einlesen
+		byte[] xmldata = new byte[(int) xmlfile.length()];
+		FileInputStream xmlInputStream = new FileInputStream(xmlfile);
+		xmlInputStream.read(xmldata);
+		xmlInputStream.close();
+
+		// XML-Daten unge'typ't parsen
+		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+		Document doc = docBuilder.parse(new ByteArrayInputStream(xmldata));
+
+		// XML Root Element ermitteln
+		Node rootnode = doc.getLastChild();
+		if( rootnode == null ) {
+			throw new RuntimeException("XML has no root element");
+		}
+		String[] rootnames = rootnode.getNodeName().split(":");
+		String rootname;
+		if( rootnames.length>1 ) {
+			rootname=rootnames[1];
+		} else {
+			rootname=rootnames[0];
+		}
+		if( ! rootname.equals("EDCHARACTER") ) {
+			throw new RuntimeException("XML root element '"+rootname+"' is not 'EDCHARACTER'");
+		}
+		Node version = rootnode.getAttributes().getNamedItem("xsd-version");
+		if( version == null ) {
+			System.err.println("No xsd-version set. But try to read anyway.");
+		} else {
+			String value = version.getNodeValue();
+			if( value.equals("1.0") ) {
+				// XSLT Transformation
+				System.out.println("XML mit xsd-version 1.0, transformiere nach aktuellem Schema");
+				TransformerFactory tFactory = TransformerFactory.newInstance();
+				try {
+					Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/convertcharacter_1.0.xsl"));
+					ByteArrayOutputStream xmldataNew = new ByteArrayOutputStream();
+					transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(xmldata)),new javax.xml.transform.stream.StreamResult(xmldataNew));
+					xmldata=xmldataNew.toByteArray();
+				} catch (TransformerException e) {
+					System.err.print("Transformation alter (1.0) XML-character Version fehlgeschlagen : ");
+					System.err.println(e.getLocalizedMessage());
+				}
+			} else {
+				System.err.println("Unknown xsd-version. But try to read anyway.");
+			}
+		}
+		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+		Unmarshaller u = jc.createUnmarshaller();
+		character =(EDCHARACTER)u.unmarshal(new ByteArrayInputStream(xmldata));
 	}
 
 	public void setEDCHARACTER(EDCHARACTER c) {
 		character = c;
+	}
+
+	public void writeXml(OutputStream out,String encoding) throws JAXBException, UnsupportedEncodingException {
+		PrintStream fileio = new PrintStream(out, false, encoding);
+		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
+		// Lösche XSD-Version
+		character.setXsdVersion(null);
+		// Sieht kopmisch aus, setzt aber die Default/Fixed XSD-Version
+		character.setXsdVersion(character.getXsdVersion());
+		toXml(encoding).marshal(character,fileio);
+		fileio.close();
+	}
+
+	public void writeHtml(OutputStream out,String encoding) {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		try {
+			writeXml(baos, encoding);
+		} catch (UnsupportedEncodingException | JAXBException e) {
+			System.err.println(e.getLocalizedMessage());
+			return;
+		}
+		String htmlstring="";
+		// Transformiere das Character XML mit Hilfe des XSLT nach HTML
+		TransformerFactory tFactory = TransformerFactory.newInstance();
+		try {
+			Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
+			ByteArrayOutputStream html = new ByteArrayOutputStream();
+			transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
+			htmlstring=html.toString(encoding);
+		} catch (TransformerException | UnsupportedEncodingException e) {
+			System.err.println(e.getLocalizedMessage());
+			return;
+		}
+		try {
+			// Lese CSS ein um die referenz im HTML durch inline zu ersetzen
+			File cssfile=new File("config/earthdawncharacter.css");
+			byte[] cssdata = new byte[(int) cssfile.length()];
+			FileInputStream cssio = new FileInputStream(cssfile);
+			cssio.read(cssdata);
+			cssio.close();
+			// Ersetzte CSS link durch CSS inline
+			htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", "<style type=\"text/css\">"+new String(cssdata)+"</style>");
+		} catch (IOException e) {
+			System.err.println(e.getLocalizedMessage());
+		}
+		// Entferne XSLT Fehler
+		htmlstring=htmlstring.replaceAll("(%0A|%09)*;base64,(%0A|%09)*", ";base64,");
+		// Ersetze alle Icon Links durch inline Bilder
+		for(File iconfile : (new File("icons")).listFiles()) {
+			if( iconfile.getName().endsWith(".png") ) {
+				try {
+					htmlstring=htmlstring.replace(iconfile.toURI().getRawPath(),"data:image/png;base64,"+Base64.encodeFromFile(iconfile.getCanonicalPath()).replace("\r", "").replace("\n", ""));
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+				}
+			}
+		}
+		//Schreibe Ergebnis weg
+		try {
+			PrintStream fileio = new PrintStream(out, false, encoding);
+			fileio.print(htmlstring);
+			fileio.close();
+		} catch (UnsupportedEncodingException e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	public Marshaller toXml(String encoding) throws JAXBException {
+		character.setEditorpath((new File("")).toURI().getRawPath());
+		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+		Marshaller m = jc.createMarshaller();
+		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
+		m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+		return m;
 	}
 
 	public EDCHARACTER getEDCHARACTER() {
@@ -532,10 +689,11 @@ public class CharacterContainer extends CharChangeRefresh {
 	public TALENTType getTalentByDisciplinAndName(String disciplin, String searchTalent) {
 		for( DISCIPLINEType discipline : getDisciplines() ) {
 			if( ! discipline.getName().equals(disciplin) ) continue;
-			for (TALENTType talent : discipline.getDISZIPLINETALENT()) {
+			TalentsContainer alltalents = new TalentsContainer(discipline);
+			for (TALENTType talent : alltalents.getDisciplinetalents()) {
 				if ( talent.getName().equals(searchTalent)) return talent;
 			}
-			List<TALENTType> optionaltalents = discipline.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = alltalents.getOptionaltalents();
 			List<TALENTType> remove = new ArrayList<TALENTType>();
 			TALENTType result = null;
 			for( TALENTType talent : optionaltalents ) {
@@ -577,8 +735,29 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 			discount++;
 		}
+		// Normiere Limitation für die Skills
+		for( SKILLType skill : skills ) {
+			List<String> limitations = skill.getLIMITATION();
+			Collections.sort(limitations);
+			String limitation = join( limitations );
+			limitations.clear();
+			if( !limitation.isEmpty() ) limitations.add(limitation);
+		}
 		Collections.sort(skills, new SkillComparator());
 		return skills;
+	}
+
+	static public String join( List<?> list) { return join( ", ", list ); }
+
+	static public String join( String seperator, List<?> list) {
+		Iterator<?> iterator = list.iterator();
+		if( ! iterator.hasNext() ) return "";
+		StringBuffer result = new StringBuffer();
+		while( true ) {
+			result.append(iterator.next().toString().replaceAll("\\s\\s*", " ").replaceFirst("^\\s*", "").replaceFirst("\\s*$", ""));
+			if( iterator.hasNext() ) result.append(seperator);
+			else return result.toString();
+		}
 	}
 
 	public void addSkill(SKILLType skill) {
@@ -633,7 +812,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			// Skills die keinen Rang haben können übersprungen werden.
 			if( (skill.getRANK()==null) || (skill.getRANK().getRank()<1) ) continue;
 			String skillname=skill.getName();
-			String skilllimitation=skill.getLimitation();
+			String skilllimitation=join(skill.getLIMITATION());
 			int discount=0;
 			for( DISCIPLINEType discipline : getDisciplines() ) {
 				if( skill == null ) break;
@@ -641,7 +820,8 @@ public class CharacterContainer extends CharChangeRefresh {
 				for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
 					// Talente die keine Rang haben können übersprungen werden
 					if( (talent.getRANK()==null) || (talent.getRANK().getRank()<1) ) continue;
-					if( talent.getName().equals(skillname) && talent.getLimitation().equals(skilllimitation) ) {
+					String limitation=join(talent.getLIMITATION());
+					if( talent.getName().equals(skillname) && limitation.equals(skilllimitation) ) {
 						skill.setRealigned(discount);
 						alignedskills.add(skill);
 						talent.setALIGNEDSKILL(skill);
@@ -768,10 +948,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		// Falls es das DurabilityTalent ist, dann ignoriere die Limitationsangabe
 		if( name.equals(durabilityName) ) return durabilityName;
 
-		String limitation = talent.getLimitation();
-		if( limitation == null ) return name;
-		if( limitation.isEmpty() ) return name;
-		return name + " : "+limitation;
+		if( talent.getLIMITATION().size()<1 ) return name;
+		return name + " : "+talent.getLIMITATION().get(0);
 	}
 
 	public static String getFullTalentname(TALENTABILITYType talent) {
@@ -780,7 +958,6 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( name.equals(durabilityName) ) return durabilityName;
 
 		String limitation = talent.getLimitation();
-		if( limitation == null ) return name;
 		if( limitation.isEmpty() ) return name;
 		return name + " : "+limitation;
 	}
@@ -973,7 +1150,7 @@ public class CharacterContainer extends CharChangeRefresh {
 				for( TALENTABILITYType disciplineTalent :disciplineCircleDefinition.getDISCIPLINETALENT()) {
 					TALENTType newTalent = new TALENTType();
 					newTalent.setName(disciplineTalent.getName());
-					newTalent.setLimitation(disciplineTalent.getLimitation());
+					newTalent.getLIMITATION().add(disciplineTalent.getLimitation());
 					newTalent.setCircle(circlenr);
 					String newFullTalentName=getFullTalentname(newTalent);
 					if( ! totalListOfDisciplineTalents.contains(newFullTalentName) ) {
@@ -1033,9 +1210,10 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public TALENTType addOptionalTalent(String disciplineName, int circle, TALENTABILITYType talenttype, boolean byVersatility) {
+		if( talenttype == null ) return null;
 		TALENTType talent = new TALENTType();
 		talent.setName(talenttype.getName());
-		talent.setLimitation(talenttype.getLimitation());
+		if( !talenttype.getLimitation().isEmpty() ) talent.getLIMITATION().add(talenttype.getLimitation());
 		talent.setCircle(circle);
 
 		RANKType rank = new RANKType();
@@ -1155,7 +1333,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		boolean noKnackLimitation = knackLimitation.isEmpty();
 		for( TalentsContainer talents : getAllTalents() ) {
 			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
-				if( noKnackLimitation || talent.getLimitation().equals(knackLimitation)) for( KNACKType k : talent.getKNACK() ) {
+				boolean matchLimitation=false;
+				if( noKnackLimitation ) matchLimitation=true;
+				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
+				if( matchLimitation ) for( KNACKType k : talent.getKNACK() ) {
 					if( k.getName().equals(knackName) ) return true;
 				}
 			}
@@ -1169,7 +1350,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		boolean noKnackLimitation = knackLimitation.isEmpty();
 		for( TalentsContainer talents : getAllTalents() ) {
 			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
-				if( noKnackLimitation || talent.getLimitation().equals(knackLimitation)) {
+				boolean matchLimitation=false;
+				if( noKnackLimitation ) matchLimitation=true;
+				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
+				if( matchLimitation ) {
 					List<KNACKType> talentknacks = talent.getKNACK();
 					List<KNACKType> remove = new ArrayList<KNACKType>();
 					for( KNACKType k : talentknacks ) if( k.getName().equals(knackName) ) remove.add(k);
@@ -1494,7 +1678,11 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<SKILLType> remove = new ArrayList<SKILLType>();
 		for( SKILLType skill : skills ) {
 			RANKType rank = skill.getRANK();
-			if( (rank != null) && (rank.getRank() > 0) ) continue;
+			if( (rank != null) && (rank.getRank() > 0) ) {
+				// Lösche alle leeren Limitaions, falls welche vorhanden sind
+				while( skill.getLIMITATION().remove("") );
+				continue;
+			}
 			remove.add(skill);
 		}
 		removeSkill(remove);
@@ -1585,7 +1773,7 @@ public class CharacterContainer extends CharChangeRefresh {
 				}
 				// Talente bei denen die Limitation auf "(#)" endet kommen von ThreadItems und fliegen erstmal raus
 				// Diese werden wieder vom ThreadItem ergänzt, wenn es noch da ist.
-				if( talent.getLimitation().endsWith("(#)") ) {
+				if( join(talent.getLIMITATION()).endsWith("(#)") ) {
 					remove.add(talent);
 					continue;
 				}
@@ -1922,7 +2110,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		String knackname = knack.getName();
 		boolean noLimitation=limitation.isEmpty();
 		for( TALENTType talent : getTalentByName(knack.getBasename()) ) {
-			if( noLimitation || talent.getLimitation().equals(limitation) ) {
+			boolean matchLimitation=false;
+			if( noLimitation ) matchLimitation=true;
+			else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(limitation);
+			if( matchLimitation ) {
 				List<KNACKType> talentknacks = talent.getKNACK();
 				for( KNACKType k : talentknacks ) {
 					if( k.getName().equals(knackname) ) return;
@@ -1958,7 +2149,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		dst.setBlooddamage(src.getBlooddamage());
 		dst.setBookref(src.getBookref());
 		dst.setDepatterningrate(src.getDepatterningrate());
-		dst.setDescription(src.getDescription());
+		dst.setDESCRIPTION(src.getDESCRIPTION());
 		dst.setKind(src.getKind());
 		dst.setLocation(src.getLocation());
 		dst.setName(src.getName());

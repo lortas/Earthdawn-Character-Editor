@@ -155,7 +155,7 @@ class SpellsTableModel extends AbstractTableModel {
 	public void generateLists(List<TALENTType> threadweavings){
 		spelllist = new ArrayList<SPELLType>();
 		List<String> threadweavingTypes = new ArrayList<String>();
-		if( threadweavings != null) for(TALENTType threadweaving : threadweavings ) threadweavingTypes.add(threadweaving.getLimitation());
+		if( threadweavings != null) for(TALENTType threadweaving : threadweavings ) threadweavingTypes.addAll(threadweaving.getLIMITATION());
 		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = PROPERTIES.getSpellsByDiscipline();
 		HashMap<String, SPELLDEFType> spells = PROPERTIES.getSpells();
 		HashMap<SpellkindType, String> spellKindMap = PROPERTIES.getSpellKindMap();

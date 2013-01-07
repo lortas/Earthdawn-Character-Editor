@@ -169,10 +169,10 @@ public class ECEPdfExporter {
 			Collections.sort(skills, new SkillComparator());
 			for( SKILLType skill : skills ) {
 				String skillName=skill.getName();
-				if( ! skill.getLimitation().isEmpty() ) {
+				if( skill.getLIMITATION().size()>0 ) {
 					if( skillName.equals(ARTISAN[0]) ) skillName = ARTISAN[1];
 					else if( skillName.equals(KNOWLEDGE[0]) ) skillName = KNOWLEDGE[1];
-					skillName += " : "+skill.getLimitation();
+					skillName += " : "+skill.getLIMITATION().get(0);
 				}
 				if( ! skill.getBookref().isEmpty() ) skillName += " ["+skill.getBookref()+"]";
 				acroFields.setField( "Skill."+counter, skillName);
@@ -360,7 +360,7 @@ public class ECEPdfExporter {
 				acroFields.setField( "MagicalTreasureSpellDefense", String.valueOf(magicitem.getSpelldefense()) );
 				acroFields.setField( "MagicalTreasureMaxThreads", String.valueOf(magicitem.getMaxthreads()) );
 				int counterMagicItemDescription=0;
-				for( String description : wrapString(50,magicitem.getDescription()) ) {
+				for( String description : wrapString(50,magicitem.getDESCRIPTION()) ) {
 					acroFields.setField( "MagicalTreasureDesc."+counterMagicItemDescription, description );
 					counterMagicItemDescription++;
 					if( counterMagicItemDescription > 2 ) {
@@ -619,7 +619,7 @@ public class ECEPdfExporter {
 			acroFields.setField( "MagicalTreasureSpellDefense."+counterMagicItem, String.valueOf(item.getSpelldefense()) );
 			acroFields.setField( "MagicalTreasureMaxThreads."+counterMagicItem, String.valueOf(item.getMaxthreads()) );
 			int counterMagicItemDescription=0;
-			for( String description : wrapString(55,item.getDescription()) ) {
+			for( String description : wrapString(55,item.getDESCRIPTION()) ) {
 				acroFields.setField( "MagicalTreasureDesc."+counterMagicItemDescription+"."+counterMagicItem, description );
 				counterMagicItemDescription++;
 				if( counterMagicItemDescription > 2 ) {
@@ -997,7 +997,9 @@ public class ECEPdfExporter {
 	private void setTalent(int counter, TALENTType talent, HashMap<String,ATTRIBUTEType> attributes) throws DocumentException, IOException {
 		String talentname = talent.getName();
 		TALENTTEACHERType teacher = talent.getTEACHER();
-		if ( ! talent.getLimitation().isEmpty() ) talentname += ": "+talent.getLimitation();
+		String limitation="";
+		if( talent.getLIMITATION().size()>0 ) limitation=talent.getLIMITATION().get(0);
+		if ( ! limitation.isEmpty() ) talentname += ": "+limitation;
 		acroFields.setField( "TalentBookref."+counter, String.valueOf(talent.getBookref()) );
 		if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
 		if ( talent.getRealigned() > 0 ) talentname="("+talentname+")";

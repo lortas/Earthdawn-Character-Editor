@@ -132,7 +132,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 					RANKType rank = new RANKType();
 					skill.setRANK(rank);
 					skill.setName(name);
-					skill.setLimitation(limitation);
+					skill.getLIMITATION().add(limitation);
 					capabilities.enforceCapabilityParams(skill);
 					if( ! limitation.isEmpty() ) capabilityMap.put(name+" : "+limitation,skill);
 					else capabilityMap.put(name,skill);
@@ -157,7 +157,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 						((talent==SELECT_VERSATILITYTALENT) && capability.getNotbyversatility().equals(YesnoType.NO)) ) {
 					SKILLType cap = new SKILLType();
 					cap.setName(talentabilityName);
-					cap.setLimitation(limitation);
+					cap.getLIMITATION().add(limitation);
 					cap.setAction(capability.getAction());
 					cap.setAttribute(capability.getAttribute());
 					cap.setBonus(capability.getBonus());
@@ -195,16 +195,16 @@ public class EDCapabilitySelectDialog extends JDialog {
 	}
 
 	public boolean skillIsExcluded(SKILLType skill) {
-		return skillIsExcluded(skill.getName(),skill.getLimitation());
+		if( skill.getLIMITATION().size()<1 ) return skillIsExcluded(skill.getName(), "");
+		return skillIsExcluded(skill.getName(),skill.getLIMITATION().get(0));
 	}
 
 	public boolean skillIsExcluded(String skillname,String skilllimitation) {
 		if( (skillname==null) || skillname.isEmpty() ) return true;
 		for( SKILLType e : excludedSkills ) {
 			if( e.getName().equals(skillname) ) {
-				String limitation = e.getLimitation();
-				if( (limitation==null) || (limitation.isEmpty()) ) return true;
-				else if( limitation.equals(skilllimitation) ) return true;
+				if( e.getLIMITATION().size()<1 ) return true;
+				if( e.getLIMITATION().get(0).equals(skilllimitation) ) return true;
 			}
 		}
 		return false;

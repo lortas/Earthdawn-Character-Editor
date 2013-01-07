@@ -283,7 +283,7 @@ public class ECEWorker {
 			for( String t : namegivertalents.keySet() ) {
 				TALENTType talent = new TALENTType();
 				talent.setName(namegivertalents.get(t).getName());
-				talent.setLimitation(namegivertalents.get(t).getLimitation());
+				talent.getLIMITATION().add(namegivertalents.get(t).getLimitation());
 				talent.setCircle(0);
 				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
@@ -316,7 +316,8 @@ public class ECEWorker {
 					int rank = durabilityTalent.getRANK().getRank()-durabilityTalent.getRANK().getRealignedrank();
 					death.setAdjustment(death.getAdjustment()+(durability.getDeath()*rank));
 					unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(durability.getUnconsciousness()*rank));
-					durabilityTalent.setLimitation(durability.getDeath()+"/"+durability.getUnconsciousness());
+					durabilityTalent.getLIMITATION().clear();
+					durabilityTalent.getLIMITATION().add(durability.getDeath()+"/"+durability.getUnconsciousness());
 				}
 				String halfmagic=currentDiscipline.getHALFMAGIC();
 				if( (halfmagic==null) || (halfmagic.isEmpty()) ) {
@@ -476,7 +477,12 @@ public class ECEWorker {
 				for( DISCIPLINEType discipline : allDisciplines ) {
 					DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(discipline.getName());
 					for( TALENTType talent : (new TalentsContainer(discipline).getDisciplineAndOptionaltalents()) ) {
-						if( talent.getName().equals(talentname) && ( limitation.isEmpty() || (talent.getLimitation().equals(limitation)) ) ) {
+						boolean sameLimitations = false;
+						if( limitation.isEmpty() ) sameLimitations = true;
+						else if( talent.getLIMITATION().size()>0 ) {
+							sameLimitations = talent.getLIMITATION().get(0).equals(limitation);
+						}
+						if( talent.getName().equals(talentname) && sameLimitations ) {
 							found=true;
 							RANKType talentrank = talent.getRANK();
 							talentrank.setBonus(talentrank.getBonus()+itembonus);
@@ -500,7 +506,7 @@ public class ECEWorker {
 					else limitation += " (#)";
 					TALENTType bonusTalent = new TALENTType();
 					bonusTalent.setName(itemtalent.getName());
-					bonusTalent.setLimitation(limitation);
+					bonusTalent.getLIMITATION().add(limitation);
 					bonusTalent.setCircle(0);
 					capabilities.enforceCapabilityParams(bonusTalent);
 					RANKType bonusrank = new RANKType();
@@ -616,7 +622,7 @@ public class ECEWorker {
 			for(SKILLType skilltemplate : PROPERTIES.getStartingSkills() ) {
 				SKILLType skill = new SKILLType();
 				skill.setName(skilltemplate.getName());
-				skill.setLimitation(skilltemplate.getLimitation());
+				skill.getLIMITATION().addAll(skilltemplate.getLIMITATION());
 				RANKType rank = new RANKType();
 				rank.setRank(skilltemplate.getRANK().getRank());
 				rank.setStartrank(skilltemplate.getRANK().getStartrank());
@@ -639,10 +645,10 @@ public class ECEWorker {
 			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
 			rank.setLpcost(lpcostfull-lpcoststart);
 			rank.setBonus(0);
-			if( skill.getLimitation().isEmpty() ) {
+			if( skill.getLIMITATION().size()<1 ) {
 				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+"'");
 			} else {
-				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+" ("+skill.getLimitation()+")'");
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+" ("+skill.getLIMITATION().get(0)+")'");
 			}
 			capabilities.enforceCapabilityParams(skill);
 			if( skill.getAttribute() != null ) {
@@ -662,7 +668,7 @@ public class ECEWorker {
 					RANKType rank = new RANKType();
 					skill.setRANK(rank);
 					skill.setName(defaultSkill.getName());
-					skill.setLimitation(limitation);
+					if( !limitation.isEmpty() ) skill.getLIMITATION().add(limitation);
 					capabilities.enforceCapabilityParams(skill);
 					if( skill.getAttribute() != null ) {
 						calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
@@ -695,7 +701,8 @@ public class ECEWorker {
 
 	private void checkTalentKnacks(TALENTType talent, int disciplinenumber, int minDisciplineCircle) {
 		String talentname = talent.getName();
-		String limitation = talent.getLimitation();
+		String limitation = "";
+		if( talent.getLIMITATION().size()>0 ) limitation = talent.getLIMITATION().get(0);
 		//Kleinster-Kreis-Angabe nur bei Knacks für Talente aus zweiter,dritter,... Disziplin relevant
 		if(disciplinenumber<2) minDisciplineCircle=0;
 		for( KNACKType knack : talent.getKNACK() ) {
