@@ -130,16 +130,26 @@ class KnacksTableModel extends AbstractTableModel {
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
 				int talentrank=talent.getRANK().getRank()+2;
-				String limitation = talent.getLimitation();
-				for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-					if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+				if( talent.getLIMITATION().size()<1 ) {
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
+						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					}
+				} else for( String limitation : talent.getLIMITATION() ) {
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
+						if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					}
 				}
 			}
 			for( TALENTType talent : discipline.getOPTIONALTALENT() ) {
 				int talentrank=talent.getRANK().getRank();
-				String limitation = talent.getLimitation();
-				for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-					if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+				if( talent.getLIMITATION().size()<1 ) {
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
+						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					}
+				} else for( String limitation : talent.getLIMITATION() ) {
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
+						if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					}
 				}
 			}
 		}

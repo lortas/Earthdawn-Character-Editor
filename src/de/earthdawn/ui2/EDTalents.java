@@ -202,10 +202,16 @@ public class EDTalents extends JPanel {
 		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
 			SKILLType cap = selected.get(key);
-			TALENTABILITYType talent = new TALENTABILITYType();
-			talent.setName(cap.getName());
-			talent.setLimitation(cap.getLimitation());
-			character.addOptionalTalent(disciplin, circle, talent, true);
+			if( cap.getLIMITATION().size()<1 ) {
+				TALENTABILITYType talent = new TALENTABILITYType();
+				talent.setName(cap.getName());
+				character.addOptionalTalent(disciplin, circle, talent, true);
+			} else for( String limitation : cap.getLIMITATION() ) {
+				TALENTABILITYType talent = new TALENTABILITYType();
+				talent.setName(cap.getName());
+				if( !limitation.isEmpty() ) talent.setLimitation(limitation);
+				character.addOptionalTalent(disciplin, circle, talent, true);
+			}
 			character.refesh();
 		}
 	}
@@ -222,10 +228,16 @@ public class EDTalents extends JPanel {
 		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
 			SKILLType cap = selected.get(key);
-			TALENTABILITYType talent = new TALENTABILITYType();
-			talent.setName(cap.getName());
-			talent.setLimitation(cap.getLimitation());
-			character.addOptionalTalent(disciplin, circle, talent, false);
+			if( cap.getLIMITATION().size()<1 ) {
+				TALENTABILITYType talent = new TALENTABILITYType();
+				talent.setName(cap.getName());
+				character.addOptionalTalent(disciplin, circle, talent, false);
+			} else for( String limitation : cap.getLIMITATION() ) {
+				TALENTABILITYType talent = new TALENTABILITYType();
+				talent.setName(cap.getName());
+				if( !limitation.isEmpty() ) talent.setLimitation(limitation);
+				character.addOptionalTalent(disciplin, circle, talent, false);
+			}
 			character.refesh();
 		}
 	}
@@ -289,7 +301,7 @@ class TalentsTableModel extends AbstractTableModel {
 	}
 
 	public Object getValueAt(int row, int col) {
-		TALENTType talent = null;
+		TALENTType talent;
 		boolean isDisciplinTalent=true;
 		if(talents.getDisciplinetalents().size() > row ) {
 			talent=talents.getDisciplinetalents().get(row);
@@ -301,99 +313,41 @@ class TalentsTableModel extends AbstractTableModel {
 				talent=optionaltalent.get(i);
 				isDisciplinTalent=false;
 			} else {
-				return new String("Error");
+				return "Error";
 			}
 		}
-		Object result = new String("Error");
+		TALENTTEACHERType teacher = talent.getTEACHER();
 		switch (col) {
 		case 0:
-	        	try{
-	        		result = new Integer(talent.getCircle());
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 1:  
-	        	try{
-	        		result = talent.getName();
-	        		if( talent.getRealigned() > 0 ) {
-	        			result = "("+result+")";
-	        		}
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 2:
-	        	try{
-	        		result = talent.getLimitation();
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 3: 
-	        	try{
-	        		result = talent.getAttribute().value();
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 4:
-	        	try{
-	        		result = new Integer(talent.getRANK().getStartrank());
-	        	}
-	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 5:
-	        	try{
-	        		result = new Integer(talent.getRANK().getRank());
-	        	}
-	        	catch(Exception e){
-	        		System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 6: return talent.getRANK().getStep();
-	        case 7:
-	        	if( talent.getRANK().getDice() == null ) return "";
-	        	return talent.getRANK().getDice().value();
-	        case 8: return talent.getAction().value();
-	        case 9:
-	        	try{
-	        		TALENTTEACHERType teacher = talent.getTEACHER();
-	        		if( teacher == null ) {
-	        			result = "-";
-	        		} else {
-	        			result = teacher.getDiscipline();
-	        		}
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 10:
-	        	try{
-	        		TALENTTEACHERType teacher = talent.getTEACHER();
-	        		if( (teacher!=null) && teacher.getByversatility().equals(YesnoType.YES) ) {
-	        			result="Versatility";
-	        		} else if( isDisciplinTalent ) {
-	        			result="DisciplineTalent";
-	        		} else {
-	        			result="OptionalTalent";
-	        		}
-	        	}
-	        	catch(Exception e){
-	        		//System.err.println("Error: " + talent.getName());
-	        	}
-	        	break;
-	        case 11: return talent.getBookref();
-	        default: return new Integer(0);
+			return new Integer(talent.getCircle());
+		case 1:
+			String result = talent.getName();
+			if( talent.getRealigned() > 0 ) {
+				result = "("+result+")";
+			}
+			return result;
+		case 2:
+			if( talent.getLIMITATION().size()>0 ) return talent.getLIMITATION().get(0);
+			return "-";
+		case 3: return talent.getAttribute().value();
+		case 4: return new Integer(talent.getRANK().getStartrank());
+		case 5: return new Integer(talent.getRANK().getRank());
+		case 6: return talent.getRANK().getStep();
+		case 7:
+			if( talent.getRANK().getDice() == null ) return "-";
+			return talent.getRANK().getDice().value();
+		case 8: return talent.getAction().value();
+		case 9:
+			if( teacher == null ) return "-";
+			return teacher.getDiscipline();
+		case 10:
+			if( teacher == null ) return "-";
+			if( teacher.getByversatility().equals(YesnoType.YES) ) return "Versatility";
+			if( isDisciplinTalent ) return "DisciplineTalent";
+			return "OptionalTalent";
+		case 11: return talent.getBookref();
+		default: return new Integer(0);
 		}
-		return result;
 	}
 
     /*

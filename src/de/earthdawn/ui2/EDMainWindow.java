@@ -48,10 +48,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.text.EditorKit;
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -449,6 +446,23 @@ public class EDMainWindow {
 		});
 		mnHelp.add(mntmAbout);
 
+		JMenuItem mntmWiki= new JMenuItem(NLS.getString("EDMainWindow.mntmWIKI.text")); //$NON-NLS-1$
+		mntmWiki.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					try {
+						desktop.browse(new URI("https://sourceforge.net/p/ed-char-editor/wiki/"));
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (URISyntaxException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		mnHelp.add(mntmWiki);
+
 		JMenuItem mntmFAQ= new JMenuItem(NLS.getString("EDMainWindow.mntmFAQ.text")); //$NON-NLS-1$
 		mntmFAQ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -773,36 +787,15 @@ public class EDMainWindow {
 
 	public void writeToXml(File file) throws JAXBException, IOException {
 		if( character == null ) return;
-		EDCHARACTER ec = character.getEDCHARACTER();
-		if( ec == null ) return;
-		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-		Marshaller m = jc.createMarshaller();
 		FileOutputStream out = new FileOutputStream(file);
-		PrintStream fileio = new PrintStream(out, false, encoding);
-		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-		m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
-		ec.setEditorpath((new File("")).toURI().getRawPath());
-		m.marshal(ec,fileio);
-		fileio.close();
+		character.writeXml(out, encoding);
 		out.close();
 	}
 
 	private void writeToJson(File file) throws JAXBException, JSONException, IOException {
 		if( character == null ) return;
-		EDCHARACTER ec = character.getEDCHARACTER();
-		if( ec == null ) return;
-		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-		Marshaller m = jc.createMarshaller();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
-		ec.setEditorpath((new File("")).toURI().getRawPath());
-		m.marshal(ec,baos);
+		character.writeXml(baos, encoding);
 		JSONObject json = XML.toJSONObject(baos.toString());
 		baos.close();
 		FileOutputStream out = new FileOutputStream(file);
@@ -827,52 +820,7 @@ public class EDMainWindow {
 
 	private void writeToHtml(File file) throws JAXBException, IOException, TransformerException {
 		if( character == null ) return;
-		EDCHARACTER ec = character.getEDCHARACTER();
-		if( ec == null ) return;
-		// Erzeuge Character XML
-		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-		Marshaller m = jc.createMarshaller();
-		jc=null;
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
-		m.setProperty(Marshaller.JAXB_FRAGMENT, false);
-		ec.setEditorpath((new File("")).toURI().getRawPath());
-		m.marshal(ec,baos);
-		m=null;
-		// Transformiere das Character XML mit hilfe des XSLT nach HTML
-		TransformerFactory tFactory = TransformerFactory.newInstance();
-		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
-		ByteArrayOutputStream html = new ByteArrayOutputStream();
-		transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
-		baos=null;
-		String htmlstring=html.toString(encoding);
-		// Lese CSS ein um die referenz im HTML durch inline zu ersetzen
-		File cssfile=new File("config/earthdawncharacter.css");
-		byte[] cssdata = new byte[(int) cssfile.length()];
-		FileInputStream cssio = new FileInputStream(cssfile);
-		cssio.read(cssdata);
-		cssio.close();
-		// Ersetzte CSS link durch CSS inline
-		htmlstring=htmlstring.replaceAll("<link *rel=\"stylesheet\" *type=\"text/css\" *href=\"earthdawncharacter\\.css\" */?>", "<style type=\"text/css\">"+new String(cssdata)+"</style>");
-		cssdata=null;
-		// Entferne XSLT Fehler
-		htmlstring=htmlstring.replaceAll("(%0A|%09)*;base64,(%0A|%09)*", ";base64,");
-		// Ersetze alle Icon Links durch inline Bilder
-		for(File iconfile : (new File("icons")).listFiles()) {
-			if( iconfile.getName().endsWith(".png") ) {
-				try {
-					htmlstring=htmlstring.replace(iconfile.toURI().getRawPath(),"data:image/png;base64,"+Base64.encodeFromFile(iconfile.getCanonicalPath()).replace("\r", "").replace("\n", ""));
-				} catch (IOException e) {
-					System.err.println(e.getMessage());
-				}
-			}
-		}
-		//Schreibe Ergebnis weg
-		PrintStream out = new PrintStream(new FileOutputStream(file), false, encoding);
-		out.print(htmlstring);
-		out.close();
+		character.writeHtml(new FileOutputStream(file), encoding);
 	}
 
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
@@ -885,17 +833,13 @@ public class EDMainWindow {
 		File selFile = fc.getSelectedFile();
 		if(selFile != null){
 			file = selFile;
-			EDCHARACTER ec=null;
 			try{
-				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-				Unmarshaller u = jc.createUnmarshaller();
-				ec =(EDCHARACTER)u.unmarshal(selFile);
+				character = new CharacterContainer(selFile);
 			}
 			catch(Exception e){
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
-			character = new CharacterContainer(ec);
 			new ECEWorker(character).verarbeiteCharakter();
 			this.character.addCharChangeEventListener(new CharChangeEventListener() {
 				@Override

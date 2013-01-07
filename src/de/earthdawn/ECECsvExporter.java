@@ -97,7 +97,9 @@ public class ECECsvExporter {
 				if( skill.getRealigned() > 0 ) continue;
 				List<String> row = new ArrayList<String>();
 				row.add( skill.getName() );
-				row.add( skill.getLimitation() );
+				String limitation="";
+				if( skill.getLIMITATION().size()>0 ) limitation=skill.getLIMITATION().get(0);
+				row.add( limitation );
 				RANKType rank = skill.getRANK();
 				row.add( skill.getAttribute().value() );
 				if( rank == null ) {
@@ -175,7 +177,9 @@ public class ECECsvExporter {
 			else row.add( "O" );
 			row.add( String.valueOf(talent.getCircle()) );
 			row.add( talent.getName() );
-			row.add( talent.getLimitation() );
+			String limitation="";
+			if( talent.getLIMITATION().size()>0 ) limitation=talent.getLIMITATION().get(0);
+			row.add( limitation );
 			RANKType rank = talent.getRANK();
 			row.add( talent.getAttribute().value() );
 			if( rank == null ) {

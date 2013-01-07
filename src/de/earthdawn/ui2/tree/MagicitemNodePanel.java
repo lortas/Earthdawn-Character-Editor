@@ -98,7 +98,7 @@ public class MagicitemNodePanel extends AbstractNodePanel<MAGICITEMType> {
 		textFieldDescription = new JTextField();
 		add(textFieldDescription, "cell 1 5 5 1,growx,aligny center");
 		textFieldDescription.setColumns(12);
-		textFieldDescription.setText(nodeObject.getDescription());
+		textFieldDescription.setText(nodeObject.getDESCRIPTION());
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class MagicitemNodePanel extends AbstractNodePanel<MAGICITEMType> {
 		nodeObject.setSize((Integer) spinnerSize.getValue());
 		nodeObject.setEffect(textFieldEffect.getText());
 		nodeObject.setSpelldefense((Integer) spinnerSpelldefense.getValue());
-		nodeObject.setDescription(textFieldDescription.getText());
+		nodeObject.setDESCRIPTION(textFieldDescription.getText());
 		if(chckbxUsed.isSelected()) nodeObject.setUsed(YesnoType.YES);
 		else nodeObject.setUsed(YesnoType.NO);
 	}

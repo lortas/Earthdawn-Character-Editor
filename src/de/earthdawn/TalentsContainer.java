@@ -18,12 +18,24 @@ public class TalentsContainer {
 	}
 
 	public void setDisciplinetalents(List<TALENTType> disciplinetalents) {
+		for( TALENTType talent : disciplinetalents ) {
+			List<String> limitations = talent.getLIMITATION();
+			String limitation=CharacterContainer.join( limitations );
+			limitations.clear();
+			if( !limitation.isEmpty() ) limitations.add(limitation);
+		}
 		this.disciplinetalents = disciplinetalents;
 	}
 	public List<TALENTType> getDisciplinetalents() {
 		return disciplinetalents;
 	}
 	public void setOptionaltalents(List<TALENTType> optionaltalents) {
+		for( TALENTType talent : optionaltalents ) {
+			List<String> limitations = talent.getLIMITATION();
+			String limitation=CharacterContainer.join( limitations );
+			limitations.clear();
+			if( !limitation.isEmpty() ) limitations.add(limitation);
+		}
 		this.optionaltalents = optionaltalents;
 	}
 	public List<TALENTType> getOptionaltalents() {

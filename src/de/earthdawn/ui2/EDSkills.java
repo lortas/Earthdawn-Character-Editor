@@ -165,7 +165,7 @@ public class EDSkills extends JPanel {
 			skill.setDefault(cap.getDefault());
 			skill.setStrain(cap.getStrain());
 			skill.setName(cap.getName());
-			skill.setLimitation(cap.getLimitation());
+			skill.getLIMITATION().addAll(cap.getLIMITATION());
 			RANKType rank = new RANKType();
 			rank.setRank(1);
 			skill.setRANK(rank);

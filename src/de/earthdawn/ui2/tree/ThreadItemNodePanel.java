@@ -162,7 +162,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		textFieldDescription = new JTextField();
 		add(textFieldDescription, "cell 1 6 5 1,growx,aligny center");
 		textFieldDescription.setColumns(12);
-		String description = nodeObject.getDescription();
+		String description = nodeObject.getDESCRIPTION();
 		if( description != null ) textFieldDescription.setText(description);
 	}
 
@@ -179,7 +179,7 @@ public class ThreadItemNodePanel extends AbstractNodePanel<THREADITEMType> {
 		nodeObject.setEffect(textFieldEffect.getText());
 		if(chckbxUsed.isSelected()) nodeObject.setUsed(YesnoType.YES);
 		else nodeObject.setUsed(YesnoType.NO);
-		nodeObject.setDescription(textFieldDescription.getText());
+		nodeObject.setDESCRIPTION(textFieldDescription.getText());
 		nodeObject.setLpcostgrowth((Integer)spinnerLP.getValue());
 		nodeObject.setMaxthreads((Integer)spinnerMaxThreads.getValue());
 		nodeObject.setSpelldefense((Integer)spinnerSpellDefense.getValue());
