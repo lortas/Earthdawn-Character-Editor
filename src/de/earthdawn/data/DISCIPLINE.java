@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="DURABILITY" type="{http://earthdawn.com/discipline}DISCIPLINEDURABILITY_type"/>
+ *         &lt;element name="EASYSKILL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="CIRCLE" type="{http://earthdawn.com/discipline}DISCIPLINECIRCLE_type" maxOccurs="15" minOccurs="8"/>
  *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="HALFMAGIC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -46,6 +47,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "durability",
+    "easyskill",
     "circle",
     "karmaritual",
     "halfmagic"
@@ -55,6 +57,8 @@ public class DISCIPLINE {
 
     @XmlElement(name = "DURABILITY", namespace = "http://earthdawn.com/discipline", required = true)
     protected DISCIPLINEDURABILITYType durability;
+    @XmlElement(name = "EASYSKILL", namespace = "http://earthdawn.com/discipline")
+    protected List<String> easyskill;
     @XmlElement(name = "CIRCLE", namespace = "http://earthdawn.com/discipline", required = true)
     protected List<DISCIPLINECIRCLEType> circle;
     @XmlElement(name = "KARMARITUAL", namespace = "http://earthdawn.com/discipline")
@@ -90,6 +94,35 @@ public class DISCIPLINE {
      */
     public void setDURABILITY(DISCIPLINEDURABILITYType value) {
         this.durability = value;
+    }
+
+    /**
+     * Gets the value of the easyskill property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the easyskill property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getEASYSKILL().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getEASYSKILL() {
+        if (easyskill == null) {
+            easyskill = new ArrayList<String>();
+        }
+        return this.easyskill;
     }
 
     /**

@@ -580,7 +580,7 @@ public class ECEWorker {
 		death.setValue(death.getBase()+death.getAdjustment());
 		unconsciousness.setValue(unconsciousness.getBase()+unconsciousness.getAdjustment());
 
-		character.setAbilities(concatStrings(namegiverAbilities));
+		character.setAbilities(CharacterContainer.join(namegiverAbilities));
 
 		calculatedLP.addThreadItems(character.getThreadItem());
 		calculatedLP.calclulateTotal();
@@ -634,6 +634,16 @@ public class ECEWorker {
 		List<String> namgiverNotdefaultskills = character.getRace().getNOTDEFAULTSKILL();
 		for( String skill : namgiverNotdefaultskills ) namegiverAbilities.add("'"+skill+"' is not a default skill");
 		List<CAPABILITYType> defaultSkills = capabilities.getDefaultSkills(namgiverNotdefaultskills);
+
+		// Finde heraus, ob für die Erstdisziplin Skills definiert sind, die wie Novice Talene gelernt werden.
+		List<String> easyskills;
+		if( !character.getDisciplines().isEmpty() ) {
+			DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(character.getDisciplines().get(0).getName());
+			easyskills = disziplinProperties.getEASYSKILL();
+		} else {
+			easyskills = new ArrayList<String>();
+		}
+
 		// Berechne nun alle LP und Ränge aller vorhandenen Skills und entferne diese aus der Liste der Defaultskills, dabereits vorhanden.
 		for( SKILLType skill : skills ) {
 			RANKType rank = skill.getRANK();
@@ -641,20 +651,28 @@ public class ECEWorker {
 			if( rank.getRank() < 1) continue;
 			int startrank = rank.getStartrank();
 			skillsStartranks+=startrank;
-			int lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(rank.getRank());
-			int lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
+			int lpcostfull;
+			int lpcoststart;
+			String skillname = skill.getName();
+			if( easyskills.contains(skillname) ) {
+				lpcostfull= PROPERTIES.getCharacteristics().getTalentRankTotalLP(1,1,rank.getRank());
+				lpcoststart= PROPERTIES.getCharacteristics().getTalentRankTotalLP(1,1,startrank);
+			} else {
+				lpcostfull= PROPERTIES.getCharacteristics().getSkillRankTotalLP(rank.getRank());
+				lpcoststart= PROPERTIES.getCharacteristics().getSkillRankTotalLP(startrank);
+			}
 			rank.setLpcost(lpcostfull-lpcoststart);
 			rank.setBonus(0);
 			if( skill.getLIMITATION().size()<1 ) {
-				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+"'");
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skillname+"'");
 			} else {
-				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skill.getName()+" ("+skill.getLIMITATION().get(0)+")'");
+				calculatedLP.addSkills(rank.getLpcost(),"LP cost for Skill '"+skillname+" ("+CharacterContainer.join(skill.getLIMITATION())+")'");
 			}
 			capabilities.enforceCapabilityParams(skill);
 			if( skill.getAttribute() != null ) {
 				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
 			}
-			removeIfContains(defaultSkills,skill.getName());
+			removeIfContains(defaultSkills,skillname);
 		}
 		calculatedLP.setUsedSkillsStartRanks(skillsStartranks);
 
@@ -869,21 +887,18 @@ public class ECEWorker {
 		defaultSkills.removeAll(remove);
 	}
 
-	public static String concatStrings(List<String> strings) {
-		String result = "";
-		for ( String s : strings ) {
-			if( ! result.isEmpty() ) result += ", ";
-			result += s;
-		}
-		return result;
-	}
-
 	private static int calculateKarma(KARMAType karma, TALENTType karmaritualTalent, int karmaModifier, int karmaMaxBonus) {
 		karma.setMaxmodificator(karmaMaxBonus);
-		if( (karmaritualTalent != null) && (karmaritualTalent.getRANK() != null) ) {
-			karma.setMax( karmaMaxBonus + (karmaModifier * karmaritualTalent.getRANK().getRank()) );
-		} else {
+		if( karmaritualTalent == null ) {
 			errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
+		} else {
+			int rank;
+			if( karmaritualTalent.getRANK() == null ) {
+				rank = 0;
+			} else {
+				rank = karmaritualTalent.getRANK().getRank();
+			}
+			karma.setMax( karmaMaxBonus + (karmaModifier * rank) );
 		}
 		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
 		karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
@@ -1074,6 +1089,12 @@ public class ECEWorker {
 		int circlenr=0;
 		DISCIPLINE disziplinProperties = ApplicationProperties.create().getDisziplin(discipline.getName());
 		if( disziplinProperties == null ) return bonuses;
+		for(String skill : disziplinProperties.getEASYSKILL() ) {
+			DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
+			bonus.setCircle(1);
+			bonus.setBonus("Learn '"+skill+"'-skill(s) like novice talents");
+			bonuses.add(bonus);
+		}
 		for(DISCIPLINECIRCLEType circle : disziplinProperties.getCIRCLE()) {
 			circlenr++;
 			if( circlenr > discipline.getCircle() ) break;

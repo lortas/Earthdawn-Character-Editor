@@ -1150,7 +1150,8 @@ public class CharacterContainer extends CharChangeRefresh {
 				for( TALENTABILITYType disciplineTalent :disciplineCircleDefinition.getDISCIPLINETALENT()) {
 					TALENTType newTalent = new TALENTType();
 					newTalent.setName(disciplineTalent.getName());
-					newTalent.getLIMITATION().add(disciplineTalent.getLimitation());
+					String limitation = disciplineTalent.getLimitation();
+					if( !limitation.isEmpty() ) newTalent.getLIMITATION().add(limitation);
 					newTalent.setCircle(circlenr);
 					String newFullTalentName=getFullTalentname(newTalent);
 					if( ! totalListOfDisciplineTalents.contains(newFullTalentName) ) {
