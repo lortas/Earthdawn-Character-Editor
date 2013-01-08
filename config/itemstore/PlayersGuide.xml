@@ -220,7 +220,7 @@
 	<BLOODCHARMITEM name="Wound Balance" depatterningrate="1" blooddamage="3" effect="1 Strain, +3 Knockdown Test" enchantingdifficultynumber="14" weight="1" price="200" bookref="PG p.261"/>
 	
 	<THREADITEM name="Spell Matrix Object" lpcostgrowth="1" spelldefense="12" maxthreads="1" weight="0" price="6500" bookref="PG p.280">
-		<edt:description>Template for Spell Matrix Object (like the talent)</edt:description>
+		<edt:DESCRIPTION>Template for Spell Matrix Object (like the talent)</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Spell Matrix Rank 1" keyknowledge="The owner must learn the object's name."/>
 		<edt:THREADRANK effect="Spell Matrix Rank 2"/>
 		<edt:THREADRANK effect="Spell Matrix Rank 3" keyknowledge="The wilder must learn the name of the object's creator."/>
@@ -238,7 +238,7 @@
 		<edt:THREADRANK effect="Spell Matrix Rank 15"/>
 	</THREADITEM>
 	<THREADITEM name="Enhanced Matrix Object" lpcostgrowth="5" spelldefense="15" maxthreads="1" weight="0" price="7000" bookref="PG p.280">
-		<edt:description>Template for Enhanced Matrix Object (like the talent)</edt:description>
+		<edt:DESCRIPTION>Template for Enhanced Matrix Object (like the talent)</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Enhanced Matrix Rank 1" keyknowledge="The owner must learn the object's name."/>
 		<edt:THREADRANK effect="Enhanced Matrix Rank 2"/>
 		<edt:THREADRANK effect="Enhanced Matrix Rank 3" keyknowledge="The wilder must learn the name of the object's creator."/>
@@ -256,7 +256,7 @@
 		<edt:THREADRANK effect="Enhanced Matrix Rank 15"/>
 	</THREADITEM>
 	<THREADITEM name="Armor Matrix Object" lpcostgrowth="9" spelldefense="19" maxthreads="1" weight="0" price="8500" bookref="PG p.280">
-		<edt:description>Template for Armor Matrix Object (like the talent)</edt:description>
+		<edt:DESCRIPTION>Template for Armor Matrix Object (like the talent)</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Armor Matrix Rank 1" keyknowledge="The owner must learn the object's name."/>
 		<edt:THREADRANK effect="Armor Matrix Rank 2"/>
 		<edt:THREADRANK effect="Armor Matrix Rank 3" keyknowledge="The wilder must learn the name of the object's creator."/>
@@ -274,7 +274,7 @@
 		<edt:THREADRANK effect="Armor Matrix Rank 15"/>
 	</THREADITEM>
 	<THREADITEM name="Shared Matrix Object" lpcostgrowth="13" spelldefense="24" maxthreads="1" weight="0" price="9000" bookref="PG p.280">
-		<edt:description>Template for Shared Matrix Object (like the talent)</edt:description>
+		<edt:DESCRIPTION>Template for Shared Matrix Object (like the talent)</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Shared Matrix Rank 1" keyknowledge="The owner must learn the object's name."/>
 		<edt:THREADRANK effect="Shared Matrix Rank 2"/>
 		<edt:THREADRANK effect="Shared Matrix Rank 3" keyknowledge="The wilder must learn the name of the object's creator."/>

@@ -8,16 +8,13 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -49,9 +46,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.text.EditorKit;
 import javax.xml.bind.JAXBException;
-import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,7 +55,6 @@ import org.json.XML;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.codec.Base64;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.CharacteristicStatus;
@@ -1135,9 +1129,9 @@ public class EDMainWindow {
 	}
 
 	public static void copyCharacterAdditionalFiles(File path) throws IOException {
-		copyFile("./config/earthdawncharacter.xsd",new File( path, "earthdawncharacter.xsd" ).getCanonicalPath());
-		copyFile("./config/earthdawncharacter.xsl",new File( path, "earthdawncharacter.xsl" ).getCanonicalPath());
-		copyFile("./config/earthdawncharacter.css",new File( path, "earthdawncharacter.css" ).getCanonicalPath());
+		copyFile(new File("config","earthdawncharacter.xsd").getCanonicalPath(),new File( path, "earthdawncharacter.xsd" ).getCanonicalPath());
+		copyFile(new File("config","earthdawncharacter.xsl").getCanonicalPath(),new File( path, "earthdawncharacter.xsl" ).getCanonicalPath());
+		copyFile(new File("config","earthdawncharacter.css").getCanonicalPath(),new File( path, "earthdawncharacter.css" ).getCanonicalPath());
 	}
 
 	public JMenu createOptionalRuleMenu() {

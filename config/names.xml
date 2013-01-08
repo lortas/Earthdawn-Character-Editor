@@ -83,13 +83,16 @@
 		<SKILL name="Read/Write Language">
 			<edt:RANK rank="1" startrank="1"/>
 		</SKILL>
-		<SKILL name="Knowledge" limitation="TBD">
+		<SKILL name="Knowledge">
+			<edt:LIMITATION>TBD</edt:LIMITATION>
 			<edt:RANK rank="1" startrank="1"/>
 		</SKILL>
-		<SKILL name="Knowledge" limitation="TBD">
+		<SKILL name="Knowledge">
+			<edt:LIMITATION>TBD</edt:LIMITATION>
 			<edt:RANK rank="1" startrank="1"/>
 		</SKILL>
-		<SKILL name="Artisan" limitation="TBD">
+		<SKILL name="Artisan">
+			<edt:LIMITATION>TBD</edt:LIMITATION>
 			<edt:RANK rank="1" startrank="1"/>
 		</SKILL>
 	</STARTINGSKILLS>

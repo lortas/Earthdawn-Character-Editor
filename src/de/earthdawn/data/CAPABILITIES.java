@@ -49,8 +49,8 @@ import javax.xml.bind.annotation.XmlType;
 public class CAPABILITIES {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<CAPABILITYType>> skillOrTALENT;
     @XmlAttribute(name = "lang", required = true)

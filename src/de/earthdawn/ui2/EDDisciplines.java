@@ -199,7 +199,6 @@ public class EDDisciplines extends JPanel {
 	}
 
 	protected void do_menuItem_actionPerformed(ActionEvent arg0) {
-		System.out.println(((JMenuItem)arg0.getSource()).getText());
 		character.addDiciplin(((JMenuItem)arg0.getSource()).getText());
 		new ECEWorker(character).verarbeiteCharakter();
 		character.refesh();

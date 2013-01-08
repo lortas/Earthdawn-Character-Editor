@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 	<THREADITEM name="Thread Crystal Ringlet" lpcostgrowth="1" spelldefense="13" maxthreads="2" enchantingdifficultynumber="16" kind="armor" weight="45.0" bookref="PG p.278">
-		<edt:description>Made from carved, interlocking rings of living crystal, this armor protects the character's entire body except the legs below the knee</edt:description>
+		<edt:DESCRIPTION>Made from carved, interlocking rings of living crystal, this armor protects the character's entire body except the legs below the knee</edt:DESCRIPTION>
 		<edt:THREADRANK effect="is now max forged">
 			<edt:ARMOR edn="16" penalty="2" mysticarmor="6" physicalarmor="6" kind="armor" weight="45.0" name="Thread Crystal Ringlet"/>
 		</edt:THREADRANK>

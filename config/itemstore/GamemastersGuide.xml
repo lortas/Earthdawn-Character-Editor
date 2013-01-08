@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" kind="vambrace" weight="6.0" bookref="GM p.132">
-		<edt:description>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:description>		
+		<edt:DESCRIPTION>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:DESCRIPTION>		
 		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Name of bracers">
 			<edt:DEFENSE kind="physical" bonus="1"/>
 		</edt:THREADRANK>
@@ -23,7 +23,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Counterspell Staff" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="wand" weight="4.0" effect="like quarterstaff" bookref="GM p.132">
-		<edt:description>A quarterstaff, topped with a crystal carved into any of shapes or figures. Most commonly made of wood, usually mahogany. With no threads like characteristics as normal quarterstaff</edt:description>
+		<edt:DESCRIPTION>A quarterstaff, topped with a crystal carved into any of shapes or figures. Most commonly made of wood, usually mahogany. With no threads like characteristics as normal quarterstaff</edt:DESCRIPTION>
 			<edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="6" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Counterspell Staff" weight="4.0" size="5" kind="wand" bookref="GM p.132"/>
 		<edt:THREADRANK effect="+1 Spell Defense" keyknowledge="staffs name">
 			<edt:DEFENSE kind="spell" bonus="1"/>
@@ -55,7 +55,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Crystal Spear" lpcostgrowth="5" spelldefense="18" maxthreads="2" kind="melee weapon" weight="3.0" effect="without threads like normal spear" bookref="GM p.133">
-		<edt:description>These magical spears are made of solid crystal. The shaft of spear is pentagonal and polished to fine sheen. Magic of spear keeps its blade razor sharp, despite is rough finish. With no threads characteristics as normal spear</edt:description>
+		<edt:DESCRIPTION>These magical spears are made of solid crystal. The shaft of spear is pentagonal and polished to fine sheen. Magic of spear keeps its blade razor sharp, despite is rough finish. With no threads characteristics as normal spear</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Damage Step 7" keyknowledge="spear’s name">
 			<edt:WEAPON size="3" strengthmin="9" damagestep="7" shortrange="10" longrange="20" weight="3.0" name="Crystal Spear"/>
 		</edt:THREADRANK>
@@ -87,7 +87,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Crystal Spell Box" lpcostgrowth="5" spelldefense="15" maxthreads="2" kind="tool" weight="3.0" bookref="GM p.133">
-		<edt:description>Small box made of crystal and metal. The sides, top, and bottom are all solid pieces of crystal, with seams between the pieces made of precious metals, most often silver or gold. Box not designed to be opened. Crystal used is usually deep amber in color, though clear or blackened crystal is used occasionally. Measures roughly 8 inches long, 5 inches wide and 3 inches high. Box containing a spell, radiates faint glow, which intensifies as more spells captured within. Were designed by great mage Masym.</edt:description>
+		<edt:DESCRIPTION>Small box made of crystal and metal. The sides, top, and bottom are all solid pieces of crystal, with seams between the pieces made of precious metals, most often silver or gold. Box not designed to be opened. Crystal used is usually deep amber in color, though clear or blackened crystal is used occasionally. Measures roughly 8 inches long, 5 inches wide and 3 inches high. Box containing a spell, radiates faint glow, which intensifies as more spells captured within. Were designed by great mage Masym.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Can capture spell that is being cast by making Spellcasting Test against caster’s Spellcasting Test. If successful, spell is captured in box. Can hold 1 spell. Spell released by making Spellcasting Test (no threads need be); Spell’s effect as if cast normal. Once released, spell gone; new spell may be captured." keyknowledge="box’s Name">
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 Rank to Spellcasting talent when capturing spells into or casting spells from box">
@@ -104,7 +104,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Elemental Long-Spear" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="melee weapon" weight="7.0" bookref="GM p.134">
-		<edt:description>Six- to eight-foot-long wooden long-spears incorporate each of the five True Elements. Shafts are woven with True Wood, hollow cores filled with True Air, and spears’ metal tips woven with True Earth. Each spear is soaked in liquid rich in True Water and hardened in flames fueled by True Fire. Spears float in water. No threads, same characteristics as long-spear.</edt:description>
+		<edt:DESCRIPTION>Six- to eight-foot-long wooden long-spears incorporate each of the five True Elements. Shafts are woven with True Wood, hollow cores filled with True Air, and spears’ metal tips woven with True Earth. Each spear is soaked in liquid rich in True Water and hardened in flames fueled by True Fire. Spears float in water. No threads, same characteristics as long-spear.</edt:DESCRIPTION>
 		<edt:WEAPON strengthmin="13" damagestep="5" name="Elemental Long-Spear" weight="7.0" size="5" kind="melee weapon" bookref="GM p.134"/>
 		<edt:THREADRANK effect="Damage Step 10; immune fire and from effects of spells or abilities that damage; keeps spear from splintering when making Charging Attacks" keyknowledge="spear’s Name">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="10" weight="7.0" name="Elemental Long-Spear"/>
@@ -130,7 +130,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Espagra Boots" lpcostgrowth="5" spelldefense="17" maxthreads="2" weight="0.0" kind="cloth" bookref="GM p.134">
-		<edt:description>Boots made from hides of espagra are usually bright blue, interwoven with brown leather. Espagra scales give boots brilliant luster, trademark of espagra-skin products.</edt:description>
+		<edt:DESCRIPTION>Boots made from hides of espagra are usually bright blue, interwoven with brown leather. Espagra scales give boots brilliant luster, trademark of espagra-skin products.</edt:DESCRIPTION>
 		<edt:THREADRANK keyknowledge="boots’ Name" lpcost="200" deed="" effect="+1 Rank to Avoid Blow">
 			<edt:TALENT name="Avoid Blow" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
@@ -155,7 +155,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Espagra Saddle" maxthreads="2" spelldefense="14" lpcostgrowth="5" weight="24.0" kind="tool" bookref="GM p.135">
-        <edt:description>Saddles are constructed using combination of hide and scales of espagra. Shimmering blue espagra scales give these saddles a beautiful luster while Hanging flaps are made of creatures’ hide. One saddle requires three to seven hides.</edt:description>
+        <edt:DESCRIPTION>Saddles are constructed using combination of hide and scales of espagra. Shimmering blue espagra scales give these saddles a beautiful luster while Hanging flaps are made of creatures’ hide. One saddle requires three to seven hides.</edt:DESCRIPTION>
 		<edt:THREADRANK keyknowledge="saddle’s Name" lpcost="200" deed="" effect="mount adds +1 to Movement Rate at rider’s choice"/>
         <edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="mount adds +1 to Physical Armor while rider is in saddle"/>
         <edt:THREADRANK keyknowledge="how many espagra hides were used to create saddle" lpcost="500" deed="" effect="mount adds up to +2 to Movement Rate at  rider’s choice"/>
@@ -166,7 +166,7 @@
         <edt:THREADRANK keyknowledge="" lpcost="500" deed="" effect="rider and mount add +2 Physical, Spell and  Social Defense while rider in saddle"/>
     </THREADITEM>
 	<THREADITEM name="Forest Robes" lpcostgrowth="5" spelldefense="16" maxthreads="1" kind="cloth" weight="1.0" bookref="GM p.135">
-		<edt:description>Forest robes take their name from woodland patterns they are decorated with. Individual robes were often Named after creator or owner.Typically, robe patterns appear three-dimensional, as if one might reach inside and touch branches and leaves. Each robe looks slightly different from every other; designs often depict the native forest of creator or wearer, or display a jewelers’ collage of branches, leaves, and vines. A forest robe can be worn over armor without any ill effects.</edt:description>		
+		<edt:DESCRIPTION>Forest robes take their name from woodland patterns they are decorated with. Individual robes were often Named after creator or owner.Typically, robe patterns appear three-dimensional, as if one might reach inside and touch branches and leaves. Each robe looks slightly different from every other; designs often depict the native forest of creator or wearer, or display a jewelers’ collage of branches, leaves, and vines. A forest robe can be worn over armor without any ill effects.</edt:DESCRIPTION>		
 		<edt:THREADRANK effect="+1 to Spellcasting" keyknowledge="robe’s Name">
 			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
 		</edt:THREADRANK>
@@ -197,7 +197,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Frost Pouch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="tool" bookref="GM p.136">
-		<edt:description>small pouches, usually 3 by 5 inches in size made of white or blue cloth. Pouches always feel cool</edt:description>		
+		<edt:DESCRIPTION>small pouches, usually 3 by 5 inches in size made of white or blue cloth. Pouches always feel cool</edt:DESCRIPTION>		
 		<edt:THREADRANK effect="Owner reaches into pouch, grabs handful frost, hurls it at opponent, making thrown Attack Test against target. If test succeeds, Willpower+5 Effect Test as Damage Test. Physical Armor protects. Each use causes 1 Strain. The thrown Range equals that of dagger." keyknowledge="pouch’s Name"/>
 		<edt:THREADRANK effect="The thrown Range of frost equals a throwing dagger."/>
 		<edt:THREADRANK effect="Effect Step of Willpower+6" keyknowledge=" Frost originally came from mountain snow or glacier ice. Name of mountain or glacier"/>			
@@ -206,7 +206,7 @@
 		<edt:THREADRANK effect="Effect Step of Willpower+8"/>
 	</THREADITEM>
 	<THREADITEM name="Lightning Mace" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="5.0" kind="melee weapon" bookref="GM p.136">
-		<edt:description>Lightning maces can be of as many different shapes and sizes as normal maces. Head of a lightning mace is always made of metal and often shows many small burn marks. Activated the head of mace crackles with small bolts of lightning.With no threads attached, lightning maces have same characteristics as normal maces.</edt:description>
+		<edt:DESCRIPTION>Lightning maces can be of as many different shapes and sizes as normal maces. Head of a lightning mace is always made of metal and often shows many small burn marks. Activated the head of mace crackles with small bolts of lightning.With no threads attached, lightning maces have same characteristics as normal maces.</edt:DESCRIPTION>
 		<edt:WEAPON size="3" strengthmin="13" damagestep="4" weight="5.0" kind="melee weapon" name="Lightning Mace" bookref="GM p.136"/>
 		<edt:THREADRANK effect="Damage Step 7" keyknowledge="mace’s Name">
 			<edt:WEAPON size="3" strengthmin="13" damagestep="7" weight="5.0" name="Lightning Mace"/>
@@ -240,7 +240,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Naga-Scale Brooch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="brooch" bookref="GM p.137">
-		<edt:description>Brooches are made from single naga scale, set into gold or silver backing often engraved with serpent motif. Scale changes color to blend with wearer’s clothing.</edt:description>
+		<edt:DESCRIPTION>Brooches are made from single naga scale, set into gold or silver backing often engraved with serpent motif. Scale changes color to blend with wearer’s clothing.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="+1 to Charisma-only Tests" keyknowledge="Can be made only with scales willingly donated. Each brooch is Named after naga from whom its scale came. Brooch’s Name."/>
 		<edt:THREADRANK effect="+2 to Charisma-only Tests"/>
 		<edt:THREADRANK effect="+1 to Social Defense" keyknowledge="Name of person who obtained scale and created brooch">			
@@ -259,7 +259,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Orichalcum Shield" lpcostgrowth="13" spelldefense="18" maxthreads="1" weight="15.0" kind="shield" bookref="GM p.137">
-		<edt:description>Similar in size and shape to crystal raider shields, orichalcum shields are made of orichalcum-lined wooden and metal plates. Physical Armor 4, Mystic Armor 4, Initiative Penalty 3, Deflection Bonus 5</edt:description>
+		<edt:DESCRIPTION>Similar in size and shape to crystal raider shields, orichalcum shields are made of orichalcum-lined wooden and metal plates. Physical Armor 4, Mystic Armor 4, Initiative Penalty 3, Deflection Bonus 5</edt:DESCRIPTION>
 			<edt:SHIELD name="Orichalcum Shield" physicalarmor="4" mysticarmor="4" penalty="3" weight="15.0" kind="shield"/>
 		<edt:THREADRANK effect="Physical Armor 6; Mystic Armor 6" keyknowledge="shield’s Name">
 			<edt:SHIELD name="Orichalcum Shield" physicalarmor="6" mysticarmor="6" penalty="3" weight="15.0" kind="shield"/>
@@ -285,7 +285,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Potion of Life" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="1.0" kind="potion" bookref="GM p.138">
-		<edt:description>Potions of life vary greatly in color and consistency, depending on the alchemists who create them. A potion of life is stored in a magical flask. The containers holding these potions are most often porcelain, but are sometimes made from glass or metal.</edt:description>
+		<edt:DESCRIPTION>Potions of life vary greatly in color and consistency, depending on the alchemists who create them. A potion of life is stored in a magical flask. The containers holding these potions are most often porcelain, but are sometimes made from glass or metal.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Owner tosses silver coin over his shoulder, proposing toast to the alchemist. Flask fills with healing potion with a +6 bonus. Potion must be consumed immediately. No other magiccan enhance the Recovery Test the potion isused to enhance. Flask can produce two potions per day." keyknowledge="flask ’s Name"/>
 		<edt:THREADRANK effect="Healing potion now has +8"/>
 		<edt:THREADRANK effect="Healing potion now has +10. Flask can now also produce a Cure Disease Potion. Owner cannot use any other magic to enhance a test enhanced by this potion. Flask can produce three potions per day." keyknowledge="Name of alchemist who created potion"/>			
@@ -293,7 +293,7 @@
 		<edt:THREADRANK effect="Cure disease potion now +7; Flask can produce cleanse poison potion, the owner cannot use any other magic to enhance a test granted by this potion. Flask can produce five potions per day"/>
 	</THREADITEM>
 	<THREADITEM name="Puppet Familiar" lpcostgrowth="9" spelldefense="15" maxthreads="2" weight="5.0" kind="artisan" bookref="GM p.138">
-		<edt:description>Puppet familiars consist of small puppets formed in the shape of one of the Namegiver races. Puppets usually measure only 12 to 18 inches in height. The faces of puppet familiars usually express an exaggerated emotion, ranging from astonishment to fear to joy.</edt:description>
+		<edt:DESCRIPTION>Puppet familiars consist of small puppets formed in the shape of one of the Namegiver races. Puppets usually measure only 12 to 18 inches in height. The faces of puppet familiars usually express an exaggerated emotion, ranging from astonishment to fear to joy.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="spell matrix of Rank equal to Thread Rank" keyknowledge="puppet’s Name"/>
 		<edt:THREADRANK effect="two spell matrices of Rank equal to Thread Rank"/>
 		<edt:THREADRANK effect="now 1 spell matrix and 1 enhanced matrix." keyknowledge="Name of person who created puppet familiar"/>			
@@ -303,7 +303,7 @@
 		<edt:THREADRANK effect="By hour-long ritual and taking 1 Blood Magic Damage, owner can convert one of puppet’s Armored Matrices into Shared Matrix; another ritual is required to turn it back, allowing to heal damage." keyknowledge="what type of wood was used and Name of forest or woods where wood originated"/>
 	</THREADITEM>
 	<THREADITEM name="Purse Ever Bountiful" lpcostgrowth="5" spelldefense="14" maxthreads="5" weight="1.0" kind="cloth" bookref="GM p.139">
-		<edt:description>Small leather purses close with drawstring. Very ordinary looking, in no way reveal their magical properties. Less powerful purses end with Thread Rank Three.</edt:description>
+		<edt:DESCRIPTION>Small leather purses close with drawstring. Very ordinary looking, in no way reveal their magical properties. Less powerful purses end with Thread Rank Three.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="places copper coin inside purse; 1 Strain; Willpower Test; creates number of duplicates equal to Willpower Test" keyknowledge="purse’s Name"/>
 		<edt:THREADRANK effect="Willpower+1; how many duplicates are created"/>
 		<edt:THREADRANK effect="can duplicate silver coins; 2 Strain; Willpower+2; how many duplicates are created" keyknowledge="Name of Elementalist who created purse"/>			
@@ -312,7 +312,7 @@
 		<edt:THREADRANK effect="can duplicate gold coins; 3 Strain; Willpower+6; how many duplicates are created" keyknowledge="Name of last person to own purse"/>
 	</THREADITEM>
 	<THREADITEM name="Rapier of Wit" lpcostgrowth="13" spelldefense="16" maxthreads="2" weight="1.0" kind="melee weapon" bookref="GM p.139">
-		<edt:description>If legends are to be believed, the queen of windlings has held an annual Swordmaster tournament at her palace ever since the end of the Scourge, in mockery of the tournament held in Blood Wood. The winner is said to receive a special threaded windling sword, tapering to so thin a point it can split a hair with a thrust. Either this story is true or it is the fabrication of the finest Weaponsmith among windlings, if not all Namegivers, for the purpose of being left alone to work in peace. Without a thread attached to it, the weapon is treated as a windling sword.</edt:description>
+		<edt:DESCRIPTION>If legends are to be believed, the queen of windlings has held an annual Swordmaster tournament at her palace ever since the end of the Scourge, in mockery of the tournament held in Blood Wood. The winner is said to receive a special threaded windling sword, tapering to so thin a point it can split a hair with a thrust. Either this story is true or it is the fabrication of the finest Weaponsmith among windlings, if not all Namegivers, for the purpose of being left alone to work in peace. Without a thread attached to it, the weapon is treated as a windling sword.</edt:DESCRIPTION>
 			<edt:WEAPON size="1" strengthmin="6" damagestep="3" weight="1.0" kind="melee weapon" name="Rapier of Wit" bookref="GM p.139"/>
 		<edt:THREADRANK effect="Damage Step 5; Any windling can wield it, regardless of Strength" keyknowledge="weapon’s Name">
 			<edt:WEAPON size="1" strengthmin="0" damagestep="5" weight="1.0" kind="melee weapon" name="Rapier of Wit" bookref="GM p.139"/>
@@ -338,7 +338,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>	
 	<THREADITEM name="Savage Hide" lpcostgrowth="13" spelldefense="16" maxthreads="2" kind="armor" weight="25.0" bookref="GM p.139">
-		<edt:description>Usually using bear, brithan, or skeorx hides. Beast’s head acts as helmet, paws as gloves that cover top of hand. Only best pieces of hide are chosen for enchantment, and usually an extremely large and dangerous specimen provides material. Savage hides are common among tribes living in hinterlands, often made for war chiefs and exceptional hunters. Without thread attached, treated as normal hide armor.</edt:description>
+		<edt:DESCRIPTION>Usually using bear, brithan, or skeorx hides. Beast’s head acts as helmet, paws as gloves that cover top of hand. Only best pieces of hide are chosen for enchantment, and usually an extremely large and dangerous specimen provides material. Savage hides are common among tribes living in hinterlands, often made for war chiefs and exceptional hunters. Without thread attached, treated as normal hide armor.</edt:DESCRIPTION>
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="1" physicalarmor="5" kind="armor" weight="25.0" name="Savage Hide"/>
 		<edt:THREADRANK effect="Physical Armor 8; Mystic Armor 2" keyknowledge="armor’s Name">
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="2" physicalarmor="8" kind="armor" weight="25.0" name="Savage Hide"/>
@@ -374,7 +374,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Silvered Shield" lpcostgrowth="5" spelldefense="18" maxthreads="4" weight="10.0" kind="shield" bookref="GM p.140">
-		<edt:description>Typically a footman’s shield. Silvered Shields have fine silver lines decorating their edges, making them appear of more than average worth. Many of these shields have sigils and designs outlined in silver. With no threads attached, shield has same characteristics as normal footman’s shield, with Mystic Armor 1</edt:description>
+		<edt:DESCRIPTION>Typically a footman’s shield. Silvered Shields have fine silver lines decorating their edges, making them appear of more than average worth. Many of these shields have sigils and designs outlined in silver. With no threads attached, shield has same characteristics as normal footman’s shield, with Mystic Armor 1</edt:DESCRIPTION>
 			<edt:SHIELD name="Silvered Shield" physicalarmor="3" mysticarmor="1" penalty="1" weight="10.0" kind="shield"/>
 		<edt:THREADRANK effect="Physical Armor 5" keyknowledge="shield’s Name">
 			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="1" penalty="1" weight="10.0" kind="shield"/>
@@ -402,7 +402,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
     <THREADITEM weaventhreadrank="0" maxthreads="3" spelldefense="0" lpcostgrowth="13" enchantingdifficultynumber="0" effect="" name="Spell Sword" weight="4.0" size="3" used="no" location="self" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="GM p.140">
-        <edt:description>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:description>
+        <edt:DESCRIPTION>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:DESCRIPTION>
 		<edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="yes" location="" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="PG p.251"/>
         <edt:THREADRANK keyknowledge="must learn sword’s Name" lpcost="500" deed="" effect="contains spell matrix of  Rank equal to Thread Rank; may place spell in matrix; wielder may cast spell as if casting from matrix">
             <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>

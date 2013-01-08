@@ -2,7 +2,7 @@
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 		
 	<THREADITEM name="Thermail Schutz der Plage" lpcostgrowth="9" spelldefense="20" maxthreads="1" weaventhreadrank="4" kind="ring" weight="0.1" bookref="FanWork">
-		<edt:description>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</edt:description>
+		<edt:DESCRIPTION>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
 		<edt:THREADRANK effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
 			<edt:TALENT name="Avoid Blow" bonus="2"/>
@@ -58,14 +58,14 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Silverins Heiltrank" lpcostgrowth="9" spelldefense="21" maxthreads="2" kind="potion" weight="6.0"  bookref="FanWork">
-		<edt:description>1 x Anwendung täglich</edt:description>
+		<edt:DESCRIPTION>1 x Anwendung täglich</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Heiltrank +4" keyknowledge="name of the item"/>
 		<edt:THREADRANK effect="Heiltrank +5"/>
 		<edt:THREADRANK effect="Heiltrank +6, Erholungstrank +4"/>
 		<edt:THREADRANK effect="Heiltrank +8, Erholungstrank +4"/>
 	</THREADITEM>
 	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" effect="Spellmatrix" kind="wand" weight="1.0" name="Thread Matrix Wand">
-		<edt:description>schwarzer 2m-Stab, der "aufgeladen" blutrot ist; Der Stab ist Theranischer Herkunft die eingebaute Zaubermatrix ist zwar echt aber eher ein Gimmik um die wahre Funktion zu verschleiern; Der Stab muss mit der gesamten Blutmagie eines beliebigen Namensgeber aufladen, d.h. der Stab muss durch das Herz eines lebenden Namensgebers gestossen werden und dort solange verweilen bis dieser ausgeblutet ist.</edt:description>
+		<edt:DESCRIPTION>schwarzer 2m-Stab, der "aufgeladen" blutrot ist; Der Stab ist Theranischer Herkunft die eingebaute Zaubermatrix ist zwar echt aber eher ein Gimmik um die wahre Funktion zu verschleiern; Der Stab muss mit der gesamten Blutmagie eines beliebigen Namensgeber aufladen, d.h. der Stab muss durch das Herz eines lebenden Namensgebers gestossen werden und dort solange verweilen bis dieser ausgeblutet ist.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="SpellMatrix Rank 1"/>
 		<edt:THREADRANK effect="SpellMatrix Rank 2"/>
 		<edt:THREADRANK effect="SpellMatrix Rank 3"/>
@@ -83,7 +83,7 @@
 		<edt:THREADRANK effect="SpellMatrix Rank 15"/>
 	</THREADITEM>
 	<THREADITEM name="Devocor Calamitas" weight="0.5" kind="vambrace" lpcostgrowth="1" maxthreads="2" spelldefense="10" enchantingdifficultynumber="30">
-		<edt:description>A vambrace consist of norite, which is nerverd by many white thin traces. The specimen of the white thin traces eludes any comprehension. Anyone studding the traces get confused more and more. The vambrace fits the forearm of Trolls and Obsidimen.</edt:description>
+		<edt:DESCRIPTION>A vambrace consist of norite, which is nerverd by many white thin traces. The specimen of the white thin traces eludes any comprehension. Anyone studding the traces get confused more and more. The vambrace fits the forearm of Trolls and Obsidimen.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="optional talent: Cursed Luck" keyknowledge="Name of item: Devocor Calamitas">
 			<edt:TALENT name="Cursed Luck" limitation="attitude: neutral or better" bonus="1"/>
 		</edt:THREADRANK>
@@ -94,7 +94,7 @@
 	</THREADITEM>
 	
 		<THREADITEM name="Thread Espagra-Scale Cloak" lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="armor" weight="10.0">
-		<edt:description>-</edt:description>
+		<edt:DESCRIPTION>-</edt:DESCRIPTION>
 		<edt:THREADRANK effect="max forged" keyknowledge="name of item">
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="2" physicalarmor="5" kind="armor" weight="10.0" name="Thread Espagra-Scale Cloak"/>
 		</edt:THREADRANK>
@@ -109,7 +109,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread Stirnreif" lpcostgrowth="5" spelldefense="13" maxthreads="2" weaventhreadrank="3" weight="0.0" >
-		<edt:description>Stirnreif, aus Bronze, ohne Verzierung</edt:description>
+		<edt:DESCRIPTION>Stirnreif, aus Bronze, ohne Verzierung</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Initiative +1" keyknowledge="name of item">
 			<edt:INITIATIVE/>
 		</edt:THREADRANK>
@@ -121,7 +121,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread Ring" lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" weight="0.1">
-		<edt:description>silberner Ring mit Schlangenlinien verziert</edt:description>
+		<edt:DESCRIPTION>silberner Ring mit Schlangenlinien verziert</edt:DESCRIPTION>
 		<edt:THREADRANK effect="social defenese+1" keyknowledge="name of item">
 			<edt:DEFENSE kind="social"/>
 		</edt:THREADRANK>
@@ -136,7 +136,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread Crystal Waraxt" lpcostgrowth="5" spelldefense="11" maxthreads="2" kind="melee weapon" weight="6.0">
-		<edt:description>Thread Item Melee Weapon page 276 PlayerGuide</edt:description>
+		<edt:DESCRIPTION>Thread Item Melee Weapon page 276 PlayerGuide</edt:DESCRIPTION>
 		<edt:THREADRANK effect="max Forge Damage" keyknowledge="name of the item">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="6.0" name="Thread Crystal Waraxt: Gratü"/>
 		</edt:THREADRANK>
@@ -151,7 +151,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread CrystalRaider" lpcostgrowth="5" spelldefense="16" maxthreads="2" kind="shield" weight="6.0">
-		<edt:description>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</edt:description>
+		<edt:DESCRIPTION>like Thread Item Heavy Armor page 276 PlayerGuide, but a littel bit better and more LP-expensive</edt:DESCRIPTION>
 		<edt:THREADRANK effect="max Forge Defense" keyknowledge="Name of the Item: Sylvio">
 			<edt:SHIELD mysticdeflectionbonus="3" physicaldeflectionbonus="3" edn="0" penalty="2" mysticarmor="5" physicalarmor="5" kind="shield" weight="6.0" name="Thread CrystalRaider: Sylvio"/>
 		</edt:THREADRANK>
@@ -166,7 +166,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread Brooch" lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="brooch" weight="6.0">
-		<edt:description>Schwarzer Stein mit goldener Verzierung</edt:description>
+		<edt:DESCRIPTION>Schwarzer Stein mit goldener Verzierung</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="name of the item">
 			<edt:DEFENSE kind="social"/>
 		</edt:THREADRANK>
@@ -176,7 +176,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread Ring" lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="ring" weight="6.0">
-		<edt:description></edt:description>
+		<edt:DESCRIPTION></edt:DESCRIPTION>
 		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="name of the item">
 			<edt:DEFENSE kind="social"/>
 		</edt:THREADRANK>
