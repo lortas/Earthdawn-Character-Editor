@@ -50,7 +50,9 @@ public class EDDisciplines extends JPanel {
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 		((DisciplinesTableModel)table.getModel()).setCharacter(character);
-		table.setRowHeight(70);
+		table.setDefaultRenderer(Object.class, new DisciplineTableCellRenderer());
+		table.setDefaultRenderer(Integer.class, new DisciplineTableCellRenderer());
+		table.setRowHeight(100);
 		TableColumnModel columnModel = table.getColumnModel();
 		JComboBox<Integer> comboBoxOneToFithteen = new JComboBox<Integer>();
 		for(int i=1; i<16;i++) comboBoxOneToFithteen.addItem(i);
@@ -64,9 +66,7 @@ public class EDDisciplines extends JPanel {
 		}
 		columnModel.getColumn(2).setCellEditor(new javax.swing.DefaultCellEditor(comboBoxPrimElement));
 		columnModel.getColumn(3).setCellEditor(new TextTableCellEditor());
-		columnModel.getColumn(3).setCellRenderer(new TextTableCellEditor());
 		columnModel.getColumn(4).setCellEditor(new TextTableCellEditor());
-		columnModel.getColumn(4).setCellRenderer(new TextTableCellEditor());
 		try {
 			int c=0;
 			for( LAYOUTSIZESType width : PROPERTIES.getGuiLayoutTabel("disciplineselection") ) {
