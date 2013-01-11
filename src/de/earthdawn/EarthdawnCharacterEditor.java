@@ -39,7 +39,11 @@ public class EarthdawnCharacterEditor {
 			if( infile.canRead() ) {
 				System.out.println("Read character from "+infile.getCanonicalPath());
 				ec=new CharacterContainer(infile);
-				System.out.println("Processing the character: '" + ec.getName() + "'");
+				String name=ec.getName();
+				if( name==null || name.isEmpty() ) {
+					name=infile.getName();
+				}
+				System.out.println("Processing the character: '" + name + "'");
 			} else {
 				ec = new CharacterContainer();
 			}

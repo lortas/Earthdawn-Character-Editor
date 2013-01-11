@@ -88,7 +88,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		character = c;
 	}
 
-	public CharacterContainer(File xmlfile) throws IOException,JAXBException, ParserConfigurationException, SAXException, TransformerException {
+	public CharacterContainer(File xmlfile) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException {
 		// XML-Daten einlesen
 		byte[] xmldata = new byte[(int) xmlfile.length()];
 		FileInputStream xmlInputStream = new FileInputStream(xmlfile);
@@ -133,6 +133,8 @@ public class CharacterContainer extends CharChangeRefresh {
 					System.err.print("Transformation alter (1.0) XML-character Version fehlgeschlagen : ");
 					System.err.println(e.getLocalizedMessage());
 				}
+			} else if( value.equals("1.1") ) {
+				// Nothing ToDo. This is most current xsd version.
 			} else {
 				System.err.println("Unknown xsd-version. But try to read anyway.");
 			}
