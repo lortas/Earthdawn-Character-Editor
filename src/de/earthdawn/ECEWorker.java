@@ -822,7 +822,7 @@ public class ECEWorker {
 				}
 			}
 			// Nur in der Erstdisziplin kann ein Startrang existieren.
-			if( disciplinenumber!=1 ) {
+			if( (disciplinenumber!=1) && (rank.getStartrank()!=0) ) {
 				rank.setStartrank(0);
 				errorout.println("The talent '"+talent.getName()+"' is from "+disciplinenumber+". discipline and can't have any start rank. Clear start rank.");
 			}

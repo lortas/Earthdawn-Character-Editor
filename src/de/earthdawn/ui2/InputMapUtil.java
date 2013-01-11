@@ -7,8 +7,9 @@ import javax.swing.KeyStroke;
 
 public class InputMapUtil {
 	static void setupInputMap(JTable table){
+		//TODO: das müsste mal überarbeitet werden
 		for ( KeyStroke key : table.getInputMap(JTable.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).allKeys()){
-			System.out.println("Key :" + key.toString() + " -> " + table.getInputMap(JTable.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).get(key) );
+			//System.out.println("Key :" + key.toString() + " -> " + table.getInputMap(JTable.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).get(key) );
 		}
 		
 		table.getInputMap(JTable.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "selectNextRow");
