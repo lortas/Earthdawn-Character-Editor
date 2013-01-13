@@ -104,7 +104,7 @@ public class DefaultOptionalTalent extends JFrame {
 			if( ! talentnames.contains(name) ) talentnames.add(name);
 		}
 		Collections.sort(talentnames);
-		cbxTalent.setModel(new DefaultComboBoxModel<String>((String[]) talentnames.toArray()));
+		cbxTalent.setModel(new DefaultComboBoxModel<String>(talentnames.toArray(new String[1])));
 		cbxDiscipline.removeAllItems();
 		for(int i=1; i<10;i++) cbxDiscipline.addItem(i);
 		cbxCircle.removeAllItems();
