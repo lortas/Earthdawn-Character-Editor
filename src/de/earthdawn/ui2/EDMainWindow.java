@@ -1002,18 +1002,11 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			try {
 				writeToHtml(selFile);
-				copyFile("./config/earthdawncharacter.css",new File(selFile.getParentFile(),"earthdawncharacter.css").getCanonicalPath());
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (JAXBException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (TransformerException e) {
+			} catch (Exception e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
