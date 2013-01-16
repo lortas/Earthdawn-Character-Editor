@@ -557,29 +557,21 @@
 		<xs:complexContent>
 			<xs:extension base="MAGICITEM_type">
 				<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="1" name="ARMOR" type="ARMOR_type">
-				<xs:annotation>
-					<xs:documentation>If the magic item is a armor the current armor values are named here. This will automatic update the armor inventory.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" maxOccurs="1" name="SHIELD" type="SHIELD_type">
-				<xs:annotation>
-					<xs:documentation>If the magic item is a armor the current armor values are named here. This will automatic update the armor inventory.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" maxOccurs="1" name="WEAPON" type="WEAPON_type">
-				<xs:annotation>
-					<xs:documentation>If the magic item is a weapon the current weapon values are named here. This will automatic update the weapn inventory.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-					<xs:element minOccurs="0" maxOccurs="unbounded" name="THREADRANK" type="THREADRANK_type"/>
+					<xs:element minOccurs="0" maxOccurs="1" name="ARMOR" type="ARMOR_type">
+						<xs:annotation><xs:documentation>If the magic item is a armor the current armor values are named here. This will automatic update the armor inventory.</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" maxOccurs="1" name="SHIELD" type="SHIELD_type">
+						<xs:annotation><xs:documentation>If the magic item is a armor the current armor values are named here. This will automatic update the armor inventory.</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" maxOccurs="1" name="WEAPON" type="WEAPON_type">
+						<xs:annotation><xs:documentation>If the magic item is a weapon the current weapon values are named here. This will automatic update the weapn inventory.</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="THREADRANK" type="THREADRANK_type" />
 				</xs:sequence>
-				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0"/>
-				<xs:attribute name="maxthreads" type="unsigned_int" default="2"/>
+				<xs:attribute name="weaventhreadrank" type="unsigned_int" default="0" />
+				<xs:attribute name="maxthreads" type="unsigned_int" default="2" />
 				<xs:attribute name="lpcostgrowth" type="unsigned_int" default="5">
-					<xs:annotation>
-						<xs:documentation>Determines the amount of legend points a character has to spend to waeve the individual thread ranks. These correlate to the cost for increasing talent ranks of talents with the named number as talent circle.</xs:documentation>
-					</xs:annotation>
+					<xs:annotation><xs:documentation>Determines the amount of legend points a character has to spend to waeve the individual thread ranks. These correlate to the cost for increasing talent ranks of talents with the named number as talent circle.</xs:documentation></xs:annotation>
 				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
