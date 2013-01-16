@@ -31,21 +31,15 @@
 			<table width="100%">
 				<tr>
 					<td class="edMiscellaneous">
-						<!-- Miscellaneous -->
 						<xsl:call-template name="miscellaneous" />
 					</td>
 					<td class="edAttributes">
-						<!-- Attributes -->
 						<xsl:call-template name="attributes" />
-					</td>
-					<td class="edDefense">
-						<!-- Defense -->
-						<xsl:call-template name="defense" />
 					</td>
 				</tr>
 			</table>
 		</div>
-		<!-- Health -->
+		<xsl:call-template name="defense"/>
 		<xsl:call-template name="health"/>
 		<table class="invisible" width="100%">
 			<tr class="invisible">
@@ -272,21 +266,22 @@
 		<div class="edThreadItems" width="100%"><xsl:call-template name="threadItems"/></div>
 		<table width="100%">
 			<tr>
-				<td valign="top">
+				<td valign="top" rowspan="2">
 					<xsl:call-template name="portraits"/>
 				</td>
 				<td valign="top">
 					<xsl:call-template name="description"/>
 				</td>
+			</tr>
+			<tr>
 				<td valign="top">
 					<xsl:call-template name="comment"/>
 				</td>
 			</tr>
 		</table>
-		<!-- OpenSpells -->
 		<xsl:call-template name="openspells"/>
-		<!-- DisciplineSpells -->
 		<xsl:call-template name="disciplinespells"/>
+		<xsl:call-template name="legendpointsreceived"/>
 	</body> 
 </html> 
 </xsl:template>
@@ -381,49 +376,43 @@
 </xsl:template>
 
 <xsl:template name="defense">
-	<div class="edSubHeader">Defense/Armor Rating</div>
-	<table width="100%">
-		<xsl:apply-templates select="//edc:DEFENSE"/>	
-		<xsl:apply-templates select="//edc:PROTECTION"/>
-		<xsl:apply-templates select="//edc:MOVEMENT"/>	
-	</table>
-</xsl:template>
-
-<xsl:template match="//edc:DEFENSE">
-	<tr>
-		<td class="edKeyCell">Social&#160;Defense:</td>
-		<td class="edValueCell"><xsl:value-of select="@social" /></td>
-	</tr>
-	<tr>
-		<td class="edKeyCell">Spell&#160;Defense:</td>
-		<td class="edValueCell"><xsl:value-of select="@spell" /></td>
-	</tr>
-	<tr>
-		<td class="edKeyCell">Physical&#160;Defense:</td>
-		<td class="edValueCell"><xsl:value-of select="@physical" /></td>
-	</tr>
-</xsl:template>
-
-<xsl:template match="//edc:PROTECTION">
-	<tr>
-		<td class="edKeyCell">Mystic&#160;Armor:</td>
-		<td class="edValueCell"><xsl:value-of select="@mysticarmor" /></td>
-	</tr>
-	<tr>
-		<td class="edKeyCell">Physical&#160;Armor:</td>
-		<td class="edValueCell"><xsl:value-of select="@physicalarmor" /></td>
-	</tr>
-</xsl:template>
-
-<xsl:template match="//edc:MOVEMENT">
-	<tr>
-		<td class="edKeyCell">Movement&#160;Ground:</td>
-		<td class="edValueCell"><xsl:value-of select="@ground" /></td>
-	</tr>
-	<tr>
-		<td class="edKeyCell">Movement&#160;Flight:</td>
-		<td class="edValueCell"><xsl:value-of select="@flight" /></td>
-	</tr>
+	<div class="edHealth">
+		<div class="edSubHeader">Defense/Armor Rating</div>
+		<table width="100%">
+			<tr>
+				<td class="edKeyCell">Physical&#160;Defense:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@physical"/></td>
+				<td class="edKeyCell">Physical&#160;Armor:</td>
+				<td class="edValueCell">
+					<xsl:value-of select="//edc:PROTECTION/@physicalarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@physicalarmor!=0] | //edc:PROTECTION/edt:SHIELD[@physicalarmor!=0]">
+						<xsl:value-of select="@physicalarmor"/>
+						<xsl:if test="position()!=last()">+</xsl:if>
+					</xsl:for-each>)
+				</td>
+				<td class="edKeyCell">Movement&#160;Ground:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@ground"/>hex (<xsl:value-of select="//edc:MOVEMENT/@ground * 2"/>yd)</td>
+			</tr>
+			<tr>
+				<td class="edKeyCell">Spell&#160;Defense:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@spell"/></td>
+				<td class="edKeyCell">Mystic&#160;Armor:</td>
+				<td class="edValueCell">
+					<xsl:value-of select="//edc:PROTECTION/@mysticarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@mysticarmor!=0] | //edc:PROTECTION/edt:SHIELD[@mysticarmor!=0]">
+						<xsl:value-of select="@mysticarmor"/>
+						<xsl:if test="position()!=last()">+</xsl:if>
+					</xsl:for-each>)
+				</td>
+				<td class="edKeyCell">Movement&#160;Flight:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@flight"/>hex (<xsl:value-of select="//edc:MOVEMENT/@flight * 2"/>yd)</td>
+			</tr>
+			<tr>
+				<td class="edKeyCell">Social&#160;Defense:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@social"/></td>
+				<td class="edKeyCell">Penalty:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:PROTECTION/@penalty"/></td>
+			</tr>
+		</table>
+	</div>
 </xsl:template>
 
 <xsl:template name="health">
@@ -797,7 +786,7 @@
 		<td class="edCapabCell"><xsl:value-of select="@timesforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
@@ -816,7 +805,7 @@
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@enchantingdifficultynumber"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@effect"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
@@ -836,7 +825,7 @@
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@enchantingdifficultynumber"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@effect"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
@@ -873,7 +862,7 @@
 		<td class="edCapabCell"><xsl:value-of select="@effect"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@depatterningrate"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
@@ -943,7 +932,7 @@
 		<td class="edCapabCell"><xsl:value-of select="@edn"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
@@ -978,7 +967,7 @@
 		<td class="edCapabCell"><xsl:value-of select="@mysticdeflectionbonus"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@weight"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@used"/></td>
 	</tr>
 </xsl:template>
@@ -1058,6 +1047,7 @@
 	<table class="invisible" width="100%">
 		<thead><tr>
 			<td class="edHeaderCell" style="text-align: right;">Purse Name</td>
+			<td class="edHeaderCell">Weight</td>
 			<td class="edHeaderCell">Location</td>
 			<td class="edHeaderCell">Copper (1/10)</td>
 			<td class="edHeaderCell">Silver (1)</td>
@@ -1106,6 +1096,7 @@
 			</img>
 			<xsl:value-of select="@name"/>
 		</td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')" /></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@copper"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@silver"/></td>
@@ -1128,14 +1119,16 @@
 	<xsl:if test="//edc:ITEM">
 		<table width="100%">
 			<tr>
-				<td class="edHeaderCell" width="40%">Name</td>
-				<td class="edHeaderCell" width="5%">Weight</td>
-				<td class="edHeaderCell" width="5%">Location</td>
-				<td class="edHeaderCell" width="40%">Name</td>
-				<td class="edHeaderCell" width="5%">Weight</td>
-				<td class="edHeaderCell" width="5%">Location</td>
+				<td class="edHeaderCell" width="44%">Name</td>
+				<td class="edHeaderCell" width="8%">Weight</td>
+				<td class="edHeaderCell" width="8%">Size</td>
+				<td class="edHeaderCell" width="8%">Blood Damage</td>
+				<td class="edHeaderCell" width="8%">Depatterning</td>
+				<td class="edHeaderCell" width="8%">Location</td>
+				<td class="edHeaderCell" width="8%">Used</td>
+				<td class="edHeaderCell" width="8%">Book Ref</td>
 			</tr>
-			<xsl:apply-templates select="//edc:ITEM[(position() mod 2) = 1]"> 
+			<xsl:apply-templates select="//edc:ITEM"> 
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
 		</table>
@@ -1144,95 +1137,185 @@
 
 <xsl:template match="//edc:ITEM">
 	<tr>
-		<xsl:for-each select=". | following-sibling::edc:ITEM[position() &lt; 2]">
-			<td class="edItemCell" style="text-align: left;">
-				<img class="edIcon">
-					<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
-				</img>
-				<xsl:value-of select="@name" />
-			</td>
-			<td class="edItemCell"><xsl:value-of select="@weight" /></td>
-			<td class="edItemCell"><xsl:value-of select="@location" /></td>
-		</xsl:for-each>
-	 </tr>
+		<td class="edItemCell" style="text-align: left;">
+			<img class="edIcon">
+				<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
+			</img>
+			<xsl:value-of select="@name" />
+		</td>
+		<td class="edItemCell"><xsl:value-of select="format-number(@weight,'##')" /></td>
+		<td class="edItemCell"><xsl:value-of select="@size"/></td>
+		<td class="edItemCell"><xsl:value-of select="@blooddamage"/></td>
+		<td class="edItemCell"><xsl:value-of select="@depatterningrate"/></td>
+		<td class="edItemCell"><xsl:value-of select="@location"/></td>
+		<td class="edItemCell"><xsl:value-of select="@used"/></td>
+		<td class="edItemCell"><xsl:value-of select="@bookref"/></td>
+	</tr>
 </xsl:template>
 
 <xsl:template name="threadItems">
-	<div class="edSubHeader">Thread Items</div>
 	<xsl:if test="//edc:THREADITEM">
-		<table width="100%">
-			<xsl:apply-templates select="//edc:THREADITEM[(position() mod 2) = 1]" />
-		</table>
+		<div class="edSubHeader">Thread Items</div>
+		<xsl:apply-templates select="//edc:THREADITEM" />
 	</xsl:if>
 </xsl:template>
 
 <xsl:template match="//edc:THREADITEM">
-	<table width="100%">
+	<table class="invisible" width="100%">
 		<tr>
-			<xsl:for-each select=". | following-sibling::edc:THREADITEM[position() &lt; 2]">
-				<td class="edThreadItemTop">
-					<table width="100%" style="page-break-inside:avoid">
-						<tr>
-							<td class="edKeyCell">Name:</td>
-							<td class="edValueCell" colspan="3" style="text-align: left;">
-								<img class="edIcon">
-									<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
-								</img>
-								<xsl:value-of select="@name" />
-							</td>
-						</tr>
-						<tr>
-							<td class="edKeyCell">Max Threads:</td>
-							<td class="edValueCell"><xsl:value-of select="@maxthreads" /></td>
-							<td class="edKeyCell">Spell Defence:</td>
-							<td class="edValueCell"><xsl:value-of select="@spelldefense" /></td>
-						</tr>
-						<tr>
-							<td class="edKeyCell">Description:</td>
-							<td class="edThreaditemdescription" colspan="3"><xsl:value-of select="./edt:description"/></td>
-						</tr>
-					</table>
-				</td>
-			</xsl:for-each>
+			<td class="edThreadItemTop">
+				<table class="invisible" width="100%" style="page-break-inside:avoid">
+					<tr>
+						<td class="edKeyCell">Name:</td>
+						<td class="edValueCell" colspan="7" style="text-align: left;">
+							<img class="edIcon">
+								<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>icons/</xsl:text><xsl:value-of select="translate(@kind,$smallcase,$uppercase)" /><xsl:if test="not(@kind)">UNDEFINED</xsl:if><xsl:text>.png</xsl:text></xsl:attribute>
+							</img>
+							<xsl:value-of select="@name" />
+						</td>
+					</tr>
+					<tr>
+						<td class="edKeyCell">Max Threads:</td>
+						<td class="edValueCell"><xsl:value-of select="@maxthreads" /></td>
+						<td class="edKeyCell">Weaven Thread Rank:</td>
+						<td class="edValueCell"><xsl:value-of select="@weaventhreadrank" /></td>
+						<td class="edKeyCell">Spell Defence:</td>
+						<td class="edValueCell"><xsl:value-of select="@spelldefense" /></td>
+						<td class="edKeyCell">EDN:</td>
+						<td class="edValueCell"><xsl:if test="not(@enchantingdifficultynumber) or (@enchantingdifficultynumber='')">NA</xsl:if><xsl:value-of select="@enchantingdifficultynumber" /></td>
+					</tr>
+					<tr>
+						<td class="edKeyCell">Blood Damage:</td>
+						<td class="edValueCell"><xsl:value-of select="@blooddamage" /></td>
+						<td class="edKeyCell">Depatterning Rate:</td>
+						<td class="edValueCell"><xsl:value-of select="depatterningrate" /></td>
+						<td class="edKeyCell">Weight:</td>
+						<td class="edValueCell"><xsl:value-of select="format-number(@weight,'##')" /></td>
+						<td class="edKeyCell">Size:</td>
+						<td class="edValueCell"><xsl:value-of select="@size" /></td>
+					</tr>
+					<tr>
+						<td class="edKeyCell">Location:</td>
+						<td class="edValueCell"><xsl:value-of select="@location" /></td>
+						<td class="edKeyCell">Used:</td>
+						<td class="edValueCell"><xsl:value-of select="@used" /></td>
+						<td class="edKeyCell">Book Ref:</td>
+						<td class="edValueCell"><xsl:value-of select="bookref" /></td>
+					</tr>
+					<tr>
+						<td class="edKeyCell">Effect:</td>
+						<td class="edThreaditemdescription" colspan="7">
+							<xsl:if test="@effect=''">--</xsl:if><xsl:value-of select="@effect"/>
+							<xsl:if test="./edt:ARMOR">(Armor details can be found in armor section)</xsl:if>
+							<xsl:if test="./edt:SHIELD">(Shield details can be found in shield section)</xsl:if>
+							<xsl:if test="./edt:WEAPON">(weapon details can be found in weapon section)</xsl:if>
+						</td>
+					</tr>
+					<tr>
+						<td class="edKeyCell">Description:</td>
+						<td class="edThreaditemdescription" colspan="7">
+							<xsl:value-of select="./edt:DESCRIPTION"/>
+						</td>
+					</tr>
+				</table>
+			</td>
 		</tr>
 		<tr>
-			<xsl:for-each select=". | following-sibling::edc:THREADITEM[position() &lt; 2]">
-				<td class="edThreadItemBottom">
-					<table width="100%">
-						<tr>
-							<td style="text-align: center">
-								Thread Ranks
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<table width="100%">
-									<tr>
-										<td class="edHeaderCell">Rank (LPCost)</td>
-										<td class="edHeaderCell">Knowledge / Effect / Deed</td>
-									</tr>
-									<xsl:apply-templates select="./edt:THREADRANK"/>
-								</table>
-							</td>
-					   </tr>
-					</table>
-				</td>
-			</xsl:for-each>
+			<td class="edThreadItemBottom">
+				<table class="invisible" width="100%">
+					<tr>
+						<td style="text-align: center">
+							Thread Ranks
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table class="invisible" width="100%">
+								<xsl:apply-templates select="./edt:THREADRANK"/>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
 		</tr>
 	</table>
 </xsl:template>
 
 <xsl:template match="//edt:THREADRANK">
 	<tr>
-		<td class="edThreadrank" rowspan="3" valign="middle"><xsl:value-of select="position()"/> (<xsl:value-of select="@lpcost"/>)</td>
-		<td class="edCell"><xsl:value-of select="@keyknowledge" /></td>
+		<td class="edThreadrank" valign="middle">Rank <xsl:value-of select="position()"/> (<xsl:value-of select="@lpcost"/>LP)</td>
+		<td><table width="100%">
+			<tr>
+				<td class="edCell">Knowledge: <xsl:value-of select="@keyknowledge"/></td>
+			</tr>
+			<xsl:if test="@deed"><tr>
+				<td class="edCell">Deed: <xsl:value-of select="@deed"/></td>
+			</tr></xsl:if>
+			<xsl:if test="@effect"><tr>
+				<td class="edCell">Effect: <xsl:value-of select="@effect"/></td>
+			</tr></xsl:if>
+			<xsl:if test="./edt:ARMOR"><td class="edCell">Armor: 
+				phy:<xsl:value-of select="./edt:ARMOR/@physicalarmor"/>, 
+				mys:<xsl:value-of select="./edt:ARMOR/@mysticarmor"/>, 
+				ini:<xsl:value-of select="./edt:ARMOR/@penalty"/>
+			</td></xsl:if>
+			<xsl:if test="./edt:SHIELD"><td class="edCell">Shield: 
+				phy:<xsl:value-of select="./edt:SHIELD/@physicalarmor"/>, 
+				mys:<xsl:value-of select="./edt:SHIELD/@mysticarmor"/>, 
+				ini:<xsl:value-of select="./edt:SHIELD/@penalty"/>
+			</td></xsl:if>
+			<xsl:if test="./edt:WEAPON"><td class="edCell">Weapon: damage step:<xsl:value-of select="./edt:WEAPON/@damagestep"/></td></xsl:if>
+			<xsl:if test="./edt:WOUND"><td class="edCell">Cause Wound: 
+				threshold:<xsl:value-of select="./edt:WOUND/@threshold"/>, 
+				normal:<xsl:value-of select="./edt:WOUND/@normal"/>, 
+				blood:<xsl:value-of select="./edt:WOUND/@blood"/>, 
+				penalties:<xsl:value-of select="./edt:WOUND/@penalties"/>
+			</td></xsl:if>
+			<xsl:for-each select="./edt:SPELL"><tr>
+				<td class="edCell">Spell: <xsl:value-of select="."/></td>
+			</tr></xsl:for-each>
+			<xsl:for-each select="./edt:ABILITY"><tr>
+				<td class="edCell">Ability: <xsl:value-of select="."/></td>
+			</tr></xsl:for-each>
+			<tr><td class="edCell">
+				<xsl:for-each select="./edt:DEFENSE"> Defense: 
+					<xsl:choose>
+						<xsl:when test="@kind=''"> physical</xsl:when>
+						<xsl:when test="not(@kind)"> physical</xsl:when>
+						<xsl:otherwise> <xsl:value-of select="@kind"/></xsl:otherwise>
+					</xsl:choose>
+					<xsl:choose>
+						<xsl:when test="@bonus=''"> +1</xsl:when>
+						<xsl:when test="@bonus='0'"> 0</xsl:when>
+						<xsl:when test="not(@bonus)"> +1</xsl:when>
+						<xsl:otherwise> +<xsl:value-of select="@bonus"/></xsl:otherwise>
+					</xsl:choose>
+				; </xsl:for-each>
+				<xsl:for-each select="./edt:TALENT"> Talent: <xsl:value-of select="@name"/> <xsl:if test="@limitation">(<xsl:value-of select="@limitation"/>) </xsl:if>
+					<xsl:choose>
+						<xsl:when test="@bonus=''"> +1</xsl:when>
+						<xsl:when test="@bonus='0'"> 0</xsl:when>
+						<xsl:when test="not(@bonus)"> +1</xsl:when>
+						<xsl:otherwise> +<xsl:value-of select="@bonus"/></xsl:otherwise>
+					</xsl:choose>
+				; </xsl:for-each>
+				<xsl:for-each select="./edt:SPELLABILITY"> Spell Ability: <xsl:call-template name="diszipinability_type"/> </xsl:for-each>
+				<xsl:for-each select="./edt:INITIATIVE"> Initiative Step: <xsl:call-template name="diszipinability_type"/>; </xsl:for-each>
+				<xsl:for-each select="./edt:RECOVERYTEST"> Recovery Test: <xsl:call-template name="diszipinability_type"/>; </xsl:for-each>
+				<xsl:for-each select="./edt:KARMASTEP"> Karma Step: <xsl:call-template name="diszipinability_type"/>; </xsl:for-each>
+				<xsl:for-each select="./edt:MAXKARMA"> Max Karma: <xsl:call-template name="diszipinability_type"/>; </xsl:for-each>
+			</td></tr>
+		</table></td>
 	</tr>
-	<tr>
-		<td class="edCell"><xsl:value-of select="@deed" /></td>
-	</tr>
-	<tr>
-		<td class="edCell"><xsl:value-of select="@effect" /></td>
-	</tr>
+</xsl:template>
+
+<xsl:template name="diszipinability_type">
+	<xsl:choose>
+		<xsl:when test="@count=''"> +1</xsl:when>
+		<xsl:when test="@count='0'"> 0</xsl:when>
+		<xsl:when test="not(@count)"> +1</xsl:when>
+		<xsl:otherwise> +<xsl:value-of select="@count"/></xsl:otherwise>
+	</xsl:choose>
 </xsl:template>
 
 <xsl:template name="experience">
@@ -1253,6 +1336,26 @@
 			</tr>
 		</table>
 	</div>
+</xsl:template>
+
+<xsl:template name="legendpointsreceived">
+	<div class="edSubHeader">total legendpoints received history</div>
+	<table class="invisible" width="100%">
+		<thead>
+			<tr>
+				<td class="edHeaderCell">when</td>
+				<td class="edHeaderCell">value</td>
+				<td class="edHeaderCell">comment</td>
+			</tr>
+		</thead>
+		<xsl:for-each select="//edc:EXPERIENCE/edt:LEGENDPOINTS">
+			<xsl:if test="@type='+'"><tr>
+				<td class="edCell"><xsl:value-of select="@when"/></td>
+				<td class="edCell"><xsl:value-of select="@value"/></td>
+				<td class="edCell"><xsl:value-of select="@comment"/></td>
+			</tr></xsl:if>
+		</xsl:for-each>
+	</table>
 </xsl:template>
 
 <xsl:template name="calculatedLegendPoints">

@@ -142,18 +142,12 @@
 	border-style: none;
 }
 
+.edDefense,
 .edMiscellaneous,
 .edAttributes {
     border-style: solid;
     border-width: thin;
     vertical-align: top;
-}
-
-.edDefense {
-    border-style: solid;
-    border-width: thin;
-    vertical-align: top;
-    width: 27ex;
 }
 
 .edExperience,
