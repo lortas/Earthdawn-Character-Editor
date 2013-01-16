@@ -166,6 +166,7 @@
 			<xs:enumeration value="armor"/>
 			<xs:enumeration value="artisan"/>
 			<xs:enumeration value="book"/>
+			<xs:enumeration value="boot"/>
 			<xs:enumeration value="brooch"/>
 			<xs:enumeration value="cloth"/>
 			<xs:enumeration value="coins"/>
