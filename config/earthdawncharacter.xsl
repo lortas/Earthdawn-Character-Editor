@@ -424,24 +424,24 @@
 				<td class="edValueCell"><xsl:value-of select="//edt:DEATH/@base" /> + <xsl:value-of select="//edt:DEATH/@adjustment" /> = <xsl:value-of select="//edt:DEATH/@value" /></td>
 				<td class="edKeyCell">Unconsciousness</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:UNCONSCIOUSNESS/@base" /> + <xsl:value-of select="//edt:UNCONSCIOUSNESS/@adjustment" /> = <xsl:value-of select="//edt:UNCONSCIOUSNESS/@value" /></td>
-				<td class="edKeyCell">Recovery Step</td>
-				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@step" /></td>
-				<td class="edKeyCell">Recovery Dice</td>
-				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@dice" /></td>
-				<td class="edKeyCell">Recovery Tests</td>
-				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@testsperday" /></td>
-			</tr>
-			<tr>
 				<td class="edKeyCell">Current Damage</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/@damage" /></td>
-				<td class="edKeyCell">Current Wounds</td>
+			</tr>
+			<tr>
+				<td class="edKeyCell">Recovery</td>
+				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@step" /> (<xsl:value-of select="//edt:RECOVERY/@dice" />)</td>
+				<td class="edKeyCell">Recovery Tests</td>
+				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@testsperday" /></td>
+				<td class="edKeyCell">Wound Threshold</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@threshold" /></td>
+			</tr>
+			<tr>
+				<td class="edKeyCell">Normal Wounds</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@normal" /></td>
 				<td class="edKeyCell">Blood Wounds</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@blood" /></td>
 				<td class="edKeyCell">Wound Penalties</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@penalties" /></td>
-				<td class="edKeyCell">Wound Threshold</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@threshold" /></td>
 			</tr>
 		</table>
 	</div>
@@ -521,7 +521,6 @@
 				<td class="edHeaderCell">Step</td>
 				<td class="edHeaderCell">Dice</td>
 				<td class="edHeaderCell">Ini.</td>
-				<td class="edHeaderCell">Realign</td>
 				<td class="edHeaderCell">Book</td>
 			</tr></thead>
 			<xsl:apply-templates select="./edt:DISZIPLINETALENT">
@@ -529,7 +528,7 @@
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="@name"/>
-				<xsl:sort select="@limitation"/>
+				<xsl:sort select="./edt:LIMITATION"/>
 			</xsl:apply-templates>
 		</table>
 		<br/>
@@ -545,7 +544,6 @@
 				<td class="edHeaderCell">Step</td>
 				<td class="edHeaderCell">Dice</td>
 				<td class="edHeaderCell">Ini.</td>
-				<td class="edHeaderCell">Realign</td>
 				<td class="edHeaderCell">Book</td>
 			</tr></thead>
 			<xsl:apply-templates select="./edt:OPTIONALTALENT">
@@ -553,7 +551,7 @@
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 				<xsl:sort select="@name"/>
-				<xsl:sort select="@limitation"/>
+				<xsl:sort select="./edt:LIMITATION"/>
 			</xsl:apply-templates>
 		</table>
 	</div>
@@ -561,9 +559,18 @@
 
 <xsl:template match="//edt:DISZIPLINETALENT">
 	<tr>
+		<xsl:if test="@realigned>0">
+			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
+		</xsl:if>
 		<td class="edKeyCell">
 			<xsl:value-of select="@name"/>
-			<xsl:if test="@limitation!=''">: <xsl:value-of select="@limitation"/></xsl:if>
+			<xsl:if test="./edt:LIMITATION">
+				<xsl:text>: </xsl:text>
+				<xsl:for-each select="./edt:LIMITATION">
+					<xsl:value-of select="."/>
+					<xsl:if test="position() &lt; last()">, </xsl:if>
+				</xsl:for-each>
+			</xsl:if>
 			<xsl:if test="./edt:TEACHER/@byversatility!='yes'"> (v)</xsl:if>
 		</td>
 		<td class="edCapabCell">
@@ -597,21 +604,24 @@
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@realigned>0">yes</xsl:when>
-				<xsl:otherwise>no</xsl:otherwise>
-			</xsl:choose>
-		</td>
 		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
 
 <xsl:template match="//edt:OPTIONALTALENT">
 	<tr>
+		<xsl:if test="@realigned>0">
+			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
+		</xsl:if>
 		<td class="edKeyCell">
 			<xsl:value-of select="@name"/>
-			<xsl:if test="@limitation!=''">: <xsl:value-of select="@limitation"/></xsl:if>
+			<xsl:if test="./edt:LIMITATION">
+				<xsl:text>: </xsl:text>
+				<xsl:for-each select="./edt:LIMITATION">
+					<xsl:value-of select="."/>
+					<xsl:if test="position() &lt; last()">, </xsl:if>
+				</xsl:for-each>
+			</xsl:if>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@karma"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
@@ -635,12 +645,6 @@
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@realigned>0">yes</xsl:when>
-				<xsl:otherwise>no</xsl:otherwise>
-			</xsl:choose>
-		</td>
 		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
@@ -911,21 +915,32 @@
 			<td class="edHeaderCell">Step</td>
 			<td class="edHeaderCell">Dice</td>
 			<td class="edHeaderCell">Ini.</td>
-			<td class="edHeaderCell">Realign</td>
 			<td class="edHeaderCell">Book</td>
 		</tr></thead>
 		<xsl:apply-templates select="//edc:SKILL">
 			<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
 			<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
 			<xsl:sort select="@name"/>
-			<xsl:sort select="@limitation"/>
+			<xsl:sort select="./edt:LIMITATION"/>
 		</xsl:apply-templates>
 	</table>
 </xsl:template>
 
 <xsl:template match="//edc:SKILL">
 	<tr>
-		<td class="edKeyCell"><xsl:value-of select="@name"/></td>
+		<xsl:if test="@realigned>0">
+			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
+		</xsl:if>
+		<td class="edKeyCell">
+			<xsl:value-of select="@name"/>
+			<xsl:if test="./edt:LIMITATION">
+				<xsl:text>: </xsl:text>
+				<xsl:for-each select="./edt:LIMITATION">
+					<xsl:value-of select="."/>
+					<xsl:if test="position() &lt; last()">, </xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
@@ -947,12 +962,6 @@
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@realigned>0">yes</xsl:when>
-				<xsl:otherwise>no</xsl:otherwise>
-			</xsl:choose>
-		</td>
 		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
