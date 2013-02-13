@@ -37,6 +37,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -116,28 +117,28 @@ public class CharacterContainer extends CharChangeRefresh {
 			throw new RuntimeException("XML root element '"+rootname+"' is not 'EDCHARACTER'");
 		}
 		Node version = rootnode.getAttributes().getNamedItem("xsd-version");
-		if( version == null ) {
-			System.err.println("No xsd-version set. But try to read anyway.");
-		} else {
-			String value = version.getNodeValue();
-			if( value.equals("1.0") ) {
-				// XSLT Transformation
-				System.out.println("XML mit xsd-version 1.0, transformiere nach aktuellem Schema");
-				TransformerFactory tFactory = TransformerFactory.newInstance();
-				try {
-					Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/convertcharacter_1.0.xsl"));
-					ByteArrayOutputStream xmldataNew = new ByteArrayOutputStream();
-					transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(xmldata)),new javax.xml.transform.stream.StreamResult(xmldataNew));
-					xmldata=xmldataNew.toByteArray();
-				} catch (TransformerException e) {
-					System.err.print("Transformation alter (1.0) XML-character Version fehlgeschlagen : ");
-					System.err.println(e.getLocalizedMessage());
-				}
-			} else if( value.equals("1.1") ) {
-				// Nothing ToDo. This is most current xsd version.
-			} else {
-				System.err.println("Unknown xsd-version. But try to read anyway.");
+		String value = (version==null)?"":version.getNodeValue();
+		if( value.isEmpty() ) {
+			JOptionPane.showMessageDialog(null, "No xsd-version set. Try to read it as like xsd-version 1.0. Procced at your own risk");
+			value="1.0";
+		}
+		if( value.equals("1.0") ) {
+			// XSLT Transformation
+			System.out.println("XML mit xsd-version 1.0, transformiere nach aktuellem Schema");
+			TransformerFactory tFactory = TransformerFactory.newInstance();
+			try {
+				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/convertcharacter_1.0.xsl"));
+				ByteArrayOutputStream xmldataNew = new ByteArrayOutputStream();
+				transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(xmldata)),new javax.xml.transform.stream.StreamResult(xmldataNew));
+				xmldata=xmldataNew.toByteArray();
+			} catch (TransformerException e) {
+				System.err.print("Transformation alter (1.0) XML-character Version fehlgeschlagen : ");
+				System.err.println(e.getLocalizedMessage());
 			}
+		} else if( value.equals("1.1") ) {
+			// Nothing ToDo. This is most current xsd version.
+		} else {
+			JOptionPane.showMessageDialog(null, "Unknown xsd-version '"+value+"'. But try to read anyway. Procced at your own risk");
 		}
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Unmarshaller u = jc.createUnmarshaller();
@@ -150,7 +151,8 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public void writeXml(OutputStream out,String encoding) throws JAXBException, UnsupportedEncodingException {
 		PrintStream fileio = new PrintStream(out, false, encoding);
-		fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
+		fileio.println("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>");
+		fileio.println("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
 		// Lösche XSD-Version
 		character.setXsdVersion(null);
 		// Sieht kopmisch aus, setzt aber die Default/Fixed XSD-Version
@@ -1149,7 +1151,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			for( DISCIPLINECIRCLEType disciplineCircleDefinition : disciplineDefinition.getCIRCLE() ) {
 				circlenr++;
 				if( circlenr > disciplineCircleNr ) break;
-				for( TALENTABILITYType disciplineTalent :disciplineCircleDefinition.getDISCIPLINETALENT()) {
+				for( TALENTABILITYType disciplineTalent : disciplineCircleDefinition.getDISCIPLINETALENT()) {
 					TALENTType newTalent = new TALENTType();
 					newTalent.setName(disciplineTalent.getName());
 					String limitation = disciplineTalent.getLimitation();
@@ -1179,13 +1181,13 @@ public class CharacterContainer extends CharChangeRefresh {
 			// Die Nummerierung der Disziplinen fängt bei Eins an, daher zälen wir hier schon hoch
 			disciplineOrder++;
 			for( TALENTType disTalent : discipline.getDISZIPLINETALENT() ) {
-				// Disziplinetalente können nicht realigned werden, daher ist auch keine gesonderte Prüfung
-				// ob dieses Talent bereits ge-realigned ist nicht notwendig und wäre unsinnig
 				// Ermittle für spätere Vergleiche den vollständigen Diszipline namen (mit Limitation Bezeichnung)
 				String disTalentName=getFullTalentname(disTalent);
 				for( DISCIPLINEType compareDiscipline : disciplines ) {
 					// Talentlisten nicht mit sich selbst vergleichen, daher Schleife überspringen, wenn es die selbe Disziplin ist.
 					if( discipline == compareDiscipline ) continue;
+					// Disziplinetalente können nicht realigned werden, daher ist auch keine gesonderte Prüfung
+					// ob dieses Talent bereits ge-realigned ist nicht notwendig und wäre unsinnig
 					for( TALENTType optTalent : compareDiscipline.getOPTIONALTALENT() ) {
 						String optTalentName = getFullTalentname(optTalent);
 						if( multiUseTalents.containsKey(optTalentName) ) {
@@ -1782,6 +1784,23 @@ public class CharacterContainer extends CharChangeRefresh {
 				}
 			}
 			optionalTalents.removeAll(remove);
+		}
+		for( DISCIPLINEType discipline1 : getDisciplines() ) {
+			for( TALENTType talent1 : discipline1.getDISZIPLINETALENT() ) {
+				String talentname1 = getFullTalentname(talent1);
+				for( DISCIPLINEType discipline2 : getDisciplines() ) {
+					if( discipline1 == discipline2 ) continue;
+					// in anderen Diszipinen (2) darf es kein Disziplintalent geben,
+					// dass bereits in dieser Disziplin (1) ein Disziplintalent ist.
+					List<TALENTType> remove = new ArrayList<TALENTType>();
+					List<TALENTType> talents2 = discipline2.getDISZIPLINETALENT();
+					for( TALENTType talent2 : talents2 ) {
+						String talentname2 = getFullTalentname(talent2);
+						if( talentname1.equals(talentname2) ) remove.add(talent2);
+					}
+					talents2.removeAll(remove);
+				}
+			}
 		}
 	}
 
