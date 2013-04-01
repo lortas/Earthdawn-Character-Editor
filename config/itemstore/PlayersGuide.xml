@@ -65,7 +65,7 @@
 
 <!--  throwing weapon vollständig PG	-->
 	<WEAPON kind="throwing weapon" name="Bola" longrange="24" shortrange="12" size="3" strengthmin="6" dexteritymin="9" damagestep="3" weight="2" price="10" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Dagger" longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" weight="1" price="0" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Dagger" longrange="20" shortrange="10" size="1" strengthmin="4" damagestep="2" weight="1" price="0" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Dart" longrange="36" shortrange="18" size="1" strengthmin="4" damagestep="1" weight="0.5" price="0" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Flight Dagger" longrange="40" shortrange="20" size="1" strengthmin="4" damagestep="2" weight="0.75" price="25" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Hawk Hatchet" longrange="48" shortrange="24" size="3" strengthmin="8" damagestep="4" weight="2" price="75" bookref="PG p.252"/>
@@ -75,7 +75,7 @@
 	<WEAPON kind="throwing weapon" name="Net (large)" longrange="12" shortrange="6" size="5" strengthmin="7" damagestep="0" weight="10" price="25" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Net (huge)" longrange="12" shortrange="6" size="6" strengthmin="8" damagestep="0" weight="12" price="40" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Spear" longrange="20" shortrange="10" size="3" strengthmin="9"  damagestep="4" weight="3" price="9" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Throwing Axe" longrange="12" shortrange="6" size="3" strengthmin="7" damagestep="3" weight="2" price="25" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Throwing Axe" longrange="24" shortrange="12" size="3" strengthmin="7" damagestep="3" weight="2" price="25" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Throwing Dagger" longrange="32" shortrange="16" size="1" strengthmin="4" damagestep="2" weight="0.75" price="2" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Windling Net" longrange="12" shortrange="6" size="2" strengthmin="4" dexteritymin="9" damagestep="0" weight="0.75" price="15" bookref="PG p.252"/>
 	<WEAPON kind="throwing weapon" name="Windling Spear" longrange="16" shortrange="8" size="1" strengthmin="4" damagestep="2" weight="0.5" price="25" bookref="PG p.252"/>
