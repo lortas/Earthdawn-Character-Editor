@@ -1,0 +1,366 @@
+# Change Log #
+## EarthdawnCharacterEditor-0.45-20121119.zip ##
++ Bugs
+	+ Karma Ritual was missing in Discipline Journeyman
+	+ Aligned Skill
+	+ spellability for circle 2 to 5 were missing for the discipline elementalist
+	+ Knack Ghost Master had wrong value in attribute "limitation"
+	+ Small bugs within random character generatore removed
+	+ Blood damage was not shown within the Ajfel+Mordom PDF
++ Multiple menu entries have now key short cuts
++ Added Spell Sword
++ Multiple SpinnerEditor changed to JComboBox
++ Confirmation for exit added
++ Confirmation for create new character added
++ New menu entry switch window to fullscreen
++ New menu entry for editing DefaultOptionalTalents
++ Create for every spell an empty spelldiscription, if no spell description exists
++ PatternItem enhanced
++ If an optional rule is changed, refresh character
++ New random character template scorcher added
++ Optional Rule ALIGNINGTALENTSANDSKILLS default value is "no"
++ Optional Rule AUTOINSERTLEGENDPOINTSPENT default value is "no"
++ New Optional Rule KEEPLEGENDPOINTSYNC
+## EarthdawnCharacterEditor-0.44-20120819.zip ##
++ Bugs
+	+ ThreadRankNodePanel: WoundThreshold und WoundPenalties mismatch
+	+ taking an item from the item store multible times had lead to the effect that changing one does change the other ones too
++ Multiple magic items of the Gamemasters Guide insert into the item store
++ Code beautifying and adding more comments
++ Spells from earthdawncompendium.com included into the addon archive
++ Optional rule "Align Skills and Talents" added (including correct LP calculation)
++ Pop-up to choose Skills show now only Skill which are not taken
++ Thread item ability "wound" will now take account
++ Thread items now have a thread rank independent way to mark them self as weapon/armor/shield
++ Normal weapon/armor/shield can now be cloned to a thread item
++ Polish pdf character export added
++ The most of the optional rules settings can now be modified via menu entries in the GUI instead of editing the xml file
++ Layout of the general tab updated
++ Action types spelling can now be defined within the configuration file names.xml
+## EarthdawnCharacterEditor-0.43-20120529.zip ##
++ Bugs
+	+ Pdf Ajfel Forms were not storable
+	+ Initiative bonus conform with optional rule ENDURINGARMORBYSTRENGTH
+	+ Error message for karma calculation even if no discipline yet defined
+	+ Adding a new thread rank will now be in all cases no link to previous entries
+	+ Strange resizing effects in the general tab change to be more static
++ Library Update
+	+ miglayout : 3.7.1 --> 4.0
+	+ gson : 1.7.1 --> 2.2.1
+	+ itext : 5.0.1 --> 5.2.1
++ optional rule ALIGNINGTALENTSANDSKILLS prepared but not yet functional
++ XML
+	+ New element ALIGNEDSKILL for element TALENT
+	+ Element RECOVERY renamed to RECOVERYTEST
+	+ New attribute “armorpenalty” in element 'INITIATIVE'
+	+ Attribute "size" moved up from child "weapon" to parent "item"
+	+ New attribute "deed" for Threadranks
++ Interface getSkills changed and new interfaces for skill handling added
++ Inventory and ItemStore root element type changed
++ Items added by ItemStore will now be shown after it was inserted
++ More Thread Items within the ItemStore, eg. from GMG
++ change and define item tree root element order
++ updated files "*.data_fields.txt" within the documentation folder
+## EarthdawnCharacterEditor-0.42-20120512.zip ##
++ Bugs
+	+ Common Magic Items will now be shown on the PDF-export
+	+ Armor node panel and shield node panel will now bee completely shown
+	+ Gems were missing in Ajfels and RB-extended PDF export
+	+ Removing last thread item rank had result in null pointer exception
+	+ Recovery test modification from thread items will no be respected
++ Spells from thread items will be shown within the exports
++ Now you have also an "Add Entry" for "Common Magic Items"
++ The characters maximal karma can now be modified by thread items
++ New optional rule: ENDURINGARMORBYSTRENGTH
++ Skills from the book Namgivers are added
++ Character items can now be individual exported
++ Adding a new thread rank for a thread item will use the previous rank as template
+## EarthdawnCharacterEditor-0.41-20120507.zip ##
++ Bugs
+	+ Talent knacks can now also be removed
+	+ The possibility to have more woven thread ranks than the items total thread rank is now removed
+	+ No you can also have an empty portrait if you really want.
+	+ spell kind sorcery definition was missing in names.xml
++ More pictures with in the character portraits
++ Item store
+	+ All healing aid from PG added
+	+ All adventurers equipment from PG added
++ Own category clothes with in the inventory and item store
++ Where type of spell was shown, now element of spell will be shown
++ While elementalist can have an primary element, you can note your primary element, bonus and penalty are shown but not calculated
++ Thread item ranks can now be: delete, moved up, moved down
++ The status shield/armor/weapon can now also be removed again from a item thread rank
+## EarthdawnCharacterEditor-0.40-20120325.zip ##
++ XML
+	+ New attribute EditorPath within the character xml to find image dependencies
+	+ New attribute price for ITEMType
+	+ New xml element NAMESHORTCUTType for knowledge and artisan skills
+	+ THREADITEM description moved to parent ITEM and set to optional
+	+ ITEM enhanced with element IMAGE
+	+ new element CREATURE within ECCHARACTER
++ Icons of the Items are shown within the HTML view of the character XMLs
++ Tuning of HTML view of the character XMLs
++ Character can now be exported to an all-in-one/standalone HTML file (pictures and CSS are in-line)
++ A few new portrait pictures
++ More items from the players guide insert into the itemstore
++ thread item, knack and spell lists slitted into multiple files
++ Common Magic Items can now be added
++ The inventory of a character can now be exported as itemstore file
++ Image files moved from the directory template into its own folder
++ Thread Items can now have their own images
++ Credits are now shown in the about window
++ If multiple default character portraits are matching to characters race and gender, one is randomly chosen
+## EarthdawnCharacterEditor-0.39-20120222.zip ##
++ Bugs
+	+ Typos within two discipline definitions corrected
+	+ Now Thread Items which are also Armor/Shield will flagged as virtual within the Armor/Shield section
++ ThreadItems Editor enhanced
+	+ Spells can be added and edited
+	+ Talents can be added and edited
+	+ Abilities can be added and edited
+	+ ...
++ Within the Armor Node of the inventory now shields can be added too
++ Now Items can be selected from an item store
++ The capabilities (talents+skills) are no longer contained within one file. Now they are spread in multiple files within one directory
++ The spells are no longer contained within one file. Now they are spread in multiple files within one directory
++ The knacks are no longer contained within one file. Now they are spread in multiple files within one directory
++ AddOn distribution will no longer replace files from the base distribution. It places new files into the folders, where they will be found by the ECE
++ The XSLT and CSS are massively updated and the new HTML-view is better optimised for printing
++ Damages and Wounds can now be edited within the General-tab
+## EarthdawnCharacterEditor-0.38-20120212.zip ##
++ Bugs
+	+ The "Birth" field was not shown from loaded character within the general tab.
+	+ Typos with the elemental spells corrected
+	+ No unneeded confirmation for updating the portrait if character will be loaded
++ Inventory
+	+ The ThreadItem context menu contains now Refresh Character
+	+ ThreadRanks can be added to a ThreadItem
+	+ DefenseAbility can be inserted to a ThreadRank and edited
+	+ Weapon can be inserted to a ThreadRank and edited
+	+ Armor can be inserted to a ThreadRank and edited
+	+ Shield can be inserted to a ThreadRank and edited
+	+ Coins can now be noted within purses
++ Picture preview while choosing a portrait picture
++ Re-design for the character languages. The LearnedBySkill-Flags has moved and for each speak and read/write the source can be chosen.
++ New Tab Knacks to select learned knacks. Currently only the Ajfel+Mordom PDF export contains learned knacks.
+## EarthdawnCharacterEditor-0.37-20120114.zip ##
++ Bugs
+	+ Now, player name will also be loaded
+	+ Remove function now delete the selected item in the inventor no longer the first
+	+ Realign of talents should now work
++ New disciplines
+	+ Sword Dancer
+	+ War Rider
+	+ Sorcerer
++ New spell type sorcery
++ General-Tab enhanced: Portrait is displayed and can now be changed
++ LP calculation will be detailed in the XML and can used view a Reset Spent LP button
++ For each discipline the half magic and karmaritual definition can be edit, default comes from the discipline definition
++ Halfmagic text will be print into the PDFs if there is a place for it
++ More dependencies between startrank and rank
++ LANGUAGE has the new attribute "notlearnedbyskill"
++ New tab "Languages", for editing languages and languages skills
++ Layout of almost all item types with in the inventory tab updated.
++ Default languages can now be defined for each namegiver
++ Race selection order by origin and race kind
++ Portrait and Language can be reset by changing race or gender
++ Config Syntax for GUI layout updated
++ Adding for almost all discipline half magic text templates
+## EarthdawnCharacterEditor-0.36-20111220.zip ##
++ Bugs
+	+ if creating a new character the file handle will also be reset. So "Save" will no longer automatically overwrite the previous saved character
+	+ BloodDamage will no correct calculated
+	+ Ajfel+Mordom PDF form fields updated
++ FAQ file is now formatted as HTML
++ The Tabs Attributes and Disciplines have swapped their places
++ Additional column 'Dice' within the talent tabular and the attribute tabular
++ New column width for the columns of the talent tablle
++ If a armor item have an undefined type, it will now be set to 'ARMOR'
++ Inventory Tab
+	+ GUI layout of armor updated and enhanced
+	+ Items flagged as 'virtual' are now longer editable
+	+ GUI layout of blood charms updated and enhanced
+	+ GUI layout of items updated and enhanced
+	+ GUI layout of weapons updated and enhanced
+	+ MAGICITEMType, THREADITEMType, TALENTABILITYType, DEFENSEABILITYType will now be displayed if part of a thread item. Editing will follow later
++ The GUI Layout of the General Tab substantial updated
++ New edit fields with in the General Tab
+	+ Player name
+	+ Birth (day)
+	+ Description
+	+ Comment
+	+ Blood wound
+	+ No gender
++ Race abilities will now be shown on the General Tab, including those which have already take account by the editor
++ XML Schema enhanced
+	+ No extra BloodCharm Type any more. All Items can have blood damage
+	+ Blood charms are now from type MagicItem
+	+ The attributes of DEATHType are now longer requiered. The have now an default value
+	+ HEALTH enhanced with blooddamage and depatterningrate
++ New icon for item type 'AMMUNITION'
++ Example Character Eloxis updated.
++ Some more item kinds
++ New icons for ARTISAN, POT, LIGHT, TOOL, AMMUNITION, RATION, UNDEFINED, INSTRUMENT, GRIMOIRE
+## EarthdawnCharacterEditor-0.35-20111201.zip ##
++ Bugs
+	+ Fixating column order of the tables skill, spell and talent
+	+ optional talent spell matrix now works again for circle 1 if circle 2 is in use
+	+ Now Redbrick PDF export works even if no discipline was chosen
+	+ Parsing problems with weight and size field solved
+	+ TalentAbility of thread items now with correct bonus
+	+ Defence calculation of thread items corrected
+	+ Background picture of inventory tab will no longer scale with inventory
+	+ Row mismatch off the optional talents area within the Ajfel+Mordom PDF export solved
+	+ DamageStep of weapons will now be recognise
++ New disciplines:
+	+ Monk
+	+ Samurai
+	+ Scholar
++ XML Schema enhanced
+	+ Attribute 'birth' added to element APPEARANCE 
++ For all columns of the tables within the GUI, the width can be configured: eceguilayout.xml
++ Main window size and sub window size can now be configured: eceguilayout.xml
++ Add more comments within the source code for optional talents procedures
++ Add RemoveLastDiscipline button within the discipline tab
++ Add Show/Hide Default Skills button within the skill tab
++ Buttons within the discipline tab are no longer transparent
++ Now all tabs have background pictures
++ New background pictures
++ New default window and columns sizes
++ All yard entries removed and replaced by hex entries
++ SpellEffekt font size within the Ajfel+Mordom PDF export re adjusted
++ Example characters updated
+## EarthdawnCharacterEditor-0.34-20111026.zip ##
++ New disciplines:
+	+ TraveledScholar-Spy
+	+ Taildancer-Kstulaami
+	+ Woodsman-Assassin
+	+ Windmaster-Slasher
+	+ Merchant
+	+ Pugilist
++ New races from Namegivers and Thera Empire
++ More basic names for random name generator
++ XML Schema enhanced:
+	+ All items have now also the attribute bookref
+	+ New item-type AMMUNITION
+	+ spelldef extended by the attribute element
+	+ element-type extended by illusion and fear
+	+ earthdawndiscipline.xsd extended by the element FOREIGNTALENTS
+	+ spells can now be flagged by "learned by spell ability"
++ items.xml extended with more examples from the core books
++ spelldescriptions.xml will now be read if exists, but will not be ditributed (no copyright)
++ New pdf-export: spellcards
++ some horror powers inserted into the capabilities.xml
++ first spells are now flagged which element it uses
++ filter within the spell-tab removed (depreciated)
++ characteristic statistic layout updated
++ MainWindow will no longer start at position (100,100), it now will be placed by the window manager
++ Tuned the min/max value for column width of the spell table
+## EarthdawnCharacterEditor-0.33-20110907.zip ##
++ Bugs
+	+ Extra rank cost for new rank 1 talents of multi disciplines works now
++ Name database for random names enhanced
++ Capabilities do now allow a collection of limitations
++ Skills like Artisan+Craftsman+Knowledge do now have a defined list of limitations
++ Do not allow a start rank for second and later disciplines
++ AddOn distribution do now contain more talents from The Earthdawn Compendium
++ New Tool "JoinCapabilities" to merge multi capabilities XML files.
+## EarthdawnCharacterEditor-0.32-20110828.zip ##
++ Random name data base increased and hyphenation added.
++ Random name generator replaced by a syllable-based random name generator.
++ Comments for rules how specific namegivers do name giving added into the random name data base.
++ More default portraits for different namegivers added.
+## EarthdawnCharacterEditor-0.31-20110821.zip ##
++ Bugs
+	+ Talents not allowed for versatility are no more missing on the optional talent list.
+	+ To save space on the Redbrick PDF export, only woven thread ranks of thread items are shown on the overview.
++ CPG:
+	+ New discipline Beastlord added.
+	+ New discipline Guardian of Cathay added
+	+ New discipline Daughter of Heaven added
++ bookref for disciplines from NG added.
++ Button for selecting optional talents by random added.
++ Added a second spell page for the Ajfel+Mordom PDF export.
++ On the Ajfel+Mordom PDF export use unused talent rows to show talents from additional disciplines.
++ Documentation folder added.
+	+ A HOWTO for inserting an own character pdf into the ECE.
+	+ A FAQ added.
++ A basic RandomNameGenerator inserted. But still under construction and need more name input.
++ A RandomCharacterGenerator inserted. But only two test-templates are available. Need more templates.
++ The maximum for attribute LP increase can now be configured by optional rules.
++ Comments for name giving (from NG) added.
+## EarthdawnCharacterEditor-0.30-20110805.zip ##
++ Bugs
+	+ Misspelled “Dicipline” is corrected to “Discipline” (everywhere).
+	+ The RB extended pdf export works again.
+	+ The Durability can again only be chosen once per discipline.
+	+ The save and export dialogue will now only write a file if Yes/Ok button was clicked.
++ All knacks from the CPG inclusive bookref were inserted.
++ The optional talent chooser is now a pop-up window with scrollbar.
+## EarthdawnCharacterEditor-0.29-20110729.zip ##
++ Bugs
+	+ Now every character starts with karma points equal to is base karma modifier.
+	+ The penalty of the natural armor was wrongly set to the physical armor. Was only relevant for obsidiman.
++ XML Schema enhanced
+	+ The knacks element also need the attribute limitation, while some knacks only work for specific talents.
++ Knacks (including book references) of the book namegivers added.
++ All example characters of the Players Guide added.
++ New export plausibility added: GSON; This also creates a Json file, but for human it is much better to read.
++ Some missing icons for character items added.
++ Enhanced item library.
++ Minor changes of the namegivers configuration file.
+## EarthdawnCharacterEditor-0.28-20110716.zip ##
++ Bugs
+	+ Header of the CSV Export are now also comma separated.
+	+ The attribute "default" will now also be inherit from the capability database.
++ XML Schema enhanced
+	+ The elements "disciplinetalent", "optionaltalent" and "spell" has moved from the root-element to the "discipline"-element. Sadly, this result in incompatible save files to older versions. But there is a easy way for converting old character files, please take a look into the help forum (https://sourceforge.net/projects/ed-char-editor/forums/forum/1265052)
+	+ XSD-version defined and set to "1.0"
++ CSV export for skills added
++ All CSV will now UTF-8 encoded
++ The large changes of the XML-schema need to readjust the XSL and CSS files.
++ XSL and CSS was additionally modified and enhanced to include more details (e.g. showing languages) and to better fit the print-view.
++ New export plausibility added: JSON (http://www.json.org/)
+## EarthdawnCharacterEditor-0.27-20110711.zip ##
++ Bugs
+	+ XML encoding for storing character should now be set correct
+	+ Typing error within different discipline config files corrected
+	+ The maximal circle for disciplines is now reduced to 15.
++ XML Schema enhanced:
+	+ select element type for the list of available talent knacks from xs:choise to xs:sequence
++ If the language list of the character is empty default language will be inserted
++ The languages of the character are listed at the Ajfel+Mordom PDF
++ This readme in markdown-syntax added
++ All spells of Cathay Players Guide added
++ New optional rule KARMALEGENDPOINTCOST added
++ The column for LP based raising of attributes is renamed from "circle" to "LP increase"
++ The knack list of the character will now be evaluated and the knack LPs will now be calculated
++ The list for versatility talents will now only show talents until current circle and also list talents multiple time with different limitations
++ Negative values of (calculated) legend points and negative values of starti ranks will now changed to red within the characteristic overview
+## EarthdawnCharacterEditor-0.26-20110704.zip ##
++ XML Schema enhanced:
+	- The element "portrait" has now the attribute "contenttype"
+	- New element "language", to tag which language a character can speak or read/write
+	- There are talents which must not be learned by versatility. A new talent attribute have to be defined
+	- The attributes threads and strain are now strings, forced by the different values defined in the books
++ Templates for Portraits enhanced.
++ Portraits will now also displayed in the html view
++ Now, two example characters have their own portraits
++ Talents learned by versatility will now get there circle based on the character current circle
++ The attribute "bookref" for talents, skills and spells will now be displayed in the Ajfel+Mordom PDF
++ Three talents marked as initiative talents
++ Talents that are marked as initiative talents will now receive the armour penalty on there final step
++ The ranks of talents that are marked as initiative talents, are also displayed in the initiative form field off all PDFs
++ GUI: The column for startrank is now in on skills and talents the same
++ Forcing, that only talents from circle <2 can have startranks
++ New example character Kartesch
++ Bookref
+	- The bookref for all spells of PG added
+	- The bookref for all shaman spells above circle 7 (PC) added
++ The warnings of the Java Class ECEWorker can now be send to another PrintStream than System.err
++ All talents of Cathay Players Guide added
++ Skills of Cathay Players Guide added
++ Bugs
+	- Calculating SpellLP corrected
+	- The form field "brief description" in the Ajfel+Mordom PDF will no be filled
+	- The form fields of the Ajfel+Mordom PDF revised

@@ -125,6 +125,7 @@
 			<zipfileset file="./license.de.html"/>
 			<zipfileset file="./earthdawn_copyright_note.txt"/>
 			<zipfileset file="./readme.txt"/>
+			<zipfileset file="./changelog.txt"/>
 		</zip>
 	</target>
 
