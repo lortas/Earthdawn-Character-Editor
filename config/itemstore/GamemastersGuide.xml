@@ -401,19 +401,19 @@
 			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="5" penalty="0" weight="10.0" kind="shield"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-    <THREADITEM weaventhreadrank="0" maxthreads="3" spelldefense="0" lpcostgrowth="13" enchantingdifficultynumber="0" effect="" name="Spell Sword" weight="4.0" size="3" used="no" location="self" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="GM p.140">
-        <edt:DESCRIPTION>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:DESCRIPTION>
+    <THREADITEM name="Spell Sword" maxthreads="3" spelldefense="0" lpcostgrowth="13" weight="4.0" size="3" used="no" location="self" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="GM p.140">
+        <edt:description>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:description>
 		<edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="yes" location="" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="PG p.251"/>
-        <edt:THREADRANK keyknowledge="must learn sword’s Name" lpcost="500" deed="" effect="contains spell matrix of  Rank equal to Thread Rank; may place spell in matrix; wielder may cast spell as if casting from matrix">
+        <edt:THREADRANK keyknowledge="sword’s Name" lpcost="500" effect="contains spell matrix of  Rank equal to Thread Rank; may place spell in matrix; wielder may cast spell as if casting from matrix">
             <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
         </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="" lpcost="800" deed="" effect="Damage Step 6.">
+        <edt:THREADRANK keyknowledge="" lpcost="800" effect="Damage Step 6.">
             <edt:WEAPON damagestep="6" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
         </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="Name of the sword’s creator" lpcost="1300" deed="" effect="holds second spell matrix; Rank of  each spell matrix equals Thread Rank;">
+        <edt:THREADRANK keyknowledge="Name of the sword’s creator" lpcost="1300" effect="holds second spell matrix; Rank of  each spell matrix equals Thread Rank;">
             <edt:WEAPON damagestep="6" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
         </edt:THREADRANK>
-        <edt:THREADRANK keyknowledge="" lpcost="2100" deed="" effect="Damage Step 7">
+        <edt:THREADRANK keyknowledge="" lpcost="2100" effect="Damage Step 7">
             <edt:WEAPON damagestep="7" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="" lpcost="3400" deed="must decide upon Deed using blade; then publicly declare intention of doing Deed;" effect="+1 to Physical and Spell Defense">
@@ -426,7 +426,223 @@
             <edt:DEFENSE kind="physical" bonus="1"/>
             <edt:DEFENSE kind="spell" bonus="1"/>
         </edt:THREADRANK>
+	</THREADITEM>		
+	<THREADITEM name="Spike Bomb" maxthreads="2" spelldefense="14" lpcostgrowth="5" weight="1.0" blooddamage="0" depatterningrate="0" bookref="GM p.141">
+        <edt:description>four-inch-diameter, metal balls covered with magical symbols (arcane markings of no particular significance)</edt:description>
+        <edt:THREADRANK keyknowledge="bomb’s Name" effect="throwing weapon; Range short 2–10, long 11–20 yards; Attack Test successful: bomb explodes (Willpower+6); Mystic Armor protects; bomb temporarily destroyed; immediate Willpower (8) to recreate bomb; If unsuccessful, 1 Strain for each retry"/>
+        <edt:THREADRANK effect="Willpower+8"/>
+        <edt:THREADRANK keyknowledge="Name of alchemist who created the spike bomb" effect="affects multiple targets; attack succeeds, compares Attack Test result against Physical Defense of all characters within 2 hexes of target; Good result: target character takes damage; Mystic Armor protects"/>
+        <edt:THREADRANK effect="Range short 2–16, long 17–32 yards"/>
+        <edt:THREADRANK keyknowledge="meaning of arcane symbols and if they have any significance" effect="Willpower+10"/>
+        <edt:THREADRANK deed="Wound Horror or construct with spike bomb" effect="Range short 2–20, long 21–40 yards"/>
+        <edt:THREADRANK effect="Willpower+12"/>
+	</THREADITEM>	
+ 	<THREADITEM name="Spike Gauntlets" maxthreads="2" spelldefense="14" lpcostgrowth="5" kind="cloth" weight="4.0" blooddamage="0" depatterningrate="0" bookref="GM p.141">
+        <edt:description>metal gauntlets bristling with many small, slender, steel spikes usually highly polished and sharply pointed; made from metal mined in Caucavic Mountains, despite earth elemental objections to the mining activities; Gauntlets draw power from mountains</edt:description>
+        <edt:THREADRANK keyknowledge="gauntlets’ Name" effect="+1 Physical Defense">
+			<edt:DEFENSE kind="physical" bonus="1"/>
+		</edt:THREADRANK>
+        <edt:THREADRANK effect="+1 Spell Defense">
+			<edt:DEFENSE kind="physical" bonus="1"/>
+			<edt:DEFENSE kind="spell" bonus="1"/>
+		</edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of creator" effect="+2 Physical and Spell Defense">
+			<edt:DEFENSE kind="physical" bonus="2"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>		
+        <edt:THREADRANK effect="1 Strain: +4 Damage Test for one attack; each Strain: +1 to result of successful Attack Test (Armor-Defeating Hit); maximum amount of Strain each round is equal to Thread Rank">
+			<edt:DEFENSE kind="physical" bonus="2"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>		
+        <edt:THREADRANK keyknowledge="mountains Name where gauntlets metal was mined" effect="+3 Physical and Spell Defense">
+			<edt:DEFENSE kind="physical" bonus="3"/>
+			<edt:DEFENSE kind="spell" bonus="3"/>
+		</edt:THREADRANK>
+        <edt:THREADRANK effect="1 Strain: +6 Damage Test for one attack">
+			<edt:DEFENSE kind="physical" bonus="2"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>
+        <edt:THREADRANK deed="contact with earth elemental living near mountain metal came from; arguing why deeds he performed with gauntlets’ help justify metal’s mining." effect="+1 Social Defense; +4 Spell Defense">
+			<edt:DEFENSE kind="physical" bonus="3"/>
+			<edt:DEFENSE kind="social" bonus="1"/>
+			<edt:DEFENSE kind="spell" bonus="4"/>
+		</edt:THREADRANK>
+        <edt:THREADRANK effect="+2 Social Defense, +4 Physical Defense">
+			<edt:DEFENSE kind="physical" bonus="4"/>
+			<edt:DEFENSE kind="social" bonus="2"/>
+			<edt:DEFENSE kind="spell" bonus="4"/>
+		</edt:THREADRANK>		
+	</THREADITEM>
+	<THREADITEM name="Talisman Statue" maxthreads="2" lpcostgrowth="5" spelldefense="15" effect="can enhance magical abilities of spellcasters; must wear statuette to benefit from its power;" weight="5.0" kind="artisan" bookref="GM p. 142">
+        <edt:description>usually 3 to 4 (rarely up to 7) inches stone, wood, or clay statue with intricate runes carved into it; sometimes small gems embedded into statuette’s eyes; must wear statuette to benefit from power;</edt:description>
+		<edt:THREADRANK keyknowledge="statue’s Name" effect="+1 Spellcasting">
+            <edt:TALENT name="Spellcasting" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="+1 Thread Weaving">
+            <edt:TALENT name="Spellcasting" bonus="1"/>
+            <edt:TALENT name="Thread Weaving" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of the statue’s creator" effect="+1 Spell Defense">
+            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:TALENT name="Spellcasting" bonus="1"/>
+            <edt:TALENT name="Thread Weaving" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="+2 Spell Defense">
+            <edt:DEFENSE kind="spell" bonus="2"/>
+            <edt:TALENT name="Spellcasting" bonus="1" />
+            <edt:TALENT name="Thread Weaving" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of mountain, mine, forest from which material of statue originated" effect="+2 Mystic Armor">
+			<edt:ARMOR mysticarmor="2" kind="armor" weight="5.0" name="Talisman Statue"/>
+            <edt:DEFENSE kind="spell" bonus="2"/>
+            <edt:TALENT name="Spellcasting" bonus="1"/>
+            <edt:TALENT name="Thread Weaving" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK deed="must bind (hour-long ritual Thread Weaving (22)) statue to part of his pattern holds spellcasting abilities; ritual causes 1 point Permanent Damage" effect="+1 Karma Step when enhance Spellcasting , Effect, or Thread Weaving">
+            <edt:ARMOR mysticarmor="2" kind="armor" weight="5.0" name="Talisman Statue"/>
+			<edt:DEFENSE kind="spell" bonus="2"/>
+            <edt:TALENT name="Spellcasting" bonus="1"/>
+            <edt:TALENT name="Thread Weaving" bonus="1"/>
+        </edt:THREADRANK>
     </THREADITEM>
-	
-<!-- 	weiter mit Spike Bomb p141 -->
+	<THREADITEM name="Thorn Man Spear" maxthreads="1" lpcostgrowth="5" spelldefense="15" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142">
+        <edt:DESCRIPTION>Spears wielded by thorn men that guard Blood Wood. Spears sprout wicked thorns up and down their lengths (1 Damage Point each round). No armor protects. Damage is based on the Thread Rank woven to spear.</edt:DESCRIPTION>
+        <edt:WEAPON damagestep="4" strengthmin="9" shortrange="5" longrange="10" name="Thorn Man Spear" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142"/>
+        <edt:THREADRANK keyknowledge="spear´s Name" effect="Damage Step 7">
+            <edt:WEAPON damagestep="7" strengthmin="9" shortrange="5" longrange="10" name="Thorn Man Spear" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="Damage Step 8">
+            <edt:WEAPON damagestep="8" strengthmin="9" shortrange="5" longrange="10" name="Thorn Man Spear" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="Damage Step 9">
+            <edt:WEAPON damagestep="9" strengthmin="9" shortrange="5" longrange="10" name="Thorn Man Spear" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="Damage Step 10; no longer damage from thorns protecting spear´shaft">
+            <edt:WEAPON damagestep="10" strengthmin="9" shortrange="5" longrange="10" name="Thorn Man Spear" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+    </THREADITEM>	
+    <THREADITEM name="Three-Axe" maxthreads="2" lpcostgrowth="5" spelldefense="16" effect="like Battle-Axe; until thread is woven wielder is considered Harried (see PG p. 227)" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142">
+        <edt:DESCRIPTION>Fearsome, triple-bladed weapon which are clumsy to use in combat: until thread is woven wielder is considered Harried (see PG p. 227); </edt:DESCRIPTION>
+        <edt:WEAPON damagestep="7" strengthmin="13" name="Three-Axe (like Battle-Axe)" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
+        <edt:THREADRANK keyknowledge="axe´s Name" effect="Damage Step 10">
+            <edt:WEAPON damagestep="10" strengthmin="13" name="Three-Axe" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="Damage Step 11">
+            <edt:WEAPON damagestep="11" strengthmin="13" name="Three-Axe" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of axe´s creator" effect="1 Strain: focus energy of all three blades into a single blade; Two become incorporeal, glowing faint blue; Next strike gains +3 to Damage Test; axe then  returns to normal shape">
+            <edt:WEAPON damagestep="11" strengthmin="13" name="Three-Axe" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="Damage Step 12">
+            <edt:WEAPON damagestep="12" strengthmin="13" name="Three-Axe" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK deed="must Wound an equal or superior opponent  while using focusing ability" effect="focusing energy of blades: now +6 Damage Test; In round in which focusing ability is used adds +3 to Wound Threshold">
+            <edt:WEAPON damagestep="12" strengthmin="13" name="Three-Axe" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
+        </edt:THREADRANK>
+    </THREADITEM>
+	<THREADITEM name="War Helm of Landis" maxthreads="2" lpcostgrowth="5" spelldefense="16" effect="+2 Deflection Bonus; -1 Perception (see PG. p. 254)" weight="2.5" kind="armor" bookref="GM p. 142">
+        <edt:DESCRIPTION>Metal helmet adorned with symbol of ancient human kingdom of Landis; has a faceplate that can swing down or up, depending on protecting face or simply wants to see better. Mages and Weaponsmiths worked together to provide protection to important military commanders</edt:DESCRIPTION>
+        <edt:THREADRANK keyknowledge="helmet’s Name" deed="polish and repair helmet; Replacing unit insignia reactivates its magic." effect="+1 Physical Armor, +1 Social Defense, +1 Charisma-only Tests">
+            <edt:ARMOR physicalarmor="1" edn_element="undefined" name="War Helm of Landis" weight="2.5" kind="armor" bookref="GM p. 142"/>
+            <edt:DEFENSE kind="social" bonus="1"/>
+            <edt:ABILITY>Charisma only Tests +1</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="+2 Social Defense, +2 Charisma-only Tests">
+            <edt:ARMOR physicalarmor="1" name="War Helm of Landis" weight="2.5" kind="armor" bookref="GM p. 142"/>
+            <edt:DEFENSE kind="social" bonus="2"/>
+            <edt:ABILITY>Charisma only Tests +2</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="what military unit was under the command of helmet’s original owner" effect="+1 Spell Defense">
+            <edt:ARMOR physicalarmor="1" name="War Helm of Landis" weight="2.5" kind="armor" bookref="GM p. 142"/>
+            <edt:DEFENSE kind="social" bonus="2"/>
+            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:ABILITY>Charisma only Tests +2</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" effect="+2 Physical Armor, no Perception Test penalty any more">
+            <edt:ARMOR physicalarmor="2" name="War Helm of Landis" weight="2.5" kind="armor" bookref="GM p. 142"/>
+            <edt:DEFENSE kind="social" bonus="2"/>
+            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:ABILITY>Charisma only Tests +2</edt:ABILITY>
+        </edt:THREADRANK>
+    </THREADITEM>
+	<THREADITEM name="Whip of Defense" maxthreads="2" lpcostgrowth="5" spelldefense="15" effect="with no threads like normal whip" weight="2.0" size="3" kind="melee weapon" bookref="GM p. 143">
+        <edt:DESCRIPTION>Main cord is 12 feet long, composed of several strands of skin braided together. The most common materials is leather, but other are possible (f.e. espagra skin, lizard skin)</edt:DESCRIPTION>
+        <edt:WEAPON damagestep="3" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+        <edt:THREADRANK keyknowledge="whip’s Name" effect=" +1 Physical Defense against 1 attack per combat round; Damage Step 4">
+            <edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+            <edt:DEFENSE kind="physical" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="+2 Physical Defense against 2 attacks per combat round">
+            <edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+            <edt:DEFENSE kind="physical" bonus="2"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of the whip´s creator" effect="+1 Spell Defense">
+            <edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+            <edt:DEFENSE kind="physical" bonus="2"/>
+            <edt:DEFENSE kind="spell"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" effect="+3 Physical Defense against 3 attacks per combat round; Damage Step 5">
+            <edt:WEAPON damagestep="5" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+            <edt:DEFENSE kind="physical" bonus="3"/>
+            <edt:DEFENSE kind="spell" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Which types of skins used to make the whip" effect="+4 Physical Defense against 4 attacks per combat round; +2 Spell Defense.">
+            <edt:WEAPON damagestep="5" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+            <edt:DEFENSE kind="physical" bonus="4"/>
+            <edt:DEFENSE kind="spell" bonus="2"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" effect="+5 Physical  Defense against 5 attacks per combat round; +3 Spell Defense">
+            <edt:WEAPON damagestep="5" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
+            <edt:DEFENSE kind="physical" bonus="5"/>
+            <edt:DEFENSE kind="spell" bonus="3"/>
+        </edt:THREADRANK>
+    </THREADITEM>
+	<THREADITEM name="Windling Cup of Friendship" maxthreads="5" lpcostgrowth="5" spelldefense="16" weight="1.0" kind="artisan" bookref="GM p. 143">
+        <edt:DESCRIPTION>Carved wooden cups atop a long wooden stem. Thin woven cords of various colors are braided around the stem, usually in shades of green and brown; brighter colors such as blue, red, and yellow sometimes used. Each cup is Named when created; once in windling, and again in another tongue</edt:DESCRIPTION>
+        <edt:THREADRANK keyknowledge="learn the non-windling Name" effect="1 Strain: cup fills on command with clear water or windling keesriswine when its Name is spoken"/>
+        <edt:THREADRANK keyknowledge="discover windling clan or tribe from which cup originated" effect="+1 Charisma-based Tests made against any non-windling Namegiver"/>
+        <edt:THREADRANK keyknowledge="learn windling Name" effect="+1 Charisma-based  Tests made against windlings">
+            <edt:ABILITY>+1 Charisma-based Tests</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="" effect="+2 Charisma-based Tests made against windlings.">
+            <edt:ABILITY>+2 Charisma-based Tests</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK deed="share a drink with a windling never met, both parties drinking from the same cup; only successful if two part as friends who have shared tales with one another" effect="shares wine from cup with a stranger; stranger´s Attitude toward cup holder improves by one degree">
+            <edt:ABILITY>+2 Charisma-based Tests</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="+3 Charisma-based Tests made against windlings">
+            <edt:ABILITY>+2 Charisma-based Tests</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Each cup has special command word in windling language; discover that word" effect="sacrificing one Recovery Test, the cup fill with healing potion; potion must be consumed from cup within an hour">
+            <edt:ABILITY>+3 Charisma-based Tests</edt:ABILITY>
+        </edt:THREADRANK>
+        <edt:THREADRANK deed="return cup to village elders where it was fashioned; In formal ritual (windling friendship cup ceremony)  receives cup back from village elders (it´s not automatic)  May require the cup holder to prove his worthiness to own cup. Part of the Deed is to convince villagers to perform the ritual, which involves blood magic oaths; Cup’s holder must take oath with village’s leader." effect="2 Strain (only one at a time; number of rounds Thread Rank): +2 Physical Defense; +5 Astral Sight; Flight at Movement Rate 6 (only once per day)">
+            <edt:ABILITY>+3 Charisma-based Tests</edt:ABILITY>
+        </edt:THREADRANK>
+    </THREADITEM>
+	<THREADITEM name="Wrist Carver" maxthreads="2" lpcostgrowth="5" spelldefense="14" effect="no threads: same characteristics as dagger; treated as attached weapon; free use of hands, but Attack Tests –1 for every 2 pounds wearer holds in hand" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144">
+        <edt:DESCRIPTION>a curved, jagged blade attached to bracer; worn on wrist; can cause nasty Wounds</edt:DESCRIPTION>
+        <edt:WEAPON damagestep="2" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
+        <edt:THREADRANK keyknowledge="wrist carver’s Name" effect="Damage Step 3">
+            <edt:WEAPON damagestep="3" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="1 Strain: +3 next Attack Test with wrist carver">
+            <edt:WEAPON damagestep="3" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK keyknowledge="Name of wrist carver´s creator" effect="Damage Step 4; 1 Strain: Bleeding Wound (decide before Attack; If inflicts a Wound) +2 Damage Points at end of each round, until successful Recovery Test, receives medical attention, dies; No armor protects">
+            <edt:WEAPON damagestep="4" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="+1 Rank Parry talent; counts as Size 3 weapon when determining weapon Size to Parry Tests">
+            <edt:WEAPON damagestep="4" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
+            <edt:TALENT name="Parry" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="Damage Step 5">
+            <edt:WEAPON damagestep="5" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" ind="melee weapon" bookref="GM p. 144"/>
+            <edt:TALENT name="Parry" bonus="1"/>
+        </edt:THREADRANK>
+        <edt:THREADRANK effect="2 Strain: +3 to all Damage Tests until end of round">
+            <edt:WEAPON damagestep="5" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
+            <edt:TALENT name="Parry" bonus="1"/>
+        </edt:THREADRANK>
+    </THREADITEM>
 </ITEMS>
