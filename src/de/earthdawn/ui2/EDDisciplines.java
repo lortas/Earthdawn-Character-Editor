@@ -152,22 +152,24 @@ public class EDDisciplines extends JPanel {
 		});
 		btnRemoveDiscipline.setOpaque(true);
 		toolBar.add(btnRemoveDiscipline);
-		popupMenuCircle = mapTreeToMenuTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree()).getPopupMenu();
+		popupMenuCircle = mapTreeToMenuTree(null,ApplicationProperties.create().getAllDisziplinNamesAsTree(),0).getPopupMenu();
 	}
 
-	private JMenu mapTreeToMenuTree(String name, Map<String, Map<String, ?>> tree) {
+	private JMenu mapTreeToMenuTree(String name, Map<String, Map<String, ?>> tree, int level) {
 		JMenu result;
 		if( name == null ) {
 			result = new JMenu();
 		} else {
 			result = new JMenu(name);
-			JMenuItem menuItem = new JMenuItem(name);
-			menuItem.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					do_menuItem_actionPerformed(arg0);
-				}
-			});
-			result.add(menuItem);
+			if(level>1) {
+				JMenuItem menuItem = new JMenuItem(name);
+				menuItem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						do_menuItem_actionPerformed(arg0);
+					}
+				});
+				result.add(menuItem);
+			}
 		}
 		SortedSet<String> sortedset= new TreeSet<String>(tree.keySet());
 		for( String n : sortedset ) {
@@ -182,7 +184,7 @@ public class EDDisciplines extends JPanel {
 			} else {
 				@SuppressWarnings("unchecked")
 				Map<String, Map<String, ?>> submap = (Map<String, Map<String, ?>>)(tree.get(n));
-				result.add(mapTreeToMenuTree(n,submap));
+				result.add(mapTreeToMenuTree(n,submap,level+1));
 			}
 		}
 		return result;

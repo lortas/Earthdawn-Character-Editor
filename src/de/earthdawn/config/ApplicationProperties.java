@@ -23,8 +23,11 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -158,6 +161,47 @@ public class ApplicationProperties {
 			@SuppressWarnings("unchecked")
 			Map<String,Map<String,?>> element = (Map<String,Map<String,?>>)(result.get(s));
 			if( ! element.isEmpty() ) result.put( s, shrinkStringMap(element) );
+		}
+		return smallStringMap(result, 8);
+	}
+
+	private Map<String,Map<String,?>> smallStringMap(Map<String,Map<String,?>> map, int maxsize) {
+		List<String> topLevelStrings = Arrays.asList(map.keySet().toArray(new String[0]));
+		Collections.sort(topLevelStrings);
+		int step=topLevelStrings.size()/maxsize;
+		if( step<2 ) return map;
+		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
+		Iterator<String> iter = topLevelStrings.iterator();
+		String s = null;
+		if( iter.hasNext() ) s = iter.next();
+		while( s != null ) {
+			String title = s.substring(0, 3) + " - ";
+			Map<String,Map<String,?>> entry = new HashMap<String, Map<String,?>>();
+			entry.put(s, map.get(s));
+			int count = step;
+			while( count > 1) {
+				count--;
+				if( iter.hasNext() ) s=iter.next();
+				else {
+					s=null;
+					break;
+				}
+				entry.put(s, map.get(s));
+			}
+			if( s != null ) {
+				String last = s.substring(0,3);
+				title += last;
+				while( true ) {
+					if( ! iter.hasNext() ) {
+						s=null;
+						break;
+					}
+					s = iter.next();
+					if( ! s.startsWith(last) ) break;
+					entry.put( s, map.get(s) );
+				}
+			}
+			result.put(title,entry);
 		}
 		return result;
 	}
