@@ -47,7 +47,7 @@ public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYTy
 			TALENTABILITYType t = talentByCircle.get(talent);
 			talenthash.put(talent, new String[]{t.getName(),t.getLimitation(),t.getPool()});
 		}
-		String[] array = (String[]) talenthash.keySet().toArray();
+		String[] array = talenthash.keySet().toArray(new String[1]);
 		Arrays.sort(array);
 		comboBoxTalent = new JComboBox<String>(array);
 		comboBoxTalent.setFont(new Font("Tahoma", Font.PLAIN, 10));
