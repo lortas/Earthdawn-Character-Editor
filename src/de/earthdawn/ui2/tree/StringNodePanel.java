@@ -30,7 +30,7 @@ public class StringNodePanel extends AbstractNodePanel<StringNode> {
 		switch( nodeType ) {
 		case SPELL:
 			add(new JLabel("Spell"), "cell 0 0,alignx right,aligny center");
-			String[] array = (String[]) spelldefs.keySet().toArray();
+			String[] array = spelldefs.keySet().toArray(new String[1]);
 			Arrays.sort(array);
 			comboBoxString = new JComboBox<String>(array);
 			comboBoxString.setFont(new Font("Tahoma", Font.PLAIN, 10));
