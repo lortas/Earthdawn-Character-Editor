@@ -66,7 +66,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	private static Random rand = new Random();
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final ECECharacteristics PROPERTIES_Characteristics= PROPERTIES.getCharacteristics();
-	public static ATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
+	public static MOVEMENTATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public static final String durabilityName = PROPERTIES.getDurabilityName();
 	public static final List<String> speakSkillName = PROPERTIES.getLanguageSkillSpeakName();
@@ -1831,30 +1831,24 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		HashMap<String, ATTRIBUTEType> attributes = getAttributes();
 		ATTRIBUTEType strength = attributes.get("STR");
+		int modDex = attributes.get("DEX").getStep()-6;
+		int d=strength.getCurrentvalue()-strength.getRacevalue();
+		int modStr=0;
+		if( d < 0 ) { modStr = -1 - (int) ((((double)d)/2.0)+0.99); }
+		else { modStr = (int) ((((double)d)/4.0)+0.99) - 1; }
 		switch(OptionalRule_AttributeBasedMovement) {
 		case DEX:
-			int modDex = attributes.get("DEX").getStep()-6;
 			movementGround+=modDex;
 			if(movementFlight>0) movementFlight+=modDex;
 			break;
 		case STR:
-			int d=strength.getCurrentvalue()-strength.getRacevalue();
-			int modStr=0;
-			if( d < 0 ) {
-				modStr = -1 - (int) ((((double)d)/2.0)+0.99);
-			} else {
-				modStr = (int) ((((double)d)/4.0)+0.99) - 1;
-			}
 			movementGround+=modStr;
 			if(movementFlight>0) movementFlight+=modStr;
 			break;
-		case CHA:
-			break;
-		case PER:
-			break;
-		case TOU:
-			break;
-		case WIL:
+		case STR_DEX:
+			int m=Math.round((modDex+modStr)/2f);
+			movementGround+=m;
+			if(movementFlight>0) movementFlight+=m;
 			break;
 		case NA:
 			break;

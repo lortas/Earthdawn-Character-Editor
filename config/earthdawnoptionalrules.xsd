@@ -10,7 +10,7 @@
 		<xs:attribute name="limitlpincrease" type="edt:unsigned_int" default="3"/>
 	</xs:complexType>
 	<xs:complexType name="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT">
-		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
+		<xs:attribute name="attribute" type="edt:MOVEMENTATTRIBUTE_name_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="OPTIONALRULES_DEFAULTOPTIONALTALENT">
 		<xs:attribute name="talent" type="xs:string" use="required"/>

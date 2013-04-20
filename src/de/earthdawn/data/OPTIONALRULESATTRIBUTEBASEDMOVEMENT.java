@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="OPTIONALRULES_ATTRIBUTEBASEDMOVEMENT">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="attribute" use="required" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" />
+ *       &lt;attribute name="attribute" use="required" type="{http://earthdawn.com/datatypes}MOVEMENTATTRIBUTE_name_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,17 +36,17 @@ import javax.xml.bind.annotation.XmlType;
 public class OPTIONALRULESATTRIBUTEBASEDMOVEMENT {
 
     @XmlAttribute(name = "attribute", required = true)
-    protected ATTRIBUTENameType attribute;
+    protected MOVEMENTATTRIBUTENameType attribute;
 
     /**
      * Gets the value of the attribute property.
      * 
      * @return
      *     possible object is
-     *     {@link ATTRIBUTENameType }
+     *     {@link MOVEMENTATTRIBUTENameType }
      *     
      */
-    public ATTRIBUTENameType getAttribute() {
+    public MOVEMENTATTRIBUTENameType getAttribute() {
         return attribute;
     }
 
@@ -55,10 +55,10 @@ public class OPTIONALRULESATTRIBUTEBASEDMOVEMENT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ATTRIBUTENameType }
+     *     {@link MOVEMENTATTRIBUTENameType }
      *     
      */
-    public void setAttribute(ATTRIBUTENameType value) {
+    public void setAttribute(MOVEMENTATTRIBUTENameType value) {
         this.attribute = value;
     }
 

@@ -11,6 +11,14 @@
 			<xs:enumeration value="na"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="MOVEMENTATTRIBUTE_name_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DEX"/>
+			<xs:enumeration value="STR"/>
+			<xs:enumeration value="STR+DEX"/>
+			<xs:enumeration value="na"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="lpincrease_type">
 		<xs:restriction base="xs:int">
 			<xs:minInclusive value="-2"/>
