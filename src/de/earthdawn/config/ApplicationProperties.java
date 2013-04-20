@@ -413,7 +413,9 @@ public class ApplicationProperties {
 
 	public HashMap<ATTRIBUTENameType,String> getAttributeNames() {
 		HashMap<ATTRIBUTENameType,String> result = new HashMap<ATTRIBUTENameType,String>();
+		// Fill result HashMap with default values
 		for( ATTRIBUTENameType attr : ATTRIBUTENameType.values() ) result.put(attr,attr.value());
+		// Search for translation in the config
 		for( NAMESATTRIBUTESType attributes : NAMES.getATTRIBUTES() ) {
 			if( attributes.getLang().equals(LANGUAGE) ) {
 				for( NAMESATTRIBUTEType attribute : attributes.getATTRIBUTE() ) {

@@ -70,6 +70,7 @@ import de.earthdawn.data.ITEMS;
 import de.earthdawn.data.LAYOUTDIMENSIONType;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.LanguageType;
+import de.earthdawn.data.MOVEMENTATTRIBUTENameType;
 import de.earthdawn.data.OPTIONALRULES;
 import de.earthdawn.data.OPTIONALRULEType;
 import de.earthdawn.data.SHIELDType;
@@ -1196,10 +1197,15 @@ public class EDMainWindow {
 		JMenu mnMovmentRule= new JMenu();
 		mnMovmentRule.setName("ATTRIBUTEBASEDMOVEMENT");
 		mnMovmentRule.setText(NLS.getString("EDMainWindow.mntmOptRuleATTRIBUTEBASEDMOVEMENT.text"));
-		ATTRIBUTENameType attribute = OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().getAttribute();
+		MOVEMENTATTRIBUTENameType attribute = OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().getAttribute();
 
-		HashMap<ATTRIBUTENameType, String> attributes = PROPERTIES.getAttributeNames();
-		for( ATTRIBUTENameType a : new ATTRIBUTENameType[]{ATTRIBUTENameType.NA,ATTRIBUTENameType.STR,ATTRIBUTENameType.DEX} ) {
+		HashMap<ATTRIBUTENameType, String> attributesHash = PROPERTIES.getAttributeNames();
+		HashMap<MOVEMENTATTRIBUTENameType,String> attributes = new HashMap<MOVEMENTATTRIBUTENameType,String>();
+		attributes.put(MOVEMENTATTRIBUTENameType.NA, attributesHash.get(ATTRIBUTENameType.NA));
+		attributes.put(MOVEMENTATTRIBUTENameType.STR, attributesHash.get(ATTRIBUTENameType.STR));
+		attributes.put(MOVEMENTATTRIBUTENameType.DEX, attributesHash.get(ATTRIBUTENameType.DEX));
+		attributes.put(MOVEMENTATTRIBUTENameType.STR_DEX, attributesHash.get(ATTRIBUTENameType.STR)+"+"+attributesHash.get(ATTRIBUTENameType.DEX));
+		for( MOVEMENTATTRIBUTENameType a : new MOVEMENTATTRIBUTENameType[]{MOVEMENTATTRIBUTENameType.NA,MOVEMENTATTRIBUTENameType.STR,MOVEMENTATTRIBUTENameType.DEX,MOVEMENTATTRIBUTENameType.STR_DEX} ) {
 			JMenuItem item = new JMenuItem();
 			item.setName(a.name());
 			item.setText(attributes.get(a));
@@ -1213,7 +1219,7 @@ public class EDMainWindow {
 						if( item instanceof JMenuItem ) ((JMenuItem)item).setIcon(noIcon);
 					}
 					menuitem.setIcon(yesIcon);
-					ATTRIBUTENameType newattribute = ATTRIBUTENameType.valueOf(menuitem.getName());
+					MOVEMENTATTRIBUTENameType newattribute = MOVEMENTATTRIBUTENameType.valueOf(menuitem.getName());
 					if( newattribute != null ) {
 						OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().setAttribute(newattribute);
 						CharacterContainer.OptionalRule_AttributeBasedMovement=newattribute;
