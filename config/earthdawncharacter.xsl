@@ -359,7 +359,12 @@
 			<td class="edHeaderCell">Step</td>
 			<td class="edHeaderCell">Dice</td>
 		</tr>
-		<xsl:apply-templates select="//edc:ATTRIBUTE"/>
+		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='DEX']"/>
+		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='STR']"/>
+		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='TOU']"/>
+		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='PER']"/>
+		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='WIL']"/>
+		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='CHA']"/>
 	</table>
 </xsl:template>
 
@@ -970,12 +975,12 @@
 	<div class="edSubHeader">Languages</div>
 	<b>Speak:</b>&#160;
 	<xsl:for-each select="//edc:LANGUAGE">
-		<xsl:if test="@speak='yes'"><xsl:value-of select="@language"/>; </xsl:if>
+		<xsl:if test="@speak!='no'"><xsl:value-of select="@language"/> (via <xsl:value-of select="@speak"/>); </xsl:if>
 	</xsl:for-each>
 	<br/>
 	<b>Read/Write:</b>&#160;
 	<xsl:for-each select="//edc:LANGUAGE">
-		<xsl:if test="@readwrite='yes'"><xsl:value-of select="@language"/>; </xsl:if>
+		<xsl:if test="@readwrite!='no'"><xsl:value-of select="@language"/> (via <xsl:value-of select="@readwrite"/>); </xsl:if>
 	</xsl:for-each>
 </xsl:template>
 
