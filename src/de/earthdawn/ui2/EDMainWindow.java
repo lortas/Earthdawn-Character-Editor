@@ -766,7 +766,6 @@ public class EDMainWindow {
 		if( fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION ) return;
 		// Only Save file if OK/Yes was pressed
 		File selFile = fc.getSelectedFile();
-		//TODO: Wenn abbrechen gedrückt wurde, dann darf auch nicht gespeichert werden
 		if( selFile != null ) {
 			file = selFile;
 			try{
@@ -1204,8 +1203,9 @@ public class EDMainWindow {
 		attributes.put(MOVEMENTATTRIBUTENameType.NA, attributesHash.get(ATTRIBUTENameType.NA));
 		attributes.put(MOVEMENTATTRIBUTENameType.STR, attributesHash.get(ATTRIBUTENameType.STR));
 		attributes.put(MOVEMENTATTRIBUTENameType.DEX, attributesHash.get(ATTRIBUTENameType.DEX));
-		attributes.put(MOVEMENTATTRIBUTENameType.STR_DEX, attributesHash.get(ATTRIBUTENameType.STR)+"+"+attributesHash.get(ATTRIBUTENameType.DEX));
-		for( MOVEMENTATTRIBUTENameType a : new MOVEMENTATTRIBUTENameType[]{MOVEMENTATTRIBUTENameType.NA,MOVEMENTATTRIBUTENameType.STR,MOVEMENTATTRIBUTENameType.DEX,MOVEMENTATTRIBUTENameType.STR_DEX} ) {
+		attributes.put(MOVEMENTATTRIBUTENameType.STR_DEX, "mid("+attributesHash.get(ATTRIBUTENameType.STR)+","+attributesHash.get(ATTRIBUTENameType.DEX)+")");
+		attributes.put(MOVEMENTATTRIBUTENameType.MAX, "max("+attributesHash.get(ATTRIBUTENameType.STR)+","+attributesHash.get(ATTRIBUTENameType.DEX)+")");
+		for( MOVEMENTATTRIBUTENameType a : new MOVEMENTATTRIBUTENameType[]{MOVEMENTATTRIBUTENameType.NA,MOVEMENTATTRIBUTENameType.STR,MOVEMENTATTRIBUTENameType.DEX,MOVEMENTATTRIBUTENameType.STR_DEX,MOVEMENTATTRIBUTENameType.MAX} ) {
 			JMenuItem item = new JMenuItem();
 			item.setName(a.name());
 			item.setText(attributes.get(a));
