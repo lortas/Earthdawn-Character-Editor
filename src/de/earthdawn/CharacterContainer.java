@@ -1831,11 +1831,9 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		HashMap<String, ATTRIBUTEType> attributes = getAttributes();
 		ATTRIBUTEType strength = attributes.get("STR");
-		int modDex = attributes.get("DEX").getStep()-6;
-		int d=strength.getCurrentvalue()-strength.getRacevalue();
-		int modStr=0;
-		if( d < 0 ) { modStr = -1 - (int) ((((double)d)/2.0)+0.99); }
-		else { modStr = (int) ((((double)d)/4.0)+0.99) - 1; }
+		ATTRIBUTEType dexterity = attributes.get("DEX");
+		int modStr=Math.round( (float)(strength.getCurrentvalue()-strength.getRacevalue()) / 3f );
+		int modDex=Math.round( (float)(dexterity.getCurrentvalue()-dexterity.getRacevalue()) / 3f );
 		switch(OptionalRule_AttributeBasedMovement) {
 		case DEX:
 			movementGround+=modDex;
@@ -1846,9 +1844,14 @@ public class CharacterContainer extends CharChangeRefresh {
 			if(movementFlight>0) movementFlight+=modStr;
 			break;
 		case STR_DEX:
-			int m=Math.round((modDex+modStr)/2f);
-			movementGround+=m;
-			if(movementFlight>0) movementFlight+=m;
+			int av=Math.round((modDex+modStr)/2f);
+			movementGround+=av;
+			if(movementFlight>0) movementFlight+=av;
+			break;
+		case MAX:
+			int max=(modDex>modStr)?modDex:modStr;
+			movementGround+=max;
+			if(movementFlight>0) movementFlight+=max;
 			break;
 		case NA:
 			break;
