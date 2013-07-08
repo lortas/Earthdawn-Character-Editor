@@ -16,6 +16,7 @@
 			<xs:enumeration value="DEX"/>
 			<xs:enumeration value="STR"/>
 			<xs:enumeration value="STR+DEX"/>
+			<xs:enumeration value="MAX"/>
 			<xs:enumeration value="na"/>
 		</xs:restriction>
 	</xs:simpleType>

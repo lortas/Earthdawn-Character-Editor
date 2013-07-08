@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="DEX"/>
  *     &lt;enumeration value="STR"/>
  *     &lt;enumeration value="STR+DEX"/>
+ *     &lt;enumeration value="MAX"/>
  *     &lt;enumeration value="na"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -38,6 +39,7 @@ public enum MOVEMENTATTRIBUTENameType {
     STR("STR"),
     @XmlEnumValue("STR+DEX")
     STR_DEX("STR+DEX"),
+    MAX("MAX"),
     @XmlEnumValue("na")
     NA("na");
     private final String value;
