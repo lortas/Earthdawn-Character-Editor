@@ -764,14 +764,28 @@ public class ECEWorker {
 				rank = new RANKType();
 				talent.setRANK(rank);
 			}
-			if( disTalents && OptionalRule_autoincrementDisciplinetalents &&
-					(talent.getCircle() < disciplinecircle) && (rank.getRank() < disciplinecircle) ) {
-				rank.setRank(disciplinecircle);
+			// Nur in der Erstdisziplin kann ein Startrang existieren.
+			if( (disciplinenumber!=1) && (rank.getStartrank()!=0) ) {
+				rank.setStartrank(0);
+				errorout.println("The talent '"+talent.getName()+"' is from "+disciplinenumber+". discipline and can't have any start rank. Clear start rank.");
+			}
+			// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
+			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) {
+				rank.setStartrank(0);
+				errorout.println("The talent '"+talent.getName()+"' is from circle "+talent.getCircle()+". Only talents of circle 1 of the first discipline can have start ranks. The talent start rank was cleared fit this sittuation.");
+			}
+			if( disTalents && OptionalRule_autoincrementDisciplinetalents && (rank.getRank() < disciplinecircle) ) {
+				if( talent.getCircle() < disciplinecircle ) {
+					rank.setRank(disciplinecircle);
+				} else if (talent.getCircle() == disciplinecircle) {
+					rank.setRank(1);
+				} else {
+					rank.setRank(0);
+					errorout.println("The talent '"+talent.getName()+"' is from circle "+talent.getCircle()+", but the circe of the discipline is only "+disciplinecircle+". The talent rank was cleared fit this sittuation.");
+				}
 			}
 			if( rank.getRank() < rank.getStartrank() ) rank.setRank(rank.getStartrank());
 			if( rank.getRank() < rank.getRealignedrank() ) rank.setRank(rank.getRealignedrank());
-			// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
-			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) rank.setStartrank(0);
 			capabilities.enforceCapabilityParams(talent);
 			rank.setBonus(talent.getBonus());
 			if( rank.getRank() < 1 ) {
@@ -806,8 +820,6 @@ public class ECEWorker {
 				}
 				rankhistory.setRank(rank.getRank());
 			}
-			// Disziplintalente mir Rank 0 darf es nicht geben.
-			if( disTalents && (rank.getRank()<1) && (talent.getCircle()>1) ) rank.setRank(1);
 			// Prüfe ob extra LP Kosten entstanden sind, da eine neue Disziplin "zu früh" erlernt wurde.
 			int newDisciplineTalentCost=0;
 			List<CHARACTERISTICSCOST> newDisciplineTalentCosts = PROPERTIES.getCharacteristics().getNewDisciplineTalentCost(disciplinenumber);
@@ -822,11 +834,6 @@ public class ECEWorker {
 						newDisciplineTalentCost = newDisciplineTalentCosts.get(mincircle).getCost();
 					}
 				}
-			}
-			// Nur in der Erstdisziplin kann ein Startrang existieren.
-			if( (disciplinenumber!=1) && (rank.getStartrank()!=0) ) {
-				rank.setStartrank(0);
-				errorout.println("The talent '"+talent.getName()+"' is from "+disciplinenumber+". discipline and can't have any start rank. Clear start rank.");
 			}
 			// Wenn zu dem Talent ein Skill aligned wurde, dann kann es dazu keinen Startrank geben.
 			if( talent.getALIGNEDSKILL() != null ) {
