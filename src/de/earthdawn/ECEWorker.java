@@ -45,6 +45,8 @@ public class ECEWorker {
 	public static boolean OptionalRule_KeepLegendPointSync=OptionalRule.getKEEPLEGENDPOINTSYNC().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_EnduringArmorByStrength=OptionalRule.getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
+	public static boolean OptionalRule_NoNegativeKarmaMax=PROPERTIES.getOptionalRules().getATTRIBUTE().getLimitoneway().equals(YesnoType.YES);
+	public static int OptionalRule_MaxAttributeBuyPoints=PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints();
 	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
 	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
@@ -61,6 +63,8 @@ public class ECEWorker {
 		OptionalRule_KeepLegendPointSync=OptionalRule.getKEEPLEGENDPOINTSYNC().getUsed().equals(YesnoType.YES);
 		OptionalRule_EnduringArmorByStrength=OptionalRule.getENDURINGARMORBYSTRENGTH().getUsed().equals(YesnoType.YES);
 		OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
+		OptionalRule_NoNegativeKarmaMax=PROPERTIES.getOptionalRules().getATTRIBUTE().getLimitoneway().equals(YesnoType.YES);
+		OptionalRule_MaxAttributeBuyPoints=PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints();
 	}
 
 	public ECEWorker(CharacterContainer character) {
@@ -104,7 +108,7 @@ public class ECEWorker {
 		weaponList.addAll(magicWeapons);
 
 		// **ATTRIBUTE**
-		int karmaMaxBonus = PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints();
+		int karmaMaxBonus = OptionalRule_MaxAttributeBuyPoints;
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		characterAttributes = character.getAttributes();
 		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
@@ -129,6 +133,10 @@ public class ECEWorker {
 		}
 		if( karmaMaxBonus <0 ) {
 			errorout.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
+			if( OptionalRule_NoNegativeKarmaMax ) {
+				errorout.println("The to many spent attribute buy points will not result in a negative karma maximum.");
+				karmaMaxBonus=0;
+			}
 		}
 
 		// **DEFENSE**
