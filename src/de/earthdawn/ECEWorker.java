@@ -33,14 +33,12 @@ import de.earthdawn.data.*;
 public class ECEWorker {
 	public static ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final String durabilityTalentName = PROPERTIES.getDurabilityName();
-	public static final String questorTalentName = PROPERTIES.getQuestorTalentName();
 	public static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
 	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
 	public static final String karmaritualName = PROPERTIES.getKarmaritualName();
 	public static OPTIONALRULES OptionalRule=PROPERTIES.getOptionalRules();
 	public static boolean OptionalRule_SpellLegendPointCost=OptionalRule.getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_KarmaLegendPointCost=OptionalRule.getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-	public static boolean OptionalRule_QuestorTalentNeedLegendpoints=OptionalRule.getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_autoincrementDisciplinetalents=OptionalRule.getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_LegendpointsForAttributeIncrease=OptionalRule.getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_AutoInsertLegendPointSpent=OptionalRule.getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
@@ -57,7 +55,6 @@ public class ECEWorker {
 		OptionalRule=PROPERTIES.getOptionalRules();
 		OptionalRule_SpellLegendPointCost=OptionalRule.getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
 		OptionalRule_KarmaLegendPointCost=OptionalRule.getKARMALEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
-		OptionalRule_QuestorTalentNeedLegendpoints=OptionalRule.getQUESTORTALENTNEEDLEGENDPOINTS().getUsed().equals(YesnoType.YES);
 		OptionalRule_autoincrementDisciplinetalents=OptionalRule.getAUTOINCREMENTDISCIPLINETALENTS().getUsed().equals(YesnoType.YES);
 		OptionalRule_LegendpointsForAttributeIncrease=OptionalRule.getLEGENDPOINTSFORATTRIBUTEINCREASE().getUsed().equals(YesnoType.YES);
 		OptionalRule_AutoInsertLegendPointSpent=OptionalRule.getAUTOINSERTLEGENDPOINTSPENT().getUsed().equals(YesnoType.YES);
@@ -260,6 +257,7 @@ public class ECEWorker {
 		// Wenn ein Charakter Weihepunkte erhalten hat, dann steht ihm das Questorentalent zur Verfügung
 		DEVOTIONType devotionPoints = character.getDevotionPoints();
 		if( (devotionPoints!=null) && (devotionPoints.getValue()>0) ) {
+			String questorTalentName = PROPERTIES.getQuestorTalentName();
 			TALENTABILITYType talent = new TALENTABILITYType();
 			talent.setName(questorTalentName);
 			talent.setLimitation(devotionPoints.getPassion());
@@ -284,7 +282,11 @@ public class ECEWorker {
 				TALENTType talent = new TALENTType();
 				talent.setName(namegivertalents.get(t).getName());
 				talent.getLIMITATION().add(namegivertalents.get(t).getLimitation());
-				talent.setCircle(0);
+				if( talent.getName().equals(PROPERTIES.getQuestorTalentName()) ) {
+					talent.setCircle(5);
+				} else {
+					talent.setCircle(0);
+				}
 				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
