@@ -22,7 +22,7 @@ import de.earthdawn.ui2.EDMainWindow;
 
 public class EarthdawnCharacterEditor {
 	private static final File LASTEDITEDCHARACTER = new File("lasteditedcharacter.xml");
-	public static final String VERSION="0.46";
+	public static final String VERSION="0.47";
 	/**
 	 * Main-Funktion. 
 	 */
