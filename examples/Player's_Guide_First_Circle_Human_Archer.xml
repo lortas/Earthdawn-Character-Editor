@@ -1,167 +1,118 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
-<ns10:EDCHARACTER xmlns="http://earthdawn.com/datatypes" xmlns:ns2="http://earthdawn.com/characteristics" xmlns:ns3="http://earthdawn.com/discipline" xmlns:ns4="http://earthdawn.com/names" xmlns:ns5="http://earthdawn.com/optionalrules" xmlns:ns6="http://earthdawn.com/help" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/capability" xmlns:ns9="http://earthdawn.com/knack" xmlns:ns10="http://earthdawn.com/character" xmlns:ns11="http://earthdawn.com/spell" xmlns:ns12="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsd-version="1.0" name="Player's Guide First Circle Human Archer" xsi:schemaLocation="http://earthdawn.com/character ../config/earthdawncharacter.xsd">
-    <ns10:APPEARANCE race="Human" skin="?" hair="?" eyes="?" weight="0" height="0" age="0" gender="male"/>
-    <ns10:ATTRIBUTE cost="2" currentvalue="12" basevalue="12" generationvalue="2" racevalue="10" name="CHA" dice="d8" step="5"/>
-    <ns10:ATTRIBUTE cost="9" currentvalue="16" basevalue="16" generationvalue="6" racevalue="10" name="DEX" dice="d12" step="7"/>
-    <ns10:ATTRIBUTE cost="3" currentvalue="13" basevalue="13" generationvalue="3" racevalue="10" name="STR" dice="d10" step="6"/>
-    <ns10:ATTRIBUTE cost="5" currentvalue="14" basevalue="14" generationvalue="4" racevalue="10" name="PER" dice="d10" step="6"/>
-    <ns10:ATTRIBUTE cost="1" currentvalue="11" lpincrease="0" basevalue="11" generationvalue="1" racevalue="10" name="WIL" dice="d8" step="5"/>
-    <ns10:ATTRIBUTE cost="5" currentvalue="14" basevalue="14" generationvalue="4" racevalue="10" name="TOU" dice="d10" step="6"/>
-    <ns10:DEFENSE social="7" spell="8" physical="9"/>
-    <ns10:PROTECTION penalty="0" mysticarmor="1" physicalarmor="3">
-        <ARMOR penalty="0" mysticarmor="1" physicalarmor="0" virtual="yes" used="yes" weight="0.0" name="natural Armor"/>
-        <ARMOR penalty="0" mysticarmor="0" physicalarmor="3" kind="armor" weight="15.0" name="Leather"/>
-    </ns10:PROTECTION>
-    <ns10:HEALTH damage="0">
-        <RECOVERY testsperday="3" dice="d10" step="6"/>
-        <UNCONSCIOUSNESS value="28" adjustment="0" base="28"/>
-        <DEATH value="36" adjustment="0" base="36"/>
-        <WOUNDS threshold="10"/>
-    </ns10:HEALTH>
-    <ns10:MOVEMENT ground="6" flight="0"/>
-    <ns10:INITIATIVE modification="0" base="7" dice="d12" step="7"/>
-    <ns10:CARRYING carrying="110" lifting="220"/>
-    <ns10:DISCIPLINE circle="1" name="Archer">
-        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.74" default="no" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Karma Ritual">
-            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d6-3" step="1"/>
+
+<ns16:EDCHARACTER xmlns="http://earthdawn.com/datatypes" xmlns:ns2="http://earthdawn.com/items" xmlns:ns3="http://earthdawn.com/eceguilayout" xmlns:ns4="http://earthdawn.com/optionalrules" xmlns:ns5="http://earthdawn.com/names" xmlns:ns6="http://earthdawn.com/spell" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/spelldescription" xmlns:ns9="http://earthdawn.com/randomname" xmlns:ns10="http://earthdawn.com/help" xmlns:ns11="http://earthdawn.com/knack" xmlns:ns12="http://earthdawn.com/randomcharactertemplate" xmlns:ns13="http://earthdawn.com/characteristics" xmlns:ns14="http://earthdawn.com/capability" xmlns:ns15="http://earthdawn.com/discipline" xmlns:ns16="http://earthdawn.com/character" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Player's Guide First Circle Human Archer" xsd-version="1.1" editorpath="/home/hvr/eclipse-workspace/Earthdawn%20Character%20Editor/" xsi:schemaLocation="http://earthdawn.com/character earthdawncharacter.xsd">
+    <ns16:APPEARANCE gender="male" age="30" height="6.0" weight="150.0" eyes="?" hair="?" skin="?" race="Human"/>
+    <ns16:ATTRIBUTE name="CHA" racevalue="10" generationvalue="2" basevalue="12" currentvalue="12" cost="2" step="5" dice="d8"/>
+    <ns16:ATTRIBUTE name="DEX" racevalue="10" generationvalue="6" basevalue="16" currentvalue="16" cost="9" step="7" dice="d12"/>
+    <ns16:ATTRIBUTE name="STR" racevalue="10" generationvalue="3" basevalue="13" currentvalue="13" cost="3" step="6" dice="d10"/>
+    <ns16:ATTRIBUTE name="PER" racevalue="10" generationvalue="4" basevalue="14" currentvalue="14" cost="5" step="6" dice="d10"/>
+    <ns16:ATTRIBUTE name="WIL" racevalue="10" generationvalue="1" basevalue="11" lpincrease="0" currentvalue="11" cost="1" step="5" dice="d8"/>
+    <ns16:ATTRIBUTE name="TOU" racevalue="10" generationvalue="4" basevalue="14" currentvalue="14" cost="5" step="6" dice="d10"/>
+    <ns16:DEFENSE physical="9" spell="8" social="7"/>
+    <ns16:PROTECTION physicalarmor="3" mysticarmor="1" penalty="0">
+        <ARMOR physicalarmor="0" mysticarmor="1" penalty="0" name="natural Armor" weight="0.0" used="yes" kind="armor" virtual="yes"/>
+        <ARMOR physicalarmor="3" mysticarmor="0" penalty="0" edn="0" edn_element="undefined" timesforged_physical="3" timesforged_mystic="0" dateforged="" name="Leather" weight="15.0" size="0" used="yes" location="self" kind="armor" virtual="no" blooddamage="0" depatterningrate="0" bookref="PG p.256" price="10.0"/>
+    </ns16:PROTECTION>
+    <ns16:HEALTH damage="0" blooddamage="0" depatterningrate="0">
+        <RECOVERY testsperday="3" step="6" dice="d10"/>
+        <UNCONSCIOUSNESS base="28" adjustment="0" value="28"/>
+        <DEATH base="36" adjustment="0" value="36"/>
+        <WOUNDS threshold="10" penalties="0"/>
+    </ns16:HEALTH>
+    <ns16:MOVEMENT flight="0" ground="8"/>
+    <ns16:INITIATIVE base="7" modification="0" armorpenalty="0" step="7" dice="d12"/>
+    <ns16:CARRYING lifting="220" carrying="110"/>
+    <ns16:DISCIPLINE name="Archer" circle="1" usedspellabilities="0">
+        <KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+        <HALFMAGIC>caring for ranged weapons; recognize types ranged weapons, ammunition, their creators; Skill: Craft Weapon make ranged weapons, ammunition; (PG p.43)</HALFMAGIC>
+        <DISZIPLINETALENT circle="1" name="Karma Ritual" action="na" strain="0" attribute="na" bonus="0" karma="no" default="no" bookref="PG p.74" isinitiative="no" notbyversatility="no">
+            <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="1" dice="d6-3"/>
             <TEACHER/>
         </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.75" default="no" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
-            <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="d8+d6" step="9"/>
+        <DISZIPLINETALENT circle="1" name="Missile Weapons" action="standard" strain="0" attribute="DEX" bonus="0" karma="no" default="no" bookref="PG p.75" isinitiative="no" notbyversatility="no">
+            <RANK startrank="2" rank="2" bonus="0" lpcost="0" step="9" dice="d8+d6"/>
             <TEACHER/>
         </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.76" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Mystic Aim">
-            <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="2d6" step="8"/>
+        <DISZIPLINETALENT circle="1" name="Mystic Aim" action="standard" strain="1" attribute="PER" bonus="0" karma="no" default="no" bookref="PG p.76" isinitiative="no" notbyversatility="no">
+            <RANK startrank="2" rank="2" bonus="0" lpcost="0" step="8" dice="2d6"/>
             <TEACHER/>
         </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.84" default="no" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
-            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
+        <DISZIPLINETALENT circle="1" name="Throwing Weapons" action="standard" strain="0" attribute="DEX" bonus="0" karma="no" default="no" bookref="PG p.84" isinitiative="no" notbyversatility="no">
+            <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2d6"/>
             <TEACHER/>
         </DISZIPLINETALENT>
-        <DISZIPLINETALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.84" default="no" karma="yes" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="True Shot">
-            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
+        <DISZIPLINETALENT circle="1" name="True Shot" action="standard" strain="0" attribute="DEX" bonus="0" karma="yes" default="no" bookref="PG p.84" isinitiative="no" notbyversatility="no">
+            <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2d6"/>
             <TEACHER/>
         </DISZIPLINETALENT>
-        <OPTIONALTALENT circle="1" notbyversatility="no" isinitiative="no" bookref="PG p.62" default="no" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
-            <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
+        <OPTIONALTALENT circle="1" name="Avoid Blow" action="free" strain="1" attribute="DEX" bonus="0" karma="no" default="no" bookref="PG p.62" isinitiative="no" notbyversatility="no">
+            <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2d6"/>
             <TEACHER/>
         </OPTIONALTALENT>
-        <OPTIONALTALENT circle="0" notbyversatility="no" isinitiative="no" bookref="PG p.85" default="no" karma="no" limitation="" bonus="0" attribute="na" strain="0" action="na" name="Versatility">
+        <OPTIONALTALENT circle="0" name="Versatility" action="na" strain="0" attribute="na" bonus="0" karma="no" default="no" bookref="PG p.85" isinitiative="no" notbyversatility="no">
             <RANK step="0"/>
             <TEACHER/>
         </OPTIONALTALENT>
-    </ns10:DISCIPLINE>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.102" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Speak Language">
-        <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="2d6" step="8"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.100" default="no" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="standard" name="Read/Write Language">
-        <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="2d6" step="8"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.98" default="no" karma="no" limitation="Creature Lore" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.98" default="no" karma="no" limitation="Barsaive History" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.93" default="no" karma="no" limitation="Wood Carving" bonus="0" attribute="CHA" strain="0" action="sustained" name="Artisan">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d10" step="6"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.94" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Climbing">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.98" default="no" karma="no" limitation="Human Lore" bonus="0" attribute="PER" strain="0" action="standard" name="Knowledge">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.97" default="no" karma="no" bonus="0" attribute="DEX" strain="0" action="sustained" name="Hunting">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Melee Weapons">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="2d6" step="8"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" bonus="0" attribute="PER" strain="1" action="standard" name="Tracking">
-        <RANK lpcost="0" bonus="0" rank="1" startrank="1" dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Wilderness Survival">
-        <RANK lpcost="0" bonus="0" rank="2" startrank="2" dice="2d6" step="8"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.92" default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="0" action="standard" name="Animal Handling">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.93" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Avoid Blow">
-        <RANK dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.93" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Bribery">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.94" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Conversation">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.95" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="1" action="standard" name="Detect Weapon">
-        <RANK dice="d10" step="6"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.96" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="1" action="standard" name="Distract">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.96" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Etiquette">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.97" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Flirting">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.97" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Haggle">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="KR p.225" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="standard" name="Intimidation">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Missile Weapons">
-        <RANK dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.99" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="1" action="free" name="Parry">
-        <RANK dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.100" default="yes" karma="no" limitation="" bonus="0" attribute="PER" strain="0" action="sustained" name="Research">
-        <RANK dice="d10" step="6"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.100" default="yes" karma="no" limitation="" bonus="0" attribute="WIL" strain="1" action="free" name="Resist Taunt">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.101" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="0" action="sustained" name="Seduction">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.102" default="yes" karma="no" limitation="" bonus="0" attribute="CHA" strain="2" action="standard" name="Slough Blame">
-        <RANK dice="d8" step="5"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.102" default="yes" karma="no" limitation="" bonus="0" attribute="STR" strain="0" action="standard" name="Swimming">
-        <RANK dice="d10" step="6"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Throwing Weapons">
-        <RANK dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:SKILL notbyversatility="no" isinitiative="no" bookref="PG p.103" default="yes" karma="no" limitation="" bonus="0" attribute="DEX" strain="0" action="standard" name="Unarmed Combat">
-        <RANK dice="d12" step="7"/>
-    </ns10:SKILL>
-    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Dwarf/Throalic"/>
-    <ns10:LANGUAGE readwrite="skill" speak="skill" language="Human"/>
-    <ns10:WEAPON longrange="10" shortrange="5" size="1" strengthmin="4" damagestep="2" kind="throwing weapon" weight="1.0" name="Dagger"/>
-    <ns10:WEAPON longrange="80" shortrange="40" size="5" strengthmin="11" damagestep="4" kind="missile weapon" weight="4.0" name="Longbow"/>
-    <ns10:COINS gold="2" silver="4" copper="2" location="self" used="yes" weight="0.125" name="Purse #1"/>
-    <ns10:ITEM name="Quiver (20 Longbow Arrows)" kind="missile weapon" weight="4"/>
-    <ns10:ITEM name="Backpack, Bedroll, Flint&amp;Steel, Waterskin, Large Sack" kind="kit" weight="13"/>
-    <ns10:ITEM name="Torch" kind="light" weight="1"/>
-    <ns10:ITEM name="Rope (6 yards)" kind="tool" weight="3"/>
-    <ns10:ITEM name="Trail Rations (1 week)" kind="food" weight="1"/>
-    <ns10:ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" kind="cloth" weight="3"/>
-    <ns10:ITEM name="Wood Carving Tools" kind="tool" weight="5"/>
-    <ns10:KARMA maxmodificator="0" max="5" current="5" dice="d6" step="4">
-        <KARMAPOINTS when="" comment="" value="0" type="+"/>
-    </ns10:KARMA>
-    <ns10:RACEABILITES></ns10:RACEABILITES>
-    <ns10:CALCULATEDLEGENDPOINTS total="0" magicitems="0" karma="0" spells="0" skills="0" knacks="0" optionaltalents="0" disciplinetalents="0" attributes="0">
-        <ns10:USEDSTARTRANKS skills="0" talents="0"/>
-    </ns10:CALCULATEDLEGENDPOINTS>
-    <ns10:EXPERIENCE reputation="na" renown="21" currentlegendpoints="0" totallegendpoints="0">
-        <LEGENDPOINTS when="" comment="" value="0" type="+"/>
-    </ns10:EXPERIENCE>
-</ns10:EDCHARACTER>
+    </ns16:DISCIPLINE>
+    <ns16:SKILL name="Speak Language" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="PG p.102" isinitiative="no" notbyversatility="no">
+        <RANK startrank="2" rank="2" bonus="0" lpcost="0" step="8" dice="2d6"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Read/Write Language" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="PG p.100" isinitiative="no" notbyversatility="no">
+        <RANK startrank="2" rank="2" bonus="0" lpcost="0" step="8" dice="2d6"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Knowledge" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="PG p.98" isinitiative="no" notbyversatility="no">
+        <LIMITATION>Creature Lore</LIMITATION>
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="7" dice="d12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Knowledge" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="PG p.98" isinitiative="no" notbyversatility="no">
+        <LIMITATION>Barsaive History</LIMITATION>
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="7" dice="d12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Artisan" action="sustained" strain="0" attribute="CHA" bonus="0" karma="no" default="no" bookref="PG p.93" isinitiative="no" notbyversatility="no">
+        <LIMITATION>Wood Carving</LIMITATION>
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="6" dice="d10"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Climbing" action="standard" strain="0" attribute="DEX" bonus="0" karma="no" default="yes" bookref="PG p.94" isinitiative="no" notbyversatility="no">
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2d6"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Knowledge" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="PG p.98" isinitiative="no" notbyversatility="no">
+        <LIMITATION>Human Lore</LIMITATION>
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="7" dice="d12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Hunting" action="sustained" strain="0" attribute="DEX" bonus="0" karma="no" default="no" bookref="PG p.97" isinitiative="no" notbyversatility="no">
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2d6"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Melee Weapons" action="standard" strain="0" attribute="DEX" bonus="0" karma="no" default="yes" bookref="PG p.99" isinitiative="no" notbyversatility="no">
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2d6"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Tracking" action="standard" strain="1" attribute="PER" bonus="0" karma="no" default="yes" bookref="PG p.103" isinitiative="no" notbyversatility="no">
+        <RANK startrank="1" rank="1" bonus="0" lpcost="0" step="7" dice="d12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Wilderness Survival" action="sustained" strain="0" attribute="PER" bonus="0" karma="no" default="yes" bookref="PG p.103" isinitiative="no" notbyversatility="no">
+        <RANK startrank="2" rank="2" bonus="0" lpcost="0" step="8" dice="2d6"/>
+    </ns16:SKILL>
+    <ns16:LANGUAGE language="Dwarf/Throalic" speak="skill" readwrite="skill"/>
+    <ns16:LANGUAGE language="Human" speak="skill" readwrite="skill"/>
+    <ns16:WEAPON damagestep="2" dexteritymin="0" strengthmin="4" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Dagger" weight="1.0" size="1" used="no" location="self" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="PG p.251" price="0.0"/>
+    <ns16:WEAPON damagestep="4" dexteritymin="13" strengthmin="11" shortrange="40" longrange="80" timesforged="0" dateforged="" name="Longbow" weight="4.0" size="5" used="no" location="self" kind="missile weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="PG p.252" price="60.0"/>
+    <ns16:COINS copper="2" silver="4" gold="2" name="Purse #1" weight="0.12916666" used="yes" location="self"/>
+    <ns16:ITEM name="Quiver (20 Longbow Arrows)" weight="4.0" kind="missile weapon"/>
+    <ns16:ITEM name="Backpack, Bedroll, Flint&amp;Steel, Waterskin, Large Sack" weight="13.0" kind="kit"/>
+    <ns16:ITEM name="Torch" weight="1.0" kind="light"/>
+    <ns16:ITEM name="Rope (6 yards)" weight="3.0" kind="tool"/>
+    <ns16:ITEM name="Trail Rations (1 week)" weight="1.0" kind="food"/>
+    <ns16:ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3.0" kind="cloth"/>
+    <ns16:ITEM name="Wood Carving Tools" weight="5.0" kind="tool"/>
+    <ns16:KARMA current="5" max="5" maxmodificator="0" step="4" dice="d6">
+        <KARMAPOINTS type="+" value="0" comment="" when=""/>
+    </ns16:KARMA>
+    <ns16:RACEABILITES>extra optional talent 'Versatility' *</ns16:RACEABILITES>
+    <ns16:PORTRAIT contenttype="image/jpg">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</ns16:PORTRAIT>
+    <ns16:CALCULATEDLEGENDPOINTS attributes="0" disciplinetalents="0" optionaltalents="0" knacks="0" skills="0" spells="0" karma="0" magicitems="0" total="0">
+        <ns16:USEDSTARTRANKS talents="0" skills="0" spells="-6"/>
+    </ns16:CALCULATEDLEGENDPOINTS>
+    <ns16:EXPERIENCE totallegendpoints="0" currentlegendpoints="0" renown="21" reputation="na">
+        <LEGENDPOINTS type="+" value="0" comment="" when=""/>
+    </ns16:EXPERIENCE>
+</ns16:EDCHARACTER>
