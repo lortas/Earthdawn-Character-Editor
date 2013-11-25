@@ -285,7 +285,7 @@ public class EDGeneral extends JPanel {
 		add(textFieldHaircolor, "cell 1 12 2 1,growx,aligny center");
 
 		add(new JLabel("Size"), "cell 0 8,alignx right,aligny center");
-		add(new JLabel("foot"), "cell 2 8,alignx left,aligny center");
+		add(new JLabel("feet"), "cell 2 8,alignx left,aligny center");
 		spinnerSize = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerSize.setOpaque(false);
 		spinnerSize.addChangeListener(new ChangeListener() {
