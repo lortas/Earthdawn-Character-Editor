@@ -6,12 +6,12 @@
 		<OPTIONALTALENT name="First Impression"/>
 		<OPTIONALTALENT name="Read/Write Language"/>
 		<OPTIONALTALENT name="Silent Walk"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="I2"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
 		<DISCIPLINETALENT name="Read/Write Magic"/>
 		<DISCIPLINETALENT name="Speak Language"/>
 		<DISCIPLINETALENT name="Spellcasting"/>
-		<DISCIPLINETALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="I1"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Illusionism"/>
 		<TALENTABILITY/>
 		<SPELL type="illusion" name="Assuring Touch"/>
@@ -34,8 +34,8 @@
 		<OPTIONALTALENT name="Frighten"/>
 		<OPTIONALTALENT name="Haggle"/>
 		<OPTIONALTALENT name="Mimic Voice"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="I3"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="I4"/>
 		<OPTIONALTALENT name="Winning Smile"/>
 		<DISCIPLINETALENT name="Disguise Self"/>
 		<TALENTABILITY/>
@@ -95,8 +95,8 @@
 		<KARMA spend="Perception-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
-		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="I1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="I2"/>
 		<OPTIONALTALENT name="Graceful Exit"/>
 		<OPTIONALTALENT name="Hypnotize"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
@@ -165,9 +165,9 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="I1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="I2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="I3"/>
 		<OPTIONALTALENT name="Conceal Object"/>
 		<OPTIONALTALENT name="Hold Thread"/>
 		<OPTIONALTALENT name="Incite Mob"/>
@@ -212,9 +212,9 @@
 		<OPTIONALTALENT name="Casting Pattern"/>
 		<OPTIONALTALENT name="Chameleon"/>
 		<OPTIONALTALENT name="Impossible Hide"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="I1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="I2"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="I3"/>
 		<DISCIPLINETALENT name="Multi-Weaving"/>
 		<TALENTABILITY/>
 		<SPELL type="illusion" name="Restore Pattern"/>

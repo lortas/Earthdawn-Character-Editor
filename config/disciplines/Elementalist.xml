@@ -6,13 +6,13 @@
 		<OPTIONALTALENT name="Haggle"/>
 		<OPTIONALTALENT name="Read/Write Language"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="E2"/>
 		<DISCIPLINETALENT name="Air Speaking"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
 		<DISCIPLINETALENT name="Spellcasting"/>
 		<DISCIPLINETALENT name="Read/Write Magic"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Elementalism"/>
-		<DISCIPLINETALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="E1"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Air Armor"/>
 		<SPELL type="elemental" name="Crunch Climb"/>
@@ -32,8 +32,8 @@
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Parry"/>
 		<OPTIONALTALENT name="Durability"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="E3"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="E4"/>
 		<OPTIONALTALENT name="Tracking"/>
 		<OPTIONALTALENT name="Wind Catcher"/>
 		<DISCIPLINETALENT name="Fire Heal"/>
@@ -109,8 +109,8 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Detect Trap"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E2"/>
 		<OPTIONALTALENT name="Gliding Stride"/>
 		<OPTIONALTALENT name="Spot Armor Flaw"/>
 		<OPTIONALTALENT name="Steel Thought"/>
@@ -181,8 +181,8 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="E1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="E2"/>
 		<OPTIONALTALENT name="Bargain With Summoned Creature"/>
 		<OPTIONALTALENT name="Disarm Trap"/>
 		<OPTIONALTALENT name="Plant Shelter"/>
@@ -231,8 +231,8 @@
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="First Ring of Perfection"/>
 		<OPTIONALTALENT name="Gold Sense"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="E1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="E2"/>
 		<OPTIONALTALENT name="Soften Blade"/>
 		<OPTIONALTALENT name="Water Dancing"/>
 		<DISCIPLINETALENT name="Moving Earth"/>

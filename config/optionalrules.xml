@@ -76,10 +76,7 @@
 	-->
 	<DATEFORMAT>yyyy-MM-dd HH:mm</DATEFORMAT>
 	<!-- The following Rule can be added multiple times and will define which talents can be used more than ones and how many at maximum -->
-	<MULTIUSETALENT talent="Spell Matrix" lang="en" count="5"/>
-	<MULTIUSETALENT talent="Enhanced Matrix" lang="en" count="4"/>
-	<MULTIUSETALENT talent="Armored Matrix" lang="en" count="3"/>
-	<MULTIUSETALENT talent="Shared Matrix" lang="en" count="3"/>
+	<!-- <MULTIUSETALENT talent="xxx" lang="en" count="10"/> -->
 	<!-- By the following rule you can define if if a specific talent will be added automatically and will not cost an optional talent slot -->
 	<!-- <DEFAULTOPTIONALTALENT talent="Durability" circle="2" lang="en"/>  uncomment this item to get the durability as an extra talent-->
 	<ORIGIN name="Barsaive">

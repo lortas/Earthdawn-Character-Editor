@@ -6,12 +6,12 @@
 		<OPTIONALTALENT name="Haggle"/>
 		<OPTIONALTALENT name="Impress"/>
 		<OPTIONALTALENT name="Search"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="S2"/>
 		<DISCIPLINETALENT name="Evaluate"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
 		<DISCIPLINETALENT name="Read/Write Magic"/>
 		<DISCIPLINETALENT name="Spellcasting"/>
-		<DISCIPLINETALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="S1"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Sorcery"/>
 		<TALENTABILITY/>
 		<SPELL type="sorcery" name="Assuring Touch"/>
@@ -36,7 +36,7 @@
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Picking Pockets"/>
 		<OPTIONALTALENT name="Research"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="S3"/>
 		<DISCIPLINETALENT name="Astral Sight"/>
 		<TALENTABILITY/>
 		<SPELL type="sorcery" name="Astral Shield"/>
@@ -85,8 +85,8 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Clay Skin"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="S1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="S2"/>
 		<OPTIONALTALENT name="Hypnotize"/>
 		<OPTIONALTALENT name="Orbiting Spy"/>
 		<OPTIONALTALENT name="Steel Thought"/>
@@ -146,9 +146,9 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="S1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="S2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="S3"/>
 		<OPTIONALTALENT name="Champion Challenge"/>
 		<OPTIONALTALENT name="Hold Thread"/>
 		<OPTIONALTALENT name="Mind Wave"/>
@@ -197,9 +197,9 @@
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Moving Earth"/>
 		<OPTIONALTALENT name="Multi-Weaving"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="S1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="S2"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="S3"/>
 		<OPTIONALTALENT name="Soul Shatter"/>
 		<DISCIPLINETALENT name="Spell Crystal Lock"/>
 		<TALENTABILITY/>
