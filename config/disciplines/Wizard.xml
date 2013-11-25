@@ -6,12 +6,12 @@
 		<OPTIONALTALENT name="Conversation"/>
 		<OPTIONALTALENT name="Creature Analysis"/>
 		<OPTIONALTALENT name="Evidence Analysis"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="W2"/>
 		<DISCIPLINETALENT name="Astral Sight"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
 		<DISCIPLINETALENT name="Read/Write Magic"/>
 		<DISCIPLINETALENT name="Spellcasting"/>
-		<DISCIPLINETALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="W1"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Wizardry"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Astral Sense"/>
@@ -34,8 +34,8 @@
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Search"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="W3"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="W4"/>
 		<DISCIPLINETALENT name="Read/Write Language"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="And His Money"/>
@@ -94,8 +94,8 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Detect Trap"/>
 		<OPTIONALTALENT name="Direction Sense"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="W1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="W2"/>
 		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Lip Reading"/>
 		<OPTIONALTALENT name="Orbiting Spy"/>
@@ -162,9 +162,9 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 		<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W3"/>
 		<OPTIONALTALENT name="Astral Pocket"/>
 		<OPTIONALTALENT name="Matrix Strike"/>
 		<OPTIONALTALENT name="Power Mask"/>
@@ -197,9 +197,9 @@
 		<OPTIONALTALENT name="Detect Falsehood"/>
 		<OPTIONALTALENT name="First Ring of Perfection"/>
 		<OPTIONALTALENT name="Multi-Tongue"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W3"/>
 		<DISCIPLINETALENT name="Effect Pattern"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>

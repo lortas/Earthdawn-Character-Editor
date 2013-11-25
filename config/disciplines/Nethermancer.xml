@@ -6,12 +6,12 @@
 		<OPTIONALTALENT name="Read/Write Language"/>
 		<OPTIONALTALENT name="Silent Walk"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="N2"/>
 		<DISCIPLINETALENT name="Astral Sight"/>
 		<DISCIPLINETALENT name="Karma Ritual"/>
 		<DISCIPLINETALENT name="Read/Write Magic"/>
 		<DISCIPLINETALENT name="Spellcasting"/>
-		<DISCIPLINETALENT name="Spell Matrix"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="N1"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Nethermancy"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Astral Spear"/>
@@ -35,8 +35,8 @@
 		<OPTIONALTALENT name="Dominate Beast"/>
 		<OPTIONALTALENT name="Durability"/>
 		<OPTIONALTALENT name="Frighten Animals"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="N3"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="N4"/>
 		<DISCIPLINETALENT name="Frighten"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Bone Circle"/>
@@ -90,8 +90,8 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Abate Curse"/>
 		<OPTIONALTALENT name="Elemental Tongues"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="N1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="N2"/>
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Lion Heart"/>
 		<OPTIONALTALENT name="Steel Thought"/>
@@ -171,8 +171,8 @@
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Animate Object"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
-		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="N1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="N2"/>
 		<OPTIONALTALENT name="Astral Pocket"/>
 		<OPTIONALTALENT name="Cold Purify"/>
 		<OPTIONALTALENT name="Life Check"/>
@@ -227,7 +227,7 @@
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Ethereal Weapon"/>
 		<OPTIONALTALENT name="Second Chance"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="N1"/>
 		<OPTIONALTALENT name="Detect Influence"/>
 		<OPTIONALTALENT name="Wound Transfer"/>
 		<DISCIPLINETALENT name="Spell Crystal Lock"/>
