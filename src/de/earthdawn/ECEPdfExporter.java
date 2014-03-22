@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +44,7 @@ public class ECEPdfExporter {
 	public static final String[] KNOWLEDGE = PROPERTIES.getKnowledgeName();
 	private int counterEquipment=0;
 	private AcroFields acroFields = null;
+	private static PrintStream errorout = System.err;
 
 	private void exportCommonFields(CharacterContainer character, int maxSkillSpace, int raceAbilitiesLineLength) throws IOException, DocumentException {
 		acroFields.setField( "ExportDate", CharacterContainer.getCurrentDateTime());
@@ -719,10 +721,13 @@ public class ECEPdfExporter {
 		List<Base64BinaryType> potraits = character.getPortrait();
 		if( ! potraits.isEmpty() ) {
 			Image image = Image.getInstance(potraits.get(0).getValue());
-			image.setAbsolutePosition(18.5f,702.5f);
-			image.scaleAbsolute(91.5f, 93f);
-			PdfContentByte overContent = stamper.getOverContent(2);
-			overContent.addImage(image);
+			if( image != null ) {
+				image.setAbsolutePosition(18.5f,702.5f);
+				image.scaleAbsolute(91.5f, 93f);
+				PdfContentByte overContent = stamper.getOverContent(2);
+				if( overContent != null ) overContent.addImage(image);
+				else errorout.println("Unable to insert character image.");
+			}
 		}
 
 		int counterArmor=0;
