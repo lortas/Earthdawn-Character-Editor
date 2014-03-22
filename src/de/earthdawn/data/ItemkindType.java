@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="animal"/>
  *     &lt;enumeration value="armor"/>
  *     &lt;enumeration value="artisan"/>
+ *     &lt;enumeration value="bag"/>
  *     &lt;enumeration value="book"/>
  *     &lt;enumeration value="boot"/>
  *     &lt;enumeration value="brooch"/>
@@ -75,6 +76,8 @@ public enum ItemkindType {
     ARMOR("armor"),
     @XmlEnumValue("artisan")
     ARTISAN("artisan"),
+    @XmlEnumValue("bag")
+    BAG("bag"),
     @XmlEnumValue("book")
     BOOK("book"),
     @XmlEnumValue("boot")
