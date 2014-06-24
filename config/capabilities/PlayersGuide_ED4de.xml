@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+	<TALENT name="Ablenken" attribute="CHA" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Abrichten" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Abwehrkreis" attribute="DEX" action="simple" strain="1" skilluse="5"/>
+	<TALENT name="Akrobatische Verteidigung" attribute="DEX" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Andere Inspirieren" attribute="CHA" action="standard"/>
+	<TALENT name="Arkanes Gefasel" attribute="CHA" action="standard" skilluse="1"/>
+	<TALENT name="Artefaktgeschichte" attribute="PER" action="sustained"/>
+	<TALENT name="Astrale Interferenz" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Astralsicht" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Ätherhaut" attribute="WIL" action="sustained"/>
+	<TALENT name="Aufmerksamkeit" attribute="PER" action="simple" skilluse="1"/>
+	<TALENT name="Bannmarkierung" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Beeindrucken" attribute="na" action="simple" strain="1" skilluse="5"/>
+	<TALENT name="Beschwören" attribute="PER" action="sustained"/>
+	<TALENT name="Beweisanalyse" attribute="PER" action="sustained" strain="1" skilluse="5"/>
+	<TALENT name="Blattschuss" attribute="DEX" action="standard" strain="2"/>
+	<TALENT name="Bleibender Eindruck" attribute="CHA" action="standard"/>
+	<TALENT name="Blutige Krallen" attribute="DEX" action="standard" strain="1 (s. Text)"/>
+	<TALENT name="Brandpfeil" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Büchergedächtnis" attribute="WIL" action="standard"/>
+	<TALENT name="Diplomatie" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Doppelter Sturmangriff" attribute="DEX" action="simple" strain="1"/>
+	<TALENT name="Eiserne Konstitution" attribute="TOU" action="free"/>
+	<TALENT name="Eiserner Wille" attribute="WIL" action="free" strain="4"/>
+	<TALENT name="Eleganter Abgang" attribute="CHA" action="standard" strain="0	" skilluse="1"/>
+	<TALENT name="Elementarbann" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Elementarsprachen" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Empathische Wahrnehmung" attribute="CHA" action="standard" strain="1 (s. Text)"/>
+	<TALENT name="Entwaffnen" attribute="DEX" action="standard" strain="1" skilluse="5"/>
+	<TALENT name="Erdhaut" attribute="TOU" action="standard"/>
+	<TALENT name="Erster Eindruck" attribute="CHA" action="standard" skilluse="1"/>
+	<TALENT name="Erweiterte Matrix" attribute="na" action="na"/>
+	<TALENT name="Etikette" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Faden Halten" attribute="WIL" action="simple" strain="1 (s. Text)"/>
+	<TALENT name="Fadenweben" attribute="PER" action="standard"/>
+	<TALENT name="Fallen Entschärfen" attribute="DEX" action="standard" strain="1" skilluse="1"/> 
+	<TALENT name="Feilschen" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Feuerblut" attribute="TOU" action="standard"/>
+	<TALENT name="Flinke Hand" attribute="DEX" action="standard" strain="1" skilluse="5"/>
+	<TALENT name="Fluch Unterdrücken" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Forschen" attribute="PER" action="sustained" skilluse="1"/>
+	<TALENT name="Fremdsprachen" attribute="PER" action="standard" strain="1 (s. Text)"/>
+	<TALENT name="Führung" attribute="CHA" action="sustained" skilluse="5"/>
+	<TALENT name="Furchterregender Sturmangriff" attribute="CHA" action="simple" strain="2"/>
+	<TALENT name="Gedankenkette" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Gefahrensinn" attribute="DEX" action="free" strain="1" skilluse="1"/>
+	<TALENT name="Gefühlsmelodie" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Gegenstand Verbergen" attribute="DEX" action="standard" strain="1" skilluse="5"/>
+	<TALENT name="Geisterbann" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Geisterreittier" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Geistersprache" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Gewinnendes Lächeln" attribute="CHA" action="standard"/>
+	<TALENT name="Gezielter Querschläger" attribute="DEX" action="simple" strain="1"/>
+	<TALENT name="Hammerschlag" attribute="STR" action="free" strain="1"/>
+	<TALENT name="Hartnäckiges Gewebe" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Heilendes Feuer" attribute="WIL" action="sustained"/>
+	<TALENT name="Heimlicher Schritt" attribute="DEX" action="simple" skilluse="1"/>
+	<TALENT name="Herzliches Lachen" attribute="CHA" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Hieb Ausweichen" attribute="DEX" action="free" strain="1" skilluse="1"/>
+	<TALENT name="Holzhaut" attribute="TOU" action="standard"/>
+	<TALENT name="Hypnotisieren" attribute="CHA" action="sustained" strain="1" skilluse="5"/>
+	<TALENT name="Illusionsverstärkung" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Kampfgebrüll" attribute="CHA" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Kampfsinn" attribute="PER" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Klettern" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Klingen Jonglieren" attribute="DEX" action="standard" strain="1 (s. Text)" skilluse="5"/>
+	<TALENT name="Kobrastoß" attribute="DEX" action="free" strain="2"/>
+	<TALENT name="Kompasspfeil" attribute="PER" action="standard" strain="2"/>
+	<TALENT name="Konversation" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Krallenhand" attribute="STR" bonus="3" action="simple"/>
+	<TALENT name="Kreisender Spion" attribute="PER" action="standard"/>
+	<TALENT name="Kunstreiten" attribute="DEX" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Lebensblick" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Lesen/Schreiben" attribute="PER" action="sustained" strain="1 (s. Text)"/>
+	<TALENT name="Letzte Rettung" attribute="TOU" action="free"/>
+	<TALENT name="Löwenherz" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Luftgleiten" attribute="DEX" action="free" strain="1"/>
+	<TALENT name="Luftsegeln" attribute="WIL" action="sustained" skilluse="1"/>
+	<TALENT name="Lufttanz" attribute="DEX" action="free" strain="2"/>
+	<TALENT name="Machtmaskierung" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Magie Neutralisieren" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Magische Markierung" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Magische Maske" attribute="PER" action="standard"/>
+	<TALENT name="Manövrieren" attribute="DEX" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Mentale Tierkontrolle" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Nachtflieger Befehligen" attribute="WIL" action="sustained" strain="1"/>
+	<TALENT name="Nachtreten" attribute="DEX" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Nahkampfwaffen" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Navigation" attribute="PER" action="sustained" skilluse="1"/>
+	<TALENT name="Projektil Rufen" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Projektilwaffen" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Reinigende Kälte" attribute="WIL" action="sustained"/>
+	<TALENT name="Reittier Panzern" attribute="WIL" action="simple" strain="1"/>
+	<TALENT name="Reittierangriff" attribute="DEX" action="simple" strain="1" skilluse="5"/>
+	<TALENT name="Riposte" attribute="DEX" action="free" strain="2" skilluse="5"/>
+	<TALENT name="Rüstung Schmieden" attribute="PER" action="sustained"/>
+	<TALENT name="Schadensverteilung" attribute="TOU" action="standard"/>
+	<TALENT name="Schildschlag" attribute="STR" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Schlachtruf" attribute="CHA" action="simple" strain="1" skilluse="5"/>
+	<TALENT name="Schloss Knacken" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Schmetterschlag" attribute="STR" action="free" strain="1" skilluse="5"/>
+	<TALENT name="Schuld Abwälzen" attribute="CHA" action="standard" strain="1" skilluse="5"/>
+	<TALENT name="Schwachstelle Erkennen" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Schwenkangriff" attribute="DEX" action="standard" strain="1" skilluse="5"/>
+	<TALENT name="Schwungvoller Angriff" attribute="DEX" action="simple" strain="1"/>
+	<TALENT name="Sicherer Pfad" attribute="PER" action="standard"/>
+	<TALENT name="Sicherer Reitsitz" attribute="STR" action="free" skilluse="1"/>
+	<TALENT name="Sprint" attribute="na" action="simple" strain="1"/>
+	<TALENT name="Spruchzauberei" attribute="PER" action="standard"/>
+	<TALENT name="Spurenlesen" attribute="PER" action="standard" skilluse="1"/>
+	<TALENT name="Stählerner Blick" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Standardmatrix" attribute="na" action="na"/>
+	<TALENT name="Standhaftigkeit" attribute="STR" action="free" skilluse="1"/>
+	<TALENT name="Starrsinn" attribute="WIL" action="free" strain="1" skilluse="5"/>
+	<TALENT name="Stimmen Imitieren" attribute="CHA" action="simple" skilluse="1"/>
+	<TALENT name="Struktur Verstehen" attribute="PER" action="standard"/>
+	<TALENT name="Sturmangriff" attribute="STR" action="free" skilluse="1"/>
+	<TALENT name="Taktik" attribute="PER" action="standard" skilluse="5"/>
+	<TALENT name="Taschendiebstahl" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Tieranalyse" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Tiere Bändigen" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Tierfreundschaft" attribute="CHA" action="standard" skilluse="1"/>
+	<TALENT name="Tiergefährten Rufen" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Tiergefährten Verbessern" attribute="WIL" action="sustained"/>
+	<TALENT name="Tierische Sinne" attribute="WIL" action="standard"/>
+	<TALENT name="Tiersprache" attribute="PER" action="standard"/>
+	<TALENT name="Tigersprung" attribute="na" action="free" strain="1"/>
+	<TALENT name="Totstellen" attribute="WIL" action="simple" strain="1"/>
+	<TALENT name="Überraschungsschlag" attribute="STR" action="free" strain="1" skilluse="1"/>
+	<TALENT name="Unempfindlichkeit (Tiergefährte)" attribute="na" action="na"/>
+	<TALENT name="Untrüglicher Blick" attribute="na" action="na"/>
+	<TALENT name="Verängstigen" attribute="WIL" action="standard"/>
+	<TALENT name="Verbannen" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Verspotten" attribute="CHA" action="simple" strain="1" skilluse="1"/>
+	<TALENT name="Vielseitigkeit" attribute="na" action="na"/>
+	<TALENT name="Waffe Schmieden" attribute="PER" action="sustained"/>
+	<TALENT name="Waffenloser Kampf" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Wasserfallschlag" attribute="na" action="free" strain="1"/>
+	<TALENT name="Weitschuss" attribute="na" action="simple" strain="1"/>
+	<TALENT name="Weitsprung" attribute="DEX" action="free" strain="1" skilluse="1"/>
+	<TALENT name="Wildnisüberleben" attribute="PER" action="sustained" skilluse="1"/>
+	<TALENT name="Willensstärke" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Windkissen" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Wispern" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Wortgeplänkel" attribute="CHA" action="standard" skilluse="1"/>
+	<TALENT name="Wurfwaffen" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Zweiter Angriff" attribute="DEX" action="simple" strain="2" skilluse="5"/>
+	<TALENT name="Zweiter Schuss" attribute="DEX" action="simple" strain="2" skilluse="5"/>
+	<TALENT name="Zweitwaffe" attribute="DEX" action="simple" strain="1" skilluse="5"/>
+</CAPABILITIES>

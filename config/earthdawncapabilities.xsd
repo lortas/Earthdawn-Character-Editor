@@ -8,6 +8,7 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="edt:CAPABILITY_type"/>
 			</xs:choice>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
+			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
