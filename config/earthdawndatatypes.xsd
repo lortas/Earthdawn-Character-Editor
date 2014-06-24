@@ -329,6 +329,7 @@
 		<xs:attribute name="realigned" type="unsigned_int" default="0"/>
 		<xs:attribute name="isinitiative" type="yesno_type" default="no"/>
 		<xs:attribute name="notbyversatility" type="yesno_type" default="no"/>
+		<xs:attribute name="skilluse" type="unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="SKILL_type">
 		<xs:complexContent>
