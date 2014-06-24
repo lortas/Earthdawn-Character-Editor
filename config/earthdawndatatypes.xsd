@@ -190,11 +190,13 @@
 			<xs:enumeration value="missile weapon"/>
 			<xs:enumeration value="mount"/>
 			<xs:enumeration value="paper"/>
+			<xs:enumeration value="pen"/>
 			<xs:enumeration value="pot"/>
 			<xs:enumeration value="potion"/>
 			<xs:enumeration value="ration"/>
 			<xs:enumeration value="ring"/>
 			<xs:enumeration value="salve"/>
+			<xs:enumeration value="stone"/>
 			<xs:enumeration value="shield"/>
 			<xs:enumeration value="talisman"/>
 			<xs:enumeration value="throwing weapon"/>
