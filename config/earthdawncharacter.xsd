@@ -78,6 +78,7 @@
 			<xs:attribute name="player" type="xs:string" use="optional"/>
 			<xs:attribute name="xsd-version" type="xs:string" fixed="1.1" use="required"/>
 			<xs:attribute name="editorpath" type="xs:anyURI" default=""/>
+			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
