@@ -20,6 +20,12 @@
 			<xs:enumeration value="na"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="rulesetversion_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ED3"/>
+			<xs:enumeration value="ED4"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="lpincrease_type">
 		<xs:restriction base="xs:int">
 			<xs:minInclusive value="-2"/>
@@ -390,6 +396,7 @@
 			<xs:element minOccurs="0" maxOccurs="1" name="HALFMAGIC" type="xs:string"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DISZIPLINETALENT" type="TALENT_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="TALENT_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="FREETALENT" type="TALENT_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="SPELL_type"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -397,6 +404,7 @@
 		<xs:attribute name="usedstartranks" type="xs:int" default="0"/>
 		<xs:attribute name="usedspellabilities" type="xs:int" default="0"/>
 		<xs:attribute name="primelement" type="elementkind_type" default="undefined"/>
+		<xs:attribute name="durability" type="xs:int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="COINS_type">
 		<xs:complexContent>

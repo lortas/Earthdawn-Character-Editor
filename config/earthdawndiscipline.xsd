@@ -18,6 +18,7 @@
 		<xs:sequence maxOccurs="1" minOccurs="1">
 			<xs:element minOccurs="0" maxOccurs="1" name="FOREIGNTALENTS" type="FOREIGNTALENTS_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="FREETALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="8" name="DISCIPLINETALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element minOccurs="1" maxOccurs="1" name="TALENTABILITY" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELL" type="DISCIPLINESPELL_type"/>
@@ -42,6 +43,7 @@
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="bookref" type="xs:string" default=""/>
+			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
