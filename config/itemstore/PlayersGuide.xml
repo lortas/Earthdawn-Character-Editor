@@ -185,40 +185,40 @@
 	<MAGICITEM name="Salve of Closure" weight="1" enchantingdifficultynumber="9" price="200" kind="salve" effect="heals any Wound it is applied; costs the character Recovery Test" bookref="PG p.266"/>
 
 <!-- bloodcharm fertig	-->
-	<BLOODCHARMITEM name="Absorb Blow" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="100" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Astral-Sensitive Eye" depatterningrate="0" blooddamage="2" effect="like Astral Sight (PG p. 61) +1 Step bonus; 1 Strain per use" enchantingdifficultynumber="13" weight="1" price="325" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Blood Karma" depatterningrate="0" blooddamage="1" effect="spend multiple Karma Points on Talent Test, one point at a time, until test successful; 1 Strain per Point" enchantingdifficultynumber="16" weight="1" price="2000" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Blood Knuckles" depatterningrate="1" blooddamage="2" effect="+2 unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="11" weight="1" price="180" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Blood Matrix" depatterningrate="1" blooddamage="2" effect="acts as spell-specific spell matrix; 2 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="1500" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Enhanced Blood Matrix"  depatterningrate="1" blooddamage="2" effect="acts as spell-specific enhanced spell matrix; 3 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="2500" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Armored Blood Matrix" depatterningrate="1" blooddamage="2" effect="acts as spell-specific armored spell matrix; 4 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="3500" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Blood Weapon" depatterningrate="1" blooddamage="3" effect="+4 to unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="20" weight="3" price="500" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Common Bone Charm" depatterningrate="0" blooddamage="1" effect="+1 to Recovery Tests" enchantingdifficultynumber="12" weight="1" price="175" bookref="PG p.257"/>
-	<BLOODCHARMITEM name="Shaped Bone Charm" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="175" bookref="PG p.258"/>
-	<BLOODCHARMITEM name="Crystal Arm" depatterningrate="2" blooddamage="3" effect="see text; 1 Strain, make one more unarmed combat Attack but suffers –2 penalty all Action Tests" enchantingdifficultynumber="18" weight="1" price="1700" bookref="PG p.258"/>
-	<BLOODCHARMITEM name="Darksight Eye" depatterningrate="0" blooddamage="2" effect="Low Light Vision" enchantingdifficultynumber="11" weight="1" price="200" bookref="PG p.258"/>
-	<BLOODCHARMITEM name="Death Cheat" depatterningrate="0" blooddamage="3" effect="in case of death allows Recovery Test with +6; no Recovery Tests available get bonus Recovery Test Step 6" enchantingdifficultynumber="17" weight="1" price="450" bookref="PG p.259"/>
-	<BLOODCHARMITEM name="Desperate Blow" depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" price="275" bookref="PG p.259"/>
-	<BLOODCHARMITEM name="Desperate Spell" depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" price="300" bookref="PG p.259"/>
-	<BLOODCHARMITEM name="Disturbing Appearance" depatterningrate="3" blooddamage="1" effect="1 Strain, +2 Interaction Tests" enchantingdifficultynumber="20" weight="1" price="1000" bookref="PG p.259"/>
-	<BLOODCHARMITEM name="Elemental Fend Air" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst air spirits" enchantingdifficultynumber="17" weight="1" price="250" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Elemental Fend Earth" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst earth spirits" enchantingdifficultynumber="17" weight="1" price="200" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Elemental Fend Fire" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst fire spirits" enchantingdifficultynumber="17" weight="1" price="350" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Elemental Fend Water" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst water spirits" enchantingdifficultynumber="17" weight="1" price="300" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Elemental Fend Wood" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst wood spirits" enchantingdifficultynumber="17" weight="1" price="400" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Garlen Stone" depatterningrate="0" blooddamage="4" effect="2 Strain, use Recovery Tests heal Wound instead Damage" enchantingdifficultynumber="15" weight="1" price="250" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Horn Needle" depatterningrate="1" blooddamage="3" effect="2 Strain, +3 Toughness-based Tests or +3 Spell Defense resisting poison/ disease"  enchantingdifficultynumber="14" weight="1" price="450" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Horror Fend" depatterningrate="0" blooddamage="3" effect="1 Strain per round, +3 Physical and Spell Defense against Horrors/ Horror constructs" enchantingdifficultynumber="17" weight="1" price="500" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Initiative Booster" depatterningrate="1" blooddamage="4" effect="each point Strain, +1 Initiative Test" enchantingdifficultynumber="21" weight="1" price="600" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Karma" depatterningrate="2" blooddamage="3" effect="2 Strain + Strain cost talent, spend Karma Point on talent" enchantingdifficultynumber="16" weight="1" price="1000" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Karma Absorber" depatterningrate="3" blooddamage="3" effect="successfully strikes opponent, 2 Strain gain one of opponent’s Karma Points" enchantingdifficultynumber="20" weight="0" price="500" bookref="PG p.260"/>
-	<BLOODCHARMITEM name="Poison Sac" depatterningrate="2" blooddamage="1" effect="attached to blood weapons; causes Wound victim is poisoned" enchantingdifficultynumber="18" weight="1" price="1000" bookref="PG p.261"/>
-	<BLOODCHARMITEM name="Spore Glands" depatterningrate="2" blooddamage="2" effect="Step 4 damage to unconscious character, Toughness Step damage to all living targets 10-yard radius" enchantingdifficultynumber="19" weight="0" price="300" bookref="PG p.261"/>
-	<BLOODCHARMITEM name="Strength Booster" depatterningrate="1" blooddamage="2" effect="for every 2 Strain, +1 Strength-only Tests; no Damage Tests" enchantingdifficultynumber="13" weight="1" price="300" bookref="PG p.261"/>
-	<BLOODCHARMITEM name="Targeting Eye" depatterningrate="0" blooddamage="2" effect="1 Strain, +2 ranged combat Attack" enchantingdifficultynumber="13" weight="1" price="450" bookref="PG p.261"/>
-	<BLOODCHARMITEM name="Wings of Fire" depatterningrate="2" blooddamage="3" effect="can fly Toughness Step rounds; 1 Strain per round" enchantingdifficultynumber="18" weight="3" price="1000" bookref="PG p.261"/>
-	<BLOODCHARMITEM name="Wound Balance" depatterningrate="1" blooddamage="3" effect="1 Strain, +3 Knockdown Test" enchantingdifficultynumber="14" weight="1" price="200" bookref="PG p.261"/>
-	
+	<BLOODCHARMITEM kind="brooch" name="Absorb Blow" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="100" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Astral-Sensitive Eye" depatterningrate="0" blooddamage="2" effect="like Astral Sight (PG p. 61) +1 Step bonus; 1 Strain per use" enchantingdifficultynumber="13" weight="1" price="325" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Blood Karma" depatterningrate="0" blooddamage="1" effect="spend multiple Karma Points on Talent Test, one point at a time, until test successful; 1 Strain per Point" enchantingdifficultynumber="16" weight="1" price="2000" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Blood Knuckles" depatterningrate="1" blooddamage="2" effect="+2 unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="11" weight="1" price="180" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Blood Matrix" depatterningrate="1" blooddamage="2" effect="acts as spell-specific spell matrix; 2 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="1500" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Enhanced Blood Matrix"  depatterningrate="1" blooddamage="2" effect="acts as spell-specific enhanced spell matrix; 3 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="2500" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Armored Blood Matrix" depatterningrate="1" blooddamage="2" effect="acts as spell-specific armored spell matrix; 4 Strain casting spell" enchantingdifficultynumber="0" weight="1" price="3500" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Blood Weapon" depatterningrate="1" blooddamage="3" effect="+4 to unarmed Damage Test; 1 Strain per use" enchantingdifficultynumber="20" weight="3" price="500" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Common Bone Charm" depatterningrate="0" blooddamage="1" effect="+1 to Recovery Tests" enchantingdifficultynumber="12" weight="1" price="175" bookref="PG p.257"/>
+	<BLOODCHARMITEM kind="brooch" name="Shaped Bone Charm" depatterningrate="0" blooddamage="2" effect="absorbing 12 damage once" enchantingdifficultynumber="11" weight="1" price="175" bookref="PG p.258"/>
+	<BLOODCHARMITEM kind="brooch" name="Crystal Arm" depatterningrate="2" blooddamage="3" effect="see text; 1 Strain, make one more unarmed combat Attack but suffers –2 penalty all Action Tests" enchantingdifficultynumber="18" weight="1" price="1700" bookref="PG p.258"/>
+	<BLOODCHARMITEM kind="brooch" name="Darksight Eye" depatterningrate="0" blooddamage="2" effect="Low Light Vision" enchantingdifficultynumber="11" weight="1" price="200" bookref="PG p.258"/>
+	<BLOODCHARMITEM kind="brooch" name="Death Cheat" depatterningrate="0" blooddamage="3" effect="in case of death allows Recovery Test with +6; no Recovery Tests available get bonus Recovery Test Step 6" enchantingdifficultynumber="17" weight="1" price="450" bookref="PG p.259"/>
+	<BLOODCHARMITEM kind="brooch" name="Desperate Blow" depatterningrate="1" blooddamage="3" effect="+6 to attack or damage" enchantingdifficultynumber="14" weight="0.1" price="275" bookref="PG p.259"/>
+	<BLOODCHARMITEM kind="brooch" name="Desperate Spell" depatterningrate="1" blooddamage="3" effect="+6 to cast or effect" enchantingdifficultynumber="14" weight="0.1" price="300" bookref="PG p.259"/>
+	<BLOODCHARMITEM kind="brooch" name="Disturbing Appearance" depatterningrate="3" blooddamage="1" effect="1 Strain, +2 Interaction Tests" enchantingdifficultynumber="20" weight="1" price="1000" bookref="PG p.259"/>
+	<BLOODCHARMITEM kind="brooch" name="Elemental Fend Air" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst air spirits" enchantingdifficultynumber="17" weight="1" price="250" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Elemental Fend Earth" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst earth spirits" enchantingdifficultynumber="17" weight="1" price="200" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Elemental Fend Fire" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst fire spirits" enchantingdifficultynumber="17" weight="1" price="350" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Elemental Fend Water" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst water spirits" enchantingdifficultynumber="17" weight="1" price="300" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Elemental Fend Wood" depatterningrate="0" blooddamage="3" effect="1 Strain per round; +3 to Physical and Spell Defense aganinst wood spirits" enchantingdifficultynumber="17" weight="1" price="400" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Garlen Stone" depatterningrate="0" blooddamage="4" effect="2 Strain, use Recovery Tests heal Wound instead Damage" enchantingdifficultynumber="15" weight="1" price="250" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Horn Needle" depatterningrate="1" blooddamage="3" effect="2 Strain, +3 Toughness-based Tests or +3 Spell Defense resisting poison/ disease"  enchantingdifficultynumber="14" weight="1" price="450" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Horror Fend" depatterningrate="0" blooddamage="3" effect="1 Strain per round, +3 Physical and Spell Defense against Horrors/ Horror constructs" enchantingdifficultynumber="17" weight="1" price="500" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Initiative Booster" depatterningrate="1" blooddamage="4" effect="each point Strain, +1 Initiative Test" enchantingdifficultynumber="21" weight="1" price="600" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Karma" depatterningrate="2" blooddamage="3" effect="2 Strain + Strain cost talent, spend Karma Point on talent" enchantingdifficultynumber="16" weight="1" price="1000" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Karma Absorber" depatterningrate="3" blooddamage="3" effect="successfully strikes opponent, 2 Strain gain one of opponent’s Karma Points" enchantingdifficultynumber="20" weight="0" price="500" bookref="PG p.260"/>
+	<BLOODCHARMITEM kind="brooch" name="Poison Sac" depatterningrate="2" blooddamage="1" effect="attached to blood weapons; causes Wound victim is poisoned" enchantingdifficultynumber="18" weight="1" price="1000" bookref="PG p.261"/>
+	<BLOODCHARMITEM kind="brooch" name="Spore Glands" depatterningrate="2" blooddamage="2" effect="Step 4 damage to unconscious character, Toughness Step damage to all living targets 10-yard radius" enchantingdifficultynumber="19" weight="0" price="300" bookref="PG p.261"/>
+	<BLOODCHARMITEM kind="brooch" name="Strength Booster" depatterningrate="1" blooddamage="2" effect="for every 2 Strain, +1 Strength-only Tests; no Damage Tests" enchantingdifficultynumber="13" weight="1" price="300" bookref="PG p.261"/>
+	<BLOODCHARMITEM kind="brooch" name="Targeting Eye" depatterningrate="0" blooddamage="2" effect="1 Strain, +2 ranged combat Attack" enchantingdifficultynumber="13" weight="1" price="450" bookref="PG p.261"/>
+	<BLOODCHARMITEM kind="brooch" name="Wings of Fire" depatterningrate="2" blooddamage="3" effect="can fly Toughness Step rounds; 1 Strain per round" enchantingdifficultynumber="18" weight="3" price="1000" bookref="PG p.261"/>
+	<BLOODCHARMITEM kind="brooch" name="Wound Balance" depatterningrate="1" blooddamage="3" effect="1 Strain, +3 Knockdown Test" enchantingdifficultynumber="14" weight="1" price="200" bookref="PG p.261"/>
+
 	<THREADITEM name="Spell Matrix Object" lpcostgrowth="1" spelldefense="12" maxthreads="1" weight="0" price="6500" bookref="PG p.280">
 		<edt:DESCRIPTION>Template for Spell Matrix Object (like the talent)</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Spell Matrix Rank 1" keyknowledge="The owner must learn the object's name."/>
@@ -293,116 +293,115 @@
 	</THREADITEM>
 
 	<!-- Items PG Tabelle S 268 vollständig -->
-	<ITEM name="Adventurer’s Kit: backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="14.0" price="15" bookref="PG p.268"/>
-	<ITEM name="Adventurer’s Kit plus tent: backpack, bedroll, flint&amp;steel, waterskin, large sack, tent" weight="34.0" price="40" bookref="PG p.268"/>
-	<ITEM name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
-	<ITEM name="Alchemist’s Shop" price="2000" weight="0" bookref="PG p.268"/>
-	<ITEM name="Artisan Tools:Carving" weight="3.0" price="15" bookref="PG p.268"/>
-	<ITEM name="Artisan Tools:Embroidery/Sewing" weight="1.0" price="25" bookref="PG p.268"/>
-	<ITEM name="Artisan Tools:Forge" weight="20.0" price="100" bookref="PG p.268"/>
-	<ITEM name="Artisan Tools:Painting" weight="2.0" price="45" bookref="PG p.268"/>
-	<ITEM name="Artisan Tools:Sculpting" weight="3.0" price="30" bookref="PG p.268"/>
-	<ITEM name="Backpack" weight="3.0" price="5" bookref="PG p.268"/>
-	<ITEM name="Bedroll" weight="4.0" price="5" bookref="PG p.268"/>
-	<ITEM name="Belt Pouch" weight="1.0" price="0.8" bookref="PG p.268"/>
-	<ITEM name="Blanket" weight="2.0" price="1.5" bookref="PG p.268"/>
-	<ITEM name="Candle" weight="0.27" price="0.3" bookref="PG p.268"/>
-	<ITEM name="Chain:Heavy (3 yards)" weight="9.0" price="50" bookref="PG p.268"/>
-	<ITEM name="Chain:Light (3 yards)" weight="6.0" price="10" bookref="PG p.268"/>
-	<ITEM name="Chalk (5 pieces)" weight="0.3" price="0.3" bookref="PG p.268"/>
-	<ITEM name="Climbing Kit:Rope (6 yards), Light Chain (3 yards), 2 Pitons, Grappling Hook" weight="19.0" price="36" bookref="PG p.268"/>
-	<ITEM name="Craftsman Tools" weight="5.0" price="25" bookref="PG p.268"/>
-	<ITEM name="Disguise Kit" weight="6.0" price="50" bookref="PG p.268"/>
-	<ITEM name="Fishing Kit:10 Fish Hooks, Fishing Net, Fishing Rod, Bait Jar" weight="14.0" price="20" bookref="PG p.268"/>
-	<ITEM name="Fishing Net (9 sq. yards)" weight="10.0" price="15" bookref="PG p.268"/>
-	<ITEM name="Flint and Steel" weight="0.5" price="1" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Adventurer’s Kit: backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="14.0" price="15" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Adventurer’s Kit plus tent: backpack, bedroll, flint&amp;steel, waterskin, large sack, tent" weight="34.0" price="40" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Alchemist’s Kit" weight="15.0" price="500" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Alchemist’s Shop" price="2000" weight="0" bookref="PG p.268"/>
+	<ITEM kind="artisan" name="Artisan Tools:Carving" weight="3.0" price="15" bookref="PG p.268"/>
+	<ITEM kind="artisan" name="Artisan Tools:Embroidery/Sewing" weight="1.0" price="25" bookref="PG p.268"/>
+	<ITEM kind="artisan" name="Artisan Tools:Forge" weight="20.0" price="100" bookref="PG p.268"/>
+	<ITEM kind="artisan" name="Artisan Tools:Painting" weight="2.0" price="45" bookref="PG p.268"/>
+	<ITEM kind="artisan" name="Artisan Tools:Sculpting" weight="3.0" price="30" bookref="PG p.268"/>
+	<ITEM kind="bag" name="Backpack" weight="3.0" price="5" bookref="PG p.268"/>
+	<ITEM kind="cloth" name="Bedroll" weight="4.0" price="5" bookref="PG p.268"/>
+	<ITEM kind="bag" name="Belt Pouch" weight="1.0" price="0.8" bookref="PG p.268"/>
+	<ITEM kind="cloth" name="Blanket" weight="2.0" price="1.5" bookref="PG p.268"/>
+	<ITEM kind="light" name="Candle" weight="0.27" price="0.3" bookref="PG p.268"/>
+	<ITEM kind="tool" name="Chain:Heavy (3 yards)" weight="9.0" price="50" bookref="PG p.268"/>
+	<ITEM kind="tool" name="Chain:Light (3 yards)" weight="6.0" price="10" bookref="PG p.268"/>
+	<ITEM kind="tool" name="Chalk (5 pieces)" weight="0.3" price="0.3" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Climbing Kit:Rope (6 yards), Light Chain (3 yards), 2 Pitons, Grappling Hook" weight="19.0" price="36" bookref="PG p.268"/>
+	<ITEM kind="tool" name="Craftsman Tools" weight="5.0" price="25" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Disguise Kit" weight="6.0" price="50" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Fishing Kit:10 Fish Hooks, Fishing Net, Fishing Rod, Bait Jar" weight="14.0" price="20" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Fishing Net (9 sq. yards)" weight="10.0" price="15" bookref="PG p.268"/>
+	<ITEM kind="tool" name="Flint and Steel" weight="0.5" price="1" bookref="PG p.268"/>
 	<ITEM name="Grappling Hook" weight="5.0" price="10" bookref="PG p.268"/>
-	<ITEM name="Healing Kit:Basic (3 applications)" weight="5.0" price="75" bookref="PG p.268"/>
-	<ITEM name="Healing Kit:Refill (3 applications)" weight="0" price="50" bookref="PG p.268"/>
-	<ITEM name="Iron Pot" weight="8.0" price="20" bookref="PG p.268"/>
-	<ITEM name="Lantern:Hooded" weight="3.0" price="93" bookref="PG p.268"/>
-	<ITEM name="Lantern:Bull’s-Eye" weight="3.0" price="27" bookref="PG p.268"/>
-	<ITEM name="Light Quartz" weight="5.0" price="85" bookref="PG p.268"/>
-	<ITEM name="Map or Scroll Case" weight="1.0" price="0.8" bookref="PG p.268"/>
-	<ITEM name="Musical Instrument:Drum" weight="5.0" price="7" bookref="PG p.268"/>
-	<ITEM name="Musical Instrument:Flute" weight="2.0" price="2" bookref="PG p.268"/>
-	<ITEM name="Musical Instrument:Horn" weight="7.0" price="70" bookref="PG p.268"/>
-	<ITEM name="Musical Instrument:Lute" weight="6.0" price="25" bookref="PG p.268"/>
-	<ITEM name="Musical Instrument:Whistle" weight="1.0" price="0.2" bookref="PG p.268"/>
-	<ITEM name="Navigation Charts" weight="2.0" price="15" bookref="PG p.268"/>
-	<ITEM name="Oil Flask" weight="1.0" price="6" bookref="PG p.268"/>
-	<ITEM name="Paper/Parchment (sheet)" weight="0" price="1" bookref="PG p.268"/>
-	<ITEM name="Physician’s Kit:Basic (3 applications)" weight="3.0" price="50" bookref="PG p.268"/>
-	<ITEM name="Physician’s Kit:Refill (3 applications)" weight="1.0" price="25" bookref="PG p.268"/>
-	<ITEM name="Quill Pen" weight="0" price="1" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Healing Kit:Basic (3 applications)" weight="5.0" price="75" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Healing Kit:Refill (3 applications)" weight="0" price="50" bookref="PG p.268"/>
+	<ITEM kind="pot" name="Iron Pot" weight="8.0" price="20" bookref="PG p.268"/>
+	<ITEM kind="light" name="Lantern:Hooded" weight="3.0" price="93" bookref="PG p.268"/>
+	<ITEM kind="light" name="Lantern:Bull’s-Eye" weight="3.0" price="27" bookref="PG p.268"/>
+	<ITEM kind="light" name="Light Quartz" weight="5.0" price="85" bookref="PG p.268"/>
+	<ITEM kind="paper" name="Map or Scroll Case" weight="1.0" price="0.8" bookref="PG p.268"/>
+	<ITEM kind="instrument" name="Musical Instrument:Drum" weight="5.0" price="7" bookref="PG p.268"/>
+	<ITEM kind="instrument" name="Musical Instrument:Flute" weight="2.0" price="2" bookref="PG p.268"/>
+	<ITEM kind="instrument" name="Musical Instrument:Horn" weight="7.0" price="70" bookref="PG p.268"/>
+	<ITEM kind="instrument" name="Musical Instrument:Lute" weight="6.0" price="25" bookref="PG p.268"/>
+	<ITEM kind="instrument" name="Musical Instrument:Whistle" weight="1.0" price="0.2" bookref="PG p.268"/>
+	<ITEM kind="paper" name="Navigation Charts" weight="2.0" price="15" bookref="PG p.268"/>
+	<ITEM kind="light" name="Oil Flask" weight="1.0" price="6" bookref="PG p.268"/>
+	<ITEM kind="paper" name="Paper/Parchment (sheet)" weight="0" price="1" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Physician’s Kit:Basic (3 applications)" weight="3.0" price="50" bookref="PG p.268"/>
+	<ITEM kind="kit" name="Physician’s Kit:Refill (3 applications)" weight="1.0" price="25" bookref="PG p.268"/>
+	<ITEM kind="pen" name="Quill Pen" weight="0" price="1" bookref="PG p.268"/>
 	<ITEM name="Rope, per yard" weight="1.0" price="3" bookref="PG p.268"/>
-	<ITEM name="Sack" weight="2.0" price="2" bookref="PG p.268"/>
+	<ITEM kind="bag" name="Sack" weight="2.0" price="2" bookref="PG p.268"/>
 	<ITEM name="Tent" weight="20.0" price="30" bookref="PG p.268"/>
-	<ITEM name="Thieves’ Picks and Tools" weight="1.0" price="100" bookref="PG p.268"/>
-	<ITEM name="Torch" weight="1.0" price="0.5" bookref="PG p.268"/>
-	<ITEM name="Whetstone" weight="1.0" price="0.2" bookref="PG p.268"/>
-	<ITEM name="Water or Wine Skin" weight="4.0" price="2" bookref="PG p.268"/>
-	<ITEM name="Writing Ink (per vial)" weight="0.5" price="10" bookref="PG p.268"/>
-	<ITEM name="Writing Kit:Quill Pen, Writing Ink, 10 Sheets of Parchment or Paper, 2 Candles, 10 Pieces of Chalk" weight="2.0" price="23" bookref="PG p.268"/>
+	<ITEM kind="tool" name="Thieves’ Picks and Tools" weight="1.0" price="100" bookref="PG p.268"/>
+	<ITEM kind="light" name="Torch" weight="1.0" price="0.5" bookref="PG p.268"/>
+	<ITEM kind="stone" name="Whetstone" weight="1.0" price="0.2" bookref="PG p.268"/>
+	<ITEM kind="drink" name="Water or Wine Skin" weight="4.0" price="2" bookref="PG p.268"/>
+	<ITEM kind="pen" name="Writing Ink (per vial)" weight="0.5" price="10" bookref="PG p.268"/>
+	<ITEM kind="pen" name="Writing Kit:Quill Pen, Writing Ink, 10 Sheets of Parchment or Paper, 2 Candles, 10 Pieces of Chalk" weight="2.0" price="23" bookref="PG p.268"/>
 
 	<!-- Seite 271	"Provender Tabel" vollständig; nur transportable Gegenstände -->
-	<ITEM name="Wine:Average (per bottle)" weight="1.0" price="0.5" bookref="PG p.271"/>
-	<ITEM name="Wine:Fine (per bottle)" weight="1.0" price="5" bookref="PG p.271"/>
-	<ITEM name="Rations:Dwarf Mine (1 week)" weight="6.0" price="25" bookref="PG p.271"/>
-	<ITEM name="Rations:Trail (1 week)" weight="8.0" price="10" bookref="PG p.271" />
+	<ITEM kind="drink" name="Wine:Average (per bottle)" weight="1.0" price="0.5" bookref="PG p.271"/>
+	<ITEM kind="drink" name="Wine:Fine (per bottle)" weight="1.0" price="5" bookref="PG p.271"/>
+	<ITEM kind="ration" name="Rations:Dwarf Mine (1 week)" weight="6.0" price="25" bookref="PG p.271"/>
+	<ITEM kind="ration" name="Rations:Trail (1 week)" weight="8.0" price="10" bookref="PG p.271" />
 
 	<!--  Clothes Seite 281 vollständig -->
-	<ITEM name="Belt" weight="0.0" price="0.5" bookref="PG p.281"/>
-	<ITEM name="Boots:Soft" weight="1.0" price="1" bookref="PG p.281"/>
-	<ITEM name="Boots:Riding" weight="2.0" price="4" bookref="PG p.281"/>
-	<ITEM name="Boots:Mountain" weight="2.0" price="8" bookref="PG p.281"/>
-	<ITEM name="Breeches:Peasant’s" weight="1.0" price="0.4" bookref="PG p.281"/>
-	<ITEM name="Breeches:Merchant’s" weight="1.0" price="1" bookref="PG p.281"/>
-	<ITEM name="Breeches:Guild Member’s" weight="1.0" price="7" bookref="PG p.281"/>
-	<ITEM name="Brooch:Plain Brass" weight="1.0" price="2" bookref="PG p.281"/>
-	<ITEM name="Brooch:Ornamental" weight="1.0" price="12" bookref="PG p.281"/>
-	<ITEM name="Brooch:Silver" weight="1.0" price="15" bookref="PG p.281"/>
-	<ITEM name="Brooch:Gold" weight="2.0" price="120" bookref="PG p.281"/>
-	<ITEM name="Cloak:Wool" weight="1.0" price="5" bookref="PG p.281"/>
-	<ITEM name="Cloak:Satin- or Silk-lined" weight="1.0" price="14" bookref="PG p.281"/>
-	<ITEM name="Cloak:Traveler’s" weight="1.0" price="8" bookref="PG p.281"/>
-	<ITEM name="Cloak:Fur-trimmed" weight="1.0" price="50" bookref="PG p.281"/>
-	<ITEM name="Cloak:Theran" weight="2.0" price="380" bookref="PG p.281"/>
-	<ITEM name="Dress:Plain" weight="1.0" price="2" bookref="PG p.281"/>
-	<ITEM name="Dress:Patterned" weight="1.0" price="7" bookref="PG p.281"/>
-	<ITEM name="Dress:Embroidered" weight="2.0" price="22" bookref="PG p.281"/>
-	<ITEM name="Dress:Satin" weight="2.0" price="100" bookref="PG p.281"/>
-	<ITEM name="Dress:Ballroom Gown" weight="4.0" price="250" bookref="PG p.281"/>
-	<ITEM name="Dress:Theran" weight="6.0" price="560" bookref="PG p.281"/>
-	<ITEM name="Gloves" weight="0.0" price="2" bookref="PG p.281"/>
-	<ITEM name="Hat:Felt" weight="0.0" price="0.4" bookref="PG p.281"/>
-	<ITEM name="Hat:Woolen" weight="0.0" price="1.2" bookref="PG p.281"/>
-	<ITEM name="Hat:Fine Quality" weight="0.0" price="9" bookref="PG p.281"/>
-	<ITEM name="Hat:Courtier Quality" weight="1.0" price="18" bookref="PG p.281"/>
-	<ITEM name="Hooded Mask" weight="0.0" price="3" bookref="PG p.281"/>
-	<ITEM name="Hosiery:Plain" weight="0.0" price="0.5" bookref="PG p.281"/>
-	<ITEM name="Hosiery:Silk" weight="0.0" price="20" bookref="PG p.281"/>
-	<ITEM name="Jacket:Wool" weight="1.0" price="12" bookref="PG p.281"/>
-	<ITEM name="Jacket:Silk" weight="1.0" price="90" bookref="PG p.281"/>
-	<ITEM name="Jacket:Courtier’s" weight="2.0" price="170" bookref="PG p.281"/>
-	<ITEM name="Peasant’s Garb (breeches):Shirt, belt, sandals and breeches" weight="1.0" price="1.2" bookref="PG p.281"/>
-	<ITEM name="Peasant’s Garb (robe or dress):Shirt, belt, sandals and robe or dress" weight="1.0" price="3" bookref="PG p.281"/>
-	<ITEM name="Pin or Clasp" weight="0.0" price="1" bookref="PG p.281"/>
-	<ITEM name="Robe:Linen" weight="1.0" price="1.5" bookref="PG p.281"/>
-	<ITEM name="Robe:Embroidered" weight="1.0" price="15" bookref="PG p.281"/>
-	<ITEM name="Sandals" weight="0.0" price="0.2" bookref="PG p.281"/>
-	<ITEM name="Shirt:Plain" weight="1.0" price="0.2" bookref="PG p.281"/>
-	<ITEM name="Shirt:Patterned" weight="1.0" price="1" bookref="PG p.281"/>
-	<ITEM name="Shirt:Silk" weight="1.0" price="45" bookref="PG p.281"/>
-	<ITEM name="Shoes:Merchant’s" weight="1.0" price="2" bookref="PG p.281"/>
-	<ITEM name="Shoes:Courtier’s" weight="1.0" price="40" bookref="PG p.281"/>
-	<ITEM name="Scabbard (blade)" weight="1.0" price="5" bookref="PG p.281"/>
-	<ITEM name="Scarf" weight="0.0" price="5" bookref="PG p.281"/>
-	<ITEM name="Toga" weight="1.0" price="0.6" bookref="PG p.281"/>
-	<ITEM name="Traveler ’s Garb (breeches):Soft boots, belt, shirt, breeches and cloak" weight="3.0" price="8" bookref="PG p.281"/>
-	<ITEM name="Traveler ’s Garb (robe or dress):Soft boots, belt, shirt, cloak and robe or dress" weight="3.0" price="9" bookref="PG p.281"/>
-	<ITEM name="Tunic" weight="1.0" price="0.4" bookref="PG p.281"/>
-	<ITEM name="Wealthy Traveler’s Garb (breeches):Riding boots, belt, shoes, three patterned shirts and guild breeches or patterned dress, fine hat, satin-lined cloak and an ornamental brooch" weight="5.0" price="40" bookref="PG p.281"/>
-	<ITEM name="Wealthy Traveler’s Garb (robe):Riding boots, belt, shoes, three patterned shirts and fine hat, satin-lined cloak, an ornamental brooch and embroidered robe" weight="5.0" price="50" bookref="PG p.281"/>
-		
+	<ITEM kind="cloth" name="Belt" weight="0.0" price="0.5" bookref="PG p.281"/>
+	<ITEM kind="boot" name="Boots:Soft" weight="1.0" price="1" bookref="PG p.281"/>
+	<ITEM kind="boot" name="Boots:Riding" weight="2.0" price="4" bookref="PG p.281"/>
+	<ITEM kind="boot" name="Boots:Mountain" weight="2.0" price="8" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Breeches:Peasant’s" weight="1.0" price="0.4" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Breeches:Merchant’s" weight="1.0" price="1" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Breeches:Guild Member’s" weight="1.0" price="7" bookref="PG p.281"/>
+	<ITEM kind="brooch" name="Brooch:Plain Brass" weight="1.0" price="2" bookref="PG p.281"/>
+	<ITEM kind="brooch" name="Brooch:Ornamental" weight="1.0" price="12" bookref="PG p.281"/>
+	<ITEM kind="brooch" name="Brooch:Silver" weight="1.0" price="15" bookref="PG p.281"/>
+	<ITEM kind="brooch" name="Brooch:Gold" weight="2.0" price="120" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Cloak:Wool" weight="1.0" price="5" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Cloak:Satin- or Silk-lined" weight="1.0" price="14" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Cloak:Traveler’s" weight="1.0" price="8" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Cloak:Fur-trimmed" weight="1.0" price="50" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Cloak:Theran" weight="2.0" price="380" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Dress:Plain" weight="1.0" price="2" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Dress:Patterned" weight="1.0" price="7" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Dress:Embroidered" weight="2.0" price="22" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Dress:Satin" weight="2.0" price="100" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Dress:Ballroom Gown" weight="4.0" price="250" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Dress:Theran" weight="6.0" price="560" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Gloves" weight="0.0" price="2" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hat:Felt" weight="0.0" price="0.4" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hat:Woolen" weight="0.0" price="1.2" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hat:Fine Quality" weight="0.0" price="9" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hat:Courtier Quality" weight="1.0" price="18" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hooded Mask" weight="0.0" price="3" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hosiery:Plain" weight="0.0" price="0.5" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Hosiery:Silk" weight="0.0" price="20" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Jacket:Wool" weight="1.0" price="12" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Jacket:Silk" weight="1.0" price="90" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Jacket:Courtier’s" weight="2.0" price="170" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Peasant’s Garb (breeches):Shirt, belt, sandals and breeches" weight="1.0" price="1.2" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Peasant’s Garb (robe or dress):Shirt, belt, sandals and robe or dress" weight="1.0" price="3" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Pin or Clasp" weight="0.0" price="1" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Robe:Linen" weight="1.0" price="1.5" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Robe:Embroidered" weight="1.0" price="15" bookref="PG p.281"/>
+	<ITEM kind="boot" name="Sandals" weight="0.0" price="0.2" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Shirt:Plain" weight="1.0" price="0.2" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Shirt:Patterned" weight="1.0" price="1" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Shirt:Silk" weight="1.0" price="45" bookref="PG p.281"/>
+	<ITEM kind="boot" name="Shoes:Merchant’s" weight="1.0" price="2" bookref="PG p.281"/>
+	<ITEM kind="boot" name="Shoes:Courtier’s" weight="1.0" price="40" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Scabbard (blade)" weight="1.0" price="5" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Scarf" weight="0.0" price="5" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Toga" weight="1.0" price="0.6" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Traveler ’s Garb (breeches):Soft boots, belt, shirt, breeches and cloak" weight="3.0" price="8" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Traveler ’s Garb (robe or dress):Soft boots, belt, shirt, cloak and robe or dress" weight="3.0" price="9" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Tunic" weight="1.0" price="0.4" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Wealthy Traveler’s Garb (breeches):Riding boots, belt, shoes, three patterned shirts and guild breeches or patterned dress, fine hat, satin-lined cloak and an ornamental brooch" weight="5.0" price="40" bookref="PG p.281"/>
+	<ITEM kind="cloth" name="Wealthy Traveler’s Garb (robe):Riding boots, belt, shoes, three patterned shirts and fine hat, satin-lined cloak, an ornamental brooch and embroidered robe" weight="5.0" price="50" bookref="PG p.281"/>
 </ITEMS>
