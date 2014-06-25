@@ -19,7 +19,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -593,13 +592,8 @@ public class ApplicationProperties {
 		try {
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
-			File[] files = new File("./config/disciplines").listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name != null && name.endsWith(".xml");
-				}
-			});
 			// --- Einlesen der Dateien
-			for(File disConfigFile : files) {
+			for(File disConfigFile : selectallxmlfiles(new File("./config/disciplines"))) {
 				System.out.println("Lese Konfigurationsdatei: '" + disConfigFile.getCanonicalPath() + "'");
 				DISCIPLINE dis = (DISCIPLINE) unmarshaller.unmarshal(disConfigFile);
 				DISCIPLINES.put(dis.getName(), dis);
@@ -607,15 +601,10 @@ public class ApplicationProperties {
 
 			// capabilities laden
 			// --- Bestimmen aller Dateien im Unterordner 'capabilities'
-			files = new File("./config/capabilities").listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name != null && name.endsWith(".xml");
-				}
-			});
 			// --- Einlesen der Dateien
 			CAPABILITIES=new CAPABILITIES();
 			CAPABILITIES.setLang(LANGUAGE);
-			for(File capa : files) {
+			for(File capa : selectallxmlfiles(new File("./config/capabilities"))) {
 				System.out.print("Reading config file '" + capa.getCanonicalPath() + "' ...");
 				CAPABILITIES c = (CAPABILITIES) unmarshaller.unmarshal(capa);
 				if( c == null ) { System.out.println(" parse error."); continue; }
@@ -629,17 +618,12 @@ public class ApplicationProperties {
 
 			// spells laden
 			// --- Bestimmen aller Dateien im Unterordner 'spells'
-			files = new File("./config/spells").listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name != null && name.endsWith(".xml");
-				}
-			});
 			// --- Einlesen der Dateien
 			SPELLS=new SPELLS();
 			SPELLS.setLang(LANGUAGE);
 			SPELLDESCRIPTIONS=new SPELLDESCRIPTIONS();
 			SPELLDESCRIPTIONS.setLang(LANGUAGE);
-			for(File spells : files) {
+			for(File spells : selectallxmlfiles(new File("./config/spells"))) {
 				System.out.print("Reading config file '" + spells.getCanonicalPath() + "' ...");
 				SPELLS s = (SPELLS) unmarshaller.unmarshal(spells);
 				if( s == null ) { System.out.println(" parse error."); continue; }
@@ -691,15 +675,10 @@ public class ApplicationProperties {
 
 			// knacks laden
 			// --- Bestimmen aller Dateien im Unterordner 'knacks'
-			files = new File("./config/knacks").listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name != null && name.endsWith(".xml");
-				}
-			});
 			// --- Einlesen der Dateien
 			KNACKS=new KNACKS();
 			KNACKS.setLang(LANGUAGE);
-			for(File knacks : files) {
+			for(File knacks : selectallxmlfiles(new File("./config/knacks"))) {
 				System.out.print("Reading config file '" + knacks.getCanonicalPath() + "' ...");
 				KNACKS k = (KNACKS) unmarshaller.unmarshal(knacks);
 				if( k == null ) { System.out.println(" parse error."); continue; }
@@ -714,15 +693,10 @@ public class ApplicationProperties {
 
 			// itemstore laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
-			files = new File("./config/itemstore").listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name != null && name.endsWith(".xml");
-				}
-			});
 			// --- Einlesen der Dateien
 			ITEMS=new ITEMS();
 			ITEMS.setLang(LANGUAGE);
-			for(File items : files) {
+			for(File items : selectallxmlfiles(new File("./config/itemstore"))) {
 				System.out.println("Reading config file '" + items.getCanonicalPath() + "' ...");
 				ITEMS i = (ITEMS) unmarshaller.unmarshal(items);
 				if( i == null ) { System.out.println(" parse error."); continue; }
@@ -751,13 +725,8 @@ public class ApplicationProperties {
 
 			// randomcharactertemplates laden
 			// --- Bestimmen aller Dateien im Unterordner 'randomcharactertemplates'
-			files = new File("./config/randomcharactertemplates").listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name != null && name.endsWith(".xml");
-				}
-			});
 			// --- Einlesen der Dateien
-			for(File configFile : files) {
+			for(File configFile : selectallxmlfiles(new File("./config/randomcharactertemplates"))) {
 				System.out.println("Lese Konfigurationsdatei: '" + configFile.getCanonicalPath() + "'");
 				EDRANDOMCHARACTERTEMPLATE t = (EDRANDOMCHARACTERTEMPLATE) unmarshaller.unmarshal(configFile);
 				if( t.getLang().equals(LANGUAGE) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
@@ -807,5 +776,18 @@ public class ApplicationProperties {
 			}
 		}
 		return modified;
+	}
+
+	public static List<File> selectallxmlfiles(File folder) {
+		List<File> files = new ArrayList<File>();
+		List<File> folders = new ArrayList<File>();
+		for( File file : folder.listFiles() ) {
+			String name=file.getName();
+			if( name == null ) continue;
+			if( file.isFile() && name.endsWith(".xml") ) files.add(file);
+			else if( file.isDirectory() ) folders.add(file);
+		}
+		for( File dir : folders ) files.addAll(selectallxmlfiles(dir));
+		return files;
 	}
 }
