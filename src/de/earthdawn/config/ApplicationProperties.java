@@ -48,7 +48,7 @@ import de.earthdawn.ui2.EDMainWindow;
 public class ApplicationProperties {
 
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
-    private static CAPABILITIES CAPABILITIES = new CAPABILITIES();
+	private static List<CAPABILITIES> CAPABILITIES;
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
@@ -58,6 +58,7 @@ public class ApplicationProperties {
     private static HELP HELP = new HELP();
     private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
     private static LanguageType LANGUAGE = LanguageType.EN;
+	private static RulesetversionType RULESETVERSION = RulesetversionType.ED_3;
     private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
     private static SPELLDESCRIPTIONS SPELLDESCRIPTIONS = new SPELLDESCRIPTIONS();
     private ECECharacteristics CHARACTERISTICS = null;
@@ -242,7 +243,10 @@ public class ApplicationProperties {
 	}
 
 	public ECECapabilities getCapabilities() {
-		return new ECECapabilities(CAPABILITIES.getSKILLOrTALENT());
+		for( CAPABILITIES c : CAPABILITIES ) {
+			if( c.getLang().equals(LANGUAGE) && c.getRulesetversion().equals(RULESETVERSION) ) return new ECECapabilities(c.getSKILLOrTALENT());
+		}
+		return new ECECapabilities();
 	}
 
 	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
@@ -602,18 +606,20 @@ public class ApplicationProperties {
 			// capabilities laden
 			// --- Bestimmen aller Dateien im Unterordner 'capabilities'
 			// --- Einlesen der Dateien
-			CAPABILITIES=new CAPABILITIES();
-			CAPABILITIES.setLang(LANGUAGE);
+			CAPABILITIES=new ArrayList<CAPABILITIES>();
 			for(File capa : selectallxmlfiles(new File("./config/capabilities"))) {
 				System.out.print("Reading config file '" + capa.getCanonicalPath() + "' ...");
-				CAPABILITIES c = (CAPABILITIES) unmarshaller.unmarshal(capa);
-				if( c == null ) { System.out.println(" parse error."); continue; }
-				if( c.getLang().equals(LANGUAGE) ) {
-					CAPABILITIES.getSKILLOrTALENT().addAll(c.getSKILLOrTALENT());
-					System.out.println(" done.");
-				} else {
-					System.out.println(" skipped. Wrong language: "+c.getLang().value()+" != "+LANGUAGE.value() );
+				CAPABILITIES c1 = (CAPABILITIES) unmarshaller.unmarshal(capa);
+				if( c1 == null ) { System.out.println(" parse error."); continue; }
+				boolean notfound=true;
+				for( CAPABILITIES c2 : CAPABILITIES ) {
+					if( c2.getLang().equals(c1.getLang()) && c2.getRulesetversion().equals(c1.getRulesetversion()) ){
+						notfound=false;
+						c2.getSKILLOrTALENT().addAll(c1.getSKILLOrTALENT());
+					}
 				}
+				if( notfound ) CAPABILITIES.add(c1);
+				System.out.println(" done.");
 			}
 
 			// spells laden
