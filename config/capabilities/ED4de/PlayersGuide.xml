@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CAPABILITIES lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
-	<TALENT name="Ablenken" attribute="CHA" action="simple" strain="1" skilluse="1"/>
+<CAPABILITIES lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
+	<SKILL name="Alchemie" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Arzt" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Bestechung" attribute="CHA" action="standard" skilluse="1" canimprovised="yes"/>
+	<SKILL name="Bildende Kunst" attribute="CHA" action="sustained" skilluse="1"/>
+	<SKILL name="Boot Steuern" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Fälschen" attribute="DEX" action="sustained" skilluse="1"/>
+	<SKILL name="Flirten" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
+	<SKILL name="Fremdsprachen" attribute="PER" action="standard" skilluse="1"/>
+	<SKILL name="Gassenwissen" attribute="CHA" action="sustained" skilluse="1"/>
+	<SKILL name="Handwerk" attribute="DEX" action="sustained" skilluse="1"/>
+	<SKILL name="Karten Zeichnen" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Kunsthandwerk" attribute="CHA" action="sustained" skilluse="1">
+		<edt:LIMITATION>Backen</edt:LIMITATION>
+		<edt:LIMITATION>Bildende Kunst</edt:LIMITATION>
+		<edt:LIMITATION>Bildhauerei</edt:LIMITATION>
+		<edt:LIMITATION>Geschichtenerzählen</edt:LIMITATION>
+		<edt:LIMITATION>Handwerk</edt:LIMITATION>
+		<edt:LIMITATION>Jonglieren</edt:LIMITATION>
+		<edt:LIMITATION>Karten Zeichnen</edt:LIMITATION>
+		<edt:LIMITATION>Kleidung und Stil</edt:LIMITATION>
+		<edt:LIMITATION>Kochen</edt:LIMITATION>
+		<edt:LIMITATION>Korbflechten</edt:LIMITATION>
+		<edt:LIMITATION>Körpermalerei</edt:LIMITATION>
+		<edt:LIMITATION>Musizieren</edt:LIMITATION>
+		<edt:LIMITATION>Poesie</edt:LIMITATION>
+		<edt:LIMITATION>Runenschnitzen</edt:LIMITATION>
+		<edt:LIMITATION>Rüstung Herstellen</edt:LIMITATION>
+		<edt:LIMITATION>Schauspielern</edt:LIMITATION>
+		<edt:LIMITATION>Schnitzen</edt:LIMITATION>
+		<edt:LIMITATION>Singen</edt:LIMITATION>
+		<edt:LIMITATION>Sticken</edt:LIMITATION>
+		<edt:LIMITATION>Tanzen</edt:LIMITATION>
+		<edt:LIMITATION>Tätowieren</edt:LIMITATION>
+		<edt:LIMITATION>Unterhalten</edt:LIMITATION>
+		<edt:LIMITATION>Waffe Herstellen</edt:LIMITATION>
+	</SKILL>
+	<SKILL name="Lesen/Schreiben" attribute="PER" action="standard" skilluse="1"/>
+	<SKILL name="Rüstung Herstellen" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Schauspielern" attribute="CHA" action="sustained" skilluse="1"/>
+	<SKILL name="Schwimmen" attribute="STR" action="standard" skilluse="1" canimprovised="yes"/>
+	<SKILL name="Segeln" attribute="DEX" action="sustained" skilluse="1"/>
+	<SKILL name="Tierbeherrschung" attribute="WIL" action="standard" skilluse="1" canimprovised="yes"/>
+	<SKILL name="Unterhalten" attribute="CHA" action="sustained" skilluse="1"/>
+	<SKILL name="Verführen" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
+	<SKILL name="Verkleiden" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Waffe Herstellen" attribute="PER" action="sustained" skilluse="1"/>
+	<SKILL name="Wissen" attribute="PER" action="standard" skilluse="1">
+		<edt:LIMITATION>Alchemie und Tränke</edt:LIMITATION>
+		<edt:LIMITATION>Altertümliche Waffen</edt:LIMITATION>
+		<edt:LIMITATION>Backen</edt:LIMITATION>
+		<edt:LIMITATION>Botanik</edt:LIMITATION>
+		<edt:LIMITATION>Dämonenkunde</edt:LIMITATION>
+		<edt:LIMITATION>Disziplinkunde</edt:LIMITATION>
+		<edt:LIMITATION>Geschichte Barsaives</edt:LIMITATION>
+		<edt:LIMITATION>Geschichte der Plage</edt:LIMITATION>
+		<edt:LIMITATION>Geschichte einer Provinz</edt:LIMITATION>
+		<edt:LIMITATION>Handelsrouten</edt:LIMITATION>
+		<edt:LIMITATION>Höfische Tänze</edt:LIMITATION>
+		<edt:LIMITATION>Landwirtschaft</edt:LIMITATION>
+		<edt:LIMITATION>Legenden und Helden</edt:LIMITATION>
+		<edt:LIMITATION>Militärorganisationen</edt:LIMITATION>
+		<edt:LIMITATION>Rassenkunde</edt:LIMITATION>
+		<edt:LIMITATION>Tierkunde</edt:LIMITATION>
+		<edt:LIMITATION>Wilde Tiere</edt:LIMITATION>
+	</SKILL>
+	<TALENT name="Ablenken" attribute="CHA" action="simple" strain="1" skilluse="1" canimprovised="yes" />
 	<TALENT name="Abrichten" attribute="CHA" action="sustained" skilluse="1"/>
 	<TALENT name="Abwehrkreis" attribute="DEX" action="simple" strain="1" skilluse="5"/>
 	<TALENT name="Akrobatische Verteidigung" attribute="DEX" action="simple" strain="1" skilluse="1"/>
@@ -10,7 +75,7 @@
 	<TALENT name="Astrale Interferenz" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Astralsicht" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Ätherhaut" attribute="WIL" action="sustained"/>
-	<TALENT name="Aufmerksamkeit" attribute="PER" action="simple" skilluse="1"/>
+	<TALENT name="Aufmerksamkeit" attribute="PER" action="simple" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Bannmarkierung" attribute="CHA" action="standard" strain="1"/>
 	<TALENT name="Beeindrucken" attribute="na" action="simple" strain="1" skilluse="5"/>
 	<TALENT name="Beschwören" attribute="PER" action="sustained"/>
@@ -24,7 +89,7 @@
 	<TALENT name="Doppelter Sturmangriff" attribute="DEX" action="simple" strain="1"/>
 	<TALENT name="Eiserne Konstitution" attribute="TOU" action="free"/>
 	<TALENT name="Eiserner Wille" attribute="WIL" action="free" strain="4"/>
-	<TALENT name="Eleganter Abgang" attribute="CHA" action="standard" strain="0" skilluse="1"/>
+	<TALENT name="Eleganter Abgang" attribute="CHA" action="standard" skilluse="1"/>
 	<TALENT name="Elementarbann" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Elementarsprachen" attribute="PER" action="standard" strain="1"/>
 	<TALENT name="Empathische Wahrnehmung" attribute="CHA" action="standard" strain="1 (s. Text)"/>
@@ -32,15 +97,15 @@
 	<TALENT name="Erdhaut" attribute="TOU" action="standard"/>
 	<TALENT name="Erster Eindruck" attribute="CHA" action="standard" skilluse="1"/>
 	<TALENT name="Erweiterte Matrix" attribute="na" action="na"/>
-	<TALENT name="Etikette" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Etikette" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Faden Halten" attribute="WIL" action="simple" strain="1 (s. Text)"/>
 	<TALENT name="Fadenweben" attribute="PER" action="standard"/>
 	<TALENT name="Fallen Entschärfen" attribute="DEX" action="standard" strain="1" skilluse="1"/> 
-	<TALENT name="Feilschen" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Feilschen" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Feuerblut" attribute="TOU" action="standard"/>
 	<TALENT name="Flinke Hand" attribute="DEX" action="standard" strain="1" skilluse="5"/>
 	<TALENT name="Fluch Unterdrücken" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Forschen" attribute="PER" action="sustained" skilluse="1"/>
+	<TALENT name="Forschen" attribute="PER" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Fremdsprachen" attribute="PER" action="standard" strain="1 (s. Text)"/>
 	<TALENT name="Führung" attribute="CHA" action="sustained" skilluse="5"/>
 	<TALENT name="Furchterregender Sturmangriff" attribute="CHA" action="simple" strain="2"/>
@@ -64,11 +129,11 @@
 	<TALENT name="Illusionsverstärkung" attribute="WIL" action="free" strain="1"/>
 	<TALENT name="Kampfgebrüll" attribute="CHA" action="simple" strain="1" skilluse="1"/>
 	<TALENT name="Kampfsinn" attribute="PER" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Klettern" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Klettern" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Klingen Jonglieren" attribute="DEX" action="standard" strain="1 (s. Text)" skilluse="5"/>
 	<TALENT name="Kobrastoß" attribute="DEX" action="free" strain="2"/>
 	<TALENT name="Kompasspfeil" attribute="PER" action="standard" strain="2"/>
-	<TALENT name="Konversation" attribute="CHA" action="sustained" skilluse="1"/>
+	<TALENT name="Konversation" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Krallenhand" attribute="STR" bonus="3" action="simple"/>
 	<TALENT name="Kreisender Spion" attribute="PER" action="standard"/>
 	<TALENT name="Kunstreiten" attribute="DEX" action="simple" strain="1" skilluse="1"/>
@@ -87,10 +152,10 @@
 	<TALENT name="Mentale Tierkontrolle" attribute="WIL" action="standard" strain="2"/>
 	<TALENT name="Nachtflieger Befehligen" attribute="WIL" action="sustained" strain="1"/>
 	<TALENT name="Nachtreten" attribute="DEX" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Nahkampfwaffen" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Nahkampfwaffen" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Navigation" attribute="PER" action="sustained" skilluse="1"/>
 	<TALENT name="Projektil Rufen" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Projektilwaffen" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Projektilwaffen" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Reinigende Kälte" attribute="WIL" action="sustained"/>
 	<TALENT name="Reittier Panzern" attribute="WIL" action="simple" strain="1"/>
 	<TALENT name="Reittierangriff" attribute="DEX" action="simple" strain="1" skilluse="5"/>
@@ -101,7 +166,7 @@
 	<TALENT name="Schlachtruf" attribute="CHA" action="simple" strain="1" skilluse="5"/>
 	<TALENT name="Schloss Knacken" attribute="DEX" action="standard" skilluse="1"/>
 	<TALENT name="Schmetterschlag" attribute="STR" action="free" strain="1" skilluse="5"/>
-	<TALENT name="Schuld Abwälzen" attribute="CHA" action="standard" strain="1" skilluse="5"/>
+	<TALENT name="Schuld Abwälzen" attribute="CHA" action="standard" strain="1" skilluse="5" canimprovised="yes"/>
 	<TALENT name="Schwachstelle Erkennen" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Schwenkangriff" attribute="DEX" action="standard" strain="1" skilluse="5"/>
 	<TALENT name="Schwungvoller Angriff" attribute="DEX" action="simple" strain="1"/>
@@ -109,11 +174,11 @@
 	<TALENT name="Sicherer Reitsitz" attribute="STR" action="free" skilluse="1"/>
 	<TALENT name="Sprint" attribute="na" action="simple" strain="1"/>
 	<TALENT name="Spruchzauberei" attribute="PER" action="standard"/>
-	<TALENT name="Spurenlesen" attribute="PER" action="standard" skilluse="1"/>
+	<TALENT name="Spurenlesen" attribute="PER" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Stählerner Blick" attribute="CHA" action="standard" strain="1"/>
 	<TALENT name="Standardmatrix" attribute="na" action="na"/>
 	<TALENT name="Standhaftigkeit" attribute="STR" action="free" skilluse="1"/>
-	<TALENT name="Starrsinn" attribute="WIL" action="free" strain="1" skilluse="5"/>
+	<TALENT name="Starrsinn" attribute="WIL" action="free" strain="1" skilluse="5" canimprovised="yes"/>
 	<TALENT name="Stimmen Imitieren" attribute="CHA" action="simple" skilluse="1"/>
 	<TALENT name="Struktur Verstehen" attribute="PER" action="standard"/>
 	<TALENT name="Sturmangriff" attribute="STR" action="free" skilluse="1"/>
@@ -136,16 +201,16 @@
 	<TALENT name="Verspotten" attribute="CHA" action="simple" strain="1" skilluse="1"/>
 	<TALENT name="Vielseitigkeit" attribute="na" action="na"/>
 	<TALENT name="Waffe Schmieden" attribute="PER" action="sustained"/>
-	<TALENT name="Waffenloser Kampf" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Waffenloser Kampf" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Wasserfallschlag" attribute="na" action="free" strain="1"/>
 	<TALENT name="Weitschuss" attribute="na" action="simple" strain="1"/>
 	<TALENT name="Weitsprung" attribute="DEX" action="free" strain="1" skilluse="1"/>
-	<TALENT name="Wildnisüberleben" attribute="PER" action="sustained" skilluse="1"/>
+	<TALENT name="Wildnisüberleben" attribute="PER" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Willensstärke" attribute="WIL" action="free" strain="1"/>
 	<TALENT name="Windkissen" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Wispern" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Wortgeplänkel" attribute="CHA" action="standard" skilluse="1"/>
-	<TALENT name="Wurfwaffen" attribute="DEX" action="standard" skilluse="1"/>
+	<TALENT name="Wurfwaffen" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Zweiter Angriff" attribute="DEX" action="simple" strain="2" skilluse="5"/>
 	<TALENT name="Zweiter Schuss" attribute="DEX" action="simple" strain="2" skilluse="5"/>
 	<TALENT name="Zweitwaffe" attribute="DEX" action="simple" strain="1" skilluse="5"/>
