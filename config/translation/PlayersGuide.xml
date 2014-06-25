@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <TRANSLATIONS rulesetversion="ED4" xmlns="http://earthdawn.com/translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/translation ../earthdawntranslation.xsd">
-	<TRANSLATION type="capability">
+	<CAPABILITY>
 		<LABEL lang="de">Blattschuss</LABEL>
 		<LABEL lang="en">True Shot</LABEL>
-	</TRANSLATION>
-	<TRANSLATION type="capability">
+	</CAPABILITY>
+	<CAPABILITY>
 		<LABEL lang="de">Fadenweben</LABEL>
 		<LABEL lang="en">Thread Weaving</LABEL>
-	</TRANSLATION>
+	</CAPABILITY>
+	<SPELL>
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</SPELL>
+	<DISCIPLINE>
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</DISCIPLINE>
+	<ITEM>
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</ITEM>
 </TRANSLATIONS>
