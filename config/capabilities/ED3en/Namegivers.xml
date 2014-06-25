@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
 	<SKILL name="Buzz" attribute="DEX" default="no" action="standard" strain="0" bookref="NG p.228"/>
 	<SKILL name="Cast Net" attribute="DEX" default="no" action="free" strain="1" bookref="NG p.228"/>
 	<SKILL name="Dive Attack" attribute="STR" default="no" action="free" strain="1" bookref="NG p.228"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
 	<SKILL name="Close In" attribute="DEX" default="no" action="simple" strain="1" bookref="KR p.225"/>
 	<SKILL name="Intimidation" attribute="CHA" default="yes" action="standard" strain="0" bookref="KR p.225"/>
 	<TALENT name="Bribery" attribute="CHA" action="standard" karma="no" strain="0" bookref="KR p.224"/>

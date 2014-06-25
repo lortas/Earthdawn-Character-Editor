@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../earthdawncapabilities.xsd">
+<CAPABILITIES lang="en" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
 	<SKILL name="Acrobatic Strike" attribute="DEX" default="no" action="simple" strain="1" bookref="PG p.91"/>
 	<SKILL name="Acting" attribute="CHA" default="no" action="sustained" strain="0" bookref="PG p.91"/>
 	<SKILL name="Air Sailing" attribute="WIL" default="no" action="sustained" strain="0" bookref="PG p.91"/>
