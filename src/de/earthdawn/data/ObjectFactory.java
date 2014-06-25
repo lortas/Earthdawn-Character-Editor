@@ -966,6 +966,48 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TRANSLATIONS }
+     * 
+     */
+    public TRANSLATIONS createTRANSLATIONS() {
+        return new TRANSLATIONS();
+    }
+
+    /**
+     * Create an instance of {@link TRANSLATIONType }
+     * 
+     */
+    public TRANSLATIONType createTRANSLATIONType() {
+        return new TRANSLATIONType();
+    }
+
+    /**
+     * Create an instance of {@link TranslationlabelType }
+     * 
+     */
+    public TranslationlabelType createTranslationlabelType() {
+        return new TranslationlabelType();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}}
      * 
      */
@@ -1071,24 +1113,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "SKILLLPCOST", scope = CHARACTERISTICS.class)
     public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSSKILLLPCOST(CHARACTERISTICSCOST value) {
         return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSSKILLLPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
     }
 
 }
