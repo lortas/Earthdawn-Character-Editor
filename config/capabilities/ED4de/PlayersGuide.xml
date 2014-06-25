@@ -24,7 +24,7 @@
 	<TALENT name="Doppelter Sturmangriff" attribute="DEX" action="simple" strain="1"/>
 	<TALENT name="Eiserne Konstitution" attribute="TOU" action="free"/>
 	<TALENT name="Eiserner Wille" attribute="WIL" action="free" strain="4"/>
-	<TALENT name="Eleganter Abgang" attribute="CHA" action="standard" strain="0	" skilluse="1"/>
+	<TALENT name="Eleganter Abgang" attribute="CHA" action="standard" strain="0" skilluse="1"/>
 	<TALENT name="Elementarbann" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Elementarsprachen" attribute="PER" action="standard" strain="1"/>
 	<TALENT name="Empathische Wahrnehmung" attribute="CHA" action="standard" strain="1 (s. Text)"/>
@@ -45,7 +45,7 @@
 	<TALENT name="Führung" attribute="CHA" action="sustained" skilluse="5"/>
 	<TALENT name="Furchterregender Sturmangriff" attribute="CHA" action="simple" strain="2"/>
 	<TALENT name="Gedankenkette" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Gefahrensinn" attribute="DEX" action="free" strain="1" skilluse="1"/>
+	<TALENT name="Gefahrensinn" attribute="DEX" action="free" strain="1" skilluse="1" isinitiative="yes"/>
 	<TALENT name="Gefühlsmelodie" attribute="CHA" action="sustained" skilluse="1"/>
 	<TALENT name="Gegenstand Verbergen" attribute="DEX" action="standard" strain="1" skilluse="5"/>
 	<TALENT name="Geisterbann" attribute="WIL" action="standard" strain="1"/>
@@ -78,7 +78,7 @@
 	<TALENT name="Löwenherz" attribute="WIL" action="free" strain="1"/>
 	<TALENT name="Luftgleiten" attribute="DEX" action="free" strain="1"/>
 	<TALENT name="Luftsegeln" attribute="WIL" action="sustained" skilluse="1"/>
-	<TALENT name="Lufttanz" attribute="DEX" action="free" strain="2"/>
+	<TALENT name="Lufttanz" attribute="DEX" action="free" strain="2" isinitiative="yes"/>
 	<TALENT name="Machtmaskierung" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Magie Neutralisieren" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Magische Markierung" attribute="PER" action="simple" strain="1"/>
@@ -126,7 +126,7 @@
 	<TALENT name="Tiergefährten Verbessern" attribute="WIL" action="sustained"/>
 	<TALENT name="Tierische Sinne" attribute="WIL" action="standard"/>
 	<TALENT name="Tiersprache" attribute="PER" action="standard"/>
-	<TALENT name="Tigersprung" attribute="na" action="free" strain="1"/>
+	<TALENT name="Tigersprung" attribute="na" action="free" strain="1" isinitiative="yes"/>
 	<TALENT name="Totstellen" attribute="WIL" action="simple" strain="1"/>
 	<TALENT name="Überraschungsschlag" attribute="STR" action="free" strain="1" skilluse="1"/>
 	<TALENT name="Unempfindlichkeit (Tiergefährte)" attribute="na" action="na"/>
