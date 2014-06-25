@@ -37,6 +37,8 @@ public class ECECapabilities {
 	private HashMap<String,CAPABILITYType> talentMap = new HashMap<String,CAPABILITYType>();
 	private HashMap<String,CAPABILITYType> skillMap = new HashMap<String,CAPABILITYType>();
 	
+	public ECECapabilities(){}
+
 	public ECECapabilities(List<JAXBElement<CAPABILITYType>> capabilities) {
 		for (JAXBElement<CAPABILITYType> element : capabilities) {
 			if (element.getName().getLocalPart().equals("TALENT")) {
