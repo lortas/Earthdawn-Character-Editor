@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="FOREIGNTALENTS" type="{http://earthdawn.com/discipline}FOREIGNTALENTS_type" minOccurs="0"/>
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="FREETALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DISCIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="8" minOccurs="0"/>
  *         &lt;element name="TALENTABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/discipline}DISCIPLINESPELL_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -50,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DISCIPLINECIRCLE_type", namespace = "http://earthdawn.com/discipline", propOrder = {
     "foreigntalents",
     "optionaltalent",
+    "freetalent",
     "disciplinetalent",
     "talentability",
     "spell",
@@ -67,6 +69,8 @@ public class DISCIPLINECIRCLEType {
     protected FOREIGNTALENTSType foreigntalents;
     @XmlElement(name = "OPTIONALTALENT")
     protected List<TALENTABILITYType> optionaltalent;
+    @XmlElement(name = "FREETALENT")
+    protected List<TALENTABILITYType> freetalent;
     @XmlElement(name = "DISCIPLINETALENT")
     protected List<TALENTABILITYType> disciplinetalent;
     @XmlElement(name = "TALENTABILITY", required = true)
@@ -139,6 +143,35 @@ public class DISCIPLINECIRCLEType {
             optionaltalent = new ArrayList<TALENTABILITYType>();
         }
         return this.optionaltalent;
+    }
+
+    /**
+     * Gets the value of the freetalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the freetalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFREETALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTABILITYType }
+     * 
+     * 
+     */
+    public List<TALENTABILITYType> getFREETALENT() {
+        if (freetalent == null) {
+            freetalent = new ArrayList<TALENTABILITYType>();
+        }
+        return this.freetalent;
     }
 
     /**

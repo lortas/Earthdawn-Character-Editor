@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
+ *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -49,12 +50,14 @@ import javax.xml.bind.annotation.XmlType;
 public class CAPABILITIES {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<CAPABILITYType>> skillOrTALENT;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
+    @XmlAttribute(name = "rulesetversion")
+    protected RulesetversionType rulesetversion;
 
     /**
      * Gets the value of the skillOrTALENT property.
@@ -108,6 +111,34 @@ public class CAPABILITIES {
      */
     public void setLang(LanguageType value) {
         this.lang = value;
+    }
+
+    /**
+     * Gets the value of the rulesetversion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public RulesetversionType getRulesetversion() {
+        if (rulesetversion == null) {
+            return RulesetversionType.ED_3;
+        } else {
+            return rulesetversion;
+        }
+    }
+
+    /**
+     * Sets the value of the rulesetversion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public void setRulesetversion(RulesetversionType value) {
+        this.rulesetversion = value;
     }
 
 }

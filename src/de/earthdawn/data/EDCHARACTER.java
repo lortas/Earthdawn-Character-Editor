@@ -63,6 +63,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="player" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="xsd-version" use="required" type="{http://www.w3.org/2001/XMLSchema}string" fixed="1.1" />
  *       &lt;attribute name="editorpath" type="{http://www.w3.org/2001/XMLSchema}anyURI" default="" />
+ *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -172,6 +173,8 @@ public class EDCHARACTER {
     @XmlAttribute(name = "editorpath")
     @XmlSchemaType(name = "anyURI")
     protected String editorpath;
+    @XmlAttribute(name = "rulesetversion")
+    protected RulesetversionType rulesetversion;
 
     /**
      * Gets the value of the appearance property.
@@ -1046,6 +1049,34 @@ public class EDCHARACTER {
      */
     public void setEditorpath(String value) {
         this.editorpath = value;
+    }
+
+    /**
+     * Gets the value of the rulesetversion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public RulesetversionType getRulesetversion() {
+        if (rulesetversion == null) {
+            return RulesetversionType.ED_3;
+        } else {
+            return rulesetversion;
+        }
+    }
+
+    /**
+     * Sets the value of the rulesetversion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public void setRulesetversion(RulesetversionType value) {
+        this.rulesetversion = value;
     }
 
 }
