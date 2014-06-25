@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -71,6 +72,8 @@ public class DISCIPLINE {
     protected String name;
     @XmlAttribute(name = "bookref")
     protected String bookref;
+    @XmlAttribute(name = "rulesetversion")
+    protected RulesetversionType rulesetversion;
 
     /**
      * Gets the value of the durability property.
@@ -276,6 +279,34 @@ public class DISCIPLINE {
      */
     public void setBookref(String value) {
         this.bookref = value;
+    }
+
+    /**
+     * Gets the value of the rulesetversion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public RulesetversionType getRulesetversion() {
+        if (rulesetversion == null) {
+            return RulesetversionType.ED_3;
+        } else {
+            return rulesetversion;
+        }
+    }
+
+    /**
+     * Sets the value of the rulesetversion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public void setRulesetversion(RulesetversionType value) {
+        this.rulesetversion = value;
     }
 
 }

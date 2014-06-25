@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="HALFMAGIC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="DISZIPLINETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="FREETALENT" type="{http://earthdawn.com/datatypes}TALENT_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/datatypes}SPELL_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -39,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="usedstartranks" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *       &lt;attribute name="usedspellabilities" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *       &lt;attribute name="primelement" type="{http://earthdawn.com/datatypes}elementkind_type" default="undefined" />
+ *       &lt;attribute name="durability" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -53,6 +55,7 @@ import javax.xml.bind.annotation.XmlType;
     "halfmagic",
     "disziplinetalent",
     "optionaltalent",
+    "freetalent",
     "spell"
 })
 public class DISCIPLINEType {
@@ -67,6 +70,8 @@ public class DISCIPLINEType {
     protected List<TALENTType> disziplinetalent;
     @XmlElement(name = "OPTIONALTALENT")
     protected List<TALENTType> optionaltalent;
+    @XmlElement(name = "FREETALENT")
+    protected List<TALENTType> freetalent;
     @XmlElement(name = "SPELL")
     protected List<SPELLType> spell;
     @XmlAttribute(name = "name", required = true)
@@ -79,6 +84,8 @@ public class DISCIPLINEType {
     protected Integer usedspellabilities;
     @XmlAttribute(name = "primelement")
     protected ElementkindType primelement;
+    @XmlAttribute(name = "durability")
+    protected Integer durability;
 
     /**
      * Gets the value of the disciplinebonus property.
@@ -213,6 +220,35 @@ public class DISCIPLINEType {
             optionaltalent = new ArrayList<TALENTType>();
         }
         return this.optionaltalent;
+    }
+
+    /**
+     * Gets the value of the freetalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the freetalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFREETALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTType }
+     * 
+     * 
+     */
+    public List<TALENTType> getFREETALENT() {
+        if (freetalent == null) {
+            freetalent = new ArrayList<TALENTType>();
+        }
+        return this.freetalent;
     }
 
     /**
@@ -366,6 +402,34 @@ public class DISCIPLINEType {
      */
     public void setPrimelement(ElementkindType value) {
         this.primelement = value;
+    }
+
+    /**
+     * Gets the value of the durability property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getDurability() {
+        if (durability == null) {
+            return  0;
+        } else {
+            return durability;
+        }
+    }
+
+    /**
+     * Sets the value of the durability property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setDurability(Integer value) {
+        this.durability = value;
     }
 
 }
