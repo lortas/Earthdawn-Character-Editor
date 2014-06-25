@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -29,7 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;choice maxOccurs="unbounded">
  *         &lt;element name="LABEL" type="{http://earthdawn.com/translation}translationlabel_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
- *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/translation}TRANSLATION_type_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -45,8 +43,6 @@ public class TRANSLATIONType {
 
     @XmlElement(name = "LABEL")
     protected List<TranslationlabelType> label;
-    @XmlAttribute(name = "type", required = true)
-    protected TRANSLATIONTypeType type;
 
     /**
      * Gets the value of the label property.
@@ -75,30 +71,6 @@ public class TRANSLATIONType {
             label = new ArrayList<TranslationlabelType>();
         }
         return this.label;
-    }
-
-    /**
-     * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TRANSLATIONTypeType }
-     *     
-     */
-    public TRANSLATIONTypeType getType() {
-        return type;
-    }
-
-    /**
-     * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TRANSLATIONTypeType }
-     *     
-     */
-    public void setType(TRANSLATIONTypeType value) {
-        this.type = value;
     }
 
 }

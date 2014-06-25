@@ -27,9 +27,12 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded">
- *         &lt;element name="TRANSLATION" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/choice>
+ *       &lt;sequence>
+ *         &lt;element name="CAPABILITY" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="SPELL" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="ITEM" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="rulesetversion" use="required" type="{http://earthdawn.com/datatypes}rulesetversion_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,29 +43,38 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "translation"
+    "capability",
+    "spell",
+    "discipline",
+    "item"
 })
 @XmlRootElement(name = "TRANSLATIONS", namespace = "http://earthdawn.com/translation")
 public class TRANSLATIONS {
 
-    @XmlElement(name = "TRANSLATION", namespace = "http://earthdawn.com/translation")
-    protected List<TRANSLATIONType> translation;
+    @XmlElement(name = "CAPABILITY", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> capability;
+    @XmlElement(name = "SPELL", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> spell;
+    @XmlElement(name = "DISCIPLINE", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> discipline;
+    @XmlElement(name = "ITEM", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> item;
     @XmlAttribute(name = "rulesetversion", required = true)
     protected RulesetversionType rulesetversion;
 
     /**
-     * Gets the value of the translation property.
+     * Gets the value of the capability property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the translation property.
+     * This is why there is not a <CODE>set</CODE> method for the capability property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTRANSLATION().add(newItem);
+     *    getCAPABILITY().add(newItem);
      * </pre>
      * 
      * 
@@ -72,11 +84,98 @@ public class TRANSLATIONS {
      * 
      * 
      */
-    public List<TRANSLATIONType> getTRANSLATION() {
-        if (translation == null) {
-            translation = new ArrayList<TRANSLATIONType>();
+    public List<TRANSLATIONType> getCAPABILITY() {
+        if (capability == null) {
+            capability = new ArrayList<TRANSLATIONType>();
         }
-        return this.translation;
+        return this.capability;
+    }
+
+    /**
+     * Gets the value of the spell property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spell property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPELL().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getSPELL() {
+        if (spell == null) {
+            spell = new ArrayList<TRANSLATIONType>();
+        }
+        return this.spell;
+    }
+
+    /**
+     * Gets the value of the discipline property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the discipline property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDISCIPLINE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getDISCIPLINE() {
+        if (discipline == null) {
+            discipline = new ArrayList<TRANSLATIONType>();
+        }
+        return this.discipline;
+    }
+
+    /**
+     * Gets the value of the item property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the item property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getITEM().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getITEM() {
+        if (item == null) {
+            item = new ArrayList<TRANSLATIONType>();
+        }
+        return this.item;
     }
 
     /**
