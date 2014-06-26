@@ -34,6 +34,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
@@ -49,6 +50,7 @@ public class ApplicationProperties {
 
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
 	private static List<CAPABILITIES> CAPABILITIES;
+	private static List<TRANSLATIONS> TRANSLATIONS;
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
@@ -594,6 +596,29 @@ public class ApplicationProperties {
 			return;
 		}
 		try {
+			// translation laden
+			// --- Bestimmen aller Dateien im Unterordner 'translation'
+			// --- Einlesen der Dateien
+			TRANSLATIONS=new ArrayList<TRANSLATIONS>();
+			for(File translation : selectallxmlfiles(new File("./config/translation"))) {
+				System.out.print("Lese Konfigurationsdatei: '" + translation.getCanonicalPath() + "' ... ");
+				TRANSLATIONS t1 = (TRANSLATIONS) unmarshaller.unmarshal(translation);
+				if( t1 == null ) { System.out.println(" parse error."); continue; }
+				boolean notfound=true;
+				for( TRANSLATIONS t2 : TRANSLATIONS ) {
+					if( t2.getRulesetversion().equals(t1.getRulesetversion()) ){
+						notfound=false;
+						t2.getCAPABILITY().addAll(t1.getCAPABILITY());
+						t2.getDISCIPLINE().addAll(t1.getDISCIPLINE());
+						t2.getSPELL().addAll(t1.getSPELL());
+						t2.getITEM().addAll(t1.getITEM());
+						break;
+					}
+				}
+				if( notfound ) TRANSLATIONS.add(t1);
+				System.out.println(" done.");
+			}
+
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
 			// --- Einlesen der Dateien
@@ -764,6 +789,7 @@ public class ApplicationProperties {
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+		//checktranslation();
 	}
 
 	public static boolean fillSpellDescription(SPELLDESCRIPTIONS spelldescriptions, SPELLS spelllist) {
@@ -795,5 +821,65 @@ public class ApplicationProperties {
 		}
 		for( File dir : folders ) files.addAll(selectallxmlfiles(dir));
 		return files;
+	}
+
+	private void checktranslation() {
+		for( CAPABILITIES c : CAPABILITIES ) {
+			RulesetversionType rsv = c.getRulesetversion();
+			LanguageType lang = c.getLang();
+			HashMap<String,List<TranslationlabelType>> translation = new HashMap<String,List<TranslationlabelType>>();
+			HashMap<String,Integer> count = new HashMap<String,Integer>();
+			for( TRANSLATIONS t : TRANSLATIONS ) {
+				if( t.getRulesetversion().equals(rsv) ) {
+					for( TRANSLATIONType i : t.getCAPABILITY() ) {
+						for( TranslationlabelType j : i.getLABEL() ) {
+							if( j.getLang().equals(lang) ) {
+								translation.put(j.getValue(), i.getLABEL());
+								count.put(j.getValue(), 0);
+							}
+						}
+					}
+				}
+			}
+			for( JAXBElement<CAPABILITYType> t : c.getSKILLOrTALENT() ) {
+				String name = t.getValue().getName();
+				List<TranslationlabelType> labels = translation.get(name);
+				if( labels == null ) {
+					count.put(name, -1);
+				} else {
+					count.put(name,count.get(name)+1);
+				}
+			}
+			List <String> keys = new ArrayList<String>(Arrays.asList(count.keySet().toArray(new String[0])));
+			Collections.sort(keys);
+			System.out.println("The following translation were used:");
+			for( String key : keys ) {
+				if( count.get(key) > 0 ) {
+					System.out.println("	<CAPABILITY>");
+					for( TranslationlabelType ll : translation.get(key) ) {
+						System.out.println("		<LABEL lang=\""+ll.getLang().value()+"\">"+ll.getValue()+"</LABEL>");
+					}
+					System.out.println("	</CAPABILITY>");
+				}
+			}
+			System.out.println("The following translation were not used:");
+			for( String key : keys ) {
+				if( count.get(key) == 0 ) {
+					System.out.println("	<CAPABILITY>");
+					for( TranslationlabelType ll : translation.get(key) ) {
+						System.out.println("		<LABEL lang=\""+ll.getLang().value()+"\">"+ll.getValue()+"</LABEL>");
+					}
+					System.out.println("	</CAPABILITY>");
+				}
+			}
+			System.out.println("The following translation were missing:");
+			for( String key : keys ) {
+				if( count.get(key) < 0 ) {
+					System.out.println("	<CAPABILITY>");
+					System.out.println("		<LABEL lang=\""+lang.value()+"\">"+key+"</LABEL>");
+					System.out.println("	</CAPABILITY>");
+				}
+			}
+		}
 	}
 }
