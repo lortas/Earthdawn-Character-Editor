@@ -72,7 +72,7 @@ public class ApplicationProperties {
     private ResourceBundle MESSAGES = null;
 
     /** Disziplinen (Name Label geordnet) */
-    private static final Map<String, DISCIPLINE> DISCIPLINES = new TreeMap<String, DISCIPLINE>();
+    private static final Map<RulesetversionType,Map<String, DISCIPLINE>> DISCIPLINES = new HashMap<RulesetversionType,Map<String, DISCIPLINE>>();
     /** RandomCharacterTemplates (Name Label geordnet) */
     private static final RandomCharacterTemplates RANDOMCHARACTERTEMPLATES = new RandomCharacterTemplates();
 
@@ -113,7 +113,7 @@ public class ApplicationProperties {
 	}
 
 	public DISCIPLINE getDisziplin(String name) {
-		DISCIPLINE discipline = DISCIPLINES.get(name);
+		DISCIPLINE discipline = DISCIPLINES.get(RULESETVERSION).get(name);
 		if( discipline == null ) {
 			System.err.println("Discipline '"+name+"' does not exist.");
 		}
@@ -121,12 +121,12 @@ public class ApplicationProperties {
 	}
 
 	public Set<String> getAllDisziplinNames() {
-		return DISCIPLINES.keySet();
+		return DISCIPLINES.get(RULESETVERSION).keySet();
 	}
 
 	public Map<String,Map<String,?>> getAllDisziplinNamesAsTree() {
 		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
-		for( String s : DISCIPLINES.keySet() ) result.put(s,new HashMap<String, Map<String,?>>());
+		for( String s : DISCIPLINES.get(RULESETVERSION).keySet() ) result.put(s,new HashMap<String, Map<String,?>>());
 		return shrinkStringMap(result);
 	}
 
@@ -209,7 +209,7 @@ public class ApplicationProperties {
 	}
 
 	public Collection<DISCIPLINE> getAllDisziplines() {
-		return DISCIPLINES.values();
+		return DISCIPLINES.get(RULESETVERSION).values();
 	}
 
 	public List<NAMEGIVERABILITYType> getNamegivers() {
@@ -563,7 +563,7 @@ public class ApplicationProperties {
 		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
 		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.getSPELL());
 		RANDOMCHARACTERTEMPLATES.setCapabilities(getCapabilities());
-		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES);
+		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES.get(RULESETVERSION));
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
 	}
 
@@ -625,7 +625,12 @@ public class ApplicationProperties {
 			for(File disConfigFile : selectallxmlfiles(new File("./config/disciplines"))) {
 				System.out.println("Lese Konfigurationsdatei: '" + disConfigFile.getCanonicalPath() + "'");
 				DISCIPLINE dis = (DISCIPLINE) unmarshaller.unmarshal(disConfigFile);
-				DISCIPLINES.put(dis.getName(), dis);
+				Map<String, DISCIPLINE> dis2 = DISCIPLINES.get(dis.getRulesetversion());
+				if( dis2 == null ) {
+					dis2 = new TreeMap<String, DISCIPLINE>();
+					DISCIPLINES.put(dis.getRulesetversion(),dis2);
+				}
+				dis2.put(dis.getName(), dis);
 			}
 
 			// capabilities laden
