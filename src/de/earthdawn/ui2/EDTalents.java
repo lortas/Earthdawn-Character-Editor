@@ -30,6 +30,7 @@ import javax.swing.table.TableColumn;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.TalentsContainer;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.DISCIPLINE;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.RANKType;
@@ -40,7 +41,7 @@ import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 
 public class EDTalents extends JPanel {
-	
+
 	private static final long serialVersionUID = -8850440306321140758L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 
@@ -329,7 +330,9 @@ class TalentsTableModel extends AbstractTableModel {
 		case 2:
 			if( talent.getLIMITATION().size()>0 ) return talent.getLIMITATION().get(0);
 			return "-";
-		case 3: return talent.getAttribute().value();
+		case 3:
+			if( talent.getAttribute() == null ) return ATTRIBUTENameType.NA.value();
+			return talent.getAttribute().value();
 		case 4: return new Integer(talent.getRANK().getStartrank());
 		case 5: return new Integer(talent.getRANK().getRank());
 		case 6: return talent.getRANK().getStep();
