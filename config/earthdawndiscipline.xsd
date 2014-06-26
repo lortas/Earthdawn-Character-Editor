@@ -2,6 +2,7 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/discipline" xmlns="http://earthdawn.com/discipline" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:complexType name="DISCIPLINEDURABILITY_type">
+		<xs:attribute name="value" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="death" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="unconsciousness" type="edt:unsigned_int" default="0"/>
 		<xs:attribute name="circle" type="edt:unsigned_int" default="0"/>

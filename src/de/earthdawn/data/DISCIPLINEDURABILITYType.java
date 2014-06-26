@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="DISCIPLINEDURABILITY_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;attribute name="value" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="death" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="unconsciousness" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="circle" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -37,12 +38,42 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DISCIPLINEDURABILITY_type", namespace = "http://earthdawn.com/discipline")
 public class DISCIPLINEDURABILITYType {
 
+    @XmlAttribute(name = "value")
+    protected Integer value;
     @XmlAttribute(name = "death")
     protected Integer death;
     @XmlAttribute(name = "unconsciousness")
     protected Integer unconsciousness;
     @XmlAttribute(name = "circle")
     protected Integer circle;
+
+    /**
+     * Gets the value of the value property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public int getValue() {
+        if (value == null) {
+            return  0;
+        } else {
+            return value;
+        }
+    }
+
+    /**
+     * Sets the value of the value property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setValue(Integer value) {
+        this.value = value;
+    }
 
     /**
      * Gets the value of the death property.
