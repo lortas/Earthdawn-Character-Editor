@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Sorcerer" lang="en" bookref="CPG p.65" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="4" unconsciousness="3"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Claw Shape"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Impress"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="S2"/>
+		<DISCIPLINETALENT name="Evaluate"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Read/Write Magic"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="S1"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Sorcery"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Assuring Touch"/>
+		<SPELL type="sorcery" name="Astral Sense"/>
+		<SPELL type="sorcery" name="Blessing of the Giant"/>
+		<SPELL type="sorcery" name="Cobra Charms the Weasel"/>
+		<SPELL type="sorcery" name="Dispel Magic"/>
+		<SPELL type="sorcery" name="Dry and Wet"/>
+		<SPELL type="sorcery" name="Earth Darts"/>
+		<SPELL type="sorcery" name="Heat Food"/>
+		<SPELL type="sorcery" name="Light"/>
+		<SPELL type="sorcery" name="Monkey Pretends to be Tiger"/>
+		<SPELL type="sorcery" name="Purify Water"/>
+		<SPELL type="sorcery" name="Shanjo Writes with Air"/>
+		<SPELL type="sorcery" name="Sun Shrinks the Petal"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Flame Arrow"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Picking Pockets"/>
+		<OPTIONALTALENT name="Research"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="S3"/>
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Astral Shield"/>
+		<SPELL type="sorcery" name="Boil Water"/>
+		<SPELL type="sorcery" name="Clean"/>
+		<SPELL type="sorcery" name="Dragon’s Nose Smells Magic"/>
+		<SPELL type="sorcery" name="Ignite"/>
+		<SPELL type="sorcery" name="Sterilize Object"/>
+		<SPELL type="sorcery" name="The Thousand Faces of Cheung"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Arcane Mutterings"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Alarm"/>
+		<SPELL type="sorcery" name="Astral Strike"/>
+		<SPELL type="sorcery" name="Dragon Returns to His Lair"/>
+		<SPELL type="sorcery" name="Emperor Eats Rotten Shellfish"/>
+		<SPELL type="sorcery" name="Levitate"/>
+		<SPELL type="sorcery" name="Monk Slaps the Water"/>
+		<SPELL type="sorcery" name="Old Man Wears Shoe on Hand"/>
+		<SPELL type="sorcery" name="Plant Feast"/>
+		<SPELL type="sorcery" name="Puddle Deep"/>
+		<SPELL type="sorcery" name="Repair"/>
+		<SPELL type="sorcery" name="Rust"/>
+		<SPELL type="sorcery" name="Shatter Lock"/>
+		<SPELL type="sorcery" name="The Fog of Con-Sha"/>
+		<SPELLABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Enduring Art"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Buoyancy"/>
+		<SPELL type="sorcery" name="Dragon Brings Rain"/>
+		<SPELL type="sorcery" name="Dragon’s Tongue Licks Palm"/>
+		<SPELL type="sorcery" name="Falcon’s Cloak"/>
+		<SPELL type="sorcery" name="Fatal Food"/>
+		<SPELL type="sorcery" name="Infant Opens and Closes Its Eyes"/>
+		<SPELL type="sorcery" name="Liquid Arrow"/>
+		<SPELL type="sorcery" name="Princess Dreams of Lotus Flowers"/>
+		<SPELL type="sorcery" name="The Grip of Chi"/>
+		<SPELL type="sorcery" name="The Hand of Chi"/>
+		<SPELL type="sorcery" name="Tiger Dines on Bark"/>
+		<SPELLABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Clay Skin"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="S1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="S2"/>
+		<OPTIONALTALENT name="Hypnotize"/>
+		<OPTIONALTALENT name="Orbiting Spy"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="Temper Self"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Awaken"/>
+		<SPELL type="sorcery" name="Counterspell"/>
+		<SPELL type="sorcery" name="Flying Carpet"/>
+		<SPELL type="sorcery" name="Giant Size"/>
+		<SPELL type="sorcery" name="Giu Shapes the Clay"/>
+		<SPELL type="sorcery" name="Heat Metal Armor"/>
+		<SPELL type="sorcery" name="Ironwood"/>
+		<SPELL type="sorcery" name="Mage Armor"/>
+		<SPELL type="sorcery" name="Makeshift Missile"/>
+		<SPELL type="sorcery" name="Passion’s Eyes See Below"/>
+		<SPELL type="sorcery" name="Shattering Stone"/>
+		<SPELL type="sorcery" name="Wither Limb"/>
+		<SPELLABILITY/>
+		<ABILITY>Fluid Reality</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Graceful Exit"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Giant Takes One Step"/>
+		<SPELL type="sorcery" name="Mai-Lo Becomes a Teacup"/>
+		<SPELL type="sorcery" name="Makeshift Weapon"/>
+		<SPELL type="sorcery" name="Princess Dreams of Serpents"/>
+		<SPELL type="sorcery" name="Sleep"/>
+		<SPELL type="sorcery" name="Spellstore"/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Steely Stare"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Beastform"/>
+		<SPELL type="sorcery" name="Bone Pudding"/>
+		<SPELL type="sorcery" name="Cloud Summon"/>
+		<SPELL type="sorcery" name="Cold Storage"/>
+		<SPELL type="sorcery" name="Infant Takes First Step"/>
+		<SPELL type="sorcery" name="Reverse Withering"/>
+		<SPELL type="sorcery" name="Teacup Becomes Dagger"/>
+		<SPELL type="sorcery" name="Walk Through"/>
+		<KARMA spend="spell effect tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Giu Makes Many Pots"/>
+		<SPELL type="sorcery" name="Massive Missiles"/>
+		<SPELL type="sorcery" name="Prince Wears New Face"/>
+		<SPELL type="sorcery" name="Princess Trapped in Mirror"/>
+		<SPELL type="sorcery" name="Silence Metal"/>
+		<SPELL type="sorcery" name="Teacup Finds New Friends"/>
+		<SPELL type="sorcery" name="Waterspout"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Armored Matrix" limitation="S1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="S2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="S3"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Hold Thread"/>
+		<OPTIONALTALENT name="Mind Wave"/>
+		<OPTIONALTALENT name="Temper Other"/>
+		<OPTIONALTALENT name="Wound Transfer"/>
+		<DISCIPLINETALENT name="Astral Pocket"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Caterpillar Spins Cocoon"/>
+		<SPELL type="sorcery" name="Cloud Banish"/>
+		<SPELL type="sorcery" name="Giant Stomps His Feet"/>
+		<SPELL type="sorcery" name="Reattach Limb"/>
+		<SPELL type="sorcery" name="Spider Spins Its Web"/>
+		<SPELL type="sorcery" name="Thundering Walls"/>
+		<KARMA spend="Recovery Tests"/>
+		<ABILITY>Immaculate Imagination</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Animate Object"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Earth and Air"/>
+		<SPELL type="sorcery" name="Fire and Water"/>
+		<SPELL type="sorcery" name="Petrify"/>
+		<SPELL type="sorcery" name="Warp Astral Space"/>
+		<SPELL type="sorcery" name="Warrior Raises His Shield"/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Reshape Object"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Alter Life"/>
+		<SPELL type="sorcery" name="Mao Tends the Herd"/>
+		<SPELL type="sorcery" name="Sculptor Chisels the Stone"/>
+		<SPELL type="sorcery" name="Shatter Pattern"/>
+		<SPELL type="sorcery" name="Wood Blade"/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Casting Pattern"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Alter Form"/>		
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Moving Earth"/>
+		<OPTIONALTALENT name="Multi-Weaving"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="S1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="S2"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="S3"/>
+		<OPTIONALTALENT name="Soul Shatter"/>
+		<DISCIPLINETALENT name="Spell Crystal Lock"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Restore Pattern"/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Reinvention</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Astral Web"/>
+		<TALENTABILITY/>
+		<SPELL type="sorcery" name="Lao Curses the Emperor"/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Effect Pattern"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>recognize types magic use, identify specific uses Sorcery; knowledge: magical rituals;(CPG p.67)</HALFMAGIC>
+</DISCIPLINE>

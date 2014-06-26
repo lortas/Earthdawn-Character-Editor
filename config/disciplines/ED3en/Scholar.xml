@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Scholar" lang="en" bookref="CPG p.59" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Book Memory"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Commune"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Moon Ray"/>
+		<DISCIPLINETALENT name="Research"/>
+		<DISCIPLINETALENT name="Store Knowledge"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Book Recall"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<DISCIPLINETALENT name="Rhetoric"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Evidence Analysis"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Secret Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Dead Fall"/>
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Direction Sense"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Spirit Talk"/>
+		<OPTIONALTALENT name="Temper Self"/>
+		<DISCIPLINETALENT name="Block Spell"/>
+		<TALENTABILITY/>
+		<ABILITY>Time’s Secret</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Moon Shield"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Mind Hand"/>
+		<TALENTABILITY/>
+		<KARMA spend="spend Karma Point test made to gather knowledge for the Tower or prevent Tower’s knowledge being taken from him"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astral Pocket"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Orbiting Spy"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Spirit Hold"/>
+		<OPTIONALTALENT name="Thought Link"/>
+		<OPTIONALTALENT name="Thoughtful Expression"/>
+		<OPTIONALTALENT name="Wound Transfer"/>
+		<DISCIPLINETALENT name="Absorb Spell"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>View Memories</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Safe Thought"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Detect Falsehood"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Create Moon Staff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Animate Object"/>
+		<OPTIONALTALENT name="Detect Influence"/>
+		<OPTIONALTALENT name="Echo Location"/>
+		<OPTIONALTALENT name="Multi-Tongue"/>
+		<OPTIONALTALENT name="Soul Shatter"/>
+		<OPTIONALTALENT name="Vitality"/>
+		<DISCIPLINETALENT name="Truth Skit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Pass Knowledge</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Impossible Hide"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Aura Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>produce writing materials needed produce books/ scrolls; Perception-based Tests: draw sketches, retrieve information from Moon Staff; Skill: Navigation, Mapmaking;(CPG p.61)</HALFMAGIC>
+</DISCIPLINE>

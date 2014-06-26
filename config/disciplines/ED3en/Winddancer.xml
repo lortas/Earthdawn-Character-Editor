@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Winddancer" lang="en" bookref="NG p.201" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Impress"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<DISCIPLINETALENT name="Conversation"/>
+		<DISCIPLINETALENT name="Etiquette"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Taunt"/>
+		<DISCIPLINETALENT name="Wind Dance"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Distract"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Emotion Song"/>
+		<OPTIONALTALENT name="Empathic Sense"/>
+		<OPTIONALTALENT name="Engaging Banter"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Mimic Voice"/>
+		<DISCIPLINETALENT name="Diplomacy"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Bird Song"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Dance Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Dead Fall"/>
+		<OPTIONALTALENT name="Enduring Art"/>
+		<OPTIONALTALENT name="Fast Hand"/>
+		<OPTIONALTALENT name="Inspire Others"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
+		<OPTIONALTALENT name="Lip Reading"/>
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<ABILITY>Judgment Call</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Graceful Exit"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Leadership"/>
+		<TALENTABILITY/>
+		<KARMA spend="Interaction Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Hypnotize"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Incite Mob"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Mind Wave"/>
+		<OPTIONALTALENT name="Rally"/>
+		<OPTIONALTALENT name="Safe Thought"/>
+		<OPTIONALTALENT name="Song of Deflection"/>
+		<OPTIONALTALENT name="Mind Wave"/>
+		<OPTIONALTALENT name="Thought Link"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<DISCIPLINETALENT name="Slough Blame"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Captivate</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Bardic Voice"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Detect Falsehood"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Truth Skit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Animate Object"/>
+		<OPTIONALTALENT name="Blood Guilt Weapon"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Detect Influence"/>
+		<OPTIONALTALENT name="Echo Location"/>
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<DISCIPLINETALENT name="Multi-Tongue"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMASTEP/>
+		<ABILITY>Wing Mastery</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Aura Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>whenever perform for audiences; knowledge: legends, myths, rites, traditions, folklore of windling culture/ cultures studied personally; (NG p.203)</HALFMAGIC>
+</DISCIPLINE>

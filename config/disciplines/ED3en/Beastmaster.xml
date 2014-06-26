@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Beastmaster" lang="en" bookref="PG p.44" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="7" unconsciousness="6"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Animal Bond"/>
+		<DISCIPLINETALENT name="Claw Shape"/>
+		<DISCIPLINETALENT name="Creature Analysis"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Unarmed Combat"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Frighten Animals"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<DISCIPLINETALENT name="Dominate Beast"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Animal Training"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Beast Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Companion Durability" limitation="6/5"/>
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Call Animal Companion"/>
+		<OPTIONALTALENT name="Empathic Command"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Heal Animal Companion"/>
+		<TALENTABILITY/>
+		<ABILITY>Primal Urges</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Animal Talk"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Animal Possession"/>
+		<TALENTABILITY/>
+		<KARMA spend="animal companion Action Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Frenzy"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>	
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Bestial Toughness"/>
+		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Enduring Art"/>
+		<OPTIONALTALENT name="Howl"/>
+		<OPTIONALTALENT name="Incite Stampede"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Tame Mount"/>
+		<DISCIPLINETALENT name="Chameleon"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Tough Hide</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Animal Leadership"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Develop Animal Sense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Toughness-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Bestial Resilience"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Echo Location"/>
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<OPTIONALTALENT name="Trample"/>
+		<DISCIPLINETALENT name="Scent Identifier"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Wild Sense</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Venom"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Astral Web"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>dealing with/caring for animals beyond described by talents (including animal breeding, first aid, husbandry); recognizing different animals, animal tracks, abnormal behavior among animals/creatures; Skill: Wilderness Survival;(PG p.44)</HALFMAGIC>
+</DISCIPLINE>

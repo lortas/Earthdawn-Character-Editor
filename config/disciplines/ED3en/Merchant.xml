@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Merchant" lang="en" bookref="CPG p.40" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Bribery"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Etiquette"/>
+		<DISCIPLINETALENT name="Evaluate"/>
+		<DISCIPLINETALENT name="First Impression"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Trading"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Dead Fall"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Slough Blame"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<DISCIPLINETALENT name="Empathic Sense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Conceal Object"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Profit Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Direction Sense"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Fast Hand"/>
+		<OPTIONALTALENT name="Lip Reading"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<DISCIPLINETALENT name="Assess Community"/>
+		<TALENTABILITY/>
+		<ABILITY>Procure Item</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Safe Path"/>
+		<TALENTABILITY/>
+		<KARMA spend="spend Karma Point on Action Tests to defend his property against theft or robbery"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+		<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astral Pocket"/>
+		<OPTIONALTALENT name="Bardic Voice"/>
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Detect Falsehood"/>
+		<OPTIONALTALENT name="Infuse Weapon"/>
+		<OPTIONALTALENT name="Power Mask"/>
+		<OPTIONALTALENT name="Safe Thought"/>
+		<OPTIONALTALENT name="Show Armor Flaw"/>
+		<DISCIPLINETALENT name="Gold Sense"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>A Contract is a Contract</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Disguise Chest"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Sense Magic Item"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Conceal Caravan"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Gain Surprise"/>
+		<OPTIONALTALENT name="Infuse Armor"/>
+		<OPTIONALTALENT name="Moving Earth"/>
+		<OPTIONALTALENT name="Multi-Tongue"/>
+		<OPTIONALTALENT name="Reshape Object"/>
+		<OPTIONALTALENT name="Soften Blade"/>
+		<DISCIPLINETALENT name="Chameleon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>Evaluate Customer</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Company of One"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: everything related to trade (important trade routes, customs regarding trade, trade laws, clauses in contracts); in place Interaction (Insight) Tests, apply them documents to spot dangerous clauses in fine print; Skill: Navigation, Mapmaking;(CPG p.42) </HALFMAGIC>
+</DISCIPLINE>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Horror Stalker" lang="en" bookref="NG p.146" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="8" unconsciousness="6"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<DISCIPLINETALENT name="Call of Harrow"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<DISCIPLINETALENT name="Abate Curse"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Bear Mark"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Horror Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Direction Sense"/>
+		<OPTIONALTALENT name="Research"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Steely Stare"/>
+		<OPTIONALTALENT name="Temper Self"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Lion Heart"/>
+		<TALENTABILITY/>
+		<ABILITY>Spiritual Sanctuary</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Bane Strike"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Life Check"/>
+		<TALENTABILITY/>
+		<KARMA spend="Test aganinst Horror and Test to resist or evade Horror´s attacks, spells or powers"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Second Attack"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Crushing Blow"/>
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Frighten"/>
+		<OPTIONALTALENT name="Rally"/>
+		<OPTIONALTALENT name="Resist Pain"/>
+		<OPTIONALTALENT name="Temper Other"/>
+		<OPTIONALTALENT name="Vitality"/>
+		<DISCIPLINETALENT name="Lion Spirit"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Horror Trap</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Detect Influence"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Suppress Influence"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Netherwalk"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Mind Blade"/>
+		<OPTIONALTALENT name="Multi-Strike"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="Vital Strike"/>
+		<OPTIONALTALENT name="Wound Transfer"/>
+		<DISCIPLINETALENT name="Confront Horror"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMASTEP/>
+		<ABILITY>Wrath Manifest</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Aura Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Astral Web"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>seeking knowledge: Horrors, Horror constructs, Scourge, kaers/ citadels, magic used by Horrors or devised protect against them, Names and legends those who fought Horrors; Willpower-based Tests resist lure of Horrors, effects placed upon them against their will, if resisting not covered by abilities; Perception-based Tests detect presence of Horrors/Constructs within 15 hex;(NG p.148)</HALFMAGIC>
+</DISCIPLINE>
