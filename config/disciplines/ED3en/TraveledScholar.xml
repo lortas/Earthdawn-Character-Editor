@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Traveled Scholar" lang="en" bookref="NG p.194" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<EASYSKILL>Knowledge</EASYSKILL>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Search"/>
+		<DISCIPLINETALENT name="Item History"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Read/Write Language"/>
+		<DISCIPLINETALENT name="Research"/>
+		<DISCIPLINETALENT name="Speak Language"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Evaluate"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Lock Picking"/>
+		<DISCIPLINETALENT name="Book Memory"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Book Recall"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Lore Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Direction Sense"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Spirit Talk"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<DISCIPLINETALENT name="Applied Science"/>
+		<TALENTABILITY/>
+		<ABILITY>Quest for Knowledge</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Lip Reading"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Safe Path"/>
+		<TALENTABILITY/>
+		<KARMA spend="Knowledge Tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Endure Cold"/>
+		<OPTIONALTALENT name="Hypnotize"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Mind Wave"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Sense Magic Item"/>
+		<OPTIONALTALENT name="Thought Link"/>
+		<DISCIPLINETALENT name="Safe Thought"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Indexing</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Detect Falsehood"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Truth Skit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Bardic Voice"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Astral Pocket"/>
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Detect Influence"/>
+		<OPTIONALTALENT name="Elemental Walk"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>Wisdom of the Ages</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Multi-Tongue"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Earth Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>produce materials (includes paper, parchment, ink, quills, drawing chalk, scrolls, scroll/ map cases, bookbinding, calligraphy, illustration) and presentations required for Discipline;  Skill: Navigation, Mapmaking; (NG p.197)</HALFMAGIC>
+</DISCIPLINE>

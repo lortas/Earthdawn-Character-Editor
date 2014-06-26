@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Samurai" lang="en" bookref="CPG p.54" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY circle="1" death="9" unconsciousness="7"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Charge"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Trick Riding"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Kiai"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Missile Weapons"/>
+		<DISCIPLINETALENT name="Parry"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Block and Counter"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Mystic Aim"/>
+		<OPTIONALTALENT name="Sure Mount"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Anticipate Blow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Riposte"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Daisho Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Joint Lock"/>
+		<OPTIONALTALENT name="Long Shot"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Momentum Attack"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Wheeling Attack"/>
+		<DISCIPLINETALENT name="Shadow Step"/>
+		<TALENTABILITY/>
+		<ABILITY>Daimyo’s Authority</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="True Shot"/>
+		<TALENTABILITY/>
+		<KARMA spend="Strength-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Guard Stance"/>
+		<TALENTABILITY/>
+		<KARMA spend="spend Karma Point on Damage Tests fighting his lord’s interests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Crushing Blow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+		<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Blind Fire"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Mount Attack"/>
+		<OPTIONALTALENT name="Rally"/>
+		<OPTIONALTALENT name="Resist Pain"/>
+		<OPTIONALTALENT name="Takedown"/>
+		<DISCIPLINETALENT name="Cobra Strike"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Daimyo’s Command</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Great Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Vitality"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Screaming Arrow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Aura Armor"/>
+		<OPTIONALTALENT name="Infuse Weapon"/>
+		<OPTIONALTALENT name="Mind Blade"/>
+		<OPTIONALTALENT name="Missile Twister"/>
+		<OPTIONALTALENT name="Trample"/>
+		<OPTIONALTALENT name="Vital Strike"/>
+		<DISCIPLINETALENT name="Ethereal Weapon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Daimyo’s Entitlement</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Multi-Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Multi-Shot"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>maintain his weapons/ armor, care for his mount; knowledge: military tactics/ strategy, concerning samurai life, code of bushido, Jih’Pen nobles and their culture; Skill: Tactics, Etiquette, Conversation if situation concerns Jih’Pen culture;(CPG p.56)</HALFMAGIC>
+</DISCIPLINE>

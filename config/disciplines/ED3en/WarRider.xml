@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="War Rider" lang="en" bookref="CPG p.74" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="7" unconsciousness="6"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Animal Training"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Missile Weapons"/>
+		<DISCIPLINETALENT name="Surprise Strike"/>
+		<DISCIPLINETALENT name="Tracking"/>
+		<DISCIPLINETALENT name="Trick Riding"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Dominate Beast"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
+		<OPTIONALTALENT name="Long Shot"/>
+		<OPTIONALTALENT name="Mystic Aim"/>
+		<OPTIONALTALENT name="Wood Skin"/>
+		<DISCIPLINETALENT name="Sure Mount"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Empathic Command"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Gar Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Strength-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Heal Animal"/>
+		<OPTIONALTALENT name="Momentum Attack"/>
+		<OPTIONALTALENT name="Mount Durability"/>
+		<OPTIONALTALENT name="Steely Stare"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="True Shot"/>
+		<OPTIONALTALENT name="Wheeling Attack"/>
+		<DISCIPLINETALENT name="Lion Heart"/>
+		<TALENTABILITY/>
+		<ABILITY>Life in Stirrups</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Wheeling Defense"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Feign Retreat"/>
+		<TALENTABILITY/>
+		<KARMA spend="Damage Tests while mounted"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Second Shot"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Call Missile"/>
+		<OPTIONALTALENT name="Call Mount"/>
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Eagle Eye"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Mount Attack"/>
+		<OPTIONALTALENT name="Quick Shot"/>
+		<OPTIONALTALENT name="Tame Mount"/>
+		<DISCIPLINETALENT name="Ambush"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Out of Nowhere</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Armor Mount"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Bestial Toughness"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Unmount"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Gain Surprise"/>
+		<OPTIONALTALENT name="Screaming Arrow"/>
+		<OPTIONALTALENT name="Trample"/>
+		<OPTIONALTALENT name="Wind Bow"/>
+		<DISCIPLINETALENT name="Bestial Resilience"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>Law of Might</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Vital Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Multi-Shot"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: mounts common to homelands; taking care mounts/ mount-related gear; tame/ train mounts; Skill: Craft Weapon missile weapons, ammunition (CPG p.77)</HALFMAGIC>
+</DISCIPLINE>

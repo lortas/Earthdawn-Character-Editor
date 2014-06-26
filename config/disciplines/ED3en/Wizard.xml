@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Wizard" lang="en" bookref="PG p.56" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="4" unconsciousness="3"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="W2"/>
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Read/Write Magic"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="W1"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Wizardry"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Astral Sense"/>
+		<SPELL type="wizard" name="Bedazzling Display of Logical Analysis"/>
+		<SPELL type="wizard" name="Crushing Will"/>
+		<SPELL type="wizard" name="Dispel Magic"/>
+		<SPELL type="wizard" name="Divine Aura"/>
+		<SPELL type="wizard" name="Flame Flash"/>
+		<SPELL type="wizard" name="Ignite"/>
+		<SPELL type="wizard" name="Iron Hand"/>
+		<SPELL type="wizard" name="Mind Dagger"/>
+		<SPELL type="wizard" name="Silent Converse"/>
+		<SPELL type="wizard" name="Triangulate"/>
+		<SPELL type="wizard" name="Wall Walker"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Abate Curse"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="W3"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="W4"/>
+		<DISCIPLINETALENT name="Read/Write Language"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="And His Money"/>
+		<SPELL type="wizard" name="Astral Shield"/>
+		<SPELL type="wizard" name="Clean"/>
+		<SPELL type="wizard" name="Dodge Boost"/>
+		<SPELL type="wizard" name="Rope Ladder"/>
+		<SPELL type="wizard" name="Seal"/>
+		<SPELL type="wizard" name="Vines"/>
+		<SPELL type="wizard" name="Wake-Up Call"/>
+		<SPELLABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Book Memory"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Aura Strike"/>
+		<SPELL type="wizard" name="Catwalk"/>
+		<SPELL type="wizard" name="Combat Fury"/>
+		<SPELL type="wizard" name="False Aura"/>
+		<SPELL type="wizard" name="Healing Sleep"/>
+		<SPELL type="wizard" name="Identify Spell"/>
+		<SPELL type="wizard" name="Leaps and Bounds"/>
+		<SPELL type="wizard" name="Levitate"/>
+		<SPELL type="wizard" name="Notice Not"/>
+		<SPELL type="wizard" name="Ork Stoke"/>
+		<SPELL type="wizard" name="Quicken Pace"/>
+		<SPELL type="wizard" name="Seeking Sight"/>
+		<SPELL type="wizard" name="Shatter Lock"/>
+		<SPELL type="wizard" name="Water Wings"/>
+		<SPELL type="wizard" name="Wizard Mark"/>
+		<SPELLABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Research"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Ball of String"/>
+		<SPELL type="wizard" name="Binding Threads"/>
+		<SPELL type="wizard" name="Buoyancy"/>
+		<SPELL type="wizard" name="Dust Devil"/>
+		<SPELL type="wizard" name="Hair Frenzy"/>
+		<SPELL type="wizard" name="Icy Protection"/>
+		<SPELL type="wizard" name="Identify Magic"/>
+		<SPELL type="wizard" name="Inventory"/>
+		<SPELL type="wizard" name="Juggler's Touch"/>
+		<SPELL type="wizard" name="Kaer Knocking"/>
+		<SPELL type="wizard" name="Karmic Connection"/>
+		<SPELL type="wizard" name="Relax"/>
+		<SPELL type="wizard" name="Repair Lock"/>
+		<SPELL type="wizard" name="Thorny Retreat"/>
+		<SPELL type="wizard" name="Trust"/>
+		<SPELL type="wizard" name="Wizard's Cloak"/>
+		<SPELLABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Direction Sense"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="W1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Lifesight"/>
+		<OPTIONALTALENT name="Lip Reading"/>
+		<OPTIONALTALENT name="Orbiting Spy"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Counterspell"/>
+		<SPELL type="wizard" name="Giant Size"/>
+		<SPELL type="wizard" name="Heat Metal Armor"/>
+		<SPELL type="wizard" name="Invigorate"/>
+		<SPELL type="wizard" name="Kaer Pictographs"/>
+		<SPELL type="wizard" name="Mage Armor"/>
+		<SPELL type="wizard" name="Makeshift Missile"/>
+		<SPELL type="wizard" name="Mystic Shock"/>
+		<SPELL type="wizard" name="Sanctuary"/>
+		<SPELL type="wizard" name="Slow"/>
+		<SPELL type="wizard" name="Solo Flight"/>
+		<SPELL type="wizard" name="Study Thread"/>
+		<SPELLABILITY/>
+		<ABILITY>Book Mage</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Book Recall"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Blood Lost"/>
+		<SPELL type="wizard" name="Displace Self"/>
+		<SPELL type="wizard" name="Doom Missile"/>
+		<SPELL type="wizard" name="Karma Cancel"/>
+		<SPELL type="wizard" name="Loan Spell"/>
+		<SPELL type="wizard" name="Makeshift Weapon"/>
+		<SPELL type="wizard" name="Mental Library"/>
+		<SPELL type="wizard" name="Multi-Mind Dagger"/>
+		<SPELL type="wizard" name="Rampage"/>
+		<SPELL type="wizard" name="Razor Orb"/>
+		<SPELL type="wizard" name="Sleep"/>
+		<SPELL type="wizard" name="Spellstore"/>
+		<KARMA spend="Willpower-Only Tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Astral Gift"/>
+		<SPELL type="wizard" name="Blood Boil"/>
+		<SPELL type="wizard" name="Call"/>
+		<SPELL type="wizard" name="Confusing Weave"/>
+		<SPELL type="wizard" name="Dislodge Spell"/>
+		<SPELL type="wizard" name="Lightning Cloud"/>
+		<SPELL type="wizard" name="Liquid Eyes"/>
+		<SPELL type="wizard" name="Move on Through"/>
+		<SPELL type="wizard" name="Mystic Net"/>
+		<SPELL type="wizard" name="Spell Cage"/>
+		<KARMA spend="spell effect tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Hold Thread"/>
+		<TALENTABILITY/>
+		<SPELL type="wizard" name="Catch Spell"/>
+		<SPELL type="wizard" name="Compression Bubble"/>
+		<SPELL type="wizard" name="Delay Blow"/>
+		<SPELL type="wizard" name="Peacebond"/>
+		<SPELL type="wizard" name="Safe Opening"/>
+		<SPELL type="wizard" name="Spell Snatcher"/>
+		<SPELL type="wizard" name="Wound Mask"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+		<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Armored Matrix" limitation="W1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W3"/>
+		<OPTIONALTALENT name="Astral Pocket"/>
+		<OPTIONALTALENT name="Matrix Strike"/>
+		<OPTIONALTALENT name="Power Mask"/>
+		<OPTIONALTALENT name="Safe Thought"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<DISCIPLINETALENT name="Range Pattern"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Matrix Split</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Casting Pattern"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Wound Transfer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Detect Falsehood"/>
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<OPTIONALTALENT name="Multi-Tongue"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W3"/>
+		<DISCIPLINETALENT name="Effect Pattern"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Casting Triangle</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Detect Influence"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE count="2"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Astral Web"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>recognize types of magic use, identify specific uses of Wizardry; knowledge: of magical rituals (PG p.56)</HALFMAGIC>
+</DISCIPLINE>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Messenger" lang="en" bookref="NG p.163" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Book Memory"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Read/Write Language"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Avoid Blow"/>
+		<DISCIPLINETALENT name="Direction Sense"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Navigation"/>
+		<DISCIPLINETALENT name="Speak Language"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Book Recall"/>
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Silent Walk"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<DISCIPLINETALENT name="Conceal Object"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Sprint"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Message Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Gliding Stride"/>
+		<OPTIONALTALENT name="Mimic Voice"/>
+		<OPTIONALTALENT name="Trick Riding"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Temper Self"/>
+		<TALENTABILITY/>
+		<ABILITY>Encrypt</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Steel Thought"/>
+		<TALENTABILITY/>
+		<KARMA spend="Action Test to defend an outside influence that might prevent him from delivering a message"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Safe Path"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Fast Hand"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Lifesight"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Missile Twister"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<OPTIONALTALENT name="Poison Resistance"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Lion Spirit"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Endurance</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Safe Thought"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Chameleon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Defense"/>
+		<OPTIONALTALENT name="Detect Falsehood"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Multi-Tongue"/>
+		<OPTIONALTALENT name="Stone Skin"/>
+		<OPTIONALTALENT name="Truth Skit"/>
+		<DISCIPLINETALENT name="Elemental Walk"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<KARMASTEP/>
+		<ABILITY>One with the Message</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Echo Location"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: travel routes, customs of delivery trade, messages types, how to convey, hide, find, encrypt, decrypt; Toughness-based Tests in place Fatigue Tests; Skill: Mapmaking, Wilderness Survival;(NG p.163)</HALFMAGIC>
+</DISCIPLINE>

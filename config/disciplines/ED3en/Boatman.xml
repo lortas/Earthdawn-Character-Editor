@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Boatman" lang="en" bookref="NG p.141" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="6" unconsciousness="5"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Climbing"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Pilot Boat"/>
+		<DISCIPLINETALENT name="Swimming"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Evaluate"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Cast Net"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Read River"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="River Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Acrobatic Strike"/>
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Engaging Banter"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
+		<OPTIONALTALENT name="Mystic Aim"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Swing Attack"/>
+		<TALENTABILITY/>
+		<ABILITY>Flow of Kiatsu</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Lion Heart"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Second Weapon"/>
+		<TALENTABILITY/>
+		<KARMA spend="Action Test made aboard a riverboat"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Disarm"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Detect Falsehood"/>
+		<OPTIONALTALENT name="Eagle Eye"/>
+		<OPTIONALTALENT name="Pin"/>
+		<OPTIONALTALENT name="Rally"/>
+		<OPTIONALTALENT name="Second Attack"/>
+		<OPTIONALTALENT name="Shield Beater"/>
+		<OPTIONALTALENT name="Whirlwind"/>
+		<DISCIPLINETALENT name="Lion Spirit"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Strengh of Jik´harra</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Defense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Life Check"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Infuse Blade"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Aura Armor"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Missile Twister"/>
+		<OPTIONALTALENT name="Quick Shot"/>
+		<OPTIONALTALENT name="Water Dancing"/>
+		<DISCIPLINETALENT name="Mind Blade"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Forging P´skarrot</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Vitality"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Second Chance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>maintenance, repair, construction riverboats; knowledge: riverboat designs, recognition types of boats, commonly followed trade routes, riverboat crew complements; Skill: Read River, Sailing, Navigation aboard riverboats; swing from rigging, avoid obstacles etc. moving around riverboat;(NG p.143)</HALFMAGIC>
+</DISCIPLINE>

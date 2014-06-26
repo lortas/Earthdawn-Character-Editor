@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Elementalist" lang="en" bookref="PG p.46" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="4" unconsciousness="3"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Read/Write Language"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="E2"/>
+		<DISCIPLINETALENT name="Air Speaking"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Read/Write Magic"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Elementalism"/>
+		<DISCIPLINETALENT name="Spell Matrix" limitation="E1"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Armor"/>
+		<SPELL type="elemental" name="Crunch Climb"/>
+		<SPELL type="elemental" name="Earth Blend"/>
+		<SPELL type="elemental" name="Earth Darts"/>
+		<SPELL type="elemental" name="Flameweapon"/>
+		<SPELL type="elemental" name="Heat Food"/>
+		<SPELL type="elemental" name="Moonglow"/>
+		<SPELL type="elemental" name="Plant Talk"/>
+		<SPELL type="elemental" name="Purify Earth"/>
+		<SPELL type="elemental" name="Purify Water"/>
+		<SPELL type="elemental" name="Resist Cold"/>
+		<SPELL type="elemental" name="Resist Fire"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Parry"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="E3"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="E4"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Wind Catcher"/>
+		<DISCIPLINETALENT name="Fire Heal"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Mattress"/>
+		<SPELL type="elemental" name="Billowing Cloak"/>
+		<SPELL type="elemental" name="Boil Water"/>
+		<SPELL type="elemental" name="Detect Elementalism Magic"/>
+		<SPELL type="elemental" name="Flame Strike"/>
+		<SPELL type="elemental" name="Gills"/>
+		<SPELL type="elemental" name="Hunter's Sense"/>
+		<SPELL type="elemental" name="Ice Spear"/>
+		<SPELL type="elemental" name="Icy Surface"/>
+		<SPELL type="elemental" name="Path Home"/>
+		<SPELL type="elemental" name="Shield Willow"/>
+		<SPELL type="elemental" name="Slow Metal Weapon"/>
+		<SPELL type="elemental" name="Small Slayer"/>
+		<SPELL type="elemental" name="Sterilize Object"/>
+		<SPELL type="elemental" name="Stick Together"/>
+		<SPELLABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Elemental Tongues"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Behind Eye"/>
+		<SPELL type="elemental" name="Dispel Elementalism Magic"/>
+		<SPELL type="elemental" name="Fingers of Wind"/>
+		<SPELL type="elemental" name="Fuel Flame"/>
+		<SPELL type="elemental" name="Grounding"/>
+		<SPELL type="elemental" name="Ice Mace and Chain"/>
+		<SPELL type="elemental" name="Lightning Bolt"/>
+		<SPELL type="elemental" name="Plant Feast"/>
+		<SPELL type="elemental" name="Porter"/>
+		<SPELL type="elemental" name="Puddle Deep"/>
+		<SPELL type="elemental" name="Repair"/>
+		<SPELL type="elemental" name="Rust"/>
+		<SPELL type="elemental" name="Sky Lattice"/>	
+		<SPELL type="elemental" name="Smoke Cloud"/>
+		<SPELL type="elemental" name="Snuff"/>
+		<SPELL type="elemental" name="Sunlight"/>
+		<SPELL type="elemental" name="Thrive"/>
+		<SPELL type="elemental" name="Throne of Air"/>
+		<SPELL type="elemental" name="Winds of Deflection"/>
+		<SPELLABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Elemental Hold"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Blast"/>
+		<SPELL type="elemental" name="Blizzard Sphere"/>
+		<SPELL type="elemental" name="Element Spear: Air"/>
+		<SPELL type="elemental" name="Element Spear: Earth"/>
+		<SPELL type="elemental" name="Element Spear: Fire"/>
+		<SPELL type="elemental" name="Element Spear: Water"/>
+		<SPELL type="elemental" name="Element Spear: Wood"/>
+		<SPELL type="elemental" name="Falcon's Cloak"/>
+		<SPELL type="elemental" name="Fire Whip"/>
+		<SPELL type="elemental" name="Great Sticky Vines"/>
+		<SPELL type="elemental" name="Lighten Load"/>		
+		<SPELL type="elemental" name="Lightning Shield"/>
+		<SPELL type="elemental" name="Lightning Step"/>
+		<SPELL type="elemental" name="Liquid Arrow"/>
+		<SPELL type="elemental" name="Lodestone's Touch"/>
+		<SPELL type="elemental" name="Root Trap"/>
+		<SPELL type="elemental" name="Shield of Warping"/>
+		<SPELL type="elemental" name="Spirits of Death's Sea"/>
+		<SPELL type="elemental" name="Suffocating Paste"/>
+		<SPELL type="elemental" name="Uneven Ground"/>
+		<SPELL type="elemental" name="Weapon Back"/>
+		<SPELLABILITY/>
+		<KARMA spend="Perception-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Detect Trap"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E1"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E2"/>
+		<OPTIONALTALENT name="Gliding Stride"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="Willforce"/>
+		<OPTIONALTALENT name="Wood Skin"/>
+		<DISCIPLINETALENT name="Summon" limitation="Elemental Spirits"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Balloons of Mist"/>
+		<SPELL type="elemental" name="Earth Staff"/>
+		<SPELL type="elemental" name="Fireball"/>
+		<SPELL type="elemental" name="Inflame Self"/>
+		<SPELL type="elemental" name="Ironwood"/>
+		<SPELL type="elemental" name="Metal Scream"/>
+		<SPELL type="elemental" name="Metal Wings"/>
+		<SPELL type="elemental" name="Nutritious Earth"/>	
+		<SPELL type="elemental" name="Resist Poison"/>
+		<SPELL type="elemental" name="Shattering Stone"/>
+		<SPELL type="elemental" name="Stone Cage"/>
+		<SPELLABILITY/>
+		<ABILITY>Fire and Ice</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Cold Purify"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Drastic Temperature"/>
+		<SPELL type="elemental" name="Ease Passage"/>
+		<SPELL type="elemental" name="Fireweave"/>
+		<SPELL type="elemental" name="Flameshaw"/>
+		<SPELL type="elemental" name="Living Wall"/>
+		<SPELL type="elemental" name="Ricochet Attack"/>
+		<SPELL type="elemental" name="Stone Rain"/>
+		<SPELL type="elemental" name="Tossing Earth"/>	
+		<SPELL type="elemental" name="Tree Merge"/>
+		<KARMA spend="Willpower-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Earth Skin"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Beastform"/>
+		<SPELL type="elemental" name="Calm Water"/>
+		<SPELL type="elemental" name="Cloud Summon"/>
+		<SPELL type="elemental" name="Death Rain"/>
+		<SPELL type="elemental" name="Earth Q'wril"/>
+		<SPELL type="elemental" name="Earth Surfing"/>
+		<SPELL type="elemental" name="Engulf Air"/>
+		<SPELL type="elemental" name="Engulf Earth"/>
+		<SPELL type="elemental" name="Engulf Fire"/>
+		<SPELL type="elemental" name="Engulf Water"/>
+		<SPELL type="elemental" name="Engulf Wood"/>
+		<SPELL type="elemental" name="Fire Hounds"/>
+		<SPELL type="elemental" name="Flame Darts"/>
+		<SPELL type="elemental" name="Grasping Hand of Earth"/>
+		<SPELL type="elemental" name="Storm Manacles"/>
+		<SPELL type="elemental" name="Thunderclap"/>
+		<SPELL type="elemental" name="Whirlwind"/>
+		<KARMA spend="Spell Effect Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Temperature"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Blade Fury"/>
+		<SPELL type="elemental" name="Crushing Hand of Earth"/>
+		<SPELL type="elemental" name="Earth Wall"/>
+		<SPELL type="elemental" name="Perimeter Alarm"/>
+		<SPELL type="elemental" name="Silence Metal"/>
+		<SPELL type="elemental" name="Silver Shadow"/>
+		<SPELL type="elemental" name="Waterspout"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Armored Matrix" limitation="E1"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="E2"/>
+		<OPTIONALTALENT name="Bargain With Summoned Creature"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Plant Shelter"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Spirit Strike"/>
+		<OPTIONALTALENT name="Warp Missile"/>
+		<DISCIPLINETALENT name="Metal Ward"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Burning Water"/>
+		<SPELL type="elemental" name="Cloud Banish"/>
+		<SPELL type="elemental" name="Cold Embers"/>
+		<SPELL type="elemental" name="Dragon's Breath"/>
+		<SPELL type="elemental" name="Fire Wall"/>
+		<SPELL type="elemental" name="Moon Shadow"/>
+		<SPELL type="elemental" name="Water Wall"/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Earth and Wind</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Endure Cold"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Air Fortress"/>
+		<SPELL type="elemental" name="Earth and Air"/>
+		<SPELL type="elemental" name="Elemental Merchant"/>
+		<SPELL type="elemental" name="Fire and Water"/>
+		<SPELL type="elemental" name="Frozen Harbor"/>
+		<SPELL type="elemental" name="Petrify"/>
+		<SPELL type="elemental" name="Weather Change"/>
+		<DEFENSE kind="spell"/>
+		<KARMA spend="Karma Point on Action Tests made by a spirit or creature under his control"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Reshape Object"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Wood Blade"/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Summoning Circle"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Crop Blight"/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="First Ring of Perfection"/>
+		<OPTIONALTALENT name="Gold Sense"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="E1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="E2"/>
+		<OPTIONALTALENT name="Soften Blade"/>
+		<OPTIONALTALENT name="Water Dancing"/>
+		<DISCIPLINETALENT name="Moving Earth"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Element Matrix</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Elemental Walk"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Council of the Forest"/>
+		<DEFENSE kind="spell"/>
+		<RECOVERYTEST/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Earth Armor"/>
+		<TALENTABILITY/>
+		<SPELL type="elemental" name="Call Forth the Maelstrom"/>
+		<SPELL type="elemental" name="Purify Forest"/>
+		<DEFENSE kind="physical"/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: nature, elements, uses of elemental magic, other magical rituals; Perception-based Tests: locate/gather True elements, detect elemental spirits within 15 hex;(PG p.46)</HALFMAGIC>
+</DISCIPLINE>

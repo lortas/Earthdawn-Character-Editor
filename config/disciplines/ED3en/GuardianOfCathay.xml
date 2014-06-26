@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Guardian of Cathay" lang="en" bookref="CPG p.35" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY death="9" unconsciousness="7"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Fireblood"/>
+		<DISCIPLINETALENT name="Karma Ritual"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Maneuver"/>
+		<DISCIPLINETALENT name="Parry"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<OPTIONALTALENT name="Detect Weapon"/>
+		<OPTIONALTALENT name="Durability"/>
+		<OPTIONALTALENT name="Lasting Impression"/>
+		<OPTIONALTALENT name="Search"/>
+		<OPTIONALTALENT name="Sense Danger"/>
+		<OPTIONALTALENT name="Shield Charge"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Clay Skin"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Air Dance"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Duty Weaving"/>
+		<TALENTABILITY/>
+		<KARMA spend="Charisma-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Direction Sense"/>
+		<OPTIONALTALENT name="Elemental Tongues"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
+		<TALENTABILITY/>
+		<ABILITY>Emperor’s Emissary</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Cobra Strike"/>
+		<TALENTABILITY/>
+		<KARMA spend="Dexterity-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Momentum Attack"/>
+		<TALENTABILITY/>
+		<KARMA spend="against enemy of his kingdom"/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Flowing Blow"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>	
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Detect Falsehood"/>
+		<OPTIONALTALENT name="Frenzy"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Pin"/>
+		<OPTIONALTALENT name="Rally"/>
+		<OPTIONALTALENT name="Vitality"/>
+		<DISCIPLINETALENT name="Liquid Prison"/>
+		<TALENTABILITY/>
+		<KARMA spend="Recovery Test"/>
+		<ABILITY>Strength of the Realm</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Metal Ward"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Strength-only Test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Fiery Blade"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Airs of Nobility"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Blood Guilt Weapon"/>
+		<OPTIONALTALENT name="Elemental Walk"/>
+		<OPTIONALTALENT name="Infuse Blade"/>
+		<OPTIONALTALENT name="Rushing Attack"/>
+		<OPTIONALTALENT name="Shield of the Innocent"/>
+		<OPTIONALTALENT name="Storm Shield"/>
+		<DISCIPLINETALENT name="Earth Armor"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMASTEP/>
+		<ABILITY>Spirit Guardian</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Vital Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Multi-Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>knowledge: military strategy/ tactics, his kingdom and its laws; taking care arms/ armor; Skill: Tactics; (CPG p.36)</HALFMAGIC>
+</DISCIPLINE>
