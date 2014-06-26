@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TRANSLATIONS rulesetversion="ED4" xmlns="http://earthdawn.com/translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/translation ../earthdawntranslation.xsd">
+	<CAPABILITY>
+		<LABEL lang="en">Distract</LABEL>
+		<LABEL lang="de">Ablenken</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Animal Training</LABEL>
+		<LABEL lang="de">Abrichten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Wheeling Defense</LABEL>
+		<LABEL lang="de">Abwehrkreis</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Acrobatic Defense</LABEL>
+		<LABEL lang="de">Akrobatische Verteidigung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Alchemy</LABEL>
+		<LABEL lang="de">Alchemie</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Inspire Others</LABEL>
+		<LABEL lang="de">Andere Inspirieren</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Arcane Mutterings</LABEL>
+		<LABEL lang="de">Arkanes Gefasel</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Item History</LABEL>
+		<LABEL lang="de">Artefaktgeschichte</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Physician</LABEL>
+		<LABEL lang="de">Arzt</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Astral Interference</LABEL>
+		<LABEL lang="de">Astrale Interferenz</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Astral Sight</LABEL>
+		<LABEL lang="de">Astralsicht</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Awareness</LABEL>
+		<LABEL lang="de">Aufmerksamkeit</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Stopping Aim</LABEL>
+		<LABEL lang="de">Bannmarkierung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Impressive Display</LABEL>
+		<LABEL lang="de">Beeindrucken</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Summon</LABEL>
+		<LABEL lang="de">Beschwören</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Bribery</LABEL>
+		<LABEL lang="de">Bestechung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Evidence Analysis</LABEL>
+		<LABEL lang="de">Beweisanalyse</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Artist</LABEL>
+		<LABEL lang="de">Bildende Kunst</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">True Shot</LABEL>
+		<LABEL lang="de">Blattschuss</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Lasting Impression</LABEL>
+		<LABEL lang="de">Bleibender Eindruck</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Claw Frenzy</LABEL>
+		<LABEL lang="de">Blutige Krallen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Pilot Boat</LABEL>
+		<LABEL lang="de">Boot Steuern</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Flame Arrow</LABEL>
+		<LABEL lang="de">Brandpfeil</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Book Memory</LABEL>
+		<LABEL lang="de">Büchergedächtnis</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Diplomacy</LABEL>
+		<LABEL lang="de">Diplomatie</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Double-Charge</LABEL>
+		<LABEL lang="de">Doppelter Sturmangriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Iron Constitution</LABEL>
+		<LABEL lang="de">Eiserne Konstitution</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Steel Thought</LABEL>
+		<LABEL lang="de">Eiserner Wille</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Graceful Exit</LABEL>
+		<LABEL lang="de">Eleganter Abgang</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Elemental Hold</LABEL>
+		<LABEL lang="de">Elementarbann</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Elemental Tongues</LABEL>
+		<LABEL lang="de">Elementarsprachen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Empathic Sense</LABEL>
+		<LABEL lang="de">Empathische Wahrnehmung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Disarm</LABEL>
+		<LABEL lang="de">Entwaffnen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Earth Skin</LABEL>
+		<LABEL lang="de">Erdhaut</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">First Impression</LABEL>
+		<LABEL lang="de">Erster Eindruck</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Enhanced Matrix</LABEL>
+		<LABEL lang="de">Erweiterte Matrix</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Etiquette</LABEL>
+		<LABEL lang="de">Etikette</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Hold Thread</LABEL>
+		<LABEL lang="de">Faden Halten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Thread Weaving</LABEL>
+		<LABEL lang="de">Fadenweben</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Disarm Trap</LABEL>
+		<LABEL lang="de">Fallen Entschärfen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Haggle</LABEL>
+		<LABEL lang="de">Feilschen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Fireblood</LABEL>
+		<LABEL lang="de">Feuerblut</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Fast Hand</LABEL>
+		<LABEL lang="de">Flinke Hand</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Flirting</LABEL>
+		<LABEL lang="de">Flirten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Suppress Curse</LABEL>
+		<LABEL lang="de">Fluch Unterdrücken</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Research</LABEL>
+		<LABEL lang="de">Forschen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Speak Language</LABEL>
+		<LABEL lang="de">Fremdsprachen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Fearsome Charge</LABEL>
+		<LABEL lang="de">Furchterregender Sturmangriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Forgery</LABEL>
+		<LABEL lang="de">Fälschen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Leadership</LABEL>
+		<LABEL lang="de">Führung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Streetwise</LABEL>
+		<LABEL lang="de">Gassenwissen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Thought Link</LABEL>
+		<LABEL lang="de">Gedankenkette</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Danger Sense</LABEL>
+		<LABEL lang="de">Gefahrensinn</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Emotion Song</LABEL>
+		<LABEL lang="de">Gefühlsmelodie</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Conceal Object</LABEL>
+		<LABEL lang="de">Gegenstand Verbergen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Spirit Hold</LABEL>
+		<LABEL lang="de">Geisterbann</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Spirit Mount</LABEL>
+		<LABEL lang="de">Geisterreittier</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Spirit Talk</LABEL>
+		<LABEL lang="de">Geistersprache</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Winning Smile</LABEL>
+		<LABEL lang="de">Gewinnendes Lächeln</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Bank Shot</LABEL>
+		<LABEL lang="de">Gezielter Querschläger</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Crushing Blow</LABEL>
+		<LABEL lang="de">Hammerschlag</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Craftsman</LABEL>
+		<LABEL lang="de">Handwerk</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Tenacious Weave</LABEL>
+		<LABEL lang="de">Hartnäckiges Gewebe</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Fire Heal</LABEL>
+		<LABEL lang="de">Heilendes Feuer</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Stealthy Stride</LABEL>
+		<LABEL lang="de">Heimlicher Schritt</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Heartening Laugh</LABEL>
+		<LABEL lang="de">Herzliches Lachen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Avoid Blow</LABEL>
+		<LABEL lang="de">Hieb Ausweichen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Wood Skin</LABEL>
+		<LABEL lang="de">Holzhaut</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Hypnotize</LABEL>
+		<LABEL lang="de">Hypnotisieren</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">False Sight</LABEL>
+		<LABEL lang="de">Illusionsverstärkung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Battle Shout</LABEL>
+		<LABEL lang="de">Kampfgebrüll</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Anticipate Blow</LABEL>
+		<LABEL lang="de">Kampfsinn</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Mapmaking</LABEL>
+		<LABEL lang="de">Karten Zeichnen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Climbing</LABEL>
+		<LABEL lang="de">Klettern</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Blade Juggle</LABEL>
+		<LABEL lang="de">Klingen Jonglieren</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Cobra Strike</LABEL>
+		<LABEL lang="de">Kobrastoß</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Direction Arrow</LABEL>
+		<LABEL lang="de">Kompasspfeil</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Conversation</LABEL>
+		<LABEL lang="de">Konversation</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Claw Shape</LABEL>
+		<LABEL lang="de">Krallenhand</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Orbiting Spy</LABEL>
+		<LABEL lang="de">Kreisender Spion</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Artisan</LABEL>
+		<LABEL lang="de">Kunsthandwerk</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Trick Riding</LABEL>
+		<LABEL lang="de">Kunstreiten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Lifesight</LABEL>
+		<LABEL lang="de">Lebensblick</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Read/Write Language</LABEL>
+		<LABEL lang="de">Lesen/Schreiben</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Life Check</LABEL>
+		<LABEL lang="de">Letzte Rettung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Gliding Stride</LABEL>
+		<LABEL lang="de">Luftgleiten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Air Sailing</LABEL>
+		<LABEL lang="de">Luftsegeln</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Air Dance</LABEL>
+		<LABEL lang="de">Lufttanz</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Lion Heart</LABEL>
+		<LABEL lang="de">Löwenherz</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Power Mask</LABEL>
+		<LABEL lang="de">Machtmaskierung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Dispel Magic</LABEL>
+		<LABEL lang="de">Magie Neutralisieren</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Mystic Aim</LABEL>
+		<LABEL lang="de">Magische Markierung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Disguise Self</LABEL>
+		<LABEL lang="de">Magische Maske</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Maneuver</LABEL>
+		<LABEL lang="de">Manövrieren</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Animal Possession</LABEL>
+		<LABEL lang="de">Mentale Tierkontrolle</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Command Nightflyer</LABEL>
+		<LABEL lang="de">Nachtflieger Befehligen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Swift Kick</LABEL>
+		<LABEL lang="de">Nachtreten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Melee Weapons</LABEL>
+		<LABEL lang="de">Nahkampfwaffen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Navigation</LABEL>
+		<LABEL lang="de">Navigation</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Call Missile</LABEL>
+		<LABEL lang="de">Projektil Rufen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Missile Weapons</LABEL>
+		<LABEL lang="de">Projektilwaffen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Cold Purify</LABEL>
+		<LABEL lang="de">Reinigende Kälte</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Armor Mount</LABEL>
+		<LABEL lang="de">Reittier Panzern</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Mount Attack</LABEL>
+		<LABEL lang="de">Reittierangriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Riposte</LABEL>
+		<LABEL lang="de">Riposte</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Craft Armor</LABEL>
+		<LABEL lang="de">Rüstung Herstellen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Forge Armor</LABEL>
+		<LABEL lang="de">Rüstung Schmieden</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Blood Share</LABEL>
+		<LABEL lang="de">Schadensverteilung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Acting</LABEL>
+		<LABEL lang="de">Schauspielern</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Shield Bash</LABEL>
+		<LABEL lang="de">Schildschlag</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Battle Bellow</LABEL>
+		<LABEL lang="de">Schlachtruf</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Lock Picking</LABEL>
+		<LABEL lang="de">Schloss Knacken</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Down Strike</LABEL>
+		<LABEL lang="de">Schmetterschlag</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Slough Blame</LABEL>
+		<LABEL lang="de">Schuld Abwälzen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Spot Armor Flaw</LABEL>
+		<LABEL lang="de">Schwachstelle Erkennen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Wheeling Attack</LABEL>
+		<LABEL lang="de">Schwenkangriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Swimming</LABEL>
+		<LABEL lang="de">Schwimmen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Momentum Attack</LABEL>
+		<LABEL lang="de">Schwungvoller Angriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Sailing</LABEL>
+		<LABEL lang="de">Segeln</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Safe Path</LABEL>
+		<LABEL lang="de">Sicherer Pfad</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Sure Mount</LABEL>
+		<LABEL lang="de">Sicherer Reitsitz</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Sprint</LABEL>
+		<LABEL lang="de">Sprint</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Spellcasting</LABEL>
+		<LABEL lang="de">Spruchzauberei</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Tracking</LABEL>
+		<LABEL lang="de">Spurenlesen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Standard Matrix</LABEL>
+		<LABEL lang="de">Standardmatrix</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Wound Balance</LABEL>
+		<LABEL lang="de">Standhaftigkeit</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Resist Taunt</LABEL>
+		<LABEL lang="de">Starrsinn</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Mimic Voice</LABEL>
+		<LABEL lang="de">Stimmen Imitieren</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Patterncraft</LABEL>
+		<LABEL lang="de">Struktur Verstehen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Charge</LABEL>
+		<LABEL lang="de">Sturmangriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Steely Stare</LABEL>
+		<LABEL lang="de">Stählerner Blick</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Tactics</LABEL>
+		<LABEL lang="de">Taktik</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Picking Pockets</LABEL>
+		<LABEL lang="de">Taschendiebstahl</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Creature Analysis</LABEL>
+		<LABEL lang="de">Tieranalyse</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Animal Handling</LABEL>
+		<LABEL lang="de">Tierbeherrschung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Dominate Beast</LABEL>
+		<LABEL lang="de">Tiere Bändigen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Animal Bond</LABEL>
+		<LABEL lang="de">Tierfreundschaft</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Call Animal Companion</LABEL>
+		<LABEL lang="de">Tiergefährten Rufen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Enhance Animal Companion</LABEL>
+		<LABEL lang="de">Tiergefährten Verbessern</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Borrow Sense</LABEL>
+		<LABEL lang="de">Tierische Sinne</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Animal Talk</LABEL>
+		<LABEL lang="de">Tiersprache</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Tiger Spring</LABEL>
+		<LABEL lang="de">Tigersprung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Dead Fall</LABEL>
+		<LABEL lang="de">Totstellen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Animal Companion Durability</LABEL>
+		<LABEL lang="de">Unempfindlichkeit (Tiergefährte)</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Entertainer</LABEL>
+		<LABEL lang="de">Unterhalten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">True Sight</LABEL>
+		<LABEL lang="de">Untrüglicher Blick</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Banish</LABEL>
+		<LABEL lang="de">Verbannen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Seduction</LABEL>
+		<LABEL lang="de">Verführen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Disguise</LABEL>
+		<LABEL lang="de">Verkleiden</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Taunt</LABEL>
+		<LABEL lang="de">Verspotten</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Frighten</LABEL>
+		<LABEL lang="de">Verängstigen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Versatility</LABEL>
+		<LABEL lang="de">Vielseitigkeit</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Craft Weapon</LABEL>
+		<LABEL lang="de">Waffe Herstellen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Forge Weapon</LABEL>
+		<LABEL lang="de">Waffe Schmieden</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Unarmed Combat</LABEL>
+		<LABEL lang="de">Waffenloser Kampf</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Waterfall Slam</LABEL>
+		<LABEL lang="de">Wasserfallschlag</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Long Shot</LABEL>
+		<LABEL lang="de">Weitschuss</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Great Leap</LABEL>
+		<LABEL lang="de">Weitsprung</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Wilderness Survival</LABEL>
+		<LABEL lang="de">Wildnisüberleben</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Willforce</LABEL>
+		<LABEL lang="de">Willensstärke</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Wind Catcher</LABEL>
+		<LABEL lang="de">Windkissen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Air Speaking</LABEL>
+		<LABEL lang="de">Wispern</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Knowledge</LABEL>
+		<LABEL lang="de">Wissen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Engaging Banter</LABEL>
+		<LABEL lang="de">Wortgeplänkel</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Throwing Weapons</LABEL>
+		<LABEL lang="de">Wurfwaffen</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Second Attack</LABEL>
+		<LABEL lang="de">Zweiter Angriff</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Second Shot</LABEL>
+		<LABEL lang="de">Zweiter Schuss</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Second Weapon</LABEL>
+		<LABEL lang="de">Zweitwaffe</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Temper Self</LABEL>
+		<LABEL lang="de">Ätherhaut</LABEL>
+	</CAPABILITY>
+	<CAPABILITY>
+		<LABEL lang="en">Surprise Strike</LABEL>
+		<LABEL lang="de">Überraschungsschlag</LABEL>
+	</CAPABILITY>
+
+	<SPELL>
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</SPELL>
+
+	<DISCIPLINE>
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</DISCIPLINE>
+
+	<ITEM>
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</ITEM>
+</TRANSLATIONS>
