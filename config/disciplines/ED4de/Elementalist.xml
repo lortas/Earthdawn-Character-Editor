@@ -1,0 +1,59 @@
+<FREETALENT name="Standardmatrix"/>
+<DISCIPLINETALENT name="Aufmerksamkeit"/>
+<DISCIPLINETALENT name="Fadenweben" limitation="Elementarismus"/>
+<DISCIPLINETALENT name="Holzhaut"/>
+<DISCIPLINETALENT name="Spruchzauberei"/>
+<DISCIPLINETALENT name="Struktur Verstehen"/>
+<TALENTABILITY/>
+</CIRCLE>
+<CIRCLE><!-- 2 -->
+<DISCIPLINETALENT name="Fallen Entschärfen"/>
+<TALENTABILITY/>
+<DEFENSE kind="physical"/>
+</CIRCLE>
+<CIRCLE><!-- 3 -->
+<DISCIPLINETALENT name="Feilschen"/>
+<TALENTABILITY/>
+<KARMA spend="Initiativeproben"/>
+</CIRCLE>
+<CIRCLE><!-- 4 -->
+<DISCIPLINETALENT name="Gegenstand Verbergen"/>
+<TALENTABILITY/>
+<DEFENSE kind="social"/>
+</CIRCLE>
+<CIRCLE><!-- 5 -->
+<OPTIONALTALENT name="Eleganter Abgang"/>
+<OPTIONALTALENT name="Klingen Jonglieren"/>
+<OPTIONALTALENT name="Kompasspfeil"/>
+<OPTIONALTALENT name="Magische Maske"/>
+<OPTIONALTALENT name="Projektil Rufen"/>
+<OPTIONALTALENT name="Schwachstelle Erkennen"/>
+<OPTIONALTALENT name="Stimmen Imitieren"/>
+<OPTIONALTALENT name="Totstellen"/>
+<OPTIONALTALENT name="Untrüglicher Blick"/>
+<OPTIONALTALENT name="Zweitwaffe"/>
+<DISCIPLINETALENT name="Wortgeplänkel"/>
+<TALENTABILITY/>
+<KARMA spend="Angriffsproben bei überraschung oder Toter Winkel"/>
+<ABILITY>Schattenmantel</ABILITY>
+</CIRCLE>
+<CIRCLE><!-- 6 -->
+<DISCIPLINETALENT name="Schuld Abwälzen"/>
+<TALENTABILITY/>
+<DEFENSE kind="physical"/>
+</CIRCLE>
+<CIRCLE><!-- 7 -->
+<DISCIPLINETALENT name="Flinke Hand"/>
+<TALENTABILITY/>
+<INITIATIVE/>
+</CIRCLE>
+<CIRCLE><!-- 8 -->
+<DISCIPLINETALENT name="Untrüglicher Blick"/>
+<TALENTABILITY/>
+<DEFENSE kind="physical"/>
+</CIRCLE>
+<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+<HALFMAGIC>Diebe können Halbmagie einsetzen, um Sicherheitsmaßnahmen zu bauen oder zu umgehen, die Diebstähle verhindern sollen, und um verschiedene Arten von Schließmechanismen zu erkennen.</HALFMAGIC>
+</DISCIPLINE>
+
+
