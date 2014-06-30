@@ -1,17 +1,32 @@
-<FREETALENT name="Standardmatrix"/>
-<DISCIPLINETALENT name="Aufmerksamkeit"/>
-<DISCIPLINETALENT name="Fadenweben" limitation="Elementarismus"/>
-<DISCIPLINETALENT name="Holzhaut"/>
-<DISCIPLINETALENT name="Spruchzauberei"/>
-<DISCIPLINETALENT name="Struktur Verstehen"/>
-<TALENTABILITY/>
-</CIRCLE>
-<CIRCLE><!-- 2 -->
-<DISCIPLINETALENT name="Fallen Entschärfen"/>
-<TALENTABILITY/>
-<DEFENSE kind="physical"/>
-</CIRCLE>
-<CIRCLE><!-- 3 -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Elementarist" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arkanes Gefasel"/>
+		<OPTIONALTALENT name="Artefaktgeschichte"/>
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Klettern"/>
+		<OPTIONALTALENT name="Standardmatrix"/>
+		<OPTIONALTALENT name="Spurenlesen"/>
+		<OPTIONALTALENT name="Wildnisüberleben"/>
+		<OPTIONALTALENT name="Windkissen"/>
+		<OPTIONALTALENT name="Wispern"/>
+		<FREETALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix"/>
+		<DISCIPLINETALENT name="Aufmerksamkeit"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Elementarismus"/>
+		<DISCIPLINETALENT name="Holzhaut"/>
+		<DISCIPLINETALENT name="Spruchzauberei"/>
+		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Heilendes Feuer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
 <DISCIPLINETALENT name="Feilschen"/>
 <TALENTABILITY/>
 <KARMA spend="Initiativeproben"/>
@@ -55,5 +70,3 @@
 <KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 <HALFMAGIC>Diebe können Halbmagie einsetzen, um Sicherheitsmaßnahmen zu bauen oder zu umgehen, die Diebstähle verhindern sollen, und um verschiedene Arten von Schließmechanismen zu erkennen.</HALFMAGIC>
 </DISCIPLINE>
-
-
