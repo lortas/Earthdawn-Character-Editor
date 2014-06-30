@@ -687,12 +687,68 @@
 	</SPELL>
 
 	<DISCIPLINE>
-		<LABEL lang="de"></LABEL>
-		<LABEL lang="en"></LABEL>
+		<LABEL lang="de">Dieb</LABEL>
+		<LABEL lang="en">Thief</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Elementarist</LABEL>
+		<LABEL lang="en">Elementalist</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Geisterbeschwörer</LABEL>
+		<LABEL lang="en">Nethermancer</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Illusionist</LABEL>
+		<LABEL lang="en">Illusionist</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Krieger</LABEL>
+		<LABEL lang="en">Warrior</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Kundschafter</LABEL>
+		<LABEL lang="en">Scout</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Luftpirat</LABEL>
+		<LABEL lang="en">SkyRaider</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Luftsegler</LABEL>
+		<LABEL lang="en">AirSailor</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Magier</LABEL>
+		<LABEL lang="en">Wizard</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Schütze</LABEL>
+		<LABEL lang="en">Archer</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Schwertmeister</LABEL>
+		<LABEL lang="en">Swordmaster</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Steppenreiter</LABEL>
+		<LABEL lang="en">Cavalryman</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Tiermeister</LABEL>
+		<LABEL lang="en">Beastmaster</LABEL>
+	</DISCIPLINE>
+	<DISCIPLINE>
+		<LABEL lang="de">Troubadour</LABEL>
+		<LABEL lang="en">Troubadour</LABEL>
+	</DISCIPLINE>
+ 	<DISCIPLINE>
+		<LABEL lang="de">Waffenschmied</LABEL>
+		<LABEL lang="en">Weaponsmith</LABEL>
 	</DISCIPLINE>
 
 	<ITEM>
-		<LABEL lang="de"></LABEL>
-		<LABEL lang="en"></LABEL>
+		<LABEL lang="de">Battle-Axe</LABEL>
+		<LABEL lang="en">Streitaxt</LABEL>
 	</ITEM>
 </TRANSLATIONS>
