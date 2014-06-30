@@ -26,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" />
- *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;attribute name="replace" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -46,6 +47,8 @@ public class TALENTABILITYType {
     protected Integer bonus;
     @XmlAttribute(name = "pool")
     protected String pool;
+    @XmlAttribute(name = "replace")
+    protected String replace;
 
     /**
      * Gets the value of the name property.
@@ -136,7 +139,11 @@ public class TALENTABILITYType {
      *     
      */
     public String getPool() {
-        return pool;
+        if (pool == null) {
+            return "";
+        } else {
+            return pool;
+        }
     }
 
     /**
@@ -149,6 +156,34 @@ public class TALENTABILITYType {
      */
     public void setPool(String value) {
         this.pool = value;
+    }
+
+    /**
+     * Gets the value of the replace property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReplace() {
+        if (replace == null) {
+            return "";
+        } else {
+            return replace;
+        }
+    }
+
+    /**
+     * Sets the value of the replace property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReplace(String value) {
+        this.replace = value;
     }
 
 }

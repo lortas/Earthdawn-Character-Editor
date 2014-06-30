@@ -688,7 +688,8 @@
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="limitation" type="xs:string" default=""/>
 		<xs:attribute name="bonus" type="unsigned_int" default="1"/>
-		<xs:attribute name="pool" type="xs:string" use="optional"/>
+		<xs:attribute name="pool" type="xs:string" default=""/>
+		<xs:attribute name="replace" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="KARMAABILITY_type">
 		<xs:attribute name="spend" type="xs:string" use="required"/>
