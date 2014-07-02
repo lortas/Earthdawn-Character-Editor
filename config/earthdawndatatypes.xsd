@@ -221,7 +221,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="acronym_type">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="2"/>
+			<xs:minLength value="1"/>
 			<xs:maxLength value="4"/>
 		</xs:restriction>
 	</xs:simpleType>
