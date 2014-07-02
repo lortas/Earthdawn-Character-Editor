@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <TRANSLATIONS rulesetversion="ED3" xmlns="http://earthdawn.com/translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/translation ../earthdawntranslation.xsd">
+	<ATTRIBUTES lang="de">
+		<ATTRIBUTE attribute="DEX" acronym="GES" name="Geschicklichkeit"/>
+		<ATTRIBUTE attribute="STR" acronym="STÄ" name="Stärke"/>
+		<ATTRIBUTE attribute="TOU" acronym="ZÄH" name="Zähigkeit"/>
+		<ATTRIBUTE attribute="PER" acronym="WAH" name="Wahrnehmung"/>
+		<ATTRIBUTE attribute="WIL" acronym="WIL" name="Willenskraft"/>
+		<ATTRIBUTE attribute="CHA" acronym="CHA" name="Charisma"/>
+	</ATTRIBUTES>
+	<ATTRIBUTES lang="en">
+		<ATTRIBUTE attribute="DEX" acronym="DEX" name="Dexterity"/>
+		<ATTRIBUTE attribute="STR" acronym="STR" name="Strength"/>
+		<ATTRIBUTE attribute="TOU" acronym="TOU" name="Toughness"/>
+		<ATTRIBUTE attribute="PER" acronym="PER" name="Perception"/>
+		<ATTRIBUTE attribute="WIL" acronym="WIL" name="Willenpower"/>
+		<ATTRIBUTE attribute="CHA" acronym="CHA" name="Charisma"/>
+	</ATTRIBUTES>
+	<ACTIONS lang="de">
+		<ACTION action="sustained" acronym="and" name="Andauernd"/>
+		<ACTION action="standard" acronym="std" name="Standard"/>
+		<ACTION action="simple" acronym="einf" name="Einfach"/>
+		<ACTION action="free" acronym="frei" name="Frei"/>
+		<ACTION action="na" acronym="nv" name="Nicht Verfügbar"/>
+	</ACTIONS>
+	<ACTIONS lang="en">
+		<ACTION action="sustained" acronym="sust" name="Sustained"/>
+		<ACTION action="standard" acronym="std" name="Standard"/>
+		<ACTION action="simple" acronym="smpl" name="Simple"/>
+		<ACTION action="free" acronym="free" name="Free"/>
+		<ACTION action="na" acronym="na" name="Not Avialabel"/>
+	</ACTIONS>
+	<DURABILITY>
+		<LABEL lang="de">Unempfindlichkeit</LABEL>
+		<LABEL lang="en">Durability</LABEL>
+	</DURABILITY>
+	<VERSATILITY>
+		<LABEL lang="de">Vielseitigkeit</LABEL>
+		<LABEL lang="en">Versatility</LABEL>
+	</VERSATILITY>
+	<KARMARUTUAL>
+		<LABEL lang="de">Karma Ritual</LABEL>
+		<LABEL lang="en">Karma Ritual</LABEL>
+	</KARMARUTUAL>
+	<ARTISAN>
+		<LABEL lang="de">Kunsthandwerk</LABEL>
+		<SHORTCUT lang="de">K</SHORTCUT>
+		<LABEL lang="de">Artisan</LABEL>
+		<SHORTCUT lang="en">A</SHORTCUT>
+	</ARTISAN>
+	<KNOWLEDGE>
+		<LABEL lang="de">Wissen</LABEL>
+		<SHORTCUT lang="de">W</SHORTCUT>
+		<LABEL lang="en">Knowledge</LABEL>
+		<SHORTCUT lang="en">K</SHORTCUT>
+	</KNOWLEDGE>
+	<QUESTORTALENT>
+		<LABEL lang="de">Questor</LABEL>
+		<LABEL lang="en">Questor</LABEL>
+	</QUESTORTALENT>
+	<THREADWEAVING>
+		<LABEL lang="en">Thread Weaving</LABEL>
+		<LABEL lang="de">Fadenweben</LABEL>
+	</THREADWEAVING>
+	<LANGUAGESKILLSPEAK>
+		<LABEL lang="en">Speak Language</LABEL>
+		<LABEL lang="de">Fremdsprachen</LABEL>
+	</LANGUAGESKILLSPEAK>
+	<LANGUAGESKILLREADWRITE>
+		<LABEL lang="en">Read/Write Language</LABEL>
+		<LABEL lang="de">Lesen/Schreiben</LABEL>
+	</LANGUAGESKILLREADWRITE>
+	<SPELLWEAVING lang="en">
+		<SPELLKIND type="elemental" weaving="Elementalism"/>
+		<SPELLKIND type="illusion" weaving="Illusionism"/>
+		<SPELLKIND type="nether" weaving="Nethermancy"/>
+		<SPELLKIND type="shamane" weaving="Shamanism"/>
+		<SPELLKIND type="sorcery" weaving="Sorcery"/>
+		<SPELLKIND type="wizard" weaving="Wizardry"/>
+	</SPELLWEAVING>
 	<CAPABILITY>
 		<LABEL lang="en">Abate Curse</LABEL>
 		<LABEL lang="de">Fluch Aufheben</LABEL>

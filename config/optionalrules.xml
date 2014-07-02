@@ -99,4 +99,46 @@
 	<ORIGIN name="Indrisa">
 		<DEFAULTLANGUAGE lang="en" language="Indrisan" speak="skill" readwrite="skill"/>
 	</ORIGIN>
+	<STARTINGWEAPONS lang="de">
+		<WEAPON name="Messer" damagestep="2" strengthmin="4" weight="1" size="1" shortrange="5" longrange="10" kind="melee weapon"/>
+	</STARTINGWEAPONS>
+	<STARTINGWEAPONS lang="en">
+		<WEAPON name="Dagger" damagestep="2" strengthmin="4" weight="1" size="1" shortrange="5" longrange="10" kind="melee weapon"/>
+	</STARTINGWEAPONS>
+	<STARTINGITEMS lang="de">
+		<ITEM name="Rucksack, Schlafsack, &amp;steel, Wasserschlauch, großer Sack" weight="13"/>
+		<ITEM name="Fackel" weight="1" kind="light"/>
+		<ITEM name="Kunsthandwerk Werkzeug (to be specified)" weight="5" kind="tool"/>
+		<ITEM name="Grimoir (nur bei Zauberer)" weight="3" kind="book"/>
+		<ITEM name="Reisekleidung (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3" kind="cloth"/>
+		<ITEM name="Reiseproviant (1 Woche)" weight="1" kind="food"/>
+	</STARTINGITEMS>
+	<STARTINGITEMS lang="en">
+		<ITEM name="backpack, bedroll, flint&amp;steel, waterskin, large sack" weight="13"/>
+		<ITEM name="torch" weight="1" kind="light"/>
+		<ITEM name="artisan tool (to be specified)" weight="5" kind="tool"/>
+		<ITEM name="grimoire (magicans only)" weight="3" kind="book"/>
+		<ITEM name="Traveler's Garb (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3" kind="cloth"/>
+		<ITEM name="Trail Rations (1 week)" weight="1" kind="food"/>
+	</STARTINGITEMS>
+	<STARTINGSKILLS lang="en">
+		<SKILL name="Speak Language">
+			<edt:RANK rank="2" startrank="2"/>
+		</SKILL>
+		<SKILL name="Read/Write Language">
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+		<SKILL name="Knowledge">
+			<edt:LIMITATION>TBD</edt:LIMITATION>
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+		<SKILL name="Knowledge">
+			<edt:LIMITATION>TBD</edt:LIMITATION>
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+		<SKILL name="Artisan">
+			<edt:LIMITATION>TBD</edt:LIMITATION>
+			<edt:RANK rank="1" startrank="1"/>
+		</SKILL>
+	</STARTINGSKILLS>
 </OPTIONALRULES>
