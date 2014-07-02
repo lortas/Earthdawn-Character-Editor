@@ -36,6 +36,24 @@
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="NAME_STARTINGWEAPONS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="WEAPON" type="edt:WEAPON_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_STARTINGITEMS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="ITEM" type="edt:ITEM_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_STARTINGSKILLS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
 			<xs:sequence>
@@ -58,6 +76,9 @@
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MULTIUSETALENT" type="OPTIONALRULES_MULTIUSETALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="ORIGIN" type="OPTIONALRULES_ORIGIN"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGWEAPONS" type="NAME_STARTINGWEAPONS_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGITEMS" type="NAME_STARTINGITEMS_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="STARTINGSKILLS" type="NAME_STARTINGSKILLS_type"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
