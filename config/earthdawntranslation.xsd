@@ -5,19 +5,19 @@
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attribute name="lang" type="edt:language_type" use="required"/>
+				<xs:attribute name="acronym" type="edt:acronym_type" use="optional"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="TRANSLATION_type">
-		<xs:choice maxOccurs="unbounded">
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="LABEL" type="translationlabel_type"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="SHORTCUT" type="translationlabel_type"/>
-		</xs:choice>
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="LABEL" type="translationlabel_type"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="NAMES_ATTRIBUTE_type">
 		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
 		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="acronym" type="xs:string" use="required"/>
+		<xs:attribute name="acronym" type="edt:acronym_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="NAMES_ATTRIBUTES_type">
 		<xs:sequence>
