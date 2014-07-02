@@ -11,11 +11,56 @@
 	<xs:complexType name="TRANSLATION_type">
 		<xs:choice maxOccurs="unbounded">
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="LABEL" type="translationlabel_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="SHORTCUT" type="translationlabel_type"/>
 		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="NAMES_ATTRIBUTE_type">
+		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="acronym" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAMES_ATTRIBUTES_type">
+		<xs:sequence>
+			<xs:element name="ATTRIBUTE" type="NAMES_ATTRIBUTE_type" minOccurs="6" maxOccurs="6"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAMES_ACTION_type">
+		<xs:attribute name="action" type="edt:action_type" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="acronym" type="edt:acronym_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAMES_ACTIONS_type">
+		<xs:sequence>
+			<xs:element name="ACTION" type="NAMES_ACTION_type" minOccurs="5" maxOccurs="5"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_SPELLWEAVING_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLKIND" type="NAME_SPELLKIND_type"/>
+		</xs:sequence>
+		<xs:attribute name="lang" type="edt:language_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_SPELLKIND_type">
+		<xs:attribute name="weaving" type="xs:string" use="required"/>
+		<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
 	</xs:complexType>
 	<xs:element name="TRANSLATIONS">
 		<xs:complexType>
 			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ATTRIBUTES" type="NAMES_ATTRIBUTES_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ACTIONS" type="NAMES_ACTIONS_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="DURABILITY" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="VERSATILITY" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="KARMARUTUAL" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="ARTISAN" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="KNOWLEDGE" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="QUESTORTALENT" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="THREADWEAVING" type="TRANSLATION_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGESKILLSPEAK" type="TRANSLATION_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGESKILLREADWRITE" type="TRANSLATION_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLWEAVING" type="NAME_SPELLWEAVING_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="CAPABILITY" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINE" type="TRANSLATION_type"/>
