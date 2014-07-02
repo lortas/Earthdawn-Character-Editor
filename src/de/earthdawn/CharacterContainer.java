@@ -69,11 +69,9 @@ public class CharacterContainer extends CharChangeRefresh {
 	public static MOVEMENTATTRIBUTENameType OptionalRule_AttributeBasedMovement=PROPERTIES.getOptionalRules().getATTRIBUTEBASEDMOVEMENT().getAttribute();
 	public static final String threadWeavingName = PROPERTIES.getThreadWeavingName();
 	public static final String durabilityName = PROPERTIES.getDurabilityName();
-	public static final List<String> speakSkillName = PROPERTIES.getLanguageSkillSpeakName();
-	public static final List<String> readwriteSkillName = PROPERTIES.getLanguageSkillReadWriteName();
 	public static String DATEFORMAT = PROPERTIES.getOptionalRules().getDATEFORMAT();
-	public static final List<String> languageSkillSpeakNames = PROPERTIES.getLanguageSkillSpeakName();
-	public static final List<String> languageSkillReadWriteNames = PROPERTIES.getLanguageSkillReadWriteName();
+	public static final String languageSkillSpeakName = PROPERTIES.getLanguageSkillSpeakName();
+	public static final String languageSkillReadWriteName = PROPERTIES.getLanguageSkillReadWriteName();
 
 	public static String getCurrentDateTime() {
 		DateFormat dateFormat = new SimpleDateFormat(DATEFORMAT);
@@ -779,7 +777,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<SKILLType> getSpeakSkills() {
 		List<SKILLType> result = new ArrayList<SKILLType>();
 		for( SKILLType skill : getSkills() ) {
-			if( speakSkillName.contains(skill.getName()) ) result.add(skill);
+			if( languageSkillSpeakName.equals(skill.getName()) ) result.add(skill);
 		}
 		return result;
 	}
@@ -787,7 +785,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<SKILLType> getReadWriteSkills() {
 		List<SKILLType> result = new ArrayList<SKILLType>();
 		for( SKILLType skill : getSkills() ) {
-			if( readwriteSkillName.contains(skill.getName()) ) result.add(skill);
+			if( languageSkillReadWriteName.equals(skill.getName()) ) result.add(skill);
 		}
 		return result;
 	}
@@ -795,8 +793,8 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<SKILLType> getNonLanguageSkills() {
 		List<SKILLType> result = new ArrayList<SKILLType>();
 		for( SKILLType skill : getSkills() ) {
-			if( languageSkillSpeakNames.contains(skill.getName()) ) continue;
-			if( languageSkillReadWriteNames.contains(skill.getName()) ) continue;
+			if( languageSkillSpeakName.equals(skill.getName()) ) continue;
+			if( languageSkillReadWriteName.equals(skill.getName()) ) continue;
 			result.add(skill);
 		}
 		return result;
@@ -805,7 +803,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<SKILLType> getOnlyLanguageSkills() {
 		List<SKILLType> result = new ArrayList<SKILLType>();
 		for( SKILLType skill : getSkills() ) {
-			if( languageSkillSpeakNames.contains(skill.getName()) || languageSkillReadWriteNames.contains(skill.getName()) ) result.add(skill);
+			if( languageSkillSpeakName.equals(skill.getName()) || languageSkillReadWriteName.equals(skill.getName()) ) result.add(skill);
 		}
 		return result;
 	}

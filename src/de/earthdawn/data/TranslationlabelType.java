@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlValue;
  *   &lt;simpleContent>
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
+ *       &lt;attribute name="acronym" type="{http://earthdawn.com/datatypes}acronym_type" />
  *     &lt;/extension>
  *   &lt;/simpleContent>
  * &lt;/complexType>
@@ -42,6 +43,8 @@ public class TranslationlabelType {
     protected String value;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
+    @XmlAttribute(name = "acronym")
+    protected String acronym;
 
     /**
      * Gets the value of the value property.
@@ -89,6 +92,30 @@ public class TranslationlabelType {
      */
     public void setLang(LanguageType value) {
         this.lang = value;
+    }
+
+    /**
+     * Gets the value of the acronym property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAcronym() {
+        return acronym;
+    }
+
+    /**
+     * Sets the value of the acronym property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAcronym(String value) {
+        this.acronym = value;
     }
 
 }

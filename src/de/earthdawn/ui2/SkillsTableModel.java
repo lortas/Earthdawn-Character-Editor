@@ -17,8 +17,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
-import java.util.List;
-
 import javax.swing.table.AbstractTableModel;
 
 import de.earthdawn.CharacterContainer;
@@ -29,8 +27,8 @@ import de.earthdawn.data.SKILLType;
 public class SkillsTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1321139806762229027L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
-	public static final List<String> languageSkillSpeakNames = PROPERTIES.getLanguageSkillSpeakName();
-	public static final List<String> languageSkillReadWriteNames = PROPERTIES.getLanguageSkillReadWriteName();
+	public static final String languageSkillSpeakName = PROPERTIES.getLanguageSkillSpeakName();
+	public static final String languageSkillReadWriteName = PROPERTIES.getLanguageSkillReadWriteName();
 	private CharacterContainer character;
 	private boolean languageSkills;
 	private String[] columnNames = {"Name", "Limitation",  "Attribute", "Startrank", "Rank", "Action", "Step", "Dice", "Bookref"};
@@ -93,8 +91,8 @@ public class SkillsTableModel extends AbstractTableModel {
 		if( col == 4 ) return true;
 		if( languageSkills ) return false;
 		SKILLType skill = character.getSkills().get(row);
-		if( languageSkillSpeakNames.contains(skill.getName()) ) return false;
-		if( languageSkillReadWriteNames.contains(skill.getName()) ) return false;
+		if( languageSkillSpeakName.equals(skill.getName()) ) return false;
+		if( languageSkillReadWriteName.equals(skill.getName()) ) return false;
 		if( col==1 ) return true;
 		return false;
 	}

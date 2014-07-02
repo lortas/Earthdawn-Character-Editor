@@ -50,13 +50,13 @@ public class ApplicationProperties {
 
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
 	private static List<CAPABILITIES> CAPABILITIES;
-	private static List<TRANSLATIONS> TRANSLATIONS;
+	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
+	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
     private static KNACKS KNACKS = new KNACKS();
     private static SPELLS SPELLS = new SPELLS();
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
     private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
     private static ITEMS ITEMS = new ITEMS();
-    private static NAMES NAMES = new NAMES();
     private static HELP HELP = new HELP();
     private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
 	private static ECERulesetLanguage RULESETLANGUAGE = new ECERulesetLanguage(RulesetversionType.ED_3,LanguageType.EN);
@@ -420,7 +420,7 @@ public class ApplicationProperties {
 		// Fill result HashMap with default values
 		for( ATTRIBUTENameType attr : ATTRIBUTENameType.values() ) result.put(attr,attr.value());
 		// Search for translation in the config
-		for( NAMESATTRIBUTESType attributes : NAMES.getATTRIBUTES() ) {
+		for( NAMESATTRIBUTESType attributes : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getATTRIBUTES() ) {
 			if( attributes.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
 				for( NAMESATTRIBUTEType attribute : attributes.getATTRIBUTE() ) {
 					result.put(attribute.getAttribute(),attribute.getName());
@@ -431,71 +431,61 @@ public class ApplicationProperties {
 	}
 
 	public String getKarmaritualName() {
-		for( NAMELANGType name : NAMES.getKARMARUTUAL() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getName();
-		}
-		// Not found
-		return null;
+		return NAMES.get("karmaritual").get(RULESETLANGUAGE).getValue();
 	}
 
 	public String getDurabilityName() {
-		for( NAMELANGType name : NAMES.getDURABILITY() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getName();
-		}
-		// Not found
-		return "";
+		return NAMES.get("durability").get(RULESETLANGUAGE).getValue();
 	}
 
 	public String getVersatilityName() {
-		for( NAMELANGType name : NAMES.getVERSATILITY() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getName();
-		}
-		// Not found
-		return null;
+		return NAMES.get("versatility").get(RULESETLANGUAGE).getValue();
 	}
 
 	public String getThreadWeavingName() {
-		for( NAMELANGType name : NAMES.getTHREADWEAVING() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getName();
-		}
-		// Not found
-		return "";
+		return NAMES.get("threadweaving").get(RULESETLANGUAGE).getValue();
 	}
 
-	public List<String> getLanguageSkillSpeakName() {
-		List<String> result = new ArrayList<String>();
-		for( NAMELANGType name : NAMES.getLANGUAGESKILLSPEAK() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) result.add(name.getName());
-		}
-		return result;
+	public String getLanguageSkillSpeakName() {
+		return NAMES.get("languageskillspeak").get(RULESETLANGUAGE).getValue();
 	}
 
-	public List<String> getLanguageSkillReadWriteName() {
-		List<String> result = new ArrayList<String>();
-		for( NAMELANGType name : NAMES.getLANGUAGESKILLREADWRITE() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) result.add(name.getName());
-		}
-		return result;
+	public String getLanguageSkillReadWriteName() {
+		return NAMES.get("languageskillreadwrite").get(RULESETLANGUAGE).getValue();
+	}
+
+	public String getQuestorTalentName() {
+		return NAMES.get("questortalent").get(RULESETLANGUAGE).getValue();
+	}
+
+	public String[] getArtisanName() {
+		TranslationlabelType name = NAMES.get("artisan").get(RULESETLANGUAGE);
+		if( name == null ) return new String[]{"",""};
+		return new String[]{name.getValue(),name.getAcronym()};
+	}
+
+	public String[] getKnowledgeName() {
+		TranslationlabelType name = NAMES.get("knowledge").get(RULESETLANGUAGE);
+		if( name == null ) return new String[]{"",""};
+		return new String[]{name.getValue(),name.getAcronym()};
 	}
 
 	public List<ITEMType> getStartingItems() {
-		for( NAMESTARTINGITEMSType name : NAMES.getSTARTINGITEMS() ) {
+		for( NAMESTARTINGITEMSType name : OPTIONALRULES.getSTARTINGITEMS() ) {
 			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getITEM();
 		}
-		// Not found
 		return null;
 	}
 
 	public List<WEAPONType> getStartingWeapons() {
-		for( NAMESTARTINGWEAPONSType name : NAMES.getSTARTINGWEAPONS() ) {
+		for( NAMESTARTINGWEAPONSType name : OPTIONALRULES.getSTARTINGWEAPONS() ) {
 			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getWEAPON();
 		}
-		// Not found
 		return null;
 	}
 
 	public List<SKILLType> getStartingSkills() {
-		for( NAMESTARTINGSKILLSType skills : NAMES.getSTARTINGSKILLS() ) {
+		for( NAMESTARTINGSKILLSType skills : OPTIONALRULES.getSTARTINGSKILLS() ) {
 			if( skills.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
 				List<SKILLType> skill = skills.getSKILL();
 				for( SKILLType s : skill ) {
@@ -508,7 +498,7 @@ public class ApplicationProperties {
 	}
 
 	public HashMap<SpellkindType,String> getSpellKindMap() {
-		for( NAMESPELLWEAVINGType name : NAMES.getSPELLWEAVING() ) {
+		for( NAMESPELLWEAVINGType name : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getSPELLWEAVING() ) {
 			if( name.getLang().equals(RULESETLANGUAGE.getLanguage())) {
 				HashMap<SpellkindType,String> spellTypeMap = new HashMap<SpellkindType,String>();
 				for( NAMESPELLKINDType type : name.getSPELLKIND() ) {
@@ -522,31 +512,6 @@ public class ApplicationProperties {
 
 	public HELP getHelp() {
 		return HELP;
-	}
-
-	public String getQuestorTalentName() {
-		for( NAMELANGType name : NAMES.getQUESTORTALENT() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getName();
-		}
-		return "";
-	}
-
-	public String[] getArtisanName() {
-		for( NAMESHORTCUTType name : NAMES.getARTISAN() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
-				return new String[]{name.getName(),name.getShortcut()};
-			}
-		}
-		return new String[]{"",""};
-	}
-
-	public String[] getKnowledgeName() {
-		for( NAMESHORTCUTType name : NAMES.getKNOWLEDGE() ) {
-			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
-				return new String[]{name.getName(),name.getShortcut()};
-			}
-		}
-		return new String[]{"",""};
 	}
 
 	public ITEMS getItems() {
@@ -598,24 +563,102 @@ public class ApplicationProperties {
 			// translation laden
 			// --- Bestimmen aller Dateien im Unterordner 'translation'
 			// --- Einlesen der Dateien
-			TRANSLATIONS=new ArrayList<TRANSLATIONS>();
+			TRANSLATIONS=new HashMap<RulesetversionType,TRANSLATIONS>();
 			for(File translation : selectallxmlfiles(new File("./config/translation"))) {
 				System.out.print("Reading config file '" + translation.getCanonicalPath() + "' ... ");
 				TRANSLATIONS t1 = (TRANSLATIONS) unmarshaller.unmarshal(translation);
 				if( t1 == null ) { System.out.println(" parse error."); continue; }
-				boolean notfound=true;
-				for( TRANSLATIONS t2 : TRANSLATIONS ) {
-					if( t2.getRulesetversion().equals(t1.getRulesetversion()) ){
-						notfound=false;
-						t2.getCAPABILITY().addAll(t1.getCAPABILITY());
-						t2.getDISCIPLINE().addAll(t1.getDISCIPLINE());
-						t2.getSPELL().addAll(t1.getSPELL());
-						t2.getITEM().addAll(t1.getITEM());
-						break;
+				TRANSLATIONS t2 = TRANSLATIONS.get(t1.getRulesetversion());
+				if( t2 == null ) {
+					TRANSLATIONS.put(t1.getRulesetversion(), t1);
+				} else {
+					t2.getACTIONS().addAll(t1.getACTIONS());
+					t2.getARTISAN().addAll(t1.getARTISAN());
+					t2.getATTRIBUTES().addAll(t1.getATTRIBUTES());
+					t2.getCAPABILITY().addAll(t1.getCAPABILITY());
+					t2.getDISCIPLINE().addAll(t1.getDISCIPLINE());
+					t2.getDURABILITY().addAll(t1.getDISCIPLINE());
+					t2.getITEM().addAll(t1.getITEM());
+					t2.getKARMARUTUAL().addAll(t1.getKARMARUTUAL());
+					t2.getKNOWLEDGE().addAll(t1.getKNOWLEDGE());
+					t2.getLANGUAGESKILLREADWRITE().addAll(t1.getLANGUAGESKILLREADWRITE());
+					t2.getLANGUAGESKILLSPEAK().addAll(t1.getLANGUAGESKILLSPEAK());
+					t2.getQUESTORTALENT().addAll(t1.getQUESTORTALENT());
+					t2.getSPELL().addAll(t1.getSPELL());
+					t2.getSPELLWEAVING().addAll(t1.getSPELLWEAVING());
+					t2.getTHREADWEAVING().addAll(t1.getTHREADWEAVING());
+					t2.getVERSATILITY().addAll(t1.getVERSATILITY());
+				}
+				System.out.println(" done.");
+			}
+
+			// Zum späteren leichteren Zugriff, bringe die spezifischen Übersetzungen in ein anderes Format.
+			NAMES=new HashMap<String,Map<ECERulesetLanguage,TranslationlabelType>>();
+			NAMES.put("karmaritual",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("durability",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("versatility",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("threadweaving",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("languageskillspeak",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("languageskillreadwrite",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("questortalent",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("artisan",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("knowledge",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			for( RulesetversionType rulesetversion : TRANSLATIONS.keySet() ) {
+				Map<ECERulesetLanguage, TranslationlabelType> n;
+				n = NAMES.get("karmaritual");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getKARMARUTUAL() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
 					}
 				}
-				if( notfound ) TRANSLATIONS.add(t1);
-				System.out.println(" done.");
+				n = NAMES.get("durability");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getDURABILITY() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("versatility");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getVERSATILITY() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("threadweaving");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getTHREADWEAVING() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("languageskillspeak");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getLANGUAGESKILLSPEAK() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("languageskillreadwrite");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getLANGUAGESKILLREADWRITE() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("questortalent");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getQUESTORTALENT() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("artisan");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getARTISAN() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
+				n = NAMES.get("knowledge");
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getKNOWLEDGE() ) {
+					for( TranslationlabelType label : translation.getLABEL() ) {
+						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
+					}
+				}
 			}
 
 			// disziplinen laden
@@ -777,9 +820,6 @@ public class ApplicationProperties {
 			filename="config/optionalrules.xml";
 			System.out.println("Reading config file '" + filename + "'");
 			OPTIONALRULES = (OPTIONALRULES) unmarshaller.unmarshal(new File(filename));
-			filename="./config/names.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			NAMES = (NAMES) unmarshaller.unmarshal(new File(filename));
 			filename="./config/help.xml";
 			System.out.println("Reading config file '" + filename + "'");
 			HELP = (HELP) unmarshaller.unmarshal(new File(filename));
@@ -833,17 +873,13 @@ public class ApplicationProperties {
 			ECERulesetLanguage rl = new ECERulesetLanguage(c.getRulesetversion(),c.getLang());
 			HashMap<String,List<TranslationlabelType>> translation = new HashMap<String,List<TranslationlabelType>>();
 			HashMap<String,Integer> count = new HashMap<String,Integer>();
-			for( TRANSLATIONS t : TRANSLATIONS ) {
-				if( t.getRulesetversion().equals(rl.getRulesetversion()) ) {
-					for( TRANSLATIONType i : t.getCAPABILITY() ) {
+					for( TRANSLATIONType i : TRANSLATIONS.get(rl.getRulesetversion()).getCAPABILITY() ) {
 						for( TranslationlabelType j : i.getLABEL() ) {
 							if( j.getLang().equals(rl.getLanguage()) ) {
 								translation.put(j.getValue(), i.getLABEL());
 								count.put(j.getValue(), 0);
 							}
 						}
-					}
-				}
 			}
 			for( JAXBElement<CAPABILITYType> t : c.getSKILLOrTALENT() ) {
 				String name = t.getValue().getName();
