@@ -10,9 +10,11 @@ package de.earthdawn.data;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -27,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;choice maxOccurs="unbounded">
  *         &lt;element name="LABEL" type="{http://earthdawn.com/translation}translationlabel_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="SHORTCUT" type="{http://earthdawn.com/translation}translationlabel_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/choice>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,40 +40,44 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TRANSLATION_type", namespace = "http://earthdawn.com/translation", propOrder = {
-    "label"
+    "labelOrSHORTCUT"
 })
 public class TRANSLATIONType {
 
-    @XmlElement(name = "LABEL")
-    protected List<TranslationlabelType> label;
+    @XmlElementRefs({
+        @XmlElementRef(name = "SHORTCUT", namespace = "http://earthdawn.com/translation", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LABEL", namespace = "http://earthdawn.com/translation", type = JAXBElement.class, required = false)
+    })
+    protected List<JAXBElement<TranslationlabelType>> labelOrSHORTCUT;
 
     /**
-     * Gets the value of the label property.
+     * Gets the value of the labelOrSHORTCUT property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the label property.
+     * This is why there is not a <CODE>set</CODE> method for the labelOrSHORTCUT property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLABEL().add(newItem);
+     *    getLABELOrSHORTCUT().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TranslationlabelType }
+     * {@link JAXBElement }{@code <}{@link TranslationlabelType }{@code >}
+     * {@link JAXBElement }{@code <}{@link TranslationlabelType }{@code >}
      * 
      * 
      */
-    public List<TranslationlabelType> getLABEL() {
-        if (label == null) {
-            label = new ArrayList<TranslationlabelType>();
+    public List<JAXBElement<TranslationlabelType>> getLABELOrSHORTCUT() {
+        if (labelOrSHORTCUT == null) {
+            labelOrSHORTCUT = new ArrayList<JAXBElement<TranslationlabelType>>();
         }
-        return this.label;
+        return this.labelOrSHORTCUT;
     }
 
 }

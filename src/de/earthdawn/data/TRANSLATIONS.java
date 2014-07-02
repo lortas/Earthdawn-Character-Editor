@@ -28,6 +28,18 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="ATTRIBUTES" type="{http://earthdawn.com/translation}NAMES_ATTRIBUTES_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ACTIONS" type="{http://earthdawn.com/translation}NAMES_ACTIONS_type" maxOccurs="unbounded"/>
+ *         &lt;element name="DURABILITY" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="VERSATILITY" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="KARMARUTUAL" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="ARTISAN" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="KNOWLEDGE" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="QUESTORTALENT" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="THREADWEAVING" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/>
+ *         &lt;element name="LANGUAGESKILLSPEAK" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="LANGUAGESKILLREADWRITE" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/translation}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/>
  *         &lt;element name="CAPABILITY" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -43,6 +55,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "attributes",
+    "actions",
+    "durability",
+    "versatility",
+    "karmarutual",
+    "artisan",
+    "knowledge",
+    "questortalent",
+    "threadweaving",
+    "languageskillspeak",
+    "languageskillreadwrite",
+    "spellweaving",
     "capability",
     "spell",
     "discipline",
@@ -51,6 +75,30 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "TRANSLATIONS", namespace = "http://earthdawn.com/translation")
 public class TRANSLATIONS {
 
+    @XmlElement(name = "ATTRIBUTES", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<NAMESATTRIBUTESType> attributes;
+    @XmlElement(name = "ACTIONS", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<NAMESACTIONSType> actions;
+    @XmlElement(name = "DURABILITY", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> durability;
+    @XmlElement(name = "VERSATILITY", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> versatility;
+    @XmlElement(name = "KARMARUTUAL", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> karmarutual;
+    @XmlElement(name = "ARTISAN", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> artisan;
+    @XmlElement(name = "KNOWLEDGE", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> knowledge;
+    @XmlElement(name = "QUESTORTALENT", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> questortalent;
+    @XmlElement(name = "THREADWEAVING", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<TRANSLATIONType> threadweaving;
+    @XmlElement(name = "LANGUAGESKILLSPEAK", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> languageskillspeak;
+    @XmlElement(name = "LANGUAGESKILLREADWRITE", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> languageskillreadwrite;
+    @XmlElement(name = "SPELLWEAVING", namespace = "http://earthdawn.com/translation", required = true)
+    protected List<NAMESPELLWEAVINGType> spellweaving;
     @XmlElement(name = "CAPABILITY", namespace = "http://earthdawn.com/translation")
     protected List<TRANSLATIONType> capability;
     @XmlElement(name = "SPELL", namespace = "http://earthdawn.com/translation")
@@ -61,6 +109,354 @@ public class TRANSLATIONS {
     protected List<TRANSLATIONType> item;
     @XmlAttribute(name = "rulesetversion", required = true)
     protected RulesetversionType rulesetversion;
+
+    /**
+     * Gets the value of the attributes property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the attributes property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getATTRIBUTES().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESATTRIBUTESType }
+     * 
+     * 
+     */
+    public List<NAMESATTRIBUTESType> getATTRIBUTES() {
+        if (attributes == null) {
+            attributes = new ArrayList<NAMESATTRIBUTESType>();
+        }
+        return this.attributes;
+    }
+
+    /**
+     * Gets the value of the actions property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the actions property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getACTIONS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESACTIONSType }
+     * 
+     * 
+     */
+    public List<NAMESACTIONSType> getACTIONS() {
+        if (actions == null) {
+            actions = new ArrayList<NAMESACTIONSType>();
+        }
+        return this.actions;
+    }
+
+    /**
+     * Gets the value of the durability property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the durability property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDURABILITY().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getDURABILITY() {
+        if (durability == null) {
+            durability = new ArrayList<TRANSLATIONType>();
+        }
+        return this.durability;
+    }
+
+    /**
+     * Gets the value of the versatility property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the versatility property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getVERSATILITY().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getVERSATILITY() {
+        if (versatility == null) {
+            versatility = new ArrayList<TRANSLATIONType>();
+        }
+        return this.versatility;
+    }
+
+    /**
+     * Gets the value of the karmarutual property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the karmarutual property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKARMARUTUAL().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getKARMARUTUAL() {
+        if (karmarutual == null) {
+            karmarutual = new ArrayList<TRANSLATIONType>();
+        }
+        return this.karmarutual;
+    }
+
+    /**
+     * Gets the value of the artisan property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the artisan property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getARTISAN().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getARTISAN() {
+        if (artisan == null) {
+            artisan = new ArrayList<TRANSLATIONType>();
+        }
+        return this.artisan;
+    }
+
+    /**
+     * Gets the value of the knowledge property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the knowledge property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKNOWLEDGE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getKNOWLEDGE() {
+        if (knowledge == null) {
+            knowledge = new ArrayList<TRANSLATIONType>();
+        }
+        return this.knowledge;
+    }
+
+    /**
+     * Gets the value of the questortalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the questortalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getQUESTORTALENT().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getQUESTORTALENT() {
+        if (questortalent == null) {
+            questortalent = new ArrayList<TRANSLATIONType>();
+        }
+        return this.questortalent;
+    }
+
+    /**
+     * Gets the value of the threadweaving property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the threadweaving property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTHREADWEAVING().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getTHREADWEAVING() {
+        if (threadweaving == null) {
+            threadweaving = new ArrayList<TRANSLATIONType>();
+        }
+        return this.threadweaving;
+    }
+
+    /**
+     * Gets the value of the languageskillspeak property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the languageskillspeak property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLANGUAGESKILLSPEAK().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getLANGUAGESKILLSPEAK() {
+        if (languageskillspeak == null) {
+            languageskillspeak = new ArrayList<TRANSLATIONType>();
+        }
+        return this.languageskillspeak;
+    }
+
+    /**
+     * Gets the value of the languageskillreadwrite property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the languageskillreadwrite property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLANGUAGESKILLREADWRITE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getLANGUAGESKILLREADWRITE() {
+        if (languageskillreadwrite == null) {
+            languageskillreadwrite = new ArrayList<TRANSLATIONType>();
+        }
+        return this.languageskillreadwrite;
+    }
+
+    /**
+     * Gets the value of the spellweaving property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spellweaving property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPELLWEAVING().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESPELLWEAVINGType }
+     * 
+     * 
+     */
+    public List<NAMESPELLWEAVINGType> getSPELLWEAVING() {
+        if (spellweaving == null) {
+            spellweaving = new ArrayList<NAMESPELLWEAVINGType>();
+        }
+        return this.spellweaving;
+    }
 
     /**
      * Gets the value of the capability property.

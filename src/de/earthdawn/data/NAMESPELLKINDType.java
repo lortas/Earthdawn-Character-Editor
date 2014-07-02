@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAME_SPELLKIND_type", namespace = "http://earthdawn.com/names")
+@XmlType(name = "NAME_SPELLKIND_type", namespace = "http://earthdawn.com/translation")
 public class NAMESPELLKINDType {
 
     @XmlAttribute(name = "weaving", required = true)

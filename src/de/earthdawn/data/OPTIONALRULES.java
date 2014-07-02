@@ -46,6 +46,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="MULTIUSETALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_MULTIUSETALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFAULTOPTIONALTALENT" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_DEFAULTOPTIONALTALENT" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ORIGIN" type="{http://earthdawn.com/optionalrules}OPTIONALRULES_ORIGIN" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="STARTINGWEAPONS" type="{http://earthdawn.com/optionalrules}NAME_STARTINGWEAPONS_type" maxOccurs="unbounded"/>
+ *         &lt;element name="STARTINGITEMS" type="{http://earthdawn.com/optionalrules}NAME_STARTINGITEMS_type" maxOccurs="unbounded"/>
+ *         &lt;element name="STARTINGSKILLS" type="{http://earthdawn.com/optionalrules}NAME_STARTINGSKILLS_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -74,7 +77,10 @@ import javax.xml.bind.annotation.XmlType;
     "dateformat",
     "multiusetalent",
     "defaultoptionaltalent",
-    "origin"
+    "origin",
+    "startingweapons",
+    "startingitems",
+    "startingskills"
 })
 @XmlRootElement(name = "OPTIONALRULES", namespace = "http://earthdawn.com/optionalrules")
 public class OPTIONALRULES {
@@ -117,6 +123,12 @@ public class OPTIONALRULES {
     protected List<OPTIONALRULESDEFAULTOPTIONALTALENT> defaultoptionaltalent;
     @XmlElement(name = "ORIGIN", namespace = "http://earthdawn.com/optionalrules")
     protected List<OPTIONALRULESORIGIN> origin;
+    @XmlElement(name = "STARTINGWEAPONS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected List<NAMESTARTINGWEAPONSType> startingweapons;
+    @XmlElement(name = "STARTINGITEMS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected List<NAMESTARTINGITEMSType> startingitems;
+    @XmlElement(name = "STARTINGSKILLS", namespace = "http://earthdawn.com/optionalrules", required = true)
+    protected List<NAMESTARTINGSKILLSType> startingskills;
 
     /**
      * Gets the value of the attribute property.
@@ -587,6 +599,93 @@ public class OPTIONALRULES {
             origin = new ArrayList<OPTIONALRULESORIGIN>();
         }
         return this.origin;
+    }
+
+    /**
+     * Gets the value of the startingweapons property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the startingweapons property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSTARTINGWEAPONS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESTARTINGWEAPONSType }
+     * 
+     * 
+     */
+    public List<NAMESTARTINGWEAPONSType> getSTARTINGWEAPONS() {
+        if (startingweapons == null) {
+            startingweapons = new ArrayList<NAMESTARTINGWEAPONSType>();
+        }
+        return this.startingweapons;
+    }
+
+    /**
+     * Gets the value of the startingitems property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the startingitems property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSTARTINGITEMS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESTARTINGITEMSType }
+     * 
+     * 
+     */
+    public List<NAMESTARTINGITEMSType> getSTARTINGITEMS() {
+        if (startingitems == null) {
+            startingitems = new ArrayList<NAMESTARTINGITEMSType>();
+        }
+        return this.startingitems;
+    }
+
+    /**
+     * Gets the value of the startingskills property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the startingskills property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSTARTINGSKILLS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMESTARTINGSKILLSType }
+     * 
+     * 
+     */
+    public List<NAMESTARTINGSKILLSType> getSTARTINGSKILLS() {
+        if (startingskills == null) {
+            startingskills = new ArrayList<NAMESTARTINGSKILLSType>();
+        }
+        return this.startingskills;
     }
 
 }

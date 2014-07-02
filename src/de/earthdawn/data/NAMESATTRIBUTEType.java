@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAMES_ATTRIBUTE_type", namespace = "http://earthdawn.com/names")
+@XmlType(name = "NAMES_ATTRIBUTE_type", namespace = "http://earthdawn.com/translation")
 public class NAMESATTRIBUTEType {
 
     @XmlAttribute(name = "attribute", required = true)

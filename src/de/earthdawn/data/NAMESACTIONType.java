@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="action" use="required" type="{http://earthdawn.com/datatypes}action_type" />
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="acronym" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="acronym" use="required" type="{http://earthdawn.com/datatypes}acronym_type" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAMES_ACTION_type", namespace = "http://earthdawn.com/names")
+@XmlType(name = "NAMES_ACTION_type", namespace = "http://earthdawn.com/translation")
 public class NAMESACTIONType {
 
     @XmlAttribute(name = "action", required = true)

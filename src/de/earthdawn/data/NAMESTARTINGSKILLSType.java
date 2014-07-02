@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAME_STARTINGSKILLS_type", namespace = "http://earthdawn.com/names", propOrder = {
+@XmlType(name = "NAME_STARTINGSKILLS_type", namespace = "http://earthdawn.com/optionalrules", propOrder = {
     "skill"
 })
 public class NAMESTARTINGSKILLSType {

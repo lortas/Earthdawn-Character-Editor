@@ -31,8 +31,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
-    private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
+    private final static QName _TRANSLATIONTypeLABEL_QNAME = new QName("http://earthdawn.com/translation", "LABEL");
+    private final static QName _TRANSLATIONTypeSHORTCUT_QNAME = new QName("http://earthdawn.com/translation", "SHORTCUT");
     private final static QName _CHARACTERISTICSSTEPDICETABLE_QNAME = new QName("http://earthdawn.com/characteristics", "STEPDICETABLE");
     private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
     private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
@@ -45,6 +45,8 @@ public class ObjectFactory {
     private final static QName _CHARACTERISTICSMYSTICARMOR_QNAME = new QName("http://earthdawn.com/characteristics", "MYSTICARMOR");
     private final static QName _CHARACTERISTICSATTRIBUTECOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTECOST");
     private final static QName _CHARACTERISTICSSKILLLPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "SKILLLPCOST");
+    private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
+    private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.earthdawn.data
@@ -534,62 +536,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OPTIONALRULESDEFAULTLANGUAGE }
-     * 
-     */
-    public OPTIONALRULESDEFAULTLANGUAGE createOPTIONALRULESDEFAULTLANGUAGE() {
-        return new OPTIONALRULESDEFAULTLANGUAGE();
-    }
-
-    /**
-     * Create an instance of {@link NAMES }
-     * 
-     */
-    public NAMES createNAMES() {
-        return new NAMES();
-    }
-
-    /**
-     * Create an instance of {@link NAMESATTRIBUTESType }
-     * 
-     */
-    public NAMESATTRIBUTESType createNAMESATTRIBUTESType() {
-        return new NAMESATTRIBUTESType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESACTIONSType }
-     * 
-     */
-    public NAMESACTIONSType createNAMESACTIONSType() {
-        return new NAMESACTIONSType();
-    }
-
-    /**
-     * Create an instance of {@link NAMELANGType }
-     * 
-     */
-    public NAMELANGType createNAMELANGType() {
-        return new NAMELANGType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESHORTCUTType }
-     * 
-     */
-    public NAMESHORTCUTType createNAMESHORTCUTType() {
-        return new NAMESHORTCUTType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESPELLWEAVINGType }
-     * 
-     */
-    public NAMESPELLWEAVINGType createNAMESPELLWEAVINGType() {
-        return new NAMESPELLWEAVINGType();
-    }
-
-    /**
      * Create an instance of {@link NAMESTARTINGWEAPONSType }
      * 
      */
@@ -614,27 +560,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NAMESACTIONType }
+     * Create an instance of {@link OPTIONALRULESDEFAULTLANGUAGE }
      * 
      */
-    public NAMESACTIONType createNAMESACTIONType() {
-        return new NAMESACTIONType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESPELLKINDType }
-     * 
-     */
-    public NAMESPELLKINDType createNAMESPELLKINDType() {
-        return new NAMESPELLKINDType();
-    }
-
-    /**
-     * Create an instance of {@link NAMESATTRIBUTEType }
-     * 
-     */
-    public NAMESATTRIBUTEType createNAMESATTRIBUTEType() {
-        return new NAMESATTRIBUTEType();
+    public OPTIONALRULESDEFAULTLANGUAGE createOPTIONALRULESDEFAULTLANGUAGE() {
+        return new OPTIONALRULESDEFAULTLANGUAGE();
     }
 
     /**
@@ -686,30 +616,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EDRANDOMNAME }
-     * 
-     */
-    public EDRANDOMNAME createEDRANDOMNAME() {
-        return new EDRANDOMNAME();
-    }
-
-    /**
-     * Create an instance of {@link RANDOMNAMERACEType }
-     * 
-     */
-    public RANDOMNAMERACEType createRANDOMNAMERACEType() {
-        return new RANDOMNAMERACEType();
-    }
-
-    /**
-     * Create an instance of {@link RandomnameNamesType }
-     * 
-     */
-    public RandomnameNamesType createRandomnameNamesType() {
-        return new RandomnameNamesType();
-    }
-
-    /**
      * Create an instance of {@link HELP }
      * 
      */
@@ -731,6 +637,30 @@ public class ObjectFactory {
      */
     public KNACKBASEType createKNACKBASEType() {
         return new KNACKBASEType();
+    }
+
+    /**
+     * Create an instance of {@link EDRANDOMNAME }
+     * 
+     */
+    public EDRANDOMNAME createEDRANDOMNAME() {
+        return new EDRANDOMNAME();
+    }
+
+    /**
+     * Create an instance of {@link RANDOMNAMERACEType }
+     * 
+     */
+    public RANDOMNAMERACEType createRANDOMNAMERACEType() {
+        return new RANDOMNAMERACEType();
+    }
+
+    /**
+     * Create an instance of {@link RandomnameNamesType }
+     * 
+     */
+    public RandomnameNamesType createRandomnameNamesType() {
+        return new RandomnameNamesType();
     }
 
     /**
@@ -974,11 +904,59 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NAMESATTRIBUTESType }
+     * 
+     */
+    public NAMESATTRIBUTESType createNAMESATTRIBUTESType() {
+        return new NAMESATTRIBUTESType();
+    }
+
+    /**
+     * Create an instance of {@link NAMESACTIONSType }
+     * 
+     */
+    public NAMESACTIONSType createNAMESACTIONSType() {
+        return new NAMESACTIONSType();
+    }
+
+    /**
      * Create an instance of {@link TRANSLATIONType }
      * 
      */
     public TRANSLATIONType createTRANSLATIONType() {
         return new TRANSLATIONType();
+    }
+
+    /**
+     * Create an instance of {@link NAMESPELLWEAVINGType }
+     * 
+     */
+    public NAMESPELLWEAVINGType createNAMESPELLWEAVINGType() {
+        return new NAMESPELLWEAVINGType();
+    }
+
+    /**
+     * Create an instance of {@link NAMESACTIONType }
+     * 
+     */
+    public NAMESACTIONType createNAMESACTIONType() {
+        return new NAMESACTIONType();
+    }
+
+    /**
+     * Create an instance of {@link NAMESPELLKINDType }
+     * 
+     */
+    public NAMESPELLKINDType createNAMESPELLKINDType() {
+        return new NAMESPELLKINDType();
+    }
+
+    /**
+     * Create an instance of {@link NAMESATTRIBUTEType }
+     * 
+     */
+    public NAMESATTRIBUTEType createNAMESATTRIBUTEType() {
+        return new NAMESATTRIBUTEType();
     }
 
     /**
@@ -990,21 +968,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link TranslationlabelType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    @XmlElementDecl(namespace = "http://earthdawn.com/translation", name = "LABEL", scope = TRANSLATIONType.class)
+    public JAXBElement<TranslationlabelType> createTRANSLATIONTypeLABEL(TranslationlabelType value) {
+        return new JAXBElement<TranslationlabelType>(_TRANSLATIONTypeLABEL_QNAME, TranslationlabelType.class, TRANSLATIONType.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link TranslationlabelType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    @XmlElementDecl(namespace = "http://earthdawn.com/translation", name = "SHORTCUT", scope = TRANSLATIONType.class)
+    public JAXBElement<TranslationlabelType> createTRANSLATIONTypeSHORTCUT(TranslationlabelType value) {
+        return new JAXBElement<TranslationlabelType>(_TRANSLATIONTypeSHORTCUT_QNAME, TranslationlabelType.class, TRANSLATIONType.class, value);
     }
 
     /**
@@ -1113,6 +1091,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "SKILLLPCOST", scope = CHARACTERISTICS.class)
     public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSSKILLLPCOST(CHARACTERISTICSCOST value) {
         return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSSKILLLPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
     }
 
 }

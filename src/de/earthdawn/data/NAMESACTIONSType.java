@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ACTION" type="{http://earthdawn.com/names}NAMES_ACTION_type" maxOccurs="5" minOccurs="5"/>
+ *         &lt;element name="ACTION" type="{http://earthdawn.com/translation}NAMES_ACTION_type" maxOccurs="5" minOccurs="5"/>
  *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAMES_ACTIONS_type", namespace = "http://earthdawn.com/names", propOrder = {
+@XmlType(name = "NAMES_ACTIONS_type", namespace = "http://earthdawn.com/translation", propOrder = {
     "action"
 })
 public class NAMESACTIONSType {

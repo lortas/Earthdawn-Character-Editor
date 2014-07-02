@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="SPELLKIND" type="{http://earthdawn.com/names}NAME_SPELLKIND_type" maxOccurs="unbounded"/>
+ *         &lt;element name="SPELLKIND" type="{http://earthdawn.com/translation}NAME_SPELLKIND_type" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
  *     &lt;/restriction>
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NAME_SPELLWEAVING_type", namespace = "http://earthdawn.com/names", propOrder = {
+@XmlType(name = "NAME_SPELLWEAVING_type", namespace = "http://earthdawn.com/translation", propOrder = {
     "spellkind"
 })
 public class NAMESPELLWEAVINGType {
