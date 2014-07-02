@@ -219,6 +219,12 @@
 			<xs:enumeration value="core"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="acronym_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="stringlist_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
