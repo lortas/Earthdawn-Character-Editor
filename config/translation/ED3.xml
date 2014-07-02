@@ -43,16 +43,12 @@
 		<LABEL lang="en">Karma Ritual</LABEL>
 	</KARMARUTUAL>
 	<ARTISAN>
-		<LABEL lang="de">Kunsthandwerk</LABEL>
-		<SHORTCUT lang="de">K</SHORTCUT>
-		<LABEL lang="de">Artisan</LABEL>
-		<SHORTCUT lang="en">A</SHORTCUT>
+		<LABEL lang="de" acronym="K" >Kunsthandwerk</LABEL>
+		<LABEL lang="en" acronym="A">Artisan</LABEL>
 	</ARTISAN>
 	<KNOWLEDGE>
-		<LABEL lang="de">Wissen</LABEL>
-		<SHORTCUT lang="de">W</SHORTCUT>
-		<LABEL lang="en">Knowledge</LABEL>
-		<SHORTCUT lang="en">K</SHORTCUT>
+		<LABEL lang="de" acronym="W">Wissen</LABEL>
+		<LABEL lang="en" acronym="K">Knowledge</LABEL>
 	</KNOWLEDGE>
 	<QUESTORTALENT>
 		<LABEL lang="de">Questor</LABEL>
