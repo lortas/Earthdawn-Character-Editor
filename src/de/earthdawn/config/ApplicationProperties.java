@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeMap;
 
 import javax.xml.bind.JAXBContext;
@@ -53,7 +54,7 @@ public class ApplicationProperties {
 	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
 	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
     private static KNACKS KNACKS = new KNACKS();
-    private static SPELLS SPELLS = new SPELLS();
+	private static Map<ECERulesetLanguage,SPELLS> SPELLS;
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
     private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
     private static ITEMS ITEMS = new ITEMS();
@@ -61,9 +62,10 @@ public class ApplicationProperties {
     private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
 	private static ECERulesetLanguage RULESETLANGUAGE = new ECERulesetLanguage(RulesetversionType.ED_3,LanguageType.EN);
     private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
-    private static SPELLDESCRIPTIONS SPELLDESCRIPTIONS = new SPELLDESCRIPTIONS();
+	private static Map<ECERulesetLanguage,SPELLDESCRIPTIONS> SPELLDESCRIPTIONS;
     private ECECharacteristics CHARACTERISTICS = null;
-    
+	private static File CONFIGDIR = new File("./config");
+
     /** Singleton-Instanz dieser Klasse. */
     private static ApplicationProperties theProps = null;
 
@@ -90,7 +92,7 @@ public class ApplicationProperties {
 	}
 
 	/**
-	 * Gibt internationalisierten Text zu <code>key</code> zur�ck.
+	 * Gibt internationalisierten Text zu <code>key</code> zurück.
 	 */
 	public String getMessage(String key) {
 		return MESSAGES.getString(key);
@@ -295,7 +297,7 @@ public class ApplicationProperties {
 	// Unabhängig von der Diszipin oder dem Fadenweben-Talent
 	public HashMap<String,SPELLDEFType> getSpells() {
 		HashMap<String,SPELLDEFType> spellmap = new HashMap<String,SPELLDEFType>();
-		for( SPELLDEFType spell : SPELLS.getSPELL() ) {
+		for( SPELLDEFType spell : SPELLS.get(RULESETLANGUAGE).getSPELL() ) {
 			spellmap.put(spell.getName(), spell);
 		}
 		return spellmap;
@@ -303,7 +305,7 @@ public class ApplicationProperties {
 
 	public HashMap<String,SpelldescriptionType> getSpellDescriptions() {
 		HashMap<String,SpelldescriptionType> spellmap = new HashMap<String,SpelldescriptionType>();
-		for( SpelldescriptionType spell : SPELLDESCRIPTIONS.getSPELL() ) spellmap.put(spell.getName(), spell);
+		for( SpelldescriptionType spell : SPELLDESCRIPTIONS.get(RULESETLANGUAGE).getSPELL() ) spellmap.put(spell.getName(), spell);
 		return spellmap;
 	}
 
@@ -399,7 +401,7 @@ public class ApplicationProperties {
 
 	public void saveOptionalRules() throws JAXBException, IOException {
 		if( OPTIONALRULES == null ) return;
-		final String file="config/optionalrules.xml";
+		final String file=(new File(CONFIGDIR,"optionalrules.xml")).getCanonicalPath();
 		System.out.println("Scheibe Konfigurationsdatei: '" + file + "'");
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
@@ -525,7 +527,7 @@ public class ApplicationProperties {
 	public CharacterContainer getRandomCharacter(String template) {
 		if( template == null ) return null; 
 		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
-		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.getSPELL());
+		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.get(RULESETLANGUAGE).getSPELL());
 		RANDOMCHARACTERTEMPLATES.setCapabilities(getCapabilities());
 		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES.get(RULESETLANGUAGE.getLanguage()));
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
@@ -564,7 +566,7 @@ public class ApplicationProperties {
 			// --- Bestimmen aller Dateien im Unterordner 'translation'
 			// --- Einlesen der Dateien
 			TRANSLATIONS=new HashMap<RulesetversionType,TRANSLATIONS>();
-			for(File translation : selectallxmlfiles(new File("./config/translation"))) {
+			for(File translation : selectallxmlfiles(new File(CONFIGDIR,"translation"))) {
 				System.out.print("Reading config file '" + translation.getCanonicalPath() + "' ... ");
 				TRANSLATIONS t1 = (TRANSLATIONS) unmarshaller.unmarshal(translation);
 				if( t1 == null ) { System.out.println(" parse error."); continue; }
@@ -664,7 +666,7 @@ public class ApplicationProperties {
 			// disziplinen laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
 			// --- Einlesen der Dateien
-			for(File disConfigFile : selectallxmlfiles(new File("./config/disciplines"))) {
+			for(File disConfigFile : selectallxmlfiles(new File(CONFIGDIR,"disciplines"))) {
 				System.out.println("Reading config file: '" + disConfigFile.getCanonicalPath() + "'");
 				DISCIPLINE dis = (DISCIPLINE) unmarshaller.unmarshal(disConfigFile);
 				ECERulesetLanguage rl = new ECERulesetLanguage(dis.getRulesetversion(),dis.getLang());
@@ -680,7 +682,7 @@ public class ApplicationProperties {
 			// --- Bestimmen aller Dateien im Unterordner 'capabilities'
 			// --- Einlesen der Dateien
 			CAPABILITIES=new ArrayList<CAPABILITIES>();
-			for(File capa : selectallxmlfiles(new File("./config/capabilities"))) {
+			for(File capa : selectallxmlfiles(new File(CONFIGDIR,"capabilities"))) {
 				System.out.print("Reading config file '" + capa.getCanonicalPath() + "' ...");
 				CAPABILITIES c1 = (CAPABILITIES) unmarshaller.unmarshal(capa);
 				if( c1 == null ) { System.out.println(" parse error."); continue; }
@@ -698,57 +700,79 @@ public class ApplicationProperties {
 			// spells laden
 			// --- Bestimmen aller Dateien im Unterordner 'spells'
 			// --- Einlesen der Dateien
-			SPELLS=new SPELLS();
-			SPELLS.setLang(RULESETLANGUAGE.getLanguage());
-			SPELLDESCRIPTIONS=new SPELLDESCRIPTIONS();
-			SPELLDESCRIPTIONS.setLang(RULESETLANGUAGE.getLanguage());
-			for(File spells : selectallxmlfiles(new File("./config/spells"))) {
+			SPELLS=new HashMap<ECERulesetLanguage,SPELLS>();
+			SPELLDESCRIPTIONS=new HashMap<ECERulesetLanguage,SPELLDESCRIPTIONS>();
+			File spelldescriptionsdir = new File(CONFIGDIR, "spelldescriptions");
+			for(File spells : selectallxmlfiles(new File(CONFIGDIR,"spells"))) {
 				System.out.print("Reading config file '" + spells.getCanonicalPath() + "' ...");
 				SPELLS s = (SPELLS) unmarshaller.unmarshal(spells);
 				if( s == null ) { System.out.println(" parse error."); continue; }
-				if( s.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
-					SPELLS.getSPELL().addAll(s.getSPELL());
-					System.out.println(" done.");
-					String filebasename=spells.getName();
-					File parentdir = spells.getParentFile().getParentFile();
-					File spelldescriptionsdir = new File(parentdir, "spelldescriptions");
-					if( spelldescriptionsdir.isDirectory() || spelldescriptionsdir.mkdir() ) {
-						File spelldescriptionsfile = new File(spelldescriptionsdir, filebasename);
-						boolean neworchanged=false;
-						SPELLDESCRIPTIONS spelldescriptions;
-						if( spelldescriptionsfile.canRead() ) {
-							System.out.println("Reading config file '" + spelldescriptionsfile.getCanonicalPath() + "'");
-							spelldescriptions = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
-							if( fillSpellDescription(spelldescriptions,s) ) {
-								// Nicht zu allen Spells eine SpellDescriptions gefunden.
-								neworchanged=true;
-							}
-							SPELLDESCRIPTIONS.getSPELL().addAll(spelldescriptions.getSPELL());
-						} else {
-							System.out.println("Überspringe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "'");
-							spelldescriptions = new SPELLDESCRIPTIONS();
-							spelldescriptions.setLang(RULESETLANGUAGE.getLanguage());
-							fillSpellDescription(spelldescriptions,s);
-							neworchanged=true;
-						}
-						if( neworchanged ) {
-							System.out.println("Scheibe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "'");
-							JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
-							Marshaller m = jc.createMarshaller();
-							FileOutputStream out = new FileOutputStream(spelldescriptionsfile);
-							PrintStream fileio = new PrintStream(out, false, EDMainWindow.encoding);
-							m.setProperty(Marshaller.JAXB_ENCODING, EDMainWindow.encoding);
-							m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-							m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/spelldescription spelldescription.xsd");
-							m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-							fileio.print("<?xml version=\"1.0\" encoding=\""+EDMainWindow.encoding+"\" standalone=\"no\"?>");
-							m.marshal(spelldescriptions,fileio);
-							fileio.close();
-							out.close();
-						}
+				ECERulesetLanguage rsl=new ECERulesetLanguage(s.getRulesetversion(),s.getLang());
+				SPELLS s2 = SPELLS.get(rsl);
+				if( s2 == null ) {
+					s2=new SPELLS();
+					s2.setLang(rsl.getLanguage());
+					s2.setRulesetversion(rsl.getRulesetversion());
+					SPELLS.put(rsl, s2);
+				}
+				s2.getSPELL().addAll(s.getSPELL());
+				System.out.println(" done.");
+				Stack<String> filepath = new Stack<String>();
+				File file = spells;
+				while(!file.equals(CONFIGDIR)) {
+					filepath.push(file.getName());
+					file=file.getParentFile();
+				}
+				filepath.pop(); // "./config/spells/"
+				File spelldescr=spelldescriptionsdir;
+				while(filepath.size()>1) {
+					spelldescr=new File(spelldescr,filepath.pop());
+				}
+				spelldescr.mkdirs();
+				File spelldescriptionsfile=new File(spelldescr,filepath.pop());
+				boolean neworchanged=false;
+				SPELLDESCRIPTIONS spelldescriptions;
+				if( spelldescriptionsfile.canRead() ) {
+					System.out.println("Reading config file '" + spelldescriptionsfile.getCanonicalPath() + "'");
+					spelldescriptions = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
+					ECERulesetLanguage rsl_sd=new ECERulesetLanguage(spelldescriptions.getRulesetversion(),spelldescriptions.getLang());
+					if( !rsl.equals(rsl_sd) ) {
+						System.err.println("config file has diffrent rulesetversion or language ("+rsl+"!="+rsl_sd+")");
 					}
+					if( fillSpellDescription(spelldescriptions,s) ) {
+						// Nicht zu allen Spells eine SpellDescriptions gefunden.
+						neworchanged=true;
+					}
+					SPELLDESCRIPTIONS sd = SPELLDESCRIPTIONS.get(rsl);
+					if( sd == null ) {
+						sd=new SPELLDESCRIPTIONS();
+						sd.setLang(rsl.getLanguage());
+						sd.setRulesetversion(rsl.getRulesetversion());
+						SPELLS.put(rsl, s2);
+					}
+					sd.getSPELL().addAll(spelldescriptions.getSPELL());
 				} else {
-					System.out.println(" skipped. Wrong language: "+s.getLang().value()+" != "+RULESETLANGUAGE.getLanguage().value() );
+					System.out.println("Überspringe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "' da nicht vorhanden oder nicht lesbar.");
+					spelldescriptions = new SPELLDESCRIPTIONS();
+					spelldescriptions.setLang(rsl.getLanguage());
+					spelldescriptions.setRulesetversion(rsl.getRulesetversion());
+					fillSpellDescription(spelldescriptions,s);
+					neworchanged=true;
+				}
+				if( neworchanged ) {
+					System.out.println("Scheibe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "'");
+					JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
+					Marshaller m = jc.createMarshaller();
+					FileOutputStream out = new FileOutputStream(spelldescriptionsfile);
+					PrintStream fileio = new PrintStream(out, false, EDMainWindow.encoding);
+					m.setProperty(Marshaller.JAXB_ENCODING, EDMainWindow.encoding);
+					m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+					m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/spelldescription spelldescription.xsd");
+					m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+					fileio.print("<?xml version=\"1.0\" encoding=\""+EDMainWindow.encoding+"\" standalone=\"no\"?>");
+					m.marshal(spelldescriptions,fileio);
+					fileio.close();
+					out.close();
 				}
 			}
 
@@ -757,7 +781,7 @@ public class ApplicationProperties {
 			// --- Einlesen der Dateien
 			KNACKS=new KNACKS();
 			KNACKS.setLang(RULESETLANGUAGE.getLanguage());
-			for(File knacks : selectallxmlfiles(new File("./config/knacks"))) {
+			for(File knacks : selectallxmlfiles(new File(CONFIGDIR,"knacks"))) {
 				System.out.print("Reading config file '" + knacks.getCanonicalPath() + "' ...");
 				KNACKS k = (KNACKS) unmarshaller.unmarshal(knacks);
 				if( k == null ) { System.out.println(" parse error."); continue; }
@@ -775,7 +799,7 @@ public class ApplicationProperties {
 			// --- Einlesen der Dateien
 			ITEMS=new ITEMS();
 			ITEMS.setLang(RULESETLANGUAGE.getLanguage());
-			for(File items : selectallxmlfiles(new File("./config/itemstore"))) {
+			for(File items : selectallxmlfiles(new File(CONFIGDIR,"itemstore"))) {
 				System.out.println("Reading config file '" + items.getCanonicalPath() + "' ...");
 				ITEMS i = (ITEMS) unmarshaller.unmarshal(items);
 				if( i == null ) { System.out.println(" parse error."); continue; }
@@ -805,30 +829,30 @@ public class ApplicationProperties {
 			// randomcharactertemplates laden
 			// --- Bestimmen aller Dateien im Unterordner 'randomcharactertemplates'
 			// --- Einlesen der Dateien
-			for(File configFile : selectallxmlfiles(new File("./config/randomcharactertemplates"))) {
+			for(File configFile : selectallxmlfiles(new File(CONFIGDIR,"randomcharactertemplates"))) {
 				System.out.println("Reading config file '" + configFile.getCanonicalPath() + "'");
 				EDRANDOMCHARACTERTEMPLATE t = (EDRANDOMCHARACTERTEMPLATE) unmarshaller.unmarshal(configFile);
 				if( t.getLang().equals(RULESETLANGUAGE.getLanguage()) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
 			}
 
-			String filename="./config/characteristics.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) unmarshaller.unmarshal(new File(filename)));
-			filename="./config/namegivers.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			NAMEGIVERS = (NAMEGIVERS) unmarshaller.unmarshal(new File(filename));
-			filename="config/optionalrules.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			OPTIONALRULES = (OPTIONALRULES) unmarshaller.unmarshal(new File(filename));
-			filename="./config/help.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			HELP = (HELP) unmarshaller.unmarshal(new File(filename));
-			filename="./config/randomnames.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			RANDOMNAMES = (EDRANDOMNAME) unmarshaller.unmarshal(new File(filename));
-			filename="./config/eceguilayout.xml";
-			System.out.println("Reading config file '" + filename + "'");
-			ECEGUILAYOUT = (ECEGUILAYOUT) unmarshaller.unmarshal(new File(filename));
+			File filename=new File(CONFIGDIR,"characteristics.xml");
+			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
+			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) unmarshaller.unmarshal(filename));
+			filename=new File(CONFIGDIR,"namegivers.xml");
+			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
+			NAMEGIVERS = (NAMEGIVERS) unmarshaller.unmarshal(filename);
+			filename=new File(CONFIGDIR,"optionalrules.xml");
+			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
+			OPTIONALRULES = (OPTIONALRULES) unmarshaller.unmarshal(filename);
+			filename=new File(CONFIGDIR,"help.xml");
+			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
+			HELP = (HELP) unmarshaller.unmarshal(filename);
+			filename=new File(CONFIGDIR,"randomnames.xml");
+			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
+			RANDOMNAMES = (EDRANDOMNAME) unmarshaller.unmarshal(filename);
+			filename=new File(CONFIGDIR,"eceguilayout.xml");
+			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
+			ECEGUILAYOUT = (ECEGUILAYOUT) unmarshaller.unmarshal(filename);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (JAXBException e) {
