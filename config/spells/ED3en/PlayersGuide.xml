@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell ../earthdawnspells.xsd">
+<SPELLS lang="en" rulesetversion="ED3" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell ../../earthdawnspells.xsd">
 	<SPELL name="Air Armor" threads="0" reattuningdifficulty="10" range="touch" duration="R+5 min" effect="+3 Physical Armor, +3 Fatigue Test bonus vs. heat" bookref="PG p.146" element="air"/>
 	<SPELL name="Air Blast" threads="1" weavingdifficulty="10" reattuningdifficulty="16" castingdifficulty="TSD*" range="12 hex" duration="1 rnd" effect="WIL + 9" effectarea="60-degree arc from an origin hex adjacent to the spellcaster towards the target hex, up to the spell's range. For every 1 hex length away from the caster, the effect expands by 1 hex in width." bookref="PG p.146" element="air"/>
 	<SPELL name="Air Mattress" threads="1" weavingdifficulty="7" reattuningdifficulty="17" castingdifficulty="6" range="touch" duration="10 hr" effect="+2 Recovery Test bonus" bookref="PG p.146" element="air"/>

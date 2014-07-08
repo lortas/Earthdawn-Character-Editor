@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<SPELLS lang="en" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell ../earthdawnspells.xsd">
+<SPELLS lang="en" rulesetversion="ED3" xmlns="http://earthdawn.com/spell" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/spell ../../earthdawnspells.xsd">
 	<SPELL name="Angry Man Stamps His Feet" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="5 hex" duration="1 rnd" effect="WIL+4" bookref="CPG p.104"/>
 	<SPELL name="Astral Strike" threads="0" reattuningdifficulty="11" castingdifficulty="TSD*" range="10 hex" duration="R rnd" effect="WIL+4/Mystic" bookref="CPG p.104"/>
 	<SPELL name="Blessing of the Giant" threads="1" weavingdifficulty="7" reattuningdifficulty="15" castingdifficulty="TSD*" range="8 hex" duration="R+2 rnd" effect="Enlarges non-living object up to +100 percent of its original size" bookref="CPG p.104"/>
