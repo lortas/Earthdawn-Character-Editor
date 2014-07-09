@@ -18,19 +18,28 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.LanguageType;
+import de.earthdawn.data.RulesetversionType;
 import de.earthdawn.ui2.EDMainWindow;
 
 public class EarthdawnCharacterEditor {
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private static final File LASTEDITEDCHARACTER = new File("lasteditedcharacter.xml");
+	private static List<String> commandlineargs = new ArrayList<String>();
 	public static final String VERSION="0.47";
-	/**
-	 * Main-Funktion. 
-	 */
+
 	public static void main(String[] args) {
+		commandlineargs = Arrays.asList(args);
+		PROPERTIES.setRulesetLanguage(getRulesetversionFromArgs(), getLanguageFromArgs());
 		try {
 			CharacterContainer ec;
 			File infile;
-			// Erster Parameter wenn vorhanden ist der einzulesende Charakterbogen
+			// Erster Parameter, wenn vorhanden, ist der einzulesende Charakterbogen
 			if( args.length > 0 ) {
 				infile=new File(args[0]);
 			} else {
@@ -65,6 +74,35 @@ public class EarthdawnCharacterEditor {
 			e.printStackTrace();
 		}
 	}
+
+	private static RulesetversionType getRulesetversionFromArgs() {
+		int i = commandlineargs.indexOf("--rulesetversion");
+		if( i < 0 ) commandlineargs.indexOf("-r");
+		if( i >= 0 ) {
+			commandlineargs.remove(i); // --rulesetversion | -r
+			String s = commandlineargs.remove(i); // Parameter von --rulesetversion
+			if( s != null ) {
+				RulesetversionType rs = RulesetversionType.fromValue(s);
+				if( rs != null ) return rs;
+			}
+		}
+		return RulesetversionType.ED_3;
+	}
+
+	private static LanguageType getLanguageFromArgs() {
+		int i = commandlineargs.indexOf("--language");
+		if( i < 0 ) commandlineargs.indexOf("-l");
+		if( i >= 0 ) {
+			commandlineargs.remove(i); // --language | -l
+			String s = commandlineargs.remove(i); // Parameter von --language
+			if( s != null ) {
+				LanguageType lang = LanguageType.fromValue(s);
+				if( lang != null ) return lang;
+			}
+		}
+		return LanguageType.EN;
+	}
+
 	public static String chopFilename(File f){
 		String filename = f.getName();
 		int dotPlace = filename.lastIndexOf ( '.' );
