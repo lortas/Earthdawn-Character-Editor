@@ -81,10 +81,22 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public CharacterContainer() {
 		character = new EDCHARACTER();
+		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
+			throw new RuntimeException("The character '"+character.getName()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+		}
+		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
+			throw new RuntimeException("The character '"+character.getName()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+		}
 	}
 
 	public CharacterContainer(EDCHARACTER c) {
 		character = c;
+		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
+			throw new RuntimeException("The character '"+character.getName()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+		}
+		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
+			throw new RuntimeException("The character '"+character.getName()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+		}
 	}
 
 	public CharacterContainer(File xmlfile) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException {
@@ -141,10 +153,22 @@ public class CharacterContainer extends CharChangeRefresh {
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Unmarshaller u = jc.createUnmarshaller();
 		character =(EDCHARACTER)u.unmarshal(new ByteArrayInputStream(xmldata));
+		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
+			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+		}
+		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
+			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+		}
 	}
 
 	public void setEDCHARACTER(EDCHARACTER c) {
 		character = c;
+		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
+			throw new RuntimeException("The character '"+character.getName()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+		}
+		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
+			throw new RuntimeException("The character '"+character.getName()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+		}
 	}
 
 	public void writeXml(OutputStream out,String encoding) throws JAXBException, UnsupportedEncodingException {
@@ -153,7 +177,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		fileio.println("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
 		// Lösche XSD-Version
 		character.setXsdVersion(null);
-		// Sieht kopmisch aus, setzt aber die Default/Fixed XSD-Version
+		// Sieht komisch aus, setzt aber die Default/Fixed XSD-Version
 		character.setXsdVersion(character.getXsdVersion());
 		toXml(encoding).marshal(character,fileio);
 		fileio.close();
