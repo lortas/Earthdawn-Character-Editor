@@ -28,8 +28,8 @@ public class ECERulesetLanguage implements Comparable<ECERulesetLanguage> {
 	public ECERulesetLanguage(){}
 
 	public ECERulesetLanguage(RulesetversionType rulesetversion, LanguageType language) {
-		this.rulesetversion=rulesetversion;
-		this.language=language;
+		this.rulesetversion=(rulesetversion==null)?RulesetversionType.ED_3:rulesetversion;
+		this.language=(language==null)?LanguageType.EN:language;
 	}
 
 	public LanguageType getLanguage() {
