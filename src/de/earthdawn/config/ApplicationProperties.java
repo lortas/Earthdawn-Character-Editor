@@ -91,13 +91,23 @@ public class ApplicationProperties {
 		return theProps;
 	}
 
+	public void setRulesetLanguage(ECERulesetLanguage rulesetlanguage) {
+		RULESETLANGUAGE = rulesetlanguage;
+	}
+	public void setRulesetLanguage(RulesetversionType rulesetversion, LanguageType language) {
+		setRulesetLanguage(new ECERulesetLanguage(rulesetversion,language));
+	}
+	public ECERulesetLanguage getRulesetLanguage() {
+		return RULESETLANGUAGE;
+	}
+
 	/**
 	 * Gibt internationalisierten Text zu <code>key</code> zurück.
 	 */
 	public String getMessage(String key) {
 		return MESSAGES.getString(key);
 	}
-	
+
 	public static List<Integer> getNumberOfOptionalTalentsPerCircle(DISCIPLINE discipline) {
 		List<Integer> result = new ArrayList<Integer>();
 		if( discipline == null ) return result;
