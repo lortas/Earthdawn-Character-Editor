@@ -67,6 +67,6 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
-	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Diebe können Halbmagie einsetzen, um Sicherheitsmaßnahmen zu bauen oder zu umgehen, die Diebstähle verhindern sollen, und um verschiedene Arten von Schließmechanismen zu erkennen.</HALFMAGIC>
 </DISCIPLINE>
