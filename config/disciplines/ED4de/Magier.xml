@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Magier" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arkanes Gefasel"/>
+		<OPTIONALTALENT name="Artefaktgeschichte"/>
+		<OPTIONALTALENT name="Aufmerksamkeit"/>
+		<OPTIONALTALENT name="Büchergedächtnis"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Konversation"/>
+		<OPTIONALTALENT name="Lesen/Schreiben"/>
+		<OPTIONALTALENT name="Standardmatrix"/>
+		<OPTIONALTALENT name="Tieranalyse"/>
+		<FREETALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix"/>
+		<DISCIPLINETALENT name="Forschen"/>
+		<DISCIPLINETALENT name="Magie Neutralisieren"/>
+		<DISCIPLINETALENT name="Spruchzauberei"/>
+		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Magie"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Astralsicht"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Hartnäckiges Gewebe"/>
+		<TALENTABILITY/>
+		<KARMA spend="um sich zu erinnern (einschl. Wissensproben)"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Eisener Wille"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Beweisanalyse"/>
+		<OPTIONALTALENT name="Diplomatie"/>
+		<OPTIONALTALENT name="Erweiterte Matrix"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Hypnotisieren"/>
+		<OPTIONALTALENT name="Kompasspfeil"/>
+		<OPTIONALTALENT name="Lebensblick"/>
+		<OPTIONALTALENT name="Machtmaskierung"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Untrüglicher Blick"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
+		<DISCIPLINETALENT name="Astrale Interferenz"/>
+		<TALENTABILITY/>
+		<KARMA spend="um einen Selbst-Zauber auf Berührung zu ändern"/>
+		<ABILITY>Buchzauberer</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willensstärke"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Faden Halten"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Fluch Unterdrücken"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Erkennt verschiedene Arten von Magie, erkennt spezielle Anwendung von Magier-Magie; Wissen über magische Rituale </HALFMAGIC>
+</DISCIPLINE>

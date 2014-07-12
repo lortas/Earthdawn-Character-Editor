@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Illusionist" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arkanes Gefasel"/>
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Aufmerksamkeit"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Gewinnendes Lächeln"/>
+		<OPTIONALTALENT name="Heimlicher Schritt"/>
+		<OPTIONALTALENT name="Standardmatrix"/>
+		<OPTIONALTALENT name="Stimmen Immitieren"/>
+		<OPTIONALTALENT name="Totstellen"/>
+		<OPTIONALTALENT name="Verspotten"/>
+		<FREETALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix"/>
+		<DISCIPLINETALENT name="Erster Eindruck"/>
+		<DISCIPLINETALENT name="Illusionsverstärkung"/>
+		<DISCIPLINETALENT name="Spruchzauberei"/>
+		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Illusionismus"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Untrüglicher Blick"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Konversation"/>
+		<TALENTABILITY/>
+		<KARMA spend="für Interaktionsproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Magische Maske"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Eiserner Wille"/>
+		<OPTIONALTALENT name="Erweiterte Matrix"/>
+		<OPTIONALTALENT name="Flinke Hand"/>
+		<OPTIONALTALENT name="Gegenstand Verbergen"/>
+		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
+		<OPTIONALTALENT name="Magie Neutralisieren"/>
+		<OPTIONALTALENT name="Schuld Abwälzen"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Verängstigen"/>
+		<OPTIONALTALENT name="Wortgeplänkel"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
+		<DISCIPLINETALENT name="Machtmaskierung"/>
+		<TALENTABILITY/>
+		<KARMA spend="+2 auf die Wirkungsstufe eines Zaubers, für die ganze Dauer"/>
+		<ABILITY>Glamour</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willensstärke"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Hypnotisieren"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Faden Halten"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Wissen: Erkennt den Gebrauch von Magie und im speziellen von Illusions-Magie; Wahrnehmungsprobe: erkennt die "Wahrheit" einer Situation</HALFMAGIC>
+</DISCIPLINE>

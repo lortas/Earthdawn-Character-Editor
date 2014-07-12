@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Waffenschmied" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Aufmerksamkeit"/>
+		<OPTIONALTALENT name="Erster Eindruck"/>
+		<OPTIONALTALENT name="Fallen Entschärfen"/>
+		<OPTIONALTALENT name="Feilschen"/>
+		<OPTIONALTALENT name="Feuerblut"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Gefahrensinn"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Lesen/Schreiben"/>
+		<OPTIONALTALENT name="Schildschlag"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Faden Schmieden"/>
+		<DISCIPLINETALENT name="Artefaktgeschichte"/>
+		<DISCIPLINETALENT name="Eisener Wille"/>
+		<DISCIPLINETALENT name="Nahkampfwaffen"/>
+		<DISCIPLINETALENT name="Waffe Schmieden"/>
+		<TALENTABILITY/>
+		<ABILITY>Handwerker</ABILITY>
+		<KARMA
+			spend="Für jede Probe um einen Gegenstand herzustellen oder zu reparieren"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Konversation"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Fluch Unterdrücken"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Erholungsproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Standhaftigkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Diplomatie"/>
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Erdhaut"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Führung"/>
+		<OPTIONALTALENT name="Heilendes Feuer"/>
+		<OPTIONALTALENT name="Herzliches Lachen"/>
+		<OPTIONALTALENT name="Kampfgebrüll"/>
+		<OPTIONALTALENT name="Projektilwaffen"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<DISCIPLINETALENT name="Rüstung Schmieden"/>
+		<TALENTABILITY/>
+		<ABILITY>Reisende Schmiede</ABILITY>
+		<KARMA spend="Für Schadensproben mit Waffen die selbst hergestellt sind"/>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Ätherhaut"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Schwachstelle Erkennen"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Löwenherz"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Pflege von Waffen und Rüstungen; Erkennen von Waffen und Rüstungen und ihre Hersteller</HALFMAGIC>
+</DISCIPLINE>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Geisterbeschwörer" lang="de"  rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arkanes Gefasel"/>
+		<OPTIONALTALENT name="Aufmerksamkeit"/>
+		<OPTIONALTALENT name="Fluch Unterdrücken"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Heimlicher Schritt"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Lesen/Schreiben"/>
+		<OPTIONALTALENT name="Magie Neutralisieren"/>
+		<OPTIONALTALENT name="Nachtflieger Befehligen"/>
+		<OPTIONALTALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix"/>
+		<DISCIPLINETALENT name="Astralsicht"/>
+		<DISCIPLINETALENT name="Spruchzauberei"/>
+		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<DISCIPLINETALENT name="Verängstigen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Geisterbeschwörung"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Eisener Wille"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Geistersprache"/>
+		<TALENTABILITY/>
+		<KARMA spend="beliebige Probe gegen Dämonen, Konstrukte, Untote"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Geisterbann"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Astrale Interferenz"/>
+		<OPTIONALTALENT name="Erweiterte Matrix"/>
+		<OPTIONALTALENT name="Forschen"/>
+		<OPTIONALTALENT name="Geisterreittier"/>
+		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
+		<OPTIONALTALENT name="Lebensblick"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Schadensverteilung"/>
+		<OPTIONALTALENT name="Stählener Blick"/>
+		<OPTIONALTALENT name="Verbannen"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
+		<DISCIPLINETALENT name="Beschwören" limitation="Verbündete Geister"/>
+		<TALENTABILITY/>
+		<ABILITY>Blutbeschwörung</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willensstärke"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Kreisender Spion"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Faden Halten"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
+	<HALFMAGIC>Wissen: Erkenne Geisterbeschwörer Magie und Untoten/Geister, Verstehe Blutmagie Rituale und die Wirkung von Blutamuletten; Wahrnehmungsprobe: Präsenz von Geistern spüren</HALFMAGIC>
+</DISCIPLINE>

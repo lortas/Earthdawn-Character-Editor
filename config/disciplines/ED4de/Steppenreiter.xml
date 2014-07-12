@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Steppenreiter" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Erster Eindruck"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Herzliches Lachen"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Kampfgebrüll"/>
+		<OPTIONALTALENT name="Konversation"/>
+		<OPTIONALTALENT name="Schadensverteilung"/>
+		<OPTIONALTALENT name="Sicherer Reitsitz"/>
+		<OPTIONALTALENT name="Tieranalyse"/>
+		<OPTIONALTALENT name="Tiere Bändigen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Reiterweben"/>
+		<DISCIPLINETALENT name="Kunstreiten"/>
+		<DISCIPLINETALENT name="Nahkampfwaffen"/>
+		<DISCIPLINETALENT name="Sturmangriff"/>
+		<DISCIPLINETALENT name="Tierfreundschaft"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Abrichten"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Tiergefährten Verbessern"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Angriffsproben bei einem Sturmangriff"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Tiergefährten Rufen"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Empathische Wahrnehmung"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Führung"/>
+		<OPTIONALTALENT name="Furchterregender Sturmangriff"/>
+		<OPTIONALTALENT name="Geisterreittier"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Projektilwaffen"/>
+		<OPTIONALTALENT name="Reittierangriff"/>
+		<OPTIONALTALENT name="Taktik"/>
+		<OPTIONALTALENT name="Unempfindlichkeit Tiergefährte"/>
+		<DISCIPLINETALENT name="Reittier Panzern"/>
+		<TALENTABILITY/>
+		<KARMA spend="für alle Schadensproben beim Reiten"/>
+		<ABILITY>Eine Seele, Zwei Körper</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Schenkangriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Abwehrkreis"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Doppelter Sturmangriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Wissen über: Reittiere von Namensgebern, Aufzucht und erste Hilfe bei Tieren, bekannte Kavallerieeinheiten; Pflege des Reitzeugs</HALFMAGIC>
+</DISCIPLINE>

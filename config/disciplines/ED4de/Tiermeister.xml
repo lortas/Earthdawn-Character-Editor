@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Tiermeister" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Abrichten"/>
+		<OPTIONALTALENT name="Akrobatische Verteidigung"/>
+		<OPTIONALTALENT name="Gefahrensinn"/>
+		<OPTIONALTALENT name="Heimlicher Schritt"/>
+		<OPTIONALTALENT name="Klettern"/>
+		<OPTIONALTALENT name="Spurenlesen"/>
+		<OPTIONALTALENT name="Tieranalyse"/>
+		<OPTIONALTALENT name="Tierfreundschaft"/>
+		<OPTIONALTALENT name="Tiergefährten Verbessern"/>
+		<OPTIONALTALENT name="Tierische Sinne"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Tierweben"/>
+		<DISCIPLINETALENT name="Hieb Ausweichen"/>
+		<DISCIPLINETALENT name="Krallenhand"/>
+		<DISCIPLINETALENT name="Waffenloser Kampf"/>
+		<DISCIPLINETALENT name="Wildnisüberleben"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Aufmerksamkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Tiere Bändigen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Erholungsproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Weitsprung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Kobrastoß"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Mentale Tierkontrolle"/>
+		<OPTIONALTALENT name="Nachtreten"/>
+		<OPTIONALTALENT name="Schlachtruf"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Tiergefährten Rufen"/>
+		<OPTIONALTALENT name="Tigersprung"/>
+		<OPTIONALTALENT name="Unempfindlichkeit Tiergefährte"/>
+		<DISCIPLINETALENT name="Schadensverteilung"/>
+		<TALENTABILITY/>
+		<ABILITY>Katzenhafte Anmut</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Tiersprache"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Schmetterschlag"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Blutige Krallen"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Umgang und Sorgen für Tiere soweit kein Talent dafür vorhanden (einschl. Aufzucht und erste Hilfe); Wissen über Tiere; Erkennen von Tierspuren und abnormales Tier/Kreatur-Verhalten</HALFMAGIC>
+</DISCIPLINE>

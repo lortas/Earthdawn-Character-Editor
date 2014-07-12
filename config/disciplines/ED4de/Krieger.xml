@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Krieger" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Ablenken"/>
+		<OPTIONALTALENT name="Akrobtaische Verteidigung"/>
+		<OPTIONALTALENT name="Feuerblut"/>
+		<OPTIONALTALENT name="Gefahrensinn"/>
+		<OPTIONALTALENT name="Kampfsinn"/>
+		<OPTIONALTALENT name="Manövrieren"/>
+		<OPTIONALTALENT name="Projekttilwaffen"/>
+		<OPTIONALTALENT name="Schildschlag"/>
+		<OPTIONALTALENT name="Taktik"/>
+		<OPTIONALTALENT name="Waffenloser Kampf"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Kriegsweben"/>
+		<DISCIPLINETALENT name="Hieb Ausweichen"/>
+		<DISCIPLINETALENT name="Holzhaut"/>
+		<DISCIPLINETALENT name="Nahkampfwaffen"/>
+		<DISCIPLINETALENT name="Tigersprung"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Standhaftigkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Lufttanz"/>
+		<TALENTABILITY/>
+		<KARMA spend="für Erholungsproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Wasserfallschlag"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Entwaffnen"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Führung"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Nachtreten"/>
+		<OPTIONALTALENT name="Schwachstelle Erkennen"/>
+		<OPTIONALTALENT name="Schwungvoller Angriff"/>
+		<OPTIONALTALENT name="Stählerner Blick"/>
+		<OPTIONALTALENT name="Zweitwaffe"/>
+		<DISCIPLINETALENT name="Erdhaut"/>
+		<TALENTABILITY/>
+		<KARMA spend="auf beliebige Schadensproben im Nahkampf"/>
+		<ABILITY>Kampfriten</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Ätherhaut"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Hammerschlag"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Zweiter Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
+	<HALFMAGIC>Pflege und Reparatur von  Waffen und Rüstung; Wissen über: Militär Strategien und Taktik, Ereignisse in Barsaive's Militär Geschichte, Wahrnehmung von: Kriegerorden, berühmte Krieger der Vergangenheit, altertümliche Waffen und Rüstungen</HALFMAGIC>
+</DISCIPLINE>

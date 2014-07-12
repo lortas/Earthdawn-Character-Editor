@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Luftpirat" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Gefahrensinn"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Luftsegeln"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Schildschlag"/>
+		<OPTIONALTALENT name="Waffenloser Kampf"/>
+		<OPTIONALTALENT name="Wildnisüberleben"/>
+		<OPTIONALTALENT name="Windkissen"/>
+		<OPTIONALTALENT name="Wispern"/>
+		<OPTIONALTALENT name="Wurfwaffen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Himmelsweben"/>
+		<DISCIPLINETALENT name="Feuerblut"/>
+		<DISCIPLINETALENT name="Kampfgebrüll"/>
+		<DISCIPLINETALENT name="Klettern"/>
+		<DISCIPLINETALENT name="Nahkampfwaffen"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Weitsprung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Standhaftigkeit"/>
+		<TALENTABILITY/>
+		<KARMA spend="für Erholungsproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Heilendes Feuer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Ablenken"/>
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Erster Eindruck"/>
+		<OPTIONALTALENT name="Führung"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Nachtreten"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Taktik"/>
+		<OPTIONALTALENT name="Tigersprung"/>
+		<OPTIONALTALENT name="Zweitwaffe"/>
+		<DISCIPLINETALENT name="Schlachtruf"/>
+		<TALENTABILITY/>
+		<ABILITY>Überwätigende Kraft</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Stählender Blick"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Schmetterschlag"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Schwungvoller Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Instandhaltung, Reparatur, Bau von Drakkar Luftschiffen; Wissen über: Luftschiff Typen/Mannschaften und übliche Flugrouten</HALFMAGIC>
+</DISCIPLINE>

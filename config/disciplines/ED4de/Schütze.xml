@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Schütze" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Aufmerksamkeit"/>
+		<OPTIONALTALENT name="Beeindrucken"/>
+		<OPTIONALTALENT name="Erster Eindruck"/>
+		<OPTIONALTALENT name="Heimlicher Schritt"/>
+		<OPTIONALTALENT name="Klettern"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Spurenlesen"/>
+		<OPTIONALTALENT name="Tiernanalyse"/>
+		<OPTIONALTALENT name="Wildnisüberleben"/>
+		<OPTIONALTALENT name="Wurfwaffen"/>
+		<FREETALENT name="Projektil Rufen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Pfeil Weben"/>
+		<DISCIPLINETALENT name="Blattschuss"/>
+		<DISCIPLINETALENT name="Hieb Ausweichen"/>
+		<DISCIPLINETALENT name="Magische Markierung"/>
+		<DISCIPLINETALENT name="Projektilwaffen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Wahrnehmungsproben auf Sicht basierend"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Kompasspfeil"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Kampfsinn"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Initiativproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Weitschuss"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Ablenken"/>
+		<OPTIONALTALENT name="Bannmarkierung"/>
+		<OPTIONALTALENT name="Beweisanalyse"/>
+		<OPTIONALTALENT name="Eisener Wille"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Gefahrensinn"/>
+		<OPTIONALTALENT name="Konversation"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Tigersprung"/>
+		<DISCIPLINETALENT name="Schwachstelle Erkennen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Schadensproben mit Fernkampfwaffen"/>
+		<ABILITY>Projektil Erschaffen</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Gezielter Querschläger"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Brandpfeil"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Zweiter Schuss"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Pflege von Fernkampfwaffen; Erkennen aller Arten von  Fernkampfwaffen, Munition oder Hersteller</HALFMAGIC>
+</DISCIPLINE>

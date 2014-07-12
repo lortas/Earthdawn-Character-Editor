@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Kundschafter" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Fallen Entschärfen"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Kampfsinn"/>
+		<OPTIONALTALENT name="Lesen/Schreiben"/>
+		<OPTIONALTALENT name="Nahkampfwaffen"/>
+		<OPTIONALTALENT name="Projektilwaffen"/>
+		<OPTIONALTALENT name="Schloss Knacken"/>
+		<OPTIONALTALENT name="Tieranalyse"/>
+		<OPTIONALTALENT name="Weitsprung"/>
+		<FREETALENT name="Navigation"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Kundschafterweben"/>
+		<DISCIPLINETALENT name="Aufmerksamkeit"/>
+		<DISCIPLINETALENT name="Klettern"/>
+		<DISCIPLINETALENT name="Spurenlesen"/>
+		<DISCIPLINETALENT name="Wildnisüberleben"/>
+		<TALENTABILITY/>
+		<KARMA spend="auf Proben um etwas zu finden"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Heimlicher Schritt"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Kompasspfeil"/>
+		<TALENTABILITY/>
+		<KARMA spend="auf Initiativproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Gefahrensinn"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Gegenstand Verbergen"/>
+		<OPTIONALTALENT name="Geisterreittier"/>
+		<OPTIONALTALENT name="Magische Maske"/>
+		<OPTIONALTALENT name="Schwachstelle Erkennen"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Tierfreundschaft"/>
+		<OPTIONALTALENT name="Tierische Sinne"/>
+		<OPTIONALTALENT name="Tigersprung"/>
+		<OPTIONALTALENT name="Überraschungsschlag"/>
+		<OPTIONALTALENT name="Untrüglicher Blick"/>
+		<DISCIPLINETALENT name="Beweisanalyse"/>
+		<TALENTABILITY/>
+		<KARMA spend="für Erholungsproben"/>
+		<ABILITY>Geschärfte Sinne</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Astralsicht"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Sicherer Pfad"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Kreisender Spion"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Erkennt Spuren und Fährten von Tieren und Namensgebern in der Stadt und auf dem Land; Wissen über Pflanzen, Kreaturen und Kulturen in Barsaive </HALFMAGIC>
+</DISCIPLINE>

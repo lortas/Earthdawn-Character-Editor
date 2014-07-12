@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Luftsegler" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Ablenken"/>
+		<OPTIONALTALENT name="Akrobatische Verteidigung"/>
+		<OPTIONALTALENT name="Erster Eindruck"/>
+		<OPTIONALTALENT name="Feilschen"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Manövrieren"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Verspotten"/>
+		<OPTIONALTALENT name="Weitsprung"/>
+		<OPTIONALTALENT name="Wurfwaffen"/>
+		<FREETALENT name="Luftsegeln"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Luftweben"/>
+		<DISCIPLINETALENT name="Hieb Ausweichen"/>
+		<DISCIPLINETALENT name="Klettern"/>
+		<DISCIPLINETALENT name="Nahkampfwaffen"/>
+		<DISCIPLINETALENT name="Windkissen"/>
+		<TALENTABILITY/>
+		<KARMA spend="1x pro Runde für Aktionsproben auf einem Luftschiff"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Aufmerksamkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Empathische Wahrnehmung"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Initiativproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Standhaftigkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Eleganter Abgang"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Führung"/>
+		<OPTIONALTALENT name="Gegenstand Verbergen"/>
+		<OPTIONALTALENT name="Schlachtruf"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Überraschungsschlag"/>
+		<OPTIONALTALENT name="Wispern"/>
+		<OPTIONALTALENT name="Wortgeplänkel"/>
+		<OPTIONALTALENT name="Zweitwaffe"/>
+		<DISCIPLINETALENT name="Herzliches Lachen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Interaktionsproben"/>
+		<ABILITY>Zusammenarbeiten</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Lufttanz"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Andere Inspirieren"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Löwenherz"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Wartung, Reparatur, Bau von Luftschiffen; Wissen über: Luftschiffdesign und Typen, übliche Flugrouten und Besatzungen</HALFMAGIC>
+</DISCIPLINE>

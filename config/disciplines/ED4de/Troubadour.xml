@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Troubadour" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Beeindrucken"/>
+		<OPTIONALTALENT name="Feilschen"/>
+		<OPTIONALTALENT name="Fremdsprachen"/>
+		<OPTIONALTALENT name="Gewinnendes Lächeln"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Konversation"/>
+		<OPTIONALTALENT name="Lesen/Schreiben"/>
+		<OPTIONALTALENT name="Nahkampfwaffen"/>
+		<OPTIONALTALENT name="Verspotten"/>
+		<OPTIONALTALENT name="Wurfwaffen"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Geschichtenweben"/>
+		<DISCIPLINETALENT name="Artefaktgeschichte"/>
+		<DISCIPLINETALENT name="Erster Eindruck"/>
+		<DISCIPLINETALENT name="Gefühlsmelodie"/>
+		<DISCIPLINETALENT name="Herzliches Lachen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Interaktionsproben"/>
+		<ABILITY>Entertainer</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Etikette"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Empathische Wahrnehmung"/>
+		<TALENTABILITY/>
+		<KARMA spend="Für Poben zur Informationsbeschaffung oder Erinnerungen"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Forschen"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Diplomatie"/>
+		<OPTIONALTALENT name="Eleganter Abgang"/>
+		<OPTIONALTALENT name="Führung"/>
+		<OPTIONALTALENT name="Hypnotisieren"/>
+		<OPTIONALTALENT name="Klingen Jonglieren"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Magische Maske"/>
+		<OPTIONALTALENT name="Stimmen Imitieren"/>
+		<OPTIONALTALENT name="Wispern"/>
+		<OPTIONALTALENT name="Wortgeplänkel"/>
+		<DISCIPLINETALENT name="Andere Inspirieren"/>
+		<TALENTABILITY/>
+		<KARMA spend="1x pro Runde für Proben eines anderen Charakters in Seh oder Hörweite"/>
+		<ABILITY>Ein Letztes Wort</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Bleibender Eindruck"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Starrsinn"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Schuld Abwälzen"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
+	<HALFMAGIC>Wissen über: Legenden, Mythen, Folklore; Erkennen von Musikinstrumenten und darstellenden Künsten</HALFMAGIC>
+</DISCIPLINE>
