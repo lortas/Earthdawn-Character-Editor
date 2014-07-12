@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Elementarist" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arkanes Gefasel"/>
+		<OPTIONALTALENT name="Artefaktgeschichte"/>
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Hieb Ausweichen"/>
+		<OPTIONALTALENT name="Klettern"/>
+		<OPTIONALTALENT name="Standardmatrix"/>
+		<OPTIONALTALENT name="Spurenlesen"/>
+		<OPTIONALTALENT name="Wildnisüberleben"/>
+		<OPTIONALTALENT name="Windkissen"/>
+		<OPTIONALTALENT name="Wispern"/>
+		<FREETALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix"/>
+		<DISCIPLINETALENT name="Aufmerksamkeit"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Elementarismus"/>
+		<DISCIPLINETALENT name="Spruchzauberei"/>
+		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Heilendes Feuer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Elementar Sprachen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Elementarbann"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Eisener Wille"/>
+		<OPTIONALTALENT name="Erweiterte Matrix"/>
+		<OPTIONALTALENT name="Feuerblut"/>
+		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
+		<OPTIONALTALENT name="Luftgleiten"/>
+		<OPTIONALTALENT name="Magie Neutralisieren"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Reinigende Kälte"/>
+		<OPTIONALTALENT name="Sicherer Pfad"/>
+		<OPTIONALTALENT name="Verbannen"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
+		<DISCIPLINETALENT name="Beschwören" limitation="Elementargeister"/>
+		<TALENTABILITY/>
+		<ABILITY>Feuer und Eis</ABILITY>
+		<KARMA spend="Zauber auf einen zusätzlichen Verbündeten legen"/>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willensstärke"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Erdhaut"/>
+		<TALENTABILITY/>
+		<RECOVERYTEST/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Faden Halten"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Wissen über: Natur, Elemente, Elementar Magie, Magische Rituale; Wahrnehmungsprobe bei: Elementargeister entdecken</HALFMAGIC>
+</DISCIPLINE>
