@@ -443,31 +443,45 @@ public class ApplicationProperties {
 	}
 
 	public String getKarmaritualName() {
-		return NAMES.get("karmaritual").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("karmaritual").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String getDurabilityName() {
-		return NAMES.get("durability").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("durability").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String getVersatilityName() {
-		return NAMES.get("versatility").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("versatility").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String getThreadWeavingName() {
-		return NAMES.get("threadweaving").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("threadweaving").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String getLanguageSkillSpeakName() {
-		return NAMES.get("languageskillspeak").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("languageskillspeak").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String getLanguageSkillReadWriteName() {
-		return NAMES.get("languageskillreadwrite").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("languageskillreadwrite").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String getQuestorTalentName() {
-		return NAMES.get("questortalent").get(RULESETLANGUAGE).getValue();
+		TranslationlabelType translationlabel = NAMES.get("questortalent").get(RULESETLANGUAGE);
+		if( translationlabel== null ) return "";
+		return translationlabel.getValue();
 	}
 
 	public String[] getArtisanName() {
