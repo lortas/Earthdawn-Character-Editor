@@ -34,7 +34,7 @@ public class EarthdawnCharacterEditor {
 	public static final String VERSION="0.47";
 
 	public static void main(String[] args) {
-		commandlineargs = Arrays.asList(args);
+		commandlineargs = new ArrayList<String>(Arrays.asList(args));
 		PROPERTIES.setRulesetLanguage(getRulesetversionFromArgs(), getLanguageFromArgs());
 		try {
 			CharacterContainer ec;
