@@ -19,7 +19,11 @@
 		<DISCIPLINETALENT name="Spruchzauberei"/>
 		<DISCIPLINETALENT name="Struktur Verstehen"/>
 		<TALENTABILITY/>
-		<SPELL type="elemental" name="Element Widerstehen"/>
+		<SPELL type="elemental" name="Element Erde Widerstehen"/>
+		<SPELL type="elemental" name="Element Feuer Widerstehen"/>
+		<SPELL type="elemental" name="Element Holz Widerstehen"/>
+		<SPELL type="elemental" name="Element Luft Widerstehen"/>
+		<SPELL type="elemental" name="Element Wasser Widerstehen"/>
 		<SPELL type="elemental" name="Erde Reinigen"/>
 		<SPELL type="elemental" name="Erdpfeile"/>
 		<SPELL type="elemental" name="Flammenwaffe"/>
@@ -60,7 +64,11 @@
 		<SPELL type="elemental" name="Gewitterschritt"/>
 		<SPELL type="elemental" name="Hainerneuerung"/>
 		<SPELL type="elemental" name="Schneesturm"/>
-		<SPELL type="elemental" name="Speer des Elements"/>
+		<SPELL type="elemental" name="Speer des Elements Erde"/>
+		<SPELL type="elemental" name="Speer des Elements Feuer"/>
+		<SPELL type="elemental" name="Speer des Elements Holz"/>
+		<SPELL type="elemental" name="Speer des Elements Luft"/>
+		<SPELL type="elemental" name="Speer des Elements Wasser"/>
 		<SPELL type="elemental" name="Windstoß"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
