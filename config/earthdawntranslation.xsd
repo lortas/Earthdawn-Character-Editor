@@ -64,6 +64,7 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="CAPABILITY" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINE" type="TRANSLATION_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="NAMEGIVER" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="ITEM" type="TRANSLATION_type"/>
 			</xs:sequence>
 			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" use="required"/>

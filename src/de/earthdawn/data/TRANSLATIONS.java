@@ -43,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="CAPABILITY" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELL" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="NAMEGIVER" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ITEM" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="rulesetversion" use="required" type="{http://earthdawn.com/datatypes}rulesetversion_type" />
@@ -70,6 +71,7 @@ import javax.xml.bind.annotation.XmlType;
     "capability",
     "spell",
     "discipline",
+    "namegiver",
     "item"
 })
 @XmlRootElement(name = "TRANSLATIONS", namespace = "http://earthdawn.com/translation")
@@ -105,6 +107,8 @@ public class TRANSLATIONS {
     protected List<TRANSLATIONType> spell;
     @XmlElement(name = "DISCIPLINE", namespace = "http://earthdawn.com/translation")
     protected List<TRANSLATIONType> discipline;
+    @XmlElement(name = "NAMEGIVER", namespace = "http://earthdawn.com/translation")
+    protected List<TRANSLATIONType> namegiver;
     @XmlElement(name = "ITEM", namespace = "http://earthdawn.com/translation")
     protected List<TRANSLATIONType> item;
     @XmlAttribute(name = "rulesetversion", required = true)
@@ -543,6 +547,35 @@ public class TRANSLATIONS {
             discipline = new ArrayList<TRANSLATIONType>();
         }
         return this.discipline;
+    }
+
+    /**
+     * Gets the value of the namegiver property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the namegiver property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getNAMEGIVER().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TRANSLATIONType }
+     * 
+     * 
+     */
+    public List<TRANSLATIONType> getNAMEGIVER() {
+        if (namegiver == null) {
+            namegiver = new ArrayList<TRANSLATIONType>();
+        }
+        return this.namegiver;
     }
 
     /**
