@@ -20,20 +20,49 @@
 		<DISCIPLINETALENT name="Struktur Verstehen"/>
 		<DISCIPLINETALENT name="Fadenweben" limitation="Magie"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Astralsinn"/>
+		<SPELL type="wizard" name="Aura Lesen"/>
+		<SPELL type="wizard" name="Blendende Zurschaustellung Logischer Analyse"/>
+		<SPELL type="wizard" name="Eiserne Hand"/>
+		<SPELL type="wizard" name="Flammenblitz"/>
+		<SPELL type="wizard" name="Katzenaugen"/>
+		<SPELL type="wizard" name="Kletterhilfe"/>
+		<SPELL type="wizard" name="Mentaler Dolch"/>
+		<SPELL type="wizard" name="Schneller zu Fuß"/>
+		<SPELL type="wizard" name="Schnelllesen"/>
+		<SPELL type="wizard" name="Verzauberte Rüstung"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Astralsicht"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Astralschild"/>
+		<SPELL type="wizard" name="Ausweichschub"/>
+		<SPELL type="wizard" name="Fadenkreuz"/>
+		<SPELL type="wizard" name="Interferenzausgleich"/>
+		<SPELL type="wizard" name="Strickleiter"/>
+		<SPELL type="wizard" name="Vernichtender Wille"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Hartnäckiges Gewebe"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Astralvisier"/>
+		<SPELL type="wizard" name="Auraschlag"/>
+		<SPELL type="wizard" name="Kampfeswut"/>
+		<SPELL type="wizard" name="Levitation"/>
+		<SPELL type="wizard" name="Magie Identifizieren"/>
+		<SPELL type="wizard" name="Magiermal"/>
 		<KARMA spend="um sich zu erinnern (einschl. Wissensproben)"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Eisener Wille"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Berührung des Gauklers"/>
+		<SPELL type="wizard" name="Fesselnde Fäden"/>
+		<SPELL type="wizard" name="Gewachsenes Bewusstsein"/>
+		<SPELL type="wizard" name="Last Erleichtern"/>
+		<SPELL type="wizard" name="Leitfaden"/>
+		<SPELL type="wizard" name="Umhang des Magiers"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
@@ -50,22 +79,46 @@
 		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
 		<DISCIPLINETALENT name="Astrale Interferenz"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Fliegen"/>
+		<SPELL type="wizard" name="Mystischer Schock"/>
+		<SPELL type="wizard" name="Riesenwuchs"/>
+		<SPELL type="wizard" name="Talent Unterbrechen"/>
+		<SPELL type="wizard" name="Verlangsamen"/>
+		<SPELL type="wizard" name="Waffe Herbei"/>
 		<KARMA spend="um einen Selbst-Zauber auf Berührung zu ändern"/>
 		<ABILITY>Buchzauberer</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Willensstärke"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Energieschild"/>
+		<SPELL type="wizard" name="Intuitives Ausweichen"/>
+		<SPELL type="wizard" name="Schlaf"/>
+		<SPELL type="wizard" name="Verwüstung"/>
+		<SPELL type="wizard" name="Zauber Verleihen"/>
+		<SPELL type="wizard" name="Zerschmettern"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Faden Halten"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Hypergeschwindigkeit"/>
+		<SPELL type="wizard" name="Mystisches Netz"/>
+		<SPELL type="wizard" name="Ruf"/>
+		<SPELL type="wizard" name="Verknotete Fäden"/>
+		<SPELL type="wizard" name="Zauber Verdrängen"/>
+		<SPELL type="wizard" name="Zauberspeicher"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Fluch Unterdrücken"/>
 		<TALENTABILITY/>
+		<SPELL type="wizard" name="Astrale Katastrophe"/>
+		<SPELL type="wizard" name="Karmablockade"/>
+		<SPELL type="wizard" name="Zauber Einfangen"/>
+		<SPELL type="wizard" name="Zauberdiebstahl"/>
+		<SPELL type="wizard" name="Zauberkäfig"/>
+		<SPELL type="wizard" name="Zerquetschen"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
