@@ -402,7 +402,7 @@
 		</edt:THREADRANK>
 	</THREADITEM>
     <THREADITEM name="Spell Sword" maxthreads="3" spelldefense="0" lpcostgrowth="13" weight="4.0" size="3" used="no" location="self" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="GM p.140">
-        <edt:description>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:description>
+        <edt:DESCRIPTION>differing styles and sizes (most broadswords); elemental earth and air used to forge; mark flat sides of blades with unusual swirled  appearance;</edt:DESCRIPTION>
 		<edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="yes" location="" kind="melee weapon" blooddamage="0" depatterningrate="0" bookref="PG p.251"/>
         <edt:THREADRANK keyknowledge="sword’s Name" lpcost="500" effect="contains spell matrix of  Rank equal to Thread Rank; may place spell in matrix; wielder may cast spell as if casting from matrix">
             <edt:WEAPON damagestep="5" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
@@ -428,7 +428,7 @@
         </edt:THREADRANK>
 	</THREADITEM>		
 	<THREADITEM name="Spike Bomb" maxthreads="2" spelldefense="14" lpcostgrowth="5" weight="1.0" blooddamage="0" depatterningrate="0" bookref="GM p.141">
-        <edt:description>four-inch-diameter, metal balls covered with magical symbols (arcane markings of no particular significance)</edt:description>
+        <edt:DESCRIPTION>four-inch-diameter, metal balls covered with magical symbols (arcane markings of no particular significance)</edt:DESCRIPTION>
         <edt:THREADRANK keyknowledge="bomb’s Name" effect="throwing weapon; Range short 2–10, long 11–20 yards; Attack Test successful: bomb explodes (Willpower+6); Mystic Armor protects; bomb temporarily destroyed; immediate Willpower (8) to recreate bomb; If unsuccessful, 1 Strain for each retry"/>
         <edt:THREADRANK effect="Willpower+8"/>
         <edt:THREADRANK keyknowledge="Name of alchemist who created the spike bomb" effect="affects multiple targets; attack succeeds, compares Attack Test result against Physical Defense of all characters within 2 hexes of target; Good result: target character takes damage; Mystic Armor protects"/>
@@ -438,7 +438,7 @@
         <edt:THREADRANK effect="Willpower+12"/>
 	</THREADITEM>	
  	<THREADITEM name="Spike Gauntlets" maxthreads="2" spelldefense="14" lpcostgrowth="5" kind="cloth" weight="4.0" blooddamage="0" depatterningrate="0" bookref="GM p.141">
-        <edt:description>metal gauntlets bristling with many small, slender, steel spikes usually highly polished and sharply pointed; made from metal mined in Caucavic Mountains, despite earth elemental objections to the mining activities; Gauntlets draw power from mountains</edt:description>
+        <edt:DESCRIPTION>metal gauntlets bristling with many small, slender, steel spikes usually highly polished and sharply pointed; made from metal mined in Caucavic Mountains, despite earth elemental objections to the mining activities; Gauntlets draw power from mountains</edt:DESCRIPTION>
         <edt:THREADRANK keyknowledge="gauntlets’ Name" effect="+1 Physical Defense">
 			<edt:DEFENSE kind="physical" bonus="1"/>
 		</edt:THREADRANK>
@@ -474,7 +474,7 @@
 		</edt:THREADRANK>		
 	</THREADITEM>
 	<THREADITEM name="Talisman Statue" maxthreads="2" lpcostgrowth="5" spelldefense="15" effect="can enhance magical abilities of spellcasters; must wear statuette to benefit from its power;" weight="5.0" kind="artisan" bookref="GM p. 142">
-        <edt:description>usually 3 to 4 (rarely up to 7) inches stone, wood, or clay statue with intricate runes carved into it; sometimes small gems embedded into statuette’s eyes; must wear statuette to benefit from power;</edt:description>
+        <edt:DESCRIPTION>usually 3 to 4 (rarely up to 7) inches stone, wood, or clay statue with intricate runes carved into it; sometimes small gems embedded into statuette’s eyes; must wear statuette to benefit from power;</edt:DESCRIPTION>
 		<edt:THREADRANK keyknowledge="statue’s Name" effect="+1 Spellcasting">
             <edt:TALENT name="Spellcasting" bonus="1"/>
         </edt:THREADRANK>
@@ -637,7 +637,7 @@
             <edt:TALENT name="Parry" bonus="1"/>
         </edt:THREADRANK>
         <edt:THREADRANK effect="Damage Step 5">
-            <edt:WEAPON damagestep="5" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" ind="melee weapon" bookref="GM p. 144"/>
+            <edt:WEAPON damagestep="5" strengthmin="4" name="Wrist Carver" weight="1.0" size="1" kind="melee weapon" bookref="GM p. 144"/>
             <edt:TALENT name="Parry" bonus="1"/>
         </edt:THREADRANK>
         <edt:THREADRANK effect="2 Strain: +3 to all Damage Tests until end of round">
