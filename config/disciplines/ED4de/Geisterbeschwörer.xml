@@ -20,20 +20,51 @@
 		<DISCIPLINETALENT name="Verängstigen"/>
 		<DISCIPLINETALENT name="Fadenweben" limitation="Geisterbeschwörung"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Astralspeer"/>
+		<SPELL type="nether" name="Ätherische Finsternis"/>
+		<SPELL type="nether" name="Augenblick des Todes"/>
+		<SPELL type="nether" name="Dunkler Bote"/>
+		<SPELL type="nether" name="Geisterhand"/>
+		<SPELL type="nether" name="Geisterpfeil"/>
+		<SPELL type="nether" name="Kleiner Bannkreis"/>
+		<SPELL type="nether" name="Knochenkreis"/>
+		<SPELL type="nether" name="Schattenverschmelzung"/>
+		<SPELL type="nether" name="Seelenlose Augen"/>
+		<SPELL type="nether" name="Seelenrüstung"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Eisener Wille"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Aspekt des Nebelgeistes"/>
+		<SPELL type="nether" name="Kreis der Kälte"/>
+		<SPELL type="nether" name="Nebelgeist Beschwören"/>
+		<SPELL type="nether" name="Nebelschild"/>
+		<SPELL type="nether" name="Schädel des Todes"/>
+		<SPELL type="nether" name="Schattengeflüster"/>
+		<SPELL type="nether" name="Schneide der Nacht"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Geistersprache"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Aspekt des Feigen Herumschleichens"/>
+		<SPELL type="nether" name="Aspekt des Knochengeistes"/>
+		<SPELL type="nether" name="Grabesbotschaft"/>
+		<SPELL type="nether" name="Knochengeist Beschwören"/>
+		<SPELL type="nether" name="Nebel der Angst"/>
+		<SPELL type="nether" name="Pfeil der Nacht"/>
+		<SPELL type="nether" name="Schmerzen"/>
 		<KARMA spend="beliebige Probe gegen Dämonen, Konstrukte, Untote"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Geisterbann"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Aspekt des Bedrohlichen Tyrannen"/>
+		<SPELL type="nether" name="Böser Blick"/>
+		<SPELL type="nether" name="Dunkler Spion"/>
+		<SPELL type="nether" name="Letzte Chance"/>
+		<SPELL type="nether" name="Sichtfenster"/>
+		<SPELL type="nether" name="Umhang des Nachtfliegers"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
@@ -50,21 +81,45 @@
 		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
 		<DISCIPLINETALENT name="Beschwören" limitation="Verbündete Geister"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Aspekt des Grausamen Arztes"/>
+		<SPELL type="nether" name="Astraler Schutzkreis"/>
+		<SPELL type="nether" name="Erblinden"/>
+		<SPELL type="nether" name="Staub zu Staub"/>
+		<SPELL type="nether" name="Verdorren"/>
+		<SPELL type="nether" name="Verdorren Umkehren"/>
 		<ABILITY>Blutbeschwörung</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Willensstärke"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Astralschlund"/>
+		<SPELL type="nether" name="Durch den Schatten Treten"/>
+		<SPELL type="nether" name="Erholung"/>
+		<SPELL type="nether" name="Freundliche Finsternis"/>
+		<SPELL type="nether" name="Knochenbrecher"/>
+		<SPELL type="nether" name="Schwächende Düsternis"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Kreisender Spion"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Aspekt des Gelegenheitsmörders"/>
+		<SPELL type="nether" name="Astrales Leuchtfeuer"/>
+		<SPELL type="nether" name="Herzbeklemmung"/>
+		<SPELL type="nether" name="Knochenpudding"/>
+		<SPELL type="nether" name="Lähmkreis"/>
+		<SPELL type="nether" name="Üble Dämpfe"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Faden Halten"/>
 		<TALENTABILITY/>
+		<SPELL type="nether" name="Aspekt des Astralen Gelehrten"/>
+		<SPELL type="nether" name="Astralklinge"/>
+		<SPELL type="nether" name="Dahinsiechen"/>
+		<SPELL type="nether" name="Dämonenruf"/>
+		<SPELL type="nether" name="Geisterportal"/>
+		<SPELL type="nether" name="Schattenfessel"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
