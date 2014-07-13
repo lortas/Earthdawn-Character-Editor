@@ -20,20 +20,50 @@
 		<DISCIPLINETALENT name="Struktur Verstehen"/>
 		<DISCIPLINETALENT name="Fadenweben" limitation="Illusionismus"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Beruhigende Berührung"/>
+		<SPELL type="illusion" name="Blitz"/>
+		<SPELL type="illusion" name="Botschaft Senden"/>
+		<SPELL type="illusion" name="Falsches Gesicht"/>
+		<SPELL type="illusion" name="Illusionärer Blitz"/>
+		<SPELL type="illusion" name="Katastrophe"/>
+		<SPELL type="illusion" name="Schreckgestalt"/>
+		<SPELL type="illusion" name="Spaß mit Türen"/>
+		<SPELL type="illusion" name="Umhang"/>
+		<SPELL type="illusion" name="Unsichtbare Stimmen"/>
+		<SPELL type="illusion" name="Verschlüsseln"/>
+		<SPELL type="illusion" name="Vertrauen"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Untrüglicher Blick"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Abbild Versetzen"/>
+		<SPELL type="illusion" name="Blindheit"/>
+		<SPELL type="illusion" name="Gedankennebel"/>
+		<SPELL type="illusion" name="Harmloses Treiben"/>
+		<SPELL type="illusion" name="Phantomflamme"/>
+		<SPELL type="illusion" name="Sehen von Verborgenem"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Konversation"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Blendendes Licht"/>
+		<SPELL type="illusion" name="Nebel des Spotts"/>
+		<SPELL type="illusion" name="Niemand Da"/>
+		<SPELL type="illusion" name="Phantomkrieger"/>
+		<SPELL type="illusion" name="Und ein Schleier fiel"/>
 		<KARMA spend="für Interaktionsproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Magische Maske"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Demaskieren"/>
+		<SPELL type="illusion" name="Ersticken"/>
+		<SPELL type="illusion" name="Große Waffe"/>
+		<SPELL type="illusion" name="Halt, Stehenbleiben"/>
+		<SPELL type="illusion" name="Phantomblitzschlag"/>
+		<SPELL type="illusion" name="Suggestive Stimme"/>
+		<SPELL type="illusion" name="Unauffälligkeit"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
@@ -50,22 +80,47 @@
 		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
 		<DISCIPLINETALENT name="Machtmaskierung"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Auge der Wahrheit"/>
+		<SPELL type="illusion" name="Band der Verschwiegenheit"/>
+		<SPELL type="illusion" name="Illusion"/>
+		<SPELL type="illusion" name="Phantomfeuerball"/>
+		<SPELL type="illusion" name="Presto!"/>
+		<SPELL type="illusion" name="Rollentausch"/>
 		<KARMA spend="+2 auf die Wirkungsstufe eines Zaubers, für die ganze Dauer"/>
 		<ABILITY>Glamour</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Willensstärke"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Astralschatten"/>
+		<SPELL type="illusion" name="Echte Geschosse"/>
+		<SPELL type="illusion" name="Fliegender Teppich"/>
+		<SPELL type="illusion" name="Gedächtnisnotiz"/>
+		<SPELL type="illusion" name="Illusionäre Geschosse"/>
+		<SPELL type="illusion" name="Positionstausch"/>
+		<SPELL type="illusion" name="Vorgezeichneter Weg"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Hypnotisieren"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Gebrabbel"/>
+		<SPELL type="illusion" name="Illusionäre Stampede"/>
+		<SPELL type="illusion" name="Lautlose Stampede"/>
+		<SPELL type="illusion" name="Schwindelgefühl"/>
+		<SPELL type="illusion" name="Tanzender Drache"/>
+		<SPELL type="illusion" name="Zeitweilige Öffnung"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Faden Halten"/>
 		<TALENTABILITY/>
+		<SPELL type="illusion" name="Dimensionstor"/>
+		<SPELL type="illusion" name="Gesichtslos"/>
+		<SPELL type="illusion" name="Gestalttausch"/>
+		<SPELL type="illusion" name="Gestank"/>
+		<SPELL type="illusion" name="Rebellisches Körperteil"/>
+		<SPELL type="illusion" name="Zauber Überschatten"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
