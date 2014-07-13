@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Impressive Strike"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Shield Beater"/>

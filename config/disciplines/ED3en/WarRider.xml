@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Armor Mount"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Bestial Toughness"/>
@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Unmount"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Champion Challenge"/>
@@ -120,7 +120,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>knowledge: mounts common to homelands; taking care mounts/ mount-related gear; tame/ train mounts; Skill: Craft Weapon missile weapons, ammunition (CPG p.77)</HALFMAGIC>

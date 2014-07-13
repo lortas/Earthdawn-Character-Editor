@@ -89,7 +89,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Blind Fire"/>
@@ -121,7 +121,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>caring for ranged weapons; recognize types ranged weapons, ammunition, their creators; Skill: Craft Weapon make ranged weapons, ammunition; (PG p.43)</HALFMAGIC>

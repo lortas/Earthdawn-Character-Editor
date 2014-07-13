@@ -82,14 +82,14 @@
 		<DISCIPLINETALENT name="Detect Falsehood"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Howl"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Develop Animal Sense"/>
@@ -114,7 +114,7 @@
 		<DISCIPLINETALENT name="Chameleon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Spirit Blend"/>

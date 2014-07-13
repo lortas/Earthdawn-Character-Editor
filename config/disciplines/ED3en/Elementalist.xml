@@ -246,8 +246,7 @@
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Council of the Forest"/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY count="2"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Earth Armor"/>

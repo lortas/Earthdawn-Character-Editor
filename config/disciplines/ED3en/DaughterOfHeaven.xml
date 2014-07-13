@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Lion Spirit"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Cyclone"/>
@@ -95,7 +95,7 @@
 		<DISCIPLINETALENT name="Path of the Righteous"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Confront Horror"/>

@@ -83,7 +83,7 @@
 		<DISCIPLINETALENT name="True Sight"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Defense"/>
@@ -115,7 +115,7 @@
 		<DISCIPLINETALENT name="Chameleon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Second Chance"/>

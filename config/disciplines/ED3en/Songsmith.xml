@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Bardic Voice"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Thought Link"/>
@@ -114,7 +114,7 @@
 		<DISCIPLINETALENT name="Truth Skit"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Aura Armor"/>

@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Champion Challenge"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Spot Armor Flaw"/>

@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Chameleon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Defense"/>
@@ -114,7 +114,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Echo Location"/>

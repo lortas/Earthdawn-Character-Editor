@@ -115,7 +115,7 @@
 		<SPELL type="elemental" name="Umhang des Blutelfen"/>
 		<SPELL type="elemental" name="Wirbelwind"/>
 		<SPELL type="elemental" name="Wolken Beschwören"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Faden Halten"/>

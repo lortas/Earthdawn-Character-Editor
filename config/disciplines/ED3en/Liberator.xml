@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Impossible Hide"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Blood Guilt Weapon"/>

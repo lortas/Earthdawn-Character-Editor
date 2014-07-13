@@ -192,7 +192,7 @@
 		<TALENTABILITY/>
 		<SPELL type="sorcery" name="Alter Form"/>		
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Moving Earth"/>
@@ -221,7 +221,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>recognize types magic use, identify specific uses Sorcery; knowledge: magical rituals;(CPG p.67)</HALFMAGIC>

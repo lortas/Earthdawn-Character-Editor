@@ -406,7 +406,9 @@ public class ECEWorker {
 		defense.setSocial(defense.getSocial()+disciplineDefense.getSocial());
 		defense.setSpell(defense.getSpell()+disciplineDefense.getSpell());
 
-		recovery.setStep(recovery.getStep()+getDisciplineRecoveryTestBonus(diciplineCircle));
+		int[] recoverytestbonus = getDisciplineRecoveryTestBonus(diciplineCircle);
+		recovery.setTestsperday(recovery.getTestsperday()+recoverytestbonus[0]);
+		recovery.setStep(recovery.getStep()+recoverytestbonus[1]);
 		recovery.setDice(PROPERTIES.step2Dice(recovery.getStep()));
 
 		character.readjustInitiativeModifikator(getDisciplineInitiative(diciplineCircle),false);
@@ -951,21 +953,26 @@ public class ECEWorker {
 		return result;
 	}
 
-	private static int getDisciplineRecoveryTestBonus(HashMap<String,Integer> diciplineCircle) {
-		int result = 0;
+	private static int[] getDisciplineRecoveryTestBonus(HashMap<String,Integer> diciplineCircle) {
+		int[] result = {0,0};
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			if( d == null ) continue;
-			int tmp = 0;
+			int recoverytestperday = 0;
+			int recoveryteststep = 0;
 			int circlenr=0;
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
 				circlenr++;
 				if( circlenr > diciplineCircle.get(discipline) ) break;
-				for( DISZIPINABILITYType recoverytest : circle.getRECOVERYTEST() ) {
-					tmp += recoverytest.getCount();
+				for( DISZIPINABILITYType r : circle.getRECOVERYTESTPERDAY() ) {
+					recoverytestperday += r.getCount();
+				}
+				for( DISZIPINABILITYType r : circle.getRECOVERYTESTSTEP() ) {
+					recoveryteststep += r.getCount();
 				}
 			}
-			if( tmp > result ) result=tmp;
+			if( recoverytestperday > result[0] ) result[0]=recoverytestperday;
+			if( recoveryteststep > result[1] ) result[1]=recoveryteststep;
 		}
 		return result;
 	}

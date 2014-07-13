@@ -58,7 +58,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Hammerschlag"/>
 		<TALENTABILITY/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Zweiter Angriff"/>

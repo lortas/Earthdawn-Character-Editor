@@ -203,7 +203,7 @@
 		<SPELL type="shamane" name="Alter Form"/>
 		<SPELL type="shamane" name="Crop Blight"/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Bestial Resilience"/>
@@ -223,7 +223,7 @@
 		<TALENTABILITY/>
 		<SPELL type="shamane" name="Council of the Forest"/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Multi-Weaving"/>

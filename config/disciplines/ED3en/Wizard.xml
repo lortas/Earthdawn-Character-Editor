@@ -191,7 +191,7 @@
 		<DISCIPLINETALENT name="Wound Transfer"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Detect Falsehood"/>
@@ -217,7 +217,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>recognize types of magic use, identify specific uses of Wizardry; knowledge: of magical rituals (PG p.56)</HALFMAGIC>

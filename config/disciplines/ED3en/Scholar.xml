@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Safe Thought"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Detect Falsehood"/>
@@ -114,14 +114,14 @@
 		<DISCIPLINETALENT name="Impossible Hide"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>produce writing materials needed produce books/ scrolls; Perception-based Tests: draw sketches, retrieve information from Moon Staff; Skill: Navigation, Mapmaking;(CPG p.61)</HALFMAGIC>

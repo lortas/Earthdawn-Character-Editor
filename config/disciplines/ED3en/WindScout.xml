@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Chameleon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Plant Shelter"/>
@@ -114,7 +114,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Develop Animal Sense"/>

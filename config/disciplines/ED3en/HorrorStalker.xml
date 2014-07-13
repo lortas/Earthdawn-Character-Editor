@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Netherwalk"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Ethereal Weapon"/>
@@ -113,7 +113,7 @@
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Astral Web"/>

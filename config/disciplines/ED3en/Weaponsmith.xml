@@ -95,7 +95,7 @@
 		<DISCIPLINETALENT name="Mind Blade"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Armored Matrix"/>
@@ -121,7 +121,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>caring weapons/ armor; recognize types of weapons/ armor used or worn different Namegivers; Craftsman Tests making/ repairing forged metal items; Skill: Craft Armor, Craft Weapon;  Fifth Circle: can create living armor; (PG p.55)</HALFMAGIC>

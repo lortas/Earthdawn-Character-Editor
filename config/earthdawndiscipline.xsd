@@ -26,7 +26,8 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="SPELLABILITY" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTEST" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTESTPERDAY" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTESTSTEP" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMA" type="edt:KARMAABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMASTEP" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>

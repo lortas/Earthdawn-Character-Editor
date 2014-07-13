@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Conceal Caravan"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Gain Surprise"/>
@@ -120,8 +120,8 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>knowledge: everything related to trade (important trade routes, customs regarding trade, trade laws, clauses in contracts); in place Interaction (Insight) Tests, apply them documents to spot dangerous clauses in fine print; Skill: Navigation, Mapmaking;(CPG p.42) </HALFMAGIC>

@@ -95,7 +95,7 @@
 		<DISCIPLINETALENT name="Detect Influence"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Blood Guilt Weapon"/>
@@ -114,7 +114,7 @@
 		<DISCIPLINETALENT name="First Ring of Perfection"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Confront Horror"/>

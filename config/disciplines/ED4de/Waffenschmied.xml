@@ -18,9 +18,8 @@
 		<DISCIPLINETALENT name="Nahkampfwaffen"/>
 		<DISCIPLINETALENT name="Waffe Schmieden"/>
 		<TALENTABILITY/>
+		<KARMA spend="Für jede Probe um einen Gegenstand herzustellen oder zu reparieren"/>
 		<ABILITY>Handwerker</ABILITY>
-		<KARMA
-			spend="Für jede Probe um einen Gegenstand herzustellen oder zu reparieren"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Konversation"/>
@@ -50,8 +49,8 @@
 		<OPTIONALTALENT name="Starrsinn"/>
 		<DISCIPLINETALENT name="Rüstung Schmieden"/>
 		<TALENTABILITY/>
-		<ABILITY>Reisende Schmiede</ABILITY>
 		<KARMA spend="Für Schadensproben mit Waffen die selbst hergestellt sind"/>
+		<ABILITY>Reisende Schmiede</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Ätherhaut"/>
@@ -61,7 +60,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Schwachstelle Erkennen"/>
 		<TALENTABILITY/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTSTEP/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Löwenherz"/>

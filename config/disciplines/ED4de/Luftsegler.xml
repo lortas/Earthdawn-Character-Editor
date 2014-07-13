@@ -60,7 +60,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Andere Inspirieren"/>
 		<TALENTABILITY/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Löwenherz"/>

@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Chameleon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Critical Hit"/>
@@ -120,7 +120,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>build/ bypass security measures;  recognize types locking mechanisms; Skill: Search, Detect Trap, Disarm Trap; (PG p.52)</HALFMAGIC>

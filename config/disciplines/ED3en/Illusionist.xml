@@ -206,7 +206,7 @@
 		<DISCIPLINETALENT name="Bone Compass"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<RECOVERYTEST/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Casting Pattern"/>

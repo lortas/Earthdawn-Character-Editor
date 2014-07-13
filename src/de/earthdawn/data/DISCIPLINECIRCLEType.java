@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SPELLABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RECOVERYTEST" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="RECOVERYTESTPERDAY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="RECOVERYTESTSTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMA" type="{http://earthdawn.com/datatypes}KARMAABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
@@ -58,7 +59,8 @@ import javax.xml.bind.annotation.XmlType;
     "spellability",
     "defense",
     "initiative",
-    "recoverytest",
+    "recoverytestperday",
+    "recoveryteststep",
     "karma",
     "karmastep",
     "ability"
@@ -83,8 +85,10 @@ public class DISCIPLINECIRCLEType {
     protected List<DEFENSEABILITYType> defense;
     @XmlElement(name = "INITIATIVE")
     protected List<DISZIPINABILITYType> initiative;
-    @XmlElement(name = "RECOVERYTEST")
-    protected List<DISZIPINABILITYType> recoverytest;
+    @XmlElement(name = "RECOVERYTESTPERDAY")
+    protected List<DISZIPINABILITYType> recoverytestperday;
+    @XmlElement(name = "RECOVERYTESTSTEP")
+    protected List<DISZIPINABILITYType> recoveryteststep;
     @XmlElement(name = "KARMA")
     protected List<KARMAABILITYType> karma;
     @XmlElement(name = "KARMASTEP")
@@ -344,18 +348,18 @@ public class DISCIPLINECIRCLEType {
     }
 
     /**
-     * Gets the value of the recoverytest property.
+     * Gets the value of the recoverytestperday property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the recoverytest property.
+     * This is why there is not a <CODE>set</CODE> method for the recoverytestperday property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRECOVERYTEST().add(newItem);
+     *    getRECOVERYTESTPERDAY().add(newItem);
      * </pre>
      * 
      * 
@@ -365,11 +369,40 @@ public class DISCIPLINECIRCLEType {
      * 
      * 
      */
-    public List<DISZIPINABILITYType> getRECOVERYTEST() {
-        if (recoverytest == null) {
-            recoverytest = new ArrayList<DISZIPINABILITYType>();
+    public List<DISZIPINABILITYType> getRECOVERYTESTPERDAY() {
+        if (recoverytestperday == null) {
+            recoverytestperday = new ArrayList<DISZIPINABILITYType>();
         }
-        return this.recoverytest;
+        return this.recoverytestperday;
+    }
+
+    /**
+     * Gets the value of the recoveryteststep property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the recoveryteststep property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRECOVERYTESTSTEP().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link DISZIPINABILITYType }
+     * 
+     * 
+     */
+    public List<DISZIPINABILITYType> getRECOVERYTESTSTEP() {
+        if (recoveryteststep == null) {
+            recoveryteststep = new ArrayList<DISZIPINABILITYType>();
+        }
+        return this.recoveryteststep;
     }
 
     /**
