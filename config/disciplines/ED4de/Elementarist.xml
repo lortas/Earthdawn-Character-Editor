@@ -19,20 +19,49 @@
 		<DISCIPLINETALENT name="Spruchzauberei"/>
 		<DISCIPLINETALENT name="Struktur Verstehen"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Element Widerstehen"/>
+		<SPELL type="elemental" name="Erde Reinigen"/>
+		<SPELL type="elemental" name="Erdpfeile"/>
+		<SPELL type="elemental" name="Flammenwaffe"/>
+		<SPELL type="elemental" name="Kletterschub"/>
+		<SPELL type="elemental" name="Luftrüstung"/>
+		<SPELL type="elemental" name="Nahrung Erhitzen"/>
+		<SPELL type="elemental" name="Schnauben"/>
+		<SPELL type="elemental" name="Unterschlupf"/>
+		<SPELL type="elemental" name="Wasser Reinigen"/>
+		<SPELL type="elemental" name="Wasserdicht"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Heilendes Feuer"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Luftmatratze"/>
+		<SPELL type="elemental" name="Umhang des Waldjägers"/>
+		<SPELL type="elemental" name="Vereiste Oberfläche"/>
+		<SPELL type="elemental" name="Waffe Verlangsamen"/>
+		<SPELL type="elemental" name="Weidenschild"/>
+		<SPELL type="elemental" name="Windfinger"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Elementar Sprachen"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Blitzschlag"/>
+		<SPELL type="elemental" name="Eisbola"/>
+		<SPELL type="elemental" name="Pflanzenmenü"/>
+		<SPELL type="elemental" name="Pflanzenwachstum"/>
+		<SPELL type="elemental" name="Umhang des Reflektierenden Teichs"/>
+		<SPELL type="elemental" name="Winde der Ablenkung"/>
 		<KARMA spend="Erholungsproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Elementarbann"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Erzitternde Erde"/>
+		<SPELL type="elemental" name="Gewitterschritt"/>
+		<SPELL type="elemental" name="Hainerneuerung"/>
+		<SPELL type="elemental" name="Schneesturm"/>
+		<SPELL type="elemental" name="Speer des Elements"/>
+		<SPELL type="elemental" name="Windstoß"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
@@ -49,22 +78,46 @@
 		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
 		<DISCIPLINETALENT name="Beschwören" limitation="Elementargeister"/>
 		<TALENTABILITY/>
-		<ABILITY>Feuer und Eis</ABILITY>
+		<SPELL type="elemental" name="Erdstab"/>
+		<SPELL type="elemental" name="Feuerball"/>
+		<SPELL type="elemental" name="Fruchtbare Erde"/>
+		<SPELL type="elemental" name="Reite den Blitz"/>
+		<SPELL type="elemental" name="Rüstung Erhitzen"/>
+		<SPELL type="elemental" name="Splitternder Stein"/>
 		<KARMA spend="Zauber auf einen zusätzlichen Verbündeten legen"/>
+		<ABILITY>Feuer und Eis</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Willensstärke"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Erdstoß"/>
+		<SPELL type="elemental" name="Feuergewebe"/>
+		<SPELL type="elemental" name="Frost und Hitze"/>
+		<SPELL type="elemental" name="Metallflügel"/>
+		<SPELL type="elemental" name="Steinregen"/>
+		<SPELL type="elemental" name="Umhang des Feuerplünderers"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Erdhaut"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Donnerschlag"/>
+		<SPELL type="elemental" name="Erdwelle"/>
+		<SPELL type="elemental" name="Todesregen"/>
+		<SPELL type="elemental" name="Umhang des Blutelfen"/>
+		<SPELL type="elemental" name="Wirbelwind"/>
+		<SPELL type="elemental" name="Wolken Beschwören"/>
 		<RECOVERYTEST/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Faden Halten"/>
 		<TALENTABILITY/>
+		<SPELL type="elemental" name="Eisenhaut"/>
+		<SPELL type="elemental" name="Erdwand"/>
+		<SPELL type="elemental" name="Giftiger Zorn"/>
+		<SPELL type="elemental" name="Heilquelle"/>
+		<SPELL type="elemental" name="Im Würgegriff der Erdhand"/>
+		<SPELL type="elemental" name="Umhang der Gewittervorhut"/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
