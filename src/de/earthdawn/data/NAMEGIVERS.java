@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="NAMEGIVER" type="{http://earthdawn.com/namegiver}NAMEGIVERABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
+ *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -45,6 +47,8 @@ public class NAMEGIVERS {
 
     @XmlElement(name = "NAMEGIVER", namespace = "http://earthdawn.com/namegiver")
     protected List<NAMEGIVERABILITYType> namegiver;
+    @XmlAttribute(name = "rulesetversion")
+    protected RulesetversionType rulesetversion;
 
     /**
      * Gets the value of the namegiver property.
@@ -73,6 +77,34 @@ public class NAMEGIVERS {
             namegiver = new ArrayList<NAMEGIVERABILITYType>();
         }
         return this.namegiver;
+    }
+
+    /**
+     * Gets the value of the rulesetversion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public RulesetversionType getRulesetversion() {
+        if (rulesetversion == null) {
+            return RulesetversionType.ED_3;
+        } else {
+            return rulesetversion;
+        }
+    }
+
+    /**
+     * Sets the value of the rulesetversion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public void setRulesetversion(RulesetversionType value) {
+        this.rulesetversion = value;
     }
 
 }

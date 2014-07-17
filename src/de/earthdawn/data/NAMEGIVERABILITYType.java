@@ -27,11 +27,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/namegiver}NAMEVALUE_type" maxOccurs="6" minOccurs="6"/>
+ *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/namegiver}ATTRIBUTENAMEVALUE_type" maxOccurs="6" minOccurs="6"/>
  *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type"/>
  *         &lt;element name="WOUND" type="{http://earthdawn.com/datatypes}WOUND_type"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="CARRY" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="ORIGIN" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="NOTDEFAULTSKILL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
@@ -58,6 +59,7 @@ import javax.xml.bind.annotation.XmlType;
     "wound",
     "defense",
     "talent",
+    "carry",
     "ability",
     "origin",
     "notdefaultskill",
@@ -66,7 +68,7 @@ import javax.xml.bind.annotation.XmlType;
 public class NAMEGIVERABILITYType {
 
     @XmlElement(name = "ATTRIBUTE", required = true)
-    protected List<NAMEVALUEType> attribute;
+    protected List<ATTRIBUTENAMEVALUEType> attribute;
     @XmlElement(name = "ARMOR", required = true)
     protected ARMORType armor;
     @XmlElement(name = "WOUND", required = true)
@@ -75,6 +77,8 @@ public class NAMEGIVERABILITYType {
     protected List<DEFENSEABILITYType> defense;
     @XmlElement(name = "TALENT")
     protected List<TALENTABILITYType> talent;
+    @XmlElement(name = "CARRY")
+    protected List<TALENTABILITYType> carry;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
     @XmlElement(name = "ORIGIN")
@@ -116,13 +120,13 @@ public class NAMEGIVERABILITYType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link NAMEVALUEType }
+     * {@link ATTRIBUTENAMEVALUEType }
      * 
      * 
      */
-    public List<NAMEVALUEType> getATTRIBUTE() {
+    public List<ATTRIBUTENAMEVALUEType> getATTRIBUTE() {
         if (attribute == null) {
-            attribute = new ArrayList<NAMEVALUEType>();
+            attribute = new ArrayList<ATTRIBUTENAMEVALUEType>();
         }
         return this.attribute;
     }
@@ -231,6 +235,35 @@ public class NAMEGIVERABILITYType {
             talent = new ArrayList<TALENTABILITYType>();
         }
         return this.talent;
+    }
+
+    /**
+     * Gets the value of the carry property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the carry property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCARRY().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TALENTABILITYType }
+     * 
+     * 
+     */
+    public List<TALENTABILITYType> getCARRY() {
+        if (carry == null) {
+            carry = new ArrayList<TALENTABILITYType>();
+        }
+        return this.carry;
     }
 
     /**
