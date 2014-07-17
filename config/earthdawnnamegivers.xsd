@@ -7,8 +7,8 @@
 			<xs:enumeration value="flight"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="NAMEVALUE_type">
-		<xs:attribute name="name" type="xs:string" use="required"/>
+	<xs:complexType name="ATTRIBUTENAMEVALUE_type">
+		<xs:attribute name="name" type="edt:ATTRIBUTE_name_type" use="required"/>
 		<xs:attribute name="value" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="NAMEGIVERMOVEMENT_type">
@@ -17,11 +17,12 @@
 	</xs:complexType>
 	<xs:complexType name="NAMEGIVERABILITY_type">
 		<xs:sequence>
-			<xs:element maxOccurs="6" minOccurs="6" name="ATTRIBUTE" type="NAMEVALUE_type"/>
+			<xs:element maxOccurs="6" minOccurs="6" name="ATTRIBUTE" type="ATTRIBUTENAMEVALUE_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="ARMOR" type="edt:ARMOR_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="WOUND" type="edt:WOUND_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="edt:TALENTABILITY_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="CARRY" type="edt:TALENTABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ABILITY" type="xs:string"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ORIGIN" type="xs:string"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="NOTDEFAULTSKILL" type="xs:string"/>
@@ -40,6 +41,7 @@
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="NAMEGIVER" type="NAMEGIVERABILITY_type"/>
 			</xs:sequence>
+			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
