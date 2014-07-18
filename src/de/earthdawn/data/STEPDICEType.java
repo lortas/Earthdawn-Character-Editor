@@ -48,7 +48,7 @@ public class STEPDICEType {
     @XmlAttribute(name = "step")
     protected Integer step;
     @XmlAttribute(name = "dice")
-    protected DiceType dice;
+    protected String dice;
 
     /**
      * Gets the value of the step property.
@@ -83,10 +83,10 @@ public class STEPDICEType {
      * 
      * @return
      *     possible object is
-     *     {@link DiceType }
+     *     {@link String }
      *     
      */
-    public DiceType getDice() {
+    public String getDice() {
         return dice;
     }
 
@@ -95,10 +95,10 @@ public class STEPDICEType {
      * 
      * @param value
      *     allowed object is
-     *     {@link DiceType }
+     *     {@link String }
      *     
      */
-    public void setDice(DiceType value) {
+    public void setDice(String value) {
         this.dice = value;
     }
 

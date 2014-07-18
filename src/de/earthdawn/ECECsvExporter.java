@@ -116,9 +116,9 @@ public class ECECsvExporter {
 					row.add( String.valueOf(rank.getStartrank()) );
 					row.add( String.valueOf(rank.getBonus()) );
 					row.add( String.valueOf(rank.getStep()) );
-					DiceType dice = rank.getDice();
+					String dice = rank.getDice();
 					if( dice == null ) row.add( "-" );
-					else row.add( dice.value() );
+					else row.add( dice );
 					row.add( String.valueOf(rank.getLpcost()) );
 				}
 				row.add( skill.getAction().value() );
@@ -196,9 +196,9 @@ public class ECECsvExporter {
 				row.add( String.valueOf(rank.getStartrank()) );
 				row.add( String.valueOf(rank.getBonus()) );
 				row.add( String.valueOf(rank.getStep()) );
-				DiceType dice = rank.getDice();
+				String dice = rank.getDice();
 				if( dice == null ) row.add( "-" );
-				else row.add( dice.value() );
+				else row.add( dice );
 				row.add( String.valueOf(rank.getLpcost()) );
 			}
 			row.add( talent.getAction().value() );

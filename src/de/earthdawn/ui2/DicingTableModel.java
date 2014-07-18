@@ -6,7 +6,6 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.data.DiceType;
 import de.earthdawn.data.ROLLEDDICEType;
 
 class DicingTableModel extends AbstractTableModel {
@@ -17,7 +16,7 @@ class DicingTableModel extends AbstractTableModel {
 	private int indexCounter=0;
 	private List<Integer> index = new ArrayList<Integer>();
 	private List<int[]> steps = new ArrayList<int[]>();
-	private List<DiceType[]> dices = new ArrayList<DiceType[]>();
+	private List<String[]> dices = new ArrayList<String[]>();
 	private List<ROLLEDDICEType> rolledDices = new ArrayList<ROLLEDDICEType>();
 
 	@Override
@@ -49,13 +48,13 @@ class DicingTableModel extends AbstractTableModel {
 			return stepresult.toString();
 		}
 		case  1: {
-			DiceType[] rowDices = dices.get(row);
+			String[] rowDices = dices.get(row);
 			if( (rowDices==null) || (rowDices.length<1) ) return "NULL";
 			StringBuffer dicesresult = new StringBuffer();
-			dicesresult.append(rowDices[0].value());
+			dicesresult.append(rowDices[0]);
 			for(int i=1; i<rowDices.length;i++) {
 				dicesresult.append(" + ");
-				dicesresult.append(rowDices[i].value());
+				dicesresult.append(rowDices[i]);
 			}
 			return dicesresult.toString();
 		}
@@ -74,7 +73,7 @@ class DicingTableModel extends AbstractTableModel {
 	public void add(int[] steps, ROLLEDDICEType rolledDice) {
 		this.index.add(indexCounter++);
 		this.steps.add(steps);
-		DiceType[] diceset = new DiceType[steps.length];
+		String[] diceset = new String[steps.length];
 		for(int i=0; i<steps.length;i++) {
 			diceset[i] = PROPERTIES.getCharacteristics().getSTEPDICEbyStep(steps[i]).getDice();
 		}

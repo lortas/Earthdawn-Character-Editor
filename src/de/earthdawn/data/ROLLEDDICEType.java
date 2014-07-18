@@ -44,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 public class ROLLEDDICEType {
 
     @XmlAttribute(name = "dice", required = true)
-    protected DiceType dice;
+    protected String dice;
     @XmlAttribute(name = "rolling", required = true)
     protected String rolling;
     @XmlAttribute(name = "result", required = true)
@@ -67,10 +67,10 @@ public class ROLLEDDICEType {
      * 
      * @return
      *     possible object is
-     *     {@link DiceType }
+     *     {@link String }
      *     
      */
-    public DiceType getDice() {
+    public String getDice() {
         return dice;
     }
 
@@ -79,10 +79,10 @@ public class ROLLEDDICEType {
      * 
      * @param value
      *     allowed object is
-     *     {@link DiceType }
+     *     {@link String }
      *     
      */
-    public void setDice(DiceType value) {
+    public void setDice(String value) {
         this.dice = value;
     }
 

@@ -78,7 +78,7 @@ public class SkillsTableModel extends AbstractTableModel {
 		case 4: return new Integer(skill.getRANK().getRank());
 		case 5: return skill.getAction().value();
 		case 6: return skill.getRANK().getStep();
-		case 7: return skill.getRANK().getDice().value();
+		case 7: return skill.getRANK().getDice();
 		case 8: return skill.getBookref();
 		default : return "Error: not defined";
 		}

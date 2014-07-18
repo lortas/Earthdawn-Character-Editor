@@ -134,7 +134,7 @@ class AttributesTableModel extends AbstractTableModel {
 		case 3:  return new Integer(character.getAttributes().get(columnKey[row]).getLpincrease());
 		case 4:  return new Integer(character.getAttributes().get(columnKey[row]).getCurrentvalue());
 		case 5:  return new Integer(character.getAttributes().get(columnKey[row]).getStep());
-		case 6:  return character.getAttributes().get(columnKey[row]).getDice().value();
+		case 6:  return character.getAttributes().get(columnKey[row]).getDice();
 		default: return new Integer(0);
 	}
 }

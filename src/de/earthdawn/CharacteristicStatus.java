@@ -12,7 +12,6 @@ import de.earthdawn.data.CALCULATEDLEGENDPOINTSType;
 import de.earthdawn.data.DEATHType;
 import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.DEVOTIONType;
-import de.earthdawn.data.DiceType;
 import de.earthdawn.data.EXPERIENCEType;
 import de.earthdawn.data.INITIATIVEType;
 import de.earthdawn.data.KARMAType;
@@ -63,7 +62,7 @@ public class CharacteristicStatus {
 			values.put( "lpincrease", attribute.getLpincrease() );
 			values.put( "currentvalue", attribute.getCurrentvalue() );
 			values.put( "step", attribute.getStep() );
-			values.put( "dice", attribute.getDice().value() );
+			values.put( "dice", attribute.getDice() );
 		}
 		root.put("ATTRIBUTE", node);
 
@@ -98,9 +97,9 @@ public class CharacteristicStatus {
 		node.put( "base", initiative.getBase() );
 		node.put( "modification", initiative.getModification() );
 		node.put( "step", initiative.getStep() );
-		DiceType initiativedice = initiative.getDice();
+		String initiativedice = initiative.getDice();
 		if( initiativedice == null ) node.put( "dice", "-" );
-		else node.put( "dice", initiativedice.value() );
+		else node.put( "dice", initiativedice );
 		root.put("INITIATIVE", node);
 
 		node = new HashMap<String,Object>();
@@ -118,7 +117,7 @@ public class CharacteristicStatus {
 		node.put( "current", karma.getCurrent() );
 		node.put( "max", karma.getMax() );
 		node.put( "step", karma.getStep() );
-		node.put( "dice", karma.getDice().value() );
+		node.put( "dice", karma.getDice() );
 		node.put( "maxmodificator", karma.getMaxmodificator() );
 		root.put("KARMA", node);
 
@@ -184,7 +183,7 @@ public class CharacteristicStatus {
 
 		node = new HashMap<String,Object>();
 		RECOVERYType recov = character.getHealth().getRECOVERY();
-		node.put( "dice" , recov.getDice().value() );
+		node.put( "dice" , recov.getDice() );
 		node.put( "step" , recov.getStep() );
 		node.put( "testsperday" , recov.getTestsperday() );
 		root.get("HEALTH").put("RECOVERY", node);

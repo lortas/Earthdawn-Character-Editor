@@ -92,12 +92,12 @@ public class ECEPdfExporter {
 		acroFields.setField( "AttributeStep.3", String.valueOf(attributes.get("PER").getStep()) );
 		acroFields.setField( "AttributeStep.4", String.valueOf(attributes.get("WIL").getStep()) );
 		acroFields.setField( "AttributeStep.5", String.valueOf(attributes.get("CHA").getStep()) );
-		acroFields.setField( "AttributeDice.0", attributes.get("DEX").getDice().value() );
-		acroFields.setField( "AttributeDice.1", attributes.get("STR").getDice().value() );
-		acroFields.setField( "AttributeDice.2", attributes.get("TOU").getDice().value() );
-		acroFields.setField( "AttributeDice.3", attributes.get("PER").getDice().value() );
-		acroFields.setField( "AttributeDice.4", attributes.get("WIL").getDice().value() );
-		acroFields.setField( "AttributeDice.5", attributes.get("CHA").getDice().value() );
+		acroFields.setField( "AttributeDice.0", attributes.get("DEX").getDice() );
+		acroFields.setField( "AttributeDice.1", attributes.get("STR").getDice() );
+		acroFields.setField( "AttributeDice.2", attributes.get("TOU").getDice() );
+		acroFields.setField( "AttributeDice.3", attributes.get("PER").getDice() );
+		acroFields.setField( "AttributeDice.4", attributes.get("WIL").getDice() );
+		acroFields.setField( "AttributeDice.5", attributes.get("CHA").getDice() );
 		acroFields.setField( "DefensePhysical", String.valueOf(character.getDefence().getPhysical()) );
 		acroFields.setField( "DefenseSocial", String.valueOf(character.getDefence().getSocial()) );
 		acroFields.setField( "DefenseSpell", String.valueOf(character.getDefence().getSpell()) );
@@ -108,14 +108,14 @@ public class ECEPdfExporter {
 		acroFields.setField( "UnconsciousnessBase", String.valueOf(character.getUnconsciousness().getBase()) );
 		acroFields.setField( "UnconsciousnessValue", String.valueOf(character.getUnconsciousness().getValue()) );
 		acroFields.setField( "Recovery Step", String.valueOf(character.getRecovery().getStep()) );
-		acroFields.setField( "RecoveryDice", character.getRecovery().getDice().value() );
+		acroFields.setField( "RecoveryDice", character.getRecovery().getDice() );
 		acroFields.setField( "RecoveryTestsPerDay",  String.valueOf(character.getRecovery().getTestsperday()) );
 		acroFields.setField( "WoundThreshold", String.valueOf(character.getWound().getThreshold()) );
 		acroFields.setField( "TotalLegendPoints", String.valueOf(character.getLegendPoints().getTotallegendpoints()) );
 		acroFields.setField( "CurrentLegendPoints", String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
 		acroFields.setField( "Renown", String.valueOf(character.getLegendPoints().getRenown()) );
 		acroFields.setField( "Reputation", character.getLegendPoints().getReputation() );
-		acroFields.setField( "InitiativeDice", character.getInitiative().getDice().value() );
+		acroFields.setField( "InitiativeDice", character.getInitiative().getDice() );
 		String initiativeStep = String.valueOf(character.getInitiative().getStep());
 		for( TalentsContainer talents : character.getAllTalents() ) {
 			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) initiativeStep += initiativeStepOpts(talent);
@@ -186,7 +186,7 @@ public class ECEPdfExporter {
 				default        : acroFields.setField( "SkillAction."+counter, skill.getAction().value() );
 				}
 				RANKType skillrank = skill.getRANK();
-				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice().value() );
+				acroFields.setField( "SkillActionDice."+counter, skillrank.getDice() );
 				acroFields.setField( "SkillStep."+counter, String.valueOf(skillrank.getStep()) );
 				if( skillrank.getBonus() > 0 ) acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"+"+skillrank.getBonus() );
 				else if( skillrank.getBonus() < 0 ) acroFields.setField( "SkillRank."+counter, skillrank.getRank()+"-"+(skillrank.getBonus()*-1) );
@@ -1028,7 +1028,7 @@ public class ECEPdfExporter {
 		if( attributeIsNa || (talentrank.getDice()==null) ) {
 			acroFields.setField( "ActionDice."+counter, "-" );
 		} else {
-			acroFields.setField( "ActionDice."+counter, talentrank.getDice().value() );
+			acroFields.setField( "ActionDice."+counter, talentrank.getDice() );
 		}
 		if( attributeIsNa ) {
 			acroFields.setField( "Step."+counter, "-" );

@@ -4,7 +4,6 @@ import java.util.Random;
 
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECharacteristics;
-import de.earthdawn.data.DiceType;
 import de.earthdawn.data.ROLLEDDICEType;
 import de.earthdawn.data.STEPDICEType;
 
@@ -18,7 +17,7 @@ public class DiceCup {
 	}
 
 	public void setStep(int step) {
-		DiceType dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
+		String dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
 		stepDice = new STEPDICEType();
 		stepDice.setStep(step);
 		stepDice.setDice(dice);
@@ -29,14 +28,14 @@ public class DiceCup {
 	}
 
 	public static ROLLEDDICEType toss(int step) {
-		DiceType dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
+		String dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
 		return toss(dice);
 	}
 
-	public static ROLLEDDICEType toss(DiceType diceset) {
+	public static ROLLEDDICEType toss(String diceset) {
 		int sum=0;
 		String path="";
-		for( String dice : diceset.value().split("\\+") ) {
+		for( String dice : diceset.split("\\+") ) {
 			String[] d = dice.split("d");
 			if( d.length != 2 ) {
 				System.err.println("illigal dice '"+dice+"'");
