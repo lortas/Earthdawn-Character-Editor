@@ -83,6 +83,7 @@
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="RESULTLEVEL" type="CHARACTERISTICS_RESULTLEVEL"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="NEWDISCIPLINETALENTCOST" type="CHARACTERISTICS_NEWDISCIPLINETALENTCOST"/>
 			</xs:choice>
+			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
