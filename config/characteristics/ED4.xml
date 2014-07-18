@@ -1,159 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CHARACTERISTICS xmlns="http://earthdawn.com/characteristics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/characteristics earthdawncharacteristics.xsd">
-  <ENCUMBRANCE attribute="0" carrying="0"/>
-  <ENCUMBRANCE attribute="1" carrying="5"/>
-  <ENCUMBRANCE attribute="2" carrying="10"/>
-  <ENCUMBRANCE attribute="3" carrying="15"/>
-  <ENCUMBRANCE attribute="4" carrying="20"/>
-  <ENCUMBRANCE attribute="5" carrying="25"/>
-  <ENCUMBRANCE attribute="6" carrying="30"/>
-  <ENCUMBRANCE attribute="7" carrying="40"/>
-  <ENCUMBRANCE attribute="8" carrying="50"/>
-  <ENCUMBRANCE attribute="9" carrying="60"/>
-  <ENCUMBRANCE attribute="10" carrying="70"/>
-  <ENCUMBRANCE attribute="11" carrying="80"/>
-  <ENCUMBRANCE attribute="12" carrying="95"/>
-  <ENCUMBRANCE attribute="13" carrying="110"/>
-  <ENCUMBRANCE attribute="14" carrying="125"/>
-  <ENCUMBRANCE attribute="15" carrying="140"/>
-  <ENCUMBRANCE attribute="16" carrying="160"/>
-  <ENCUMBRANCE attribute="17" carrying="180"/>
-  <ENCUMBRANCE attribute="18" carrying="200"/>
-  <ENCUMBRANCE attribute="19" carrying="230"/>
-  <ENCUMBRANCE attribute="20" carrying="260"/>
-  <ENCUMBRANCE attribute="21" carrying="290"/>
-  <ENCUMBRANCE attribute="22" carrying="330"/>
-  <ENCUMBRANCE attribute="23" carrying="370"/>
-  <ENCUMBRANCE attribute="24" carrying="410"/>
-  <ENCUMBRANCE attribute="25" carrying="460"/>
-  <ENCUMBRANCE attribute="26" carrying="510"/>
-  <ENCUMBRANCE attribute="27" carrying="560"/>
-  <ENCUMBRANCE attribute="28" carrying="620"/>
-  <ENCUMBRANCE attribute="29" carrying="680"/>
-  <ENCUMBRANCE attribute="30" carrying="740"/>
-  <ENCUMBRANCE attribute="31" carrying="810"/>
-  <ENCUMBRANCE attribute="32" carrying="880"/>
-  <ENCUMBRANCE attribute="33" carrying="950"/>
-  <ENCUMBRANCE attribute="34" carrying="1030"/>
-  <ENCUMBRANCE attribute="35" carrying="1110"/>
-  <ENCUMBRANCE attribute="36" carrying="1190"/>
-  <ENCUMBRANCE attribute="37" carrying="1280"/>
-  <ENCUMBRANCE attribute="38" carrying="1370"/>
-  <ENCUMBRANCE attribute="39" carrying="1460"/>
-  <ENCUMBRANCE attribute="40" carrying="1560"/>
-  <ENCUMBRANCE attribute="41" carrying="1660"/>
-  <ENCUMBRANCE attribute="42" carrying="1760"/>
-  <ENCUMBRANCE attribute="43" carrying="1870"/>
-  <ENCUMBRANCE attribute="44" carrying="1980"/>
-  <ENCUMBRANCE attribute="45" carrying="2090"/>
-  <ENCUMBRANCE attribute="46" carrying="2210"/>
-  <ENCUMBRANCE attribute="47" carrying="2330"/>
-  <ENCUMBRANCE attribute="48" carrying="2450"/>
-  <ENCUMBRANCE attribute="49" carrying="2580"/>
-  <ENCUMBRANCE attribute="50" carrying="2710"/>
-  <ENCUMBRANCE attribute="51" carrying="2840"/>
-  <ENCUMBRANCE attribute="52" carrying="2980"/>
-  <ENCUMBRANCE attribute="53" carrying="3120"/>
-  <ENCUMBRANCE attribute="54" carrying="3260"/>
-  <ENCUMBRANCE attribute="55" carrying="3410"/>
-  <ENCUMBRANCE attribute="56" carrying="3560"/>
-  <ENCUMBRANCE attribute="57" carrying="3710"/>
-  <ENCUMBRANCE attribute="58" carrying="3870"/>
-  <ENCUMBRANCE attribute="59" carrying="4030"/>
-  <ENCUMBRANCE attribute="60" carrying="4190"/>
-  <ENCUMBRANCE attribute="61" carrying="4360"/>
-  <ENCUMBRANCE attribute="62" carrying="4530"/>
-  <ENCUMBRANCE attribute="63" carrying="4700"/>
-  <ENCUMBRANCE attribute="64" carrying="4880"/>
-  <ENCUMBRANCE attribute="65" carrying="5060"/>
-  <ENCUMBRANCE attribute="66" carrying="5240"/>
+<CHARACTERISTICS xmlns="http://earthdawn.com/characteristics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/characteristics ../earthdawncharacteristics.xsd">
+  <ENCUMBRANCE attribute="0"  carrying="0"/>
+  <ENCUMBRANCE attribute="1"  carrying="10"/>
+  <ENCUMBRANCE attribute="2"  carrying="15"/>
+  <ENCUMBRANCE attribute="3"  carrying="20"/>
+  <ENCUMBRANCE attribute="4"  carrying="25"/>
+  <ENCUMBRANCE attribute="5"  carrying="30"/>
+  <ENCUMBRANCE attribute="6"  carrying="40"/>
+  <ENCUMBRANCE attribute="7"  carrying="50"/>
+  <ENCUMBRANCE attribute="8"  carrying="60"/>
+  <ENCUMBRANCE attribute="9"  carrying="70"/>
+  <ENCUMBRANCE attribute="10" carrying="80"/>
+  <ENCUMBRANCE attribute="11" carrying="95"/>
+  <ENCUMBRANCE attribute="12" carrying="110"/>
+  <ENCUMBRANCE attribute="13" carrying="125"/>
+  <ENCUMBRANCE attribute="14" carrying="140"/>
+  <ENCUMBRANCE attribute="15" carrying="155"/>
+  <ENCUMBRANCE attribute="16" carrying="175"/>
+  <ENCUMBRANCE attribute="17" carrying="195"/>
+  <ENCUMBRANCE attribute="18" carrying="215"/>
+  <ENCUMBRANCE attribute="19" carrying="235"/>
+  <ENCUMBRANCE attribute="20" carrying="255"/>
+  <ENCUMBRANCE attribute="21" carrying="280"/>
+  <ENCUMBRANCE attribute="22" carrying="305"/>
+  <ENCUMBRANCE attribute="23" carrying="330"/>
+  <ENCUMBRANCE attribute="24" carrying="355"/>
+  <ENCUMBRANCE attribute="25" carrying="380"/>
+  <ENCUMBRANCE attribute="26" carrying="410"/>
+  <ENCUMBRANCE attribute="27" carrying="440"/>
+  <ENCUMBRANCE attribute="28" carrying="470"/>
+  <ENCUMBRANCE attribute="29" carrying="500"/>
+  <ENCUMBRANCE attribute="30" carrying="530"/>
   <DEFENSERAITING attribute="0" defense="1" />
   <DEFENSERAITING attribute="1" defense="2" />
-  <DEFENSERAITING attribute="2" defense="3" />
-  <DEFENSERAITING attribute="4" defense="4" />
+  <DEFENSERAITING attribute="3" defense="3" />
+  <DEFENSERAITING attribute="5" defense="4" />
   <DEFENSERAITING attribute="7" defense="5" />
   <DEFENSERAITING attribute="9" defense="6" />
   <DEFENSERAITING attribute="11" defense="7" />
-  <DEFENSERAITING attribute="14" defense="8" />
-  <DEFENSERAITING attribute="16" defense="9" />
-  <DEFENSERAITING attribute="18" defense="10" />
-  <DEFENSERAITING attribute="21" defense="11" />
-  <DEFENSERAITING attribute="23" defense="12" />
-  <DEFENSERAITING attribute="25" defense="13" />
-  <DEFENSERAITING attribute="28" defense="14" />
-  <DEFENSERAITING attribute="30" defense="15" />
-  <DEFENSERAITING attribute="32" defense="16" />
-  <DEFENSERAITING attribute="35" defense="17" />
-  <DEFENSERAITING attribute="37" defense="18" />
-  <DEFENSERAITING attribute="39" defense="19" />
-  <DEFENSERAITING attribute="42" defense="20" />
-  <MYSTICARMOR attribute="0" armor="0" />
-  <MYSTICARMOR attribute="11" armor="1" />
-  <MYSTICARMOR attribute="14" armor="2" />
-  <MYSTICARMOR attribute="17" armor="3" />
+  <DEFENSERAITING attribute="13" defense="8" />
+  <DEFENSERAITING attribute="15" defense="9" />
+  <DEFENSERAITING attribute="17" defense="10" />
+  <DEFENSERAITING attribute="19" defense="11" />
+  <DEFENSERAITING attribute="21" defense="12" />
+  <DEFENSERAITING attribute="23" defense="13" />
+  <DEFENSERAITING attribute="25" defense="14" />
+  <DEFENSERAITING attribute="27" defense="15" />
+  <DEFENSERAITING attribute="28" defense="16" />
+  <MYSTICARMOR attribute="0"  armor="0" />
+  <MYSTICARMOR attribute="5"  armor="1" />
+  <MYSTICARMOR attribute="10" armor="2" />
+  <MYSTICARMOR attribute="15" armor="3" />
   <MYSTICARMOR attribute="20" armor="4" />
-  <MYSTICARMOR attribute="23" armor="5" />
-  <MYSTICARMOR attribute="26" armor="6" />
-  <MYSTICARMOR attribute="29" armor="7" />
-  <MYSTICARMOR attribute="32" armor="8" />
-  <MYSTICARMOR attribute="35" armor="9" />
-  <MYSTICARMOR attribute="38" armor="10" />
-  <MYSTICARMOR attribute="41" armor="11" />
-  <MYSTICARMOR attribute="44" armor="12" />
-  <MYSTICARMOR attribute="47" armor="13" />
-  <MYSTICARMOR attribute="50" armor="14" />
+  <MYSTICARMOR attribute="25" armor="5" />
+  <MYSTICARMOR attribute="30" armor="6" />
   <ATTRIBUTECOST modifier="-2" cost="-2" />
   <ATTRIBUTECOST modifier="-1" cost="-1" />
-  <ATTRIBUTECOST modifier="0" cost="0" />
-  <ATTRIBUTECOST modifier="1" cost="1" />
-  <ATTRIBUTECOST modifier="2" cost="2" />
-  <ATTRIBUTECOST modifier="3" cost="3" />
-  <ATTRIBUTECOST modifier="4" cost="5" />
-  <ATTRIBUTECOST modifier="5" cost="7" />
-  <ATTRIBUTECOST modifier="6" cost="9" />
-  <ATTRIBUTECOST modifier="7" cost="12" />
-  <ATTRIBUTECOST modifier="8" cost="15" />
-  <HEALTHRATING  value="1" death="19" unconsciousness="10"  wound="3" recovery="0" />
-  <HEALTHRATING  value="2" death="20" unconsciousness="11"  wound="4" recovery="0" />
-  <HEALTHRATING  value="3" death="22" unconsciousness="13"  wound="4" recovery="1" />
-  <HEALTHRATING  value="4" death="23" unconsciousness="14"  wound="5" recovery="1" />
-  <HEALTHRATING  value="5" death="24" unconsciousness="15"  wound="5" recovery="1" />
-  <HEALTHRATING  value="6" death="26" unconsciousness="17"  wound="6" recovery="1" />
-  <HEALTHRATING  value="7" death="27" unconsciousness="18"  wound="6" recovery="1" />
-  <HEALTHRATING  value="8" death="28" unconsciousness="19"  wound="7" recovery="2" />
-  <HEALTHRATING  value="9" death="30" unconsciousness="21"  wound="7" recovery="2" />
-  <HEALTHRATING value="10" death="31" unconsciousness="22"  wound="8" recovery="2" />
-  <HEALTHRATING value="11" death="32" unconsciousness="24"  wound="8" recovery="2" />
-  <HEALTHRATING value="12" death="34" unconsciousness="26"  wound="9" recovery="2" />
-  <HEALTHRATING value="13" death="35" unconsciousness="27"  wound="9" recovery="2" />
-  <HEALTHRATING value="14" death="36" unconsciousness="28" wound="10" recovery="3" />
-  <HEALTHRATING value="15" death="38" unconsciousness="30" wound="10" recovery="3" />
-  <HEALTHRATING value="16" death="39" unconsciousness="31" wound="11" recovery="3" />
-  <HEALTHRATING value="17" death="40" unconsciousness="32" wound="11" recovery="3" />
-  <HEALTHRATING value="18" death="42" unconsciousness="34" wound="12" recovery="3" />
-  <HEALTHRATING value="19" death="43" unconsciousness="35" wound="12" recovery="3" />
-  <HEALTHRATING value="20" death="44" unconsciousness="36" wound="13" recovery="4" />
-  <HEALTHRATING value="21" death="46" unconsciousness="39" wound="13" recovery="4" />
-  <HEALTHRATING value="22" death="47" unconsciousness="40" wound="13" recovery="4" />
-  <HEALTHRATING value="23" death="48" unconsciousness="41" wound="14" recovery="4" />
-  <HEALTHRATING value="24" death="50" unconsciousness="43" wound="14" recovery="4" />
-  <HEALTHRATING value="25" death="51" unconsciousness="44" wound="15" recovery="4" />
-  <HEALTHRATING value="26" death="52" unconsciousness="45" wound="15" recovery="5" />
-  <HEALTHRATING value="27" death="54" unconsciousness="47" wound="15" recovery="5" />
-  <HEALTHRATING value="28" death="55" unconsciousness="48" wound="16" recovery="5" />
-  <HEALTHRATING value="29" death="56" unconsciousness="49" wound="16" recovery="5" />
-  <HEALTHRATING value="30" death="58" unconsciousness="51" wound="17" recovery="5" />
-  <HEALTHRATING value="31" death="59" unconsciousness="52" wound="17" recovery="5" />
-  <HEALTHRATING value="32" death="60" unconsciousness="53" wound="18" recovery="6" />
-  <HEALTHRATING value="33" death="62" unconsciousness="55" wound="18" recovery="6" />
-  <HEALTHRATING value="33" death="63" unconsciousness="56" wound="18" recovery="6" />
-  <HEALTHRATING value="34" death="64" unconsciousness="57" wound="19" recovery="6" />
-  <HEALTHRATING value="35" death="66" unconsciousness="59" wound="19" recovery="6" />
-  <HEALTHRATING value="36" death="67" unconsciousness="60" wound="20" recovery="6" />
-  <STEPDICETABLE attribute="0" step="1" dice="d6-3" />
-  <STEPDICETABLE attribute="1" step="2" dice="d6-2" />
-  <STEPDICETABLE attribute="4" step="3" dice="d6-1" />
-  <STEPDICETABLE attribute="7" step="4" dice="d6" />
+  <ATTRIBUTECOST modifier="0"  cost="0" />
+  <ATTRIBUTECOST modifier="1"  cost="1" />
+  <ATTRIBUTECOST modifier="2"  cost="2" />
+  <ATTRIBUTECOST modifier="3"  cost="3" />
+  <ATTRIBUTECOST modifier="4"  cost="5" />
+  <ATTRIBUTECOST modifier="5"  cost="7" />
+  <ATTRIBUTECOST modifier="6"  cost="9" />
+  <ATTRIBUTECOST modifier="7"  cost="12" />
+  <ATTRIBUTECOST modifier="8"  cost="15" />
+  <HEALTHRATING  value="1" death="4"  unconsciousness="2"  wound="3"  recovery="1" />
+  <HEALTHRATING  value="2" death="6"  unconsciousness="4"  wound="3"  recovery="1" />
+  <HEALTHRATING  value="3" death="8"  unconsciousness="6"  wound="4"  recovery="1" />
+  <HEALTHRATING  value="4" death="11" unconsciousness="8"  wound="4"  recovery="1" />
+  <HEALTHRATING  value="5" death="13" unconsciousness="10" wound="5"  recovery="1" />
+  <HEALTHRATING  value="6" death="15" unconsciousness="12" wound="5"  recovery="1" />
+  <HEALTHRATING  value="7" death="18" unconsciousness="14" wound="6"  recovery="2" />
+  <HEALTHRATING  value="8" death="20" unconsciousness="16" wound="6"  recovery="2" />
+  <HEALTHRATING  value="9" death="22" unconsciousness="18" wound="7"  recovery="2" />
+  <HEALTHRATING value="10" death="25" unconsciousness="20" wound="7"  recovery="2" />
+  <HEALTHRATING value="11" death="27" unconsciousness="22" wound="8"  recovery="2" />
+  <HEALTHRATING value="12" death="29" unconsciousness="24" wound="8"  recovery="2" />
+  <HEALTHRATING value="13" death="32" unconsciousness="26" wound="9"  recovery="3" />
+  <HEALTHRATING value="14" death="34" unconsciousness="28" wound="9"  recovery="3" />
+  <HEALTHRATING value="15" death="36" unconsciousness="30" wound="10" recovery="3" />
+  <HEALTHRATING value="16" death="39" unconsciousness="32" wound="10" recovery="3" />
+  <HEALTHRATING value="17" death="41" unconsciousness="34" wound="11" recovery="3" />
+  <HEALTHRATING value="18" death="43" unconsciousness="36" wound="11" recovery="3" />
+  <HEALTHRATING value="19" death="46" unconsciousness="38" wound="12" recovery="4" />
+  <HEALTHRATING value="20" death="48" unconsciousness="40" wound="12" recovery="4" />
+  <HEALTHRATING value="21" death="50" unconsciousness="42" wound="13" recovery="4" />
+  <HEALTHRATING value="22" death="53" unconsciousness="44" wound="13" recovery="4" />
+  <HEALTHRATING value="23" death="55" unconsciousness="46" wound="14" recovery="4" />
+  <HEALTHRATING value="24" death="57" unconsciousness="48" wound="14" recovery="4" />
+  <HEALTHRATING value="25" death="60" unconsciousness="50" wound="15" recovery="5" />
+  <HEALTHRATING value="26" death="62" unconsciousness="52" wound="15" recovery="5" />
+  <HEALTHRATING value="27" death="64" unconsciousness="54" wound="16" recovery="5" />
+  <HEALTHRATING value="28" death="67" unconsciousness="56" wound="16" recovery="5" />
+  <HEALTHRATING value="29" death="69" unconsciousness="58" wound="17" recovery="5" />
+  <HEALTHRATING value="30" death="71" unconsciousness="60" wound="17" recovery="5" />
+  <STEPDICETABLE attribute="0"  step="1" dice="d4-2" />
+  <STEPDICETABLE attribute="1"  step="2" dice="d4-1" />
+  <STEPDICETABLE attribute="4"  step="3" dice="d4" />
+  <STEPDICETABLE attribute="7"  step="4" dice="d6" />
   <STEPDICETABLE attribute="10" step="5" dice="d8" />
   <STEPDICETABLE attribute="13" step="6" dice="d10" />
   <STEPDICETABLE attribute="16" step="7" dice="d12" />
@@ -168,28 +113,28 @@
   <STEPDICETABLE attribute="43" step="16" dice="d12+d8+d6" />
   <STEPDICETABLE attribute="46" step="17" dice="d12+2d8" />
   <STEPDICETABLE attribute="49" step="18" dice="d12+d10+d8" />
-  <STEPDICETABLE attribute="52" step="19" dice="d12+2d10" />
-  <STEPDICETABLE attribute="55" step="20" dice="2d12+d10" />
-  <STEPDICETABLE attribute="58" step="21" dice="3d12" />
-  <STEPDICETABLE attribute="61" step="22" dice="2d12+2d6" />
-  <STEPDICETABLE attribute="64" step="23" dice="2d12+d8+d6" />
-  <STEPDICETABLE attribute="67" step="24" dice="2d12+2d8" />
-  <STEPDICETABLE attribute="70" step="25" dice="2d12+d10+d8" />
-  <STEPDICETABLE attribute="73" step="26" dice="2d12+2d10" />
-  <STEPDICETABLE attribute="76" step="27" dice="3d12+d10" />
-  <STEPDICETABLE attribute="79" step="28" dice="4d12" />
-  <STEPDICETABLE attribute="82" step="29" dice="3d12+2d6" />
-  <STEPDICETABLE attribute="85" step="30" dice="3d12+d8+d6" />
-  <STEPDICETABLE attribute="88" step="31" dice="3d12+2d8" />
-  <STEPDICETABLE attribute="91" step="32" dice="3d12+d10+d8" />
-  <STEPDICETABLE attribute="94" step="33" dice="3d12+2d10" />
-  <STEPDICETABLE attribute="97" step="34" dice="4d12+d10" />
-  <STEPDICETABLE attribute="100" step="35" dice="5d12" />
-  <STEPDICETABLE attribute="103" step="36" dice="4d12+2d6" />
-  <STEPDICETABLE attribute="106" step="37" dice="4d12+d8+d6" />
-  <STEPDICETABLE attribute="109" step="38" dice="4d12+2d8" />
-  <STEPDICETABLE attribute="112" step="39" dice="4d12+d10+d8" />
-  <STEPDICETABLE attribute="115" step="40" dice="4d12+2d10" />
+  <STEPDICETABLE attribute="52" step="19" dice="d20+2d6" />
+  <STEPDICETABLE attribute="55" step="20" dice="d20+d8+d6" />
+  <STEPDICETABLE attribute="58" step="21" dice="d20+2d8" />
+  <STEPDICETABLE attribute="61" step="22" dice="d20+d10+d8" />
+  <STEPDICETABLE attribute="64" step="23" dice="d20+2d10" />
+  <STEPDICETABLE attribute="67" step="24" dice="d20+d12+d10" />
+  <STEPDICETABLE attribute="70" step="25" dice="d20+2d12" />
+  <STEPDICETABLE attribute="73" step="26" dice="d20+d12+2d6" />
+  <STEPDICETABLE attribute="76" step="27" dice="d20+d12+d8+d6" />
+  <STEPDICETABLE attribute="79" step="28" dice="d20+d12+2d8" />
+  <STEPDICETABLE attribute="82" step="29" dice="d20+d12+d10+d8" />
+  <STEPDICETABLE attribute="85" step="30" dice="2d20+2d6" />
+  <STEPDICETABLE attribute="88" step="31" dice="2d20+d8+d6" />
+  <STEPDICETABLE attribute="91" step="32" dice="2d20+2d8" />
+  <STEPDICETABLE attribute="94" step="33" dice="2d20+d10+d8" />
+  <STEPDICETABLE attribute="97" step="34" dice="2d20+2d10" />
+  <STEPDICETABLE attribute="100" step="35" dice="2d20+d12+d10" />
+  <STEPDICETABLE attribute="103" step="36" dice="2d20+2d12" />
+  <STEPDICETABLE attribute="106" step="37" dice="2d20+d12+2d6" />
+  <STEPDICETABLE attribute="109" step="38" dice="2d20+d12+d8+d6" />
+  <STEPDICETABLE attribute="112" step="39" dice="2d20+d12+2d8" />
+  <STEPDICETABLE attribute="115" step="40" dice="2d20+d12+d10+d8" />
 	<DISCIPLINENR>
 			<CIRCLE circle="0">
 			<TALENTLPCOST cost="100"/>
