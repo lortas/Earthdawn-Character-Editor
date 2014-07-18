@@ -3,13 +3,10 @@ package de.earthdawn;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.earthdawn.config.ApplicationProperties;
-import de.earthdawn.config.ECECharacteristics;
 import de.earthdawn.data.ROLLEDDICEType;
 import de.earthdawn.data.STEPDICEType;
 
 public class DiceCups {
-	private static final ECECharacteristics CHARACTERISTICS = ApplicationProperties.create().getCharacteristics();
 	private List<DiceCup> diceCups= new ArrayList<DiceCup>();
 
 	public DiceCups( int[] steps ) {
@@ -35,7 +32,8 @@ public class DiceCups {
 				path += " + "+r.getRolling();
 			}
 		}
-		ROLLEDDICEType result = CHARACTERISTICS.getResultLevel(sum);
+		ROLLEDDICEType result = new ROLLEDDICEType();
+		result.setResult(sum);
 		result.setRolling(path);
 		return result;
 	}

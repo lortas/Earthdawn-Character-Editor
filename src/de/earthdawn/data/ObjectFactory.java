@@ -36,7 +36,6 @@ public class ObjectFactory {
     private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
     private final static QName _CHARACTERISTICSDISCIPLINENR_QNAME = new QName("http://earthdawn.com/characteristics", "DISCIPLINENR");
     private final static QName _CHARACTERISTICSNEWDISCIPLINETALENTCOST_QNAME = new QName("http://earthdawn.com/characteristics", "NEWDISCIPLINETALENTCOST");
-    private final static QName _CHARACTERISTICSRESULTLEVEL_QNAME = new QName("http://earthdawn.com/characteristics", "RESULTLEVEL");
     private final static QName _CHARACTERISTICSHEALTHRATING_QNAME = new QName("http://earthdawn.com/characteristics", "HEALTHRATING");
     private final static QName _CHARACTERISTICSLEGENDARYSTATUS_QNAME = new QName("http://earthdawn.com/characteristics", "LEGENDARYSTATUS");
     private final static QName _CHARACTERISTICSATTRIBUTELPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTELPCOST");
@@ -782,14 +781,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CHARACTERISTICSRESULTLEVEL }
-     * 
-     */
-    public CHARACTERISTICSRESULTLEVEL createCHARACTERISTICSRESULTLEVEL() {
-        return new CHARACTERISTICSRESULTLEVEL();
-    }
-
-    /**
      * Create an instance of {@link CHARACTERISTICSNEWDISCIPLINETALENTCOST }
      * 
      */
@@ -798,19 +789,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CHARACTERISTICSCIRCLE }
-     * 
-     */
-    public CHARACTERISTICSCIRCLE createCHARACTERISTICSCIRCLE() {
-        return new CHARACTERISTICSCIRCLE();
-    }
-
-    /**
      * Create an instance of {@link CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE }
      * 
      */
     public CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE createCHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE() {
         return new CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE();
+    }
+
+    /**
+     * Create an instance of {@link CHARACTERISTICSCIRCLE }
+     * 
+     */
+    public CHARACTERISTICSCIRCLE createCHARACTERISTICSCIRCLE() {
+        return new CHARACTERISTICSCIRCLE();
     }
 
     /**
@@ -1008,15 +999,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "NEWDISCIPLINETALENTCOST", scope = CHARACTERISTICS.class)
     public JAXBElement<CHARACTERISTICSNEWDISCIPLINETALENTCOST> createCHARACTERISTICSNEWDISCIPLINETALENTCOST(CHARACTERISTICSNEWDISCIPLINETALENTCOST value) {
         return new JAXBElement<CHARACTERISTICSNEWDISCIPLINETALENTCOST>(_CHARACTERISTICSNEWDISCIPLINETALENTCOST_QNAME, CHARACTERISTICSNEWDISCIPLINETALENTCOST.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSRESULTLEVEL }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "RESULTLEVEL", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSRESULTLEVEL> createCHARACTERISTICSRESULTLEVEL(CHARACTERISTICSRESULTLEVEL value) {
-        return new JAXBElement<CHARACTERISTICSRESULTLEVEL>(_CHARACTERISTICSRESULTLEVEL_QNAME, CHARACTERISTICSRESULTLEVEL.class, CHARACTERISTICS.class, value);
     }
 
     /**

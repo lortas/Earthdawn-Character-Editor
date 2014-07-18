@@ -50,7 +50,8 @@ public class DiceCup {
 				path+=r+"(d"+d[1]+")";
 			}
 		}
-		ROLLEDDICEType result = CHARACTERISTICS.getResultLevel(sum);
+		ROLLEDDICEType result = new ROLLEDDICEType();
+		result.setResult(sum);
 		result.setDice(diceset);
 		result.setRolling(path);
 		return result;

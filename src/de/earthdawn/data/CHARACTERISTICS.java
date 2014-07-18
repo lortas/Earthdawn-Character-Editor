@@ -40,7 +40,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SKILLLPCOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_COST" maxOccurs="unbounded"/>
  *         &lt;element name="ATTRIBUTELPCOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_COST" maxOccurs="unbounded"/>
  *         &lt;element name="LEGENDARYSTATUS" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_LEGENDARYSTATUS" maxOccurs="unbounded"/>
- *         &lt;element name="RESULTLEVEL" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_RESULTLEVEL" maxOccurs="unbounded"/>
  *         &lt;element name="NEWDISCIPLINETALENTCOST" type="{http://earthdawn.com/characteristics}CHARACTERISTICS_NEWDISCIPLINETALENTCOST" maxOccurs="unbounded"/>
  *       &lt;/choice>
  *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" />
@@ -59,18 +58,17 @@ import javax.xml.bind.annotation.XmlType;
 public class CHARACTERISTICS {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "DEFENSERAITING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "RESULTLEVEL", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "STEPDICETABLE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "NEWDISCIPLINETALENTCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "MYSTICARMOR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LEGENDARYSTATUS", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "ATTRIBUTELPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "DISCIPLINENR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "MYSTICARMOR", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "NEWDISCIPLINETALENTCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LEGENDARYSTATUS", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ENCUMBRANCE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "HEALTHRATING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "STEPDICETABLE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "SKILLLPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "ATTRIBUTECOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "SKILLLPCOST", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "DEFENSERAITING", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "ENCUMBRANCE", namespace = "http://earthdawn.com/characteristics", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> encumbranceOrDEFENSERAITINGOrMYSTICARMOR;
     @XmlAttribute(name = "rulesetversion")
@@ -94,18 +92,17 @@ public class CHARACTERISTICS {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSRESULTLEVEL }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDISCIPLINENR }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSLEGENDARYSTATUS }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSNEWDISCIPLINETALENTCOST }{@code >}
-     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSHEALTHRATING }{@code >}
      * {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSNEWDISCIPLINETALENTCOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSLEGENDARYSTATUS }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSHEALTHRATING }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDISCIPLINENR }{@code >}
      * {@link JAXBElement }{@code <}{@link CHARACTERISTICSATTRIBUTECOST }{@code >}
      * {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}
+     * {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}
      * 
      * 
      */
