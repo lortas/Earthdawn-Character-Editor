@@ -36,18 +36,27 @@ public class EarthdawnCharacterEditor {
 	public static void main(String[] args) {
 		commandlineargs = new ArrayList<String>(Arrays.asList(args));
 		PROPERTIES.setRulesetLanguage(getRulesetversionFromArgs(), getLanguageFromArgs());
+		boolean newchar=getNewCharFromArgs();
 		try {
 			CharacterContainer ec;
 			File infile;
 			// Erster Parameter, wenn vorhanden, ist der einzulesende Charakterbogen
-			if( args.length > 0 ) {
-				infile=new File(args[0]);
+			if(  commandlineargs.size() > 0 ) {
+				infile=new File(commandlineargs.get(0));
 			} else {
 				infile=LASTEDITEDCHARACTER;
 			}
-			if( infile.canRead() ) {
+			if( !newchar && infile.canRead() ) {
 				System.out.println("Read character from "+infile.getCanonicalPath());
-				ec=new CharacterContainer(infile);
+				try {
+					ec=new CharacterContainer(infile);
+				} catch( RuntimeException e) {
+					if( e.getMessage().contains("has wrong Rulesetversion") ) {
+						ec=new CharacterContainer();
+					} else {
+						return;
+					}
+				}
 				String name=ec.getName();
 				if( name==null || name.isEmpty() ) {
 					name=infile.getName();
@@ -58,7 +67,7 @@ public class EarthdawnCharacterEditor {
 			}
 			// Verarbeiten
 			EDMainWindow window = new EDMainWindow(new ECEWorker(ec).verarbeiteCharakter());
-			if( args.length < 2 ) { 
+			if( commandlineargs.size() < 2 ) { 
 				// Anzeigen des Hauptdialogs, wenn nur maximal ein Parameter übergeben wurde
 				window.setVisible(true);
 				while( window.isDisplayable() ) Thread.sleep(500);
@@ -66,9 +75,9 @@ public class EarthdawnCharacterEditor {
 				window.writeToXml(LASTEDITEDCHARACTER);
 			} else {
 				// Wenn noch ein zweiter Parameter übergeben wurde, schreibe Charakter dort rein
-				window.writeToXml(new File(args[1]));
+				window.writeToXml(new File(commandlineargs.get(1)));
 				// Wenn noch ein dritter Parameter übergeben wurde, schreibe pdf export dort rein
-				if( args.length > 2 ) new ECEPdfExporter().exportRedbrickExtended(window.getEDCharacter(),new File(args[2]));
+				if( commandlineargs.size() > 2 ) new ECEPdfExporter().exportRedbrickExtended(window.getEDCharacter(),new File(commandlineargs.get(2)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -101,6 +110,16 @@ public class EarthdawnCharacterEditor {
 			}
 		}
 		return LanguageType.EN;
+	}
+
+	private static boolean getNewCharFromArgs() {
+		int i = commandlineargs.indexOf("--newchar");
+		if( i < 0 ) commandlineargs.indexOf("-n");
+		if( i >= 0 ) {
+			commandlineargs.remove(i); // --newchar | -n
+			return true;
+		}
+		return false;
 	}
 
 	public static String chopFilename(File f){
