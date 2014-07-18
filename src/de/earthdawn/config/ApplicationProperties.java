@@ -53,6 +53,7 @@ public class ApplicationProperties {
 	private static List<CAPABILITIES> CAPABILITIES;
 	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
 	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
+	private static Map<RulesetversionType,List<TRANSLATIONType>> NAMEGIVERTRANSLATIONS;
     private static KNACKS KNACKS = new KNACKS();
 	private static Map<ECERulesetLanguage,SPELLS> SPELLS;
     private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
@@ -63,7 +64,7 @@ public class ApplicationProperties {
 	private static ECERulesetLanguage RULESETLANGUAGE = new ECERulesetLanguage(RulesetversionType.ED_3,LanguageType.EN);
     private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
 	private static Map<ECERulesetLanguage,SPELLDESCRIPTIONS> SPELLDESCRIPTIONS;
-    private ECECharacteristics CHARACTERISTICS = null;
+	private static Map<RulesetversionType,ECECharacteristics> CHARACTERISTICS;
 	private static File CONFIGDIR = new File("./config");
 
     /** Singleton-Instanz dieser Klasse. */
@@ -231,6 +232,20 @@ public class ApplicationProperties {
 		return result;
 	}
 
+	public NAMEGIVERABILITYType searchNamegiver(String namegiver, String origin) {
+		List<NAMEGIVERABILITYType> results = new ArrayList<NAMEGIVERABILITYType>();
+		for( NAMEGIVERABILITYType ng : NAMEGIVERS.getNAMEGIVER()) {
+			String name=translateNamegiver(ng.getName(),ng.getLang());
+			if( name.isEmpty() ) name=ng.getName();
+			List<String> origins=ng.getORIGIN();
+			if( name.equals(namegiver) && origins.contains(origin)) results.add(ng);
+		}
+		for( NAMEGIVERABILITYType ng : results ) {
+			if( ng.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return ng;
+		}
+		return results.get(0);
+	}
+
 	public HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> getNamgiversByType() {
 		HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> result = new HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>>();
 		for( NAMEGIVERABILITYType namegiver : getNamegivers() ) {
@@ -248,10 +263,10 @@ public class ApplicationProperties {
 	}
 
 	public ECECharacteristics getCharacteristics() {
-		return CHARACTERISTICS;
+		return CHARACTERISTICS.get(RULESETLANGUAGE.getRulesetversion());
 	}
 
-	public DiceType step2Dice(int value) {
+	public String step2Dice(int value) {
 		return getCharacteristics().getSTEPDICEbyStep(value).getDice();
 	}
 
@@ -520,7 +535,7 @@ public class ApplicationProperties {
 				return skill;
 			}
 		}
-		return null;
+		return new ArrayList<SKILLType>();
 	}
 
 	public HashMap<SpellkindType,String> getSpellKindMap() {
@@ -619,6 +634,7 @@ public class ApplicationProperties {
 			}
 
 			// Zum späteren leichteren Zugriff, bringe die spezifischen Übersetzungen in ein anderes Format.
+			NAMEGIVERTRANSLATIONS=new HashMap<RulesetversionType,List<TRANSLATIONType>>();
 			NAMES=new HashMap<String,Map<ECERulesetLanguage,TranslationlabelType>>();
 			NAMES.put("karmaritual",new HashMap<ECERulesetLanguage,TranslationlabelType>());
 			NAMES.put("durability",new HashMap<ECERulesetLanguage,TranslationlabelType>());
@@ -684,6 +700,14 @@ public class ApplicationProperties {
 					for( TranslationlabelType label : translation.getLABEL() ) {
 						n.put(new ECERulesetLanguage(rulesetversion,label.getLang()),label);
 					}
+				}
+				List<TRANSLATIONType> namegiver = NAMEGIVERTRANSLATIONS.get(rulesetversion);
+				if( namegiver == null ) {
+					namegiver = new ArrayList<TRANSLATIONType>();
+					NAMEGIVERTRANSLATIONS.put(rulesetversion,namegiver);
+				}
+				for( TRANSLATIONType translation : TRANSLATIONS.get(rulesetversion).getNAMEGIVER() ) {
+					namegiver.add(translation);
 				}
 			}
 
@@ -859,13 +883,20 @@ public class ApplicationProperties {
 				if( t.getLang().equals(RULESETLANGUAGE.getLanguage()) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
 			}
 
-			File filename=new File(CONFIGDIR,"characteristics.xml");
-			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
-			CHARACTERISTICS = new ECECharacteristics((CHARACTERISTICS) unmarshaller.unmarshal(filename));
-			filename=new File(CONFIGDIR,"namegivers.xml");
-			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
-			NAMEGIVERS = (NAMEGIVERS) unmarshaller.unmarshal(filename);
-			filename=new File(CONFIGDIR,"optionalrules.xml");
+			for(File configFile : selectallxmlfiles(new File(CONFIGDIR,"namegivers"))) {
+				System.out.println("Reading config file '" + configFile.getCanonicalPath() + "'");
+				NAMEGIVERS t = (NAMEGIVERS) unmarshaller.unmarshal(configFile);
+				if( t.getRulesetversion().equals(RULESETLANGUAGE.getRulesetversion()) ) NAMEGIVERS.getNAMEGIVER().addAll(t.getNAMEGIVER());
+			}
+
+			CHARACTERISTICS=new HashMap<RulesetversionType,ECECharacteristics>();
+			for(File configFile : selectallxmlfiles(new File(CONFIGDIR,"characteristics"))) {
+				System.out.println("Reading config file '" + configFile.getCanonicalPath() + "'");
+				CHARACTERISTICS t = (CHARACTERISTICS) unmarshaller.unmarshal(configFile);
+				CHARACTERISTICS.put(t.getRulesetversion(), new ECECharacteristics(t));
+			}
+
+			File filename=new File(CONFIGDIR,"optionalrules.xml");
 			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
 			OPTIONALRULES = (OPTIONALRULES) unmarshaller.unmarshal(filename);
 			filename=new File(CONFIGDIR,"help.xml");
@@ -877,9 +908,7 @@ public class ApplicationProperties {
 			filename=new File(CONFIGDIR,"eceguilayout.xml");
 			System.out.println("Reading config file '" + filename.getCanonicalPath() + "'");
 			ECEGUILAYOUT = (ECEGUILAYOUT) unmarshaller.unmarshal(filename);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (JAXBException e) {
+		} catch (JAXBException|IOException e) {
 			e.printStackTrace();
 		}
 		//checktranslation();
@@ -914,6 +943,23 @@ public class ApplicationProperties {
 		}
 		for( File dir : folders ) files.addAll(selectallxmlfiles(dir));
 		return files;
+	}
+
+	public String translateNamegiver(String namegiver, LanguageType language) {
+		for( TRANSLATIONType ng : NAMEGIVERTRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()) ) {
+			boolean found=false;
+			String destination=null;
+			for( TranslationlabelType label : ng.getLABEL() ) {
+				if( label.getLang().equals(language) && label.getValue().equals(namegiver)) {
+					found=true;
+				}
+				if( label.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
+					destination = label.getValue();
+				}
+			}
+			if( found && destination!=null ) return destination;
+		}
+		return "";
 	}
 
 	private void checktranslation() {
