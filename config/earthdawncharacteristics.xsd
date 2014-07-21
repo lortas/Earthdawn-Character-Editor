@@ -50,13 +50,6 @@
 		<xs:attribute name="reown" type="edt:unsigned_int" use="required"/>
 		<xs:attribute name="reputation" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="CHARACTERISTICS_RESULTLEVEL">
-		<xs:attribute name="poor" type="edt:unsigned_int" use="required"/>
-		<xs:attribute name="average" type="edt:unsigned_int" use="required"/>
-		<xs:attribute name="good" type="edt:unsigned_int" use="required"/>
-		<xs:attribute name="excellent" type="edt:unsigned_int" use="required"/>
-		<xs:attribute name="extraordinary" type="edt:unsigned_int" use="required"/>
-	</xs:complexType>
 	<xs:complexType name="CHARACTERISTICS_NEWDISCIPLINETALENTCOST">
 		<xs:sequence>
 			<xs:element name="DISCIPLINE" type="CHARACTERISTICS_NEWDISCIPLINETALENTCOSTDISCIPLINE" minOccurs="1" maxOccurs="unbounded"/>
@@ -80,7 +73,6 @@
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="SKILLLPCOST" type="CHARACTERISTICS_COST"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="ATTRIBUTELPCOST" type="CHARACTERISTICS_COST"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="LEGENDARYSTATUS" type="CHARACTERISTICS_LEGENDARYSTATUS"/>
-				<xs:element maxOccurs="unbounded" minOccurs="1" name="RESULTLEVEL" type="CHARACTERISTICS_RESULTLEVEL"/>
 				<xs:element maxOccurs="unbounded" minOccurs="1" name="NEWDISCIPLINETALENTCOST" type="CHARACTERISTICS_NEWDISCIPLINETALENTCOST"/>
 			</xs:choice>
 			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
