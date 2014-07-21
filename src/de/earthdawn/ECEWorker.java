@@ -111,7 +111,7 @@ public class ECEWorker {
 		int karmaMaxBonus = OptionalRule_MaxAttributeBuyPoints;
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		characterAttributes = character.getAttributes();
-		for (NAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
+		for (ATTRIBUTENAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
 			ATTRIBUTEType attribute = characterAttributes.get(raceattribute.getName());
 			attribute.setRacevalue(raceattribute.getValue());
@@ -199,12 +199,14 @@ public class ECEWorker {
 					break;
 				}
 			}
-			if(karmaritualTalent == null ) {
-				errorout.println("No Karmaritual ("+karmaritualName+") could be found.");
-			}
-			int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
-			if( OptionalRule_KarmaLegendPointCost ) {
-				calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
+			if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_3)) {
+				if(karmaritualTalent == null ) {
+					errorout.println("No Karmaritual ("+karmaritualName+") could be found.");
+				}
+				int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
+				if( OptionalRule_KarmaLegendPointCost ) {
+					calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
+				}
 			}
 		}
 
@@ -298,7 +300,10 @@ public class ECEWorker {
 				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
-				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
+				ATTRIBUTENameType attribute = talent.getAttribute();
+				if( attribute != null ) {
+					calculateCapabilityRank(rank,characterAttributes.get(attribute.value()));
+				}
 				talent.setRANK(rank);
 				currentTalents.getOptionaltalents().add(talent);
 			}
@@ -908,20 +913,23 @@ public class ECEWorker {
 
 	private static int calculateKarma(KARMAType karma, TALENTType karmaritualTalent, int karmaModifier, int karmaMaxBonus) {
 		karma.setMaxmodificator(karmaMaxBonus);
-		if( karmaritualTalent == null ) {
-			errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
-		} else {
-			int rank;
-			if( karmaritualTalent.getRANK() == null ) {
-				rank = 0;
+		if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_3)) {
+			if( karmaritualTalent == null ) {
+				errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
 			} else {
-				rank = karmaritualTalent.getRANK().getRank();
+				int rank = ( karmaritualTalent.getRANK() == null ) ? 0 : karmaritualTalent.getRANK().getRank();
+				karma.setMax( karmaMaxBonus + (karmaModifier * rank) );
 			}
-			karma.setMax( karmaMaxBonus + (karmaModifier * rank) );
+			List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
+			karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
+			return 10*k.get(0); // KarmaLP
+		} else {
+			// in ED4 sind Karma punkte kosten los. Damit benötigt man keine Buchhaltung der Karmapunkte.
+			karma.getKARMAPOINTS().clear();
+			// Wir gehen einfachmal davon aus, dass der Charakter täglich sein Karmaritual macht.
+			karma.setCurrent(karma.getMax());
+			return 0;
 		}
-		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
-		karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
-		return 10*k.get(0); // KarmaLP
 	}
 
 	private void calculateKnacks(int disciplinenumber, TALENTType talent, boolean disTalents) {
