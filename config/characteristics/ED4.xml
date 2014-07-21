@@ -95,46 +95,46 @@
   <HEALTHRATING value="28" death="67" unconsciousness="56" wound="16" recovery="5" />
   <HEALTHRATING value="29" death="69" unconsciousness="58" wound="17" recovery="5" />
   <HEALTHRATING value="30" death="71" unconsciousness="60" wound="17" recovery="5" />
-  <STEPDICETABLE attribute="0"  step="1" dice="d4-2" />
-  <STEPDICETABLE attribute="1"  step="2" dice="d4-1" />
-  <STEPDICETABLE attribute="4"  step="3" dice="d4" />
-  <STEPDICETABLE attribute="7"  step="4" dice="d6" />
-  <STEPDICETABLE attribute="10" step="5" dice="d8" />
-  <STEPDICETABLE attribute="13" step="6" dice="d10" />
-  <STEPDICETABLE attribute="16" step="7" dice="d12" />
-  <STEPDICETABLE attribute="19" step="8" dice="2d6" />
-  <STEPDICETABLE attribute="22" step="9" dice="d8+d6" />
-  <STEPDICETABLE attribute="25" step="10" dice="2d8" />
-  <STEPDICETABLE attribute="28" step="11" dice="d10+d8" />
-  <STEPDICETABLE attribute="31" step="12" dice="2d10" />
-  <STEPDICETABLE attribute="34" step="13" dice="d12+d10" />
-  <STEPDICETABLE attribute="37" step="14" dice="2d12" />
-  <STEPDICETABLE attribute="40" step="15" dice="d12+2d6" />
-  <STEPDICETABLE attribute="43" step="16" dice="d12+d8+d6" />
-  <STEPDICETABLE attribute="46" step="17" dice="d12+2d8" />
-  <STEPDICETABLE attribute="49" step="18" dice="d12+d10+d8" />
-  <STEPDICETABLE attribute="52" step="19" dice="d20+2d6" />
-  <STEPDICETABLE attribute="55" step="20" dice="d20+d8+d6" />
-  <STEPDICETABLE attribute="58" step="21" dice="d20+2d8" />
-  <STEPDICETABLE attribute="61" step="22" dice="d20+d10+d8" />
-  <STEPDICETABLE attribute="64" step="23" dice="d20+2d10" />
-  <STEPDICETABLE attribute="67" step="24" dice="d20+d12+d10" />
-  <STEPDICETABLE attribute="70" step="25" dice="d20+2d12" />
-  <STEPDICETABLE attribute="73" step="26" dice="d20+d12+2d6" />
-  <STEPDICETABLE attribute="76" step="27" dice="d20+d12+d8+d6" />
-  <STEPDICETABLE attribute="79" step="28" dice="d20+d12+2d8" />
-  <STEPDICETABLE attribute="82" step="29" dice="d20+d12+d10+d8" />
-  <STEPDICETABLE attribute="85" step="30" dice="2d20+2d6" />
-  <STEPDICETABLE attribute="88" step="31" dice="2d20+d8+d6" />
-  <STEPDICETABLE attribute="91" step="32" dice="2d20+2d8" />
-  <STEPDICETABLE attribute="94" step="33" dice="2d20+d10+d8" />
-  <STEPDICETABLE attribute="97" step="34" dice="2d20+2d10" />
-  <STEPDICETABLE attribute="100" step="35" dice="2d20+d12+d10" />
-  <STEPDICETABLE attribute="103" step="36" dice="2d20+2d12" />
-  <STEPDICETABLE attribute="106" step="37" dice="2d20+d12+2d6" />
-  <STEPDICETABLE attribute="109" step="38" dice="2d20+d12+d8+d6" />
-  <STEPDICETABLE attribute="112" step="39" dice="2d20+d12+2d8" />
-  <STEPDICETABLE attribute="115" step="40" dice="2d20+d12+d10+d8" />
+  <STEPDICETABLE attribute="0"  step="1" dice="W4-2" />
+  <STEPDICETABLE attribute="1"  step="2" dice="W4-1" />
+  <STEPDICETABLE attribute="4"  step="3" dice="W4" />
+  <STEPDICETABLE attribute="7"  step="4" dice="W6" />
+  <STEPDICETABLE attribute="10" step="5" dice="W8" />
+  <STEPDICETABLE attribute="13" step="6" dice="W10" />
+  <STEPDICETABLE attribute="16" step="7" dice="W12" />
+  <STEPDICETABLE attribute="19" step="8" dice="2W6" />
+  <STEPDICETABLE attribute="22" step="9" dice="W8+W6" />
+  <STEPDICETABLE attribute="25" step="10" dice="2W8" />
+  <STEPDICETABLE attribute="28" step="11" dice="W10+W8" />
+  <STEPDICETABLE attribute="31" step="12" dice="2W10" />
+  <STEPDICETABLE attribute="34" step="13" dice="W12+W10" />
+  <STEPDICETABLE attribute="37" step="14" dice="2W12" />
+  <STEPDICETABLE attribute="40" step="15" dice="W12+2W6" />
+  <STEPDICETABLE attribute="43" step="16" dice="W12+W8+W6" />
+  <STEPDICETABLE attribute="46" step="17" dice="W12+2W8" />
+  <STEPDICETABLE attribute="49" step="18" dice="W12+W10+W8" />
+  <STEPDICETABLE attribute="52" step="19" dice="W20+2W6" />
+  <STEPDICETABLE attribute="55" step="20" dice="W20+W8+W6" />
+  <STEPDICETABLE attribute="58" step="21" dice="W20+2W8" />
+  <STEPDICETABLE attribute="61" step="22" dice="W20+W10+W8" />
+  <STEPDICETABLE attribute="64" step="23" dice="W20+2W10" />
+  <STEPDICETABLE attribute="67" step="24" dice="W20+W12+W10" />
+  <STEPDICETABLE attribute="70" step="25" dice="W20+2W12" />
+  <STEPDICETABLE attribute="73" step="26" dice="W20+W12+2W6" />
+  <STEPDICETABLE attribute="76" step="27" dice="W20+W12+W8+W6" />
+  <STEPDICETABLE attribute="79" step="28" dice="W20+W12+2W8" />
+  <STEPDICETABLE attribute="82" step="29" dice="W20+W12+W10+W8" />
+  <STEPDICETABLE attribute="85" step="30" dice="2W20+2W6" />
+  <STEPDICETABLE attribute="88" step="31" dice="2W20+W8+W6" />
+  <STEPDICETABLE attribute="91" step="32" dice="2W20+2W8" />
+  <STEPDICETABLE attribute="94" step="33" dice="2W20+W10+W8" />
+  <STEPDICETABLE attribute="97" step="34" dice="2W20+2W10" />
+  <STEPDICETABLE attribute="100" step="35" dice="2W20+W12+W10" />
+  <STEPDICETABLE attribute="103" step="36" dice="2W20+2W12" />
+  <STEPDICETABLE attribute="106" step="37" dice="2W20+W12+2W6" />
+  <STEPDICETABLE attribute="109" step="38" dice="2W20+W12+W8+W6" />
+  <STEPDICETABLE attribute="112" step="39" dice="2W20+W12+2W8" />
+  <STEPDICETABLE attribute="115" step="40" dice="2W20+W12+W10+W8" />
 	<DISCIPLINENR>
 			<CIRCLE circle="0">
 			<TALENTLPCOST cost="100"/>
@@ -313,8 +313,8 @@
 			<TALENTLPCOST cost="418100"/>
 		</CIRCLE>
 	</DISCIPLINENR>
-	<SKILLLPCOST cost="200"/>
-	<SKILLLPCOST cost="300"/>
+	<SKILLLPCOST cost="200"/> <!-- "Novice" skill costs starts here -->
+	<SKILLLPCOST cost="300"/> <!-- "Journeyman" skill costs starts here -->
 	<SKILLLPCOST cost="500"/>
 	<SKILLLPCOST cost="800"/>
 	<SKILLLPCOST cost="1300"/>
@@ -323,6 +323,7 @@
 	<SKILLLPCOST cost="5500"/>
 	<SKILLLPCOST cost="8900"/>
 	<SKILLLPCOST cost="14400"/>
+	<SKILLLPCOST cost="23300"/>
 	<ATTRIBUTELPCOST cost="800"/> 
 	<ATTRIBUTELPCOST cost="1300"/> 
 	<ATTRIBUTELPCOST cost="2100"/> 
@@ -330,12 +331,12 @@
 	<ATTRIBUTELPCOST cost="5500"/>
 	<ATTRIBUTELPCOST cost="8900"/>
 	<ATTRIBUTELPCOST cost="14400"/>
-	<LEGENDARYSTATUS circle="0" reown="37" reputation="na"/>
-	<LEGENDARYSTATUS circle="1" reown="21" reputation="na"/>
-	<LEGENDARYSTATUS circle="2" reown="15" reputation="+1"/>
+	<LEGENDARYSTATUS circle="0" reown="16" reputation="na"/>
+	<LEGENDARYSTATUS circle="1" reown="16" reputation="na"/>
+	<LEGENDARYSTATUS circle="2" reown="16" reputation="na"/>
 	<LEGENDARYSTATUS circle="5" reown="11" reputation="+2"/>
-	<LEGENDARYSTATUS circle="9" reown="9" reputation="+3"/>
-	<LEGENDARYSTATUS circle="13" reown="7" reputation="+5"/>
+	<LEGENDARYSTATUS circle="9" reown="9" reputation="+4"/>
+	<LEGENDARYSTATUS circle="13" reown="7" reputation="+6"/>
 	<NEWDISCIPLINETALENTCOST>
 		<DISCIPLINE>
 			<COST cost="1100"/><!-- 1300-200 -->
