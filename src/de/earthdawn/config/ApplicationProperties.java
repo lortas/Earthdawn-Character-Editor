@@ -243,6 +243,7 @@ public class ApplicationProperties {
 		for( NAMEGIVERABILITYType ng : results ) {
 			if( ng.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return ng;
 		}
+		if( results.isEmpty() ) throw new RuntimeException("There is no Namegiver definition for '"+namegiver+"' locatet in '"+origin+"'");
 		return results.get(0);
 	}
 
