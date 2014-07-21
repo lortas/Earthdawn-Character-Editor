@@ -1502,4 +1502,44 @@
 	<CAPABILITY>
 		<LABEL lang="en">Wound Transfer</LABEL>
 	</CAPABILITY>
+	<NAMEGIVER>
+		<LABEL lang="en">Dwarf</LABEL>
+		<LABEL lang="de">Zwerg</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Elf</LABEL>
+		<LABEL lang="de">Elf</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Human</LABEL>
+		<LABEL lang="de">Mensch</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Obsidiman</LABEL>
+		<LABEL lang="de">Obsidianer</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Ork</LABEL>
+		<LABEL lang="de">Ork</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Troll</LABEL>
+		<LABEL lang="de">Troll</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">T'skrang</LABEL>
+		<LABEL lang="de">T'skrang</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Windling</LABEL>
+		<LABEL lang="de">Windling</LABEL>
+	</NAMEGIVER>
+	<NAMEGIVER>
+		<LABEL lang="en">Drake</LABEL>
+		<LABEL lang="de">Drako</LABEL>
+	</NAMEGIVER>
+	<ITEM>
+		<LABEL lang="de">Battle-Axe</LABEL>
+		<LABEL lang="en">Streitaxt</LABEL>
+	</ITEM>
 </TRANSLATIONS>
