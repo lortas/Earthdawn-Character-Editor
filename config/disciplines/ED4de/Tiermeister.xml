@@ -47,6 +47,7 @@
 		<OPTIONALTALENT name="Unempfindlichkeit Tiergefährte"/>
 		<DISCIPLINETALENT name="Schadensverteilung"/>
 		<TALENTABILITY/>
+		<KARMA spend="auf beliebige Schadensproben im waffenlosen Kampf"/>
 		<ABILITY>Katzenhafte Anmut</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

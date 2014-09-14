@@ -47,6 +47,7 @@
 		<OPTIONALTALENT name="Zweitwaffe"/>
 		<DISCIPLINETALENT name="Schlachtruf"/>
 		<TALENTABILITY/>
+		<KARMA spend="für Schadensproben von Nahkampf- oder Wurfwaffen, größergleich dem Einhandgrößenlimit"/>
 		<ABILITY>Überwätigende Kraft</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
