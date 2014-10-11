@@ -56,7 +56,7 @@ public class ApplicationProperties {
 	private static Map<RulesetversionType,List<TRANSLATIONType>> NAMEGIVERTRANSLATIONS;
     private static KNACKS KNACKS = new KNACKS();
 	private static Map<ECERulesetLanguage,SPELLS> SPELLS;
-    private static NAMEGIVERS NAMEGIVERS = new NAMEGIVERS();
+    private static Map<ECERulesetLanguage,List<NAMEGIVERABILITYType>> NAMEGIVERS;
     private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
     private static ITEMS ITEMS = new ITEMS();
     private static HELP HELP = new HELP();
@@ -225,26 +225,26 @@ public class ApplicationProperties {
 	}
 
 	public List<NAMEGIVERABILITYType> getNamegivers() {
-		List<NAMEGIVERABILITYType> result = new ArrayList<NAMEGIVERABILITYType>();
-		for( NAMEGIVERABILITYType namegiver : NAMEGIVERS.getNAMEGIVER()) {
-			if( namegiver.getLang().equals(RULESETLANGUAGE.getLanguage()) ) result.add(namegiver);
+		List<NAMEGIVERABILITYType> result = NAMEGIVERS.get(RULESETLANGUAGE);
+		if( result == null ) {
+			throw new RuntimeException("There are no namegiver defined for rulesetversion '"+RULESETLANGUAGE.getRulesetversion()+"' and language '"+RULESETLANGUAGE.getLanguage()+"'.");
 		}
 		return result;
 	}
 
 	public NAMEGIVERABILITYType searchNamegiver(String namegiver, String origin) {
-		List<NAMEGIVERABILITYType> results = new ArrayList<NAMEGIVERABILITYType>();
-		for( NAMEGIVERABILITYType ng : NAMEGIVERS.getNAMEGIVER()) {
-			String name=translateNamegiver(ng.getName(),ng.getLang());
-			if( name.isEmpty() ) name=ng.getName();
-			List<String> origins=ng.getORIGIN();
-			if( name.equals(namegiver) && origins.contains(origin)) results.add(ng);
+		NAMEGIVERABILITYType fallbackresult=null;
+		for( NAMEGIVERABILITYType ng : getNamegivers()) {
+			if( ng.getName().equals(namegiver) ) {
+				if( ng.getORIGIN().contains(origin) ) return ng;
+				if( fallbackresult == null ) fallbackresult=ng;
+			}
 		}
-		for( NAMEGIVERABILITYType ng : results ) {
-			if( ng.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return ng;
+		if( fallbackresult == null ) {
+			throw new RuntimeException("There is no namegiver definition for: namegiver='"+namegiver+"'.");
 		}
-		if( results.isEmpty() ) throw new RuntimeException("There is no Namegiver definition for '"+namegiver+"' locatet in '"+origin+"'");
-		return results.get(0);
+		System.err.println("There is no namegiver definition for '"+namegiver+"' locatet in '"+origin+"'. Using '"+fallbackresult.getName()+"' locatet in '"+fallbackresult.getORIGIN()+"'.");
+		return fallbackresult;
 	}
 
 	public HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> getNamgiversByType() {
@@ -889,10 +889,20 @@ public class ApplicationProperties {
 				if( t.getLang().equals(RULESETLANGUAGE.getLanguage()) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
 			}
 
+			NAMEGIVERS=new HashMap<ECERulesetLanguage,List<NAMEGIVERABILITYType>>();
 			for(File configFile : selectallxmlfiles(new File(CONFIGDIR,"namegivers"))) {
 				System.out.println("Reading config file '" + configFile.getCanonicalPath() + "'");
 				NAMEGIVERS t = (NAMEGIVERS) unmarshaller.unmarshal(configFile);
-				if( t.getRulesetversion().equals(RULESETLANGUAGE.getRulesetversion()) ) NAMEGIVERS.getNAMEGIVER().addAll(t.getNAMEGIVER());
+				RulesetversionType rulesetversion = t.getRulesetversion();
+				for( NAMEGIVERABILITYType n : t.getNAMEGIVER() ) {
+					ECERulesetLanguage key = new ECERulesetLanguage(rulesetversion,n.getLang());
+					List<NAMEGIVERABILITYType> ng = NAMEGIVERS.get(key);
+					if( ng == null ) {
+						ng=new ArrayList<NAMEGIVERABILITYType>();
+						NAMEGIVERS.put(key, ng);
+					}
+					ng.add(n);
+				}
 			}
 
 			CHARACTERISTICS=new HashMap<RulesetversionType,ECECharacteristics>();
