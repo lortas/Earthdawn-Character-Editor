@@ -87,6 +87,7 @@
 		<SPELL type="nether" name="Staub zu Staub"/>
 		<SPELL type="nether" name="Verdorren"/>
 		<SPELL type="nether" name="Verdorren Umkehren"/>
+		<KARMA spend="den Malus eines Zaubers, den man wirkt, um 2 zu erhöhen"/>
 		<ABILITY>Blutbeschwörung</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
