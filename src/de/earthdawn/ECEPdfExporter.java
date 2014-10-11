@@ -26,7 +26,15 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
@@ -696,6 +704,303 @@ public class ECEPdfExporter {
 			result.add(item);
 		}
 		return result;
+	}
+
+	public void exportGeneric(EDCHARACTER edCharakter, File template, File outFile) throws DocumentException, IOException {
+		System.out.println("Reading template file: '" + template.getCanonicalPath() + "'");
+		CHARSHEETTEMPLATE fieldmap;
+		try {
+			Unmarshaller unmarshaller = JAXBContext.newInstance("de.earthdawn.data").createUnmarshaller();
+			fieldmap = (CHARSHEETTEMPLATE) unmarshaller.unmarshal(template);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+			return;
+		}
+		File pdfinputfile = new File( new File("templates"), fieldmap.getFilename() );
+		PdfReader reader = new PdfReader(new FileInputStream(pdfinputfile));
+		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
+		acroFields = stamper.getAcroFields();
+		CharacterContainer character = new CharacterContainer(edCharakter);
+// +++ DEBUG +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+		Set<String> fieldNames = acroFields.getFields().keySet();
+		fieldNames = new TreeSet<String>(fieldNames);
+		for( String fieldName : fieldNames ) {
+			acroFields.setField( fieldName, fieldName );
+		}
+// +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		APPEARANCEType appearance = character.getAppearance();
+		String race;
+		if( appearance.getOrigin().isEmpty() ) race = appearance.getRace();
+		else race = appearance.getRace()+" ("+appearance.getOrigin()+")";
+		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		Iterator<String> disciplineNames = character.getDisciplineNames().iterator();
+		Iterator<Integer> disciplineCircles = character.getDisciplineCircles().iterator();
+		int lpIncreaseDex = attributes.get(ATTRIBUTENameType.DEX).getLpincrease();
+		int lpIncreaseStr = attributes.get(ATTRIBUTENameType.STR).getLpincrease();
+		int lpIncreaseTou = attributes.get(ATTRIBUTENameType.TOU).getLpincrease();
+		int lpIncreasePer = attributes.get(ATTRIBUTENameType.PER).getLpincrease();
+		int lpIncreaseWil = attributes.get(ATTRIBUTENameType.WIL).getLpincrease();
+		int lpIncreaseCha = attributes.get(ATTRIBUTENameType.CHA).getLpincrease();
+		for( JAXBElement<?> f : fieldmap.getCurrentDateTimeOrNameOrDisciplineName() ) {
+			switch(f.getName().getLocalPart()) {
+			case "CurrentDateTime" :
+				acroFields.setField( (String)f.getValue() , CharacterContainer.getCurrentDateTime());
+				break;
+			case "Name" :
+				acroFields.setField( (String)f.getValue() , character.getName());
+				break;
+			case "Race" :
+				acroFields.setField( (String)f.getValue() , race);
+				break;
+			case "Age" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(appearance.getAge()) );
+				break;
+			case "Eyes" :
+				acroFields.setField( (String)f.getValue(), appearance.getEyes() );
+				break;
+			case "Gender" :
+				acroFields.setField( (String)f.getValue(), appearance.getGender().value() );
+				break;
+			case "Hair" :
+				acroFields.setField( (String)f.getValue(), appearance.getHair() );
+				break;
+			case "Height" :
+				acroFields.setField( (String)f.getValue(), String.valueOf(appearance.getHeight()) );
+				break;
+			case "Skin" :
+				acroFields.setField( (String)f.getValue(), appearance.getSkin() );
+				break;
+			case "Weight" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(appearance.getWeight()) );
+				break;
+			case "Passion" :
+				acroFields.setField( (String)f.getValue() , character.getPassion() );
+				break;
+			case "Player" :
+				acroFields.setField( (String)f.getValue() , character.getPlayer() );
+				break;
+			case "Movement" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getMovement().getGround()) );
+				break;
+			case "Carrying" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getCarrying().getCarrying()) );
+				break;
+			case "AttributeBaseDex" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getBasevalue()) );
+				break;
+			case "AttributeBaseStr" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.STR).getBasevalue()) );
+				break;
+			case "AttributeBaseTou" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getBasevalue()) );
+				break;
+			case "AttributeBasePer" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.PER).getBasevalue()) );
+				break;
+			case "AttributeBaseWil" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getBasevalue()) );
+				break;
+			case "AttributeBaseCha" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getBasevalue()) );
+				break;
+			case "AttributeCurrentDex" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()) );
+				break;
+			case "AttributeCurrentStr" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.STR).getCurrentvalue()) );
+				break;
+			case "AttributeCurrentTou" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getCurrentvalue()) );
+				break;
+			case "AttributeCurrentPer" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.PER).getCurrentvalue()) );
+				break;
+			case "AttributeCurrentWil" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getCurrentvalue()) );
+				break;
+			case "AttributeCurrentCha" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()) );
+				break;
+			case "AttributeStepDex" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getStep()) );
+				break;
+			case "AttributeStepStr" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.STR).getStep()) );
+				break;
+			case "AttributeStepTou" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getStep()) );
+				break;
+			case "AttributeStepPer" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.PER).getStep()) );
+				break;
+			case "AttributeStepWil" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getStep()) );
+				break;
+			case "AttributeStepCha" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getStep()) );
+				break;
+			case "AttributeDiceDex" :
+				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.DEX).getDice() );
+				break;
+			case "AttributeDiceStr" :
+				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.STR).getDice() );
+				break;
+			case "AttributeDiceTou" :
+				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.TOU).getDice() );
+				break;
+			case "AttributeDicePer" :
+				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.PER).getDice() );
+				break;
+			case "AttributeDiceWil" :
+				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.WIL).getDice() );
+				break;
+			case "AttributeDiceCha" :
+				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.CHA).getDice() );
+				break;
+			case "DisciplineName" :
+				if( disciplineNames.hasNext() ) {
+					acroFields.setField( (String)f.getValue() , disciplineNames.next() );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "DisciplineCircle" :
+				if( disciplineCircles.hasNext() ) {
+					acroFields.setField( (String)f.getValue() , String.valueOf(disciplineCircles.next()) );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "DefencePhysical" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getPhysical()) );
+				break;
+			case "DefenceSocial" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getSocial()) );
+				break;
+			case "DefenceMystic" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getSpell()) );
+				break;
+			case "DeathAdjustment" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getAdjustment()) );
+				break;
+			case "DeathBase" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getBase()) );
+				break;
+			case "DeathValue" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getValue()) );
+				break;
+			case "UnconsciousnessAdjustment" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getUnconsciousness().getAdjustment()) );
+				break;
+			case "UnconsciousnessBase" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getUnconsciousness().getBase()) );
+				break;
+			case "UnconsciousnessValue" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getUnconsciousness().getValue()) );
+				break;
+			case "RecoveryStep" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getRecovery().getStep()) );
+				break;
+			case "RecoveryDice" :
+				acroFields.setField( (String)f.getValue() , character.getRecovery().getDice() );
+				break;
+			case "RecoveryTestsperday" :
+				acroFields.setField( (String)f.getValue() ,  String.valueOf(character.getRecovery().getTestsperday()) );
+				break;
+			case "WoundThreshold" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getWound().getThreshold()) );
+				break;
+			case "BloodWound" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getHealth().getWOUNDS().getBlood()) );
+				break;
+			case "HealthDamage" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getHealth().getDamage()) );
+				break;
+			case "LegendPointsTotal" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getLegendPoints().getTotallegendpoints()) );
+				break;
+			case "LegendPointsCurrent" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
+				break;
+			case "LegendPointsRenown" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getLegendPoints().getRenown()) );
+				break;
+			case "LegendPointsReputation" :
+				acroFields.setField( (String)f.getValue() , character.getLegendPoints().getReputation() );
+				break;
+			case "InitiativeDice" :
+				acroFields.setField( (String)f.getValue() , character.getInitiative().getDice() );
+				break;
+			case "InitiativeStep" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getInitiative().getStep()) );
+				break;
+			case "LpincreaseDex" :
+				if( lpIncreaseDex > 0 ) {
+					lpIncreaseDex--;
+					acroFields.setField( (String)f.getValue() , "Yes" );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "LpincreaseStr" :
+				if( lpIncreaseStr > 0 ) {
+					lpIncreaseStr--;
+					acroFields.setField( (String)f.getValue() , "Yes" );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "LpincreaseTou" :
+				if( lpIncreaseTou > 0 ) {
+					lpIncreaseTou--;
+					acroFields.setField( (String)f.getValue() , "Yes" );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "LpincreasePer" :
+				if( lpIncreasePer > 0 ) {
+					lpIncreasePer--;
+					acroFields.setField( (String)f.getValue() , "Yes" );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "LpincreaseWil" :
+				if( lpIncreaseWil > 0 ) {
+					lpIncreaseWil--;
+					acroFields.setField( (String)f.getValue() , "Yes" );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "LpincreaseCha" :
+				if( lpIncreaseCha > 0 ) {
+					lpIncreaseCha--;
+					acroFields.setField( (String)f.getValue() , "Yes" );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			default :
+				System.err.println("Unhandled fieldname '"+f.getName().getLocalPart()+"' of class '"+f.getValue().getClass()+"'.");
+				break;
+			}
+		}
+		acroFields.setField( "LPIncrease.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getLpincrease()) );
+		acroFields.setField( "LPIncrease.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getLpincrease()) );
+		acroFields.setField( "LPIncrease.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getLpincrease()) );
+		acroFields.setField( "LPIncrease.3", String.valueOf(attributes.get(ATTRIBUTENameType.PER).getLpincrease()) );
+		acroFields.setField( "LPIncrease.4", String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getLpincrease()) );
+		acroFields.setField( "LPIncrease.5", String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getLpincrease()) );
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.DEX).getLpincrease(), 0);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.STR).getLpincrease(), 1);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.TOU).getLpincrease(), 2);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.PER).getLpincrease(), 3);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.WIL).getLpincrease(), 4);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.CHA).getLpincrease(), 5);
+
+		stamper.close();
 	}
 
 	public void exportAjfelMordom(EDCHARACTER edCharakter, int pdftype, File outFile) throws DocumentException, IOException {

@@ -282,6 +282,14 @@ public class EDMainWindow {
 		});
 		mntmPdfExport.add(mntmExportAjfelmordomPl);
 
+		JMenuItem mntmExportGeneric = new JMenuItem(NLS.getString("EDMainWindow.mntmExportGeneric.text")); //$NON-NLS-1$
+		mntmExportGeneric.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,4);
+			}
+		});
+		mntmPdfExport.add(mntmExportGeneric);
+
 		JMenuItem mntmExportSpellcards0 = new JMenuItem(NLS.getString("EDMainWindow.mntmExportSpellcards0.text")); //$NON-NLS-1$
 		mntmExportSpellcards0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -870,6 +878,7 @@ public class EDMainWindow {
 				case 1 : new ECEPdfExporter().exportRedbrickSimple(character.getEDCHARACTER(), selFile); break;
 				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 0, selFile); break;
 				case 3 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 1, selFile); break;
+				case 4 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ED4_de.xml"), selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 				if( Desktop.isDesktopSupported() ) {
