@@ -81,12 +81,8 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public CharacterContainer() {
 		character = new EDCHARACTER();
-		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
-			throw new RuntimeException("The character '"+character.getName()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
-		}
-		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
-			throw new RuntimeException("The character '"+character.getName()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
-		}
+		character.setRulesetversion(PROPERTIES.getRulesetLanguage().getRulesetversion());
+		character.setLang(PROPERTIES.getRulesetLanguage().getLanguage());
 	}
 
 	public CharacterContainer(EDCHARACTER c) {
@@ -276,37 +272,34 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public APPEARANCEType getAppearance() {
 		APPEARANCEType appearance = character.getAPPEARANCE();
-		if( appearance != null ) return appearance;
-		// If not found: create
-		appearance = new APPEARANCEType();
-		appearance.setRace("Human");
-		appearance.setOrigin("Barsaive");
-		appearance.setGender(GenderType.MALE);
-		appearance.setEyes("brown");
-		appearance.setAge(20);
-		appearance.setHair("black");
-		appearance.setHeight(5.5f);
-		appearance.setSkin("caucasian");
-		appearance.setWeight(176);
-		character.setAPPEARANCE(appearance);
+		if( appearance == null ) {
+			appearance = new APPEARANCEType();
+			character.setAPPEARANCE(appearance);
+		}
+		if( appearance.getRace() == null || appearance.getRace().isEmpty() ) appearance.setRace(PROPERTIES.translateNamegiver("Human",LanguageType.EN));
+		if( appearance.getOrigin() == null || appearance.getOrigin().isEmpty() ) appearance.setOrigin("Barsaive");
+		if( appearance.getEyes() == null || appearance.getEyes().isEmpty() ) appearance.setEyes("brown");
+		if( appearance.getEyes() == null || appearance.getEyes().isEmpty() ) appearance.setHair("black");
+		if( appearance.getEyes() == null || appearance.getEyes().isEmpty() ) appearance.setSkin("caucasian");
+		if( appearance.getGender() == null ) appearance.setGender(GenderType.MALE);
 		return appearance;
 	}
 
-	public HashMap<String, ATTRIBUTEType> getAttributes() {
+	public HashMap<ATTRIBUTENameType, ATTRIBUTEType> getAttributes() {
 		List<ATTRIBUTEType> attributelist = character.getATTRIBUTE();
-		HashMap<String,ATTRIBUTEType> attributes = new HashMap<String,ATTRIBUTEType>();
+		HashMap<ATTRIBUTENameType,ATTRIBUTEType> attributes = new HashMap<ATTRIBUTENameType,ATTRIBUTEType>();
 		for (ATTRIBUTEType attribute : attributelist ) {
-			attributes.put(attribute.getName().value(), attribute);
+			attributes.put(attribute.getName(), attribute);
 		}
 		for( ATTRIBUTENameType name : ATTRIBUTENameType.values() ) {
 			// Wenn das Attribut bereits exisitert, kein neues Setzen
-			if( attributes.containsKey(name.value())) continue;
+			if( attributes.containsKey(name)) continue;
 			// Das "Attribut" na soll nicht angefügt werden
 			if( name.equals(ATTRIBUTENameType.NA) ) continue;
 			ATTRIBUTEType attribute = new ATTRIBUTEType();
 			attribute.setName(name);
 			attributelist.add(attribute);
-			attributes.put(attribute.getName().value(), attribute);
+			attributes.put(attribute.getName(), attribute);
 		}
 		return attributes;
 	}
@@ -1830,17 +1823,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		APPEARANCEType appearance = getAppearance();
 		String race = appearance.getRace();
 		String origin = appearance.getOrigin();
-		NAMEGIVERABILITYType fallback = null;
-		for (NAMEGIVERABILITYType n : PROPERTIES.getNamegivers()) {
-			if( n.getName().equals(race)) {
-				// wenn der Rassenname übereinstimmt, dann könnte es schon mal passen
-				// und da wir "first-match" und nicht "last-match" haben wollen, setzen wir den fallback nur wenn er noch nicht gesetzt wurde
-				if( fallback==null ) fallback = n;
-				// aber erst wenn auch das Ursprungsgebiet zusammen passt haben wir unsere Rassendefinition
-				if( n.getORIGIN().contains(origin) ) return n;
-			}
-		}
-		return fallback;
+		return PROPERTIES.searchNamegiver(race, origin);
 	}
 
 	public void calculateMovement() {
@@ -1851,9 +1834,9 @@ public class CharacterContainer extends CharChangeRefresh {
 			movementFlight = namegiver.getMovementFlight();
 			movementGround = namegiver.getMovementGround();
 		}
-		HashMap<String, ATTRIBUTEType> attributes = getAttributes();
-		ATTRIBUTEType strength = attributes.get("STR");
-		ATTRIBUTEType dexterity = attributes.get("DEX");
+		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = getAttributes();
+		ATTRIBUTEType strength = attributes.get(ATTRIBUTENameType.STR);
+		ATTRIBUTEType dexterity = attributes.get(ATTRIBUTENameType.DEX);
 		int modStr=Math.round( (float)(strength.getCurrentvalue()-strength.getRacevalue()) / 3f );
 		int modDex=Math.round( (float)(dexterity.getCurrentvalue()-dexterity.getRacevalue()) / 3f );
 		switch(OptionalRule_AttributeBasedMovement) {
@@ -1887,7 +1870,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public void calculateCarrying() {
 		CARRYINGType carrying = getCarrying();
 		List<Integer> encumbrance = PROPERTIES_Characteristics.getENCUMBRANCE();
-		int strength=getAttributes().get("STR").getCurrentvalue();
+		int strength=getAttributes().get(ATTRIBUTENameType.STR).getCurrentvalue();
 		if( strength<1 ) {
 			// wenn Wert kleiner 1, dann keine Fehlermedung sondern einfach nur den Wert korrigieren 
 			strength=1;
@@ -2059,12 +2042,9 @@ public class CharacterContainer extends CharChangeRefresh {
 	public LanguageContainer getDefaultLanguages() {
 		String origin = getAppearance().getOrigin();
 		String race = getAppearance().getRace();
+		NAMEGIVERABILITYType namegiver = PROPERTIES.searchNamegiver(race,origin);
 		LanguageContainer defaultlanguages = new LanguageContainer(PROPERTIES.getDefaultLanguage(origin));
-		for( NAMEGIVERABILITYType namegiver : PROPERTIES.getNamegivers() ) {
-			if( namegiver.getName().equals(race) ) {
-				defaultlanguages.insertLanguages(namegiver.getDEFAULTLANGUAGE());
-			}
-		}
+		defaultlanguages.insertLanguages(namegiver.getDEFAULTLANGUAGE());
 		return defaultlanguages;
 	}
 

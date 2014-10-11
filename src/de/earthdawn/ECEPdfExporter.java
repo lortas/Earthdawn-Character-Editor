@@ -61,43 +61,43 @@ public class ECEPdfExporter {
 		acroFields.setField( "CharacterWeight" , String.valueOf(appearance.getWeight()) );
 		acroFields.setField( "Passion" , character.getPassion() );
 		acroFields.setField( "PlayerName" , character.getPlayer() );
-		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
-		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get("DEX").getBasevalue()) );
-		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get("STR").getBasevalue()) );
-		acroFields.setField( "AttributeBase.2", String.valueOf(attributes.get("TOU").getBasevalue()) );
-		acroFields.setField( "AttributeBase.3", String.valueOf(attributes.get("PER").getBasevalue()) );
-		acroFields.setField( "AttributeBase.4", String.valueOf(attributes.get("WIL").getBasevalue()) );
-		acroFields.setField( "AttributeBase.5", String.valueOf(attributes.get("CHA").getBasevalue()) );
-		acroFields.setField( "LPIncrease.0", String.valueOf(attributes.get("DEX").getLpincrease()) );
-		acroFields.setField( "LPIncrease.1", String.valueOf(attributes.get("STR").getLpincrease()) );
-		acroFields.setField( "LPIncrease.2", String.valueOf(attributes.get("TOU").getLpincrease()) );
-		acroFields.setField( "LPIncrease.3", String.valueOf(attributes.get("PER").getLpincrease()) );
-		acroFields.setField( "LPIncrease.4", String.valueOf(attributes.get("WIL").getLpincrease()) );
-		acroFields.setField( "LPIncrease.5", String.valueOf(attributes.get("CHA").getLpincrease()) );
-		setLpincreaseButtons(attributes.get("DEX").getLpincrease(), 0);
-		setLpincreaseButtons(attributes.get("STR").getLpincrease(), 1);
-		setLpincreaseButtons(attributes.get("TOU").getLpincrease(), 2);
-		setLpincreaseButtons(attributes.get("PER").getLpincrease(), 3);
-		setLpincreaseButtons(attributes.get("WIL").getLpincrease(), 4);
-		setLpincreaseButtons(attributes.get("CHA").getLpincrease(), 5);
-		acroFields.setField( "AttributeCurrent.0", String.valueOf(attributes.get("DEX").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.1", String.valueOf(attributes.get("STR").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.2", String.valueOf(attributes.get("TOU").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.3", String.valueOf(attributes.get("PER").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.4", String.valueOf(attributes.get("WIL").getCurrentvalue()) );
-		acroFields.setField( "AttributeCurrent.5", String.valueOf(attributes.get("CHA").getCurrentvalue()) );
-		acroFields.setField( "AttributeStep.0", String.valueOf(attributes.get("DEX").getStep()) );
-		acroFields.setField( "AttributeStep.1", String.valueOf(attributes.get("STR").getStep()) );
-		acroFields.setField( "AttributeStep.2", String.valueOf(attributes.get("TOU").getStep()) );
-		acroFields.setField( "AttributeStep.3", String.valueOf(attributes.get("PER").getStep()) );
-		acroFields.setField( "AttributeStep.4", String.valueOf(attributes.get("WIL").getStep()) );
-		acroFields.setField( "AttributeStep.5", String.valueOf(attributes.get("CHA").getStep()) );
-		acroFields.setField( "AttributeDice.0", attributes.get("DEX").getDice() );
-		acroFields.setField( "AttributeDice.1", attributes.get("STR").getDice() );
-		acroFields.setField( "AttributeDice.2", attributes.get("TOU").getDice() );
-		acroFields.setField( "AttributeDice.3", attributes.get("PER").getDice() );
-		acroFields.setField( "AttributeDice.4", attributes.get("WIL").getDice() );
-		acroFields.setField( "AttributeDice.5", attributes.get("CHA").getDice() );
+		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getBasevalue()) );
+		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getBasevalue()) );
+		acroFields.setField( "AttributeBase.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getBasevalue()) );
+		acroFields.setField( "AttributeBase.3", String.valueOf(attributes.get(ATTRIBUTENameType.PER).getBasevalue()) );
+		acroFields.setField( "AttributeBase.4", String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getBasevalue()) );
+		acroFields.setField( "AttributeBase.5", String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getBasevalue()) );
+		acroFields.setField( "LPIncrease.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getLpincrease()) );
+		acroFields.setField( "LPIncrease.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getLpincrease()) );
+		acroFields.setField( "LPIncrease.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getLpincrease()) );
+		acroFields.setField( "LPIncrease.3", String.valueOf(attributes.get(ATTRIBUTENameType.PER).getLpincrease()) );
+		acroFields.setField( "LPIncrease.4", String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getLpincrease()) );
+		acroFields.setField( "LPIncrease.5", String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getLpincrease()) );
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.DEX).getLpincrease(), 0);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.STR).getLpincrease(), 1);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.TOU).getLpincrease(), 2);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.PER).getLpincrease(), 3);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.WIL).getLpincrease(), 4);
+		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.CHA).getLpincrease(), 5);
+		acroFields.setField( "AttributeCurrent.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.3", String.valueOf(attributes.get(ATTRIBUTENameType.PER).getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.4", String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getCurrentvalue()) );
+		acroFields.setField( "AttributeCurrent.5", String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()) );
+		acroFields.setField( "AttributeStep.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getStep()) );
+		acroFields.setField( "AttributeStep.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getStep()) );
+		acroFields.setField( "AttributeStep.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getStep()) );
+		acroFields.setField( "AttributeStep.3", String.valueOf(attributes.get(ATTRIBUTENameType.PER).getStep()) );
+		acroFields.setField( "AttributeStep.4", String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getStep()) );
+		acroFields.setField( "AttributeStep.5", String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getStep()) );
+		acroFields.setField( "AttributeDice.0", attributes.get(ATTRIBUTENameType.DEX).getDice() );
+		acroFields.setField( "AttributeDice.1", attributes.get(ATTRIBUTENameType.STR).getDice() );
+		acroFields.setField( "AttributeDice.2", attributes.get(ATTRIBUTENameType.TOU).getDice() );
+		acroFields.setField( "AttributeDice.3", attributes.get(ATTRIBUTENameType.PER).getDice() );
+		acroFields.setField( "AttributeDice.4", attributes.get(ATTRIBUTENameType.WIL).getDice() );
+		acroFields.setField( "AttributeDice.5", attributes.get(ATTRIBUTENameType.CHA).getDice() );
 		acroFields.setField( "DefensePhysical", String.valueOf(character.getDefence().getPhysical()) );
 		acroFields.setField( "DefenseSocial", String.valueOf(character.getDefence().getSocial()) );
 		acroFields.setField( "DefenseSpell", String.valueOf(character.getDefence().getSpell()) );
@@ -269,7 +269,7 @@ public class ECEPdfExporter {
 			DISCIPLINEType discipline1=disciplines.get(0);
 			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
-			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+			HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 			int counter = 0;
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4) && (counter<9) ) {
@@ -494,7 +494,7 @@ public class ECEPdfExporter {
 			int counter = 0;
 			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
-			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+			HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4)  && (counter<9) )  counter =  9;
 				if( (talent.getCircle()>8)  && (counter<13) ) counter = 13;
@@ -523,7 +523,7 @@ public class ECEPdfExporter {
 			int counter = 36;
 			List<TALENTType> disziplinetalents = discipline2.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
-			HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+			HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4)  && (counter<44) ) counter = 44;
 				if( (talent.getCircle()>8)  && (counter<48) ) counter = 48;
@@ -751,7 +751,7 @@ public class ECEPdfExporter {
 		List<WEAPONType> weapons = character.getWeapons();
 		if( weapons != null ) {
 			int counter = 0;
-			ATTRIBUTEType str = character.getAttributes().get("STR");
+			ATTRIBUTEType str = character.getAttributes().get(ATTRIBUTENameType.STR);
 			for( WEAPONType weapon : weapons ) {
 				acroFields.setField( "Weapon."+counter, weapon.getName() );
 				acroFields.setField( "WeaponStrength."+counter, String.valueOf(str.getStep()) );
@@ -999,7 +999,7 @@ public class ECEPdfExporter {
 		counterEquipment++;
 	}
 
-	private void setTalent(int counter, TALENTType talent, HashMap<String,ATTRIBUTEType> attributes) throws DocumentException, IOException {
+	private void setTalent(int counter, TALENTType talent, HashMap<ATTRIBUTENameType,ATTRIBUTEType> attributes) throws DocumentException, IOException {
 		String talentname = talent.getName();
 		TALENTTEACHERType teacher = talent.getTEACHER();
 		String limitation="";

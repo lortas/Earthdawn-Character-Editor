@@ -48,7 +48,7 @@ public class ECEWorker {
 	public static boolean OptionalRule_NoNegativeKarmaMax=PROPERTIES.getOptionalRules().getATTRIBUTE().getLimitoneway().equals(YesnoType.YES);
 	public static int OptionalRule_MaxAttributeBuyPoints=PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints();
 	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
-	private HashMap<String, ATTRIBUTEType> characterAttributes=null;
+	private HashMap<ATTRIBUTENameType, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
 	private static PrintStream errorout = System.err;
 	private CharacterContainer character;
@@ -114,6 +114,12 @@ public class ECEWorker {
 		for (ATTRIBUTENAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
 			// Pro Atributt wird nun dessen Werte, Stufe und Würfel bestimmt
 			ATTRIBUTEType attribute = characterAttributes.get(raceattribute.getName());
+			if( attribute == null ) {
+				attribute=new ATTRIBUTEType();
+				attribute.setName(raceattribute.getName());
+				characterAttributes.put(raceattribute.getName(), attribute);
+				System.err.println("Character '"+character.getName()+"' do not have any attribute '"+raceattribute.getName()+"'");
+			}
 			attribute.setRacevalue(raceattribute.getValue());
 			attribute.setCost(berechneAttriubteCost(attribute.getGenerationvalue()));
 			int value = attribute.getRacevalue() + attribute.getGenerationvalue();
@@ -141,9 +147,9 @@ public class ECEWorker {
 
 		// **DEFENSE**
 		DEFENSEType defense = character.getDefence();
-		defense.setPhysical(berechneWiederstandskraft(characterAttributes.get("DEX").getCurrentvalue()));
-		defense.setSpell(berechneWiederstandskraft(characterAttributes.get("PER").getCurrentvalue()));
-		defense.setSocial(berechneWiederstandskraft(characterAttributes.get("CHA").getCurrentvalue()));
+		defense.setPhysical(berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()));
+		defense.setSpell(berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.PER).getCurrentvalue()));
+		defense.setSocial(berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()));
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
 			case PHYSICAL:
@@ -163,10 +169,10 @@ public class ECEWorker {
 
 		// **INITIATIVE**
 		// Setze alle Initiative Modifikatoren zurück, da diese im folgenden neu bestimmt werden.
-		character.resetInitiative(attribute2StepAndDice(characterAttributes.get("DEX").getCurrentvalue()));
+		character.resetInitiative(attribute2StepAndDice(characterAttributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()));
 
 		// **HEALTH**
-		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(characterAttributes.get("TOU").getCurrentvalue());
+		CHARACTERISTICSHEALTHRATING newhealth = bestimmeHealth(characterAttributes.get(ATTRIBUTENameType.TOU).getCurrentvalue());
 		character.clearBloodDamage();
 		DEATHType death=character.getDeath();
 		DEATHType unconsciousness=character.getUnconsciousness();
@@ -184,8 +190,8 @@ public class ECEWorker {
 		else wound.setPenalties(0);
 		RECOVERYType recovery = character.getRecovery();
 		recovery.setTestsperday(newhealth.getRecovery());
-		recovery.setStep(characterAttributes.get("TOU").getStep());
-		recovery.setDice(characterAttributes.get("TOU").getDice());
+		recovery.setStep(characterAttributes.get(ATTRIBUTENameType.TOU).getStep());
+		recovery.setDice(characterAttributes.get(ATTRIBUTENameType.TOU).getDice());
 
 		// **KARMA**
 		List<DISCIPLINEType> allDisciplines = character.getDisciplines();
@@ -370,7 +376,7 @@ public class ECEWorker {
 		else if(namgiverArmorPenalty<0) namegiverAbilities.add("armor penalty "+namgiverArmorPenalty+" *");
 		ARMORType naturalArmor = new ARMORType();
 		naturalArmor.setName(namegiverArmor.getName());
-		naturalArmor.setMysticarmor(namegiverMysticArmor+berechneMysticArmor(characterAttributes.get("WIL").getCurrentvalue()));
+		naturalArmor.setMysticarmor(namegiverMysticArmor+berechneMysticArmor(characterAttributes.get(ATTRIBUTENameType.WIL).getCurrentvalue()));
 		naturalArmor.setPhysicalarmor(namegiverPhysicalArmor);
 		naturalArmor.setPenalty(namgiverArmorPenalty);
 		naturalArmor.setUsed(namegiverArmor.getUsed());
@@ -421,7 +427,7 @@ public class ECEWorker {
 		// ** SPELLS **
 		// Bestimme die wieviele Zaubersprüche bei der Charactererschaffung kostenlos dazu kamen
 		// und wieviel ein SpellAbility pro Kreis pro Disziplin kostenlos dazukamen.
-		int freespellranks = attribute2StepAndDice(characterAttributes.get("PER").getBasevalue()).getStep();
+		int freespellranks = attribute2StepAndDice(characterAttributes.get(ATTRIBUTENameType.PER).getBasevalue()).getStep();
 		for( int sa : getDisciplineSpellAbility(diciplineCircle) ) freespellranks+=sa;
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			int usedSpellabilities=0;
@@ -582,7 +588,7 @@ public class ECEWorker {
 		if( OptionalRule_EnduringArmorByStrength ) {
 			int currentarmorpenalty = character.getInitiative().getArmorpenalty();
 			if( currentarmorpenalty>0 ) {
-				float strength = characterAttributes.get("STR").getCurrentvalue();
+				float strength = characterAttributes.get(ATTRIBUTENameType.STR).getCurrentvalue();
 				strength *= namegiver.getEnduringarmorfactor();
 				// neuer Stärkewert aufrunden und in der Tabelle für Mystische Armor nachschlagen
 				int relief=berechneMysticArmor(new Double(Math.ceil(strength)).intValue());
@@ -613,7 +619,7 @@ public class ECEWorker {
 		return character.getEDCHARACTER();
 	}
 
-	public static void calculateSkills(CharacterContainer character, HashMap<String, ATTRIBUTEType> characterAttributes, List<String> namegiverAbilities, CalculatedLPContainer calculatedLP) {
+	public static void calculateSkills(CharacterContainer character, HashMap<ATTRIBUTENameType,ATTRIBUTEType> characterAttributes, List<String> namegiverAbilities, CalculatedLPContainer calculatedLP) {
 		// StartRänge und MindestRänge für die SprachenSkills bestimmen
 		int[] startSpeakReadWrite = character.getDefaultLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
 		int[] currentSpeakReadWrite = character.getLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);

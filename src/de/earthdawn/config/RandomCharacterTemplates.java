@@ -149,7 +149,7 @@ public class RandomCharacterTemplates {
 		}
 		// Atributes
 		int attributeTotalWeight = 0;
-		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
+		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		for( RANDOMATTRIBUTESType attr : template.getATTRIBUTES() ) {
 			attributeTotalWeight+=attr.getWeight();
 		}

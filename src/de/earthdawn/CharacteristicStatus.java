@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import de.earthdawn.data.APPEARANCEType;
+import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.CALCULATEDLEGENDPOINTSType;
 import de.earthdawn.data.DEATHType;
@@ -53,16 +54,17 @@ public class CharacteristicStatus {
 		Map<String,Map<String,Object>> root = new HashMap<String,Map<String,Object>>();
 
 		node = new HashMap<String,Object>();
-		HashMap<String, ATTRIBUTEType> attributes = character.getAttributes();
-		for( String a : attributes.keySet() ) {
+		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		for( ATTRIBUTENameType a : attributes.keySet() ) {
 			Map<String,Object> values = new HashMap<String,Object>();
-			node.put(a, values);
+			node.put(a.value(), values);
 			ATTRIBUTEType attribute = attributes.get(a);
 			values.put( "basevalue", attribute.getBasevalue() );
 			values.put( "lpincrease", attribute.getLpincrease() );
 			values.put( "currentvalue", attribute.getCurrentvalue() );
 			values.put( "step", attribute.getStep() );
-			values.put( "dice", attribute.getDice() );
+			String dice = attribute.getDice();
+			values.put( "dice", (dice==null)?"NA":dice );
 		}
 		root.put("ATTRIBUTE", node);
 

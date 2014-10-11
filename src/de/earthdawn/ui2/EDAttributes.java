@@ -18,6 +18,8 @@ import javax.imageio.ImageIO;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.data.ATTRIBUTENameType;
+import de.earthdawn.data.ATTRIBUTEType;
 
 public class EDAttributes extends JPanel {
 	private static final long serialVersionUID = -6319723413147452999L;
@@ -102,7 +104,7 @@ class AttributesTableModel extends AbstractTableModel {
 	{"Willpower"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
 	{"Charisma"		, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
 	};
-	private String[] columnKey = {"DEX", "STR", "TOU", "PER", "WIL", "CHA"};
+	private ATTRIBUTENameType[] columnKey = {ATTRIBUTENameType.DEX, ATTRIBUTENameType.STR, ATTRIBUTENameType.TOU, ATTRIBUTENameType.PER, ATTRIBUTENameType.WIL, ATTRIBUTENameType.CHA};
 	public void setCharacter(CharacterContainer character) {
 		this.character = character;
 	}
@@ -127,14 +129,15 @@ class AttributesTableModel extends AbstractTableModel {
 		if (character == null){
 			return data[row][col];
 		}
+		ATTRIBUTEType attribute = character.getAttributes().get(columnKey[row]);
 		switch (col) {
 		case 0:  return data[row][col]; 
-		case 1:  return new Integer(character.getAttributes().get(columnKey[row]).getRacevalue());
-		case 2:  return new Integer(character.getAttributes().get(columnKey[row]).getGenerationvalue());
-		case 3:  return new Integer(character.getAttributes().get(columnKey[row]).getLpincrease());
-		case 4:  return new Integer(character.getAttributes().get(columnKey[row]).getCurrentvalue());
-		case 5:  return new Integer(character.getAttributes().get(columnKey[row]).getStep());
-		case 6:  return character.getAttributes().get(columnKey[row]).getDice();
+		case 1:  return new Integer(attribute.getRacevalue());
+		case 2:  return new Integer(attribute.getGenerationvalue());
+		case 3:  return new Integer(attribute.getLpincrease());
+		case 4:  return new Integer(attribute.getCurrentvalue());
+		case 5:  return new Integer(attribute.getStep());
+		case 6:  return (attribute.getDice()==null)?"NA":attribute.getDice();
 		default: return new Integer(0);
 	}
 }
