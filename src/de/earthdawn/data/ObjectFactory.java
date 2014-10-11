@@ -42,6 +42,92 @@ public class ObjectFactory {
     private final static QName _CHARACTERISTICSMYSTICARMOR_QNAME = new QName("http://earthdawn.com/characteristics", "MYSTICARMOR");
     private final static QName _CHARACTERISTICSATTRIBUTECOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTECOST");
     private final static QName _CHARACTERISTICSSKILLLPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "SKILLLPCOST");
+    private final static QName _CHARSHEETTEMPLATECurrentDateTime_QNAME = new QName("http://earthdawn.com/charsheettemplate", "CurrentDateTime");
+    private final static QName _CHARSHEETTEMPLATEArmorPhysical_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ArmorPhysical");
+    private final static QName _CHARSHEETTEMPLATERecoveryTestsperday_QNAME = new QName("http://earthdawn.com/charsheettemplate", "RecoveryTestsperday");
+    private final static QName _CHARSHEETTEMPLATEUnconsciousnessBase_QNAME = new QName("http://earthdawn.com/charsheettemplate", "UnconsciousnessBase");
+    private final static QName _CHARSHEETTEMPLATEPassion_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Passion");
+    private final static QName _CHARSHEETTEMPLATERecoveryDice_QNAME = new QName("http://earthdawn.com/charsheettemplate", "RecoveryDice");
+    private final static QName _CHARSHEETTEMPLATEAttributeStepCha_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepCha");
+    private final static QName _CHARSHEETTEMPLATEDisciplineCircle_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineCircle");
+    private final static QName _CHARSHEETTEMPLATEWeight_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Weight");
+    private final static QName _CHARSHEETTEMPLATEUnconsciousnessValue_QNAME = new QName("http://earthdawn.com/charsheettemplate", "UnconsciousnessValue");
+    private final static QName _CHARSHEETTEMPLATELpincreaseDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreaseDex");
+    private final static QName _CHARSHEETTEMPLATEArmorMystic_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ArmorMystic");
+    private final static QName _CHARSHEETTEMPLATELegendPointsTotal_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LegendPointsTotal");
+    private final static QName _CHARSHEETTEMPLATEInitiativeDice_QNAME = new QName("http://earthdawn.com/charsheettemplate", "InitiativeDice");
+    private final static QName _CHARSHEETTEMPLATESkill_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Skill");
+    private final static QName _CHARSHEETTEMPLATELegendPointsCurrent_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LegendPointsCurrent");
+    private final static QName _CHARSHEETTEMPLATEAttributeDicePer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDicePer");
+    private final static QName _CHARSHEETTEMPLATEWeaponShortrange_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponShortrange");
+    private final static QName _CHARSHEETTEMPLATEAttributeCurrentCha_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentCha");
+    private final static QName _CHARSHEETTEMPLATEWeaponName_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponName");
+    private final static QName _CHARSHEETTEMPLATELpincreaseTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreaseTou");
+    private final static QName _CHARSHEETTEMPLATEAttributeBaseDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseDex");
+    private final static QName _CHARSHEETTEMPLATEAttributeBaseTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseTou");
+    private final static QName _CHARSHEETTEMPLATECarrying_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Carrying");
+    private final static QName _CHARSHEETTEMPLATEDefenceMystic_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DefenceMystic");
+    private final static QName _CHARSHEETTEMPLATEArmorPenalty_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ArmorPenalty");
+    private final static QName _CHARSHEETTEMPLATEAttributeCurrentWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentWil");
+    private final static QName _CHARSHEETTEMPLATEAttributeStepDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepDex");
+    private final static QName _CHARSHEETTEMPLATEDisciplineBonusCircle_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineBonusCircle");
+    private final static QName _CHARSHEETTEMPLATEAttributeBasePer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBasePer");
+    private final static QName _CHARSHEETTEMPLATEGender_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Gender");
+    private final static QName _CHARSHEETTEMPLATEAttributeCurrentTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentTou");
+    private final static QName _CHARSHEETTEMPLATEWeaponAttackstep_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponAttackstep");
+    private final static QName _CHARSHEETTEMPLATEMovement_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Movement");
+    private final static QName _CHARSHEETTEMPLATEHair_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Hair");
+    private final static QName _CHARSHEETTEMPLATEWeaponTimesforged_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponTimesforged");
+    private final static QName _CHARSHEETTEMPLATEAttributeDiceCha_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDiceCha");
+    private final static QName _CHARSHEETTEMPLATEDeathAdjustment_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DeathAdjustment");
+    private final static QName _CHARSHEETTEMPLATEHeight_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Height");
+    private final static QName _CHARSHEETTEMPLATEAttributeDiceWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDiceWil");
+    private final static QName _CHARSHEETTEMPLATEDisciplineName_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineName");
+    private final static QName _CHARSHEETTEMPLATERace_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Race");
+    private final static QName _CHARSHEETTEMPLATEDefenceSocial_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DefenceSocial");
+    private final static QName _CHARSHEETTEMPLATEDeathBase_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DeathBase");
+    private final static QName _CHARSHEETTEMPLATEBloodWound_QNAME = new QName("http://earthdawn.com/charsheettemplate", "BloodWound");
+    private final static QName _CHARSHEETTEMPLATEAttributeStepTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepTou");
+    private final static QName _CHARSHEETTEMPLATEAttributeDiceTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDiceTou");
+    private final static QName _CHARSHEETTEMPLATEEyes_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Eyes");
+    private final static QName _CHARSHEETTEMPLATEWeaponLongrange_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponLongrange");
+    private final static QName _CHARSHEETTEMPLATEWeaponDamagestep_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponDamagestep");
+    private final static QName _CHARSHEETTEMPLATETalent_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Talent");
+    private final static QName _CHARSHEETTEMPLATEAttributeBaseWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseWil");
+    private final static QName _CHARSHEETTEMPLATEUnconsciousnessAdjustment_QNAME = new QName("http://earthdawn.com/charsheettemplate", "UnconsciousnessAdjustment");
+    private final static QName _CHARSHEETTEMPLATEDefencePhysical_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DefencePhysical");
+    private final static QName _CHARSHEETTEMPLATELpincreaseCha_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreaseCha");
+    private final static QName _CHARSHEETTEMPLATEAttributeCurrentStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentStr");
+    private final static QName _CHARSHEETTEMPLATEAttributeCurrentDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentDex");
+    private final static QName _CHARSHEETTEMPLATEAttributeStepWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepWil");
+    private final static QName _CHARSHEETTEMPLATEWoundThreshold_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WoundThreshold");
+    private final static QName _CHARSHEETTEMPLATEAttributeDiceStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDiceStr");
+    private final static QName _CHARSHEETTEMPLATEPlayer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Player");
+    private final static QName _CHARSHEETTEMPLATERecoveryStep_QNAME = new QName("http://earthdawn.com/charsheettemplate", "RecoveryStep");
+    private final static QName _CHARSHEETTEMPLATELpincreaseStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreaseStr");
+    private final static QName _CHARSHEETTEMPLATEKarmaMax_QNAME = new QName("http://earthdawn.com/charsheettemplate", "KarmaMax");
+    private final static QName _CHARSHEETTEMPLATELpincreaseWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreaseWil");
+    private final static QName _CHARSHEETTEMPLATEAge_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Age");
+    private final static QName _CHARSHEETTEMPLATEShieldPhysical_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ShieldPhysical");
+    private final static QName _CHARSHEETTEMPLATEHealthDamage_QNAME = new QName("http://earthdawn.com/charsheettemplate", "HealthDamage");
+    private final static QName _CHARSHEETTEMPLATEWeaponSize_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponSize");
+    private final static QName _CHARSHEETTEMPLATELegendPointsRenown_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LegendPointsRenown");
+    private final static QName _CHARSHEETTEMPLATEAttributeBaseCha_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseCha");
+    private final static QName _CHARSHEETTEMPLATEAttributeStepPer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepPer");
+    private final static QName _CHARSHEETTEMPLATEName_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Name");
+    private final static QName _CHARSHEETTEMPLATEWeaponAttribute_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponAttribute");
+    private final static QName _CHARSHEETTEMPLATEAttributeBaseStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseStr");
+    private final static QName _CHARSHEETTEMPLATEAttributeDiceDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDiceDex");
+    private final static QName _CHARSHEETTEMPLATEDisciplineBonusAbility_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineBonusAbility");
+    private final static QName _CHARSHEETTEMPLATEAttributeCurrentPer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentPer");
+    private final static QName _CHARSHEETTEMPLATELpincreasePer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreasePer");
+    private final static QName _CHARSHEETTEMPLATELegendPointsReputation_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LegendPointsReputation");
+    private final static QName _CHARSHEETTEMPLATEDeathValue_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DeathValue");
+    private final static QName _CHARSHEETTEMPLATEAttributeStepStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepStr");
+    private final static QName _CHARSHEETTEMPLATEInitiativeStep_QNAME = new QName("http://earthdawn.com/charsheettemplate", "InitiativeStep");
+    private final static QName _CHARSHEETTEMPLATEShieldMystic_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ShieldMystic");
+    private final static QName _CHARSHEETTEMPLATEKarmaCurrent_QNAME = new QName("http://earthdawn.com/charsheettemplate", "KarmaCurrent");
+    private final static QName _CHARSHEETTEMPLATESkin_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Skin");
     private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
     private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
 
@@ -50,6 +136,22 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link CHARSHEETTEMPLATE }
+     * 
+     */
+    public CHARSHEETTEMPLATE createCHARSHEETTEMPLATE() {
+        return new CHARSHEETTEMPLATE();
+    }
+
+    /**
+     * Create an instance of {@link CharsheettemplatetalentType }
+     * 
+     */
+    public CharsheettemplatetalentType createCharsheettemplatetalentType() {
+        return new CharsheettemplatetalentType();
     }
 
     /**
@@ -1053,6 +1155,780 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "SKILLLPCOST", scope = CHARACTERISTICS.class)
     public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSSKILLLPCOST(CHARACTERISTICSCOST value) {
         return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSSKILLLPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "CurrentDateTime", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATECurrentDateTime(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATECurrentDateTime_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "ArmorPhysical", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEArmorPhysical(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEArmorPhysical_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "RecoveryTestsperday", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATERecoveryTestsperday(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATERecoveryTestsperday_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "UnconsciousnessBase", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEUnconsciousnessBase(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEUnconsciousnessBase_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Passion", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEPassion(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEPassion_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "RecoveryDice", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATERecoveryDice(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATERecoveryDice_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepCha", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepCha(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepCha_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineCircle", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDisciplineCircle(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDisciplineCircle_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Weight", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeight(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeight_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "UnconsciousnessValue", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEUnconsciousnessValue(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEUnconsciousnessValue_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LpincreaseDex", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELpincreaseDex(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELpincreaseDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "ArmorMystic", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEArmorMystic(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEArmorMystic_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LegendPointsTotal", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELegendPointsTotal(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELegendPointsTotal_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "InitiativeDice", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEInitiativeDice(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEInitiativeDice_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CharsheettemplatetalentType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Skill", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<CharsheettemplatetalentType> createCHARSHEETTEMPLATESkill(CharsheettemplatetalentType value) {
+        return new JAXBElement<CharsheettemplatetalentType>(_CHARSHEETTEMPLATESkill_QNAME, CharsheettemplatetalentType.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LegendPointsCurrent", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELegendPointsCurrent(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELegendPointsCurrent_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDicePer", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDicePer(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDicePer_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponShortrange", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponShortrange(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponShortrange_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeCurrentCha", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeCurrentCha(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeCurrentCha_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponName", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponName(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponName_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LpincreaseTou", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELpincreaseTou(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELpincreaseTou_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeBaseDex", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeBaseDex(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeBaseDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeBaseTou", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeBaseTou(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeBaseTou_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Carrying", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATECarrying(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATECarrying_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DefenceMystic", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDefenceMystic(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDefenceMystic_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "ArmorPenalty", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEArmorPenalty(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEArmorPenalty_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeCurrentWil", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeCurrentWil(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeCurrentWil_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepDex", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepDex(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineBonusCircle", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDisciplineBonusCircle(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDisciplineBonusCircle_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeBasePer", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeBasePer(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeBasePer_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Gender", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEGender(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEGender_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeCurrentTou", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeCurrentTou(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeCurrentTou_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponAttackstep", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponAttackstep(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponAttackstep_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Movement", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEMovement(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEMovement_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Hair", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEHair(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEHair_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponTimesforged", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponTimesforged(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponTimesforged_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDiceCha", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDiceCha(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDiceCha_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DeathAdjustment", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDeathAdjustment(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDeathAdjustment_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Height", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEHeight(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEHeight_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDiceWil", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDiceWil(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDiceWil_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineName", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDisciplineName(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDisciplineName_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Race", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATERace(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATERace_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DefenceSocial", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDefenceSocial(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDefenceSocial_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DeathBase", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDeathBase(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDeathBase_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "BloodWound", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEBloodWound(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEBloodWound_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepTou", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepTou(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepTou_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDiceTou", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDiceTou(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDiceTou_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Eyes", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEEyes(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEEyes_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponLongrange", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponLongrange(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponLongrange_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponDamagestep", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponDamagestep(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponDamagestep_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CharsheettemplatetalentType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Talent", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<CharsheettemplatetalentType> createCHARSHEETTEMPLATETalent(CharsheettemplatetalentType value) {
+        return new JAXBElement<CharsheettemplatetalentType>(_CHARSHEETTEMPLATETalent_QNAME, CharsheettemplatetalentType.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeBaseWil", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeBaseWil(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeBaseWil_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "UnconsciousnessAdjustment", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEUnconsciousnessAdjustment(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEUnconsciousnessAdjustment_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DefencePhysical", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDefencePhysical(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDefencePhysical_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LpincreaseCha", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELpincreaseCha(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELpincreaseCha_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeCurrentStr", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeCurrentStr(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeCurrentStr_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeCurrentDex", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeCurrentDex(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeCurrentDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepWil", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepWil(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepWil_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WoundThreshold", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWoundThreshold(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWoundThreshold_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDiceStr", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDiceStr(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDiceStr_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Player", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEPlayer(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEPlayer_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "RecoveryStep", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATERecoveryStep(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATERecoveryStep_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LpincreaseStr", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELpincreaseStr(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELpincreaseStr_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "KarmaMax", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEKarmaMax(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEKarmaMax_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LpincreaseWil", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELpincreaseWil(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELpincreaseWil_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Age", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAge(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAge_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "ShieldPhysical", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEShieldPhysical(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEShieldPhysical_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "HealthDamage", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEHealthDamage(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEHealthDamage_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponSize", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponSize(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponSize_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LegendPointsRenown", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELegendPointsRenown(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELegendPointsRenown_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeBaseCha", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeBaseCha(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeBaseCha_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepPer", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepPer(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepPer_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Name", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEName(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEName_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponAttribute", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponAttribute(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponAttribute_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeBaseStr", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeBaseStr(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeBaseStr_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDiceDex", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDiceDex(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDiceDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineBonusAbility", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDisciplineBonusAbility(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDisciplineBonusAbility_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeCurrentPer", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeCurrentPer(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeCurrentPer_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LpincreasePer", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELpincreasePer(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELpincreasePer_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "LegendPointsReputation", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATELegendPointsReputation(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATELegendPointsReputation_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DeathValue", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEDeathValue(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEDeathValue_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepStr", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepStr(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepStr_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "InitiativeStep", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEInitiativeStep(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEInitiativeStep_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "ShieldMystic", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEShieldMystic(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEShieldMystic_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "KarmaCurrent", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEKarmaCurrent(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEKarmaCurrent_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Skin", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATESkin(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATESkin_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
     }
 
     /**
