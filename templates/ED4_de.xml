@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CHARSHEETTEMPLATE filename="" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/charsheettemplate ../config/charsheettemplate.xsd">
+	<CurrentDateTime></CurrentDateTime>
+	<Name>topmostSubform[0].Page1[0].Name[0]</Name>
+	<Race>topmostSubform[0].Page1[0].Race[0]</Race>
+	<Age>topmostSubform[0].Page1[0].Age[0]</Age>
+	<Eyes>topmostSubform[0].Page1[0].Eyes[0]</Eyes>
+	<Gender>topmostSubform[0].Page1[0].Gender[0]</Gender>
+	<Hair>topmostSubform[0].Page1[0].Hair[0]</Hair>
+	<Height>topmostSubform[0].Page1[0].Height[0]</Height>
+	<Skin>topmostSubform[0].Page1[0].Skin[0]</Skin>
+	<Weight>topmostSubform[0].Page1[0].CharacterWeight[0]</Weight>
+	<Passion>topmostSubform[0].Page1[0].Passion[0]</Passion>
+	<Player>topmostSubform[0].Page1[0].PlayerName[0]</Player>
+	<DisciplineName>topmostSubform[0].Page1[0].Discipline[0]</DisciplineName>
+	<DisciplineCircle>topmostSubform[0].Page1[0].Circle[0]</DisciplineCircle>
+	<AttributeBaseDex></AttributeBaseDex>
+	<AttributeBaseStr></AttributeBaseStr>
+	<AttributeBaseTou></AttributeBaseTou>
+	<AttributeBasePer></AttributeBasePer>
+	<AttributeBaseWil></AttributeBaseWil>
+	<AttributeBaseCha></AttributeBaseCha>
+	<AttributeCurrentDex>topmostSubform[0].Page1[0].AttributeCurrent\.1[0]</AttributeCurrentDex>
+	<AttributeCurrentStr>topmostSubform[0].Page1[0].AttributeCurrent\.0[0]</AttributeCurrentStr>
+	<AttributeCurrentTou>topmostSubform[0].Page1[0].AttributeCurrent\.2[0]</AttributeCurrentTou>
+	<AttributeCurrentPer>topmostSubform[0].Page1[0].AttributeCurrent\.3[0]</AttributeCurrentPer>
+	<AttributeCurrentWil>topmostSubform[0].Page1[0].AttributeCurrent\.4[0]</AttributeCurrentWil>
+	<AttributeCurrentCha>topmostSubform[0].Page1[0].AttributeCurrent\.5[0]</AttributeCurrentCha>
+	<AttributeStepDex>topmostSubform[0].Page1[0].AttributeStep\.0[0]</AttributeStepDex>
+	<AttributeStepStr>topmostSubform[0].Page1[0].AttributeStep\.1[0]</AttributeStepStr>
+	<AttributeStepTou>topmostSubform[0].Page1[0].AttributeStep\.2[0]</AttributeStepTou>
+	<AttributeStepPer>topmostSubform[0].Page1[0].AttributeStep\.3[0]</AttributeStepPer>
+	<AttributeStepWil>topmostSubform[0].Page1[0].AttributeStep\.4[0]</AttributeStepWil>
+	<AttributeStepCha>topmostSubform[0].Page1[0].AttributeStep\.5[0]</AttributeStepCha>
+	<AttributeDiceDex>topmostSubform[0].Page1[0].AttributeDice\.0[0]</AttributeDiceDex>
+	<AttributeDiceStr>topmostSubform[0].Page1[0].AttributeDice\.1[0]</AttributeDiceStr>
+	<AttributeDiceTou>topmostSubform[0].Page1[0].AttributeDice\.2[0]</AttributeDiceTou>
+	<AttributeDicePer>topmostSubform[0].Page1[0].AttributeDice\.3[0]</AttributeDicePer>
+	<AttributeDiceWil>topmostSubform[0].Page1[0].AttributeDice\.4[0]</AttributeDiceWil>
+	<AttributeDiceCha>topmostSubform[0].Page1[0].AttributeDice\.5[0]</AttributeDiceCha>
+	<LpincreaseDex>topmostSubform[0].Page1[0].LPIncrease\.0\.0[0]</LpincreaseDex>
+	<LpincreaseDex>topmostSubform[0].Page1[0].LPIncrease\.0\.1[0]</LpincreaseDex>
+	<LpincreaseDex>topmostSubform[0].Page1[0].LPIncrease\.0\.2[0]</LpincreaseDex>
+	<LpincreaseStr>topmostSubform[0].Page1[0].LPIncrease\.1\.0[0]</LpincreaseStr>
+	<LpincreaseStr>topmostSubform[0].Page1[0].LPIncrease\.1\.1[0]</LpincreaseStr>
+	<LpincreaseStr>topmostSubform[0].Page1[0].LPIncrease\.1\.2[0]</LpincreaseStr>
+	<LpincreaseTou>topmostSubform[0].Page1[0].LPIncrease\.2\.0[0]</LpincreaseTou>
+	<LpincreaseTou>topmostSubform[0].Page1[0].LPIncrease\.2\.1[0]</LpincreaseTou>
+	<LpincreaseTou>topmostSubform[0].Page1[0].LPIncrease\.2\.2[0]</LpincreaseTou>
+	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.1[0]</LpincreasePer>
+	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.0[0]</LpincreasePer>
+	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.2[0]</LpincreasePer>
+	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.1[0]</LpincreaseWil>
+	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.0[0]</LpincreaseWil>
+	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.2[0]</LpincreaseWil>
+	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.0[0]</LpincreaseCha>
+	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.2[0]</LpincreaseCha>
+	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.1[0]</LpincreaseCha>
+	<DefencePhysical>topmostSubform[0].Page1[0].DefensePhysical[0]</DefencePhysical>
+	<DefenceSocial>topmostSubform[0].Page1[0].DefenseSocial[0]</DefenceSocial>
+	<DefenceMystic>topmostSubform[0].Page1[0].DefenseMystic[0]</DefenceMystic>
+	<DeathAdjustment></DeathAdjustment>
+	<DeathBase></DeathBase>
+	<DeathValue>topmostSubform[0].Page1[0].DeathValue[0]</DeathValue>
+	<UnconsciousnessAdjustment></UnconsciousnessAdjustment>
+	<UnconsciousnessBase></UnconsciousnessBase>
+	<UnconsciousnessValue>topmostSubform[0].Page1[0].UnconsciousnessValue[0]</UnconsciousnessValue>
+	<RecoveryStep></RecoveryStep>
+	<RecoveryDice>topmostSubform[0].Page1[0].RecoveryDice[0]</RecoveryDice>
+	<RecoveryTestsperday>topmostSubform[0].Page1[0].RecoveryTestsPerDay[0]</RecoveryTestsperday>
+	<WoundThreshold>topmostSubform[0].Page1[0].WoundThreshold[0]</WoundThreshold>
+	<BloodWound>topmostSubform[0].Page1[0].BloodWound[0]</BloodWound>
+	<LegendPointsTotal>topmostSubform[0].Page1[0].TotalLegendPoints[0]</LegendPointsTotal>
+	<LegendPointsCurrent>topmostSubform[0].Page1[0].CurrentLegendPoints[0]</LegendPointsCurrent>
+	<LegendPointsRenown>topmostSubform[0].Page1[0].Renown[0]</LegendPointsRenown>
+	<LegendPointsReputation>topmostSubform[0].Page1[0].Reputation[0]</LegendPointsReputation>
+	<InitiativeDice></InitiativeDice>
+	<InitiativeStep>topmostSubform[0].Page1[0].InitiativeStep[0]</InitiativeStep>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.0[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.0[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.0[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.0[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.0[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.0[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.0[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.0[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.0[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.1[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.1[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.1[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.1[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.1[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.1[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.1[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.1[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.1[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.2[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.2[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.2[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.2[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.2[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.2[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.2[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.2[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.3[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.3[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.3[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.3[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.3[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.3[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.3[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.3[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.3[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.2[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.4[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.4[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.4[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.4[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.4[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.4[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.4[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.4[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.4[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.5[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.5[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.5[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.5[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.5[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.5[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.5[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.5[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.6[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.6[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.6[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.6[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.6[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.6[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.6[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.6[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.6[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.8[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.7[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.7[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.7[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.7[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.7[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.7[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.7[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.7[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.10[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.8[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.8[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.8[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.8[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.8[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.8[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.8[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.8[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.5[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.9[0]</Name> <Action>topmostSubform[0].Page1[0].Action\.9[0]</Action> <Strain>topmostSubform[0].Page1[0].Strain\.9[0]</Strain> <Attribute>topmostSubform[0].Page1[0].Attribute\.9[0]</Attribute> <AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.9[0]</AttributeStep> <Rank>topmostSubform[0].Page1[0].Rank\.9[0]</Rank> <Step>topmostSubform[0].Page1[0].Step\.9[0]</Step> <Dice>topmostSubform[0].Page1[0].ActionDice\.9[0]</Dice> <Page>topmostSubform[0].Page1[0].Page\.7[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.10[0]</Name><Action>topmostSubform[0].Page1[0].Action\.10[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.10[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.10[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.10[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.10[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.10[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.10[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.9[0]</Page> </Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.11[0]</Name><Action>topmostSubform[0].Page1[0].Action\.11[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.11[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.11[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.11[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.11[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.11[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.11[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.11[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.12[0]</Name><Action>topmostSubform[0].Page1[0].Action\.12[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.12[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.12[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.12[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.12[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.12[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.12[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.13[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.13[0]</Name><Action>topmostSubform[0].Page1[0].Action\.13[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.13[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.13[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.13[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.13[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.13[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.13[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.15[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.14[0]</Name><Action>topmostSubform[0].Page1[0].Action\.14[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.14[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.14[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.14[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.14[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.14[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.14[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.17[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.15[0]</Name><Action>topmostSubform[0].Page1[0].Action\.15[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.15[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.15[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.15[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.15[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.15[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.15[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.14[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.16[0]</Name><Action>topmostSubform[0].Page1[0].Action\.16[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.16[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.16[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.16[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.16[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.16[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.16[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.12[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.17[0]</Name><Action>topmostSubform[0].Page1[0].Action\.17[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.17[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.17[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.17[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.17[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.17[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.17[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.16[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.18[0]</Name><Action>topmostSubform[0].Page1[0].Action\.18[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.18[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.18[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.18[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.18[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.18[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.18[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.18[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.19[0]</Name><Action>topmostSubform[0].Page1[0].Action\.19[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.19[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.19[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.19[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.19[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.19[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.19[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.19[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.20[0]</Name><Action>topmostSubform[0].Page1[0].Action\.20[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.20[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.20[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.20[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.20[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.20[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.20[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.20[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.21[0]</Name><Action>topmostSubform[0].Page1[0].Action\.21[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.21[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.21[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.21[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.21[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.21[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.21[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.21[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.22[0]</Name><Action>topmostSubform[0].Page1[0].Action\.22[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.22[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.22[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.22[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.22[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.22[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.22[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.22[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.23[0]</Name><Action>topmostSubform[0].Page1[0].Action\.23[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.23[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.23[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.23[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.23[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.23[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.23[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.23[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.24[0]</Name><Action>topmostSubform[0].Page1[0].Action\.24[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.24[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.24[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.24[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.24[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.24[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.24[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.24[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.25[0]</Name><Action>topmostSubform[0].Page1[0].Action\.25[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.25[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.25[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.25[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.25[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.25[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.25[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.26[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.26[0]</Name><Action>topmostSubform[0].Page1[0].Action\.26[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.26[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.26[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.26[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.26[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.26[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.26[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.28[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.27[0]</Name><Action>topmostSubform[0].Page1[0].Action\.27[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.27[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.27[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.27[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.27[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.27[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.27[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.30[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.28[0]</Name><Action>topmostSubform[0].Page1[0].Action\.28[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.28[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.28[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.28[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.28[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.28[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.28[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.25[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.29[0]</Name><Action>topmostSubform[0].Page1[0].Action\.29[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.29[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.29[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.29[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.29[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.29[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.29[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.27[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.30[0]</Name><Action>topmostSubform[0].Page1[0].Action\.30[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.30[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.30[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.30[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.30[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.30[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.30[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.29[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.31[0]</Name><Action>topmostSubform[0].Page1[0].Action\.31[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.31[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.31[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.31[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.31[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.31[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.31[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.31[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.32[0]</Name><Action>topmostSubform[0].Page1[0].Action\.32[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.32[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.32[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.32[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.32[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.32[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.32[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.33[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.33[0]</Name><Action>topmostSubform[0].Page1[0].Action\.33[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.33[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.33[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.33[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.33[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.33[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.33[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.35[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.34[0]</Name><Action>topmostSubform[0].Page1[0].Action\.34[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.34[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.34[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.34[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.34[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.34[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.34[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.34[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.35[0]</Name><Action>topmostSubform[0].Page1[0].Action\.35[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.35[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.35[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.35[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.35[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.35[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.35[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.32[0]</Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.36[0]</Name><Action>topmostSubform[0].Page1[0].Action\.36[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.36[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.36[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.36[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.36[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.36[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.36[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.36[0]</Page></Talent>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.1[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.2[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.3[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.4[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.5[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.6[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.7[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.8[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.9[0]</AttributeStep> </Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.10[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.11[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.12[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.13[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.14[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.15[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.16[0]</AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep></AttributeStep></Skill>
+	<Skill><Name></Name><AttributeStep></AttributeStep></Skill>
+	<HealthDamage>topmostSubform[0].Page1[0].CurrentDamage[0]</HealthDamage>
+	<KarmaCurrent>topmostSubform[0].Page1[0].KarmaCurrent[0]</KarmaCurrent>
+	<KarmaMax>topmostSubform[0].Page1[0].KarmaMax[0]</KarmaMax>
+	<Movement>topmostSubform[0].Page1[0].MovementRate[0]</Movement>
+	<Carrying>topmostSubform[0].Page1[0].CarryingCapacity[0]</Carrying>
+	<ArmorMystic>topmostSubform[0].Page1[0].Mystic_Armor[0]</ArmorMystic>
+	<ArmorPhysical>topmostSubform[0].Page1[0].Physical_Armor[0]</ArmorPhysical>
+	<ArmorPenalty></ArmorPenalty>
+	<ShieldMystic>topmostSubform[0].Page1[0].Mystic_Shield[0]</ShieldMystic>
+	<ShieldPhysical>topmostSubform[0].Page1[0].Physical_Shield[0]</ShieldPhysical>
+	<DisciplineBonusCircle></DisciplineBonusCircle>
+	<DisciplineBonusAbility></DisciplineBonusAbility>
+	<WeaponName>topmostSubform[0].Page1[0].Weapon\.0[0]</WeaponName>
+	<WeaponName>topmostSubform[0].Page1[0].Weapon\.1[0]</WeaponName>
+	<WeaponName>topmostSubform[0].Page1[0].Weapon\.2[0]</WeaponName>
+	<WeaponName>topmostSubform[0].Page1[0].Weapon\.3[0]</WeaponName>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.0\.0[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.0\.1[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.0\.2[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.0\.3[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.1\.0[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.1\.1[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.1\.2[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\.1\.3[0]</WeaponAttackstep>
+	<WeaponAttackstep>topmostSubform[0].Page1[0].WeaponAttack\</WeaponAttackstep>
+	<WeaponSize></WeaponSize>
+	<WeaponTimesforged></WeaponTimesforged>
+	<WeaponShortrange>topmostSubform[0].Page1[0].WeaponRange\.0[0]</WeaponShortrange>
+	<WeaponShortrange>topmostSubform[0].Page1[0].WeaponRange\.1[0]</WeaponShortrange>
+	<WeaponShortrange>topmostSubform[0].Page1[0].WeaponRange\.2[0]</WeaponShortrange>
+	<WeaponShortrange>topmostSubform[0].Page1[0].WeaponRange\.3[0]</WeaponShortrange>
+	<WeaponLongrange></WeaponLongrange>
+	<WeaponAttribute>topmostSubform[0].Page1[0].WeaponStrength\.0[0]</WeaponAttribute>
+	<WeaponAttribute>topmostSubform[0].Page1[0].WeaponStrength\.1[0]</WeaponAttribute>
+	<WeaponAttribute>topmostSubform[0].Page1[0].WeaponStrength\.2[0]</WeaponAttribute>
+	<WeaponAttribute>topmostSubform[0].Page1[0].WeaponStrength\.3[0]</WeaponAttribute>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.1\.0[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.1\.1[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.1\.2[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.1\.3[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.0\.0[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.0\.1[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.0\.2[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\.0\.3[0]</WeaponDamagestep>
+	<WeaponDamagestep>topmostSubform[0].Page1[0].WeaponDamage\</WeaponDamagestep>
+</CHARSHEETTEMPLATE>
+<!--
+topmostSubform[0].Page1[0].Wounds\.4[0]
+topmostSubform[0].Page1[0].Wounds\.0[0]
+topmostSubform[0].Page1[0].Wounds\.5[0]
+topmostSubform[0].Page1[0].Wounds\.1[0]
+topmostSubform[0].Page1[0].Wounds\.6[0]
+topmostSubform[0].Page1[0].Wounds\.2[0]
+topmostSubform[0].Page1[0].Wounds\.7[0]
+topmostSubform[0].Page1[0].Wounds\.3[0]
+topmostSubform[0].Page1[0].Wounds\.8[0]
+topmostSubform[0].Page2[0].Portrait__Row_1[0]
+topmostSubform[0].Page2[0].___Row_1[0]
+topmostSubform[0].Page2[0].bonusability__Row_1[0]
+topmostSubform[0].Page2[0].circle__Row_1[0]
+topmostSubform[0].Page2[0].bonusability__Row_1_2[0]
+topmostSubform[0].Page2[0].___Row_2[0]
+topmostSubform[0].Page2[0].bonusability__Row_2[0]
+topmostSubform[0].Page2[0].circle__Row_2[0]
+topmostSubform[0].Page2[0].bonusability__Row_2_2[0]
+topmostSubform[0].Page2[0].___Row_3[0]
+topmostSubform[0].Page2[0].bonusability__Row_3[0]
+topmostSubform[0].Page2[0].circle__Row_3[0]
+topmostSubform[0].Page2[0].bonusability__Row_3_2[0]
+topmostSubform[0].Page2[0].___Row_4[0]
+topmostSubform[0].Page2[0].bonusability__Row_4[0]
+topmostSubform[0].Page2[0].circle__Row_4[0]
+topmostSubform[0].Page2[0].bonusability__Row_4_2[0]
+topmostSubform[0].Page2[0].___Row_5[0]
+topmostSubform[0].Page2[0].bonusability__Row_5[0]
+topmostSubform[0].Page2[0].circle__Row_5[0]
+topmostSubform[0].Page2[0].bonusability__Row_5_2[0]
+topmostSubform[0].Page2[0].___Row_6[0]
+topmostSubform[0].Page2[0].bonusability__Row_6[0]
+topmostSubform[0].Page2[0].circle__Row_6[0]
+topmostSubform[0].Page2[0].bonusability__Row_6_2[0]
+topmostSubform[0].Page2[0].___Row_7[0]
+topmostSubform[0].Page2[0].bonusability__Row_7[0]
+topmostSubform[0].Page2[0].circle__Row_7[0]
+topmostSubform[0].Page2[0].bonusability__Row_7_2[0]
+topmostSubform[0].Page2[0].Racial_abilities__readwrite[0]
+topmostSubform[0].Page2[0].Racial_abilities__readwrite_2[0]
+topmostSubform[0].Page2[0].Skill_name__Row_1[0]
+topmostSubform[0].Page2[0].action__Row_1_3[0]
+topmostSubform[0].Page2[0].strain__Row_1_3[0]
+topmostSubform[0].Page2[0].rank_39[0]
+topmostSubform[0].Page2[0].st_5[0]
+topmostSubform[0].Page2[0].ac_dice[0]
+topmostSubform[0].Page2[0].speak[0]
+topmostSubform[0].Page2[0].readwrite[0]
+topmostSubform[0].Page2[0].Racial_abilities[0]
+topmostSubform[0].Page2[0].Racial_abilities_2[0]
+topmostSubform[0].Page2[0].Skill_name__Row_2[0]
+topmostSubform[0].Page2[0].action__Row_2_3[0]
+topmostSubform[0].Page2[0].strain__Row_2_3[0]
+topmostSubform[0].Page2[0].rank_40[0]
+topmostSubform[0].Page2[0].st_6[0]
+topmostSubform[0].Page2[0].ac_dice_2[0]
+topmostSubform[0].Page2[0].speak_2[0]
+topmostSubform[0].Page2[0].readwrite_2[0]
+topmostSubform[0].Page2[0].Racial_abilities_3[0]
+topmostSubform[0].Page2[0].Racial_abilities_4[0]
+topmostSubform[0].Page2[0].Skill_name__Row_3[0]
+topmostSubform[0].Page2[0].action__Row_3_3[0]
+topmostSubform[0].Page2[0].strain__Row_3_3[0]
+topmostSubform[0].Page2[0].rank_41[0]
+topmostSubform[0].Page2[0].st_7[0]
+topmostSubform[0].Page2[0].ac_dice_3[0]
+topmostSubform[0].Page2[0].speak_3[0]
+topmostSubform[0].Page2[0].readwrite_3[0]
+topmostSubform[0].Page2[0].Skill_name__Row_4[0]
+topmostSubform[0].Page2[0].action__Row_4_3[0]
+topmostSubform[0].Page2[0].strain__Row_4_3[0]
+topmostSubform[0].Page2[0].rank_42[0]
+topmostSubform[0].Page2[0].st_8[0]
+topmostSubform[0].Page2[0].ac_dice_4[0]
+topmostSubform[0].Page2[0].speak_4[0]
+topmostSubform[0].Page2[0].readwrite_4[0]
+topmostSubform[0].Page2[0].Half_magic[0]
+topmostSubform[0].Page2[0].Skill_name__Row_5[0]
+topmostSubform[0].Page2[0].action__Row_5_3[0]
+topmostSubform[0].Page2[0].strain__Row_5_3[0]
+topmostSubform[0].Page2[0].rank_43[0]
+topmostSubform[0].Page2[0].st_9[0]
+topmostSubform[0].Page2[0].ac_dice_5[0]
+topmostSubform[0].Page2[0].speak_5[0]
+topmostSubform[0].Page2[0].readwrite_5[0]
+topmostSubform[0].Page2[0].Half_magic_2[0]
+topmostSubform[0].Page2[0].Skill_name__Row_6[0]
+topmostSubform[0].Page2[0].action__Row_6_3[0]
+topmostSubform[0].Page2[0].strain__Row_6_3[0]
+topmostSubform[0].Page2[0].rank_44[0]
+topmostSubform[0].Page2[0].st_10[0]
+topmostSubform[0].Page2[0].ac_dice_6[0]
+topmostSubform[0].Page2[0].speak_6[0]
+topmostSubform[0].Page2[0].readwrite_6[0]
+topmostSubform[0].Page2[0].Half_magic_3[0]
+topmostSubform[0].Page2[0].Skill_name__Row_7[0]
+topmostSubform[0].Page2[0].action__Row_7_3[0]
+topmostSubform[0].Page2[0].strain__Row_7_3[0]
+topmostSubform[0].Page2[0].rank_45[0]
+topmostSubform[0].Page2[0].st_11[0]
+topmostSubform[0].Page2[0].ac_dice_7[0]
+topmostSubform[0].Page2[0].speak_7[0]
+topmostSubform[0].Page2[0].readwrite_7[0]
+topmostSubform[0].Page2[0].Skill_name__Row_8[0]
+topmostSubform[0].Page2[0].action__Row_8_3[0]
+topmostSubform[0].Page2[0].strain__Row_8_3[0]
+topmostSubform[0].Page2[0].rank_46[0]
+topmostSubform[0].Page2[0].st_12[0]
+topmostSubform[0].Page2[0].ac_dice_8[0]
+topmostSubform[0].Page2[0].speak_8[0]
+topmostSubform[0].Page2[0].readwrite_8[0]
+topmostSubform[0].Page2[0].Faith_points[0]
+topmostSubform[0].Page2[0].Skill_name__Row_9[0]
+topmostSubform[0].Page2[0].action__Row_9_3[0]
+topmostSubform[0].Page2[0].strain__Row_9_3[0]
+topmostSubform[0].Page2[0].rank_47[0]
+topmostSubform[0].Page2[0].st_13[0]
+topmostSubform[0].Page2[0].ac_dice_9[0]
+topmostSubform[0].Page2[0].speak_9[0]
+topmostSubform[0].Page2[0].readwrite_9[0]
+topmostSubform[0].Page2[0].Skill_name__Row_10[0]
+topmostSubform[0].Page2[0].action__Row_10[0]
+topmostSubform[0].Page2[0].strain__Row_10[0]
+topmostSubform[0].Page2[0].rank_48[0]
+topmostSubform[0].Page2[0].st_14[0]
+topmostSubform[0].Page2[0].ac_dice_10[0]
+topmostSubform[0].Page2[0].speak_10[0]
+topmostSubform[0].Page2[0].readwrite_10[0]
+topmostSubform[0].Page2[0].Skill_name__Row_11[0]
+topmostSubform[0].Page2[0].action__Row_11_3[0]
+topmostSubform[0].Page2[0].strain__Row_11_3[0]
+topmostSubform[0].Page2[0].rank_49[0]
+topmostSubform[0].Page2[0].st_15[0]
+topmostSubform[0].Page2[0].ac_dice_11[0]
+topmostSubform[0].Page2[0].speak_11[0]
+topmostSubform[0].Page2[0].readwrite_11[0]
+topmostSubform[0].Page2[0].Type_of_armor[0]
+topmostSubform[0].Page2[0].iNI__PM[0]
+topmostSubform[0].Page2[0].Skill_name__Row_12[0]
+topmostSubform[0].Page2[0].action__Row_12_3[0]
+topmostSubform[0].Page2[0].strain__Row_12_3[0]
+topmostSubform[0].Page2[0].rank_50[0]
+topmostSubform[0].Page2[0].st_16[0]
+topmostSubform[0].Page2[0].ac_dice_12[0]
+topmostSubform[0].Page2[0].speak_12[0]
+topmostSubform[0].Page2[0].readwrite_12[0]
+topmostSubform[0].Page2[0].Type_of_armor_2[0]
+topmostSubform[0].Page2[0].iNI__PM_2[0]
+topmostSubform[0].Page2[0].Skill_name__Row_13[0]
+topmostSubform[0].Page2[0].action__Row_13_3[0]
+topmostSubform[0].Page2[0].strain__Row_13_3[0]
+topmostSubform[0].Page2[0].rank_51[0]
+topmostSubform[0].Page2[0].st_17[0]
+topmostSubform[0].Page2[0].ac_dice_13[0]
+topmostSubform[0].Page2[0].speak_13[0]
+topmostSubform[0].Page2[0].readwrite_13[0]
+topmostSubform[0].Page2[0].Type_of_armor_3[0]
+topmostSubform[0].Page2[0].iNI__PM_3[0]
+topmostSubform[0].Page2[0].Skill_name__Row_14[0]
+topmostSubform[0].Page2[0].action__Row_14_3[0]
+topmostSubform[0].Page2[0].strain__Row_14_3[0]
+topmostSubform[0].Page2[0].rank_52[0]
+topmostSubform[0].Page2[0].st_18[0]
+topmostSubform[0].Page2[0].ac_dice_14[0]
+topmostSubform[0].Page2[0].speak_14[0]
+topmostSubform[0].Page2[0].readwrite_14[0]
+topmostSubform[0].Page2[0].Type_of_armor_4[0]
+topmostSubform[0].Page2[0].iNI__PM_4[0]
+topmostSubform[0].Page2[0].Skill_name__Row_15[0]
+topmostSubform[0].Page2[0].action__Row_15_3[0]
+topmostSubform[0].Page2[0].strain__Row_15_3[0]
+topmostSubform[0].Page2[0].rank_53[0]
+topmostSubform[0].Page2[0].st_19[0]
+topmostSubform[0].Page2[0].ac_dice_15[0]
+topmostSubform[0].Page2[0].speak_15[0]
+topmostSubform[0].Page2[0].readwrite_15[0]
+topmostSubform[0].Page2[0].Type_of_armor_5[0]
+topmostSubform[0].Page2[0].iNI__PM_5[0]
+topmostSubform[0].Page2[0].Skill_name__Row_16[0]
+topmostSubform[0].Page2[0].action__Row_16_3[0]
+topmostSubform[0].Page2[0].strain__Row_16_3[0]
+topmostSubform[0].Page2[0].rank_54[0]
+topmostSubform[0].Page2[0].st_20[0]
+topmostSubform[0].Page2[0].ac_dice_16[0]
+topmostSubform[0].Page2[0].speak_16[0]
+topmostSubform[0].Page2[0].readwrite_16[0]
+topmostSubform[0].Page2[0].iNI__PM_6[0]
+topmostSubform[0].Page2[0].talent[0]
+topmostSubform[0].Page2[0].talent_2[0]
+topmostSubform[0].Page2[0].talent_3[0]
+topmostSubform[0].Page2[0].talent_4[0]
+topmostSubform[0].Page2[0].talent_5[0]
+topmostSubform[0].Page2[0].talent_6[0]
+topmostSubform[0].Page2[0].talent_7[0]
+topmostSubform[0].Page2[0].talent_8[0]
+topmostSubform[0].Page2[0].talent_9[0]
+topmostSubform[0].Page2[0].talent_10[0]
+topmostSubform[0].Page2[0].talent_11[0]
+topmostSubform[0].Page2[0].talent_12[0]
+topmostSubform[0].Page2[0].talent_13[0]
+topmostSubform[0].Page2[0].talent_14[0]
+topmostSubform[0].Page2[0].talent_15[0]
+topmostSubform[0].Page2[0].talent_16[0]
+topmostSubform[0].Page2[0].type__Row_1[0]
+topmostSubform[0].Page2[0].damage__Row_1[0]
+topmostSubform[0].Page2[0].Effect__Row_1[0]
+topmostSubform[0].Page2[0].object__Row_1[0]
+topmostSubform[0].Page2[0].rank__Row_1[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_1[0]
+topmostSubform[0].Page2[0].effect__Row_1[0]
+topmostSubform[0].Page2[0].type__Row_2[0]
+topmostSubform[0].Page2[0].damage__Row_2[0]
+topmostSubform[0].Page2[0].Effect__Row_2[0]
+topmostSubform[0].Page2[0].object__Row_2[0]
+topmostSubform[0].Page2[0].rank__Row_2[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_2[0]
+topmostSubform[0].Page2[0].effect__Row_2[0]
+topmostSubform[0].Page2[0].type__Row_3[0]
+topmostSubform[0].Page2[0].damage__Row_3[0]
+topmostSubform[0].Page2[0].Effect__Row_3[0]
+topmostSubform[0].Page2[0].object__Row_3[0]
+topmostSubform[0].Page2[0].rank__Row_3[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_3[0]
+topmostSubform[0].Page2[0].effect__Row_3[0]
+topmostSubform[0].Page2[0].type__Row_4[0]
+topmostSubform[0].Page2[0].damage__Row_4[0]
+topmostSubform[0].Page2[0].Effect__Row_4[0]
+topmostSubform[0].Page2[0].object__Row_4[0]
+topmostSubform[0].Page2[0].rank__Row_4[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_4[0]
+topmostSubform[0].Page2[0].effect__Row_4[0]
+topmostSubform[0].Page2[0].type__Row_5[0]
+topmostSubform[0].Page2[0].damage__Row_5[0]
+topmostSubform[0].Page2[0].Effect__Row_5[0]
+topmostSubform[0].Page2[0].object__Row_5[0]
+topmostSubform[0].Page2[0].rank__Row_5[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_5[0]
+topmostSubform[0].Page2[0].effect__Row_5[0]
+topmostSubform[0].Page2[0].type__Row_6[0]
+topmostSubform[0].Page2[0].damage__Row_6[0]
+topmostSubform[0].Page2[0].Effect__Row_6[0]
+topmostSubform[0].Page2[0].object__Row_6[0]
+topmostSubform[0].Page2[0].rank__Row_6[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_6[0]
+topmostSubform[0].Page2[0].effect__Row_6[0]
+topmostSubform[0].Page2[0].type__Row_7[0]
+topmostSubform[0].Page2[0].damage__Row_7[0]
+topmostSubform[0].Page2[0].Effect__Row_7[0]
+topmostSubform[0].Page2[0].object__Row_7[0]
+topmostSubform[0].Page2[0].rank__Row_7[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_7[0]
+topmostSubform[0].Page2[0].effect__Row_7[0]
+topmostSubform[0].Page2[0].type__Row_8[0]
+topmostSubform[0].Page2[0].damage__Row_8[0]
+topmostSubform[0].Page2[0].Effect__Row_8[0]
+topmostSubform[0].Page2[0].object__Row_8[0]
+topmostSubform[0].Page2[0].rank__Row_8[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_8[0]
+topmostSubform[0].Page2[0].effect__Row_8[0]
+topmostSubform[0].Page2[0].type__Row_9[0]
+topmostSubform[0].Page2[0].damage__Row_9[0]
+topmostSubform[0].Page2[0].Effect__Row_9[0]
+topmostSubform[0].Page2[0].object__Row_9[0]
+topmostSubform[0].Page2[0].rank__Row_9[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_9[0]
+topmostSubform[0].Page2[0].effect__Row_9[0]
+topmostSubform[0].Page2[0].type__Row_10[0]
+topmostSubform[0].Page2[0].damage__Row_10[0]
+topmostSubform[0].Page2[0].Effect__Row_10[0]
+topmostSubform[0].Page2[0].object__Row_10[0]
+topmostSubform[0].Page2[0].rank__Row_10[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_10[0]
+topmostSubform[0].Page2[0].effect__Row_10[0]
+topmostSubform[0].Page2[0].type__Row_11[0]
+topmostSubform[0].Page2[0].damage__Row_11[0]
+topmostSubform[0].Page2[0].Effect__Row_11[0]
+topmostSubform[0].Page2[0].object__Row_11[0]
+topmostSubform[0].Page2[0].rank__Row_11[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_11[0]
+topmostSubform[0].Page2[0].effect__Row_11[0]
+topmostSubform[0].Page2[0].type__Row_12[0]
+topmostSubform[0].Page2[0].damage__Row_12[0]
+topmostSubform[0].Page2[0].Effect__Row_12[0]
+topmostSubform[0].Page2[0].object__Row_12[0]
+topmostSubform[0].Page2[0].rank__Row_12[0]
+topmostSubform[0].Page2[0].Lp_cost__Row_12[0]
+topmostSubform[0].Page2[0].effect__Row_12[0]
+topmostSubform[0].Page2[0].equipment__Row_1[0]
+topmostSubform[0].Page2[0].equipment__Row_1_2[0]
+topmostSubform[0].Page2[0].copper_110[0]
+topmostSubform[0].Page2[0].equipment__Row_2[0]
+topmostSubform[0].Page2[0].equipment__Row_2_2[0]
+topmostSubform[0].Page2[0].equipment__Row_3[0]
+topmostSubform[0].Page2[0].equipment__Row_3_2[0]
+topmostSubform[0].Page2[0].equipment__Row_4[0]
+topmostSubform[0].Page2[0].equipment__Row_4_2[0]
+topmostSubform[0].Page2[0].equipment__Row_5[0]
+topmostSubform[0].Page2[0].equipment__Row_5_2[0]
+topmostSubform[0].Page2[0].Silver_1[0]
+topmostSubform[0].Page2[0].equipment__Row_6[0]
+topmostSubform[0].Page2[0].equipment__Row_6_2[0]
+topmostSubform[0].Page2[0].Gold_10[0]
+topmostSubform[0].Page2[0].equipment__Row_7[0]
+topmostSubform[0].Page2[0].equipment__Row_7_2[0]
+topmostSubform[0].Page2[0].equipment__Row_8[0]
+topmostSubform[0].Page2[0].equipment__Row_8_2[0]
+topmostSubform[0].Page2[0].equipment__Row_9[0]
+topmostSubform[0].Page2[0].equipment__Row_9_2[0]
+topmostSubform[0].Page2[0].equipment__Row_10[0]
+topmostSubform[0].Page2[0].equipment__Row_10_2[0]
+topmostSubform[0].Page2[0].equipment__Row_11[0]
+topmostSubform[0].Page2[0].equipment__Row_11_2[0]
+topmostSubform[0].Page2[0].equipment__Row_12[0]
+topmostSubform[0].Page2[0].equipment__Row_12_2[0]
+topmostSubform[0].Page2[0].equipment__Row_13[0]
+topmostSubform[0].Page2[0].equipment__Row_13_2[0]
+topmostSubform[0].Page2[0].equipment__Row_14[0]
+topmostSubform[0].Page2[0].equipment__Row_14_2[0]
+topmostSubform[0].Page2[0].equipment__Row_15[0]
+topmostSubform[0].Page2[0].equipment__Row_15_2[0]
+topmostSubform[0].Page2[0].other[0]
+topmostSubform[0].Page2[0].equipment__Row_16[0]
+topmostSubform[0].Page2[0].equipment__Row_16_2[0]
+topmostSubform[0].Page2[0].equipment__Row_17[0]
+topmostSubform[0].Page2[0].equipment__Row_17_2[0]
+topmostSubform[0].Page2[0].Water_and_food_supplies__Row_1[0]
+topmostSubform[0].Page2[0].equipment__Row_18[0]
+topmostSubform[0].Page2[0].equipment__Row_18_2[0]
+topmostSubform[0].Page2[0].Water_and_food_supplies__Row_2[0]
+topmostSubform[0].Page2[0].ShortDescription[0]
+topmostSubform[0].Page2[0].Attribut__Row_1_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_2_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_3_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_4_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_5_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_6_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_7_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_8_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_9_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_10_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_11_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_12_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_13_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_14_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_15_3[0]
+topmostSubform[0].Page2[0].Attribut__Row_16_3[0]
+-->

@@ -1,0 +1,112 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/charsheettemplate" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="charsheettemplatetalent_type">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Name"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Action"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Strain"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Attribute"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="AttributeStep"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Rank"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Step"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Dice"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Page"/>
+		</xs:sequence>
+		<xs:attribute type="xs:boolean" default="0" name="discipline"/>
+		<xs:attribute type="xs:boolean" default="0" name="free"/>
+		<xs:attribute type="xs:boolean" default="0" name="other"/>
+		<xs:attribute type="xs:boolean" default="0" name="versatility"/>
+	</xs:complexType>
+	<xs:element name="CHARSHEETTEMPLATE">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="CurrentDateTime" type="xs:string"/>
+				<xs:element name="Name" type="xs:string"/>
+				<xs:element name="DisciplineName" type="xs:string"/>
+				<xs:element name="DisciplineCircle" type="xs:string"/>
+				<xs:element name="Race" type="xs:string"/>
+				<xs:element name="Age" type="xs:string"/>
+				<xs:element name="Eyes" type="xs:string"/>
+				<xs:element name="Gender" type="xs:string"/>
+				<xs:element name="Hair" type="xs:string"/>
+				<xs:element name="Height" type="xs:string"/>
+				<xs:element name="Skin" type="xs:string"/>
+				<xs:element name="Weight" type="xs:string"/>
+				<xs:element name="Passion" type="xs:string"/>
+				<xs:element name="Player" type="xs:string"/>
+				<xs:element name="AttributeBaseDex" type="xs:string"/>
+				<xs:element name="AttributeBaseStr" type="xs:string"/>
+				<xs:element name="AttributeBaseTou" type="xs:string"/>
+				<xs:element name="AttributeBasePer" type="xs:string"/>
+				<xs:element name="AttributeBaseWil" type="xs:string"/>
+				<xs:element name="AttributeBaseCha" type="xs:string"/>
+				<xs:element name="AttributeCurrentDex" type="xs:string"/>
+				<xs:element name="AttributeCurrentStr" type="xs:string"/>
+				<xs:element name="AttributeCurrentTou" type="xs:string"/>
+				<xs:element name="AttributeCurrentPer" type="xs:string"/>
+				<xs:element name="AttributeCurrentWil" type="xs:string"/>
+				<xs:element name="AttributeCurrentCha" type="xs:string"/>
+				<xs:element name="AttributeStepDex" type="xs:string"/>
+				<xs:element name="AttributeStepStr" type="xs:string"/>
+				<xs:element name="AttributeStepTou" type="xs:string"/>
+				<xs:element name="AttributeStepPer" type="xs:string"/>
+				<xs:element name="AttributeStepWil" type="xs:string"/>
+				<xs:element name="AttributeStepCha" type="xs:string"/>
+				<xs:element name="AttributeDiceDex" type="xs:string"/>
+				<xs:element name="AttributeDiceStr" type="xs:string"/>
+				<xs:element name="AttributeDiceTou" type="xs:string"/>
+				<xs:element name="AttributeDicePer" type="xs:string"/>
+				<xs:element name="AttributeDiceWil" type="xs:string"/>
+				<xs:element name="AttributeDiceCha" type="xs:string"/>
+				<xs:element name="LpincreaseDex" type="xs:string"/>
+				<xs:element name="LpincreaseStr" type="xs:string"/>
+				<xs:element name="LpincreaseTou" type="xs:string"/>
+				<xs:element name="LpincreasePer" type="xs:string"/>
+				<xs:element name="LpincreaseWil" type="xs:string"/>
+				<xs:element name="LpincreaseCha" type="xs:string"/>
+				<xs:element name="DefencePhysical" type="xs:string"/>
+				<xs:element name="DefenceSocial" type="xs:string"/>
+				<xs:element name="DefenceMystic" type="xs:string"/>
+				<xs:element name="DeathAdjustment" type="xs:string"/>
+				<xs:element name="DeathBase" type="xs:string"/>
+				<xs:element name="DeathValue" type="xs:string"/>
+				<xs:element name="UnconsciousnessAdjustment" type="xs:string"/>
+				<xs:element name="UnconsciousnessBase" type="xs:string"/>
+				<xs:element name="UnconsciousnessValue" type="xs:string"/>
+				<xs:element name="RecoveryStep" type="xs:string"/>
+				<xs:element name="RecoveryDice" type="xs:string"/>
+				<xs:element name="RecoveryTestsperday" type="xs:string"/>
+				<xs:element name="WoundThreshold" type="xs:string"/>
+				<xs:element name="BloodWound" type="xs:string"/>
+				<xs:element name="LegendPointsTotal" type="xs:string"/>
+				<xs:element name="LegendPointsCurrent" type="xs:string"/>
+				<xs:element name="LegendPointsRenown" type="xs:string"/>
+				<xs:element name="LegendPointsReputation" type="xs:string"/>
+				<xs:element name="InitiativeDice" type="xs:string"/>
+				<xs:element name="InitiativeStep" type="xs:string"/>
+				<xs:element name="Talent" type="charsheettemplatetalent_type"/>
+				<xs:element name="Skill" type="charsheettemplatetalent_type"/>
+				<xs:element name="HealthDamage" type="xs:string"/>
+				<xs:element name="KarmaCurrent" type="xs:string"/>
+				<xs:element name="KarmaMax" type="xs:string"/>
+				<xs:element name="Movement" type="xs:string"/>
+				<xs:element name="Carrying" type="xs:string"/>
+				<xs:element name="ArmorMystic" type="xs:string"/>
+				<xs:element name="ArmorPhysical" type="xs:string"/>
+				<xs:element name="ShieldMystic" type="xs:string"/>
+				<xs:element name="ShieldPhysical" type="xs:string"/>
+				<xs:element name="ArmorPenalty" type="xs:string"/>
+				<xs:element name="DisciplineBonusCircle" type="xs:string"/>
+				<xs:element name="DisciplineBonusAbility" type="xs:string"/>
+				<xs:element name="WeaponName" type="xs:string"/>
+				<xs:element name="WeaponDamagestep" type="xs:string"/>
+				<xs:element name="WeaponSize" type="xs:string"/>
+				<xs:element name="WeaponTimesforged" type="xs:string"/>
+				<xs:element name="WeaponShortrange" type="xs:string"/>
+				<xs:element name="WeaponLongrange" type="xs:string"/>
+				<xs:element name="WeaponAttackstep" type="xs:string"/>
+				<xs:element name="WeaponAttribute" type="xs:string"/>
+			</xs:choice>
+			<xs:attribute name="filename" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
