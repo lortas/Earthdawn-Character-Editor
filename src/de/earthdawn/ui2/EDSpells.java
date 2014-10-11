@@ -166,9 +166,11 @@ class SpellsTableModel extends AbstractTableModel {
 				circlenr++;
 				if(circlenr>maxCircle) break;
 				for( DISCIPLINESPELLType disciplineSpell : disciplineSpells ) {
-					String spellKind = spellKindMap.get(disciplineSpell.getType());
 					// Wenn der SpruchType nicht bekannt ist, dann Überspringe das Einfügen
+					if( disciplineSpell.getType() == null) continue;
+					String spellKind=spellKindMap.get(disciplineSpell.getType());
 					if( spellKind == null ) continue;
+
 					// Wenn der SpruchType nicht zu einem der FadenwebenTalente passt, dann Überspringe das Einfügen
 					if( !threadweavingTypes.contains(spellKind)) continue;
 					SPELLDEFType spelldef = spells.get(disciplineSpell.getName());
