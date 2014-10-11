@@ -264,7 +264,11 @@ public class ApplicationProperties {
 	}
 
 	public ECECharacteristics getCharacteristics() {
-		return CHARACTERISTICS.get(RULESETLANGUAGE.getRulesetversion());
+		ECECharacteristics characteristics = CHARACTERISTICS.get(RULESETLANGUAGE.getRulesetversion());
+		if( characteristics == null ) {
+			throw new RuntimeException("Did not find any characteristics for ruleset '"+RULESETLANGUAGE.getRulesetversion()+"'.");
+		}
+		return characteristics;
 	}
 
 	public String step2Dice(int value) {
@@ -549,7 +553,8 @@ public class ApplicationProperties {
 				return spellTypeMap;
 			}
 		}
-		return null;
+		System.err.println("Could not find a SpellTypeMap for language='"+RULESETLANGUAGE.getLanguage().value()+"' and rulesetversion='"+RULESETLANGUAGE.getRulesetversion().value()+"'");
+		return new HashMap<SpellkindType,String>();
 	}
 
 	public HELP getHelp() {
