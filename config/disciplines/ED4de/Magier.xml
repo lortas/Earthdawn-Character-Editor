@@ -52,7 +52,7 @@
 		<SPELL type="wizard" name="Levitation"/>
 		<SPELL type="wizard" name="Magie Identifizieren"/>
 		<SPELL type="wizard" name="Magiermal"/>
-		<KARMA spend="um sich zu erinnern (einschl. Wissensproben)"/>
+		<KARMA spend="um sich zu erinnern - einschl. Wissensproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Eisener Wille"/>
