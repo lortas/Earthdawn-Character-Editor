@@ -88,7 +88,7 @@
 	<TALENT name="Diplomatie" attribute="CHA" action="sustained" skilluse="1"/>
 	<TALENT name="Doppelter Sturmangriff" attribute="DEX" action="simple" strain="1"/>
 	<TALENT name="Eiserne Konstitution" attribute="TOU" action="free"/>
-	<TALENT name="Eiserner Wille" attribute="WIL" action="free" strain="4"/>
+	<TALENT name="Eiserner Wille" attribute="WIL" action="free" strain="1"/>
 	<TALENT name="Eleganter Abgang" attribute="CHA" action="standard" skilluse="1"/>
 	<TALENT name="Elementarbann" attribute="WIL" action="standard" strain="1"/>
 	<TALENT name="Elementarsprachen" attribute="PER" action="standard" strain="1"/>
