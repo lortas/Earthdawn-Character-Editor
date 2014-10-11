@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Beastmaster" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acrobatic Defense"/>
+		<OPTIONALTALENT name="Animal Bond"/>
+		<OPTIONALTALENT name="Animal Training"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Enhance Animal Companion"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<DISCIPLINETALENT name="Avoid Blow"/>
+		<DISCIPLINETALENT name="Claw Shape"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Beast Weaving"/>
+		<DISCIPLINETALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Wilderness Survival"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Awareness"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Dominate Beast"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Recovery Tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Great Leap"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Companion Durability"/>
+		<OPTIONALTALENT name="Animal Possession"/>
+		<OPTIONALTALENT name="Battle Bellow"/>
+		<OPTIONALTALENT name="Call Animal Companion"/>
+		<OPTIONALTALENT name="Cobra Strike"/>
+		<OPTIONALTALENT name="Iron Constitution"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<DISCIPLINETALENT name="Blood Share"/>
+		<TALENTABILITY/>
+		<KARMA spend="on a Damage test made with unarmed combat"/>
+		<ABILITY>Cat's Grace</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Animal Talk"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Down Stride"/>
+		<TALENTABILITY/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Claw Frency"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Dealing with or caring for animals, including animal husbandry and first aid. Recognizing different animals, animal tracks, and abnormal behavior among animals/creatures</HALFMAGIC>
+</DISCIPLINE>

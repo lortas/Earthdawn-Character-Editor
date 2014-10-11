@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Thief" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<OPTIONALTALENT name="Taunt"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<FREETALENT name="Danger Sense"/>
+		<DISCIPLINETALENT name="Awareness"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Thief Weaving"/>
+		<DISCIPLINETALENT name="Lock Picking"/>
+		<DISCIPLINETALENT name="Picking Pockets"/>
+		<DISCIPLINETALENT name="Stealthy Stride"/>
+		<TALENTABILITY/>
+		<KARMA spend="on any Charisma-based test when the adept is attempting to deceive a target"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Disarm Trap"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Haggle"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Initiative tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Conceal Object"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Blade Juggle"/>
+		<OPTIONALTALENT name="Call Missile"/>
+		<OPTIONALTALENT name="Dead Fall"/>
+		<OPTIONALTALENT name="Direction Arrow"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Mimic Voice"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<DISCIPLINETALENT name="Engaging Banter"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Attack tests against a Surprised/Blindsided opponent"/>
+		<ABILITY>Shadowcloak</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Slough Blame"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Fast Hand"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="False Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Build or bypass security measures and recognize types of locking mechanisms</HALFMAGIC>
+</DISCIPLINE>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Cavalryman" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Battle Shout"/>
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Dominate Beast"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Sure Mount"/>
+		<DISCIPLINETALENT name="Animal Bond"/>
+		<DISCIPLINETALENT name="Charge"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Rider Weaving"/>
+		<DISCIPLINETALENT name="Trick Riding"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Animal Training"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Enhance Animal Companion"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Attack tests made while charging"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Call Animal Companion"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Companion Durability"/>
+		<OPTIONALTALENT name="Empathic Sense"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Fearsome Charge"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Missle Weapons"/>
+		<OPTIONALTALENT name="Mount Attack"/>
+		<OPTIONALTALENT name="Spirit Mount"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<DISCIPLINETALENT name="Armor Mount"/>
+		<TALENTABILITY/>
+		<KARMA spend="on any Damage tests made while mounted"/>
+		<ABILITY>One Soul, Two Bodies:</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Wheeling Attack"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Wheeling Defense"/>
+		<TALENTABILITY/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Double-Charge"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>For knowledge of types of mounts, upkeep of riding gear, animal husbandry and first aid, and knowledge of cavalry units in Barsaive</HALFMAGIC>
+</DISCIPLINE>

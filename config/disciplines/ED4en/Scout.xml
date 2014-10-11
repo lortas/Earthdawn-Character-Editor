@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Scout" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Anticipate Blow,"/>
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Lock Picking"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Read and Write Language"/>
+		<FREETALENT name="Navigation"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Scout Weaving"/>
+		<DISCIPLINETALENT name="Awareness"/>
+		<DISCIPLINETALENT name="Climbing"/>
+		<DISCIPLINETALENT name="Tracking"/>
+		<DISCIPLINETALENT name="Wilderness Survival"/>
+		<TALENTABILITY/>
+		<KARMA spend="on tests made to find something"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Stealthy Stride"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Direction Arrow"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Initiative tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Danger Sense"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Bond"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Spirit Mount"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<OPTIONALTALENT name="Tigerspring"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<DISCIPLINETALENT name="Evidence Analysis"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Recovery tests"/>
+		<ABILITY>Enhanced Senses</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Safe Path"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Orbiting Spy"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Recognize tracks and trails by Animals/Namegivers, know about the plants and creatures, even information on cultures across Barsaive.</HALFMAGIC>
+</DISCIPLINE>

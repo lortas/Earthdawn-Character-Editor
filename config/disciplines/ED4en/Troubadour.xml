@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Troubadour" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Impressive Display"/>
+		<OPTIONALTALENT name="Melee Weapons"/>
+		<OPTIONALTALENT name="Read and Write Language,"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Taunt"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<OPTIONALTALENT name="Winning Smile"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Story Weaving"/>
+		<DISCIPLINETALENT name="Emotion Song"/>
+		<DISCIPLINETALENT name="First Impression"/>
+		<DISCIPLINETALENT name="Heartening Laugh"/>
+		<DISCIPLINETALENT name="Item History"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Interaction tests"/>
+		<ABILITY>Entertainer</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Etiquette"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Empathic Sense"/>
+		<TALENTABILITY/>
+		<KARMA spend=" on any test to gain or recall information"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Research"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Blade Juggle"/>
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Engaging Banter"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Hypnotize"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Mimic Voice"/>
+		<DISCIPLINETALENT name="Inspire Others"/>
+		<TALENTABILITY/>
+		<KARMA spend="Once per round; to another character’s test by offering encouragement"/>
+		<ABILITY>One Last Word</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Lasting Impression"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Resist Taunt"/>
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Slough Blame"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Knowledge of legends, myths, folklore. Identify instruments and performing arts of different areas</HALFMAGIC>
+</DISCIPLINE>

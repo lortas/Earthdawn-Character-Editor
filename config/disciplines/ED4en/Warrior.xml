@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Warrior" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acrobatic Defense"/>
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Distract"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Shild Bash"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="War Weaving"/>
+		<DISCIPLINETALENT name="Avoid Blow"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Tigerspring"/>
+		<DISCIPLINETALENT name="Wood Skin"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Wound Balance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Air Dance"/>
+		<TALENTABILITY/>
+		<KARMA spend="on a Recovery test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Waterfall Slam"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Disarm"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Momentum Attack"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Steely Stare"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<DISCIPLINETALENT name="Earth Skin"/>
+		<TALENTABILITY/>
+		<KARMA spend="on any Damage test made in close combat"/>
+		<ABILITY>Battle Rites</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Temper Flesh"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Crushing Blow"/>
+		<TALENTABILITY/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Second Attack"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Repairing weapons/armor, knowledge of military tactics/strategy. Recall events of military history. Recognize warrior orders, ancient Warriors/Arms/Armor</HALFMAGIC>
+</DISCIPLINE>

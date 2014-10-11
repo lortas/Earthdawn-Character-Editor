@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Illusionist" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Dead Fall"/>
+		<OPTIONALTALENT name="Mimic Voice"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Standard Matrix"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Taunt"/>
+		<OPTIONALTALENT name="Winning Smile"/>
+		<FREETALENT name="Standard Matrix"/>
+		<FREETALENT name="Standard Matrix"/>
+		<DISCIPLINETALENT name="False Sight"/>
+		<DISCIPLINETALENT name="First Impression"/>
+		<DISCIPLINETALENT name="Patterncraft"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Illusionism"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Assuring Touch"/>
+		<SPELL type="illusion" name="Best Face"/>
+		<SPELL type="illusion" name="Cloak"/>
+		<SPELL type="illusion" name="Disaster"/>
+		<SPELL type="illusion" name="Encrypt"/>
+		<SPELL type="illusion" name="Ephemeral Bolt"/>
+		<SPELL type="illusion" name="Fun With Doors"/>
+		<SPELL type="illusion" name="Monstrous Mantle"/>
+		<SPELL type="illusion" name="Send Message"/>
+		<SPELL type="illusion" name="True Ephemeral Bolt"/>
+		<SPELL type="illusion" name="Trust"/>
+		<SPELL type="illusion" name="Unseen Voices"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="True Sight"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Blindness"/>
+		<SPELL type="illusion" name="Displace Image"/>
+		<SPELL type="illusion" name="Innocent Activity"/>
+		<SPELL type="illusion" name="Mind Fog"/>
+		<SPELL type="illusion" name="Phantom Flame"/>
+		<SPELL type="illusion" name="See the Unseen"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Conversation"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="And Then I Woke Up"/>
+		<SPELL type="illusion" name="Blinding Glare"/>
+		<SPELL type="illusion" name="Fog of Jeer"/>
+		<SPELL type="illusion" name="Nobody Here"/>
+		<SPELL type="illusion" name="Phantom Warrior"/>
+		<KARMA spend="on Interaction tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Disguise Self"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Clarion Call"/>
+		<SPELL type="illusion" name="Great Weapon"/>
+		<SPELL type="illusion" name="Notice Not"/>
+		<SPELL type="illusion" name="Phantom Lightning"/>
+		<SPELL type="illusion" name="Stop Right There"/>
+		<SPELL type="illusion" name="Suffocation"/>
+		<SPELL type="illusion" name="Unmask"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Dispel Magic"/>
+		<OPTIONALTALENT name="Engaging Banter"/>
+		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Fast Hand"/>
+		<OPTIONALTALENT name="Frighten"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Slough Blame"/>
+		<OPTIONALTALENT name="steel Tought"/>
+		<OPTIONALTALENT name="Tenacious Weave"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix"/>
+		<DISCIPLINETALENT name="Power Mask"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Bond of Silence"/>
+		<SPELL type="illusion" name="Eye of Truth"/>
+		<SPELL type="illusion" name="Illusion"/>
+		<SPELL type="illusion" name="Phantom Fireball"/>
+		<SPELL type="illusion" name="Presto!"/>
+		<SPELL type="illusion" name="Switch"/>
+		<KARMA spend="Add a +2 bonus to a spell’s Effect Step. The bonus lasts for the full spell duration"/>
+		<ABILITY>Glamour</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willforce"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Astral Shadow"/>
+		<SPELL type="illusion" name="Chosen Path"/>
+		<SPELL type="illusion" name="Flying Carpet"/>
+		<SPELL type="illusion" name="Illusory Missiles"/>
+		<SPELL type="illusion" name="Memory Scribe"/>
+		<SPELL type="illusion" name="True Missiles"/>
+		<SPELL type="illusion" name="True Switch"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Hypnotize"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Dancing Dragon"/>
+		<SPELL type="illusion" name="Silent Stampede"/>
+		<SPELL type="illusion" name="Stampede"/>
+		<SPELL type="illusion" name="Twisted Tongues"/>
+		<SPELL type="illusion" name="Vertigo"/>
+		<SPELL type="illusion" name="Walk Through"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Hold Thread"/>
+		<TALENTABILITY/>
+		<SPELL type="illusion" name="Face Lift"/>
+		<SPELL type="illusion" name="Form Exchange"/>
+		<SPELL type="illusion" name="Other Place"/>
+		<SPELL type="illusion" name="Rebel Limb"/>
+		<SPELL type="illusion" name="Shadow Spell"/>
+		<SPELL type="illusion" name="Stench"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Recognize different types of magic use, illusion magic as well and when attempting to perceive the “truth” of a given situation</HALFMAGIC>
+</DISCIPLINE>

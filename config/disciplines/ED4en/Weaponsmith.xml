@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Weaponsmith" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Disarm Trap"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Shield Bash"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Read and Write Language"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Thread Smithing"/>
+		<DISCIPLINETALENT name="Forge Weapon"/>
+		<DISCIPLINETALENT name="Item History"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Steel Tought"/>
+		<TALENTABILITY/>
+		<KARMA spend="on any test to craft or repair an item"/>
+		<ABILITY>Craftsman</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Conversation"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Supress Curse"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Recovery tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Wound Balance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Battle Shout"/>
+		<OPTIONALTALENT name="Diplomacy"/>
+		<OPTIONALTALENT name="Earth Skin"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Fire Heal"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Iron Constitution"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Missile Weapons"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<DISCIPLINETALENT name="Forge Armor"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Damage tests made with a weapon the adept crafted"/>
+		<ABILITY>Traveling Smithy</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Temper Flesh"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Spot Armor Flaw"/>
+		<TALENTABILITY/>
+		<RECOVERYTESTSTEP/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Lion Heart"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Caring for weapons/armor, to recognize types of weapons/armor used by different races or their creators</HALFMAGIC>
+</DISCIPLINE>
