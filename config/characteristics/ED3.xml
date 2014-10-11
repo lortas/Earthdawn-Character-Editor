@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CHARACTERISTICS xmlns="http://earthdawn.com/characteristics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/characteristics ../earthdawncharacteristics.xsd">
+<CHARACTERISTICS rulesetversion="ED3" xmlns="http://earthdawn.com/characteristics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/characteristics ../earthdawncharacteristics.xsd">
   <ENCUMBRANCE attribute="0" carrying="0"/>
   <ENCUMBRANCE attribute="1" carrying="5"/>
   <ENCUMBRANCE attribute="2" carrying="10"/>
