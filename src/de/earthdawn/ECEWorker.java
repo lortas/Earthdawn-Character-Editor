@@ -199,20 +199,30 @@ public class ECEWorker {
 			errorout.println("Karmaritual talent name is not defined for selected language.");
 		} else if( ! allDisciplines.isEmpty() ) {
 			TALENTType karmaritualTalent = null;
-			for( TALENTType talent : character.getTalentByName(karmaritualName) ) {
-				if( talent.getRealigned() == 0 ) {
-					karmaritualTalent=talent;
-					break;
+			if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_3)) {
+				for( TALENTType talent : character.getTalentByName(karmaritualName) ) {
+					if( talent.getRealigned() == 0 ) {
+						karmaritualTalent=talent;
+						break;
+					}
+				}
+			} else if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_4)) {
+				karmaritualTalent = new TALENTType();
+				karmaritualTalent.setName(karmaritualName);
+				RANKType rank = new RANKType();
+				rank.setRank(0);
+				karmaritualTalent.setRANK(rank);
+				for( DISCIPLINEType d : allDisciplines ) {
+					rank.setRank(rank.getRank()+d.getCircle());
 				}
 			}
-			if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_3)) {
-				if(karmaritualTalent == null ) {
-					errorout.println("No Karmaritual ("+karmaritualName+") could be found.");
-				}
-				int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
-				if( OptionalRule_KarmaLegendPointCost ) {
-					calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
-				}
+
+			if(karmaritualTalent == null ) {
+				errorout.println("No Karmaritual ("+karmaritualName+") could be found.");
+			}
+			int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
+			if( (calculatedKarmaLP!=0) && OptionalRule_KarmaLegendPointCost ) {
+				calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
 			}
 		}
 
@@ -923,15 +933,15 @@ public class ECEWorker {
 
 	private static int calculateKarma(KARMAType karma, TALENTType karmaritualTalent, int karmaModifier, int karmaMaxBonus) {
 		karma.setMaxmodificator(karmaMaxBonus);
+		if( karmaritualTalent == null ) {
+			errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
+		} else {
+			int rank = ( karmaritualTalent.getRANK() == null ) ? 0 : karmaritualTalent.getRANK().getRank();
+			karma.setMax( karmaMaxBonus + (karmaModifier * rank) );
+		}
+		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
+		karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
 		if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_3)) {
-			if( karmaritualTalent == null ) {
-				errorout.println("No karmaritual talent found, skipping maximal karma calculation.");
-			} else {
-				int rank = ( karmaritualTalent.getRANK() == null ) ? 0 : karmaritualTalent.getRANK().getRank();
-				karma.setMax( karmaMaxBonus + (karmaModifier * rank) );
-			}
-			List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
-			karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
 			return 10*k.get(0); // KarmaLP
 		} else {
 			// in ED4 sind Karma punkte kosten los. Damit benötigt man keine Buchhaltung der Karmapunkte.
