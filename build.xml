@@ -119,6 +119,7 @@
 			<zipfileset file="./examples/Player's_Guide_First_Circle_Troll_Illusionist.xml" prefix="examples"/>
 			<zipfileset file="./examples/Player's_Guide_First_Circle_T'Skrang_Swordmaster.xml" prefix="examples"/>
 			<zipfileset file="./examples/Player's_Guide_First_Circle_Windling_Thief.xml" prefix="examples"/>
+			<zipfileset file="./examples/ED4de_Spielerhandbuch_BeispielChar_*.xml" prefix="examples"/>
 			<zipfileset dir="./cmd"/>
 			<zipfileset file="./license.en.txt"/>
 			<zipfileset file="./license.en.html"/>
