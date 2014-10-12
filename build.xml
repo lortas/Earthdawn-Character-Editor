@@ -73,10 +73,10 @@
 				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
 				<attribute name="Class-Path" value="${lib}/itextpdf-5.2.1.jar ${lib}/itext-xtra-5.2.1.jar ${lib}/freemarker.jar ${lib}/gson-2.2.1.jar ${lib}/miglayout-4.0-swing.jar"/>
 				<section name="common">
-					<attribute name="Build-By" value="${imp.build}" />
+					<attribute name="Build-By" value="lortas" />
 					<attribute name="Build-Date" value="${cur.date}" />
-					<attribute name="Implementation-Title" value="${imp.title}" />
-					<attribute name="Implementation-Version" value="${imp.version}" />
+					<attribute name="Implementation-Title" value="Earthdawn Character Editor" />
+					<attribute name="Implementation-Version" value="0.47" />
 				</section>
 			</manifest>
 		</jar>
