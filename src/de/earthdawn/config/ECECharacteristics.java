@@ -36,17 +36,15 @@ import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
 import de.earthdawn.data.CHARACTERISTICSNEWDISCIPLINETALENTCOST;
 import de.earthdawn.data.CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
-import de.earthdawn.data.ROLLEDDICEType;
-
 
 public class ECECharacteristics {
 
-	private static CHARACTERISTICS CHARACTERISTICS = null;
+	private CHARACTERISTICS CHARACTERISTICS = null;
 
 	public ECECharacteristics(CHARACTERISTICS c) {
 		CHARACTERISTICS = c;
 	}
-	
+
 	public List<Integer> getENCUMBRANCE() {
 		List<Integer> result = new ArrayList<Integer>();
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
