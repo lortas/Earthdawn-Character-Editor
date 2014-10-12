@@ -31,7 +31,7 @@ public class EarthdawnCharacterEditor {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private static final File LASTEDITEDCHARACTER = new File("lasteditedcharacter.xml");
 	private static List<String> commandlineargs = new ArrayList<String>();
-	public static final String VERSION="0.47";
+	public static final String VERSION=System.class.getPackage().getImplementationVersion();
 
 	public static void main(String[] args) {
 		commandlineargs = new ArrayList<String>(Arrays.asList(args));
