@@ -43,8 +43,13 @@ public class ECECapabilities {
 		for (JAXBElement<CAPABILITYType> element : capabilities) {
 			if (element.getName().getLocalPart().equals("TALENT")) {
 				CAPABILITYType talent = (CAPABILITYType)element.getValue();
+				String talentName = talent.getName();
 				talentList.add(talent);
-				talentMap.put(talent.getName(), talent);
+				talentMap.put(talentName, talent);
+				if( (talent.getSkilluse() > 0) &&  !skillMap.containsKey(talentName) ) {
+					skillList.add(talent);
+					skillMap.put(talentName,talent);
+				}
 			} else if (element.getName().getLocalPart().equals("SKILL")) {
 				CAPABILITYType skill = (CAPABILITYType)element.getValue();
 				skillList.add(skill);
