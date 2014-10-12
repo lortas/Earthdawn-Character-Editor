@@ -4,6 +4,7 @@
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Name"/>
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Action"/>
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Strain"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Karma"/>
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Attribute"/>
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="AttributeStep"/>
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Rank"/>

@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Action" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Strain" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Karma" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Attribute" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="AttributeStep" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Rank" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -51,6 +52,7 @@ import javax.xml.bind.annotation.XmlType;
     "name",
     "action",
     "strain",
+    "karma",
     "attribute",
     "attributeStep",
     "rank",
@@ -66,6 +68,8 @@ public class CharsheettemplatetalentType {
     protected String action;
     @XmlElement(name = "Strain")
     protected String strain;
+    @XmlElement(name = "Karma")
+    protected String karma;
     @XmlElement(name = "Attribute")
     protected String attribute;
     @XmlElement(name = "AttributeStep")
@@ -157,6 +161,30 @@ public class CharsheettemplatetalentType {
      */
     public void setStrain(String value) {
         this.strain = value;
+    }
+
+    /**
+     * Gets the value of the karma property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getKarma() {
+        return karma;
+    }
+
+    /**
+     * Sets the value of the karma property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setKarma(String value) {
+        this.karma = value;
     }
 
     /**
