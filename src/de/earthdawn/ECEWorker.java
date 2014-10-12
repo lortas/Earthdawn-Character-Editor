@@ -332,6 +332,10 @@ public class ECEWorker {
 			if( disziplinProperties != null ) {
 				// Wenn Durability-Talente gefunden wurden, berechnen aus dessen Rank
 				// die Erhöhung von Todes- und Bewustlosigkeitsschwelle
+				if( currentDiscipline.getCircle() >= disziplinProperties.getDURABILITY().getCircle() ) {
+					death.setAdjustment(death.getAdjustment()+((disziplinProperties.getDURABILITY().getValue()+1)*currentDiscipline.getCircle()));
+					unconsciousness.setAdjustment(unconsciousness.getAdjustment()+(disziplinProperties.getDURABILITY().getValue()*currentDiscipline.getCircle()));
+				}
 				for( TALENTType durabilityTalent : durabilityTalents ) {
 					DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
 					int rank = durabilityTalent.getRANK().getRank()-durabilityTalent.getRANK().getRealignedrank();
