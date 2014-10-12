@@ -757,8 +757,34 @@ public class ECEPdfExporter {
 		int lpIncreasePer = attributes.get(ATTRIBUTENameType.PER).getLpincrease();
 		int lpIncreaseWil = attributes.get(ATTRIBUTENameType.WIL).getLpincrease();
 		int lpIncreaseCha = attributes.get(ATTRIBUTENameType.CHA).getLpincrease();
+
+		int[] totalArmor=new int[]{0,0,0};
+		int[] totalShield=new int[]{0,0,0};
+		List<ARMORType> armorList = new ArrayList<ARMORType>();
+		List<SHIELDType> shieldList = new ArrayList<SHIELDType>();
+		for (ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
+			if( ! armor.getUsed().equals(YesnoType.YES) ) continue;
+			int physicalarmor = armor.getPhysicalarmor();
+			int mysticarmor = armor.getMysticarmor();
+			int penalty = armor.getPenalty();
+			if( (physicalarmor==0) && (mysticarmor==0) && (penalty==0) ) continue;
+			if( armor instanceof SHIELDType ) {
+				shieldList.add((SHIELDType)armor);
+				totalShield[0]+=physicalarmor;
+				totalShield[1]+=mysticarmor;
+				totalShield[2]+=penalty;
+			} else {
+				armorList.add(armor);
+				totalArmor[0]+=physicalarmor;
+				totalArmor[1]+=mysticarmor;
+				totalArmor[2]+=penalty;
+			}
+		}
+
 		CharsheettemplatetalentStack talentForms = new CharsheettemplatetalentStack();
 		List<CharsheettemplatetalentType> skillForms = new ArrayList<CharsheettemplatetalentType>();
+		List<CharsheettemplatedisciplinebonusType> disciplineBonusFroms = new ArrayList<CharsheettemplatedisciplinebonusType>();
+
 		for( JAXBElement<?> f : fieldmap.getCurrentDateTimeOrNameOrDisciplineName() ) {
 			switch(f.getName().getLocalPart()) {
 			case "CurrentDateTime" :
@@ -898,6 +924,21 @@ public class ECEPdfExporter {
 			case "DefenceMystic" :
 				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getSpell()) );
 				break;
+			case "ArmorPhysical" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(totalArmor[0]) );
+				break;
+			case "ArmorMystic" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(totalArmor[1]) );
+				break;
+			case "ArmorPenalty" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(totalArmor[2]) );
+				break;
+			case "ShieldPhysical" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(totalShield[0]) );
+				break;
+			case "ShieldMystic" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(totalShield[1]) );
+				break;
 			case "DeathAdjustment" :
 				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getAdjustment()) );
 				break;
@@ -951,6 +992,12 @@ public class ECEPdfExporter {
 				break;
 			case "InitiativeStep" :
 				acroFields.setField( (String)f.getValue() , String.valueOf(character.getInitiative().getStep()) );
+				break;
+			case "KarmaCurrent" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getKarma().getCurrent()) );
+				break;
+			case "KarmaMax" :
+				acroFields.setField( (String)f.getValue() , String.valueOf(character.getKarma().getMax()) );
 				break;
 			case "LpincreaseDex" :
 				if( lpIncreaseDex > 0 ) {
@@ -1006,27 +1053,19 @@ public class ECEPdfExporter {
 			case "Skill" :
 				skillForms.add((CharsheettemplatetalentType)f.getValue());
 				break;
+			case "DisciplineBonus" :
+				disciplineBonusFroms.add((CharsheettemplatedisciplinebonusType)f.getValue());
+				break;
 			default :
 				System.err.println("Unhandled fieldname '"+f.getName().getLocalPart()+"' of class '"+f.getValue().getClass()+"'.");
 				break;
 			}
 		}
-		acroFields.setField( "LPIncrease.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getLpincrease()) );
-		acroFields.setField( "LPIncrease.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getLpincrease()) );
-		acroFields.setField( "LPIncrease.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getLpincrease()) );
-		acroFields.setField( "LPIncrease.3", String.valueOf(attributes.get(ATTRIBUTENameType.PER).getLpincrease()) );
-		acroFields.setField( "LPIncrease.4", String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getLpincrease()) );
-		acroFields.setField( "LPIncrease.5", String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getLpincrease()) );
-		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.DEX).getLpincrease(), 0);
-		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.STR).getLpincrease(), 1);
-		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.TOU).getLpincrease(), 2);
-		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.PER).getLpincrease(), 3);
-		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.WIL).getLpincrease(), 4);
-		setLpincreaseButtons(attributes.get(ATTRIBUTENameType.CHA).getLpincrease(), 5);
 
 		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
 		spellslist.add(character.getOpenSpellList());
 		int counterKnack=0;
+		Iterator<CharsheettemplatedisciplinebonusType> disciplineBonusFromIterator = disciplineBonusFroms.iterator();
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			List<TALENTType> disziplinetalents = discipline.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
@@ -1051,6 +1090,12 @@ public class ECEPdfExporter {
 					acroFields.setField( "TalentKnackName."+counterKnack, knack.getName()+" ["+knack.getStrain()+"]" );
 					counterKnack++;
 				}
+			}
+			for( DISCIPLINEBONUSType bonus : discipline.getDISCIPLINEBONUS() ) {
+				if( ! disciplineBonusFromIterator.hasNext() ) break;
+				CharsheettemplatedisciplinebonusType formnames = disciplineBonusFromIterator.next();
+				acroFields.setField( formnames.getCircle(), String.valueOf(bonus.getCircle()) );
+				acroFields.setField( formnames.getAbility(), bonus.getBonus() );
 			}
 			spellslist.add(discipline.getSPELL());
 		}
