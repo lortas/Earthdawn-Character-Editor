@@ -42,6 +42,8 @@ public class ObjectFactory {
     private final static QName _CHARACTERISTICSMYSTICARMOR_QNAME = new QName("http://earthdawn.com/characteristics", "MYSTICARMOR");
     private final static QName _CHARACTERISTICSATTRIBUTECOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTECOST");
     private final static QName _CHARACTERISTICSSKILLLPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "SKILLLPCOST");
+    private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
+    private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
     private final static QName _CHARSHEETTEMPLATECurrentDateTime_QNAME = new QName("http://earthdawn.com/charsheettemplate", "CurrentDateTime");
     private final static QName _CHARSHEETTEMPLATEArmorPhysical_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ArmorPhysical");
     private final static QName _CHARSHEETTEMPLATERecoveryTestsperday_QNAME = new QName("http://earthdawn.com/charsheettemplate", "RecoveryTestsperday");
@@ -70,7 +72,6 @@ public class ObjectFactory {
     private final static QName _CHARSHEETTEMPLATEArmorPenalty_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ArmorPenalty");
     private final static QName _CHARSHEETTEMPLATEAttributeCurrentWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentWil");
     private final static QName _CHARSHEETTEMPLATEAttributeStepDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepDex");
-    private final static QName _CHARSHEETTEMPLATEDisciplineBonusCircle_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineBonusCircle");
     private final static QName _CHARSHEETTEMPLATEAttributeBasePer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBasePer");
     private final static QName _CHARSHEETTEMPLATEGender_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Gender");
     private final static QName _CHARSHEETTEMPLATEAttributeCurrentTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentTou");
@@ -111,6 +112,7 @@ public class ObjectFactory {
     private final static QName _CHARSHEETTEMPLATEShieldPhysical_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ShieldPhysical");
     private final static QName _CHARSHEETTEMPLATEHealthDamage_QNAME = new QName("http://earthdawn.com/charsheettemplate", "HealthDamage");
     private final static QName _CHARSHEETTEMPLATEWeaponSize_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponSize");
+    private final static QName _CHARSHEETTEMPLATEDisciplineBonus_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineBonus");
     private final static QName _CHARSHEETTEMPLATELegendPointsRenown_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LegendPointsRenown");
     private final static QName _CHARSHEETTEMPLATEAttributeBaseCha_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseCha");
     private final static QName _CHARSHEETTEMPLATEAttributeStepPer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepPer");
@@ -118,7 +120,6 @@ public class ObjectFactory {
     private final static QName _CHARSHEETTEMPLATEWeaponAttribute_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponAttribute");
     private final static QName _CHARSHEETTEMPLATEAttributeBaseStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseStr");
     private final static QName _CHARSHEETTEMPLATEAttributeDiceDex_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeDiceDex");
-    private final static QName _CHARSHEETTEMPLATEDisciplineBonusAbility_QNAME = new QName("http://earthdawn.com/charsheettemplate", "DisciplineBonusAbility");
     private final static QName _CHARSHEETTEMPLATEAttributeCurrentPer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeCurrentPer");
     private final static QName _CHARSHEETTEMPLATELpincreasePer_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LpincreasePer");
     private final static QName _CHARSHEETTEMPLATELegendPointsReputation_QNAME = new QName("http://earthdawn.com/charsheettemplate", "LegendPointsReputation");
@@ -128,8 +129,6 @@ public class ObjectFactory {
     private final static QName _CHARSHEETTEMPLATEShieldMystic_QNAME = new QName("http://earthdawn.com/charsheettemplate", "ShieldMystic");
     private final static QName _CHARSHEETTEMPLATEKarmaCurrent_QNAME = new QName("http://earthdawn.com/charsheettemplate", "KarmaCurrent");
     private final static QName _CHARSHEETTEMPLATESkin_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Skin");
-    private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
-    private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.earthdawn.data
@@ -152,6 +151,14 @@ public class ObjectFactory {
      */
     public CharsheettemplatetalentType createCharsheettemplatetalentType() {
         return new CharsheettemplatetalentType();
+    }
+
+    /**
+     * Create an instance of {@link CharsheettemplatedisciplinebonusType }
+     * 
+     */
+    public CharsheettemplatedisciplinebonusType createCharsheettemplatedisciplinebonusType() {
+        return new CharsheettemplatedisciplinebonusType();
     }
 
     /**
@@ -1158,6 +1165,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -1407,15 +1432,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeStepDex", scope = CHARSHEETTEMPLATE.class)
     public JAXBElement<String> createCHARSHEETTEMPLATEAttributeStepDex(String value) {
         return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeStepDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineBonusCircle", scope = CHARSHEETTEMPLATE.class)
-    public JAXBElement<String> createCHARSHEETTEMPLATEDisciplineBonusCircle(String value) {
-        return new JAXBElement<String>(_CHARSHEETTEMPLATEDisciplineBonusCircle_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
     }
 
     /**
@@ -1779,6 +1795,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CharsheettemplatedisciplinebonusType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineBonus", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<CharsheettemplatedisciplinebonusType> createCHARSHEETTEMPLATEDisciplineBonus(CharsheettemplatedisciplinebonusType value) {
+        return new JAXBElement<CharsheettemplatedisciplinebonusType>(_CHARSHEETTEMPLATEDisciplineBonus_QNAME, CharsheettemplatedisciplinebonusType.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -1839,15 +1864,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "AttributeDiceDex", scope = CHARSHEETTEMPLATE.class)
     public JAXBElement<String> createCHARSHEETTEMPLATEAttributeDiceDex(String value) {
         return new JAXBElement<String>(_CHARSHEETTEMPLATEAttributeDiceDex_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "DisciplineBonusAbility", scope = CHARSHEETTEMPLATE.class)
-    public JAXBElement<String> createCHARSHEETTEMPLATEDisciplineBonusAbility(String value) {
-        return new JAXBElement<String>(_CHARSHEETTEMPLATEDisciplineBonusAbility_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
     }
 
     /**
@@ -1929,24 +1945,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "Skin", scope = CHARSHEETTEMPLATE.class)
     public JAXBElement<String> createCHARSHEETTEMPLATESkin(String value) {
         return new JAXBElement<String>(_CHARSHEETTEMPLATESkin_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
     }
 
 }

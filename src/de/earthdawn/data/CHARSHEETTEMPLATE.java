@@ -106,8 +106,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ShieldMystic" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="ShieldPhysical" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="ArmorPenalty" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="DisciplineBonusCircle" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="DisciplineBonusAbility" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="DisciplineBonus" type="{http://earthdawn.com/charsheettemplate}charsheettemplatedisciplinebonus_type"/>
  *         &lt;element name="WeaponName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="WeaponDamagestep" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="WeaponSize" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -133,92 +132,91 @@ import javax.xml.bind.annotation.XmlType;
 public class CHARSHEETTEMPLATE {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "Race", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DisciplineBonusCircle", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Skill", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeStepTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeCurrentCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "RecoveryTestsperday", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "UnconsciousnessValue", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WoundThreshold", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LpincreaseWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Eyes", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LpincreasePer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LegendPointsReputation", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Weight", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeStepWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeBaseDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeCurrentPer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DeathAdjustment", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LpincreaseTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeBaseTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Skin", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DisciplineBonusAbility", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponDamagestep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeBasePer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeStepPer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeStepStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Player", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeDiceTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DefenceSocial", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "InitiativeStep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "RecoveryDice", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeCurrentDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponLongrange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ShieldPhysical", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "InitiativeDice", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeDiceCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LpincreaseDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "KarmaMax", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeDiceStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ArmorMystic", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeCurrentWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LegendPointsCurrent", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DeathValue", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeBaseWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ArmorPenalty", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeDiceDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LegendPointsRenown", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DisciplineName", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeCurrentStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Name", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DefenceMystic", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "Carrying", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Age", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Gender", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DisciplineCircle", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Height", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Movement", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponAttackstep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponShortrange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeDicePer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponName", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeStepCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ShieldMystic", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeStepDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "KarmaCurrent", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Passion", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LegendPointsTotal", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeDiceWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponAttribute", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DeathBase", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "BloodWound", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ArmorPhysical", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LegendPointsCurrent", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "AttributeCurrentTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponSize", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LpincreaseCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "AttributeBaseStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "WeaponTimesforged", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Hair", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "LpincreaseStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "RecoveryStep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "AttributeBaseCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "CurrentDateTime", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DeathValue", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DefenceMystic", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "UnconsciousnessAdjustment", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "DefencePhysical", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeDiceWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "CurrentDateTime", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeDicePer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "RecoveryTestsperday", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Age", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeCurrentWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Hair", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeBasePer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LpincreasePer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeDiceTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Skin", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Race", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "ArmorMystic", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "ShieldMystic", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Weight", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeCurrentPer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeCurrentStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Gender", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeStepTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LpincreaseStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "BloodWound", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponLongrange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DeathBase", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeBaseDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponAttribute", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponName", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "KarmaMax", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WoundThreshold", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeStepCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeDiceDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponTimesforged", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "InitiativeDice", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeStepStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Skill", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeBaseWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "RecoveryStep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Passion", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LpincreaseCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Movement", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeStepDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "RecoveryDice", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeBaseStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LpincreaseTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Talent", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Name", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DisciplineCircle", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "InitiativeStep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponDamagestep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DisciplineBonus", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeStepPer", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "ArmorPhysical", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeCurrentCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "KarmaCurrent", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeCurrentDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LegendPointsReputation", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Eyes", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "UnconsciousnessValue", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeStepWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponSize", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LpincreaseWil", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "UnconsciousnessBase", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "HealthDamage", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "Talent", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "AttributeBaseTou", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "ShieldPhysical", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeDiceCha", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Height", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "ArmorPenalty", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DisciplineName", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "AttributeDiceStr", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DeathAdjustment", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "Player", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DefencePhysical", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LpincreaseDex", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DefenceSocial", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponAttackstep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LegendPointsRenown", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "LegendPointsTotal", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponShortrange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> currentDateTimeOrNameOrDisciplineName;
     @XmlAttribute(name = "filename", required = true)
@@ -243,50 +241,6 @@ public class CHARSHEETTEMPLATE {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link CharsheettemplatetalentType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
@@ -327,6 +281,49 @@ public class CHARSHEETTEMPLATE {
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link CharsheettemplatetalentType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link CharsheettemplatetalentType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link CharsheettemplatedisciplinebonusType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 

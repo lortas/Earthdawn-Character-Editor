@@ -17,6 +17,12 @@
 		<xs:attribute type="xs:boolean" default="0" name="other"/>
 		<xs:attribute type="xs:boolean" default="0" name="versatility"/>
 	</xs:complexType>
+	<xs:complexType name="charsheettemplatedisciplinebonus_type">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Circle"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Ability"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="CHARSHEETTEMPLATE">
 		<xs:complexType>
 			<xs:choice maxOccurs="unbounded">
@@ -96,8 +102,7 @@
 				<xs:element name="ShieldMystic" type="xs:string"/>
 				<xs:element name="ShieldPhysical" type="xs:string"/>
 				<xs:element name="ArmorPenalty" type="xs:string"/>
-				<xs:element name="DisciplineBonusCircle" type="xs:string"/>
-				<xs:element name="DisciplineBonusAbility" type="xs:string"/>
+				<xs:element name="DisciplineBonus" type="charsheettemplatedisciplinebonus_type"/>
 				<xs:element name="WeaponName" type="xs:string"/>
 				<xs:element name="WeaponDamagestep" type="xs:string"/>
 				<xs:element name="WeaponSize" type="xs:string"/>
