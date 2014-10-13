@@ -112,6 +112,7 @@
 				<xs:element name="WeaponAttackstep" type="xs:string"/>
 				<xs:element name="WeaponAttribute" type="xs:string"/>
 			</xs:choice>
+			<xs:attribute name="menuentryname" type="xs:string" use="required"/>
 			<xs:attribute name="filename" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
