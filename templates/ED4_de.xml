@@ -113,22 +113,22 @@
 	<Talent discipline="0" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.34[0]</Name><Action>topmostSubform[0].Page1[0].Action\.34[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.34[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.34[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.34[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.34[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.34[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.34[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.34[0]</Page></Talent>
 	<Talent discipline="0" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.35[0]</Name><Action>topmostSubform[0].Page1[0].Action\.35[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.35[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.35[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.35[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.35[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.35[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.35[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.32[0]</Page></Talent>
 	<Talent discipline="0" free="1" other="1" versatility="1"><Name>topmostSubform[0].Page1[0].Talent\.36[0]</Name><Action>topmostSubform[0].Page1[0].Action\.36[0]</Action><Strain>topmostSubform[0].Page1[0].Strain\.36[0]</Strain><Attribute>topmostSubform[0].Page1[0].Attribute\.36[0]</Attribute><AttributeStep>topmostSubform[0].Page1[0].TalentAttributeStep\.36[0]</AttributeStep><Rank>topmostSubform[0].Page1[0].Rank\.36[0]</Rank><Step>topmostSubform[0].Page1[0].Step\.36[0]</Step><Dice>topmostSubform[0].Page1[0].ActionDice\.36[0]</Dice><Page>topmostSubform[0].Page1[0].Page\.36[0]</Page></Talent>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.1[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.2[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.3[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.4[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.5[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.6[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.7[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.8[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.9[0]</AttributeStep> </Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.10[0]</AttributeStep></Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.11[0]</AttributeStep></Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.12[0]</AttributeStep></Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.13[0]</AttributeStep></Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.14[0]</AttributeStep></Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.15[0]</AttributeStep></Skill>
-	<Skill><Name></Name><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.16[0]</AttributeStep></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_1[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_1_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_1_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.1[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_39[0]</Rank><Step>topmostSubform[0].Page2[0].st_5[0]</Step> <Dice>topmostSubform[0].Page2[0].ac_dice[0]</Dice>   </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_2[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_2_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_2_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.2[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_40[0]</Rank><Step>topmostSubform[0].Page2[0].st_6[0]</Step> <Dice>topmostSubform[0].Page2[0].ac_dice_2[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_3[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_3_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_3_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.3[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_41[0]</Rank><Step>topmostSubform[0].Page2[0].st_7[0]</Step> <Dice>topmostSubform[0].Page2[0].ac_dice_3[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_4[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_4_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_4_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.4[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_42[0]</Rank><Step>topmostSubform[0].Page2[0].st_8[0]</Step> <Dice>topmostSubform[0].Page2[0].ac_dice_4[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_5[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_5_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_5_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.5[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_43[0]</Rank><Step>topmostSubform[0].Page2[0].st_9[0]</Step> <Dice>topmostSubform[0].Page2[0].ac_dice_5[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_6[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_6_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_6_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.6[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_44[0]</Rank><Step>topmostSubform[0].Page2[0].st_10[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_6[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_7[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_7_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_7_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.7[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_45[0]</Rank><Step>topmostSubform[0].Page2[0].st_11[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_7[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_8[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_8_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_8_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.8[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_46[0]</Rank><Step>topmostSubform[0].Page2[0].st_12[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_8[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_9[0]</Name> <Action>topmostSubform[0].Page2[0].action__Row_9_3[0]</Action> <Strain>topmostSubform[0].Page2[0].strain__Row_9_3[0]</Strain> <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.9[0]</AttributeStep> <Rank>topmostSubform[0].Page2[0].rank_47[0]</Rank><Step>topmostSubform[0].Page2[0].st_13[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_9[0]</Dice> </Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_10[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_10[0]</Action>  <Strain>topmostSubform[0].Page2[0].strain__Row_10[0]</Strain>  <AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.10[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_48[0]</Rank><Step>topmostSubform[0].Page2[0].st_14[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_10[0]</Dice></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_11[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_11_3[0]</Action><Strain>topmostSubform[0].Page2[0].strain__Row_11_3[0]</Strain><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.11[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_49[0]</Rank><Step>topmostSubform[0].Page2[0].st_15[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_11[0]</Dice></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_12[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_12_3[0]</Action><Strain>topmostSubform[0].Page2[0].strain__Row_12_3[0]</Strain><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.12[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_50[0]</Rank><Step>topmostSubform[0].Page2[0].st_16[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_12[0]</Dice></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_13[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_13_3[0]</Action><Strain>topmostSubform[0].Page2[0].strain__Row_13_3[0]</Strain><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.13[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_51[0]</Rank><Step>topmostSubform[0].Page2[0].st_17[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_13[0]</Dice></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_14[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_14_3[0]</Action><Strain>topmostSubform[0].Page2[0].strain__Row_14_3[0]</Strain><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.14[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_52[0]</Rank><Step>topmostSubform[0].Page2[0].st_18[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_14[0]</Dice></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_15[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_15_3[0]</Action><Strain>topmostSubform[0].Page2[0].strain__Row_15_3[0]</Strain><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.15[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_53[0]</Rank><Step>topmostSubform[0].Page2[0].st_19[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_15[0]</Dice></Skill>
+	<Skill><Name>topmostSubform[0].Page2[0].Skill_name__Row_16[0]</Name><Action>topmostSubform[0].Page2[0].action__Row_16_3[0]</Action><Strain>topmostSubform[0].Page2[0].strain__Row_16_3[0]</Strain><AttributeStep>topmostSubform[0].Page2[0].SkillAttributeStep\.16[0]</AttributeStep><Rank>topmostSubform[0].Page2[0].rank_54[0]</Rank><Step>topmostSubform[0].Page2[0].st_20[0]</Step><Dice>topmostSubform[0].Page2[0].ac_dice_16[0]</Dice></Skill>
 	<HealthDamage>topmostSubform[0].Page1[0].CurrentDamage[0]</HealthDamage>
 	<KarmaCurrent>topmostSubform[0].Page1[0].KarmaCurrent[0]</KarmaCurrent>
 	<KarmaMax>topmostSubform[0].Page1[0].KarmaMax[0]</KarmaMax>
@@ -251,22 +251,6 @@ topmostSubform[0].Page2[0].Racial_abilities__readwrite[0]
 topmostSubform[0].Page2[0].Racial_abilities__readwrite_2[0]
 topmostSubform[0].Page2[0].ShortDescription[0]
 topmostSubform[0].Page2[0].Silver_1[0]
-topmostSubform[0].Page2[0].Skill_name__Row_10[0]
-topmostSubform[0].Page2[0].Skill_name__Row_11[0]
-topmostSubform[0].Page2[0].Skill_name__Row_12[0]
-topmostSubform[0].Page2[0].Skill_name__Row_13[0]
-topmostSubform[0].Page2[0].Skill_name__Row_14[0]
-topmostSubform[0].Page2[0].Skill_name__Row_15[0]
-topmostSubform[0].Page2[0].Skill_name__Row_16[0]
-topmostSubform[0].Page2[0].Skill_name__Row_1[0]
-topmostSubform[0].Page2[0].Skill_name__Row_2[0]
-topmostSubform[0].Page2[0].Skill_name__Row_3[0]
-topmostSubform[0].Page2[0].Skill_name__Row_4[0]
-topmostSubform[0].Page2[0].Skill_name__Row_5[0]
-topmostSubform[0].Page2[0].Skill_name__Row_6[0]
-topmostSubform[0].Page2[0].Skill_name__Row_7[0]
-topmostSubform[0].Page2[0].Skill_name__Row_8[0]
-topmostSubform[0].Page2[0].Skill_name__Row_9[0]
 topmostSubform[0].Page2[0].Type_of_armor[0]
 topmostSubform[0].Page2[0].Type_of_armor_2[0]
 topmostSubform[0].Page2[0].Type_of_armor_3[0]
@@ -274,38 +258,6 @@ topmostSubform[0].Page2[0].Type_of_armor_4[0]
 topmostSubform[0].Page2[0].Type_of_armor_5[0]
 topmostSubform[0].Page2[0].Water_and_food_supplies__Row_1[0]
 topmostSubform[0].Page2[0].Water_and_food_supplies__Row_2[0]
-topmostSubform[0].Page2[0].ac_dice[0]
-topmostSubform[0].Page2[0].ac_dice_10[0]
-topmostSubform[0].Page2[0].ac_dice_11[0]
-topmostSubform[0].Page2[0].ac_dice_12[0]
-topmostSubform[0].Page2[0].ac_dice_13[0]
-topmostSubform[0].Page2[0].ac_dice_14[0]
-topmostSubform[0].Page2[0].ac_dice_15[0]
-topmostSubform[0].Page2[0].ac_dice_16[0]
-topmostSubform[0].Page2[0].ac_dice_2[0]
-topmostSubform[0].Page2[0].ac_dice_3[0]
-topmostSubform[0].Page2[0].ac_dice_4[0]
-topmostSubform[0].Page2[0].ac_dice_5[0]
-topmostSubform[0].Page2[0].ac_dice_6[0]
-topmostSubform[0].Page2[0].ac_dice_7[0]
-topmostSubform[0].Page2[0].ac_dice_8[0]
-topmostSubform[0].Page2[0].ac_dice_9[0]
-topmostSubform[0].Page2[0].action__Row_10[0]
-topmostSubform[0].Page2[0].action__Row_11_3[0]
-topmostSubform[0].Page2[0].action__Row_12_3[0]
-topmostSubform[0].Page2[0].action__Row_13_3[0]
-topmostSubform[0].Page2[0].action__Row_14_3[0]
-topmostSubform[0].Page2[0].action__Row_15_3[0]
-topmostSubform[0].Page2[0].action__Row_16_3[0]
-topmostSubform[0].Page2[0].action__Row_1_3[0]
-topmostSubform[0].Page2[0].action__Row_2_3[0]
-topmostSubform[0].Page2[0].action__Row_3_3[0]
-topmostSubform[0].Page2[0].action__Row_4_3[0]
-topmostSubform[0].Page2[0].action__Row_5_3[0]
-topmostSubform[0].Page2[0].action__Row_6_3[0]
-topmostSubform[0].Page2[0].action__Row_7_3[0]
-topmostSubform[0].Page2[0].action__Row_8_3[0]
-topmostSubform[0].Page2[0].action__Row_9_3[0]
 topmostSubform[0].Page2[0].copper_110[0]
 topmostSubform[0].Page2[0].damage__Row_1[0]
 topmostSubform[0].Page2[0].damage__Row_2[0]
@@ -386,22 +338,6 @@ topmostSubform[0].Page2[0].object__Row_7[0]
 topmostSubform[0].Page2[0].object__Row_8[0]
 topmostSubform[0].Page2[0].object__Row_9[0]
 topmostSubform[0].Page2[0].other[0]
-topmostSubform[0].Page2[0].rank_39[0]
-topmostSubform[0].Page2[0].rank_40[0]
-topmostSubform[0].Page2[0].rank_41[0]
-topmostSubform[0].Page2[0].rank_42[0]
-topmostSubform[0].Page2[0].rank_43[0]
-topmostSubform[0].Page2[0].rank_44[0]
-topmostSubform[0].Page2[0].rank_45[0]
-topmostSubform[0].Page2[0].rank_46[0]
-topmostSubform[0].Page2[0].rank_47[0]
-topmostSubform[0].Page2[0].rank_48[0]
-topmostSubform[0].Page2[0].rank_49[0]
-topmostSubform[0].Page2[0].rank_50[0]
-topmostSubform[0].Page2[0].rank_51[0]
-topmostSubform[0].Page2[0].rank_52[0]
-topmostSubform[0].Page2[0].rank_53[0]
-topmostSubform[0].Page2[0].rank_54[0]
 topmostSubform[0].Page2[0].rank__Row_10[0]
 topmostSubform[0].Page2[0].rank__Row_11[0]
 topmostSubform[0].Page2[0].rank__Row_12[0]
@@ -446,38 +382,6 @@ topmostSubform[0].Page2[0].speak_6[0]
 topmostSubform[0].Page2[0].speak_7[0]
 topmostSubform[0].Page2[0].speak_8[0]
 topmostSubform[0].Page2[0].speak_9[0]
-topmostSubform[0].Page2[0].st_10[0]
-topmostSubform[0].Page2[0].st_11[0]
-topmostSubform[0].Page2[0].st_12[0]
-topmostSubform[0].Page2[0].st_13[0]
-topmostSubform[0].Page2[0].st_14[0]
-topmostSubform[0].Page2[0].st_15[0]
-topmostSubform[0].Page2[0].st_16[0]
-topmostSubform[0].Page2[0].st_17[0]
-topmostSubform[0].Page2[0].st_18[0]
-topmostSubform[0].Page2[0].st_19[0]
-topmostSubform[0].Page2[0].st_20[0]
-topmostSubform[0].Page2[0].st_5[0]
-topmostSubform[0].Page2[0].st_6[0]
-topmostSubform[0].Page2[0].st_7[0]
-topmostSubform[0].Page2[0].st_8[0]
-topmostSubform[0].Page2[0].st_9[0]
-topmostSubform[0].Page2[0].strain__Row_10[0]
-topmostSubform[0].Page2[0].strain__Row_11_3[0]
-topmostSubform[0].Page2[0].strain__Row_12_3[0]
-topmostSubform[0].Page2[0].strain__Row_13_3[0]
-topmostSubform[0].Page2[0].strain__Row_14_3[0]
-topmostSubform[0].Page2[0].strain__Row_15_3[0]
-topmostSubform[0].Page2[0].strain__Row_16_3[0]
-topmostSubform[0].Page2[0].strain__Row_1_3[0]
-topmostSubform[0].Page2[0].strain__Row_2_3[0]
-topmostSubform[0].Page2[0].strain__Row_3_3[0]
-topmostSubform[0].Page2[0].strain__Row_4_3[0]
-topmostSubform[0].Page2[0].strain__Row_5_3[0]
-topmostSubform[0].Page2[0].strain__Row_6_3[0]
-topmostSubform[0].Page2[0].strain__Row_7_3[0]
-topmostSubform[0].Page2[0].strain__Row_8_3[0]
-topmostSubform[0].Page2[0].strain__Row_9_3[0]
 topmostSubform[0].Page2[0].talent[0]
 topmostSubform[0].Page2[0].talent_10[0]
 topmostSubform[0].Page2[0].talent_11[0]

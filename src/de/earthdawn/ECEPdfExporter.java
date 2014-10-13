@@ -284,7 +284,7 @@ public class ECEPdfExporter {
 				if( (talent.getCircle()>4) && (counter<9) ) {
 					counter = 9;
 				}
-				setTalent(getTalentFieldNames(counter), talent, attributes);
+				setSkillOrTalent(getTalentFieldNames(counter), talent, attributes);
 				counter++;
 			}
 			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
@@ -294,7 +294,7 @@ public class ECEPdfExporter {
 				if( (talent.getCircle()>4) && (counter<4) ) {
 					counter = 4;
 				}
-				setTalent(getTalentFieldNames(13+counter), talent, attributes);
+				setSkillOrTalent(getTalentFieldNames(13+counter), talent, attributes);
 				// Optionale Talente können Karma erfordern
 				if( talent.getKarma().equals(YesnoType.YES)) {
 					acroFields.setField( "KarmaRequired."+counter, "Yes" );
@@ -523,7 +523,7 @@ public class ECEPdfExporter {
 				if( (talent.getCircle()>4)  && (counter<9) )  counter =  9;
 				if( (talent.getCircle()>8)  && (counter<13) ) counter = 13;
 				if( (talent.getCircle()>12) && (counter<17) ) counter = 17;
-				setTalent(getTalentFieldNames(counter), talent, attributes);
+				setSkillOrTalent(getTalentFieldNames(counter), talent, attributes);
 				counter++;
 			}
 			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
@@ -532,7 +532,7 @@ public class ECEPdfExporter {
 			for( TALENTType talent : optionaltalents ) {
 				if( (talent.getCircle()>4)  && (counter<7) )  counter = 7;
 				if( (talent.getCircle()>8)  && (counter<13) ) counter = 13;
-				setTalent(getTalentFieldNames(20+counter), talent, attributes);
+				setSkillOrTalent(getTalentFieldNames(20+counter), talent, attributes);
 				// Optionale Talente können Karma erfordern
 				if( talent.getKarma().equals(YesnoType.YES)) {
 					acroFields.setField( "KarmaRequired."+counter, "Yes" );
@@ -552,7 +552,7 @@ public class ECEPdfExporter {
 				if( (talent.getCircle()>4)  && (counter<44) ) counter = 44;
 				if( (talent.getCircle()>8)  && (counter<48) ) counter = 48;
 				if( (talent.getCircle()>12) && (counter<52) ) counter = 52;
-				setTalent(getTalentFieldNames(counter), talent, attributes);
+				setSkillOrTalent(getTalentFieldNames(counter), talent, attributes);
 				counter++;
 			}
 			List<TALENTType> optionaltalents = discipline2.getOPTIONALTALENT();
@@ -561,7 +561,7 @@ public class ECEPdfExporter {
 			for( TALENTType talent : optionaltalents ) {
 				if( (talent.getCircle()>4)  && (counter<22) ) counter = 22;
 				if( (talent.getCircle()>8)  && (counter<26) ) counter = 26;
-				setTalent(getTalentFieldNames(39+counter), talent, attributes);
+				setSkillOrTalent(getTalentFieldNames(39+counter), talent, attributes);
 				// Optionale Talente können Karma erfordern
 				if( talent.getKarma().equals(YesnoType.YES)) {
 					acroFields.setField( "KarmaRequired."+counter, "Yes" );
@@ -1062,16 +1062,22 @@ public class ECEPdfExporter {
 			}
 		}
 
+		Iterator<CharsheettemplatetalentType> skillFormsIterator = skillForms.iterator();
+		for( SKILLType skill : character.getSkills() ) {
+			if( !skillFormsIterator.hasNext() ) break;
+			setSkillOrTalent(skillFormsIterator.next(), skill, attributes);
+		}
+
 		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
 		spellslist.add(character.getOpenSpellList());
 		int counterKnack=0;
-		Iterator<CharsheettemplatedisciplinebonusType> disciplineBonusFromIterator = disciplineBonusFroms.iterator();
+		Iterator<CharsheettemplatedisciplinebonusType> disciplineBonusFromsIterator = disciplineBonusFroms.iterator();
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			List<TALENTType> disziplinetalents = discipline.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			for( TALENTType talent : disziplinetalents ) {
 				if( talentForms.hasNext(1) ) {
-					setTalent(talentForms.pull(1), talent, attributes);
+					setSkillOrTalent(talentForms.pull(1), talent, attributes);
 				}
 				for( KNACKType knack : talent.getKNACK() ) {
 					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
@@ -1083,7 +1089,7 @@ public class ECEPdfExporter {
 			Collections.sort(optionaltalents, new TalentComparator());
 			for( TALENTType talent : optionaltalents ) {
 				if( talentForms.hasNext(-1) ) {
-					setTalent(talentForms.pull(-1), talent, character.getAttributes());
+					setSkillOrTalent(talentForms.pull(-1), talent, character.getAttributes());
 				}
 				for( KNACKType knack : talent.getKNACK() ) {
 					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
@@ -1092,8 +1098,8 @@ public class ECEPdfExporter {
 				}
 			}
 			for( DISCIPLINEBONUSType bonus : discipline.getDISCIPLINEBONUS() ) {
-				if( ! disciplineBonusFromIterator.hasNext() ) break;
-				CharsheettemplatedisciplinebonusType formnames = disciplineBonusFromIterator.next();
+				if( ! disciplineBonusFromsIterator.hasNext() ) break;
+				CharsheettemplatedisciplinebonusType formnames = disciplineBonusFromsIterator.next();
 				acroFields.setField( formnames.getCircle(), String.valueOf(bonus.getCircle()) );
 				acroFields.setField( formnames.getAbility(), bonus.getBonus() );
 			}
@@ -1240,7 +1246,7 @@ public class ECEPdfExporter {
 			for( TALENTType talent : disziplinetalents ) {
 				// Für mehr als 20 Disziplintalente ist kein Platz!
 				if( counterDisciplinetalent>20 ) break;
-				setTalent(getTalentFieldNames(counterDisciplinetalent), talent, character.getAttributes());
+				setSkillOrTalent(getTalentFieldNames(counterDisciplinetalent), talent, character.getAttributes());
 				counterDisciplinetalent++;
 				for( KNACKType knack : talent.getKNACK() ) {
 					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
@@ -1251,7 +1257,7 @@ public class ECEPdfExporter {
 			List<TALENTType> optionaltalents = discipline.getOPTIONALTALENT();
 			Collections.sort(optionaltalents, new TalentComparator());
 			for( TALENTType talent : optionaltalents ) {
-				setTalent(getTalentFieldNames(20+counterOthertalent), talent, character.getAttributes());
+				setSkillOrTalent(getTalentFieldNames(20+counterOthertalent), talent, character.getAttributes());
 				if( talent.getKarma().equals(YesnoType.YES)) {
 					acroFields.setField( "KarmaRequired."+counterOthertalent, "Yes" );
 				} else {
@@ -1404,14 +1410,16 @@ public class ECEPdfExporter {
 		counterEquipment++;
 	}
 
-	private void setTalent(CharsheettemplatetalentType fieldnames, TALENTType talent, HashMap<ATTRIBUTENameType,ATTRIBUTEType> attributes) throws DocumentException, IOException {
+	private void setSkillOrTalent(CharsheettemplatetalentType fieldnames, SKILLType talent, HashMap<ATTRIBUTENameType,ATTRIBUTEType> attributes) throws DocumentException, IOException {
 		String talentname = talent.getName();
-		TALENTTEACHERType teacher = talent.getTEACHER();
 		String limitation="";
 		if( talent.getLIMITATION().size()>0 ) limitation=talent.getLIMITATION().get(0);
 		if ( ! limitation.isEmpty() ) talentname += ": "+limitation;
 		acroFieldsSetField( fieldnames.getPage(), String.valueOf(talent.getBookref()) );
-		if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
+		if( talent instanceof TALENTType ) {
+			TALENTTEACHERType teacher = ((TALENTType)talent).getTEACHER();
+			if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
+		}
 		if ( talent.getRealigned() > 0 ) talentname="("+talentname+")";
 		acroFieldsSetField( fieldnames.getName(), talentname);
 		ATTRIBUTENameType attribute = talent.getAttribute();
