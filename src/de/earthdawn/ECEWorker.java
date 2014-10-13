@@ -318,7 +318,7 @@ public class ECEWorker {
 				RANKType rank = new RANKType();
 				ATTRIBUTENameType attribute = talent.getAttribute();
 				if( attribute != null ) {
-					calculateCapabilityRank(rank,characterAttributes.get(attribute.value()));
+					calculateCapabilityRank(rank,characterAttributes.get(attribute));
 				}
 				talent.setRANK(rank);
 				currentTalents.getOptionaltalents().add(talent);
@@ -334,7 +334,7 @@ public class ECEWorker {
 				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
-				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute().value()));
+				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute()));
 				talent.setRANK(rank);
 				currentTalents.getOptionaltalents().add(talent);
 			}
@@ -523,7 +523,7 @@ public class ECEWorker {
 							found=true;
 							RANKType talentrank = talent.getRANK();
 							talentrank.setBonus(talentrank.getBonus()+itembonus);
-							calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute().value()));
+							calculateCapabilityRank(talentrank,characterAttributes.get(talent.getAttribute()));
 							if( talentname.equals(durabilityTalentName) && (disziplinProperties!=null) ) {
 								// Wenn Durability-Talente gefunden wurden, berechnen die Erhöhung von Todes- und Bewustlosigkeitsschwelle
 								DISCIPLINEDURABILITYType durability = disziplinProperties.getDURABILITY();
@@ -549,7 +549,7 @@ public class ECEWorker {
 					RANKType bonusrank = new RANKType();
 					bonusrank.setRank(0);
 					bonusrank.setBonus(itembonus);
-					calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute().value()));
+					calculateCapabilityRank(bonusrank,characterAttributes.get(bonusTalent.getAttribute()));
 					bonusTalent.setRANK(bonusrank);
 					TALENTTEACHERType teacher = new TALENTTEACHERType();
 					teacher.setByversatility(YesnoType.NO);
@@ -707,7 +707,7 @@ public class ECEWorker {
 			}
 			capabilities.enforceCapabilityParams(skill);
 			if( skill.getAttribute() != null ) {
-				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute().value()));
+				calculateCapabilityRank(rank,characterAttributes.get(skill.getAttribute()));
 			}
 			removeIfContains(defaultSkills,skillname);
 		}
@@ -904,7 +904,7 @@ public class ECEWorker {
 			}
 			startranks+=rank.getStartrank();
 			ATTRIBUTENameType attr = talent.getAttribute();
-			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr.value()));
+			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr));
 			String talentname = talent.getName();
 			if( talentname.equals(durabilityTalentName)) durabilityTalents.add(talent);
 			calculateKnacks(disciplinenumber, talent, disTalents);
