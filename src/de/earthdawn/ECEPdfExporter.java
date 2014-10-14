@@ -127,7 +127,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "InitiativeDice", character.getInitiative().getDice() );
 		String initiativeStep = String.valueOf(character.getInitiative().getStep());
 		for( TalentsContainer talents : character.getAllTalents() ) {
-			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) initiativeStep += initiativeStepOpts(talent);
+			for( TALENTType talent : talents.getAllTalents() ) initiativeStep += initiativeStepOpts(talent);
 		}
 		for( SKILLType skill : character.getSkills() ) initiativeStep += initiativeStepOpts(skill);
 

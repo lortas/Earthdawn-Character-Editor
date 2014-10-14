@@ -249,7 +249,9 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public String getName() {
-		return character.getName();
+		String name = character.getName();
+		if( name == null ) return "";
+		return name;
 	}
 
 	public String setRandomName() {
@@ -696,7 +698,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	public List<TALENTType> getTalentByName(String searchTalent) {
 		List<TALENTType> result = new ArrayList<TALENTType>();
 		for (TalentsContainer talents : getAllTalents()) {
-			for (TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+			for (TALENTType talent : talents.getAllTalents() ) {
 				if ( talent.getName().equals(searchTalent)) {
 					result.add(talent);
 				}
@@ -734,7 +736,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		HashMap<String,List<TALENTType>> result = new HashMap<String,List<TALENTType>>();
 		for (DISCIPLINEType discipline : getDisciplines() ) {
 			List<TALENTType> threadweaving = new ArrayList<TALENTType>();
-			for(TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) if( threadWeavingName.equals(talent.getName()) ) threadweaving.add(talent);
+			for(TALENTType talent : (new TalentsContainer(discipline)).getAllTalents() ) if( threadWeavingName.equals(talent.getName()) ) threadweaving.add(talent);
 			result.put(discipline.getName(),threadweaving);
 		}
 		return result;
@@ -745,7 +747,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		skills.addAll(character.getSKILL());
 		int discount=1;
 		for( DISCIPLINEType discipline : getDisciplines() ) {
-			for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+			for( TALENTType talent : (new TalentsContainer(discipline)).getAllTalents() ) {
 				SKILLType skill = talent.getALIGNEDSKILL();
 				if( skill != null ) {
 					if( skill.getRealigned() == 0 ) skill.setRealigned(discount);
@@ -836,7 +838,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			for( DISCIPLINEType discipline : getDisciplines() ) {
 				if( skill == null ) break;
 				discount++;
-				for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+				for( TALENTType talent : (new TalentsContainer(discipline)).getAllTalents() ) {
 					// Talente die keine Rang haben können übersprungen werden
 					if( (talent.getRANK()==null) || (talent.getRANK().getRank()<1) ) continue;
 					String limitation=join(talent.getLIMITATION());
@@ -999,7 +1001,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
 		// Schleife über alle gelernten Disziplinen
 		for( DISCIPLINEType discipline : getDisciplines() ) {
-			for( TALENTType talent : (new TalentsContainer(discipline)).getDisciplineAndOptionaltalents() ) {
+			for( TALENTType talent : (new TalentsContainer(discipline)).getAllTalents() ) {
 				String name = getFullTalentname(talent);
 				Integer multiUseCount = multiUseTalents.get(name);
 				if( multiUseCount == null ) {
@@ -1140,7 +1142,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		// Falls zu Talenten der zu löschenden Disziplin zugeordnete Skill enthalten sind,
 		// müssen die Skills zu Skillliste verschoben werden.
 		TalentsContainer talents = new TalentsContainer(disciplines.get(size-1));
-		for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+		for( TALENTType talent : talents.getAllTalents() ) {
 			SKILLType skill = talent.getALIGNEDSKILL();
 			if( skill != null ) {
 				talent.setALIGNEDSKILL(null);
@@ -1148,6 +1150,32 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		disciplines.remove(size-1);
+	}
+
+	public void resetFreeTalentsExits() {
+		for( DISCIPLINEType discipline : getDisciplines() ) {
+			DISCIPLINE disciplineDefinition = PROPERTIES.getDisziplin(discipline.getName());
+			// Wenn es zu der Disziplin der Talentliste keine Disziplindefinition gibt, dann über springe diese Talentliste
+			if( disciplineDefinition == null ) continue;
+			int disciplineCircleNr = discipline.getCircle();
+			int circlenr=0;
+			Iterator<DISCIPLINECIRCLEType> circledefs=disciplineDefinition.getCIRCLE().iterator();
+			discipline.getFREETALENT().clear();
+			while(true) {
+				circlenr++;
+				if( circlenr > disciplineCircleNr ) break;
+				if( ! circledefs.hasNext() ) break;
+				DISCIPLINECIRCLEType disciplineCircleDefinition = circledefs.next();
+				for( TALENTABILITYType freetalent : disciplineCircleDefinition.getFREETALENT()) {
+					TALENTType newTalent = new TALENTType();
+					newTalent.setName(freetalent.getName());
+					String limitation = freetalent.getLimitation();
+					if( !limitation.isEmpty() ) newTalent.getLIMITATION().add(limitation);
+					newTalent.setCircle(circlenr);
+					discipline.getFREETALENT().add(newTalent);
+				}
+			}
+		}
 	}
 
 	public void ensureDisciplinTalentsExits() {
@@ -1352,7 +1380,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		String knackLimitation = knack.getLimitation();
 		boolean noKnackLimitation = knackLimitation.isEmpty();
 		for( TalentsContainer talents : getAllTalents() ) {
-			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+			for( TALENTType talent : talents.getAllTalents() ) {
 				boolean matchLimitation=false;
 				if( noKnackLimitation ) matchLimitation=true;
 				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
@@ -1369,7 +1397,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		String knackLimitation = knack.getLimitation();
 		boolean noKnackLimitation = knackLimitation.isEmpty();
 		for( TalentsContainer talents : getAllTalents() ) {
-			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) {
+			for( TALENTType talent : talents.getAllTalents() ) {
 				boolean matchLimitation=false;
 				if( noKnackLimitation ) matchLimitation=true;
 				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
@@ -1674,7 +1702,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		if( allTalents == null ) return 0;
 		int result = 0;
 		for( TalentsContainer talents : allTalents ) {
-			result += isLearnedByVersatility(talents.getDisciplineAndOptionaltalents());
+			result += isLearnedByVersatility(talents.getAllTalents());
 		}
 		return result;
 	}
@@ -1713,7 +1741,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		HashMap<String, List<TALENTType>> realignedTalentHash = new HashMap<String, List<TALENTType>>();
 		// Finde alle Talente die als Realigned makiert sind
 		for( TalentsContainer talents : getAllTalents() ) {
-			insertIfRealigned(realignedTalentHash, talents.getDisciplineAndOptionaltalents() );
+			insertIfRealigned(realignedTalentHash, talents.getAllTalents() );
 		}
 		for( String talentName : realignedTalentHash.keySet() ) {
 			// Wurde ein Talent Realigned, dann gibt es das Talent unter gleichen Namen mehrfach.
@@ -2016,7 +2044,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		initiative.setStep(initiative.getBase()+initiative.getModification());
 		initiative.setDice(PROPERTIES.step2Dice(initiative.getStep()));
 		for( TalentsContainer talents : getAllTalents() ) {
-			for( TALENTType talent : talents.getDisciplineAndOptionaltalents() ) readjustSkillInitiativeModifikator(talent,adjustment);
+			for( TALENTType talent : talents.getAllTalents() ) readjustSkillInitiativeModifikator(talent,adjustment);
 		}
 		for( SKILLType skill : getSkills() ) readjustSkillInitiativeModifikator(skill,adjustment);
 	}

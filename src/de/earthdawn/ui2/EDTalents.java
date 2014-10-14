@@ -29,6 +29,7 @@ import javax.swing.table.TableColumn;
 
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.TalentsContainer;
+import de.earthdawn.TalentsContainer.TalentKind;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.DISCIPLINE;
@@ -294,7 +295,7 @@ class TalentsTableModel extends AbstractTableModel {
 			return 0;
 		}
 		if (talents == null) return 0;
-		return talents.getDisciplinetalents().size()+talents.getOptionaltalents().size();
+		return talents.getDisciplinetalents().size()+talents.getOptionaltalents().size()+talents.getFreetalents().size();
 	}
 
 	public String getColumnName(int col) {
@@ -302,21 +303,9 @@ class TalentsTableModel extends AbstractTableModel {
 	}
 
 	public Object getValueAt(int row, int col) {
-		TALENTType talent;
-		boolean isDisciplinTalent=true;
-		if(talents.getDisciplinetalents().size() > row ) {
-			talent=talents.getDisciplinetalents().get(row);
-			isDisciplinTalent=true;
-		} else {
-			int i = row-talents.getDisciplinetalents().size();
-			List<TALENTType> optionaltalent = talents.getOptionaltalents();
-			if( (i>= 0) && (i<optionaltalent.size()) ) {
-				talent=optionaltalent.get(i);
-				isDisciplinTalent=false;
-			} else {
-				return "Error";
-			}
-		}
+		TALENTType talent = getTalent(row);
+		if( talent == null ) return "Error";
+		TalentKind talentKind=getTalentKind(row);
 		TALENTTEACHERType teacher = talent.getTEACHER();
 		switch (col) {
 		case 0:
@@ -346,8 +335,11 @@ class TalentsTableModel extends AbstractTableModel {
 		case 10:
 			if( teacher == null ) return "-";
 			if( teacher.getByversatility().equals(YesnoType.YES) ) return "Versatility";
-			if( isDisciplinTalent ) return "DisciplineTalent";
-			return "OptionalTalent";
+			switch(talentKind){
+			case DIS : return "DisciplineTalent";
+			case FRE : return "FreeTalent";
+			default: return "OptionalTalent"; 
+			}
 		case 11: return talent.getBookref();
 		default: return new Integer(0);
 		}
@@ -362,18 +354,21 @@ class TalentsTableModel extends AbstractTableModel {
 	public Class<?> getColumnClass(int c) { return getValueAt(0, c).getClass(); }
 
 	public boolean isCellEditable(int row, int col) {
-		TALENTType talent = null;
-		if(talents.getDisciplinetalents().size() > row ) {
-			talent=talents.getDisciplinetalents().get(row);
-		} else {
-			int o = row-talents.getDisciplinetalents().size();
-			talent=talents.getOptionaltalents().get(o);
+		TALENTType talent = getTalent(row);
+		if( talent == null ) {
+			return false;
 		}
-		if( talent == null ) return false;
+		if( getTalentKind(row).equals(TalentKind.FRE) ) {
+			return false;
+		}
 		// Realigned Talents dürfen nicht mehr editiert werden
-		if( talent.getRealigned() > 0 ) return false;
+		if( talent.getRealigned() > 0 ) {
+			return false;
+		}
 		if( col == 4 ) {
-			if( talent.getCircle() > 1 ) return false;
+			if( talent.getCircle() > 1 ) {
+				return false;
+			}
 			return true;
 		}
 		if( col == 5 ) return true;
@@ -386,12 +381,8 @@ class TalentsTableModel extends AbstractTableModel {
 	}
 
 	public void setValueAt(Object value, int row, int col) {
-		TALENTType talent = null;
-		if(talents.getDisciplinetalents().size() > row ) {
-			talent=talents.getDisciplinetalents().get(row);
-		} else {
-			talent=talents.getOptionaltalents().get(row-talents.getDisciplinetalents().size());
-		}
+		TALENTType talent = getTalent(row);
+		if( talent == null ) return;
 		switch (col) {
 		case 0:
 			talent.setCircle((Integer)value);
@@ -421,5 +412,35 @@ class TalentsTableModel extends AbstractTableModel {
 			fireTableCellUpdated(row, col);
 			fireTableCellUpdated(row, 5);
 		}
+	}
+
+	private TALENTType getTalent(int row) {
+		if(talents.getDisciplinetalents().size() > row ) {
+			return talents.getDisciplinetalents().get(row);
+		}
+		row -= talents.getDisciplinetalents().size();
+		if(talents.getOptionaltalents().size() > row ) {
+			return talents.getOptionaltalents().get(row);
+		}
+		row -= talents.getOptionaltalents().size();
+		if(talents.getFreetalents().size() > row ) {
+			return talents.getFreetalents().get(row);
+		}
+		return null;
+	}
+
+	private TalentsContainer.TalentKind getTalentKind(int row) {
+		if(talents.getDisciplinetalents().size() > row ) {
+			return TalentsContainer.TalentKind.DIS;
+		}
+		row -= talents.getDisciplinetalents().size();
+		if(talents.getOptionaltalents().size() > row ) {
+			return TalentsContainer.TalentKind.OPT;
+		}
+		row -= talents.getOptionaltalents().size();
+		if(talents.getFreetalents().size() > row ) {
+			return TalentsContainer.TalentKind.FRE;
+		}
+		return null;
 	}
 }

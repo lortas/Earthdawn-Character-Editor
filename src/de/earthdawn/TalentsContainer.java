@@ -1,50 +1,52 @@
 package de.earthdawn;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.TALENTType;
 
 public class TalentsContainer {
-	private List<TALENTType> disciplinetalents=null;
-	private List<TALENTType> optionaltalents=null;
+	public enum TalentKind { DIS, OPT, FRE };
+	private HashMap<TalentKind,List<TALENTType>> talents=new HashMap<TalentKind,List<TALENTType>>();
 
 	public TalentsContainer() {}
 
 	public TalentsContainer(DISCIPLINEType discipline) {
-		setDisciplinetalents(discipline.getDISZIPLINETALENT());
-		setOptionaltalents(discipline.getOPTIONALTALENT());
+		setTalents(TalentKind.DIS,discipline.getDISZIPLINETALENT());
+		setTalents(TalentKind.OPT,discipline.getOPTIONALTALENT());
+		setTalents(TalentKind.FRE,discipline.getFREETALENT());
 	}
 
-	public void setDisciplinetalents(List<TALENTType> disciplinetalents) {
-		for( TALENTType talent : disciplinetalents ) {
+	public void setTalents(TalentKind talentkind, List<TALENTType> talents) {
+		for( TALENTType talent : talents ) {
 			List<String> limitations = talent.getLIMITATION();
 			String limitation=CharacterContainer.join( limitations );
 			limitations.clear();
 			if( !limitation.isEmpty() ) limitations.add(limitation);
 		}
-		this.disciplinetalents = disciplinetalents;
+		this.talents.put(talentkind,talents);
 	}
 	public List<TALENTType> getDisciplinetalents() {
-		return disciplinetalents;
-	}
-	public void setOptionaltalents(List<TALENTType> optionaltalents) {
-		for( TALENTType talent : optionaltalents ) {
-			List<String> limitations = talent.getLIMITATION();
-			String limitation=CharacterContainer.join( limitations );
-			limitations.clear();
-			if( !limitation.isEmpty() ) limitations.add(limitation);
-		}
-		this.optionaltalents = optionaltalents;
+		return getTalents(TalentKind.DIS);
 	}
 	public List<TALENTType> getOptionaltalents() {
-		return optionaltalents;
+		return getTalents(TalentKind.OPT);
 	}
-	public List<TALENTType> getDisciplineAndOptionaltalents() {
+	public List<TALENTType> getFreetalents() {
+		return getTalents(TalentKind.FRE);
+	}
+	public List<TALENTType> getTalents(TalentKind kind) {
+		return talents.get(kind);
+	}
+	public List<TALENTType> getAllTalents() {
 		List<TALENTType> result = new ArrayList<TALENTType>();
-		if( disciplinetalents != null ) result.addAll(disciplinetalents);
-		if( optionaltalents != null ) result.addAll(optionaltalents);
+		for( TalentKind e : TalentKind.values() ) {
+			List<TALENTType> t = talents.get(e);
+			if( t == null ) continue;
+			result.addAll(t);
+		}
 		return result;
 	}
 }

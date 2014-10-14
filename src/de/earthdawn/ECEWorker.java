@@ -84,7 +84,10 @@ public class ECEWorker {
 		CalculatedLPContainer oldcalculatedLP = calculatedLP.copy();
 		// Berechnete LP erstmal zurücksetzen
 		calculatedLP.clear();
-	
+
+		character.getEDCHARACTER().setName(character.getName().replaceAll("[^-+ '\"A-Za-z0-9]", ""));
+		character.getEDCHARACTER().setPlayer(character.getPlayer().replaceAll("[^-+ '\"A-Za-z0-9]", ""));
+
 		// Die OpenSpell List ist eine generierte Liste und muss daher am Anfang gelöscht werden
 		character.clearOpenSpellList();
 
@@ -263,8 +266,9 @@ public class ECEWorker {
 
 		// Lösche alle Diziplin Boni, damit diese unten wieder ergänzt werden können ohne auf Duplikate achten zu müssen
 		character.clearDisciplineBonuses();
-		// Stelle sicher dass ale Disziplin Talent eingügt werden
+		// Stelle sicher dass alle Disziplin Talent eingügt werden
 		character.ensureDisciplinTalentsExits();
+		character.resetFreeTalentsExits();
 		// Entferne alle Talente die zuhohle Kreise haben.
 		character.removeIllegalTalents();
 		// Entferne alle Optionalen Talente ohne Rang.
@@ -296,12 +300,16 @@ public class ECEWorker {
 			disciplinenumber++;
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
 			TalentsContainer currentTalents = new TalentsContainer(currentDiscipline);
-			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) ensureRankAndTeacher(talent);
 			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
 			int currentCircle = currentDiscipline.getCircle();
 			int minDisciplineCircle=character.getDisciplineMinCircle(disciplinenumber).getCircle();
-			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getDisciplinetalents(), true);
-			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getOptionaltalents(), false);
+			for( TALENTType t : currentTalents.getAllTalents() ) capabilities.enforceCapabilityParams(t);
+			ensureRankAndTeacher(currentTalents.getAllTalents());
+			checkStartrank(disciplinenumber, currentTalents.getAllTalents());
+			autoincrementTalentRank(currentCircle, currentTalents.getDisciplinetalents());
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getDisciplinetalents(), TalentsContainer.TalentKind.DIS);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getOptionaltalents(), TalentsContainer.TalentKind.OPT);
+			calculateTalents(namegivertalents, defaultOptionalTalents, disciplinenumber, currentCircle, minDisciplineCircle, durabilityTalents, currentTalents.getFreetalents(), TalentsContainer.TalentKind.FRE);
 			// Alle Namegiver Talente, die bis jetzt noch nicht enthalten waren,
 			// werden nun den optionalen Talenten beigefügt.
 			for( String t : namegivertalents.keySet() ) {
@@ -371,7 +379,7 @@ public class ECEWorker {
 			currentBonuses.clear();
 			currentBonuses.addAll(getDisciplineBonuses(currentDiscipline));
 			// TALENT KNACKS
-			for( TALENTType talent : currentTalents.getDisciplineAndOptionaltalents() ) checkTalentKnacks(talent,disciplinenumber,minDisciplineCircle);
+			for( TALENTType talent : currentTalents.getAllTalents() ) checkTalentKnacks(talent,disciplinenumber,minDisciplineCircle);
 		}
 
 		// ** ARMOR **
@@ -513,7 +521,7 @@ public class ECEWorker {
 				boolean found=false;
 				for( DISCIPLINEType discipline : allDisciplines ) {
 					DISCIPLINE disziplinProperties = PROPERTIES.getDisziplin(discipline.getName());
-					for( TALENTType talent : (new TalentsContainer(discipline).getDisciplineAndOptionaltalents()) ) {
+					for( TALENTType talent : (new TalentsContainer(discipline).getAllTalents()) ) {
 						boolean sameLimitations = false;
 						if( limitation.isEmpty() ) sameLimitations = true;
 						else if( talent.getLIMITATION().size()>0 ) {
@@ -781,47 +789,19 @@ public class ECEWorker {
 		}
 	}
 
-	public void ensureRankAndTeacher(TALENTType talent) {
-		if( talent.getRANK() == null ) talent.setRANK(new RANKType());
-		if( talent.getTEACHER() == null ) talent.setTEACHER(new TALENTTEACHERType());
+	private static void ensureRankAndTeacher(List<TALENTType> talents) {
+		for( TALENTType talent : talents ) {
+			if( talent.getRANK() == null ) talent.setRANK(new RANKType());
+			if( talent.getTEACHER() == null ) talent.setTEACHER(new TALENTTEACHERType());
+		}
 	}
 
-	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, int minDisciplineCircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, boolean disTalents) {
+	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, int minDisciplineCircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, TalentsContainer.TalentKind talentKind) {
 		int startranks=calculatedLP.getUsedTalentsStartRanks();
 		for( TALENTType talent : talents ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
-			if( teacher == null ) {
-				teacher = new TALENTTEACHERType();
-				talent.setTEACHER(teacher);
-			}
 			RANKType rank = talent.getRANK();
-			if( rank == null ) {
-				rank = new RANKType();
-				talent.setRANK(rank);
-			}
-			// Nur in der Erstdisziplin kann ein Startrang existieren.
-			if( (disciplinenumber!=1) && (rank.getStartrank()!=0) ) {
-				rank.setStartrank(0);
-				errorout.println("The talent '"+talent.getName()+"' is from "+disciplinenumber+". discipline and can't have any start rank. Clear start rank.");
-			}
-			// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
-			if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) {
-				rank.setStartrank(0);
-				errorout.println("The talent '"+talent.getName()+"' is from circle "+talent.getCircle()+". Only talents of circle 1 of the first discipline can have start ranks. The talent start rank was cleared fit this sittuation.");
-			}
-			if( disTalents && OptionalRule_autoincrementDisciplinetalents && (rank.getRank() < disciplinecircle) ) {
-				if( talent.getCircle() < disciplinecircle ) {
-					rank.setRank(disciplinecircle);
-				} else if (talent.getCircle() == disciplinecircle) {
-					rank.setRank(1);
-				} else {
-					rank.setRank(0);
-					errorout.println("The talent '"+talent.getName()+"' is from circle "+talent.getCircle()+", but the circe of the discipline is only "+disciplinecircle+". The talent rank was cleared fit this sittuation.");
-				}
-			}
-			if( rank.getRank() < rank.getStartrank() ) rank.setRank(rank.getStartrank());
 			if( rank.getRank() < rank.getRealignedrank() ) rank.setRank(rank.getRealignedrank());
-			capabilities.enforceCapabilityParams(talent);
 			rank.setBonus(talent.getBonus());
 			if( rank.getRank() < 1 ) {
 				// Wenn kein Rang exisitert, dann auch keine Rangvergangenheit.
@@ -878,6 +858,11 @@ public class ECEWorker {
 			// Der Startrank bassiert entweder von dem gesetzen "Startrank" (bei Charaktererschaffung) oder auf dem Rank ab Realigned
 			int startrank=rank.getStartrank();
 			if( startrank < rank.getRealignedrank() ) startrank = rank.getRealignedrank();
+			if( talentKind.equals(TalentsContainer.TalentKind.FRE) ) {
+				startrank=0;
+				rank.setStartrank(0);
+				rank.setRank(disciplinecircle);
+			}
 			// Sind Skills bereits Realigned dann beachte es auch
 			// Unabhängig von der Optionalen Regel. Die bestimmt nur ob Skills Realigned werden.
 			if( rank.getRank()>0 ) {
@@ -896,18 +881,22 @@ public class ECEWorker {
 					}
 				}
 			}
-			rank.setLpcost(newDisciplineTalentCost+PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),startrank,rank.getRank()));
-			if( disTalents ) {
-				calculatedLP.addDisciplinetalents(rank.getLpcost(),"LPs for discipline talent '"+talent.getName()+"'");
+			if( talentKind.equals(TalentsContainer.TalentKind.FRE) ) {
+				rank.setLpcost(0);
 			} else {
-				calculatedLP.addOptionaltalents(rank.getLpcost(),"LPs for optional talent '"+talent.getName()+"'");
+				rank.setLpcost(newDisciplineTalentCost+PROPERTIES.getCharacteristics().getTalentRankTotalLP(disciplinenumber,talent.getCircle(),startrank,rank.getRank()));
+				if( talentKind.equals(TalentsContainer.TalentKind.DIS) ) {
+					calculatedLP.addDisciplinetalents(rank.getLpcost(),"LPs for discipline talent '"+talent.getName()+"'");
+				} else {
+					calculatedLP.addOptionaltalents(rank.getLpcost(),"LPs for optional talent '"+talent.getName()+"'");
+				}
 			}
 			startranks+=rank.getStartrank();
 			ATTRIBUTENameType attr = talent.getAttribute();
 			if( attr != null ) calculateCapabilityRank(rank,characterAttributes.get(attr));
 			String talentname = talent.getName();
 			if( talentname.equals(durabilityTalentName)) durabilityTalents.add(talent);
-			calculateKnacks(disciplinenumber, talent, disTalents);
+			calculateKnacks(disciplinenumber, talent, talentKind.equals(TalentsContainer.TalentKind.DIS));
 			if( namegivertalents.containsKey(talentname) ) {
 				namegivertalents.remove(talentname);
 			}
@@ -919,6 +908,48 @@ public class ECEWorker {
 			}
 		}
 		calculatedLP.setUsedTalentsStartRanks(startranks);
+	}
+
+	private static void checkStartrank(int disciplinenumber, List<TALENTType> talents) {
+		if( disciplinenumber == 1 ) {
+			for( TALENTType talent : talents ) {
+				RANKType rank = talent.getRANK();
+				// Talente aus höheren Kreisen können keine Startranks haben, da Startranks nur bei der Charaktererschaffung vergeben werden.
+				if( (talent.getCircle()>1) && (rank.getStartrank()>0) ) {
+					rank.setStartrank(0);
+					errorout.println("The talent '"+talent.getName()+"' is from circle "+talent.getCircle()+". Only talents of circle 1 of the first discipline can have start ranks. The talent start rank was cleared fit this sittuation.");
+				}
+				if( rank.getRank() < rank.getStartrank() ) rank.setRank(rank.getStartrank());
+			}
+		} else {
+			// Nur in der Erstdisziplin kann ein Startrang existieren.
+			for( TALENTType talent : talents ) {
+				RANKType rank = talent.getRANK();
+				if( rank.getStartrank()!=0 ) {
+					rank.setStartrank(0);
+					errorout.println("The talent '"+talent.getName()+"' is from "+disciplinenumber+". discipline and can't have any start rank. Clear start rank.");
+				}
+			}
+		}
+	}
+
+	// Die Funktion geht davon aus das alle Talente ein RANK Object haben.
+	private static void autoincrementTalentRank(int disciplinecircle, List<TALENTType> talents ) {
+		if( ! OptionalRule_autoincrementDisciplinetalents ) return;
+		for( TALENTType talent : talents ) {
+			RANKType rank = talent.getRANK();
+			// Wenn der Rank bereits größer als der Disciplin Kreis ist. Dann tue nichts.
+			if( rank.getRank() > disciplinecircle ) continue;
+			int talentcircle = talent.getCircle();
+			if( talentcircle < disciplinecircle ) {
+				rank.setRank(disciplinecircle);
+			} else if (talentcircle == disciplinecircle) {
+				rank.setRank(1);
+			} else {
+				rank.setRank(0);
+				errorout.println("The talent '"+talent.getName()+"' is from circle "+talentcircle+", but the circe of the discipline is only "+disciplinecircle+". The talent rank was cleared to fit this sittuation.");
+			}
+		}
 	}
 
 	public static void removeIfContains(List<CAPABILITYType> defaultSkills, String name) {
