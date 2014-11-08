@@ -6,6 +6,7 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.ATTRIBUTEType;
@@ -27,7 +28,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 public class CharacteristicStatus {
-
+	public static ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private CharacterContainer character;
 	private Configuration cfg;
 	private Template template=null;
@@ -55,6 +56,7 @@ public class CharacteristicStatus {
 
 		node = new HashMap<String,Object>();
 		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		int spendAttributeBuyPoints=0;
 		for( ATTRIBUTENameType a : attributes.keySet() ) {
 			Map<String,Object> values = new HashMap<String,Object>();
 			node.put(a.value(), values);
@@ -65,7 +67,10 @@ public class CharacteristicStatus {
 			values.put( "step", attribute.getStep() );
 			String dice = attribute.getDice();
 			values.put( "dice", (dice==null)?"NA":dice );
+			spendAttributeBuyPoints+=attribute.getCost();
 		}
+		node.put("BuyPointsUsed", spendAttributeBuyPoints);
+		node.put("BuyPointsMax", PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints());
 		root.put("ATTRIBUTE", node);
 
 		node = new HashMap<String,Object>();

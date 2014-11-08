@@ -111,7 +111,7 @@ public class ECEWorker {
 		weaponList.addAll(magicWeapons);
 
 		// **ATTRIBUTE**
-		int karmaMaxBonus = OptionalRule_MaxAttributeBuyPoints;
+		int spendAttributeBuyPoints=0;
 		// Der Bonus auf das Maximale Karma ergibt sich aus den übriggebliebenen Kaufpunkten bei der Charaktererschaffung
 		characterAttributes = character.getAttributes();
 		for (ATTRIBUTENAMEVALUEType raceattribute : namegiver.getATTRIBUTE()) {
@@ -132,7 +132,7 @@ public class ECEWorker {
 			STEPDICEType stepdice=attribute2StepAndDice(value);
 			attribute.setDice(stepdice.getDice());
 			attribute.setStep(stepdice.getStep());
-			karmaMaxBonus-=attribute.getCost();
+			spendAttributeBuyPoints+=attribute.getCost();
 			if( OptionalRule_LegendpointsForAttributeIncrease ) {
 				calculatedLP.addAttribute(
 						PROPERTIES.getCharacteristics().getAttributeTotalLP(attribute.getLpincrease()),
@@ -140,12 +140,8 @@ public class ECEWorker {
 						);
 			}
 		}
-		if( karmaMaxBonus <0 ) {
-			errorout.println("The character was generated with to many spent attribute buy points: "+(-karmaMaxBonus));
-			if( OptionalRule_NoNegativeKarmaMax ) {
-				errorout.println("The to many spent attribute buy points will not result in a negative karma maximum.");
-				karmaMaxBonus=0;
-			}
+		if( spendAttributeBuyPoints > OptionalRule_MaxAttributeBuyPoints ) {
+			errorout.println("The character was generated with to many spent attribute buy points: "+spendAttributeBuyPoints+" > "+OptionalRule_MaxAttributeBuyPoints);
 		}
 
 		// **DEFENSE**
@@ -223,7 +219,7 @@ public class ECEWorker {
 			if(karmaritualTalent == null ) {
 				errorout.println("No Karmaritual ("+karmaritualName+") could be found.");
 			}
-			int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), karmaMaxBonus);
+			int calculatedKarmaLP=calculateKarma(character.getKarma(), karmaritualTalent, namegiver.getKarmamodifier(), OptionalRule_MaxAttributeBuyPoints - spendAttributeBuyPoints);
 			if( (calculatedKarmaLP!=0) && OptionalRule_KarmaLegendPointCost ) {
 				calculatedLP.addKarma(calculatedKarmaLP,"LPs spent for Karma");
 			}
@@ -963,6 +959,10 @@ public class ECEWorker {
 	}
 
 	private static int calculateKarma(KARMAType karma, TALENTType karmaritualTalent, int karmaModifier, int karmaMaxBonus) {
+		if( (karmaMaxBonus < 0) && OptionalRule_NoNegativeKarmaMax ) {
+			errorout.println("The to many spent attribute buy points will not result in a negative karma maximum.");
+			karmaMaxBonus=0;
+		}
 		karma.setMaxmodificator(karmaMaxBonus);
 		if( karmaritualTalent == null ) {
 			errorout.println("No karmaritual talent found, skipping maximal karma calculation.");

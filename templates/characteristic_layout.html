@@ -67,8 +67,8 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.CHA.dice}</td>
 				</tr>
 				<tr class="tfoot">
-					<td colspan="5">Not Spent Attribute Cost</td>
-					<#if KARMA.maxmodificator < 0><td class="red"><#else><td></#if>${KARMA.maxmodificator}</td>
+					<td colspan="5">Used Attribute Cost</td>
+					<#if ATTRIBUTE.BuyPointsMax < ATTRIBUTE.BuyPointsUsed><td class="red"><#else><td></#if>${ATTRIBUTE.BuyPointsUsed} of ${ATTRIBUTE.BuyPointsMax}</td>
 				</tr>
 			</table>
 		</td>
