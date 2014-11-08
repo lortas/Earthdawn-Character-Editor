@@ -405,22 +405,34 @@ public class ECEWorker {
 		// magischen Rüstung/Rüstungsschutz anhängen:
 		totalarmor.addAll(character.getMagicArmor());
 		// Bestimme nun den aktuellen Gesamtrüstungsschutz
-		int mysticalarmor=0;
+		int mysticarmor=0;
 		int physicalarmor=0;
+		int mysticdefense=0;
+		int physicaldefense=0;
 		int protectionpenalty=0;
 		for (ARMORType armor : totalarmor ) {
 			if( armor.getUsed().equals(YesnoType.YES) ) {
-				mysticalarmor+=armor.getMysticarmor();
+				mysticarmor+=armor.getMysticarmor();
 				physicalarmor+=armor.getPhysicalarmor();
 				protectionpenalty+=armor.getPenalty();
 				if( armor.getVirtual().equals(YesnoType.NO) ) {
 					character.addBloodDamgeFrom(armor);
 				}
+				if( armor instanceof SHIELDType ) {
+					SHIELDType shield = (SHIELDType) armor;
+					DEFENSEType d = shield.getDEFENSE();
+					if( d != null ) {
+						physicaldefense+=d.getPhysical();
+						mysticdefense+=d.getSpell();
+					}
+				}
 			}
 			if(armor.getKind().equals(ItemkindType.UNDEFINED)) armor.setKind(ItemkindType.ARMOR);
 		}
+		defense.setPhysical(defense.getPhysical()+physicaldefense);
+		defense.setSpell(defense.getSpell()+mysticdefense);
 		PROTECTIONType protection = character.getProtection();
-		protection.setMysticarmor(mysticalarmor);
+		protection.setMysticarmor(mysticarmor);
 		protection.setPenalty(protectionpenalty);
 		protection.setPhysicalarmor(physicalarmor);
 		character.readjustInitiativeModifikator(-protectionpenalty,true);

@@ -11,6 +11,7 @@ package de.earthdawn.data;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -23,6 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="SHIELD_type">
  *   &lt;complexContent>
  *     &lt;extension base="{http://earthdawn.com/datatypes}ARMOR_type">
+ *       &lt;sequence>
+ *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSE_type" minOccurs="0"/>
+ *       &lt;/sequence>
  *       &lt;attribute name="shatterthreshold" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="physicaldeflectionbonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
  *       &lt;attribute name="mysticdeflectionbonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
@@ -34,17 +38,45 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SHIELD_type")
+@XmlType(name = "SHIELD_type", propOrder = {
+    "defense"
+})
 public class SHIELDType
     extends ARMORType
 {
 
+    @XmlElement(name = "DEFENSE")
+    protected DEFENSEType defense;
     @XmlAttribute(name = "shatterthreshold")
     protected Integer shatterthreshold;
     @XmlAttribute(name = "physicaldeflectionbonus")
     protected Integer physicaldeflectionbonus;
     @XmlAttribute(name = "mysticdeflectionbonus")
     protected Integer mysticdeflectionbonus;
+
+    /**
+     * Gets the value of the defense property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DEFENSEType }
+     *     
+     */
+    public DEFENSEType getDEFENSE() {
+        return defense;
+    }
+
+    /**
+     * Sets the value of the defense property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DEFENSEType }
+     *     
+     */
+    public void setDEFENSE(DEFENSEType value) {
+        this.defense = value;
+    }
 
     /**
      * Gets the value of the shatterthreshold property.

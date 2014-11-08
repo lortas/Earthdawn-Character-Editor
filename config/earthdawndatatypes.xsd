@@ -449,6 +449,9 @@
 	<xs:complexType name="SHIELD_type">
 		<xs:complexContent>
 			<xs:extension base="ARMOR_type">
+				<xs:sequence minOccurs="1" maxOccurs="1">
+					<xs:element  minOccurs="0" maxOccurs="1" name="DEFENSE" type="DEFENSE_type"/>
+				</xs:sequence>
 				<xs:attribute name="shatterthreshold" type="unsigned_int" default="0"/>
 				<xs:attribute name="physicaldeflectionbonus" type="unsigned_int" default="0"/>
 				<xs:attribute name="mysticdeflectionbonus" type="unsigned_int" default="0"/>
