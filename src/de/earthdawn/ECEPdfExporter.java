@@ -204,8 +204,8 @@ public class ECEPdfExporter {
 				acroFields.setField( "SkillAttribute."+counter, attribute.value() );
 				if( attribute.equals(ATTRIBUTENameType.NA) ) {
 					acroFields.setField( "SkillAttributeStep."+counter, "-" );
-				} else { 
-					acroFields.setField( "SkillAttributeStep."+counter, String.valueOf(attributes.get(attribute.value()).getStep()) );
+				} else {
+					acroFields.setField( "SkillAttributeStep."+counter, String.valueOf(attributes.get(attribute).getStep()) );
 				}
 				counter++;
 			}
