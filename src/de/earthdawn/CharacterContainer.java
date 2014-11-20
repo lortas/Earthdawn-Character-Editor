@@ -310,7 +310,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		int result = 0;
 		for (ATTRIBUTEType attribute : character.getATTRIBUTE() ) {
 			// Das "Attribut" na soll nicht beachtet werden
-			if( attribute.equals(ATTRIBUTENameType.NA) ) continue;
+			if( attribute.getName().equals(ATTRIBUTENameType.NA) ) continue;
 			result += attribute.getCost();
 		}
 		return result;
