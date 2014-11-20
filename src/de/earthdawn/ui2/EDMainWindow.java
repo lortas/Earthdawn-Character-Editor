@@ -773,7 +773,10 @@ public class EDMainWindow {
 
 	protected void do_mntmSaveAs_actionPerformed(ActionEvent arg0) {
 		String name = character.getName();
-		if( name == null ) name = "noname";
+		if( name == null || name.isEmpty() ) {
+			name = character.getRace().getName();
+			for( String s : character.getDisciplineNames() ) name += "_"+s;
+		}
 		File xmlFile = new File(name.replaceAll(" ", "_") + ".xml");
 		JFileChooser fc = new JFileChooser(new File("."));
 		fc.setSelectedFile(xmlFile);
