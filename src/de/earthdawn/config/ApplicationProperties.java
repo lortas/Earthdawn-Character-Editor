@@ -29,7 +29,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeMap;
@@ -88,7 +87,7 @@ public class ApplicationProperties {
 		return theProps;
 	}
 
-	public void setRulesetLanguage(ECERulesetLanguage rulesetlanguage) {
+	public static void setRulesetLanguage(ECERulesetLanguage rulesetlanguage) {
 		RULESETLANGUAGE = rulesetlanguage;
 	}
 	public void setRulesetLanguage(RulesetversionType rulesetversion, LanguageType language) {
