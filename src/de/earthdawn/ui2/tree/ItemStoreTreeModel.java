@@ -18,7 +18,7 @@ public class ItemStoreTreeModel implements TreeModel {
 	private ArrayList<EDInventoryRootNodeType> displayKeys;
 	protected ArrayList<TreeModelListener> listeners  = new ArrayList<TreeModelListener>();
 
-	public List<?> getListForGroupNode(String groupkey){
+	public List<?> getListForGroupNode(EDInventoryRootNodeType groupkey){
 		return (List<?>)displayedNodes.get(groupkey);
 	}
 
