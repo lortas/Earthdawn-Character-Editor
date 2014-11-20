@@ -69,10 +69,6 @@ public class ApplicationProperties {
 
     /** Singleton-Instanz dieser Klasse. */
     private static ApplicationProperties theProps = null;
-
-    /** Anzeigetexte (Steuerelemente) */
-    private ResourceBundle MESSAGES = null;
-
     /** Disziplinen (Name Label geordnet) */
     private static final Map<ECERulesetLanguage,Map<String, DISCIPLINE>> DISCIPLINES = new HashMap<ECERulesetLanguage,Map<String, DISCIPLINE>>();
     /** RandomCharacterTemplates (Name Label geordnet) */
@@ -100,13 +96,6 @@ public class ApplicationProperties {
 	}
 	public ECERulesetLanguage getRulesetLanguage() {
 		return RULESETLANGUAGE;
-	}
-
-	/**
-	 * Gibt internationalisierten Text zu <code>key</code> zurück.
-	 */
-	public String getMessage(String key) {
-		return MESSAGES.getString(key);
 	}
 
 	public static List<Integer> getNumberOfOptionalTalentsPerCircle(DISCIPLINE discipline) {
@@ -574,7 +563,7 @@ public class ApplicationProperties {
 		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
 		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.get(RULESETLANGUAGE).getSPELL());
 		RANDOMCHARACTERTEMPLATES.setCapabilities(getCapabilities());
-		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES.get(RULESETLANGUAGE.getLanguage()));
+		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES.get(RULESETLANGUAGE));
 		return RANDOMCHARACTERTEMPLATES.generateRandomCharacter(template);
 	}
 
