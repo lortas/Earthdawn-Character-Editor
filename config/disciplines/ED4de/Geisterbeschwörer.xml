@@ -33,7 +33,7 @@
 		<SPELL type="nether" name="Seelenrüstung"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<DISCIPLINETALENT name="Eisener Wille"/>
+		<DISCIPLINETALENT name="Eiserner Wille"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Aspekt des Nebelgeistes"/>
 		<SPELL type="nether" name="Kreis der Kälte"/>

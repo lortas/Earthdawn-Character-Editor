@@ -74,7 +74,7 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
-		<OPTIONALTALENT name="Eisener Wille"/>
+		<OPTIONALTALENT name="Eiserner Wille"/>
 		<OPTIONALTALENT name="Erweiterte Matrix"/>
 		<OPTIONALTALENT name="Feuerblut"/>
 		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>

@@ -10,10 +10,10 @@
 		<OPTIONALTALENT name="Fremdsprachen"/>
 		<OPTIONALTALENT name="Konversation"/>
 		<OPTIONALTALENT name="Lesen/Schreiben"/>
-		<OPTIONALTALENT name="Standardmatrix"/>
+		<OPTIONALTALENT name="Standardmatrix" limitation="M3"/>
 		<OPTIONALTALENT name="Tieranalyse"/>
-		<FREETALENT name="Standardmatrix"/>
-		<FREETALENT name="Standardmatrix"/>
+		<FREETALENT name="Standardmatrix" limitation="M1"/>
+		<FREETALENT name="Standardmatrix" limitation="M2"/>
 		<DISCIPLINETALENT name="Forschen"/>
 		<DISCIPLINETALENT name="Magie Neutralisieren"/>
 		<DISCIPLINETALENT name="Spruchzauberei"/>
@@ -55,7 +55,7 @@
 		<KARMA spend="um sich zu erinnern - einschl. Wissensproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
-		<DISCIPLINETALENT name="Eisener Wille"/>
+		<DISCIPLINETALENT name="Eiserner Wille"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Berührung des Gauklers"/>
 		<SPELL type="wizard" name="Fesselnde Fäden"/>
@@ -68,7 +68,7 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Beweisanalyse"/>
 		<OPTIONALTALENT name="Diplomatie"/>
-		<OPTIONALTALENT name="Erweiterte Matrix"/>
+		<OPTIONALTALENT name="Erweiterte Matrix" limitation="M4"/>
 		<OPTIONALTALENT name="Hieb Ausweichen"/>
 		<OPTIONALTALENT name="Hypnotisieren"/>
 		<OPTIONALTALENT name="Kompasspfeil"/>
@@ -76,7 +76,7 @@
 		<OPTIONALTALENT name="Machtmaskierung"/>
 		<OPTIONALTALENT name="Starrsinn"/>
 		<OPTIONALTALENT name="Untrüglicher Blick"/>
-		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="M1"/>
 		<DISCIPLINETALENT name="Astrale Interferenz"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Fliegen"/>
