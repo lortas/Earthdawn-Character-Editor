@@ -1167,12 +1167,25 @@ public class CharacterContainer extends CharChangeRefresh {
 				if( ! circledefs.hasNext() ) break;
 				DISCIPLINECIRCLEType disciplineCircleDefinition = circledefs.next();
 				for( TALENTABILITYType freetalent : disciplineCircleDefinition.getFREETALENT()) {
-					TALENTType newTalent = new TALENTType();
-					newTalent.setName(freetalent.getName());
-					String limitation = freetalent.getLimitation();
-					if( !limitation.isEmpty() ) newTalent.getLIMITATION().add(limitation);
-					newTalent.setCircle(circlenr);
-					discipline.getFREETALENT().add(newTalent);
+					boolean toBeInsert=true;
+					String replace=freetalent.getReplace();
+					if( ! replace.isEmpty() ) {
+						for( TALENTType tal : discipline.getFREETALENT () ) {
+							if( tal.getName().equals(replace)) {
+								tal.setName(freetalent.getName());
+								toBeInsert=false;
+								break;
+							}
+						}
+					}
+					if( toBeInsert ) {
+						TALENTType newTalent = new TALENTType();
+						newTalent.setName(freetalent.getName());
+						String limitation = freetalent.getLimitation();
+						if( !limitation.isEmpty() ) newTalent.getLIMITATION().add(limitation);
+						newTalent.setCircle(circlenr);
+						discipline.getFREETALENT().add(newTalent);
+					}
 				}
 			}
 		}
