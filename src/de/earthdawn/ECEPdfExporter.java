@@ -287,7 +287,9 @@ public class ECEPdfExporter {
 				setSkillOrTalent(getTalentFieldNames(counter), talent, attributes);
 				counter++;
 			}
-			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = new ArrayList<TALENTType>();
+			optionaltalents.addAll(discipline1.getOPTIONALTALENT());
+			optionaltalents.addAll(discipline1.getFREETALENT());
 			Collections.sort(optionaltalents, new TalentComparator());
 			counter = 0;
 			for( TALENTType talent : optionaltalents ) {
@@ -526,7 +528,9 @@ public class ECEPdfExporter {
 				setSkillOrTalent(getTalentFieldNames(counter), talent, attributes);
 				counter++;
 			}
-			List<TALENTType> optionaltalents = discipline1.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = new ArrayList<TALENTType>();
+			optionaltalents.addAll(discipline1.getOPTIONALTALENT());
+			optionaltalents.addAll(discipline1.getFREETALENT());
 			Collections.sort(optionaltalents, new TalentComparator());
 			counter = 0;
 			for( TALENTType talent : optionaltalents ) {
@@ -555,7 +559,9 @@ public class ECEPdfExporter {
 				setSkillOrTalent(getTalentFieldNames(counter), talent, attributes);
 				counter++;
 			}
-			List<TALENTType> optionaltalents = discipline2.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = new ArrayList<TALENTType>();
+			optionaltalents.addAll(discipline2.getOPTIONALTALENT());
+			optionaltalents.addAll(discipline2.getFREETALENT());
 			Collections.sort(optionaltalents, new TalentComparator());
 			counter = 16;
 			for( TALENTType talent : optionaltalents ) {
@@ -1085,7 +1091,9 @@ public class ECEPdfExporter {
 					counterKnack++;
 				}
 			}
-			List<TALENTType> optionaltalents = discipline.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = new ArrayList<TALENTType>();
+			optionaltalents.addAll(discipline.getOPTIONALTALENT());
+			optionaltalents.addAll(discipline.getFREETALENT());
 			Collections.sort(optionaltalents, new TalentComparator());
 			for( TALENTType talent : optionaltalents ) {
 				if( talentForms.hasNext(-1) ) {
@@ -1254,7 +1262,9 @@ public class ECEPdfExporter {
 					counterKnack++;
 				}
 			}
-			List<TALENTType> optionaltalents = discipline.getOPTIONALTALENT();
+			List<TALENTType> optionaltalents = new ArrayList<TALENTType>();
+			optionaltalents.addAll(discipline.getOPTIONALTALENT());
+			optionaltalents.addAll(discipline.getFREETALENT());
 			Collections.sort(optionaltalents, new TalentComparator());
 			for( TALENTType talent : optionaltalents ) {
 				setSkillOrTalent(getTalentFieldNames(20+counterOthertalent), talent, character.getAttributes());
