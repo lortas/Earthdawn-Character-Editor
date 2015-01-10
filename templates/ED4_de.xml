@@ -139,6 +139,18 @@
 	<ArmorPenalty></ArmorPenalty>
 	<ShieldMystic>topmostSubform[0].Page1[0].Mystic_Shield[0]</ShieldMystic>
 	<ShieldPhysical>topmostSubform[0].Page1[0].Physical_Shield[0]</ShieldPhysical>
+<!--
+	<ArmorName>topmostSubform[0].Page2[0].Type_of_armor[0]</ArmorName>
+	<ArmorName>topmostSubform[0].Page2[0].Type_of_armor_2[0]</ArmorName>
+	<ArmorName>topmostSubform[0].Page2[0].Type_of_armor_3[0]</ArmorName>
+	<ArmorName>topmostSubform[0].Page2[0].Type_of_armor_4[0]</ArmorName>
+	<ArmorName>topmostSubform[0].Page2[0].Type_of_armor_5[0]</ArmorName>
+	<ArmorPenalties>topmostSubform[0].Page2[0].iNI__PM[0]</ArmorPenalties>
+	<ArmorPenalties>topmostSubform[0].Page2[0].iNI__PM_2[0]</ArmorPenalties>
+	<ArmorPenalties>topmostSubform[0].Page2[0].iNI__PM_3[0]</ArmorPenalties>
+	<ArmorPenalties>topmostSubform[0].Page2[0].iNI__PM_4[0]</ArmorPenalties>
+	<ArmorPenalties>topmostSubform[0].Page2[0].iNI__PM_5[0]</ArmorPenalties>
+-->
 	<DisciplineBonus><Circle>topmostSubform[0].Page2[0].___Row_1[0]</Circle><Ability>topmostSubform[0].Page2[0].bonusability__Row_1[0]</Ability></DisciplineBonus>
 	<DisciplineBonus><Circle>topmostSubform[0].Page2[0].___Row_2[0]</Circle><Ability>topmostSubform[0].Page2[0].bonusability__Row_2[0]</Ability></DisciplineBonus>
 	<DisciplineBonus><Circle>topmostSubform[0].Page2[0].___Row_3[0]</Circle><Ability>topmostSubform[0].Page2[0].bonusability__Row_3[0]</Ability></DisciplineBonus>
