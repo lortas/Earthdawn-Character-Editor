@@ -1168,6 +1168,8 @@ public class CharacterContainer extends CharChangeRefresh {
 				DISCIPLINECIRCLEType disciplineCircleDefinition = circledefs.next();
 				for( TALENTABILITYType freetalent : disciplineCircleDefinition.getFREETALENT()) {
 					boolean toBeInsert=true;
+					// Manche Freien Talente können ander freie Talente ersetzen.
+					// Prüfe, ob ein anderes freies Talent ersetzt werden soll.
 					String replace=freetalent.getReplace();
 					if( ! replace.isEmpty() ) {
 						for( TALENTType tal : discipline.getFREETALENT () ) {
@@ -1178,6 +1180,7 @@ public class CharacterContainer extends CharChangeRefresh {
 							}
 						}
 					}
+					// Kein Talent ist ersetzt worden. Fünge das neue Freie Talent der liste der Freien Talente hinzu.
 					if( toBeInsert ) {
 						TALENTType newTalent = new TALENTType();
 						newTalent.setName(freetalent.getName());
