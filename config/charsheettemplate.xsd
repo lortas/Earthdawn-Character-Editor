@@ -102,6 +102,8 @@
 				<xs:element name="ShieldMystic" type="xs:string"/>
 				<xs:element name="ShieldPhysical" type="xs:string"/>
 				<xs:element name="ArmorPenalty" type="xs:string"/>
+				<xs:element name="ArmorName" type="xs:string"/>
+				<xs:element name="ArmorPenalties" type="xs:string"/>
 				<xs:element name="DisciplineBonus" type="charsheettemplatedisciplinebonus_type"/>
 				<xs:element name="WeaponName" type="xs:string"/>
 				<xs:element name="WeaponDamagestep" type="xs:string"/>
