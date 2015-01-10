@@ -315,7 +315,10 @@ public class ApplicationProperties {
 	// Unabhängig von der Diszipin oder dem Fadenweben-Talent
 	public HashMap<String,SPELLDEFType> getSpells() {
 		HashMap<String,SPELLDEFType> spellmap = new HashMap<String,SPELLDEFType>();
-		for( SPELLDEFType spell : SPELLS.get(RULESETLANGUAGE).getSPELL() ) {
+		de.earthdawn.data.SPELLS spells = SPELLS.get(RULESETLANGUAGE);
+		if( spells == null ) {
+			System.err.println("No Spells defined found in ruleset "+RULESETLANGUAGE.toString());
+		} else for( SPELLDEFType spell : spells.getSPELL() ) {
 			spellmap.put(spell.getName(), spell);
 		}
 		return spellmap;
