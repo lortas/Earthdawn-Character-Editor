@@ -949,7 +949,7 @@ public class ECEWorker {
 			if( talentcircle < disciplinecircle ) {
 				rank.setRank(disciplinecircle);
 			} else if (talentcircle == disciplinecircle) {
-				rank.setRank(1);
+				if( rank.getRank() < 1) rank.setRank(1);
 			} else {
 				rank.setRank(0);
 				errorout.println("The talent '"+talent.getName()+"' is from circle "+talentcircle+", but the circe of the discipline is only "+disciplinecircle+". The talent rank was cleared to fit this sittuation.");
