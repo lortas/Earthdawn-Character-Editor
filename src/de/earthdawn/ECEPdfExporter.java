@@ -757,6 +757,8 @@ public class ECEPdfExporter {
 		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		Iterator<String> disciplineNames = character.getDisciplineNames().iterator();
 		Iterator<Integer> disciplineCircles = character.getDisciplineCircles().iterator();
+		List<String> armorNameList = new ArrayList<String>();
+		List<Integer> armorPenaltyList = new ArrayList<Integer>();
 		int lpIncreaseDex = attributes.get(ATTRIBUTENameType.DEX).getLpincrease();
 		int lpIncreaseStr = attributes.get(ATTRIBUTENameType.STR).getLpincrease();
 		int lpIncreaseTou = attributes.get(ATTRIBUTENameType.TOU).getLpincrease();
@@ -785,7 +787,11 @@ public class ECEPdfExporter {
 				totalArmor[1]+=mysticarmor;
 				totalArmor[2]+=penalty;
 			}
+			armorNameList.add(armor.getName());
+			armorPenaltyList.add(armor.getPenalty());
 		}
+		Iterator<String> armorName = armorNameList.iterator();
+		Iterator<Integer> armorPenalty = armorPenaltyList.iterator();
 
 		CharsheettemplatetalentStack talentForms = new CharsheettemplatetalentStack();
 		List<CharsheettemplatetalentType> skillForms = new ArrayList<CharsheettemplatetalentType>();
@@ -919,6 +925,20 @@ public class ECEPdfExporter {
 					acroFields.setField( (String)f.getValue() , String.valueOf(disciplineCircles.next()) );
 				} else {
 					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "ArmorName" :
+				if( armorName.hasNext() ) {
+					acroFields.setField( (String)f.getValue() , armorName.next() );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );
+				}
+				break;
+			case "ArmorPenalties" :
+				if( armorPenalty.hasNext() ) {
+					acroFields.setField( (String)f.getValue() , String.valueOf(armorPenalty.next()) );
+				} else {
+					acroFields.setField( (String)f.getValue() , "" );	
 				}
 				break;
 			case "DefencePhysical" :
