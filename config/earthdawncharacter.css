@@ -12,6 +12,9 @@
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
+	border-left: 20px solid #702A2A;
+	border-right: 20px solid #702A2A;
+	border-bottom: 20px solid #702A2A;
 }
 
 .edHeader {

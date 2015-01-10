@@ -26,7 +26,18 @@
 	<body class="edBody">
 		<!-- div needed for layout purposes -->
 		<!-- Heading -->
-		<div class="edHeader">Earthdawn Character Sheet</div>
+		<xsl:choose>
+			<xsl:when test="/edc:EDCHARACTER/@rulesetversion='ED4'">
+				<div style="text-align:center; vertical-align:center;background-color:#702A2A">
+					<img class="edIcon" width="30%">
+						<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>images/ed4-logo.png</xsl:text></xsl:attribute>
+					</img>
+				</div>
+			</xsl:when>
+			<xsl:otherwise>
+				<div class="edHeader">Earthdawn Character Sheet</div>
+			</xsl:otherwise>
+		</xsl:choose>
 		<div class="edLayoutRow">
 			<table width="100%">
 				<tr>
@@ -48,15 +59,16 @@
 					<xsl:apply-templates select="//edc:KARMA"/>	
 				</td>
 				<td class="invisible">
-					<!-- Initiative -->
-					<xsl:apply-templates select="//edc:INITIATIVE"/>	
-				</td>
-				<td class="invisible">
 					<!-- Carrying -->
 					<xsl:apply-templates select="//edc:CARRYING"/>	
 				</td>
 			</tr>
 		</table>
+		<!-- Disciplines -->
+		<xsl:apply-templates select="//edc:DISCIPLINE"/>
+		<!-- Skills -->
+		<xsl:call-template name="skills"/>
+		<!-- LPs -->
 		<table class="invisible" width="100%">
 			<tr class="invisible">
 				<td class="invisible">
@@ -66,192 +78,6 @@
 				<td class="invisible">
 					<!-- Calculated Legend Points -->
 					<xsl:call-template name="calculatedLegendPoints" />
-				</td>
-			</tr>
-		</table>
-		<!-- Disciplines -->
-		<table class="invisible" width="100%">
-			<tr class="invisible">
-				<td style="border-style: solid; border-width: 1px;" valign="top" rowspan="2">
-					<table width="100%">
-						<thead><tr class="invisible">
-							<td class="edHeaderCell">Step</td>
-							<td class="edHeaderCell">Dice</td>
-						</tr></thead>
-						<tr class="invisible">
-							<td class="dicetableStep">1</td>
-							<td class="dicetableDice">d6-3</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">1</td>
-							<td class="dicetableDice">d6-3</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">2</td>
-							<td class="dicetableDice">d6-2</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">3</td>
-							<td class="dicetableDice">d6-1</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">4</td>
-							<td class="dicetableDice">d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">5</td>
-							<td class="dicetableDice">d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">6</td>
-							<td class="dicetableDice">d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">7</td>
-							<td class="dicetableDice">d12</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">8</td>
-							<td class="dicetableDice">2d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">9</td>
-							<td class="dicetableDice">d8+d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">10</td>
-							<td class="dicetableDice">2d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">11</td>
-							<td class="dicetableDice">d10+d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">12</td>
-							<td class="dicetableDice">2d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">13</td>
-							<td class="dicetableDice">d12+d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">14</td>
-							<td class="dicetableDice">2d12</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">15</td>
-							<td class="dicetableDice">d12+2d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">16</td>
-							<td class="dicetableDice">d12+d8+d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">17</td>
-							<td class="dicetableDice">d12+2d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">18</td>
-							<td class="dicetableDice">d12+d10+d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">19</td>
-							<td class="dicetableDice">d12+2d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">20</td>
-							<td class="dicetableDice">2d12+d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">21</td>
-							<td class="dicetableDice">3d12</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">22</td>
-							<td class="dicetableDice">2d12+2d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">23</td>
-							<td class="dicetableDice">2d12+d8+d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">24</td>
-							<td class="dicetableDice">2d12+2d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">25</td>
-							<td class="dicetableDice">2d12+d10+d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">26</td>
-							<td class="dicetableDice">2d12+2d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">27</td>
-							<td class="dicetableDice">3d12+d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">28</td>
-							<td class="dicetableDice">4d12</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">29</td>
-							<td class="dicetableDice">3d12+2d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">30</td>
-							<td class="dicetableDice">3d12+d8+d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">31</td>
-							<td class="dicetableDice">3d12+2d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">32</td>
-							<td class="dicetableDice">3d12+d10+d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">33</td>
-							<td class="dicetableDice">3d12+2d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">34</td>
-							<td class="dicetableDice">4d12+d10</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">35</td>
-							<td class="dicetableDice">5d12</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">36</td>
-							<td class="dicetableDice">4d12+2d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">37</td>
-							<td class="dicetableDice">4d12+d8+d6</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">38</td>
-							<td class="dicetableDice">4d12+2d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">39</td>
-							<td class="dicetableDice">4d12+d10+d8</td>
-						</tr>
-						<tr class="invisible">
-							<td class="dicetableStep">40</td>
-							<td class="dicetableDice">4d12+2d10</td>
-						</tr>
-					</table>
-				</td>
-				<td class="invisible" valign="top">
-					<xsl:apply-templates select="//edc:DISCIPLINE"/>
-				</td>
-			</tr>
-			<tr>
-				<td class="invisible" valign="top">
-					<!-- Skills -->
-					<xsl:call-template name="skills"/>
 				</td>
 			</tr>
 		</table>
@@ -385,36 +211,39 @@
 		<div class="edSubHeader">Defense/Armor Rating</div>
 		<table width="100%">
 			<tr>
-				<td class="edKeyCell">Physical&#160;Defense:</td>
+				<td class="edKeyCell">Phy.&#160;Defense:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@physical"/></td>
-				<td class="edKeyCell">Physical&#160;Armor:</td>
+				<td class="edKeyCell">Mys.&#160;Defense:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@spell"/></td>
+				<td class="edKeyCell">Social&#160;Defense:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@social"/></td>
+				<td class="edKeyCell">Movement:</td>
+				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@ground"/><xsl:if test="//edc:MOVEMENT/@flight>0"><xsl:text> / </xsl:text><xsl:value-of select="//edc:MOVEMENT/@flight"/></xsl:if></td>
+			</tr>
+			<tr>
+				<td class="edKeyCell">Phy.&#160;Armor:</td>
 				<td class="edValueCell">
 					<xsl:value-of select="//edc:PROTECTION/@physicalarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@physicalarmor!=0] | //edc:PROTECTION/edt:SHIELD[@physicalarmor!=0]">
 						<xsl:value-of select="@physicalarmor"/>
 						<xsl:if test="position()!=last()">+</xsl:if>
 					</xsl:for-each>)
 				</td>
-				<td class="edKeyCell">Movement&#160;Ground:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@ground"/>hex (<xsl:value-of select="format-number(//edc:MOVEMENT/@ground*1.8288,'##.0')"/>m)</td>
-			</tr>
-			<tr>
-				<td class="edKeyCell">Spell&#160;Defense:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@spell"/></td>
-				<td class="edKeyCell">Mystic&#160;Armor:</td>
+				<td class="edKeyCell">Mys.&#160;Armor:</td>
 				<td class="edValueCell">
 					<xsl:value-of select="//edc:PROTECTION/@mysticarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@mysticarmor!=0] | //edc:PROTECTION/edt:SHIELD[@mysticarmor!=0]">
 						<xsl:value-of select="@mysticarmor"/>
 						<xsl:if test="position()!=last()">+</xsl:if>
 					</xsl:for-each>)
 				</td>
-				<td class="edKeyCell">Movement&#160;Flight:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@flight"/>hex (<xsl:value-of select="format-number(//edc:MOVEMENT/@flight*1.8288,'##.0')"/>m)</td>
-			</tr>
-			<tr>
-				<td class="edKeyCell">Social&#160;Defense:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@social"/></td>
 				<td class="edKeyCell">Penalty:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:PROTECTION/@penalty"/></td>
+				<td class="edKeyCell">Initiative:</td>
+				<td class="edValueCell">
+					<xsl:value-of select="//edc:INITIATIVE/@step"/>
+					<xsl:text> (</xsl:text>
+					<xsl:value-of select="//edc:INITIATIVE/@dice"/>
+					<xsl:text>)</xsl:text>
+				</td>
 			</tr>
 		</table>
 	</div>
@@ -461,27 +290,11 @@
 				<td class="edValueCell"><xsl:value-of select="@current" /></td>
 				<td class="edKeyCell">Max:</td>
 				<td class="edValueCell"><xsl:value-of select="@max" /></td>
-				<td class="edKeyCell">Step:</td>
-				<td class="edValueCell"><xsl:value-of select="@step" /></td>
 				<td class="edKeyCell">Dice:</td>
 				<td class="edValueCell"><xsl:value-of select="@dice" /></td>
 				<td width="5%">&#160;</td>
 			</tr>
 		</tbody></table>
-	</div>
-</xsl:template>
-
-<xsl:template match="//edc:INITIATIVE">
-	<div class="edInitiative">
-		<div class="edSubHeader">Initiative</div>
-		<table width="100%">
-			<tr>
-				<td class="edKeyCell">Step:</td>
-				<td class="edValueCell"><xsl:value-of select="@step" /></td>
-				<td class="edKeyCell">Dice:</td>
-				<td class="edValueCell"><xsl:value-of select="@dice" /></td>
-			</tr>
-		</table>
 	</div>
 </xsl:template>
 
@@ -515,7 +328,7 @@
 			<!-- Discipline Bonuses -->
 			<xsl:call-template name="disciplineBonuses"/>
 		</div>
-		<div class="edSubHeader" style="text-align:left">Discipline Talents :</div>
+		<div class="edSubHeader" style="text-align:left">Talents :</div>
 		<table width="100%">
 			<thead><tr>
 				<td class="edHeaderCell" style="text-align: right;">Talentname</td>
@@ -535,23 +348,14 @@
 				<xsl:sort select="@name"/>
 				<xsl:sort select="./edt:LIMITATION"/>
 			</xsl:apply-templates>
-		</table>
-		<br/>
-		<div class="edSubHeader" style="text-align:left">Optional Talents :</div>
-		<table width="100%">
-			<thead><tr>
-				<td class="edHeaderCell" style="text-align: right;">Talent Name</td>
-				<td class="edHeaderCell">Karma</td>
-				<td class="edHeaderCell">Action</td>
-				<td class="edHeaderCell">Strain</td>
-				<td class="edHeaderCell">Attr.</td>
-				<td class="edHeaderCell">Rank</td>
-				<td class="edHeaderCell">Step</td>
-				<td class="edHeaderCell">Dice</td>
-				<td class="edHeaderCell">Ini.</td>
-				<td class="edHeaderCell">Book</td>
-			</tr></thead>
 			<xsl:apply-templates select="./edt:OPTIONALTALENT">
+				<xsl:sort select="@circle" data-type="number" order="ascending"/>
+				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
+				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
+				<xsl:sort select="@name"/>
+				<xsl:sort select="./edt:LIMITATION"/>
+			</xsl:apply-templates>
+			<xsl:apply-templates select="./edt:FREETALENT">
 				<xsl:sort select="@circle" data-type="number" order="ascending"/>
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
 				<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
@@ -627,8 +431,49 @@
 					<xsl:if test="position() &lt; last()">, </xsl:if>
 				</xsl:for-each>
 			</xsl:if>
+			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="@karma"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
+			<xsl:value-of select="./edt:RANK/@rank"/>
+			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
+			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
+		</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">-</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">-</xsl:when>
+				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell"><xsl:value-of select="@isinitiative"/></td>
+		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
+	</tr>
+</xsl:template>
+
+<xsl:template match="//edt:FREETALENT">
+	<tr>
+		<xsl:if test="@realigned>0">
+			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
+		</xsl:if>
+		<td class="edKeyCell">
+			<xsl:value-of select="@name"/>
+			<xsl:if test="./edt:LIMITATION">
+				<xsl:text>: </xsl:text>
+				<xsl:for-each select="./edt:LIMITATION">
+					<xsl:value-of select="."/>
+					<xsl:if test="position() &lt; last()">, </xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
