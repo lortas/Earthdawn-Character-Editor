@@ -247,8 +247,10 @@ class ExperienceTableModel extends AbstractTableModel {
      * then the last column would contain text ("true"/"false"),
      * rather than a check box.
      */
-    public Class<?> getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
+	public Class<?> getColumnClass(int c) {
+		Object valueAt = getValueAt(0, c);
+		if( valueAt == null ) return String.class;
+		return valueAt.getClass();
     }
 
     /*
