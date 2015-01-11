@@ -48,7 +48,7 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<DISCIPLINETALENT name="Elementar Sprachen"/>
+		<DISCIPLINETALENT name="Elementarsprachen"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Blitzschlag"/>
 		<SPELL type="elemental" name="Eisbola"/>
