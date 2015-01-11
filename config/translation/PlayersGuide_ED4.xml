@@ -74,7 +74,15 @@
 		<SPELLKIND type="sorcery" weaving="Sorcery"/>
 		<SPELLKIND type="wizard" weaving="Wizardry"/>
 	</SPELLWEAVING>
-	<CAPABILITY>
+	<SPELLWEAVING lang="de">
+		<SPELLKIND type="elemental" weaving="Elementarismus"/>
+		<SPELLKIND type="illusion" weaving="Illusionismus"/>
+		<SPELLKIND type="nether" weaving="Geisterbeschwörung"/>
+		<SPELLKIND type="shamane" weaving="Schamanismus"/>
+		<SPELLKIND type="sorcery" weaving="Hexerei"/>
+		<SPELLKIND type="wizard" weaving="Magie"/>
+	</SPELLWEAVING>
+		<CAPABILITY>
 		<LABEL lang="en">Distract</LABEL>
 		<LABEL lang="de">Ablenken</LABEL>
 	</CAPABILITY>
