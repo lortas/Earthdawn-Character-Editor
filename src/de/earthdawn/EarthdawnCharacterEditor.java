@@ -53,8 +53,10 @@ public class EarthdawnCharacterEditor {
 				} catch( RuntimeException e) {
 					if( e.getMessage().contains("has wrong Rulesetversion") ) {
 						ec=new CharacterContainer();
+					} else if( e.getMessage().contains("has wrong language") ) {
+						ec=new CharacterContainer();
 					} else {
-						return;
+						throw(e);
 					}
 				}
 				String name=ec.getName();
