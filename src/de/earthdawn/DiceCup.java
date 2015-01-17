@@ -17,7 +17,7 @@ public class DiceCup {
 	}
 
 	public void setStep(int step) {
-		String dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
+		String dice = CHARACTERISTICS.getDice(step);
 		stepDice = new STEPDICEType();
 		stepDice.setStep(step);
 		stepDice.setDice(dice);
@@ -28,7 +28,7 @@ public class DiceCup {
 	}
 
 	public static ROLLEDDICEType toss(int step) {
-		String dice = CHARACTERISTICS.getSTEPDICEbyStep(step).getDice();
+		String dice = CHARACTERISTICS.getDice(step);
 		return toss(dice);
 	}
 

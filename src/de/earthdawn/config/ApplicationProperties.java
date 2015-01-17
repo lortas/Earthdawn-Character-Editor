@@ -259,8 +259,8 @@ public class ApplicationProperties {
 		return characteristics;
 	}
 
-	public String step2Dice(int value) {
-		return getCharacteristics().getSTEPDICEbyStep(value).getDice();
+	public String step2Dice(int step) {
+		return getCharacteristics().getDice(step);
 	}
 
 	public ECECapabilities getCapabilities() {

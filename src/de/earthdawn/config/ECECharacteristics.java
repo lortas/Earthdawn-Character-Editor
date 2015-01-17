@@ -36,9 +36,9 @@ import de.earthdawn.data.CHARACTERISTICSMYSTICARMOR;
 import de.earthdawn.data.CHARACTERISTICSNEWDISCIPLINETALENTCOST;
 import de.earthdawn.data.CHARACTERISTICSNEWDISCIPLINETALENTCOSTDISCIPLINE;
 import de.earthdawn.data.CHARACTERISTICSSTEPDICETABLE;
+import de.earthdawn.data.LanguageType;
 
 public class ECECharacteristics {
-
 	private CHARACTERISTICS CHARACTERISTICS = null;
 
 	public ECECharacteristics(CHARACTERISTICS c) {
@@ -102,17 +102,26 @@ public class ECECharacteristics {
 		return result;
 	}
 
-	public CHARACTERISTICSSTEPDICETABLE getSTEPDICEbyStep(int step) {
+	public String getDice(int step) {
+		return getDice(step,ApplicationProperties.create().getRulesetLanguage().getLanguage());
+	}
+
+	public String getDice(int step, LanguageType language) {
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
 			if( element.getName().getLocalPart().equals("STEPDICETABLE") ) {
 				CHARACTERISTICSSTEPDICETABLE result = ((CHARACTERISTICSSTEPDICETABLE)element.getValue());
 				if( result.getStep() == step ) {
-					return result;
+					switch( language ) {
+					case DE: return result.getDice().replaceAll("[WwDdKk]", "w");
+					case EN: return result.getDice().replaceAll("[WwDdKk]", "d");
+					case PL: return result.getDice().replaceAll("[WwDdKk]", "k");
+					default: return result.getDice();
+					}
 				}
 			}
 		}
-		// Not found
-		return new CHARACTERISTICSSTEPDICETABLE();
+		// No dice for selected step found
+		return "";
 	}
 
 	public CHARACTERISTICSSTEPDICETABLE getSTEPDICEbyAttribute(int attribute) {

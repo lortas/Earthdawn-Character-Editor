@@ -75,7 +75,7 @@ class DicingTableModel extends AbstractTableModel {
 		this.steps.add(steps);
 		String[] diceset = new String[steps.length];
 		for(int i=0; i<steps.length;i++) {
-			diceset[i] = PROPERTIES.getCharacteristics().getSTEPDICEbyStep(steps[i]).getDice();
+			diceset[i] = PROPERTIES.getCharacteristics().getDice(steps[i]);
 		}
 		this.dices.add(diceset);
 		this.rolledDices.add(rolledDice);
