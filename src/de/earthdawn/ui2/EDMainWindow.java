@@ -606,7 +606,7 @@ public class EDMainWindow {
 		tabbedPane.addTab("Inventory", null, panelEDThreadItems , null);
 
 		splitPane.setRightComponent(editorScrollPane);
-		File icon = new File(new File("images"),"ece-loogo.png");
+		File icon = new File(new File("images"),"ece-logo.png");
 		try {
 			String iconfilename = icon.getCanonicalPath();
 			if( ! icon.canRead() ) {
@@ -614,7 +614,7 @@ public class EDMainWindow {
 			}
 			frame.setIconImage((new ImageIcon(iconfilename)).getImage());
 		} catch (IOException e) {
-			System.err.println("Can not locate icon file : "+e.getLocalizedMessage()+"\n");
+			System.err.println("Can not locate or read icon file : "+e.getLocalizedMessage()+"\n");
 		}
 	}
 
