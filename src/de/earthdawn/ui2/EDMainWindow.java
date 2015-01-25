@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -605,6 +606,16 @@ public class EDMainWindow {
 		tabbedPane.addTab("Inventory", null, panelEDThreadItems , null);
 
 		splitPane.setRightComponent(editorScrollPane);
+		File icon = new File(new File("images"),"ece-loogo.png");
+		try {
+			String iconfilename = icon.getCanonicalPath();
+			if( ! icon.canRead() ) {
+				throw new FileNotFoundException(iconfilename);
+			}
+			frame.setIconImage((new ImageIcon(iconfilename)).getImage());
+		} catch (IOException e) {
+			System.err.println("Can not locate icon file : "+e.getLocalizedMessage()+"\n");
+		}
 	}
 
 	private JMenu mapTreeToMenuTree(String name, Map<String, Map<String, ?>> tree) {
