@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="earthdawncharacter.xsl"?>
+
+<ns16:EDCHARACTER xmlns="http://earthdawn.com/charsheettemplate" xmlns:ns2="http://earthdawn.com/datatypes" xmlns:ns3="http://earthdawn.com/items" xmlns:ns4="http://earthdawn.com/eceguilayout" xmlns:ns5="http://earthdawn.com/optionalrules" xmlns:ns6="http://earthdawn.com/spell" xmlns:ns7="http://earthdawn.com/namegiver" xmlns:ns8="http://earthdawn.com/spelldescription" xmlns:ns9="http://earthdawn.com/help" xmlns:ns10="http://earthdawn.com/knack" xmlns:ns11="http://earthdawn.com/randomname" xmlns:ns12="http://earthdawn.com/randomcharactertemplate" xmlns:ns13="http://earthdawn.com/characteristics" xmlns:ns14="http://earthdawn.com/capability" xmlns:ns15="http://earthdawn.com/discipline" xmlns:ns16="http://earthdawn.com/character" xmlns:ns17="http://earthdawn.com/translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="" player="" xsd-version="1.1" editorpath="/home/hvr/eclipse-workspace/Earthdawn%20Character%20Editor/" lang="de" rulesetversion="ED4" xsi:schemaLocation="http://earthdawn.com/character earthdawncharacter.xsd">
+    <ns16:APPEARANCE gender="male" age="0" height="0.0" weight="0.0" eyes="brown" skin="" race="Obsidianer" origin="Barsaive"/>
+    <ns16:ATTRIBUTE name="CHA" racevalue="9" generationvalue="-1" basevalue="8" currentvalue="8" cost="-1" step="4" dice="W6"/>
+    <ns16:ATTRIBUTE name="DEX" racevalue="8" generationvalue="6" basevalue="14" currentvalue="14" cost="9" step="6" dice="W10"/>
+    <ns16:ATTRIBUTE name="STR" racevalue="18" generationvalue="5" basevalue="23" currentvalue="23" cost="7" step="9" dice="W8+W6"/>
+    <ns16:ATTRIBUTE name="PER" racevalue="9" generationvalue="3" basevalue="12" currentvalue="12" cost="3" step="5" dice="W8"/>
+    <ns16:ATTRIBUTE name="WIL" racevalue="10" basevalue="10" currentvalue="10" cost="0" step="5" dice="W8"/>
+    <ns16:ATTRIBUTE name="TOU" racevalue="13" generationvalue="5" basevalue="18" currentvalue="18" cost="7" step="7" dice="W12"/>
+    <ns16:DEFENSE physical="8" spell="7" social="5"/>
+    <ns16:PROTECTION physicalarmor="3" mysticarmor="2" penalty="0">
+        <ns2:ARMOR physicalarmor="3" mysticarmor="2" penalty="0" name="Natürliche Rüstung" weight="0.0" used="yes" kind="armor" virtual="yes"/>
+    </ns16:PROTECTION>
+    <ns16:HEALTH blooddamage="0" depatterningrate="0">
+        <ns2:RECOVERY testsperday="3" step="7" dice="W12"/>
+        <ns2:UNCONSCIOUSNESS base="36" adjustment="7" value="43"/>
+        <ns2:DEATH base="43" adjustment="8" value="51"/>
+        <ns2:WOUNDS threshold="14" penalties="0"/>
+    </ns16:HEALTH>
+    <ns16:MOVEMENT flight="0" ground="10"/>
+    <ns16:INITIATIVE base="6" modification="0" armorpenalty="0" step="6" dice="W10"/>
+    <ns16:CARRYING lifting="660" carrying="330"/>
+    <ns16:DISCIPLINE name="Krieger" circle="1" usedspellabilities="0">
+        <ns2:KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </ns2:KARMARITUAL>
+        <ns2:HALFMAGIC>Pflege und Reparatur von  Waffen und Rüstung; Wissen über: Militär Strategien und Taktik, Ereignisse in Barsaive's Militär Geschichte, Wahrnehmung von: Kriegerorden, berühmte Krieger der Vergangenheit, altertümliche Waffen und Rüstungen</ns2:HALFMAGIC>
+        <ns2:DISZIPLINETALENT circle="1" name="Fadenweben" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+            <ns2:LIMITATION>Kriegsweben</ns2:LIMITATION>
+            <ns2:RANK startrank="1" rank="1" bonus="0" lpcost="0" step="6" dice="W10"/>
+            <ns2:TEACHER/>
+        </ns2:DISZIPLINETALENT>
+        <ns2:DISZIPLINETALENT circle="1" name="Hieb Ausweichen" action="free" strain="1" attribute="DEX" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+            <ns2:RANK startrank="1" rank="1" bonus="0" lpcost="0" step="7" dice="W12"/>
+            <ns2:TEACHER/>
+        </ns2:DISZIPLINETALENT>
+        <ns2:DISZIPLINETALENT circle="1" name="Holzhaut" action="standard" strain="0" attribute="TOU" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+            <ns2:RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2W6"/>
+            <ns2:TEACHER/>
+        </ns2:DISZIPLINETALENT>
+        <ns2:DISZIPLINETALENT circle="1" name="Nahkampfwaffen" action="standard" strain="0" attribute="DEX" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+            <ns2:RANK startrank="3" rank="3" bonus="0" lpcost="0" step="9" dice="W8+W6"/>
+            <ns2:TEACHER/>
+        </ns2:DISZIPLINETALENT>
+        <ns2:DISZIPLINETALENT circle="1" name="Tigersprung" action="free" strain="1" attribute="na" bonus="0" karma="no" default="no" bookref="" isinitiative="yes" notbyversatility="no">
+            <ns2:RANK startrank="1" rank="1" bonus="0" lpcost="0" step="1" dice="W4-2"/>
+            <ns2:TEACHER/>
+        </ns2:DISZIPLINETALENT>
+        <ns2:OPTIONALTALENT circle="1" name="Feuerblut" action="standard" strain="0" attribute="TOU" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+            <ns2:RANK startrank="1" rank="1" bonus="0" lpcost="0" step="8" dice="2W6"/>
+            <ns2:TEACHER/>
+        </ns2:OPTIONALTALENT>
+    </ns16:DISCIPLINE>
+    <ns16:SKILL name="Wissen" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:LIMITATION>Altertümliche Waffen</ns2:LIMITATION>
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="7" dice="W12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Aufmerksamkeit" action="simple" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="7" dice="W12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Fremdsprachen" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="7" dice="W12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Klettern" action="standard" strain="0" attribute="DEX" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="8" dice="2W6"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Lesen/Schreiben" action="standard" strain="0" attribute="PER" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="7" dice="W12"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Kunsthandwerk" action="sustained" strain="0" attribute="CHA" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:LIMITATION>Runenschnitzen</ns2:LIMITATION>
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="6" dice="W10"/>
+    </ns16:SKILL>
+    <ns16:SKILL name="Standhaftigkeit" action="free" strain="0" attribute="STR" bonus="0" karma="no" default="no" bookref="" isinitiative="no" notbyversatility="no">
+        <ns2:RANK startrank="2" rank="2" bonus="0" lpcost="0" step="11" dice="W10+W8"/>
+    </ns16:SKILL>
+    <ns16:LANGUAGE language="Obsidianisch" speak="skill" readwrite="skill"/>
+    <ns16:LANGUAGE language="Zwergisch" speak="skill" readwrite="skill"/>
+    <ns16:WEAPON damagestep="2" strengthmin="4" shortrange="5" longrange="10" name="Messer" weight="1.0" size="1" kind="melee weapon"/>
+    <ns16:COINS silver="100" name="Starting Purse" weight="1.5625" used="yes" location="self" kind="coins"/>
+    <ns16:ITEM name="Rucksack, Schlafsack, &amp;steel, Wasserschlauch, großer Sack" weight="13.0"/>
+    <ns16:ITEM name="Fackel" weight="1.0" kind="light"/>
+    <ns16:ITEM name="Kunsthandwerk Werkzeug (to be specified)" weight="5.0" kind="tool"/>
+    <ns16:ITEM name="Grimoir (nur bei Zauberer)" weight="3.0" kind="book"/>
+    <ns16:ITEM name="Reisekleidung (soft boots, shirt, belt, robe or breeches, traveler's cloak)" weight="3.0" kind="cloth"/>
+    <ns16:ITEM name="Reiseproviant (1 Woche)" weight="1.0" kind="food"/>
+    <ns16:KARMA current="3" max="3" maxmodificator="0" step="4" dice="W6"/>
+    <ns16:RACEABILITES>Natürliche Rüstung, Erhöhte Wundschwelle, wound threshold +3 *, physical armor +3 *</ns16:RACEABILITES>
+    <ns16:PORTRAIT contenttype="image/jpg">/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCABfAFsDASIAAhEBAxEB/8QAHAABAAICAwEAAAAAAAAAAAAAAAcIBAUBAgYD/8QAORAAAQMDAQUEBwUJAAAAAAAAAQACAwQFEQYHEiExURNBYXEUIjKBkaGxCBUjgrIzNUJDcnSSosP/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AmZERARdJZY4YnyyvayNjS5znHAaBzJKg7WW2yvqamSj0ximpmkt9LewGSTxaDwaPMZ8kE6Iqo0Z1XrW5+hQVVbc6pzS/ckqTgAc/aIAC4umktUacaZ6+1VlKxvOZoywebm5A+KC16Kqdp17qqyva6jvdXut/lzP7Vn+Lsj4KW9EbZ6S9Tx26/wAUdDVyHdjqGHEMh6HPsn3keSCUUREBERAREQeT2ouqW7N7yaXe7Tsmh27z3N9u/wD65VX1cmWKOeF8M0bZI5Glr2OGQ4HgQR0UaXPYTp2rqnTUVbWULXHPZNIexvlnj8SUGDsG0/2FurtQTMw+pd6PASP4G8XEeBdgflUtua17S1wDmkYII4FYFhs1Np+x0lppMmGljDA483HmXHxJJPvWwQQDti0HS6eqYb3aoRDRVbzHLC0YbFJjI3egIB4dxHjhRirKbY4mSbNbg5+N6OSFzM9e0aPoSq1oLEbG9WTag01Jb62QyVdsLWb7jkvjOdwnqRgj3DqpEUB7A5HjV1wiGdx1AXO8xIzH1KnxAREQEREBERARF4PWm1ey6ZikpqGSO43PBAijdlkZ6vcPoOPlzQaLbvqGKCz0mn4ngz1MgnmaD7Mbc4z5u/SVBiy7tda293Oe5XCczVM7t57z8gOgA4AL0mg9nlx1nXNkLX09rjd+NVEc+rWdXfId/Qh7/YLYpIKG4X2Zha2pIggJ72t4uPlnA/KVLyxrfQUtqt8FBRQthp6dgZGxvcAslAREQEREBERBFu3etq6XT1vjpqmaFk9Q5srY3lokG7yOOYUQ6Y0be9XzyxWinbI2Dd7aWSQNbHnOM54nkeQPJSvt/wD3Faf7p36VifZ8/ZX/APqp/wDog2Gl9htst7mVN/qfvGYcewjyyEHxPN3y8lKEEENLAyCniZDFGN1kcbQ1rR0AHJfREBERAREQEREBERBqdQUNgrKNjtQxUT6aJ2WurC0MaT4u4L56co9M00U0mmmW4Rykdq6hc1wcRnGS3zKrdrbVdZqzUVRWTzONMx7m0sOfVjjzwwOp5k9Vr7Bf7hpu7w3K3TOjlicMtz6sje9rh3goLdosa3VsdyttLXxAiOqhZMwHo4Aj6rJQEREBERAREQEREFVNb6VrNJ6jqKOaFwpnvc+llx6skZPDB6jkQtfYLBcNSXaG222B0sshGXY9WNve5x7gFbSsoaS4QGCtpYaqInJjmjD2/ArpQ22gtkRit9DT0kZOSyCJsYPuAQc22hjtlrpLfESY6WFkLCe8NaAPoslEQEREBERB/9k=</ns16:PORTRAIT>
+    <ns16:CALCULATEDLEGENDPOINTS attributes="0" disciplinetalents="0" optionaltalents="0" knacks="0" skills="0" spells="0" karma="0" magicitems="0" total="0">
+        <ns16:USEDSTARTRANKS talents="0" skills="0" spells="-5"/>
+    </ns16:CALCULATEDLEGENDPOINTS>
+    <ns16:EXPERIENCE totallegendpoints="0" currentlegendpoints="0" renown="16" reputation="na"/>
+</ns16:EDCHARACTER>
