@@ -8,12 +8,12 @@
 		<OPTIONALTALENT name="Avoid Blow"/>
 		<OPTIONALTALENT name="Climbing"/>
 		<OPTIONALTALENT name="Item History"/>
-		<OPTIONALTALENT name="Standard Matrix"/>
+		<OPTIONALTALENT name="Standard Matrix" limitation="E3"/>
 		<OPTIONALTALENT name="Tracking"/>
 		<OPTIONALTALENT name="Wilderness Survival"/>
 		<OPTIONALTALENT name="Wind Catcher"/>
-		<FREETALENT name="Standard Matrix"/>
-		<FREETALENT name="Standard Matrix"/>
+		<FREETALENT name="Standard Matrix" limitation="E1"/>
+		<FREETALENT name="Standard Matrix" limitation="E2"/>
 		<DISCIPLINETALENT name="Awareness"/>
 		<DISCIPLINETALENT name="Patterncraft"/>
 		<DISCIPLINETALENT name="Spellcasting"/>
@@ -63,11 +63,11 @@
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Air Blast"/>
 		<SPELL type="elemental" name="Blizzard Sphere"/>
-		<SPELL type="elemental" name="Elemental Spear: Air"/>
-		<SPELL type="elemental" name="Elemental Spear: Earth"/>
-		<SPELL type="elemental" name="Elemental Spear: Fire"/>
-		<SPELL type="elemental" name="Elemental Spear: Water"/>
-		<SPELL type="elemental" name="Elemental Spear: Wood"/>
+		<SPELL type="elemental" name="Elemental Spear - Air"/>
+		<SPELL type="elemental" name="Elemental Spear - Earth"/>
+		<SPELL type="elemental" name="Elemental Spear - Fire"/>
+		<SPELL type="elemental" name="Elemental Spear - Water"/>
+		<SPELL type="elemental" name="Elemental Spear - Wood"/>
 		<SPELL type="elemental" name="Grove Renewal"/>
 		<SPELL type="elemental" name="Lightning Step"/>
 		<SPELL type="elemental" name="Uneven Ground"/>
@@ -77,14 +77,14 @@
 		<OPTIONALTALENT name="Banish"/>
 		<OPTIONALTALENT name="Cold Purify"/>
 		<OPTIONALTALENT name="Dispel Magic"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E4"/>
 		<OPTIONALTALENT name="Fireblood"/>
 		<OPTIONALTALENT name="Gliding Stride"/>
 		<OPTIONALTALENT name="Navigation"/>
 		<OPTIONALTALENT name="Safe Path"/>
-		<OPTIONALTALENT name="Steel Tought"/>
+		<OPTIONALTALENT name="Steel Thought"/>
 		<OPTIONALTALENT name="Tenacious Weave"/>
-		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="E1"/>
 		<DISCIPLINETALENT name="Summon" limitation="Elemental Spirits"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Earth Staff"/>

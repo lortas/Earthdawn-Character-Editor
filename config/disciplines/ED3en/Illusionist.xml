@@ -95,8 +95,8 @@
 		<KARMA spend="Perception-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="I1"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="I2"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="I5"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="I6"/>
 		<OPTIONALTALENT name="Graceful Exit"/>
 		<OPTIONALTALENT name="Hypnotize"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
@@ -165,9 +165,9 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix" limitation="I1"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="I2"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="I3"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="I7"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="I8"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="I9"/>
 		<OPTIONALTALENT name="Conceal Object"/>
 		<OPTIONALTALENT name="Hold Thread"/>
 		<OPTIONALTALENT name="Incite Mob"/>
@@ -212,9 +212,9 @@
 		<OPTIONALTALENT name="Casting Pattern"/>
 		<OPTIONALTALENT name="Chameleon"/>
 		<OPTIONALTALENT name="Impossible Hide"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="I1"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="I2"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="I3"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="I10"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="I11"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="I12"/>
 		<DISCIPLINETALENT name="Multi-Weaving"/>
 		<TALENTABILITY/>
 		<SPELL type="illusion" name="Restore Pattern"/>

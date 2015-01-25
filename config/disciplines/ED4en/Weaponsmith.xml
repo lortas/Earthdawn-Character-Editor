@@ -16,7 +16,7 @@
 		<DISCIPLINETALENT name="Forge Weapon"/>
 		<DISCIPLINETALENT name="Item History"/>
 		<DISCIPLINETALENT name="Melee Weapons"/>
-		<DISCIPLINETALENT name="Steel Tought"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
 		<TALENTABILITY/>
 		<KARMA spend="on any test to craft or repair an item"/>
 		<ABILITY>Craftsman</ABILITY>
@@ -27,7 +27,7 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<DISCIPLINETALENT name="Supress Curse"/>
+		<DISCIPLINETALENT name="Suppress Curse"/>
 		<TALENTABILITY/>
 		<KARMA spend="on Recovery tests"/>
 	</CIRCLE>

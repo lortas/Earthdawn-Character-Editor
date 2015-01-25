@@ -94,8 +94,8 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Detect Trap"/>
 		<OPTIONALTALENT name="Direction Sense"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="W1"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="W5"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="W6"/>
 		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Lip Reading"/>
 		<OPTIONALTALENT name="Orbiting Spy"/>
@@ -162,9 +162,9 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 		<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix" limitation="W1"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="W2"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="W3"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W7"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W8"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="W9"/>
 		<OPTIONALTALENT name="Astral Pocket"/>
 		<OPTIONALTALENT name="Matrix Strike"/>
 		<OPTIONALTALENT name="Power Mask"/>
@@ -197,9 +197,9 @@
 		<OPTIONALTALENT name="Detect Falsehood"/>
 		<OPTIONALTALENT name="First Ring of Perfection"/>
 		<OPTIONALTALENT name="Multi-Tongue"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="W1"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="W2"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="W3"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W10"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W11"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="W12"/>
 		<DISCIPLINETALENT name="Effect Pattern"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>

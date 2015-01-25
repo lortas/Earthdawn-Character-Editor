@@ -11,9 +11,9 @@
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Read and Write Language"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Standard Matrix"/>
-		<FREETALENT name="Standardmatrix"/>
-		<FREETALENT name="Standardmatrix"/>
+		<OPTIONALTALENT name="Standard Matrix" limitation="W3"/>
+		<FREETALENT name="Standard Matrix" limitation="W1"/>
+		<FREETALENT name="Standard Matrix" limitation="W2"/>
 		<DISCIPLINETALENT name="Dispel Magic"/>
 		<DISCIPLINETALENT name="Patterncraft"/>
 		<DISCIPLINETALENT name="Research"/>
@@ -55,7 +55,7 @@
 		<KARMA spend="on any test to recall information - including Knowledge tests"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
-		<DISCIPLINETALENT name="Steel Tought"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Ball of String"/>
 		<SPELL type="wizard" name="Binding Threads"/>
@@ -69,14 +69,14 @@
 		<OPTIONALTALENT name="Avoid Blow"/>
 		<OPTIONALTALENT name="Direction Arrow"/>
 		<OPTIONALTALENT name="Diplomacy"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix"  limitation="W4"/>
 		<OPTIONALTALENT name="Evidence Analysis"/>
 		<OPTIONALTALENT name="Hypnotize"/>
 		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Power Mask"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
 		<OPTIONALTALENT name="True Sight"/>
-		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="W1"/>
 		<DISCIPLINETALENT name="Astral Interference"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Flight"/>
@@ -111,7 +111,7 @@
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
-		<DISCIPLINETALENT name="Supress Curse"/>
+		<DISCIPLINETALENT name="Suppress Curse"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Astral Catastrophe"/>
 		<SPELL type="wizard" name="Catch Spell"/>

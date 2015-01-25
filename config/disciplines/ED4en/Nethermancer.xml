@@ -9,11 +9,11 @@
 		<OPTIONALTALENT name="Dispel Magic"/>
 		<OPTIONALTALENT name="Read and Write Languages"/>
 		<OPTIONALTALENT name="Speak Language,"/>
-		<OPTIONALTALENT name="Standard Matrix"/>
+		<OPTIONALTALENT name="Standard Matrix" limitation="N3"/>
 		<OPTIONALTALENT name="Stealthy Stride"/>
-		<OPTIONALTALENT name="Supress Curse"/>
-		<FREETALENT name="Standard Matrix"/>
-		<FREETALENT name="Standard Matrix"/>
+		<OPTIONALTALENT name="Suppress Curse"/>
+		<FREETALENT name="Standard Matrix" limitation="N1"/>
+		<FREETALENT name="Standard Matrix" limitation="N2"/>
 		<DISCIPLINETALENT name="Astral Sight"/>
 		<DISCIPLINETALENT name="Frighten"/>
 		<DISCIPLINETALENT name="Patterncraft"/>
@@ -33,7 +33,7 @@
 		<SPELL type="nether" name="Spirit Grip"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<DISCIPLINETALENT name="Steel Tought"/>
+		<DISCIPLINETALENT name="Steel Thought"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Aspect of the Fog Ghost"/>
 		<SPELL type="nether" name="Chilling Circle"/>
@@ -71,14 +71,14 @@
 		<OPTIONALTALENT name="Astral Interference"/>
 		<OPTIONALTALENT name="Banish"/>
 		<OPTIONALTALENT name="Blood Share"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="N4"/>
 		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Lion Heart"/>
 		<OPTIONALTALENT name="Research"/>
 		<OPTIONALTALENT name="Spirit Mount"/>
 		<OPTIONALTALENT name="Steely Stare"/>
 		<OPTIONALTALENT name="Tenacious Weave"/>
-		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="N1"/>
 		<DISCIPLINETALENT name="Summon" limitation="Ally Spirits"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Aspect of the Cruel Physician"/>

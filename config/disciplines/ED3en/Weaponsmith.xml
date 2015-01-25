@@ -70,7 +70,7 @@
 		<OPTIONALTALENT name="Disarm Trap"/>
 		<OPTIONALTALENT name="Sense Magic Item"/>
 		<OPTIONALTALENT name="Show Armor Flaw"/>
-		<OPTIONALTALENT name="Spell Matrix"/>
+		<OPTIONALTALENT name="Spell Matrix" limitation="WS1"/>
 		<OPTIONALTALENT name="Spellcasting"/>
 		<OPTIONALTALENT name="Temperature"/>
 		<DISCIPLINETALENT name="Infuse Weapon"/>
@@ -98,10 +98,10 @@
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
-		<OPTIONALTALENT name="Armored Matrix"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="WS2"/>
 		<OPTIONALTALENT name="First Ring of Perfection"/>
 		<OPTIONALTALENT name="Resist Pain"/>
-		<OPTIONALTALENT name="Shared Matrix"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="WS3"/>
 		<OPTIONALTALENT name="Soften Blade"/>
 		<OPTIONALTALENT name="Willforce"/>
 		<DISCIPLINETALENT name="Ethereal Weapon"/>

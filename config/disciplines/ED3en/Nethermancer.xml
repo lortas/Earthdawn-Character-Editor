@@ -90,8 +90,8 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Abate Curse"/>
 		<OPTIONALTALENT name="Elemental Tongues"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="N1"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="N2"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="N5"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="N6"/>
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Lion Heart"/>
 		<OPTIONALTALENT name="Steel Thought"/>
@@ -171,8 +171,8 @@
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Animate Object"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="N1"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="N2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="N7"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="N8"/>
 		<OPTIONALTALENT name="Astral Pocket"/>
 		<OPTIONALTALENT name="Cold Purify"/>
 		<OPTIONALTALENT name="Life Check"/>
@@ -227,7 +227,7 @@
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Ethereal Weapon"/>
 		<OPTIONALTALENT name="Second Chance"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="N1"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="N9"/>
 		<OPTIONALTALENT name="Detect Influence"/>
 		<OPTIONALTALENT name="Wound Transfer"/>
 		<DISCIPLINETALENT name="Spell Crystal Lock"/>

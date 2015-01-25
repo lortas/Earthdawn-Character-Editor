@@ -109,8 +109,8 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Detect Trap"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="E1"/>
-		<OPTIONALTALENT name="Enhanced Matrix" limitation="E2"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E5"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="E6"/>
 		<OPTIONALTALENT name="Gliding Stride"/>
 		<OPTIONALTALENT name="Spot Armor Flaw"/>
 		<OPTIONALTALENT name="Steel Thought"/>
@@ -181,8 +181,8 @@
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
-		<OPTIONALTALENT name="Armored Matrix" limitation="E1"/>
-		<OPTIONALTALENT name="Armored Matrix" limitation="E2"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="E7"/>
+		<OPTIONALTALENT name="Armored Matrix" limitation="E8"/>
 		<OPTIONALTALENT name="Bargain With Summoned Creature"/>
 		<OPTIONALTALENT name="Disarm Trap"/>
 		<OPTIONALTALENT name="Plant Shelter"/>
@@ -231,8 +231,8 @@
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="First Ring of Perfection"/>
 		<OPTIONALTALENT name="Gold Sense"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="E1"/>
-		<OPTIONALTALENT name="Shared Matrix" limitation="E2"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="E9"/>
+		<OPTIONALTALENT name="Shared Matrix" limitation="E10"/>
 		<OPTIONALTALENT name="Soften Blade"/>
 		<OPTIONALTALENT name="Water Dancing"/>
 		<DISCIPLINETALENT name="Moving Earth"/>

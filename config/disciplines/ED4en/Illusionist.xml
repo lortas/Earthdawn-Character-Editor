@@ -8,12 +8,12 @@
 		<OPTIONALTALENT name="Dead Fall"/>
 		<OPTIONALTALENT name="Mimic Voice"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Standard Matrix"/>
+		<OPTIONALTALENT name="Standard Matrix" limitation="I3"/>
 		<OPTIONALTALENT name="Stealthy Stride"/>
 		<OPTIONALTALENT name="Taunt"/>
 		<OPTIONALTALENT name="Winning Smile"/>
-		<FREETALENT name="Standard Matrix"/>
-		<FREETALENT name="Standard Matrix"/>
+		<FREETALENT name="Standard Matrix" limitation="I1"/>
+		<FREETALENT name="Standard Matrix" limitation="I2"/>
 		<DISCIPLINETALENT name="False Sight"/>
 		<DISCIPLINETALENT name="First Impression"/>
 		<DISCIPLINETALENT name="Patterncraft"/>
@@ -70,14 +70,14 @@
 		<OPTIONALTALENT name="Conceal Object"/>
 		<OPTIONALTALENT name="Dispel Magic"/>
 		<OPTIONALTALENT name="Engaging Banter"/>
-		<OPTIONALTALENT name="Enhanced Matrix"/>
+		<OPTIONALTALENT name="Enhanced Matrix" limitation="I4"/>
 		<OPTIONALTALENT name="Fast Hand"/>
 		<OPTIONALTALENT name="Frighten"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
 		<OPTIONALTALENT name="Slough Blame"/>
-		<OPTIONALTALENT name="steel Tought"/>
+		<OPTIONALTALENT name="Steel Thought"/>
 		<OPTIONALTALENT name="Tenacious Weave"/>
-		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="I1"/>
 		<DISCIPLINETALENT name="Power Mask"/>
 		<TALENTABILITY/>
 		<SPELL type="illusion" name="Bond of Silence"/>
