@@ -8,12 +8,12 @@
 		<OPTIONALTALENT name="Fremdsprachen"/>
 		<OPTIONALTALENT name="Gewinnendes Lächeln"/>
 		<OPTIONALTALENT name="Heimlicher Schritt"/>
-		<OPTIONALTALENT name="Standardmatrix" limitation="I3"/>
+		<OPTIONALTALENT name="Standardmatrix" limitation="I1"/>
 		<OPTIONALTALENT name="Stimmen Immitieren"/>
 		<OPTIONALTALENT name="Totstellen"/>
 		<OPTIONALTALENT name="Verspotten"/>
-		<FREETALENT name="Standardmatrix" limitation="I1"/>
-		<FREETALENT name="Standardmatrix" limitation="I2"/>
+		<FREETALENT name="Standardmatrix" limitation="F1"/>
+		<FREETALENT name="Standardmatrix" limitation="F2"/>
 		<DISCIPLINETALENT name="Erster Eindruck"/>
 		<DISCIPLINETALENT name="Illusionsverstärkung"/>
 		<DISCIPLINETALENT name="Spruchzauberei"/>
@@ -68,7 +68,7 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Eiserner Wille"/>
-		<OPTIONALTALENT name="Erweiterte Matrix" limitation="I4"/>
+		<OPTIONALTALENT name="Erweiterte Matrix" limitation="I2"/>
 		<OPTIONALTALENT name="Flinke Hand"/>
 		<OPTIONALTALENT name="Gegenstand Verbergen"/>
 		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
@@ -77,7 +77,7 @@
 		<OPTIONALTALENT name="Starrsinn"/>
 		<OPTIONALTALENT name="Verängstigen"/>
 		<OPTIONALTALENT name="Wortgeplänkel"/>
-		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="I1"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="F1"/>
 		<DISCIPLINETALENT name="Machtmaskierung"/>
 		<TALENTABILITY/>
 		<SPELL type="illusion" name="Auge der Wahrheit"/>

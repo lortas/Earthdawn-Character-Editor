@@ -11,9 +11,9 @@
 		<OPTIONALTALENT name="Item History"/>
 		<OPTIONALTALENT name="Read and Write Language"/>
 		<OPTIONALTALENT name="Speak Language"/>
-		<OPTIONALTALENT name="Standard Matrix" limitation="W3"/>
-		<FREETALENT name="Standard Matrix" limitation="W1"/>
-		<FREETALENT name="Standard Matrix" limitation="W2"/>
+		<OPTIONALTALENT name="Standard Matrix" limitation="W1"/>
+		<FREETALENT name="Standard Matrix" limitation="F1"/>
+		<FREETALENT name="Standard Matrix" limitation="F2"/>
 		<DISCIPLINETALENT name="Dispel Magic"/>
 		<DISCIPLINETALENT name="Patterncraft"/>
 		<DISCIPLINETALENT name="Research"/>
@@ -69,14 +69,14 @@
 		<OPTIONALTALENT name="Avoid Blow"/>
 		<OPTIONALTALENT name="Direction Arrow"/>
 		<OPTIONALTALENT name="Diplomacy"/>
-		<OPTIONALTALENT name="Enhanced Matrix"  limitation="W4"/>
+		<OPTIONALTALENT name="Enhanced Matrix"  limitation="W2"/>
 		<OPTIONALTALENT name="Evidence Analysis"/>
 		<OPTIONALTALENT name="Hypnotize"/>
 		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Power Mask"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
 		<OPTIONALTALENT name="True Sight"/>
-		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="W1"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="F1"/>
 		<DISCIPLINETALENT name="Astral Interference"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Flight"/>

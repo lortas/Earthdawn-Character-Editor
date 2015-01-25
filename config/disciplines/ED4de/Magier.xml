@@ -10,10 +10,10 @@
 		<OPTIONALTALENT name="Fremdsprachen"/>
 		<OPTIONALTALENT name="Konversation"/>
 		<OPTIONALTALENT name="Lesen/Schreiben"/>
-		<OPTIONALTALENT name="Standardmatrix" limitation="M3"/>
+		<OPTIONALTALENT name="Standardmatrix" limitation="M1"/>
 		<OPTIONALTALENT name="Tieranalyse"/>
-		<FREETALENT name="Standardmatrix" limitation="M1"/>
-		<FREETALENT name="Standardmatrix" limitation="M2"/>
+		<FREETALENT name="Standardmatrix" limitation="F1"/>
+		<FREETALENT name="Standardmatrix" limitation="F2"/>
 		<DISCIPLINETALENT name="Forschen"/>
 		<DISCIPLINETALENT name="Magie Neutralisieren"/>
 		<DISCIPLINETALENT name="Spruchzauberei"/>
@@ -68,7 +68,7 @@
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Beweisanalyse"/>
 		<OPTIONALTALENT name="Diplomatie"/>
-		<OPTIONALTALENT name="Erweiterte Matrix" limitation="M4"/>
+		<OPTIONALTALENT name="Erweiterte Matrix" limitation="M2"/>
 		<OPTIONALTALENT name="Hieb Ausweichen"/>
 		<OPTIONALTALENT name="Hypnotisieren"/>
 		<OPTIONALTALENT name="Kompasspfeil"/>
@@ -76,7 +76,7 @@
 		<OPTIONALTALENT name="Machtmaskierung"/>
 		<OPTIONALTALENT name="Starrsinn"/>
 		<OPTIONALTALENT name="Untrüglicher Blick"/>
-		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="M1"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="F1"/>
 		<DISCIPLINETALENT name="Astrale Interferenz"/>
 		<TALENTABILITY/>
 		<SPELL type="wizard" name="Fliegen"/>

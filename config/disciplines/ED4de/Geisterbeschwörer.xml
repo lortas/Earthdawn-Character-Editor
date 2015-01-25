@@ -11,9 +11,9 @@
 		<OPTIONALTALENT name="Lesen/Schreiben"/>
 		<OPTIONALTALENT name="Magie Neutralisieren"/>
 		<OPTIONALTALENT name="Nachtflieger Befehligen"/>
-		<OPTIONALTALENT name="Standardmatrix" limitation="G3"/>
-		<FREETALENT name="Standardmatrix" limitation="G1"/>
-		<FREETALENT name="Standardmatrix" limitation="G2"/>
+		<OPTIONALTALENT name="Standardmatrix" limitation="G1"/>
+		<FREETALENT name="Standardmatrix" limitation="F1"/>
+		<FREETALENT name="Standardmatrix" limitation="F2"/>
 		<DISCIPLINETALENT name="Astralsicht"/>
 		<DISCIPLINETALENT name="Spruchzauberei"/>
 		<DISCIPLINETALENT name="Struktur Verstehen"/>
@@ -69,7 +69,7 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Astrale Interferenz"/>
-		<OPTIONALTALENT name="Erweiterte Matrix" limitation="G4"/>
+		<OPTIONALTALENT name="Erweiterte Matrix" limitation="G2"/>
 		<OPTIONALTALENT name="Forschen"/>
 		<OPTIONALTALENT name="Geisterreittier"/>
 		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
@@ -78,7 +78,7 @@
 		<OPTIONALTALENT name="Schadensverteilung"/>
 		<OPTIONALTALENT name="Stählener Blick"/>
 		<OPTIONALTALENT name="Verbannen"/>
-		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="G1"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="F1"/>
 		<DISCIPLINETALENT name="Beschwören" limitation="Verbündete Geister"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Aspekt des Grausamen Arztes"/>

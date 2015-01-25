@@ -7,13 +7,13 @@
 		<OPTIONALTALENT name="Astralsicht"/>
 		<OPTIONALTALENT name="Hieb Ausweichen"/>
 		<OPTIONALTALENT name="Klettern"/>
-		<OPTIONALTALENT name="Standardmatrix" limitation="E3"/>
+		<OPTIONALTALENT name="Standardmatrix" limitation="E1"/>
 		<OPTIONALTALENT name="Spurenlesen"/>
 		<OPTIONALTALENT name="Wildnisüberleben"/>
 		<OPTIONALTALENT name="Windkissen"/>
 		<OPTIONALTALENT name="Wispern"/>
-		<FREETALENT name="Standardmatrix" limitation="E1"/>
-		<FREETALENT name="Standardmatrix" limitation="E2"/>
+		<FREETALENT name="Standardmatrix" limitation="F1"/>
+		<FREETALENT name="Standardmatrix" limitation="F2"/>
 		<DISCIPLINETALENT name="Aufmerksamkeit"/>
 		<DISCIPLINETALENT name="Holzhaut"/>
 		<DISCIPLINETALENT name="Fadenweben" limitation="Elementarismus"/>
@@ -75,7 +75,7 @@
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Eiserner Wille"/>
-		<OPTIONALTALENT name="Erweiterte Matrix" limitation="E4"/>
+		<OPTIONALTALENT name="Erweiterte Matrix" limitation="E2"/>
 		<OPTIONALTALENT name="Feuerblut"/>
 		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
 		<OPTIONALTALENT name="Luftgleiten"/>
@@ -84,7 +84,7 @@
 		<OPTIONALTALENT name="Reinigende Kälte"/>
 		<OPTIONALTALENT name="Sicherer Pfad"/>
 		<OPTIONALTALENT name="Verbannen"/>
-		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="E1"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="F1"/>
 		<DISCIPLINETALENT name="Beschwören" limitation="Elementargeister"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Erdstab"/>
