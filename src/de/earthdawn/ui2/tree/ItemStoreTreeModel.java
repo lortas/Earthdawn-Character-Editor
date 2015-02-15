@@ -1,8 +1,10 @@
 package de.earthdawn.ui2.tree;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
+import java.util.TreeMap;
+
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
@@ -14,7 +16,7 @@ import de.earthdawn.ui2.EDInventoryRootNodeType;
 
 public class ItemStoreTreeModel implements TreeModel {
 	private ITEMS itemstore;
-	private HashMap<EDInventoryRootNodeType, Object> displayedNodes;
+	private Map<EDInventoryRootNodeType, Object> displayedNodes;
 	private ArrayList<EDInventoryRootNodeType> displayKeys;
 	protected ArrayList<TreeModelListener> listeners  = new ArrayList<TreeModelListener>();
 
@@ -26,7 +28,7 @@ public class ItemStoreTreeModel implements TreeModel {
 		super();
 
 		this.itemstore = itemstore;
-		displayedNodes = new HashMap<EDInventoryRootNodeType, Object>();
+		displayedNodes = new TreeMap<EDInventoryRootNodeType, Object>();
 		displayKeys = new ArrayList<EDInventoryRootNodeType>();
 		if(this.itemstore != null) {
 			displayedNodes.put(EDInventoryRootNodeType.ITEMS, itemstore.getITEM());

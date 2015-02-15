@@ -10,8 +10,8 @@ import de.earthdawn.data.GenderType;
 import de.earthdawn.data.NAMEGIVERABILITYType;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeSet;
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -122,11 +122,11 @@ public class EDGeneral extends JPanel {
 		btnRace.setContentAreaFilled(false);
 
 		popupMenuRace = new JPopupMenu();
-		HashMap<String, HashMap<String, List<NAMEGIVERABILITYType>>> namegivers = ApplicationProperties.create().getNamgiversByType();
+		Map<String, Map<String, List<NAMEGIVERABILITYType>>> namegivers = ApplicationProperties.create().getNamgiversByType();
 		for( String namegiversorigin : new TreeSet<String>(namegivers.keySet()) ) {
 			JMenu menuRace = new JMenu(namegiversorigin);
 			popupMenuRace.add(menuRace);
-			HashMap<String, List<NAMEGIVERABILITYType>> namegiverByOrigin = namegivers.get(namegiversorigin);
+			Map<String, List<NAMEGIVERABILITYType>> namegiverByOrigin = namegivers.get(namegiversorigin);
 			for( String namegiverstype : new TreeSet<String>(namegiverByOrigin.keySet()) ) {
 				List<NAMEGIVERABILITYType> namegiverList = namegiverByOrigin.get(namegiverstype);
 				Collections.sort(namegiverList, new NamegiverComparator());

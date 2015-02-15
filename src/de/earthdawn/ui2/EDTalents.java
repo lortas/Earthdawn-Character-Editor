@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -201,7 +201,7 @@ public class EDTalents extends JPanel {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_VERSATILITYTALENT,circle,new Rectangle(button.getLocationOnScreen().x, button.getLocationOnScreen().y+button.getHeight(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
-		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
+		Map<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
 			SKILLType cap = selected.get(key);
 			if( cap.getLIMITATION().size()<1 ) {
@@ -227,7 +227,7 @@ public class EDTalents extends JPanel {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_TALENT,circle,talentlist,null,new Rectangle(parentloc.x+source.getX()+source.getWidth(), parentloc.y+source.getY(), 450, 300));
 		dialog.setSingleSelection(true);
 		dialog.setVisible(true);
-		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
+		Map<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(String key : selected.keySet()){
 			SKILLType cap = selected.get(key);
 			if( cap.getLIMITATION().size()<1 ) {

@@ -1,7 +1,8 @@
 package de.earthdawn;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.Map;
 import java.util.List;
 
 import de.earthdawn.data.DISCIPLINEType;
@@ -9,7 +10,7 @@ import de.earthdawn.data.TALENTType;
 
 public class TalentsContainer {
 	public enum TalentKind { DIS, OPT, FRE };
-	private HashMap<TalentKind,List<TALENTType>> talents=new HashMap<TalentKind,List<TALENTType>>();
+	private Map<TalentKind,List<TALENTType>> talents=new TreeMap<TalentKind,List<TALENTType>>();
 
 	public TalentsContainer() {}
 

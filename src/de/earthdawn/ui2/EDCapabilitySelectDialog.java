@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
@@ -38,11 +38,11 @@ public class EDCapabilitySelectDialog extends JDialog {
 	private JScrollPane scrollPane;
 	private JList<String> list;
 
-	private TreeMap<String,SKILLType> capabilityMap = new TreeMap<String,SKILLType>();
-	private HashMap<String,SKILLType> selectedCapabilityMap = new HashMap<String,SKILLType>();
+	private Map<String,SKILLType> capabilityMap = new TreeMap<String,SKILLType>();
+	private Map<String,SKILLType> selectedCapabilityMap = new TreeMap<String,SKILLType>();
 	private List<SKILLType> excludedSkills = new ArrayList<SKILLType>();
 
-	public HashMap<String, SKILLType> getSelectedCapabilitytMap() {
+	public Map<String, SKILLType> getSelectedCapabilitytMap() {
 		return selectedCapabilityMap;
 	}
 	public static final int SELECT_SKILLS=0;
@@ -70,7 +70,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 		setAlwaysOnTop(true);
 		setBounds(dim);
 		if( exclude != null ) this.excludedSkills.addAll(exclude);
-		selectedCapabilityMap = new HashMap<String,SKILLType>();
+		selectedCapabilityMap = new TreeMap<String,SKILLType>();
 		initCapabilityList(talent,maxcirclenr,talentabilities);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -141,7 +141,7 @@ public class EDCapabilitySelectDialog extends JDialog {
 		} else {
 			if( talentabilities == null ) {
 				talentabilities=new ArrayList<TALENTABILITYType>();
-				HashMap<String, TALENTABILITYType> alltalentabilities = PROPERTIES.getTalentsByCircle(maxcirclenr);
+				Map<String, TALENTABILITYType> alltalentabilities = PROPERTIES.getTalentsByCircle(maxcirclenr);
 				for( String name : alltalentabilities.keySet() ) {
 					talentabilities.add(alltalentabilities.get(name));
 				}

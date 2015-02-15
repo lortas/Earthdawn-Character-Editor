@@ -1,8 +1,9 @@
 package de.earthdawn.ui2;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javax.swing.JComponent;
@@ -116,7 +117,7 @@ class KnacksTableModel extends AbstractTableModel {
 	public final ApplicationProperties PROPERTIES = ApplicationProperties.create();
 	private String[] columnNames = {"Learned", "Knack Name", "Limitation", "Talent Name", "Rank", "Strain", "BookRef"};
 
-	HashMap<String,KNACKBASEType> knacklist;
+	Map<String,KNACKBASEType> knacklist;
 	List<String> knacknames;
 
 	public KnacksTableModel(CharacterContainer character) {
@@ -126,7 +127,7 @@ class KnacksTableModel extends AbstractTableModel {
 	}
 
 	public void generateLists(){
-		knacklist = new HashMap<String,KNACKBASEType>();
+		knacklist = new TreeMap<String,KNACKBASEType>();
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
 				int talentrank=talent.getRANK().getRank()+2;

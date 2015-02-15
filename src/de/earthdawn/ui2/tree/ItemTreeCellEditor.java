@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 import java.lang.reflect.Constructor;
 import java.util.EventObject;
 import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.JTree;
 import javax.swing.event.CellEditorListener;
 import javax.swing.tree.DefaultTreeCellRenderer;
@@ -27,11 +29,11 @@ public class ItemTreeCellEditor extends  DefaultTreeCellRenderer implements Tree
 	private static final long serialVersionUID = 4228894595876362173L;
 	private AbstractNodePanel<?> editorPanel;
 	@SuppressWarnings("rawtypes")
-	private HashMap<Class,Class> registerEditors;
+	private Map<Class,Class> registerEditors;
 	
 	@SuppressWarnings("rawtypes")
 	public ItemTreeCellEditor(){
-		registerEditors = new  HashMap<Class,Class>();
+		registerEditors = new HashMap<Class,Class>();
 		registerEditors.put(ITEMType.class,ItemNodePanel.class);
 		registerEditors.put(WEAPONType.class,WeaponNodePanel.class);
 		registerEditors.put(ARMORType.class,ArmorNodePanel.class);

@@ -19,9 +19,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 import java.util.Random;
+import java.util.TreeMap;
 
 import de.earthdawn.data.GenderType;
 import de.earthdawn.data.RANDOMNAMERACEType;
@@ -29,7 +30,7 @@ import de.earthdawn.data.RandomnameNamesType;
 
 public class NameGenerator {
 
-	private final HashMap<String,HashMap<GenderType,List<Integer>>> creativityMap = new HashMap<String, HashMap<GenderType,List<Integer>>>();
+	private final Map<String,Map<GenderType,List<Integer>>> creativityMap = new TreeMap<String, Map<GenderType,List<Integer>>>();
 	private final List<SyllableComplex> randomnameraceList = new ArrayList<SyllableComplex>();
 	private List<RANDOMNAMERACEType> randomnameraces = null;
 	private static Random rand = new Random();
@@ -38,9 +39,9 @@ public class NameGenerator {
 		this.randomnameraces  = randomnameraces;
 		for( RANDOMNAMERACEType randomnamerace : randomnameraces ) {
 			String currentRaceName = randomnamerace.getRace();
-			HashMap<GenderType, List<Integer>> creativityByRace = creativityMap.get(currentRaceName);
+			Map<GenderType, List<Integer>> creativityByRace = creativityMap.get(currentRaceName);
 			if( creativityByRace == null ) {
-				creativityByRace = new HashMap<GenderType, List<Integer>>();
+				creativityByRace = new TreeMap<GenderType, List<Integer>>();
 				creativityMap.put(currentRaceName, creativityByRace);
 			}
 			for( RandomnameNamesType RandomnameNames : randomnamerace.getRANDOMNAMENAMEPART() ) {
@@ -131,7 +132,7 @@ public class NameGenerator {
 	}
 
 	public String generateName(String race, GenderType gender, int part) {
-		HashMap<GenderType, List<Integer>> creativityByRace = creativityMap.get(race);
+		Map<GenderType, List<Integer>> creativityByRace = creativityMap.get(race);
 		if( creativityByRace == null ) return "";
 		List<Integer> creativityByRaceByGender = creativityByRace.get(gender);
 		if( creativityByRaceByGender == null ) return "";

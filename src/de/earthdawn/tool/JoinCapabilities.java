@@ -23,8 +23,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javax.xml.bind.JAXBContext;
@@ -52,8 +53,8 @@ public class JoinCapabilities {
 			JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 			Unmarshaller u = jc.createUnmarshaller();
 			int countInFiles=args.length-1;
-			HashMap<String,CAPABILITYType> talents = new HashMap<String,CAPABILITYType>();
-			HashMap<String,CAPABILITYType> skills = new HashMap<String,CAPABILITYType>();
+			Map<String,CAPABILITYType> talents = new TreeMap<String,CAPABILITYType>();
+			Map<String,CAPABILITYType> skills = new TreeMap<String,CAPABILITYType>();
 			LanguageType language=null;
 			for( int i=0; i<countInFiles; i++ ) {
 				File inFile = new File(args[i]);

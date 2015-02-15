@@ -32,10 +32,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.TreeMap;
 
 import javax.swing.JOptionPane;
 import javax.xml.bind.JAXBContext;
@@ -287,9 +288,9 @@ public class CharacterContainer extends CharChangeRefresh {
 		return appearance;
 	}
 
-	public HashMap<ATTRIBUTENameType, ATTRIBUTEType> getAttributes() {
+	public Map<ATTRIBUTENameType, ATTRIBUTEType> getAttributes() {
 		List<ATTRIBUTEType> attributelist = character.getATTRIBUTE();
-		HashMap<ATTRIBUTENameType,ATTRIBUTEType> attributes = new HashMap<ATTRIBUTENameType,ATTRIBUTEType>();
+		Map<ATTRIBUTENameType,ATTRIBUTEType> attributes = new TreeMap<ATTRIBUTENameType,ATTRIBUTEType>();
 		for (ATTRIBUTEType attribute : attributelist ) {
 			attributes.put(attribute.getName(), attribute);
 		}
@@ -622,8 +623,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return 0;
 	}
 
-	public HashMap<String,DISCIPLINEType> getAllDisciplinesByName() {
-		HashMap<String,DISCIPLINEType> result = new HashMap<String,DISCIPLINEType>();
+	public Map<String,DISCIPLINEType> getAllDisciplinesByName() {
+		Map<String,DISCIPLINEType> result = new TreeMap<String,DISCIPLINEType>();
 		for (DISCIPLINEType discipline : getDisciplines()) {
 			result.put(discipline.getName(),discipline);
 		}
@@ -687,8 +688,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public HashMap<String,TalentsContainer> getAllTalentsByDisziplinName() {
-		HashMap<String,TalentsContainer> alltalents = new HashMap<String,TalentsContainer>();
+	public Map<String,TalentsContainer> getAllTalentsByDisziplinName() {
+		Map<String,TalentsContainer> alltalents = new TreeMap<String,TalentsContainer>();
 		for (DISCIPLINEType discipline : getDisciplines() ) {
 			alltalents.put(discipline.getName(),new TalentsContainer(discipline));
 		}
@@ -732,8 +733,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return null;
 	}
 
-	public HashMap<String,List<TALENTType>> getThreadWeavingTalents() {
-		HashMap<String,List<TALENTType>> result = new HashMap<String,List<TALENTType>>();
+	public Map<String,List<TALENTType>> getThreadWeavingTalents() {
+		Map<String,List<TALENTType>> result = new TreeMap<String,List<TALENTType>>();
 		for (DISCIPLINEType discipline : getDisciplines() ) {
 			List<TALENTType> threadweaving = new ArrayList<TALENTType>();
 			for(TALENTType talent : (new TalentsContainer(discipline)).getAllTalents() ) if( threadWeavingName.equals(talent.getName()) ) threadweaving.add(talent);
@@ -940,14 +941,14 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	/*
 	 * Liefert für jede Diszipline des Charakters pro Kreis eine Auflistung der verwendeten Optionalen Talente
-	 * Die äußere HashMap beinhaltet als Key, den Disziplinnamen. Die Values ist eine Liste,
+	 * Die äußere Map beinhaltet als Key, den Disziplinnamen. Die Values ist eine Liste,
 	 * wobei nicht der erste Eintrag für den ersten Kreis steht sondern der Eintrag mit dem Index=1,
 	 * das selbe gilt für die anderen Kreise analog
 	 * Die Werte der Liste ist wieder rum eine Liste von Talenten.
 	 * 
 	 */
-	public HashMap<String,List<List<TALENTType>>> getUsedOptionalTalents() {
-		HashMap<String,List<List<TALENTType>>> result = new HashMap<String,List<List<TALENTType>>>();
+	public Map<String,List<List<TALENTType>>> getUsedOptionalTalents() {
+		Map<String,List<List<TALENTType>>> result = new TreeMap<String,List<List<TALENTType>>>();
 		// Schleife über alle Disziplinen des Charakters
 		for(DISCIPLINEType discipline : getDisciplines() ) {
 			// Erstelle schon mal eine Ausreichende Liste von Leeren Listen um die Talente aufzunehmen.
@@ -998,7 +999,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		List<TALENTABILITYType> result = new ArrayList<TALENTABILITYType>();
 		List<TALENTType> usedTalents = new ArrayList<TALENTType>();
 		// multiUseTalents sind Talente die mehr als einmal gelernt werden können
-		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
+		Map<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
 		// Schleife über alle gelernten Disziplinen
 		for( DISCIPLINEType discipline : getDisciplines() ) {
 			for( TALENTType talent : (new TalentsContainer(discipline)).getAllTalents() ) {
@@ -1044,7 +1045,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			// Wenn min und max ein gülltiges Intervall ergeben, dann sind FOREIGNTALENTS definiert und müssen eingefügt werden.
 			// Um doppelte Auflistung zu vermeiden Erzeuge ein Liste von allen benutzten Talente sowie den Talenten, die bereits
 			// als Optionale Talente identifiziert wurden.
-			HashMap<String, TALENTABILITYType> talents = PROPERTIES.getTalentsByCircle(mincircle,maxcircle);
+			Map<String, TALENTABILITYType> talents = PROPERTIES.getTalentsByCircle(mincircle,maxcircle);
 			List<String> potentialTalents = new ArrayList<String>();
 			for( TALENTType talent : usedTalents ) potentialTalents.add(getFullTalentname(talent));
 			for( TALENTABILITYType talent : result ) potentialTalents.add(getFullTalentname(talent));
@@ -1058,9 +1059,9 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public HashMap<String,List<Integer>> getCircleOfMissingOptionalTalents() {
-		HashMap<String,List<Integer>> result = new HashMap<String,List<Integer>>();
-		HashMap<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
+	public Map<String,List<Integer>> getCircleOfMissingOptionalTalents() {
+		Map<String,List<Integer>> result = new TreeMap<String,List<Integer>>();
+		Map<String,List<List<TALENTType>>> talentsMap = getUsedOptionalTalents();
 		// Eine Schleife über alle Disciplinenamen des Charakters
 		for(String discipline : talentsMap.keySet() ) {
 			List<Integer> list = new ArrayList<Integer>();
@@ -1073,7 +1074,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 			int disciplineNumber = getDisciplineOrder(discipline);
 			// Falls in den Optionalen Regel Default Talente festgelegt seine sollte, hole diese
-			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplineNumber);
+			Map<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplineNumber);
 			int disciplineCircle = getCircleOf(disciplineNumber);
 			int circlenr=0;
 			for( int numberOfOptionalTalents : PROPERTIES.getNumberOfOptionalTalentsPerCircleByDiscipline(discipline) ) {
@@ -1230,7 +1231,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		// Talentname von Unempfindlichkeit ermitteln
 		final String durabilityName = PROPERTIES.getDurabilityName();
 		// Talente ermitteln die mehrfach verwendet werden dürfen.
-		HashMap<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
+		Map<String, Integer> multiUseTalents = PROPERTIES.getMultiUseTalents();
 		// Liste alle vom Charakter gelernter Disziplinen
 		List<DISCIPLINEType> disciplines = character.getDISCIPLINE();
 		// Wenn man bei Eins anfängt zu nummerieren, dann ist die Anzahl der Disziplinen auch gleichzeitig die Nummer der letzten Disziplin.
@@ -1754,7 +1755,7 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	// Finde zu allen Talenten, ob es Realigned Talente dazu gibt und aktuallisiere deren Realigned Rank
 	public void updateRealignedTalents() {
-		HashMap<String, List<TALENTType>> realignedTalentHash = new HashMap<String, List<TALENTType>>();
+		Map<String, List<TALENTType>> realignedTalentHash = new TreeMap<String, List<TALENTType>>();
 		// Finde alle Talente die als Realigned makiert sind
 		for( TalentsContainer talents : getAllTalents() ) {
 			insertIfRealigned(realignedTalentHash, talents.getAllTalents() );
@@ -1785,7 +1786,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
-	private void insertIfRealigned(HashMap<String, List<TALENTType>> realignedTalents, List<TALENTType> talents) {
+	private void insertIfRealigned(Map<String, List<TALENTType>> realignedTalents, List<TALENTType> talents) {
 		for( TALENTType talent : talents ) {
 			if( talent.getRealigned() > 0 ) {
 				String talentName = talent.getName();
@@ -1878,7 +1879,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			movementFlight = namegiver.getMovementFlight();
 			movementGround = namegiver.getMovementGround();
 		}
-		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = getAttributes();
+		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = getAttributes();
 		ATTRIBUTEType strength = attributes.get(ATTRIBUTENameType.STR);
 		ATTRIBUTEType dexterity = attributes.get(ATTRIBUTENameType.DEX);
 		int modStr=Math.round( (float)(strength.getCurrentvalue()-strength.getRacevalue()) / 3f );
@@ -1928,8 +1929,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		carrying.setLifting(carryingValue *2);
 	}
 
-	public HashMap<String,ITEMType> getHashOfAllItems() {
-		HashMap<String,ITEMType> result = new HashMap<String, ITEMType>();
+	public Map<String,ITEMType> getHashOfAllItems() {
+		Map<String,ITEMType> result = new TreeMap<String, ITEMType>();
 		for( ITEMType item : character.getITEM() ) result.put( item.getName(), item );
 		int pursecounter=0;
 		for( COINSType coins : character.getCOINS() ) {

@@ -7,7 +7,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Map;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.SPELLDEFType;
 import de.earthdawn.ui2.tree.StringNodeType;
@@ -16,7 +16,7 @@ import net.miginfocom.swing.MigLayout;
 public class StringNodePanel extends AbstractNodePanel<StringNode> {
 	private static final long serialVersionUID = 4048257772310202634L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
-	public static final HashMap<String, SPELLDEFType> spelldefs = PROPERTIES.getSpells();
+	public static final Map<String, SPELLDEFType> spelldefs = PROPERTIES.getSpells();
 	private StringNodeType nodeType;
 	private JComboBox<String> comboBoxString;
 	private JTextField textFieldString;

@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +68,7 @@ public class ApplicationProperties {
     /** Singleton-Instanz dieser Klasse. */
     private static ApplicationProperties theProps = null;
     /** Disziplinen (Name Label geordnet) */
-    private static final Map<ECERulesetLanguage,Map<String, DISCIPLINE>> DISCIPLINES = new HashMap<ECERulesetLanguage,Map<String, DISCIPLINE>>();
+    private static final Map<ECERulesetLanguage,Map<String, DISCIPLINE>> DISCIPLINES = new TreeMap<ECERulesetLanguage,Map<String, DISCIPLINE>>();
     /** RandomCharacterTemplates (Name Label geordnet) */
     private static final RandomCharacterTemplates RANDOMCHARACTERTEMPLATES = new RandomCharacterTemplates();
 
@@ -125,22 +124,22 @@ public class ApplicationProperties {
 	}
 
 	public Map<String,Map<String,?>> getAllDisziplinNamesAsTree() {
-		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
-		for( String s : DISCIPLINES.get(RULESETLANGUAGE).keySet() ) result.put(s,new HashMap<String, Map<String,?>>());
+		Map<String,Map<String,?>> result = new TreeMap<String, Map<String,?>>();
+		for( String s : DISCIPLINES.get(RULESETLANGUAGE).keySet() ) result.put(s,new TreeMap<String, Map<String,?>>());
 		return shrinkStringMap(result);
 	}
 
 	public Map<String,Map<String,?>> getAllCharacterTemplatesNamesAsTree() {
-		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
-		for( String s : RANDOMCHARACTERTEMPLATES.getAllTemplateNames() ) result.put(s,new HashMap<String, Map<String,?>>());
+		Map<String,Map<String,?>> result = new TreeMap<String, Map<String,?>>();
+		for( String s : RANDOMCHARACTERTEMPLATES.getAllTemplateNames() ) result.put(s,new TreeMap<String, Map<String,?>>());
 		return shrinkStringMap(result);
 	}
 
 	private Map<String,Map<String,?>> shrinkStringMap(Map<String,Map<String,?>> map) {
-		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
+		Map<String,Map<String,?>> result = new TreeMap<String, Map<String,?>>();
 		for( String newkey : map.keySet() ) {
 			boolean insert=false;
-			Map<String, Map<String, ?>> newvalue = new HashMap<String, Map<String,?>>();
+			Map<String, Map<String, ?>> newvalue = new TreeMap<String, Map<String,?>>();
 			List<String> removelist = new ArrayList<String>();
 			for( String s : result.keySet() ) {
 				if( newkey.startsWith(s) ) {
@@ -153,7 +152,7 @@ public class ApplicationProperties {
 					break;
 				} else if( s.startsWith(newkey) ) {
 					removelist.add(s);
-					newvalue.put(s, new HashMap<String, Map<String,?>>());
+					newvalue.put(s, new TreeMap<String, Map<String,?>>());
 				}
 			}
 			for( String s : removelist ) result.remove(s);
@@ -172,13 +171,13 @@ public class ApplicationProperties {
 		Collections.sort(topLevelStrings);
 		int step=topLevelStrings.size()/maxsize;
 		if( step<2 ) return map;
-		Map<String,Map<String,?>> result = new HashMap<String, Map<String,?>>();
+		Map<String,Map<String,?>> result = new TreeMap<String, Map<String,?>>();
 		Iterator<String> iter = topLevelStrings.iterator();
 		String s = null;
 		if( iter.hasNext() ) s = iter.next();
 		while( s != null ) {
 			String title = s.substring(0, 3) + " - ";
-			Map<String,Map<String,?>> entry = new HashMap<String, Map<String,?>>();
+			Map<String,Map<String,?>> entry = new TreeMap<String, Map<String,?>>();
 			entry.put(s, map.get(s));
 			int count = step;
 			while( count > 1) {
@@ -235,15 +234,15 @@ public class ApplicationProperties {
 		return fallbackresult;
 	}
 
-	public HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> getNamgiversByType() {
-		HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>> result = new HashMap<String,HashMap<String,List<NAMEGIVERABILITYType>>>();
+	public Map<String,Map<String,List<NAMEGIVERABILITYType>>> getNamgiversByType() {
+		Map<String,Map<String,List<NAMEGIVERABILITYType>>> result = new TreeMap<String,Map<String,List<NAMEGIVERABILITYType>>>();
 		for( NAMEGIVERABILITYType namegiver : getNamegivers() ) {
 			String type = namegiver.getType();
 			List<String> originList = namegiver.getORIGIN();
 			if( originList.isEmpty() ) originList.add("");
 			for( String origin : originList ) {
-				if( ! result.containsKey(origin) ) result.put(origin,new HashMap<String,List<NAMEGIVERABILITYType>>());
-				HashMap<String, List<NAMEGIVERABILITYType>> o = result.get(origin);
+				if( ! result.containsKey(origin) ) result.put(origin,new TreeMap<String,List<NAMEGIVERABILITYType>>());
+				Map<String, List<NAMEGIVERABILITYType>> o = result.get(origin);
 				if( ! o.containsKey(type) ) o.put(type,new ArrayList<NAMEGIVERABILITYType>());
 				o.get(type).add(namegiver);
 			}
@@ -270,12 +269,12 @@ public class ApplicationProperties {
 		return new ECECapabilities();
 	}
 
-	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
+	public Map<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
 		return getTalentsByCircle(1,maxcirclenr);
 	}
 
-	public HashMap<String,TALENTABILITYType> getTalentsByCircle(int mincirclenr, int maxcirclenr) {
-		HashMap<String,TALENTABILITYType> result = new HashMap<String,TALENTABILITYType>();
+	public Map<String,TALENTABILITYType> getTalentsByCircle(int mincirclenr, int maxcirclenr) {
+		Map<String,TALENTABILITYType> result = new TreeMap<String,TALENTABILITYType>();
 		for(DISCIPLINE discipline : getAllDisziplines()) {
 			int circlenr=0;
 			for( DISCIPLINECIRCLEType circle : discipline.getCIRCLE() ) {
@@ -313,8 +312,8 @@ public class ApplicationProperties {
 
 	// Liefert die Definition aller verfügbarer Zauber zurück.
 	// Unabhängig von der Diszipin oder dem Fadenweben-Talent
-	public HashMap<String,SPELLDEFType> getSpells() {
-		HashMap<String,SPELLDEFType> spellmap = new HashMap<String,SPELLDEFType>();
+	public Map<String,SPELLDEFType> getSpells() {
+		Map<String,SPELLDEFType> spellmap = new TreeMap<String,SPELLDEFType>();
 		de.earthdawn.data.SPELLS spells = SPELLS.get(RULESETLANGUAGE);
 		if( spells == null ) {
 			System.err.println("No Spells defined found in ruleset "+RULESETLANGUAGE.toString());
@@ -324,14 +323,14 @@ public class ApplicationProperties {
 		return spellmap;
 	}
 
-	public HashMap<String,SpelldescriptionType> getSpellDescriptions() {
-		HashMap<String,SpelldescriptionType> spellmap = new HashMap<String,SpelldescriptionType>();
+	public Map<String,SpelldescriptionType> getSpellDescriptions() {
+		Map<String,SpelldescriptionType> spellmap = new TreeMap<String,SpelldescriptionType>();
 		for( SpelldescriptionType spell : SPELLDESCRIPTIONS.get(RULESETLANGUAGE).getSPELL() ) spellmap.put(spell.getName(), spell);
 		return spellmap;
 	}
 
-	public HashMap<String,List<List<DISCIPLINESPELLType>>> getSpellsByDiscipline() {
-		HashMap<String,List<List<DISCIPLINESPELLType>>> result = new HashMap<String,List<List<DISCIPLINESPELLType>>>();
+	public Map<String,List<List<DISCIPLINESPELLType>>> getSpellsByDiscipline() {
+		Map<String,List<List<DISCIPLINESPELLType>>> result = new TreeMap<String,List<List<DISCIPLINESPELLType>>>();
 		for(DISCIPLINE discipline : getAllDisziplines()){
 			List<List<DISCIPLINESPELLType>> spells = new ArrayList<List<DISCIPLINESPELLType>>();
 			for( DISCIPLINECIRCLEType circle : discipline.getCIRCLE() ) {
@@ -344,8 +343,8 @@ public class ApplicationProperties {
 
 	public List<SPELLType> getSpells4Grimoir() {
 		List<SPELLType> result = new ArrayList<SPELLType>();
-		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = getSpellsByDiscipline();
-		HashMap<String, SPELLDEFType> spells = getSpells();
+		Map<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = getSpellsByDiscipline();
+		Map<String, SPELLDEFType> spells = getSpells();
 		for( String discipline : spellsByDiscipline.keySet() ) {
 			int circlenr=0;
 			for( List<DISCIPLINESPELLType> disciplineSpells : spellsByDiscipline.get(discipline)) {
@@ -380,8 +379,8 @@ public class ApplicationProperties {
 		return OPTIONALRULES;
 	}
 
-	public HashMap<String,Integer> getDefaultOptionalTalents(int discipline) {
-		HashMap<String,Integer> result = new HashMap<String,Integer>();
+	public Map<String,Integer> getDefaultOptionalTalents(int discipline) {
+		Map<String,Integer> result = new TreeMap<String,Integer>();
 		for( OPTIONALRULESDEFAULTOPTIONALTALENT talent : OPTIONALRULES.getDEFAULTOPTIONALTALENT() ) {
 			if( (talent.getDiscipline() == discipline) && talent.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
 				result.put(talent.getTalent(), talent.getCircle());
@@ -391,11 +390,11 @@ public class ApplicationProperties {
 	}
 
 	/* 
-	 * Liefert eine HashMap von Talenten die mehr als einmal gelernt werden können.
+	 * Liefert eine Map von Talenten die mehr als einmal gelernt werden können.
 	 * Der Key enthält dabei den Talentnamen und das Value den Zähler, wie häufig es gelernt werden darf.
 	 */
-	public HashMap<String,Integer> getMultiUseTalents() {
-		HashMap<String,Integer> result = new HashMap<String,Integer>();
+	public Map<String,Integer> getMultiUseTalents() {
+		Map<String,Integer> result = new TreeMap<String,Integer>();
 		for( OPTIONALRULESMULTIUSETALENT talent : OPTIONALRULES.getMULTIUSETALENT() ) {
 			if( talent.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
 				result.put(talent.getTalent(), talent.getCount());
@@ -438,9 +437,9 @@ public class ApplicationProperties {
 		out.close();
 	}
 
-	public HashMap<ATTRIBUTENameType,String> getAttributeNames() {
-		HashMap<ATTRIBUTENameType,String> result = new HashMap<ATTRIBUTENameType,String>();
-		// Fill result HashMap with default values
+	public Map<ATTRIBUTENameType,String> getAttributeNames() {
+		Map<ATTRIBUTENameType,String> result = new TreeMap<ATTRIBUTENameType,String>();
+		// Fill result Map with default values
 		for( ATTRIBUTENameType attr : ATTRIBUTENameType.values() ) result.put(attr,attr.value());
 		// Search for translation in the config
 		for( NAMESATTRIBUTESType attributes : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getATTRIBUTES() ) {
@@ -534,10 +533,10 @@ public class ApplicationProperties {
 		return new ArrayList<SKILLType>();
 	}
 
-	public HashMap<SpellkindType,String> getSpellKindMap() {
+	public Map<SpellkindType,String> getSpellKindMap() {
 		for( NAMESPELLWEAVINGType name : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getSPELLWEAVING() ) {
 			if( name.getLang().equals(RULESETLANGUAGE.getLanguage())) {
-				HashMap<SpellkindType,String> spellTypeMap = new HashMap<SpellkindType,String>();
+				Map<SpellkindType,String> spellTypeMap = new TreeMap<SpellkindType,String>();
 				for( NAMESPELLKINDType type : name.getSPELLKIND() ) {
 					spellTypeMap.put(type.getType(),type.getWeaving());
 				}
@@ -545,7 +544,7 @@ public class ApplicationProperties {
 			}
 		}
 		System.err.println("Could not find a SpellTypeMap for language='"+RULESETLANGUAGE.getLanguage().value()+"' and rulesetversion='"+RULESETLANGUAGE.getRulesetversion().value()+"'");
-		return new HashMap<SpellkindType,String>();
+		return new TreeMap<SpellkindType,String>();
 	}
 
 	public HELP getHelp() {
@@ -601,7 +600,7 @@ public class ApplicationProperties {
 			// translation laden
 			// --- Bestimmen aller Dateien im Unterordner 'translation'
 			// --- Einlesen der Dateien
-			TRANSLATIONS=new HashMap<RulesetversionType,TRANSLATIONS>();
+			TRANSLATIONS=new TreeMap<RulesetversionType,TRANSLATIONS>();
 			for(File translation : selectallxmlfiles(new File(CONFIGDIR,"translation"))) {
 				System.out.print("Reading config file '" + translation.getCanonicalPath() + "' ... ");
 				TRANSLATIONS t1 = (TRANSLATIONS) unmarshaller.unmarshal(translation);
@@ -631,17 +630,17 @@ public class ApplicationProperties {
 			}
 
 			// Zum späteren leichteren Zugriff, bringe die spezifischen Übersetzungen in ein anderes Format.
-			NAMEGIVERTRANSLATIONS=new HashMap<RulesetversionType,List<TRANSLATIONType>>();
-			NAMES=new HashMap<String,Map<ECERulesetLanguage,TranslationlabelType>>();
-			NAMES.put("karmaritual",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("durability",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("versatility",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("threadweaving",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("languageskillspeak",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("languageskillreadwrite",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("questortalent",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("artisan",new HashMap<ECERulesetLanguage,TranslationlabelType>());
-			NAMES.put("knowledge",new HashMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMEGIVERTRANSLATIONS=new TreeMap<RulesetversionType,List<TRANSLATIONType>>();
+			NAMES=new TreeMap<String,Map<ECERulesetLanguage,TranslationlabelType>>();
+			NAMES.put("karmaritual",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("durability",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("versatility",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("threadweaving",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("languageskillspeak",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("languageskillreadwrite",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("questortalent",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("artisan",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
+			NAMES.put("knowledge",new TreeMap<ECERulesetLanguage,TranslationlabelType>());
 			for( RulesetversionType rulesetversion : TRANSLATIONS.keySet() ) {
 				Map<ECERulesetLanguage, TranslationlabelType> n;
 				n = NAMES.get("karmaritual");
@@ -745,8 +744,8 @@ public class ApplicationProperties {
 			// spells laden
 			// --- Bestimmen aller Dateien im Unterordner 'spells'
 			// --- Einlesen der Dateien
-			SPELLS=new HashMap<ECERulesetLanguage,SPELLS>();
-			SPELLDESCRIPTIONS=new HashMap<ECERulesetLanguage,SPELLDESCRIPTIONS>();
+			SPELLS=new TreeMap<ECERulesetLanguage,SPELLS>();
+			SPELLDESCRIPTIONS=new TreeMap<ECERulesetLanguage,SPELLDESCRIPTIONS>();
 			File spelldescriptionsdir = new File(CONFIGDIR, "spelldescriptions");
 			for(File spells : selectallxmlfiles(new File(CONFIGDIR,"spells"))) {
 				System.out.print("Reading config file '" + spells.getCanonicalPath() + "' ...");
@@ -880,7 +879,7 @@ public class ApplicationProperties {
 				if( t.getLang().equals(RULESETLANGUAGE.getLanguage()) ) RANDOMCHARACTERTEMPLATES.put(t.getName(), t);
 			}
 
-			NAMEGIVERS=new HashMap<ECERulesetLanguage,List<NAMEGIVERABILITYType>>();
+			NAMEGIVERS=new TreeMap<ECERulesetLanguage,List<NAMEGIVERABILITYType>>();
 			for(File configFile : selectallxmlfiles(new File(CONFIGDIR,"namegivers"))) {
 				System.out.println("Reading config file '" + configFile.getCanonicalPath() + "'");
 				NAMEGIVERS t = (NAMEGIVERS) unmarshaller.unmarshal(configFile);
@@ -896,7 +895,7 @@ public class ApplicationProperties {
 				}
 			}
 
-			CHARACTERISTICS=new HashMap<RulesetversionType,ECECharacteristics>();
+			CHARACTERISTICS=new TreeMap<RulesetversionType,ECECharacteristics>();
 			for(File configFile : selectallxmlfiles(new File(CONFIGDIR,"characteristics"))) {
 				System.out.println("Reading config file '" + configFile.getCanonicalPath() + "'");
 				CHARACTERISTICS t = (CHARACTERISTICS) unmarshaller.unmarshal(configFile);
@@ -972,8 +971,8 @@ public class ApplicationProperties {
 	private void checktranslation() {
 		for( CAPABILITIES c : CAPABILITIES ) {
 			ECERulesetLanguage rl = new ECERulesetLanguage(c.getRulesetversion(),c.getLang());
-			HashMap<String,List<TranslationlabelType>> translation = new HashMap<String,List<TranslationlabelType>>();
-			HashMap<String,Integer> count = new HashMap<String,Integer>();
+			Map<String,List<TranslationlabelType>> translation = new TreeMap<String,List<TranslationlabelType>>();
+			Map<String,Integer> count = new TreeMap<String,Integer>();
 					for( TRANSLATIONType i : TRANSLATIONS.get(rl.getRulesetversion()).getCAPABILITY() ) {
 						for( TranslationlabelType j : i.getLABEL() ) {
 							if( j.getLang().equals(rl.getLanguage()) ) {

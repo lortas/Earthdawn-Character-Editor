@@ -30,7 +30,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import javax.swing.ListSelectionModel;
 
 public class EDSkills extends JPanel {
@@ -156,7 +156,7 @@ public class EDSkills extends JPanel {
 	protected void do_btnAddSkill_actionPerformed(ActionEvent arg0) {
 		EDCapabilitySelectDialog dialog = new EDCapabilitySelectDialog(EDCapabilitySelectDialog.SELECT_SKILLS,0,character.getSkills(),new Rectangle(100, 100, 450, 300) );
 		dialog.setVisible(true);
-		HashMap<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
+		Map<String, SKILLType> selected = dialog.getSelectedCapabilitytMap();
 		for(Object key : selected.keySet()){
 			SKILLType cap = selected.get(key);
 			SKILLType skill = new SKILLType();

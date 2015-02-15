@@ -725,7 +725,7 @@ public class EDInventory extends JPanel {
 					else if( currentNode instanceof SHIELDType) items.getSHIELD().add((SHIELDType)currentNode);
 					else if( currentNode instanceof ARMORType) items.getARMOR().add((ARMORType)currentNode);
 					else if( currentNode instanceof MAGICITEMType ) {
-						if( category.equals("Bloodcharms") ) items.getBLOODCHARMITEM().add((MAGICITEMType)currentNode);
+						if( category.equals(EDInventoryRootNodeType.BLOODCHARMS) ) items.getBLOODCHARMITEM().add((MAGICITEMType)currentNode);
 						else items.getMAGICITEM().add((MAGICITEMType)currentNode);
 					}
 					else if( currentNode instanceof ITEMType ) items.getITEM().add((ITEMType)currentNode);

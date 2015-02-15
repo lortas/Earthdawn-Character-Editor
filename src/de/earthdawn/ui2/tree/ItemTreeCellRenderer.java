@@ -6,7 +6,9 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTree;
@@ -27,14 +29,14 @@ import de.earthdawn.data.YesnoType;
 import de.earthdawn.ui2.EDInventoryRootNodeType;
 
 public class ItemTreeCellRenderer implements TreeCellRenderer {
-	private HashMap<String, ImageIcon> treeIcons;
+	private Map<String, ImageIcon> treeIcons;
 	private int intWidth = 30;
 	private int intHeight = 30;
 
 	public ItemTreeCellRenderer() {
 		super();
 		File icondir = new File("icons");
-		treeIcons = new HashMap<String, ImageIcon>();
+		treeIcons = new TreeMap<String, ImageIcon>();
 		for(File file : icondir.listFiles()) {
 			String strFilename=file.getName();
 			if( strFilename.endsWith(".png") ) {

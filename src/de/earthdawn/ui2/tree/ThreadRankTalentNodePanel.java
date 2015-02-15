@@ -8,8 +8,9 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import net.miginfocom.swing.MigLayout;
 import de.earthdawn.config.ApplicationProperties;
@@ -20,9 +21,9 @@ import javax.swing.JSpinner;
 public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYType> {
 	private static final long serialVersionUID = 4271333564693831830L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
-	public static final HashMap<String, TALENTABILITYType> talentByCircle = PROPERTIES.getTalentsByCircle(15);
+	public static final Map<String, TALENTABILITYType> talentByCircle = PROPERTIES.getTalentsByCircle(15);
 	public static final List<CAPABILITYType> talents = PROPERTIES.getCapabilities().getTalents();
-	private HashMap<String,String[]> talenthash;
+	private Map<String,String[]> talenthash;
 	private JComboBox<String> comboBoxTalent;
 	private JSpinner spinnerBonus;
 	private JTextField textFieldPool;
@@ -33,7 +34,7 @@ public class ThreadRankTalentNodePanel extends AbstractNodePanel<TALENTABILITYTy
 		setLayout(new MigLayout("", "[50px][200px,grow][50px][50px][50px][200px,grow]", "[20px:20px:20px]"));
 
 		add(new JLabel("Talent"), "cell 0 0,alignx right,aligny center");
-		talenthash = new HashMap<String,String[]>();
+		talenthash = new TreeMap<String,String[]>();
 		for( CAPABILITYType t : talents ) {
 			List<String> limitations = t.getLIMITATION();
 			String talentname=t.getName();

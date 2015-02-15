@@ -19,7 +19,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.xml.bind.JAXBElement;
 
@@ -57,8 +58,8 @@ public class ECECharacteristics {
 		return result;
 	}
 
-	public HashMap<Integer,Integer> getATTRIBUTECOST() {
-		HashMap<Integer,Integer> result = new HashMap<Integer,Integer>();
+	public Map<Integer,Integer> getATTRIBUTECOST() {
+		Map<Integer,Integer> result = new TreeMap<Integer,Integer>();
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
 			if( element.getName().getLocalPart().equals("ATTRIBUTECOST") ) {
 				int modifier = ((CHARACTERISTICSATTRIBUTECOST)element.getValue()).getModifier();
@@ -79,8 +80,8 @@ public class ECECharacteristics {
 		return result;
 	}
 
-	public HashMap<Integer,CHARACTERISTICSHEALTHRATING> getHEALTHRATING() {
-		HashMap<Integer,CHARACTERISTICSHEALTHRATING> result = new HashMap<Integer,CHARACTERISTICSHEALTHRATING>();
+	public Map<Integer,CHARACTERISTICSHEALTHRATING> getHEALTHRATING() {
+		Map<Integer,CHARACTERISTICSHEALTHRATING> result = new TreeMap<Integer,CHARACTERISTICSHEALTHRATING>();
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
 			if( element.getName().getLocalPart().equals("HEALTHRATING") ) {
 				CHARACTERISTICSHEALTHRATING value = ((CHARACTERISTICSHEALTHRATING)element.getValue());
@@ -219,7 +220,7 @@ public class ECECharacteristics {
 	}
 
 	public CHARACTERISTICSLEGENDARYSTATUS getLegendaystatus(int circle) {
-		HashMap<Integer,CHARACTERISTICSLEGENDARYSTATUS> status = new HashMap<Integer,CHARACTERISTICSLEGENDARYSTATUS>();
+		Map<Integer,CHARACTERISTICSLEGENDARYSTATUS> status = new TreeMap<Integer,CHARACTERISTICSLEGENDARYSTATUS>();
 		for (JAXBElement<?> element : CHARACTERISTICS.getENCUMBRANCEOrDEFENSERAITINGOrMYSTICARMOR()) {
 			if( element.getName().getLocalPart().equals("LEGENDARYSTATUS") ) {
 				CHARACTERISTICSLEGENDARYSTATUS st = (CHARACTERISTICSLEGENDARYSTATUS)element.getValue();

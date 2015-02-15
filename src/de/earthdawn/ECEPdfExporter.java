@@ -25,11 +25,9 @@ import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -70,7 +68,7 @@ public class ECEPdfExporter {
 		acroFields.setField( "CharacterWeight" , String.valueOf(appearance.getWeight()) );
 		acroFields.setField( "Passion" , character.getPassion() );
 		acroFields.setField( "PlayerName" , character.getPlayer() );
-		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		acroFields.setField( "AttributeBase.0", String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getBasevalue()) );
 		acroFields.setField( "AttributeBase.1", String.valueOf(attributes.get(ATTRIBUTENameType.STR).getBasevalue()) );
 		acroFields.setField( "AttributeBase.2", String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getBasevalue()) );
@@ -278,7 +276,7 @@ public class ECEPdfExporter {
 			DISCIPLINEType discipline1=disciplines.get(0);
 			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
-			HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+			Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 			int counter = 0;
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4) && (counter<9) ) {
@@ -520,7 +518,7 @@ public class ECEPdfExporter {
 			int counter = 0;
 			List<TALENTType> disziplinetalents = discipline1.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
-			HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+			Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4)  && (counter<9) )  counter =  9;
 				if( (talent.getCircle()>8)  && (counter<13) ) counter = 13;
@@ -551,7 +549,7 @@ public class ECEPdfExporter {
 			int counter = 36;
 			List<TALENTType> disziplinetalents = discipline2.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
-			HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+			Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 			for( TALENTType talent : disziplinetalents ) {
 				if( (talent.getCircle()>4)  && (counter<44) ) counter = 44;
 				if( (talent.getCircle()>8)  && (counter<48) ) counter = 48;
@@ -754,7 +752,7 @@ public class ECEPdfExporter {
 		String race;
 		if( appearance.getOrigin().isEmpty() ) race = appearance.getRace();
 		else race = appearance.getRace()+" ("+appearance.getOrigin()+")";
-		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		Iterator<String> disciplineNames = character.getDisciplineNames().iterator();
 		Iterator<Integer> disciplineCircles = character.getDisciplineCircles().iterator();
 		List<String> armorNameList = new ArrayList<String>();
@@ -1440,7 +1438,7 @@ public class ECEPdfExporter {
 		counterEquipment++;
 	}
 
-	private void setSkillOrTalent(CharsheettemplatetalentType fieldnames, SKILLType talent, HashMap<ATTRIBUTENameType,ATTRIBUTEType> attributes) throws DocumentException, IOException {
+	private void setSkillOrTalent(CharsheettemplatetalentType fieldnames, SKILLType talent, Map<ATTRIBUTENameType,ATTRIBUTEType> attributes) throws DocumentException, IOException {
 		String talentname = talent.getName();
 		String limitation="";
 		if( talent.getLIMITATION().size()>0 ) limitation=talent.getLIMITATION().get(0);
@@ -1551,7 +1549,7 @@ public class ECEPdfExporter {
 		int counterSpells=maxSpellPerPage;
 		PdfStamper stamper=null;
 		PdfReader reader=null;
-		HashMap<String, SpelldescriptionType> spelldescriptions = ApplicationProperties.create().getSpellDescriptions();
+		Map<String, SpelldescriptionType> spelldescriptions = ApplicationProperties.create().getSpellDescriptions();
 		
 		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
 		List<String> disciplineNames = new ArrayList<String>();

@@ -23,11 +23,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javax.imageio.ImageIO;
@@ -689,8 +689,8 @@ public class EDMainWindow {
 	private void addTalentsAndSpellsTabs(){
 		List<String> allTalentTabs = new ArrayList<String>();
 		List<String> allSpellTabs = new ArrayList<String>();
-		HashMap<String, List<TALENTType>> threadWeavingTalents = character.getThreadWeavingTalents();
-		HashMap<String, DISCIPLINEType> allDisciplinesByName = character.getAllDisciplinesByName();
+		Map<String, List<TALENTType>> threadWeavingTalents = character.getThreadWeavingTalents();
+		Map<String, DISCIPLINEType> allDisciplinesByName = character.getAllDisciplinesByName();
 		for(Component co : tabbedPane.getComponents() ) {
 			if(co.getClass() == EDTalents.class) {
 				// löschen wenn die Disciplin nicht mehr vorhanden ist
@@ -1233,8 +1233,8 @@ public class EDMainWindow {
 		mnMovmentRule.setText(NLS.getString("EDMainWindow.mntmOptRuleATTRIBUTEBASEDMOVEMENT.text"));
 		MOVEMENTATTRIBUTENameType attribute = OPTIONALRULES.getATTRIBUTEBASEDMOVEMENT().getAttribute();
 
-		HashMap<ATTRIBUTENameType, String> attributesHash = PROPERTIES.getAttributeNames();
-		HashMap<MOVEMENTATTRIBUTENameType,String> attributes = new HashMap<MOVEMENTATTRIBUTENameType,String>();
+		Map<ATTRIBUTENameType, String> attributesHash = PROPERTIES.getAttributeNames();
+		Map<MOVEMENTATTRIBUTENameType,String> attributes = new TreeMap<MOVEMENTATTRIBUTENameType,String>();
 		attributes.put(MOVEMENTATTRIBUTENameType.NA, attributesHash.get(ATTRIBUTENameType.NA));
 		attributes.put(MOVEMENTATTRIBUTENameType.STR, attributesHash.get(ATTRIBUTENameType.STR));
 		attributes.put(MOVEMENTATTRIBUTENameType.DEX, attributesHash.get(ATTRIBUTENameType.DEX));

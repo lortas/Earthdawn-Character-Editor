@@ -19,8 +19,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
+import java.util.TreeMap;
+
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.*;
@@ -47,8 +49,8 @@ public class ECEWorker {
 	public static boolean OptionalRule_AligningTalentsAndSkills=OptionalRule.getALIGNINGTALENTSANDSKILLS().getUsed().equals(YesnoType.YES);
 	public static boolean OptionalRule_NoNegativeKarmaMax=PROPERTIES.getOptionalRules().getATTRIBUTE().getLimitoneway().equals(YesnoType.YES);
 	public static int OptionalRule_MaxAttributeBuyPoints=PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints();
-	public static final HashMap<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
-	private HashMap<ATTRIBUTENameType, ATTRIBUTEType> characterAttributes=null;
+	public static final Map<String, SPELLDEFType> spelllist = PROPERTIES.getSpells();
+	private Map<ATTRIBUTENameType, ATTRIBUTEType> characterAttributes=null;
 	CalculatedLPContainer calculatedLP = null;
 	private static PrintStream errorout = System.err;
 	private CharacterContainer character;
@@ -274,7 +276,7 @@ public class ECEWorker {
 		// Finde zu allen Talenten, ob es Realigned Talente dazu gibt und aktuallisiere deren Realigned Rank
 		character.updateRealignedTalents();
 		// Sammle alle Namensgeber spezial Talente in einer Liste zusammen
-		HashMap<String,TALENTABILITYType> namegivertalents = new HashMap<String,TALENTABILITYType>();
+		Map<String,TALENTABILITYType> namegivertalents = new TreeMap<String,TALENTABILITYType>();
 		for( TALENTABILITYType t : namegiver.getTALENT() ) {
 			String name = t.getName();
 			namegivertalents.put(name, t);
@@ -290,13 +292,13 @@ public class ECEWorker {
 			namegivertalents.put(questorTalentName, talent);
 		}
 		int maxKarmaStepBonus=0;
-		HashMap<String,Integer> diciplineCircle = new HashMap<String, Integer>();
+		Map<String,Integer> diciplineCircle = new TreeMap<String, Integer>();
 		int disciplinenumber=0;
 		for( DISCIPLINEType currentDiscipline : allDisciplines ) {
 			disciplinenumber++;
 			List<TALENTType> durabilityTalents = new ArrayList<TALENTType>();
 			TalentsContainer currentTalents = new TalentsContainer(currentDiscipline);
-			HashMap<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
+			Map<String, Integer> defaultOptionalTalents = PROPERTIES.getDefaultOptionalTalents(disciplinenumber);
 			int currentCircle = currentDiscipline.getCircle();
 			int minDisciplineCircle=character.getDisciplineMinCircle(disciplinenumber).getCircle();
 			for( TALENTType t : currentTalents.getAllTalents() ) capabilities.enforceCapabilityParams(t);
@@ -649,7 +651,7 @@ public class ECEWorker {
 		return character.getEDCHARACTER();
 	}
 
-	public static void calculateSkills(CharacterContainer character, HashMap<ATTRIBUTENameType,ATTRIBUTEType> characterAttributes, List<String> namegiverAbilities, CalculatedLPContainer calculatedLP) {
+	public static void calculateSkills(CharacterContainer character, Map<ATTRIBUTENameType,ATTRIBUTEType> characterAttributes, List<String> namegiverAbilities, CalculatedLPContainer calculatedLP) {
 		// StartRänge und MindestRänge für die SprachenSkills bestimmen
 		int[] startSpeakReadWrite = character.getDefaultLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
 		int[] currentSpeakReadWrite = character.getLanguages().getCountOfSpeakReadWrite(LearnedbyType.SKILL);
@@ -801,7 +803,7 @@ public class ECEWorker {
 		}
 	}
 
-	private void calculateTalents(HashMap<String, TALENTABILITYType> namegivertalents, HashMap<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, int minDisciplineCircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, TalentsContainer.TalentKind talentKind) {
+	private void calculateTalents(Map<String, TALENTABILITYType> namegivertalents, Map<String, Integer> defaultOptionalTalents, int disciplinenumber, int disciplinecircle, int minDisciplineCircle, List<TALENTType> durabilityTalents, List<TALENTType> talents, TalentsContainer.TalentKind talentKind) {
 		int startranks=calculatedLP.getUsedTalentsStartRanks();
 		for( TALENTType talent : talents ) {
 			TALENTTEACHERType teacher = talent.getTEACHER();
@@ -1021,7 +1023,7 @@ public class ECEWorker {
 		return result;
 	}
 
-	private static int[] getDisciplineRecoveryTestBonus(HashMap<String,Integer> diciplineCircle) {
+	private static int[] getDisciplineRecoveryTestBonus(Map<String,Integer> diciplineCircle) {
 		int[] result = {0,0};
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
@@ -1045,7 +1047,7 @@ public class ECEWorker {
 		return result;
 	}
 
-	private static int getDisciplineInitiative(HashMap<String,Integer> diciplineCircle) {
+	private static int getDisciplineInitiative(Map<String,Integer> diciplineCircle) {
 		int result = 0;
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
@@ -1066,7 +1068,7 @@ public class ECEWorker {
 
 	// Der Defense Bonus wird nicht über Alle Disziplinen addiert, sondern
 	// der Character erhält von des Disziplinen nur den jeweils höchsten DefenseBonus
-	private static DEFENSEType getDisciplineDefense(HashMap<String,Integer> diciplineCircle) {
+	private static DEFENSEType getDisciplineDefense(Map<String,Integer> diciplineCircle) {
 		DEFENSEType result = new DEFENSEType();
 		result.setPhysical(0);
 		result.setSocial(0);
@@ -1097,7 +1099,7 @@ public class ECEWorker {
 		return result;
 	}
 
-	private static List<Integer> getDisciplineSpellAbility(HashMap<String,Integer> diciplineCircle) {
+	private static List<Integer> getDisciplineSpellAbility(Map<String,Integer> diciplineCircle) {
 		List<Integer> result = new ArrayList<Integer>();
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = PROPERTIES.getDisziplin(discipline);
@@ -1134,12 +1136,12 @@ public class ECEWorker {
 			errorout.println("The generation attribute value was to high. Value will be lower down to 8.");
 			modifier = 8;
 		}
-		HashMap<Integer,Integer> attributecost = ApplicationProperties.create().getCharacteristics().getATTRIBUTECOST();
+		Map<Integer,Integer> attributecost = ApplicationProperties.create().getCharacteristics().getATTRIBUTECOST();
 		return attributecost.get(modifier);
 	}
 
 	public static CHARACTERISTICSHEALTHRATING bestimmeHealth(int value) {
-		HashMap<Integer,CHARACTERISTICSHEALTHRATING> healthrating = ApplicationProperties.create().getCharacteristics().getHEALTHRATING();
+		Map<Integer,CHARACTERISTICSHEALTHRATING> healthrating = ApplicationProperties.create().getCharacteristics().getHEALTHRATING();
 		return healthrating.get(value);
 	}
 

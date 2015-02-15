@@ -3,8 +3,8 @@ package de.earthdawn;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.APPEARANCEType;
@@ -52,13 +52,13 @@ public class CharacteristicStatus {
 		if( template == null )return;
 		if( character == null )return;
 		Map<String,Object> node;
-		Map<String,Map<String,Object>> root = new HashMap<String,Map<String,Object>>();
+		Map<String,Map<String,Object>> root = new TreeMap<String,Map<String,Object>>();
 
-		node = new HashMap<String,Object>();
-		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		node = new TreeMap<String,Object>();
+		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		int spendAttributeBuyPoints=0;
 		for( ATTRIBUTENameType a : attributes.keySet() ) {
-			Map<String,Object> values = new HashMap<String,Object>();
+			Map<String,Object> values = new TreeMap<String,Object>();
 			node.put(a.value(), values);
 			ATTRIBUTEType attribute = attributes.get(a);
 			values.put( "basevalue", attribute.getBasevalue() );
@@ -73,7 +73,7 @@ public class CharacteristicStatus {
 		node.put("BuyPointsMax", PROPERTIES.getOptionalRules().getATTRIBUTE().getPoints());
 		root.put("ATTRIBUTE", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		APPEARANCEType appearance = character.getAppearance();
 		node.put( "race", appearance.getRace() );
 		node.put( "origin", appearance.getOrigin() );
@@ -86,20 +86,20 @@ public class CharacteristicStatus {
 		node.put( "skin", appearance.getSkin() );
 		root.put("APPEARANCE", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		DEFENSEType defence = character.getDefence();
 		node.put( "physical", defence.getPhysical() );
 		node.put( "spell", defence.getSpell() );
 		node.put( "social", defence.getSocial() );
 		root.put("DEFENSE", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		PROTECTIONType protection = character.getProtection();
 		node.put( "physicalarmor", protection.getPhysicalarmor() );
 		node.put( "mysticarmor", protection.getMysticarmor() );
 		root.put("PROTECTION", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		INITIATIVEType initiative = character.getInitiative();
 		node.put( "base", initiative.getBase() );
 		node.put( "modification", initiative.getModification() );
@@ -109,17 +109,17 @@ public class CharacteristicStatus {
 		else node.put( "dice", initiativedice );
 		root.put("INITIATIVE", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		MOVEMENTType movement = character.getMovement();
 		node.put( "ground", movement.getGround() );
 		node.put( "flight", movement.getFlight() );
 		root.put("MOVEMENT", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		node.put( "carrying", character.getCarrying().getCarrying() );
 		root.put("CARRYING", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		KARMAType karma = character.getKarma();
 		node.put( "current", karma.getCurrent() );
 		node.put( "max", karma.getMax() );
@@ -128,7 +128,7 @@ public class CharacteristicStatus {
 		node.put( "maxmodificator", karma.getMaxmodificator() );
 		root.put("KARMA", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		EXPERIENCEType legendPoints = character.getLegendPoints();
 		node.put( "renown", legendPoints.getRenown() );
 		node.put( "reputation", legendPoints.getReputation() );
@@ -136,7 +136,7 @@ public class CharacteristicStatus {
 		node.put( "currentlegendpoints", legendPoints.getCurrentlegendpoints() );
 		root.put("EXPERIENCE", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		DEVOTIONType devotionPoints = character.getDevotionPoints();
 		if( devotionPoints == null ) {
 			node.put( "passion", "na" );
@@ -147,7 +147,7 @@ public class CharacteristicStatus {
 		}
 		root.put("DEVOTION", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		CALCULATEDLEGENDPOINTSType calculatedLegendpoints = character.getCalculatedLegendpoints();
 		node.put( "unused", (legendPoints.getTotallegendpoints()-calculatedLegendpoints.getTotal()) );
 		node.put( "total", calculatedLegendpoints.getTotal() );
@@ -161,41 +161,41 @@ public class CharacteristicStatus {
 		node.put( "magicitems", calculatedLegendpoints.getMagicitems() );
 		root.put("CALCULATEDLEGENDPOINTS", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		USEDSTARTRANKSType usedStartranks = calculatedLegendpoints.getUSEDSTARTRANKS();
 		node.put( "skills", -usedStartranks.getSkills() );
 		node.put( "talents", -usedStartranks.getTalents() );
 		node.put( "spells", -usedStartranks.getSpells() );
 		root.put("USEDSTARTRANKS", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		node.put( "damage", character.getHealth().getDamage() );
 		node.put( "blooddamage", character.getHealth().getBlooddamage() );
 		node.put( "depatterningrate", character.getHealth().getDepatterningrate() );
 		root.put("HEALTH", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		DEATHType death = character.getHealth().getUNCONSCIOUSNESS();
 		node.put( "adjustment" , death.getAdjustment() );
 		node.put( "base" , death.getBase() );
 		node.put( "value" , death.getValue() );
 		root.get("HEALTH").put("UNCONSCIOUSNESS", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		death = character.getHealth().getDEATH();
 		node.put( "adjustment" , death.getAdjustment() );
 		node.put( "base" , death.getBase() );
 		node.put( "value" , death.getValue() );
 		root.get("HEALTH").put("DEATH", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		RECOVERYType recov = character.getHealth().getRECOVERY();
 		node.put( "dice" , recov.getDice() );
 		node.put( "step" , recov.getStep() );
 		node.put( "testsperday" , recov.getTestsperday() );
 		root.get("HEALTH").put("RECOVERY", node);
 
-		node = new HashMap<String,Object>();
+		node = new TreeMap<String,Object>();
 		WOUNDType wounds = character.getHealth().getWOUNDS();
 		node.put( "blood" , wounds.getBlood());
 		node.put( "normal" , wounds.getNormal() );

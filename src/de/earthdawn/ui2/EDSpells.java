@@ -1,7 +1,7 @@
 package de.earthdawn.ui2;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 import javax.swing.JComponent;
@@ -156,9 +156,9 @@ class SpellsTableModel extends AbstractTableModel {
 		spelllist = new ArrayList<SPELLType>();
 		List<String> threadweavingTypes = new ArrayList<String>();
 		if( threadweavings != null) for(TALENTType threadweaving : threadweavings ) threadweavingTypes.addAll(threadweaving.getLIMITATION());
-		HashMap<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = PROPERTIES.getSpellsByDiscipline();
-		HashMap<String, SPELLDEFType> spells = PROPERTIES.getSpells();
-		HashMap<SpellkindType, String> spellKindMap = PROPERTIES.getSpellKindMap();
+		Map<String, List<List<DISCIPLINESPELLType>>> spellsByDiscipline = PROPERTIES.getSpellsByDiscipline();
+		Map<String, SPELLDEFType> spells = PROPERTIES.getSpells();
+		Map<SpellkindType, String> spellKindMap = PROPERTIES.getSpellKindMap();
 		int maxCircle=character.getCircleOf(this.discipline);
 		for( String disciplinename : spellsByDiscipline.keySet() ) {
 			int circlenr = 0;

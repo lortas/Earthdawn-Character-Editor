@@ -18,7 +18,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -149,7 +148,7 @@ public class RandomCharacterTemplates {
 		}
 		// Atributes
 		int attributeTotalWeight = 0;
-		HashMap<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
+		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		for( RANDOMATTRIBUTESType attr : template.getATTRIBUTES() ) {
 			attributeTotalWeight+=attr.getWeight();
 		}

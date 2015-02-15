@@ -19,8 +19,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.xml.bind.JAXBElement;
 
@@ -34,8 +35,8 @@ public class ECECapabilities {
 	private List<CAPABILITYType> talentList = new ArrayList<CAPABILITYType>();
 	private List<CAPABILITYType> skillList = new ArrayList<CAPABILITYType>();
 	private List<CAPABILITYType> versatilitytalentList = null;
-	private HashMap<String,CAPABILITYType> talentMap = new HashMap<String,CAPABILITYType>();
-	private HashMap<String,CAPABILITYType> skillMap = new HashMap<String,CAPABILITYType>();
+	private Map<String,CAPABILITYType> talentMap = new TreeMap<String,CAPABILITYType>();
+	private Map<String,CAPABILITYType> skillMap = new TreeMap<String,CAPABILITYType>();
 	
 	public ECECapabilities(){}
 
