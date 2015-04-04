@@ -22,6 +22,17 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.47-20150404.zip ##
++ ED4 enabled.
++ ED4 example characters added.
++ a lot of bugfixes.
++ config folder organisation updated.
++ config data clean up
++ character save file format enhanced for ED4.
++ new possibility to calculate movement added.
++ programm icon created
++ new item kinds and icons
++ enhance multi language support.
 ## EarthdawnCharacterEditor-0.46-20130420.zip ##
 + Updated character file format. New files can not correctly read by older ECE version. But older files can still be read by current ECE.
 + Bugs
