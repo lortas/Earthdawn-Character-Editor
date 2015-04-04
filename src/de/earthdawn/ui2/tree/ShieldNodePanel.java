@@ -1,5 +1,6 @@
 package de.earthdawn.ui2.tree;
 
+import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.data.ItemkindType;
@@ -15,117 +16,97 @@ import java.awt.Font;
 import javax.swing.border.LineBorder;
 import net.miginfocom.swing.MigLayout;
 
-
 public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
-	private static final long serialVersionUID = 1L;
-	private JLabel lblName;
+	private static final long serialVersionUID = -3332807171808480805L;
 	private JTextField textFieldName;
-	private JLabel lblWeight;
 	private JSpinner spinnerWeight;
-	private JLabel lblLocation;
 	private JTextField textFieldLocation;
 	private JCheckBox chckbxUsed;
-	private JLabel lblType;
 	private JComboBox<ItemkindType> comboBoxType;
-	private JLabel lblPhysicalArmor;
-	private JSpinner spinnerPhysical;
-	private JLabel lblMysticArmor;
-	private JSpinner spinnerMystic;
-	private JLabel lblPenalty;
+	private JSpinner spinnerPhysicalArmor;
+	private JSpinner spinnerMysticArmor;
 	private JSpinner spinnerPenalty;
-	private JLabel lblEnchantingDiff;
 	private JSpinner spinnerEnchanting;
-	private JLabel lblForgedPhysical;
-	private JLabel lblForgedMystic;
-	private JLabel lblDateForged;
 	private JSpinner spinnerForgedPysical;
 	private JSpinner spinnerForgedMystic;
 	private JTextField textFieldDateForged;
+	private JSpinner spinnerPhysicalDefense;
+	private JSpinner spinnerMysticDefense;
 
 	public ShieldNodePanel(SHIELDType node) {
 		super(node);
+		DEFENSEType defense = node.getDEFENSE();
+		if( defense == null ) {
+			defense = new DEFENSEType();
+			node.setDEFENSE(defense);
+		}
+
 		setBorder(new LineBorder(new Color(0, 0, 0)));
-		setLayout(new MigLayout("", "[24px][128px][27px][86px][34px][47px,grow][40px][86px][49px]", "[23px][][]"));
-		
-		lblType = new JLabel("Type");
-		add(lblType, "cell 0 0,alignx left,aligny center");
-		
-		comboBoxType = new JComboBox<ItemkindType>(ItemkindType.values());
+		setLayout(new MigLayout("", "[24px][128px][27px][86px][34px][47px,grow][40px][86px]", "[][][]"));
+
+		add(new JLabel("Type"), "cell 0 0,alignx left,aligny center");
+		comboBoxType = new JComboBox<ItemkindType>();
+		for( ItemkindType item : ItemkindType.values() ) comboBoxType.addItem(item);
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,alignx left,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());
-		
-		lblName = new JLabel("Name");
-		add(lblName, "cell 2 0,alignx left,aligny center");
-		
+
+		add(new JLabel("Name"), "cell 0 1,alignx left,aligny center");
 		textFieldName = new JTextField();
-		add(textFieldName, "cell 3 0,alignx left,aligny center");
+		add(textFieldName, "cell 1 1,growx,aligny center");
 		textFieldName.setColumns(10);
 		textFieldName.setText(nodeObject.getName());
-		
-		lblWeight = new JLabel("Weight");
-		add(lblWeight, "cell 4 0,alignx left,aligny center");
-		
+
+		add(new JLabel("Location"), "cell 0 2,alignx left,aligny center");
+		textFieldLocation = new JTextField();
+		add(textFieldLocation, "cell 1 2,growx,aligny center");
+		textFieldLocation.setColumns(10);
+		textFieldLocation.setText(node.getLocation());
+
+		add(new JLabel("Armor (physical/mystic)"), "cell 2 0");
+		spinnerPhysicalArmor = new JSpinner(new SpinnerNumberModel(node.getPhysicalarmor(), 0, 100, 1));
+		add(spinnerPhysicalArmor, "cell 3 0");
+		add(new JLabel("/"), "cell 3 0");
+		spinnerMysticArmor = new JSpinner(new SpinnerNumberModel(node.getMysticarmor(), 0, 100, 1));
+		add(spinnerMysticArmor, "cell 3 0");
+
+		add(new JLabel("Defense (physical/mystic)"), "cell 2 1");
+		spinnerPhysicalDefense = new JSpinner(new SpinnerNumberModel(defense.getPhysical(), 0, 100, 1));
+		add(spinnerPhysicalDefense, "cell 3 1");
+		add(new JLabel("/"), "cell 3 1");
+		spinnerMysticDefense = new JSpinner(new SpinnerNumberModel(defense.getSpell(), 0, 100, 1));
+		add(spinnerMysticDefense, "cell 3 1");
+
+		add(new JLabel("Forged (physical/mystic)"), "cell 2 2");
+		spinnerForgedPysical = new JSpinner(new SpinnerNumberModel(node.getTimesforgedPhysical(), 0, 100, 1));
+		add(spinnerForgedPysical, "cell 3 2");
+		add(new JLabel("/"), "cell 3 2");
+		spinnerForgedMystic = new JSpinner(new SpinnerNumberModel(node.getTimesforgedMystic(), 0, 100, 1));
+		add(spinnerForgedMystic, "cell 3 2");
+
+		add(new JLabel("Weight"), "cell 4 0,alignx left,aligny center");
 		spinnerWeight = new JSpinner();
 		spinnerWeight.setModel(new SpinnerNumberModel(node.getWeight(), 0, 100, 1));
 		add(spinnerWeight, "cell 5 0,alignx left,aligny center");
-		
-		lblLocation = new JLabel("Location");
-		add(lblLocation, "cell 6 0,alignx left,aligny center");
-		
-		textFieldLocation = new JTextField();
-		add(textFieldLocation, "cell 7 0,alignx left,aligny center");
-		textFieldLocation.setColumns(10);
-		textFieldLocation.setText(node.getLocation());
-		
-		chckbxUsed = new JCheckBox("Used");
-		chckbxUsed.setOpaque(false);
-		add(chckbxUsed, "cell 8 0,alignx left,aligny top");
-		chckbxUsed.setSelected(node.getUsed() == YesnoType.YES);
-		
-		lblPhysicalArmor = new JLabel("Physical armor");
-		add(lblPhysicalArmor, "cell 0 1");
-		
-		spinnerPhysical = new JSpinner(new SpinnerNumberModel(node.getPhysicalarmor(), 0, 100, 1));
-		add(spinnerPhysical, "cell 1 1");
-		
-		lblMysticArmor = new JLabel("Mystic armor");
-		add(lblMysticArmor, "cell 2 1");
-		
-		spinnerMystic = new JSpinner(new SpinnerNumberModel(node.getMysticarmor(), 0, 100, 1));
-		add(spinnerMystic, "cell 3 1");
-		
-		lblPenalty = new JLabel("Penalty");
-		add(lblPenalty, "cell 4 1");
-		
+
+		add(new JLabel("Penalty"), "cell 4 1");
 		spinnerPenalty = new JSpinner(new SpinnerNumberModel(node.getPenalty(), 0, 100, 1));
 		add(spinnerPenalty, "cell 5 1");
-		
-		lblEnchantingDiff = new JLabel("Enchanting Diff");
-		add(lblEnchantingDiff, "cell 6 1");
-		
-		spinnerEnchanting = new JSpinner(new SpinnerNumberModel(node.getEdn(), 0, 100, 1));
-		add(spinnerEnchanting, "cell 7 1");
-		
-		lblForgedPhysical = new JLabel("Forged physical");
-		add(lblForgedPhysical, "cell 0 2");
-		
-		spinnerForgedPysical = new JSpinner(new SpinnerNumberModel(node.getTimesforgedPhysical(), 0, 100, 1));
-		add(spinnerForgedPysical, "cell 1 2");
-		
-		lblForgedMystic = new JLabel("Forged mystic");
-		add(lblForgedMystic, "cell 2 2");
-		
-		spinnerForgedMystic = new JSpinner(new SpinnerNumberModel(node.getTimesforgedMystic(), 0, 100, 1));
-		add(spinnerForgedMystic, "cell 3 2");
-		
-		lblDateForged = new JLabel("Date forged");
-		add(lblDateForged, "cell 4 2,alignx trailing");
-		
+
+		add(new JLabel("Date forged"), "cell 6 0,alignx trailing");
 		textFieldDateForged = new JTextField();
 		textFieldDateForged.setText(node.getDateforged());
-		add(textFieldDateForged, "cell 5 2,growx");
+		add(textFieldDateForged, "cell 7 0,growx");
 		textFieldDateForged.setColumns(10);
+
+		add(new JLabel("Enchanting Diff"), "cell 6 1");
+		spinnerEnchanting = new JSpinner(new SpinnerNumberModel(node.getEdn(), 0, 100, 1));
+		add(spinnerEnchanting, "cell 7 1");
+
+		chckbxUsed = new JCheckBox("Used");
+		chckbxUsed.setOpaque(false);
+		add(chckbxUsed, "cell 7 2,alignx left,aligny top");
+		chckbxUsed.setSelected(node.getUsed() == YesnoType.YES);
 	}
 
 	@Override
@@ -135,8 +116,10 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 		nodeObject.setWeight(((Double) spinnerWeight.getValue()).floatValue());
 		nodeObject.setLocation(textFieldLocation.getText());
 		
-		nodeObject.setPhysicalarmor((Integer) spinnerPhysical.getValue());
-		nodeObject.setMysticarmor((Integer) spinnerMystic.getValue());
+		nodeObject.setPhysicalarmor((Integer) spinnerPhysicalArmor.getValue());
+		nodeObject.setMysticarmor((Integer) spinnerMysticArmor.getValue());
+		nodeObject.getDEFENSE().setPhysical((Integer) spinnerPhysicalDefense.getValue());
+		nodeObject.getDEFENSE().setSpell((Integer) spinnerMysticDefense.getValue());
 		nodeObject.setPenalty((Integer) spinnerPenalty.getValue());
 		nodeObject.setEdn((Integer) spinnerEnchanting.getValue());
 		
@@ -152,5 +135,4 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 		}
 		
 	}
-
 }
