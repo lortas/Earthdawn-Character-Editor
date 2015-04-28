@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/charsheettemplate" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:complexType name="charsheettemplatetalent_type">
 		<xs:sequence maxOccurs="1" minOccurs="1">
@@ -22,6 +23,30 @@
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Circle"/>
 			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Ability"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="charsheettemplatespell_type">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Name"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Circle"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Element"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Threads"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Weavingdifficulty"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Reattuningdifficulty"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Castingdifficulty"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Range"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Duration"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Effect"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Effectrarea"/>
+			<xs:element  maxOccurs="1" minOccurs="0" type="xs:string" name="Bookref"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="charsheettemplateboolean_type">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="truevalue" type="xs:string" default="Yes"/>
+				<xs:attribute name="falsevalue" type="xs:string" default="No"/>
+			</xs:extension>
+		</xs:simpleContent>
 	</xs:complexType>
 	<xs:element name="CHARSHEETTEMPLATE">
 		<xs:complexType>
@@ -64,12 +89,12 @@
 				<xs:element name="AttributeDicePer" type="xs:string"/>
 				<xs:element name="AttributeDiceWil" type="xs:string"/>
 				<xs:element name="AttributeDiceCha" type="xs:string"/>
-				<xs:element name="LpincreaseDex" type="xs:string"/>
-				<xs:element name="LpincreaseStr" type="xs:string"/>
-				<xs:element name="LpincreaseTou" type="xs:string"/>
-				<xs:element name="LpincreasePer" type="xs:string"/>
-				<xs:element name="LpincreaseWil" type="xs:string"/>
-				<xs:element name="LpincreaseCha" type="xs:string"/>
+				<xs:element name="LpincreaseDex" type="charsheettemplateboolean_type"/>
+				<xs:element name="LpincreaseStr" type="charsheettemplateboolean_type"/>
+				<xs:element name="LpincreaseTou" type="charsheettemplateboolean_type"/>
+				<xs:element name="LpincreasePer" type="charsheettemplateboolean_type"/>
+				<xs:element name="LpincreaseWil" type="charsheettemplateboolean_type"/>
+				<xs:element name="LpincreaseCha" type="charsheettemplateboolean_type"/>
 				<xs:element name="DefencePhysical" type="xs:string"/>
 				<xs:element name="DefenceSocial" type="xs:string"/>
 				<xs:element name="DefenceMystic" type="xs:string"/>
@@ -84,15 +109,18 @@
 				<xs:element name="RecoveryTestsperday" type="xs:string"/>
 				<xs:element name="WoundThreshold" type="xs:string"/>
 				<xs:element name="BloodWound" type="xs:string"/>
+				<xs:element name="BloodDamage" type="xs:string"/>
 				<xs:element name="LegendPointsTotal" type="xs:string"/>
 				<xs:element name="LegendPointsCurrent" type="xs:string"/>
 				<xs:element name="LegendPointsRenown" type="xs:string"/>
 				<xs:element name="LegendPointsReputation" type="xs:string"/>
+				<xs:element name="InitiativeBase" type="xs:string"/>
 				<xs:element name="InitiativeDice" type="xs:string"/>
 				<xs:element name="InitiativeStep" type="xs:string"/>
 				<xs:element name="Talent" type="charsheettemplatetalent_type"/>
 				<xs:element name="Skill" type="charsheettemplatetalent_type"/>
 				<xs:element name="HealthDamage" type="xs:string"/>
+				<xs:element name="KarmaBase" type="xs:string"/>
 				<xs:element name="KarmaCurrent" type="xs:string"/>
 				<xs:element name="KarmaMax" type="xs:string"/>
 				<xs:element name="Movement" type="xs:string"/>
@@ -113,6 +141,11 @@
 				<xs:element name="WeaponLongrange" type="xs:string"/>
 				<xs:element name="WeaponAttackstep" type="xs:string"/>
 				<xs:element name="WeaponAttribute" type="xs:string"/>
+				<xs:element name="WeaponStep" type="xs:string"/>
+				<xs:element name="WeaponDice" type="xs:string"/>
+				<xs:element name="InventoryDescription" type="xs:string"/>
+				<xs:element name="InventoryWeight" type="xs:string"/>
+				<xs:element name="Spell" type="charsheettemplatespell_type"/>
 			</xs:choice>
 			<xs:attribute name="menuentryname" type="xs:string" use="required"/>
 			<xs:attribute name="filename" type="xs:string" use="required"/>

@@ -10,31 +10,33 @@ package de.earthdawn.data;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SPELLDEF_type complex type.
+ * <p>Java class for charsheettemplatespell_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SPELLDEF_type">
+ * &lt;complexType name="charsheettemplatespell_type">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="element" type="{http://earthdawn.com/datatypes}elementkind_type" default="undefined" />
- *       &lt;attribute name="threads" type="{http://www.w3.org/2001/XMLSchema}string" default="0" />
- *       &lt;attribute name="weavingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="na" />
- *       &lt;attribute name="reattuningdifficulty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" />
- *       &lt;attribute name="castingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="TSD" />
- *       &lt;attribute name="range" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
- *       &lt;attribute name="duration" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
- *       &lt;attribute name="effect" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
- *       &lt;attribute name="effectarea" type="{http://www.w3.org/2001/XMLSchema}string" default="s. text" />
- *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
+ *       &lt;sequence>
+ *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Circle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Element" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Threads" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Weavingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Reattuningdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Castingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Range" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Duration" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Effect" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Effectrarea" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Bookref" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -43,33 +45,45 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SPELLDEF_type")
-@XmlSeeAlso({
-    SPELLType.class
+@XmlType(name = "charsheettemplatespell_type", namespace = "http://earthdawn.com/charsheettemplate", propOrder = {
+    "name",
+    "circle",
+    "element",
+    "threads",
+    "weavingdifficulty",
+    "reattuningdifficulty",
+    "castingdifficulty",
+    "range",
+    "duration",
+    "effect",
+    "effectrarea",
+    "bookref"
 })
-public class SPELLDEFType {
+public class CharsheettemplatespellType {
 
-    @XmlAttribute(name = "name", required = true)
+    @XmlElement(name = "Name")
     protected String name;
-    @XmlAttribute(name = "element")
-    protected ElementkindType element;
-    @XmlAttribute(name = "threads")
+    @XmlElement(name = "Circle")
+    protected String circle;
+    @XmlElement(name = "Element")
+    protected String element;
+    @XmlElement(name = "Threads")
     protected String threads;
-    @XmlAttribute(name = "weavingdifficulty")
+    @XmlElement(name = "Weavingdifficulty")
     protected String weavingdifficulty;
-    @XmlAttribute(name = "reattuningdifficulty")
-    protected Integer reattuningdifficulty;
-    @XmlAttribute(name = "castingdifficulty")
+    @XmlElement(name = "Reattuningdifficulty")
+    protected String reattuningdifficulty;
+    @XmlElement(name = "Castingdifficulty")
     protected String castingdifficulty;
-    @XmlAttribute(name = "range")
+    @XmlElement(name = "Range")
     protected String range;
-    @XmlAttribute(name = "duration")
+    @XmlElement(name = "Duration")
     protected String duration;
-    @XmlAttribute(name = "effect")
+    @XmlElement(name = "Effect")
     protected String effect;
-    @XmlAttribute(name = "effectarea")
-    protected String effectarea;
-    @XmlAttribute(name = "bookref")
+    @XmlElement(name = "Effectrarea")
+    protected String effectrarea;
+    @XmlElement(name = "Bookref")
     protected String bookref;
 
     /**
@@ -97,19 +111,39 @@ public class SPELLDEFType {
     }
 
     /**
+     * Gets the value of the circle property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCircle() {
+        return circle;
+    }
+
+    /**
+     * Sets the value of the circle property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCircle(String value) {
+        this.circle = value;
+    }
+
+    /**
      * Gets the value of the element property.
      * 
      * @return
      *     possible object is
-     *     {@link ElementkindType }
+     *     {@link String }
      *     
      */
-    public ElementkindType getElement() {
-        if (element == null) {
-            return ElementkindType.UNDEFINED;
-        } else {
-            return element;
-        }
+    public String getElement() {
+        return element;
     }
 
     /**
@@ -117,10 +151,10 @@ public class SPELLDEFType {
      * 
      * @param value
      *     allowed object is
-     *     {@link ElementkindType }
+     *     {@link String }
      *     
      */
-    public void setElement(ElementkindType value) {
+    public void setElement(String value) {
         this.element = value;
     }
 
@@ -133,11 +167,7 @@ public class SPELLDEFType {
      *     
      */
     public String getThreads() {
-        if (threads == null) {
-            return "0";
-        } else {
-            return threads;
-        }
+        return threads;
     }
 
     /**
@@ -161,11 +191,7 @@ public class SPELLDEFType {
      *     
      */
     public String getWeavingdifficulty() {
-        if (weavingdifficulty == null) {
-            return "na";
-        } else {
-            return weavingdifficulty;
-        }
+        return weavingdifficulty;
     }
 
     /**
@@ -185,15 +211,11 @@ public class SPELLDEFType {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public int getReattuningdifficulty() {
-        if (reattuningdifficulty == null) {
-            return  0;
-        } else {
-            return reattuningdifficulty;
-        }
+    public String getReattuningdifficulty() {
+        return reattuningdifficulty;
     }
 
     /**
@@ -201,10 +223,10 @@ public class SPELLDEFType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setReattuningdifficulty(Integer value) {
+    public void setReattuningdifficulty(String value) {
         this.reattuningdifficulty = value;
     }
 
@@ -217,11 +239,7 @@ public class SPELLDEFType {
      *     
      */
     public String getCastingdifficulty() {
-        if (castingdifficulty == null) {
-            return "TSD";
-        } else {
-            return castingdifficulty;
-        }
+        return castingdifficulty;
     }
 
     /**
@@ -245,11 +263,7 @@ public class SPELLDEFType {
      *     
      */
     public String getRange() {
-        if (range == null) {
-            return "s. text";
-        } else {
-            return range;
-        }
+        return range;
     }
 
     /**
@@ -273,11 +287,7 @@ public class SPELLDEFType {
      *     
      */
     public String getDuration() {
-        if (duration == null) {
-            return "s. text";
-        } else {
-            return duration;
-        }
+        return duration;
     }
 
     /**
@@ -301,11 +311,7 @@ public class SPELLDEFType {
      *     
      */
     public String getEffect() {
-        if (effect == null) {
-            return "s. text";
-        } else {
-            return effect;
-        }
+        return effect;
     }
 
     /**
@@ -321,31 +327,27 @@ public class SPELLDEFType {
     }
 
     /**
-     * Gets the value of the effectarea property.
+     * Gets the value of the effectrarea property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEffectarea() {
-        if (effectarea == null) {
-            return "s. text";
-        } else {
-            return effectarea;
-        }
+    public String getEffectrarea() {
+        return effectrarea;
     }
 
     /**
-     * Sets the value of the effectarea property.
+     * Sets the value of the effectrarea property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEffectarea(String value) {
-        this.effectarea = value;
+    public void setEffectrarea(String value) {
+        this.effectrarea = value;
     }
 
     /**
@@ -357,11 +359,7 @@ public class SPELLDEFType {
      *     
      */
     public String getBookref() {
-        if (bookref == null) {
-            return "";
-        } else {
-            return bookref;
-        }
+        return bookref;
     }
 
     /**

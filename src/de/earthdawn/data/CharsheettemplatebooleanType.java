@@ -16,16 +16,16 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for translationlabel_type complex type.
+ * <p>Java class for charsheettemplateboolean_type complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="translationlabel_type">
+ * &lt;complexType name="charsheettemplateboolean_type">
  *   &lt;simpleContent>
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
- *       &lt;attribute name="acronym" type="{http://earthdawn.com/datatypes}acronym_type" />
+ *       &lt;attribute name="truevalue" type="{http://www.w3.org/2001/XMLSchema}string" default="Yes" />
+ *       &lt;attribute name="falsevalue" type="{http://www.w3.org/2001/XMLSchema}string" default="No" />
  *     &lt;/extension>
  *   &lt;/simpleContent>
  * &lt;/complexType>
@@ -34,17 +34,17 @@ import javax.xml.bind.annotation.XmlValue;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "translationlabel_type", namespace = "http://earthdawn.com/translation", propOrder = {
+@XmlType(name = "charsheettemplateboolean_type", namespace = "http://earthdawn.com/charsheettemplate", propOrder = {
     "value"
 })
-public class TranslationlabelType {
+public class CharsheettemplatebooleanType {
 
     @XmlValue
     protected String value;
-    @XmlAttribute(name = "lang", required = true)
-    protected LanguageType lang;
-    @XmlAttribute(name = "acronym")
-    protected String acronym;
+    @XmlAttribute(name = "truevalue")
+    protected String truevalue;
+    @XmlAttribute(name = "falsevalue")
+    protected String falsevalue;
 
     /**
      * Gets the value of the value property.
@@ -71,51 +71,59 @@ public class TranslationlabelType {
     }
 
     /**
-     * Gets the value of the lang property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link LanguageType }
-     *     
-     */
-    public LanguageType getLang() {
-        return lang;
-    }
-
-    /**
-     * Sets the value of the lang property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LanguageType }
-     *     
-     */
-    public void setLang(LanguageType value) {
-        this.lang = value;
-    }
-
-    /**
-     * Gets the value of the acronym property.
+     * Gets the value of the truevalue property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAcronym() {
-        return acronym;
+    public String getTruevalue() {
+        if (truevalue == null) {
+            return "Yes";
+        } else {
+            return truevalue;
+        }
     }
 
     /**
-     * Sets the value of the acronym property.
+     * Sets the value of the truevalue property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAcronym(String value) {
-        this.acronym = value;
+    public void setTruevalue(String value) {
+        this.truevalue = value;
+    }
+
+    /**
+     * Gets the value of the falsevalue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFalsevalue() {
+        if (falsevalue == null) {
+            return "No";
+        } else {
+            return falsevalue;
+        }
+    }
+
+    /**
+     * Sets the value of the falsevalue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFalsevalue(String value) {
+        this.falsevalue = value;
     }
 
 }
