@@ -22,6 +22,9 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.48-20150503.zip ##
++ enhance generic pdf export
++ add Ulisses official character PDF as export target
 ## EarthdawnCharacterEditor-0.47-20150404.zip ##
 + ED4 enabled.
 + ED4 example characters added.
