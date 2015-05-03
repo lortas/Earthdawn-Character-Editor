@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<CHARSHEETTEMPLATE menuentryname="ed4_character_sheet_ulisses" filename="ed4_character_sheet_ulisses.pdf" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/charsheettemplate ../config/charsheettemplate.xsd">
+<CHARSHEETTEMPLATE menuentryname="ED4 Ulisses Novize Char" filename="ed4_character_sheet_ulisses.pdf" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/charsheettemplate ../config/charsheettemplate.xsd">
 	<CurrentDateTime>Zeitstempel</CurrentDateTime>
 	<Name>Charaktername</Name>
 	<Race>Rasse</Race>
@@ -101,6 +101,7 @@
 	<HealthDamage>Schaden.Atuell</HealthDamage>
 	<KarmaCurrent>Karma.Aktuell</KarmaCurrent>
 	<KarmaMax>Karma.Maximum</KarmaMax>
+	<KarmaModifier>Karma.Modifikator</KarmaModifier>
 	<Movement>Bewegunsrate</Movement>
 	<Carrying>Traglast</Carrying>
 	<ArmorMystic>Rüstung.Mystisch</ArmorMystic>
@@ -143,13 +144,35 @@
 	<InventoryDescription>Ausrüstung.8</InventoryDescription>
 	<InventoryDescription>Ausrüstung.9</InventoryDescription>
 	<InventoryDescription>Ausrüstung.10</InventoryDescription>
-	<Spell><Name>Zauber.Name.1</Name><Circle>Zauber.Kreis.1</Circle><Threads>Zauber.Fäden.1</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.1</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.1</Castingdifficulty><Duration>Zauber.Dauer.1</Duration><Effect>Zauber.Wirkung.1</Effect></Spell>
-	<Spell><Name>Zauber.Name.2</Name><Circle>Zauber.Kreis.2</Circle><Threads>Zauber.Fäden.2</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.2</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.2</Castingdifficulty><Duration>Zauber.Dauer.2</Duration><Effect>Zauber.Wirkung.2</Effect></Spell>
-	<Spell><Name>Zauber.Name.3</Name><Circle>Zauber.Kreis.3</Circle><Threads>Zauber.Fäden.3</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.3</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.3</Castingdifficulty><Duration>Zauber.Dauer.3</Duration><Effect>Zauber.Wirkung.3</Effect></Spell>
-	<Spell><Name>Zauber.Name.4</Name><Circle>Zauber.Kreis.4</Circle><Threads>Zauber.Fäden.4</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.4</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.4</Castingdifficulty><Duration>Zauber.Dauer.4</Duration><Effect>Zauber.Wirkung.4</Effect></Spell>
-	<Spell><Name>Zauber.Name.5</Name><Circle>Zauber.Kreis.5</Circle><Threads>Zauber.Fäden.5</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.5</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.5</Castingdifficulty><Duration>Zauber.Dauer.5</Duration><Effect>Zauber.Wirkung.5</Effect></Spell>
-	<Spell><Name>Zauber.Name.6</Name><Circle>Zauber.Kreis.6</Circle><Threads>Zauber.Fäden.6</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.6</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.6</Castingdifficulty><Duration>Zauber.Dauer.6</Duration><Effect>Zauber.Wirkung.6</Effect></Spell>
-	<Spell><Name>Zauber.Name.7</Name><Circle>Zauber.Kreis.7</Circle><Threads>Zauber.Fäden.7</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.7</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.7</Castingdifficulty><Duration>Zauber.Dauer.7</Duration><Effect>Zauber.Wirkung.7</Effect></Spell>
-	<Spell><Name>Zauber.Name.8</Name><Circle>Zauber.Kreis.8</Circle><Threads>Zauber.Fäden.8</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.8</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.8</Castingdifficulty><Duration>Zauber.Dauer.8</Duration><Effect>Zauber.Wirkung.8</Effect></Spell>
-	<Spell><Name>Zauber.Name.9</Name><Circle>Zauber.Kreis.9</Circle><Threads>Zauber.Fäden.9</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.9</Weavingdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.9</Castingdifficulty><Duration>Zauber.Dauer.9</Duration><Effect>Zauber.Wirkung.9</Effect></Spell>
+	<MoneyCopper>Geld.Kupfer</MoneyCopper>
+	<MoneySilver>Geld.Silber</MoneySilver>
+	<MoneyGold>Geld.Gold</MoneyGold>
+	<MoneyOther>Geld.Sonstige</MoneyOther>
+	<ThreadItemName>Fadengegenstand.Name.1</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.2</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.3</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.4</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.5</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.6</ThreadItemName>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.1</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.3</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.4</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.5</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.6</ThreadItemThreadRank>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.1</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.2</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.3</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.4</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.5</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.6</ThreadItemThreadEffect>
+	<Spell><Name>Zauber.Name.1</Name><Circle>Zauber.Kreis.1</Circle><Threads>Zauber.Fäden.1</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.1</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.1</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.1</Castingdifficulty><Duration>Zauber.Dauer.1</Duration><Effect>Zauber.Wirkung.1</Effect></Spell>
+	<Spell><Name>Zauber.Name.2</Name><Circle>Zauber.Kreis.2</Circle><Threads>Zauber.Fäden.2</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.2</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.2</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.2</Castingdifficulty><Duration>Zauber.Dauer.2</Duration><Effect>Zauber.Wirkung.2</Effect></Spell>
+	<Spell><Name>Zauber.Name.3</Name><Circle>Zauber.Kreis.3</Circle><Threads>Zauber.Fäden.3</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.3</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.3</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.3</Castingdifficulty><Duration>Zauber.Dauer.3</Duration><Effect>Zauber.Wirkung.3</Effect></Spell>
+	<Spell><Name>Zauber.Name.4</Name><Circle>Zauber.Kreis.4</Circle><Threads>Zauber.Fäden.4</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.4</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.4</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.4</Castingdifficulty><Duration>Zauber.Dauer.4</Duration><Effect>Zauber.Wirkung.4</Effect></Spell>
+	<Spell><Name>Zauber.Name.5</Name><Circle>Zauber.Kreis.5</Circle><Threads>Zauber.Fäden.5</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.5</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.5</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.5</Castingdifficulty><Duration>Zauber.Dauer.5</Duration><Effect>Zauber.Wirkung.5</Effect></Spell>
+	<Spell><Name>Zauber.Name.6</Name><Circle>Zauber.Kreis.6</Circle><Threads>Zauber.Fäden.6</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.6</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.6</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.6</Castingdifficulty><Duration>Zauber.Dauer.6</Duration><Effect>Zauber.Wirkung.6</Effect></Spell>
+	<Spell><Name>Zauber.Name.7</Name><Circle>Zauber.Kreis.7</Circle><Threads>Zauber.Fäden.7</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.7</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.7</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.7</Castingdifficulty><Duration>Zauber.Dauer.7</Duration><Effect>Zauber.Wirkung.7</Effect></Spell>
+	<Spell><Name>Zauber.Name.8</Name><Circle>Zauber.Kreis.8</Circle><Threads>Zauber.Fäden.8</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.8</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.8</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.8</Castingdifficulty><Duration>Zauber.Dauer.8</Duration><Effect>Zauber.Wirkung.8</Effect></Spell>
+	<Spell><Name>Zauber.Name.9</Name><Circle>Zauber.Kreis.9</Circle><Threads>Zauber.Fäden.9</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.9</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.9</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.9</Castingdifficulty><Duration>Zauber.Dauer.9</Duration><Effect>Zauber.Wirkung.9</Effect></Spell>
 </CHARSHEETTEMPLATE>

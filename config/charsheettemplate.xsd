@@ -89,6 +89,12 @@
 				<xs:element name="AttributeDicePer" type="xs:string"/>
 				<xs:element name="AttributeDiceWil" type="xs:string"/>
 				<xs:element name="AttributeDiceCha" type="xs:string"/>
+				<xs:element name="LpincreaseDexValue" type="xs:string"/>
+				<xs:element name="LpincreaseStrValue" type="xs:string"/>
+				<xs:element name="LpincreaseTouValue" type="xs:string"/>
+				<xs:element name="LpincreasePerValue" type="xs:string"/>
+				<xs:element name="LpincreaseWilValue" type="xs:string"/>
+				<xs:element name="LpincreaseChaValue" type="xs:string"/>
 				<xs:element name="LpincreaseDex" type="charsheettemplateboolean_type"/>
 				<xs:element name="LpincreaseStr" type="charsheettemplateboolean_type"/>
 				<xs:element name="LpincreaseTou" type="charsheettemplateboolean_type"/>
@@ -123,6 +129,7 @@
 				<xs:element name="KarmaBase" type="xs:string"/>
 				<xs:element name="KarmaCurrent" type="xs:string"/>
 				<xs:element name="KarmaMax" type="xs:string"/>
+				<xs:element name="KarmaModifier" type="xs:string"/>
 				<xs:element name="Movement" type="xs:string"/>
 				<xs:element name="Carrying" type="xs:string"/>
 				<xs:element name="ArmorMystic" type="xs:string"/>
@@ -146,6 +153,13 @@
 				<xs:element name="InventoryDescription" type="xs:string"/>
 				<xs:element name="InventoryWeight" type="xs:string"/>
 				<xs:element name="Spell" type="charsheettemplatespell_type"/>
+				<xs:element name="MoneyCopper" type="xs:string"/>
+				<xs:element name="MoneySilver" type="xs:string"/>
+				<xs:element name="MoneyGold" type="xs:string"/>
+				<xs:element name="MoneyOther" type="xs:string"/>
+				<xs:element name="ThreadItemName" type="xs:string"/>
+				<xs:element name="ThreadItemThreadRank" type="xs:string"/>
+				<xs:element name="ThreadItemThreadEffect" type="xs:string"/>
 			</xs:choice>
 			<xs:attribute name="menuentryname" type="xs:string" use="required"/>
 			<xs:attribute name="filename" type="xs:string" use="required"/>
