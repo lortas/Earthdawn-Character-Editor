@@ -124,19 +124,41 @@
   <STEPDICETABLE attribute="76" step="27" dice="W20+W12+W8+W6" />
   <STEPDICETABLE attribute="79" step="28" dice="W20+W12+2W8" />
   <STEPDICETABLE attribute="82" step="29" dice="W20+W12+W10+W8" />
-  <STEPDICETABLE attribute="85" step="30" dice="2W20+2W6" />
-  <STEPDICETABLE attribute="88" step="31" dice="2W20+W8+W6" />
-  <STEPDICETABLE attribute="91" step="32" dice="2W20+2W8" />
-  <STEPDICETABLE attribute="94" step="33" dice="2W20+W10+W8" />
-  <STEPDICETABLE attribute="97" step="34" dice="2W20+2W10" />
+  <STEPDICETABLE attribute="85"  step="30" dice="2W20+2W6" />
+  <STEPDICETABLE attribute="88"  step="31" dice="2W20+W8+W6" />
+  <STEPDICETABLE attribute="91"  step="32" dice="2W20+2W8" />
+  <STEPDICETABLE attribute="94"  step="33" dice="2W20+W10+W8" />
+  <STEPDICETABLE attribute="97"  step="34" dice="2W20+2W10" />
   <STEPDICETABLE attribute="100" step="35" dice="2W20+W12+W10" />
   <STEPDICETABLE attribute="103" step="36" dice="2W20+2W12" />
   <STEPDICETABLE attribute="106" step="37" dice="2W20+W12+2W6" />
   <STEPDICETABLE attribute="109" step="38" dice="2W20+W12+W8+W6" />
   <STEPDICETABLE attribute="112" step="39" dice="2W20+W12+2W8" />
   <STEPDICETABLE attribute="115" step="40" dice="2W20+W12+W10+W8" />
+  <STEPDICETABLE attribute="118" step="41" dice="3W20+2W6" />
+  <STEPDICETABLE attribute="121" step="42" dice="3W20+W8+W6" />
+  <STEPDICETABLE attribute="124" step="43" dice="3W20+2W8" />
+  <STEPDICETABLE attribute="127" step="44" dice="3W20+W10+W8" />
+  <STEPDICETABLE attribute="130" step="45" dice="3W20+2W10" />
+  <STEPDICETABLE attribute="133" step="46" dice="3W20+W12+W10" />
+  <STEPDICETABLE attribute="139" step="47" dice="3W20+2W12" />
+  <STEPDICETABLE attribute="142" step="48" dice="3W20+W12+2W6" />
+  <STEPDICETABLE attribute="145" step="49" dice="3W20+W12+W8+W6" />
+  <STEPDICETABLE attribute="148" step="50" dice="3W20+W12+2W8" />
+  <STEPDICETABLE attribute="151" step="51" dice="3W20+W12+W10+W8" />
+  <STEPDICETABLE attribute="154" step="52" dice="4W20+2W6" />
+  <STEPDICETABLE attribute="157" step="53" dice="4W20+W8+W6" />
+  <STEPDICETABLE attribute="160" step="54" dice="4W20+2W8" />
+  <STEPDICETABLE attribute="163" step="55" dice="4W20+W10+W8" />
+  <STEPDICETABLE attribute="166" step="56" dice="4W20+2W10" />
+  <STEPDICETABLE attribute="169" step="57" dice="4W20+W12+W10" />
+  <STEPDICETABLE attribute="172" step="58" dice="4W20+2W12" />
+  <STEPDICETABLE attribute="175" step="59" dice="4W20+W12+2W6" />
+  <STEPDICETABLE attribute="178" step="60" dice="4W20+W12+W8+W6" />
+  <STEPDICETABLE attribute="181" step="61" dice="4W20+W12+2W8" />
+  <STEPDICETABLE attribute="184" step="62" dice="4W20+W12+W10+W8" />
 	<DISCIPLINENR>
-			<CIRCLE circle="0">
+		<CIRCLE circle="0">
 			<TALENTLPCOST cost="100"/>
 			<TALENTLPCOST cost="200"/>
 			<TALENTLPCOST cost="300"/>
