@@ -299,6 +299,14 @@ public class EDMainWindow {
 		});
 		mntmPdfExport.add(mntmExportGeneric);
 
+		mntmExportGeneric = new JMenuItem("ED4 Ulisses Novize Char"); //$NON-NLS-1$
+		mntmExportGeneric.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,6);
+			}
+		});
+		mntmPdfExport.add(mntmExportGeneric);
+
 		JMenuItem mntmExportSpellcards0 = new JMenuItem(NLS.getString("EDMainWindow.mntmExportSpellcards0.text")); //$NON-NLS-1$
 		mntmExportSpellcards0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -902,6 +910,7 @@ public class EDMainWindow {
 				case 3 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 1, selFile); break;
 				case 4 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ED4_de.xml"), selFile); break;
 				case 5 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_Ajfel+Mordom_en.xml"), selFile); break;
+				case 6 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_ulisses.xml"), selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 				if( Desktop.isDesktopSupported() ) {

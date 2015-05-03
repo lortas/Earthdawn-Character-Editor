@@ -26,13 +26,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
-import java.util.Iterator;
 import java.util.List;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.AcroFields;
@@ -42,6 +36,7 @@ import com.itextpdf.text.pdf.PdfStamper;
 import com.itextpdf.text.Image;
 
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.config.CharsheettemplateContainer;
 import de.earthdawn.config.CharsheettemplatetalentStack;
 import de.earthdawn.data.*;
 
@@ -342,7 +337,7 @@ public class ECEPdfExporter {
 		int goldPieces = 0;
 		int silverPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
-			addEquipment(coinsToString(coins),coins.getWeight());
+			addEquipment("Purse"+(new Purse(coins)).toString(),coins.getWeight());
 			copperPieces += coins.getCopper();
 			silverPieces += coins.getSilver();
 			goldPieces += coins.getGold();
@@ -426,29 +421,6 @@ public class ECEPdfExporter {
 		fieldnames.setStrain("Strain."+counter);
 		//fieldnames.setKarma("KarmaRequired."+counter);
 		return fieldnames;
-	}
-
-	private String coinsToString(COINSType coins) {
-		StringBuffer name=new StringBuffer("Purse ");
-		name.append(coins.getName());
-		name.append(" (c:");
-		name.append(coins.getCopper());
-		name.append(" s:");
-		name.append(coins.getSilver());
-		name.append(" g:");
-		name.append(coins.getGold());
-		if( coins.getEarth()>0 )      name.append(" e:"+coins.getEarth());
-		if( coins.getWater()>0 )      name.append(" w:"+coins.getWater());
-		if( coins.getAir()>0 )        name.append(" a:"+coins.getAir());
-		if( coins.getFire()>0 )       name.append(" f:"+coins.getFire());
-		if( coins.getOrichalcum()>0 ) name.append(" o:"+coins.getOrichalcum());
-		if( coins.getGem50()>0)       name.append(" g50:"+coins.getGem50());
-		if( coins.getGem100()>0)      name.append(" g100:"+coins.getGem100());
-		if( coins.getGem200()>0)      name.append(" g200:"+coins.getGem200());
-		if( coins.getGem500()>0)      name.append(" g500:"+coins.getGem500());
-		if( coins.getGem1000()>0)     name.append(" g1000:"+coins.getGem1000());
-		name.append(")");
-		return name.toString();
 	}
 
 	public void exportRedbrickExtended(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
@@ -622,7 +594,7 @@ public class ECEPdfExporter {
 		int goldPieces = 0;
 		int silverPieces = 0;
 		for( COINSType coins : character.getAllCoins() ) {
-			addEquipment(coinsToString(coins),coins.getWeight());
+			addEquipment("Purse"+(new Purse(coins)).toString(),coins.getWeight());
 			copperPieces += coins.getCopper();
 			silverPieces += coins.getSilver();
 			goldPieces += coins.getGold();
@@ -691,7 +663,7 @@ public class ECEPdfExporter {
 		stamper.close();
 	}
 
-	private List<ITEMType> listArmorAndWeapon(CharacterContainer character) {
+	private static List<ITEMType> listArmorAndWeapon(CharacterContainer character) {
 		List<ITEMType> result = new ArrayList<ITEMType>();
 		boolean naturalarmor=true;
 		for( ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
@@ -726,48 +698,181 @@ public class ECEPdfExporter {
 		return result;
 	}
 
-	public void exportGeneric(EDCHARACTER edCharakter, File template, File outFile) throws DocumentException, IOException {
-		System.out.println("Reading template file: '" + template.getCanonicalPath() + "'");
-		CHARSHEETTEMPLATE fieldmap;
+	private void setPdfField(String key, String value) {
+		if( (key==null) || key.isEmpty() ) return;
+		if( value == null ) value="";
 		try {
-			Unmarshaller unmarshaller = JAXBContext.newInstance("de.earthdawn.data").createUnmarshaller();
-			fieldmap = (CHARSHEETTEMPLATE) unmarshaller.unmarshal(template);
-		} catch (JAXBException e) {
-			e.printStackTrace();
-			return;
+			acroFields.setField( key, value );
+		} catch (IOException | DocumentException e) {
+			System.err.println("Failed to write to PDF-Formfield '"+key+":="+value+"' : "+ e.getLocalizedMessage() );
 		}
-		File pdfinputfile = new File( new File("templates"), fieldmap.getFilename() );
+	}
+
+	private void setAllPdfFields( List<String> keys, String value ) {
+		for( String k : keys ) setPdfField(k, value);
+	}
+
+	private void setCharsheettemplateboolean(CharsheettemplatebooleanType field, boolean istrue) {
+		if( field == null ) return;
+		setPdfField(field.getValue(),istrue ? field.getTruevalue() : field.getFalsevalue());
+	}
+
+	private void setLpincrease(CharsheettemplateContainer charsheettemplate, String attribute,int value) {
+		final String lpincreaseString = "Lpincrease"+attribute;
+		setAllPdfFields(charsheettemplate.getStringList(lpincreaseString + "Value"),String.valueOf(value));
+		for( int i=0; i<3; i++ ) {
+			setCharsheettemplateboolean(charsheettemplate.getBooleanEntryNext(lpincreaseString),i<value);
+		}
+	}
+
+	private void setCharsheettemplatedisciplinebonus(CharsheettemplatedisciplinebonusType field, DISCIPLINEBONUSType bonus) {
+		if( field == null ) return;
+		if( bonus == null ) return;
+		setPdfField(field.getCircle(),String.valueOf(bonus.getCircle()));
+		setPdfField(field.getAbility(),bonus.getBonus());
+	}
+
+	private String movementToString(MOVEMENTType movement) {
+		if( movement.getFlight() > 0 ) {
+			return String.valueOf(movement.getGround()) + "/" + String.valueOf(movement.getFlight());
+		} else {
+			return String.valueOf(movement.getGround());
+		}
+	}
+
+	public void exportGeneric(EDCHARACTER edCharakter, File template, File outFile) throws DocumentException, IOException {
+		CharsheettemplateContainer charsheettemplate = new CharsheettemplateContainer(template);
+		File pdfinputfile = new File( new File("templates"), charsheettemplate.getPdfFilename() );
 		PdfReader reader = new PdfReader(new FileInputStream(pdfinputfile));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
 		acroFields = stamper.getAcroFields();
 		CharacterContainer character = new CharacterContainer(edCharakter);
 // +++ DEBUG +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-//		Set<String> fieldNames = acroFields.getFields().keySet();
-//		fieldNames = new TreeSet<String>(fieldNames);
-//		for( String fieldName : fieldNames ) {
-//			acroFields.setField( fieldName, fieldName );
-//		}
-// +++ ~DEBUG ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//		for( String fieldName : acroFields.getFields().keySet() ) acroFields.setField( fieldName, fieldName );
+// +++ DEBUG +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		setAllPdfFields(charsheettemplate.getStringList("CurrentDateTime"),CharacterContainer.getCurrentDateTime());
+		setAllPdfFields(charsheettemplate.getStringList("Name"),character.getName());
+		setAllPdfFields(charsheettemplate.getStringList("Passion"),character.getPassion());
+		setAllPdfFields(charsheettemplate.getStringList("Player"),character.getPlayer());
+		setAllPdfFields(charsheettemplate.getStringList("Movement"),movementToString(character.getMovement()));
+		setAllPdfFields(charsheettemplate.getStringList("Carrying"),String.valueOf(character.getCarrying().getCarrying()));
+
 		APPEARANCEType appearance = character.getAppearance();
 		String race;
 		if( appearance.getOrigin().isEmpty() ) race = appearance.getRace();
 		else race = appearance.getRace()+" ("+appearance.getOrigin()+")";
+		setAllPdfFields(charsheettemplate.getStringList("Race"),race);
+		setAllPdfFields(charsheettemplate.getStringList("Age"),String.valueOf(appearance.getAge()));
+		setAllPdfFields(charsheettemplate.getStringList("Eyes"),appearance.getEyes());
+		setAllPdfFields(charsheettemplate.getStringList("Hair"),appearance.getHair());
+		setAllPdfFields(charsheettemplate.getStringList("Height"),String.format("%.2f m",appearance.getHeight()*0.3048));
+		setAllPdfFields(charsheettemplate.getStringList("Skin"),appearance.getSkin());
+		double weight = 0.453592*appearance.getWeight();
+		if( weight < 10 ) setAllPdfFields(charsheettemplate.getStringList("Weight"),String.format("%.2f kg",weight));
+		else setAllPdfFields(charsheettemplate.getStringList("Weight"),String.format("%.0f kg",weight));
+		switch(appearance.getGender()) {
+		case MALE:
+			setAllPdfFields(charsheettemplate.getStringList("Gender"),"männlich");
+			break;
+		case FEMALE:
+			setAllPdfFields(charsheettemplate.getStringList("Gender"),"weiblich");
+			break;
+		case MINUS:
+			setAllPdfFields(charsheettemplate.getStringList("Gender"),"-");
+			break;
+		}
+
 		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
-		Iterator<String> disciplineNames = character.getDisciplineNames().iterator();
-		Iterator<Integer> disciplineCircles = character.getDisciplineCircles().iterator();
-		List<String> armorNameList = new ArrayList<String>();
-		List<Integer> armorPenaltyList = new ArrayList<Integer>();
-		int lpIncreaseDex = attributes.get(ATTRIBUTENameType.DEX).getLpincrease();
-		int lpIncreaseStr = attributes.get(ATTRIBUTENameType.STR).getLpincrease();
-		int lpIncreaseTou = attributes.get(ATTRIBUTENameType.TOU).getLpincrease();
-		int lpIncreasePer = attributes.get(ATTRIBUTENameType.PER).getLpincrease();
-		int lpIncreaseWil = attributes.get(ATTRIBUTENameType.WIL).getLpincrease();
-		int lpIncreaseCha = attributes.get(ATTRIBUTENameType.CHA).getLpincrease();
+		int strength = attributes.get(ATTRIBUTENameType.STR).getStep();
+		setAllPdfFields(charsheettemplate.getStringList("AttributeBaseDex"),String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getBasevalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeBaseStr"),String.valueOf(attributes.get(ATTRIBUTENameType.STR).getBasevalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeBaseTou"),String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getBasevalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeBasePer"),String.valueOf(attributes.get(ATTRIBUTENameType.PER).getBasevalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeBaseWil"),String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getBasevalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeBaseCha"),String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getBasevalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeCurrentDex"),String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeCurrentStr"),String.valueOf(attributes.get(ATTRIBUTENameType.STR).getCurrentvalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeCurrentTou"),String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getCurrentvalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeCurrentPer"),String.valueOf(attributes.get(ATTRIBUTENameType.PER).getCurrentvalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeCurrentWil"),String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getCurrentvalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeCurrentCha"),String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeStepDex"),String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeStepStr"),String.valueOf(attributes.get(ATTRIBUTENameType.STR).getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeStepTou"),String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeStepPer"),String.valueOf(attributes.get(ATTRIBUTENameType.PER).getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeStepWil"),String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeStepCha"),String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("AttributeDiceDex"),attributes.get(ATTRIBUTENameType.DEX).getDice());
+		setAllPdfFields(charsheettemplate.getStringList("AttributeDiceStr"),attributes.get(ATTRIBUTENameType.STR).getDice());
+		setAllPdfFields(charsheettemplate.getStringList("AttributeDiceTou"),attributes.get(ATTRIBUTENameType.TOU).getDice());
+		setAllPdfFields(charsheettemplate.getStringList("AttributeDicePer"),attributes.get(ATTRIBUTENameType.PER).getDice());
+		setAllPdfFields(charsheettemplate.getStringList("AttributeDiceWil"),attributes.get(ATTRIBUTENameType.WIL).getDice());
+		setAllPdfFields(charsheettemplate.getStringList("AttributeDiceCha"),attributes.get(ATTRIBUTENameType.CHA).getDice());
+
+		setLpincrease(charsheettemplate,"Dex",attributes.get(ATTRIBUTENameType.DEX).getLpincrease());
+		setLpincrease(charsheettemplate,"Str",attributes.get(ATTRIBUTENameType.STR).getLpincrease());
+		setLpincrease(charsheettemplate,"Tou",attributes.get(ATTRIBUTENameType.TOU).getLpincrease());
+		setLpincrease(charsheettemplate,"Per",attributes.get(ATTRIBUTENameType.PER).getLpincrease());
+		setLpincrease(charsheettemplate,"Wil",attributes.get(ATTRIBUTENameType.WIL).getLpincrease());
+		setLpincrease(charsheettemplate,"Cha",attributes.get(ATTRIBUTENameType.CHA).getLpincrease());
+
+		for( SKILLType skill : character.getSkills() ) {
+			setSkillOrTalent(charsheettemplate.getSkillEntryNext(), skill, attributes);
+		}
+
+		DEFENSEType defence = character.getDefence();
+		setAllPdfFields(charsheettemplate.getStringList("DefencePhysical"),String.valueOf(defence.getPhysical()));
+		setAllPdfFields(charsheettemplate.getStringList("DefenceSocial"),String.valueOf(defence.getSocial()));
+		setAllPdfFields(charsheettemplate.getStringList("DefenceMystic"),String.valueOf(defence.getSpell()));
+
+		DEATHType death = character.getDeath();
+		setAllPdfFields(charsheettemplate.getStringList("DeathAdjustment"),String.valueOf(death.getAdjustment()));
+		setAllPdfFields(charsheettemplate.getStringList("DeathBase"),String.valueOf(death.getBase()));
+		setAllPdfFields(charsheettemplate.getStringList("DeathValue"),String.valueOf(death.getValue()));
+
+		DEATHType unconsciousness = character.getUnconsciousness();
+		setAllPdfFields(charsheettemplate.getStringList("UnconsciousnessAdjustment"),String.valueOf(unconsciousness.getAdjustment()));
+		setAllPdfFields(charsheettemplate.getStringList("UnconsciousnessBase"),String.valueOf(unconsciousness.getBase()));
+		setAllPdfFields(charsheettemplate.getStringList("UnconsciousnessValue"),String.valueOf(unconsciousness.getValue()));
+
+		RECOVERYType recovery = character.getRecovery();
+		setAllPdfFields(charsheettemplate.getStringList("RecoveryStep"),String.valueOf(recovery.getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("RecoveryDice"),recovery.getDice());
+		setAllPdfFields(charsheettemplate.getStringList("RecoveryTestsperday"),String.valueOf(recovery.getTestsperday()));
+
+		WOUNDType wound = character.getWound();
+		setAllPdfFields(charsheettemplate.getStringList("WoundThreshold"),String.valueOf(wound.getThreshold()));
+		setAllPdfFields(charsheettemplate.getStringList("BloodWound"),String.valueOf(wound.getBlood()));
+
+		HEALTHType health = character.getHealth();
+		setAllPdfFields(charsheettemplate.getStringList("HealthDamage"),String.valueOf(health.getDamage()));
+		setAllPdfFields(charsheettemplate.getStringList("BloodDamage"),String.valueOf(health.getBlooddamage()));
+
+		EXPERIENCEType legendPoints = character.getLegendPoints();
+		setAllPdfFields(charsheettemplate.getStringList("LegendPointsTotal"),String.valueOf(legendPoints.getTotallegendpoints()));
+		setAllPdfFields(charsheettemplate.getStringList("LegendPointsCurrent"),String.valueOf(legendPoints.getCurrentlegendpoints()));
+		setAllPdfFields(charsheettemplate.getStringList("LegendPointsRenown"),String.valueOf(legendPoints.getRenown()));
+		setAllPdfFields(charsheettemplate.getStringList("LegendPointsReputation"),String.valueOf(legendPoints.getReputation()));
+
+		INITIATIVEType initiative = character.getInitiative();
+		setAllPdfFields(charsheettemplate.getStringList("InitiativeBase"),String.valueOf(initiative.getBase()));
+		setAllPdfFields(charsheettemplate.getStringList("InitiativeStep"),String.valueOf(initiative.getStep()));
+		setAllPdfFields(charsheettemplate.getStringList("InitiativeDice"),initiative.getDice());
+
+		KARMAType karma = character.getKarma();
+		setAllPdfFields(charsheettemplate.getStringList("KarmaCurrent"),String.valueOf(karma.getCurrent()));
+		setAllPdfFields(charsheettemplate.getStringList("KarmaMax"),String.valueOf(karma.getMax()));
+		setAllPdfFields(charsheettemplate.getStringList("KarmaModifier"),String.valueOf(character.getRace().getKarmamodifier()));
+
+		for( ITEMType item : character.getItems() ) {
+			setPdfField(charsheettemplate.getStringEntryNext("InventoryDescription"),item.getName());
+		}
+		for( ITEMType item : listArmorAndWeapon(character) ) {
+			setPdfField(charsheettemplate.getStringEntryNext("InventoryDescription"),item.getName());
+		}
 
 		int[] totalArmor=new int[]{0,0,0};
 		int[] totalShield=new int[]{0,0,0};
-		List<ARMORType> armorList = new ArrayList<ARMORType>();
-		List<SHIELDType> shieldList = new ArrayList<SHIELDType>();
 		for (ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
 			if( ! armor.getUsed().equals(YesnoType.YES) ) continue;
 			int physicalarmor = armor.getPhysicalarmor();
@@ -775,338 +880,58 @@ public class ECEPdfExporter {
 			int penalty = armor.getPenalty();
 			if( (physicalarmor==0) && (mysticarmor==0) && (penalty==0) ) continue;
 			if( armor instanceof SHIELDType ) {
-				shieldList.add((SHIELDType)armor);
+				setPdfField(charsheettemplate.getStringEntryNext("ShieldName"),armor.getName());
+				setPdfField(charsheettemplate.getStringEntryNext("ShieldPenalties"),String.valueOf(armor.getPenalty()));
 				totalShield[0]+=physicalarmor;
 				totalShield[1]+=mysticarmor;
 				totalShield[2]+=penalty;
 			} else {
-				armorList.add(armor);
+				setPdfField(charsheettemplate.getStringEntryNext("ArmorName"),armor.getName());
+				setPdfField(charsheettemplate.getStringEntryNext("ArmorPenalties"),String.valueOf(armor.getPenalty()));
 				totalArmor[0]+=physicalarmor;
 				totalArmor[1]+=mysticarmor;
 				totalArmor[2]+=penalty;
 			}
-			armorNameList.add(armor.getName());
-			armorPenaltyList.add(armor.getPenalty());
 		}
-		Iterator<String> armorName = armorNameList.iterator();
-		Iterator<Integer> armorPenalty = armorPenaltyList.iterator();
+		setAllPdfFields(charsheettemplate.getStringList("ArmorPhysical"),String.valueOf(totalArmor[0]));
+		setAllPdfFields(charsheettemplate.getStringList("ArmorMystic"),String.valueOf(totalArmor[1]));
+		setAllPdfFields(charsheettemplate.getStringList("ArmorPenalty"),String.valueOf(totalArmor[2]));
+		setAllPdfFields(charsheettemplate.getStringList("ShieldPhysical"),String.valueOf(totalShield[0]));
+		setAllPdfFields(charsheettemplate.getStringList("ShieldMystic"),String.valueOf(totalShield[1]));
 
-		CharsheettemplatetalentStack talentForms = new CharsheettemplatetalentStack();
-		List<CharsheettemplatetalentType> skillForms = new ArrayList<CharsheettemplatetalentType>();
-		List<CharsheettemplatedisciplinebonusType> disciplineBonusFroms = new ArrayList<CharsheettemplatedisciplinebonusType>();
-
-		for( JAXBElement<?> f : fieldmap.getCurrentDateTimeOrNameOrDisciplineName() ) {
-			switch(f.getName().getLocalPart()) {
-			case "CurrentDateTime" :
-				acroFields.setField( (String)f.getValue() , CharacterContainer.getCurrentDateTime());
-				break;
-			case "Name" :
-				acroFields.setField( (String)f.getValue() , character.getName());
-				break;
-			case "Race" :
-				acroFields.setField( (String)f.getValue() , race);
-				break;
-			case "Age" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(appearance.getAge()) );
-				break;
-			case "Eyes" :
-				acroFields.setField( (String)f.getValue(), appearance.getEyes() );
-				break;
-			case "Gender" :
-				acroFields.setField( (String)f.getValue(), appearance.getGender().value() );
-				break;
-			case "Hair" :
-				acroFields.setField( (String)f.getValue(), appearance.getHair() );
-				break;
-			case "Height" :
-				acroFields.setField( (String)f.getValue(), String.valueOf(appearance.getHeight()) );
-				break;
-			case "Skin" :
-				acroFields.setField( (String)f.getValue(), appearance.getSkin() );
-				break;
-			case "Weight" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(appearance.getWeight()) );
-				break;
-			case "Passion" :
-				acroFields.setField( (String)f.getValue() , character.getPassion() );
-				break;
-			case "Player" :
-				acroFields.setField( (String)f.getValue() , character.getPlayer() );
-				break;
-			case "Movement" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getMovement().getGround()) );
-				break;
-			case "Carrying" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getCarrying().getCarrying()) );
-				break;
-			case "AttributeBaseDex" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getBasevalue()) );
-				break;
-			case "AttributeBaseStr" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.STR).getBasevalue()) );
-				break;
-			case "AttributeBaseTou" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getBasevalue()) );
-				break;
-			case "AttributeBasePer" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.PER).getBasevalue()) );
-				break;
-			case "AttributeBaseWil" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getBasevalue()) );
-				break;
-			case "AttributeBaseCha" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getBasevalue()) );
-				break;
-			case "AttributeCurrentDex" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()) );
-				break;
-			case "AttributeCurrentStr" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.STR).getCurrentvalue()) );
-				break;
-			case "AttributeCurrentTou" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getCurrentvalue()) );
-				break;
-			case "AttributeCurrentPer" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.PER).getCurrentvalue()) );
-				break;
-			case "AttributeCurrentWil" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getCurrentvalue()) );
-				break;
-			case "AttributeCurrentCha" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()) );
-				break;
-			case "AttributeStepDex" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getStep()) );
-				break;
-			case "AttributeStepStr" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.STR).getStep()) );
-				break;
-			case "AttributeStepTou" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.TOU).getStep()) );
-				break;
-			case "AttributeStepPer" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.PER).getStep()) );
-				break;
-			case "AttributeStepWil" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.WIL).getStep()) );
-				break;
-			case "AttributeStepCha" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(attributes.get(ATTRIBUTENameType.CHA).getStep()) );
-				break;
-			case "AttributeDiceDex" :
-				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.DEX).getDice() );
-				break;
-			case "AttributeDiceStr" :
-				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.STR).getDice() );
-				break;
-			case "AttributeDiceTou" :
-				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.TOU).getDice() );
-				break;
-			case "AttributeDicePer" :
-				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.PER).getDice() );
-				break;
-			case "AttributeDiceWil" :
-				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.WIL).getDice() );
-				break;
-			case "AttributeDiceCha" :
-				acroFields.setField( (String)f.getValue() , attributes.get(ATTRIBUTENameType.CHA).getDice() );
-				break;
-			case "DisciplineName" :
-				if( disciplineNames.hasNext() ) {
-					acroFields.setField( (String)f.getValue() , disciplineNames.next() );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "DisciplineCircle" :
-				if( disciplineCircles.hasNext() ) {
-					acroFields.setField( (String)f.getValue() , String.valueOf(disciplineCircles.next()) );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "ArmorName" :
-				if( armorName.hasNext() ) {
-					acroFields.setField( (String)f.getValue() , armorName.next() );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "ArmorPenalties" :
-				if( armorPenalty.hasNext() ) {
-					acroFields.setField( (String)f.getValue() , String.valueOf(armorPenalty.next()) );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );	
-				}
-				break;
-			case "DefencePhysical" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getPhysical()) );
-				break;
-			case "DefenceSocial" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getSocial()) );
-				break;
-			case "DefenceMystic" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDefence().getSpell()) );
-				break;
-			case "ArmorPhysical" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(totalArmor[0]) );
-				break;
-			case "ArmorMystic" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(totalArmor[1]) );
-				break;
-			case "ArmorPenalty" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(totalArmor[2]) );
-				break;
-			case "ShieldPhysical" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(totalShield[0]) );
-				break;
-			case "ShieldMystic" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(totalShield[1]) );
-				break;
-			case "DeathAdjustment" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getAdjustment()) );
-				break;
-			case "DeathBase" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getBase()) );
-				break;
-			case "DeathValue" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getDeath().getValue()) );
-				break;
-			case "UnconsciousnessAdjustment" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getUnconsciousness().getAdjustment()) );
-				break;
-			case "UnconsciousnessBase" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getUnconsciousness().getBase()) );
-				break;
-			case "UnconsciousnessValue" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getUnconsciousness().getValue()) );
-				break;
-			case "RecoveryStep" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getRecovery().getStep()) );
-				break;
-			case "RecoveryDice" :
-				acroFields.setField( (String)f.getValue() , character.getRecovery().getDice() );
-				break;
-			case "RecoveryTestsperday" :
-				acroFields.setField( (String)f.getValue() ,  String.valueOf(character.getRecovery().getTestsperday()) );
-				break;
-			case "WoundThreshold" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getWound().getThreshold()) );
-				break;
-			case "BloodWound" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getHealth().getWOUNDS().getBlood()) );
-				break;
-			case "HealthDamage" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getHealth().getDamage()) );
-				break;
-			case "LegendPointsTotal" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getLegendPoints().getTotallegendpoints()) );
-				break;
-			case "LegendPointsCurrent" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getLegendPoints().getCurrentlegendpoints()) );
-				break;
-			case "LegendPointsRenown" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getLegendPoints().getRenown()) );
-				break;
-			case "LegendPointsReputation" :
-				acroFields.setField( (String)f.getValue() , character.getLegendPoints().getReputation() );
-				break;
-			case "InitiativeDice" :
-				acroFields.setField( (String)f.getValue() , character.getInitiative().getDice() );
-				break;
-			case "InitiativeStep" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getInitiative().getStep()) );
-				break;
-			case "KarmaCurrent" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getKarma().getCurrent()) );
-				break;
-			case "KarmaMax" :
-				acroFields.setField( (String)f.getValue() , String.valueOf(character.getKarma().getMax()) );
-				break;
-			case "LpincreaseDex" :
-				if( lpIncreaseDex > 0 ) {
-					lpIncreaseDex--;
-					acroFields.setField( (String)f.getValue() , "Yes" );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "LpincreaseStr" :
-				if( lpIncreaseStr > 0 ) {
-					lpIncreaseStr--;
-					acroFields.setField( (String)f.getValue() , "Yes" );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "LpincreaseTou" :
-				if( lpIncreaseTou > 0 ) {
-					lpIncreaseTou--;
-					acroFields.setField( (String)f.getValue() , "Yes" );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "LpincreasePer" :
-				if( lpIncreasePer > 0 ) {
-					lpIncreasePer--;
-					acroFields.setField( (String)f.getValue() , "Yes" );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "LpincreaseWil" :
-				if( lpIncreaseWil > 0 ) {
-					lpIncreaseWil--;
-					acroFields.setField( (String)f.getValue() , "Yes" );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "LpincreaseCha" :
-				if( lpIncreaseCha > 0 ) {
-					lpIncreaseCha--;
-					acroFields.setField( (String)f.getValue() , "Yes" );
-				} else {
-					acroFields.setField( (String)f.getValue() , "" );
-				}
-				break;
-			case "Talent" :
-				talentForms.push((CharsheettemplatetalentType)f.getValue());
-				break;
-			case "Skill" :
-				skillForms.add((CharsheettemplatetalentType)f.getValue());
-				break;
-			case "DisciplineBonus" :
-				disciplineBonusFroms.add((CharsheettemplatedisciplinebonusType)f.getValue());
-				break;
-			default :
-				System.err.println("Unhandled fieldname '"+f.getName().getLocalPart()+"' of class '"+f.getValue().getClass()+"'.");
-				break;
-			}
+		for( WEAPONType weapon : character.getWeapons() ) {
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponName"),weapon.getName());
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponShortrange"),String.valueOf(weapon.getShortrange()));
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponLongrange"),String.valueOf(weapon.getLongrange()));
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponDamagestep"),String.valueOf(weapon.getDamagestep()));
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponSize"),String.valueOf(weapon.getSize()));
+			int damage = strength+weapon.getDamagestep();
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponAttackstep"),""); // TODO: Nahkampfwaffen
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponAttribute"),String.valueOf(strength));
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponStep"),String.valueOf(damage));
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponDice"),PROPERTIES.step2Dice(damage));
 		}
 
-		Iterator<CharsheettemplatetalentType> skillFormsIterator = skillForms.iterator();
-		for( SKILLType skill : character.getSkills() ) {
-			if( !skillFormsIterator.hasNext() ) break;
-			setSkillOrTalent(skillFormsIterator.next(), skill, attributes);
+		for( SPELLType spell : character.getOpenSpellList() ) {
+			setSpell(charsheettemplate.getSpellEntryNext("Spell"),spell);
 		}
 
-		List<List<SPELLType>> spellslist = new ArrayList<List<SPELLType>>();
-		spellslist.add(character.getOpenSpellList());
-		int counterKnack=0;
-		Iterator<CharsheettemplatedisciplinebonusType> disciplineBonusFromsIterator = disciplineBonusFroms.iterator();
+		CharsheettemplatetalentStack talentForms = charsheettemplate.getTalentStack();
+		CharsheettemplatetalentStack.type disciplinetalentkind = new CharsheettemplatetalentStack.type();
+		disciplinetalentkind.isDiscipline=true;
+		CharsheettemplatetalentStack.type othertalentkind = new CharsheettemplatetalentStack.type();
+		othertalentkind.isOther=true;
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			setPdfField(charsheettemplate.getStringEntryNext("DisciplineName"),discipline.getName());
+			setPdfField(charsheettemplate.getStringEntryNext("DisciplineCircle"),String.valueOf(discipline.getCircle()));
+
 			List<TALENTType> disziplinetalents = discipline.getDISZIPLINETALENT();
 			Collections.sort(disziplinetalents, new TalentComparator());
 			for( TALENTType talent : disziplinetalents ) {
-				if( talentForms.hasNext(1) ) {
-					setSkillOrTalent(talentForms.pull(1), talent, attributes);
-				}
+				setSkillOrTalent(talentForms.pull(disciplinetalentkind), talent, attributes);
 				for( KNACKType knack : talent.getKNACK() ) {
-					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
-					acroFields.setField( "TalentKnackName."+counterKnack, knack.getName()+" ["+knack.getStrain()+"]" );
-					counterKnack++;
+					setPdfField(charsheettemplate.getStringEntryNext("TalentKnackTalent"),talent.getName());
+					setPdfField(charsheettemplate.getStringEntryNext("TalentKnackTalent"),knack.getName()+" ["+knack.getStrain()+"]");
 				}
 			}
 			List<TALENTType> optionaltalents = new ArrayList<TALENTType>();
@@ -1114,22 +939,40 @@ public class ECEPdfExporter {
 			optionaltalents.addAll(discipline.getFREETALENT());
 			Collections.sort(optionaltalents, new TalentComparator());
 			for( TALENTType talent : optionaltalents ) {
-				if( talentForms.hasNext(-1) ) {
-					setSkillOrTalent(talentForms.pull(-1), talent, character.getAttributes());
-				}
+				setSkillOrTalent(talentForms.pull(othertalentkind), talent, attributes);
 				for( KNACKType knack : talent.getKNACK() ) {
-					acroFields.setField( "TalentKnackTalent."+counterKnack, talent.getName() );
-					acroFields.setField( "TalentKnackName."+counterKnack, knack.getName()+" ["+knack.getStrain()+"]" );
-					counterKnack++;
+					setPdfField(charsheettemplate.getStringEntryNext("TalentKnackTalent"),talent.getName());
+					setPdfField(charsheettemplate.getStringEntryNext("TalentKnackTalent"),knack.getName()+" ["+knack.getStrain()+"]");
 				}
 			}
 			for( DISCIPLINEBONUSType bonus : discipline.getDISCIPLINEBONUS() ) {
-				if( ! disciplineBonusFromsIterator.hasNext() ) break;
-				CharsheettemplatedisciplinebonusType formnames = disciplineBonusFromsIterator.next();
-				acroFields.setField( formnames.getCircle(), String.valueOf(bonus.getCircle()) );
-				acroFields.setField( formnames.getAbility(), bonus.getBonus() );
+				setCharsheettemplatedisciplinebonus(charsheettemplate.getDisciplinebonusEntryNext("DisciplineBonus"),bonus);
 			}
-			spellslist.add(discipline.getSPELL());
+			for( SPELLType spell : discipline.getSPELL() ) {
+				setSpell(charsheettemplate.getSpellEntryNext("Spell"),spell);
+			}
+		}
+
+		Purse money = new Purse();
+		for( COINSType coins : character.getAllCoins() ) {
+			money.addPurse(new Purse(coins));
+		}
+
+		for( Purse.Coinstype c : new Purse.Coinstype[] {Purse.Coinstype.COPPER,Purse.Coinstype.SILVER,Purse.Coinstype.GOLD} ) {
+			setAllPdfFields(charsheettemplate.getStringList("Money"+c.value()), String.valueOf(money.getCoin(c)) );
+			money.setCoin(c,0);
+		}
+		setAllPdfFields(charsheettemplate.getStringList("MoneyOther"), money.content() );
+
+		for( THREADITEMType item : character.getThreadItem() ) {
+			int rank=1;
+			for( THREADRANKType thread : item.getTHREADRANK() ) {
+				if( rank > item.getWeaventhreadrank() ) break;
+				setPdfField(charsheettemplate.getStringEntryNext("ThreadItemName"),item.getName());
+				setPdfField(charsheettemplate.getStringEntryNext("ThreadItemThreadRank"),String.valueOf(rank));
+				setPdfField(charsheettemplate.getStringEntryNext("ThreadItemThreadEffect"),thread.getEffect());
+				rank++;
+			}
 		}
 
 		stamper.close();
@@ -1438,57 +1281,71 @@ public class ECEPdfExporter {
 		counterEquipment++;
 	}
 
-	private void setSkillOrTalent(CharsheettemplatetalentType fieldnames, SKILLType talent, Map<ATTRIBUTENameType,ATTRIBUTEType> attributes) throws DocumentException, IOException {
+	private void setSkillOrTalent(CharsheettemplatetalentType fieldnames, SKILLType talent, Map<ATTRIBUTENameType,ATTRIBUTEType> attributes) {
+		if( fieldnames == null ) return;
 		String talentname = talent.getName();
 		String limitation="";
 		if( talent.getLIMITATION().size()>0 ) limitation=talent.getLIMITATION().get(0);
 		if ( ! limitation.isEmpty() ) talentname += ": "+limitation;
-		acroFieldsSetField( fieldnames.getPage(), String.valueOf(talent.getBookref()) );
+		setPdfField( fieldnames.getPage(), String.valueOf(talent.getBookref()) );
 		if( talent instanceof TALENTType ) {
 			TALENTTEACHERType teacher = ((TALENTType)talent).getTEACHER();
 			if ( (teacher != null) && teacher.getByversatility().equals(YesnoType.YES) ) talentname += " (v)";
 		}
 		if ( talent.getRealigned() > 0 ) talentname="("+talentname+")";
-		acroFieldsSetField( fieldnames.getName(), talentname);
+		setPdfField( fieldnames.getName(), talentname);
 		ATTRIBUTENameType attribute = talent.getAttribute();
-		acroFieldsSetField( fieldnames.getAttribute(), attribute.value() );
+		setPdfField( fieldnames.getAttribute(), attribute.value() );
 		boolean attributeIsNa = attribute.equals(ATTRIBUTENameType.NA);
 		if( attributeIsNa ) {
-			acroFieldsSetField( fieldnames.getAttributeStep(), "-" );
+			setPdfField( fieldnames.getAttributeStep(), "-" );
 		} else {
-			acroFieldsSetField( fieldnames.getAttributeStep(), String.valueOf(attributes.get(attribute).getStep()) );
+			setPdfField( fieldnames.getAttributeStep(), String.valueOf(attributes.get(attribute).getStep()) );
 		}
-		acroFieldsSetField( fieldnames.getStrain(), talent.getStrain() );
+		setPdfField( fieldnames.getStrain(), talent.getStrain() );
 		switch( talent.getAction() ) {
-		case STANDARD  : acroFieldsSetField( fieldnames.getAction(), "std" ); break;
-		case SIMPLE    : acroFieldsSetField( fieldnames.getAction(), "smpl" ); break;
-		case SUSTAINED : acroFieldsSetField( fieldnames.getAction(), "sust" ); break;
-		default        : acroFieldsSetField( fieldnames.getAction(), talent.getAction().value() );
+		case STANDARD  : setPdfField( fieldnames.getAction(), "std" ); break;
+		case SIMPLE    : setPdfField( fieldnames.getAction(), "smpl" ); break;
+		case SUSTAINED : setPdfField( fieldnames.getAction(), "sust" ); break;
+		default        : setPdfField( fieldnames.getAction(), talent.getAction().value() );
 		}
 		RANKType talentrank = talent.getRANK();
 		if( attributeIsNa || (talentrank.getDice()==null) ) {
-			acroFieldsSetField( fieldnames.getDice(), "-" );
+			setPdfField( fieldnames.getDice(), "-" );
 		} else {
-			acroFieldsSetField( fieldnames.getDice(), talentrank.getDice() );
+			setPdfField( fieldnames.getDice(), talentrank.getDice() );
 		}
 		if( attributeIsNa ) {
-			acroFieldsSetField( fieldnames.getStep(), "-" );
+			setPdfField( fieldnames.getStep(), "-" );
 		} else {
-			acroFieldsSetField( fieldnames.getStep(), String.valueOf(talentrank.getStep()) );
+			setPdfField( fieldnames.getStep(), String.valueOf(talentrank.getStep()) );
 		}
-		if( talentrank.getBonus() > 0 ) acroFieldsSetField( fieldnames.getRank(), talentrank.getRank()+"+"+talentrank.getBonus() );
-		else if( talentrank.getBonus() < 0 ) acroFieldsSetField( fieldnames.getRank(), talentrank.getRank()+"-"+(talentrank.getBonus()*-1) );
-		else acroFieldsSetField( fieldnames.getRank(), String.valueOf(talentrank.getRank()) );
+		if( talentrank.getBonus() > 0 ) setPdfField( fieldnames.getRank(), talentrank.getRank()+"+"+talentrank.getBonus() );
+		else if( talentrank.getBonus() < 0 ) setPdfField( fieldnames.getRank(), talentrank.getRank()+"-"+(talentrank.getBonus()*-1) );
+		else setPdfField( fieldnames.getRank(), String.valueOf(talentrank.getRank()) );
 		if( talent.getKarma().equals(YesnoType.YES)) {
-			acroFieldsSetField( fieldnames.getKarma() , "Yes" );
+			setPdfField( fieldnames.getKarma() , "Yes" );
 		} else {
-			acroFieldsSetField( fieldnames.getKarma(), "" );
+			setPdfField( fieldnames.getKarma(), "" );
 		}
 	}
 
-	private void acroFieldsSetField(String name,String value) throws IOException, DocumentException {
-		if( name == null ) return;
-		acroFields.setField(name,value);
+	private void setSpell(CharsheettemplatespellType fieldnames, SPELLType spell) {
+		if( fieldnames==null ) return;
+		if( spell==null ) return;
+		setPdfField( fieldnames.getName(), spell.getName() );
+		setPdfField( fieldnames.getBookref(), spell.getBookref() );
+		setPdfField( fieldnames.getCastingdifficulty(), spell.getCastingdifficulty() );
+		setPdfField( fieldnames.getReattuningdifficulty(), String.valueOf(spell.getReattuningdifficulty()) );
+		setPdfField( fieldnames.getCircle(), String.valueOf(spell.getCircle()) );
+		setPdfField( fieldnames.getDuration(),spell.getDuration());
+		setPdfField( fieldnames.getEffect(),spell.getEffect());
+		setPdfField( fieldnames.getEffectrarea(),spell.getEffectarea());
+		setPdfField( fieldnames.getElement(),spell.getElement().value());
+		setPdfField( fieldnames.getRange(),spell.getRange());
+		setPdfField( fieldnames.getReattuningdifficulty(),String.valueOf(spell.getReattuningdifficulty()));
+		setPdfField( fieldnames.getThreads(),spell.getThreads());
+		setPdfField( fieldnames.getWeavingdifficulty(),spell.getWeavingdifficulty());
 	}
 
 	public static List<String> wrapString(int maxLength, String string) {
