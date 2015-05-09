@@ -114,6 +114,8 @@
 				<xs:element name="RecoveryDice" type="xs:string"/>
 				<xs:element name="RecoveryTestsperday" type="xs:string"/>
 				<xs:element name="WoundThreshold" type="xs:string"/>
+				<xs:element name="WoundsValue" type="xs:string"/>
+				<xs:element name="Wounds" type="charsheettemplateboolean_type"/>
 				<xs:element name="BloodWound" type="xs:string"/>
 				<xs:element name="BloodDamage" type="xs:string"/>
 				<xs:element name="LegendPointsTotal" type="xs:string"/>

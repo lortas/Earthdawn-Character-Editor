@@ -717,12 +717,15 @@ public class ECEPdfExporter {
 		setPdfField(field.getValue(),istrue ? field.getTruevalue() : field.getFalsevalue());
 	}
 
-	private void setLpincrease(CharsheettemplateContainer charsheettemplate, String attribute,int value) {
-		final String lpincreaseString = "Lpincrease"+attribute;
-		setAllPdfFields(charsheettemplate.getStringList(lpincreaseString + "Value"),String.valueOf(value));
-		for( int i=0; i<3; i++ ) {
-			setCharsheettemplateboolean(charsheettemplate.getBooleanEntryNext(lpincreaseString),i<value);
+	private void setBooleans(CharsheettemplateContainer charsheettemplate, String key, int value) {
+		setAllPdfFields(charsheettemplate.getStringList(key+"Value"),String.valueOf(value));
+		for( int i=0; i<20; i++ ) {
+			setCharsheettemplateboolean(charsheettemplate.getBooleanEntryNext(key),i<value);
 		}
+	}
+
+	private void setLpincrease(CharsheettemplateContainer charsheettemplate, String attribute,int value) {
+		setBooleans(charsheettemplate,"Lpincrease"+attribute,value);
 	}
 
 	private void setCharsheettemplatedisciplinebonus(CharsheettemplatedisciplinebonusType field, DISCIPLINEBONUSType bonus) {
@@ -843,6 +846,7 @@ public class ECEPdfExporter {
 		WOUNDType wound = character.getWound();
 		setAllPdfFields(charsheettemplate.getStringList("WoundThreshold"),String.valueOf(wound.getThreshold()));
 		setAllPdfFields(charsheettemplate.getStringList("BloodWound"),String.valueOf(wound.getBlood()));
+		setBooleans(charsheettemplate, "Wounds", wound.getNormal());
 
 		HEALTHType health = character.getHealth();
 		setAllPdfFields(charsheettemplate.getStringList("HealthDamage"),String.valueOf(health.getDamage()));
