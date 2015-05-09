@@ -47,15 +47,15 @@
 	<LpincreaseTou>topmostSubform[0].Page1[0].LPIncrease\.2\.0[0]</LpincreaseTou>
 	<LpincreaseTou>topmostSubform[0].Page1[0].LPIncrease\.2\.1[0]</LpincreaseTou>
 	<LpincreaseTou>topmostSubform[0].Page1[0].LPIncrease\.2\.2[0]</LpincreaseTou>
-	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.1[0]</LpincreasePer>
 	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.0[0]</LpincreasePer>
+	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.1[0]</LpincreasePer>
 	<LpincreasePer>topmostSubform[0].Page1[0].LPIncrease\.3\.2[0]</LpincreasePer>
-	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.1[0]</LpincreaseWil>
 	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.0[0]</LpincreaseWil>
+	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.1[0]</LpincreaseWil>
 	<LpincreaseWil>topmostSubform[0].Page1[0].LPIncrease\.4\.2[0]</LpincreaseWil>
 	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.0[0]</LpincreaseCha>
-	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.2[0]</LpincreaseCha>
 	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.1[0]</LpincreaseCha>
+	<LpincreaseCha>topmostSubform[0].Page1[0].LPIncrease\.5\.2[0]</LpincreaseCha>
 	<DefencePhysical>topmostSubform[0].Page1[0].DefensePhysical[0]</DefencePhysical>
 	<DefenceSocial>topmostSubform[0].Page1[0].DefenseSocial[0]</DefenceSocial>
 	<DefenceMystic>topmostSubform[0].Page1[0].DefenseMystic[0]</DefenceMystic>
@@ -70,6 +70,16 @@
 	<RecoveryTestsperday>topmostSubform[0].Page1[0].RecoveryTestsPerDay[0]</RecoveryTestsperday>
 	<WoundThreshold>topmostSubform[0].Page1[0].WoundThreshold[0]</WoundThreshold>
 	<BloodWound>topmostSubform[0].Page1[0].BloodWound[0]</BloodWound>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.0[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.1[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.2[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.3[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.3[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.4[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.5[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.6[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.7[0]</Wounds>
+	<Wounds>topmostSubform[0].Page1[0].Wounds\.8[0]</Wounds>
 	<LegendPointsTotal>topmostSubform[0].Page1[0].TotalLegendPoints[0]</LegendPointsTotal>
 	<LegendPointsCurrent>topmostSubform[0].Page1[0].CurrentLegendPoints[0]</LegendPointsCurrent>
 	<LegendPointsRenown>topmostSubform[0].Page1[0].Renown[0]</LegendPointsRenown>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CHARSHEETTEMPLATE menuentryname="ED4 Ulisses Novize Char" filename="ed4_character_sheet_fasagames.pdf" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/charsheettemplate ../config/charsheettemplate.xsd">
+	<CurrentDateTime>Zeitstempel</CurrentDateTime>
+	<Name>Charaktername</Name>
+	<Race>Rasse</Race>
+	<Age>Alter</Age>
+	<Eyes>Farbe.Augen</Eyes>
+	<Gender>Geschlecht</Gender>
+	<Hair>Farbe.Haare</Hair>
+	<Height>Größe</Height>
+	<Skin>Farbe.Haut</Skin>
+	<Weight>Gewicht</Weight>
+	<Passion></Passion>
+	<Player></Player>
+	<DisciplineName>Disziplin.Name</DisciplineName>
+	<DisciplineCircle>Disziplin.Kreis</DisciplineCircle>
+	<AttributeBaseDex></AttributeBaseDex>
+	<AttributeBaseStr></AttributeBaseStr>
+	<AttributeBaseTou></AttributeBaseTou>
+	<AttributeBasePer></AttributeBasePer>
+	<AttributeBaseWil></AttributeBaseWil>
+	<AttributeBaseCha></AttributeBaseCha>
+	<AttributeCurrentDex>Attribut.Wert.1</AttributeCurrentDex>
+	<AttributeCurrentStr>Attribut.Wert.2</AttributeCurrentStr>
+	<AttributeCurrentTou>Attribut.Wert.3</AttributeCurrentTou>
+	<AttributeCurrentPer>Attribut.Wert.4</AttributeCurrentPer>
+	<AttributeCurrentWil>Attribut.Wert.5</AttributeCurrentWil>
+	<AttributeCurrentCha>Attribut.Wert.6</AttributeCurrentCha>
+	<AttributeStepDex>Attribut.Stufe.1</AttributeStepDex>
+	<AttributeStepStr>Attribut.Stufe.2</AttributeStepStr>
+	<AttributeStepTou>Attribut.Stufe.3</AttributeStepTou>
+	<AttributeStepPer>Attribut.Stufe.4</AttributeStepPer>
+	<AttributeStepWil>Attribut.Stufe.5</AttributeStepWil>
+	<AttributeStepCha>Attribut.Stufe.6</AttributeStepCha>
+	<AttributeDiceDex>Attribut.Würfel.1</AttributeDiceDex>
+	<AttributeDiceStr>Attribut.Würfel.2</AttributeDiceStr>
+	<AttributeDiceTou>Attribut.Würfel.3</AttributeDiceTou>
+	<AttributeDicePer>Attribut.Würfel.4</AttributeDicePer>
+	<AttributeDiceWil>Attribut.Würfel.5</AttributeDiceWil>
+	<AttributeDiceCha>Attribut.Würfel.6</AttributeDiceCha>
+	<LpincreaseDex truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.1.1</LpincreaseDex>
+	<LpincreaseDex truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.1.2</LpincreaseDex>
+	<LpincreaseDex truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.1.3</LpincreaseDex>
+	<LpincreaseStr truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.2.1</LpincreaseStr>
+	<LpincreaseStr truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.2.2</LpincreaseStr>
+	<LpincreaseStr truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.2.3</LpincreaseStr>
+	<LpincreaseTou truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.3.1</LpincreaseTou>
+	<LpincreaseTou truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.3.2</LpincreaseTou>
+	<LpincreaseTou truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.3.3</LpincreaseTou>
+	<LpincreasePer truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.4.1</LpincreasePer>
+	<LpincreasePer truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.4.2</LpincreasePer>
+	<LpincreasePer truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.4.3</LpincreasePer>
+	<LpincreaseWil truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.5.1</LpincreaseWil>
+	<LpincreaseWil truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.5.2</LpincreaseWil>
+	<LpincreaseWil truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.5.3</LpincreaseWil>
+	<LpincreaseCha truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.6.1</LpincreaseCha>
+	<LpincreaseCha truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.6.2</LpincreaseCha>
+	<LpincreaseCha truevalue="Ja" falsevalue="Nein">Attribut.Steigerung.6.3</LpincreaseCha>
+	<DefencePhysical>Verteitigung.Körperlich</DefencePhysical>
+	<DefenceMystic>Verteitigung.Mystisch</DefenceMystic>
+	<DefenceSocial>Verteitigung.Sozial</DefenceSocial>
+	<DeathAdjustment></DeathAdjustment>
+	<DeathBase></DeathBase>
+	<DeathValue>Schwelle.Tod</DeathValue>
+	<UnconsciousnessAdjustment></UnconsciousnessAdjustment>
+	<UnconsciousnessBase></UnconsciousnessBase>
+	<UnconsciousnessValue>Schwelle.Bewustlosigkeit</UnconsciousnessValue>
+	<RecoveryStep></RecoveryStep>
+	<RecoveryDice>Erholungsproben.Würfel</RecoveryDice>
+	<RecoveryTestsperday>Erholungsproben.ProTag</RecoveryTestsperday>
+	<WoundThreshold>Schwelle.Wunde</WoundThreshold>
+	<BloodWound></BloodWound>
+	<BloodDamage>Schaden.Blut</BloodDamage>
+	<LegendPointsTotal>Legendenpunkte.Gesamt</LegendPointsTotal>
+	<LegendPointsCurrent>Legendenpunkte.Aktuell</LegendPointsCurrent>
+	<LegendPointsRenown>Ruhm</LegendPointsRenown>
+	<LegendPointsReputation>Ruf</LegendPointsReputation>
+	<InitiativeBase>Initiative.AttributWert</InitiativeBase>
+	<InitiativeDice>Initiative.Würfel</InitiativeDice>
+	<InitiativeStep>Initiative.Wert</InitiativeStep>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.1</Name> <Action>Talent.Aktion.1</Action> <Strain>Talent.Überanstrengung.1</Strain> <Attribute>Talent.Attribut.1</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.1</Rank> <Step>Talent.Stufe.1</Step> <Dice>Talent.Würfel.1</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.2</Name> <Action>Talent.Aktion.2</Action> <Strain>Talent.Überanstrengung.2</Strain> <Attribute>Talent.Attribut.2</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.2</Rank> <Step>Talent.Stufe.2</Step> <Dice>Talent.Würfel.2</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.3</Name> <Action>Talent.Aktion.3</Action> <Strain>Talent.Überanstrengung.3</Strain> <Attribute>Talent.Attribut.3</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.3</Rank> <Step>Talent.Stufe.3</Step> <Dice>Talent.Würfel.3</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.4</Name> <Action>Talent.Aktion.4</Action> <Strain>Talent.Überanstrengung.4</Strain> <Attribute>Talent.Attribut.4</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.4</Rank> <Step>Talent.Stufe.4</Step> <Dice>Talent.Würfel.4</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.5</Name> <Action>Talent.Aktion.5</Action> <Strain>Talent.Überanstrengung.5</Strain> <Attribute>Talent.Attribut.5</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.5</Rank> <Step>Talent.Stufe.5</Step> <Dice>Talent.Würfel.5</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.6</Name> <Action>Talent.Aktion.6</Action> <Strain>Talent.Überanstrengung.6</Strain> <Attribute>Talent.Attribut.6</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.6</Rank> <Step>Talent.Stufe.6</Step> <Dice>Talent.Würfel.6</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.7</Name> <Action>Talent.Aktion.7</Action> <Strain>Talent.Überanstrengung.7</Strain> <Attribute>Talent.Attribut.7</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.7</Rank> <Step>Talent.Stufe.7</Step> <Dice>Talent.Würfel.7</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.8</Name> <Action>Talent.Aktion.8</Action> <Strain>Talent.Überanstrengung.8</Strain> <Attribute>Talent.Attribut.8</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.8</Rank> <Step>Talent.Stufe.8</Step> <Dice>Talent.Würfel.8</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.9</Name> <Action>Talent.Aktion.9</Action> <Strain>Talent.Überanstrengung.9</Strain> <Attribute>Talent.Attribut.9</Attribute> <AttributeStep></AttributeStep><Rank>Talent.Rang.9</Rank> <Step>Talent.Stufe.9</Step> <Dice>Talent.Würfel.9</Dice> <Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.10</Name><Action>Talent.Aktion.10</Action><Strain>Talent.Überanstrengung.10</Strain><Attribute>Talent.Attribut.10</Attribute><AttributeStep></AttributeStep><Rank>Talent.Rang.10</Rank><Step>Talent.Stufe.10</Step><Dice>Talent.Würfel.10</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.11</Name><Action>Talent.Aktion.11</Action><Strain>Talent.Überanstrengung.11</Strain><Attribute>Talent.Attribut.11</Attribute><AttributeStep></AttributeStep><Rank>Talent.Rang.11</Rank><Step>Talent.Stufe.11</Step><Dice>Talent.Würfel.11</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="1" other="1" versatility="1"><Name>Talent.Name.12</Name><Action>Talent.Aktion.12</Action><Strain>Talent.Überanstrengung.12</Strain><Attribute>Talent.Attribut.12</Attribute><AttributeStep></AttributeStep><Rank>Talent.Rang.12</Rank><Step>Talent.Stufe.12</Step><Dice>Talent.Würfel.12</Dice><Page></Page></Talent>
+	<Skill><Name>Fertigkeit.Name.1</Name><Action>Fertigkeit.Aktion.1</Action><Strain>Fertigkeit.Überanstrengung.1</Strain><AttributeStep>Fertigkeit.Attribut.1</AttributeStep><Rank>Fertigkeit.Rang.1</Rank><Step>Fertigkeit.Stufe.1</Step><Dice>Fertigkeit.Würfel.1</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.2</Name><Action>Fertigkeit.Aktion.2</Action><Strain>Fertigkeit.Überanstrengung.2</Strain><AttributeStep>Fertigkeit.Attribut.2</AttributeStep><Rank>Fertigkeit.Rang.2</Rank><Step>Fertigkeit.Stufe.2</Step><Dice>Fertigkeit.Würfel.2</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.3</Name><Action>Fertigkeit.Aktion.3</Action><Strain>Fertigkeit.Überanstrengung.3</Strain><AttributeStep>Fertigkeit.Attribut.3</AttributeStep><Rank>Fertigkeit.Rang.3</Rank><Step>Fertigkeit.Stufe.3</Step><Dice>Fertigkeit.Würfel.3</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.4</Name><Action>Fertigkeit.Aktion.4</Action><Strain>Fertigkeit.Überanstrengung.4</Strain><AttributeStep>Fertigkeit.Attribut.4</AttributeStep><Rank>Fertigkeit.Rang.4</Rank><Step>Fertigkeit.Stufe.4</Step><Dice>Fertigkeit.Würfel.4</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.5</Name><Action>Fertigkeit.Aktion.5</Action><Strain>Fertigkeit.Überanstrengung.5</Strain><AttributeStep>Fertigkeit.Attribut.5</AttributeStep><Rank>Fertigkeit.Rang.5</Rank><Step>Fertigkeit.Stufe.5</Step><Dice>Fertigkeit.Würfel.5</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.6</Name><Action>Fertigkeit.Aktion.6</Action><Strain>Fertigkeit.Überanstrengung.6</Strain><AttributeStep>Fertigkeit.Attribut.6</AttributeStep><Rank>Fertigkeit.Rang.6</Rank><Step>Fertigkeit.Stufe.6</Step><Dice>Fertigkeit.Würfel.6</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.7</Name><Action>Fertigkeit.Aktion.7</Action><Strain>Fertigkeit.Überanstrengung.7</Strain><AttributeStep>Fertigkeit.Attribut.7</AttributeStep><Rank>Fertigkeit.Rang.7</Rank><Step>Fertigkeit.Stufe.7</Step><Dice>Fertigkeit.Würfel.7</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.8</Name><Action>Fertigkeit.Aktion.8</Action><Strain>Fertigkeit.Überanstrengung.8</Strain><AttributeStep>Fertigkeit.Attribut.8</AttributeStep><Rank>Fertigkeit.Rang.8</Rank><Step>Fertigkeit.Stufe.8</Step><Dice>Fertigkeit.Würfel.8</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.9</Name><Action>Fertigkeit.Aktion.9</Action><Strain>Fertigkeit.Überanstrengung.9</Strain><AttributeStep>Fertigkeit.Attribut.9</AttributeStep><Rank>Fertigkeit.Rang.9</Rank><Step>Fertigkeit.Stufe.9</Step><Dice>Fertigkeit.Würfel.9</Dice></Skill>
+	<Skill><Name>Fertigkeit.Name.10</Name><Action>Fertigkeit.Aktion.10</Action><Strain>Fertigkeit.Überanstrengung.10</Strain><AttributeStep>Fertigkeit.Attribut.10</AttributeStep><Rank>Fertigkeit.Rang.10</Rank><Step>Fertigkeit.Stufe.10</Step><Dice>Fertigkeit.Würfel.10</Dice></Skill>
+	<HealthDamage>Schaden.Atuell</HealthDamage>
+	<KarmaCurrent>Karma.Aktuell</KarmaCurrent>
+	<KarmaMax>Karma.Maximum</KarmaMax>
+	<KarmaModifier>Karma.Modifikator</KarmaModifier>
+	<Movement>Bewegunsrate</Movement>
+	<Carrying>Traglast</Carrying>
+	<ArmorMystic>Rüstung.Mystisch</ArmorMystic>
+	<ArmorPhysical>Rüstung.Körperlich</ArmorPhysical>
+	<ArmorPenalty>Initiative.RüstungModifikator</ArmorPenalty>
+	<ShieldMystic></ShieldMystic>
+	<ShieldPhysical></ShieldPhysical>
+	<DisciplineBonus><Circle></Circle><Ability></Ability></DisciplineBonus>
+	<WeaponName>Waffe.Name.1</WeaponName>
+	<WeaponName>Waffe.Name.2</WeaponName>
+	<WeaponName>Waffe.Name.3</WeaponName>
+	<WeaponName>Waffe.Name.4</WeaponName>
+	<WeaponAttackstep>Waffe.Stärke.1</WeaponAttackstep>
+	<WeaponAttackstep>Waffe.Stärke.2</WeaponAttackstep>
+	<WeaponAttackstep>Waffe.Stärke.3</WeaponAttackstep>
+	<WeaponAttackstep>Waffe.Stärke.4</WeaponAttackstep>
+	<WeaponSize></WeaponSize>
+	<WeaponTimesforged></WeaponTimesforged>
+	<WeaponShortrange>Waffe.Entfernung.Kurz.1</WeaponShortrange>
+	<WeaponShortrange>Waffe.Entfernung.Kurz.2</WeaponShortrange>
+	<WeaponShortrange>Waffe.Entfernung.Kurz.3</WeaponShortrange>
+	<WeaponShortrange>Waffe.Entfernung.Kurz.4</WeaponShortrange>
+	<WeaponLongrange>Waffe.Entfernung.Lang.1</WeaponLongrange>
+	<WeaponLongrange>Waffe.Entfernung.Lang.2</WeaponLongrange>
+	<WeaponLongrange>Waffe.Entfernung.Lang.3</WeaponLongrange>
+	<WeaponLongrange>Waffe.Entfernung.Lang.4</WeaponLongrange>
+	<WeaponAttribute>Waffe.Stärke.1</WeaponAttribute>
+	<WeaponAttribute>Waffe.Stärke.2</WeaponAttribute>
+	<WeaponAttribute>Waffe.Stärke.3</WeaponAttribute>
+	<WeaponAttribute>Waffe.Stärke.4</WeaponAttribute>
+	<WeaponDamagestep>Waffe.Schadensstufe.1</WeaponDamagestep>
+	<WeaponDamagestep>Waffe.Schadensstufe.2</WeaponDamagestep>
+	<WeaponDamagestep>Waffe.Schadensstufe.3</WeaponDamagestep>
+	<WeaponDamagestep>Waffe.Schadensstufe.4</WeaponDamagestep>
+	<WeaponStep>Waffe.Stufe.1</WeaponStep>
+	<WeaponStep>Waffe.Stufe.2</WeaponStep>
+	<WeaponStep>Waffe.Stufe.3</WeaponStep>
+	<WeaponStep>Waffe.Stufe.4</WeaponStep>
+	<WeaponDice>Waffe.Würfel.1</WeaponDice>
+	<WeaponDice>Waffe.Würfel.2</WeaponDice>
+	<WeaponDice>Waffe.Würfel.3</WeaponDice>
+	<WeaponDice>Waffe.Würfel.4</WeaponDice>
+	<InventoryDescription>Ausrüstung.1</InventoryDescription>
+	<InventoryDescription>Ausrüstung.2</InventoryDescription>
+	<InventoryDescription>Ausrüstung.3</InventoryDescription>
+	<InventoryDescription>Ausrüstung.4</InventoryDescription>
+	<InventoryDescription>Ausrüstung.5</InventoryDescription>
+	<InventoryDescription>Ausrüstung.6</InventoryDescription>
+	<InventoryDescription>Ausrüstung.7</InventoryDescription>
+	<InventoryDescription>Ausrüstung.8</InventoryDescription>
+	<InventoryDescription>Ausrüstung.9</InventoryDescription>
+	<InventoryDescription>Ausrüstung.10</InventoryDescription>
+	<InventoryDescription>Ausrüstung.11</InventoryDescription>
+	<InventoryDescription>Ausrüstung.12</InventoryDescription>
+	<InventoryDescription>Ausrüstung.13</InventoryDescription>
+	<MoneyCopper>Geld.Kupfer</MoneyCopper>
+	<MoneySilver>Geld.Silber</MoneySilver>
+	<MoneyGold>Geld.Gold</MoneyGold>
+	<MoneyOther>Geld.Sonstige</MoneyOther>
+	<ThreadItemName>Fadengegenstand.Name.1</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.2</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.3</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.4</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.5</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.6</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.7</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.8</ThreadItemName>
+	<ThreadItemName>Fadengegenstand.Name.9</ThreadItemName>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.1</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.3</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.4</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.5</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.6</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.7</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.8</ThreadItemThreadRank>
+	<ThreadItemThreadRank>Fadengegenstand.Rang.9</ThreadItemThreadRank>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.1</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.2</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.3</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.4</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.5</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.6</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.7</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.8</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>Fadengegenstand.Wirkung.9</ThreadItemThreadEffect>
+	<Spell><Name>Zauber.Name.1</Name><Circle>Zauber.Kreis.1</Circle><Threads>Zauber.Fäden.1</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.1</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.1</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.1</Castingdifficulty><Duration>Zauber.Dauer.1</Duration><Effect>Zauber.Wirkung.1</Effect></Spell>
+	<Spell><Name>Zauber.Name.2</Name><Circle>Zauber.Kreis.2</Circle><Threads>Zauber.Fäden.2</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.2</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.2</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.2</Castingdifficulty><Duration>Zauber.Dauer.2</Duration><Effect>Zauber.Wirkung.2</Effect></Spell>
+	<Spell><Name>Zauber.Name.3</Name><Circle>Zauber.Kreis.3</Circle><Threads>Zauber.Fäden.3</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.3</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.3</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.3</Castingdifficulty><Duration>Zauber.Dauer.3</Duration><Effect>Zauber.Wirkung.3</Effect></Spell>
+	<Spell><Name>Zauber.Name.4</Name><Circle>Zauber.Kreis.4</Circle><Threads>Zauber.Fäden.4</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.4</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.4</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.4</Castingdifficulty><Duration>Zauber.Dauer.4</Duration><Effect>Zauber.Wirkung.4</Effect></Spell>
+	<Spell><Name>Zauber.Name.5</Name><Circle>Zauber.Kreis.5</Circle><Threads>Zauber.Fäden.5</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.5</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.5</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.5</Castingdifficulty><Duration>Zauber.Dauer.5</Duration><Effect>Zauber.Wirkung.5</Effect></Spell>
+	<Spell><Name>Zauber.Name.6</Name><Circle>Zauber.Kreis.6</Circle><Threads>Zauber.Fäden.6</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.6</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.6</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.6</Castingdifficulty><Duration>Zauber.Dauer.6</Duration><Effect>Zauber.Wirkung.6</Effect></Spell>
+	<Spell><Name>Zauber.Name.7</Name><Circle>Zauber.Kreis.7</Circle><Threads>Zauber.Fäden.7</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.7</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.7</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.7</Castingdifficulty><Duration>Zauber.Dauer.7</Duration><Effect>Zauber.Wirkung.7</Effect></Spell>
+	<Spell><Name>Zauber.Name.8</Name><Circle>Zauber.Kreis.8</Circle><Threads>Zauber.Fäden.8</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.8</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.8</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.8</Castingdifficulty><Duration>Zauber.Dauer.8</Duration><Effect>Zauber.Wirkung.8</Effect></Spell>
+	<Spell><Name>Zauber.Name.9</Name><Circle>Zauber.Kreis.9</Circle><Threads>Zauber.Fäden.9</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.9</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.9</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.9</Castingdifficulty><Duration>Zauber.Dauer.9</Duration><Effect>Zauber.Wirkung.9</Effect></Spell>
+	<Spell><Name>Zauber.Name.10</Name><Circle>Zauber.Kreis.10</Circle><Threads>Zauber.Fäden.10</Threads><Weavingdifficulty>Zauber.Webschwierigkeit.10</Weavingdifficulty><Reattuningdifficulty>Zauber.Schnellabstimmung.10</Reattuningdifficulty><Castingdifficulty>Zauber.Wirkschwierigkeit.10</Castingdifficulty><Duration>Zauber.Dauer.10</Duration><Effect>Zauber.Wirkung.10</Effect></Spell>
+</CHARSHEETTEMPLATE>

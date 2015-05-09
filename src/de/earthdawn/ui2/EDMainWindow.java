@@ -291,7 +291,7 @@ public class EDMainWindow {
 		});
 		mntmPdfExport.add(mntmExportGeneric);
 
-		mntmExportGeneric = new JMenuItem("ED4en"); //$NON-NLS-1$
+		mntmExportGeneric = new JMenuItem("ED4 FasaGames Novize Char"); //$NON-NLS-1$
 		mntmExportGeneric.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmExport_actionPerformed(arg0,5);
@@ -303,6 +303,14 @@ public class EDMainWindow {
 		mntmExportGeneric.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmExport_actionPerformed(arg0,6);
+			}
+		});
+		mntmPdfExport.add(mntmExportGeneric);
+
+		mntmExportGeneric = new JMenuItem("ED4en"); //$NON-NLS-1$
+		mntmExportGeneric.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,7);
 			}
 		});
 		mntmPdfExport.add(mntmExportGeneric);
@@ -909,8 +917,9 @@ public class EDMainWindow {
 				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 0, selFile); break;
 				case 3 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 1, selFile); break;
 				case 4 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ED4_de.xml"), selFile); break;
-				case 5 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_Ajfel+Mordom_en.xml"), selFile); break;
+				case 5 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_fasagames.xml"), selFile); break;
 				case 6 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_ulisses.xml"), selFile); break;
+				case 7 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_Ajfel+Mordom_en.xml"), selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 				if( Desktop.isDesktopSupported() ) {
