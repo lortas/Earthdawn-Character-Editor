@@ -26,18 +26,13 @@
 	<body class="edBody">
 		<!-- div needed for layout purposes -->
 		<!-- Heading -->
-		<xsl:choose>
-			<xsl:when test="/edc:EDCHARACTER/@rulesetversion='ED4'">
-				<div style="text-align:center; vertical-align:center;background-color:#702A2A">
-					<img class="edIcon" width="30%">
-						<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>images/ed4-logo.png</xsl:text></xsl:attribute>
-					</img>
-				</div>
-			</xsl:when>
-			<xsl:otherwise>
-				<div class="edHeader">Earthdawn Character Sheet</div>
-			</xsl:otherwise>
-		</xsl:choose>
+		<div style="text-align:center; vertical-align:center;background-color:#802A2A">
+			<span class="edHeader">Earthdawn</span>
+			<img class="edIcon" width="30%">
+				<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>images/ed-logo.png</xsl:text></xsl:attribute>
+			</img>
+			<span class="edHeader">Character Sheet</span>
+		</div>
 		<div class="edLayoutRow">
 			<table width="100%">
 				<tr>

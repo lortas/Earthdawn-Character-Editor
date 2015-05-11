@@ -12,18 +12,19 @@
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
-	border-left: 20px solid #702A2A;
-	border-right: 20px solid #702A2A;
-	border-bottom: 20px solid #702A2A;
+	border-left: 20px solid #802A2A;
+	border-right: 20px solid #802A2A;
+	border-top: 10px solid #802A2A;
+	border-bottom: 10px solid #802A2A;
 }
 
 .edHeader {
 	text-align: center;
-	font-family: Georgia,"Century Schoolbook",serif;
+	font-family: 'Comic Sans', Georgia, 'Century Schoolbook', serif;
 	font-size: 300%;
 	font-weight: bolder;
-	border-style: solid;
-	border-width: thick;
+	padding: 1ex;
+	margin: 1ex;
 }
 
 .edSubHeader {
