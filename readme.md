@@ -22,6 +22,11 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.49-20150511.zip ##
++ some small enhancements and bug fixes on Ulisses pdf export
++ new pdf export: FasaGames
++ show the 'old' ed-logo on html export
++ change method for config directory traversal to read all config files
 ## EarthdawnCharacterEditor-0.48-20150503.zip ##
 + enhance generic pdf export
 + add Ulisses official character PDF as export target
@@ -36,53 +41,5 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 + programm icon created
 + new item kinds and icons
 + enhance multi language support.
-## EarthdawnCharacterEditor-0.46-20130420.zip ##
-+ Updated character file format. New files can not correctly read by older ECE version. But older files can still be read by current ECE.
-+ Bugs
-	+ Some missed syntax updates from java6 to java7 corrected
-	+ Some typo were corrected
-	+ The throwing range of Throwing Axe and Dagger were wrong
-	+ Weight label was missed within the GUI
-	+ There was a bug within the OptinalRule DefaultOptionalTalent
-+ New movement rate modifier which average the DEX based and STR based. This is the new default movement rate modifier
-+ The discipline select menu is reorganized to have shorter menu length
-+ Now all thread items from GamemastersGuide can be found in the item store
-+ Character load method updated. Now files XSD version will be checked.
-+ Find and Remove possible duplicated discipline talents on multi-discipline-characters. But this may still work not perfect. This issue is still under construction.
-+ Massively updated HTML view of the character. More content and some optimization for printing.
-+ New item kind "boot"
-+ New and updated icons
-+ Console output modified
-+ GUI discipline table modified
-+ New feature EasySkill for discipline Traveled Scholar
-+ Background images modified
-+ Updated character portrait library
-+ Continue to change Spinner classes to ComboBox classes
-+ New key binding: "N" for "New Character"
-+ Always keep last character edited after exiting
-+ CC portraits of the project "Terrible Character Portraits" added.
-+ OptionDialog now multilingual
-## EarthdawnCharacterEditor-0.45-20121119.zip ##
-+ Bugs
-	+ Karma Ritual was missing in Discipline Journeyman
-	+ Aligned Skill
-	+ spellability for circle 2 to 5 were missing for the discipline elementalist
-	+ Knack Ghost Master had wrong value in attribute "limitation"
-	+ Small bugs within random character generatore removed
-	+ Blood damage was not shown within the Ajfel+Mordom PDF
-+ Multiple menu entries have now key short cuts
-+ Added Spell Sword
-+ Multiple SpinnerEditor changed to JComboBox
-+ Confirmation for exit added
-+ Confirmation for create new character added
-+ New menu entry switch window to fullscreen
-+ New menu entry for editing DefaultOptionalTalents
-+ Create for every spell an empty spelldiscription, if no spell description exists
-+ PatternItem enhanced
-+ If an optional rule is changed, refresh character
-+ New random character template scorcher added
-+ Optional Rule ALIGNINGTALENTSANDSKILLS default value is "no"
-+ Optional Rule AUTOINSERTLEGENDPOINTSPENT default value is "no"
-+ New Optional Rule KEEPLEGENDPOINTSYNC
 ## older versions ##
 Change Log of older versions can be found in the changelog.txt file.
