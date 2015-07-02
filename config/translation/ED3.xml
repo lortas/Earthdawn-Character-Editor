@@ -108,7 +108,7 @@
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Animal Companion Durability</LABEL>
-		<LABEL lang="de">Unempfindlichkeit (Tiergefährte)</LABEL>
+		<LABEL lang="de">Unempfindlichkeit Tiergefährte</LABEL>
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Animal Handling</LABEL>
@@ -364,7 +364,7 @@
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Familiar Durability</LABEL>
-		<LABEL lang="de">Unempfindlichkeit (Vertrauter)</LABEL>
+		<LABEL lang="de">Unempfindlichkeit Vertrauter</LABEL>
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Fast Hand</LABEL>
@@ -544,7 +544,7 @@
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Mount Durability</LABEL>
-		<LABEL lang="de">Unempfindlichkeit (Reittier)</LABEL>
+		<LABEL lang="de">Unempfindlichkeit Reittier</LABEL>
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Mystic Aim</LABEL>
@@ -756,7 +756,7 @@
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Temper Other</LABEL>
-		<LABEL lang="de">Ätherhaut (Andere)</LABEL>
+		<LABEL lang="de">Ätherhaut Andere</LABEL>
 	</CAPABILITY>
 	<CAPABILITY>
 		<LABEL lang="en">Temper Self</LABEL>

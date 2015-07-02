@@ -194,7 +194,7 @@
 	<TALENT name="Tigersprung" attribute="na" action="free" strain="1" isinitiative="yes"/>
 	<TALENT name="Totstellen" attribute="WIL" action="simple" strain="1"/>
 	<TALENT name="Überraschungsschlag" attribute="STR" action="free" strain="1" skilluse="1"/>
-	<TALENT name="Unempfindlichkeit (Tiergefährte)" attribute="na" action="na"/>
+	<TALENT name="Unempfindlichkeit Tiergefährte" attribute="na" action="na"/>
 	<TALENT name="Untrüglicher Blick" attribute="na" action="na"/>
 	<TALENT name="Verängstigen" attribute="WIL" action="standard"/>
 	<TALENT name="Verbannen" attribute="WIL" action="standard" strain="1"/>
