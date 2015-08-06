@@ -47,11 +47,13 @@ import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.text.EditorKit;
 import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.XML;
+import org.xml.sax.SAXException;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -875,10 +877,10 @@ public class EDMainWindow {
 			file = selFile;
 			try{
 				character = new CharacterContainer(selFile);
+				//TODO: Besserer Umgang mit Fehlern
 			}
-			catch(Exception e){
+			catch(IOException | JAXBException | ParserConfigurationException | SAXException | TransformerException e){
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
 			}
 			new ECEWorker(character).verarbeiteCharakter();
 			this.character.addCharChangeEventListener(new CharChangeEventListener() {
