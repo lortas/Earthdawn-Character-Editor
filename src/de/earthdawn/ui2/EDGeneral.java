@@ -3,6 +3,7 @@ package de.earthdawn.ui2;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.NamegiverComparator;
+import de.earthdawn.UnitCalculator;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.Base64BinaryType;
@@ -57,6 +58,7 @@ import javax.swing.JButton;
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
 	private static final String backgroundImage="images/background/genralpanel.jpg";
+	private final UnitCalculator unitcalculator = new UnitCalculator(ApplicationProperties.create().getOptionalRules().getUNITS(),2);
 	private CharacterContainer character;
 	private JTextField textFieldName;
 	private JRadioButton rdbtnMale;
@@ -76,6 +78,8 @@ public class EDGeneral extends JPanel {
 	private JSpinner spinnerAge;
 	private JTextField textFieldPlayer;
 	private JTextField textFieldBirth;
+	private JLabel labelSize;
+	private JLabel labelWeight;
 	private JPanel pnlPortrait;
 	private JLabel lblPortrait;
 	private JButton btnRace;
@@ -285,7 +289,8 @@ public class EDGeneral extends JPanel {
 		add(textFieldHaircolor, "cell 1 12 2 1,growx,aligny center");
 
 		add(new JLabel("Size"), "cell 0 8,alignx right,aligny center");
-		add(new JLabel("feet"), "cell 2 8,alignx left,aligny center");
+		labelSize = new JLabel("feet");
+		add(labelSize, "cell 2 8,alignx left,aligny center");
 		spinnerSize = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerSize.setOpaque(false);
 		spinnerSize.addChangeListener(new ChangeListener() {
@@ -295,8 +300,9 @@ public class EDGeneral extends JPanel {
 		});
 		add(spinnerSize, "cell 1 8,alignx left,aligny center");
 
+		labelWeight=new JLabel("pound");
 		add(new JLabel("Weight"), "cell 0 9,alignx right,aligny center");
-		add(new JLabel("pound"), "cell 2 9,alignx left,aligny center");
+		add(labelWeight, "cell 2 9,alignx left,aligny center");
 		spinnerWeight = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerWeight.setOpaque(false);
 		spinnerWeight.addChangeListener(new ChangeListener() {
@@ -522,14 +528,17 @@ public class EDGeneral extends JPanel {
 		Object value = spinnerWeight.getValue();
 		if( value instanceof Float ) {
 			character.getAppearance().setWeight(((Float)value).floatValue());
+			labelWeight.setText( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
 			return;
 		}
 		if( value instanceof Double ) {
 			character.getAppearance().setWeight(((Double)value).floatValue());
+			labelWeight.setText( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
 			return;
 		}
 		if( value instanceof Integer ) {
 			character.getAppearance().setWeight(((Integer)value).floatValue());
+			labelWeight.setText( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
 			return;
 		}
 		System.err.println("Unexpected object type for spinnerWeight value: "+value.getClass().getName());
@@ -540,14 +549,17 @@ public class EDGeneral extends JPanel {
 		Object value = spinnerSize.getValue();
 		if( value instanceof Float ) {
 			character.getAppearance().setHeight(((Float)value).floatValue());
+			labelSize.setText( unitcalculator.formatLength( character.getAppearance().getHeight() ) );
 			return;
 		}
 		if( value instanceof Double ) {
 			character.getAppearance().setHeight(((Double)value).floatValue());
+			labelSize.setText( unitcalculator.formatLength( character.getAppearance().getHeight() ) );
 			return;
 		}
 		if( value instanceof Integer ) {
 			character.getAppearance().setHeight(((Integer)value).floatValue());
+			labelSize.setText( unitcalculator.formatLength( character.getAppearance().getHeight() ) );
 			return;
 		}
 		System.err.println("Unexpected object type for sinnerSize value: "+value.getClass().getName());

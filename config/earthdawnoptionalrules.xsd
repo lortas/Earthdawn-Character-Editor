@@ -54,6 +54,15 @@
 		</xs:sequence>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="OPTIONALRULES_UNITS_type">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="LENGTH" type="edt:UNIT_type"/>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="WEIGHT" type="edt:UNIT_type"/>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="TIME" type="edt:UNIT_type"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="displayed" type="xs:boolean" use="required"/>
+	</xs:complexType>
 	<xs:element name="OPTIONALRULES">
 		<xs:complexType>
 			<xs:sequence>
@@ -73,6 +82,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="ENDURINGARMORBYSTRENGTH" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="ALIGNINGTALENTSANDSKILLS" type="OPTIONALRULE_type"/>
 				<xs:element minOccurs="1" maxOccurs="1" name="DATEFORMAT" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="UNITS" type="OPTIONALRULES_UNITS_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="MULTIUSETALENT" type="OPTIONALRULES_MULTIUSETALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFAULTOPTIONALTALENT" type="OPTIONALRULES_DEFAULTOPTIONALTALENT"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="ORIGIN" type="OPTIONALRULES_ORIGIN"/>

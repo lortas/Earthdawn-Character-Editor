@@ -9,6 +9,6 @@ public class SpellComparator implements Comparator<SPELLType> {
 		int result = arg0.getName().compareToIgnoreCase(arg1.getName());
 		if( result != 0 ) return result;
 		// Bei gleichem Name sortiere nach Type
-		return arg0.getType().value().compareToIgnoreCase(arg0.getType().value());
+		return arg0.getType().value().compareToIgnoreCase(arg1.getType().value());
 	}
 }

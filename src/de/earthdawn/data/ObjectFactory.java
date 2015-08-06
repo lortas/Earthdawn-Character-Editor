@@ -31,6 +31,19 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
+    private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
+    private final static QName _CHARACTERISTICSATTRIBUTECOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTECOST");
+    private final static QName _CHARACTERISTICSNEWDISCIPLINETALENTCOST_QNAME = new QName("http://earthdawn.com/characteristics", "NEWDISCIPLINETALENTCOST");
+    private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
+    private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
+    private final static QName _CHARACTERISTICSMYSTICARMOR_QNAME = new QName("http://earthdawn.com/characteristics", "MYSTICARMOR");
+    private final static QName _CHARACTERISTICSLEGENDARYSTATUS_QNAME = new QName("http://earthdawn.com/characteristics", "LEGENDARYSTATUS");
+    private final static QName _CHARACTERISTICSHEALTHRATING_QNAME = new QName("http://earthdawn.com/characteristics", "HEALTHRATING");
+    private final static QName _CHARACTERISTICSSTEPDICETABLE_QNAME = new QName("http://earthdawn.com/characteristics", "STEPDICETABLE");
+    private final static QName _CHARACTERISTICSDISCIPLINENR_QNAME = new QName("http://earthdawn.com/characteristics", "DISCIPLINENR");
+    private final static QName _CHARACTERISTICSSKILLLPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "SKILLLPCOST");
+    private final static QName _CHARACTERISTICSATTRIBUTELPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTELPCOST");
     private final static QName _CHARSHEETTEMPLATEBloodDamage_QNAME = new QName("http://earthdawn.com/charsheettemplate", "BloodDamage");
     private final static QName _CHARSHEETTEMPLATEAttributeStepWil_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepWil");
     private final static QName _CHARSHEETTEMPLATEAttributeBaseTou_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeBaseTou");
@@ -142,19 +155,6 @@ public class ObjectFactory {
     private final static QName _CHARSHEETTEMPLATEAttributeStepStr_QNAME = new QName("http://earthdawn.com/charsheettemplate", "AttributeStepStr");
     private final static QName _CHARSHEETTEMPLATERace_QNAME = new QName("http://earthdawn.com/charsheettemplate", "Race");
     private final static QName _CHARSHEETTEMPLATERecoveryTestsperday_QNAME = new QName("http://earthdawn.com/charsheettemplate", "RecoveryTestsperday");
-    private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
-    private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
-    private final static QName _CHARACTERISTICSATTRIBUTECOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTECOST");
-    private final static QName _CHARACTERISTICSNEWDISCIPLINETALENTCOST_QNAME = new QName("http://earthdawn.com/characteristics", "NEWDISCIPLINETALENTCOST");
-    private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
-    private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
-    private final static QName _CHARACTERISTICSMYSTICARMOR_QNAME = new QName("http://earthdawn.com/characteristics", "MYSTICARMOR");
-    private final static QName _CHARACTERISTICSLEGENDARYSTATUS_QNAME = new QName("http://earthdawn.com/characteristics", "LEGENDARYSTATUS");
-    private final static QName _CHARACTERISTICSHEALTHRATING_QNAME = new QName("http://earthdawn.com/characteristics", "HEALTHRATING");
-    private final static QName _CHARACTERISTICSSTEPDICETABLE_QNAME = new QName("http://earthdawn.com/characteristics", "STEPDICETABLE");
-    private final static QName _CHARACTERISTICSDISCIPLINENR_QNAME = new QName("http://earthdawn.com/characteristics", "DISCIPLINENR");
-    private final static QName _CHARACTERISTICSSKILLLPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "SKILLLPCOST");
-    private final static QName _CHARACTERISTICSATTRIBUTELPCOST_QNAME = new QName("http://earthdawn.com/characteristics", "ATTRIBUTELPCOST");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.earthdawn.data
@@ -433,6 +433,14 @@ public class ObjectFactory {
      */
     public THREADRANKType createTHREADRANKType() {
         return new THREADRANKType();
+    }
+
+    /**
+     * Create an instance of {@link UNITType }
+     * 
+     */
+    public UNITType createUNITType() {
+        return new UNITType();
     }
 
     /**
@@ -804,6 +812,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OPTIONALRULESUNITSType }
+     * 
+     */
+    public OPTIONALRULESUNITSType createOPTIONALRULESUNITSType() {
+        return new OPTIONALRULESUNITSType();
+    }
+
+    /**
      * Create an instance of {@link OPTIONALRULESMULTIUSETALENT }
      * 
      */
@@ -1105,6 +1121,123 @@ public class ObjectFactory {
      */
     public CharsheettemplatespellType createCharsheettemplatespellType() {
         return new CharsheettemplatespellType();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
+    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
+        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSATTRIBUTECOST }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ATTRIBUTECOST", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSATTRIBUTECOST> createCHARACTERISTICSATTRIBUTECOST(CHARACTERISTICSATTRIBUTECOST value) {
+        return new JAXBElement<CHARACTERISTICSATTRIBUTECOST>(_CHARACTERISTICSATTRIBUTECOST_QNAME, CHARACTERISTICSATTRIBUTECOST.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSNEWDISCIPLINETALENTCOST }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "NEWDISCIPLINETALENTCOST", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSNEWDISCIPLINETALENTCOST> createCHARACTERISTICSNEWDISCIPLINETALENTCOST(CHARACTERISTICSNEWDISCIPLINETALENTCOST value) {
+        return new JAXBElement<CHARACTERISTICSNEWDISCIPLINETALENTCOST>(_CHARACTERISTICSNEWDISCIPLINETALENTCOST_QNAME, CHARACTERISTICSNEWDISCIPLINETALENTCOST.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "DEFENSERAITING", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSDEFENSERAITING> createCHARACTERISTICSDEFENSERAITING(CHARACTERISTICSDEFENSERAITING value) {
+        return new JAXBElement<CHARACTERISTICSDEFENSERAITING>(_CHARACTERISTICSDEFENSERAITING_QNAME, CHARACTERISTICSDEFENSERAITING.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ENCUMBRANCE", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSENCUMBRANCE> createCHARACTERISTICSENCUMBRANCE(CHARACTERISTICSENCUMBRANCE value) {
+        return new JAXBElement<CHARACTERISTICSENCUMBRANCE>(_CHARACTERISTICSENCUMBRANCE_QNAME, CHARACTERISTICSENCUMBRANCE.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "MYSTICARMOR", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSMYSTICARMOR> createCHARACTERISTICSMYSTICARMOR(CHARACTERISTICSMYSTICARMOR value) {
+        return new JAXBElement<CHARACTERISTICSMYSTICARMOR>(_CHARACTERISTICSMYSTICARMOR_QNAME, CHARACTERISTICSMYSTICARMOR.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSLEGENDARYSTATUS }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "LEGENDARYSTATUS", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSLEGENDARYSTATUS> createCHARACTERISTICSLEGENDARYSTATUS(CHARACTERISTICSLEGENDARYSTATUS value) {
+        return new JAXBElement<CHARACTERISTICSLEGENDARYSTATUS>(_CHARACTERISTICSLEGENDARYSTATUS_QNAME, CHARACTERISTICSLEGENDARYSTATUS.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSHEALTHRATING }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "HEALTHRATING", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSHEALTHRATING> createCHARACTERISTICSHEALTHRATING(CHARACTERISTICSHEALTHRATING value) {
+        return new JAXBElement<CHARACTERISTICSHEALTHRATING>(_CHARACTERISTICSHEALTHRATING_QNAME, CHARACTERISTICSHEALTHRATING.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "STEPDICETABLE", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSSTEPDICETABLE> createCHARACTERISTICSSTEPDICETABLE(CHARACTERISTICSSTEPDICETABLE value) {
+        return new JAXBElement<CHARACTERISTICSSTEPDICETABLE>(_CHARACTERISTICSSTEPDICETABLE_QNAME, CHARACTERISTICSSTEPDICETABLE.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSDISCIPLINENR }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "DISCIPLINENR", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSDISCIPLINENR> createCHARACTERISTICSDISCIPLINENR(CHARACTERISTICSDISCIPLINENR value) {
+        return new JAXBElement<CHARACTERISTICSDISCIPLINENR>(_CHARACTERISTICSDISCIPLINENR_QNAME, CHARACTERISTICSDISCIPLINENR.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "SKILLLPCOST", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSSKILLLPCOST(CHARACTERISTICSCOST value) {
+        return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSSKILLLPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ATTRIBUTELPCOST", scope = CHARACTERISTICS.class)
+    public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSATTRIBUTELPCOST(CHARACTERISTICSCOST value) {
+        return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSATTRIBUTELPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
     }
 
     /**
@@ -2104,123 +2237,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "RecoveryTestsperday", scope = CHARSHEETTEMPLATE.class)
     public JAXBElement<String> createCHARSHEETTEMPLATERecoveryTestsperday(String value) {
         return new JAXBElement<String>(_CHARSHEETTEMPLATERecoveryTestsperday_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "SKILL", scope = CAPABILITIES.class)
-    public JAXBElement<CAPABILITYType> createCAPABILITIESSKILL(CAPABILITYType value) {
-        return new JAXBElement<CAPABILITYType>(_CAPABILITIESSKILL_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSATTRIBUTECOST }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ATTRIBUTECOST", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSATTRIBUTECOST> createCHARACTERISTICSATTRIBUTECOST(CHARACTERISTICSATTRIBUTECOST value) {
-        return new JAXBElement<CHARACTERISTICSATTRIBUTECOST>(_CHARACTERISTICSATTRIBUTECOST_QNAME, CHARACTERISTICSATTRIBUTECOST.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSNEWDISCIPLINETALENTCOST }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "NEWDISCIPLINETALENTCOST", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSNEWDISCIPLINETALENTCOST> createCHARACTERISTICSNEWDISCIPLINETALENTCOST(CHARACTERISTICSNEWDISCIPLINETALENTCOST value) {
-        return new JAXBElement<CHARACTERISTICSNEWDISCIPLINETALENTCOST>(_CHARACTERISTICSNEWDISCIPLINETALENTCOST_QNAME, CHARACTERISTICSNEWDISCIPLINETALENTCOST.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSDEFENSERAITING }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "DEFENSERAITING", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSDEFENSERAITING> createCHARACTERISTICSDEFENSERAITING(CHARACTERISTICSDEFENSERAITING value) {
-        return new JAXBElement<CHARACTERISTICSDEFENSERAITING>(_CHARACTERISTICSDEFENSERAITING_QNAME, CHARACTERISTICSDEFENSERAITING.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSENCUMBRANCE }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ENCUMBRANCE", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSENCUMBRANCE> createCHARACTERISTICSENCUMBRANCE(CHARACTERISTICSENCUMBRANCE value) {
-        return new JAXBElement<CHARACTERISTICSENCUMBRANCE>(_CHARACTERISTICSENCUMBRANCE_QNAME, CHARACTERISTICSENCUMBRANCE.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSMYSTICARMOR }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "MYSTICARMOR", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSMYSTICARMOR> createCHARACTERISTICSMYSTICARMOR(CHARACTERISTICSMYSTICARMOR value) {
-        return new JAXBElement<CHARACTERISTICSMYSTICARMOR>(_CHARACTERISTICSMYSTICARMOR_QNAME, CHARACTERISTICSMYSTICARMOR.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSLEGENDARYSTATUS }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "LEGENDARYSTATUS", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSLEGENDARYSTATUS> createCHARACTERISTICSLEGENDARYSTATUS(CHARACTERISTICSLEGENDARYSTATUS value) {
-        return new JAXBElement<CHARACTERISTICSLEGENDARYSTATUS>(_CHARACTERISTICSLEGENDARYSTATUS_QNAME, CHARACTERISTICSLEGENDARYSTATUS.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSHEALTHRATING }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "HEALTHRATING", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSHEALTHRATING> createCHARACTERISTICSHEALTHRATING(CHARACTERISTICSHEALTHRATING value) {
-        return new JAXBElement<CHARACTERISTICSHEALTHRATING>(_CHARACTERISTICSHEALTHRATING_QNAME, CHARACTERISTICSHEALTHRATING.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSSTEPDICETABLE }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "STEPDICETABLE", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSSTEPDICETABLE> createCHARACTERISTICSSTEPDICETABLE(CHARACTERISTICSSTEPDICETABLE value) {
-        return new JAXBElement<CHARACTERISTICSSTEPDICETABLE>(_CHARACTERISTICSSTEPDICETABLE_QNAME, CHARACTERISTICSSTEPDICETABLE.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSDISCIPLINENR }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "DISCIPLINENR", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSDISCIPLINENR> createCHARACTERISTICSDISCIPLINENR(CHARACTERISTICSDISCIPLINENR value) {
-        return new JAXBElement<CHARACTERISTICSDISCIPLINENR>(_CHARACTERISTICSDISCIPLINENR_QNAME, CHARACTERISTICSDISCIPLINENR.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "SKILLLPCOST", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSSKILLLPCOST(CHARACTERISTICSCOST value) {
-        return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSSKILLLPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CHARACTERISTICSCOST }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://earthdawn.com/characteristics", name = "ATTRIBUTELPCOST", scope = CHARACTERISTICS.class)
-    public JAXBElement<CHARACTERISTICSCOST> createCHARACTERISTICSATTRIBUTELPCOST(CHARACTERISTICSCOST value) {
-        return new JAXBElement<CHARACTERISTICSCOST>(_CHARACTERISTICSATTRIBUTELPCOST_QNAME, CHARACTERISTICSCOST.class, CHARACTERISTICS.class, value);
     }
 
 }

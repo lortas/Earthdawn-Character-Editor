@@ -75,6 +75,71 @@
 	http://download.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
 	-->
 	<DATEFORMAT>yyyy-MM-dd HH:mm</DATEFORMAT>
+	<!--
+	If a unit (length/weight/time) should be printed, use the unit definition which is flagged with displayed=true.
+	Only on unit definition must be flagged with displayed=true.
+	If multiple unit sets are flagged with displayed=true, it will be unknown which will be finally used.
+	-->
+	<UNITS name="metric" displayed="true">
+		<LENGTH name="mm" translation="914.4"/>
+		<LENGTH name="cm" translation="91.44"/>
+		<LENGTH name="m" translation="0.9144"/>
+		<LENGTH name="km" translation="0.0009144"/>
+		<WEIGHT name="mg" translation="453592"/>
+		<WEIGHT name="g" translation="453.592"/>
+		<WEIGHT name="kg" translation="0.453592"/>
+		<WEIGHT name="t" translation="0.000453592"/>
+		<TIME name="s" translation="6"/>
+		<TIME name="rnd" translation="1"/>
+		<TIME name="m" translation="0.1"/>
+		<TIME name="h" translation=".00166666666666666666"/>
+		<TIME name="d" translation=".00006944444444444444"/>
+		<TIME name="w" translation=".00000992063492063492"/>
+	</UNITS>
+	<UNITS name="imperial UK" displayed="false">
+		<LENGTH name="in" translation="36"/>
+		<LENGTH name="ft" translation="3"/>
+		<LENGTH name="yd" translation="1"/>
+		<LENGTH name="fur" translation=".00454545454545454545"/>
+		<LENGTH name="mi" translation=".00056818181818181818"/>
+		<WEIGHT name="gr" translation="7000"/>
+		<WEIGHT name="ct" translation="1700.97"/>
+		<WEIGHT name="dr" translation="256"/>
+		<WEIGHT name="oz" translation="16"/>
+		<WEIGHT name="lb" translation="1"/>
+		<WEIGHT name="st" translation=".07142857142857142857"/>
+		<WEIGHT name="cwt" translation=".00892857142857142857"/>
+		<WEIGHT name="ton" translation=".00044642857142857142"/>
+		<TIME name="s" translation="6"/>
+		<TIME name="rnd" translation="1"/>
+		<TIME name="m" translation="0.1"/>
+		<TIME name="h" translation=".00166666666666666666"/>
+		<TIME name="d" translation=".00006944444444444444"/>
+		<TIME name="w" translation=".00000992063492063492"/>
+	</UNITS>
+	<UNITS name="imperial US" displayed="false">
+		<LENGTH name="in" translation="36"/>
+		<LENGTH name="ft" translation="3"/>
+		<LENGTH name="yd" translation="1"/>
+		<LENGTH name="rd" translation=".18181818181818181818"/>
+		<LENGTH name="ch" translation=".04545454545454545454"/>
+		<LENGTH name="fur" translation=".00454545454545454545"/>
+		<LENGTH name="mi" translation=".00056818181818181818"/>
+		<WEIGHT name="gr" translation="7000"/>
+		<WEIGHT name="ct" translation="1700.97"/>
+		<WEIGHT name="dr" translation="256"/>
+		<WEIGHT name="oz" translation="16"/>
+		<WEIGHT name="lb" translation="1"/>
+		<WEIGHT name="st" translation=".07142857142857142857"/>
+		<WEIGHT name="cwt" translation=".00892857142857142857"/>
+		<WEIGHT name="ton" translation=".00044642857142857142"/>
+		<TIME name="s" translation="6"/>
+		<TIME name="rnd" translation="1"/>
+		<TIME name="m" translation="0.1"/>
+		<TIME name="h" translation=".00166666666666666666"/>
+		<TIME name="d" translation=".00006944444444444444"/>
+		<TIME name="w" translation=".00000992063492063492"/>
+	</UNITS>
 	<!-- The following Rule can be added multiple times and will define which talents can be used more than ones and how many at maximum -->
 	<!-- <MULTIUSETALENT talent="xxx" lang="en" count="10"/> -->
 	<!-- By the following rule you can define if if a specific talent will be added automatically and will not cost an optional talent slot -->

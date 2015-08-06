@@ -702,4 +702,8 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="UNIT_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="translation" type="xs:double" use="required"/>
+	</xs:complexType>
 </xs:schema>
