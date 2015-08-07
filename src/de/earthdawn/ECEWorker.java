@@ -89,6 +89,9 @@ public class ECEWorker {
 
 		character.getEDCHARACTER().setName(character.getName().replaceAll("[^-+ '\"A-Za-z0-9]", ""));
 		character.getEDCHARACTER().setPlayer(character.getPlayer().replaceAll("[^-+ '\"A-Za-z0-9]", ""));
+		final UnitCalculator unitcalculator = new UnitCalculator(ApplicationProperties.create().getOptionalRules().getUNITS(),2);
+		character.getAppearance().setHeightString( unitcalculator.formatLength( character.getAppearance().getHeight() / 3 ) );
+		character.getAppearance().setWeightString( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
 
 		// Die OpenSpell List ist eine generierte Liste und muss daher am Anfang gelöscht werden
 		character.clearOpenSpellList();

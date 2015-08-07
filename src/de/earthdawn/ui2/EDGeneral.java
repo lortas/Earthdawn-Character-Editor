@@ -290,7 +290,7 @@ public class EDGeneral extends JPanel {
 
 		add(new JLabel("Size"), "cell 0 8,alignx right,aligny center");
 		labelSize = new JLabel("feet");
-		add(labelSize, "cell 2 8,alignx left,aligny center");
+		add(labelSize, "cell 2 8,alignx center,aligny center");
 		spinnerSize = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerSize.setOpaque(false);
 		spinnerSize.addChangeListener(new ChangeListener() {
@@ -302,7 +302,7 @@ public class EDGeneral extends JPanel {
 
 		labelWeight=new JLabel("pound");
 		add(new JLabel("Weight"), "cell 0 9,alignx right,aligny center");
-		add(labelWeight, "cell 2 9,alignx left,aligny center");
+		add(labelWeight, "cell 2 9,alignx center,aligny center");
 		spinnerWeight = new JSpinner(new SpinnerNumberModel(0f, 0, 1000, 0.1));
 		spinnerWeight.setOpaque(false);
 		spinnerWeight.addChangeListener(new ChangeListener() {
@@ -526,43 +526,33 @@ public class EDGeneral extends JPanel {
 	protected void do_spinnerWeight_stateChanged(ChangeEvent arg0) {
 		if( character == null ) return;
 		Object value = spinnerWeight.getValue();
-		if( value instanceof Float ) {
-			character.getAppearance().setWeight(((Float)value).floatValue());
-			labelWeight.setText( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
-			return;
-		}
 		if( value instanceof Double ) {
 			character.getAppearance().setWeight(((Double)value).floatValue());
-			labelWeight.setText( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
-			return;
-		}
-		if( value instanceof Integer ) {
+		} else if( value instanceof Float ) {
+			character.getAppearance().setWeight(((Float)value).floatValue());
+		} else if( value instanceof Integer ) {
 			character.getAppearance().setWeight(((Integer)value).floatValue());
-			labelWeight.setText( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
-			return;
+		} else {
+			System.err.println("Unexpected object type for spinnerWeight value: "+value.getClass().getName());
 		}
-		System.err.println("Unexpected object type for spinnerWeight value: "+value.getClass().getName());
+		character.getAppearance().setWeightString( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
+		labelWeight.setText( character.getAppearance().getWeightString() );
 	}
 
 	protected void do_spinnerSize_stateChanged(ChangeEvent arg0) {
 		if( character == null ) return;
 		Object value = spinnerSize.getValue();
-		if( value instanceof Float ) {
-			character.getAppearance().setHeight(((Float)value).floatValue());
-			labelSize.setText( unitcalculator.formatLength( character.getAppearance().getHeight() ) );
-			return;
-		}
 		if( value instanceof Double ) {
 			character.getAppearance().setHeight(((Double)value).floatValue());
-			labelSize.setText( unitcalculator.formatLength( character.getAppearance().getHeight() ) );
-			return;
-		}
-		if( value instanceof Integer ) {
+		} else if( value instanceof Float ) {
+			character.getAppearance().setHeight(((Float)value).floatValue());
+		} else if( value instanceof Integer ) {
 			character.getAppearance().setHeight(((Integer)value).floatValue());
-			labelSize.setText( unitcalculator.formatLength( character.getAppearance().getHeight() ) );
-			return;
+		} else {
+			System.err.println("Unexpected object type for sinnerSize value: "+value.getClass().getName());
 		}
-		System.err.println("Unexpected object type for sinnerSize value: "+value.getClass().getName());
+		character.getAppearance().setHeightString( unitcalculator.formatLength( character.getAppearance().getHeight() / 3 ) );
+		labelSize.setText( character.getAppearance().getHeightString() );
 	}
 
 	protected void do_spinnerAge_stateChanged(ChangeEvent arg0) {

@@ -58,9 +58,9 @@ public class ECEPdfExporter {
 		acroFields.setField( "Eyes", appearance.getEyes() );
 		acroFields.setField( "Gender", appearance.getGender().value() );
 		acroFields.setField( "Hair", appearance.getHair() );
-		acroFields.setField( "Height", String.valueOf(appearance.getHeight()) );
+		acroFields.setField( "Height", appearance.getHeightString() );
 		acroFields.setField( "Skin", appearance.getSkin() );
-		acroFields.setField( "CharacterWeight" , String.valueOf(appearance.getWeight()) );
+		acroFields.setField( "CharacterWeight" , appearance.getWeightString() );
 		acroFields.setField( "Passion" , character.getPassion() );
 		acroFields.setField( "PlayerName" , character.getPlayer() );
 		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
@@ -768,11 +768,9 @@ public class ECEPdfExporter {
 		setAllPdfFields(charsheettemplate.getStringList("Age"),String.valueOf(appearance.getAge()));
 		setAllPdfFields(charsheettemplate.getStringList("Eyes"),appearance.getEyes());
 		setAllPdfFields(charsheettemplate.getStringList("Hair"),appearance.getHair());
-		setAllPdfFields(charsheettemplate.getStringList("Height"),String.format("%.2f m",appearance.getHeight()*0.3048));
+		setAllPdfFields(charsheettemplate.getStringList("Height"),appearance.getHeightString());
 		setAllPdfFields(charsheettemplate.getStringList("Skin"),appearance.getSkin());
-		double weight = 0.453592*appearance.getWeight();
-		if( weight < 10 ) setAllPdfFields(charsheettemplate.getStringList("Weight"),String.format("%.2f kg",weight));
-		else setAllPdfFields(charsheettemplate.getStringList("Weight"),String.format("%.0f kg",weight));
+		setAllPdfFields(charsheettemplate.getStringList("Weight"),appearance.getWeightString());
 		switch(appearance.getGender()) {
 		case MALE:
 			setAllPdfFields(charsheettemplate.getStringList("Gender"),"männlich");

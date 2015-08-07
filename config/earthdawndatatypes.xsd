@@ -643,7 +643,9 @@
 		<xs:attribute name="gender" type="gender_type" use="required"/>
 		<xs:attribute name="age" type="unsigned_int" use="required"/>
 		<xs:attribute name="height" type="unsigned_float" use="required"/>
+		<xs:attribute name="height_string" type="xs:string" default=""/>
 		<xs:attribute name="weight" type="unsigned_float" use="required"/>
+		<xs:attribute name="weight_string" type="xs:string" default=""/>
 		<xs:attribute name="eyes" type="xs:string" use="required"/>
 		<xs:attribute name="hair" type="xs:string" use="required"/>
 		<xs:attribute name="skin" type="xs:string" use="required"/>

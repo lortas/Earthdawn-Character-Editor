@@ -143,9 +143,9 @@
 	</tr>
 	<tr>
 		<td class="edKeyCell">Weight:</td>
-		<td class="edValueCell"><xsl:value-of select="format-number(@weight,'##')" />lb (<xsl:value-of select="format-number(@weight*0.453592,'##')" />kg)</td>
+		<td class="edValueCell"><xsl:value-of select="@weight_string" /></td>
 		<td class="edKeyCell">Height:</td>
-		<td class="edValueCell"><xsl:value-of select="format-number(@height,'##')" />ft (<xsl:value-of select="format-number(@height*0.3048,'##.00')" />m)</td>
+		<td class="edValueCell"><xsl:value-of select="@height_string" /></td>
 		<td class="edKeyCell">Birth:</td>
 		<td class="edValueCell"><xsl:value-of select="@birth" /></td>
 	</tr>
