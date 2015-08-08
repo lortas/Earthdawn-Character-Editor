@@ -42,6 +42,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.UnitCalculator;
 import de.earthdawn.data.*;
 import de.earthdawn.ui2.EDMainWindow;
 
@@ -58,7 +59,8 @@ public class ApplicationProperties {
     private static KNACKS KNACKS = new KNACKS();
 	private static Map<ECERulesetLanguage,SPELLS> SPELLS;
     private static Map<ECERulesetLanguage,List<NAMEGIVERABILITYType>> NAMEGIVERS;
-    private static OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
+	private OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
+	private UnitCalculator unitcalculator = null;
     private static ITEMS ITEMS = new ITEMS();
     private static HELP HELP = new HELP();
     private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
@@ -556,6 +558,17 @@ public class ApplicationProperties {
 
 	public ITEMS getItems() {
 		return ITEMS;
+	}
+
+	public UnitCalculator getUnitCalculator() {
+		if( this.unitcalculator == null ) {
+			this.unitcalculator=new UnitCalculator(getOptionalRules().getUNITS(),2);
+		}
+		return this.unitcalculator;
+	}
+
+	public void clearUnitCalculator() {
+		this.unitcalculator = null;
 	}
 
 	public List<RANDOMNAMERACEType> getRandomNamesByRaces() {

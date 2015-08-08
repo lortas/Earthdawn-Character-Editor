@@ -75,6 +75,7 @@ import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.LanguageType;
 import de.earthdawn.data.MOVEMENTATTRIBUTENameType;
 import de.earthdawn.data.OPTIONALRULES;
+import de.earthdawn.data.OPTIONALRULESUNITSType;
 import de.earthdawn.data.OPTIONALRULEType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.TALENTType;
@@ -1286,6 +1287,34 @@ public class EDMainWindow {
 			mnMovmentRule.add(item);
 		}
 		mnOptRules.add(mnMovmentRule);
+
+		JMenu mnUnits= new JMenu();
+		mnUnits.setName("UNITS");
+		mnUnits.setText(NLS.getString("EDMainWindow.mntmOptRuleUNITS.text"));
+		for( OPTIONALRULESUNITSType  u : OPTIONALRULES.getUNITS() ) {
+			JMenuItem item = new JMenuItem();
+			item.setName(u.getName());
+			item.setText(u.getName());
+			if( u.isDisplayed() ) item.setIcon(yesIcon);
+			else item.setIcon(noIcon);
+			item.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					JMenuItem menuitem = (JMenuItem)arg0.getSource();
+					JPopupMenu pmenu = (JPopupMenu)menuitem.getParent();
+					for( Component item : pmenu.getComponents() ) {
+						if( item instanceof JMenuItem ) ((JMenuItem)item).setIcon(noIcon);
+					}
+					menuitem.setIcon(yesIcon);
+					String name = menuitem.getName();
+					for( OPTIONALRULESUNITSType  u : OPTIONALRULES.getUNITS() ) {
+						u.setDisplayed( u.getName().equals(name) );
+					}
+					PROPERTIES.clearUnitCalculator();
+				}
+			});
+			mnUnits.add(item);
+		}
+		mnOptRules.add(mnUnits);
 
 		JMenuItem mntmDefaultOptionalTalent= new JMenuItem(NLS.getString("EDMainWindow.mntmOptRuleDEFAULTOPTIONALTALENT.text"));
 		mntmDefaultOptionalTalent.addActionListener(new ActionListener() {

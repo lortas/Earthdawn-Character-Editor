@@ -58,7 +58,6 @@ import javax.swing.JButton;
 public class EDGeneral extends JPanel {
 	private static final long serialVersionUID = 3353372429516944708L;
 	private static final String backgroundImage="images/background/genralpanel.jpg";
-	private final UnitCalculator unitcalculator = new UnitCalculator(ApplicationProperties.create().getOptionalRules().getUNITS(),2);
 	private CharacterContainer character;
 	private JTextField textFieldName;
 	private JRadioButton rdbtnMale;
@@ -535,7 +534,7 @@ public class EDGeneral extends JPanel {
 		} else {
 			System.err.println("Unexpected object type for spinnerWeight value: "+value.getClass().getName());
 		}
-		character.getAppearance().setWeightString( unitcalculator.formatWeight( character.getAppearance().getWeight() ) );
+		character.getAppearance().setWeightString( ApplicationProperties.create().getUnitCalculator().formatWeight( character.getAppearance().getWeight() ) );
 		labelWeight.setText( character.getAppearance().getWeightString() );
 	}
 
@@ -551,7 +550,7 @@ public class EDGeneral extends JPanel {
 		} else {
 			System.err.println("Unexpected object type for sinnerSize value: "+value.getClass().getName());
 		}
-		character.getAppearance().setHeightString( unitcalculator.formatLength( character.getAppearance().getHeight() / 3 ) );
+		character.getAppearance().setHeightString( ApplicationProperties.create().getUnitCalculator().formatLength( character.getAppearance().getHeight() / 3 ) );
 		labelSize.setText( character.getAppearance().getHeightString() );
 	}
 
