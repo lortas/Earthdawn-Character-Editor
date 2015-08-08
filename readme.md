@@ -22,6 +22,12 @@ The whole database of the EarthdawnCharacterEditor is stored into XML files with
 
 
 # Change Log #
+## EarthdawnCharacterEditor-0.50-20150808.zip ##
++ BugFix: The talent "Shield Bash" was mis-spelled within the discipline definition of Warrior and Sky Raider.
++ weight/height value transformation to string stored within character xml and used during export.
++ enhance optional rules to define length and weight units. E.g. metric, imperial US, imperial UK
++ add possibility to show user-friendly units.
++ rename some talent names that contains brackets to talent names without brackets.
 ## EarthdawnCharacterEditor-0.49-20150511.zip ##
 + some small enhancements and bug fixes on Ulisses pdf export
 + new pdf export: FasaGames
