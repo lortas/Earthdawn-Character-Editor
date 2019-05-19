@@ -14,9 +14,7 @@
 	<property name="lib" value="./lib/"/>
 	<property name="log" value="${temp}/log/"/>
 	<property name="config" value="./config/"/>
-	<property name="dist" value="${temp}/dist/"/>
-	<property name="jar.dir" value="${temp}/jar/"/>
-	<property name="jar.file" value="${jar.dir}/EarthdawnCharacterEditor.jar"/>
+	<property name="jar.file" value="EarthdawnCharacterEditor.jar"/>
 	<property environment="env"/>
 	<property file="./config/application.properties"/>
 
@@ -43,9 +41,7 @@
 	-->
 	<target name="clean" description="--> Aufräumen">
 		<delete dir="${build}" />
-		<delete dir="${dist}" />
 		<delete dir="${log}" />
-		<delete dir="${jar.dir}" />
 	</target>
 
 	<!--
@@ -66,12 +62,12 @@
 		<tstamp>
 			<format property="cur.date" pattern="yyyy-MM-dd hh:mm:ss" locale="de,DE" />
 		</tstamp>
-		<mkdir dir="${jar.dir}"/>
 		<jar destfile="${jar.file}">
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
-				<attribute name="Class-Path" value="${lib}/itextpdf-5.2.1.jar ${lib}/itext-xtra-5.2.1.jar ${lib}/freemarker.jar ${lib}/gson-2.2.1.jar ${lib}/miglayout-4.0-swing.jar"/>
+				<!-- echo lib/*.jar | sed -e "s/\blib\//\${lib}/g" -->
+				<attribute name="Class-Path" value="${lib}freemarker.jar ${lib}gson-2.2.1.jar ${lib}itextpdf-5.2.1.jar ${lib}itext-xtra-5.2.1.jar ${lib}jaxb-api-2.3.1.jar ${lib}jaxb-core-2.3.0.1.jar ${lib}jaxb-runtime-2.3.0.1.jar ${lib}miglayout-4.0-swing.jar"/>
 				<section name="common">
 					<attribute name="Build-By" value="lortas" />
 					<attribute name="Build-Date" value="${cur.date}" />
@@ -82,11 +78,20 @@
 		</jar>
 	</target>
 
+	<target name="run" depends="jar" description="--> ECE starten">
+		<java jar="${jar.file}" fork="true">
+			<arg value="--rulesetversion"/>
+			<arg value="ED4"/>
+			<arg value="--language"/>
+			<arg value="de"/>
+		</java>
+	</target>
+
 	<!--
 	target: dist
 	-->
 	<target name="dist" depends="jar" description="--> Distribution erzeugen">
-		<zip destfile="${dist}/EarthdawnCharacterEditor.zip" update="false">
+		<zip destfile="EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset dir="./config" prefix="config">
 				<exclude name="spelldescriptions/**"/>
@@ -140,7 +145,7 @@
 			<arg line="addons/config/capabilities/earthdawncompendium.xml"/>
 			<arg line="http://www.earthdawncompendium.com/talents/ece_xml"/>
 		</exec>
-		<zip destfile="${dist}/EarthdawnCharacterEditor-AddOns.zip" update="false">
+		<zip destfile="EarthdawnCharacterEditor-AddOns.zip" update="false">
 			<zipfileset dir="./addons/config/capabilities" prefix="config/capabilities"/>
 			<zipfileset dir="./addons/config/disciplines" prefix="config/disciplines"/>
 			<zipfileset dir="./addons/config/spells" prefix="config/spells"/>
