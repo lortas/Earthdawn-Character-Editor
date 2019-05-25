@@ -625,7 +625,7 @@ public class ECEWorker {
 				float strength = characterAttributes.get(ATTRIBUTENameType.STR).getCurrentvalue();
 				strength *= namegiver.getEnduringarmorfactor();
 				// neuer Stärkewert aufrunden und in der Tabelle für Mystische Armor nachschlagen
-				int relief=berechneMysticArmor(new Double(Math.ceil(strength)).intValue());
+				int relief=berechneMysticArmor(Double.valueOf(Math.ceil(strength)).intValue());
 				// Dies stellt nun den Stärke bassierenden Modifikator dar, mit dem der Charakter besser mit einer Rüstung zurecht kommt
 				// Es darf keine negative Rüstungsbehinderung geben
 				if( currentarmorpenalty < relief ) relief = currentarmorpenalty;

@@ -247,7 +247,7 @@ class DisciplinesTableModel extends AbstractTableModel {
 		case 0:
 			return discipline.getName();
 		case 1:
-			return new Integer(discipline.getCircle());
+			return Integer.valueOf(discipline.getCircle());
 		case 2:
 			return discipline.getPrimelement().value();
 		case 3:
@@ -259,7 +259,7 @@ class DisciplinesTableModel extends AbstractTableModel {
 			if( halfmagic == null ) return "";
 			return halfmagic;
 		default:
-			return new Integer(0);
+			return Integer.valueOf(0);
 		}
 	}
 

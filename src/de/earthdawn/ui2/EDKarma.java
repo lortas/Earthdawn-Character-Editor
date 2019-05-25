@@ -189,7 +189,7 @@ class KarmaTableModel extends AbstractTableModel {
 			if (character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getType().equals(PlusminusType.PLUS)) return new String("+");
 			else return new String("-");
 		case 3:
-			return new Integer(character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getValue());
+			return Integer.valueOf(character.getEDCHARACTER().getKARMA().getKARMAPOINTS().get(row).getValue());
 		default :
 			return new String("Error not defined");
 		}

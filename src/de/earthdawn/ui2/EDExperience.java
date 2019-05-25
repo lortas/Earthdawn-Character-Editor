@@ -232,7 +232,7 @@ class ExperienceTableModel extends AbstractTableModel {
 	    					return new String("-");
 	    				}
 	    		
-	    		case 3: return new Integer(character.getEDCHARACTER().getEXPERIENCE().getLEGENDPOINTS().get(row).getValue());
+			case 3: return Integer.valueOf(character.getEDCHARACTER().getEXPERIENCE().getLEGENDPOINTS().get(row).getValue());
 	    		default : return new String("Error not defined");
 	    	}
         }

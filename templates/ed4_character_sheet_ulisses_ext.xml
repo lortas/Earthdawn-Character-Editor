@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CHARSHEETTEMPLATE menuentryname="ED4 Ulisses Char" filename="ed4_character_sheet_ulisses_ext.pdf" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/charsheettemplate ../config/charsheettemplate.xsd">
+	<CurrentDateTime>Zeitstempel</CurrentDateTime>
+	<Name>Name</Name>
+	<Race>Rasse</Race>
+	<Age>Alter</Age>
+	<Eyes>Augenfarbe</Eyes>
+	<Gender>Geschlecht</Gender>
+	<Hair>Haarfarbe</Hair>
+	<Height>Groesse</Height>
+	<Skin>Hautfarbe</Skin>
+	<Weight>Gewicht</Weight>
+	<Passion></Passion>
+	<Player></Player>
+	<DisciplineName>Disziplin</DisciplineName>
+	<DisciplineCircle>Kreis</DisciplineCircle>
+	<AttributeBaseDex></AttributeBaseDex>
+	<AttributeBaseStr></AttributeBaseStr>
+	<AttributeBaseTou></AttributeBaseTou>
+	<AttributeBasePer></AttributeBasePer>
+	<AttributeBaseWil></AttributeBaseWil>
+	<AttributeBaseCha></AttributeBaseCha>
+	<AttributeCurrentDex>Geschicklichkeit</AttributeCurrentDex>
+	<AttributeCurrentStr>Staerke</AttributeCurrentStr>
+	<AttributeCurrentTou>Zaehigkeit</AttributeCurrentTou>
+	<AttributeCurrentPer>Warnehmung</AttributeCurrentPer>
+	<AttributeCurrentWil>Willenskraft</AttributeCurrentWil>
+	<AttributeCurrentCha>Charisma</AttributeCurrentCha>
+	<AttributeStepDex>Stufe 1</AttributeStepDex>
+	<AttributeStepStr>Stufe 2</AttributeStepStr>
+	<AttributeStepTou>Stufe 3</AttributeStepTou>
+	<AttributeStepPer>Stufe 4</AttributeStepPer>
+	<AttributeStepWil>Stufe 5</AttributeStepWil>
+	<AttributeStepCha>Stufe 6</AttributeStepCha>
+	<AttributeDiceDex>W rfel 1</AttributeDiceDex>
+	<AttributeDiceStr>W rfel 2</AttributeDiceStr>
+	<AttributeDiceTou>W rfel 3</AttributeDiceTou>
+	<AttributeDicePer>W rfel 4</AttributeDicePer>
+	<AttributeDiceWil>W rfel 5</AttributeDiceWil>
+	<AttributeDiceCha>W rfel 6</AttributeDiceCha>
+	<LpincreaseDex truevalue="Ja" falsevalue="Off">Check Box1</LpincreaseDex>
+	<LpincreaseDex truevalue="Ja" falsevalue="Off">Check Box11</LpincreaseDex>
+	<LpincreaseDex truevalue="Ja" falsevalue="Off">Check Box12</LpincreaseDex>
+	<LpincreaseStr truevalue="Ja" falsevalue="Off">Check Box2</LpincreaseStr>
+	<LpincreaseStr truevalue="Ja" falsevalue="Off">Check Box22</LpincreaseStr>
+	<LpincreaseStr truevalue="Ja" falsevalue="Off">Check Box23</LpincreaseStr>
+	<LpincreaseTou truevalue="Ja" falsevalue="Off">Check Box31</LpincreaseTou>
+	<LpincreaseTou truevalue="Ja" falsevalue="Off">Check Box32</LpincreaseTou>
+	<LpincreaseTou truevalue="Ja" falsevalue="Off">Check Box33</LpincreaseTou>
+	<LpincreasePer truevalue="Ja" falsevalue="Off">Check Box41</LpincreasePer>
+	<LpincreasePer truevalue="Ja" falsevalue="Off">Check Box42</LpincreasePer>
+	<LpincreasePer truevalue="Ja" falsevalue="Off">Check Box43</LpincreasePer>
+	<LpincreaseWil truevalue="Ja" falsevalue="Off">Check Box51</LpincreaseWil>
+	<LpincreaseWil truevalue="Ja" falsevalue="Off">Check Box52</LpincreaseWil>
+	<LpincreaseWil truevalue="Ja" falsevalue="Off">Check Box53</LpincreaseWil>
+	<LpincreaseCha truevalue="Ja" falsevalue="Off">Check Box61</LpincreaseCha>
+	<LpincreaseCha truevalue="Ja" falsevalue="Off">Check Box62</LpincreaseCha>
+	<LpincreaseCha truevalue="Ja" falsevalue="Off">Check Box63</LpincreaseCha>
+	<DefencePhysical>KV</DefencePhysical>
+	<DefenceMystic>MV</DefenceMystic>
+	<DefenceSocial>SV</DefenceSocial>
+	<DeathAdjustment></DeathAdjustment>
+	<DeathBase></DeathBase>
+	<DeathValue>Todesschwelle</DeathValue>
+	<UnconsciousnessAdjustment></UnconsciousnessAdjustment>
+	<UnconsciousnessBase></UnconsciousnessBase>
+	<UnconsciousnessValue>Bewusstlosigkeitsschwelle</UnconsciousnessValue>
+	<RecoveryStep></RecoveryStep>
+	<RecoveryDice>Würfel</RecoveryDice>
+	<RecoveryTestsperday>Erholungsproben/&gt;Tag</RecoveryTestsperday>
+	<WoundThreshold>Wundschwelle</WoundThreshold>
+	<BloodWound></BloodWound>
+	<BloodDamage>Blutschaden</BloodDamage>
+	<LegendPointsTotal>Gesamt</LegendPointsTotal>
+	<LegendPointsCurrent>Aktuell</LegendPointsCurrent>
+	<LegendPointsRenown>Ruhm</LegendPointsRenown>
+	<LegendPointsReputation>Ruf</LegendPointsReputation>
+	<InitiativeBase>Geschick</InitiativeBase>
+	<InitiativeDice></InitiativeDice>
+	<InitiativeStep>Modifizierte</InitiativeStep>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.0</Name><Action>Text5.0.0</Action><Strain>Text5.0.1</Strain><Attribute>Text4.0.1</Attribute><AttributeStep>Text4.0.2</AttributeStep><Rank>Text4.0.0</Rank><Step>Text4.0.2</Step><Dice>Text4.0.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.1</Name><Action>Text5.1.0</Action><Strain>Text5.1.1</Strain><Attribute>Text4.1.1</Attribute><AttributeStep>Text4.1.2</AttributeStep><Rank>Text4.1.0</Rank><Step>Text4.1.2</Step><Dice>Text4.1.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.2</Name><Action>Text5.2.0</Action><Strain>Text5.2.1</Strain><Attribute>Text4.2.1</Attribute><AttributeStep>Text4.2.2</AttributeStep><Rank>Text4.2.0</Rank><Step>Text4.2.2</Step><Dice>Text4.2.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.3</Name><Action>Text5.3.0</Action><Strain>Text5.3.1</Strain><Attribute>Text4.3.1</Attribute><AttributeStep>Text4.3.2</AttributeStep><Rank>Text4.3.0</Rank><Step>Text4.3.2</Step><Dice>Text4.3.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.4</Name><Action>Text5.4.0</Action><Strain>Text5.4.1</Strain><Attribute>Text4.4.1</Attribute><AttributeStep>Text4.4.2</AttributeStep><Rank>Text4.4.0</Rank><Step>Text4.4.2</Step><Dice>Text4.4.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.5</Name><Action>Text5.5.0</Action><Strain>Text5.5.1</Strain><Attribute>Text4.5.1</Attribute><AttributeStep>Text4.5.2</AttributeStep><Rank>Text4.5.0</Rank><Step>Text4.5.2</Step><Dice>Text4.5.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.6</Name><Action>Text5.6.0</Action><Strain>Text5.6.1</Strain><Attribute>Text4.6.1</Attribute><AttributeStep>Text4.6.2</AttributeStep><Rank>Text4.6.0</Rank><Step>Text4.6.2</Step><Dice>Text4.6.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.7</Name><Action>Text5.7.0</Action><Strain>Text5.7.1</Strain><Attribute>Text4.7.1</Attribute><AttributeStep>Text4.7.2</AttributeStep><Rank>Text4.7.0</Rank><Step>Text4.7.2</Step><Dice>Text4.7.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.8</Name><Action>Text5.8.0</Action><Strain>Text5.8.1</Strain><Attribute>Text4.8.1</Attribute><AttributeStep>Text4.8.2</AttributeStep><Rank>Text4.8.0</Rank><Step>Text4.8.2</Step><Dice>Text4.8.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.9</Name><Action>Text5.9.0</Action><Strain>Text5.9.1</Strain><Attribute>Text4.9.1</Attribute><AttributeStep>Text4.9.2</AttributeStep><Rank>Text4.9.0</Rank><Step>Text4.9.2</Step><Dice>Text4.9.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.10</Name><Action>Text5.10.0</Action><Strain>Text5.10.1</Strain><Attribute>Text4.10.1</Attribute><AttributeStep>Text4.10.2</AttributeStep><Rank>Text4.10.0</Rank><Step>Text4.10.2</Step><Dice>Text4.10.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.11</Name><Action>Text5.11.0</Action><Strain>Text5.11.1</Strain><Attribute>Text4.11.1</Attribute><AttributeStep>Text4.11.2</AttributeStep><Rank>Text4.11.0</Rank><Step>Text4.11.2</Step><Dice>Text4.11.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.12</Name><Action>Text5.12.0</Action><Strain>Text5.12.1</Strain><Attribute>Text4.12.1</Attribute><AttributeStep>Text4.12.2</AttributeStep><Rank>Text4.12.0</Rank><Step>Text4.12.2</Step><Dice>Text4.12.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.13</Name><Action>Text5.13.0</Action><Strain>Text5.13.1</Strain><Attribute>Text4.13.1</Attribute><AttributeStep>Text4.13.2</AttributeStep><Rank>Text4.13.0</Rank><Step>Text4.13.2</Step><Dice>Text4.13.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.14</Name><Action>Text5.14.0</Action><Strain>Text5.14.1</Strain><Attribute>Text4.14.1</Attribute><AttributeStep>Text4.14.2</AttributeStep><Rank>Text4.14.0</Rank><Step>Text4.14.2</Step><Dice>Text4.14.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.15</Name><Action>Text5.15.0</Action><Strain>Text5.15.1</Strain><Attribute>Text4.15.1</Attribute><AttributeStep>Text4.15.2</AttributeStep><Rank>Text4.15.0</Rank><Step>Text4.15.2</Step><Dice>Text4.15.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.16</Name><Action>Text5.16.0</Action><Strain>Text5.16.1</Strain><Attribute>Text4.16.1</Attribute><AttributeStep>Text4.16.2</AttributeStep><Rank>Text4.16.0</Rank><Step>Text4.16.2</Step><Dice>Text4.16.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.17</Name><Action>Text5.17.0</Action><Strain>Text5.17.1</Strain><Attribute>Text4.17.1</Attribute><AttributeStep>Text4.17.2</AttributeStep><Rank>Text4.17.0</Rank><Step>Text4.17.2</Step><Dice>Text4.17.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>Text3.18</Name><Action>Text5.18.0</Action><Strain>Text5.18.1</Strain><Attribute>Text4.18.1</Attribute><AttributeStep>Text4.18.2</AttributeStep><Rank>Text4.18.0</Rank><Step>Text4.18.2</Step><Dice>Text4.18.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.0</Name><Action>Text9.0</Action><Strain>Text10.0</Strain><Attribute>Text7.0.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.0.0</Rank><Step>Text7.0.2</Step><Dice>Text7.0.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.1</Name><Action>Text9.1</Action><Strain>Text10.1</Strain><Attribute>Text7.1.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.1.0</Rank><Step>Text7.1.2</Step><Dice>Text7.1.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.2</Name><Action>Text9.2</Action><Strain>Text10.2</Strain><Attribute>Text7.2.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.2.0</Rank><Step>Text7.2.2</Step><Dice>Text7.2.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.3</Name><Action>Text9.3</Action><Strain>Text10.3</Strain><Attribute>Text7.3.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.3.0</Rank><Step>Text7.3.2</Step><Dice>Text7.3.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.4</Name><Action>Text9.4</Action><Strain>Text10.4</Strain><Attribute>Text7.4.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.4.0</Rank><Step>Text7.4.2</Step><Dice>Text7.4.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.5</Name><Action>Text9.5</Action><Strain>Text10.5</Strain><Attribute>Text7.5.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.5.0</Rank><Step>Text7.5.2</Step><Dice>Text7.5.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.6</Name><Action>Text9.6</Action><Strain>Text10.6</Strain><Attribute>Text7.6.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.6.0</Rank><Step>Text7.6.2</Step><Dice>Text7.6.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.7</Name><Action>Text9.7</Action><Strain>Text10.7</Strain><Attribute>Text7.7.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.7.0</Rank><Step>Text7.7.2</Step><Dice>Text7.7.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.8</Name><Action>Text9.8</Action><Strain>Text10.8</Strain><Attribute>Text7.8.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.8.0</Rank><Step>Text7.8.2</Step><Dice>Text7.8.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.9</Name><Action>Text9.9</Action><Strain>Text10.9</Strain><Attribute>Text7.9.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.9.0</Rank><Step>Text7.9.2</Step><Dice>Text7.9.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.10</Name><Action>Text9.10</Action><Strain>Text10.10</Strain><Attribute>Text7.10.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.10.0</Rank><Step>Text7.10.2</Step><Dice>Text7.10.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.11</Name><Action>Text9.11</Action><Strain>Text10.11</Strain><Attribute>Text7.11.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.11.0</Rank><Step>Text7.11.2</Step><Dice>Text7.11.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.12</Name><Action>Text9.12</Action><Strain>Text10.12</Strain><Attribute>Text7.12.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.12.0</Rank><Step>Text7.12.2</Step><Dice>Text7.12.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.13</Name><Action>Text9.13</Action><Strain>Text10.13</Strain><Attribute>Text7.13.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.13.0</Rank><Step>Text7.13.2</Step><Dice>Text7.13.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.14</Name><Action>Text9.14</Action><Strain>Text10.14</Strain><Attribute>Text7.14.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.14.0</Rank><Step>Text7.14.2</Step><Dice>Text7.14.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.15</Name><Action>Text9.15</Action><Strain>Text10.15</Strain><Attribute>Text7.15.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.15.0</Rank><Step>Text7.15.2</Step><Dice>Text7.15.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.16</Name><Action>Text9.16</Action><Strain>Text10.16</Strain><Attribute>Text7.16.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.16.0</Rank><Step>Text7.16.2</Step><Dice>Text7.16.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.17</Name><Action>Text9.17</Action><Strain>Text10.17</Strain><Attribute>Text7.17.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.17.0</Rank><Step>Text7.17.2</Step><Dice>Text7.17.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.18</Name><Action>Text9.18</Action><Strain>Text10.18</Strain><Attribute>Text7.18.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.18.0</Rank><Step>Text7.18.2</Step><Dice>Text7.18.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.19</Name><Action>Text9.19</Action><Strain>Text10.19</Strain><Attribute>Text7.19.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.19.0</Rank><Step>Text7.19.2</Step><Dice>Text7.19.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>Text8.20</Name><Action>Text9.20</Action><Strain>Text10.20</Strain><Attribute>Text7.20.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.20.0</Rank><Step>Text7.20.2</Step><Dice>Text7.20.3</Dice><Page></Page></Talent>
+	<Skill><Name>Name 1_2</Name><Action>aktioN 1_2</Action><Strain>aNStReNguNg 1</Strain><AttributeStep>attRibut 1_2</AttributeStep><Rank>RaNg 1_2</Rank><Step>Stufe 1_3</Step><Dice>W Rfel 1_2</Dice></Skill>
+	<Skill><Name>Name 2_2</Name><Action>aktioN 2_2</Action><Strain>aNStReNguNg 2</Strain><AttributeStep>attRibut 2_2</AttributeStep><Rank>RaNg 2_2</Rank><Step>Stufe 2_3</Step><Dice>W Rfel 2_2</Dice></Skill>
+	<Skill><Name>Name 3_2</Name><Action>aktioN 3</Action><Strain>aNStReNguNg 3</Strain><AttributeStep>attRibut 3</AttributeStep><Rank>RaNg 3</Rank><Step>Stufe 3_2</Step><Dice>W Rfel 3</Dice></Skill>
+	<Skill><Name>Name 4_2</Name><Action>aktioN 4</Action><Strain>aNStReNguNg 4</Strain><AttributeStep>attRibut 4</AttributeStep><Rank>RaNg 4</Rank><Step>Stufe 4_2</Step><Dice>W Rfel 4</Dice></Skill>
+	<Skill><Name>Name 5_2</Name><Action>aktioN 5</Action><Strain>aNStReNguNg 5</Strain><AttributeStep>attRibut 5</AttributeStep><Rank>RaNg 5</Rank><Step>Stufe 5_2</Step><Dice>W Rfel 5</Dice></Skill>
+	<Skill><Name>Name 6_2</Name><Action>aktioN 6</Action><Strain>aNStReNguNg 6</Strain><AttributeStep>attRibut 6</AttributeStep><Rank>RaNg 6</Rank><Step>Stufe 6_2</Step><Dice>W Rfel 6</Dice></Skill>
+	<Skill><Name>Name 7_2</Name><Action>aktioN 7</Action><Strain>aNStReNguNg 7</Strain><AttributeStep>attRibut 7</AttributeStep><Rank>RaNg 7</Rank><Step>Stufe 7</Step><Dice>W Rfel 7</Dice></Skill>
+	<Skill><Name>Name 8_2</Name><Action>aktioN 8</Action><Strain>aNStReNguNg 8</Strain><AttributeStep>attRibut 8</AttributeStep><Rank>RaNg 8</Rank><Step>Stufe 8</Step><Dice>W Rfel 8</Dice></Skill>
+	<Skill><Name>Name 9_2</Name><Action>aktioN 9</Action><Strain>aNStReNguNg 9</Strain><AttributeStep>attRibut 9</AttributeStep><Rank>RaNg 9</Rank><Step>Stufe 9</Step><Dice>W Rfel 9</Dice></Skill>
+	<Skill><Name>Name 10</Name><Action>aktioN 10</Action><Strain>aNStReNguNg 10</Strain><AttributeStep>attRibut 10</AttributeStep><Rank>RaNg 10</Rank><Step>Stufe 10</Step><Dice>W Rfel 10</Dice></Skill>
+	<Skill><Name>Name 11</Name><Action>aktioN 11</Action><Strain>aNStReNguNg 11</Strain><AttributeStep>attRibut 11</AttributeStep><Rank>RaNg 11</Rank><Step>Stufe 11</Step><Dice>W Rfel 11</Dice></Skill>
+	<Skill><Name>Name 12</Name><Action>aktioN 12</Action><Strain>aNStReNguNg 12</Strain><AttributeStep>attRibut 12</AttributeStep><Rank>RaNg 12</Rank><Step>Stufe 12</Step><Dice>W Rfel 12</Dice></Skill>
+	<Skill><Name>Name 13</Name><Action>aktioN 13</Action><Strain>aNStReNguNg 13</Strain><AttributeStep>attRibut 13</AttributeStep><Rank>RaNg 13</Rank><Step>Stufe 13</Step><Dice>W Rfel 13</Dice></Skill>
+	<Skill><Name>Name 14</Name><Action>aktioN 14</Action><Strain>aNStReNguNg 14</Strain><AttributeStep>attRibut 14</AttributeStep><Rank>RaNg 14</Rank><Step>Stufe 14</Step><Dice>W Rfel 14</Dice></Skill>
+	<Skill><Name>Name 15</Name><Action>aktioN 15</Action><Strain>aNStReNguNg 15</Strain><AttributeStep>attRibut 15</AttributeStep><Rank>RaNg 15</Rank><Step>Stufe 15</Step><Dice>W Rfel 15</Dice></Skill>
+	<Skill><Name>Name 16</Name><Action>aktioN 16</Action><Strain>aNStReNguNg 16</Strain><AttributeStep>attRibut 16</AttributeStep><Rank>RaNg 16</Rank><Step>Stufe 16</Step><Dice>W Rfel 16</Dice></Skill>
+	<HealthDamage>Aktueller Schaden</HealthDamage>
+	<KarmaCurrent>AktuellesKarma</KarmaCurrent>
+	<KarmaMax>Karmamaximum</KarmaMax>
+	<KarmaModifier>Karmamodifikator</KarmaModifier>
+	<Movement>Bewegungsrate</Movement>
+	<Carrying>Traglast</Carrying>
+	<ArmorMystic>PR</ArmorMystic>
+	<ArmorPhysical>MR</ArmorPhysical>
+	<ArmorPenalty>Rüstungsm</ArmorPenalty>
+	<ShieldMystic></ShieldMystic>
+	<ShieldPhysical></ShieldPhysical>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 1</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 2</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 3</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 4</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 5</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 6</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 7</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 8</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 9</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 10</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>Disziplinboni 11</Ability></DisciplineBonus>
+	<WeaponName>Name 1</WeaponName>
+	<WeaponName>Name 2</WeaponName>
+	<WeaponName>Name 3</WeaponName>
+	<WeaponName>Name 4</WeaponName>
+	<WeaponName>Name 5</WeaponName>
+	<WeaponName>Name 6</WeaponName>
+	<WeaponName>Name 7</WeaponName>
+	<WeaponName>Name 8</WeaponName>
+	<WeaponName>Name 9</WeaponName>
+	<WeaponAttackstep>SchadeNSStufe 1</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 2</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 3</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 4</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 5</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 6</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 7</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 8</WeaponAttackstep>
+	<WeaponAttackstep>SchadeNSStufe 9</WeaponAttackstep>
+	<WeaponSize></WeaponSize>
+	<WeaponTimesforged></WeaponTimesforged>
+	<WeaponShortrange>eNtferNuNg 1</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 2</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 3</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 4</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 5</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 6</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 7</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 8</WeaponShortrange>
+	<WeaponShortrange>eNtferNuNg 9</WeaponShortrange>
+	<WeaponLongrange></WeaponLongrange>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponDamagestep>St 1</WeaponDamagestep>
+	<WeaponDamagestep>St 2</WeaponDamagestep>
+	<WeaponDamagestep>St 3</WeaponDamagestep>
+	<WeaponDamagestep>St 4</WeaponDamagestep>
+	<WeaponDamagestep>St 5</WeaponDamagestep>
+	<WeaponDamagestep>St 6</WeaponDamagestep>
+	<WeaponDamagestep>St 7</WeaponDamagestep>
+	<WeaponDamagestep>St 8</WeaponDamagestep>
+	<WeaponDamagestep>St 9</WeaponDamagestep>
+	<WeaponStep>Stufe W rfel 1</WeaponStep>
+	<WeaponStep>Stufe W rfel 2</WeaponStep>
+	<WeaponStep>Stufe W rfel 3</WeaponStep>
+	<WeaponStep>Stufe W rfel 4</WeaponStep>
+	<WeaponStep>Stufe W rfel 5</WeaponStep>
+	<WeaponStep>Stufe W rfel 6</WeaponStep>
+	<WeaponStep>Stufe W rfel 7</WeaponStep>
+	<WeaponStep>Stufe W rfel 8</WeaponStep>
+	<WeaponStep>Stufe W rfel 9</WeaponStep>
+	<WeaponDice></WeaponDice>
+	<InventoryDescription>Ausr stung 1</InventoryDescription>
+	<InventoryDescription>Ausr stung 2</InventoryDescription>
+	<InventoryDescription>Ausr stung 3</InventoryDescription>
+	<InventoryDescription>Ausr stung 4</InventoryDescription>
+	<InventoryDescription>Ausr stung 5</InventoryDescription>
+	<InventoryDescription>Ausr stung 6</InventoryDescription>
+	<InventoryDescription>Ausr stung 7</InventoryDescription>
+	<InventoryDescription>Ausr stung 8</InventoryDescription>
+	<InventoryDescription>Ausr stung 9</InventoryDescription>
+	<InventoryDescription>Ausr stung 10</InventoryDescription>
+	<InventoryDescription>Ausr stung 11</InventoryDescription>
+	<MoneyCopper>Kupfer</MoneyCopper>
+	<MoneySilver>Silber</MoneySilver>
+	<MoneyGold>Gold</MoneyGold>
+	<MoneyOther>Sonstige</MoneyOther>
+	<ThreadItemName>Name 1_3</ThreadItemName>
+	<ThreadItemName>Name 2_3</ThreadItemName>
+	<ThreadItemName>Name 3_3</ThreadItemName>
+	<ThreadItemName>Name 4_3</ThreadItemName>
+	<ThreadItemName>Name 5_3</ThreadItemName>
+	<ThreadItemName>Name 6_3</ThreadItemName>
+	<ThreadItemName>Name 7_3</ThreadItemName>
+	<ThreadItemName>Name 8_3</ThreadItemName>
+	<ThreadItemName>Name 9_3</ThreadItemName>
+	<ThreadItemName>Name 10_2</ThreadItemName>
+	<ThreadItemThreadRank>RaNg 1_3</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 2_3</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 3_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 4_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 5_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 6_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 7_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 8_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 9_2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>RaNg 10_2</ThreadItemThreadRank>
+	<ThreadItemThreadEffect>WiRkuNg 1</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 2</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 3</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 4</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 5</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 6</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 7</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 8</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 9</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>WiRkuNg 10</ThreadItemThreadEffect>
+	<Spell><Name>NAME 1</Name><Circle>KREIS f ÄDEN SCHWIERIGKEIT SCHWIERIGKEIT DAUER</Circle><Threads>1_9</Threads><Weavingdifficulty>1_10</Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty>1_11</Castingdifficulty><Duration>1_12</Duration><Effect>WIRKUNG 1</Effect></Spell>
+	<Spell><Name>NAME 2</Name><Circle>1_8</Circle><Threads>2_9</Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 3</Name><Circle>2_8</Circle><Threads>3_3</Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 4</Name><Circle>3_2</Circle><Threads>4_3</Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 5</Name><Circle>4_2</Circle><Threads>4_4</Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 6</Name><Circle>5_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 7</Name><Circle>6_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 8</Name><Circle>7_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 9</Name><Circle>8_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 10</Name><Circle>9_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 11</Name><Circle>10_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 12</Name><Circle>11_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 13</Name><Circle>12_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 14</Name><Circle>13_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 15</Name><Circle>14_2</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 16</Name><Circle>15_3</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 17</Name><Circle>16</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 18</Name><Circle>17</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>NAME 19</Name><Circle>18</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>2_7</Name><Circle>19</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>3</Name><Circle>20</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>4</Name><Circle>21</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>5</Name><Circle>22</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>6</Name><Circle>23</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>7</Name><Circle>24</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>8</Name><Circle>25</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>9</Name><Circle>26</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>10</Name><Circle>27</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>11</Name><Circle>28</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>12</Name><Circle>29</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>13</Name><Circle>30</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>14</Name><Circle>31</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>15_2</Name><Circle>32</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>15_3</Name><Circle>32</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>2_14</Name><Circle>1_16</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>1_15</Name><Circle>2_16</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>2_15</Name><Circle>3_9</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>3_8</Name><Circle>4_9</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>4_8</Name><Circle>5_9</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>5_8</Name><Circle>6_9</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>6_8</Name><Circle>7_9</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>7_8</Name><Circle>8_9</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>8_8</Name><Circle>9_8</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+	<Spell><Name>9_8</Name><Circle>10_7</Circle><Threads></Threads><Weavingdifficulty></Weavingdifficulty><Reattuningdifficulty></Reattuningdifficulty><Castingdifficulty></Castingdifficulty><Duration></Duration><Effect>WIRKUNG 2</Effect></Spell>
+</CHARSHEETTEMPLATE>

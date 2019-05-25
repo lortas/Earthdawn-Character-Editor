@@ -97,12 +97,12 @@ class AttributesTableModel extends AbstractTableModel {
 	private CharacterContainer character;
 	private String[] columnNames = {"Attribute", "Base", "Buy", "LP increase", "Final", "Step", "Dice"};
 	private Object[][] data = {
-	{"Dexterity"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
-	{"Strength"		, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
-	{"Toughness"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
-	{"Perception"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
-	{"Willpower"	, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
-	{"Charisma"		, new Integer(0), new Integer(0), new Integer(0), new Integer(0), new Integer(0), ""},
+	{"Dexterity"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"Strength"		, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"Toughness"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"Perception"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"Willpower"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"Charisma"		, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
 	};
 	private ATTRIBUTENameType[] columnKey = {ATTRIBUTENameType.DEX, ATTRIBUTENameType.STR, ATTRIBUTENameType.TOU, ATTRIBUTENameType.PER, ATTRIBUTENameType.WIL, ATTRIBUTENameType.CHA};
 	public void setCharacter(CharacterContainer character) {
@@ -132,13 +132,13 @@ class AttributesTableModel extends AbstractTableModel {
 		ATTRIBUTEType attribute = character.getAttributes().get(columnKey[row]);
 		switch (col) {
 		case 0:  return data[row][col]; 
-		case 1:  return new Integer(attribute.getRacevalue());
-		case 2:  return new Integer(attribute.getGenerationvalue());
-		case 3:  return new Integer(attribute.getLpincrease());
-		case 4:  return new Integer(attribute.getCurrentvalue());
-		case 5:  return new Integer(attribute.getStep());
+		case 1:  return Integer.valueOf(attribute.getRacevalue());
+		case 2:  return Integer.valueOf(attribute.getGenerationvalue());
+		case 3:  return Integer.valueOf(attribute.getLpincrease());
+		case 4:  return Integer.valueOf(attribute.getCurrentvalue());
+		case 5:  return Integer.valueOf(attribute.getStep());
 		case 6:  return (attribute.getDice()==null)?"NA":attribute.getDice();
-		default: return new Integer(0);
+		default: return Integer.valueOf(0);
 	}
 }
 

@@ -309,7 +309,7 @@ class TalentsTableModel extends AbstractTableModel {
 		TALENTTEACHERType teacher = talent.getTEACHER();
 		switch (col) {
 		case 0:
-			return new Integer(talent.getCircle());
+			return Integer.valueOf(talent.getCircle());
 		case 1:
 			String result = talent.getName();
 			if( talent.getRealigned() > 0 ) {
@@ -322,8 +322,8 @@ class TalentsTableModel extends AbstractTableModel {
 		case 3:
 			if( talent.getAttribute() == null ) return ATTRIBUTENameType.NA.value();
 			return talent.getAttribute().value();
-		case 4: return new Integer(talent.getRANK().getStartrank());
-		case 5: return new Integer(talent.getRANK().getRank());
+		case 4: return Integer.valueOf(talent.getRANK().getStartrank());
+		case 5: return Integer.valueOf(talent.getRANK().getRank());
 		case 6: return talent.getRANK().getStep();
 		case 7:
 			if( talent.getRANK().getDice() == null ) return "-";
@@ -341,7 +341,7 @@ class TalentsTableModel extends AbstractTableModel {
 			default: return "OptionalTalent"; 
 			}
 		case 11: return talent.getBookref();
-		default: return new Integer(0);
+		default: return Integer.valueOf(0);
 		}
 	}
 

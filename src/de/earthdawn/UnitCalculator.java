@@ -43,9 +43,9 @@ public class UnitCalculator {
 		int match = 0;
 		for( UNITType u : units ) {
 			if( value <= 0 ) break;
-			int tmp = new Double(Math.floor(0.07 + value * u.getTranslation())).intValue();
+			int tmp = Double.valueOf(Math.floor(0.07 + value * u.getTranslation())).intValue();
 			if( tmp > 0 ) {
-				value -= new Double(tmp).doubleValue() / u.getTranslation();
+				value -= Double.valueOf(tmp).doubleValue() / u.getTranslation();
 				sb.append(String.format(" %d%s",tmp,u.getName()));
 				match++;
 			}

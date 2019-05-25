@@ -134,7 +134,6 @@ public class EDMainWindow {
 	}
 
 	protected void finalize() throws Throwable {
-		super.finalize();
 		if( dicingWindow!=null) {
 			dicingWindow.setVisible(false);
 			dicingWindow.dispose();
@@ -144,6 +143,7 @@ public class EDMainWindow {
 			panelEDThreadItems.setVisible(false);
 			panelEDThreadItems=null;
 		}
+		super.finalize();
 	}
 
 	public void setVisible(boolean isVisible) {
@@ -213,7 +213,7 @@ public class EDMainWindow {
 		menuBar.add(mnFile);
 
 		JMenuItem mntmNew = new JMenuItem(NLS.getString("EDMainWindow.mntmNew.text"));
-		mntmNew.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
+		mntmNew.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK));
 		mntmNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmNew_actionPerformed(arg0);
@@ -222,7 +222,7 @@ public class EDMainWindow {
 		mnFile.add(mntmNew);
 
 		JMenuItem mntmOpen = new JMenuItem(NLS.getString("EDMainWindow.mntmOpen.text")); //$NON-NLS-1$
-		mntmOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
+		mntmOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
 		mntmOpen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmOpen_actionPerformed(arg0);
@@ -231,7 +231,7 @@ public class EDMainWindow {
 		mnFile.add(mntmOpen);
 
 		JMenuItem mntmSave = new JMenuItem(NLS.getString("EDMainWindow.mntmSave.text")); //$NON-NLS-1$
-		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
+		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmSave_actionPerformed(arg0);
@@ -240,7 +240,7 @@ public class EDMainWindow {
 		mnFile.add(mntmSave);
 
 		JMenuItem mntmSaveAs = new JMenuItem(NLS.getString("EDMainWindow.mntmSaveAs.text")); //$NON-NLS-1$
-		mntmSaveAs.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK|InputEvent.SHIFT_MASK));
+		mntmSaveAs.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK|InputEvent.SHIFT_DOWN_MASK));
 		mntmSaveAs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmSaveAs_actionPerformed(arg0);
@@ -306,6 +306,14 @@ public class EDMainWindow {
 		mntmExportGeneric.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmExport_actionPerformed(arg0,6);
+			}
+		});
+		mntmPdfExport.add(mntmExportGeneric);
+
+		mntmExportGeneric = new JMenuItem("ED4 Ulisses Char"); //$NON-NLS-1$
+		mntmExportGeneric.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmExport_actionPerformed(arg0,8);
 			}
 		});
 		mntmPdfExport.add(mntmExportGeneric);
@@ -389,7 +397,7 @@ public class EDMainWindow {
 		mntmJsonExport.add(mntmGson);
 
 		JMenuItem mntmHtml = new JMenuItem(NLS.getString("EDMainWindow.mntmXML2Html.text")); //$NON-NLS-1$
-		mntmHtml.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_MASK));
+		mntmHtml.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_DOWN_MASK));
 		mntmHtml.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmHtml_actionPerformed(arg0);
@@ -406,7 +414,7 @@ public class EDMainWindow {
 		mntmExport.add(mntmItems);
 
 		JMenuItem mntmClose = new JMenuItem(NLS.getString("EDMainWindow.mntmClose.text")); //$NON-NLS-1$
-		mntmClose.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
+		mntmClose.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_DOWN_MASK));
 		mntmClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmClose_actionPerformed(arg0);
@@ -418,7 +426,7 @@ public class EDMainWindow {
 		menuBar.add(mnView);
 
 		JMenuItem mntmWebBrowser= new JMenuItem(NLS.getString("EDMainWindow.mntmWebBrowser.text")); //$NON-NLS-1$
-		mntmWebBrowser.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_MASK));
+		mntmWebBrowser.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_DOWN_MASK));
 		mntmWebBrowser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmWebBrowser_actionPerformed(arg0);
@@ -427,7 +435,7 @@ public class EDMainWindow {
 		mnView.add(mntmWebBrowser);
 
 		JMenuItem mntmFullscreen = new JMenuItem(NLS.getString("EDMainWindow.mntmFullscreen.text")); //$NON-NLS-1$
-		mntmFullscreen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_MASK));
+		mntmFullscreen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_DOWN_MASK));
 		mntmFullscreen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if( frame.getExtendedState() == JFrame.NORMAL ) {
@@ -443,7 +451,7 @@ public class EDMainWindow {
 		menuBar.add(mnExtra);
 
 		JMenuItem mntmDicing= new JMenuItem(NLS.getString("EDMainWindow.mntmDicing.text")); //$NON-NLS-1$
-		mntmDicing.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_MASK));
+		mntmDicing.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK));
 		mntmDicing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				do_mntmDicing_actionPerformed(arg0);
@@ -923,6 +931,7 @@ public class EDMainWindow {
 				case 5 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_fasagames.xml"), selFile); break;
 				case 6 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_ulisses.xml"), selFile); break;
 				case 7 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_Ajfel+Mordom_en.xml"), selFile); break;
+				case 8 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_ulisses_ext.xml"), selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 				if( Desktop.isDesktopSupported() ) {

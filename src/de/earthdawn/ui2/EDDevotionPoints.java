@@ -254,7 +254,7 @@ class DevotionPointsTableModel extends AbstractTableModel {
 							return new String("-");
 						}
 				
-				case 3: return new Integer(accounting.getValue());
+				case 3: return Integer.valueOf(accounting.getValue());
 				default : return new String("Error not defined");
 			}
 		} else {

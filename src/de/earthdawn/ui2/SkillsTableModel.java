@@ -74,8 +74,8 @@ public class SkillsTableModel extends AbstractTableModel {
 			if( skill.getLIMITATION().size()<1 ) return "-";
 			return skill.getLIMITATION().get(0);
 		case 2: return skill.getAttribute();
-		case 3: return new Integer(skill.getRANK().getStartrank());
-		case 4: return new Integer(skill.getRANK().getRank());
+		case 3: return Integer.valueOf(skill.getRANK().getStartrank());
+		case 4: return Integer.valueOf(skill.getRANK().getRank());
 		case 5: return skill.getAction().value();
 		case 6: return skill.getRANK().getStep();
 		case 7: return skill.getRANK().getDice();

@@ -56,7 +56,7 @@ public class NameGenerator {
 					creativityByRaceByGender = new ArrayList<Integer>();
 					creativityByRace.put(currentGender, creativityByRaceByGender);
 				}
-				while( creativityByRaceByGender.size() <= currentPart ) creativityByRaceByGender.add(new Integer(0));
+				while( creativityByRaceByGender.size() <= currentPart ) creativityByRaceByGender.add(Integer.valueOf(0));
 				creativityByRaceByGender.set(currentPart, RandomnameNames.getCreativity());
 				String nameList = RandomnameNames.getValue().trim();
 				for( String name : nameList.split(RandomnameNames.getDelimiter()) ) {
