@@ -22,7 +22,7 @@
 	right now implemented are racial movement rate modifier based on "STR", "DEX" or "na"
 	The last on means no movement rate modification.
 	-->
-	<ATTRIBUTEBASEDMOVEMENT attribute="STR+DEX"/>
+	<ATTRIBUTEBASEDMOVEMENT attribute="na"/>
 	<!-- By the following rule you can define if the attribute increase will cost legend points or not -->
 	<LEGENDPOINTSFORATTRIBUTEINCREASE used="yes"/>
 	<!--
