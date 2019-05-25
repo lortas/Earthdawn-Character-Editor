@@ -9,9 +9,10 @@
 	<!--
 		konstanten
 	-->
-	<property name="temp" value="temp"/>
-	<property name="build" value="bin/"/>
+	<property name="source" value="./src/"/>
+	<property name="build" value="./bin/"/>
 	<property name="lib" value="./lib/"/>
+	<property name="doc" value="./doc/"/>
 	<property name="config" value="./config/"/>
 	<property name="jar.file" value="EarthdawnCharacterEditor.jar"/>
 	<property environment="env"/>
@@ -32,6 +33,7 @@
 	-->
 	<target name="init" description="--> Projekt aufsetzen">
 		<mkdir dir="${build}" />
+		<mkdir dir="${doc}" />
 	</target>
 
 	<!--
@@ -39,17 +41,27 @@
 	-->
 	<target name="clean" description="--> Aufräumen">
 		<delete dir="${build}" />
+		<delete dir="${doc}" />
 	</target>
 
 	<!--
 	target: compile
 	-->
 	<target name="compile" depends="init" description="--> Projekt übersetzen">
-		<copy file="./src/de/earthdawn/ui2/NLS_de.properties" todir="${build}/de/earthdawn/ui2/"/>
-		<copy file="./src/de/earthdawn/ui2/NLS.properties" todir="${build}/de/earthdawn/ui2/"/>
-		<javac srcdir="./src" destdir="${build}" debug="on" includeantruntime="false">
+		<copy file="${source}de/earthdawn/ui2/NLS_de.properties" todir="${build}/de/earthdawn/ui2/"/>
+		<copy file="${source}de/earthdawn/ui2/NLS.properties" todir="${build}/de/earthdawn/ui2/"/>
+		<javac srcdir="${source}" destdir="${build}" debug="on" includeantruntime="false">
 			<classpath refid="classpath.compile" />
 		</javac>
+	</target>
+
+	<!--
+	target: javadoc
+	-->
+	<target name="javadoc" depends="init" description="generate documentation">
+		<javadoc sourcepath="${source}" destdir="${doc}">
+			<classpath refid="classpath.compile" />
+		</javadoc>
 	</target>
 
 	<!--
