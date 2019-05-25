@@ -10,9 +10,8 @@
 		konstanten
 	-->
 	<property name="temp" value="temp"/>
-	<property name="build" value="${temp}/bin/"/>
+	<property name="build" value="bin/"/>
 	<property name="lib" value="./lib/"/>
-	<property name="log" value="${temp}/log/"/>
 	<property name="config" value="./config/"/>
 	<property name="jar.file" value="EarthdawnCharacterEditor.jar"/>
 	<property environment="env"/>
@@ -32,7 +31,6 @@
 	target: init
 	-->
 	<target name="init" description="--> Projekt aufsetzen">
-		<mkdir dir="${temp}" />
 		<mkdir dir="${build}" />
 	</target>
 
@@ -41,7 +39,6 @@
 	-->
 	<target name="clean" description="--> Aufräumen">
 		<delete dir="${build}" />
-		<delete dir="${log}" />
 	</target>
 
 	<!--
