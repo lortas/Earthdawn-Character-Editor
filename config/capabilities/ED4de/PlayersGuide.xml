@@ -132,7 +132,6 @@
 	<TALENT name="Klettern" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Klingen Jonglieren" attribute="DEX" action="standard" strain="1 (s. Text)" skilluse="5"/>
 	<TALENT name="Kobrastoß" attribute="DEX" action="free" strain="2"/>
-	<TALENT name="Kompasspfeil" attribute="PER" action="standard" strain="2"/>
 	<TALENT name="Konversation" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Krallenhand" attribute="STR" bonus="3" action="simple"/>
 	<TALENT name="Kreisender Spion" attribute="PER" action="standard"/>
@@ -150,6 +149,7 @@
 	<TALENT name="Magische Maske" attribute="PER" action="standard"/>
 	<TALENT name="Manövrieren" attribute="DEX" action="simple" strain="1" skilluse="1"/>
 	<TALENT name="Mentale Tierkontrolle" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Mystische Verfolgung" attribute="PER" action="standard" strain="2"/>
 	<TALENT name="Nachtflieger Befehligen" attribute="WIL" action="sustained" strain="1"/>
 	<TALENT name="Nachtreten" attribute="DEX" action="simple" strain="1" skilluse="1"/>
 	<TALENT name="Nahkampfwaffen" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>

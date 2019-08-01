@@ -27,7 +27,7 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<DISCIPLINETALENT name="Kompasspfeil"/>
+		<DISCIPLINETALENT name="Mystische Verfolgung"/>
 		<TALENTABILITY/>
 		<KARMA spend="auf Initiativproben"/>
 	</CIRCLE>

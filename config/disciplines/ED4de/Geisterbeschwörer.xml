@@ -76,7 +76,7 @@
 		<OPTIONALTALENT name="Lebensblick"/>
 		<OPTIONALTALENT name="Löwenherz"/>
 		<OPTIONALTALENT name="Schadensverteilung"/>
-		<OPTIONALTALENT name="Stählener Blick"/>
+		<OPTIONALTALENT name="Stählerner Blick"/>
 		<OPTIONALTALENT name="Verbannen"/>
 		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="F1"/>
 		<DISCIPLINETALENT name="Beschwören" limitation="Verbündete Geister"/>

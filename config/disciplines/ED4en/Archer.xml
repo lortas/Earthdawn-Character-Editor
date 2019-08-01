@@ -12,12 +12,12 @@
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<OPTIONALTALENT name="Tracking"/>
 		<OPTIONALTALENT name="Wilderness Survival"/>
-		<FREETALENT name="Call Missle"/>
+		<FREETALENT name="Call Missile"/>
 		<DISCIPLINETALENT name="Avoid Blow"/>
-		<DISCIPLINETALENT name="Missle Weapons"/>
+		<DISCIPLINETALENT name="Missile Weapons"/>
 		<DISCIPLINETALENT name="Mystic Aim"/>
 		<DISCIPLINETALENT name="Thread Weaving" limitation="Arrow Weaving"/>
-		<DISCIPLINETALENT name="Thrue Shot"/>
+		<DISCIPLINETALENT name="True Shot"/>
 		<TALENTABILITY/>
 		<KARMA spend="on Perception tests, rely on sight only"/>
 	</CIRCLE>
@@ -32,7 +32,7 @@
 		<KARMA spend=" on Initiative tests"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
-		<DISCIPLINETALENT name="long Shot"/>
+		<DISCIPLINETALENT name="Long Shot"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
