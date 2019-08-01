@@ -425,6 +425,15 @@ public class EDMainWindow {
 		JMenu mnView = new JMenu(NLS.getString("EDMainWindow.mnView.text")); //$NON-NLS-1$
 		menuBar.add(mnView);
 
+		JMenuItem mntmUpdateChar= new JMenuItem(NLS.getString("EDMainWindow.mntmUpdateChar.text")); //$NON-NLS-1$
+		mntmUpdateChar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_DOWN_MASK));
+		mntmUpdateChar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_mntmUpdateChar_actionPerformed(arg0);
+			}
+		});
+		mnView.add(mntmUpdateChar);
+
 		JMenuItem mntmWebBrowser= new JMenuItem(NLS.getString("EDMainWindow.mntmWebBrowser.text")); //$NON-NLS-1$
 		mntmWebBrowser.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_DOWN_MASK));
 		mntmWebBrowser.addActionListener(new ActionListener() {
@@ -1108,6 +1117,10 @@ public class EDMainWindow {
 		if( fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION ) return null;
 		// Only Save file if OK/Yes was pressed
 		return fc.getSelectedFile();
+	}
+
+	protected void do_mntmUpdateChar_actionPerformed(ActionEvent arg0) {
+		character.refesh();
 	}
 
 	protected void do_mntmWebBrowser_actionPerformed(ActionEvent arg0) {
