@@ -352,7 +352,9 @@
 	</xs:complexType>
 	<xs:complexType name="MOVEMENT_type">
 		<xs:attribute name="flight" type="unsigned_int"/>
+		<xs:attribute name="flight_string" type="xs:string" default=""/>
 		<xs:attribute name="ground" type="unsigned_int" use="required"/>
+		<xs:attribute name="ground_string" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="DISCIPLINEBONUS_type">
 		<xs:attribute name="circle" type="circle_type" use="required"/>
