@@ -25,8 +25,8 @@ public class EDDicing extends JFrame {
 	private JPanel panelLeft = new JPanel();
 	private JPanel panelRight = new JPanel();
 	private JScrollPane scrollPane = new JScrollPane();
-	JComboBox comboBoxNewDiceStep = new JComboBox();
-	JComboBox comboBoxDestinationDiceCup = new JComboBox();
+	JComboBox<String> comboBoxNewDiceStep = new JComboBox<String>();
+	JComboBox<String> comboBoxDestinationDiceCup = new JComboBox<String>();
 
 	public EDDicing(JFrame parent) {
 		super(frameName);
@@ -42,7 +42,7 @@ public class EDDicing extends JFrame {
 
 		panelLeft.setLayout(new MigLayout("", "[100px:n]", "[20px:n][20px:n][20px:n][20px:n][20px:n][20px:n]"));
 
-		JComboBox comboBoxAmountDiceCup = new JComboBox();
+		JComboBox<String> comboBoxAmountDiceCup = new JComboBox<String>();
 		for( int i=1; i<20; i++ ) {
 			comboBoxAmountDiceCup.addItem(String.valueOf(i));
 		}
