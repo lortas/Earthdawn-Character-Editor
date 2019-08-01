@@ -28,7 +28,7 @@
 		<!-- Heading -->
 		<div style="text-align:center; vertical-align:center;background-color:#802A2A">
 			<span class="edHeader">Earthdawn</span>
-			<img class="edIcon" width="30%">
+			<img class="edIcon" height="100pt">
 				<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>images/ed-logo.png</xsl:text></xsl:attribute>
 			</img>
 			<span class="edHeader">Character Sheet</span>
