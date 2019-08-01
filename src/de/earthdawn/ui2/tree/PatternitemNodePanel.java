@@ -30,6 +30,7 @@ public class PatternitemNodePanel extends AbstractNodePanel<PATTERNITEMType> {
 	private JSpinner spinnerSpelldefense;
 	private JSpinner spinnerWaventhreadrank;
 	private JTextField textFieldName;
+	private JTextField textFieldDescription;
 	private JTextField textFieldEffect;
 	private JTextField textFieldKeyknowledge;
 	private JTextField textFieldTruepattern;
@@ -97,21 +98,27 @@ public class PatternitemNodePanel extends AbstractNodePanel<PATTERNITEMType> {
 		add(textFieldBookRef, "cell 1 3,growx,aligny center");
 		textFieldBookRef.setColumns(10);
 
-		add(new JLabel("True Pattern"), "cell 0 4");
+		add(new JLabel("Description"), "cell 0 4");
+		textFieldDescription = new JTextField();
+		add(textFieldDescription, "cell 1 4 5 1,growx,aligny center");
+		textFieldDescription.setColumns(12);
+		textFieldDescription.setText(nodeObject.getDESCRIPTION());
+
+		add(new JLabel("True Pattern"), "cell 0 5");
 		textFieldTruepattern = new JTextField();
-		add(textFieldTruepattern, "cell 1 4 5 1,growx,aligny center");
+		add(textFieldTruepattern, "cell 1 5 5 1,growx,aligny center");
 		textFieldTruepattern.setColumns(12);
 		textFieldTruepattern.setText(nodeObject.getTruepattern());
 
-		add(new JLabel("Key Knowledge"), "cell 0 5");
+		add(new JLabel("Key Knowledge"), "cell 0 6");
 		textFieldKeyknowledge = new JTextField();
-		add(textFieldKeyknowledge, "cell 1 5 5 1,growx,aligny center");
+		add(textFieldKeyknowledge, "cell 1 6 5 1,growx,aligny center");
 		textFieldKeyknowledge.setColumns(12);
 		textFieldKeyknowledge.setText(nodeObject.getKeyknowledge());
 
-		add(new JLabel("Effect"), "cell 0 6");
+		add(new JLabel("Effect"), "cell 0 7");
 		textFieldEffect = new JTextField();
-		add(textFieldEffect, "cell 1 6 4 1,growx,aligny center");
+		add(textFieldEffect, "cell 1 7 4 1,growx,aligny center");
 		textFieldEffect.setColumns(12);
 		textFieldEffect.setText(nodeObject.getEffect());
 
@@ -138,6 +145,7 @@ public class PatternitemNodePanel extends AbstractNodePanel<PATTERNITEMType> {
 		nodeObject.setTruepattern(textFieldTruepattern.getText());
 		nodeObject.setWeaventhreadrank((Integer) spinnerWaventhreadrank.getValue());
 		nodeObject.setSize((Integer) spinnerSize.getValue());
+		nodeObject.setDESCRIPTION(textFieldDescription.getText());
 		if(chckbxUsed.isSelected()) nodeObject.setUsed(YesnoType.YES);
 		else nodeObject.setUsed(YesnoType.NO);
 	}
