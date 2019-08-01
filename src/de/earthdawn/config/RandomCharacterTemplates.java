@@ -159,7 +159,7 @@ public class RandomCharacterTemplates {
 			for( RANDOMATTRIBUTESType attr : template.getATTRIBUTES() ) {
 				r-=attr.getWeight();
 				if( r<0 ) {
-					a = attributes.get(attr.getAttribute().value());
+					a = attributes.get(attr.getAttribute());
 					a.setGenerationvalue(a.getGenerationvalue()+1);
 					break;
 				}
@@ -176,7 +176,7 @@ public class RandomCharacterTemplates {
 			for( RANDOMATTRIBUTESType attr : template.getATTRIBUTES() ) {
 				r-=attr.getWeight();
 				if( r<0 ) {
-					ATTRIBUTEType a = attributes.get(attr.getAttribute().value());
+					ATTRIBUTEType a = attributes.get(attr.getAttribute());
 					if( a.getLpincrease() < 2 ) {
 						a.setLpincrease(a.getLpincrease()+1);
 						i++;

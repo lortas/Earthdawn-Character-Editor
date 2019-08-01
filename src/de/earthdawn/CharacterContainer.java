@@ -525,6 +525,15 @@ public class CharacterContainer extends CharChangeRefresh {
 		return movement;
 	}
 
+	public String getMovementAsString() {
+		MOVEMENTType movement = getMovement();
+		if( movement.getFlight() > 0 ) {
+			return movement.getGroundString() + " / " + movement.getFlightString();
+		} else {
+			return movement.getGroundString();
+		}
+	}
+
 	public CARRYINGType getCarrying() {
 		CARRYINGType carrying = character.getCARRYING();
 		if( carrying == null ) {
@@ -1922,7 +1931,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		MOVEMENTType movement = getMovement();
 		movement.setFlight(movementFlight);
 		movement.setGround(movementGround);
-
+		movement.setFlightString( PROPERTIES.getUnitCalculator().formatLength( movementFlight, 0 ));
+		movement.setGroundString( PROPERTIES.getUnitCalculator().formatLength( movementGround, 0 ));
 	}
 
 	public void calculateCarrying() {

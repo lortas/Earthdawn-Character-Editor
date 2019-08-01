@@ -111,8 +111,8 @@ public class CharacteristicStatus {
 
 		node = new TreeMap<String,Object>();
 		MOVEMENTType movement = character.getMovement();
-		node.put( "ground", movement.getGround() );
-		node.put( "flight", movement.getFlight() );
+		node.put( "ground", movement.getGroundString() );
+		node.put( "flight", movement.getFlightString() );
 		root.put("MOVEMENT", node);
 
 		node = new TreeMap<String,Object>();

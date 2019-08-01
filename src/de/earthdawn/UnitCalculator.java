@@ -1,17 +1,20 @@
 package de.earthdawn;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import de.earthdawn.data.OPTIONALRULESUNITSType;
 import de.earthdawn.data.UNITType;
 
 public class UnitCalculator {
-	private LinkedList<UNITType> lengthunits=new LinkedList<UNITType>();
-	private LinkedList<UNITType> timeunits=new LinkedList<UNITType>();
-	private LinkedList<UNITType> weightunits=new LinkedList<UNITType>();
+	private List<UNITType> lengthunits=new LinkedList<UNITType>();
+	private List<UNITType> timeunits=new LinkedList<UNITType>();
+	private List<UNITType> weightunits=new LinkedList<UNITType>();
+	private List<Double> lengthsmalldivisor=new ArrayList<Double>();
 	private int match = 0;
 	public UnitCalculator(Collection <OPTIONALRULESUNITSType> unitsCollection, int maxunits) {
 		if( unitsCollection == null ) {
@@ -25,6 +28,7 @@ public class UnitCalculator {
 				this.lengthunits.addAll(u.getLENGTH());
 				this.timeunits.addAll(u.getTIME());
 				this.weightunits.addAll(u.getWEIGHT());
+				this.lengthsmalldivisor.addAll(u.getLENGTHSMALLDIVISOR());
 				break;
 			}
 		}
@@ -32,7 +36,6 @@ public class UnitCalculator {
 			throw new IllegalArgumentException("There was no units set flagged with displayed=true");
 		}
 		UnitComparator comparator = new UnitComparator();
-
 		Collections.sort(this.lengthunits,comparator);
 		Collections.sort(this.weightunits,comparator);
 		Collections.sort(this.timeunits,comparator);
@@ -59,7 +62,17 @@ public class UnitCalculator {
 		return ret;
 	}
 
-	public String formatLength(double length) {
+	public String formatLength(double length, int sizemodifier) {
+		if( sizemodifier < 0 ) {
+			sizemodifier *= -1;
+			if( this.lengthsmalldivisor.size() > sizemodifier ) {
+				System.err.println(String.format("There was no lengthsmalldividor for value %d defined.",-sizemodifier));
+			} else {
+				length /= this.lengthsmalldivisor.get(sizemodifier-1);
+			}
+		} else if( sizemodifier > 0 ) {
+			System.err.println(String.format("There was no lengthlargemodifikator for value %d defined.",sizemodifier));
+		}
 		return formatUnit(length,this.lengthunits);
 	}
 
