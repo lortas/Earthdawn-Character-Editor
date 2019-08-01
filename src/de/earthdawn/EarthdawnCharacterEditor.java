@@ -97,7 +97,7 @@ public class EarthdawnCharacterEditor {
 				if( rs != null ) return rs;
 			}
 		}
-		return RulesetversionType.ED_3;
+		return RulesetversionType.ED_4;
 	}
 
 	private static LanguageType getLanguageFromArgs() {
@@ -111,7 +111,7 @@ public class EarthdawnCharacterEditor {
 				if( lang != null ) return lang;
 			}
 		}
-		return LanguageType.EN;
+		return LanguageType.DE;
 	}
 
 	private static boolean getNewCharFromArgs() {
