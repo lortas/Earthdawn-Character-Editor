@@ -9,7 +9,7 @@
 		<OPTIONALTALENT name="Klettern"/>
 		<OPTIONALTALENT name="Navigation"/>
 		<OPTIONALTALENT name="Spurenlesen"/>
-		<OPTIONALTALENT name="Tiernanalyse"/>
+		<OPTIONALTALENT name="Tieranalyse"/>
 		<OPTIONALTALENT name="Wildnisüberleben"/>
 		<OPTIONALTALENT name="Wurfwaffen"/>
 		<FREETALENT name="Projektil Rufen"/>
@@ -22,7 +22,7 @@
 		<KARMA spend="Für Wahrnehmungsproben auf Sicht basierend"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<DISCIPLINETALENT name="Kompasspfeil"/>
+		<DISCIPLINETALENT name="Mystische Verfolgung"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>

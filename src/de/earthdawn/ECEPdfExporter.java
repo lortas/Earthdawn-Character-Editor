@@ -132,12 +132,7 @@ public class ECEPdfExporter {
 		}
 		acroFields.setField( "KarmaCurrent", String.valueOf(character.getKarma().getCurrent()) );
 		acroFields.setField( "KarmaMax", String.valueOf(character.getKarma().getMax()) );
-		MOVEMENTType movement = character.getMovement();
-		if( movement.getFlight()>0 ) {
-			acroFields.setField( "MovementRate", movement.getGround() +"/"+ movement.getFlight() );
-		} else {
-			acroFields.setField( "MovementRate", String.valueOf(movement.getGround()) );
-		}
+		acroFields.setField( "MovementRate", character.getMovementAsString() );
 		acroFields.setField( "CarryingCapacity", String.valueOf(character.getCarrying().getCarrying()) );
 		PROTECTIONType protection = character.getProtection();
 		acroFields.setField( "Mystic Armor", String.valueOf(protection.getMysticarmor()) );
@@ -735,14 +730,6 @@ public class ECEPdfExporter {
 		setPdfField(field.getAbility(),bonus.getBonus());
 	}
 
-	private String movementToString(MOVEMENTType movement) {
-		if( movement.getFlight() > 0 ) {
-			return String.valueOf(movement.getGround()) + "/" + String.valueOf(movement.getFlight());
-		} else {
-			return String.valueOf(movement.getGround());
-		}
-	}
-
 	public void exportGeneric(EDCHARACTER edCharakter, File template, File outFile) throws DocumentException, IOException {
 		CharsheettemplateContainer charsheettemplate = new CharsheettemplateContainer(template);
 		File pdfinputfile = new File( new File("templates"), charsheettemplate.getPdfFilename() );
@@ -757,7 +744,7 @@ public class ECEPdfExporter {
 		setAllPdfFields(charsheettemplate.getStringList("Name"),character.getName());
 		setAllPdfFields(charsheettemplate.getStringList("Passion"),character.getPassion());
 		setAllPdfFields(charsheettemplate.getStringList("Player"),character.getPlayer());
-		setAllPdfFields(charsheettemplate.getStringList("Movement"),movementToString(character.getMovement()));
+		setAllPdfFields(charsheettemplate.getStringList("Movement"),character.getMovementAsString());
 		setAllPdfFields(charsheettemplate.getStringList("Carrying"),String.valueOf(character.getCarrying().getCarrying()));
 
 		APPEARANCEType appearance = character.getAppearance();
@@ -1296,13 +1283,26 @@ public class ECEPdfExporter {
 		}
 		if ( talent.getRealigned() > 0 ) talentname="("+talentname+")";
 		setPdfField( fieldnames.getName(), talentname);
+		RANKType talentrank = talent.getRANK();
 		ATTRIBUTENameType attribute = talent.getAttribute();
-		setPdfField( fieldnames.getAttribute(), attribute.value() );
-		boolean attributeIsNa = attribute.equals(ATTRIBUTENameType.NA);
-		if( attributeIsNa ) {
-			setPdfField( fieldnames.getAttributeStep(), "-" );
-		} else {
-			setPdfField( fieldnames.getAttributeStep(), String.valueOf(attributes.get(attribute).getStep()) );
+		if( attribute!= null ) {
+			setPdfField( fieldnames.getAttribute(), attribute.value() );
+			boolean attributeIsNa = attribute.equals(ATTRIBUTENameType.NA);
+			if( attributeIsNa ) {
+				setPdfField( fieldnames.getAttributeStep(), "-" );
+			} else {
+				setPdfField( fieldnames.getAttributeStep(), String.valueOf(attributes.get(attribute).getStep()) );
+			}
+			if( attributeIsNa || (talentrank.getDice()==null) ) {
+				setPdfField( fieldnames.getDice(), "-" );
+			} else {
+				setPdfField( fieldnames.getDice(), talentrank.getDice() );
+			}
+			if( attributeIsNa ) {
+				setPdfField( fieldnames.getStep(), "-" );
+			} else {
+				setPdfField( fieldnames.getStep(), String.valueOf(talentrank.getStep()) );
+			}
 		}
 		setPdfField( fieldnames.getStrain(), talent.getStrain() );
 		switch( talent.getAction() ) {
@@ -1310,17 +1310,6 @@ public class ECEPdfExporter {
 		case SIMPLE    : setPdfField( fieldnames.getAction(), "smpl" ); break;
 		case SUSTAINED : setPdfField( fieldnames.getAction(), "sust" ); break;
 		default        : setPdfField( fieldnames.getAction(), talent.getAction().value() );
-		}
-		RANKType talentrank = talent.getRANK();
-		if( attributeIsNa || (talentrank.getDice()==null) ) {
-			setPdfField( fieldnames.getDice(), "-" );
-		} else {
-			setPdfField( fieldnames.getDice(), talentrank.getDice() );
-		}
-		if( attributeIsNa ) {
-			setPdfField( fieldnames.getStep(), "-" );
-		} else {
-			setPdfField( fieldnames.getStep(), String.valueOf(talentrank.getStep()) );
 		}
 		if( talentrank.getBonus() > 0 ) setPdfField( fieldnames.getRank(), talentrank.getRank()+"+"+talentrank.getBonus() );
 		else if( talentrank.getBonus() < 0 ) setPdfField( fieldnames.getRank(), talentrank.getRank()+"-"+(talentrank.getBonus()*-1) );

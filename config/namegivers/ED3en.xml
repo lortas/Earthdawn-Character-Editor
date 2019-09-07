@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NAMEGIVERS rulesetversion="ED3" xmlns="http://earthdawn.com/namegiver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/namegiver ../earthdawnnamegivers.xsd">
-	<NAMEGIVER lang="en" name="Dwarf" karmamodifier="4" movement_ground="5" type="Dwarf">
+	<NAMEGIVER lang="en" name="Dwarf" karmamodifier="4" movement_ground="10" type="Dwarf">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="12" />
 		<ATTRIBUTE name="TOU" value="13" />
@@ -15,7 +15,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="7" type="Elf">
+	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -30,7 +30,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -45,7 +45,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Cathan" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Cathan" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="9" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -59,7 +59,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dinganni" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Dinganni" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -72,7 +72,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Galeb" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Galeb" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="11" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -85,7 +85,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Klek" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Klek" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="9" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -98,7 +98,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Riders of the Scorched Plain" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Riders of the Scorched Plain" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -111,7 +111,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Scavians" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Scavians" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -124,7 +124,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Vorst" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Vorst" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -137,7 +137,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -153,7 +153,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5" enduringarmorfactor="0.8" type="Obsidiman">
+	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="10" enduringarmorfactor="0.8" type="Obsidiman">
 		<ATTRIBUTE name="DEX" value="8" />
 		<ATTRIBUTE name="STR" value="18" />
 		<ATTRIBUTE name="TOU" value="13" />
@@ -168,7 +168,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Obsidiman" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="6" type="Ork">
+	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="12" type="Ork">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="13" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -184,7 +184,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7" enduringarmorfactor="0.8" type="Troll">
+	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="14" enduringarmorfactor="0.8" type="Troll">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="14" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -199,7 +199,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Troll" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
+	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -214,7 +214,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Jungle T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
+	<NAMEGIVER lang="en" name="Jungle T'skrang" karmamodifier="4" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -227,7 +227,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Sea T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
+	<NAMEGIVER lang="en" name="Sea T'skrang" karmamodifier="4" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -241,7 +241,7 @@
 		<ORIGIN>Indrisa</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="K'stulaami" karmamodifier="4" movement_ground="6" type="T'skrang">
+	<NAMEGIVER lang="en" name="K'stulaami" karmamodifier="4" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -255,7 +255,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="K´stulaami" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Pale Ones" karmamodifier="4" movement_ground="6" type="T'skrang">
+	<NAMEGIVER lang="en" name="Pale Ones" karmamodifier="4" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -269,7 +269,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8" enduringarmorfactor="1.5" type="Windling">
+	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="4" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -286,7 +286,7 @@
 		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Gar" karmamodifier="4" movement_ground="7" type="Elf">
+	<NAMEGIVER lang="en" name="Gar" karmamodifier="4" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="11" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -300,7 +300,7 @@
 		<DEFAULTLANGUAGE language="New Gar" speak="skill"/>
 		<!-- get only one free Rang for speak language (New Gar); NO free Rank for read/write language -->
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="7" type="Elf">
+	<NAMEGIVER lang="en" name="Ki Mao" karmamodifier="4" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
 		<ATTRIBUTE name="STR" value="9" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -314,7 +314,7 @@
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="skill" readwrite="skill"/>
 		<!-- get only one free Rang for speak language and read/write language (Cathayan respective dialect) -->
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Po Na" karmamodifier="5" movement_ground="6">
+	<NAMEGIVER lang="en" name="Po Na" karmamodifier="5" movement_ground="12">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="11" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -328,7 +328,7 @@
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="skill" readwrite="skill"/>
 		<!-- get only one free Rang for speak language and read/write language (Cathayan respective dialect) -->
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="6" type="Storm Children">
+	<NAMEGIVER lang="en" name="Storm Children" karmamodifier="5" movement_ground="12" type="Storm Children">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -342,7 +342,7 @@
 		<DEFAULTLANGUAGE language="Cathayan" speak="skill" readwrite="skill"/>
 		<!-- get only one free Rang for speak language and read/write language (Cathayan) -->
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="Dragon">
+	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="14" movement_flight="20" type="Dragon">
 		<ATTRIBUTE name="DEX" value="28" />
 		<ATTRIBUTE name="STR" value="37" />
 		<ATTRIBUTE name="TOU" value="28" />
@@ -355,7 +355,7 @@
 		<DEFAULTLANGUAGE language="" speak="skill"/>
 		<!-- two free Ranks, no default language -->
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="6" type="Jackalmen">
+	<NAMEGIVER lang="en" name="Jackalmen" karmamodifier="5" movement_ground="12" type="Jackalmen">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="12" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -370,7 +370,7 @@
 		<ORIGIN>Creana</ORIGIN>
 		<DEFAULTLANGUAGE language="Jackalmen" speak="skill" />
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Jubruq" karmamodifier="6" movement_ground="5" type="Jubruq">
+	<NAMEGIVER lang="en" name="Jubruq" karmamodifier="6" movement_ground="10" type="Jubruq">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="8" />
 		<ATTRIBUTE name="TOU" value="9" />
@@ -385,7 +385,7 @@
 		<ORIGIN>Marac</ORIGIN>
 		<DEFAULTLANGUAGE language="Sulfiki" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Leafers" karmamodifier="5" movement_ground="5" type="Leafers">
+	<NAMEGIVER lang="en" name="Leafers" karmamodifier="5" movement_ground="10" type="Leafers">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="9" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -401,7 +401,7 @@
 		<ORIGIN>Vasgothia</ORIGIN>
 		<DEFAULTLANGUAGE language="Leafer" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="5" type="Ulk-Men">
+	<NAMEGIVER lang="en" name="Ulk-Men" karmamodifier="3" movement_ground="10" type="Ulk-Men">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="12" />
 		<ATTRIBUTE name="TOU" value="13" />

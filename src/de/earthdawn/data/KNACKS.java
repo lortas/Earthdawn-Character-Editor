@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="TALENTKNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" />
+ *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -53,6 +54,8 @@ public class KNACKS {
     protected List<KNACKBASEType> talentknack;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
+    @XmlAttribute(name = "rulesetversion")
+    protected RulesetversionType rulesetversion;
 
     /**
      * Gets the value of the skillknack property.
@@ -134,6 +137,34 @@ public class KNACKS {
      */
     public void setLang(LanguageType value) {
         this.lang = value;
+    }
+
+    /**
+     * Gets the value of the rulesetversion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public RulesetversionType getRulesetversion() {
+        if (rulesetversion == null) {
+            return RulesetversionType.ED_3;
+        } else {
+            return rulesetversion;
+        }
+    }
+
+    /**
+     * Sets the value of the rulesetversion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RulesetversionType }
+     *     
+     */
+    public void setRulesetversion(RulesetversionType value) {
+        this.rulesetversion = value;
     }
 
 }

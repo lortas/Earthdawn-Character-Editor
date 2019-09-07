@@ -51,7 +51,7 @@
 		<ABILITY>Überwätigende Kraft</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
-		<DISCIPLINETALENT name="Stählender Blick"/>
+		<DISCIPLINETALENT name="Stählerner Blick"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>

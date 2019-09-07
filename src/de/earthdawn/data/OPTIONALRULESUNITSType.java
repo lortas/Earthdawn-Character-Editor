@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="LENGTHSMALLDIVISOR" type="{http://www.w3.org/2001/XMLSchema}double" maxOccurs="unbounded"/>
  *         &lt;element name="LENGTH" type="{http://earthdawn.com/datatypes}UNIT_type" maxOccurs="unbounded"/>
  *         &lt;element name="WEIGHT" type="{http://earthdawn.com/datatypes}UNIT_type" maxOccurs="unbounded"/>
  *         &lt;element name="TIME" type="{http://earthdawn.com/datatypes}UNIT_type" maxOccurs="unbounded"/>
@@ -42,12 +43,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OPTIONALRULES_UNITS_type", namespace = "http://earthdawn.com/optionalrules", propOrder = {
+    "lengthsmalldivisor",
     "length",
     "weight",
     "time"
 })
 public class OPTIONALRULESUNITSType {
 
+    @XmlElement(name = "LENGTHSMALLDIVISOR", type = Double.class)
+    protected List<Double> lengthsmalldivisor;
     @XmlElement(name = "LENGTH", required = true)
     protected List<UNITType> length;
     @XmlElement(name = "WEIGHT", required = true)
@@ -58,6 +62,35 @@ public class OPTIONALRULESUNITSType {
     protected String name;
     @XmlAttribute(name = "displayed", required = true)
     protected boolean displayed;
+
+    /**
+     * Gets the value of the lengthsmalldivisor property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lengthsmalldivisor property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLENGTHSMALLDIVISOR().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Double }
+     * 
+     * 
+     */
+    public List<Double> getLENGTHSMALLDIVISOR() {
+        if (lengthsmalldivisor == null) {
+            lengthsmalldivisor = new ArrayList<Double>();
+        }
+        return this.lengthsmalldivisor;
+    }
 
     /**
      * Gets the value of the length property.

@@ -24,7 +24,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="flight" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="flight_string" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *       &lt;attribute name="ground" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" />
+ *       &lt;attribute name="ground_string" type="{http://www.w3.org/2001/XMLSchema}string" default="" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -38,8 +40,12 @@ public class MOVEMENTType {
 
     @XmlAttribute(name = "flight")
     protected Integer flight;
+    @XmlAttribute(name = "flight_string")
+    protected String flightString;
     @XmlAttribute(name = "ground", required = true)
     protected int ground;
+    @XmlAttribute(name = "ground_string")
+    protected String groundString;
 
     /**
      * Gets the value of the flight property.
@@ -66,6 +72,34 @@ public class MOVEMENTType {
     }
 
     /**
+     * Gets the value of the flightString property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFlightString() {
+        if (flightString == null) {
+            return "";
+        } else {
+            return flightString;
+        }
+    }
+
+    /**
+     * Sets the value of the flightString property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFlightString(String value) {
+        this.flightString = value;
+    }
+
+    /**
      * Gets the value of the ground property.
      * 
      */
@@ -79,6 +113,34 @@ public class MOVEMENTType {
      */
     public void setGround(int value) {
         this.ground = value;
+    }
+
+    /**
+     * Gets the value of the groundString property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getGroundString() {
+        if (groundString == null) {
+            return "";
+        } else {
+            return groundString;
+        }
+    }
+
+    /**
+     * Sets the value of the groundString property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setGroundString(String value) {
+        this.groundString = value;
     }
 
 }

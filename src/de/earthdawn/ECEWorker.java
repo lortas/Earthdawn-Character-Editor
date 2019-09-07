@@ -89,7 +89,7 @@ public class ECEWorker {
 
 		character.getEDCHARACTER().setName(character.getName().replaceAll("[^-+ '\"A-Za-z0-9]", ""));
 		character.getEDCHARACTER().setPlayer(character.getPlayer().replaceAll("[^-+ '\"A-Za-z0-9]", ""));
-		character.getAppearance().setHeightString( PROPERTIES.getUnitCalculator().formatLength( character.getAppearance().getHeight() / 3 ) );
+		character.getAppearance().setHeightString( PROPERTIES.getUnitCalculator().formatLength( character.getAppearance().getHeight(), -1 ) );
 		character.getAppearance().setWeightString( PROPERTIES.getUnitCalculator().formatWeight( character.getAppearance().getWeight() ) );
 
 		// Die OpenSpell List ist eine generierte Liste und muss daher am Anfang gelöscht werden

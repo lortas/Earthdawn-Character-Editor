@@ -3,12 +3,12 @@
 	<DURABILITY value="7" circle="1"/>
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Ablenken"/>
-		<OPTIONALTALENT name="Akrobtaische Verteidigung"/>
+		<OPTIONALTALENT name="Akrobatische Verteidigung"/>
 		<OPTIONALTALENT name="Feuerblut"/>
 		<OPTIONALTALENT name="Gefahrensinn"/>
 		<OPTIONALTALENT name="Kampfsinn"/>
 		<OPTIONALTALENT name="Manövrieren"/>
-		<OPTIONALTALENT name="Projekttilwaffen"/>
+		<OPTIONALTALENT name="Projektilwaffen"/>
 		<OPTIONALTALENT name="Schildschlag"/>
 		<OPTIONALTALENT name="Taktik"/>
 		<OPTIONALTALENT name="Waffenloser Kampf"/>

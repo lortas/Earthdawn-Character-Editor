@@ -51,7 +51,7 @@
 		<ABILITY>Eine Seele, Zwei Körper</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
-		<DISCIPLINETALENT name="Schenkangriff"/>
+		<DISCIPLINETALENT name="Schwenkangriff"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>

@@ -102,7 +102,26 @@ public class CharacterContainer extends CharChangeRefresh {
 		FileInputStream xmlInputStream = new FileInputStream(xmlfile);
 		xmlInputStream.read(xmldata);
 		xmlInputStream.close();
+		this.character=readCharacterFromXml(xmldata);
+		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
+			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+		}
+		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
+			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+		}
+	}
 
+	public CharacterContainer(byte[] xmldata) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException {
+		this.character=readCharacterFromXml(xmldata);
+		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
+			throw new RuntimeException("The character xml has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+		}
+		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
+			throw new RuntimeException("The character xml has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+		}
+	}
+
+	static private EDCHARACTER readCharacterFromXml(byte[] xmldata) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException {
 		// XML-Daten unge'typ't parsen
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -149,13 +168,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Unmarshaller u = jc.createUnmarshaller();
-		character =(EDCHARACTER)u.unmarshal(new ByteArrayInputStream(xmldata));
-		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
-			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
-		}
-		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
-			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
-		}
+		return (EDCHARACTER)u.unmarshal(new ByteArrayInputStream(xmldata));
 	}
 
 	public void setEDCHARACTER(EDCHARACTER c) {
@@ -510,6 +523,15 @@ public class CharacterContainer extends CharChangeRefresh {
 			character.setMOVEMENT(movement);
 		}
 		return movement;
+	}
+
+	public String getMovementAsString() {
+		MOVEMENTType movement = getMovement();
+		if( movement.getFlight() > 0 ) {
+			return movement.getGroundString() + " / " + movement.getFlightString();
+		} else {
+			return movement.getGroundString();
+		}
 	}
 
 	public CARRYINGType getCarrying() {
@@ -1909,7 +1931,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		MOVEMENTType movement = getMovement();
 		movement.setFlight(movementFlight);
 		movement.setGround(movementGround);
-
+		movement.setFlightString( PROPERTIES.getUnitCalculator().formatLength( movementFlight, 0 ));
+		movement.setGroundString( PROPERTIES.getUnitCalculator().formatLength( movementGround, 0 ));
 	}
 
 	public void calculateCarrying() {

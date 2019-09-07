@@ -56,16 +56,16 @@ public class ApplicationProperties {
 	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
 	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
 	private static Map<RulesetversionType,List<TRANSLATIONType>> NAMEGIVERTRANSLATIONS;
-    private static KNACKS KNACKS = new KNACKS();
+	private static Map<ECERulesetLanguage,KNACKS> KNACKS;
 	private static Map<ECERulesetLanguage,SPELLS> SPELLS;
-    private static Map<ECERulesetLanguage,List<NAMEGIVERABILITYType>> NAMEGIVERS;
+	private static Map<ECERulesetLanguage,List<NAMEGIVERABILITYType>> NAMEGIVERS;
 	private OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
 	private UnitCalculator unitcalculator = null;
-    private static ITEMS ITEMS = new ITEMS();
-    private static HELP HELP = new HELP();
-    private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
+	private static ITEMS ITEMS = new ITEMS();
+	private static HELP HELP = new HELP();
+	private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
 	private static ECERulesetLanguage RULESETLANGUAGE = new ECERulesetLanguage(RulesetversionType.ED_3,LanguageType.EN);
-    private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
+	private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
 	private static Map<ECERulesetLanguage,SPELLDESCRIPTIONS> SPELLDESCRIPTIONS;
 	private static Map<RulesetversionType,ECECharacteristics> CHARACTERISTICS;
 	private static File CONFIGDIR = new File("./config");
@@ -304,12 +304,20 @@ public class ApplicationProperties {
 	}
 
 	public List<KNACKBASEType> getTalentKnacks() {
-		return KNACKS.getTALENTKNACK();
+		KNACKS knacks = KNACKS.get(RULESETLANGUAGE);
+		if( knacks == null ) {
+			knacks = new KNACKS();
+		}
+		return knacks.getTALENTKNACK();
 	}
 
 	public List<KNACKBASEType> getTalentKnacks(String talent) {
 		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
-		for( KNACKBASEType knack : KNACKS.getTALENTKNACK() ) {
+		KNACKS knacks2 = KNACKS.get(RULESETLANGUAGE);
+		if( knacks2 == null ) {
+			knacks2 = new KNACKS();
+		}
+		for( KNACKBASEType knack : knacks2.getTALENTKNACK() ) {
 			if( knack.getBasename().equals(talent) ) knacks.add(knack);
 		}
 		return knacks;
@@ -836,18 +844,19 @@ public class ApplicationProperties {
 			// knacks laden
 			// --- Bestimmen aller Dateien im Unterordner 'knacks'
 			// --- Einlesen der Dateien
-			KNACKS=new KNACKS();
-			KNACKS.setLang(RULESETLANGUAGE.getLanguage());
+			KNACKS=new TreeMap<ECERulesetLanguage,KNACKS>();
 			for(Path knacks : selectallxmlfiles(new File(CONFIGDIR,"knacks").toPath())) {
 				System.out.println("Reading config file: " + knacks.toString());
 				KNACKS k = (KNACKS) unmarshaller.unmarshal(knacks.toFile());
 				if( k == null ) { System.out.println(" parse error."); continue; }
-				if( k.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
-					KNACKS.getTALENTKNACK().addAll(k.getTALENTKNACK());
-					KNACKS.getSKILLKNACK().addAll(k.getSKILLKNACK());
-				} else {
-					System.out.println("Skipped. Wrong language: "+k.getLang().value()+" != "+RULESETLANGUAGE.getLanguage().value() );
+				ECERulesetLanguage rsl=new ECERulesetLanguage(k.getRulesetversion(),k.getLang());
+				KNACKS knack = KNACKS.get(rsl);
+				if( knack == null ) {
+					knack = new KNACKS();
+					KNACKS.put(rsl, knack);
 				}
+				knack.getTALENTKNACK().addAll(k.getTALENTKNACK());
+				knack.getSKILLKNACK().addAll(k.getSKILLKNACK());
 			}
 
 			// itemstore laden

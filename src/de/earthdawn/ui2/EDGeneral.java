@@ -3,7 +3,6 @@ package de.earthdawn.ui2;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.NamegiverComparator;
-import de.earthdawn.UnitCalculator;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.APPEARANCEType;
 import de.earthdawn.data.Base64BinaryType;
@@ -550,7 +549,7 @@ public class EDGeneral extends JPanel {
 		} else {
 			System.err.println("Unexpected object type for sinnerSize value: "+value.getClass().getName());
 		}
-		character.getAppearance().setHeightString( ApplicationProperties.create().getUnitCalculator().formatLength( character.getAppearance().getHeight() / 3 ) );
+		character.getAppearance().setHeightString( ApplicationProperties.create().getUnitCalculator().formatLength( character.getAppearance().getHeight(), -1 ) );
 		labelSize.setText( character.getAppearance().getHeightString() );
 	}
 

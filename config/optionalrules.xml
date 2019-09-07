@@ -80,7 +80,8 @@
 	Only on unit definition must be flagged with displayed=true.
 	If multiple unit sets are flagged with displayed=true, it will be unknown which will be finally used.
 	-->
-	<UNITS name="metric" displayed="true">
+	<UNITS name="metric" displayed="false">
+		<LENGTHSMALLDIVISOR>3</LENGTHSMALLDIVISOR>
 		<LENGTH name="mm" translation="914.4"/>
 		<LENGTH name="cm" translation="91.44"/>
 		<LENGTH name="m" translation="0.9144"/>
@@ -96,7 +97,25 @@
 		<TIME name="d" translation=".00006944444444444444"/>
 		<TIME name="w" translation=".00000992063492063492"/>
 	</UNITS>
+	<UNITS name="metric (simplified)" displayed="true">
+		<LENGTHSMALLDIVISOR>3</LENGTHSMALLDIVISOR>
+		<LENGTH name="mm" translation="1000"/>
+		<LENGTH name="cm" translation="100"/>
+		<LENGTH name="m" translation="1"/>
+		<LENGTH name="km" translation="0.001"/>
+		<WEIGHT name="mg" translation="500000"/>
+		<WEIGHT name="g" translation="500"/>
+		<WEIGHT name="kg" translation="0.5"/>
+		<WEIGHT name="t" translation="0.0005"/>
+		<TIME name="s" translation="6"/>
+		<TIME name="rnd" translation="1"/>
+		<TIME name="m" translation="0.1"/>
+		<TIME name="h" translation=".00166666666666666666"/>
+		<TIME name="d" translation=".00006944444444444444"/>
+		<TIME name="w" translation=".00000992063492063492"/>
+	</UNITS>
 	<UNITS name="imperial UK" displayed="false">
+		<LENGTHSMALLDIVISOR>3</LENGTHSMALLDIVISOR>
 		<LENGTH name="in" translation="36"/>
 		<LENGTH name="ft" translation="3"/>
 		<LENGTH name="yd" translation="1"/>
@@ -118,6 +137,7 @@
 		<TIME name="w" translation=".00000992063492063492"/>
 	</UNITS>
 	<UNITS name="imperial US" displayed="false">
+		<LENGTHSMALLDIVISOR>3</LENGTHSMALLDIVISOR>
 		<LENGTH name="in" translation="36"/>
 		<LENGTH name="ft" translation="3"/>
 		<LENGTH name="yd" translation="1"/>

@@ -56,6 +56,7 @@
 	</xs:complexType>
 	<xs:complexType name="OPTIONALRULES_UNITS_type">
 		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="LENGTHSMALLDIVISOR" type="xs:double"/>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="LENGTH" type="edt:UNIT_type"/>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="WEIGHT" type="edt:UNIT_type"/>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="TIME" type="edt:UNIT_type"/>

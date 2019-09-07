@@ -50,7 +50,7 @@
 	<target name="compile" depends="init" description="--> Projekt übersetzen">
 		<copy file="${source}de/earthdawn/ui2/NLS_de.properties" todir="${build}/de/earthdawn/ui2/"/>
 		<copy file="${source}de/earthdawn/ui2/NLS.properties" todir="${build}/de/earthdawn/ui2/"/>
-		<javac srcdir="${source}" destdir="${build}" debug="on" includeantruntime="false">
+		<javac srcdir="${source}" destdir="${build}" debug="on" includeantruntime="false" deprecation="on" release="8">
 			<classpath refid="classpath.compile" />
 		</javac>
 	</target>
@@ -75,8 +75,8 @@
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
-				<!-- echo lib/*.jar | sed -e "s/\blib\//\${lib}/g" -->
-				<attribute name="Class-Path" value="${lib}freemarker.jar ${lib}gson-2.2.1.jar ${lib}itextpdf-5.2.1.jar ${lib}itext-xtra-5.2.1.jar ${lib}jaxb-api-2.3.1.jar ${lib}jaxb-core-2.3.0.1.jar ${lib}jaxb-runtime-2.3.0.1.jar ${lib}miglayout-4.0-swing.jar"/>
+				<!-- sed "s/\(attribute name=\"Class-Path\" value=\"\)[^\"]*/\1$(echo lib/*.jar | sed -e "s/\blib\//\${lib}/g")/" -i build.xml -->
+				<attribute name="Class-Path" value="${lib}freemarker.jar ${lib}gson-2.2.1.jar ${lib}istack-commons-runtime-2.3.1.jar ${lib}itextpdf-5.2.1.jar ${lib}itext-xtra-5.2.1.jar ${lib}javax.activation-api-2.3.1.jar ${lib}jaxb-api-2.3.1.jar ${lib}jaxb-core-2.3.0.1.jar ${lib}jaxb-jxc-2.3.1.jar ${lib}jaxb-runtime-2.3.0.1.jar ${lib}jaxb-runtime-2.3.1.jar ${lib}jaxb-xjc-2.3.1.jar ${lib}json-20180813.jar ${lib}miglayout-4.0-swing.jar"/>
 				<section name="common">
 					<attribute name="Build-By" value="lortas" />
 					<attribute name="Build-Date" value="${cur.date}" />
