@@ -158,7 +158,7 @@
 	<SPELL name="Schneller zu Fuß" threads="1" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="MVZ" range="Berührung" duration="Rang Stunden" effect="Bewegungsrate +2"/>
 	<SPELL name="Schnelllesen" threads="1" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="MVZ" range="Selbst" duration="Rang Stunden" effect="+4 auf alle Forschenproben"/>
 	<SPELL name="Schreckgestalt" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="MVZ" range="Berührung" duration="Rang Runden" effect="+2 auf Nahkampfangriffs- und -schadensproben, +2 auf Körperliche Verteidigung" element="illusion"/>
-	<SPELL name="Schwindelgefühl" threads="1" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="MVZ" range="30 Schritt " duration="Rang Runden" effect="-2 auf Aktionsproben pro Erfolg"/>
+	<SPELL name="Schwindelgefühl" threads="1" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="MVZ" range="30 Schritt" duration="Rang Runden" effect="-2 auf Aktionsproben pro Erfolg"/>
 	<SPELL name="Schwächende Düsternis" threads="2" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="MVZ" range="20 Schritt" duration="Rang Runden" effectarea="6 Schritt Radius" effect="Erschafft Wolke lebenentziehenden Nebels"/>
 	<SPELL name="Schädel des Todes" weavingdifficulty="6" reattuningdifficulty="11" castingdifficulty="MVZ" range="Selbst" duration="Rang + 5 Runden" effect="Anwendung von Verängstigen als Einfache Aktion"/>
 	<SPELL name="Seelenlose Augen" threads="1" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="MVZ" range="Berührung" duration="Rang + 5 Minuten" effect="+3 auf Einschüchterungsproben"/>
@@ -210,7 +210,7 @@
 	<SPELL name="Winde der Ablenkung" weavingdifficulty="7" reattuningdifficulty="12" castingdifficulty="MVZ" range="Selbst" duration="Rang Runden" effect="Verbessert Proben auf Hieb Ausweichen" element="air"/>
 	<SPELL name="Windfinger" threads="2" weavingdifficulty="6" reattuningdifficulty="11" castingdifficulty="6" range="10 Schritt" duration="Rang + 5 Minuten" effect="WIL" element="air"/>
 	<SPELL name="Windstoß" weavingdifficulty="8" reattuningdifficulty="13" castingdifficulty="MVZ (siehe Text)" range="20 Schritt" duration="1 Runde" effectarea="6 Schritt breit" effect="WIL + 5" element="air"/>
-	<SPELL name="Wirbelwind" threads="2" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="6; MVZ (siehe Text)" range="20 Schritt " duration="Rang Runden" effectarea="4 Schritt Radius" effect="WIL + 2/Physisch" element="air"/>
+	<SPELL name="Wirbelwind" threads="2" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="6; MVZ (siehe Text)" range="20 Schritt" duration="Rang Runden" effectarea="4 Schritt Radius" effect="WIL + 2/Physisch" element="air"/>
 	<SPELL name="Wolken Beschwören" threads="3" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="8+ (siehe Text)" range="1 Meile (siehe Text)" duration="Rang Stunden" effect="WIL + 6" element="air"/>
 	<SPELL name="Zauber Einfangen" threads="1" weavingdifficulty="12" reattuningdifficulty="17" castingdifficulty="MVZ" range="Selbst" duration="Rang Runden" effect="WIL + 2"/>
 	<SPELL name="Zauber Verdrängen" threads="2" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="MVZ" range="10 Schritt" duration="1 Runde" effect="WIL + 5"/>

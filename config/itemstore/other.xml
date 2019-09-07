@@ -11,7 +11,7 @@
 			<edt:TALENT name="Steel Thought" bonus="3"/>
 			<edt:TALENT name="Avoid Blow" bonus="3"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges " keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
+		<edt:THREADRANK effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
 			<edt:TALENT name="Steel Thought" bonus="4"/>
 			<edt:TALENT name="Avoid Blow" bonus="4"/>
 			<edt:TALENT name="Second Attack" bonus="4"/>

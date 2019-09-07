@@ -208,18 +208,18 @@
 	<SPELL name="True Switch" threads="3" weavingdifficulty="10" reattuningdifficulty="15" castingdifficulty="TMD" range="10 yard" duration="1 round" effect="Switches magician location with target"/>
 	<SPELL name="Trust" threads="1" weavingdifficulty="8" reattuningdifficulty="13" castingdifficulty="TMD" range="10 yard" duration="Rank minutes" effect="Creates a friendly relationship between magician and target"/>
 	<SPELL name="Twisted Tongues" threads="1" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="TMD (see text)" range="10 yard" duration="Rank minutes" effect="Jumbles targets’ speech" element="illusion"/>
-	<SPELL name="Uneven Ground" threads="2" weavingdifficulty="8" reattuningdifficulty="13" castingdifficulty="TMD (see text)" range="self" duration="Rank rounds" effectarea="10 yard radius" effect="Penalties to character " element="earth"/>
+	<SPELL name="Uneven Ground" threads="2" weavingdifficulty="8" reattuningdifficulty="13" castingdifficulty="TMD (see text)" range="self" duration="Rank rounds" effectarea="10 yard radius" effect="Penalties to character" element="earth"/>
 	<SPELL name="Unmask" weavingdifficulty="8" reattuningdifficulty="13" castingdifficulty="TMD" range="10 yard" duration="Rank rounds" effect="+5 to Dispel Magic tests"/>
 	<SPELL name="Unseen Voices" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="TMD" range="20 yard" duration="Rang + 5 rounds" effect="Creates unseen voices"/>
 	<SPELL name="Venomous Fury" threads="1" weavingdifficulty="12" reattuningdifficulty="17" castingdifficulty="TMD" range="Touch" duration="Rank rounds" effect="+3 to close combat Damage tests and poison" element="wood"/>
-	<SPELL name="Vertigo" threads="1" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="TMD" range="30 yard " duration="Rank rounds" effect="–2 penalty to Action tests per success"/>
+	<SPELL name="Vertigo" threads="1" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="TMD" range="30 yard" duration="Rank rounds" effect="–2 penalty to Action tests per success"/>
 	<SPELL name="Viewpoint" threads="2" weavingdifficulty="8" reattuningdifficulty="13" castingdifficulty="6" range="Touch" duration="Rang + 5 minutes" effect="See through a physical barrier."/>
 	<SPELL name="Vital Springs" threads="1" weavingdifficulty="12" reattuningdifficulty="17" castingdifficulty="TMD" range="Touch" duration="1 round" effectarea="10 yard radius" effect="Heals all allies within the area of effect" element="water"/>
 	<SPELL name="Walk Through" threads="1" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="TMD" range="Touch" duration="Rang + 15 rounds" effect="Creates temporary pathway through an obstacle"/>
 	<SPELL name="Wall Walker" threads="1" weavingdifficulty="5" reattuningdifficulty="10" castingdifficulty="TMD" range="Touch" duration="Rank minutes" effect="+4 bonus to Climbing tests"/>
 	<SPELL name="Waterproof" threads="1" weavingdifficulty="5 " reattuningdifficulty="10" castingdifficulty="6" range="Touch" duration="Rank minutes" effect="Repels water" element="water"/>
 	<SPELL name="Weapon Back" threads="2 (Ritual; see text)" weavingdifficulty="9" reattuningdifficulty="14" castingdifficulty="TMD (see text)" range="Touch; 100 yard" duration="Rank Wochen (see text)" effect="WIL + 6"/>
-	<SPELL name="Whirlwind" threads="2" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="6; TMD (see text)" range="20 yard " duration="Rank rounds" effectarea="4 yard radius" effect="WIL + 2/Physical" element="air"/>
+	<SPELL name="Whirlwind" threads="2" weavingdifficulty="11" reattuningdifficulty="16" castingdifficulty="6; TMD (see text)" range="20 yard" duration="Rank rounds" effectarea="4 yard radius" effect="WIL + 2/Physical" element="air"/>
 	<SPELL name="Winds of Deflection" weavingdifficulty="7" reattuningdifficulty="12" castingdifficulty="TMD" range="self" duration="Rank rounds" effect="Winds of Deflection" element="air"/>
 	<SPELL name="Wither Away" threads="5" weavingdifficulty="12" reattuningdifficulty="17" castingdifficulty="TMD" range="Touch" duration="Rank months" effect="WIL/Mystic"/>
 	<SPELL name="Wither Limb" threads="3" weavingdifficulty="9" reattuningdifficulty="14" castingdifficulty="TMD" range="20 yard" duration="1 round" effect="WIL + 6/Mystic"/>

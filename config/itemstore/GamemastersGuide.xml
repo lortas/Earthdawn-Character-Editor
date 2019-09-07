@@ -145,7 +145,7 @@
 			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
 			<edt:TALENT name="Silent Walk" limitation="" bonus="2" pool=""/>
 		</edt:THREADRANK>
-		<edt:THREADRANK keyknowledge="number of espagra hides used to create boots" lpcost="300" deed="" effect="+3 Rank to Avoid Blow and Silent Walk ">
+		<edt:THREADRANK keyknowledge="number of espagra hides used to create boots" lpcost="300" deed="" effect="+3 Rank to Avoid Blow and Silent Walk">
 			<edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
 			<edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
 		</edt:THREADRANK>
