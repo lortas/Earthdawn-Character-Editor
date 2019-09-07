@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NAMEGIVERS rulesetversion="ED4" xmlns="http://earthdawn.com/namegiver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/namegiver ../earthdawnnamegivers.xsd">
-	<NAMEGIVER lang="en" name="Dwarf" karmamodifier="4" movement_ground="5" type="Dwarf">
-		<ATTRIBUTE name="DEX" value="10" />
-		<ATTRIBUTE name="STR" value="12" />
-		<ATTRIBUTE name="TOU" value="13" />
-		<ATTRIBUTE name="PER" value="10" />
-		<ATTRIBUTE name="WIL" value="10" />
-		<ATTRIBUTE name="CHA" value="8" />
+	<NAMEGIVER lang="en" name="Dwarf" karmamodifier="4" movement_ground="10" type="Dwarf">
+		<ATTRIBUTE name="DEX" value="9" />
+		<ATTRIBUTE name="STR" value="10" />
+		<ATTRIBUTE name="TOU" value="12" />
+		<ATTRIBUTE name="PER" value="11" />
+		<ATTRIBUTE name="WIL" value="11" />
+		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Heat Sight</ABILITY>
@@ -117,6 +117,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Tail Combat</ABILITY>
+		<ABILITY>Gills</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Cathay</ORIGIN>

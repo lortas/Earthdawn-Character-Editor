@@ -79,8 +79,9 @@
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
 		<ABILITY>Schwanzkampf</ABILITY>
+		<ABILITY>Kiemen</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
-		<DEFAULTLANGUAGE language="T'Skrang " speak="skill"/>
+		<DEFAULTLANGUAGE language="T'Skrang" speak="skill"/>
 	</NAMEGIVER>
 	<NAMEGIVER lang="de" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
 		<ATTRIBUTE name="DEX" value="11"/>
@@ -109,6 +110,7 @@
 		<WOUND threshold="0"/>
 		<CARRY name="Starker Rücken" bonus="2"/>
 		<ABILITY>Wärmesicht</ABILITY>
+		<ABILITY>Starker Rücken</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Sprache nach Wahl" speak="skill"/>
 	</NAMEGIVER>
