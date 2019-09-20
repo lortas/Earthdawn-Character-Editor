@@ -59,6 +59,7 @@ import javax.xml.bind.annotation.XmlType;
     "spell",
     "spellability",
     "defense",
+    "armor",
     "initiative",
     "recoverytestperday",
     "recoveryteststep",
