@@ -1088,9 +1088,9 @@ public class ECEWorker {
 				if( circlenr > diciplineCircle.get(discipline) ) break;
 				for( DEFENSEABILITYType defense : circle.getDEFENSE() ) {
 					switch( defense.getKind() ) {
-					case PHYSICAL: tmp.setPhysical(tmp.getPhysical()+1); break;
-					case SOCIAL:   tmp.setSocial(tmp.getSocial()+1); break;
-					case SPELL:    tmp.setSpell(tmp.getSpell()+1); break;
+					case PHYSICAL: tmp.setPhysical(tmp.getPhysical()+defense.getBonus()); break;
+					case SOCIAL:   tmp.setSocial(tmp.getSocial()+defense.getBonus()); break;
+					case SPELL:    tmp.setSpell(tmp.getSpell()+defense.getBonus()); break;
 					}
 				}
 			}
