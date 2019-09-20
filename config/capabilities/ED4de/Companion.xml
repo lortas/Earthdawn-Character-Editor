@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
+	<TALENT name="Astraltasche" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Bardenstimme" attribute="na" action="free" strain="1"/>
+	<TALENT name="Entwaffnendes Lächeln" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Fesselnde Visionen" attribute="WIL" action="free" strain="2"/>
+	<TALENT name="Gedanken Verbergen" attribute="na" action="free" strain="0"/>
+	<TALENT name="Gedächtnis Durchdringen" attribute="na" action="free" strain="0"/>
+	<TALENT name="Geistessonde" attribute="CHA" action="sustained" strain="3"/>
+	<TALENT name="Gepanzerte Matrix" attribute="na" action="na"/>
+	<TALENT name="Gespleißtes Gewebe" attribute="na" action="simple" strain="1"/>
+	<TALENT name="Schlagfertige Erwiderung" attribute="CHA" action="free" strain="2" skilluse="9"/>
+	<TALENT name="Seelenschutz" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Struktur Beeinflussen" attribute="PER" action="simple" strain="2"/>
+	<TALENT name="Summenmatrix" attribute="na" action="na"/>
+	<TALENT name="Unmögliches Versteck" attribute="na" action="standard" strain="3"/>
+	<TALENT name="Untergraben" attribute="CHA" action="simple" strain="1"/>
+	<TALENT name="Wahrheit Durch Lügen" attribute="CHA" action="standard" strain="2"/>
+	<TALENT name="Zauberreichweite" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Zauberstruktur" attribute="PER" action="simple" strain="2"/>
+	<TALENT name="Zweiter Zauber" attribute="PER" action="simple" strain="2"/>
+	<TALENT name="Zweite Chance" attribute="CHA" action="free" strain="3"/>
+</CAPABILITIES>
