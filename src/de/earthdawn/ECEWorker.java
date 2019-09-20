@@ -406,6 +406,8 @@ public class ECEWorker {
 		naturalArmor.setVirtual(YesnoType.YES);
 		// Natürliche Rüstung der Liste voranstellen
 		totalarmor.add(0, naturalArmor);
+		// Rüstung aus dem Dizipline Bonus
+		totalarmor.add(getDisciplineArmor(diciplineCircle));
 		// magischen Rüstung/Rüstungsschutz anhängen:
 		totalarmor.addAll(character.getMagicArmor());
 		// Bestimme nun den aktuellen Gesamtrüstungsschutz
@@ -1097,6 +1099,42 @@ public class ECEWorker {
 			if( tmp.getPhysical() > result.getPhysical() ) result.setPhysical(tmp.getPhysical());
 			if( tmp.getSocial()   > result.getSocial()   ) result.setSocial(tmp.getSocial());
 			if( tmp.getSpell()    > result.getSpell()    ) result.setSpell(tmp.getSpell());
+		}
+		return result;
+	}
+
+	// Der Armor Bonus wird nicht über alle Disziplinen addiert, sondern
+	// der Character erhält von den Disziplinen nur den jeweils höchsten ArmorBonus
+	private static ARMORType getDisciplineArmor(Map<String,Integer> diciplineCircle) {
+		ARMORType result = new ARMORType();
+		result.setPhysicalarmor(0);
+		result.setMysticarmor(0);
+		result.setVirtual(YesnoType.YES);
+		result.setUsed(YesnoType.YES);
+		result.setName("Dicipline Bonus");
+		for( String discipline : diciplineCircle.keySet() ) {
+			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
+			if( d == null ) continue;
+			ARMORType tmp = new ARMORType();
+			tmp.setPhysicalarmor(0);
+			tmp.setMysticarmor(0);
+			int circlenr = 0;
+			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
+				circlenr++;
+				if( circlenr > diciplineCircle.get(discipline) ) break;
+				for( DEFENSEABILITYType armor : circle.getARMOR() ) {
+					switch( armor.getKind() ) {
+					case PHYSICAL: tmp.setPhysicalarmor(tmp.getPhysicalarmor()+armor.getBonus()); break;
+					case SPELL:    tmp.setMysticarmor(tmp.getMysticarmor()+armor.getBonus()); break;
+					}
+				}
+			}
+			if( tmp.getPhysicalarmor() > result.getPhysicalarmor() ) {
+				result.setPhysicalarmor(tmp.getPhysicalarmor());
+			}
+			if( tmp.getMysticarmor() > result.getMysticarmor() ) {
+				result.setMysticarmor(tmp.getMysticarmor());
+			}
 		}
 		return result;
 	}
