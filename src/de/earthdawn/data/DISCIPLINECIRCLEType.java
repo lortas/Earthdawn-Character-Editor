@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SPELL" type="{http://earthdawn.com/discipline}DISCIPLINESPELL_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="SPELLABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="RECOVERYTESTPERDAY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="RECOVERYTESTSTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -83,6 +84,8 @@ public class DISCIPLINECIRCLEType {
     protected List<DISZIPINABILITYType> spellability;
     @XmlElement(name = "DEFENSE")
     protected List<DEFENSEABILITYType> defense;
+    @XmlElement(name = "ARMOR")
+    protected List<DEFENSEABILITYType> armor;
     @XmlElement(name = "INITIATIVE")
     protected List<DISZIPINABILITYType> initiative;
     @XmlElement(name = "RECOVERYTESTPERDAY")
@@ -316,6 +319,13 @@ public class DISCIPLINECIRCLEType {
             defense = new ArrayList<DEFENSEABILITYType>();
         }
         return this.defense;
+    }
+
+    public List<DEFENSEABILITYType> getARMOR() {
+        if (armor == null) {
+            armor = new ArrayList<DEFENSEABILITYType>();
+        }
+        return this.armor;
     }
 
     /**
