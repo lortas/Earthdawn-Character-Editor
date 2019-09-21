@@ -1,23 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CAPABILITIES lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
-	<TALENT name="Astraltasche" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Adlerauge" attribute="na" action="free" strain="1"/>
+	<TALENT name="Ansporn" attribute="CHA" action="standard"/>
+	<TALENT name="Astralangriff" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Astrale Domäne" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Astraltasche" attribute="PER" action="standard" strain="1 (s. Text)"/>
+	<TALENT name="Ätherwaffe" attribute="WIL" action="simple" strain="2"/>
+	<TALENT name="Aurarüstung" attribute="WIL" action="standard" strain="2"/>
 	<TALENT name="Bardenstimme" attribute="na" action="free" strain="1"/>
+	<TALENT name="Beherrschung der Elemente" attribute="na" action="free" strain="2"/>
+	<TALENT name="Beschwörungskreis" attribute="na" action="sustained" strain="1+"/>
+	<TALENT name="Blind Schiessen" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Blut des Todesmeers" attribute="na" action="free"/>
+	<TALENT name="Blutiger Einblick" attribute="PER" action="sustained" strain="1"/>
+	<TALENT name="Brennende Kraft" attribute="STR" action="free"/>
+	<TALENT name="Chamäleon" attribute="na" action="free" strain="1"/>
+	<TALENT name="Dämonen Entgegentreten" attribute="CHA" action="standard" strain="5"/>
+	<TALENT name="Dauerfeuer" attribute="PER" action="simple" strain="+1 (s. Text)"/>
+	<TALENT name="Donnernde Entschlossenheit" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Durchbohrender Angriff" attribute="na" action="free" strain="1"/>
+	<TALENT name="Echolot" attribute="na" action="free" strain="1"/>
+	<TALENT name="Eidetisches Gedächtnis" attribute="WIL" action="simple" strain="1"/>
+	<TALENT name="Eisiger Schlag" attribute="na" action="free" strain="1"/>
+	<TALENT name="Elementarwandeln" attribute="WIL" action="standard" strain="2"/>
 	<TALENT name="Entwaffnendes Lächeln" attribute="CHA" action="standard" strain="1"/>
-	<TALENT name="Fesselnde Visionen" attribute="WIL" action="free" strain="2"/>
-	<TALENT name="Gedanken Verbergen" attribute="na" action="free" strain="0"/>
-	<TALENT name="Gedächtnis Durchdringen" attribute="na" action="free" strain="0"/>
+	<TALENT name="Fesselnde Visionen" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Fleisch Schmieden" attribute="WIL" action="free" strain="2"/>
+	<TALENT name="Fliessende Bewegung" attribute="na" action="simple" strain="1+"/>
+	<TALENT name="Fluchtplan" attribute="PER" action="sustained" strain="1"/>
+	<TALENT name="Gedächtnis Durchdringen" attribute="na" action="free"/>
+	<TALENT name="Gedanken Verbergen" attribute="na" action="free"/>
 	<TALENT name="Geistessonde" attribute="CHA" action="sustained" strain="3"/>
+	<TALENT name="Geistwandeln" attribute="WIL" action="standard" strain="5"/>
 	<TALENT name="Gepanzerte Matrix" attribute="na" action="na"/>
-	<TALENT name="Gespleißtes Gewebe" attribute="na" action="simple" strain="1"/>
+	<TALENT name="Gespleißtes Gewebe" attribute="na" action="simple" strain="1+ (s. Text)"/>
+	<TALENT name="Gestalt des Bluthundes" attribute="na" action="sustained" strain="1"/>
+	<TALENT name="Gift" attribute="TOU" action="free" strain="1"/>
+	<TALENT name="Glyphe der Entflechtung" attribute="na" action="free" strain="1"/>
+	<TALENT name="Glyphe der Neuabstimmung" attribute="PER" action="simple" strain="3"/>
+	<TALENT name="Glyphe der Spiegelung" attribute="PER" action="free" strain="2"/>
+	<TALENT name="Glyphe des Schutzes" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Herausforderung der Besten" attribute="CHA" action="standard"/>
+	<TALENT name="Heulen" attribute="CHA" action="simple" strain="2"/>
+	<TALENT name="Koordinierter Angriff" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Kritischer Treffer" attribute="na" action="free" skilluse="9"/>
+	<TALENT name="Lebendige Waffe" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Lied der Ablenkung" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Lied der Schlachten" attribute="na" action="free" strain="1"/>
+	<TALENT name="Löwenmut" attribute="na" action="na"/>
+	<TALENT name="Matrixsicht" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Mehrfacher Schlag" attribute="DEX" action="simple" strain="+1 (s. Text)"/>
+	<TALENT name="Mehrfacher Sturmangriff" attribute="DEX" action="simple" strain="+1 (s. Text)"/>
+	<TALENT name="Perfekte Konzentration" attribute="WIL" action="simple"/>
+	<TALENT name="Pflanzensprache" attribute="PER" action="standard"/>
+	<TALENT name="Projektil Beeinflussen" attribute="WIL" action="free" strain="2"/>
+	<TALENT name="Rankenrüstung" attribute="na" action="free"/>
 	<TALENT name="Schlagfertige Erwiderung" attribute="CHA" action="free" strain="2" skilluse="9"/>
+	<TALENT name="Schmerzen Widerstehen" attribute="na" action="na" skilluse="9"/>
+	<TALENT name="Schnappschuss" attribute="DEX" action="free" strain="2"/>
+	<TALENT name="Schneidende Worte" attribute="CHA" action="simple" strain="2"/>
+	<TALENT name="Schockbehandlung" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Seele des Jenseits" attribute="WIL" action="standard"/>
 	<TALENT name="Seelenschutz" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Steinhaut" attribute="na" action="standard"/>
 	<TALENT name="Struktur Beeinflussen" attribute="PER" action="simple" strain="2"/>
+	<TALENT name="Sturmschild" attribute="na" action="standard" strain="2"/>
 	<TALENT name="Summenmatrix" attribute="na" action="na"/>
+	<TALENT name="Talentdiebstahl" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Täuschende Klinge" attribute="na" action="free" strain="1"/>
+	<TALENT name="Tiere Führen" attribute="CHA" action="standard"/>
+	<TALENT name="Tödlicher Schlag" attribute="TOU" action="free" strain="2"/>
+	<TALENT name="Traumdieb" attribute="PER" action="standard" strain="2"/>
+	<TALENT name="Üble Wunde" attribute="PER" action="simple" strain="2" skilluse="9"/>
+	<TALENT name="Unaufhaltsame Erholung" attribute="TOU" action="free"/>
 	<TALENT name="Unmögliches Versteck" attribute="na" action="standard" strain="3"/>
 	<TALENT name="Untergraben" attribute="CHA" action="simple" strain="1"/>
+	<TALENT name="Unverzagte Tapferkeit" attribute="na" action="na"/>
+	<TALENT name="Verteidigungshaltung" attribute="na" action="free" strain="1" skilluse="9"/>
+	<TALENT name="Vitaler Schutz" attribute="na" action="free" strain="1"/>
+	<TALENT name="Vom Donner gerührt" attribute="STR" action="free" strain="1"/>
+	<TALENT name="Waffenbruch" attribute="na" action="free" skilluse="9"/>
 	<TALENT name="Wahrheit Durch Lügen" attribute="CHA" action="standard" strain="2"/>
+	<TALENT name="Weltenpuls" attribute="PER" action="sustained" strain="3"/>
+	<TALENT name="Wettstreit des Willens" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Wie eine streunende Katze" attribute="PER" action="standard"/>
 	<TALENT name="Zauberreichweite" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Zauberstruktur" attribute="PER" action="simple" strain="2"/>
-	<TALENT name="Zweiter Zauber" attribute="PER" action="simple" strain="2"/>
+	<TALENT name="Zielerfassung" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Zweite Chance" attribute="CHA" action="free" strain="3"/>
+	<TALENT name="Zweiter Zauber" attribute="PER" action="simple" strain="2"/>
 </CAPABILITIES>
