@@ -52,12 +52,12 @@
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Uppercut"/>
 		<TALENTABILITY/>
-		<KARMA spend="Charaisma-only Test"/>
+		<KARMA spend="Charisma-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Lightning Combo"/>
 		<TALENTABILITY/>
-		<KARMA spend="spend Karma Point on unarmed Damage Tests"/>
+		<KARMA spend="unarmed Damage Tests"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Temper Self"/>

@@ -27,7 +27,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Riposte"/>
 		<TALENTABILITY/>
-	    <KARMA spend="Für Interaktionsproben"/>
+		<KARMA spend="Interaktionsproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Herzliches Lachen"/>
@@ -48,7 +48,7 @@
 		<DISCIPLINETALENT name="Zweitwaffe"/>
 		<TALENTABILITY/>
 		<ABILITY>Einschätzen</ABILITY>
-		<KARMA spend="Für Schadensproben mit einer Nahkampfwaffe"/>
+		<KARMA spend="Schadensproben mit einer Nahkampfwaffe"/>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Entwaffnen"/>

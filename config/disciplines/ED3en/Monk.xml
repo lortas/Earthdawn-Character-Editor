@@ -57,7 +57,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Second Attack"/>
 		<TALENTABILITY/>
-		<KARMA spend="may spend 1 Karma Point on [Special Use] Tests"/>
+		<KARMA spend="[Special Use] Tests"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Takedown"/>

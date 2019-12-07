@@ -19,7 +19,7 @@
 		<DISCIPLINETALENT name="Magische Markierung"/>
 		<DISCIPLINETALENT name="Projektilwaffen"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Wahrnehmungsproben auf Sicht basierend"/>
+		<KARMA spend="Wahrnehmungsproben auf Sicht basierend"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Mystische Verfolgung"/>
@@ -29,7 +29,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Kampfsinn"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Initiativproben"/>
+		<KARMA spend="Initiativeproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Weitschuss"/>
@@ -49,7 +49,7 @@
 		<OPTIONALTALENT name="Tigersprung"/>
 		<DISCIPLINETALENT name="Schwachstelle Erkennen"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Schadensproben mit Fernkampfwaffen"/>
+		<KARMA spend="Schadensproben mit Fernkampfwaffen"/>
 		<ABILITY>Projektil Erschaffen</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

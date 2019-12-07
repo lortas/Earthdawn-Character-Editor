@@ -19,7 +19,7 @@
 		<DISCIPLINETALENT name="Spurenlesen"/>
 		<DISCIPLINETALENT name="Wildnisüberleben"/>
 		<TALENTABILITY/>
-		<KARMA spend="auf Proben um etwas zu finden"/>
+		<KARMA spend="Proben um etwas zu finden"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Heimlicher Schritt"/>
@@ -29,7 +29,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Mystische Verfolgung"/>
 		<TALENTABILITY/>
-		<KARMA spend="auf Initiativproben"/>
+		<KARMA spend="Initiativeproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Gefahrensinn"/>
@@ -49,7 +49,7 @@
 		<OPTIONALTALENT name="Untrüglicher Blick"/>
 		<DISCIPLINETALENT name="Beweisanalyse"/>
 		<TALENTABILITY/>
-		<KARMA spend="für Erholungsproben"/>
+		<KARMA spend="Erholungsproben"/>
 		<ABILITY>Geschärfte Sinne</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

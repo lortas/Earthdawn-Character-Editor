@@ -52,7 +52,7 @@
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Wound Balance"/>
 		<TALENTABILITY/>
-		<KARMA spend="Charaisma-only Test"/>
+		<KARMA spend="Charisma-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Resist Taunt"/>

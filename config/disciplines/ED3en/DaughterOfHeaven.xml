@@ -89,7 +89,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 		<DEFENSE kind="social"/>
-		<KARMA spend="Once per round, adept may spend and roll 1 Karma Point to reduce Current Damage of adjacent target by result."/>
+		<KARMA spend="reduce Current Damage of adjacent target by result (once per round)"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Path of the Righteous"/>

@@ -18,7 +18,7 @@
 		<DISCIPLINETALENT name="Gefühlsmelodie"/>
 		<DISCIPLINETALENT name="Herzliches Lachen"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Interaktionsproben"/>
+		<KARMA spend="Interaktionsproben"/>
 		<ABILITY>Entertainer</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
@@ -29,7 +29,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Empathische Wahrnehmung"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Poben zur Informationsbeschaffung oder Erinnerungen"/>
+		<KARMA spend="Proben zur Informationsbeschaffung oder Erinnerungen"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Forschen"/>
@@ -49,7 +49,7 @@
 		<OPTIONALTALENT name="Wortgeplänkel"/>
 		<DISCIPLINETALENT name="Andere Inspirieren"/>
 		<TALENTABILITY/>
-		<KARMA spend="1x pro Runde für Proben eines anderen Charakters in Seh oder Hörweite"/>
+		<KARMA spend="Proben eines anderen Charakters in Seh- oder Hörweite (einmal pro Runde)"/>
 		<ABILITY>Ein Letztes Wort</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

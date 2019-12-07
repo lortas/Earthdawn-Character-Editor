@@ -57,7 +57,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Guard Stance"/>
 		<TALENTABILITY/>
-		<KARMA spend="spend Karma Point on Damage Tests fighting his lord’s interests"/>
+		<KARMA spend="Damage Tests fighting his lord’s interests"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Crushing Blow"/>

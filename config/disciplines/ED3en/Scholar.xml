@@ -57,7 +57,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Mind Hand"/>
 		<TALENTABILITY/>
-		<KARMA spend="spend Karma Point test made to gather knowledge for the Tower or prevent Tower’s knowledge being taken from him"/>
+		<KARMA spend="test made to gather knowledge for the Tower or prevent Tower’s knowledge being taken from him"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="True Sight"/>

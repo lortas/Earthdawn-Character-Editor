@@ -212,7 +212,7 @@
 		<SPELL type="elemental" name="Petrify"/>
 		<SPELL type="elemental" name="Weather Change"/>
 		<DEFENSE kind="spell"/>
-		<KARMA spend="Karma Point on Action Tests made by a spirit or creature under his control"/>
+		<KARMA spend="Action Tests made by a spirit or creature under his control"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Reshape Object"/>

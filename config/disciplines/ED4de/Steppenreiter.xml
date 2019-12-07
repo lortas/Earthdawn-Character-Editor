@@ -27,7 +27,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Tiergefährten Verbessern"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Angriffsproben bei einem Sturmangriff"/>
+		<KARMA spend="Angriffsproben bei einem Sturmangriff"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Tiergefährten Rufen"/>
@@ -47,7 +47,7 @@
 		<OPTIONALTALENT name="Unempfindlichkeit Tiergefährte"/>
 		<DISCIPLINETALENT name="Reittier Panzern"/>
 		<TALENTABILITY/>
-		<KARMA spend="für alle Schadensproben beim Reiten"/>
+		<KARMA spend="alle Schadensproben beim Reiten"/>
 		<ABILITY>Eine Seele, Zwei Körper</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

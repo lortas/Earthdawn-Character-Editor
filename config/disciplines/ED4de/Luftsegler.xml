@@ -19,7 +19,7 @@
 		<DISCIPLINETALENT name="Nahkampfwaffen"/>
 		<DISCIPLINETALENT name="Windkissen"/>
 		<TALENTABILITY/>
-		<KARMA spend="1x pro Runde für Aktionsproben auf einem Luftschiff"/>
+		<KARMA spend="Aktionsproben auf einem Luftschiff (einmal pro Runde)"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Aufmerksamkeit"/>
@@ -29,7 +29,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Empathische Wahrnehmung"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Initiativproben"/>
+		<KARMA spend="Initiativeproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Standhaftigkeit"/>
@@ -49,7 +49,7 @@
 		<OPTIONALTALENT name="Zweitwaffe"/>
 		<DISCIPLINETALENT name="Herzliches Lachen"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Interaktionsproben"/>
+		<KARMA spend="Interaktionsproben"/>
 		<ABILITY>Zusammenarbeiten</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

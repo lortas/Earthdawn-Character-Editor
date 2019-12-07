@@ -57,7 +57,7 @@
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Safe Path"/>
 		<TALENTABILITY/>
-		<KARMA spend="spend Karma Point on Action Tests to defend his property against theft or robbery"/>
+		<KARMA spend="Action Tests to defend his property against theft or robbery"/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="True Sight"/>

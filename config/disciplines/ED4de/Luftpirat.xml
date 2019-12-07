@@ -27,7 +27,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Standhaftigkeit"/>
 		<TALENTABILITY/>
-		<KARMA spend="für Erholungsproben"/>
+		<KARMA spend="Erholungsproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Heilendes Feuer"/>
@@ -47,7 +47,7 @@
 		<OPTIONALTALENT name="Zweitwaffe"/>
 		<DISCIPLINETALENT name="Schlachtruf"/>
 		<TALENTABILITY/>
-		<KARMA spend="für Schadensproben bei Nahkampfwaffen und Wurfwaffen gleich/grösser seines Einhand Limits"/>
+		<KARMA spend="Schadensproben bei Nahkampfwaffen und Wurfwaffen gleich/grösser seines Einhand Limits"/>
 		<ABILITY>Überwätigende Kraft</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->

@@ -82,7 +82,7 @@
 		<DISCIPLINETALENT name="Song of Deflection"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<KARMA spend="Dextery-only Test"/>
+		<KARMA spend="Dexterity-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Mind Wave"/>

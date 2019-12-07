@@ -52,7 +52,7 @@
 		<SPELL type="illusion" name="Niemand Da"/>
 		<SPELL type="illusion" name="Phantomkrieger"/>
 		<SPELL type="illusion" name="Und ein Schleier fiel"/>
-		<KARMA spend="für Interaktionsproben"/>
+		<KARMA spend="Interaktionsproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Magische Maske"/>

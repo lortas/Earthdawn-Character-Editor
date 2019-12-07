@@ -27,7 +27,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Tiere Bändigen"/>
 		<TALENTABILITY/>
-		<KARMA spend="Für Erholungsproben"/>
+		<KARMA spend="Erholungsproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Weitsprung"/>
@@ -47,7 +47,7 @@
 		<OPTIONALTALENT name="Unempfindlichkeit Tiergefährte"/>
 		<DISCIPLINETALENT name="Schadensverteilung"/>
 		<TALENTABILITY/>
-		<KARMA spend="für Schadensproben bei waffenlosen Kampf"/>
+		<KARMA spend="Schadensproben bei waffenlosen Kampf"/>
 		<ABILITY>Katzenhafte Anmut</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
