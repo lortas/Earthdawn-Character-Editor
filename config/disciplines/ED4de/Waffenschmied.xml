@@ -12,6 +12,7 @@
 		<OPTIONALTALENT name="Hieb Ausweichen"/>
 		<OPTIONALTALENT name="Lesen/Schreiben"/>
 		<OPTIONALTALENT name="Schildschlag"/>
+		<FREETALENT name="Handwerk"/>
 		<DISCIPLINETALENT name="Fadenweben" limitation="Faden Schmieden"/>
 		<DISCIPLINETALENT name="Artefaktgeschichte"/>
 		<DISCIPLINETALENT name="Eiserner Wille"/>

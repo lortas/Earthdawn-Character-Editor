@@ -9,7 +9,6 @@
 	<SKILL name="Flirten" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<SKILL name="Fremdsprachen" attribute="PER" action="standard" skilluse="1"/>
 	<SKILL name="Gassenwissen" attribute="CHA" action="sustained" skilluse="1"/>
-	<SKILL name="Handwerk" attribute="DEX" action="sustained" skilluse="1"/>
 	<SKILL name="Karten Zeichnen" attribute="PER" action="sustained" skilluse="1"/>
 	<SKILL name="Kunsthandwerk" attribute="CHA" action="sustained" skilluse="1">
 		<edt:LIMITATION>Backen</edt:LIMITATION>
@@ -119,6 +118,7 @@
 	<TALENT name="Gewinnendes Lächeln" attribute="CHA" action="standard"/>
 	<TALENT name="Gezielter Querschläger" attribute="DEX" action="simple" strain="1"/>
 	<TALENT name="Hammerschlag" attribute="STR" action="free" strain="1"/>
+	<TALENT name="Handwerk" attribute="DEX" action="sustained" skilluse="1"/>
 	<TALENT name="Hartnäckiges Gewebe" attribute="WIL" action="free" strain="1"/>
 	<TALENT name="Heilendes Feuer" attribute="WIL" action="sustained"/>
 	<TALENT name="Heimlicher Schritt" attribute="DEX" action="simple" skilluse="1"/>
