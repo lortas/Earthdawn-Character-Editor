@@ -1,5 +1,11 @@
 @CHARSET "UTF-8";
 
+@page {
+	size: auto;
+	/* this affects the margin in the printer settings */
+	margin: 0mm 0mm 0mm 0mm;
+}
+
 .sup {
 	font-size:0.6em;
 	vertical-align:top
@@ -21,7 +27,7 @@
 .edHeader {
 	text-align: center;
 	font-family: 'Comic Sans', Georgia, 'Century Schoolbook', serif;
-	font-size: 300%;
+	font-size: 200%;
 	font-weight: bolder;
 	padding: 1ex;
 	margin: 1ex;
