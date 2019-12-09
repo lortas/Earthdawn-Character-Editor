@@ -908,6 +908,46 @@
 		<LABEL lang="de">Geburt</LABEL>
 		<LABEL lang="en">Birth</LABEL>
 	</APPEARANCE>
+	<HEALTH name="health">
+		<LABEL lang="de">Leben</LABEL>
+		<LABEL lang="en">Health</LABEL>
+	</HEALTH>
+	<HEALTH name="death">
+		<LABEL lang="de">Tod</LABEL>
+		<LABEL lang="en">Death</LABEL>
+	</HEALTH>
+	<HEALTH name="unconsciousness">
+		<LABEL lang="de">Bewustlosigkeit</LABEL>
+		<LABEL lang="en">Unconsciousness</LABEL>
+	</HEALTH>
+	<HEALTH name="current damage">
+		<LABEL lang="de">Aktueller Schaden</LABEL>
+		<LABEL lang="en">Current Damage</LABEL>
+	</HEALTH>
+	<HEALTH name="recovery">
+		<LABEL lang="de">Erholung</LABEL>
+		<LABEL lang="en">Recovery</LABEL>
+	</HEALTH>
+	<HEALTH name="recovery tests">
+		<LABEL lang="de">Erholungsproben</LABEL>
+		<LABEL lang="en">Recovery Tests</LABEL>
+	</HEALTH>
+	<HEALTH name="wound threshold">
+		<LABEL lang="de">Verwundungsschwelle</LABEL>
+		<LABEL lang="en">Wound Threshold</LABEL>
+	</HEALTH>
+	<HEALTH name="normal wounds">
+		<LABEL lang="de">Normale Wunde</LABEL>
+		<LABEL lang="en">Normal Wounds</LABEL>
+	</HEALTH>
+	<HEALTH name="blood wounds">
+		<LABEL lang="de">Blutwunde</LABEL>
+		<LABEL lang="en">Blood Wounds</LABEL>
+	</HEALTH>
+	<HEALTH name="wound penalties">
+		<LABEL lang="de">Wundenbehinderung</LABEL>
+		<LABEL lang="en">Wound Penalties</LABEL>
+	</HEALTH>
 	<TEXT name="player">
 		<LABEL lang="de">Spieler</LABEL>
 		<LABEL lang="en">Player</LABEL>
@@ -919,5 +959,85 @@
 	<TEXT name="racialabilities info">
 		<LABEL lang="de">Die mit &quot;*&quot; markierten Rassenfähigkeiten sind bereits in den Charakter eingerechnet.</LABEL>
 		<LABEL lang="en">Racial Abilities market with &quot;*&quot; are already calculated within the character.</LABEL>
+	</TEXT>
+	<TEXT name="character sheet">
+		<LABEL lang="de">Charakterbogen</LABEL>
+		<LABEL lang="en">Character Sheet</LABEL>
+	</TEXT>
+	<TEXT name="attributes">
+		<LABEL lang="de">Attribute</LABEL>
+		<LABEL lang="en">Attributes</LABEL>
+	</TEXT>
+	<TEXT name="base">
+		<LABEL lang="de">Basis</LABEL>
+		<LABEL lang="en">Base</LABEL>
+	</TEXT>
+	<TEXT name="current">
+		<LABEL lang="de">Aktuell</LABEL>
+		<LABEL lang="en">Current</LABEL>
+	</TEXT>
+	<TEXT name="step">
+		<LABEL lang="de">Stufe</LABEL>
+		<LABEL lang="en">Step</LABEL>
+	</TEXT>
+	<TEXT name="dice">
+		<LABEL lang="de">Würfel</LABEL>
+		<LABEL lang="en">Dice</LABEL>
+	</TEXT>
+	<TEXT name="defensearmor rating">
+		<LABEL lang="de">Verteitigungs-/Rüstungs-Werte</LABEL>
+		<LABEL lang="en">Defense/Armor Rating</LABEL>
+	</TEXT>
+	<TEXT name="physical defense">
+		<LABEL lang="de">Phy.&#160;Verteitigung</LABEL>
+		<LABEL lang="en">Phy.&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="spell defense">
+		<LABEL lang="de">Mys.&#160;Verteitigung</LABEL>
+		<LABEL lang="en">Mys.&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="social defense">
+		<LABEL lang="de">Soz.&#160;Verteitigung</LABEL>
+		<LABEL lang="en">Social&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="movement">
+		<LABEL lang="de">Bewegung</LABEL>
+		<LABEL lang="en">Movement</LABEL>
+	</TEXT>
+	<TEXT name="physical armor">
+		<LABEL lang="de">Phy.&#160;Rüstung</LABEL>
+		<LABEL lang="en">Phy.&#160;Armor</LABEL>
+	</TEXT>
+	<TEXT name="mystic armor">
+		<LABEL lang="de">Mys.&#160;Rüstung</LABEL>
+		<LABEL lang="en">Mys.&#160;Armor</LABEL>
+	</TEXT>
+	<TEXT name="penalty">
+		<LABEL lang="de">Behinderung</LABEL>
+		<LABEL lang="en">Penalty</LABEL>
+	</TEXT>
+	<TEXT name="karmapoints">
+		<LABEL lang="de">Karmapunkte</LABEL>
+		<LABEL lang="en">Karma Points</LABEL>
+	</TEXT>
+	<TEXT name="carrying">
+		<LABEL lang="de">Traglast</LABEL>
+		<LABEL lang="en">Carrying</LABEL>
+	</TEXT>
+	<TEXT name="lifting">
+		<LABEL lang="de">Hebelimit</LABEL>
+		<LABEL lang="en">Lifting</LABEL>
+	</TEXT>
+	<TEXT name="discipline">
+		<LABEL lang="de">Disziplin</LABEL>
+		<LABEL lang="en">Discipline</LABEL>
+	</TEXT>
+	<TEXT name="circle">
+		<LABEL lang="de">Kreis</LABEL>
+		<LABEL lang="en">Circle</LABEL>
+	</TEXT>
+	<TEXT name="discipline bonuses">
+		<LABEL lang="de">Disziplinbonus</LABEL>
+		<LABEL lang="en">Discipline Bonuses</LABEL>
 	</TEXT>
 </TRANSLATIONS>

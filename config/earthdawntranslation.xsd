@@ -74,6 +74,7 @@
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="NAMEGIVER" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="ITEM" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="APPEARANCE" type="GENERALTEXT_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="HEALTH" type="GENERALTEXT_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="TEXT" type="GENERALTEXT_type"/>
 			</xs:sequence>
 			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" use="required"/>

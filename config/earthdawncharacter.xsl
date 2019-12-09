@@ -32,7 +32,7 @@
 			<img class="edIcon" height="100pt">
 				<xsl:attribute name="src"><xsl:value-of select="/edc:EDCHARACTER/@editorpath"/><xsl:text>images/ed-logo.png</xsl:text></xsl:attribute>
 			</img>
-			<span class="edHeader">Character Sheet</span>
+			<span class="edHeader"><xsl:value-of select="$translations/tra:TEXT[@name='character sheet']/tra:LABEL[@lang=$lang]"/></span>
 		</div>
 		<div class="edLayoutRow">
 			<table width="100%">
@@ -115,7 +115,7 @@
 		<tr>
 			<td class="edKeyCell">Name:</td>
 			<td colspan="3" class="edValueCell"><xsl:value-of select="/edc:EDCHARACTER/@name" /></td>
-			<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:TEXT[@name='player']/tra:LABEL[@lang=$lang]"/>:</td>
+			<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='player']/tra:LABEL[@lang=$lang]"/>:</td>
 			<td colspan="3" class="edValueCell"><xsl:value-of select="/edc:EDCHARACTER/@player" /></td>
 		</tr>
 		<!-- Appearance -->
@@ -125,37 +125,37 @@
 
 <xsl:template match="//edc:APPEARANCE">
 	<tr>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='race']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='race']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell" colspan="2"><xsl:value-of select="@race" /></td>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='origin']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='origin']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell" colspan="2"><xsl:value-of select="@origin" /></td>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='age']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='age']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@age" /></td>
 	</tr>
 	<tr>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='gender']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='gender']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@gender" /></td>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='skin']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='skin']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@skin" /></td>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='hair']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='hair']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@hair" /></td>		
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='eyes']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='eyes']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@eyes" /></td>
 	</tr>
 	<tr>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='weight']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='weight']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@weight_string" /></td>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='height']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='height']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@height_string" /></td>
-		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='birth']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='birth']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@birth" /></td>
 	</tr>
 	<tr>
-		<td colspan="8"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:TEXT[@name='racialabilities info']/tra:LABEL[@lang=$lang]"/></td>
+		<td colspan="8"><xsl:value-of select="$translations/tra:TEXT[@name='racialabilities info']/tra:LABEL[@lang=$lang]"/></td>
 	</tr>
 	<tr>
 		<!-- Racial Abilities -->
-		<td class="edKeyCell" colspan="2"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:TEXT[@name='racialabilities']/tra:LABEL[@lang=$lang]"/>:</td>
+		<td class="edKeyCell" colspan="2"><xsl:value-of select="$translations/tra:TEXT[@name='racialabilities']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell" colspan="6">
 			<xsl:apply-templates select="//edc:RACEABILITES"/>
 		</td>
@@ -170,16 +170,16 @@
 </xsl:template>
 
 <xsl:template name="attributes">
-	<div class="edSubHeader">Attributes</div>
+	<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='attributes']/tra:LABEL[@lang=$lang]"/></div>
 	<table width="100%">
 		<tr>
 			<td class="edHeaderCell"><!-- Leer --></td>
-			<td class="edHeaderCell">Race</td>
-			<td class="edHeaderCell">Base</td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='race']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='base']/tra:LABEL[@lang=$lang]"/></td>
 			<td class="edHeaderCell">LP</td>
-			<td class="edHeaderCell">Current</td>
-			<td class="edHeaderCell">Step</td>
-			<td class="edHeaderCell">Dice</td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='current']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='step']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/></td>
 		</tr>
 		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='DEX']"/>
 		<xsl:apply-templates select="//edc:ATTRIBUTE[@name='STR']"/>
@@ -192,7 +192,7 @@
 
 <xsl:template match="//edc:ATTRIBUTE">
 	<tr>
-		<td class="edCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@name]/@acronym"/></td>
+		<td class="edCell"><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@name]/@acronym"/></td>
 		<td class="edMidCell"><xsl:value-of select="@racevalue"/></td>
 		<td class="edMidCell"><xsl:value-of select="@basevalue"/></td>
 		<td class="edMidCell"><xsl:value-of select="@lpincrease"/></td>
@@ -204,34 +204,34 @@
 
 <xsl:template name="defense">
 	<div class="edHealth">
-		<div class="edSubHeader">Defense/Armor Rating</div>
+		<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='defensearmor rating']/tra:LABEL[@lang=$lang]"/></div>
 		<table width="100%">
 			<tr>
-				<td class="edKeyCell">Phy.&#160;Defense:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='physical defense']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@physical"/></td>
-				<td class="edKeyCell">Mys.&#160;Defense:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='spell defense']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@spell"/></td>
-				<td class="edKeyCell">Social&#160;Defense:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='social defense']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@social"/></td>
-				<td class="edKeyCell">Movement:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='movement']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@ground"/><xsl:if test="//edc:MOVEMENT/@flight>0"><xsl:text> / </xsl:text><xsl:value-of select="//edc:MOVEMENT/@flight"/></xsl:if></td>
 			</tr>
 			<tr>
-				<td class="edKeyCell">Phy.&#160;Armor:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='physical armor']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell">
 					<xsl:value-of select="//edc:PROTECTION/@physicalarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@physicalarmor!=0] | //edc:PROTECTION/edt:SHIELD[@physicalarmor!=0]">
 						<xsl:value-of select="@physicalarmor"/>
 						<xsl:if test="position()!=last()">+</xsl:if>
 					</xsl:for-each>)
 				</td>
-				<td class="edKeyCell">Mys.&#160;Armor:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='mystic armor']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell">
 					<xsl:value-of select="//edc:PROTECTION/@mysticarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@mysticarmor!=0] | //edc:PROTECTION/edt:SHIELD[@mysticarmor!=0]">
 						<xsl:value-of select="@mysticarmor"/>
 						<xsl:if test="position()!=last()">+</xsl:if>
 					</xsl:for-each>)
 				</td>
-				<td class="edKeyCell">Penalty:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='penalty']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:PROTECTION/@penalty"/></td>
 				<td class="edKeyCell">Initiative:</td>
 				<td class="edValueCell">
@@ -247,30 +247,30 @@
 
 <xsl:template name="health">
 	<div class="edHealth">
-		<div class="edSubHeader">Health</div>
+		<div class="edSubHeader"><xsl:value-of select="$translations/tra:HEALTH[@name='health']/tra:LABEL[@lang=$lang]"/></div>
 		<table width="100%">
 			<tr>
-				<td class="edKeyCell">Death</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='death']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:DEATH/@base" /> + <xsl:value-of select="//edt:DEATH/@adjustment" /> = <xsl:value-of select="//edt:DEATH/@value" /></td>
-				<td class="edKeyCell">Unconsciousness</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='unconsciousness']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:UNCONSCIOUSNESS/@base" /> + <xsl:value-of select="//edt:UNCONSCIOUSNESS/@adjustment" /> = <xsl:value-of select="//edt:UNCONSCIOUSNESS/@value" /></td>
-				<td class="edKeyCell">Current Damage</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='current damage']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/@damage" /></td>
 			</tr>
 			<tr>
-				<td class="edKeyCell">Recovery</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='recovery']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@step" /> (<xsl:value-of select="//edt:RECOVERY/@dice" />)</td>
-				<td class="edKeyCell">Recovery Tests</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='recovery tests']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@testsperday" /></td>
-				<td class="edKeyCell">Wound Threshold</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='wound threshold']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@threshold" /></td>
 			</tr>
 			<tr>
-				<td class="edKeyCell">Normal Wounds</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='normal wounds']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@normal" /></td>
-				<td class="edKeyCell">Blood Wounds</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='blood wounds']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@blood" /></td>
-				<td class="edKeyCell">Wound Penalties</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='wound penalties']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@penalties" /></td>
 			</tr>
 		</table>
@@ -282,11 +282,11 @@
 		<div class="edSubHeader">Karma</div>
 		<table class="invisible" width="100%"><tbody class="invisible">
 			<tr class="invisible">
-				<td class="edKeyCell" width="90em">Karma Points:</td>
+				<td class="edKeyCell" width="90em"><xsl:value-of select="$translations/tra:TEXT[@name='karmapoints']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="@current" /></td>
 				<td class="edKeyCell">Max:</td>
 				<td class="edValueCell"><xsl:value-of select="@max" /></td>
-				<td class="edKeyCell">Dice:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="@dice" /></td>
 				<td width="5%">&#160;</td>
 			</tr>
@@ -296,12 +296,12 @@
 
 <xsl:template match="//edc:CARRYING">
 	<div class="edCarrying">
-		<div class="edSubHeader">Carrying</div>
+		<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='carrying']/tra:LABEL[@lang=$lang]"/></div>
 		<table width="100%">
 			<tr>
-				<td class="edKeyCell">Carrying:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='carrying']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="@carrying" /></td>
-				<td class="edKeyCell">Lifting:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='lifting']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="@lifting" /></td>
 			</tr>
 		</table>
@@ -319,7 +319,7 @@
 <xsl:template match="//edc:DISCIPLINE">
 	<div class="edDiscipline">
 		<!-- Discipline -->
-		<div class="edSubHeader">Discipline <xsl:value-of select="@name" /> (Circle <xsl:value-of select="@circle"/>)</div>
+		<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='discipline']/tra:LABEL[@lang=$lang]"/>&#160;<xsl:value-of select="@name" /> (<xsl:value-of select="$translations/tra:TEXT[@name='circle']/tra:LABEL[@lang=$lang]"/>&#160;<xsl:value-of select="@circle"/>)</div>
 		<div class="edDisciplineBonuses">
 			<!-- Discipline Bonuses -->
 			<xsl:call-template name="disciplineBonuses"/>
@@ -388,7 +388,7 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell">
@@ -434,7 +434,7 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell">
@@ -480,7 +480,7 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell">
@@ -506,7 +506,7 @@
 </xsl:template>
 
 <xsl:template name="disciplineBonuses">
-	Discipline Bonuses:
+	<xsl:value-of select="$translations/tra:TEXT[@name='discipline bonuses']/tra:LABEL[@lang=$lang]"/>:
 	<xsl:if test="./edt:DISCIPLINEBONUS">
 		<xsl:apply-templates select="./edt:DISCIPLINEBONUS"/>
 	</xsl:if>
@@ -802,7 +802,7 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell">
@@ -1381,6 +1381,6 @@
 
 <xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz '" />
 <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ_'" />
-<xsl:variable name="translations" select="document('translation/ED4.xml')" />
+<xsl:variable name="translations" select="document('translation/ED4.xml')/tra:TRANSLATIONS" />
 <xsl:param name="lang" select="lang"/>
 </xsl:stylesheet>
