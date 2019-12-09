@@ -206,6 +206,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		TransformerFactory tFactory = TransformerFactory.newInstance();
 		try {
 			Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource("config/earthdawncharacter.xsl"));
+			transformer.setParameter("lang",character.getLang().value());
 			ByteArrayOutputStream html = new ByteArrayOutputStream();
 			transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
 			htmlstring=html.toString(encoding);
