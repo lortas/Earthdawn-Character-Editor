@@ -5,6 +5,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:edc="http://earthdawn.com/character"
 	xmlns:edt="http://earthdawn.com/datatypes"
+	xmlns:tra="http://earthdawn.com/translation"
 	exclude-result-prefixes="edc edt"
 >
 
@@ -114,7 +115,7 @@
 		<tr>
 			<td class="edKeyCell">Name:</td>
 			<td colspan="3" class="edValueCell"><xsl:value-of select="/edc:EDCHARACTER/@name" /></td>
-			<td class="edKeyCell">Player:</td>
+			<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:TEXT[@name='player']/tra:LABEL[@lang=$lang]"/>:</td>
 			<td colspan="3" class="edValueCell"><xsl:value-of select="/edc:EDCHARACTER/@player" /></td>
 		</tr>
 		<!-- Appearance -->
@@ -122,39 +123,39 @@
 	</table>
 </xsl:template>
 
-<xsl:template match="//edc:APPEARANCE"> 
+<xsl:template match="//edc:APPEARANCE">
 	<tr>
-		<td class="edKeyCell">Race:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='race']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell" colspan="2"><xsl:value-of select="@race" /></td>
-		<td class="edKeyCell">Origin:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='origin']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell" colspan="2"><xsl:value-of select="@origin" /></td>
-		<td class="edKeyCell">Age:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='age']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@age" /></td>
 	</tr>
 	<tr>
-		<td class="edKeyCell">Gender:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='gender']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@gender" /></td>
-		<td class="edKeyCell">Skin:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='skin']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@skin" /></td>
-		<td class="edKeyCell">Hair:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='hair']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@hair" /></td>		
-		<td class="edKeyCell">Eyes:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='eyes']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@eyes" /></td>
 	</tr>
 	<tr>
-		<td class="edKeyCell">Weight:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='weight']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@weight_string" /></td>
-		<td class="edKeyCell">Height:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='height']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@height_string" /></td>
-		<td class="edKeyCell">Birth:</td>
+		<td class="edKeyCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:APPEARANCE[@name='birth']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@birth" /></td>
 	</tr>
 	<tr>
-		<td colspan="8">Racial Abilities market with &quot;*&quot; are already calculated within the character.</td>
+		<td colspan="8"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:TEXT[@name='racialabilities info']/tra:LABEL[@lang=$lang]"/></td>
 	</tr>
 	<tr>
 		<!-- Racial Abilities -->
-		<td class="edKeyCell" colspan="2">Racial Abilities:</td>
+		<td class="edKeyCell" colspan="2"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:TEXT[@name='racialabilities']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell" colspan="6">
 			<xsl:apply-templates select="//edc:RACEABILITES"/>
 		</td>
@@ -191,7 +192,7 @@
 
 <xsl:template match="//edc:ATTRIBUTE">
 	<tr>
-		<td class="edCell"><xsl:value-of select="@name"/></td>
+		<td class="edCell"><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@name]/@acronym"/></td>
 		<td class="edMidCell"><xsl:value-of select="@racevalue"/></td>
 		<td class="edMidCell"><xsl:value-of select="@basevalue"/></td>
 		<td class="edMidCell"><xsl:value-of select="@lpincrease"/></td>
@@ -387,7 +388,7 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="@attribute"/></xsl:otherwise>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell">
@@ -430,7 +431,12 @@
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
@@ -471,7 +477,12 @@
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
@@ -788,7 +799,12 @@
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:TRANSLATIONS/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell">
 			<xsl:value-of select="./edt:RANK/@rank"/>
 			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
@@ -1365,4 +1381,6 @@
 
 <xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz '" />
 <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ_'" />
+<xsl:variable name="translations" select="document('translation/ED4.xml')" />
+<xsl:param name="lang" select="lang"/>
 </xsl:stylesheet>
