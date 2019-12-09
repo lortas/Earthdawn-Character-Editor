@@ -82,7 +82,7 @@
 		<SPELLKIND type="sorcery" weaving="Hexerei"/>
 		<SPELLKIND type="wizard" weaving="Magie"/>
 	</SPELLWEAVING>
-		<CAPABILITY>
+	<CAPABILITY>
 		<LABEL lang="en">Distract</LABEL>
 		<LABEL lang="de">Ablenken</LABEL>
 	</CAPABILITY>
@@ -828,7 +828,6 @@
 		<LABEL lang="de">Waffenschmied</LABEL>
 		<LABEL lang="en">Weaponsmith</LABEL>
 	</DISCIPLINE>
-
 	<NAMEGIVER>
 		<LABEL lang="en">Dwarf</LABEL>
 		<LABEL lang="de">Zwerg</LABEL>
@@ -865,9 +864,60 @@
 		<LABEL lang="en">Drake</LABEL>
 		<LABEL lang="de">Drako</LABEL>
 	</NAMEGIVER>
-
 	<ITEM>
 		<LABEL lang="de">Battle-Axe</LABEL>
 		<LABEL lang="en">Streitaxt</LABEL>
 	</ITEM>
+	<APPEARANCE name="hair">
+		<LABEL lang="de">Haare</LABEL>
+		<LABEL lang="en">Hair</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="race">
+		<LABEL lang="de">Rasse</LABEL>
+		<LABEL lang="en">Race</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="origin">
+		<LABEL lang="de">Herkunft</LABEL>
+		<LABEL lang="en">Origin</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="age">
+		<LABEL lang="de">Alter</LABEL>
+		<LABEL lang="en">Age</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="gender">
+		<LABEL lang="de">Geschlecht</LABEL>
+		<LABEL lang="en">Gender</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="skin">
+		<LABEL lang="de">Haut</LABEL>
+		<LABEL lang="en">Skin</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="eyes">
+		<LABEL lang="de">Augen</LABEL>
+		<LABEL lang="en">Eyes></LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="weight">
+		<LABEL lang="de">Gewicht</LABEL>
+		<LABEL lang="en">Weight</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="height">
+		<LABEL lang="de">Größe</LABEL>
+		<LABEL lang="en">Height</LABEL>
+	</APPEARANCE>
+	<APPEARANCE name="birth">
+		<LABEL lang="de">Geburt</LABEL>
+		<LABEL lang="en">Birth</LABEL>
+	</APPEARANCE>
+	<TEXT name="player">
+		<LABEL lang="de">Spieler</LABEL>
+		<LABEL lang="en">Player</LABEL>
+	</TEXT>
+	<TEXT name="racialabilities">
+		<LABEL lang="de">Rassenfähigkeiten</LABEL>
+		<LABEL lang="en">Racial Abilities</LABEL>
+	</TEXT>
+	<TEXT name="racialabilities info">
+		<LABEL lang="de">Die mit &quot;*&quot; markierten Rassenfähigkeiten sind bereits in den Charakter eingerechnet.</LABEL>
+		<LABEL lang="en">Racial Abilities market with &quot;*&quot; are already calculated within the character.</LABEL>
+	</TEXT>
 </TRANSLATIONS>
