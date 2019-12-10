@@ -39,12 +39,18 @@
 	<xs:complexType name="NAME_SPELLWEAVING_type">
 		<xs:sequence>
 			<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLKIND" type="NAME_SPELLKIND_type"/>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLELEMENT" type="NAME_SPELLELEMENT_type"/>
 		</xs:sequence>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="NAME_SPELLKIND_type">
 		<xs:attribute name="weaving" type="xs:string" use="required"/>
 		<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="NAME_SPELLELEMENT_type">
+		<xs:attribute name="element" type="edt:elementkind_type" use="required"/>
+		<xs:attribute name="acronym" type="edt:acronym_type" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="GENERALTEXT_type">
 		<xs:complexContent>
