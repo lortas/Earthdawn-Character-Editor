@@ -109,7 +109,7 @@
 </xsl:template>
 
 <xsl:template name="miscellaneous">
-	<div class="edSubHeader">General Information</div>
+	<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='general information']/tra:LABEL[@lang=$lang]"/></div>
 	<table width="100%">
 		<!-- Name -->
 		<tr>
@@ -324,18 +324,18 @@
 			<!-- Discipline Bonuses -->
 			<xsl:call-template name="disciplineBonuses"/>
 		</div>
-		<div class="edSubHeader" style="text-align:left">Talents :</div>
+		<div class="edSubHeader" style="text-align:left"><xsl:value-of select="$translations/tra:TEXT[@name='talents']/tra:LABEL[@lang=$lang]"/>:</div>
 		<table width="100%">
 			<thead><tr>
 				<td class="edHeaderCell" style="text-align: right;">Talentname</td>
-				<td class="edHeaderCell">Action</td>
-				<td class="edHeaderCell">Strain</td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='action']/tra:LABEL[@lang=$lang]"/></td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='strain']/tra:LABEL[@lang=$lang]"/></td>
 				<td class="edHeaderCell">Attr.</td>
-				<td class="edHeaderCell">Rank</td>
-				<td class="edHeaderCell">Step</td>
-				<td class="edHeaderCell">Dice</td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='rank']/tra:LABEL[@lang=$lang]"/></td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='step']/tra:LABEL[@lang=$lang]"/></td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/></td>
 				<td class="edHeaderCell">Ini.</td>
-				<td class="edHeaderCell">Book</td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
 			</tr></thead>
 			<xsl:apply-templates select="./edt:DISZIPLINETALENT">
 				<xsl:sort select="@circle" data-type="number" order="ascending"/>
@@ -381,7 +381,7 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@action='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="@action"/></xsl:otherwise>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
@@ -429,7 +429,12 @@
 			</xsl:if>
 			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@action='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
 		<td class="edCapabCell">
 			<xsl:choose>
@@ -475,7 +480,12 @@
 			</xsl:if>
 			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@action='na'">&#8211;</xsl:when>
+				<xsl:otherwise><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
 		<td class="edCapabCell">
 			<xsl:choose>
@@ -525,28 +535,28 @@
 				<div class="edSubSubHeader">Spells</div>
 				<table width="100%">
 					<thead><tr>
-						<td class="edHeaderCell">Spellname</td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='spellname']/tra:LABEL[@lang=$lang]"/></td>
 						<td class="edHeaderCell">M<sup>1)</sup></td>
-						<td class="edHeaderCell">Type</td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='type']/tra:LABEL[@lang=$lang]"/></td>
 						<td class="edHeaderCell">Element</td>
-						<td class="edHeaderCell">Circle</td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='circle']/tra:LABEL[@lang=$lang]"/></td>
 						<td class="edHeaderCell">T<sup>2)</sup></td>
 						<td class="edHeaderCell">WD<sup>3)</sup></td>
 						<td class="edHeaderCell">RD<sup>4)</sup></td>
 						<td class="edHeaderCell">CD<sup>5)</sup></td>
-						<td class="edHeaderCell">Range</td>
-						<td class="edHeaderCell">Duration</td>
-						<td class="edHeaderCell">Effect</td>
-						<td class="edHeaderCell">Book</td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='range']/tra:LABEL[@lang=$lang]"/></td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='duration']/tra:LABEL[@lang=$lang]"/></td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='effect']/tra:LABEL[@lang=$lang]"/></td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
 					</tr></thead>
 					<xsl:apply-templates select="//edc:OPENSPELL"/>
 				</table>
 				<div>
-					<span class="sup">1)</span>In Matrix?;
-					<span class="sup">2)</span>Threads;
-					<span class="sup">3)</span>Weaving Difficulty;
-					<span class="sup">4)</span>Reattuning Difficulty;
-					<span class="sup">5)</span>Casting Difficulty;
+					<span class="sup">1)</span><xsl:value-of select="$translations/tra:TEXT[@name='in matrix']/tra:LABEL[@lang=$lang]"/>?;
+					<span class="sup">2)</span><xsl:value-of select="$translations/tra:TEXT[@name='threads']/tra:LABEL[@lang=$lang]"/>;
+					<span class="sup">3)</span><xsl:value-of select="$translations/tra:TEXT[@name='weaving difficulty']/tra:LABEL[@lang=$lang]"/>;
+					<span class="sup">4)</span><xsl:value-of select="$translations/tra:TEXT[@name='reattuning difficulty']/tra:LABEL[@lang=$lang]"/>;
+					<span class="sup">5)</span><xsl:value-of select="$translations/tra:TEXT[@name='casting difficulty']/tra:LABEL[@lang=$lang]"/>;
 				</div>
 			</div>
 		</div>
@@ -562,28 +572,28 @@
 					<div class="edSubSubHeader">Spells</div>
 					<table width="100%">
 						<thead><tr>
-							<td class="edHeaderCell">Spellname</td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='spellname']/tra:LABEL[@lang=$lang]"/></td>
 							<td class="edHeaderCell">M<sup>1)</sup></td>
-							<td class="edHeaderCell">Type</td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='type']/tra:LABEL[@lang=$lang]"/></td>
 							<td class="edHeaderCell">Element</td>
-							<td class="edHeaderCell">Circle</td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='circle']/tra:LABEL[@lang=$lang]"/></td>
 							<td class="edHeaderCell">T<sup>2)</sup></td>
 							<td class="edHeaderCell">WD<sup>3)</sup></td>
 							<td class="edHeaderCell">RD<sup>4)</sup></td>
 							<td class="edHeaderCell">CD<sup>5)</sup></td>
-							<td class="edHeaderCell">Range</td>
-							<td class="edHeaderCell">Duration</td>
-							<td class="edHeaderCell">Effect</td>
-							<td class="edHeaderCell">Book</td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='range']/tra:LABEL[@lang=$lang]"/></td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='duration']/tra:LABEL[@lang=$lang]"/></td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='effect']/tra:LABEL[@lang=$lang]"/></td>
+							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
 						</tr></thead>
 						<xsl:apply-templates select="./edt:SPELL"/>
 					</table>
 					<div>
-						<span class="sup">1)</span>In Matrix?;
-						<span class="sup">2)</span>Threads;
-						<span class="sup">3)</span>Weaving Difficulty;
-						<span class="sup">4)</span>Reattuning Difficulty;
-						<span class="sup">5)</span>Casting Difficulty;
+						<span class="sup">1)</span><xsl:value-of select="$translations/tra:TEXT[@name='in matrix']/tra:LABEL[@lang=$lang]"/>?;
+						<span class="sup">2)</span><xsl:value-of select="$translations/tra:TEXT[@name='threads']/tra:LABEL[@lang=$lang]"/>;
+						<span class="sup">3)</span><xsl:value-of select="$translations/tra:TEXT[@name='weaving difficulty']/tra:LABEL[@lang=$lang]"/>;
+						<span class="sup">4)</span><xsl:value-of select="$translations/tra:TEXT[@name='reattuning difficulty']/tra:LABEL[@lang=$lang]"/>;
+						<span class="sup">5)</span><xsl:value-of select="$translations/tra:TEXT[@name='casting difficulty']/tra:LABEL[@lang=$lang]"/>;
 					</div>
 				</div>
 			</div>
@@ -596,7 +606,7 @@
 		<td class="edCapabCell" style="text-align: left;"><xsl:value-of select="@name" /></td>
 		<td class="edCapabCell"><xsl:if test="@inmatrix='yes'">X</xsl:if></td>
 		<td class="edCapabCell"><xsl:value-of select="@type" /></td>
-		<td class="edCapabCell"><xsl:value-of select="@element" /></td>
+		<td class="edCapabCell"><xsl:value-of select="$translations/tra:SPELLWEAVING[@lang=$lang]/tra:SPELLELEMENT[@element=current()/@element]/@name"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@circle" /></td>
 		<td class="edCapabCell"><xsl:value-of select="@threads" /></td>
 		<td class="edCapabCell"><xsl:value-of select="@weavingdifficulty" /></td>
@@ -760,18 +770,18 @@
 </xsl:template>
 
 <xsl:template name="skills">
-	<div class="edSubHeader" style="text-align:left">Skills :</div>
+	<div class="edSubHeader" style="text-align:left"><xsl:value-of select="$translations/tra:TEXT[@name='skills']/tra:LABEL[@lang=$lang]"/>:</div>
 	<table width="100%">
 		<thead><tr>
-			<td class="edHeaderCell" style="text-align: right;">Skill Name</td>
-			<td class="edHeaderCell">Action</td>
-			<td class="edHeaderCell">Strain</td>
-			<td class="edHeaderCell">Attr</td>
-			<td class="edHeaderCell">Rank</td>
-			<td class="edHeaderCell">Step</td>
-			<td class="edHeaderCell">Dice</td>
+			<td class="edHeaderCell" style="text-align: right;"><xsl:value-of select="$translations/tra:TEXT[@name='skillname']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='action']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='strain']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell">Attr.</td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='rank']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='step']/tra:LABEL[@lang=$lang]"/></td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/></td>
 			<td class="edHeaderCell">Ini.</td>
-			<td class="edHeaderCell">Book</td>
+			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
 		</tr></thead>
 		<xsl:apply-templates select="//edc:SKILL">
 			<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
@@ -797,7 +807,7 @@
 				</xsl:for-each>
 			</xsl:if>
 		</td>
-		<td class="edCapabCell"><xsl:value-of select="@action"/></td>
+		<td class="edCapabCell"><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
 		<td class="edCapabCell">
 			<xsl:choose>

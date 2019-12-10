@@ -73,6 +73,14 @@
 		<SPELLKIND type="shamane" weaving="Shamanism"/>
 		<SPELLKIND type="sorcery" weaving="Sorcery"/>
 		<SPELLKIND type="wizard" weaving="Wizardry"/>
+		<SPELLELEMENT element="fire" acronym="fi" name="Fire"/>
+		<SPELLELEMENT element="water" acronym="w" name="Water"/>
+		<SPELLELEMENT element="undefined" acronym="-" name="Undefined"/>
+		<SPELLELEMENT element="wood" acronym="w" name="Wood"/>
+		<SPELLELEMENT element="earth" acronym="e" name="Earth"/>
+		<SPELLELEMENT element="air" acronym="a" name="Air"/>
+		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
+		<SPELLELEMENT element="fear" acronym="fe" name="Fear"/>
 	</SPELLWEAVING>
 	<SPELLWEAVING lang="de">
 		<SPELLKIND type="elemental" weaving="Elementarismus"/>
@@ -81,6 +89,14 @@
 		<SPELLKIND type="shamane" weaving="Schamanismus"/>
 		<SPELLKIND type="sorcery" weaving="Hexerei"/>
 		<SPELLKIND type="wizard" weaving="Magie"/>
+		<SPELLELEMENT element="fire" acronym="fe" name="Feuer"/>
+		<SPELLELEMENT element="water" acronym="w" name="Wasser"/>
+		<SPELLELEMENT element="undefined" acronym="-" name="Undefiniert"/>
+		<SPELLELEMENT element="wood" acronym="h" name="Holz"/>
+		<SPELLELEMENT element="earth" acronym="e" name="Erde"/>
+		<SPELLELEMENT element="air" acronym="l" name="Luft"/>
+		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
+		<SPELLELEMENT element="fear" acronym="fu" name="Furcht"/>
 	</SPELLWEAVING>
 	<CAPABILITY>
 		<LABEL lang="en">Distract</LABEL>
@@ -1039,5 +1055,77 @@
 	<TEXT name="discipline bonuses">
 		<LABEL lang="de">Disziplinbonus</LABEL>
 		<LABEL lang="en">Discipline Bonuses</LABEL>
+	</TEXT>
+	<TEXT name="general information">
+		<LABEL lang="de">Allgemeine Informationen</LABEL>
+		<LABEL lang="en">General Information</LABEL>
+	</TEXT>
+	<TEXT name="talents">
+		<LABEL lang="de">Talente</LABEL>
+		<LABEL lang="en">Talents</LABEL>
+	</TEXT>
+	<TEXT name="action">
+		<LABEL lang="de">Aktion</LABEL>
+		<LABEL lang="en">Action</LABEL>
+	</TEXT>
+	<TEXT name="strain">
+		<LABEL lang="de">Überan.</LABEL>
+		<LABEL lang="en">Strain</LABEL>
+	</TEXT>
+	<TEXT name="rank">
+		<LABEL lang="de">Rang</LABEL>
+		<LABEL lang="en">Rank</LABEL>
+	</TEXT>
+	<TEXT name="book">
+		<LABEL lang="de">Buch</LABEL>
+		<LABEL lang="en">Book</LABEL>
+	</TEXT>
+	<TEXT name="skillname">
+		<LABEL lang="de">Fertigkeitenname</LABEL>
+		<LABEL lang="en">Skill Name</LABEL>
+	</TEXT>
+	<TEXT name="skills">
+		<LABEL lang="de">Fertigkeiten</LABEL>
+		<LABEL lang="en">Skills</LABEL>
+	</TEXT>
+	<TEXT name="spellname">
+		<LABEL lang="de">Zaubername</LABEL>
+		<LABEL lang="en">Spellname</LABEL>
+	</TEXT>
+	<TEXT name="type">
+		<LABEL lang="de">Typ</LABEL>
+		<LABEL lang="en">Type</LABEL>
+	</TEXT>
+	<TEXT name="range">
+		<LABEL lang="de">Reichweite</LABEL>
+		<LABEL lang="en">Range</LABEL>
+	</TEXT>
+	<TEXT name="duration">
+		<LABEL lang="de">Dauer</LABEL>
+		<LABEL lang="en">Duration</LABEL>
+	</TEXT>
+	<TEXT name="effect">
+		<LABEL lang="de">Effekt</LABEL>
+		<LABEL lang="en">Effect</LABEL>
+	</TEXT>
+	<TEXT name="in matrix">
+		<LABEL lang="de">In der Matrix</LABEL>
+		<LABEL lang="en">In Matrix</LABEL>
+	</TEXT>
+	<TEXT name="threads">
+		<LABEL lang="de">Fäden</LABEL>
+		<LABEL lang="en">Threads</LABEL>
+	</TEXT>
+	<TEXT name="weaving difficulty">
+		<LABEL lang="de">Webschwierigkeit</LABEL>
+		<LABEL lang="en">Weaving Difficulty</LABEL>
+	</TEXT>
+	<TEXT name="reattuning difficulty">
+		<LABEL lang="de">Neuabstimmungsschwierigkeit</LABEL>
+		<LABEL lang="en">Reattuning Difficulty</LABEL>
+	</TEXT>
+	<TEXT name="casting difficulty">
+		<LABEL lang="de">Wirkschwierigkeit</LABEL>
+		<LABEL lang="en">Casting Difficulty</LABEL>
 	</TEXT>
 </TRANSLATIONS>
