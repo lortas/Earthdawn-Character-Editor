@@ -353,10 +353,10 @@
 	<ATTRIBUTELPCOST cost="5500"/>
 	<ATTRIBUTELPCOST cost="8900"/>
 	<ATTRIBUTELPCOST cost="14400"/>
-	<LEGENDARYSTATUS circle="0" reown="16" reputation="na"/>
-	<LEGENDARYSTATUS circle="1" reown="16" reputation="na"/>
-	<LEGENDARYSTATUS circle="2" reown="16" reputation="na"/>
-	<LEGENDARYSTATUS circle="5" reown="11" reputation="+2"/>
+	<LEGENDARYSTATUS circle="0" reown="16" reputation="-"/>
+	<LEGENDARYSTATUS circle="1" reown="16" reputation="-"/>
+	<LEGENDARYSTATUS circle="2" reown="16" reputation="-"/>
+	<LEGENDARYSTATUS circle="5" reown="12" reputation="+2"/>
 	<LEGENDARYSTATUS circle="9" reown="9" reputation="+4"/>
 	<LEGENDARYSTATUS circle="13" reown="7" reputation="+6"/>
 	<NEWDISCIPLINETALENTCOST>

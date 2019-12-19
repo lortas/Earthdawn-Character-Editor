@@ -191,7 +191,7 @@
   <STEPDICETABLE attribute="112" step="39" dice="4d12+d10+d8" />
   <STEPDICETABLE attribute="115" step="40" dice="4d12+2d10" />
 	<DISCIPLINENR>
-			<CIRCLE circle="0">
+		<CIRCLE circle="0">
 			<TALENTLPCOST cost="100"/>
 			<TALENTLPCOST cost="200"/>
 			<TALENTLPCOST cost="300"/>
@@ -385,8 +385,8 @@
 	<ATTRIBUTELPCOST cost="5500"/>
 	<ATTRIBUTELPCOST cost="8900"/>
 	<ATTRIBUTELPCOST cost="14400"/>
-	<LEGENDARYSTATUS circle="0" reown="37" reputation="na"/>
-	<LEGENDARYSTATUS circle="1" reown="21" reputation="na"/>
+	<LEGENDARYSTATUS circle="0" reown="37" reputation="-"/>
+	<LEGENDARYSTATUS circle="1" reown="21" reputation="-"/>
 	<LEGENDARYSTATUS circle="2" reown="15" reputation="+1"/>
 	<LEGENDARYSTATUS circle="5" reown="11" reputation="+2"/>
 	<LEGENDARYSTATUS circle="9" reown="9" reputation="+3"/>
