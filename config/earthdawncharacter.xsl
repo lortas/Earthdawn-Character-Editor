@@ -326,17 +326,7 @@
 		</div>
 		<div class="edSubHeader" style="text-align:left"><xsl:value-of select="$translations/tra:TEXT[@name='talents']/tra:LABEL[@lang=$lang]"/>:</div>
 		<table width="100%">
-			<thead><tr>
-				<td class="edHeaderCell" style="text-align: right;">Talentname</td>
-				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='action']/tra:LABEL[@lang=$lang]"/></td>
-				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='strain']/tra:LABEL[@lang=$lang]"/></td>
-				<td class="edHeaderCell">Attr.</td>
-				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='rank']/tra:LABEL[@lang=$lang]"/></td>
-				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='step']/tra:LABEL[@lang=$lang]"/></td>
-				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/></td>
-				<td class="edHeaderCell">Ini.</td>
-				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
-			</tr></thead>
+			<xsl:call-template name="talentorskillheader"/>
 			<xsl:apply-templates select="./edt:DISZIPLINETALENT">
 				<xsl:sort select="@circle" data-type="number" order="ascending"/>
 				<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
@@ -362,7 +352,39 @@
 	</div>
 </xsl:template>
 
-<xsl:template match="//edt:DISZIPLINETALENT">
+<xsl:template name="skills">
+	<div class="edSubHeader" style="text-align:left"><xsl:value-of select="$translations/tra:TEXT[@name='skills']/tra:LABEL[@lang=$lang]"/>:</div>
+	<table width="100%">
+		<xsl:call-template name="talentorskillheader"/>
+		<xsl:apply-templates select="//edc:SKILL">
+			<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
+			<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
+			<xsl:sort select="@name"/>
+			<xsl:sort select="./edt:LIMITATION"/>
+		</xsl:apply-templates>
+	</table>
+</xsl:template>
+
+<xsl:template match="//edt:DISZIPLINETALENT"><xsl:call-template name="talentorskill"/></xsl:template>
+<xsl:template match="//edt:OPTIONALTALENT"><xsl:call-template name="talentorskill"/></xsl:template>
+<xsl:template match="//edt:FREETALENT"><xsl:call-template name="talentorskill"/></xsl:template>
+<xsl:template match="//edc:SKILL"><xsl:call-template name="talentorskill"/></xsl:template>
+
+<xsl:template name="talentorskillheader">
+	<thead><tr>
+		<td class="edHeaderCell" style="text-align: right;">Name</td>
+		<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='action']/tra:LABEL[@lang=$lang]"/></td>
+		<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='strain']/tra:LABEL[@lang=$lang]"/></td>
+		<td class="edHeaderCell">Attr.</td>
+		<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='rank']/tra:LABEL[@lang=$lang]"/></td>
+		<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='step']/tra:LABEL[@lang=$lang]"/></td>
+		<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/></td>
+		<td class="edHeaderCell">Ini.</td>
+		<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
+	</tr></thead>
+</xsl:template>
+
+<xsl:template name="talentorskill">
 	<tr>
 		<xsl:if test="@realigned>0">
 			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
@@ -376,6 +398,7 @@
 					<xsl:if test="position() &lt; last()">, </xsl:if>
 				</xsl:for-each>
 			</xsl:if>
+			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
 			<xsl:if test="./edt:TEACHER/@byversatility!='yes'"> (v)</xsl:if>
 		</td>
 		<td class="edCapabCell">
@@ -405,108 +428,6 @@
 		<td class="edCapabCell">
 			<xsl:choose>
 				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell"><xsl:value-of select="$translations/tra:TEXT[@name=current()/@isinitiative]/tra:LABEL[@lang=$lang]"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
-	</tr>
-</xsl:template>
-
-<xsl:template match="//edt:OPTIONALTALENT">
-	<tr>
-		<xsl:if test="@realigned>0">
-			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
-		</xsl:if>
-		<td class="edKeyCell">
-			<xsl:value-of select="@name"/>
-			<xsl:if test="./edt:LIMITATION">
-				<xsl:text>: </xsl:text>
-				<xsl:for-each select="./edt:LIMITATION">
-					<xsl:value-of select="."/>
-					<xsl:if test="position() &lt; last()">, </xsl:if>
-				</xsl:for-each>
-			</xsl:if>
-			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@action='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell">
-			<xsl:value-of select="./edt:RANK/@rank"/>
-			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
-			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">-</xsl:when>
-				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">-</xsl:when>
-				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell"><xsl:value-of select="$translations/tra:TEXT[@name=current()/@isinitiative]/tra:LABEL[@lang=$lang]"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
-	</tr>
-</xsl:template>
-
-<xsl:template match="//edt:FREETALENT">
-	<tr>
-		<xsl:if test="@realigned>0">
-			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
-		</xsl:if>
-		<td class="edKeyCell">
-			<xsl:value-of select="@name"/>
-			<xsl:if test="./edt:LIMITATION">
-				<xsl:text>: </xsl:text>
-				<xsl:for-each select="./edt:LIMITATION">
-					<xsl:value-of select="."/>
-					<xsl:if test="position() &lt; last()">, </xsl:if>
-				</xsl:for-each>
-			</xsl:if>
-			<xsl:if test="@karma='yes'"><xsl:text>(K)</xsl:text></xsl:if>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@action='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell">
-			<xsl:value-of select="./edt:RANK/@rank"/>
-			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
-			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">-</xsl:when>
-				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">-</xsl:when>
 				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
 			</xsl:choose>
 		</td>
@@ -766,74 +687,6 @@
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
 		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
 		<td class="edCapabCell"><xsl:value-of select="$translations/tra:TEXT[@name=current()/@used]/tra:LABEL[@lang=$lang]"/></td>
-	</tr>
-</xsl:template>
-
-<xsl:template name="skills">
-	<div class="edSubHeader" style="text-align:left"><xsl:value-of select="$translations/tra:TEXT[@name='skills']/tra:LABEL[@lang=$lang]"/>:</div>
-	<table width="100%">
-		<thead><tr>
-			<td class="edHeaderCell" style="text-align: right;"><xsl:value-of select="$translations/tra:TEXT[@name='skillname']/tra:LABEL[@lang=$lang]"/></td>
-			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='action']/tra:LABEL[@lang=$lang]"/></td>
-			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='strain']/tra:LABEL[@lang=$lang]"/></td>
-			<td class="edHeaderCell">Attr.</td>
-			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='rank']/tra:LABEL[@lang=$lang]"/></td>
-			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='step']/tra:LABEL[@lang=$lang]"/></td>
-			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='dice']/tra:LABEL[@lang=$lang]"/></td>
-			<td class="edHeaderCell">Ini.</td>
-			<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='book']/tra:LABEL[@lang=$lang]"/></td>
-		</tr></thead>
-		<xsl:apply-templates select="//edc:SKILL">
-			<xsl:sort select="./edt:RANK/@rank" data-type="number" order="descending"/>
-			<xsl:sort select="./edt:RANK/@step" data-type="number" order="descending"/>
-			<xsl:sort select="@name"/>
-			<xsl:sort select="./edt:LIMITATION"/>
-		</xsl:apply-templates>
-	</table>
-</xsl:template>
-
-<xsl:template match="//edc:SKILL">
-	<tr>
-		<xsl:if test="@realigned>0">
-			<xsl:attribute name="style">text-decoration:line-through;</xsl:attribute>
-		</xsl:if>
-		<td class="edKeyCell">
-			<xsl:value-of select="@name"/>
-			<xsl:if test="./edt:LIMITATION">
-				<xsl:text>: </xsl:text>
-				<xsl:for-each select="./edt:LIMITATION">
-					<xsl:value-of select="."/>
-					<xsl:if test="position() &lt; last()">, </xsl:if>
-				</xsl:for-each>
-			</xsl:if>
-		</td>
-		<td class="edCapabCell"><xsl:value-of select="$translations/tra:ACTIONS[@lang=$lang]/tra:ACTION[@action=current()/@action]/@name"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="$translations/tra:ATTRIBUTES[@lang=$lang]/tra:ATTRIBUTE[@attribute=current()/@attribute]/@acronym"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell">
-			<xsl:value-of select="./edt:RANK/@rank"/>
-			<xsl:if test="./edt:RANK/@bonus>0">+</xsl:if>
-			<xsl:if test="./edt:RANK/@bonus!=0"><xsl:value-of select="./edt:RANK/@bonus"/></xsl:if>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="./edt:RANK/@step"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell">
-			<xsl:choose>
-				<xsl:when test="@attribute='na'">&#8211;</xsl:when>
-				<xsl:otherwise><xsl:value-of select="./edt:RANK/@dice"/></xsl:otherwise>
-			</xsl:choose>
-		</td>
-		<td class="edCapabCell"><xsl:value-of select="$translations/tra:TEXT[@name=current()/@isinitiative]/tra:LABEL[@lang=$lang]"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@bookref"/></td>
 	</tr>
 </xsl:template>
 
