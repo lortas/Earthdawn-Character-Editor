@@ -73,6 +73,15 @@
 		<SPELLKIND type="shamane" weaving="Shamanism"/>
 		<SPELLKIND type="sorcery" weaving="Sorcery"/>
 		<SPELLKIND type="wizard" weaving="Wizardry"/>
+		<SPELLELEMENT element="fire" acronym="fi" name="Fire"/>
+		<SPELLELEMENT element="water" acronym="w" name="Water"/>
+		<SPELLELEMENT element="undefined" acronym="-" name="Undefined"/>
+		<SPELLELEMENT element="wood" acronym="w" name="Wood"/>
+		<SPELLELEMENT element="earth" acronym="e" name="Earth"/>
+		<SPELLELEMENT element="air" acronym="a" name="Air"/>
+		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
+		<SPELLELEMENT element="fear" acronym="fe" name="Fear"/>
+		<SPELLELEMENT element="orichalcum" acronym="or" name="orichalcum"/>
 	</SPELLWEAVING>
 	<SPELLWEAVING lang="de">
 		<SPELLKIND type="elemental" weaving="Elementarismus"/>
@@ -81,6 +90,15 @@
 		<SPELLKIND type="shamane" weaving="Schamanismus"/>
 		<SPELLKIND type="sorcery" weaving="Hexerei"/>
 		<SPELLKIND type="wizard" weaving="Magie"/>
+		<SPELLELEMENT element="fire" acronym="fe" name="Feuer"/>
+		<SPELLELEMENT element="water" acronym="w" name="Wasser"/>
+		<SPELLELEMENT element="undefined" acronym="-" name="Undefiniert"/>
+		<SPELLELEMENT element="wood" acronym="h" name="Holz"/>
+		<SPELLELEMENT element="earth" acronym="e" name="Erde"/>
+		<SPELLELEMENT element="air" acronym="l" name="Luft"/>
+		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
+		<SPELLELEMENT element="fear" acronym="fu" name="Furcht"/>
+		<SPELLELEMENT element="orichalcum" acronym="or" name="Oreichalkos"/>
 	</SPELLWEAVING>
 	<CAPABILITY>
 		<LABEL lang="en">Abate Curse</LABEL>
@@ -1650,6 +1668,46 @@
 		<LABEL lang="de">Geburt</LABEL>
 		<LABEL lang="en">Birth</LABEL>
 	</APPEARANCE>
+	<HEALTH name="health">
+		<LABEL lang="de">Leben</LABEL>
+		<LABEL lang="en">Health</LABEL>
+	</HEALTH>
+	<HEALTH name="death">
+		<LABEL lang="de">Tod</LABEL>
+		<LABEL lang="en">Death</LABEL>
+	</HEALTH>
+	<HEALTH name="unconsciousness">
+		<LABEL lang="de">Bewustlosigkeit</LABEL>
+		<LABEL lang="en">Unconsciousness</LABEL>
+	</HEALTH>
+	<HEALTH name="current damage">
+		<LABEL lang="de">Aktueller Schaden</LABEL>
+		<LABEL lang="en">Current Damage</LABEL>
+	</HEALTH>
+	<HEALTH name="recovery">
+		<LABEL lang="de">Erholung</LABEL>
+		<LABEL lang="en">Recovery</LABEL>
+	</HEALTH>
+	<HEALTH name="recovery tests">
+		<LABEL lang="de">Erholungsproben</LABEL>
+		<LABEL lang="en">Recovery Tests</LABEL>
+	</HEALTH>
+	<HEALTH name="wound threshold">
+		<LABEL lang="de">Verwundungsschwelle</LABEL>
+		<LABEL lang="en">Wound Threshold</LABEL>
+	</HEALTH>
+	<HEALTH name="normal wounds">
+		<LABEL lang="de">Normale Wunde</LABEL>
+		<LABEL lang="en">Normal Wounds</LABEL>
+	</HEALTH>
+	<HEALTH name="blood wounds">
+		<LABEL lang="de">Blutwunde</LABEL>
+		<LABEL lang="en">Blood Wounds</LABEL>
+	</HEALTH>
+	<HEALTH name="wound penalties">
+		<LABEL lang="de">Wundenbehinderung</LABEL>
+		<LABEL lang="en">Wound Penalties</LABEL>
+	</HEALTH>
 	<TEXT name="player">
 		<LABEL lang="de">Spieler</LABEL>
 		<LABEL lang="en">Player</LABEL>
@@ -1661,5 +1719,369 @@
 	<TEXT name="racialabilities info">
 		<LABEL lang="de">Die mit &quot;*&quot; markierten Rassenfähigkeiten sind bereits in den Charakter eingerechnet.</LABEL>
 		<LABEL lang="en">Racial Abilities market with &quot;*&quot; are already calculated within the character.</LABEL>
+	</TEXT>
+	<TEXT name="character sheet">
+		<LABEL lang="de">Charakterbogen</LABEL>
+		<LABEL lang="en">Character Sheet</LABEL>
+	</TEXT>
+	<TEXT name="attributes">
+		<LABEL lang="de">Attribute</LABEL>
+		<LABEL lang="en">Attributes</LABEL>
+	</TEXT>
+	<TEXT name="base">
+		<LABEL lang="de">Basis</LABEL>
+		<LABEL lang="en">Base</LABEL>
+	</TEXT>
+	<TEXT name="current">
+		<LABEL lang="de">Aktuell</LABEL>
+		<LABEL lang="en">Current</LABEL>
+	</TEXT>
+	<TEXT name="step">
+		<LABEL lang="de">Stufe</LABEL>
+		<LABEL lang="en">Step</LABEL>
+	</TEXT>
+	<TEXT name="dice">
+		<LABEL lang="de">Würfel</LABEL>
+		<LABEL lang="en">Dice</LABEL>
+	</TEXT>
+	<TEXT name="defensearmor rating">
+		<LABEL lang="de">Verteitigungs-/Rüstungs-Werte</LABEL>
+		<LABEL lang="en">Defense/Armor Rating</LABEL>
+	</TEXT>
+	<TEXT name="physical defense">
+		<LABEL lang="de">Phy.&#160;Verteitigung</LABEL>
+		<LABEL lang="en">Phy.&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="spell defense">
+		<LABEL lang="de">Mys.&#160;Verteitigung</LABEL>
+		<LABEL lang="en">Mys.&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="social defense">
+		<LABEL lang="de">Soz.&#160;Verteitigung</LABEL>
+		<LABEL lang="en">Social&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="movement">
+		<LABEL lang="de">Bewegung</LABEL>
+		<LABEL lang="en">Movement</LABEL>
+	</TEXT>
+	<TEXT name="physical armor">
+		<LABEL lang="de">Phy.&#160;Rüstung</LABEL>
+		<LABEL lang="en">Phy.&#160;Armor</LABEL>
+	</TEXT>
+	<TEXT name="mystic armor">
+		<LABEL lang="de">Mys.&#160;Rüstung</LABEL>
+		<LABEL lang="en">Mys.&#160;Armor</LABEL>
+	</TEXT>
+	<TEXT name="penalty">
+		<LABEL lang="de">Behinderung</LABEL>
+		<LABEL lang="en">Penalty</LABEL>
+	</TEXT>
+	<TEXT name="karmapoints">
+		<LABEL lang="de">Karmapunkte</LABEL>
+		<LABEL lang="en">Karma Points</LABEL>
+	</TEXT>
+	<TEXT name="carrying">
+		<LABEL lang="de">Traglast</LABEL>
+		<LABEL lang="en">Carrying</LABEL>
+	</TEXT>
+	<TEXT name="lifting">
+		<LABEL lang="de">Hebelimit</LABEL>
+		<LABEL lang="en">Lifting</LABEL>
+	</TEXT>
+	<TEXT name="discipline">
+		<LABEL lang="de">Disziplin</LABEL>
+		<LABEL lang="en">Discipline</LABEL>
+	</TEXT>
+	<TEXT name="circle">
+		<LABEL lang="de">Kreis</LABEL>
+		<LABEL lang="en">Circle</LABEL>
+	</TEXT>
+	<TEXT name="discipline bonuses">
+		<LABEL lang="de">Disziplinbonus</LABEL>
+		<LABEL lang="en">Discipline Bonuses</LABEL>
+	</TEXT>
+	<TEXT name="general information">
+		<LABEL lang="de">Allgemeine Informationen</LABEL>
+		<LABEL lang="en">General Information</LABEL>
+	</TEXT>
+	<TEXT name="talents">
+		<LABEL lang="de">Talente</LABEL>
+		<LABEL lang="en">Talents</LABEL>
+	</TEXT>
+	<TEXT name="action">
+		<LABEL lang="de">Aktion</LABEL>
+		<LABEL lang="en">Action</LABEL>
+	</TEXT>
+	<TEXT name="strain">
+		<LABEL lang="de">Überan.</LABEL>
+		<LABEL lang="en">Strain</LABEL>
+	</TEXT>
+	<TEXT name="rank">
+		<LABEL lang="de">Rang</LABEL>
+		<LABEL lang="en">Rank</LABEL>
+	</TEXT>
+	<TEXT name="book">
+		<LABEL lang="de">Buch</LABEL>
+		<LABEL lang="en">Book</LABEL>
+	</TEXT>
+	<TEXT name="skillname">
+		<LABEL lang="de">Fertigkeitenname</LABEL>
+		<LABEL lang="en">Skill Name</LABEL>
+	</TEXT>
+	<TEXT name="skills">
+		<LABEL lang="de">Fertigkeiten</LABEL>
+		<LABEL lang="en">Skills</LABEL>
+	</TEXT>
+	<TEXT name="spellname">
+		<LABEL lang="de">Zaubername</LABEL>
+		<LABEL lang="en">Spellname</LABEL>
+	</TEXT>
+	<TEXT name="type">
+		<LABEL lang="de">Typ</LABEL>
+		<LABEL lang="en">Type</LABEL>
+	</TEXT>
+	<TEXT name="range">
+		<LABEL lang="de">Reichweite</LABEL>
+		<LABEL lang="en">Range</LABEL>
+	</TEXT>
+	<TEXT name="duration">
+		<LABEL lang="de">Dauer</LABEL>
+		<LABEL lang="en">Duration</LABEL>
+	</TEXT>
+	<TEXT name="effect">
+		<LABEL lang="de">Effekt</LABEL>
+		<LABEL lang="en">Effect</LABEL>
+	</TEXT>
+	<TEXT name="in matrix">
+		<LABEL lang="de">In der Matrix</LABEL>
+		<LABEL lang="en">In Matrix</LABEL>
+	</TEXT>
+	<TEXT name="threads">
+		<LABEL lang="de">Fäden</LABEL>
+		<LABEL lang="en">Threads</LABEL>
+	</TEXT>
+	<TEXT name="weaving difficulty">
+		<LABEL lang="de">Webschwierigkeit</LABEL>
+		<LABEL lang="en">Weaving Difficulty</LABEL>
+	</TEXT>
+	<TEXT name="reattuning difficulty">
+		<LABEL lang="de">Neuabstimmungsschwierigkeit</LABEL>
+		<LABEL lang="en">Reattuning Difficulty</LABEL>
+	</TEXT>
+	<TEXT name="casting difficulty">
+		<LABEL lang="de">Wirkschwierigkeit</LABEL>
+		<LABEL lang="en">Casting Difficulty</LABEL>
+	</TEXT>
+	<TEXT name="yes">
+		<LABEL lang="de">Ja</LABEL>
+		<LABEL lang="en">Yes</LABEL>
+	</TEXT>
+	<TEXT name="no">
+		<LABEL lang="de">Nein</LABEL>
+		<LABEL lang="en">No</LABEL>
+	</TEXT>
+	<TEXT name="languages">
+		<LABEL lang="de">Sprachen</LABEL>
+		<LABEL lang="en">Languages</LABEL>
+	</TEXT>
+	<TEXT name="speak">
+		<LABEL lang="de">Sprechen</LABEL>
+		<LABEL lang="en">Speak</LABEL>
+	</TEXT>
+	<TEXT name="readwrite">
+		<LABEL lang="de">Lesen/Schreiben</LABEL>
+		<LABEL lang="en">Read/Write</LABEL>
+	</TEXT>
+	<TEXT name="viaskill">
+		<LABEL lang="de">über Fertigkeit</LABEL>
+		<LABEL lang="en">via skill</LABEL>
+	</TEXT>
+	<TEXT name="viaother">
+		<LABEL lang="de">über Sonstiges</LABEL>
+		<LABEL lang="en">via other</LABEL>
+	</TEXT>
+	<TEXT name="viatalent">
+		<LABEL lang="de">über Talent</LABEL>
+		<LABEL lang="en">via talent</LABEL>
+	</TEXT>
+	<TEXT name="weapons">
+		<LABEL lang="de">Waffen</LABEL>
+		<LABEL lang="en">Weapons</LABEL>
+	</TEXT>
+	<TEXT name="equipment">
+		<LABEL lang="de">Ausrüstung</LABEL>
+		<LABEL lang="en">Equipment</LABEL>
+	</TEXT>
+	<TEXT name="weight">
+		<LABEL lang="de">Gewicht</LABEL>
+		<LABEL lang="en">Weight</LABEL>
+	</TEXT>
+	<TEXT name="size">
+		<LABEL lang="de">Größe</LABEL>
+		<LABEL lang="en">Size</LABEL>
+	</TEXT>
+	<TEXT name="blooddamage">
+		<LABEL lang="de">Blutschaden</LABEL>
+		<LABEL lang="en">Blood Damage</LABEL>
+	</TEXT>
+	<TEXT name="depatterning">
+		<LABEL lang="de">Zerfall</LABEL>
+		<LABEL lang="en">Depatterning</LABEL>
+	</TEXT>
+	<TEXT name="location">
+		<LABEL lang="de">Position</LABEL>
+		<LABEL lang="en">Location</LABEL>
+	</TEXT>
+	<TEXT name="used">
+		<LABEL lang="de">Verwe.</LABEL>
+		<LABEL lang="en">Used</LABEL>
+	</TEXT>
+	<TEXT name="bookref">
+		<LABEL lang="de">Buch Ref</LABEL>
+		<LABEL lang="en">Book Ref</LABEL>
+	</TEXT>
+	<TEXT name="copper">
+		<LABEL lang="de">Kupfer</LABEL>
+		<LABEL lang="en">Copper</LABEL>
+	</TEXT>
+	<TEXT name="silver">
+		<LABEL lang="de">Silber</LABEL>
+		<LABEL lang="en">Silver</LABEL>
+	</TEXT>
+	<TEXT name="gold">
+		<LABEL lang="de">Gold</LABEL>
+		<LABEL lang="en">Gold</LABEL>
+	</TEXT>
+	<TEXT name="dmg">
+		<LABEL lang="de">Schad</LABEL>
+		<LABEL lang="en">Dmg</LABEL>
+	</TEXT>
+	<TEXT name="sz">
+		<LABEL lang="de">Gr</LABEL>
+		<LABEL lang="en">Sz</LABEL>
+	</TEXT>
+	<TEXT name="short">
+		<LABEL lang="de">Kurz</LABEL>
+		<LABEL lang="en">Short</LABEL>
+	</TEXT>
+	<TEXT name="long">
+		<LABEL lang="de">Weit</LABEL>
+		<LABEL lang="en">Long</LABEL>
+	</TEXT>
+	<TEXT name="strmin">
+		<LABEL lang="de">STÄ min</LABEL>
+		<LABEL lang="en">STR min</LABEL>
+	</TEXT>
+	<TEXT name="dexmin">
+		<LABEL lang="de">GES min</LABEL>
+		<LABEL lang="en">DEX min</LABEL>
+	</TEXT>
+	<TEXT name="forged">
+		<LABEL lang="de">Geschm</LABEL>
+		<LABEL lang="en">Forged</LABEL>
+	</TEXT>
+	<TEXT name="date">
+		<LABEL lang="de">Datum</LABEL>
+		<LABEL lang="en">Date</LABEL>
+	</TEXT>
+	<TEXT name="armor">
+		<LABEL lang="de">Rüstung</LABEL>
+		<LABEL lang="en">Armor</LABEL>
+	</TEXT>
+	<TEXT name="shield">
+		<LABEL lang="de">Schild</LABEL>
+		<LABEL lang="en">Shield</LABEL>
+	</TEXT>
+	<TEXT name="edn">
+		<LABEL lang="de">edn</LABEL>
+		<LABEL lang="en">edn</LABEL>
+	</TEXT>
+	<TEXT name="protect">
+		<LABEL lang="de">Schutz</LABEL>
+		<LABEL lang="en">protect</LABEL>
+	</TEXT>
+	<TEXT name="shatter">
+		<LABEL lang="de">Bruch.</LABEL>
+		<LABEL lang="en">shatter</LABEL>
+	</TEXT>
+	<TEXT name="pdb">
+		<LABEL lang="de">pdb</LABEL>
+		<LABEL lang="en">pdb</LABEL>
+	</TEXT>
+	<TEXT name="mdb">
+		<LABEL lang="de">mdb</LABEL>
+		<LABEL lang="en">mdb</LABEL>
+	</TEXT>
+	<TEXT name="gem">
+		<LABEL lang="de">Juwel</LABEL>
+		<LABEL lang="en">Gem</LABEL>
+	</TEXT>
+	<TEXT name="equipment">
+		<LABEL lang="de">Ausrüstung</LABEL>
+		<LABEL lang="en">Equipment</LABEL>
+	</TEXT>
+	<TEXT name="legendpoints">
+		<LABEL lang="de">Legendenpunkte</LABEL>
+		<LABEL lang="en">Legend Points</LABEL>
+	</TEXT>
+	<TEXT name="reputation">
+		<LABEL lang="de">Ruf</LABEL>
+		<LABEL lang="en">Reputation</LABEL>
+	</TEXT>
+	<TEXT name="renown">
+		<LABEL lang="de">Ruhm</LABEL>
+		<LABEL lang="en">Renown</LABEL>
+	</TEXT>
+	<TEXT name="current">
+		<LABEL lang="de">Aktuell</LABEL>
+		<LABEL lang="en">Current</LABEL>
+	</TEXT>
+	<TEXT name="total">
+		<LABEL lang="de">Gesamt</LABEL>
+		<LABEL lang="en">Total</LABEL>
+	</TEXT>
+	<TEXT name="calculatedlegendpoints">
+		<LABEL lang="de">Berechnete Legendenpunkte</LABEL>
+		<LABEL lang="en">Calculated Legend Points</LABEL>
+	</TEXT>
+	<TEXT name="attributes">
+		<LABEL lang="de">Attribute</LABEL>
+		<LABEL lang="en">Attributes</LABEL>
+	</TEXT>
+	<TEXT name="disciplinetalents">
+		<LABEL lang="de">Disziplintalente</LABEL>
+		<LABEL lang="en">Discipline Talents</LABEL>
+	</TEXT>
+	<TEXT name="optionaltalents">
+		<LABEL lang="de">Optionale Talente</LABEL>
+		<LABEL lang="en">Optional Talents</LABEL>
+	</TEXT>
+	<TEXT name="knacks">
+		<LABEL lang="de">Kniff</LABEL>
+		<LABEL lang="en">Knacks</LABEL>
+	</TEXT>
+	<TEXT name="spells">
+		<LABEL lang="de">Zauber</LABEL>
+		<LABEL lang="en">Spells</LABEL>
+	</TEXT>
+	<TEXT name="karma">
+		<LABEL lang="de">Karma</LABEL>
+		<LABEL lang="en">Karma</LABEL>
+	</TEXT>
+	<TEXT name="magicitems">
+		<LABEL lang="de">Magische Gegenstände</LABEL>
+		<LABEL lang="en">Magic Items</LABEL>
+	</TEXT>
+	<TEXT name="total">
+		<LABEL lang="de">Gesamt</LABEL>
+		<LABEL lang="en">Total</LABEL>
+	</TEXT>
+	<TEXT name="">
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
+	</TEXT>
+	<TEXT name="">
+		<LABEL lang="de"></LABEL>
+		<LABEL lang="en"></LABEL>
 	</TEXT>
 </TRANSLATIONS>
