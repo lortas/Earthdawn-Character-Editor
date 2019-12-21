@@ -109,7 +109,7 @@
 	<TALENT name="Führung" attribute="CHA" action="sustained" skilluse="5"/>
 	<TALENT name="Furchterregender Sturmangriff" attribute="CHA" action="simple" strain="2"/>
 	<TALENT name="Gedankenkette" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Gefahrensinn" attribute="DEX" action="free" strain="1" skilluse="1" isinitiative="yes"/>
+	<TALENT name="Gefahrensinn" attribute="DEX" action="free" strain="1" skilluse="1"/>
 	<TALENT name="Gefühlsmelodie" attribute="CHA" action="sustained" skilluse="1"/>
 	<TALENT name="Gegenstand Verbergen" attribute="DEX" action="standard" strain="1" skilluse="5"/>
 	<TALENT name="Geisterbann" attribute="WIL" action="standard" strain="1"/>
@@ -191,7 +191,7 @@
 	<TALENT name="Tiergefährten Verbessern" attribute="WIL" action="sustained"/>
 	<TALENT name="Tierische Sinne" attribute="WIL" action="standard"/>
 	<TALENT name="Tiersprache" attribute="PER" action="standard"/>
-	<TALENT name="Tigersprung" attribute="na" action="free" strain="1" isinitiative="yes"/>
+	<TALENT name="Tigersprung" attribute="DEX" action="free" strain="1" isinitiative="yes"/>
 	<TALENT name="Totstellen" attribute="WIL" action="simple" strain="1"/>
 	<TALENT name="Überraschungsschlag" attribute="STR" action="free" strain="1" skilluse="1"/>
 	<TALENT name="Unempfindlichkeit Tiergefährte" attribute="na" action="na"/>

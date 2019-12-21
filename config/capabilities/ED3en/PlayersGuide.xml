@@ -323,9 +323,9 @@
 	<TALENT name="Thought Link" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.83"/>
 	<TALENT name="Thread Weaving" attribute="PER" action="standard" karma="no" strain="0" bookref="PG p.83"/>
 	<TALENT name="Throwing Weapons" attribute="DEX" action="standard" karma="no" strain="0" bookref="PG p.84"/>
-	<TALENT name="Tiger Spring" attribute="na" action="free" karma="no" strain="1" bookref="PG p.84" isinitiative="yes"/>
+	<TALENT name="Tiger Spring" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.84" isinitiative="yes"/>
 	<TALENT name="Tracking" attribute="PER" action="standard" karma="no" strain="1" bookref="PG p.84"/>
-	<TALENT name="Trap Initiative" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.84" isinitiative="yes"/>
+	<TALENT name="Trap Initiative" attribute="DEX" action="free" karma="no" strain="1" bookref="PG p.84"/>
 	<TALENT name="Trick Riding" attribute="DEX" action="simple" karma="no" strain="1" bookref="PG p.84"/>
 	<TALENT name="True Shot" attribute="DEX" action="standard" karma="yes" strain="0" bookref="PG p.84"/>
 	<TALENT name="True Sight" attribute="na" action="na" karma="no" strain="0" bookref="PG p.85"/>

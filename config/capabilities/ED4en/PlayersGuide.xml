@@ -110,7 +110,7 @@
 	<TALENT name="Leadership" attribute="CHA" action="sustained" skilluse="5"/>
 	<TALENT name="Fearsome Charge" attribute="CHA" action="simple" strain="2"/>
 	<TALENT name="Thought Link" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Danger Sense" attribute="DEX" action="free" strain="1" skilluse="1" isinitiative="yes"/>
+	<TALENT name="Danger Sense" attribute="DEX" action="free" strain="1" skilluse="1"/>
 	<TALENT name="Emotion Song" attribute="CHA" action="sustained" skilluse="1"/>
 	<TALENT name="Conceal Object" attribute="DEX" action="standard" strain="1" skilluse="5"/>
 	<TALENT name="Spirit Hold" attribute="WIL" action="standard" strain="1"/>
@@ -191,7 +191,7 @@
 	<TALENT name="Enhance Animal Companion" attribute="WIL" action="sustained"/>
 	<TALENT name="Borrow Sense" attribute="WIL" action="standard"/>
 	<TALENT name="Animal Talk" attribute="PER" action="standard"/>
-	<TALENT name="Tiger Spring" attribute="na" action="free" strain="1" isinitiative="yes"/>
+	<TALENT name="Tiger Spring" attribute="DEX" action="free" strain="1" isinitiative="yes"/>
 	<TALENT name="Dead Fall" attribute="WIL" action="simple" strain="1"/>
 	<TALENT name="Surprise Strike" attribute="STR" action="free" strain="1" skilluse="1"/>
 	<TALENT name="Animal Companion Durability" attribute="na" action="na"/>
