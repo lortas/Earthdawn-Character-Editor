@@ -1226,7 +1226,7 @@ public class ECEWorker {
 		for(String skill : disziplinProperties.getEASYSKILL() ) {
 			DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
 			bonus.setCircle(1);
-			bonus.setBonus("Learn '"+skill+"'-skill(s) like novice talents");
+			bonus.setBonus(PROPERTIES.getTranslationText("disziplineasyskill1")+" '"+skill+"'-"+PROPERTIES.getTranslationText("disziplineasyskill2"));
 			bonuses.add(bonus);
 		}
 		for(DISCIPLINECIRCLEType circle : disziplinProperties.getCIRCLE()) {
@@ -1235,13 +1235,13 @@ public class ECEWorker {
 			for( KARMAABILITYType karma : circle.getKARMA() ) {
 				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
 				bonus.setCircle(circlenr);
-				bonus.setBonus("Can spend Karma for "+karma.getSpend());
+				bonus.setBonus(PROPERTIES.getTranslationText("canspendkarmafor")+" "+karma.getSpend());
 				bonuses.add(bonus);
 			}
 			for( String ability : circle.getABILITY() ) {
 				DISCIPLINEBONUSType bonus = new DISCIPLINEBONUSType();
 				bonus.setCircle(circlenr);
-				bonus.setBonus("Ability: "+ability);
+				bonus.setBonus(PROPERTIES.getTranslationText("ability")+": "+ability);
 				bonuses.add(bonus);
 			}
 		}

@@ -1334,6 +1334,50 @@
 		<LABEL lang="de">Gesamt</LABEL>
 		<LABEL lang="en">Total</LABEL>
 	</TEXT>
+	<TEXT name="canspendkarmafor">
+		<LABEL lang="de">Karma bei</LABEL>
+		<LABEL lang="en">Can spend Karma for</LABEL>
+	</TEXT>
+	<TEXT name="ability">
+		<LABEL lang="de">Fähigkeit</LABEL>
+		<LABEL lang="en">Ability</LABEL>
+	</TEXT>
+	<TEXT name="disziplineasyskill1">
+		<LABEL lang="de">Lernt</LABEL>
+		<LABEL lang="en">Learn</LABEL>
+	</TEXT>
+	<TEXT name="disziplineasyskill2">
+		<LABEL lang="de">Fertigkeit(en) wie Novize-Talente</LABEL>
+		<LABEL lang="en">skill(s) like novice talents</LABEL>
+	</TEXT>
+	<TEXT name="portraits">
+		<LABEL lang="de">Porträts</LABEL>
+		<LABEL lang="en">Portraits</LABEL>
+	</TEXT>
+	<TEXT name="description">
+		<LABEL lang="de">Beschreibung</LABEL>
+		<LABEL lang="en">Description</LABEL>
+	</TEXT>
+	<TEXT name="comment">
+		<LABEL lang="de">Kommentar</LABEL>
+		<LABEL lang="en">Comment</LABEL>
+	</TEXT>
+	<TEXT name="totallegendpointsreceivedhistory">
+		<LABEL lang="de">Auflistung aller erhaltenen Legendenpunkte</LABEL>
+		<LABEL lang="en">total legendpoints received history</LABEL>
+	</TEXT>
+	<TEXT name="">
+		<LABEL lang="de">Wann</LABEL>
+		<LABEL lang="en">when</LABEL>
+	</TEXT>
+	<TEXT name="value">
+		<LABEL lang="de">Wert</LABEL>
+		<LABEL lang="en">value</LABEL>
+	</TEXT>
+	<TEXT name="comment">
+		<LABEL lang="de">Kommentar</LABEL>
+		<LABEL lang="en">comment</LABEL>
+	</TEXT>
 	<TEXT name="">
 		<LABEL lang="de"></LABEL>
 		<LABEL lang="en"></LABEL>

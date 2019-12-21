@@ -519,6 +519,19 @@ public class ApplicationProperties {
 		return new String[]{name.getValue(),name.getAcronym()};
 	}
 
+	public String getTranslationText(String name) {
+		for( GENERALTEXTType translation : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getTEXT() ) {
+			if( name.equals(translation.getName()) ) {
+				for( TranslationlabelType label : translation.getLABEL() ) {
+					if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
+						return label.getValue();
+					}
+				}
+			}
+		}
+		return "##"+RULESETLANGUAGE.toString()+":"+name+"##";
+	}
+
 	public List<ITEMType> getStartingItems() {
 		for( NAMESTARTINGITEMSType name : OPTIONALRULES.getSTARTINGITEMS() ) {
 			if( name.getLang().equals(RULESETLANGUAGE.getLanguage()) ) return name.getITEM();
@@ -649,6 +662,9 @@ public class ApplicationProperties {
 					t2.getSPELLWEAVING().addAll(t1.getSPELLWEAVING());
 					t2.getTHREADWEAVING().addAll(t1.getTHREADWEAVING());
 					t2.getVERSATILITY().addAll(t1.getVERSATILITY());
+					t2.getTEXT().addAll(t1.getTEXT());
+					t2.getHEALTH().addAll(t1.getHEALTH());
+					t2.getAPPEARANCE().addAll(t1.getAPPEARANCE());
 				}
 			}
 
