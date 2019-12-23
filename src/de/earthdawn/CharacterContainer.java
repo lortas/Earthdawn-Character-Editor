@@ -1565,6 +1565,14 @@ public class CharacterContainer extends CharChangeRefresh {
 			((SHIELDType)newarmor).setMysticdeflectionbonus(((SHIELDType)armor).getMysticdeflectionbonus());
 			((SHIELDType)newarmor).setPhysicaldeflectionbonus(((SHIELDType)armor).getPhysicaldeflectionbonus());
 			((SHIELDType)newarmor).setShatterthreshold(((SHIELDType)armor).getShatterthreshold());
+			DEFENSEType defense=((SHIELDType)armor).getDEFENSE();
+			if( defense != null ) {
+				DEFENSEType newdef=new DEFENSEType();
+				newdef.setPhysical(defense.getPhysical());
+				newdef.setSpell(defense.getSpell());
+				newdef.setSocial(defense.getSocial());
+				((SHIELDType)newarmor).setDEFENSE(newdef);
+			}
 		}
 		return newarmor;
 	}
