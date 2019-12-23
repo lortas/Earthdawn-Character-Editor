@@ -570,8 +570,18 @@
 		<td class="edKeyCell" style="text-align: right;"><xsl:value-of select="@name"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@damagestep"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@size"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@shortrange"/>hex (<xsl:value-of select="format-number(@shortrange*1.8288,'##.0')"/>m)</td>
-		<td class="edCapabCell"><xsl:value-of select="@longrange"/>hex (<xsl:value-of select="format-number(@longrange*1.8288,'##.0')"/>m)</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@shortrange>0"><xsl:value-of select="@shortrange"/>yd (<xsl:value-of select="format-number(@shortrange*0.9144,'##.0')"/>m)</xsl:when>
+				<xsl:otherwise>-</xsl:otherwise>
+			</xsl:choose>
+		</td>
+		<td class="edCapabCell">
+			<xsl:choose>
+				<xsl:when test="@longrange>0"><xsl:value-of select="@longrange"/>yd (<xsl:value-of select="format-number(@longrange*0.9144,'##.0')"/>m)</xsl:when>
+				<xsl:otherwise>-</xsl:otherwise>
+			</xsl:choose>
+		</td>
 		<td class="edCapabCell"><xsl:value-of select="@dexteritymin"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@strengthmin"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@timesforged"/></td>
@@ -596,7 +606,7 @@
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='weight']/tra:LABEL[@lang=$lang]"/></td>
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='used']/tra:LABEL[@lang=$lang]"/></td>
 				</tr></thead>
-				<xsl:apply-templates select="//edc:PROTECTION/edt:ARMOR[position()  > 1]"/>
+				<xsl:apply-templates select="//edc:PROTECTION/edt:ARMOR"/>
 			</table>
 		</td>
 		<td valign="top">
@@ -607,8 +617,10 @@
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='protect']/tra:LABEL[@lang=$lang]"/></td>
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='edn']/tra:LABEL[@lang=$lang]"/></td>
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='shatter']/tra:LABEL[@lang=$lang]"/></td>
-					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='pdb']/tra:LABEL[@lang=$lang]"/></td>
-					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='mdb']/tra:LABEL[@lang=$lang]"/></td>
+					<xsl:if test="/edc:EDCHARACTER/@rulesetversion!='ED4'">
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='pdb']/tra:LABEL[@lang=$lang]"/></td>
+						<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='mdb']/tra:LABEL[@lang=$lang]"/></td>
+					</xsl:if>
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='date']/tra:LABEL[@lang=$lang]"/></td>
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='location']/tra:LABEL[@lang=$lang]"/></td>
 					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='weight']/tra:LABEL[@lang=$lang]"/></td>
@@ -621,7 +633,7 @@
 </xsl:template>
 
 <xsl:template match="//edc:PROTECTION/edt:ARMOR">
-	<tr>
+	<xsl:if test="@physicalarmor>0 or @mysticarmor>0 or @penalty>0"><tr>
 		<td class="edCapabCell" style="text-align: left;">
 			<xsl:value-of select="@name"/>
 		</td>
@@ -650,9 +662,9 @@
 		<td class="edCapabCell"><xsl:value-of select="@edn"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
-		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/>lb</td>
 		<td class="edCapabCell"><xsl:value-of select="$translations/tra:TEXT[@name=current()/@used]/tra:LABEL[@lang=$lang]"/></td>
-	</tr>
+	</tr></xsl:if>
 </xsl:template>
 
 <xsl:template match="//edc:PROTECTION/edt:SHIELD">
@@ -669,23 +681,44 @@
 		</td>
 		<td class="edCapabCell">
 			<xsl:choose>
-				<xsl:when test="@physicalarmor>0"><xsl:value-of select="@physicalarmor"/></xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/<xsl:choose>
-				<xsl:when test="@mysticarmor>0"><xsl:value-of select="@mysticarmor"/></xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>/<xsl:choose>
+				<xsl:when test="/edc:EDCHARACTER/@rulesetversion='ED4'">
+					<xsl:choose>
+						<xsl:when test="@physicaldeflectionbonus>0"><xsl:value-of select="@physicaldeflectionbonus"/></xsl:when>
+						<xsl:otherwise>0</xsl:otherwise>
+					</xsl:choose>
+					/
+					<xsl:choose>
+						<xsl:when test="@mysticdeflectionbonus>0"><xsl:value-of select="@mysticdeflectionbonus"/></xsl:when>
+						<xsl:otherwise>0</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:choose>
+						<xsl:when test="@physicalarmor>0"><xsl:value-of select="@physicalarmor"/></xsl:when>
+						<xsl:otherwise>0</xsl:otherwise>
+					</xsl:choose>
+					/
+					<xsl:choose>
+						<xsl:when test="@mysticarmor>0"><xsl:value-of select="@mysticarmor"/></xsl:when>
+						<xsl:otherwise>0</xsl:otherwise>
+					</xsl:choose>
+				</xsl:otherwise>
+			</xsl:choose>
+			/
+			<xsl:choose>
 				<xsl:when test="@penalty>0"><xsl:value-of select="@penalty"/></xsl:when>
 				<xsl:otherwise>0</xsl:otherwise>
 			</xsl:choose>
 		</td>
 		<td class="edCapabCell"><xsl:value-of select="@edn"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@shatterthreshold"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@physicaldeflectionbonus"/></td>
-		<td class="edCapabCell"><xsl:value-of select="@mysticdeflectionbonus"/></td>
+		<xsl:if test="/edc:EDCHARACTER/@rulesetversion!='ED4'">
+			<td class="edCapabCell"><xsl:value-of select="@physicaldeflectionbonus"/></td>
+			<td class="edCapabCell"><xsl:value-of select="@mysticdeflectionbonus"/></td>
+		</xsl:if>
 		<td class="edCapabCell"><xsl:value-of select="@dateforged"/></td>
 		<td class="edCapabCell"><xsl:value-of select="@location"/></td>
-		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/></td>
+		<td class="edCapabCell"><xsl:value-of select="format-number(@weight,'##')"/>lb</td>
 		<td class="edCapabCell"><xsl:value-of select="$translations/tra:TEXT[@name=current()/@used]/tra:LABEL[@lang=$lang]"/></td>
 	</tr>
 </xsl:template>
