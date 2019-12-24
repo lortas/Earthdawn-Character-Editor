@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="de" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
+	<RULESETCONSTRAINT>ED4</RULESETCONSTRAINT>		
+<!--  Shield vollständig PG	-->
+	<SHIELD kind="shield" name="Buckler"         penalty="0" shatterthreshold="17" price="5"   weight="3"  bookref="SH S.261"><edt:DEFENSE physical="1" spell="0"/></SHIELD>
+	<SHIELD kind="shield" name="Farnschild"      penalty="2" shatterthreshold="16" price="22"  weight="5"  bookref="SH S.261"><edt:DEFENSE physical="1" spell="2"/></SHIELD>
+	<SHIELD kind="shield" name="Kristallbuckler" penalty="0" shatterthreshold="17" price="50"  weight="5"  bookref="SH S.261"><edt:DEFENSE physical="1" spell="1"/></SHIELD>
+	<SHIELD kind="shield" name="Kristallschild"  penalty="2" shatterthreshold="18" price="150" weight="15" bookref="SH S.261"><edt:DEFENSE physical="2" spell="2"/></SHIELD>
+	<SHIELD kind="shield" name="Reiterschild"    penalty="1" shatterthreshold="19" price="20"  weight="8"  bookref="SH S.261"><edt:DEFENSE physical="2" spell="0"/></SHIELD>
+	<SHIELD kind="shield" name="Rundschild"      penalty="1" shatterthreshold="19" price="15"  weight="10" bookref="SH S.261"><edt:DEFENSE physical="2" spell="0"/></SHIELD>
+	<SHIELD kind="shield" name="Turmschild"      penalty="2" shatterthreshold="21" price="50"  weight="15" bookref="SH S.261"><edt:DEFENSE physical="3" spell="0"/></SHIELD>
+</ITEMS>

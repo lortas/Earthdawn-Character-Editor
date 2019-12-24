@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
+	<RULESETCONSTRAINT>ED3</RULESETCONSTRAINT>		
+<!--  Shield vollständig PG	-->
+	<SHIELD kind="shield" name="Bark"            physicalarmor="2" mysticarmor="1" penalty="1" physicaldeflectionbonus="2" mysticdeflectionbonus="1" shatterthreshold="14" edn="11" weight="5"  price="15"  bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Body"            physicalarmor="5" mysticarmor="0" penalty="2" physicaldeflectionbonus="4" mysticdeflectionbonus="0" shatterthreshold="21"          weight="15" price="50"  bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Buckler"         physicalarmor="1" mysticarmor="0" penalty="0" physicaldeflectionbonus="1" mysticdeflectionbonus="0" shatterthreshold="17"          weight="3"  price="5"   bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Crystal Buckler" physicalarmor="1" mysticarmor="1" penalty="0" physicaldeflectionbonus="1" mysticdeflectionbonus="1" shatterthreshold="17" edn="10" weight="5"  price="50"  bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Crystal Raider"  physicalarmor="3" mysticarmor="3" penalty="2" physicaldeflectionbonus="3" mysticdeflectionbonus="3" shatterthreshold="18" edn="14" weight="15" price="150" bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Ferndask"        physicalarmor="1" mysticarmor="2" penalty="1" physicaldeflectionbonus="1" mysticdeflectionbonus="2" shatterthreshold="16" edn="11" weight="5"  price="22"  bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Footman's"       physicalarmor="3" mysticarmor="0" penalty="1" physicaldeflectionbonus="2" mysticdeflectionbonus="0" shatterthreshold="19"          weight="10" price="15"  bookref="PG p.257"/>
+	<SHIELD kind="shield" name="Rider's"         physicalarmor="3" mysticarmor="0" penalty="1" physicaldeflectionbonus="2" mysticdeflectionbonus="0" shatterthreshold="19"          weight="8"  price="20"  bookref="PG p.257"/>
+</ITEMS>
