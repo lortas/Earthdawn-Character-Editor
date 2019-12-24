@@ -84,11 +84,11 @@ public class WeaponNodePanel extends AbstractNodePanel<WEAPONType> {
 		spinnerDexMin = new JSpinner(new SpinnerNumberModel(node.getDexteritymin(), 0, 100, 1));
 		add(spinnerDexMin, "cell 3 1,alignx left,aligny center");
 
-		add(new JLabel("Short (hex)"), "cell 2 2,alignx right,aligny center");
+		add(new JLabel("Short (yard)"), "cell 2 2,alignx right,aligny center");
 		spinnerRangeShort = new JSpinner(new SpinnerNumberModel(node.getShortrange(), 0, 100, 1));
 		add(spinnerRangeShort, "cell 3 2,alignx left,aligny center");
 
-		add(new JLabel("Long (hex)"), "cell 2 3,alignx right,aligny center");
+		add(new JLabel("Long (yard)"), "cell 2 3,alignx right,aligny center");
 		spinnerRangeLong = new JSpinner(new SpinnerNumberModel(node.getLongrange(), 0, 100, 1));
 		add(spinnerRangeLong, "cell 3 3,alignx left,aligny center");
 
