@@ -46,8 +46,8 @@ import de.earthdawn.UnitCalculator;
 import de.earthdawn.data.*;
 import de.earthdawn.ui2.EDMainWindow;
 
-/** 
- * Klasse mit Konfigurations-Parametern 
+/**
+ * Klasse mit Konfigurations-Parametern
  */
 public class ApplicationProperties {
 
@@ -61,7 +61,7 @@ public class ApplicationProperties {
 	private static Map<ECERulesetLanguage,List<NAMEGIVERABILITYType>> NAMEGIVERS;
 	private OPTIONALRULES OPTIONALRULES = new OPTIONALRULES();
 	private UnitCalculator unitcalculator = null;
-	private static ITEMS ITEMS = new ITEMS();
+	private static Map<ECERulesetLanguage,ITEMS> ITEMS;
 	private static HELP HELP = new HELP();
 	private static ECEGUILAYOUT ECEGUILAYOUT = new ECEGUILAYOUT();
 	private static ECERulesetLanguage RULESETLANGUAGE = new ECERulesetLanguage(RulesetversionType.ED_3,LanguageType.EN);
@@ -83,7 +83,7 @@ public class ApplicationProperties {
 
 	/**
 	 * Zugriff auf Applikations-Konstanten.
-	 * 
+	 *
 	 * @return Instanz der Applikations-Konstanten.
 	 */
 	public static ApplicationProperties create() {
@@ -402,7 +402,7 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	/* 
+	/*
 	 * Liefert eine Map von Talenten die mehr als einmal gelernt werden können.
 	 * Der Key enthält dabei den Talentnamen und das Value den Zähler, wie häufig es gelernt werden darf.
 	 */
@@ -578,7 +578,7 @@ public class ApplicationProperties {
 	}
 
 	public ITEMS getItems() {
-		return ITEMS;
+		return ITEMS.get(RULESETLANGUAGE);
 	}
 
 	public UnitCalculator getUnitCalculator() {
@@ -597,8 +597,8 @@ public class ApplicationProperties {
 	}
 
 	public CharacterContainer getRandomCharacter(String template) {
-		if( template == null ) return null; 
-		RANDOMCHARACTERTEMPLATES.setItems(ITEMS);
+		if( template == null ) return null;
+		RANDOMCHARACTERTEMPLATES.setItems(getItems());
 		RANDOMCHARACTERTEMPLATES.setSpells(SPELLS.get(RULESETLANGUAGE).getSPELL());
 		RANDOMCHARACTERTEMPLATES.setCapabilities(getCapabilities());
 		RANDOMCHARACTERTEMPLATES.setDisciplineDefinitions(DISCIPLINES.get(RULESETLANGUAGE));
@@ -878,33 +878,71 @@ public class ApplicationProperties {
 			// itemstore laden
 			// --- Bestimmen aller Dateien im Unterordner 'disciplines'
 			// --- Einlesen der Dateien
-			ITEMS=new ITEMS();
-			ITEMS.setLang(RULESETLANGUAGE.getLanguage());
+			ITEMS=new TreeMap<ECERulesetLanguage,ITEMS>();
 			for(Path items : selectallxmlfiles(new File(CONFIGDIR,"itemstore").toPath())) {
 				System.out.println("Reading config file: " + items.toString());
+				System.out.println(" Rulesetlang:"+RULESETLANGUAGE.toString());
 				ITEMS i = (ITEMS) unmarshaller.unmarshal(items.toFile());
 				if( i == null ) { System.out.println(" parse error."); continue; }
-				if( i.getLang().equals(RULESETLANGUAGE.getLanguage()) ) {
-					ITEMS.getARMOR().addAll(i.getARMOR());
-					ITEMS.getBLOODCHARMITEM().addAll(i.getBLOODCHARMITEM());
-					ITEMS.getITEM().addAll(i.getITEM());
-					ITEMS.getMAGICITEM().addAll(i.getMAGICITEM());
-					ITEMS.getPATTERNITEM().addAll(i.getPATTERNITEM());
-					ITEMS.getSHIELD().addAll(i.getSHIELD());
-					ITEMS.getTHREADITEM().addAll(i.getTHREADITEM());
-					ITEMS.getWEAPON().addAll(i.getWEAPON());
-				} else {
-					System.out.println("Skipped. Wrong language: "+i.getLang().value()+" != "+RULESETLANGUAGE.getLanguage().value() );
+				RulesetversionType[] rulesets = i.getRULESETCONSTRAINT().toArray(new RulesetversionType[0]);
+				if( rulesets.length == 0 ) { rulesets = RulesetversionType.values(); }
+				for( RulesetversionType ruleset : rulesets ) {
+					ECERulesetLanguage rulesetlang = new ECERulesetLanguage(ruleset,i.getLang());
+					ITEMS j=ITEMS.get(rulesetlang);
+					if( j == null ) {
+						j=new ITEMS();
+						ITEMS.put(rulesetlang,j);
+					}
+					for( ARMORType k : i.getARMOR() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getARMOR().add(k);
+					}
+					for( MAGICITEMType k : i.getBLOODCHARMITEM() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getBLOODCHARMITEM().add(k);
+					}
+					for( ITEMType k : i.getITEM() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getITEM().add(k);
+					}
+					for( MAGICITEMType k : i.getMAGICITEM() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getMAGICITEM().add(k);
+					}
+					for( PATTERNITEMType k : i.getPATTERNITEM() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getPATTERNITEM().add(k);
+					}
+					for( SHIELDType k : i.getSHIELD() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getSHIELD().add(k);
+					}
+					for( THREADITEMType k : i.getTHREADITEM() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getTHREADITEM().add(k);
+					}
+					for( WEAPONType k : i.getWEAPON() ) {
+						k.setVirtual(YesnoType.NO);
+						k.setUsed(YesnoType.NO);
+						k.setLocation("");
+						j.getWEAPON().add(k);
+					}
 				}
 			}
-			for( ITEMType i : ITEMS.getARMOR() )          { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getBLOODCHARMITEM() ) { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getITEM() )           { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getMAGICITEM() )      { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getPATTERNITEM() )    { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getSHIELD() )         { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getTHREADITEM() )     { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
-			for( ITEMType i : ITEMS.getWEAPON() )         { i.setVirtual(YesnoType.NO); i.setUsed(YesnoType.NO); i.setLocation("self"); }
 
 			// randomcharactertemplates laden
 			// --- Bestimmen aller Dateien im Unterordner 'randomcharactertemplates'
