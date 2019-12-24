@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="de" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
+	<ARMOR kind="armor" name="Blutkiesel"                physicalarmor="5" mysticarmor="3" penalty="1" price="300"   weight="0"  bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Espagrasshuppen-Umhang"    physicalarmor="3" mysticarmor="1" penalty="0" price="200"   weight="10" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Farnrüstung"               physicalarmor="2" mysticarmor="3" penalty="0" price="125"   weight="15" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Fellrüstung"               physicalarmor="5" mysticarmor="1" penalty="1" price="50"    weight="25" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Gehärtete Lederrüstung"    physicalarmor="5" mysticarmor="0" penalty="1" price="40"    weight="20" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Gesteppte Lederrüstung"    physicalarmor="4" mysticarmor="0" penalty="0" price="20"    weight="20" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Gesteppte Tuchrüstung"     physicalarmor="2" mysticarmor="0" penalty="0" price="2"     weight="5"  bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Kettenrüstung"             physicalarmor="7" mysticarmor="0" penalty="3" price="180"   weight="40" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Kristallplattenrüstung"    physicalarmor="7" mysticarmor="7" penalty="5" price="12000" weight="90" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Kristallringrüstung"       physicalarmor="4" mysticarmor="4" penalty="2" price="500"   weight="45" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Lebendige Kristallrüstung" physicalarmor="6" mysticarmor="3" penalty="2" price="1100"  weight="0"  bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Lederrüstung"              physicalarmor="3" mysticarmor="0" penalty="0" price="10"    weight="15" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Obsidianerhaut"            physicalarmor="3" mysticarmor="1" penalty="0" price="100"   weight="20" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Plattenrüstung"            physicalarmor="9" mysticarmor="0" penalty="4" price="3000"  weight="60" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Ringrüstung"               physicalarmor="6" mysticarmor="0" penalty="2" price="110"   weight="30" bookref="SH S.261"/>
+	<ARMOR kind="armor" name="Wyvernhaut"                physicalarmor="8" mysticarmor="1" penalty="3" price="2000"  weight="50" bookref="SH S.261"/>
+
+	<WEAPON kind="throwing weapon" name="Bola"           damagestep="3" strengthmin="6" size="2" shortrange="12" longrange="24" price="10"  weight="2"     dexteritymin="9" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Dolch"          damagestep="2" strengthmin="4" size="1" shortrange="10" longrange="20" price="0.8" weight="1"     bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Falkenklaue"    damagestep="4" strengthmin="8" size="3" shortrange="24" longrange="48" price="75"  weight="2"     bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Flugdolch"      damagestep="2" strengthmin="4" size="1" shortrange="20" longrange="40" price="25"  weight="0.75"  bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Messer"         damagestep="1" strengthmin="3" size="1" shortrange="8"  longrange="16" price="0.3" weight="0.625" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Netz (leicht)"  damagestep="0" strengthmin="4" size="3" shortrange="6"  longrange="12" price="15"  weight="5"     bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Netz (mittel)"  damagestep="0" strengthmin="5" size="4" shortrange="6"  longrange="12" price="20"  weight="7"     bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Netz (groß)"    damagestep="0" strengthmin="7" size="5" shortrange="6"  longrange="12" price="25"  weight="10"    bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Netz (rießig)"  damagestep="0" strengthmin="8" size="6" shortrange="6"  longrange="12" price="40"  weight="12"    bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Speer"          damagestep="4" strengthmin="9" size="3" shortrange="10" longrange="20" price="9"   weight="3"     bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Windling Netz"  damagestep="0" strengthmin="3" size="2" shortrange="6"  longrange="12" price="15"  weight="0.75"  dexteritymin="9" bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Windling Speer" damagestep="2" strengthmin="4" size="1" shortrange="8"  longrange="16" price="25"  weight="0.5"   bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Wurfaxe"        damagestep="3" strengthmin="7" size="3" shortrange="12" longrange="24" price="25"  weight="2"     bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Wurfdolch"      damagestep="2" strengthmin="4" size="1" shortrange="16" longrange="32" price="2"   weight="0.75"  bookref="PG p.252"/>
+	<WEAPON kind="throwing weapon" name="Wurfbeil"       damagestep="1" strengthmin="4" size="1" shortrange="18" longrange="36" price="0.3" weight="0.5"   bookref="PG p.252"/>
+</ITEMS>
