@@ -1,7 +1,9 @@
 bin
+bin8
 doc
 config/spelldescriptions
 lasteditedcharacter.xml
 EarthdawnCharacterEditor.jar
+EarthdawnCharacterEditor_java8.jar
 EarthdawnCharacterEditor.zip
 nbproject
