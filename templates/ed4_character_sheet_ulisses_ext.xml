@@ -140,8 +140,8 @@
 	<KarmaModifier>Karmamodifikator</KarmaModifier>
 	<Movement>Bewegungsrate</Movement>
 	<Carrying>Traglast</Carrying>
-	<ArmorMystic>PR</ArmorMystic>
-	<ArmorPhysical>MR</ArmorPhysical>
+	<ArmorMystic>MR</ArmorMystic>
+	<ArmorPhysical>PR</ArmorPhysical>
 	<ArmorPenalty>Rüstungsm</ArmorPenalty>
 	<ShieldMystic></ShieldMystic>
 	<ShieldPhysical></ShieldPhysical>
