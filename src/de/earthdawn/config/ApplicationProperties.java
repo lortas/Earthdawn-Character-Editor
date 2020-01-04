@@ -881,7 +881,6 @@ public class ApplicationProperties {
 			ITEMS=new TreeMap<ECERulesetLanguage,ITEMS>();
 			for(Path items : selectallxmlfiles(new File(CONFIGDIR,"itemstore").toPath())) {
 				System.out.println("Reading config file: " + items.toString());
-				System.out.println(" Rulesetlang:"+RULESETLANGUAGE.toString());
 				ITEMS i = (ITEMS) unmarshaller.unmarshal(items.toFile());
 				if( i == null ) { System.out.println(" parse error."); continue; }
 				RulesetversionType[] rulesets = i.getRULESETCONSTRAINT().toArray(new RulesetversionType[0]);
