@@ -79,7 +79,7 @@
 	<TALENT name="Beeindrucken" attribute="na" action="simple" strain="1" skilluse="5"/>
 	<TALENT name="Beschwören" attribute="PER" action="sustained"/>
 	<TALENT name="Beweisanalyse" attribute="PER" action="sustained" strain="1" skilluse="5"/>
-	<TALENT name="Blattschuss" attribute="DEX" action="standard" strain="2"/>
+	<TALENT name="Blattschuss" attribute="na" action="free" strain="2"/>
 	<TALENT name="Bleibender Eindruck" attribute="CHA" action="standard"/>
 	<TALENT name="Blutige Krallen" attribute="DEX" action="standard" strain="1 (s. Text)"/>
 	<TALENT name="Brandpfeil" attribute="WIL" action="free" strain="1"/>
