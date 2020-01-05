@@ -82,6 +82,15 @@
 		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
 		<SPELLELEMENT element="fear" acronym="fe" name="Fear"/>
 		<SPELLELEMENT element="orichalcum" acronym="or" name="orichalcum"/>
+		<SPELLELEMENT element="earth-metal" acronym="em" name="Earth-Metal"/>
+		<SPELLELEMENT element="water-acid" acronym="wa" name="Water-Acid"/>
+		<SPELLELEMENT element="water-cold" acronym="wc" name="Water-Cold"/>
+		<SPELLELEMENT element="air-electric" acronym="ae" name="Air-Electric"/>
+		<SPELLELEMENT element="figment" acronym="fg" name="Figment"/>
+		<SPELLELEMENT element="spirit" acronym="sp" name="Spirit"/>
+		<SPELLELEMENT element="binding" acronym="b" name="Binding"/>
+		<SPELLELEMENT element="summoning" acronym="su" name="Summoning"/>
+		<SPELLELEMENT element="fate" acronym="fa" name="Fate"/>
 	</SPELLWEAVING>
 	<SPELLWEAVING lang="de">
 		<SPELLKIND type="elemental" weaving="Elementarismus"/>
@@ -98,7 +107,16 @@
 		<SPELLELEMENT element="air" acronym="l" name="Luft"/>
 		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
 		<SPELLELEMENT element="fear" acronym="fu" name="Furcht"/>
-		<SPELLELEMENT element="orichalcum" acronym="or" name="Oreichalkos"/>
+		<SPELLELEMENT element="orichalcum" acronym="or" name="Orichalkum"/>
+		<SPELLELEMENT element="earth-metal" acronym="em" name="Erd-Metal"/>
+		<SPELLELEMENT element="water-acid" acronym="ws" name="Wasser-Säure"/>
+		<SPELLELEMENT element="water-cold" acronym="wk" name="Wasse-Kälte"/>
+		<SPELLELEMENT element="air-electric" acronym="le" name="Luft-Elektrizität"/>
+		<SPELLELEMENT element="figment" acronym="ei" name="Einbindung"/>
+		<SPELLELEMENT element="spirit" acronym="g" name="Geist"/>
+		<SPELLELEMENT element="binding" acronym="bi" name="Bindung"/>
+		<SPELLELEMENT element="summoning" acronym="be" name="Beschwörung"/>
+		<SPELLELEMENT element="fate" acronym="fü" name="Fügung"/>
 	</SPELLWEAVING>
 	<CAPABILITY>
 		<LABEL lang="en">Distract</LABEL>

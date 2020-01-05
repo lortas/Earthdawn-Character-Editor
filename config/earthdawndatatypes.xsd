@@ -135,6 +135,7 @@
 			<xs:enumeration value="binding"/>
 			<xs:enumeration value="summoning"/>
 			<xs:enumeration value="fate"/>
+			<xs:enumeration value="orichalcum"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dice_type">

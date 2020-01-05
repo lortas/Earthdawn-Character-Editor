@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="binding"/&gt;
  *     &lt;enumeration value="summoning"/&gt;
  *     &lt;enumeration value="fate"/&gt;
+ *     &lt;enumeration value="orichalcum"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
@@ -80,7 +81,9 @@ public enum ElementkindType {
     @XmlEnumValue("summoning")
     SUMMONING("summoning"),
     @XmlEnumValue("fate")
-    FATE("fate");
+    FATE("fate"),
+    @XmlEnumValue("orichalcum")
+    ORICHALCUM("orichalcum");
     private final String value;
 
     ElementkindType(String v) {
