@@ -134,7 +134,10 @@
 	</tr>
 	<tr>
 		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='gender']/tra:LABEL[@lang=$lang]"/>:</td>
-		<td class="edValueCell"><xsl:value-of select="@gender" /></td>
+		<td class="edValueCell"><xsl:choose>
+			<xsl:when test="@gender='-'">-</xsl:when>
+			<xsl:otherwise><xsl:value-of select="$translations/tra:TEXT[@name=current()/@gender]/tra:LABEL[@lang=$lang]"/></xsl:otherwise>
+		</xsl:choose></td>
 		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='skin']/tra:LABEL[@lang=$lang]"/>:</td>
 		<td class="edValueCell"><xsl:value-of select="@skin" /></td>
 		<td class="edKeyCell"><xsl:value-of select="$translations/tra:APPEARANCE[@name='hair']/tra:LABEL[@lang=$lang]"/>:</td>
@@ -159,8 +162,6 @@
 		<td class="edValueCell" colspan="6">
 			<xsl:apply-templates select="//edc:RACEABILITES"/>
 		</td>
-	</tr>
-	<tr>
 	</tr>
 </xsl:template>
 
