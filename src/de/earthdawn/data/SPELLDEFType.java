@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="element" type="{http://earthdawn.com/datatypes}elementkind_type" default="undefined" /&gt;
+ *       &lt;attribute name="packusable" type="{http://earthdawn.com/datatypes}yesno_type" default="no" /&gt;
  *       &lt;attribute name="threads" type="{http://www.w3.org/2001/XMLSchema}string" default="0" /&gt;
  *       &lt;attribute name="weavingdifficulty" type="{http://www.w3.org/2001/XMLSchema}string" default="na" /&gt;
  *       &lt;attribute name="reattuningdifficulty" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
@@ -53,6 +54,8 @@ public class SPELLDEFType {
     protected String name;
     @XmlAttribute(name = "element")
     protected ElementkindType element;
+    @XmlAttribute(name = "packusable")
+    protected YesnoType packusable;
     @XmlAttribute(name = "threads")
     protected String threads;
     @XmlAttribute(name = "weavingdifficulty")
@@ -122,6 +125,34 @@ public class SPELLDEFType {
      */
     public void setElement(ElementkindType value) {
         this.element = value;
+    }
+
+    /**
+     * Gets the value of the packusable property.
+     *
+     * @return
+     *     possible object is
+     *     {@link YesnoType }
+     *
+     */
+    public YesnoType getPackusable() {
+        if (packusable == null) {
+            return YesnoType.NO;
+        } else {
+            return packusable;
+        }
+    }
+
+    /**
+     * Sets the value of the packusable property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link YesnoType }
+     *
+     */
+    public void setPackusable(YesnoType value) {
+        this.packusable = value;
     }
 
     /**
