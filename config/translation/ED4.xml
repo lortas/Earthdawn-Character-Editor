@@ -1366,7 +1366,7 @@
 		<LABEL lang="de">Auflistung aller erhaltenen Legendenpunkte</LABEL>
 		<LABEL lang="en">total legendpoints received history</LABEL>
 	</TEXT>
-	<TEXT name="">
+	<TEXT name="when">
 		<LABEL lang="de">Wann</LABEL>
 		<LABEL lang="en">when</LABEL>
 	</TEXT>
@@ -1378,9 +1378,13 @@
 		<LABEL lang="de">Kommentar</LABEL>
 		<LABEL lang="en">comment</LABEL>
 	</TEXT>
-	<TEXT name="">
-		<LABEL lang="de"></LABEL>
-		<LABEL lang="en"></LABEL>
+	<TEXT name="male">
+		<LABEL lang="de">männlich</LABEL>
+		<LABEL lang="en">male</LABEL>
+	</TEXT>
+	<TEXT name="female">
+		<LABEL lang="de">weiblich</LABEL>
+		<LABEL lang="en">female</LABEL>
 	</TEXT>
 	<TEXT name="">
 		<LABEL lang="de"></LABEL>
