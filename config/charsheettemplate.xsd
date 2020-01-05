@@ -148,6 +148,7 @@
 				<xs:element name="WeaponTimesforged" type="xs:string"/>
 				<xs:element name="WeaponShortrange" type="xs:string"/>
 				<xs:element name="WeaponLongrange" type="xs:string"/>
+				<xs:element name="WeaponRange" type="xs:string"/>
 				<xs:element name="WeaponAttackstep" type="xs:string"/>
 				<xs:element name="WeaponAttribute" type="xs:string"/>
 				<xs:element name="WeaponStep" type="xs:string"/>

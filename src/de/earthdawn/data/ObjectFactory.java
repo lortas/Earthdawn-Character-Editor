@@ -141,6 +141,7 @@ public class ObjectFactory {
     private final static QName _CHARSHEETTEMPLATEWeaponTimesforged_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponTimesforged");
     private final static QName _CHARSHEETTEMPLATEWeaponShortrange_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponShortrange");
     private final static QName _CHARSHEETTEMPLATEWeaponLongrange_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponLongrange");
+    private final static QName _CHARSHEETTEMPLATEWeaponRange_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponRange");
     private final static QName _CHARSHEETTEMPLATEWeaponAttackstep_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponAttackstep");
     private final static QName _CHARSHEETTEMPLATEWeaponAttribute_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponAttribute");
     private final static QName _CHARSHEETTEMPLATEWeaponStep_QNAME = new QName("http://earthdawn.com/charsheettemplate", "WeaponStep");
@@ -2567,6 +2568,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponLongrange", scope = CHARSHEETTEMPLATE.class)
     public JAXBElement<String> createCHARSHEETTEMPLATEWeaponLongrange(String value) {
         return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponLongrange_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/charsheettemplate", name = "WeaponRange", scope = CHARSHEETTEMPLATE.class)
+    public JAXBElement<String> createCHARSHEETTEMPLATEWeaponRange(String value) {
+        return new JAXBElement<String>(_CHARSHEETTEMPLATEWeaponRange_QNAME, String.class, CHARSHEETTEMPLATE.class, value);
     }
 
     /**

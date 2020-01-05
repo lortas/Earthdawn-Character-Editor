@@ -165,26 +165,26 @@
 	<WeaponName>Name 7</WeaponName>
 	<WeaponName>Name 8</WeaponName>
 	<WeaponName>Name 9</WeaponName>
-	<WeaponAttackstep>SchadeNSStufe 1</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 2</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 3</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 4</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 5</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 6</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 7</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 8</WeaponAttackstep>
-	<WeaponAttackstep>SchadeNSStufe 9</WeaponAttackstep>
+	<WeaponAttackstep>St 1</WeaponAttackstep>
+	<WeaponAttackstep>St 2</WeaponAttackstep>
+	<WeaponAttackstep>St 3</WeaponAttackstep>
+	<WeaponAttackstep>St 4</WeaponAttackstep>
+	<WeaponAttackstep>St 5</WeaponAttackstep>
+	<WeaponAttackstep>St 6</WeaponAttackstep>
+	<WeaponAttackstep>St 7</WeaponAttackstep>
+	<WeaponAttackstep>St 8</WeaponAttackstep>
+	<WeaponAttackstep>St 9</WeaponAttackstep>
 	<WeaponSize></WeaponSize>
 	<WeaponTimesforged></WeaponTimesforged>
-	<WeaponShortrange>eNtferNuNg 1</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 2</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 3</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 4</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 5</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 6</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 7</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 8</WeaponShortrange>
-	<WeaponShortrange>eNtferNuNg 9</WeaponShortrange>
+	<WeaponRange>eNtferNuNg 1</WeaponRange>
+	<WeaponRange>eNtferNuNg 2</WeaponRange>
+	<WeaponRange>eNtferNuNg 3</WeaponRange>
+	<WeaponRange>eNtferNuNg 4</WeaponRange>
+	<WeaponRange>eNtferNuNg 5</WeaponRange>
+	<WeaponRange>eNtferNuNg 6</WeaponRange>
+	<WeaponRange>eNtferNuNg 7</WeaponRange>
+	<WeaponRange>eNtferNuNg 8</WeaponRange>
+	<WeaponRange>eNtferNuNg 9</WeaponRange>
 	<WeaponLongrange></WeaponLongrange>
 	<WeaponAttribute></WeaponAttribute>
 	<WeaponAttribute></WeaponAttribute>
@@ -195,15 +195,15 @@
 	<WeaponAttribute></WeaponAttribute>
 	<WeaponAttribute></WeaponAttribute>
 	<WeaponAttribute></WeaponAttribute>
-	<WeaponDamagestep>St 1</WeaponDamagestep>
-	<WeaponDamagestep>St 2</WeaponDamagestep>
-	<WeaponDamagestep>St 3</WeaponDamagestep>
-	<WeaponDamagestep>St 4</WeaponDamagestep>
-	<WeaponDamagestep>St 5</WeaponDamagestep>
-	<WeaponDamagestep>St 6</WeaponDamagestep>
-	<WeaponDamagestep>St 7</WeaponDamagestep>
-	<WeaponDamagestep>St 8</WeaponDamagestep>
-	<WeaponDamagestep>St 9</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 1</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 2</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 3</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 4</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 5</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 6</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 7</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 8</WeaponDamagestep>
+	<WeaponDamagestep>SchadeNSStufe 9</WeaponDamagestep>
 	<WeaponStep>Stufe W rfel 1</WeaponStep>
 	<WeaponStep>Stufe W rfel 2</WeaponStep>
 	<WeaponStep>Stufe W rfel 3</WeaponStep>

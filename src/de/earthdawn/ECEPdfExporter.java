@@ -660,14 +660,8 @@ public class ECEPdfExporter {
 
 	private static List<ITEMType> listArmorAndWeapon(CharacterContainer character) {
 		List<ITEMType> result = new ArrayList<ITEMType>();
-		boolean naturalarmor=true;
 		for( ARMORType armor : character.getProtection().getARMOROrSHIELD() ) {
-			if( naturalarmor ) {
-				// Der erste Eintrag ist immer die natüliche Rüstung
-				// Diese und nur diese soll übersprungen werden
-				naturalarmor=false;
-				continue;
-			}
+			if( armor.getVirtual().equals(YesnoType.YES)) continue;
 			String name = armor.getName()+" (";
 			name += armor.getPhysicalarmor()+"/";
 			name += armor.getMysticarmor()+"/";
@@ -680,6 +674,7 @@ public class ECEPdfExporter {
 			result.add(item);
 		}
 		for( WEAPONType weapon : character.getWeapons() ) {
+			if( weapon.getVirtual().equals(YesnoType.YES)) continue;
 			String name = weapon.getName()+" (";
 			name += weapon.getDamagestep()+"/";
 			name += weapon.getTimesforged()+")";
@@ -758,18 +753,11 @@ public class ECEPdfExporter {
 		setAllPdfFields(charsheettemplate.getStringList("Height"),appearance.getHeightString());
 		setAllPdfFields(charsheettemplate.getStringList("Skin"),appearance.getSkin());
 		setAllPdfFields(charsheettemplate.getStringList("Weight"),appearance.getWeightString());
-		switch(appearance.getGender()) {
-		case MALE:
-			setAllPdfFields(charsheettemplate.getStringList("Gender"),"männlich");
-			break;
-		case FEMALE:
-			setAllPdfFields(charsheettemplate.getStringList("Gender"),"weiblich");
-			break;
-		case MINUS:
+		if( appearance.getGender() == GenderType.MINUS ) {
 			setAllPdfFields(charsheettemplate.getStringList("Gender"),"-");
-			break;
+		} else {
+			setAllPdfFields(charsheettemplate.getStringList("Gender"),PROPERTIES.getTranslationText(appearance.getGender().value()));
 		}
-
 		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		int strength = attributes.get(ATTRIBUTENameType.STR).getStep();
 		setAllPdfFields(charsheettemplate.getStringList("AttributeBaseDex"),String.valueOf(attributes.get(ATTRIBUTENameType.DEX).getBasevalue()));
@@ -892,10 +880,11 @@ public class ECEPdfExporter {
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponName"),weapon.getName());
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponShortrange"),String.valueOf(weapon.getShortrange()));
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponLongrange"),String.valueOf(weapon.getLongrange()));
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponRange"),String.valueOf(weapon.getShortrange())+" / "+String.valueOf(weapon.getLongrange()));
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponDamagestep"),String.valueOf(weapon.getDamagestep()));
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponSize"),String.valueOf(weapon.getSize()));
 			int damage = strength+weapon.getDamagestep();
-			setPdfField(charsheettemplate.getStringEntryNext("WeaponAttackstep"),""); // TODO: Nahkampfwaffen
+			setPdfField(charsheettemplate.getStringEntryNext("WeaponAttackstep"),String.valueOf(attributes.get(ATTRIBUTENameType.STR).getStep()));
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponAttribute"),String.valueOf(strength));
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponStep"),String.valueOf(damage));
 			setPdfField(charsheettemplate.getStringEntryNext("WeaponDice"),PROPERTIES.step2Dice(damage));

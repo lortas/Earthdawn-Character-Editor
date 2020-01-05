@@ -127,6 +127,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="WeaponTimesforged" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="WeaponShortrange" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="WeaponLongrange" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="WeaponRange" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="WeaponAttackstep" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="WeaponAttribute" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="WeaponStep" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -256,6 +257,7 @@ public class CHARSHEETTEMPLATE {
         @XmlElementRef(name = "WeaponTimesforged", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "WeaponShortrange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "WeaponLongrange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "WeaponRange", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "WeaponAttackstep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "WeaponAttribute", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "WeaponStep", namespace = "http://earthdawn.com/charsheettemplate", type = JAXBElement.class, required = false),
@@ -386,6 +388,7 @@ public class CHARSHEETTEMPLATE {
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link CharsheettemplatedisciplinebonusType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
