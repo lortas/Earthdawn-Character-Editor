@@ -11,6 +11,7 @@ package de.earthdawn.data;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,10 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="KNACK_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RANK" type="{http://earthdawn.com/datatypes}RANK_type" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="attribute" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" /&gt;
  *       &lt;attribute name="strain" type="{http://www.w3.org/2001/XMLSchema}string" default="0" /&gt;
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="learnedbymincircle" type="{http://earthdawn.com/datatypes}circle_type" default="0" /&gt;
+ *       &lt;attribute name="action" type="{http://earthdawn.com/datatypes}action_type" /&gt;
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,22 +43,54 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "KNACK_type")
+@XmlType(name = "KNACK_type", propOrder = {
+    "rank"
+})
 @XmlSeeAlso({
     KNACKBASEType.class
 })
 public class KNACKType {
 
+    @XmlElement(name = "RANK")
+    protected RANKType rank;
     @XmlAttribute(name = "name", required = true)
     protected String name;
+    @XmlAttribute(name = "attribute")
+    protected ATTRIBUTENameType attribute;
     @XmlAttribute(name = "strain")
     protected String strain;
     @XmlAttribute(name = "minrank")
     protected Integer minrank;
     @XmlAttribute(name = "learnedbymincircle")
     protected Integer learnedbymincircle;
+    @XmlAttribute(name = "action")
+    protected ActionType action;
     @XmlAttribute(name = "bookref")
     protected String bookref;
+
+    /**
+     * Gets the value of the rank property.
+     *
+     * @return
+     *     possible object is
+     *     {@link RANKType }
+     *
+     */
+    public RANKType getRANK() {
+        return rank;
+    }
+
+    /**
+     * Sets the value of the rank property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link RANKType }
+     *
+     */
+    public void setRANK(RANKType value) {
+        this.rank = value;
+    }
 
     /**
      * Gets the value of the name property.
@@ -76,6 +114,30 @@ public class KNACKType {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the attribute property.
+     *
+     * @return
+     *     possible object is
+     *     {@link ATTRIBUTENameType }
+     *
+     */
+    public ATTRIBUTENameType getAttribute() {
+        return attribute;
+    }
+
+    /**
+     * Sets the value of the attribute property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ATTRIBUTENameType }
+     *
+     */
+    public void setAttribute(ATTRIBUTENameType value) {
+        this.attribute = value;
     }
 
     /**
@@ -160,6 +222,30 @@ public class KNACKType {
      */
     public void setLearnedbymincircle(Integer value) {
         this.learnedbymincircle = value;
+    }
+
+    /**
+     * Gets the value of the action property.
+     *
+     * @return
+     *     possible object is
+     *     {@link ActionType }
+     *
+     */
+    public ActionType getAction() {
+        return action;
+    }
+
+    /**
+     * Sets the value of the action property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link ActionType }
+     *
+     */
+    public void setAction(ActionType value) {
+        this.action = value;
     }
 
     /**

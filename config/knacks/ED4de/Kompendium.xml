@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<KNACKS lang="de" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
+	<TALENTKNACK name="Tierbeherrschung" basename="Abrichten" attribute="WIL" minrank="4" action="standard"/>
+	<TALENTKNACK name="Akrobatische Erholung" basename="Akrobatische Verteidigung" attribute="DEX" minrank="4" action="simple"/>
+	<TALENTKNACK name="Tierbeherrschung" basename="Abrichten" attribute="WIL" minrank="4" action="standard"/>
+	<TALENTKNACK name="Akrobatische Erholung" basename="Akrobatische Verteidigung" attribute="DEX" minrank="4" action="simple" strain="3"/>
+	<TALENTKNACK name="Akrobatischer Angriff" basename="Akrobatische Verteidigung" attribute="DEX" minrank="6" action="simple" strain="1"/>
+	<TALENTKNACK name="Gelände Verweigern" basename="Akrobatische Verteidigung" attribute="DEX" minrank="3" action="simple" strain="3"/>
+	<TALENTKNACK name="Tempo Kontrollieren" basename="Akrobatische Verteidigung" attribute="DEX" minrank="5" action="simple" strain="2"/>
+	<TALENTKNACK name="Arkane Flüche" basename="Arkanes Gefasel" minrank="7"/>
+	<TALENTKNACK name="Verhexen" basename="Arkanes Gefasel" attribute="CHA" minrank="5" action="simple" strain="1"/>
+	<TALENTKNACK name="Psychometrie" basename="Artefaktgeschichte" attribute="PER" minrank="6" action="standard" strain="1"/>
+	<TALENTKNACK name="Vergangenheitsberührung" basename="Artefaktgeschichte" attribute="PER" minrank="8" action="standard"/>
+	<TALENTKNACK name="Dämoneninterferenz" basename="Astrale Interferenz" limitation="Geisterbeschwörer 7" attribute="WIL" minrank="7" action="standard" strain="1"/>
+	<TALENTKNACK name="Mobile Interferenz" basename="Astrale Interferenz" attribute="WIL" minrank="6" action="standard" strain="2"/>
+	<TALENTKNACK name="Lippenlesen" basename="Aufmerksamkeit" attribute="PER" minrank="3" action="standard" strain="1" skilluse="1"/>
+	<TALENTKNACK name="Astrale Untersuchung" basename="Beweisanalyse" attribute="PER" minrank="6" action="sustained" strain="2"/>
+	<TALENTKNACK name="Ungeklärter Fall" basename="Beweisanalyse" attribute="PER" minrank="7" action="sustained" strain="1"/>
+	<TALENTKNACK name="Fotografisches Gedächtnis" basename="Büchergedächtnis" attribute="WIL" minrank="4" action="standard"/>
+	<TALENTKNACK name="Unterhaltungsgedächtnis" basename="Büchergedächtnis" attribute="WIL" minrank="3" action="standard"/>
+	<TALENTKNACK name="Absichten Einschätzen" basename="Diplomatie" attribute="CHA" minrank="8" action="sustained" strain="1" skilluse="5"/>
+	<TALENTKNACK name="Vergifteter Einfluss" basename="Diplomatie" attribute="CHA" minrank="7" action="sustained" skilluse="5"/>
+	<TALENTKNACK name="Zauber Absorbieren" basename="Eiserner Wille" minrank="6" action="free" strain="1"/>
+</KNACKS>

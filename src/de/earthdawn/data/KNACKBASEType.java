@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="{http://earthdawn.com/datatypes}KNACK_type"&gt;
  *       &lt;attribute name="basename" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
+ *       &lt;attribute name="skilluse" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -42,6 +43,8 @@ public class KNACKBASEType
     protected String basename;
     @XmlAttribute(name = "limitation")
     protected String limitation;
+    @XmlAttribute(name = "skilluse")
+    protected Integer skilluse;
 
     /**
      * Gets the value of the basename property.
@@ -93,6 +96,34 @@ public class KNACKBASEType
      */
     public void setLimitation(String value) {
         this.limitation = value;
+    }
+
+    /**
+     * Gets the value of the skilluse property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public int getSkilluse() {
+        if (skilluse == null) {
+            return  0;
+        } else {
+            return skilluse;
+        }
+    }
+
+    /**
+     * Sets the value of the skilluse property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     */
+    public void setSkilluse(Integer value) {
+        this.skilluse = value;
     }
 
 }
