@@ -1002,7 +1002,7 @@ public class ECEWorker {
 		int trank=talent.getRANK().getRank();
 		for( KNACKType knack : talent.getKNACK() ) {
 			int krank = knack.getMinrank();
-			if( disTalents ) krank -= 2;
+			if( character.getRulesetversion().equals(RulesetversionType.ED_3) && disTalents ) krank -= 2;
 			if( krank > trank ) {
 				errorout.println("The rank of the talent '"+talent.getName()+"' is lower than the minimal rank for the kack '"+knack.getName()+"': "
 						+trank+" vs. "+krank);

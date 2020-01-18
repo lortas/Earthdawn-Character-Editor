@@ -2227,6 +2227,10 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
+	public RulesetversionType getRulesetversion() {
+		return character.getRulesetversion();
+	}
+
 	public static void makeMaxForge(ARMORType armor) {
 		if( armor == null ) return;
 		int physicalarmor = armor.getPhysicalarmor();
