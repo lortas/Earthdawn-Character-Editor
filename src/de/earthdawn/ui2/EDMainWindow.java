@@ -174,6 +174,7 @@ public class EDMainWindow {
 			}
 		});
 		refreshTabs();
+		JOptionPane.showMessageDialog(frame, NLS.getString("EDMainWindow.startHint.text")); //$NON-NLS-1$
 	}
 
 	public EDCHARACTER getEDCharacter() {
