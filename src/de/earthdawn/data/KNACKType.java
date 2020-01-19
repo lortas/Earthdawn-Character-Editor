@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="attribute" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" /&gt;
  *       &lt;attribute name="strain" type="{http://www.w3.org/2001/XMLSchema}string" default="0" /&gt;
+ *       &lt;attribute name="blood" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="learnedbymincircle" type="{http://earthdawn.com/datatypes}circle_type" default="0" /&gt;
  *       &lt;attribute name="action" type="{http://earthdawn.com/datatypes}action_type" /&gt;
@@ -51,6 +52,8 @@ public class KNACKType {
     protected ATTRIBUTENameType attribute;
     @XmlAttribute(name = "strain")
     protected String strain;
+    @XmlAttribute(name = "blood")
+    protected Integer blood;
     @XmlAttribute(name = "minrank")
     protected Integer minrank;
     @XmlAttribute(name = "learnedbymincircle")
@@ -134,6 +137,34 @@ public class KNACKType {
      */
     public void setStrain(String value) {
         this.strain = value;
+    }
+
+    /**
+     * Gets the value of the blood property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public int getBlood() {
+        if (blood == null) {
+            return  0;
+        } else {
+            return blood;
+        }
+    }
+
+    /**
+     * Sets the value of the blood property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     */
+    public void setBlood(Integer value) {
+        this.blood = value;
     }
 
     /**
