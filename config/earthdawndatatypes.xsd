@@ -273,9 +273,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="KNACK_type">
-		<xs:sequence>
-			<xs:element name="RANK" type="RANK_type" minOccurs="0" maxOccurs="1"/>
-		</xs:sequence>
 		<xs:attribute name="name"  type="xs:string" use="required"/>
 		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
 		<xs:attribute name="strain" type="xs:string" default="0"/>
