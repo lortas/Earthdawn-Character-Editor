@@ -519,17 +519,36 @@ public class ApplicationProperties {
 		return new String[]{name.getValue(),name.getAcronym()};
 	}
 
-	public String getTranslationText(String name) {
-		for( GENERALTEXTType translation : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getTEXT() ) {
-			if( name.equals(translation.getName()) ) {
-				for( TranslationlabelType label : translation.getLABEL() ) {
+	public Map<String,String> getTranslationHealthAll() {
+		Map<String,String> result = new TreeMap<String,String>();
+		for( GENERALTEXTType health : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getHEALTH() ) {
+				for( TranslationlabelType label : health.getLABEL() ) {
 					if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
-						return label.getValue();
+						result.put(health.getName(), label.getValue());
 					}
 				}
-			}
 		}
-		return "##"+RULESETLANGUAGE.toString()+":"+name+"##";
+		return result;
+	}
+
+	public Map<String,String> getTranslationTextAll() {
+		Map<String,String> result = new TreeMap<String,String>();
+		for( GENERALTEXTType translation : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getTEXT() ) {
+				for( TranslationlabelType label : translation.getLABEL() ) {
+					if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
+						result.put(translation.getName(), label.getValue());
+					}
+				}
+		}
+		return result;
+	}
+
+	public String getTranslationText(String name) {
+		String result=getTranslationTextAll().get(name);
+		if( result == null ) {
+			return "##"+RULESETLANGUAGE.toString()+":"+name+"##";
+		}
+		return result;
 	}
 
 	public List<ITEMType> getStartingItems() {
