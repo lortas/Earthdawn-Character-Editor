@@ -185,7 +185,7 @@ public class EDMainWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame("Earthdawn Character Editor");
+		frame = new JFrame("Earthdawn Character Editor - "+PROPERTIES.getRulesetLanguage().toString());
 		//frame.setBounds(10, 50, 1020, 740);
 		LAYOUTDIMENSIONType dimMainWindow = PROPERTIES.getGuiLayoutMainWindow();
 		LAYOUTSIZESType dimMainWindow_X = dimMainWindow.getX();
