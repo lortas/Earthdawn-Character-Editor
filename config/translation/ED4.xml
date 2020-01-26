@@ -964,6 +964,10 @@
 		<LABEL lang="de">Aktueller Schaden</LABEL>
 		<LABEL lang="en">Current Damage</LABEL>
 	</HEALTH>
+	<HEALTH name="blooddamage">
+		<LABEL lang="de">Blutschaden</LABEL>
+		<LABEL lang="en">Blood Damage</LABEL>
+	</HEALTH>
 	<HEALTH name="recovery">
 		<LABEL lang="de">Erholung</LABEL>
 		<LABEL lang="en">Recovery</LABEL>
@@ -976,15 +980,19 @@
 		<LABEL lang="de">Verwundungsschwelle</LABEL>
 		<LABEL lang="en">Wound Threshold</LABEL>
 	</HEALTH>
-	<HEALTH name="normal wounds">
-		<LABEL lang="de">Normale Wunde</LABEL>
+	<HEALTH name="currentwounds">
+		<LABEL lang="de">Aktuelle Wunden</LABEL>
+		<LABEL lang="en">Current Wounds</LABEL>
+	</HEALTH>
+	<HEALTH name="normalwounds">
+		<LABEL lang="de">Normale Wunden</LABEL>
 		<LABEL lang="en">Normal Wounds</LABEL>
 	</HEALTH>
-	<HEALTH name="blood wounds">
-		<LABEL lang="de">Blutwunde</LABEL>
+	<HEALTH name="bloodwounds">
+		<LABEL lang="de">Blutwunden</LABEL>
 		<LABEL lang="en">Blood Wounds</LABEL>
 	</HEALTH>
-	<HEALTH name="wound penalties">
+	<HEALTH name="woundpenalties">
 		<LABEL lang="de">Wundenbehinderung</LABEL>
 		<LABEL lang="en">Wound Penalties</LABEL>
 	</HEALTH>
@@ -1099,6 +1107,10 @@
 	<TEXT name="discipline bonuses">
 		<LABEL lang="de">Disziplinbonus</LABEL>
 		<LABEL lang="en">Discipline Bonuses</LABEL>
+	</TEXT>
+	<TEXT name="general">
+		<LABEL lang="de">Allgemein</LABEL>
+		<LABEL lang="en">General</LABEL>
 	</TEXT>
 	<TEXT name="general information">
 		<LABEL lang="de">Allgemeine Informationen</LABEL>
@@ -1369,7 +1381,7 @@
 		<LABEL lang="en">Optional Talents</LABEL>
 	</TEXT>
 	<TEXT name="knacks">
-		<LABEL lang="de">Kniff</LABEL>
+		<LABEL lang="de">Kniffe</LABEL>
 		<LABEL lang="en">Knacks</LABEL>
 	</TEXT>
 	<TEXT name="spells">
@@ -1416,6 +1428,14 @@
 		<LABEL lang="de">Kommentar</LABEL>
 		<LABEL lang="en">Comment</LABEL>
 	</TEXT>
+	<TEXT name="devotionpoints">
+		<LABEL lang="de">Weihepunkte</LABEL>
+		<LABEL lang="en">Devotionpoints</LABEL>
+	</TEXT>
+	<TEXT name="experience">
+		<LABEL lang="de">Erfahrung</LABEL>
+		<LABEL lang="en">Experience</LABEL>
+	</TEXT>
 	<TEXT name="totallegendpointsreceivedhistory">
 		<LABEL lang="de">Auflistung aller erhaltenen Legendenpunkte</LABEL>
 		<LABEL lang="en">total legendpoints received history</LABEL>
@@ -1443,6 +1463,46 @@
 	<TEXT name="usedattributecost">
 		<LABEL lang="de">Verwendete Attributkaufpunkte</LABEL>
 		<LABEL lang="en">Used Attribute Cost</LABEL>
+	</TEXT>
+	<TEXT name="inventory">
+		<LABEL lang="de">Inventar</LABEL>
+		<LABEL lang="en">Inventory</LABEL>
+	</TEXT>
+	<TEXT name="basestep">
+		<LABEL lang="de">Basisstufe</LABEL>
+		<LABEL lang="en">Base Step</LABEL>
+	</TEXT>
+	<TEXT name="devotion">
+		<LABEL lang="de">Weihe</LABEL>
+		<LABEL lang="en">Devotion</LABEL>
+	</TEXT>
+	<TEXT name="encumbrance">
+		<LABEL lang="de">Belastung</LABEL>
+		<LABEL lang="en">Encumbrance</LABEL>
+	</TEXT>
+	<TEXT name="flight">
+		<LABEL lang="de">Flug</LABEL>
+		<LABEL lang="en">Flight</LABEL>
+	</TEXT>
+	<TEXT name="ground">
+		<LABEL lang="de">Grund</LABEL>
+		<LABEL lang="en">Ground</LABEL>
+	</TEXT>
+	<TEXT name="initiative">
+		<LABEL lang="de">Initiative</LABEL>
+		<LABEL lang="en">Initiative</LABEL>
+	</TEXT>
+	<TEXT name="max">
+		<LABEL lang="de">max</LABEL>
+		<LABEL lang="en">max</LABEL>
+	</TEXT>
+	<TEXT name="unused">
+		<LABEL lang="de">unbenutzt</LABEL>
+		<LABEL lang="en">unused</LABEL>
+	</TEXT>
+	<TEXT name="notspentstartranks">
+		<LABEL lang="de">Unbenutzte Startränge</LABEL>
+		<LABEL lang="en">Not Spent Start Ranks</LABEL>
 	</TEXT>
 	<TEXT name="">
 		<LABEL lang="de"></LABEL>

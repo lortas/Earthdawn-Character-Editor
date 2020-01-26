@@ -628,19 +628,16 @@ public class EDMainWindow {
 		characteristicStatus = new CharacteristicStatus("characteristic_layout.html");
 		characteristicStatus.setCharacter(character);
 
-		tabbedPane.addTab("General", null, new JScrollPane(panelERGeneral), null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("general"), null, new JScrollPane(panelERGeneral), null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("disciplines"), null, panelEDDisciplines, null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("attributes"), null, panelEDAttributes, null);
-		tabbedPane.addTab("Knacks", null, panelEDKnacks, null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("knacks"), null, panelEDKnacks, null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("skills"), null, panelEDSkills, null);
-		tabbedPane.addTab("Languages", null, panelEDLanguages, null);
-		tabbedPane.addTab("Experience", null, panelEDExperience , null);
-		tabbedPane.addTab("Karma", null, panelEDKarma , null);
-		tabbedPane.addTab("DevotionPoints", null, panelEDDevotionPoints , null);
-		//tabbedPane.addTab("Items", null, panelEDItems , null);
-		//tabbedPane.addTab("Bloodcharms", null, panelEDBloodCharmItems , null);
-		//tabbedPane.addTab("Armor/Shields", null, panelEDArmor , null);
-		tabbedPane.addTab("Inventory", null, panelEDThreadItems , null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("languages"), null, panelEDLanguages, null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("experience"), null, panelEDExperience , null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("karma"), null, panelEDKarma , null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("devotionpoints"), null, panelEDDevotionPoints , null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("inventory"), null, panelEDThreadItems , null);
 
 		splitPane.setRightComponent(editorScrollPane);
 		File icon = new File(new File("images"),"ece-logo.png");
@@ -767,7 +764,7 @@ public class EDMainWindow {
 					// wenn tab nicht beteits vorhanden -> hinzufügen
 					if(!allSpellTabs.contains(diciplineName)){
 						panelEDSpells = new EDSpells(character,diciplineName);
-						tabbedPane.insertTab("Spells (" + diciplineName + ")", null, panelEDSpells, null, order);
+						tabbedPane.insertTab(PROPERTIES.getTranslationText("spells")+" (" + diciplineName + ")", null, panelEDSpells, null, order);
 					}
 					order++;
 				} catch(IndexOutOfBoundsException e) {

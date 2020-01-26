@@ -267,11 +267,11 @@
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@threshold" /></td>
 			</tr>
 			<tr>
-				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='normal wounds']/tra:LABEL[@lang=$lang]"/>:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='normalwounds']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@normal" /></td>
-				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='blood wounds']/tra:LABEL[@lang=$lang]"/>:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='bloodwounds']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@blood" /></td>
-				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='wound penalties']/tra:LABEL[@lang=$lang]"/>:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='woundpenalties']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@penalties" /></td>
 			</tr>
 		</table>
