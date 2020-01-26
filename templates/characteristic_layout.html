@@ -16,10 +16,10 @@ tr.tfoot { font-style:italic; }
 			(${APPEARANCE.gender}, ${APPEARANCE.age})<br/>
 			<table>
 				<tr class="thead">
-					<td colspan="6">Attributes</td>
+					<td colspan="6">${TEXT.attributes}</td>
 				</tr>
 				<tr>
-					<td>Dexterity</td>
+					<td>${ATTRIBUTE.DEX.name}</td>
 					<td>${ATTRIBUTE.DEX.basevalue}</td>
 					<td>${ATTRIBUTE.DEX.lpincrease}</td>
 					<td>${ATTRIBUTE.DEX.currentvalue}</td>
@@ -27,7 +27,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.DEX.dice}</td>
 				</tr>
 				<tr>
-					<td>Strength</td>
+					<td>${ATTRIBUTE.STR.name}</td>
 					<td>${ATTRIBUTE.STR.basevalue}</td>
 					<td>${ATTRIBUTE.STR.lpincrease}</td>
 					<td>${ATTRIBUTE.STR.currentvalue}</td>
@@ -35,7 +35,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.STR.dice}</td>
 				</tr>
 				<tr>
-					<td>Toughness</td>
+					<td>${ATTRIBUTE.TOU.name}</td>
 					<td>${ATTRIBUTE.TOU.basevalue}</td>
 					<td>${ATTRIBUTE.TOU.lpincrease}</td>
 					<td>${ATTRIBUTE.TOU.currentvalue}</td>
@@ -43,7 +43,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.TOU.dice}</td>
 				</tr>
 				<tr>
-					<td>Perception</td>
+					<td>${ATTRIBUTE.PER.name}</td>
 					<td>${ATTRIBUTE.PER.basevalue}</td>
 					<td>${ATTRIBUTE.PER.lpincrease}</td>
 					<td>${ATTRIBUTE.PER.currentvalue}</td>
@@ -51,7 +51,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.PER.dice}</td>
 				</tr>
 				<tr>
-					<td>Willpower</td>
+					<td>${ATTRIBUTE.WIL.name}</td>
 					<td>${ATTRIBUTE.WIL.basevalue}</td>
 					<td>${ATTRIBUTE.WIL.lpincrease}</td>
 					<td>${ATTRIBUTE.WIL.currentvalue}</td>
@@ -59,7 +59,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.WIL.dice}</td>
 				</tr>
 				<tr>
-					<td>Charisma</td>
+					<td>${ATTRIBUTE.CHA.name}</td>
 					<td>${ATTRIBUTE.CHA.basevalue}</td>
 					<td>${ATTRIBUTE.CHA.lpincrease}</td>
 					<td>${ATTRIBUTE.CHA.currentvalue}</td>
@@ -67,7 +67,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.CHA.dice}</td>
 				</tr>
 				<tr class="tfoot">
-					<td colspan="5">Used Attribute Cost</td>
+					<td colspan="5">${TEXT.usedattributecost}</td>
 					<#if ATTRIBUTE.BuyPointsMax < ATTRIBUTE.BuyPointsUsed><td class="red"><#else><td></#if>${ATTRIBUTE.BuyPointsUsed} of ${ATTRIBUTE.BuyPointsMax}</td>
 				</tr>
 			</table>
@@ -78,12 +78,12 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="3">Defense</td>
+								<td colspan="3">${TEXT.defense}</td>
 							</tr>
 							<tr>
-								<td>physical</td>
-								<td>spell</td>
-								<td>social</td>
+								<td>${TEXT.physical}</td>
+								<td>${TEXT.mystic}</td>
+								<td>${TEXT.social}</td>
 							</tr>
 							<tr>
 								<td>${DEFENSE.physical}</td>
@@ -95,11 +95,11 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="2">Armor</td>
+								<td colspan="2">${TEXT.armor}</td>
 							</tr>
 							<tr>
-								<td>physical</td>
-								<td>mystic</td>
+								<td>${TEXT.physical}</td>
+								<td>${TEXT.mystic}</td>
 							</tr>
 							<tr>
 								<td>${PROTECTION.physicalarmor}</td>
@@ -209,28 +209,28 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="thead">
-					<td colspan="4">Health</td>
+					<td colspan="4">${HEALTH.TEXT.health}</td>
 				</tr>
 				<tr>
-					<td>Unconsciousness</td>
+					<td>${HEALTH.TEXT.unconsciousness}</td>
 					<td colspan="2">${HEALTH.UNCONSCIOUSNESS.base} + ${HEALTH.UNCONSCIOUSNESS.adjustment} =</td>
 					<td>${HEALTH.UNCONSCIOUSNESS.value}</td>
 				</tr>
 				<tr>
-					<td>Death</td>
+					<td>${HEALTH.TEXT.death}</td>
 					<td colspan="2">${HEALTH.DEATH.base} + ${HEALTH.DEATH.adjustment} =</td>
 					<td>${HEALTH.DEATH.value}</td>
 				</tr>
 				<tr>
-					<td>Recovery Step</td>
+					<td>${HEALTH.TEXT.recovery} ${TEXT.step}</td>
 					<td>${HEALTH.RECOVERY.step}</td>
-					<td>Recovery Dice</td>
+					<td>${HEALTH.TEXT.recovery} ${TEXT.dice}</td>
 					<td>${HEALTH.RECOVERY.dice}</td>
 				</tr>
 				<tr>
-					<td>Recovery Tests per Day</td>
+					<td>${HEALTH.TEXT.recoverytests}</td>
 					<td>${HEALTH.RECOVERY.testsperday}</td>
-					<td>Wound Threshold</td>
+					<td>${HEALTH.TEXT.woundthreshold}</td>
 					<td>${HEALTH.WOUNDS.threshold}</td>
 				</tr>
 			</table>
@@ -238,10 +238,10 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="thead">
-					<td colspan="2">Damage</td>
+					<td colspan="2">${HEALTH.TEXT.damage}</td>
 				</tr>
 				<tr>
-					<td>Current Damage</td>
+					<td>${HEALTH.TEXT.currentdamage}</td>
 					<td>${HEALTH.damage}</td>
 				</tr>
 				<tr>
@@ -270,7 +270,7 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="thead">
-					<td colspan="2">Legend Points</td>
+					<td colspan="2">${TEXT.legendpoints}</td>
 				</tr>
 				<tr>
 					<td>Renown</td>

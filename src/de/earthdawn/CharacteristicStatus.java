@@ -26,9 +26,11 @@ import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import java.util.Map.Entry;
 
 public class CharacteristicStatus {
 	public static ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	private Map<ATTRIBUTENameType, String> attributesNames = PROPERTIES.getAttributeNames();
 	private CharacterContainer character;
 	private Configuration cfg;
 	private Template template=null;
@@ -55,12 +57,19 @@ public class CharacteristicStatus {
 		Map<String,Map<String,Object>> root = new TreeMap<String,Map<String,Object>>();
 
 		node = new TreeMap<String,Object>();
+		for( Entry<String,String> text : PROPERTIES.getTranslationTextAll().entrySet() ) {
+			node.put(text.getKey(),text.getValue());
+		}
+		root.put("TEXT", node);
+
+		node = new TreeMap<String,Object>();
 		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = character.getAttributes();
 		int spendAttributeBuyPoints=0;
 		for( ATTRIBUTENameType a : attributes.keySet() ) {
 			Map<String,Object> values = new TreeMap<String,Object>();
 			node.put(a.value(), values);
 			ATTRIBUTEType attribute = attributes.get(a);
+			values.put( "name", attributesNames.get(a) );
 			values.put( "basevalue", attribute.getBasevalue() );
 			values.put( "lpincrease", attribute.getLpincrease() );
 			values.put( "currentvalue", attribute.getCurrentvalue() );
@@ -173,6 +182,12 @@ public class CharacteristicStatus {
 		node.put( "blooddamage", character.getHealth().getBlooddamage() );
 		node.put( "depatterningrate", character.getHealth().getDepatterningrate() );
 		root.put("HEALTH", node);
+
+		node = new TreeMap<String,Object>();
+		for( Entry<String,String> text : PROPERTIES.getTranslationHealthAll().entrySet() ) {
+			node.put(text.getKey(),text.getValue());
+		}
+		root.get("HEALTH").put("TEXT", node);
 
 		node = new TreeMap<String,Object>();
 		DEATHType death = character.getHealth().getUNCONSCIOUSNESS();

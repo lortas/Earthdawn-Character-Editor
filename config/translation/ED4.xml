@@ -956,7 +956,11 @@
 		<LABEL lang="de">Bewustlosigkeit</LABEL>
 		<LABEL lang="en">Unconsciousness</LABEL>
 	</HEALTH>
-	<HEALTH name="current damage">
+	<HEALTH name="damage">
+		<LABEL lang="de">Schaden</LABEL>
+		<LABEL lang="en">Damage</LABEL>
+	</HEALTH>
+	<HEALTH name="currentdamage">
 		<LABEL lang="de">Aktueller Schaden</LABEL>
 		<LABEL lang="en">Current Damage</LABEL>
 	</HEALTH>
@@ -964,11 +968,11 @@
 		<LABEL lang="de">Erholung</LABEL>
 		<LABEL lang="en">Recovery</LABEL>
 	</HEALTH>
-	<HEALTH name="recovery tests">
+	<HEALTH name="recoverytests">
 		<LABEL lang="de">Erholungsproben</LABEL>
 		<LABEL lang="en">Recovery Tests</LABEL>
 	</HEALTH>
-	<HEALTH name="wound threshold">
+	<HEALTH name="woundthreshold">
 		<LABEL lang="de">Verwundungsschwelle</LABEL>
 		<LABEL lang="en">Wound Threshold</LABEL>
 	</HEALTH>
@@ -1020,17 +1024,33 @@
 		<LABEL lang="de">Würfel</LABEL>
 		<LABEL lang="en">Dice</LABEL>
 	</TEXT>
+	<TEXT name="defense">
+		<LABEL lang="de">Verteitigung</LABEL>
+		<LABEL lang="en">Defense</LABEL>
+	</TEXT>
 	<TEXT name="defensearmor rating">
 		<LABEL lang="de">Verteitigungs-/Rüstungs-Werte</LABEL>
 		<LABEL lang="en">Defense/Armor Rating</LABEL>
+	</TEXT>
+	<TEXT name="physical">
+		<LABEL lang="de">physisch</LABEL>
+		<LABEL lang="en">physical</LABEL>
 	</TEXT>
 	<TEXT name="physical defense">
 		<LABEL lang="de">Phy.&#160;Verteitigung</LABEL>
 		<LABEL lang="en">Phy.&#160;Defense</LABEL>
 	</TEXT>
+	<TEXT name="mystic">
+		<LABEL lang="de">mystisch</LABEL>
+		<LABEL lang="en">mystic</LABEL>
+	</TEXT>
 	<TEXT name="spell defense">
 		<LABEL lang="de">Mys.&#160;Verteitigung</LABEL>
 		<LABEL lang="en">Mys.&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="social">
+		<LABEL lang="de">sozial</LABEL>
+		<LABEL lang="en">social</LABEL>
 	</TEXT>
 	<TEXT name="social defense">
 		<LABEL lang="de">Soz.&#160;Verteitigung</LABEL>
@@ -1067,6 +1087,10 @@
 	<TEXT name="discipline">
 		<LABEL lang="de">Disziplin</LABEL>
 		<LABEL lang="en">Discipline</LABEL>
+	</TEXT>
+	<TEXT name="disciplines">
+		<LABEL lang="de">Disziplinen</LABEL>
+		<LABEL lang="en">Disciplines</LABEL>
 	</TEXT>
 	<TEXT name="circle">
 		<LABEL lang="de">Kreis</LABEL>
@@ -1300,6 +1324,14 @@
 		<LABEL lang="de">Legendenpunkte</LABEL>
 		<LABEL lang="en">Legend Points</LABEL>
 	</TEXT>
+	<TEXT name="lpincrease">
+		<LABEL lang="de">LP-Steigerung</LABEL>
+		<LABEL lang="en">LP increase</LABEL>
+	</TEXT>
+	<TEXT name="buy">
+		<LABEL lang="de">Kauf</LABEL>
+		<LABEL lang="en">buy</LABEL>
+	</TEXT>
 	<TEXT name="reputation">
 		<LABEL lang="de">Ruf</LABEL>
 		<LABEL lang="en">Reputation</LABEL>
@@ -1319,6 +1351,10 @@
 	<TEXT name="calculatedlegendpoints">
 		<LABEL lang="de">Berechnete Legendenpunkte</LABEL>
 		<LABEL lang="en">Calculated Legend Points</LABEL>
+	</TEXT>
+	<TEXT name="attribute">
+		<LABEL lang="de">Attribut</LABEL>
+		<LABEL lang="en">Attribute</LABEL>
 	</TEXT>
 	<TEXT name="attributes">
 		<LABEL lang="de">Attribute</LABEL>
@@ -1403,6 +1439,10 @@
 	<TEXT name="female">
 		<LABEL lang="de">weiblich</LABEL>
 		<LABEL lang="en">female</LABEL>
+	</TEXT>
+	<TEXT name="usedattributecost">
+		<LABEL lang="de">Verwendete Attributkaufpunkte</LABEL>
+		<LABEL lang="en">Used Attribute Cost</LABEL>
 	</TEXT>
 	<TEXT name="">
 		<LABEL lang="de"></LABEL>

@@ -255,15 +255,15 @@
 				<td class="edValueCell"><xsl:value-of select="//edt:DEATH/@base" /> + <xsl:value-of select="//edt:DEATH/@adjustment" /> = <xsl:value-of select="//edt:DEATH/@value" /></td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='unconsciousness']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:UNCONSCIOUSNESS/@base" /> + <xsl:value-of select="//edt:UNCONSCIOUSNESS/@adjustment" /> = <xsl:value-of select="//edt:UNCONSCIOUSNESS/@value" /></td>
-				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='current damage']/tra:LABEL[@lang=$lang]"/>:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='currentdamage']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/@damage" /></td>
 			</tr>
 			<tr>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='recovery']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@step" /> (<xsl:value-of select="//edt:RECOVERY/@dice" />)</td>
-				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='recovery tests']/tra:LABEL[@lang=$lang]"/>:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='recoverytests']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edt:RECOVERY/@testsperday" /></td>
-				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='wound threshold']/tra:LABEL[@lang=$lang]"/>:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:HEALTH[@name='woundthreshold']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:HEALTH/edt:WOUNDS/@threshold" /></td>
 			</tr>
 			<tr>

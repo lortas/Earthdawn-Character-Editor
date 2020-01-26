@@ -629,10 +629,10 @@ public class EDMainWindow {
 		characteristicStatus.setCharacter(character);
 
 		tabbedPane.addTab("General", null, new JScrollPane(panelERGeneral), null);
-		tabbedPane.addTab("Disciplines", null, panelEDDisciplines, null);
-		tabbedPane.addTab("Attributes", null, panelEDAttributes, null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("disciplines"), null, panelEDDisciplines, null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("attributes"), null, panelEDAttributes, null);
 		tabbedPane.addTab("Knacks", null, panelEDKnacks, null);
-		tabbedPane.addTab("Skills", null, panelEDSkills, null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("skills"), null, panelEDSkills, null);
 		tabbedPane.addTab("Languages", null, panelEDLanguages, null);
 		tabbedPane.addTab("Experience", null, panelEDExperience , null);
 		tabbedPane.addTab("Karma", null, panelEDKarma , null);
@@ -755,7 +755,7 @@ public class EDMainWindow {
 			if(!allTalentTabs.contains(diciplineName)){
 				panelEDTalents = new EDTalents(diciplineName);
 				panelEDTalents.setCharacter(character);
-				tabbedPane.insertTab("Talents (" + diciplineName + ")", null, panelEDTalents, null, order);
+				tabbedPane.insertTab(PROPERTIES.getTranslationText("talents")+" (" + diciplineName + ")", null, panelEDTalents, null, order);
 			}
 			order++;
 		}
