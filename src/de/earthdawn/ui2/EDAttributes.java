@@ -20,6 +20,7 @@ import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.ATTRIBUTEType;
+import java.util.Map;
 
 public class EDAttributes extends JPanel {
 	private static final long serialVersionUID = -6319723413147452999L;
@@ -93,16 +94,26 @@ public class EDAttributes extends JPanel {
 }
 
 class AttributesTableModel extends AbstractTableModel {
+	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	private static final long serialVersionUID = -6909371939387453930L;
 	private CharacterContainer character;
-	private String[] columnNames = {"Attribute", "Base", "Buy", "LP increase", "Final", "Step", "Dice"};
+	private final Map<ATTRIBUTENameType, String> attributesNames = PROPERTIES.getAttributeNames();
+	private final String[] columnNames = {
+		PROPERTIES.getTranslationText("attribute"),
+		PROPERTIES.getTranslationText("base"),
+		PROPERTIES.getTranslationText("buy"),
+		PROPERTIES.getTranslationText("lpincrease"),
+		"Final",
+		PROPERTIES.getTranslationText("step"),
+		PROPERTIES.getTranslationText("dice")
+	};
 	private Object[][] data = {
-	{"Dexterity"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
-	{"Strength"		, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
-	{"Toughness"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
-	{"Perception"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
-	{"Willpower"	, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
-	{"Charisma"		, Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"", Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"", Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"", Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"", Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"", Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
+	{"", Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0), ""},
 	};
 	private ATTRIBUTENameType[] columnKey = {ATTRIBUTENameType.DEX, ATTRIBUTENameType.STR, ATTRIBUTENameType.TOU, ATTRIBUTENameType.PER, ATTRIBUTENameType.WIL, ATTRIBUTENameType.CHA};
 	public void setCharacter(CharacterContainer character) {
@@ -131,7 +142,7 @@ class AttributesTableModel extends AbstractTableModel {
 		}
 		ATTRIBUTEType attribute = character.getAttributes().get(columnKey[row]);
 		switch (col) {
-		case 0:  return data[row][col]; 
+		case 0:  return attributesNames.get(columnKey[row]);
 		case 1:  return Integer.valueOf(attribute.getRacevalue());
 		case 2:  return Integer.valueOf(attribute.getGenerationvalue());
 		case 3:  return Integer.valueOf(attribute.getLpincrease());
