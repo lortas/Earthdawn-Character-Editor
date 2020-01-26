@@ -21,4 +21,20 @@
 	<TALENTKNACK name="Absichten Einschätzen" basename="Diplomatie" attribute="CHA" minrank="8" action="sustained" strain="1" skilluse="5"/>
 	<TALENTKNACK name="Vergifteter Einfluss" basename="Diplomatie" attribute="CHA" minrank="7" action="sustained" skilluse="5"/>
 	<TALENTKNACK name="Zauber Absorbieren" basename="Eiserner Wille" minrank="6" action="free" strain="1"/>
+	<TALENTKNACK name="Das Ist Für Mich" basename="Entwaffnen" minrank="6" action="free"/>
+	<TALENTKNACK name="Grossartiger Auftritt" basename="Erster Eindruck" attribute="CHA" minrank="7" action="standard" strain="3"/>
+	<TALENTKNACK name="Geist Entdecken" basename="Fadenweben" attribute="PER" minrank="5" action="standard" strain="0"/>
+	<TALENTKNACK name="Geistrüstung" basename="Fadenweben" minrank="8" action="standard" strain="2"/>
+	<TALENTKNACK name="Ritual des Lehrergeistes" basename="Fadenweben" attribute="" minrank="5" action="sustained"/>
+	<TALENTKNACK name="Stärke der Bronze" basename="Fadenweben" minrank="5" action="na" blood="1"/>
+	<TALENTKNACK name="Stärke des Eisens" basename="Fadenweben" minrank="9" action="na" blood="1"/>
+	<TALENTKNACK name="Stärke des Stahls" basename="Fadenweben" minrank="13" action="na" blood="1"/>
+	<TALENTKNACK name="Wahres Element Entdecken" basename="Fadenweben" attribute="PER" minrank="4" action="standard" strain="1"/>
+	<TALENTKNACK name="Wahres Element Ernten" basename="Fadenweben" attribute="PER" minrank="5" action="sustained "/>
+	<TALENTKNACK name="Schätzen" basename="Feilschen" attriute="PER" minrank="1" action="standard"/>
+	<TALENTKNACK name="Gift Entdecken" basename="Gefahrensinn" attribute="" minrank="7" action="simple" strain="1"/>
+	<TALENTKNACK name="Waffen Entdecken" basename="Gefahrensinn" attribute="PER" minrank="3" action="simple" strain="1"/>
+	<TALENTKNACK name="Begleitmusik" basename="Gefühlsmelodie" attribute="CHA" minrank="6" action="sustained " strain="2"/>
+	<TALENTKNACK name="Geschichten Erzählen" basename="Gefühlsmelodie" attribute="CHA" minrank="1" action="sustained"/>
+	<TALENTKNACK name="Flirten" basename="Gewinnendes Lächeln" attribute="CHA" minrank="4" action="sustained"/>
 </KNACKS>
