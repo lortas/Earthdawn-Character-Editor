@@ -24,11 +24,21 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="undefined"/&gt;
  *     &lt;enumeration value="wood"/&gt;
  *     &lt;enumeration value="earth"/&gt;
+ *     &lt;enumeration value="earth-metal"/&gt;
  *     &lt;enumeration value="water"/&gt;
+ *     &lt;enumeration value="water-acid"/&gt;
+ *     &lt;enumeration value="water-cold"/&gt;
  *     &lt;enumeration value="air"/&gt;
+ *     &lt;enumeration value="air-electric"/&gt;
  *     &lt;enumeration value="fire"/&gt;
  *     &lt;enumeration value="illusion"/&gt;
+ *     &lt;enumeration value="figment"/&gt;
  *     &lt;enumeration value="fear"/&gt;
+ *     &lt;enumeration value="spirit"/&gt;
+ *     &lt;enumeration value="binding"/&gt;
+ *     &lt;enumeration value="summoning"/&gt;
+ *     &lt;enumeration value="fate"/&gt;
+ *     &lt;enumeration value="orichalcum"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
@@ -44,16 +54,36 @@ public enum ElementkindType {
     WOOD("wood"),
     @XmlEnumValue("earth")
     EARTH("earth"),
+    @XmlEnumValue("earth-metal")
+    EARTH_METAL("earth-metal"),
     @XmlEnumValue("water")
     WATER("water"),
+    @XmlEnumValue("water-acid")
+    WATER_ACID("water-acid"),
+    @XmlEnumValue("water-cold")
+    WATER_COLD("water-cold"),
     @XmlEnumValue("air")
     AIR("air"),
+    @XmlEnumValue("air-electric")
+    AIR_ELECTRIC("air-electric"),
     @XmlEnumValue("fire")
     FIRE("fire"),
     @XmlEnumValue("illusion")
     ILLUSION("illusion"),
+    @XmlEnumValue("figment")
+    FIGMENT("figment"),
     @XmlEnumValue("fear")
-    FEAR("fear");
+    FEAR("fear"),
+    @XmlEnumValue("spirit")
+    SPIRIT("spirit"),
+    @XmlEnumValue("binding")
+    BINDING("binding"),
+    @XmlEnumValue("summoning")
+    SUMMONING("summoning"),
+    @XmlEnumValue("fate")
+    FATE("fate"),
+    @XmlEnumValue("orichalcum")
+    ORICHALCUM("orichalcum");
     private final String value;
 
     ElementkindType(String v) {

@@ -16,10 +16,10 @@ tr.tfoot { font-style:italic; }
 			(${APPEARANCE.gender}, ${APPEARANCE.age})<br/>
 			<table>
 				<tr class="thead">
-					<td colspan="6">Attributes</td>
+					<td colspan="6">${TEXT.attributes}</td>
 				</tr>
 				<tr>
-					<td>Dexterity</td>
+					<td>${ATTRIBUTE.DEX.name}</td>
 					<td>${ATTRIBUTE.DEX.basevalue}</td>
 					<td>${ATTRIBUTE.DEX.lpincrease}</td>
 					<td>${ATTRIBUTE.DEX.currentvalue}</td>
@@ -27,7 +27,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.DEX.dice}</td>
 				</tr>
 				<tr>
-					<td>Strength</td>
+					<td>${ATTRIBUTE.STR.name}</td>
 					<td>${ATTRIBUTE.STR.basevalue}</td>
 					<td>${ATTRIBUTE.STR.lpincrease}</td>
 					<td>${ATTRIBUTE.STR.currentvalue}</td>
@@ -35,7 +35,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.STR.dice}</td>
 				</tr>
 				<tr>
-					<td>Toughness</td>
+					<td>${ATTRIBUTE.TOU.name}</td>
 					<td>${ATTRIBUTE.TOU.basevalue}</td>
 					<td>${ATTRIBUTE.TOU.lpincrease}</td>
 					<td>${ATTRIBUTE.TOU.currentvalue}</td>
@@ -43,7 +43,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.TOU.dice}</td>
 				</tr>
 				<tr>
-					<td>Perception</td>
+					<td>${ATTRIBUTE.PER.name}</td>
 					<td>${ATTRIBUTE.PER.basevalue}</td>
 					<td>${ATTRIBUTE.PER.lpincrease}</td>
 					<td>${ATTRIBUTE.PER.currentvalue}</td>
@@ -51,7 +51,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.PER.dice}</td>
 				</tr>
 				<tr>
-					<td>Willpower</td>
+					<td>${ATTRIBUTE.WIL.name}</td>
 					<td>${ATTRIBUTE.WIL.basevalue}</td>
 					<td>${ATTRIBUTE.WIL.lpincrease}</td>
 					<td>${ATTRIBUTE.WIL.currentvalue}</td>
@@ -59,7 +59,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.WIL.dice}</td>
 				</tr>
 				<tr>
-					<td>Charisma</td>
+					<td>${ATTRIBUTE.CHA.name}</td>
 					<td>${ATTRIBUTE.CHA.basevalue}</td>
 					<td>${ATTRIBUTE.CHA.lpincrease}</td>
 					<td>${ATTRIBUTE.CHA.currentvalue}</td>
@@ -67,7 +67,7 @@ tr.tfoot { font-style:italic; }
 					<td>${ATTRIBUTE.CHA.dice}</td>
 				</tr>
 				<tr class="tfoot">
-					<td colspan="5">Used Attribute Cost</td>
+					<td colspan="5">${TEXT.usedattributecost}</td>
 					<#if ATTRIBUTE.BuyPointsMax < ATTRIBUTE.BuyPointsUsed><td class="red"><#else><td></#if>${ATTRIBUTE.BuyPointsUsed} of ${ATTRIBUTE.BuyPointsMax}</td>
 				</tr>
 			</table>
@@ -78,12 +78,12 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="3">Defense</td>
+								<td colspan="3">${TEXT.defense}</td>
 							</tr>
 							<tr>
-								<td>physical</td>
-								<td>spell</td>
-								<td>social</td>
+								<td>${TEXT.physical}</td>
+								<td>${TEXT.mystic}</td>
+								<td>${TEXT.social}</td>
 							</tr>
 							<tr>
 								<td>${DEFENSE.physical}</td>
@@ -95,11 +95,11 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="2">Armor</td>
+								<td colspan="2">${TEXT.armor}</td>
 							</tr>
 							<tr>
-								<td>physical</td>
-								<td>mystic</td>
+								<td>${TEXT.physical}</td>
+								<td>${TEXT.mystic}</td>
 							</tr>
 							<tr>
 								<td>${PROTECTION.physicalarmor}</td>
@@ -114,22 +114,22 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="2">Initiative</td>
+								<td colspan="2">${TEXT.initiative}</td>
 							</tr>
 							<tr>
-								<td>Base Step</td>
+								<td>${TEXT.basestep}</td>
 								<td>${INITIATIVE.base}</td>
 							</tr>
 							<tr>
-								<td>Penalty</td>
+								<td>${TEXT.penalty}</td>
 								<td>${INITIATIVE.modification}</td>
 							</tr>
 							<tr>
-								<td>Step</td>
+								<td>${TEXT.step}</td>
 								<td>${INITIATIVE.step}</td>
 							</tr>
 							<tr>
-								<td>Dice</td>
+								<td>${TEXT.dice}</td>
 								<td>${INITIATIVE.dice}</td>
 							</tr>
 						</table>
@@ -137,21 +137,21 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="2">Movement</td>
+								<td colspan="2">${TEXT.movement}</td>
 							</tr>
 							<tr>
-								<td>Ground</td>
+								<td>${TEXT.ground}</td>
 								<td>${MOVEMENT.ground}</td>
 							</tr>
 							<tr>
-								<td>Flight</td>
+								<td>${TEXT.flight}</td>
 								<td>${MOVEMENT.flight}</td>
 							</tr>
 							<tr class="thead">
-								<td colspan="2">Encumbrance</td>
+								<td colspan="2">${TEXT.encumbrance}</td>
 							</tr>
 							<tr>
-								<td>Carrying</td>
+								<td>${TEXT.carrying}</td>
 								<td>${CARRYING.carrying}</td>
 							</tr>
 						</table>
@@ -159,22 +159,22 @@ tr.tfoot { font-style:italic; }
 					<td>
 						<table>
 							<tr class="thead">
-								<td colspan="2">Karma</td>
+								<td colspan="2">${TEXT.karma}</td>
 							</tr>
 							<tr>
-								<td>current</td>
+								<td>${TEXT.current}</td>
 								<td>${KARMA.current}</td>
 							</tr>
 							<tr>
-								<td>Max</td>
+								<td>${TEXT.max}</td>
 								<td>${KARMA.max}</td>
 							</tr>
 							<tr>
-								<td>Step</td>
+								<td>${TEXT.step}</td>
 								<td>${KARMA.step}</td>
 							</tr>
 							<tr>
-								<td>Dice</td>
+								<td>${TEXT.dice}</td>
 								<td>${KARMA.dice}</td>
 							</tr>
 						</table>
@@ -187,21 +187,18 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="tfoot">
-					<td colspan="2">Not Spent</td>
-				</tr>
-				<tr class="tfoot">
-					<td colspan="2">Start Ranks</td>
+					<td colspan="2" style="width:50px">${TEXT.notspentstartranks}</td>
 				</tr>
 				<tr>
-					<td>Talents</td>
+					<td>${TEXT.talents}</td>
 					<#if USEDSTARTRANKS.talents < 0><td class="red"><#else><td></#if>${USEDSTARTRANKS.talents}</td>
 				</tr>
 				<tr>
-					<td>Skills</td>
+					<td>${TEXT.skills}</td>
 					<#if USEDSTARTRANKS.skills < 0><td class="red"><#else><td></#if>${USEDSTARTRANKS.skills}</td>
 				</tr>
 				<tr>
-					<td>Spells</td>
+					<td>${TEXT.spells}</td>
 					<#if USEDSTARTRANKS.spells < 0><td class="red"><#else><td></#if>${USEDSTARTRANKS.spells}</td>
 				</tr>
 			</table>
@@ -209,28 +206,28 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="thead">
-					<td colspan="4">Health</td>
+					<td colspan="4">${HEALTH.TEXT.health}</td>
 				</tr>
 				<tr>
-					<td>Unconsciousness</td>
+					<td>${HEALTH.TEXT.unconsciousness}</td>
 					<td colspan="2">${HEALTH.UNCONSCIOUSNESS.base} + ${HEALTH.UNCONSCIOUSNESS.adjustment} =</td>
 					<td>${HEALTH.UNCONSCIOUSNESS.value}</td>
 				</tr>
 				<tr>
-					<td>Death</td>
+					<td>${HEALTH.TEXT.death}</td>
 					<td colspan="2">${HEALTH.DEATH.base} + ${HEALTH.DEATH.adjustment} =</td>
 					<td>${HEALTH.DEATH.value}</td>
 				</tr>
 				<tr>
-					<td>Recovery Step</td>
+					<td>${HEALTH.TEXT.recovery} ${TEXT.step}</td>
 					<td>${HEALTH.RECOVERY.step}</td>
-					<td>Recovery Dice</td>
+					<td>${HEALTH.TEXT.recovery} ${TEXT.dice}</td>
 					<td>${HEALTH.RECOVERY.dice}</td>
 				</tr>
 				<tr>
-					<td>Recovery Tests per Day</td>
+					<td>${HEALTH.TEXT.recoverytests}</td>
 					<td>${HEALTH.RECOVERY.testsperday}</td>
-					<td>Wound Threshold</td>
+					<td>${HEALTH.TEXT.woundthreshold}</td>
 					<td>${HEALTH.WOUNDS.threshold}</td>
 				</tr>
 			</table>
@@ -238,14 +235,14 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="thead">
-					<td colspan="2">Damage</td>
+					<td colspan="2">${HEALTH.TEXT.damage}</td>
 				</tr>
 				<tr>
-					<td>Current Damage</td>
+					<td>${HEALTH.TEXT.currentdamage}</td>
 					<td>${HEALTH.damage}</td>
 				</tr>
 				<tr>
-					<td>Current Wounds</td>
+					<td>${HEALTH.TEXT.currentwounds}</td>
 					<td>
 						${HEALTH.WOUNDS.normal}
 						<#if HEALTH.WOUNDS.blood != 0>(+${HEALTH.WOUNDS.blood})</#if>
@@ -253,7 +250,7 @@ tr.tfoot { font-style:italic; }
 				</tr>
 				<tr>
 					<td>
-						Blood Damage
+						${HEALTH.TEXT.blooddamage}
 						<#if HEALTH.depatterningrate != 0>(DR)</#if>
 					</td>
 					<td>
@@ -262,7 +259,7 @@ tr.tfoot { font-style:italic; }
 					</td>
 				</tr>
 				<tr>
-					<td>Wound Penalties</td>
+					<td>${HEALTH.TEXT.woundpenalties}</td>
 					<td>${HEALTH.WOUNDS.penalties}</td>
 				</tr>
 			</table>
@@ -270,22 +267,22 @@ tr.tfoot { font-style:italic; }
 		<td>
 			<table>
 				<tr class="thead">
-					<td colspan="2">Legend Points</td>
+					<td colspan="2">${TEXT.legendpoints}</td>
 				</tr>
 				<tr>
-					<td>Renown</td>
+					<td>${TEXT.renown}</td>
 					<td>${EXPERIENCE.renown}</td>
 				</tr>
 				<tr>
-					<td>Reputation</td>
+					<td>${TEXT.reputation}</td>
 					<td>${EXPERIENCE.reputation}</td>
 				</tr>
 				<tr>
-					<td>Current</td>
+					<td>${TEXT.current}</td>
 					<#if EXPERIENCE.currentlegendpoints < 0><td class="red"><#else><td></#if>${EXPERIENCE.currentlegendpoints}</td>
 				</tr>
 				<tr>
-					<td>Total</td>
+					<td>${TEXT.total}</td>
 					<td>${EXPERIENCE.totallegendpoints}</td>
 				</tr>
 			</table>
@@ -302,7 +299,7 @@ tr.tfoot { font-style:italic; }
 					<td>${DEVOTION.passion}</td>
 				</tr>
 				<tr>
-					<td>Devotion</td>
+					<td>${TEXT.devotion}</td>
 				</tr>
 				<tr>
 					<td>${DEVOTION.value}</td>
@@ -314,19 +311,19 @@ tr.tfoot { font-style:italic; }
 		<td colspan="5">
 			<table>
 				<tr class="thead">
-					<td colspan="9">Calculated Legend Points</td>
+					<td colspan="9">${TEXT.calculatedlegendpoints}</td>
 				</tr>
 				<tr>
-					<td>Attributes</td>
-					<td>Discipline Talents</td>
-					<td>Optional Talents</td>
-					<td>Knacks</td>
-					<td>Spells</td>
-					<td>Skills</td>
-					<td>Karma</td>
-					<td>Magic Items</td>
-					<td>Total</td>
-					<td>Unused</td>
+					<td>${TEXT.attributes}</td>
+					<td>${TEXT.disciplinetalents}</td>
+					<td>${TEXT.optionaltalents}</td>
+					<td>${TEXT.knacks}</td>
+					<td>${TEXT.spells}</td>
+					<td>${TEXT.skills}</td>
+					<td>${TEXT.karma}</td>
+					<td>${TEXT.magicitems}</td>
+					<td>${TEXT.total}</td>
+					<td>${TEXT.unused}</td>
 				</tr>
 				<tr>
 					<td>${CALCULATEDLEGENDPOINTS.attributes}</td>

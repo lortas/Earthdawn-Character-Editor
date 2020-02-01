@@ -121,11 +121,21 @@
 			<xs:enumeration value="undefined"/>
 			<xs:enumeration value="wood"/>
 			<xs:enumeration value="earth"/>
+			<xs:enumeration value="earth-metal"/>
 			<xs:enumeration value="water"/>
+			<xs:enumeration value="water-acid"/>
+			<xs:enumeration value="water-cold"/>
 			<xs:enumeration value="air"/>
+			<xs:enumeration value="air-electric"/>
 			<xs:enumeration value="fire"/>
 			<xs:enumeration value="illusion"/>
+			<xs:enumeration value="figment"/>
 			<xs:enumeration value="fear"/>
+			<xs:enumeration value="spirit"/>
+			<xs:enumeration value="binding"/>
+			<xs:enumeration value="summoning"/>
+			<xs:enumeration value="fate"/>
+			<xs:enumeration value="orichalcum"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dice_type">
@@ -264,9 +274,12 @@
 	</xs:complexType>
 	<xs:complexType name="KNACK_type">
 		<xs:attribute name="name"  type="xs:string" use="required"/>
+		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
 		<xs:attribute name="strain" type="xs:string" default="0"/>
+		<xs:attribute name="blood" type="unsigned_int" default="0"/>
 		<xs:attribute name="minrank" type="unsigned_int" default="0"/>
 		<xs:attribute name="learnedbymincircle" type="circle_type" default="0"/>
+		<xs:attribute name="action" type="action_type"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
 	</xs:complexType>
 	<xs:complexType name="TALENTTEACHER_type">
@@ -612,6 +625,7 @@
 	<xs:complexType name="SPELLDEF_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
 		<xs:attribute name="element" type="elementkind_type" default="undefined"/>
+		<xs:attribute name="packusable" type="yesno_type" default="no"/>
 		<xs:attribute name="threads" type="xs:string" default="0"/>
 		<xs:attribute name="weavingdifficulty" type="xs:string" default="na"/>
 		<xs:attribute name="reattuningdifficulty" type="unsigned_int" default="0"/>

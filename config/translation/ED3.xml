@@ -82,6 +82,15 @@
 		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
 		<SPELLELEMENT element="fear" acronym="fe" name="Fear"/>
 		<SPELLELEMENT element="orichalcum" acronym="or" name="orichalcum"/>
+		<SPELLELEMENT element="earth-metal" acronym="em" name="Earth-Metal"/>
+		<SPELLELEMENT element="water-acid" acronym="wa" name="Water-Acid"/>
+		<SPELLELEMENT element="water-cold" acronym="wc" name="Water-Cold"/>
+		<SPELLELEMENT element="air-electric" acronym="ae" name="Air-Electric"/>
+		<SPELLELEMENT element="figment" acronym="fg" name="Figment"/>
+		<SPELLELEMENT element="spirit" acronym="sp" name="Spirit"/>
+		<SPELLELEMENT element="binding" acronym="b" name="Binding"/>
+		<SPELLELEMENT element="summoning" acronym="su" name="Summoning"/>
+		<SPELLELEMENT element="fate" acronym="fa" name="Fate"/>
 	</SPELLWEAVING>
 	<SPELLWEAVING lang="de">
 		<SPELLKIND type="elemental" weaving="Elementarismus"/>
@@ -98,7 +107,16 @@
 		<SPELLELEMENT element="air" acronym="l" name="Luft"/>
 		<SPELLELEMENT element="illusion" acronym="i" name="Illusion"/>
 		<SPELLELEMENT element="fear" acronym="fu" name="Furcht"/>
-		<SPELLELEMENT element="orichalcum" acronym="or" name="Oreichalkos"/>
+		<SPELLELEMENT element="orichalcum" acronym="or" name="Orichalkum"/>
+		<SPELLELEMENT element="earth-metal" acronym="em" name="Erd-Metal"/>
+		<SPELLELEMENT element="water-acid" acronym="ws" name="Wasser-Säure"/>
+		<SPELLELEMENT element="water-cold" acronym="wk" name="Wasse-Kälte"/>
+		<SPELLELEMENT element="air-electric" acronym="le" name="Luft-Elektrizität"/>
+		<SPELLELEMENT element="figment" acronym="ei" name="Einbindung"/>
+		<SPELLELEMENT element="spirit" acronym="g" name="Geist"/>
+		<SPELLELEMENT element="binding" acronym="bi" name="Bindung"/>
+		<SPELLELEMENT element="summoning" acronym="be" name="Beschwörung"/>
+		<SPELLELEMENT element="fate" acronym="fü" name="Fügung"/>
 	</SPELLWEAVING>
 	<CAPABILITY>
 		<LABEL lang="en">Abate Curse</LABEL>
@@ -1680,31 +1698,43 @@
 		<LABEL lang="de">Bewustlosigkeit</LABEL>
 		<LABEL lang="en">Unconsciousness</LABEL>
 	</HEALTH>
-	<HEALTH name="current damage">
+	<HEALTH name="damage">
+		<LABEL lang="de">Schaden</LABEL>
+		<LABEL lang="en">Damage</LABEL>
+	</HEALTH>
+	<HEALTH name="currentdamage">
 		<LABEL lang="de">Aktueller Schaden</LABEL>
 		<LABEL lang="en">Current Damage</LABEL>
+	</HEALTH>
+	<HEALTH name="blooddamage">
+		<LABEL lang="de">Blutschaden</LABEL>
+		<LABEL lang="en">Blood Damage</LABEL>
 	</HEALTH>
 	<HEALTH name="recovery">
 		<LABEL lang="de">Erholung</LABEL>
 		<LABEL lang="en">Recovery</LABEL>
 	</HEALTH>
-	<HEALTH name="recovery tests">
+	<HEALTH name="recoverytests">
 		<LABEL lang="de">Erholungsproben</LABEL>
 		<LABEL lang="en">Recovery Tests</LABEL>
 	</HEALTH>
-	<HEALTH name="wound threshold">
+	<HEALTH name="woundthreshold">
 		<LABEL lang="de">Verwundungsschwelle</LABEL>
 		<LABEL lang="en">Wound Threshold</LABEL>
 	</HEALTH>
-	<HEALTH name="normal wounds">
-		<LABEL lang="de">Normale Wunde</LABEL>
+	<HEALTH name="currentwounds">
+		<LABEL lang="de">Aktuelle Wunden</LABEL>
+		<LABEL lang="en">Current Wounds</LABEL>
+	</HEALTH>
+	<HEALTH name="normalwounds">
+		<LABEL lang="de">Normale Wunden</LABEL>
 		<LABEL lang="en">Normal Wounds</LABEL>
 	</HEALTH>
-	<HEALTH name="blood wounds">
-		<LABEL lang="de">Blutwunde</LABEL>
+	<HEALTH name="bloodwounds">
+		<LABEL lang="de">Blutwunden</LABEL>
 		<LABEL lang="en">Blood Wounds</LABEL>
 	</HEALTH>
-	<HEALTH name="wound penalties">
+	<HEALTH name="woundpenalties">
 		<LABEL lang="de">Wundenbehinderung</LABEL>
 		<LABEL lang="en">Wound Penalties</LABEL>
 	</HEALTH>
@@ -1744,17 +1774,33 @@
 		<LABEL lang="de">Würfel</LABEL>
 		<LABEL lang="en">Dice</LABEL>
 	</TEXT>
+	<TEXT name="defense">
+		<LABEL lang="de">Verteitigung</LABEL>
+		<LABEL lang="en">Defense</LABEL>
+	</TEXT>
 	<TEXT name="defensearmor rating">
 		<LABEL lang="de">Verteitigungs-/Rüstungs-Werte</LABEL>
 		<LABEL lang="en">Defense/Armor Rating</LABEL>
+	</TEXT>
+	<TEXT name="physical">
+		<LABEL lang="de">physisch</LABEL>
+		<LABEL lang="en">physical</LABEL>
 	</TEXT>
 	<TEXT name="physical defense">
 		<LABEL lang="de">Phy.&#160;Verteitigung</LABEL>
 		<LABEL lang="en">Phy.&#160;Defense</LABEL>
 	</TEXT>
+	<TEXT name="mystic">
+		<LABEL lang="de">mystisch</LABEL>
+		<LABEL lang="en">mystic</LABEL>
+	</TEXT>
 	<TEXT name="spell defense">
 		<LABEL lang="de">Mys.&#160;Verteitigung</LABEL>
 		<LABEL lang="en">Mys.&#160;Defense</LABEL>
+	</TEXT>
+	<TEXT name="social">
+		<LABEL lang="de">sozial</LABEL>
+		<LABEL lang="en">social</LABEL>
 	</TEXT>
 	<TEXT name="social defense">
 		<LABEL lang="de">Soz.&#160;Verteitigung</LABEL>
@@ -1792,6 +1838,10 @@
 		<LABEL lang="de">Disziplin</LABEL>
 		<LABEL lang="en">Discipline</LABEL>
 	</TEXT>
+	<TEXT name="disciplines">
+		<LABEL lang="de">Disziplinen</LABEL>
+		<LABEL lang="en">Disciplines</LABEL>
+	</TEXT>
 	<TEXT name="circle">
 		<LABEL lang="de">Kreis</LABEL>
 		<LABEL lang="en">Circle</LABEL>
@@ -1799,6 +1849,10 @@
 	<TEXT name="discipline bonuses">
 		<LABEL lang="de">Disziplinbonus</LABEL>
 		<LABEL lang="en">Discipline Bonuses</LABEL>
+	</TEXT>
+	<TEXT name="general">
+		<LABEL lang="de">Allgemein</LABEL>
+		<LABEL lang="en">General</LABEL>
 	</TEXT>
 	<TEXT name="general information">
 		<LABEL lang="de">Allgemeine Informationen</LABEL>
@@ -2024,6 +2078,14 @@
 		<LABEL lang="de">Legendenpunkte</LABEL>
 		<LABEL lang="en">Legend Points</LABEL>
 	</TEXT>
+	<TEXT name="lpincrease">
+		<LABEL lang="de">LP-Steigerung</LABEL>
+		<LABEL lang="en">LP increase</LABEL>
+	</TEXT>
+	<TEXT name="buy">
+		<LABEL lang="de">Kauf</LABEL>
+		<LABEL lang="en">buy</LABEL>
+	</TEXT>
 	<TEXT name="reputation">
 		<LABEL lang="de">Ruf</LABEL>
 		<LABEL lang="en">Reputation</LABEL>
@@ -2044,6 +2106,10 @@
 		<LABEL lang="de">Berechnete Legendenpunkte</LABEL>
 		<LABEL lang="en">Calculated Legend Points</LABEL>
 	</TEXT>
+	<TEXT name="attribute">
+		<LABEL lang="de">Attribut</LABEL>
+		<LABEL lang="en">Attribute</LABEL>
+	</TEXT>
 	<TEXT name="attributes">
 		<LABEL lang="de">Attribute</LABEL>
 		<LABEL lang="en">Attributes</LABEL>
@@ -2057,7 +2123,7 @@
 		<LABEL lang="en">Optional Talents</LABEL>
 	</TEXT>
 	<TEXT name="knacks">
-		<LABEL lang="de">Kniff</LABEL>
+		<LABEL lang="de">Kniffe</LABEL>
 		<LABEL lang="en">Knacks</LABEL>
 	</TEXT>
 	<TEXT name="spells">
@@ -2104,6 +2170,14 @@
 		<LABEL lang="de">Kommentar</LABEL>
 		<LABEL lang="en">Comment</LABEL>
 	</TEXT>
+	<TEXT name="devotionpoints">
+		<LABEL lang="de">Weihepunkte</LABEL>
+		<LABEL lang="en">Devotionpoints</LABEL>
+	</TEXT>
+	<TEXT name="experience">
+		<LABEL lang="de">Erfahrung</LABEL>
+		<LABEL lang="en">Experience</LABEL>
+	</TEXT>
 	<TEXT name="totallegendpointsreceivedhistory">
 		<LABEL lang="de">Auflistung aller erhaltenen Legendenpunkte</LABEL>
 		<LABEL lang="en">total legendpoints received history</LABEL>
@@ -2127,6 +2201,50 @@
 	<TEXT name="female">
 		<LABEL lang="de">weiblich</LABEL>
 		<LABEL lang="en">female</LABEL>
+	</TEXT>
+	<TEXT name="usedattributecost">
+		<LABEL lang="de">Verwendete Attributkaufpunkte</LABEL>
+		<LABEL lang="en">Used Attribute Cost</LABEL>
+	</TEXT>
+	<TEXT name="inventory">
+		<LABEL lang="de">Inventar</LABEL>
+		<LABEL lang="en">Inventory</LABEL>
+	</TEXT>
+	<TEXT name="basestep">
+		<LABEL lang="de">Basisstufe</LABEL>
+		<LABEL lang="en">Base Step</LABEL>
+	</TEXT>
+	<TEXT name="devotion">
+		<LABEL lang="de">Weihe</LABEL>
+		<LABEL lang="en">Devotion</LABEL>
+	</TEXT>
+	<TEXT name="encumbrance">
+		<LABEL lang="de">Belastung</LABEL>
+		<LABEL lang="en">Encumbrance</LABEL>
+	</TEXT>
+	<TEXT name="flight">
+		<LABEL lang="de">Flug</LABEL>
+		<LABEL lang="en">Flight</LABEL>
+	</TEXT>
+	<TEXT name="ground">
+		<LABEL lang="de">Grund</LABEL>
+		<LABEL lang="en">Ground</LABEL>
+	</TEXT>
+	<TEXT name="initiative">
+		<LABEL lang="de">Initiative</LABEL>
+		<LABEL lang="en">Initiative</LABEL>
+	</TEXT>
+	<TEXT name="max">
+		<LABEL lang="de">max</LABEL>
+		<LABEL lang="en">max</LABEL>
+	</TEXT>
+	<TEXT name="unused">
+		<LABEL lang="de">unbenutzt</LABEL>
+		<LABEL lang="en">unused</LABEL>
+	</TEXT>
+	<TEXT name="notspentstartranks">
+		<LABEL lang="de">Unbenutzte Startränge</LABEL>
+		<LABEL lang="en">Not Spent Start Ranks</LABEL>
 	</TEXT>
 	<TEXT name="">
 		<LABEL lang="de"></LABEL>
