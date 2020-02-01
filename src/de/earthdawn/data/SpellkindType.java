@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="nether"/&gt;
  *     &lt;enumeration value="illusion"/&gt;
  *     &lt;enumeration value="wizard"/&gt;
- *     &lt;enumeration value="shamane"/&gt;
+ *     &lt;enumeration value="shaman"/&gt;
  *     &lt;enumeration value="sorcery"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
@@ -44,8 +44,8 @@ public enum SpellkindType {
     ILLUSION("illusion"),
     @XmlEnumValue("wizard")
     WIZARD("wizard"),
-    @XmlEnumValue("shamane")
-    SHAMANE("shamane"),
+    @XmlEnumValue("shaman")
+    SHAMANE("shaman"),
     @XmlEnumValue("sorcery")
     SORCERY("sorcery");
     private final String value;

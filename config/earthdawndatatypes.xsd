@@ -105,7 +105,7 @@
 			<xs:enumeration value="nether"/>
 			<xs:enumeration value="illusion"/>
 			<xs:enumeration value="wizard"/>
-			<xs:enumeration value="shamane"/>
+			<xs:enumeration value="shaman"/>
 			<xs:enumeration value="sorcery"/>
 		</xs:restriction>
 	</xs:simpleType>
