@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Shaman" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="3" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Animal Bond"/>
+		<OPTIONALTALENT name="Animal Training"/>
+		<OPTIONALTALENT name="Avoid Blow"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Creature Analysis"/>
+		<OPTIONALTALENT name="Enhance Animal Companion"/>
+		<OPTIONALTALENT name="Navigation"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Standard Matrix" limitation="S1"/>
+		<FREETALENT name="Standard Matrix" limitation="F1"/>
+		<FREETALENT name="Standard Matrix" limitation="F2"/>
+		<DISCIPLINETALENT name="Awareness"/>
+		<DISCIPLINETALENT name="Patterncraft"/>
+		<DISCIPLINETALENT name="Wilderness Survival"/>
+		<DISCIPLINETALENT name="Spellcasting"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Shamanism"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Alarm"/>
+		<SPELL type="shaman" name="Hunter’s Sense"/>
+		<SPELL type="shaman" name="Insect Repellent"/>
+		<SPELL type="shaman" name="Invoke Crow Tear"/>
+		<SPELL type="shaman" name="Invoke Leopard Pounce"/>
+		<SPELL type="shaman" name="Moonglow"/>
+		<SPELL type="shaman" name="Otter Swim"/>
+		<SPELL type="shaman" name="Pack Tactics"/>
+		<SPELL type="shaman" name="Prey Senses"/>
+		<SPELL type="shaman" name="Weather Cloak"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Astral Sight"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Ferocity"/>
+		<SPELL type="shaman" name="Hero’s Feast"/>
+		<SPELL type="shaman" name="Mark of the Boar"/>
+		<SPELL type="shaman" name="Mountain Goat Leap"/>
+		<SPELL type="shaman" name="Soothe the Savage Beast"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Spirit Talk"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Catwalk"/>
+		<SPELL type="shaman" name="Invoke Lion’s Pride"/>
+		<SPELL type="shaman" name="Mark of the Wolf"/>
+		<SPELL type="shaman" name="Polecat Resilience"/>
+		<SPELL type="shaman" name="Sunlight"/>
+		<KARMA spend="on a test to Summon or interact with a spirit"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Danger Sense"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Ferret Reflex"/>
+		<SPELL type="shaman" name="Gills"/>
+		<SPELL type="shaman" name="Invoke Shark Rend"/>
+		<SPELL type="shaman" name="Mark of the Bear"/>
+		<SPELL type="shaman" name="Repel Animal"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Animal Companion Durability"/>
+		<OPTIONALTALENT name="Animal Talk"/>
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Borrow Sense"/>
+		<OPTIONALTALENT name="Call Animal Companion"/>
+		<OPTIONALTALENT name="Enhanced Matrix"  limitation="S2"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Spirit Mount"/>
+		<OPTIONALTALENT name="Spirit Mount"/>
+		<OPTIONALTALENT name="Tenacious Weave"/>
+		<FREETALENT name="Enhanced Matrix" replace="Standard Matrix" limitation="F1"/>
+		<DISCIPLINETALENT name="Summon" limitation="Beast Spirits"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Falcon’s Cloak"/>
+		<SPELL type="shaman" name="Gathering of Souls"/>
+		<SPELL type="shaman" name="Invoke Boar Charge"/>
+		<SPELL type="shaman" name="Mark of the Badger"/>
+		<SPELL type="shaman" name="Path Home"/>
+		<KARMA spend="to gain the benefit of an extra thread woven"/>
+		<ABILITY>Pack Leadership</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willforce"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Life Patterns"/>
+		<SPELL type="shaman" name="Mark of the Snake"/>
+		<SPELL type="shaman" name="Pangolin Armor"/>
+		<SPELL type="shaman" name="Predator Senses"/>
+		<SPELL type="shaman" name="Storm Wolf Call"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Lifesight"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Beastform"/>
+		<SPELL type="shaman" name="Earth Q’wril"/>
+		<SPELL type="shaman" name="Invoke Unicorn Charge"/>
+		<SPELL type="shaman" name="Premonition of Victory"/>
+		<SPELL type="shaman" name="Wolf Run"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Lion Heart"/>
+		<TALENTABILITY/>
+		<SPELL type="shaman" name="Invoke Espagra Frenzy"/>
+		<SPELL type="shaman" name="Lifesense"/>
+		<SPELL type="shaman" name="Mark of the Eagle"/>
+		<SPELL type="shaman" name="Salamander Regeneration"/>
+		<SPELL type="shaman" name="War Party"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
+	<HALFMAGIC>Recognize different animals, animal tracks, and abnormal behavior among animals and creatures. Detect the presence of beast spirits wihtin 30 yards.</HALFMAGIC>
+</DISCIPLINE>
