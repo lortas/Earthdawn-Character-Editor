@@ -234,7 +234,7 @@
 				</td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='penalty']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:PROTECTION/@penalty"/></td>
-				<td class="edKeyCell">Initiative:</td>
+				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='initiative']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell">
 					<xsl:value-of select="//edc:INITIATIVE/@step"/>
 					<xsl:text> (</xsl:text>
@@ -452,7 +452,7 @@
 <xsl:template name="openspells">
 	<xsl:if test="//edc:OPENSPELL">
 		<div class="edDiscipline">
-			<div class="edSubHeader">Open Spells</div>
+			<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='openspells']/tra:LABEL[@lang=$lang]"/></div>
 			<div class="edSpells">
 				<div class="edSubSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='spells']/tra:LABEL[@lang=$lang]"/></div>
 				<table width="100%">
@@ -489,9 +489,11 @@
 	<xsl:for-each select="//edc:DISCIPLINE">
 		<xsl:if test="./edt:SPELL">
 			<div class="edDiscipline">
-				<div class="edSubHeader">Spells <xsl:value-of select="@name" /></div>
+				<div class="edSubHeader">
+					<xsl:value-of select="$translations/tra:TEXT[@name='spells']/tra:LABEL[@lang=$lang]"/><xsl:text>&#x20;</xsl:text><xsl:value-of select="@name" />
+				</div>
 				<div class="edSpells">
-					<div class="edSubSubHeader">Spells</div>
+					<div class="edSubSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='spells']/tra:LABEL[@lang=$lang]"/></div>
 					<table width="100%">
 						<thead><tr>
 							<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='spellname']/tra:LABEL[@lang=$lang]"/></td>
@@ -1192,13 +1194,13 @@
 </xsl:template>
 
 <xsl:template name="legendpointsreceived">
-	<div class="edSubHeader">total legendpoints received history</div>
+	<div class="edSubHeader"><xsl:value-of select="$translations/tra:TEXT[@name='totallegendpointsreceivedhistory']/tra:LABEL[@lang=$lang]"/></div>
 	<table class="invisible" width="100%">
 		<thead>
 			<tr>
-				<td class="edHeaderCell">when</td>
-				<td class="edHeaderCell">value</td>
-				<td class="edHeaderCell">comment</td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='when']/tra:LABEL[@lang=$lang]"/></td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='value']/tra:LABEL[@lang=$lang]"/></td>
+				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='comment']/tra:LABEL[@lang=$lang]"/></td>
 			</tr>
 		</thead>
 		<xsl:for-each select="//edc:EXPERIENCE/edt:LEGENDPOINTS">
