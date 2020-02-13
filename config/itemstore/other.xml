@@ -1,87 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
-		
-	<THREADITEM name="Thermail Schutz der Plage" lpcostgrowth="9" spelldefense="20" maxthreads="1" weaventhreadrank="4" kind="ring" weight="0.1" bookref="FanWork">
-		<edt:DESCRIPTION>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</edt:DESCRIPTION>
-		<edt:THREADRANK effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
-		<edt:THREADRANK effect="Avoid Blow erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
-			<edt:TALENT name="Avoid Blow" bonus="2"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Steel Thought erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
-			<edt:TALENT name="Steel Thought" bonus="3"/>
-			<edt:TALENT name="Avoid Blow" bonus="3"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Second Attack erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
-			<edt:TALENT name="Steel Thought" bonus="4"/>
-			<edt:TALENT name="Avoid Blow" bonus="4"/>
-			<edt:TALENT name="Second Attack" bonus="4"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
-			<edt:TALENT name="Steel Thought" bonus="5"/>
-			<edt:TALENT name="Avoid Blow" bonus="5"/>
-			<edt:TALENT name="Second Attack" bonus="5"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
-			<edt:TALENT name="Steel Thought" bonus="6"/>
-			<edt:TALENT name="Avoid Blow" bonus="6"/>
-			<edt:TALENT name="Second Attack" bonus="6"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Steel Thought" bonus="7"/>
-			<edt:TALENT name="Avoid Blow" bonus="7"/>
-			<edt:TALENT name="Second Attack" bonus="7"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Steel Thought" bonus="8"/>
-			<edt:TALENT name="Avoid Blow" bonus="8"/>
-			<edt:TALENT name="Second Attack" bonus="8"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Steel Thought" bonus="9"/>
-			<edt:TALENT name="Avoid Blow" bonus="9"/>
-			<edt:TALENT name="Second Attack" bonus="9"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="-">
-			<edt:TALENT name="Steel Thought" bonus="10"/>
-			<edt:TALENT name="Avoid Blow" bonus="10"/>
-			<edt:TALENT name="Second Attack" bonus="10"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" keyknowledge="Rasse des Dracheneierdiebs">
-			<edt:TALENT name="Steel Thought" bonus="11"/>
-			<edt:TALENT name="Avoid Blow" bonus="11"/>
-			<edt:TALENT name="Second Attack" bonus="11"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Antimagische Waffe, alle geführten Waffen sind für 4 Überanstregungsschaden (pro Waffen und Runde) durch keinen magischen Effekt zu beeinflussen. (Achtung, nur die Waffe(n))">
-			<edt:TALENT name="Steel Thought" bonus="12"/>
-			<edt:TALENT name="Avoid Blow" bonus="12"/>
-			<edt:TALENT name="Second Attack" bonus="12"/>
-		</edt:THREADRANK>
-	</THREADITEM>
-	<THREADITEM name="Silverins Heiltrank" lpcostgrowth="9" spelldefense="21" maxthreads="2" kind="potion" weight="6.0"  bookref="FanWork">
-		<edt:DESCRIPTION>1 x Anwendung täglich</edt:DESCRIPTION>
-		<edt:THREADRANK effect="Heiltrank +4" keyknowledge="name of the item"/>
-		<edt:THREADRANK effect="Heiltrank +5"/>
-		<edt:THREADRANK effect="Heiltrank +6, Erholungstrank +4"/>
-		<edt:THREADRANK effect="Heiltrank +8, Erholungstrank +4"/>
-	</THREADITEM>
-	<THREADITEM lpcostgrowth="1" spelldefense="12" maxthreads="2" effect="Spellmatrix" kind="wand" weight="1.0" name="Thread Matrix Wand">
-		<edt:DESCRIPTION>schwarzer 2m-Stab, der "aufgeladen" blutrot ist; Der Stab ist Theranischer Herkunft die eingebaute Zaubermatrix ist zwar echt aber eher ein Gimmik um die wahre Funktion zu verschleiern; Der Stab muss mit der gesamten Blutmagie eines beliebigen Namensgeber aufladen, d.h. der Stab muss durch das Herz eines lebenden Namensgebers gestossen werden und dort solange verweilen bis dieser ausgeblutet ist.</edt:DESCRIPTION>
-		<edt:THREADRANK effect="SpellMatrix Rank 1"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 2"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 3"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 4"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 5"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 6"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 7"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 9"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 9"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 10"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 11"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 12"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 13"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 14"/>
-		<edt:THREADRANK effect="SpellMatrix Rank 15"/>
-	</THREADITEM>
 	<THREADITEM name="Devocor Calamitas" weight="0.5" kind="vambrace" lpcostgrowth="1" maxthreads="2" spelldefense="10" enchantingdifficultynumber="30">
 		<edt:DESCRIPTION>A vambrace consist of norite, which is nerverd by many white thin traces. The specimen of the white thin traces eludes any comprehension. Anyone studding the traces get confused more and more. The vambrace fits the forearm of Trolls and Obsidimen.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="optional talent: Cursed Luck" keyknowledge="Name of item: Devocor Calamitas">
@@ -92,9 +10,7 @@
 			<edt:SPELLABILITY count="10"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	
-		<THREADITEM name="Thread Espagra-Scale Cloak" lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="armor" weight="10.0">
-		<edt:DESCRIPTION>-</edt:DESCRIPTION>
+	<THREADITEM name="Thread Espagra-Scale Cloak" lpcostgrowth="1" spelldefense="12" maxthreads="2" weaventhreadrank="4" kind="armor" weight="10.0">
 		<edt:THREADRANK effect="max forged" keyknowledge="name of item">
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="2" physicalarmor="5" kind="armor" weight="10.0" name="Thread Espagra-Scale Cloak"/>
 		</edt:THREADRANK>
@@ -106,18 +22,6 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="mystic armor + 1">
 			<edt:ARMOR edn="0" penalty="1" mysticarmor="4" physicalarmor="6" kind="armor" weight="10.0" name="Thread Espagra-Scale Cloak"/>
-		</edt:THREADRANK>
-	</THREADITEM>
-	<THREADITEM name="Thread Stirnreif" lpcostgrowth="5" spelldefense="13" maxthreads="2" weaventhreadrank="3" weight="0.0" >
-		<edt:DESCRIPTION>Stirnreif, aus Bronze, ohne Verzierung</edt:DESCRIPTION>
-		<edt:THREADRANK effect="Initiative +1" keyknowledge="name of item">
-			<edt:INITIATIVE/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Initiative +1">
-			<edt:INITIATIVE/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Initiative +1">
-			<edt:INITIATIVE/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Thread Ring" lpcostgrowth="1" spelldefense="13" maxthreads="2" weaventhreadrank="4" weight="0.1">
@@ -175,22 +79,7 @@
 			<edt:DEFENSE kind="social"/>
 		</edt:THREADRANK>
 	</THREADITEM>
-	<THREADITEM name="Thread Ring" lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="ring" weight="6.0">
-		<edt:DESCRIPTION></edt:DESCRIPTION>
-		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="name of the item">
-			<edt:DEFENSE kind="social"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Magische Widerstandskraft +1">
-			<edt:DEFENSE kind="spell"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Soziale Widerstandskraft +1">
-			<edt:DEFENSE kind="social"/>
-		</edt:THREADRANK>
-		<edt:THREADRANK effect="Magische Widerstandskraft +1">
-			<edt:DEFENSE kind="spell"/>
-		</edt:THREADRANK>
-	</THREADITEM>
-	
+
     <THREADITEM name="Thread Hardened Leather" lpcostgrowth="1" spelldefense="12" maxthreads="2" kind="armor" weight="20.0">
         <edt:ARMOR penalty="1" physicalarmor="5" kind="armor" weight="20.0" name="Thread Hardened Leather"/>
         <edt:THREADRANK effect="max forged" deed="" lpcost="100" keyknowledge="">
@@ -208,6 +97,4 @@
     </THREADITEM>
 
 	<ITEM name="anschaltbarer Lichtquarz" weight="0.0" />
-	
-	
 </ITEMS>
