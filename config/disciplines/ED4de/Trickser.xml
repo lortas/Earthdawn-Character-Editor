@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Trickser" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="4" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Aufmerksamkeit"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Gegenstand Verbergen"/>
+		<OPTIONALTALENT name="Gewinnendes Lächeln"/>
+		<OPTIONALTALENT name="Heimlicher Schritt"/>
+		<OPTIONALTALENT name="Herzliches Lachen"/>
+		<OPTIONALTALENT name="Illusionsverstärkung"/>
+		<OPTIONALTALENT name="Standardmatrix" limitation="T1"/>
+		<OPTIONALTALENT name="Stimmen Imitieren"/>
+		<OPTIONALTALENT name="Taschendiebstahl"/>
+		<FREETALENT name="Standardmatrix" limitation="F1"/>
+		<FREETALENT name="Unterhalten" limitation="alle"/>
+		<DISCIPLINETALENT name="Erster Eindruck"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Tricksen"/>
+		<DISCIPLINETALENT name="Gefühlsmelodie"/>
+		<DISCIPLINETALENT name="Spruchzauberei"/>
+		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Beruhigende Berührung"/>
+		<SPELL type="trickster" name="Botschaft Senden"/>
+		<SPELL type="trickster" name="Falsches Gesicht"/>
+		<SPELL type="trickster" name="Illusionärer Blitz"/>
+		<SPELL type="trickster" name="Spaß mit Türen"/>
+		<SPELL type="trickster" name="Umhang"/>
+		<SPELL type="trickster" name="Unsichtbare Stimmen"/>
+		<SPELL type="trickster" name="Verschlüsseln"/>
+		<SPELL type="trickster" name="Vertrauen"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Beeindrucken"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Abbild Versetzen"/>
+		<SPELL type="trickster" name="Blindheit"/>
+		<SPELL type="trickster" name="Gedankennebel"/>
+		<SPELL type="trickster" name="Harmloses Treiben"/>
+		<SPELL type="trickster" name="Phantomflamme"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Konversation"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Blendendes Licht"/>
+		<SPELL type="trickster" name="Nebel des Spotts"/>
+		<SPELL type="trickster" name="Niemand Da"/>
+		<SPELL type="trickster" name="Und ein Schleier fiel"/>
+		<KARMA spend="Interaktionsproben"/>
+		<KARMA spend="Charismaproben beim Täuschen"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Magische Maske"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Demaskieren"/>
+		<SPELL type="trickster" name="Halt, Stehenbleiben"/>
+		<SPELL type="trickster" name="Phantomblitzschlag"/>
+		<SPELL type="trickster" name="Suggestive Stimme"/>
+		<SPELL type="trickster" name="Unauffälligkeit"/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Bleibender Eindruck"/>
+		<OPTIONALTALENT name="Eleganter Abgang"/>
+		<OPTIONALTALENT name="Erweiterte Matrix" limitation="T2"/>
+		<OPTIONALTALENT name="Feilschen"/>
+		<OPTIONALTALENT name="Klingen Jonglieren"/>
+		<OPTIONALTALENT name="Schuld Abwälzen"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Verspotten"/>
+		<OPTIONALTALENT name="Wispern"/>
+		<OPTIONALTALENT name="Wortgeplänkel"/>
+		<FREETALENT name="Erweiterte Matrix" replace="Standardmatrix" limitation="F1"/>
+		<DISCIPLINETALENT name="Flinke Hand"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Auge der Wahrheit"/>
+		<SPELL type="trickster" name="Band der Verschwiegenheit"/>
+		<SPELL type="trickster" name="Illusion"/>
+		<SPELL type="trickster" name="Phantomfeuerball"/>
+		<SPELL type="trickster" name="Presto!"/>
+		<SPELL type="trickster" name="Rollentausch"/>
+		<KARMA spend="+2 auf die Wirkungsstufe eines Zaubers, für die ganze Dauer"/>
+		<ABILITY>Glamour</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Willensstärke"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Astralschatten"/>
+		<SPELL type="trickster" name="Echte Geschosse"/>
+		<SPELL type="trickster" name="Fliegender Teppich"/>
+		<SPELL type="trickster" name="Gedächtnisnotiz"/>
+		<SPELL type="trickster" name="Illusionäre Geschosse"/>
+		<SPELL type="trickster" name="Positionstausch"/>
+		<SPELL type="trickster" name="Vorgezeichneter Weg"/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Hypnotisieren"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Gebrabbel"/>
+		<SPELL type="trickster" name="Illusionäre Stampede"/>
+		<SPELL type="trickster" name="Lautlose Stampede"/>
+		<SPELL type="trickster" name="Schwindelgefühl"/>
+		<SPELL type="trickster" name="Tanzender Drache"/>
+		<SPELL type="trickster" name="Zeitweilige Öffnung"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Faden Halten"/>
+		<TALENTABILITY/>
+		<SPELL type="trickster" name="Dimensionstor"/>
+		<SPELL type="trickster" name="Gesichtslos"/>
+		<SPELL type="trickster" name="Gestalttausch"/>
+		<SPELL type="trickster" name="Gestank"/>
+		<SPELL type="trickster" name="Rebellisches Körperteil"/>
+		<SPELL type="trickster" name="Zauber Überschatten"/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astraltasche"/>
+		<OPTIONALTALENT name="Bardenstimme"/>
+		<OPTIONALTALENT name="Eiserner Wille"/>
+		<OPTIONALTALENT name="Gedanken Verbergen"/>
+		<OPTIONALTALENT name="Hartnäckiges Gewebe"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Machtmaskierung"/>
+		<OPTIONALTALENT name="Untergraben"/>
+		<OPTIONALTALENT name="Verängstigen"/>
+		<OPTIONALTALENT name="Zauberreichweite"/>
+		<DISCIPLINETALENT name="Entwaffnendes Lächeln"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Zauber Verbergen</ABILITY>
+	</CIRCLE>
+	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
+	<HALFMAGIC>Wissen: Erkennt den Gebrauch von Magie und im speziellen von Illusions-Magie; Wahrnehmungsprobe: erkennt die "Wahrheit" einer Situation</HALFMAGIC>
+</DISCIPLINE>
