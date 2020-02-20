@@ -102,11 +102,12 @@
 	<xs:simpleType name="spellkind_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="elemental"/>
-			<xs:enumeration value="nether"/>
 			<xs:enumeration value="illusion"/>
-			<xs:enumeration value="wizard"/>
+			<xs:enumeration value="nether"/>
 			<xs:enumeration value="shaman"/>
 			<xs:enumeration value="sorcery"/>
+			<xs:enumeration value="trickster"/>
+			<xs:enumeration value="wizard"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="defensekind_type">

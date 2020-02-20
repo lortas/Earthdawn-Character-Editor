@@ -22,11 +22,12 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;simpleType name="spellkind_type"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="elemental"/&gt;
- *     &lt;enumeration value="nether"/&gt;
  *     &lt;enumeration value="illusion"/&gt;
- *     &lt;enumeration value="wizard"/&gt;
+ *     &lt;enumeration value="nether"/&gt;
  *     &lt;enumeration value="shaman"/&gt;
  *     &lt;enumeration value="sorcery"/&gt;
+ *     &lt;enumeration value="trickster"/&gt;
+ *     &lt;enumeration value="wizard"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
@@ -38,16 +39,18 @@ public enum SpellkindType {
 
     @XmlEnumValue("elemental")
     ELEMENTAL("elemental"),
-    @XmlEnumValue("nether")
-    NETHER("nether"),
     @XmlEnumValue("illusion")
     ILLUSION("illusion"),
-    @XmlEnumValue("wizard")
-    WIZARD("wizard"),
+    @XmlEnumValue("nether")
+    NETHER("nether"),
     @XmlEnumValue("shaman")
-    SHAMANE("shaman"),
+    SHAMAN("shaman"),
     @XmlEnumValue("sorcery")
-    SORCERY("sorcery");
+    SORCERY("sorcery"),
+    @XmlEnumValue("trickster")
+    TRICKSTER("trickster"),
+    @XmlEnumValue("wizard")
+    WIZARD("wizard");
     private final String value;
 
     SpellkindType(String v) {
