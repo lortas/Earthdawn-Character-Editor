@@ -19,7 +19,7 @@
 		<DISCIPLINETALENT name="Schloss Knacken"/>
 		<DISCIPLINETALENT name="Taschendiebstahl"/>
 		<TALENTABILITY/>
-		<KARMA spend="Charisma Probe beim Täuschen"/>
+		<KARMA spend="Charismaproben beim Täuschen"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Fallen Entschärfen"/>

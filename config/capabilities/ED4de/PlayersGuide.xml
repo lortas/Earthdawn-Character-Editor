@@ -41,7 +41,6 @@
 	<SKILL name="Schwimmen" attribute="STR" action="standard" skilluse="1" canimprovised="yes"/>
 	<SKILL name="Segeln" attribute="DEX" action="sustained" skilluse="1"/>
 	<SKILL name="Tierbeherrschung" attribute="WIL" action="standard" skilluse="1" canimprovised="yes"/>
-	<SKILL name="Unterhalten" attribute="CHA" action="sustained" skilluse="1"/>
 	<SKILL name="Verführen" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<SKILL name="Verkleiden" attribute="PER" action="sustained" skilluse="1"/>
 	<SKILL name="Waffe Herstellen" attribute="PER" action="sustained" skilluse="1"/>
@@ -195,6 +194,7 @@
 	<TALENT name="Totstellen" attribute="WIL" action="simple" strain="1"/>
 	<TALENT name="Überraschungsschlag" attribute="STR" action="free" strain="1" skilluse="1"/>
 	<TALENT name="Unempfindlichkeit Tiergefährte" attribute="na" action="na"/>
+	<TALENT name="Unterhalten" attribute="CHA" action="sustained" skilluse="1"/>
 	<TALENT name="Untrüglicher Blick" attribute="na" action="na"/>
 	<TALENT name="Verängstigen" attribute="WIL" action="standard"/>
 	<TALENT name="Verbannen" attribute="WIL" action="standard" strain="1"/>
