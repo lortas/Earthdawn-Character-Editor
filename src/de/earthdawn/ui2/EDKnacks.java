@@ -28,6 +28,7 @@ import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.KNACKBASEType;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.RulesetversionType;
 
 public class EDKnacks extends JPanel {
 	private static final long serialVersionUID = 3430848422226809963L;
@@ -130,7 +131,8 @@ class KnacksTableModel extends AbstractTableModel {
 		knacklist = new TreeMap<String,KNACKBASEType>();
 		for( DISCIPLINEType discipline : character.getDisciplines() ) {
 			for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
-				int talentrank=talent.getRANK().getRank()+2;
+				int talentrank=talent.getRANK().getRank();
+				if( character.getRulesetversion().equals(RulesetversionType.ED_3) ) talentrank += 2;
 				if( talent.getLIMITATION().size()<1 ) {
 					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
 						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
