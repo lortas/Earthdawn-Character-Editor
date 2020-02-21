@@ -269,7 +269,7 @@ public class ApplicationProperties {
 
 	public ECECapabilities getCapabilities() {
 		for( CAPABILITIES c : CAPABILITIES ) {
-			if( (new ECERulesetLanguage(c.getRulesetversion(),c.getLang())).equals(RULESETLANGUAGE) ) return new ECECapabilities(c.getSKILLOrTALENT());
+			if( (new ECERulesetLanguage(c.getRulesetversion(),c.getLang())).equals(RULESETLANGUAGE) ) return new ECECapabilities(c.getSKILLOrTALENTOrDEVOTION());
 		}
 		return new ECECapabilities();
 	}
@@ -792,7 +792,7 @@ public class ApplicationProperties {
 				for( CAPABILITIES c2 : CAPABILITIES ) {
 					if( c2.getLang().equals(c1.getLang()) && c2.getRulesetversion().equals(c1.getRulesetversion()) ){
 						notfound=false;
-						c2.getSKILLOrTALENT().addAll(c1.getSKILLOrTALENT());
+						c2.getSKILLOrTALENTOrDEVOTION().addAll(c1.getSKILLOrTALENTOrDEVOTION());
 					}
 				}
 				if( notfound ) CAPABILITIES.add(c1);
@@ -1079,8 +1079,9 @@ public class ApplicationProperties {
 							}
 						}
 			}
-			for( JAXBElement<CAPABILITYType> t : c.getSKILLOrTALENT() ) {
-				String name = t.getValue().getName();
+			for( JAXBElement<?> t : c.getSKILLOrTALENTOrDEVOTION() ) {
+				CAPABILITYType element = (CAPABILITYType)(t.getValue());
+				String name = element.getName();
 				List<TranslationlabelType> labels = translation.get(name);
 				if( labels == null ) {
 					count.put(name, -1);

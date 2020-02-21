@@ -60,7 +60,7 @@ public class JoinCapabilities {
 				File inFile = new File(args[i]);
 				System.out.println("Reading Capabilities from "+inFile.getCanonicalFile());
 				CAPABILITIES capabilities = (CAPABILITIES) u.unmarshal(inFile);
-				ECECapabilities caps = new ECECapabilities(capabilities.getSKILLOrTALENT());
+				ECECapabilities caps = new ECECapabilities(capabilities.getSKILLOrTALENTOrDEVOTION());
 				if( language == null ) language = capabilities.getLang();
 				else if( ! capabilities.getLang().equals(language) ) System.err.println("Languages are not identical: '"+language.value()+"'!='"+capabilities.getLang().value()+"'");
 				for( CAPABILITYType t : caps.getTalents() ) {
@@ -84,7 +84,7 @@ public class JoinCapabilities {
 			}
 			CAPABILITIES outCapabilities = new CAPABILITIES();
 			outCapabilities.setLang(language);
-			List<JAXBElement<CAPABILITYType>> skillOrTalent = outCapabilities.getSKILLOrTALENT();
+			List<JAXBElement<?>> skillOrTalent = outCapabilities.getSKILLOrTALENTOrDEVOTION();
 			TreeSet<String> capnames = new TreeSet<String>(skills.keySet());
 			for( String skillname : capnames ) {
 				QName qName = new QName("http://earthdawn.com/capability","SKILL");

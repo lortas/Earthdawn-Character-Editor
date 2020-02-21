@@ -313,6 +313,15 @@
 		<xs:attribute name="skilluse" type="unsigned_int" default="0"/>
 		<xs:attribute name="canimprovised" type="yesno_type" default="no"/>
 	</xs:complexType>
+	<xs:complexType name="DEVOTIONCAPABILITY_type">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="action" type="action_type" default="standard"/>
+		<xs:attribute name="strain" type="xs:string" default="0"/>
+		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
+		<xs:attribute name="devotionpoint" type="yesno_type" default="no"/>
+		<xs:attribute name="bookref" type="xs:string" default=""/>
+		<xs:attribute name="isinitiative" type="yesno_type" default="no"/>
+	</xs:complexType>
 	<xs:complexType name="SKILL_type">
 		<xs:complexContent>
 			<xs:extension base="CAPABILITY_type">

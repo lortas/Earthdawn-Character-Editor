@@ -33,6 +33,7 @@ public class ObjectFactory {
 
     private final static QName _CAPABILITIESSKILL_QNAME = new QName("http://earthdawn.com/capability", "SKILL");
     private final static QName _CAPABILITIESTALENT_QNAME = new QName("http://earthdawn.com/capability", "TALENT");
+    private final static QName _CAPABILITIESDEVOTION_QNAME = new QName("http://earthdawn.com/capability", "DEVOTION");
     private final static QName _CHARACTERISTICSENCUMBRANCE_QNAME = new QName("http://earthdawn.com/characteristics", "ENCUMBRANCE");
     private final static QName _CHARACTERISTICSDEFENSERAITING_QNAME = new QName("http://earthdawn.com/characteristics", "DEFENSERAITING");
     private final static QName _CHARACTERISTICSMYSTICARMOR_QNAME = new QName("http://earthdawn.com/characteristics", "MYSTICARMOR");
@@ -178,6 +179,14 @@ public class ObjectFactory {
      */
     public CAPABILITYType createCAPABILITYType() {
         return new CAPABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link DEVOTIONCAPABILITYType }
+     *
+     */
+    public DEVOTIONCAPABILITYType createDEVOTIONCAPABILITYType() {
+        return new DEVOTIONCAPABILITYType();
     }
 
     /**
@@ -1164,6 +1173,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "TALENT", scope = CAPABILITIES.class)
     public JAXBElement<CAPABILITYType> createCAPABILITIESTALENT(CAPABILITYType value) {
         return new JAXBElement<CAPABILITYType>(_CAPABILITIESTALENT_QNAME, CAPABILITYType.class, CAPABILITIES.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DEVOTIONCAPABILITYType }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DEVOTIONCAPABILITYType }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://earthdawn.com/capability", name = "DEVOTION", scope = CAPABILITIES.class)
+    public JAXBElement<DEVOTIONCAPABILITYType> createCAPABILITIESDEVOTION(DEVOTIONCAPABILITYType value) {
+        return new JAXBElement<DEVOTIONCAPABILITYType>(_CAPABILITIESDEVOTION_QNAME, DEVOTIONCAPABILITYType.class, CAPABILITIES.class, value);
     }
 
     /**

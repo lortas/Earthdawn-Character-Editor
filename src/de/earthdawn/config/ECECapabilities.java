@@ -27,6 +27,7 @@ import javax.xml.bind.JAXBElement;
 
 import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.DEVOTIONCAPABILITYType;
 import de.earthdawn.data.YesnoType;
 
 public class ECECapabilities {
@@ -34,14 +35,16 @@ public class ECECapabilities {
 	private static PrintStream errorout = System.err;
 	private List<CAPABILITYType> talentList = new ArrayList<CAPABILITYType>();
 	private List<CAPABILITYType> skillList = new ArrayList<CAPABILITYType>();
+	private List<DEVOTIONCAPABILITYType> devotionList = new ArrayList<DEVOTIONCAPABILITYType>();
 	private List<CAPABILITYType> versatilitytalentList = null;
 	private Map<String,CAPABILITYType> talentMap = new TreeMap<String,CAPABILITYType>();
 	private Map<String,CAPABILITYType> skillMap = new TreeMap<String,CAPABILITYType>();
+	private Map<String,DEVOTIONCAPABILITYType> devotionMap = new TreeMap<String,DEVOTIONCAPABILITYType>();
 	
 	public ECECapabilities(){}
 
-	public ECECapabilities(List<JAXBElement<CAPABILITYType>> capabilities) {
-		for (JAXBElement<CAPABILITYType> element : capabilities) {
+	public ECECapabilities(List<JAXBElement<?>> capabilities) {
+		for (JAXBElement<?> element : capabilities) {
 			if (element.getName().getLocalPart().equals("TALENT")) {
 				CAPABILITYType talent = (CAPABILITYType)element.getValue();
 				String talentName = talent.getName();
@@ -55,6 +58,10 @@ public class ECECapabilities {
 				CAPABILITYType skill = (CAPABILITYType)element.getValue();
 				skillList.add(skill);
 				skillMap.put(skill.getName(),skill);
+			} else if (element.getName().getLocalPart().equals("DEVOTION")) {
+				DEVOTIONCAPABILITYType devotion = (DEVOTIONCAPABILITYType)element.getValue();
+				devotionList.add(devotion);
+				devotionMap.put(devotion.getName(),devotion);
 			} else {
 				System.err.println( "Unknown capabilities type: "+element.getName().getLocalPart() );
 			}
