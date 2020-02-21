@@ -313,11 +313,7 @@ public class ApplicationProperties {
 
 	public List<KNACKBASEType> getTalentKnacks(String talent) {
 		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
-		KNACKS knacks2 = KNACKS.get(RULESETLANGUAGE);
-		if( knacks2 == null ) {
-			knacks2 = new KNACKS();
-		}
-		for( KNACKBASEType knack : knacks2.getTALENTKNACK() ) {
+		for( KNACKBASEType knack : getTalentKnacks() ) {
 			if( knack.getBasename().equals(talent) ) knacks.add(knack);
 		}
 		return knacks;
