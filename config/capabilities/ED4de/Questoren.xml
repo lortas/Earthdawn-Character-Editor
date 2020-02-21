@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
+	<DEVOTION name="Absichten Einschätzen" attribute="CHA" strain="1" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Akrobatische Verteidigung" attribute="DEX" action="simple" strain="1" devotionpoint="no"/>
+	<DEVOTION name="Alchemie" attribute="PER" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Ansporn" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Arzt" attribute="PER" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Astendars Muse" attribute="CHA" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Astendars Stimme" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Astralsicht" attribute="PER" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Aufmerksamkeit" attribute="PER" strain="0" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Bande Brechen" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Bardenstimme" attribute="na" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Beeindrucken" attribute="na" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Befestigen" attribute="WIL" strain="1" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Besessenheit Wecken" attribute="WIL" strain="1" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Bestechung" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Beweisanalyse" attribute="PER" strain="1" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Bildende Kunst" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Bleibender Eindruck" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Blühen und Gedeihen" attribute="WIL" strain="1" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Büchergedächtnis" attribute="WIL" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Detailorientierung" attribute="WIL" strain="0" action="free" devotionpoint="yes"/>
+	<DEVOTION name="Diplomatie" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Dis‘ Herausforderung" attribute="CHA" strain="1" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Eidetisches Gedächtnis" attribute="WIL" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Einfluss Beenden" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Einfluss Widerstehen" attribute="WIL" strain="1" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Einschüchternder Ruf" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Einsicht der Passion" attribute="PER" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Eiserner Wille" attribute="WIL" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Eleganter Abgang" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Empathische Wahrnehmung" attribute="CHA" action="standard" strain="1 (spe.)" devotionpoint="no"/>
+	<DEVOTION name="Empathischer Befehl" attribute="CHA" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Energie in Bewegung" attribute="na" strain="0" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Entwaffnendes Lächeln" attribute="CHA" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Ermutigende Redekunst" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Erster Eindruck" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Erwachende Liebe" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Etikette" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Fälschen" attribute="DEX" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Feilschen" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Flinke Hand" attribute="DEX" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Floranuus‘ Schritt" attribute="CHA" strain="3" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Foltern" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Forschen" attribute="PER" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Fotografisches Gedächtnis" attribute="WIL" action="standard" strain="0" devotionpoint="no"/>
+	<DEVOTION name="Freund des Landes" attribute="CHA" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Fruchtbare Zeiten" attribute="CHA" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Führung" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Garlens Berührung" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Garlens Linderung" attribute="CHA" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Garlens Trost" attribute="na" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Gassenwissen" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Gedanken Verbergen" attribute="na" strain="0" action="free" devotionpoint="no"/>
+	<DEVOTION name="Gedankenkette" attribute="PER" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Gefahrensinn" attribute="DEX" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Gefühlsmelodie" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Gegenstand Verbergen" attribute="DEX" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Geist Öffnen" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Geschenk des Lebens" attribute="na" strain="0" action="free" devotionpoint="no"/>
+	<DEVOTION name="Geschichten Erzählen" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Geschmack der Macht" attribute="CHA" strain="2+" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Gewinnendes Lächeln" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Grabesbefehle" attribute="WIL" strain="1+" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Grabesstärkung" attribute="CHA" strain="2" action="simple" devotionpoint="yes"/>
+	<DEVOTION name="Griff von Chorrolis" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Handwerk" attribute="PER" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Heim Versiegeln" attribute="WIL" strain="1" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Heimlicher Schritt" attribute="DEX" strain="0" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Herausforderndes Gebrüll" attribute="WIL" action="simple" strain="1" devotionpoint="no"/>
+	<DEVOTION name="Herzenswunsch" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Herzliches Lachen" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Hieb Ausweichen" attribute="DEX" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Inspiration der Passion" attribute="CHA" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Inspirierte Ausdauer" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Inspirierte Hartnäckigkeit" attribute="CHA" action="standard" strain="1+" devotionpoint="no"/>
+	<DEVOTION name="Inspirierte Kraft" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Jasprees Trost" attribute="WIL" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Kalte Erinnerung" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Kampfgebrüll" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Ketten des Gehorsams" attribute="CHA" strain="1" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Konversation" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Kunsthandwerk" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Lass Uns Handeln" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Lebender Tod" attribute="WIL" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Lebensblick" attribute="PER" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Lippenlesen" attribute="PER" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Löwenherz" attribute="WIL" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Luftgleiten" attribute="DEX" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Magische Maske" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Mynbrujes Auge" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Nahkampfwaffen" attribute="DEX" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Perfekte Konzentration" attribute="WIL" strain="0" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Pflanzenerwachen" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Pflanzensprache" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Pidginsprache" attribute="CHA" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Projektmanagement" attribute="PER" strain="0" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Psychometrie" attribute="PER" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Questor" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Rebellion Auslösen" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Rüstung Stärken" attribute="CHA" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Schätzen" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Schauspielern" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Schild der Unschuldigen" attribute="WIL" strain="1" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Schlachtruf" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Schmerzen Widerstehen" attribute="na" strain="0" action="na" devotionpoint="no"/>
+	<DEVOTION name="Schuld Abwälzen" attribute="CHA" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Sicherer Pfad" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Sprint" attribute="na" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Spurenlesen" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Stählerner Blick" attribute="CHA" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Standhaftigkeit" attribute="STR" strain="0" action="free" devotionpoint="no"/>
+	<DEVOTION name="Stärkung" attribute="CHA" strain="1+" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Stärkung der Passion" attribute="na" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Starrsinn" attribute="WIL" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Stimmen Imitieren" attribute="CHA" strain="0" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Taktik" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Thystonius‘ Rüstung" attribute="CHA" action="standard" strain="1+ (spe.)" devotionpoint="yes"/>
+	<DEVOTION name="Tier Herbeirufen" attribute="CHA" strain="2" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tieranalyse" attribute="PER" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Tiere Bändigen" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tiere Führen" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tierfreundschaft" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tiergefährten Heilen" attribute="TOU" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tiergefährten Rufen" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tiersprache" attribute="PER" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Tödlicher Schlag" attribute="TOU" strain="2" action="free" devotionpoint="no"/>
+	<DEVOTION name="Trost der Passion" attribute="CHA" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Trostlosigkeit" attribute="CHA" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Überraschungsschlag" attribute="STR" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Üble Wunde" attribute="PER" strain="2" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Unempfindlichkeit 5" attribute="na" strain="0" action="na" devotionpoint="no"/>
+	<DEVOTION name="Unmögliches Versteck" attribute="na" strain="3" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Untergraben" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Unterhalten" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Unterhaltungsgedächtnis" attribute="WIL" action="standard" strain="0" devotionpoint="no"/>
+	<DEVOTION name="Unterwerfen" attribute="WIL" strain="2" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Untrüglicher Blick" attribute="na" strain="0" action="na" devotionpoint="no"/>
+	<DEVOTION name="Upandals Palisade" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Upandals Waffenkammer" attribute="WIL" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Verängstigen" attribute="WIL" strain="0" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Vergangenheitsberührung" attribute="PER" action="standard" strain="0" devotionpoint="no"/>
+	<DEVOTION name="Vergifteter Einfluss" attribute="CHA" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Verzaubertes Geschenk" attribute="CHA" strain="0" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Vestrials Zunge" attribute="CHA" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Waffe Schärfen" attribute="CHA" strain="0" action="sustained" devotionpoint="yes"/>
+	<DEVOTION name="Weitsprung" attribute="DEX" strain="1" action="free" devotionpoint="no"/>
+	<DEVOTION name="Wildnisüberleben" attribute="PER" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Windkissen" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+	<DEVOTION name="Wispern" attribute="PER" strain="1" action="simple" devotionpoint="no"/>
+	<DEVOTION name="Zorn Entfachen" attribute="CHA" strain="3" action="standard" devotionpoint="yes"/>
+	<DEVOTION name="Zusammenbasteln" attribute="PER" strain="0" action="sustained" devotionpoint="no"/>
+	<DEVOTION name="Zwingen" attribute="WIL" strain="1" action="standard" devotionpoint="no"/>
+</CAPABILITIES>
