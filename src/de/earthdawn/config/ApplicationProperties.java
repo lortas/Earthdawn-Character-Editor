@@ -1080,8 +1080,12 @@ public class ApplicationProperties {
 						}
 			}
 			for( JAXBElement<?> t : c.getSKILLOrTALENTOrDEVOTION() ) {
-				CAPABILITYType element = (CAPABILITYType)(t.getValue());
-				String name = element.getName();
+				String name;
+				if( t.getName().getLocalPart().equals("DEVOTION") ) {
+					name = ((DEVOTIONCAPABILITYType)(t.getValue())).getName();
+				} else {
+					name = ((CAPABILITYType)(t.getValue())).getName();
+				}
 				List<TranslationlabelType> labels = translation.get(name);
 				if( labels == null ) {
 					count.put(name, -1);
