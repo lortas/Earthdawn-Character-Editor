@@ -29,7 +29,7 @@
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Mystische Verfolgung"/>
 		<TALENTABILITY/>
-		<KARMA spend="Charismaproben beim Täuschen"/>
+		<KARMA spend="Proben, um in mitten Namensgebern nicht aufzufallen"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Gegenstand Verbergen"/>
