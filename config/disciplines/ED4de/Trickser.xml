@@ -4,6 +4,7 @@
 	<CIRCLE><!-- 1 -->
 		<OPTIONALTALENT name="Aufmerksamkeit"/>
 		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Gefühlsmelodie"/>
 		<OPTIONALTALENT name="Gegenstand Verbergen"/>
 		<OPTIONALTALENT name="Gewinnendes Lächeln"/>
 		<OPTIONALTALENT name="Heimlicher Schritt"/>
@@ -11,14 +12,13 @@
 		<OPTIONALTALENT name="Illusionsverstärkung"/>
 		<OPTIONALTALENT name="Standardmatrix" limitation="T1"/>
 		<OPTIONALTALENT name="Stimmen Imitieren"/>
-		<OPTIONALTALENT name="Taschendiebstahl"/>
 		<FREETALENT name="Standardmatrix" limitation="F1"/>
 		<FREETALENT name="Unterhalten" limitation="alle"/>
 		<DISCIPLINETALENT name="Erster Eindruck"/>
 		<DISCIPLINETALENT name="Fadenweben" limitation="Tricksen"/>
-		<DISCIPLINETALENT name="Gefühlsmelodie"/>
 		<DISCIPLINETALENT name="Spruchzauberei"/>
 		<DISCIPLINETALENT name="Struktur Verstehen"/>
+		<DISCIPLINETALENT name="Taschendiebstahl"/>
 		<TALENTABILITY/>
 		<SPELL type="trickster" name="Beruhigende Berührung"/>
 		<SPELL type="trickster" name="Botschaft Senden"/>
