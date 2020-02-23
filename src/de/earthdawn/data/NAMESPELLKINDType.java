@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="weaving" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="acronym" use="required" type="{http://earthdawn.com/datatypes}acronym_type" /&gt;
  *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/datatypes}spellkind_type" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,6 +39,8 @@ public class NAMESPELLKINDType {
 
     @XmlAttribute(name = "weaving", required = true)
     protected String weaving;
+    @XmlAttribute(name = "acronym", required = true)
+    protected String acronym;
     @XmlAttribute(name = "type", required = true)
     protected SpellkindType type;
 
@@ -63,6 +66,30 @@ public class NAMESPELLKINDType {
      */
     public void setWeaving(String value) {
         this.weaving = value;
+    }
+
+    /**
+     * Gets the value of the acronym property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getAcronym() {
+        return acronym;
+    }
+
+    /**
+     * Sets the value of the acronym property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setAcronym(String value) {
+        this.acronym = value;
     }
 
     /**

@@ -45,6 +45,7 @@
 	</xs:complexType>
 	<xs:complexType name="NAME_SPELLKIND_type">
 		<xs:attribute name="weaving" type="xs:string" use="required"/>
+		<xs:attribute name="acronym" type="edt:acronym_type" use="required"/>
 		<xs:attribute name="type" type="edt:spellkind_type" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="NAME_SPELLELEMENT_type">

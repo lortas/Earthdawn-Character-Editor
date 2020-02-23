@@ -303,20 +303,38 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	public List<KNACKBASEType> getTalentKnacks() {
+	public List<KNACKBASEType> getKnacks() {
 		KNACKS knacks = KNACKS.get(RULESETLANGUAGE);
 		if( knacks == null ) {
 			knacks = new KNACKS();
 		}
-		return knacks.getTALENTKNACK();
+		return knacks.getKNACK();
 	}
 
-	public List<KNACKBASEType> getTalentKnacks(String talent) {
+	public List<KNACKBASEType> getKnacksByName(String name) {
 		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
-		for( KNACKBASEType knack : getTalentKnacks() ) {
-			if( knack.getBasename().equals(talent) ) knacks.add(knack);
+		for( KNACKBASEType knack : getKnacks() ) {
+			if( knack.getName().equals(name) ) knacks.add(knack);
 		}
 		return knacks;
+	}
+
+	public List<KNACKBASEType> getKnacks(CapabilitytypeType type, String name, String limitation) {
+		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
+		for( KNACKBASEType knack : getKnacks() ) {
+			for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+				if( ! base.getType().equals(type) ) continue;
+				if( ! base.getName().equals(name) ) continue;
+				if( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) {
+					knacks.add(knack);
+				}
+			}
+		}
+		return knacks;
+	}
+
+	public List<KNACKBASEType> getTalentKnacks(String talent,String limitation) {
+		return getKnacks(CapabilitytypeType.TALENT,talent,limitation);
 	}
 
 	// Liefert die Definition aller verfügbarer Zauber zurück.
@@ -518,11 +536,22 @@ public class ApplicationProperties {
 	public Map<String,String> getTranslationHealthAll() {
 		Map<String,String> result = new TreeMap<String,String>();
 		for( GENERALTEXTType health : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getHEALTH() ) {
-				for( TranslationlabelType label : health.getLABEL() ) {
-					if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
-						result.put(health.getName(), label.getValue());
-					}
+			for( TranslationlabelType label : health.getLABEL() ) {
+				if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
+					result.put(health.getName(), label.getValue());
 				}
+			}
+		}
+		return result;
+	}
+
+	public Map<SpellkindType,String[]> getTranslationSpellkindAll() {
+		Map<SpellkindType,String[]> result = new TreeMap<SpellkindType,String[]>();
+		for( NAMESPELLWEAVINGType spellweaving : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getSPELLWEAVING() ) {
+			if( spellweaving.getLang() != RULESETLANGUAGE.getLanguage() ) continue;
+			for( NAMESPELLKINDType spell : spellweaving.getSPELLKIND() ) {
+				result.put(spell.getType(),new String[]{spell.getAcronym(),spell.getWeaving()});
+			}
 		}
 		return result;
 	}
@@ -886,8 +915,7 @@ public class ApplicationProperties {
 					knack = new KNACKS();
 					KNACKS.put(rsl, knack);
 				}
-				knack.getTALENTKNACK().addAll(k.getTALENTKNACK());
-				knack.getSKILLKNACK().addAll(k.getSKILLKNACK());
+				knack.getKNACK().addAll(k.getKNACK());
 			}
 
 			// itemstore laden

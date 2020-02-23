@@ -1171,6 +1171,7 @@ public class ECEPdfExporter {
 	}
 
 	private void setSpellAjfelMordom(List<List<SPELLType>> spellslist) throws IOException, DocumentException {
+		final Map<SpellkindType,String[]> spellkindtranslation=PROPERTIES.getTranslationSpellkindAll();
 		int pos=0;
 		for( List<SPELLType> spells : spellslist ) {
 			Collections.sort(spells, new SpellComparator());
@@ -1183,15 +1184,11 @@ public class ECEPdfExporter {
 					acroFields.setField( "SpellInMatrix."+pos, "" );
 				}
 				if( spell.getElement().equals(ElementkindType.UNDEFINED) ) {
-					SpellkindType type = spell.getType();
-					if( type == null ) acroFields.setField( "SpellType."+pos, "" );
-					else switch( type ) {
-					case ELEMENTAL: acroFields.setField( "SpellType."+pos, "ele" ); break;
-					case ILLUSION:  acroFields.setField( "SpellType."+pos, "illu" ); break;
-					case NETHER:    acroFields.setField( "SpellType."+pos, "neth" ); break;
-					case SHAMANE:   acroFields.setField( "SpellType."+pos, "sham" ); break;
-					case WIZARD:    acroFields.setField( "SpellType."+pos, "wiz" ); break;
-					default:        acroFields.setField( "SpellType."+pos, "" ); break;
+					String[] type = spellkindtranslation.get(spell.getType());
+					if( type == null || type.length < 1 || type[0] == null ) {
+						acroFields.setField( "SpellType."+pos, "" );
+					} else {
+						acroFields.setField( "SpellType."+pos, type[0] );
 					}
 				} else acroFields.setField( "SpellType."+pos, spell.getElement().value() );
 				acroFields.setField( "SpellCircle."+pos, String.valueOf(spell.getCircle()) );
@@ -1207,6 +1204,7 @@ public class ECEPdfExporter {
 	}
 
 	private void setSpellRedbrick(List<List<SPELLType>> spellslist) throws IOException, DocumentException {
+		final Map<SpellkindType,String[]> spellkindtranslation=PROPERTIES.getTranslationSpellkindAll();
 		int pos=0;
 		for( List<SPELLType> spells : spellslist ) {
 			Collections.sort(spells, new SpellComparator());
@@ -1219,15 +1217,11 @@ public class ECEPdfExporter {
 				} else {
 					acroFields.setField( "InMatrix."+pos, "" );
 				}
-				SpellkindType type = spell.getType();
-				if( type == null ) acroFields.setField( "SpellType."+pos, "" );
-				else switch( type ) {
-				case ELEMENTAL: acroFields.setField( "SpellType."+pos, "ele" ); break;
-				case ILLUSION:  acroFields.setField( "SpellType."+pos, "illu" ); break;
-				case NETHER:    acroFields.setField( "SpellType."+pos, "neth" ); break;
-				case SHAMANE:   acroFields.setField( "SpellType."+pos, "sham" ); break;
-				case WIZARD:    acroFields.setField( "SpellType."+pos, "wiz" ); break;
-				default:   acroFields.setField( "SpellType."+pos, "" ); break;
+				String[] type = spellkindtranslation.get(spell.getType());
+				if( type == null || type.length < 1 || type[0] == null ) {
+					acroFields.setField( "SpellType."+pos, "" );
+				} else {
+					acroFields.setField( "SpellType."+pos, type[0] );
 				}
 				acroFields.setField( "SpellCircle."+pos, String.valueOf(spell.getCircle()) );
 				acroFields.setField( "SpellThreads."+pos, spell.getThreads() );

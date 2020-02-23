@@ -782,6 +782,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link KNACKRACEType }
+     *
+     */
+    public KNACKRACEType createKNACKRACEType() {
+        return new KNACKRACEType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKBASECAPABILITYType }
+     *
+     */
+    public KNACKBASECAPABILITYType createKNACKBASECAPABILITYType() {
+        return new KNACKBASECAPABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKDISCIPLINEType }
+     *
+     */
+    public KNACKDISCIPLINEType createKNACKDISCIPLINEType() {
+        return new KNACKDISCIPLINEType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKATTRIBUTEType }
+     *
+     */
+    public KNACKATTRIBUTEType createKNACKATTRIBUTEType() {
+        return new KNACKATTRIBUTEType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKCAPABILITYType }
+     *
+     */
+    public KNACKCAPABILITYType createKNACKCAPABILITYType() {
+        return new KNACKCAPABILITYType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKOTHERKNACKType }
+     *
+     */
+    public KNACKOTHERKNACKType createKNACKOTHERKNACKType() {
+        return new KNACKOTHERKNACKType();
+    }
+
+    /**
      * Create an instance of {@link NAMEGIVERS }
      *
      */

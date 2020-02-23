@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
-	<TALENTKNACK name="Act on Instinct" basename="Trap Initiative" minrank="8" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="Arrow Catch" basename="Avoid Blow" minrank="9" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="Astral Hideout" basename="Astral Pocket" minrank="10" strain="1 Wound (s.text)" bookref="KR p.226"/>
-	<TALENTKNACK name="Commanding Gaze" basename="Steely Stare" minrank="8" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="Corner of the Eye" basename="Lip Reading" minrank="9" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="Empathic Connection" basename="Empathic Command" minrank="8" strain="2" bookref="KR p.226"/>
-	<TALENTKNACK name="False Evidence" basename="Evidence Analysis" minrank="9" strain="2 (s.text)" bookref="KR p.227"/>
-	<TALENTKNACK name="Feign Hit" basename="Avoid Blow" minrank="9" strain="2" bookref="KR p.227"/>
-	<TALENTKNACK name="Fool Thief" basename="Evaluate" minrank="7" strain="1" bookref="KR p.227"/>
-	<TALENTKNACK name="Fraud Mastery" basename="Performance" minrank="3" strain="3" bookref="KR p.227"/>
-	<TALENTKNACK name="Fragile Blade" basename="Infuse Weapon" minrank="8" strain="2" bookref="KR p.228"/>
-	<TALENTKNACK name="Gory Shot" basename="Mystic Aim" minrank="9" strain="6" bookref="KR p.228"/>
-	<TALENTKNACK name="Guard Pockets" basename="Picking Pockets" minrank="6" strain="2" bookref="KR p.229"/>
-	<TALENTKNACK name="Improvised Shield" basename="Shield Charge" minrank="8" strain="2" bookref="KR p.229"/>
-	<TALENTKNACK name="Listen" basename="Search" minrank="7" strain="2,4 (s.text)" bookref="KR p.229"/>
-	<TALENTKNACK name="Lock Guard" basename="Thief Weaving" minrank="8" strain="3" bookref="KR p.229"/>
-	<TALENTKNACK name="Maim" basename="Down Strike" minrank="10" strain="6 (s.text)" bookref="KR p.229"/>
-	<TALENTKNACK name="Masterminds Plan" basename="Safe Path" minrank="9" strain="5" bookref="KR p.229"/>
-	<TALENTKNACK name="Not so Fast" basename="Fast Hand" minrank="7" strain="2" bookref="KR p.230"/>
-	<TALENTKNACK name="Plant Prison" basename="Plant Shelter" minrank="9" strain="4 (s.text)" bookref="KR p.230"/>
-	<TALENTKNACK name="Request Donation" basename="Bardic Voice" minrank="9" strain="2" bookref="KR p.230"/>
-	<TALENTKNACK name="Stalk" basename="Tracking" minrank="8" strain="3" bookref="KR p.230"/>
-	<TALENTKNACK name="Tale of Terror" basename="Creature Analysis" minrank="7" strain="2" bookref="KR p.231"/>
-	<TALENTKNACK name="Track Mount" basename="Call Mount" minrank="9" strain="4" bookref="KR p.231"/>
+<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
+	<KNACK name="Act on Instinct"     minrank="8"  strain="2"  bookref="KR p.226"><BASE type="talent" name="Trap Initiative"/>  </KNACK>
+	<KNACK name="Arrow Catch"         minrank="9"  strain="2"  bookref="KR p.226"><BASE type="talent" name="Avoid Blow"/>       </KNACK>
+	<KNACK name="Astral Hideout"      minrank="10" blood="1"   bookref="KR p.226"><BASE type="talent" name="Astral Pocket"/>    </KNACK>
+	<KNACK name="Commanding Gaze"     minrank="8"  strain="2"  bookref="KR p.226"><BASE type="talent" name="Steely Stare"/>     </KNACK>
+	<KNACK name="Corner of the Eye"   minrank="9"  strain="2"  bookref="KR p.226"><BASE type="talent" name="Lip Reading"/>      </KNACK>
+	<KNACK name="Empathic Connection" minrank="8"  strain="2"  bookref="KR p.226"><BASE type="talent" name="Empathic Command"/> </KNACK>
+	<KNACK name="False Evidence"      minrank="9"  strain="2+" bookref="KR p.227"><BASE type="talent" name="Evidence Analysis"/></KNACK>
+	<KNACK name="Feign Hit"           minrank="9"  strain="2"  bookref="KR p.227"><BASE type="talent" name="Avoid Blow"/>       </KNACK>
+	<KNACK name="Fool Thief"          minrank="7"  strain="1"  bookref="KR p.227"><BASE type="talent" name="Evaluate"/>         </KNACK>
+	<KNACK name="Fraud Mastery"       minrank="3"  strain="3"  bookref="KR p.227"><BASE type="talent" name="Performance"/>      </KNACK>
+	<KNACK name="Fragile Blade"       minrank="8"  strain="2"  bookref="KR p.228"><BASE type="talent" name="Infuse Weapon"/>    </KNACK>
+	<KNACK name="Gory Shot"           minrank="9"  strain="6"  bookref="KR p.228"><BASE type="talent" name="Mystic Aim"/>       </KNACK>
+	<KNACK name="Guard Pockets"       minrank="6"  strain="2"  bookref="KR p.229"><BASE type="talent" name="Picking Pockets"/>  </KNACK>
+	<KNACK name="Improvised Shield"   minrank="8"  strain="2"  bookref="KR p.229"><BASE type="talent" name="Shield Charge"/>    </KNACK>
+	<KNACK name="Listen"              minrank="7"  strain="2+" bookref="KR p.229"><BASE type="talent" name="Search"/>           </KNACK>
+	<KNACK name="Lock Guard"          minrank="8"  strain="3"  bookref="KR p.229"><BASE type="talent" name="Thief Weaving"/>    </KNACK>
+	<KNACK name="Maim"                minrank="10" strain="6+" bookref="KR p.229"><BASE type="talent" name="Down Strike"/>      </KNACK>
+	<KNACK name="Masterminds Plan"    minrank="9"  strain="5"  bookref="KR p.229"><BASE type="talent" name="Safe Path"/>        </KNACK>
+	<KNACK name="Not so Fast"         minrank="7"  strain="2"  bookref="KR p.230"><BASE type="talent" name="Fast Hand"/>        </KNACK>
+	<KNACK name="Plant Prison"        minrank="9"  strain="4+" bookref="KR p.230"><BASE type="talent" name="Plant Shelter"/>    </KNACK>
+	<KNACK name="Request Donation"    minrank="9"  strain="2"  bookref="KR p.230"><BASE type="talent" name="Bardic Voice"/>     </KNACK>
+	<KNACK name="Stalk"               minrank="8"  strain="3"  bookref="KR p.230"><BASE type="talent" name="Tracking"/>         </KNACK>
+	<KNACK name="Tale of Terror"      minrank="7"  strain="2"  bookref="KR p.231"><BASE type="talent" name="Creature Analysis"/></KNACK>
+	<KNACK name="Track Mount"         minrank="9"  strain="4"  bookref="KR p.231"><BASE type="talent" name="Call Mount"/>       </KNACK>
 </KNACKS>

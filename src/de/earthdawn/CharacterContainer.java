@@ -1008,14 +1008,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public static String getFullTalentname(KNACKBASEType knack) {
-		String name = knack.getName();
-		// Falls es das DurabilityTalent ist, dann ignoriere die Limitationsangabe
-		if( name.equals(durabilityName) ) return durabilityName;
-
-		String limitation = knack.getLimitation();
-		if( limitation == null ) return name;
-		if( limitation.isEmpty() ) return name;
-		return name + " : "+limitation;
+		return knack.getName();
 	}
 
 	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE disciplineDefinition, int talentCircleNr) {
@@ -1417,15 +1410,17 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public boolean hasKnackLearned(KNACKBASEType knack) {
 		String knackName = knack.getName();
-		String knackLimitation = knack.getLimitation();
-		boolean noKnackLimitation = knackLimitation.isEmpty();
-		for( TalentsContainer talents : getAllTalents() ) {
-			for( TALENTType talent : talents.getAllTalents() ) {
-				boolean matchLimitation=false;
-				if( noKnackLimitation ) matchLimitation=true;
-				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
-				if( matchLimitation ) for( KNACKType k : talent.getKNACK() ) {
-					if( k.getName().equals(knackName) ) return true;
+		for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+			String knackLimitation = base.getLimitation();
+			boolean noKnackLimitation = knackLimitation.isEmpty();
+			for( TalentsContainer talents : getAllTalents() ) {
+				for( TALENTType talent : talents.getAllTalents() ) {
+					boolean matchLimitation=false;
+					if( noKnackLimitation ) matchLimitation=true;
+					else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
+					if( matchLimitation ) for( KNACKType k : talent.getKNACK() ) {
+						if( k.getName().equals(knackName) ) return true;
+					}
 				}
 			}
 		}
@@ -1434,18 +1429,20 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public void removeKnack(KNACKBASEType knack) {
 		String knackName = knack.getName();
-		String knackLimitation = knack.getLimitation();
-		boolean noKnackLimitation = knackLimitation.isEmpty();
-		for( TalentsContainer talents : getAllTalents() ) {
-			for( TALENTType talent : talents.getAllTalents() ) {
-				boolean matchLimitation=false;
-				if( noKnackLimitation ) matchLimitation=true;
-				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
-				if( matchLimitation ) {
-					List<KNACKType> talentknacks = talent.getKNACK();
-					List<KNACKType> remove = new ArrayList<KNACKType>();
-					for( KNACKType k : talentknacks ) if( k.getName().equals(knackName) ) remove.add(k);
-					talentknacks.removeAll(remove);
+		for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+			String knackLimitation = base.getLimitation();
+			boolean noKnackLimitation = knackLimitation.isEmpty();
+			for( TalentsContainer talents : getAllTalents() ) {
+				for( TALENTType talent : talents.getAllTalents() ) {
+					boolean matchLimitation=false;
+					if( noKnackLimitation ) matchLimitation=true;
+					else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
+					if( matchLimitation ) {
+						List<KNACKType> talentknacks = talent.getKNACK();
+						List<KNACKType> remove = new ArrayList<KNACKType>();
+						for( KNACKType k : talentknacks ) if( k.getName().equals(knackName) ) remove.add(k);
+						talentknacks.removeAll(remove);
+					}
 				}
 			}
 		}
@@ -2204,25 +2201,27 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public void insertKnack(KNACKBASEType knack) {
-		String limitation=knack.getLimitation();
 		String knackname = knack.getName();
-		boolean noLimitation=limitation.isEmpty();
-		for( TALENTType talent : getTalentByName(knack.getBasename()) ) {
-			boolean matchLimitation=false;
-			if( noLimitation ) matchLimitation=true;
-			else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(limitation);
-			if( matchLimitation ) {
-				List<KNACKType> talentknacks = talent.getKNACK();
-				for( KNACKType k : talentknacks ) {
-					if( k.getName().equals(knackname) ) return;
+		for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+			String limitation=base.getLimitation();
+			boolean noLimitation=limitation.isEmpty();
+			for( TALENTType talent : getTalentByName(base.getName()) ) {
+				boolean matchLimitation=false;
+				if( noLimitation ) matchLimitation=true;
+				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(limitation);
+				if( matchLimitation ) {
+					List<KNACKType> talentknacks = talent.getKNACK();
+					for( KNACKType k : talentknacks ) {
+						if( k.getName().equals(knackname) ) return;
+					}
+					KNACKType k = new KNACKType();
+					k.setName(knackname);
+					k.setMinrank(knack.getMinrank());
+					k.setStrain(knack.getStrain());
+					k.setBookref(knack.getBookref());
+					talentknacks.add(k);
+					return;
 				}
-				KNACKType k = new KNACKType();
-				k.setName(knackname);
-				k.setMinrank(knack.getMinrank());
-				k.setStrain(knack.getStrain());
-				k.setBookref(knack.getBookref());
-				talentknacks.add(k);
-				return;
 			}
 		}
 	}

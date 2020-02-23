@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
-	<TALENTKNACK name="Barrier of the Righteous" basename="Path of the Righteous" minrank="9" strain="5" bookref="CPG p.94"/>
-	<TALENTKNACK name="Beacon in the Storm" basename="Lightning Born" minrank="1" strain="2" bookref="CPG p.98"/>
-	<TALENTKNACK name="Birth and Burial" basename="Lightning Born" minrank="3" strain="1" bookref="CPG p.98"/>
-	<TALENTKNACK name="Change Protagonist" basename="Legendary Blades" minrank="10" strain="1+ (s.text)" bookref="CPG p.94"/>
-	<TALENTKNACK name="Clinch" basename="Thread Weaving" limitation="Fist Weaving" minrank="9" strain="2" bookref="CPG p.94"/>
-	<TALENTKNACK name="Come to Terms" basename="Duel" minrank="6" strain="0" bookref="CPG p.94"/>
-	<TALENTKNACK name="Committed Throw" basename="Takedown" minrank="8" strain="3" bookref="CPG p.94"/>
-	<TALENTKNACK name="Conceal Bow" basename="Conceal Object" minrank="12" strain="2" bookref="CPG p.94"/>
-	<TALENTKNACK name="Deep Trance" basename="Meditate" minrank="9" strain="0" bookref="CPG p.95"/>
-	<TALENTKNACK name="Defang the Snake" basename="Disarm" minrank="9" strain="2" bookref="CPG p.95"/>
-	<TALENTKNACK name="Delayed Strike" basename="Great Strike" minrank="11" strain="1" bookref="CPG p.95"/>
-	<TALENTKNACK name="Encrypt Staff" basename="Store Knowledge" minrank="6" strain="2 (s.text)" bookref="CPG p.95"/>
-	<TALENTKNACK name="Gift of the Tempest" basename="Lightning Born" minrank="5" strain="4" bookref="CPG p.98"/>
-	<TALENTKNACK name="Hibernate" basename="Animal Slumber" minrank="7" strain="1" bookref="CPG p.95"/>
-	<TALENTKNACK name="Hide Warband" basename="Ambush" minrank="11" strain="2 (s.text)" bookref="CPG p.95"/>
-	<TALENTKNACK name="Inherited Strength" basename="Inherited Powers" minrank="8" strain="3" bookref="CPG p.95"/>
-	<TALENTKNACK name="Lightning Leap" basename="Lightning Born" minrank="13" strain="8" bookref="CPG p.98"/>
-	<TALENTKNACK name="Liquid Shelter" basename="Liquid Prison" minrank="10" strain="4" bookref="CPG p.95"/>
-	<TALENTKNACK name="Moon Blast" basename="Moon Ray" minrank="11" strain="6" bookref="CPG p.96"/>
-	<TALENTKNACK name="Mount Leap" basename="Trick Riding" minrank="6" strain="2" bookref="CPG p.96"/>
-	<TALENTKNACK name="Pick Up" basename="Lightning Combo" minrank="7" strain="+2 (s.text)" bookref="CPG p.96"/>
-	<TALENTKNACK name="Ride-by Shot" basename="Trick Riding" minrank="7" strain="1" bookref="CPG p.96"/>
-	<TALENTKNACK name="Ridicule" basename="Performance" minrank="6" strain="1" bookref="CPG p.96"/>
-	<TALENTKNACK name="Secure Footing" basename="Guard Stance" minrank="9" strain="1 (s.text)" bookref="CPG p.96"/>
-	<TALENTKNACK name="Send Knowledge" basename="Commune" minrank="6" strain="1 Wound (s.text)" bookref="CPG p.96"/>
-	<TALENTKNACK name="Send Them Running" basename="Kiai" minrank="11" strain="2" bookref="CPG p.96"/>
-	<TALENTKNACK name="Shield Location" basename="Shield of the Innocent" minrank="12" strain="4" bookref="CPG p.97"/>
-	<TALENTKNACK name="Snake Milking" basename="Counteract" minrank="8" strain="2" bookref="CPG p.97"/>
-	<TALENTKNACK name="Spider-walk Mount" basename="Trick Riding" minrank="13" strain="4" bookref="CPG p.97"/>
-	<TALENTKNACK name="Stash Object" basename="Conceal Object" minrank="9" strain="2" bookref="CPG p.97"/>
-	<TALENTKNACK name="Storms Roar" basename="Lightning Born" minrank="8" strain="6" bookref="CPG p.98"/>
-	<TALENTKNACK name="Storm Visits Your Home" basename="Lightning Born" minrank="10" strain="6" bookref="CPG p.98"/>	
-	<TALENTKNACK name="Summon Blade" basename="Fiery Blade" minrank="8" strain="3" bookref="CPG p.97"/>
-	<TALENTKNACK name="Traceless Wagon" basename="Conceal Caravan" minrank="9" strain="1 (s.text)" bookref="CPG p.97"/>
-	<TALENTKNACK name="Unequal Fight" basename="Absorb Blow" minrank="10" strain="2" bookref="CPG p.97"/>
-	<TALENTKNACK name="Weapon Block" basename="Block and Counter" minrank="8" strain="3" bookref="CPG p.97"/>
-	<TALENTKNACK name="Winds of the Dragons Spine" basename="Lightning Born" minrank="4" strain="2" bookref="CPG p.98"/>
-	<TALENTKNACK name="Wound Blow" basename="Flowing Blow" minrank="12" strain="2" bookref="CPG p.97"/>
+<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
+	<KNACK name="Barrier of the Righteous"   minrank="9"  strain="5"  bookref="CPG p.94"><BASE type="talent" name="Path of the Righteous"/>                   </KNACK>
+	<KNACK name="Beacon in the Storm"        minrank="1"  strain="2"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>
+	<KNACK name="Birth and Burial"           minrank="3"  strain="1"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>
+	<KNACK name="Change Protagonist"         minrank="10" strain="1+" bookref="CPG p.94"><BASE type="talent" name="Legendary Blades"/>                        </KNACK>
+	<KNACK name="Clinch"                     minrank="9"  strain="2"  bookref="CPG p.94"><BASE type="talent" name="Thread Weaving" limitation="Fist Weaving"/></KNACK>
+	<KNACK name="Come to Terms"              minrank="6"  strain="0"  bookref="CPG p.94"><BASE type="talent" name="Duel"/>                                    </KNACK>
+	<KNACK name="Committed Throw"            minrank="8"  strain="3"  bookref="CPG p.94"><BASE type="talent" name="Takedown"/>                                </KNACK>
+	<KNACK name="Conceal Bow"                minrank="12" strain="2"  bookref="CPG p.94"><BASE type="talent" name="Conceal Object"/>                          </KNACK>
+	<KNACK name="Deep Trance"                minrank="9"  strain="0"  bookref="CPG p.95"><BASE type="talent" name="Meditate"/>                                </KNACK>
+	<KNACK name="Defang the Snake"           minrank="9"  strain="2"  bookref="CPG p.95"><BASE type="talent" name="Disarm"/>                                  </KNACK>
+	<KNACK name="Delayed Strike"             minrank="11" strain="1"  bookref="CPG p.95"><BASE type="talent" name="Great Strike"/>                            </KNACK>
+	<KNACK name="Encrypt Staff"              minrank="6"  strain="2+" bookref="CPG p.95"><BASE type="talent" name="Store Knowledge"/>                         </KNACK>
+	<KNACK name="Gift of the Tempest"        minrank="5"  strain="4"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>
+	<KNACK name="Hibernate"                  minrank="7"  strain="1"  bookref="CPG p.95"><BASE type="talent" name="Animal Slumber"/>                          </KNACK>
+	<KNACK name="Hide Warband"               minrank="11" strain="2+" bookref="CPG p.95"><BASE type="talent" name="Ambush"/>                                  </KNACK>
+	<KNACK name="Inherited Strength"         minrank="8"  strain="3"  bookref="CPG p.95"><BASE type="talent" name="Inherited Powers"/>                        </KNACK>
+	<KNACK name="Lightning Leap"             minrank="13" strain="8"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>
+	<KNACK name="Liquid Shelter"             minrank="10" strain="4"  bookref="CPG p.95"><BASE type="talent" name="Liquid Prison"/>                           </KNACK>
+	<KNACK name="Moon Blast"                 minrank="11" strain="6"  bookref="CPG p.96"><BASE type="talent" name="Moon Ray"/>                                </KNACK>
+	<KNACK name="Mount Leap"                 minrank="6"  strain="2"  bookref="CPG p.96"><BASE type="talent" name="Trick Riding"/>                            </KNACK>
+	<KNACK name="Pick Up"                    minrank="7"  strain="2+" bookref="CPG p.96"><BASE type="talent" name="Lightning Combo"/>                         </KNACK>
+	<KNACK name="Ride-by Shot"               minrank="7"  strain="1"  bookref="CPG p.96"><BASE type="talent" name="Trick Riding"/>                            </KNACK>
+	<KNACK name="Ridicule"                   minrank="6"  strain="1"  bookref="CPG p.96"><BASE type="talent" name="Performance"/>                             </KNACK>
+	<KNACK name="Secure Footing"             minrank="9"  strain="1+" bookref="CPG p.96"><BASE type="talent" name="Guard Stance"/>                            </KNACK>
+	<KNACK name="Send Knowledge"             minrank="6"  blood="1"   bookref="CPG p.96"><BASE type="talent" name="Commune"/>                                 </KNACK>
+	<KNACK name="Send Them Running"          minrank="11" strain="2"  bookref="CPG p.96"><BASE type="talent" name="Kiai"/>                                    </KNACK>
+	<KNACK name="Shield Location"            minrank="12" strain="4"  bookref="CPG p.97"><BASE type="talent" name="Shield of the Innocent"/>                  </KNACK>
+	<KNACK name="Snake Milking"              minrank="8"  strain="2"  bookref="CPG p.97"><BASE type="talent" name="Counteract"/>                              </KNACK>
+	<KNACK name="Spider-walk Mount"          minrank="13" strain="4"  bookref="CPG p.97"><BASE type="talent" name="Trick Riding"/>                            </KNACK>
+	<KNACK name="Stash Object"               minrank="9"  strain="2"  bookref="CPG p.97"><BASE type="talent" name="Conceal Object"/>                          </KNACK>
+	<KNACK name="Storms Roar"                minrank="8"  strain="6"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>
+	<KNACK name="Storm Visits Your Home"     minrank="10" strain="6"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>	
+	<KNACK name="Summon Blade"               minrank="8"  strain="3"  bookref="CPG p.97"><BASE type="talent" name="Fiery Blade"/>                             </KNACK>
+	<KNACK name="Traceless Wagon"            minrank="9"  strain="1+" bookref="CPG p.97"><BASE type="talent" name="Conceal Caravan"/>                         </KNACK>
+	<KNACK name="Unequal Fight"              minrank="10" strain="2"  bookref="CPG p.97"><BASE type="talent" name="Absorb Blow"/>                             </KNACK>
+	<KNACK name="Weapon Block"               minrank="8"  strain="3"  bookref="CPG p.97"><BASE type="talent" name="Block and Counter"/>                       </KNACK>
+	<KNACK name="Winds of the Dragons Spine" minrank="4"  strain="2"  bookref="CPG p.98"><BASE type="talent" name="Lightning Born"/>                          </KNACK>
+	<KNACK name="Wound Blow"                 minrank="12" strain="2"  bookref="CPG p.97"><BASE type="talent" name="Flowing Blow"/>                            </KNACK>
 </KNACKS>

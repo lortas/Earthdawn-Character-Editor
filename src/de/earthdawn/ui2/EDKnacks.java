@@ -29,6 +29,8 @@ import de.earthdawn.data.KNACKBASEType;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.RulesetversionType;
+import de.earthdawn.data.KNACKBASECAPABILITYType;
+import de.earthdawn.TalentsContainer;
 
 public class EDKnacks extends JPanel {
 	private static final long serialVersionUID = 3430848422226809963L;
@@ -134,24 +136,27 @@ class KnacksTableModel extends AbstractTableModel {
 				int talentrank=talent.getRANK().getRank();
 				if( character.getRulesetversion().equals(RulesetversionType.ED_3) ) talentrank += 2;
 				if( talent.getLIMITATION().size()<1 ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName(),"") ) {
+						if( knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
 					}
 				} else for( String limitation : talent.getLIMITATION() ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName(),limitation) ) {
+						if( knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
 					}
 				}
 			}
-			for( TALENTType talent : discipline.getOPTIONALTALENT() ) {
+			List<TALENTType> othertalents = new ArrayList<TALENTType>();
+			othertalents.addAll(discipline.getOPTIONALTALENT());
+			othertalents.addAll(discipline.getFREETALENT());
+			for( TALENTType talent : othertalents ) {
 				int talentrank=talent.getRANK().getRank();
 				if( talent.getLIMITATION().size()<1 ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName(),"") ) {
+						if( knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
 					}
 				} else for( String limitation : talent.getLIMITATION() ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName(),limitation) ) {
+						if( knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
 					}
 				}
 			}
@@ -183,13 +188,19 @@ class KnacksTableModel extends AbstractTableModel {
 
 	public Object getValueAt(int row, int col) {
 		KNACKBASEType knack = knacklist.get(knacknames.get(row));
+		List<String> limitations = new ArrayList<String>();
+		List<String> basenames = new ArrayList<String>();
+		for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+			limitations.add(base.getLimitation());
+			basenames.add(base.getName());
+		}
 		switch (col) {
 			case 0:
 				if(character == null) return false;
 				else return character.hasKnackLearned(knack);
 			case 1: return knack.getName();
-			case 2: return knack.getLimitation();
-			case 3: return knack.getBasename();
+			case 2: return String.join(", ",limitations);
+			case 3: return String.join(", ",basenames);
 			case 4: return knack.getMinrank();
 			case 5: return knack.getStrain();
 			case 6: return knack.getBookref();

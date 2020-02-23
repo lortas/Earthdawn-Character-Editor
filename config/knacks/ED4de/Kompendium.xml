@@ -1,40 +1,281 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<KNACKS lang="de" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
-	<TALENTKNACK name="Tierbeherrschung" basename="Abrichten" attribute="WIL" minrank="4" action="standard"/>
-	<TALENTKNACK name="Akrobatische Erholung" basename="Akrobatische Verteidigung" attribute="DEX" minrank="4" action="simple"/>
-	<TALENTKNACK name="Tierbeherrschung" basename="Abrichten" attribute="WIL" minrank="4" action="standard"/>
-	<TALENTKNACK name="Akrobatische Erholung" basename="Akrobatische Verteidigung" attribute="DEX" minrank="4" action="simple" strain="3"/>
-	<TALENTKNACK name="Akrobatischer Angriff" basename="Akrobatische Verteidigung" attribute="DEX" minrank="6" action="simple" strain="1"/>
-	<TALENTKNACK name="Gelände Verweigern" basename="Akrobatische Verteidigung" attribute="DEX" minrank="3" action="simple" strain="3"/>
-	<TALENTKNACK name="Tempo Kontrollieren" basename="Akrobatische Verteidigung" attribute="DEX" minrank="5" action="simple" strain="2"/>
-	<TALENTKNACK name="Arkane Flüche" basename="Arkanes Gefasel" minrank="7"/>
-	<TALENTKNACK name="Verhexen" basename="Arkanes Gefasel" attribute="CHA" minrank="5" action="simple" strain="1"/>
-	<TALENTKNACK name="Psychometrie" basename="Artefaktgeschichte" attribute="PER" minrank="6" action="standard" strain="1"/>
-	<TALENTKNACK name="Vergangenheitsberührung" basename="Artefaktgeschichte" attribute="PER" minrank="8" action="standard"/>
-	<TALENTKNACK name="Dämoneninterferenz" basename="Astrale Interferenz" limitation="Geisterbeschwörer 7" attribute="WIL" minrank="7" action="standard" strain="1"/>
-	<TALENTKNACK name="Mobile Interferenz" basename="Astrale Interferenz" attribute="WIL" minrank="6" action="standard" strain="2"/>
-	<TALENTKNACK name="Lippenlesen" basename="Aufmerksamkeit" attribute="PER" minrank="3" action="standard" strain="1" skilluse="1"/>
-	<TALENTKNACK name="Astrale Untersuchung" basename="Beweisanalyse" attribute="PER" minrank="6" action="sustained" strain="2"/>
-	<TALENTKNACK name="Ungeklärter Fall" basename="Beweisanalyse" attribute="PER" minrank="7" action="sustained" strain="1"/>
-	<TALENTKNACK name="Fotografisches Gedächtnis" basename="Büchergedächtnis" attribute="WIL" minrank="4" action="standard"/>
-	<TALENTKNACK name="Unterhaltungsgedächtnis" basename="Büchergedächtnis" attribute="WIL" minrank="3" action="standard"/>
-	<TALENTKNACK name="Absichten Einschätzen" basename="Diplomatie" attribute="CHA" minrank="8" action="sustained" strain="1" skilluse="5"/>
-	<TALENTKNACK name="Vergifteter Einfluss" basename="Diplomatie" attribute="CHA" minrank="7" action="sustained" skilluse="5"/>
-	<TALENTKNACK name="Zauber Absorbieren" basename="Eiserner Wille" minrank="6" action="free" strain="1"/>
-	<TALENTKNACK name="Das Ist Für Mich" basename="Entwaffnen" minrank="6" action="free"/>
-	<TALENTKNACK name="Grossartiger Auftritt" basename="Erster Eindruck" attribute="CHA" minrank="7" action="standard" strain="3"/>
-	<TALENTKNACK name="Geist Entdecken" basename="Fadenweben" attribute="PER" minrank="5" action="standard" strain="0"/>
-	<TALENTKNACK name="Geistrüstung" basename="Fadenweben" minrank="8" action="standard" strain="2"/>
-	<TALENTKNACK name="Ritual des Lehrergeistes" basename="Fadenweben" attribute="" minrank="5" action="sustained"/>
-	<TALENTKNACK name="Stärke der Bronze" basename="Fadenweben" minrank="5" action="na" blood="1"/>
-	<TALENTKNACK name="Stärke des Eisens" basename="Fadenweben" minrank="9" action="na" blood="1"/>
-	<TALENTKNACK name="Stärke des Stahls" basename="Fadenweben" minrank="13" action="na" blood="1"/>
-	<TALENTKNACK name="Wahres Element Entdecken" basename="Fadenweben" attribute="PER" minrank="4" action="standard" strain="1"/>
-	<TALENTKNACK name="Wahres Element Ernten" basename="Fadenweben" attribute="PER" minrank="5" action="sustained "/>
-	<TALENTKNACK name="Schätzen" basename="Feilschen" attriute="PER" minrank="1" action="standard"/>
-	<TALENTKNACK name="Gift Entdecken" basename="Gefahrensinn" attribute="" minrank="7" action="simple" strain="1"/>
-	<TALENTKNACK name="Waffen Entdecken" basename="Gefahrensinn" attribute="PER" minrank="3" action="simple" strain="1"/>
-	<TALENTKNACK name="Begleitmusik" basename="Gefühlsmelodie" attribute="CHA" minrank="6" action="sustained " strain="2"/>
-	<TALENTKNACK name="Geschichten Erzählen" basename="Gefühlsmelodie" attribute="CHA" minrank="1" action="sustained"/>
-	<TALENTKNACK name="Flirten" basename="Gewinnendes Lächeln" attribute="CHA" minrank="4" action="sustained"/>
+<KNACKS lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
+	<KNACK name="Tierbeherrschung"                minrank="4"  attribute="WIL" action="standard"  strain="0"              ><BASE type="talent" name="Abrichten"/>                       </KNACK>
+	<KNACK name="Akrobatische Erholung"           minrank="4"  attribute="DEX" action="simple"    strain="3"              ><BASE type="talent" name="Akrobatische Verteidigung"/>       </KNACK>
+	<KNACK name="Akrobatischer Angriff"           minrank="6"  attribute="DEX" action="simple"    strain="1"              ><BASE type="talent" name="Akrobatische Verteidigung"/>       </KNACK>
+	<KNACK name="Gelände Verweigern"              minrank="3"  attribute="DEX" action="simple"    strain="3"              ><BASE type="talent" name="Akrobatische Verteidigung"/>       </KNACK>
+	<KNACK name="Tempo Kontrollieren"             minrank="5"  attribute="DEX" action="simple"    strain="2"              ><BASE type="talent" name="Akrobatische Verteidigung"/>       </KNACK>
+	<KNACK name="Arkane Flüche"                   minrank="7"                                     strain="1"              ><BASE type="talent" name="Arkanes Gefasel"/>                 </KNACK>
+	<KNACK name="Verhexen"                        minrank="5"  attribute="CHA" action="simple"    strain="1"              ><BASE type="talent" name="Arkanes Gefasel"/>                 </KNACK>
+	<KNACK name="Psychometrie"                    minrank="6"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Artefaktgeschichte"/>              </KNACK>
+	<KNACK name="Vergangenheitsberührung"         minrank="8"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Artefaktgeschichte"/>              </KNACK>
+	<KNACK name="Dämoneninterferenz"              minrank="7"  attribute="WIL" action="standard"  strain="1"              ><BASE type="talent" name="Astrale Interferenz"/>             <DISCIPLINE name="Geisterbeschwörer" circle="7"/></KNACK>
+	<KNACK name="Mobile Interferenz"              minrank="6"  attribute="WIL" action="standard"  strain="2"              ><BASE type="talent" name="Astrale Interferenz"/>             </KNACK>
+	<KNACK name="Lippenlesen"                     minrank="3"  attribute="PER" action="standard"  strain="1" skilluse="1" ><BASE type="talent" name="Aufmerksamkeit"/>                  </KNACK>
+	<KNACK name="Astrale Untersuchung"            minrank="6"  attribute="PER" action="sustained" strain="2"              ><BASE type="talent" name="Beweisanalyse"/>                   </KNACK>
+	<KNACK name="Ungeklärter Fall"                minrank="7"  attribute="PER" action="sustained" strain="1"              ><BASE type="talent" name="Beweisanalyse"/>                   </KNACK>
+	<KNACK name="Fotografisches Gedächtnis"       minrank="4"  attribute="WIL" action="standard"  strain="0"              ><BASE type="talent" name="Büchergedächtnis"/>                </KNACK>
+	<KNACK name="Unterhaltungsgedächtnis"         minrank="3"  attribute="WIL" action="standard"  strain="0"              ><BASE type="talent" name="Büchergedächtnis"/>                </KNACK>
+	<KNACK name="Absichten Einschätzen"           minrank="8"  attribute="CHA" action="sustained" strain="1" skilluse="5" ><BASE type="talent" name="Diplomatie"/>                      </KNACK>
+	<KNACK name="Vergifteter Einfluss"            minrank="7"  attribute="CHA" action="sustained" strain="0" skilluse="5" ><BASE type="talent" name="Diplomatie"/>                      </KNACK>
+	<KNACK name="Zauber Absorbieren"              minrank="6"  attribute="na"  action="free"      strain="1"              ><BASE type="talent" name="Eiserner Wille"/>                  </KNACK>
+	<KNACK name="Das Ist Für Mich"                minrank="6"  attribute="na"  action="na"        strain="0"              ><BASE type="talent" name="Entwaffnen"/>                      <DISCIPLINE name="Schwertmeister" circle="5"/><DISCIPLINE name="*" circle="7"/></KNACK>
+	<KNACK name="Grossartiger Auftritt"           minrank="7"  attribute="CHA" action="standard"  strain="3"              ><BASE type="talent" name="Erster Eindruck"/>                 </KNACK>
+	<KNACK name="Geist Entdecken"                 minrank="5"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Fadenweben" limitation="Elementarismus"/><BASE type="talent" name="Fadenweben" limitation="Geisterbeschwörung"/><BASE type="talent" name="Fadenweben" limitation="Kundschafterweben"/></KNACK>
+	<KNACK name="Geistrüstung"                    minrank="8"  attribute="na"  action="standard"  strain="2"              ><BASE type="talent" name="Fadenweben"/>                      </KNACK>
+	<KNACK name="Ritual des Lehrergeistes"        minrank="5"  attribute="na"  action="sustained" strain="0"              ><BASE type="talent" name="Fadenweben"/>                      </KNACK>
+	<KNACK name="Stärke der Bronze"               minrank="5"  attribute="na"  action="na"        blood="1"               ><BASE type="talent" name="Fadenweben"/>                                                       <RACE name="Zwerg"/><ATTRIBUTE name="STR" min="14"/></KNACK>
+	<KNACK name="Stärke des Eisens"               minrank="9"  attribute="na"  action="na"        blood="1"               ><BASE type="talent" name="Fadenweben"/>                      <KNACK name="Stärke der Bronze"/><RACE name="Zwerg"/><ATTRIBUTE name="STR" min="14"/></KNACK>
+	<KNACK name="Stärke des Stahls"               minrank="13" attribute="na"  action="na"        blood="1"               ><BASE type="talent" name="Fadenweben"/>                      <KNACK name="Stärke des Eisens"/><RACE name="Zwerg"/><ATTRIBUTE name="STR" min="18"/></KNACK>
+	<KNACK name="Wahres Element Entdecken"        minrank="4"  attribute="PER" action="standard"  strain="1" skilluse="5" ><BASE type="talent" name="Fadenweben" limitation="Elementarismus"/><BASE type="talent" name="Fadenweben" limitation="Fadenschmieden"/><BASE type="talent" name="Fadenweben" limitation="Kundschafterweben"/></KNACK>
+	<KNACK name="Wahres Element Ernten"           minrank="5"  attribute="PER" action="sustained" strain="0" skilluse="5" ><BASE type="talent" name="Fadenweben" limitation="Elementarismus"/></KNACK>
+	<KNACK name="Schätzen"                        minrank="1"  attribute="PER" action="standard"  strain="0" skilluse="1" ><BASE type="talent" name="Feilschen"/>                       </KNACK>
+	<KNACK name="Gift Entdecken"                  minrank="7"  attribute="PER" action="simple"    strain="1"              ><BASE type="talent" name="Gefahrensinn"/>                    </KNACK>
+	<KNACK name="Waffen Entdecken"                minrank="3"  attribute="PER" action="simple"    strain="1"              ><BASE type="talent" name="Gefahrensinn"/>                    </KNACK>
+	<KNACK name="Begleitmusik"                    minrank="6"  attribute="CHA" action="sustained" strain="2"              ><BASE type="talent" name="Gefühlsmelodie"/>                  </KNACK>
+	<KNACK name="Geschichten Erzählen"            minrank="1"  attribute="CHA" action="sustained" strain="0" skilluse="1" ><BASE type="talent" name="Gefühlsmelodie"/>                  </KNACK>
+	<KNACK name="Flirten"                         minrank="4"  attribute="CHA" action="sustained" strain="0"              ><BASE type="talent" name="Gewinnendes Lächeln"/>             </KNACK>
+	<KNACK name="Verführen"                       minrank="5"  attribute="CHA" action="sustained" strain="0"              ><BASE type="talent" name="Gewinnendes Lächeln"/>             </KNACK>
+	<KNACK name="Astrale Heimlichkeit"            minrank="7"  attribute="DEX" action="standard"  strain="1"              ><BASE type="talent" name="Heimlicher Schritt"/>              </KNACK>
+	<KNACK name="Heimlicher Zauber"               minrank="6"  attribute="DEX" action="free"      strain="0"              ><BASE type="talent" name="Heimlicher Schritt"/>              </KNACK>
+	<KNACK name="Spurloser Schritt"               minrank="8"  attribute="DEX" action="standard"  strain="1"              ><BASE type="talent" name="Heimlicher Schritt"/>              </KNACK>
+	<KNACK name="Angriff Umlenken"                minrank="8"                                     strain="2"              ><BASE type="talent" name="Hieb Ausweichen"/>                 </KNACK>
+	<KNACK name="Einstecken"                      minrank="6"  attribute="na"  action="free"      strain="1"              ><BASE type="talent" name="Hieb Ausweichen"/>                 </KNACK>
+	<KNACK name="Pfeil Zerteilen"                 minrank="5"                                     strain="0"              ><BASE type="talent" name="Hieb Ausweichen"/>                 <TALENT name="Nahkampfwaffen" minrank="5"/><TALENT name="Waffenloser Kampf" minrank="5"/></KNACK>
+	<KNACK name="Herausforderndes Gebrüll"        minrank="7"  attribute="WIL" action="simple"    strain="1"              ><BASE type="talent" name="Kampfgebrüll"/>                    </KNACK>
+	<KNACK name="Zerstörendes Gebrüll"            minrank="6"  attribute="WIL" action="simple"    strain="2"              ><BASE type="talent" name="Kampfgebrüll"/>                    </KNACK>
+	<KNACK name="Aggression Vorhersehen"          minrank="7"  attribute="PER" action="simple"    strain="3"              ><BASE type="talent" name="Kampfsinn"/>                       </KNACK>
+	<KNACK name="Bewegung Vorhersehen"            minrank="7"  attribute="PER" action="simple"    strain="2"              ><BASE type="talent" name="Kampfsinn"/>                       </KNACK>
+	<KNACK name="Treffer Auffangen"               minrank="6"  attribute="PER" action="simple"    strain="2"              ><BASE type="talent" name="Kampfsinn"/>                       <DISCIPLINE name="Krieger" circle="5"/><DISCIPLINE name="Kundschafter" circle="8"/><DISCIPLINE name="Schwertmeister" circle="6"/></KNACK>
+	<KNACK name="Zauber Vorhersehen"              minrank="5"  attribute="PER" action="simple"    strain="2"              ><BASE type="talent" name="Kampfsinn"/>                       </KNACK>
+	<KNACK name="Schwingende Bewegung"            minrank="3"  attribute="DEX" action="standard"  strain="0+" skilluse="1"><BASE type="talent" name="Klettern"/>                        </KNACK>
+	<KNACK name="Wie Eine Spinne"                 minrank="8"  attribute="DEX" action="standard"  strain="0"              ><BASE type="talent" name="Klettern"/>                        </KNACK>
+	<KNACK name="Kennenlernen"                    minrank="7"                                     strain="1+"             ><BASE type="talent" name="Konversation"/>                    </KNACK>
+	<KNACK name="Krallengliedmasse"               minrank="5"  attribute="STR" action="free"      strain="0"              ><BASE type="talent" name="Krallenhand"/>                     </KNACK>
+	<KNACK name="Krallenwerkzeug"                 minrank="5"  attribute="na"  action="sustained" strain="1/min"          ><BASE type="talent" name="Krallenhand"/>                     </KNACK>
+	<KNACK name="Trümmerkrallen"                  minrank="6"  attribute="na"  action="sustained" strain="1/Angr."        ><BASE type="talent" name="Krallenhand"/>                     </KNACK>
+	<KNACK name="Boot Steuern"                    minrank="5"  attribute="PER" action="sustained" strain="0"              ><BASE type="talent" name="Luftsegeln"/>                      </KNACK>
+	<KNACK name="Luftbeine"                       minrank="3"  attribute="DEX" action="free"      strain="1"              ><BASE type="talent" name="Luftsegeln"/>                      </KNACK>
+	<KNACK name="Segeln"                          minrank="4"  attribute="PER" action="sustained" strain="0"              ><BASE type="talent" name="Luftsegeln"/>                      </KNACK>
+	<KNACK name="Präziser Schuss"                 minrank="7"  attribute="PER" action="simple"    strain="3"              ><BASE type="talent" name="Magische Markierung"/>             </KNACK>
+	<KNACK name="Ideale Erscheinung"              minrank="8"  attribute="CHA" action="simple"    strain="1"              ><BASE type="talent" name="Magische Maske"/>                  </KNACK>
+	<KNACK name="Aggressives Manövrieren"         minrank="5"  attribute="DEX" action="simple"    strain="2" skilluse="5" ><BASE type="talent" name="Manövrieren"/>                     </KNACK>
+	<KNACK name="Finte"                           minrank="7"  attribute="CHA" action="simple"    strain="2" skilluse="5" ><BASE type="talent" name="Manövrieren"/>                     </KNACK>
+	<KNACK name="Geduldiges Manövrieren"          minrank="5"  attribute="DEX" action="free"      strain="1" skilluse="5" ><BASE type="talent" name="Manövrieren"/>                     </KNACK>
+	<KNACK name="In die Falle Locken"             minrank="8"  attribute="DEX" action="simple"    strain="2" skilluse="5" ><BASE type="talent" name="Manövrieren"/>                     </KNACK>
+	<KNACK name="Lähmen"                          minrank="6"                                     strain="0"              ><BASE type="talent" name="Manövrieren"/>                     </KNACK>
+	<KNACK name="Bedrängender Angriff"            minrank="6"                                     strain="0"              ><BASE type="talent" name="Nahkampfwaffen"/>                  </KNACK>
+	<KNACK name="Geistklinge"                     minrank="8"  attribute="na"  action="standard"  strain="1"              ><BASE type="talent" name="Nahkampfwaffen"/>                  </KNACK>
+	<KNACK name="Hieb Ablenken"                   minrank="7"  attribute="na"  action="simple"    strain="1"              ><BASE type="talent" name="Nahkampfwaffen"/>                  </KNACK>
+	<KNACK name="Improvisierte Waffe"             minrank="4"  attribute="DEX" action="standard"  strain="0"              ><BASE type="talent" name="Nahkampfwaffen"/>                  </KNACK>
+	<KNACK name="Niederkämpfen"                   minrank="7"                                                             ><BASE type="talent" name="Nahkampfwaffen"/>                  <ATTRIBUTE name="STR" min="14"/></KNACK>
+	<KNACK name="Schwanzwaffe"                    minrank="4"  attribute="DEX" action="simple"    strain="0"              ><BASE type="talent" name="Nahkampfwaffen"/>                  </KNACK> <!-- Voraussetzungen: Schwanzkampf -->
+	<KNACK name="Schwungangriff"                  minrank="6"  attribute="DEX" action="standard"  strain="1" skilluse="1" ><BASE type="talent" name="Nahkampfwaffen"/>                  </KNACK>
+	<KNACK name="Verbesserte Improvisierte Waffe" minrank="7"  attribute="DEX" action="standard"  strain="1"              ><BASE type="talent" name="Nahkampfwaffen"/>                  <KNACK name="Improvisierte Waffe"/></KNACK>
+	<KNACK name="Zurückweichen"                   minrank="6"                                                             ><BASE type="talent" name="Nahkampfwaffen"/><BASE type="talent" name="Waffenloser Kampf"/></KNACK>
+	<KNACK name="Fluss Lesen"                     minrank="5"  attribute="PER" action="sustained" strain="0" skilluse="1" ><BASE type="talent" name="Navigation"/>                      </KNACK>
+	<KNACK name="Karten Zeichnen"                 minrank="2"  attribute="PER" action="sustained" strain="0"              ><BASE type="talent" name="Navigation"/>                      </KNACK>
+	<KNACK name="Jedes Projektil Rufen"           minrank="6"  attribute="CHA" action="simple"    strain="1"              ><BASE type="talent" name="Projektil Rufen"/>                 </KNACK>
+	<KNACK name="Aufgesetzter Schuss"             minrank="3"  attribute="DEX" action="standard"  strain="1"              ><BASE type="talent" name="Projektilwaffen"/><BASE type="talent" name="Wurfwaffen"/>     </KNACK>
+	<KNACK name="Leuchtgeschoss"                  minrank="7"  attribute="DEX" action="standard"  strain="2"              ><BASE type="talent" name="Projektilwaffen"/><BASE type="talent" name="Wurfwaffen"/>     </KNACK>
+	<KNACK name="Windbogen"                       minrank="8"  attribute="na"  action="standard"  strain="1"              ><BASE type="talent" name="Projektilwaffen"/>                 </KNACK>
+	<KNACK name="Krankheit Aufhalten"             minrank="6"  attribute="WIL" action="sustained" strain="0"              ><BASE type="talent" name="Reinigende Kälte"/>                </KNACK>
+	<KNACK name="Krallenriposte"                  minrank="5"  attribute="DEX" action="free"      strain="3"              ><BASE type="talent" name="Riposte"/>                         </KNACK>
+	<KNACK name="Effizientes Rüstungsschmieden"   minrank="5"  attribute="PER" action="sustained" strain="0"              ><BASE type="talent" name="Rüstung Schmieden"/>               <DISCIPLINE name="Waffenschmied" circle="5"/></KNACK>
+	<KNACK name="Schnelles Rüstungsschmieden"     minrank="6"  attribute="PER"                                            ><BASE type="talent" name="Rüstung Schmieden"/>               <DISCIPLINE name="Waffenschmied" circle="6"/></KNACK>
+	<KNACK name="Schildniederschlag"              minrank="6"  attribute="STR" action="simple"    strain="2" skilluse="5" ><BASE type="talent" name="Schildschlag"/>                    </KNACK>
+	<KNACK name="Einschüchternder Ruf"            minrank="5"  attribute="CHA" action="simple"    strain="1" skilluse="5" ><BASE type="talent" name="Schlachtruf"/>                     </KNACK>
+	<KNACK name="Bande Abwerfen"                  minrank="3"  attribute="DEX" action="sustained" strain="2"              ><BASE type="talent" name="Schloss Knacken"/>                 </KNACK>
+	<KNACK name="Fälschen"                        minrank="6"  attribute="DEX" action="sustained" strain="0"              ><BASE type="talent" name="Schuld Abwälzen"/>                 </KNACK>
+	<KNACK name="Ablenken"                        minrank="4"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Magier" circle="4"/></KNACK>
+	<KNACK name="Arkane Präzision"                minrank="2"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Magier" circle="2"/></KNACK>
+	<KNACK name="Arkane Schneide"                 minrank="3"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Magier" circle="3"/></KNACK>
+	<KNACK name="Astrale Belastung"               minrank="2"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Geisterbeschwörer" circle="2"/></KNACK>
+	<KNACK name="Astraler Schutz"                 minrank="2"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Magier" circle="2"/></KNACK>
+	<KNACK name="Blute"                           minrank="3"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Geisterbeschwörer" circle="3"/></KNACK>
+	<KNACK name="Durcheinander"                   minrank="5"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Illusionist" circle="5"/></KNACK>
+	<KNACK name="Geschwindigkeitsschub"           minrank="3"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Elementarist" circle="3"/></KNACK>
+	<KNACK name="Gift Schwächen"                  minrank="4"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Elementarist" circle="4"/></KNACK>
+	<KNACK name="Greifende Ranken"                minrank="5"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Elementarist" circle="5"/></KNACK>
+	<KNACK name="Mut"                             minrank="2"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Illusionist" circle="2"/></KNACK>
+	<KNACK name="Rüstung Verstärken"              minrank="2"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Elementarist" circle="2"/></KNACK>
+	<KNACK name="Säurespritzer"                   minrank="2"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Elementarist" circle="2"/></KNACK>
+	<KNACK name="Stottern"                        minrank="3"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Illusionist" circle="3"/></KNACK>
+	<KNACK name="Struktur Schwächen"              minrank="4"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Geisterbeschwörer" circle="4"/></KNACK>
+	<KNACK name="Struktur Verstärken"             minrank="5"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Magier" circle="5"/></KNACK>
+	<KNACK name="Verstauchung"                    minrank="5"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Geisterbeschwörer" circle="5"/></KNACK>
+	<KNACK name="Verunsichern"                    minrank="2"  attribute="PER" action="standard"  strain="0"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Geisterbeschwörer" circle="2"/></KNACK>
+	<KNACK name="Verwirren"                       minrank="2"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Illusionist" circle="3"/></KNACK>
+	<KNACK name="Zweifel"                         minrank="4"  attribute="PER" action="standard"  strain="1"              ><BASE type="talent" name="Spruchzauberei"/>                  <DISCIPLINE name="Illusionist" circle="4"/></KNACK>
+	<KNACK name="Zugeständnis"                    minrank="6"  attribute="na"  action="free"      strain="1"              ><BASE type="talent" name="Starrsinn"/>                       </KNACK>
+	<KNACK name="Improvisierte Struktur"          minrank="8"  attribute="na"  action="simple"    strain="1+"             ><BASE type="talent" name="Struktur Verstehen"/>              </KNACK>
+	<KNACK name="Umrennen"                        minrank="7"                                                             ><BASE type="talent" name="Sturmangriff"/>                    </KNACK>
+	<KNACK name="Bresche"                         minrank="8"                                                             ><BASE type="talent" name="Taktik"/>                          </KNACK>
+	<KNACK name="Gassenwissen"                    minrank="4"  attribute="CHA" action="sustained" strain="0"              ><BASE type="talent" name="Taschendiebstahl"/>                </KNACK>
+	<KNACK name="Tier Zähmen"                     minrank="8"  attribute="CHA" action="standard"  strain="2"              ><BASE type="talent" name="Tiere Bändigen"/>                  <DISCIPLINE name="Steppenreiter" circle="8"/><DISCIPLINE name="Tiermeister" circle="7"/></KNACK>
+	<KNACK name="Tiergefährten Heilen"            minrank="7"  attribute="TOU" action="standard"  strain="0"              ><BASE type="talent" name="Tierfreundschaft"/>                </KNACK>
+	<KNACK name="Empathischer Befehl"             minrank="8"  attribute="CHA" action="free"      strain="1"              ><BASE type="talent" name="Tiergefährten Rufen"/>             </KNACK>
+	<KNACK name="Tier Herbeirufen"                minrank="5"  attribute="CHA" action="free"      strain="2"              ><BASE type="talent" name="Tiergefährten Rufen"/>             </KNACK>
+	<KNACK name="Gefährtengestalt Erweitern"      minrank="5"  attribute="na"  action="sustained" strain="0"              ><BASE type="talent" name="Tiergefährten Verbessern"/>        <DISCIPLINE name="Steppenreiter" circle="5"/><DISCIPLINE name="Tiermeister" circle="5"/></KNACK>
+	<KNACK name="Gefährtengestalt Formen"         minrank="9"  attribute="na"  action="sustained" strain="0"              ><BASE type="talent" name="Tiergefährten Verbessern"/>        <KNACK name="Gefährtengestalt Erweitern"/><DISCIPLINE name="Steppenreiter" circle="9"/><DISCIPLINE name="Tiermeister" circle="9"/></KNACK>
+	<KNACK name="Gefährtengestalt Modellieren"    minrank="13" attribute="na"  action="sustained" strain="0"              ><BASE type="talent" name="Tiergefährten Verbessern"/>        <KNACK name="Gefährtengestalt Formen"/><DISCIPLINE name="Steppenreiter" circle="13"/><DISCIPLINE name="Tiermeister" circle="13"/></KNACK>
 </KNACKS>
+<!--
+	<KNACK name="Tierische Sinne"
+Anderer Sinn
+<BASE type="talent" name="Tierische Sinne"/>
+Voraussetzungen: Keine
+action="standard"
+minrank="8"
+attribute="WIL"
+strain="1"
+
+	<KNACK name="Ein Auge Offen"
+<BASE type="talent" name="Tierische Sinne"/>
+minrank="4"
+Voraussetzungen: Keine
+attribute="na"
+action="sustained"
+strain="0"
+
+	<KNACK name="Schmutzige Tricks"
+<BASE type="talent" name="Überraschungsschlag"/>
+minrank="7"
+Voraussetzungen: Keine
+attribute="CHA"
+action="simple"
+strain="2"
+
+	<KNACK name="Waffe Schmieden"
+Effizientes Waffenschmieden
+<BASE type="talent" name="Waffe Schmieden"/>
+minrank="5"
+Voraussetzungen: Waffenschmied 5
+attribute="PER"
+action="sustained"
+strain="0"
+
+	<KNACK name="Schnelles Waffenschmieden [Spezialmanöver]"
+<BASE type="talent" name="Waffe Schmieden"/>
+minrank="6"
+Voraussetzungen: Waffenschmied 6
+
+	<KNACK name="Ins Auge [Spezialmanöver]"
+<BASE type="talent" name="Waffenloser Kampf"/>
+minrank="7"
+Voraussetzungen: Keine
+
+	<KNACK name="Körperklinge"
+<BASE type="talent" name="Waffenloser Kampf"/>
+Voraussetzungen: Keine
+action="free"
+minrank="5"
+attribute="STR"
+strain="1"
+
+minrank="5"
+attribute="na"
+strain="1"
+
+	<KNACK name="Anspringen [Spezialmanöver]"
+<BASE type="talent" name="Weitsprung"/>
+minrank="7"
+Voraussetzungen: Keine
+
+	<KNACK name="Gegner Überspringen"
+<BASE type="talent" name="Weitsprung"/>
+Voraussetzungen: Keine
+action="simple"
+minrank="6"
+attribute="DEX"
+strain="2"
+
+	<KNACK name="Windkissen"
+Gleiten
+<BASE type="talent" name="Windkissen"/>
+Voraussetzungen: Keine
+action="standard"
+
+minrank="6"
+attribute="WIL"
+strain="2"
+
+	<KNACK name="Weitschuss"
+Reichweite Erhöhen
+<BASE type="talent" name="Weitschuss"/>
+Voraussetzungen: Keine
+action="simple"
+
+	<KNACK name="Bestechung"
+<BASE type="talent" name="Wortgeplänkel"/>
+Voraussetzungen: Keine
+action="standard"
+skilluse="1"
+minrank="5"
+attribute="CHA"
+strain="0"
+
+	<KNACK name="Aufgesetzter Schuss"
+Improvisierte Wurfwaffe
+<BASE type="talent" name="Wurfwaffen"/>
+Voraussetzungen: Keine
+action="na"
+minrank="4"
+attribute="na"
+strain="0"
+
+	<KNACK name="Gift Mischen"
+<BASE type="talent" name="Diebweben"/><BASE type="talent" name="Kundschafterweben"/>
+minrank="5"
+Voraussetzungen: eine Disziplin 5
+
+	<KNACK name="Wiederkehr"
+<BASE type="talent" name="Wurfwaffen"/>
+Voraussetzungen: Keine
+action="free"
+minrank="4"
+attribute="na"
+strain="1"
+
+	<KNACK name="Allgemeinen Magischen Gegenstand Herstellen"
+<BASE type="talent" name="Struktur Verstehen"/>
+minrank="5"
+Voraussetzungen: Elementarist 4, Magier 5
+
+	<KNACK name="Blutamulett Herstellen"
+<BASE type="talent" name="Struktur Verstehen"/>
+minrank="5"
+Voraussetzungen: Geisterbeschwörer 5
+
+	<KNACK name="Elemente Bearbeiten"
+<BASE type="talent" name="Fadenschmieden"/><BASE type="talent" name="Struktur Verstehen"/>
+minrank="5"
+Voraussetzungen: Elementarist 4, Waffenschmied 5
+
+	<KNACK name="Gebundenen Geist Integrieren"
+<BASE type="talent" name="Struktur Verstehen"/>
+minrank="6"
+Voraussetzungen: Elementarist 6, Geisterbeschwörer 5
+
+	<KNACK name="Glyphe Erschaffen"
+<BASE type="talent" name="Struktur Verstehen"/>
+minrank="5"
+Voraussetzungen: eine Disziplin 5
+
+	<KNACK name="Orichalkum Herstellen"
+<BASE type="talent" name="Elementarismus"/><BASE type="talent" name="Fadenschmieden"/>
+minrank="10"
+Voraussetzungen: Elementarist 9, Waffenschmied 10
+skilluse="9"
+
+	<KNACK name="Verzauberungsstruktur Entwerfen"
+<BASE type="talent" name="Fadenschmieden"/><BASE type="talent" name="Struktur Verstehen"/>
+minrank="8"
+Voraussetzungen: Keine
+skilluse="5"
+
+	<KNACK name="Wahre Struktur Erschaffen"
+<BASE type="talent" name="Fadenschmieden"/><BASE type="talent" name="Struktur Verstehen"/>
+minrank="5"
+Voraussetzungen: eine Disziplin 5
+-->

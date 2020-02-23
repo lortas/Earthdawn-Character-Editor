@@ -75,6 +75,13 @@
 			<xs:enumeration value="depends"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="capabilitytype_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="skill"/>
+			<xs:enumeration value="talent"/>
+			<xs:enumeration value="knack"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="learnedby_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="no"/>

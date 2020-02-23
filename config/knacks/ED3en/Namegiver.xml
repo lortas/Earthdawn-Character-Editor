@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../earthdawnknacks.xsd">
-	<TALENTKNACK name="Backlash" basename="Tail Dance" minrank="6" strain="2" bookref="NG p.224"/>
-	<TALENTKNACK name="Beauty of Bloodshed" basename="Thread Weaving" limitation="Art Weaving" minrank="7" strain="4" bookref="NG p.224"/>
-	<TALENTKNACK name="Bluffing Dive" basename="Dive Attack" minrank="9" strain="2" bookref="NG p.224"/>
-	<TALENTKNACK name="Body Armor" basename="Body Control" minrank="9" strain="1" bookref="NG p.224"/>
-	<TALENTKNACK name="Brandmark Servant" basename="Detect Influence" minrank="7" strain="2" bookref="NG p.224"/>
-	<TALENTKNACK name="Break Lock" basename="Lock Picking" minrank="6" strain="2" bookref="NG p.225"/>
-	<TALENTKNACK name="Broadside" basename="Pilot Boat" minrank="8" strain="4" bookref="NG p.225"/>
-	<TALENTKNACK name="Clay Blend" basename="Clay Skin" minrank="8" strain="2 (s.text)" bookref="NG p.225"/>
-	<TALENTKNACK name="Collective Beating" basename="Hoard Blows" minrank="9" strain="1 (s.text)" bookref="NG p.225"/>
-	<TALENTKNACK name="Cover" basename="Avoid Blow" minrank="6" strain="1" bookref="NG p.225"/>
-	<TALENTKNACK name="Dive" basename="Swimming" minrank="8" strain="2" bookref="NG p.225"/>
-	<TALENTKNACK name="Dragging Parry" basename="Cast Net" minrank="8" strain="2" bookref="NG p.225"/>
-	<TALENTKNACK name="Endure Heat" basename="Endure Cold" minrank="5" strain="0" bookref="NG p.226"/>
-	<TALENTKNACK name="Fake Thought" basename="Safe Thought" minrank="9" strain="2" bookref="NG p.226"/>
-	<TALENTKNACK name="Fast Grab" basename="Disarm" minrank="9" strain="2" bookref="NG p.226"/>
-	<TALENTKNACK name="Fast Talk" basename="Conversation" minrank="6" strain="2" bookref="NG p.226"/>
-	<TALENTKNACK name="Hiking" basename="Woodwalk" minrank="9" strain="3" bookref="NG p.226"/>
-	<TALENTKNACK name="History Skit" basename="Truth Skit" minrank="11" strain="4" bookref="NG p.226"/>
-	<TALENTKNACK name="Hoard Spells" basename="Hoard Blows" minrank="9" strain="1" bookref="NG p.226"/>
-	<TALENTKNACK name="Hoarded Haunting" basename="Hoard Blows" minrank="8" strain="2 (s.text)" bookref="NG p.226"/>
-	<TALENTKNACK name="Incite Monologue" basename="Engaging Banter" minrank="7" strain="3" bookref="NG p.226"/>
-	<TALENTKNACK name="Lasting Performance" basename="Performance" minrank="9" strain="2" bookref="NG p.226"/>
-	<TALENTKNACK name="Lay of the Land" basename="Lifesight" minrank="5" strain="1" bookref="NG p.226"/>
-	<TALENTKNACK name="Locate Horror" basename="Bear Mark" minrank="7" strain="4" bookref="NG p.226"/>
-	<TALENTKNACK name="Mind Reading" basename="Lip Reading" minrank="11" strain="1" bookref="NG p.227"/>
-	<TALENTKNACK name="Mystic Mind Armor" basename="Mind Armor" minrank="8" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Scorn" basename="Performance" minrank="7" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Tail Sweep" basename="Unarmed Combat" minrank="9" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Threatening Aura" basename="Power Mask" minrank="9" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Treetrap" basename="Thread Weaving" limitation="Forest Weaving" minrank="7" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Wind Shout" basename="Wind Dance" minrank="7" strain="2" bookref="NG p.227"/>
-	<TALENTKNACK name="Wood Wings" basename="Wood Skin" minrank="6" strain="1" bookref="NG p.227"/>
+<KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
+	<KNACK name="Backlash"            minrank="6"  strain="2"  bookref="NG p.224"><BASE type="talent" name="Tail Dance"/>                                </KNACK>
+	<KNACK name="Beauty of Bloodshed" minrank="7"  strain="4"  bookref="NG p.224"><BASE type="talent" name="Thread Weaving" limitation="Art Weaving"/>   </KNACK>
+	<KNACK name="Bluffing Dive"       minrank="9"  strain="2"  bookref="NG p.224"><BASE type="talent" name="Dive Attack"/>                               </KNACK>
+	<KNACK name="Body Armor"          minrank="9"  strain="1"  bookref="NG p.224"><BASE type="talent" name="Body Control"/>                              </KNACK>
+	<KNACK name="Brandmark Servant"   minrank="7"  strain="2"  bookref="NG p.224"><BASE type="talent" name="Detect Influence"/>                          </KNACK>
+	<KNACK name="Break Lock"          minrank="6"  strain="2"  bookref="NG p.225"><BASE type="talent" name="Lock Picking"/>                              </KNACK>
+	<KNACK name="Broadside"           minrank="8"  strain="4"  bookref="NG p.225"><BASE type="talent" name="Pilot Boat"/>                                </KNACK>
+	<KNACK name="Clay Blend"          minrank="8"  strain="2+" bookref="NG p.225"><BASE type="talent" name="Clay Skin"/>                                 </KNACK>
+	<KNACK name="Collective Beating"  minrank="9"  strain="1+" bookref="NG p.225"><BASE type="talent" name="Hoard Blows"/>                               </KNACK>
+	<KNACK name="Cover"               minrank="6"  strain="1"  bookref="NG p.225"><BASE type="talent" name="Avoid Blow"/>                                </KNACK>
+	<KNACK name="Dive"                minrank="8"  strain="2"  bookref="NG p.225"><BASE type="talent" name="Swimming"/>                                  </KNACK>
+	<KNACK name="Dragging Parry"      minrank="8"  strain="2"  bookref="NG p.225"><BASE type="talent" name="Cast Net"/>                                  </KNACK>
+	<KNACK name="Endure Heat"         minrank="5"  strain="0"  bookref="NG p.226"><BASE type="talent" name="Endure Cold"/>                               </KNACK>
+	<KNACK name="Fake Thought"        minrank="9"  strain="2"  bookref="NG p.226"><BASE type="talent" name="Safe Thought"/>                              </KNACK>
+	<KNACK name="Fast Grab"           minrank="9"  strain="2"  bookref="NG p.226"><BASE type="talent" name="Disarm"/>                                    </KNACK>
+	<KNACK name="Fast Talk"           minrank="6"  strain="2"  bookref="NG p.226"><BASE type="talent" name="Conversation"/>                              </KNACK>
+	<KNACK name="Hiking"              minrank="9"  strain="3"  bookref="NG p.226"><BASE type="talent" name="Woodwalk"/>                                  </KNACK>
+	<KNACK name="History Skit"        minrank="11" strain="4"  bookref="NG p.226"><BASE type="talent" name="Truth Skit"/>                                </KNACK>
+	<KNACK name="Hoard Spells"        minrank="9"  strain="1"  bookref="NG p.226"><BASE type="talent" name="Hoard Blows"/>                               </KNACK>
+	<KNACK name="Hoarded Haunting"    minrank="8"  strain="2+" bookref="NG p.226"><BASE type="talent" name="Hoard Blows"/>                               </KNACK>
+	<KNACK name="Incite Monologue"    minrank="7"  strain="3"  bookref="NG p.226"><BASE type="talent" name="Engaging Banter"/>                           </KNACK>
+	<KNACK name="Lasting Performance" minrank="9"  strain="2"  bookref="NG p.226"><BASE type="talent" name="Performance"/>                               </KNACK>
+	<KNACK name="Lay of the Land"     minrank="5"  strain="1"  bookref="NG p.226"><BASE type="talent" name="Lifesight"/>                                 </KNACK>
+	<KNACK name="Locate Horror"       minrank="7"  strain="4"  bookref="NG p.226"><BASE type="talent" name="Bear Mark"/>                                 </KNACK>
+	<KNACK name="Mind Reading"        minrank="11" strain="1"  bookref="NG p.227"><BASE type="talent" name="Lip Reading"/>                               </KNACK>
+	<KNACK name="Mystic Mind Armor"   minrank="8"  strain="2"  bookref="NG p.227"><BASE type="talent" name="Mind Armor"/>                                </KNACK>
+	<KNACK name="Scorn"               minrank="7"  strain="2"  bookref="NG p.227"><BASE type="talent" name="Performance"/>                               </KNACK>
+	<KNACK name="Tail Sweep"          minrank="9"  strain="2"  bookref="NG p.227"><BASE type="talent" name="Unarmed Combat"/>                            </KNACK>
+	<KNACK name="Threatening Aura"    minrank="9"  strain="2"  bookref="NG p.227"><BASE type="talent" name="Power Mask"/>                                </KNACK>
+	<KNACK name="Treetrap"            minrank="7"  strain="2"  bookref="NG p.227"><BASE type="talent" name="Thread Weaving" limitation="Forest Weaving"/></KNACK>
+	<KNACK name="Wind Shout"          minrank="7"  strain="2"  bookref="NG p.227"><BASE type="talent" name="Wind Dance"/>                                </KNACK>
+	<KNACK name="Wood Wings"          minrank="6"  strain="1"  bookref="NG p.227"><BASE type="talent" name="Wood Skin"/>                                 </KNACK>
 </KNACKS>
