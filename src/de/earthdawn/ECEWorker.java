@@ -780,6 +780,7 @@ public class ECEWorker {
 		String limitation = "";
 		if( talent.getLIMITATION().size()>0 ) limitation = talent.getLIMITATION().get(0);
 		for( KNACKType knack : talent.getKNACK() ) {
+			boolean knackstatsupdated=false;
 			for( KNACKBASEType k : PROPERTIES.getKnacksByName(knack.getName()) ) {
 				for( KNACKBASECAPABILITYType base : k.getBASE() ) {
 					String lim = base.getLimitation();
@@ -791,10 +792,12 @@ public class ECEWorker {
 						knack.setBookref(k.getBookref());
 						knack.setMinrank(k.getMinrank());
 						knack.setStrain(k.getStrain());
-					} else {
-						errorout.println("The knack '"+knack.getName()+"' was learned for the talent '"+talentname+"', but should be learned for talent '"+k.getName()+"'. Will not enforce knack default values!");
+						knackstatsupdated=true;
 					}
 				}
+			}
+			if( ! knackstatsupdated ) {
+				errorout.println("The knack '"+knack.getName()+"' learned for the talent '"+talentname+" ("+limitation+")', but not found in this combination. Will not enforce knack default values!");
 			}
 		}
 	}

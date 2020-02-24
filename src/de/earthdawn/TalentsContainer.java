@@ -6,7 +6,9 @@ import java.util.Map;
 import java.util.List;
 
 import de.earthdawn.data.DISCIPLINEType;
+import de.earthdawn.data.RANKType;
 import de.earthdawn.data.TALENTType;
+import java.util.LinkedList;
 
 public class TalentsContainer {
 	public enum TalentKind { DIS, OPT, FRE };
@@ -33,8 +35,19 @@ public class TalentsContainer {
 		return getTalents(TalentKind.DIS);
 	}
 	public List<TALENTType> getOptionaltalents() {
-		return getTalents(TalentKind.OPT);
+		List<TALENTType> tals = getTalents(TalentKind.OPT);
+		// Optional talents with rank 0 are not learned and will be removed.
+		List<TALENTType> remove = new LinkedList<>();
+		for( TALENTType t : tals ) {
+			RANKType rank = t.getRANK();
+			if( rank == null || rank.getRank() < 1 ) {
+				remove.add(t);
+			}
+		}
+		tals.removeAll(remove);
+		return tals;
 	}
+
 	public List<TALENTType> getFreetalents() {
 		return getTalents(TalentKind.FRE);
 	}
@@ -44,9 +57,10 @@ public class TalentsContainer {
 	public List<TALENTType> getAllTalents() {
 		List<TALENTType> result = new ArrayList<TALENTType>();
 		for( TalentKind e : TalentKind.values() ) {
-			List<TALENTType> t = talents.get(e);
-			if( t == null ) continue;
-			result.addAll(t);
+			List<TALENTType> t;
+			if( e == TalentKind.OPT ) t = getOptionaltalents();
+			else  t = talents.get(e);
+			if( t != null ) result.addAll(t);
 		}
 		return result;
 	}
