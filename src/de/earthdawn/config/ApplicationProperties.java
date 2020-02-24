@@ -52,7 +52,7 @@ import de.earthdawn.ui2.EDMainWindow;
 public class ApplicationProperties {
 
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
-	private static List<CAPABILITIES> CAPABILITIES;
+	private static Map<ECERulesetLanguage,CAPABILITIES> CAPABILITIES;
 	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
 	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
 	private static Map<RulesetversionType,List<TRANSLATIONType>> NAMEGIVERTRANSLATIONS;
@@ -268,10 +268,12 @@ public class ApplicationProperties {
 	}
 
 	public ECECapabilities getCapabilities() {
-		for( CAPABILITIES c : CAPABILITIES ) {
-			if( (new ECERulesetLanguage(c.getRulesetversion(),c.getLang())).equals(RULESETLANGUAGE) ) return new ECECapabilities(c.getSKILLOrTALENTOrDEVOTION());
+		CAPABILITIES c = CAPABILITIES.get(RULESETLANGUAGE);
+		if( c == null ) {
+			c = new CAPABILITIES();
+			CAPABILITIES.put(RULESETLANGUAGE,c);
 		}
-		return new ECECapabilities();
+		return new ECECapabilities(c.getSKILLOrTALENTOrDEVOTION(),getKnacks());
 	}
 
 	public Map<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
@@ -808,19 +810,18 @@ public class ApplicationProperties {
 			// capabilities laden
 			// --- Bestimmen aller Dateien im Unterordner 'capabilities'
 			// --- Einlesen der Dateien
-			CAPABILITIES=new ArrayList<CAPABILITIES>();
+			CAPABILITIES=new TreeMap<>();
 			for(Path capa : selectallxmlfiles(new File(CONFIGDIR,"capabilities").toPath())) {
 				System.out.println("Reading config file: " + capa.toString());
 				CAPABILITIES c1 = (CAPABILITIES) unmarshaller.unmarshal(capa.toFile());
 				if( c1 == null ) { System.out.println(" parse error."); continue; }
-				boolean notfound=true;
-				for( CAPABILITIES c2 : CAPABILITIES ) {
-					if( c2.getLang().equals(c1.getLang()) && c2.getRulesetversion().equals(c1.getRulesetversion()) ){
-						notfound=false;
-						c2.getSKILLOrTALENTOrDEVOTION().addAll(c1.getSKILLOrTALENTOrDEVOTION());
-					}
+				ECERulesetLanguage rsl=new ECERulesetLanguage(c1.getRulesetversion(),c1.getLang());
+				CAPABILITIES c2 = CAPABILITIES.get(rsl);
+				if( c2 == null ) {
+					CAPABILITIES.put(rsl,c1);
+				} else {
+					c2.getSKILLOrTALENTOrDEVOTION().addAll(c1.getSKILLOrTALENTOrDEVOTION());
 				}
-				if( notfound ) CAPABILITIES.add(c1);
 			}
 
 			// spells laden
@@ -1091,8 +1092,8 @@ public class ApplicationProperties {
 	}
 
 	private void checktranslation() {
-		for( CAPABILITIES c : CAPABILITIES ) {
-			ECERulesetLanguage rl = new ECERulesetLanguage(c.getRulesetversion(),c.getLang());
+		for( Map.Entry<ECERulesetLanguage, CAPABILITIES> c : CAPABILITIES.entrySet() ) {
+			ECERulesetLanguage rl = c.getKey();
 			Map<String,List<TranslationlabelType>> translation = new TreeMap<String,List<TranslationlabelType>>();
 			Map<String,Integer> count = new TreeMap<String,Integer>();
 					for( TRANSLATIONType i : TRANSLATIONS.get(rl.getRulesetversion()).getCAPABILITY() ) {
@@ -1103,7 +1104,7 @@ public class ApplicationProperties {
 							}
 						}
 			}
-			for( JAXBElement<?> t : c.getSKILLOrTALENTOrDEVOTION() ) {
+			for( JAXBElement<?> t : c.getValue().getSKILLOrTALENTOrDEVOTION() ) {
 				String name;
 				if( t.getName().getLocalPart().equals("DEVOTION") ) {
 					name = ((DEVOTIONCAPABILITYType)(t.getValue())).getName();

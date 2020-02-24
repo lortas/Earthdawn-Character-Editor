@@ -60,7 +60,7 @@ public class JoinCapabilities {
 				File inFile = new File(args[i]);
 				System.out.println("Reading Capabilities from "+inFile.getCanonicalFile());
 				CAPABILITIES capabilities = (CAPABILITIES) u.unmarshal(inFile);
-				ECECapabilities caps = new ECECapabilities(capabilities.getSKILLOrTALENTOrDEVOTION());
+				ECECapabilities caps = new ECECapabilities(capabilities.getSKILLOrTALENTOrDEVOTION(),null);
 				if( language == null ) language = capabilities.getLang();
 				else if( ! capabilities.getLang().equals(language) ) System.err.println("Languages are not identical: '"+language.value()+"'!='"+capabilities.getLang().value()+"'");
 				for( CAPABILITYType t : caps.getTalents() ) {
