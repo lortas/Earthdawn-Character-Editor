@@ -457,12 +457,16 @@
 
 <xsl:template name="knacks">
 	<xsl:if test="//edt:KNACK">
+		<xsl:variable name="knackbloodsum" select="sum(//edt:KNACK/@blood)"/>
 		<div class="edSubHeader" style="text-align:left"><xsl:value-of select="$translations/tra:TEXT[@name='knacks']/tra:LABEL[@lang=$lang]"/>:</div>
 		<table width="100%">
 			<thead><tr>
 				<td class="edHeaderCell" style="text-align: right;">Name</td>
 				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='action']/tra:LABEL[@lang=$lang]"/></td>
 				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='strain']/tra:LABEL[@lang=$lang]"/></td>
+				<xsl:if test="$knackbloodsum > 0">
+					<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='blooddamage']/tra:LABEL[@lang=$lang]"/></td>
+				</xsl:if>
 				<td class="edHeaderCell">Attr.</td>
 				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='rank']/tra:LABEL[@lang=$lang]"/></td>
 				<td class="edHeaderCell"><xsl:value-of select="$translations/tra:TEXT[@name='viatalent']/tra:LABEL[@lang=$lang]"/></td>
@@ -478,6 +482,9 @@
 						</xsl:choose>
 					</td>
 					<td class="edCapabCell"><xsl:value-of select="@strain"/></td>
+					<xsl:if test="$knackbloodsum > 0">
+						<td class="edCapabCell"><xsl:value-of select="@blood"/></td>
+					</xsl:if>
 					<td class="edCapabCell"><xsl:value-of select="@attribute"/></td>
 					<xsl:apply-templates select="../edt:RANK"/>
 					<td class="edCapabCell"><xsl:value-of select="../@name"/></td>
