@@ -32,9 +32,9 @@
 				<xs:attribute name="name" type="xs:string" default="*"/>
 				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
-	<xs:complexType name="KNACKBASE_type">
+	<xs:complexType name="KNACKDEFINITION_type">
 		<xs:complexContent>
-			<xs:extension base="edt:KNACK_type">
+			<xs:extension base="edt:KNACKBASE_type">
 				<xs:sequence>
 					<xs:element maxOccurs="unbounded" minOccurs="1" name="BASE" type="KNACKBASECAPABILITY_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="KNACK" type="KNACKOTHERKNACK_type"/>
@@ -50,7 +50,7 @@
 	<xs:element name="KNACKS">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="KNACK" type="KNACKBASE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KNACK" type="KNACKDEFINITION_type"/>
 			</xs:sequence>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>
