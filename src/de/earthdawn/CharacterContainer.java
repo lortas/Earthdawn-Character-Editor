@@ -61,6 +61,8 @@ import de.earthdawn.config.ECECharacteristics;
 import de.earthdawn.data.*;
 import de.earthdawn.event.CharChangeRefresh;
 import de.earthdawn.namegenerator.NameGenerator;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
@@ -735,23 +737,11 @@ public class CharacterContainer extends CharChangeRefresh {
 		for( DISCIPLINEType discipline : getDisciplines() ) {
 			if( ! discipline.getName().equals(disciplin) ) continue;
 			TalentsContainer alltalents = new TalentsContainer(discipline);
-			for (TALENTType talent : alltalents.getDisciplinetalents()) {
+			for (TALENTType talent : alltalents.getAllTalents()) {
 				if ( talent.getName().equals(searchTalent)) return talent;
 			}
-			List<TALENTType> optionaltalents = alltalents.getOptionaltalents();
-			List<TALENTType> remove = new ArrayList<TALENTType>();
-			TALENTType result = null;
-			for( TALENTType talent : optionaltalents ) {
-				RANKType rank = talent.getRANK();
-				if( (rank == null) || (rank.getRank() < 1) ) {
-					remove.add(talent);
-					continue;
-				}
-				if( talent.getName().equals(searchTalent) ) result=talent;
-			}
-			optionaltalents.removeAll(remove);
-			if( result != null ) return result;
 		}
+		System.err.println("Character does not have learned the talent '"+searchTalent+"' by the discipline '"+disciplin+"'");
 		// Not found
 		return null;
 	}
@@ -1008,14 +998,7 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public static String getFullTalentname(KNACKBASEType knack) {
-		String name = knack.getName();
-		// Falls es das DurabilityTalent ist, dann ignoriere die Limitationsangabe
-		if( name.equals(durabilityName) ) return durabilityName;
-
-		String limitation = knack.getLimitation();
-		if( limitation == null ) return name;
-		if( limitation.isEmpty() ) return name;
-		return name + " : "+limitation;
+		return knack.getName();
 	}
 
 	public List<TALENTABILITYType> getUnusedOptionalTalents(DISCIPLINE disciplineDefinition, int talentCircleNr) {
@@ -1183,37 +1166,62 @@ public class CharacterContainer extends CharChangeRefresh {
 			if( disciplineDefinition == null ) continue;
 			int disciplineCircleNr = discipline.getCircle();
 			int circlenr=0;
-			Iterator<DISCIPLINECIRCLEType> circledefs=disciplineDefinition.getCIRCLE().iterator();
-			discipline.getFREETALENT().clear();
-			while(true) {
+			// select all Freetalents.
+			List<TALENTABILITYType> freetalents=new LinkedList<>();
+			for( DISCIPLINECIRCLEType circledef : disciplineDefinition.getCIRCLE() ) {
 				circlenr++;
 				if( circlenr > disciplineCircleNr ) break;
-				if( ! circledefs.hasNext() ) break;
-				DISCIPLINECIRCLEType disciplineCircleDefinition = circledefs.next();
-				for( TALENTABILITYType freetalent : disciplineCircleDefinition.getFREETALENT()) {
-					boolean toBeInsert=true;
-					// Manche Freien Talente können ander freie Talente ersetzen.
-					// Prüfe, ob ein anderes freies Talent ersetzt werden soll.
-					String replace=freetalent.getReplace();
-					if( ! replace.isEmpty() ) {
-						for( TALENTType tal : discipline.getFREETALENT () ) {
-							if( tal.getName().equals(replace)) {
-								tal.setName(freetalent.getName());
-								toBeInsert=false;
-								break;
+				for( TALENTABILITYType tnew : circledef.getFREETALENT() ) {
+					String name = tnew.getReplace();
+					String lim = tnew.getLimitation();
+					List<TALENTABILITYType> remove = new LinkedList<>();
+					for( TALENTABILITYType told : freetalents ) {
+						if( told.getName().equals(name) && told.getLimitation().equals(lim)) {
+							// If there is a replacment drop the old entry
+							remove.add(told);
+						}
+					}
+					freetalents.removeAll(remove);
+					freetalents.add(tnew);
+				}
+			}
+			// Search for freetalents which are already present
+			List<TALENTType> removeOld = new LinkedList<>();
+			for( TALENTType freetalent : discipline.getFREETALENT() ) {
+				String[] limitations = freetalent.getLIMITATION().toArray(new String[0]);
+				if( limitations.length == 0) limitations=new String[]{""};
+				List<TALENTABILITYType> removeNew = new LinkedList<>();
+				for( TALENTABILITYType f : freetalents ) {
+					boolean exists=false;
+					for( String l : limitations ) {
+						if( l.isEmpty() || f.getLimitation().equals(l) ) {
+							if( freetalent.getName().equals(f.getReplace()) ) {
+								// Some free talents may replaced by other free talents
+								freetalent.setName(f.getName());
+								exists=true;
+							} else if( freetalent.getName().equals(f.getName()) ) {
+								exists=true;
 							}
 						}
 					}
-					// Kein Talent ist ersetzt worden. Fünge das neue Freie Talent der liste der Freien Talente hinzu.
-					if( toBeInsert ) {
-						TALENTType newTalent = new TALENTType();
-						newTalent.setName(freetalent.getName());
-						String limitation = freetalent.getLimitation();
-						if( !limitation.isEmpty() ) newTalent.getLIMITATION().add(limitation);
-						newTalent.setCircle(circlenr);
-						discipline.getFREETALENT().add(newTalent);
-					}
+					if( exists ) removeNew.add(f);
 				}
+				if( removeNew.isEmpty() ) {
+					// We did not find an free talent definition for an existing free talent.
+					removeOld.add(freetalent);
+				} else {
+					freetalents.removeAll(removeNew);
+				}
+			}
+			discipline.getFREETALENT().removeAll(removeOld);
+			// Now insert all missing freetalents
+			for( TALENTABILITYType f : freetalents ) {
+				TALENTType newTalent = new TALENTType();
+				newTalent.setName(f.getName());
+				String limitation = f.getLimitation();
+				if( !limitation.isEmpty() ) newTalent.getLIMITATION().add(limitation);
+				newTalent.setCircle(circlenr);
+				discipline.getFREETALENT().add(newTalent);
 			}
 		}
 	}
@@ -1415,38 +1423,24 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
-	public boolean hasKnackLearned(KNACKBASEType knack) {
-		String knackName = knack.getName();
-		String knackLimitation = knack.getLimitation();
-		boolean noKnackLimitation = knackLimitation.isEmpty();
+	public KNACKType[] getKnacksByName(String knackname) {
+		List<KNACKType> result = new LinkedList<>();
 		for( TalentsContainer talents : getAllTalents() ) {
 			for( TALENTType talent : talents.getAllTalents() ) {
-				boolean matchLimitation=false;
-				if( noKnackLimitation ) matchLimitation=true;
-				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
-				if( matchLimitation ) for( KNACKType k : talent.getKNACK() ) {
-					if( k.getName().equals(knackName) ) return true;
+				for( KNACKType k : talent.getKNACK() ) {
+					if( k.getName().equals(knackname) ) result.add(k);
 				}
 			}
 		}
-		return false;
+		return result.toArray(new KNACKType[0]);
 	}
 
-	public void removeKnack(KNACKBASEType knack) {
-		String knackName = knack.getName();
-		String knackLimitation = knack.getLimitation();
-		boolean noKnackLimitation = knackLimitation.isEmpty();
+	// Works only, if the list of knacks are the same objects to be removed.
+	// Use getKnacksByName to get the knacks to select from to be deleted.
+	public void removeKnack(KNACKType[] knacks) {
 		for( TalentsContainer talents : getAllTalents() ) {
 			for( TALENTType talent : talents.getAllTalents() ) {
-				boolean matchLimitation=false;
-				if( noKnackLimitation ) matchLimitation=true;
-				else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(knackLimitation);
-				if( matchLimitation ) {
-					List<KNACKType> talentknacks = talent.getKNACK();
-					List<KNACKType> remove = new ArrayList<KNACKType>();
-					for( KNACKType k : talentknacks ) if( k.getName().equals(knackName) ) remove.add(k);
-					talentknacks.removeAll(remove);
-				}
+				talent.getKNACK().removeAll(Arrays.asList(knacks));
 			}
 		}
 	}
@@ -2203,27 +2197,12 @@ public class CharacterContainer extends CharChangeRefresh {
 		unconsciousness.setAdjustment(unconsciousness.getAdjustment()-itemBloodDamge);
 	}
 
-	public void insertKnack(KNACKBASEType knack) {
-		String limitation=knack.getLimitation();
-		String knackname = knack.getName();
-		boolean noLimitation=limitation.isEmpty();
-		for( TALENTType talent : getTalentByName(knack.getBasename()) ) {
-			boolean matchLimitation=false;
-			if( noLimitation ) matchLimitation=true;
-			else if( talent.getLIMITATION().size()>0 ) matchLimitation=talent.getLIMITATION().get(0).equals(limitation);
-			if( matchLimitation ) {
-				List<KNACKType> talentknacks = talent.getKNACK();
-				for( KNACKType k : talentknacks ) {
-					if( k.getName().equals(knackname) ) return;
-				}
-				KNACKType k = new KNACKType();
-				k.setName(knackname);
-				k.setMinrank(knack.getMinrank());
-				k.setStrain(knack.getStrain());
-				k.setBookref(knack.getBookref());
-				talentknacks.add(k);
-				return;
-			}
+	public void insertKnack(KNACKType knack, String disciplinename, String talentname) {
+		TALENTType talent = getTalentByDisciplinAndName(disciplinename, talentname);
+		if( talent == null ) {
+			System.err.println( "No talent '"+talentname+"' found within discipline '"+disciplinename+"' to insert knack '"+knack.getName()+"'");
+		} else {
+			talent.getKNACK().add(knack);
 		}
 	}
 

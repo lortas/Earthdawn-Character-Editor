@@ -52,7 +52,7 @@ import de.earthdawn.ui2.EDMainWindow;
 public class ApplicationProperties {
 
     /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
-	private static List<CAPABILITIES> CAPABILITIES;
+	private static Map<ECERulesetLanguage,CAPABILITIES> CAPABILITIES;
 	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
 	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
 	private static Map<RulesetversionType,List<TRANSLATIONType>> NAMEGIVERTRANSLATIONS;
@@ -268,10 +268,12 @@ public class ApplicationProperties {
 	}
 
 	public ECECapabilities getCapabilities() {
-		for( CAPABILITIES c : CAPABILITIES ) {
-			if( (new ECERulesetLanguage(c.getRulesetversion(),c.getLang())).equals(RULESETLANGUAGE) ) return new ECECapabilities(c.getSKILLOrTALENT());
+		CAPABILITIES c = CAPABILITIES.get(RULESETLANGUAGE);
+		if( c == null ) {
+			c = new CAPABILITIES();
+			CAPABILITIES.put(RULESETLANGUAGE,c);
 		}
-		return new ECECapabilities();
+		return new ECECapabilities(c.getSKILLOrTALENTOrDEVOTION(),getKnacks());
 	}
 
 	public Map<String,TALENTABILITYType> getTalentsByCircle(int maxcirclenr) {
@@ -303,24 +305,38 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	public List<KNACKBASEType> getTalentKnacks() {
+	public List<KNACKBASEType> getKnacks() {
 		KNACKS knacks = KNACKS.get(RULESETLANGUAGE);
 		if( knacks == null ) {
 			knacks = new KNACKS();
 		}
-		return knacks.getTALENTKNACK();
+		return knacks.getKNACK();
 	}
 
-	public List<KNACKBASEType> getTalentKnacks(String talent) {
+	public List<KNACKBASEType> getKnacksByName(String name) {
 		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
-		KNACKS knacks2 = KNACKS.get(RULESETLANGUAGE);
-		if( knacks2 == null ) {
-			knacks2 = new KNACKS();
-		}
-		for( KNACKBASEType knack : knacks2.getTALENTKNACK() ) {
-			if( knack.getBasename().equals(talent) ) knacks.add(knack);
+		for( KNACKBASEType knack : getKnacks() ) {
+			if( knack.getName().equals(name) ) knacks.add(knack);
 		}
 		return knacks;
+	}
+
+	public List<KNACKBASEType> getKnacks(CapabilitytypeType type, String name, String limitation) {
+		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
+		for( KNACKBASEType knack : getKnacks() ) {
+			for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+				if( ! base.getType().equals(type) ) continue;
+				if( ! base.getName().equals(name) ) continue;
+				if( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) {
+					knacks.add(knack);
+				}
+			}
+		}
+		return knacks;
+	}
+
+	public List<KNACKBASEType> getTalentKnacks(String talent,String limitation) {
+		return getKnacks(CapabilitytypeType.TALENT,talent,limitation);
 	}
 
 	// Liefert die Definition aller verfügbarer Zauber zurück.
@@ -522,11 +538,22 @@ public class ApplicationProperties {
 	public Map<String,String> getTranslationHealthAll() {
 		Map<String,String> result = new TreeMap<String,String>();
 		for( GENERALTEXTType health : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getHEALTH() ) {
-				for( TranslationlabelType label : health.getLABEL() ) {
-					if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
-						result.put(health.getName(), label.getValue());
-					}
+			for( TranslationlabelType label : health.getLABEL() ) {
+				if( label.getLang() == RULESETLANGUAGE.getLanguage() ) {
+					result.put(health.getName(), label.getValue());
 				}
+			}
+		}
+		return result;
+	}
+
+	public Map<SpellkindType,String[]> getTranslationSpellkindAll() {
+		Map<SpellkindType,String[]> result = new TreeMap<SpellkindType,String[]>();
+		for( NAMESPELLWEAVINGType spellweaving : TRANSLATIONS.get(RULESETLANGUAGE.getRulesetversion()).getSPELLWEAVING() ) {
+			if( spellweaving.getLang() != RULESETLANGUAGE.getLanguage() ) continue;
+			for( NAMESPELLKINDType spell : spellweaving.getSPELLKIND() ) {
+				result.put(spell.getType(),new String[]{spell.getAcronym(),spell.getWeaving()});
+			}
 		}
 		return result;
 	}
@@ -783,19 +810,18 @@ public class ApplicationProperties {
 			// capabilities laden
 			// --- Bestimmen aller Dateien im Unterordner 'capabilities'
 			// --- Einlesen der Dateien
-			CAPABILITIES=new ArrayList<CAPABILITIES>();
+			CAPABILITIES=new TreeMap<>();
 			for(Path capa : selectallxmlfiles(new File(CONFIGDIR,"capabilities").toPath())) {
 				System.out.println("Reading config file: " + capa.toString());
 				CAPABILITIES c1 = (CAPABILITIES) unmarshaller.unmarshal(capa.toFile());
 				if( c1 == null ) { System.out.println(" parse error."); continue; }
-				boolean notfound=true;
-				for( CAPABILITIES c2 : CAPABILITIES ) {
-					if( c2.getLang().equals(c1.getLang()) && c2.getRulesetversion().equals(c1.getRulesetversion()) ){
-						notfound=false;
-						c2.getSKILLOrTALENT().addAll(c1.getSKILLOrTALENT());
-					}
+				ECERulesetLanguage rsl=new ECERulesetLanguage(c1.getRulesetversion(),c1.getLang());
+				CAPABILITIES c2 = CAPABILITIES.get(rsl);
+				if( c2 == null ) {
+					CAPABILITIES.put(rsl,c1);
+				} else {
+					c2.getSKILLOrTALENTOrDEVOTION().addAll(c1.getSKILLOrTALENTOrDEVOTION());
 				}
-				if( notfound ) CAPABILITIES.add(c1);
 			}
 
 			// spells laden
@@ -890,8 +916,7 @@ public class ApplicationProperties {
 					knack = new KNACKS();
 					KNACKS.put(rsl, knack);
 				}
-				knack.getTALENTKNACK().addAll(k.getTALENTKNACK());
-				knack.getSKILLKNACK().addAll(k.getSKILLKNACK());
+				knack.getKNACK().addAll(k.getKNACK());
 			}
 
 			// itemstore laden
@@ -1067,8 +1092,8 @@ public class ApplicationProperties {
 	}
 
 	private void checktranslation() {
-		for( CAPABILITIES c : CAPABILITIES ) {
-			ECERulesetLanguage rl = new ECERulesetLanguage(c.getRulesetversion(),c.getLang());
+		for( Map.Entry<ECERulesetLanguage, CAPABILITIES> c : CAPABILITIES.entrySet() ) {
+			ECERulesetLanguage rl = c.getKey();
 			Map<String,List<TranslationlabelType>> translation = new TreeMap<String,List<TranslationlabelType>>();
 			Map<String,Integer> count = new TreeMap<String,Integer>();
 					for( TRANSLATIONType i : TRANSLATIONS.get(rl.getRulesetversion()).getCAPABILITY() ) {
@@ -1079,8 +1104,13 @@ public class ApplicationProperties {
 							}
 						}
 			}
-			for( JAXBElement<CAPABILITYType> t : c.getSKILLOrTALENT() ) {
-				String name = t.getValue().getName();
+			for( JAXBElement<?> t : c.getValue().getSKILLOrTALENTOrDEVOTION() ) {
+				String name;
+				if( t.getName().getLocalPart().equals("DEVOTION") ) {
+					name = ((DEVOTIONCAPABILITYType)(t.getValue())).getName();
+				} else {
+					name = ((CAPABILITYType)(t.getValue())).getName();
+				}
 				List<TranslationlabelType> labels = translation.get(name);
 				if( labels == null ) {
 					count.put(name, -1);

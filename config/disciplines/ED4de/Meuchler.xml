@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DISCIPLINE name="Dieb" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+<DISCIPLINE name="Meuchler" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
 	<DURABILITY value="5" circle="1"/>
 	<CIRCLE><!-- 1 -->
-		<OPTIONALTALENT name="Erster Eindruck"/>
 		<OPTIONALTALENT name="Hieb Ausweichen"/>
 		<OPTIONALTALENT name="Klettern"/>
-		<OPTIONALTALENT name="Nahkampfwaffen"/>
 		<OPTIONALTALENT name="Projektilwaffen"/>
+		<OPTIONALTALENT name="Fallen Entschärfen"/>
 		<OPTIONALTALENT name="Sprint"/>
-		<OPTIONALTALENT name="Überraschungsschlag"/>
+		<OPTIONALTALENT name="Taschendiebstahl"/>
 		<OPTIONALTALENT name="Verspotten"/>
+		<OPTIONALTALENT name="Waffenloser Kampf"/>
 		<OPTIONALTALENT name="Weitsprung"/>
 		<OPTIONALTALENT name="Wurfwaffen"/>
 		<FREETALENT name="Gefahrensinn"/>
 		<DISCIPLINETALENT name="Aufmerksamkeit"/>
-		<DISCIPLINETALENT name="Fadenweben" limitation="Diebweben"/>
+		<DISCIPLINETALENT name="Fadenweben" limitation="Meuchelweben"/>
 		<DISCIPLINETALENT name="Heimlicher Schritt"/>
-		<DISCIPLINETALENT name="Schloss Knacken"/>
-		<DISCIPLINETALENT name="Taschendiebstahl"/>
+		<DISCIPLINETALENT name="Nahkampfwaffen"/>
+		<DISCIPLINETALENT name="Überraschungsschlag"/>
 		<TALENTABILITY/>
-		<KARMA spend="Charismaproben beim Täuschen"/>
+		<KARMA spend="Initiativeproben"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<DISCIPLINETALENT name="Fallen Entschärfen"/>
+		<DISCIPLINETALENT name="Schloss Knacken"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<DISCIPLINETALENT name="Feilschen"/>
+		<DISCIPLINETALENT name="Mystische Verfolgung"/>
 		<TALENTABILITY/>
-		<KARMA spend="Initiativeproben"/>
+		<KARMA spend="Proben, um in mitten Namensgebern nicht aufzufallen"/>
 	</CIRCLE>
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Gegenstand Verbergen"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social"/>
+		<DEFENSE kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Erster Eindruck"/>
 		<OPTIONALTALENT name="Eleganter Abgang"/>
 		<OPTIONALTALENT name="Klingen Jonglieren"/>
-		<OPTIONALTALENT name="Mystische Verfolgung"/>
-		<OPTIONALTALENT name="Magische Maske"/>
+		<OPTIONALTALENT name="Schuld Abwälzen"/>
+		<OPTIONALTALENT name="Wortgeplänkel"/>
 		<OPTIONALTALENT name="Projektil Rufen"/>
-		<OPTIONALTALENT name="Schwachstelle Erkennen"/>
 		<OPTIONALTALENT name="Stimmen Imitieren"/>
 		<OPTIONALTALENT name="Totstellen"/>
 		<OPTIONALTALENT name="Untrüglicher Blick"/>
 		<OPTIONALTALENT name="Zweitwaffe"/>
-		<DISCIPLINETALENT name="Wortgeplänkel"/>
+		<DISCIPLINETALENT name="Schwachstelle Erkennen"/>
 		<TALENTABILITY/>
 		<KARMA spend="Angriffsproben bei Überraschung oder Toter Winkel"/>
 		<ABILITY>Schattenmantel</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 6 -->
-		<DISCIPLINETALENT name="Schuld Abwälzen"/>
+		<DISCIPLINETALENT name="Magische Maske"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
@@ -68,5 +68,5 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
-	<HALFMAGIC>Diebe können Halbmagie einsetzen, um Sicherheitsmaßnahmen zu bauen oder zu umgehen, die Diebstähle verhindern sollen, und um verschiedene Arten von Schließmechanismen zu erkennen.</HALFMAGIC>
+	<HALFMAGIC>Meuchler können Halbmagie einsetzen, um Sicherheitsmaßnahmen zu bauen oder zu umgehen, die Annähern an einen Namensgeber verhindern sollen, und um verschiedene Arten von Schließmechanismen zu erkennen.</HALFMAGIC>
 </DISCIPLINE>

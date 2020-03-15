@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS lang="de" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
+	<THREADITEM name="Zaga" weaventhreadrank="4" maxthreads="2" lpcostgrowth="1" spelldefense="13" effect="Erhöhrt die Verteitigungsfähigkeit des Charakters" weight="1" size="1" kind="amulet">
+		<edt:THREADRANK lpcost="100" keyknowledge="Name des Gegenstands" effect="Körperliche Verteitigung +1">
+			<edt:DEFENSE kind="physical"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="200" effect="Soziale Verteitigung +1">
+			<edt:DEFENSE kind="physical"/>
+			<edt:DEFENSE kind="social"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="300" effect="Hiebausweichen +1">
+			<edt:DEFENSE kind="physical"/>
+			<edt:DEFENSE kind="social"/>
+			<edt:TALENT name="Hieb Ausweichen"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK lpcost="500" effect="Körperliche Verteitigung +1">
+			<edt:DEFENSE kind="physical" bonus="2"/>
+			<edt:DEFENSE kind="social"/>
+			<edt:TALENT name="Hieb Ausweichen"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Thermail Schutz der Plage" lpcostgrowth="9" spelldefense="20" maxthreads="1" weaventhreadrank="4" kind="ring" weight="1" bookref="FanWork">
+		<edt:DESCRIPTION>massiver Ring aus reinem Gold mit in einander verschlungenen eingravierten Linie versehen. Auffällig ist, daß der Ring immer funkelt und das Sonnenlicht oder auch andere Lichtquellen in das Auge des Betrachters spiegelt. Durch diese Kombination aus ständigem Funkeln und seiner satten Goldfarbe sieht er sehr wertvoll aus.</edt:DESCRIPTION>
+		<edt:THREADRANK effect="Ignorieren von Wunden für 'Fibonacci viel' Überanstrengungsschaden pro Runde" keyknowledge="Name des Rings muss bekannt sein: 'Thermail Schutz der Plage'"/>
+		<edt:THREADRANK effect="Hieb Ausweichen erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Name der Erschafferin des Ringes: 'Mira'">
+			<edt:TALENT name="Hieb Ausweichen" bonus="2"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Eiserner Wille erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Idee der Erschaffung des Ringes: 'Schutz Vor der Plage, ohne ein Kaer zu benötigen'">
+			<edt:TALENT name="Eiserner Wille" bonus="3"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="3"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Zweiter Angriff erhält einen Bonus in Höhe des aktuellen Fadenranges" keyknowledge="Gegenleistung für die Hilfe bei der Erschaffung des Rings: 'Thermail oder einer von Thermails guten Freunden den Dieb ihrer Eier nennen und seine aktuellen Aufenthaltsort nennen. DEAD OR ALIVE'">
+			<edt:TALENT name="Eiserner Wille" bonus="4"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="4"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="4"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Jede natürliche Erholungsprobe heilt automatisch eine Wunde" keyknowledge="Name des Dracheneierdiebs: 'Uhl Denairastas'">
+			<edt:TALENT name="Eiserner Wille" bonus="5"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="5"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="5"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="-" keyknowledge="Name und Rasse der Person, die den Dracheneierdieb ausfindig gemacht hat: 'Eloxis, Troll'">
+			<edt:TALENT name="Eiserner Wille" bonus="6"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="6"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="6"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="-">
+			<edt:TALENT name="Eiserner Wille" bonus="7"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="7"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="7"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="-">
+			<edt:TALENT name="Eiserner Wille" bonus="8"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="8"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="8"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="-">
+			<edt:TALENT name="Eiserner Wille" bonus="9"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="9"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="9"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="-">
+			<edt:TALENT name="Eiserner Wille" bonus="10"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="10"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="10"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Etherwaffe, alle geführten Waffen werden für 4 Überanstregungsschaden (pro Waffe und Runde) zur Etherwaffe, d.h. nur Lebendiges kann dagegen Schutz bieten. (Achtung, nur die Waffe(n))" keyknowledge="Rasse des Dracheneierdiebs">
+			<edt:TALENT name="Eiserner Wille" bonus="11"/>
+			<edt:TALENT name="Hieb Ausweichen" bonus="11"/>
+			<edt:TALENT name="Zweiter Angriff" bonus="11"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Thread Stirnreif" lpcostgrowth="5" spelldefense="13" maxthreads="2" weaventhreadrank="3" weight="2" >
+		<edt:DESCRIPTION>Stirnreif, aus Bronze, ohne Verzierung</edt:DESCRIPTION>
+		<edt:THREADRANK effect="Initiative +1" keyknowledge="name of item">
+			<edt:INITIATIVE/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Initiative +1">
+			<edt:INITIATIVE count="2"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Initiative +1">
+			<edt:INITIATIVE count="3"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+	<THREADITEM name="Fadenring" lpcostgrowth="1" spelldefense="13" maxthreads="2" kind="ring" weight="1">
+		<edt:THREADRANK effect="Soziale Widerstandskraft +1" keyknowledge="Name des Gegenstands">
+			<edt:DEFENSE kind="social"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Magische Widerstandskraft +1">
+			<edt:DEFENSE kind="spell"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Soziale Widerstandskraft +1">
+			<edt:DEFENSE kind="social" bonus="2"/>
+		</edt:THREADRANK>
+		<edt:THREADRANK effect="Magische Widerstandskraft +1">
+			<edt:DEFENSE kind="spell" bonus="2"/>
+		</edt:THREADRANK>
+	</THREADITEM>
+</ITEMS>

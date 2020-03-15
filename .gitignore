@@ -8,3 +8,10 @@ EarthdawnCharacterEditor.jar
 EarthdawnCharacterEditor_java8.jar
 EarthdawnCharacterEditor.zip
 nbproject
+manifest.mf
+nbbuild.xml
+examples/*.html
+examples/*.pdf
+examples/earthdawncharacter.css
+examples/earthdawncharacter.xsd
+examples/earthdawncharacter.xsl

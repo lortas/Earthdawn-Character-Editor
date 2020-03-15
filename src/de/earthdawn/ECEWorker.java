@@ -36,7 +36,6 @@ public class ECEWorker {
 	public static ApplicationProperties PROPERTIES=ApplicationProperties.create();
 	public static final String durabilityTalentName = PROPERTIES.getDurabilityName();
 	public static final ECECapabilities capabilities = PROPERTIES.getCapabilities();
-	public static final List<KNACKBASEType> globalTalentKnackList = PROPERTIES.getTalentKnacks();
 	public static final String karmaritualName = PROPERTIES.getKarmaritualName();
 	public static OPTIONALRULES OptionalRule=PROPERTIES.getOptionalRules();
 	public static boolean OptionalRule_SpellLegendPointCost=OptionalRule.getSPELLLEGENDPOINTCOST().getUsed().equals(YesnoType.YES);
@@ -780,22 +779,25 @@ public class ECEWorker {
 		String talentname = talent.getName();
 		String limitation = "";
 		if( talent.getLIMITATION().size()>0 ) limitation = talent.getLIMITATION().get(0);
-		//Kleinster-Kreis-Angabe nur bei Knacks für Talente aus zweiter,dritter,... Disziplin relevant
 		for( KNACKType knack : talent.getKNACK() ) {
-			String knackname = knack.getName();
-			for( KNACKBASEType k : globalTalentKnackList ) {
-				String lim = k.getLimitation();
-				boolean nolim = lim.isEmpty();
-				if( k.getName().equals(knackname) &&(nolim||lim.equals(limitation))) {
-					if( k.getBasename().equals(talentname) ) {
+			boolean knackstatsupdated=false;
+			for( KNACKBASEType k : PROPERTIES.getKnacksByName(knack.getName()) ) {
+				for( KNACKBASECAPABILITYType base : k.getBASE() ) {
+					String lim = base.getLimitation();
+					boolean nolim = lim.isEmpty();
+					if( base.getType().equals(CapabilitytypeType.TALENT) && base.getName().equals(talentname) && (nolim||lim.equals(limitation))) {
+						knack.setAction(k.getAction());
+						knack.setAttribute(k.getAttribute());
+						knack.setBlood(k.getBlood());
 						knack.setBookref(k.getBookref());
 						knack.setMinrank(k.getMinrank());
 						knack.setStrain(k.getStrain());
-						break; // Wenn der Knack gefunden wurde, brauch nicht mehr weitergesucht werden
-					} else {
-						errorout.println("The knack '"+knackname+"' was learned for the talent '"+talentname+"', but should be learned for talent '"+k.getBasename()+"'. Will not enforce knack default values!");
+						knackstatsupdated=true;
 					}
 				}
+			}
+			if( ! knackstatsupdated ) {
+				errorout.println("The knack '"+knack.getName()+"' learned for the talent '"+talentname+" ("+limitation+")', but not found in this combination. Will not enforce knack default values!");
 			}
 		}
 	}

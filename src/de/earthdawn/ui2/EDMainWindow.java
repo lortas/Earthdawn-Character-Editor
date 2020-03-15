@@ -769,9 +769,8 @@ public class EDMainWindow {
 					order++;
 				} catch(IndexOutOfBoundsException e) {
 					String message = e.getLocalizedMessage();
-					if( message.startsWith("No Spells for the thread waving talent(s): ")) System.out.println(message);
-					else {
-						System.err.println(message);
+					System.out.println(message);
+					if( ! message.startsWith("No Spells for the thread waving talent(s): ")) {
 						e.printStackTrace();
 					}
 				}

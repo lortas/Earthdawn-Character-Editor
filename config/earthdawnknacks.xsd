@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/knack" xmlns="http://earthdawn.com/knack" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="KNACKRACE_type">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="KNACKBASECAPABILITY_type">
+				<xs:attribute name="type" type="edt:capabilitytype_type" use="required"/>
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="limitation" type="xs:string" default=""/>
+	</xs:complexType>
+	<xs:complexType name="KNACKDISCIPLINE_type">
+				<xs:attribute name="name" type="xs:string" default="*"/>
+				<xs:attribute name="circle" type="edt:unsigned_int" default="1"/>
+	</xs:complexType>
+	<xs:complexType name="KNACKATTRIBUTE_type">
+				<xs:attribute name="name" type="edt:ATTRIBUTE_name_type" use="required"/>
+				<xs:attribute name="min" type="edt:unsigned_int" default="1"/>
+				<xs:attribute name="max" type="edt:unsigned_int" default="0"/>
+	</xs:complexType>
+	<xs:complexType name="KNACKCAPABILITY_type">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="minrank" type="edt:unsigned_int" default="1"/>
+				<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
+	</xs:complexType>
+	<xs:complexType name="KNACKOTHERKNACK_type">
+				<xs:attribute name="name" type="xs:string" default="*"/>
+	</xs:complexType>
 	<xs:complexType name="KNACKBASE_type">
 		<xs:complexContent>
 			<xs:extension base="edt:KNACK_type">
-				<xs:attribute name="basename" type="xs:string" use="required"/>
-				<xs:attribute name="limitation" type="xs:string" default=""/>
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="1" name="BASE" type="KNACKBASECAPABILITY_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="KNACK" type="KNACKOTHERKNACK_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINE" type="KNACKDISCIPLINE_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="KNACKCAPABILITY_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="RACE" type="KNACKRACE_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ATTRIBUTE" type="KNACKATTRIBUTE_type"/>
+				</xs:sequence>
 				<xs:attribute name="skilluse" type="edt:unsigned_int" default="0"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -13,8 +44,7 @@
 	<xs:element name="KNACKS">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILLKNACK" type="KNACKBASE_type"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENTKNACK" type="KNACKBASE_type"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="KNACK" type="KNACKBASE_type"/>
 			</xs:sequence>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED3"/>

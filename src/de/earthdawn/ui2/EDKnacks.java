@@ -28,6 +28,15 @@ import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.KNACKBASEType;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.TALENTType;
+import de.earthdawn.data.RulesetversionType;
+import de.earthdawn.data.KNACKBASECAPABILITYType;
+import de.earthdawn.TalentsContainer;
+import de.earthdawn.data.KNACKATTRIBUTEType;
+import de.earthdawn.data.KNACKCAPABILITYType;
+import de.earthdawn.data.KNACKDISCIPLINEType;
+import de.earthdawn.data.KNACKOTHERKNACKType;
+import de.earthdawn.data.KNACKRACEType;
+import de.earthdawn.data.KNACKType;
 
 public class EDKnacks extends JPanel {
 	private static final long serialVersionUID = 3430848422226809963L;
@@ -115,10 +124,28 @@ class KnacksTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -2103405769857336996L;
 	private CharacterContainer character;
 	public final ApplicationProperties PROPERTIES = ApplicationProperties.create();
-	private String[] columnNames = {"Learned", "Knack Name", "Limitation", "Talent Name", "Rank", "Strain", "BookRef"};
+	private String[] columnNames = {"Learned", "Knack Name", "Attribute", "Rank", "Strain", "Talent", "Discipline", "BookRef"};
 
-	Map<String,KNACKBASEType> knacklist;
-	List<String> knacknames;
+	class KnackTableEntry {
+		public String disciplinename;
+		public String talentname;
+		public int disciplinecircle;
+		public KNACKType knack;
+		public KnackTableEntry(String disciplinename, String talentname, int disciplinecircle, KNACKBASEType knack) {
+			this.disciplinename=disciplinename;
+			this.talentname=talentname;
+			this.disciplinecircle=disciplinecircle;
+			this.knack=new KNACKType();
+			this.knack.setAction(knack.getAction());
+			this.knack.setAttribute(knack.getAttribute());
+			this.knack.setBlood(knack.getBlood());
+			this.knack.setBookref(knack.getBookref());
+			this.knack.setMinrank(knack.getMinrank());
+			this.knack.setName(knack.getName());
+			this.knack.setStrain(knack.getStrain());
+		}
+	}
+	List<KnackTableEntry> knacklist;
 
 	public KnacksTableModel(CharacterContainer character) {
 		super();
@@ -126,36 +153,67 @@ class KnacksTableModel extends AbstractTableModel {
 		generateLists();
 	}
 
-	public void generateLists(){
-		knacklist = new TreeMap<String,KNACKBASEType>();
-		for( DISCIPLINEType discipline : character.getDisciplines() ) {
-			for( TALENTType talent : discipline.getDISZIPLINETALENT() ) {
-				int talentrank=talent.getRANK().getRank()+2;
-				if( talent.getLIMITATION().size()<1 ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
-					}
-				} else for( String limitation : talent.getLIMITATION() ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
-					}
-				}
+	private List<KnackTableEntry> getKnacksForTalents(List <TALENTType> talents, DISCIPLINEType discipline, boolean isdisciplinetalent) {
+		List<KnackTableEntry> result = new ArrayList<>();
+		for( TALENTType talent : talents ) {
+			int talentrank=talent.getRANK().getRank();
+			// In ED3 discipline talents get knacks 2 ranks earlier.
+			if( isdisciplinetalent && character.getRulesetversion().equals(RulesetversionType.ED_3) ) talentrank += 2;
+			String[] talentlimitations = talent.getLIMITATION().toArray(new String[0]);
+			if( talentlimitations.length == 0 ) {
+				talentlimitations=new String[]{""};
 			}
-			for( TALENTType talent : discipline.getOPTIONALTALENT() ) {
-				int talentrank=talent.getRANK().getRank();
-				if( talent.getLIMITATION().size()<1 ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( knack.getLimitation().isEmpty() && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+			for( String limitation : talentlimitations ) {
+				for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName(),limitation) ) {
+					boolean match=( knack.getMinrank() <= talentrank );
+					if( ! match ) continue;
+					for( KNACKATTRIBUTEType attr : knack.getATTRIBUTE() ) {
+						int step=character.getAttributes().get(attr.getName()).getCurrentvalue();
+						if( step < attr.getMin() ) match=false;
+						if( step > attr.getMax() && attr.getMax() >= attr.getMin() ) match=false;
 					}
-				} else for( String limitation : talent.getLIMITATION() ) {
-					for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName()) ) {
-						if( (knack.getLimitation().isEmpty()||knack.getLimitation().equals(limitation)) && knack.getMinrank() <= talentrank ) knacklist.put(CharacterContainer.getFullTalentname(knack), knack);
+					if( ! match ) continue;
+					// If we have discipline limitations, they must match
+					if( knack.getDISCIPLINE().size()>0 ) match=false;
+					for( KNACKDISCIPLINEType dis : knack.getDISCIPLINE() ) {
+						if( (dis.getName().equals("*") || dis.getName().equals(discipline.getName())) && dis.getCircle() <= discipline.getCircle() ) match=true;
 					}
+					if( ! match ) continue;
+					// If we have other knacks requierd, they must match
+					if( knack.getKNACK().size()>0 ) match=false;
+					for( KNACKOTHERKNACKType k: knack.getKNACK() ) {
+						if( character.getKnacksByName(k.getName()).length>0 ) match=true;
+					}
+					if( ! match ) continue;
+					// If we have race requierd, they must match
+					if( knack.getRACE().size()>0 ) match=false;
+					for( KNACKRACEType r : knack.getRACE() ) {
+						if( character.getRace().getName().equals(r.getName()) ) match=true;
+					}
+					if( ! match ) continue;
+					// If we have additional talent requierd, they must match
+					if( knack.getTALENT().size()>0 ) match=false;
+					for( KNACKCAPABILITYType tal : knack.getTALENT() ) {
+						for( TALENTType t : character.getTalentByName(tal.getName()) ) {
+							int r=t.getRANK().getRank();
+							match=( r >= tal.getMinrank() && ( r <= tal.getMaxrank() || tal.getMaxrank() < tal.getMinrank() ) );
+						}
+					}
+					if( ! match ) continue;
+					result.add(new KnackTableEntry(discipline.getName(),talent.getName(),discipline.getCircle(),knack));
 				}
 			}
 		}
-		knacknames = new ArrayList<String>();
-		for( String name : new TreeSet<String>(knacklist.keySet()) ) knacknames.add(name);
+		return result;
+	}
+
+	public void generateLists(){
+		knacklist = new ArrayList<>();
+		for( DISCIPLINEType discipline : character.getDisciplines() ) {
+			knacklist.addAll(getKnacksForTalents(discipline.getDISZIPLINETALENT(),discipline, true));
+			knacklist.addAll(getKnacksForTalents(discipline.getOPTIONALTALENT(),discipline,  false));
+			knacklist.addAll(getKnacksForTalents(discipline.getFREETALENT(),discipline,      false));
+		}
 	}
 
 	public void setCharacter(CharacterContainer character) {
@@ -172,7 +230,7 @@ class KnacksTableModel extends AbstractTableModel {
 	}
 
 	public int getRowCount() {
-		return knacknames.size();
+		return knacklist.size();
 	}
 
 	public String getColumnName(int col) {
@@ -180,18 +238,19 @@ class KnacksTableModel extends AbstractTableModel {
 	}
 
 	public Object getValueAt(int row, int col) {
-		KNACKBASEType knack = knacklist.get(knacknames.get(row));
+		KnackTableEntry knackentry = knacklist.get(row);
 		switch (col) {
 			case 0:
 				if(character == null) return false;
-				else return character.hasKnackLearned(knack);
-			case 1: return knack.getName();
-			case 2: return knack.getLimitation();
-			case 3: return knack.getBasename();
-			case 4: return knack.getMinrank();
-			case 5: return knack.getStrain();
-			case 6: return knack.getBookref();
-			default : return new String("Error not defined");
+				else return character.getKnacksByName(knackentry.knack.getName()).length>0;
+			case 1: return knackentry.knack.getName();
+			case 2: return knackentry.knack.getAttribute();
+			case 3: return knackentry.knack.getMinrank();
+			case 4: return knackentry.knack.getStrain();
+			case 5: return knackentry.talentname;
+			case 6: return knackentry.disciplinename;
+			case 7: return knackentry.knack.getBookref();
+			default : return "Error not defined";
 		}
 	}
 
@@ -210,9 +269,10 @@ class KnacksTableModel extends AbstractTableModel {
 
 	public void setValueAt(Object value, int row, int col) {
 		if( character == null ) return;
-		KNACKBASEType knack = knacklist.get(knacknames.get(row));
-		if( character.hasKnackLearned(knack) ) character.removeKnack(knack);
-		else character.insertKnack(knack);
+		KnackTableEntry knack = knacklist.get(row);
+		KNACKType[] learnedKnacks = character.getKnacksByName(knack.knack.getName());
+		if( learnedKnacks.length>0 ) character.removeKnack(learnedKnacks);
+		else character.insertKnack(knack.knack,knack.disciplinename,knack.talentname);
 		character.refesh();
 		fireTableCellUpdated(row, 0);
 		fireTableCellUpdated(row, 1);

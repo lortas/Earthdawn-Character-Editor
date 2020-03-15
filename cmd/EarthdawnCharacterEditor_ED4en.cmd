@@ -1,12 +1,24 @@
-SET JAR=EarthdawnCharacterEditor.jar
+@echo off
 
-FOR /f tokens^=2-5^ delims^=.-_^" %%j IN ('java -version 2^>^&1') DO SET "JV=%%j%%k%%l%%m"
+java -version > nul 2>&1
 IF %ERRORLEVEL% NEQ 0 (
 	echo "no java found"
-	EXIT 1
-)
-IF %JV% LSS 110000 (
-	SET JAR=EarthdawnCharacterEditor_java8.jar
+	goto :end
 )
 
+for /f tokens^=2-5^ delims^=.-_^" %%j in ('java -version 2^>^&1') do (
+	SET /a "JV1=%%j"
+	SET /a "JV2=%%k"
+	SET /a "JV3=%%l"
+	SET /a "JV4=%%m"
+	goto :decide
+)
+
+:decide
+set JAR=EarthdawnCharacterEditor.jar
+IF %JV2% LSS 11 (
+	set JAR=EarthdawnCharacterEditor_java8.jar
+)
 java -jar %JAR% --rulesetversion ED4 --language en
+
+:end

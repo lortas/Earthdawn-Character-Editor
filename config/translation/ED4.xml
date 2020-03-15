@@ -67,12 +67,13 @@
 		<LABEL lang="de">Lesen/Schreiben</LABEL>
 	</LANGUAGESKILLREADWRITE>
 	<SPELLWEAVING lang="en">
-		<SPELLKIND type="elemental" weaving="Elementalism"/>
-		<SPELLKIND type="illusion" weaving="Illusionism"/>
-		<SPELLKIND type="nether" weaving="Nethermancy"/>
-		<SPELLKIND type="shamane" weaving="Shamanism"/>
-		<SPELLKIND type="sorcery" weaving="Sorcery"/>
-		<SPELLKIND type="wizard" weaving="Wizardry"/>
+		<SPELLKIND type="elemental" acronym="ele" weaving="Elementalism"/>
+		<SPELLKIND type="illusion"  acronym="ilu" weaving="Illusionism"/>
+		<SPELLKIND type="nether"    acronym="nth" weaving="Nethermancy"/>
+		<SPELLKIND type="shaman"    acronym="shm" weaving="Shamanism"/>
+		<SPELLKIND type="sorcery"   acronym="sor" weaving="Sorcery"/>
+		<SPELLKIND type="wizard"    acronym="wiz" weaving="Wizardry"/>
+		<SPELLKIND type="trickster" acronym="tri" weaving="Trickstry"/>
 		<SPELLELEMENT element="fire" acronym="fi" name="Fire"/>
 		<SPELLELEMENT element="water" acronym="w" name="Water"/>
 		<SPELLELEMENT element="undefined" acronym="-" name="Undefined"/>
@@ -93,12 +94,13 @@
 		<SPELLELEMENT element="fate" acronym="fa" name="Fate"/>
 	</SPELLWEAVING>
 	<SPELLWEAVING lang="de">
-		<SPELLKIND type="elemental" weaving="Elementarismus"/>
-		<SPELLKIND type="illusion" weaving="Illusionismus"/>
-		<SPELLKIND type="nether" weaving="Geisterbeschwörung"/>
-		<SPELLKIND type="shamane" weaving="Schamanismus"/>
-		<SPELLKIND type="sorcery" weaving="Hexerei"/>
-		<SPELLKIND type="wizard" weaving="Magie"/>
+		<SPELLKIND type="elemental" acronym="ele" weaving="Elementarismus"/>
+		<SPELLKIND type="illusion"  acronym="ilu" weaving="Illusionismus"/>
+		<SPELLKIND type="nether"    acronym="gei" weaving="Geisterbeschwörung"/>
+		<SPELLKIND type="shaman"    acronym="shm" weaving="Schamanismus"/>
+		<SPELLKIND type="sorcery"   acronym="hex" weaving="Hexerei"/>
+		<SPELLKIND type="wizard"    acronym="mag" weaving="Magie"/>
+		<SPELLKIND type="trickster" acronym="tri" weaving="Tricksen"/>
 		<SPELLELEMENT element="fire" acronym="fe" name="Feuer"/>
 		<SPELLELEMENT element="water" acronym="w" name="Wasser"/>
 		<SPELLELEMENT element="undefined" acronym="-" name="Undefiniert"/>
@@ -1388,6 +1390,10 @@
 		<LABEL lang="de">Zauber</LABEL>
 		<LABEL lang="en">Spells</LABEL>
 	</TEXT>
+	<TEXT name="openspells">
+		<LABEL lang="de">offene Zauber</LABEL>
+		<LABEL lang="en">Open Spells</LABEL>
+	</TEXT>
 	<TEXT name="karma">
 		<LABEL lang="de">Karma</LABEL>
 		<LABEL lang="en">Karma</LABEL>
@@ -1395,10 +1401,6 @@
 	<TEXT name="magicitems">
 		<LABEL lang="de">Magische Gegenstände</LABEL>
 		<LABEL lang="en">Magic Items</LABEL>
-	</TEXT>
-	<TEXT name="total">
-		<LABEL lang="de">Gesamt</LABEL>
-		<LABEL lang="en">Total</LABEL>
 	</TEXT>
 	<TEXT name="canspendkarmafor">
 		<LABEL lang="de">Karma bei</LABEL>

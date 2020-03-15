@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;choice maxOccurs="unbounded"&gt;
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}CAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}DEVOTIONCAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/choice&gt;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" /&gt;
  *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" /&gt;
@@ -44,34 +45,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "skillOrTALENT"
+    "skillOrTALENTOrDEVOTION"
 })
 @XmlRootElement(name = "CAPABILITIES", namespace = "http://earthdawn.com/capability")
 public class CAPABILITIES {
 
     @XmlElementRefs({
         @XmlElementRef(name = "SKILL", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "TALENT", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "DEVOTION", namespace = "http://earthdawn.com/capability", type = JAXBElement.class, required = false)
     })
-    protected List<JAXBElement<CAPABILITYType>> skillOrTALENT;
+    protected List<JAXBElement<?>> skillOrTALENTOrDEVOTION;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
     @XmlAttribute(name = "rulesetversion")
     protected RulesetversionType rulesetversion;
 
     /**
-     * Gets the value of the skillOrTALENT property.
+     * Gets the value of the skillOrTALENTOrDEVOTION property.
      *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the skillOrTALENT property.
+     * This is why there is not a <CODE>set</CODE> method for the skillOrTALENTOrDEVOTION property.
      *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSKILLOrTALENT().add(newItem);
+     *    getSKILLOrTALENTOrDEVOTION().add(newItem);
      * </pre>
      *
      *
@@ -79,14 +81,15 @@ public class CAPABILITIES {
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}
      * {@link JAXBElement }{@code <}{@link CAPABILITYType }{@code >}
+     * {@link JAXBElement }{@code <}{@link DEVOTIONCAPABILITYType }{@code >}
      *
      *
      */
-    public List<JAXBElement<CAPABILITYType>> getSKILLOrTALENT() {
-        if (skillOrTALENT == null) {
-            skillOrTALENT = new ArrayList<JAXBElement<CAPABILITYType>>();
+    public List<JAXBElement<?>> getSKILLOrTALENTOrDEVOTION() {
+        if (skillOrTALENTOrDEVOTION == null) {
+            skillOrTALENTOrDEVOTION = new ArrayList<JAXBElement<?>>();
         }
-        return this.skillOrTALENT;
+        return this.skillOrTALENTOrDEVOTION;
     }
 
     /**

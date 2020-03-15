@@ -8,9 +8,12 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -23,8 +26,14 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="KNACKBASE_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{http://earthdawn.com/datatypes}KNACK_type"&gt;
- *       &lt;attribute name="basename" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BASE" type="{http://earthdawn.com/knack}KNACKBASECAPABILITY_type" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="KNACK" type="{http://earthdawn.com/knack}KNACKOTHERKNACK_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/knack}KNACKDISCIPLINE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="TALENT" type="{http://earthdawn.com/knack}KNACKCAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="RACE" type="{http://earthdawn.com/knack}KNACKRACE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/knack}KNACKATTRIBUTE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
  *       &lt;attribute name="skilluse" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
@@ -34,68 +43,205 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "KNACKBASE_type", namespace = "http://earthdawn.com/knack")
+@XmlType(name = "KNACKBASE_type", namespace = "http://earthdawn.com/knack", propOrder = {
+    "base",
+    "knack",
+    "discipline",
+    "talent",
+    "race",
+    "attribute"
+})
 public class KNACKBASEType
     extends KNACKType
 {
 
-    @XmlAttribute(name = "basename", required = true)
-    protected String basename;
-    @XmlAttribute(name = "limitation")
-    protected String limitation;
+    @XmlElement(name = "BASE", required = true)
+    protected List<KNACKBASECAPABILITYType> base;
+    @XmlElement(name = "KNACK")
+    protected List<KNACKOTHERKNACKType> knack;
+    @XmlElement(name = "DISCIPLINE")
+    protected List<KNACKDISCIPLINEType> discipline;
+    @XmlElement(name = "TALENT")
+    protected List<KNACKCAPABILITYType> talent;
+    @XmlElement(name = "RACE")
+    protected List<KNACKRACEType> race;
+    @XmlElement(name = "ATTRIBUTE")
+    protected List<KNACKATTRIBUTEType> attribute;
     @XmlAttribute(name = "skilluse")
     protected Integer skilluse;
 
     /**
-     * Gets the value of the basename property.
+     * Gets the value of the base property.
      *
-     * @return
-     *     possible object is
-     *     {@link String }
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the base property.
      *
-     */
-    public String getBasename() {
-        return basename;
-    }
-
-    /**
-     * Sets the value of the basename property.
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBASE().add(newItem);
+     * </pre>
      *
-     * @param value
-     *     allowed object is
-     *     {@link String }
      *
-     */
-    public void setBasename(String value) {
-        this.basename = value;
-    }
-
-    /**
-     * Gets the value of the limitation property.
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKBASECAPABILITYType }
      *
-     * @return
-     *     possible object is
-     *     {@link String }
      *
      */
-    public String getLimitation() {
-        if (limitation == null) {
-            return "";
-        } else {
-            return limitation;
+    public List<KNACKBASECAPABILITYType> getBASE() {
+        if (base == null) {
+            base = new ArrayList<KNACKBASECAPABILITYType>();
         }
+        return this.base;
     }
 
     /**
-     * Sets the value of the limitation property.
+     * Gets the value of the knack property.
      *
-     * @param value
-     *     allowed object is
-     *     {@link String }
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the knack property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKNACK().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKOTHERKNACKType }
+     *
      *
      */
-    public void setLimitation(String value) {
-        this.limitation = value;
+    public List<KNACKOTHERKNACKType> getKNACK() {
+        if (knack == null) {
+            knack = new ArrayList<KNACKOTHERKNACKType>();
+        }
+        return this.knack;
+    }
+
+    /**
+     * Gets the value of the discipline property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the discipline property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDISCIPLINE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKDISCIPLINEType }
+     *
+     *
+     */
+    public List<KNACKDISCIPLINEType> getDISCIPLINE() {
+        if (discipline == null) {
+            discipline = new ArrayList<KNACKDISCIPLINEType>();
+        }
+        return this.discipline;
+    }
+
+    /**
+     * Gets the value of the talent property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the talent property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTALENT().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKCAPABILITYType }
+     *
+     *
+     */
+    public List<KNACKCAPABILITYType> getTALENT() {
+        if (talent == null) {
+            talent = new ArrayList<KNACKCAPABILITYType>();
+        }
+        return this.talent;
+    }
+
+    /**
+     * Gets the value of the race property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the race property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRACE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKRACEType }
+     *
+     *
+     */
+    public List<KNACKRACEType> getRACE() {
+        if (race == null) {
+            race = new ArrayList<KNACKRACEType>();
+        }
+        return this.race;
+    }
+
+    /**
+     * Gets the value of the attribute property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the attribute property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getATTRIBUTE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKATTRIBUTEType }
+     *
+     *
+     */
+    public List<KNACKATTRIBUTEType> getATTRIBUTE() {
+        if (attribute == null) {
+            attribute = new ArrayList<KNACKATTRIBUTEType>();
+        }
+        return this.attribute;
     }
 
     /**

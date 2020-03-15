@@ -14,46 +14,34 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for spellkind_type.
+ * <p>Java class for capabilitytype_type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="spellkind_type"&gt;
+ * &lt;simpleType name="capabilitytype_type"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="elemental"/&gt;
- *     &lt;enumeration value="illusion"/&gt;
- *     &lt;enumeration value="nether"/&gt;
- *     &lt;enumeration value="shaman"/&gt;
- *     &lt;enumeration value="sorcery"/&gt;
- *     &lt;enumeration value="trickster"/&gt;
- *     &lt;enumeration value="wizard"/&gt;
+ *     &lt;enumeration value="skill"/&gt;
+ *     &lt;enumeration value="talent"/&gt;
+ *     &lt;enumeration value="knack"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  *
  */
-@XmlType(name = "spellkind_type")
+@XmlType(name = "capabilitytype_type")
 @XmlEnum
-public enum SpellkindType {
+public enum CapabilitytypeType {
 
-    @XmlEnumValue("elemental")
-    ELEMENTAL("elemental"),
-    @XmlEnumValue("illusion")
-    ILLUSION("illusion"),
-    @XmlEnumValue("nether")
-    NETHER("nether"),
-    @XmlEnumValue("shaman")
-    SHAMAN("shaman"),
-    @XmlEnumValue("sorcery")
-    SORCERY("sorcery"),
-    @XmlEnumValue("trickster")
-    TRICKSTER("trickster"),
-    @XmlEnumValue("wizard")
-    WIZARD("wizard");
+    @XmlEnumValue("skill")
+    SKILL("skill"),
+    @XmlEnumValue("talent")
+    TALENT("talent"),
+    @XmlEnumValue("knack")
+    KNACK("knack");
     private final String value;
 
-    SpellkindType(String v) {
+    CapabilitytypeType(String v) {
         value = v;
     }
 
@@ -61,8 +49,8 @@ public enum SpellkindType {
         return value;
     }
 
-    public static SpellkindType fromValue(String v) {
-        for (SpellkindType c: SpellkindType.values()) {
+    public static CapabilitytypeType fromValue(String v) {
+        for (CapabilitytypeType c: CapabilitytypeType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
