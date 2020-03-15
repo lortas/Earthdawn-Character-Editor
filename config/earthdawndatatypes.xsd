@@ -212,6 +212,12 @@
 			<xs:enumeration value="master"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="prerequisitekind_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="requirement"/><!-- All elements marked with 'requirement' must be fullfilled. -->
+			<xs:enumeration value="restriction"/><!-- One of all elements marked with 'restriction' must be fullfilled. -->
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="stringlist_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -293,7 +299,6 @@
 		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
 		<xs:attribute name="strain" type="xs:string" default="0"/>
 		<xs:attribute name="blood" type="unsigned_int" default="0"/>
-		<xs:attribute name="minrank" type="unsigned_int" default="0"/>
 		<xs:attribute name="learnedbymincircle" type="circle_type" default="0"/>
 		<xs:attribute name="action" type="action_type"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
