@@ -3,28 +3,34 @@
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:complexType name="KNACKRACE_type">
 				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKBASECAPABILITY_type">
 				<xs:attribute name="type" type="edt:capabilitytype_type" use="required"/>
 				<xs:attribute name="name" type="xs:string" use="required"/>
 				<xs:attribute name="limitation" type="xs:string" default=""/>
+				<xs:attribute name="minrank" type="edt:unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKDISCIPLINE_type">
 				<xs:attribute name="name" type="xs:string" default="*"/>
 				<xs:attribute name="circle" type="edt:unsigned_int" default="1"/>
+				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKATTRIBUTE_type">
 				<xs:attribute name="name" type="edt:ATTRIBUTE_name_type" use="required"/>
 				<xs:attribute name="min" type="edt:unsigned_int" default="1"/>
 				<xs:attribute name="max" type="edt:unsigned_int" default="0"/>
+				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKCAPABILITY_type">
 				<xs:attribute name="name" type="xs:string" use="required"/>
 				<xs:attribute name="minrank" type="edt:unsigned_int" default="1"/>
 				<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
+				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKOTHERKNACK_type">
 				<xs:attribute name="name" type="xs:string" default="*"/>
+				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKBASE_type">
 		<xs:complexContent>
