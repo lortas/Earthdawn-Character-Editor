@@ -1,146 +1,146 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
-	<KNACK name="Adept's Best Friend"           minrank="6"  strain="3"     bookref="PC p.120"><BASE type="talent" name="Tracking"/>                                   </KNACK>
-	<KNACK name="Air Conditioning"              minrank="6"  strain="2"     bookref="PC p.120"><BASE type="talent" name="Temperature"/>                                </KNACK>	
-	<KNACK name="Air Legs"                      minrank="4"  strain="2"     bookref="PC p.121"><BASE type="talent" name="Air Sailing"/>                                </KNACK>
-	<KNACK name="Air Mount"                     minrank="13" strain="6"     bookref="PC p.121"><BASE type="talent" name="Spirit Mount"/>                               </KNACK>
-	<KNACK name="Anchored Spell"                minrank="8"  blood="1"      bookref="PC p.121"><BASE type="talent" name="Spellcasting"/>                               </KNACK>
-	<KNACK name="Angelic Appearance"            minrank="7"  strain="1"     bookref="PC p.121"><BASE type="talent" name="Disguise Self"/>                              </KNACK>
-	<KNACK name="Animal's Best Friend"          minrank="6"  strain="4"     bookref="PC p.121"><BASE type="talent" name="Tracking"/>                                   </KNACK>
-	<KNACK name="Arcane Curses"                 minrank="7"  strain="1"     bookref="PC p.121"><BASE type="talent" name="Arcane Mutterings"/>                          </KNACK>
-	<KNACK name="Armor Beater"                  minrank="10" strain="3"     bookref="PC p.122"><BASE type="talent" name="Melee Weapons"/>                              </KNACK>
-	<KNACK name="Arrow Cutting"                 minrank="9"  strain="2"     bookref="PC p.122"><BASE type="talent" name="Parry"/>                                      </KNACK>
-	<KNACK name="Arrow Stop"                    minrank="7"  strain="2"     bookref="PC p.122"><BASE type="talent" name="Impressive Shot"/>                            </KNACK>
-	<KNACK name="Assault"                       minrank="8"  strain="4"     bookref="PC p.122"><BASE type="talent" name="Air Sailing"/>                                </KNACK>
-	<KNACK name="Astral Spy"                    minrank="9"  strain="1+"    bookref="PC p.122"><BASE type="talent" name="Orbiting Spy"/>                               </KNACK>
-	<KNACK name="Astral Tracking"               minrank="9"  strain="2"     bookref="PC p.122"><BASE type="talent" name="Tracking"/>                                   </KNACK>
-	<KNACK name="Attribute Pattern"             minrank="15" strain="2"     bookref="PC p.122"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="Backbiter"                     minrank="7"  strain="3"     bookref="PC p.122"><BASE type="talent" name="Bank Shot"/>                                  </KNACK>
-	<KNACK name="Bind Spirit"                   minrank="6"  strain="2"     bookref="PC p.122"><BASE type="talent" name="Summon"/>                                     </KNACK>
-	<KNACK name="Bless Ally"                    minrank="12" strain="4"     bookref="PC p.123"><BASE type="talent" name="Second Chance"/>                              </KNACK>
-	<KNACK name="Blood Compass"                 minrank="9"  strain="3"     bookref="PC p.123"><BASE type="talent" name="Bone Compass"/>                               </KNACK>
-	<KNACK name="Boarding Action"               minrank="8"  strain="4"     bookref="PC p.123"><BASE type="talent" name="Air Sailing"/>                                </KNACK>
-	<KNACK name="Bounce"                        minrank="9"  strain="2"     bookref="PC p.123"><BASE type="talent" name="Avoid Blow"/>                                 </KNACK>
-	<KNACK name="Braiding Threads"              minrank="7"  strain="2"     bookref="PC p.123"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="By the Fingernails"            minrank="7"  strain="4"     bookref="PC p.123"><BASE type="talent" name="Climbing"/>                                   </KNACK>
-	<KNACK name="Calm Herd"                     minrank="8"  strain="2"     bookref="PC p.123"><BASE type="talent" name="Incite Stampede"/>                            </KNACK>
-	<KNACK name="Claw Riposte"                  minrank="9"  strain="3"     bookref="PC p.123"><BASE type="talent" name="Riposte"/>                                    </KNACK>
-	<KNACK name="Claw Tool"                     minrank="4"  strain="2/min" bookref="PC p.123"><BASE type="talent" name="Claw Shape"/>                                 </KNACK>
-	<KNACK name="Cosmetics"                     minrank="9"  strain="2+"    bookref="PC p.123"><BASE type="talent" name="Fire Heal"/>                                  </KNACK>
-	<KNACK name="Covet Item"                    minrank="7"  strain="4"     bookref="PC p.123"><BASE type="talent" name="Haggle"/>                                     </KNACK>
-	<KNACK name="Create Orichalcum"             minrank="11" strain="2"     bookref="PC p.123"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Armored Matrix Object"  minrank="12" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Armored Matrix Object"  minrank="12" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
-	<KNACK name="Create Armored Matrix Object"  minrank="12" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
-	<KNACK name="Create Armored Matrix Object"  minrank="12" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
-	<KNACK name="Create Armored Matrix Object"  minrank="12" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
-	<KNACK name="Create Armored Matrix Object"  minrank="12" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Thread Smithing"/></KNACK>
-	<KNACK name="Create Common Magic Item"      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
-	<KNACK name="Create Enhanced Matrix Object" minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Enhanced Matrix Object" minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
-	<KNACK name="Create Enhanced Matrix Object" minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
-	<KNACK name="Create Enhanced Matrix Object" minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
-	<KNACK name="Create Enhanced Matrix Object" minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
-	<KNACK name="Create Enhanced Matrix Object" minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
-	<KNACK name="Create Shared Matrix Object"   minrank="15" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Shared Matrix Object"   minrank="15" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
-	<KNACK name="Create Shared Matrix Object"   minrank="15" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
-	<KNACK name="Create Shared Matrix Object"   minrank="15" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
-	<KNACK name="Create Shared Matrix Object"   minrank="15" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
-	<KNACK name="Create Shared Matrix Object"   minrank="15" strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
-	<KNACK name="Create Spell Matrix Object"    minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Spell Matrix Object"    minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
-	<KNACK name="Create Spell Matrix Object"    minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
-	<KNACK name="Create Spell Matrix Object"    minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
-	<KNACK name="Create Spell Matrix Object"    minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
-	<KNACK name="Create Spell Matrix Object"    minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Thread Smithing"/></KNACK>
-	<KNACK name="Create Thread Item"            minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
-	<KNACK name="Creature Remains"              minrank="7"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Creature Analysis"/>                          </KNACK>
-	<KNACK name="Deathbed"                      minrank="7"  strain="1/min" bookref="PC p.124"><BASE type="talent" name="Dead Fall"/>                                  </KNACK>
-	<KNACK name="Deathsight"                    minrank="9"  strain="3"     bookref="PC p.124"><BASE type="talent" name="Lifesight"/>                                  </KNACK>
-	<KNACK name="Deflect Blow"                  minrank="8"  strain="1"     bookref="PC p.124"><BASE type="talent" name="Melee Weapons"/>                              </KNACK>
-	<KNACK name="Defuse Mob"                    minrank="8"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Incite Mob "/>                                </KNACK>
-	<KNACK name="Diagnose"                      minrank="5"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Astral Sight"/>                               </KNACK>
-	<KNACK name="Disassociate"                  minrank="9"  strain="2"     bookref="PC p.124"><BASE type="talent" name="Empathic Sense"/>                             </KNACK>
-	<KNACK name="Explosive Flame Arrow"         minrank="8"  strain="4"     bookref="PC p.124"><BASE type="talent" name="Flame Arrow"/>                                </KNACK>
-	<KNACK name="Extend Range"                  minrank="10" strain="3"     bookref="PC p.125"><BASE type="talent" name="Long Shot"/>                                  </KNACK>
-	<KNACK name="Far Speaking"                  minrank="7"  strain="2"     bookref="PC p.125"><BASE type="talent" name="Air Speaking"/>                               </KNACK>
-	<KNACK name="Faulty Bowyer"                 minrank="9"  strain="4"     bookref="PC p.125"><BASE type="talent" name="Warp Missile"/>                               </KNACK>
-	<KNACK name="Faulty Goods"                  minrank="9"  strain="2"     bookref="PC p.125"><BASE type="talent" name="Haggle"/>                                     </KNACK>
-	<KNACK name="Favored Mount"                 minrank="4"  strain="2+"    bookref="PC p.125"><BASE type="talent" name="Spirit Mount"/>                               </KNACK>
-	<KNACK name="Feinting Lunge"                minrank="8"  strain="3"     bookref="PC p.125"><BASE type="talent" name="Trick Riding"/>                               </KNACK>
-	<KNACK name="Feinting Retreat"              minrank="7"  strain="3"     bookref="PC p.125"><BASE type="talent" name="Trick Riding"/>                               </KNACK>
-	<KNACK name="Fire Arrow"                    minrank="5"  strain="1"     bookref="PC p.125"><BASE type="talent" name="Flame Arrow"/>                                </KNACK>
-	<KNACK name="Flaming Wounds"                minrank="8"  strain="3"     bookref="PC p.126"><BASE type="talent" name="Fireblood"/>                                  </KNACK>
-	<KNACK name="Flying Kick"                   minrank="7"  strain="2"     bookref="PC p.126"><BASE type="talent" name="Great Leap"/>                                 </KNACK>
-	<KNACK name="Forge Arrow"                   minrank="5"  strain="2"     bookref="PC p.126"><BASE type="talent" name="Forge Weapon"/>                               </KNACK>
-	<KNACK name="Gaping Wounds"                 minrank="9"  strain="2"     bookref="PC p.126"><BASE type="talent" name="Spellcasting"/>                               </KNACK>
-	<KNACK name="Glide"                         minrank="8"  strain="2"     bookref="PC p.126"><BASE type="talent" name="Wind Catcher"/>                               </KNACK>
-	<KNACK name="Ghost Master Ritual"           minrank="7"  strain="0"     bookref="PC p.126"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="Halt Disease"                  minrank="6"  strain="2"     bookref="PC p.126"><BASE type="talent" name="Cold Purify"/>                                </KNACK>
-	<KNACK name="Hard Glare"                    minrank="10" strain="4"     bookref="PC p.126"><BASE type="talent" name="Steely Stare"/>                               </KNACK>
-	<KNACK name="Head Butt"                     minrank="7"  strain="2"     bookref="PC p.126"><BASE type="talent" name="Unarmed Combat"/>                             </KNACK>
-	<KNACK name="Heal Others"                   minrank="7"  strain="1+"    bookref="PC p.127"><BASE type="talent" name="Fire Heal"/>                                  </KNACK>
-	<KNACK name="Hold Multiple Threads"         minrank="10" strain="2+"    bookref="PC p.127"><BASE type="talent" name="Hold Thread"/>                                </KNACK>
-	<KNACK name="Horror Analysis"               minrank="9"  strain="1"     bookref="PC p.127"><BASE type="talent" name="Creature Analysis"/>                          </KNACK>
-	<KNACK name="Identify Tracks"               minrank="7"  strain="2"     bookref="PC p.127"><BASE type="talent" name="Tracking"/>                                   </KNACK>
-	<KNACK name="Improvised Missiles"           minrank="7"  strain="1"     bookref="PC p.127"><BASE type="talent" name="Throwing Weapons"/>                           </KNACK>
-	<KNACK name="Improvised Weapons"            minrank="7"  strain="1"     bookref="PC p.127"><BASE type="talent" name="Melee Weapons"/>                              </KNACK>
-	<KNACK name="Lasting Deceit"                minrank="12" strain="6"     bookref="PC p.127"><BASE type="talent" name="False Sight"/>                                </KNACK>
-	<KNACK name="Liar"                          minrank="8"  strain="1"     bookref="PC p.127"><BASE type="talent" name="Detect Falsehood"/>                           </KNACK>
-	<KNACK name="Lift the Curtain"              minrank="9"  strain="1/min" bookref="PC p.127"><BASE type="talent" name="Astral Sight"/>                               </KNACK>
-	<KNACK name="Maintain Spell Threads"        minrank="8"  strain="1+"    bookref="PC p.183"><BASE type="talent" name="Spellcasting"/>                               </KNACK>
-	<KNACK name="Mighty Throw"                  minrank="8"  strain="2"     bookref="PC p.127"><BASE type="talent" name="Unarmed Combat"/>                             </KNACK>
-	<KNACK name="Mimic Music"                   minrank="8"  strain="2"     bookref="PC p.128"><BASE type="talent" name="Mimic Voice"/>                                </KNACK>
-	<KNACK name="Mind Trick"                    minrank="9"  strain="1"     bookref="PC p.128"><BASE type="talent" name="Mind Wave"/>                                  </KNACK>
-	<KNACK name="Mold Spirit"                   minrank="11" strain="2"     bookref="PC p.128"><BASE type="talent" name="Summoning"/>                                  </KNACK>
-	<KNACK name="Mountain Hoof"                 minrank="8"  strain="2/rnd" bookref="PC p.128"><BASE type="talent" name="Trick Riding"/>                               </KNACK>
-	<KNACK name="Name Spell"                    minrank="8"  strain="1+"    bookref="PC p.128"><BASE type="talent" name="Spellcasting"/>                               </KNACK>
-	<KNACK name="Nether Sextant"                minrank="12" strain="3"     bookref="PC p.128"><BASE type="talent" name="Bone Compass"/>                               </KNACK>
-	<KNACK name="Offguard"                      minrank="7"  strain="4"     bookref="PC p.128"><BASE type="talent" name="Picking Pockets"/>                            </KNACK>
-	<KNACK name="Orbiting Watcher"              minrank="8"  strain="1"     bookref="PC p.128"><BASE type="talent" name="Orbiting Spy"/>                               </KNACK>
-	<KNACK name="Photographic Memory"           minrank="10" strain="3"     bookref="PC p.128"><BASE type="talent" name="Book Memory"/>                                </KNACK>
-	<KNACK name="Pin Down"                      minrank="7"  strain="2"     bookref="PC p.128"><BASE type="talent" name="Unarmed Combat"/>                             </KNACK>
-	<KNACK name="Pin Up"                        minrank="8"  strain="2"     bookref="PC p.128"><BASE type="talent" name="Throwing Weapons"/>                           </KNACK>
-	<KNACK name="Placed Shot"                   minrank="7"  strain="2/atk" bookref="PC p.129"><BASE type="talent" name="Missile Weapons"/>                            </KNACK>
-	<KNACK name="Placed Throw"                  minrank="7"  strain="2/atk" bookref="PC p.129"><BASE type="talent" name="Throwing Weapons"/>                           </KNACK>
-	<KNACK name="Poisoned Influence"            minrank="6"  strain="1"     bookref="PC p.129"><BASE type="talent" name="Diplomacy"/>                                  </KNACK>
-	<KNACK name="Rapier Wit"                    minrank="9"  strain="2"     bookref="PC p.129"><BASE type="talent" name="Resist Taunt"/>                               </KNACK>
-	<KNACK name="Remember Conversation"         minrank="9"  strain="2"     bookref="PC p.129"><BASE type="talent" name="Book Memory"/>                                </KNACK>
-	<KNACK name="Second Riposte"                minrank="9"  strain="4"     bookref="PC p.129"><BASE type="talent" name="Second Weapon"/>                              </KNACK>
-	<KNACK name="Setup"                         minrank="8"  strain="1"     bookref="PC p.129"><BASE type="talent" name="Maneuver"/>                                   </KNACK>
-	<KNACK name="Shadow Hide"                   minrank="4"  strain="1"     bookref="PC p.129"><BASE type="talent" name="Silent Walk"/>                                </KNACK>
-	<KNACK name="Share Sense"                   minrank="7"  strain="2"     bookref="PC p.129"><BASE type="talent" name="Borrow Sense"/>                               </KNACK>
-	<KNACK name="Signature Spells"              minrank="7"  strain="1"     bookref="PC p.129"><BASE type="talent" name="Spellcasting"/>                               </KNACK>
-	<KNACK name="Smooth Armor"                  minrank="9"  strain="4"     bookref="PC p.130"><BASE type="talent" name="Forge Armor"/>                                </KNACK>
-	<KNACK name="Spell Stacking"                minrank="10" strain="2+"    bookref="PC p.130"><BASE type="talent" name="Spellcasting"/>                               </KNACK>
-	<KNACK name="Spirit Flame"                  minrank="9"  strain="4"     bookref="PC p.130"><BASE type="talent" name="Flame Arrow"/>                                </KNACK>
-	<KNACK name="Swab the Deck"                 minrank="9"  strain="1"     bookref="PC p.130"><BASE type="talent" name="Air Sailing"/>                                </KNACK>
-	<KNACK name="Swift Hoof"                    minrank="5"  strain="1+"    bookref="PC p.130"><BASE type="talent" name="Trick Riding"/>                               </KNACK>
-	<KNACK name="Swinging Move"                 minrank="5"  strain="0+"    bookref="PC p.130"><BASE type="talent" name="Climbing"/>                                   </KNACK>
-	<KNACK name="Talent Linking"                minrank="8"  strain="2+"    bookref="PC p.130"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="Talent Pattern"                minrank="13" strain="2"     bookref="PC p.130"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="Telling the Tale"              minrank="5"  strain="0"     bookref="PC p.131"><BASE type="talent" name="Emotion Song"/>                               </KNACK>
-	<KNACK name="Thread Masking"                minrank="7"  strain="2"     bookref="PC p.131"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="Traceless Stride"              minrank="8"  strain="1"     bookref="PC p.131"><BASE type="talent" name="Silent Walk"/>                                </KNACK>
-	<KNACK name="Translator"                    minrank="9"  strain="1/min" bookref="PC p.131"><BASE type="talent" name="Spirit Talk"/>                                </KNACK>
-	<KNACK name="Unraveling"                    minrank="7"  strain="2+"    bookref="PC p.131"><BASE type="talent" name="Thread Weaving"/>                             </KNACK>
-	<KNACK name="Water Mount"                   minrank="11" strain="4"     bookref="PC p.131"><BASE type="talent" name="Spirit Mount"/>                               </KNACK>
-	<KNACK name="Weapon Smash"                  minrank="9"  strain="2"     bookref="PC p.131"><BASE type="talent" name="Momentum Attack"/>                            </KNACK>
-	<KNACK name="Weave Element"                 minrank="5"  strain="2"     bookref="PC p.131"><BASE type="talent" name="Elementalism"/>                               </KNACK>
-	<KNACK name="Whispered Conversation"        minrank="7"  strain="1"     bookref="PC p.131"><BASE type="talent" name="Air Speaking"/>                               </KNACK>
-	<KNACK name="Wound Heal"                    minrank="6"  strain="2+"    bookref="PC p.131"><BASE type="talent" name="Fire Heal"/>                                  </KNACK>
-	<KNACK name="Wound Share"                   minrank="8"  strain="4"     bookref="PC p.131"><BASE type="talent" name="Blood Share"/>                                </KNACK>
+	<KNACK name="Adept's Best Friend"           strain="3"     bookref="PC p.120"><BASE type="talent" minrank="6"  name="Tracking"/>                                   </KNACK>
+	<KNACK name="Air Conditioning"              strain="2"     bookref="PC p.120"><BASE type="talent" minrank="6"  name="Temperature"/>                                </KNACK>	
+	<KNACK name="Air Legs"                      strain="2"     bookref="PC p.121"><BASE type="talent" minrank="4"  name="Air Sailing"/>                                </KNACK>
+	<KNACK name="Air Mount"                     strain="6"     bookref="PC p.121"><BASE type="talent" minrank="13" name="Spirit Mount"/>                               </KNACK>
+	<KNACK name="Anchored Spell"                blood="1"      bookref="PC p.121"><BASE type="talent" minrank="8"  name="Spellcasting"/>                               </KNACK>
+	<KNACK name="Angelic Appearance"            strain="1"     bookref="PC p.121"><BASE type="talent" minrank="7"  name="Disguise Self"/>                              </KNACK>
+	<KNACK name="Animal's Best Friend"          strain="4"     bookref="PC p.121"><BASE type="talent" minrank="6"  name="Tracking"/>                                   </KNACK>
+	<KNACK name="Arcane Curses"                 strain="1"     bookref="PC p.121"><BASE type="talent" minrank="7"  name="Arcane Mutterings"/>                          </KNACK>
+	<KNACK name="Armor Beater"                  strain="3"     bookref="PC p.122"><BASE type="talent" minrank="10" name="Melee Weapons"/>                              </KNACK>
+	<KNACK name="Arrow Cutting"                 strain="2"     bookref="PC p.122"><BASE type="talent" minrank="9"  name="Parry"/>                                      </KNACK>
+	<KNACK name="Arrow Stop"                    strain="2"     bookref="PC p.122"><BASE type="talent" minrank="7"  name="Impressive Shot"/>                            </KNACK>
+	<KNACK name="Assault"                       strain="4"     bookref="PC p.122"><BASE type="talent" minrank="8"  name="Air Sailing"/>                                </KNACK>
+	<KNACK name="Astral Spy"                    strain="1+"    bookref="PC p.122"><BASE type="talent" minrank="9"  name="Orbiting Spy"/>                               </KNACK>
+	<KNACK name="Astral Tracking"               strain="2"     bookref="PC p.122"><BASE type="talent" minrank="9"  name="Tracking"/>                                   </KNACK>
+	<KNACK name="Attribute Pattern"             strain="2"     bookref="PC p.122"><BASE type="talent" minrank="15" name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="Backbiter"                     strain="3"     bookref="PC p.122"><BASE type="talent" minrank="7"  name="Bank Shot"/>                                  </KNACK>
+	<KNACK name="Bind Spirit"                   strain="2"     bookref="PC p.122"><BASE type="talent" minrank="6"  name="Summon"/>                                     </KNACK>
+	<KNACK name="Bless Ally"                    strain="4"     bookref="PC p.123"><BASE type="talent" minrank="12" name="Second Chance"/>                              </KNACK>
+	<KNACK name="Blood Compass"                 strain="3"     bookref="PC p.123"><BASE type="talent" minrank="9"  name="Bone Compass"/>                               </KNACK>
+	<KNACK name="Boarding Action"               strain="4"     bookref="PC p.123"><BASE type="talent" minrank="8"  name="Air Sailing"/>                                </KNACK>
+	<KNACK name="Bounce"                        strain="2"     bookref="PC p.123"><BASE type="talent" minrank="9"  name="Avoid Blow"/>                                 </KNACK>
+	<KNACK name="Braiding Threads"              strain="2"     bookref="PC p.123"><BASE type="talent" minrank="7"  name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="By the Fingernails"            strain="4"     bookref="PC p.123"><BASE type="talent" minrank="7"  name="Climbing"/>                                   </KNACK>
+	<KNACK name="Calm Herd"                     strain="2"     bookref="PC p.123"><BASE type="talent" minrank="8"  name="Incite Stampede"/>                            </KNACK>
+	<KNACK name="Claw Riposte"                  strain="3"     bookref="PC p.123"><BASE type="talent" minrank="9"  name="Riposte"/>                                    </KNACK>
+	<KNACK name="Claw Tool"                     strain="2/min" bookref="PC p.123"><BASE type="talent" minrank="4"  name="Claw Shape"/>                                 </KNACK>
+	<KNACK name="Cosmetics"                     strain="2+"    bookref="PC p.123"><BASE type="talent" minrank="9"  name="Fire Heal"/>                                  </KNACK>
+	<KNACK name="Covet Item"                    strain="4"     bookref="PC p.123"><BASE type="talent" minrank="7"  name="Haggle"/>                                     </KNACK>
+	<KNACK name="Create Orichalcum"             strain="2"     bookref="PC p.123"><BASE type="talent" minrank="11" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Armored Matrix Object"  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="12" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Armored Matrix Object"  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="12" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
+	<KNACK name="Create Armored Matrix Object"  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="12" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
+	<KNACK name="Create Armored Matrix Object"  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="12" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
+	<KNACK name="Create Armored Matrix Object"  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="12" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
+	<KNACK name="Create Armored Matrix Object"  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="12" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Illusionism"    /></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Shamanism"      /></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Sorcery"        /></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Thread Smithing"/></KNACK>
+	<KNACK name="Create Common Magic Item"      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Wizardry"       /></KNACK>
+	<KNACK name="Create Enhanced Matrix Object" strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Enhanced Matrix Object" strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Thread Weaving" limitation="Illusionism"    /></KNACK>
+	<KNACK name="Create Enhanced Matrix Object" strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
+	<KNACK name="Create Enhanced Matrix Object" strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Thread Weaving" limitation="Shamanism"      /></KNACK>
+	<KNACK name="Create Enhanced Matrix Object" strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Thread Weaving" limitation="Sorcery"        /></KNACK>
+	<KNACK name="Create Enhanced Matrix Object" strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Thread Weaving" limitation="Wizardry"       /></KNACK>
+	<KNACK name="Create Shared Matrix Object"   strain="2"     bookref="PC p.124"><BASE type="talent" minrank="15" name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Shared Matrix Object"   strain="2"     bookref="PC p.124"><BASE type="talent" minrank="15" name="Thread Weaving" limitation="Illusionism"    /></KNACK>
+	<KNACK name="Create Shared Matrix Object"   strain="2"     bookref="PC p.124"><BASE type="talent" minrank="15" name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
+	<KNACK name="Create Shared Matrix Object"   strain="2"     bookref="PC p.124"><BASE type="talent" minrank="15" name="Thread Weaving" limitation="Shamanism"      /></KNACK>
+	<KNACK name="Create Shared Matrix Object"   strain="2"     bookref="PC p.124"><BASE type="talent" minrank="15" name="Thread Weaving" limitation="Sorcery"        /></KNACK>
+	<KNACK name="Create Shared Matrix Object"   strain="2"     bookref="PC p.124"><BASE type="talent" minrank="15" name="Thread Weaving" limitation="Wizardry"       /></KNACK>
+	<KNACK name="Create Spell Matrix Object"    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Spell Matrix Object"    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Illusionism"    /></KNACK>
+	<KNACK name="Create Spell Matrix Object"    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
+	<KNACK name="Create Spell Matrix Object"    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Shamanism"      /></KNACK>
+	<KNACK name="Create Spell Matrix Object"    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Sorcery"        /></KNACK>
+	<KNACK name="Create Spell Matrix Object"    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Thread Weaving" limitation="Wizardry"       /></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Elementalism"   /></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Illusionism"    /></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Nethermancy"    /></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Shamanism"      /></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Sorcery"        /></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Thread Smithing"/></KNACK>
+	<KNACK name="Create Thread Item"            strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Thread Weaving" limitation="Wizardry"       /></KNACK>
+	<KNACK name="Creature Remains"              strain="2"     bookref="PC p.124"><BASE type="talent" minrank="7"  name="Creature Analysis"/>                          </KNACK>
+	<KNACK name="Deathbed"                      strain="1/min" bookref="PC p.124"><BASE type="talent" minrank="7"  name="Dead Fall"/>                                  </KNACK>
+	<KNACK name="Deathsight"                    strain="3"     bookref="PC p.124"><BASE type="talent" minrank="9"  name="Lifesight"/>                                  </KNACK>
+	<KNACK name="Deflect Blow"                  strain="1"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Melee Weapons"/>                              </KNACK>
+	<KNACK name="Defuse Mob"                    strain="2"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Incite Mob "/>                                </KNACK>
+	<KNACK name="Diagnose"                      strain="2"     bookref="PC p.124"><BASE type="talent" minrank="5"  name="Astral Sight"/>                               </KNACK>
+	<KNACK name="Disassociate"                  strain="2"     bookref="PC p.124"><BASE type="talent" minrank="9"  name="Empathic Sense"/>                             </KNACK>
+	<KNACK name="Explosive Flame Arrow"         strain="4"     bookref="PC p.124"><BASE type="talent" minrank="8"  name="Flame Arrow"/>                                </KNACK>
+	<KNACK name="Extend Range"                  strain="3"     bookref="PC p.125"><BASE type="talent" minrank="10" name="Long Shot"/>                                  </KNACK>
+	<KNACK name="Far Speaking"                  strain="2"     bookref="PC p.125"><BASE type="talent" minrank="7"  name="Air Speaking"/>                               </KNACK>
+	<KNACK name="Faulty Bowyer"                 strain="4"     bookref="PC p.125"><BASE type="talent" minrank="9"  name="Warp Missile"/>                               </KNACK>
+	<KNACK name="Faulty Goods"                  strain="2"     bookref="PC p.125"><BASE type="talent" minrank="9"  name="Haggle"/>                                     </KNACK>
+	<KNACK name="Favored Mount"                 strain="2+"    bookref="PC p.125"><BASE type="talent" minrank="4"  name="Spirit Mount"/>                               </KNACK>
+	<KNACK name="Feinting Lunge"                strain="3"     bookref="PC p.125"><BASE type="talent" minrank="8"  name="Trick Riding"/>                               </KNACK>
+	<KNACK name="Feinting Retreat"              strain="3"     bookref="PC p.125"><BASE type="talent" minrank="7"  name="Trick Riding"/>                               </KNACK>
+	<KNACK name="Fire Arrow"                    strain="1"     bookref="PC p.125"><BASE type="talent" minrank="5"  name="Flame Arrow"/>                                </KNACK>
+	<KNACK name="Flaming Wounds"                strain="3"     bookref="PC p.126"><BASE type="talent" minrank="8"  name="Fireblood"/>                                  </KNACK>
+	<KNACK name="Flying Kick"                   strain="2"     bookref="PC p.126"><BASE type="talent" minrank="7"  name="Great Leap"/>                                 </KNACK>
+	<KNACK name="Forge Arrow"                   strain="2"     bookref="PC p.126"><BASE type="talent" minrank="5"  name="Forge Weapon"/>                               </KNACK>
+	<KNACK name="Gaping Wounds"                 strain="2"     bookref="PC p.126"><BASE type="talent" minrank="9"  name="Spellcasting"/>                               </KNACK>
+	<KNACK name="Glide"                         strain="2"     bookref="PC p.126"><BASE type="talent" minrank="8"  name="Wind Catcher"/>                               </KNACK>
+	<KNACK name="Ghost Master Ritual"           strain="0"     bookref="PC p.126"><BASE type="talent" minrank="7"  name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="Halt Disease"                  strain="2"     bookref="PC p.126"><BASE type="talent" minrank="6"  name="Cold Purify"/>                                </KNACK>
+	<KNACK name="Hard Glare"                    strain="4"     bookref="PC p.126"><BASE type="talent" minrank="10" name="Steely Stare"/>                               </KNACK>
+	<KNACK name="Head Butt"                     strain="2"     bookref="PC p.126"><BASE type="talent" minrank="7"  name="Unarmed Combat"/>                             </KNACK>
+	<KNACK name="Heal Others"                   strain="1+"    bookref="PC p.127"><BASE type="talent" minrank="7"  name="Fire Heal"/>                                  </KNACK>
+	<KNACK name="Hold Multiple Threads"         strain="2+"    bookref="PC p.127"><BASE type="talent" minrank="10" name="Hold Thread"/>                                </KNACK>
+	<KNACK name="Horror Analysis"               strain="1"     bookref="PC p.127"><BASE type="talent" minrank="9"  name="Creature Analysis"/>                          </KNACK>
+	<KNACK name="Identify Tracks"               strain="2"     bookref="PC p.127"><BASE type="talent" minrank="7"  name="Tracking"/>                                   </KNACK>
+	<KNACK name="Improvised Missiles"           strain="1"     bookref="PC p.127"><BASE type="talent" minrank="7"  name="Throwing Weapons"/>                           </KNACK>
+	<KNACK name="Improvised Weapons"            strain="1"     bookref="PC p.127"><BASE type="talent" minrank="7"  name="Melee Weapons"/>                              </KNACK>
+	<KNACK name="Lasting Deceit"                strain="6"     bookref="PC p.127"><BASE type="talent" minrank="12" name="False Sight"/>                                </KNACK>
+	<KNACK name="Liar"                          strain="1"     bookref="PC p.127"><BASE type="talent" minrank="8"  name="Detect Falsehood"/>                           </KNACK>
+	<KNACK name="Lift the Curtain"              strain="1/min" bookref="PC p.127"><BASE type="talent" minrank="9"  name="Astral Sight"/>                               </KNACK>
+	<KNACK name="Maintain Spell Threads"        strain="1+"    bookref="PC p.183"><BASE type="talent" minrank="8"  name="Spellcasting"/>                               </KNACK>
+	<KNACK name="Mighty Throw"                  strain="2"     bookref="PC p.127"><BASE type="talent" minrank="8"  name="Unarmed Combat"/>                             </KNACK>
+	<KNACK name="Mimic Music"                   strain="2"     bookref="PC p.128"><BASE type="talent" minrank="8"  name="Mimic Voice"/>                                </KNACK>
+	<KNACK name="Mind Trick"                    strain="1"     bookref="PC p.128"><BASE type="talent" minrank="9"  name="Mind Wave"/>                                  </KNACK>
+	<KNACK name="Mold Spirit"                   strain="2"     bookref="PC p.128"><BASE type="talent" minrank="11" name="Summoning"/>                                  </KNACK>
+	<KNACK name="Mountain Hoof"                 strain="2/rnd" bookref="PC p.128"><BASE type="talent" minrank="8"  name="Trick Riding"/>                               </KNACK>
+	<KNACK name="Name Spell"                    strain="1+"    bookref="PC p.128"><BASE type="talent" minrank="8"  name="Spellcasting"/>                               </KNACK>
+	<KNACK name="Nether Sextant"                strain="3"     bookref="PC p.128"><BASE type="talent" minrank="12" name="Bone Compass"/>                               </KNACK>
+	<KNACK name="Offguard"                      strain="4"     bookref="PC p.128"><BASE type="talent" minrank="7"  name="Picking Pockets"/>                            </KNACK>
+	<KNACK name="Orbiting Watcher"              strain="1"     bookref="PC p.128"><BASE type="talent" minrank="8"  name="Orbiting Spy"/>                               </KNACK>
+	<KNACK name="Photographic Memory"           strain="3"     bookref="PC p.128"><BASE type="talent" minrank="10" name="Book Memory"/>                                </KNACK>
+	<KNACK name="Pin Down"                      strain="2"     bookref="PC p.128"><BASE type="talent" minrank="7"  name="Unarmed Combat"/>                             </KNACK>
+	<KNACK name="Pin Up"                        strain="2"     bookref="PC p.128"><BASE type="talent" minrank="8"  name="Throwing Weapons"/>                           </KNACK>
+	<KNACK name="Placed Shot"                   strain="2/atk" bookref="PC p.129"><BASE type="talent" minrank="7"  name="Missile Weapons"/>                            </KNACK>
+	<KNACK name="Placed Throw"                  strain="2/atk" bookref="PC p.129"><BASE type="talent" minrank="7"  name="Throwing Weapons"/>                           </KNACK>
+	<KNACK name="Poisoned Influence"            strain="1"     bookref="PC p.129"><BASE type="talent" minrank="6"  name="Diplomacy"/>                                  </KNACK>
+	<KNACK name="Rapier Wit"                    strain="2"     bookref="PC p.129"><BASE type="talent" minrank="9"  name="Resist Taunt"/>                               </KNACK>
+	<KNACK name="Remember Conversation"         strain="2"     bookref="PC p.129"><BASE type="talent" minrank="9"  name="Book Memory"/>                                </KNACK>
+	<KNACK name="Second Riposte"                strain="4"     bookref="PC p.129"><BASE type="talent" minrank="9"  name="Second Weapon"/>                              </KNACK>
+	<KNACK name="Setup"                         strain="1"     bookref="PC p.129"><BASE type="talent" minrank="8"  name="Maneuver"/>                                   </KNACK>
+	<KNACK name="Shadow Hide"                   strain="1"     bookref="PC p.129"><BASE type="talent" minrank="4"  name="Silent Walk"/>                                </KNACK>
+	<KNACK name="Share Sense"                   strain="2"     bookref="PC p.129"><BASE type="talent" minrank="7"  name="Borrow Sense"/>                               </KNACK>
+	<KNACK name="Signature Spells"              strain="1"     bookref="PC p.129"><BASE type="talent" minrank="7"  name="Spellcasting"/>                               </KNACK>
+	<KNACK name="Smooth Armor"                  strain="4"     bookref="PC p.130"><BASE type="talent" minrank="9"  name="Forge Armor"/>                                </KNACK>
+	<KNACK name="Spell Stacking"                strain="2+"    bookref="PC p.130"><BASE type="talent" minrank="10" name="Spellcasting"/>                               </KNACK>
+	<KNACK name="Spirit Flame"                  strain="4"     bookref="PC p.130"><BASE type="talent" minrank="9"  name="Flame Arrow"/>                                </KNACK>
+	<KNACK name="Swab the Deck"                 strain="1"     bookref="PC p.130"><BASE type="talent" minrank="9"  name="Air Sailing"/>                                </KNACK>
+	<KNACK name="Swift Hoof"                    strain="1+"    bookref="PC p.130"><BASE type="talent" minrank="5"  name="Trick Riding"/>                               </KNACK>
+	<KNACK name="Swinging Move"                 strain="0+"    bookref="PC p.130"><BASE type="talent" minrank="5"  name="Climbing"/>                                   </KNACK>
+	<KNACK name="Talent Linking"                strain="2+"    bookref="PC p.130"><BASE type="talent" minrank="8"  name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="Talent Pattern"                strain="2"     bookref="PC p.130"><BASE type="talent" minrank="13" name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="Telling the Tale"              strain="0"     bookref="PC p.131"><BASE type="talent" minrank="5"  name="Emotion Song"/>                               </KNACK>
+	<KNACK name="Thread Masking"                strain="2"     bookref="PC p.131"><BASE type="talent" minrank="7"  name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="Traceless Stride"              strain="1"     bookref="PC p.131"><BASE type="talent" minrank="8"  name="Silent Walk"/>                                </KNACK>
+	<KNACK name="Translator"                    strain="1/min" bookref="PC p.131"><BASE type="talent" minrank="9"  name="Spirit Talk"/>                                </KNACK>
+	<KNACK name="Unraveling"                    strain="2+"    bookref="PC p.131"><BASE type="talent" minrank="7"  name="Thread Weaving"/>                             </KNACK>
+	<KNACK name="Water Mount"                   strain="4"     bookref="PC p.131"><BASE type="talent" minrank="11" name="Spirit Mount"/>                               </KNACK>
+	<KNACK name="Weapon Smash"                  strain="2"     bookref="PC p.131"><BASE type="talent" minrank="9"  name="Momentum Attack"/>                            </KNACK>
+	<KNACK name="Weave Element"                 strain="2"     bookref="PC p.131"><BASE type="talent" minrank="5"  name="Elementalism"/>                               </KNACK>
+	<KNACK name="Whispered Conversation"        strain="1"     bookref="PC p.131"><BASE type="talent" minrank="7"  name="Air Speaking"/>                               </KNACK>
+	<KNACK name="Wound Heal"                    strain="2+"    bookref="PC p.131"><BASE type="talent" minrank="6"  name="Fire Heal"/>                                  </KNACK>
+	<KNACK name="Wound Share"                   strain="4"     bookref="PC p.131"><BASE type="talent" minrank="8"  name="Blood Share"/>                                </KNACK>
 </KNACKS>
