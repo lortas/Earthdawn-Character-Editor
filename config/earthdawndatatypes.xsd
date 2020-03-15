@@ -204,6 +204,14 @@
 			<xs:maxLength value="4"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="tierkind_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="novice"/>
+			<xs:enumeration value="journeyman"/>
+			<xs:enumeration value="warden"/>
+			<xs:enumeration value="master"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="stringlist_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
