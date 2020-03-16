@@ -35,7 +35,11 @@
 		<xs:attribute name="enduringarmorfactor" type="xs:float" default="1.0"/>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 		<xs:attribute name="type" type="xs:string" default=""/>
-	</xs:complexType>
+                <xs:attribute name="onehandlimitmin" type="edt:unsigned_int" default="1"/>
+                <xs:attribute name="twohandlimitmin" type="edt:unsigned_int" default="4"/>
+                <xs:attribute name="onehandlimitmax" type="edt:unsigned_int" default="3"/>
+                <xs:attribute name="twohandlimitmax" type="edt:unsigned_int" default="6"/>
+        </xs:complexType>
 	<xs:element name="NAMEGIVERS">
 		<xs:complexType>
 			<xs:sequence>

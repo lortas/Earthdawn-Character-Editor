@@ -28,7 +28,7 @@
 		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Menschlich" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Obsidianer" karmamodifier="3" movement_ground="10" enduringarmorfactor="0.8" type="Obsidianer">
+	<NAMEGIVER lang="de" name="Obsidianer" karmamodifier="3" movement_ground="10" enduringarmorfactor="0.8" type="Obsidianer" onehandlimitmin="2" onehandlimitmax="4" twohandlimitmin="5" twohandlimitmax="7">
 		<ATTRIBUTE name="DEX" value="8"/>
 		<ATTRIBUTE name="STR" value="18"/>
 		<ATTRIBUTE name="TOU" value="13"/>
@@ -56,7 +56,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Orkisch)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Troll" karmamodifier="3" movement_ground="14" enduringarmorfactor="0.8" type="Troll">
+	<NAMEGIVER lang="de" name="Troll" karmamodifier="3" movement_ground="14" enduringarmorfactor="0.8" type="Troll" onehandlimitmin="2" onehandlimitmax="4" twohandlimitmin="5" twohandlimitmax="7">
 		<ATTRIBUTE name="DEX" value="10"/>
 		<ATTRIBUTE name="STR" value="14"/>
 		<ATTRIBUTE name="TOU" value="12"/>
@@ -83,7 +83,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
+	<NAMEGIVER lang="de" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling" onehandlimitmin="1" onehandlimitmax="1" twohandlimitmin="2" twohandlimitmax="2">
 		<ATTRIBUTE name="DEX" value="11"/>
 		<ATTRIBUTE name="STR" value="4"/>
 		<ATTRIBUTE name="TOU" value="8"/>
@@ -99,7 +99,7 @@
 		<NOTDEFAULTSKILL>Schwimmen</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Zwerg" karmamodifier="4" movement_ground="10" type="Zwerg">
+	<NAMEGIVER lang="de" name="Zwerg" karmamodifier="4" movement_ground="10" type="Zwerg" twohandlimitmax="5">
 		<ATTRIBUTE name="DEX" value="9"/>
 		<ATTRIBUTE name="STR" value="10"/>
 		<ATTRIBUTE name="TOU" value="12"/>
