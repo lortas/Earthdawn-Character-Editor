@@ -294,14 +294,21 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="KNACK_type">
+	<xs:complexType name="KNACKBASE_type">
 		<xs:attribute name="name"  type="xs:string" use="required"/>
 		<xs:attribute name="attribute" type="ATTRIBUTE_name_type"/>
 		<xs:attribute name="strain" type="xs:string" default="0"/>
 		<xs:attribute name="blood" type="unsigned_int" default="0"/>
-		<xs:attribute name="learnedbymincircle" type="circle_type" default="0"/>
 		<xs:attribute name="action" type="action_type"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
+	</xs:complexType>
+	<xs:complexType name="KNACK_type">
+		<xs:complexContent>
+			<xs:extension base="KNACKBASE_type">
+				<xs:attribute name="minrank" type="unsigned_int" default="0"/>
+				<xs:attribute name="learnedbymincircle" type="circle_type" default="0"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="TALENTTEACHER_type">
 		<xs:attribute name="name" type="xs:string" default=""/>
