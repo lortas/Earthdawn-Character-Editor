@@ -97,6 +97,7 @@
 			<xs:enumeration value="simple"/>
 			<xs:enumeration value="free"/>
 			<xs:enumeration value="na"/>
+                        <xs:enumeration value="special"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="gender_type">
@@ -335,7 +336,8 @@
 		<xs:attribute name="default" type="yesno_type" default="no"/>
 		<xs:attribute name="bookref" type="xs:string" default=""/>
 		<xs:attribute name="realigned" type="unsigned_int" default="0"/>
-		<xs:attribute name="isinitiative" type="yesno_type" default="no"/>
+                <xs:attribute name="isinitiative" type="yesno_type" default="no"/>
+                <xs:attribute name="hasonehandlimitbonus" type="yesno_type" default="no"/>
 		<xs:attribute name="notbyversatility" type="yesno_type" default="no"/>
 		<xs:attribute name="skilluse" type="unsigned_int" default="0"/>
 		<xs:attribute name="canimprovised" type="yesno_type" default="no"/>
