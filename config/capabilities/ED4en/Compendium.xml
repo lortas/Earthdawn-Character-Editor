@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CAPABILITIES lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
+	
+        <TALENT name="Alley Cat Approach" attribute="PER" action="standard" strain="0"/>
+        <TALENT name="Animal Leadership" attribute="CHA" action="standard" strain="0"/>
+        <TALENT name="Armored Matrix" attribute="na" action="na" strain="0"/>
+        <TALENT name="Astral Domain" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Astral Pocket" attribute="PER" action="standard" strain="1"/>
+        <TALENT name="Aura Armor" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Bardic Voice" attribute="na" action="free" strain="1"/>
+        <TALENT name="Beguiling Blade" attribute="na" action="free" strain="1"/>
+        <TALENT name="Blind Fire" attribute="PER" action="simple" strain="1"/>
+        <TALENT name="Blood Insight" attribute="PER" action="sustained" strain="1"/>
+        <TALENT name="Blood of Death’s Sea" attribute="na" action="free" strain="0"/>
+        <TALENT name="Bloodhound Form" attribute="na" action="sustained" strain="1"/>
+        <TALENT name="Burning Vigor" attribute="STR" action="free" strain="0"/>
+        <TALENT name="Casting Pattern" attribute="PER" action="simple" strain="2"/>
+        <TALENT name="Chameleon" attribute="na" action="free" strain="1"/>
+        <TALENT name="Champion Challenge" attribute="CHA" action="standard" strain="0"/>
+        <TALENT name="Chilling Strike" attribute="na" action="free" strain="1"/>
+        <TALENT name="Concentrated Assault" attribute="CHA" action="standard" strain="1"/>
+        <TALENT name="Concise Casting" attribute="PER" action="simple" strain="2"/>
+        <TALENT name="Confront Horror" attribute="CHA" action="standard" strain="5"/>
+        <TALENT name="Contest of Wills" attribute="WIL" action="free" strain="1"/>
+        <TALENT name="Critical Hit" attribute="na" action="free" strain="0" skilluse="9"/>
+        <TALENT name="Cutting Words" attribute="CHA" action="simple" strain="2"/>
+        <TALENT name="Defensive Posture" attribute="na" action="free" strain="1" skilluse="9"/>
+        <TALENT name="Disarming Smile" attribute="CHA" action="standard" strain="1"/>
+        <TALENT name="Dream Thief" attribute="PER" action="standard" strain="2"/>
+        <TALENT name="Eagle Eye" attribute="na" action="free" strain="1"/>
+        <TALENT name="Echolocation" attribute="na" action="free" strain="1"/>
+        <TALENT name="Effect Pattern" attribute="PER" action="simple" strain="2"/>
+        <TALENT name="Eidetic Memory" attribute="WIL" action="simple" strain="1"/>
+        <TALENT name="Elemental Mastery" attribute="na" action="free" strain="2"/>
+        <TALENT name="Elemental Walk" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Enthralling Visions" attribute="WIL" action="free" strain="1"/>
+        <TALENT name="Escape Plan" attribute="PER" action="sustained" strain="1"/>
+        <TALENT name="Ethereal Weapon" attribute="WIL" action="simple" strain="2"/>
+        <TALENT name="Fluid Movement" attribute="na" action="simple" strain="1"/>
+        <TALENT name="Forge Flesh" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Glyph of Attunement" attribute="PER" action="simple" strain="3"/>
+        <TALENT name="Glyph of Reversal" attribute="PER" action="free" strain="2"/>
+        <TALENT name="Glyph of Shielding" attribute="PER" action="simple" strain="1"/>
+        <TALENT name="Glyph of Unweaving" attribute="na" action="free" strain="1"/>
+        <TALENT name="Goring Attack" attribute="na" action="free" strain="1"/>
+        <TALENT name="Howl" attribute="CHA" action="simple" strain="2"/>
+        <TALENT name="Impossible Hide" attribute="na" action="standard" strain="3"/>
+        <TALENT name="Influence Missile" attribute="WIL" action="free" strain="2"/>
+        <TALENT name="Infuse Memory" attribute="na" action="free" strain="0"/>
+        <TALENT name="Lion Spirit" attribute="na" action="na" strain="0"/>
+        <TALENT name="Living Weapon" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Matrix Sight" attribute="PER" action="simple" strain="1"/>
+        <TALENT name="Memory Probe" attribute="CHA" action="sustained" strain="3"/>
+        <TALENT name="Missile Lock" attribute="PER" action="simple" strain="1"/>
+        <TALENT name="Multi-Charge" attribute="DEX" action="simple" strain="+"/>
+        <TALENT name="Multi-Shot" attribute="PER" action="simple" strain="+"/>
+        <TALENT name="Multi-Strike" attribute="DEX" action="simple" strain="1"/>
+        <TALENT name="Nethersoul" attribute="WIL" action="standard" strain="0"/>
+        <TALENT name="Netherwalk" attribute="WIL" action="standard" strain="5"/>
+        <TALENT name="Perfect Focus" attribute="WIL" action="simple" strain="0"/>
+        <TALENT name="Plant Talk" attribute="PER" action="standard" strain="0"/>
+        <TALENT name="Rally" attribute="CHA" action="standard" strain="0"/>
+        <TALENT name="Range Pattern" attribute="PER" action="simple" strain="1"/>
+        <TALENT name="Relentless Recovery" attribute="TOU" action="free" strain="0"/>
+        <TALENT name="Resist Pain" attribute="na" action="na" strain="0" skilluse="9"/>
+        <TALENT name="Safe Thought" attribute="na" action="free" strain="0"/>
+        <TALENT name="Second Chance" attribute="CHA" action="free" strain="3"/>
+        <TALENT name="Shared Matrix" attribute="na" action="na" strain="0"/>
+        <TALENT name="Shock Treatment" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Snapshot" attribute="DEX" action="free" strain="2"/>
+        <TALENT name="Snatch Talent" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Song of Battle" attribute="na" action="free" strain="1"/>
+        <TALENT name="Song of Deflection" attribute="CHA" action="standard" strain="1"/>
+        <TALENT name="Soul Aegis" attribute="WIL" action="standard" strain="1"/>
+        <TALENT name="Spirit Strike" attribute="WIL" action="standard" strain="2"/>
+        <TALENT name="Spliced Weave" attribute="na" action="simple" strain="1"/>
+        <TALENT name="Stone Skin" attribute="na" action="standard" strain="0"/>
+        <TALENT name="Storm Shield" attribute="na" action="standard" strain="2"/>
+        <TALENT name="Summoning Circle" attribute="na" action="sustained" strain="1"/>
+        <TALENT name="Thunderous Resolve" attribute="WIL" action="free" strain="1"/>
+        <TALENT name="Thunderstruck" attribute="STR" action="free" strain="1"/>
+        <TALENT name="Truth Through Lies" attribute="CHA" action="standard" strain="2"/>
+        <TALENT name="Undermine" attribute="CHA" action="simple" strain="1"/>
+        <TALENT name="Unflinching Fortitude" attribute="na" action="na" strain="0"/>
+        <TALENT name="Venom" attribute="TOU" action="free" strain="1"/>
+        <TALENT name="Vicious Wound" attribute="PER" action="simple" strain="2" skilluse="9"/>
+        <TALENT name="Vine Armor" attribute="na" action="free" strain="0"/>
+        <TALENT name="Vital Strike" attribute="TOU" action="free" strain="2"/>
+        <TALENT name="Vital Ward" attribute="na" action="free" strain="1"/>
+        <TALENT name="Weapon Breaker" attribute="na" action="free" strain="0" skilluse="9"/>
+        <TALENT name="Witty Repartee" attribute="CHA" action="free" strain="2" skilluse="9"/>
+        <TALENT name="World Pulse" attribute="PER" action="sustained" strain="3"/>
+
+</CAPABILITIES>
