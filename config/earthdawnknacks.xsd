@@ -24,6 +24,7 @@
 	</xs:complexType>
 	<xs:complexType name="KNACKCAPABILITY_type">
 				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="limitation" type="xs:string" default=""/>
 				<xs:attribute name="minrank" type="edt:unsigned_int" default="1"/>
 				<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
 				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
@@ -40,6 +41,7 @@
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="KNACK" type="KNACKOTHERKNACK_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="DISCIPLINE" type="KNACKDISCIPLINE_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="KNACKCAPABILITY_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILL" type="KNACKCAPABILITY_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="RACE" type="KNACKRACE_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ATTRIBUTE" type="KNACKATTRIBUTE_type"/>
 				</xs:sequence>
