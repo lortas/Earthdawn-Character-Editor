@@ -9,6 +9,7 @@
 		<ATTRIBUTE name="CHA" value="11"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Nachtsicht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elfisch)" speak="skill"/>
@@ -22,6 +23,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Vielseitigkeit"/>
 		<ABILITY>Vielseitigkeit</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -37,6 +39,7 @@
 		<ATTRIBUTE name="CHA" value="9"/>
 		<ARMOR name="Natürliche Rüstung" weight="0" used="yes" location="selbst" physicalarmor="3"/>
 		<WOUND threshold="3"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Natürliche Rüstung</ABILITY>
 		<ABILITY>Erhöhte Wundschwelle</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -51,6 +54,7 @@
 		<ATTRIBUTE name="CHA" value="9"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Nachticht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -65,6 +69,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Wärmesicht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Trollisch" speak="skill"/>
@@ -78,6 +83,7 @@
 		<ATTRIBUTE name="CHA" value="11"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Schwanzkampf</ABILITY>
 		<ABILITY>Kiemen</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -92,6 +98,7 @@
 		<ATTRIBUTE name="CHA" value="12"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astralsicht"/>
 		<ABILITY>Flugfähigkeit</ABILITY>
@@ -108,6 +115,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<CARRY name="Starker Rücken" bonus="2"/>
 		<ABILITY>Wärmesicht</ABILITY>
 		<ABILITY>Starker Rücken</ABILITY>

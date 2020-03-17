@@ -9,6 +9,7 @@
 		<ATTRIBUTE name="CHA" value="8" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -24,6 +25,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -39,6 +41,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -54,6 +57,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -68,6 +72,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
@@ -81,6 +86,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
@@ -94,6 +100,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
@@ -107,6 +114,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
@@ -120,6 +128,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>		
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
@@ -133,6 +142,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
@@ -146,6 +156,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Astral Sight"/>
 		<TALENT name="Versatility"/>
 		<ABILITY>Low-Light Vision</ABILITY>
@@ -162,6 +173,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self" physicalarmor="3"/>
 		<WOUND threshold="3"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Can only wear Living Armor</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -177,6 +189,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -193,6 +206,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -208,6 +222,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -223,6 +238,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
@@ -236,6 +252,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Water Breath</ABILITY>
 		<ORIGIN>Indrisa</ORIGIN>
@@ -250,6 +267,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Gliding</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -264,6 +282,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -278,6 +297,7 @@
 		<ATTRIBUTE name="CHA" value="12" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>
@@ -295,6 +315,7 @@
 		<ATTRIBUTE name="CHA" value="8" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="New Gar" speak="skill"/>
@@ -309,6 +330,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Cathay</ORIGIN>		
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="skill" readwrite="skill"/>
@@ -323,6 +345,7 @@
 		<ATTRIBUTE name="CHA" value="8" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Prehensile Tail</ABILITY>
 		<ORIGIN>Cathay</ORIGIN>		
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="skill" readwrite="skill"/>
@@ -337,6 +360,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Lightning Born"/>
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Cathayan" speak="skill" readwrite="skill"/>
@@ -351,6 +375,7 @@
 		<ATTRIBUTE name="CHA" value="31" />
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<DEFAULTLANGUAGE language="" speak="skill" readwrite="skill"/>
 		<DEFAULTLANGUAGE language="" speak="skill"/>
 		<!-- two free Ranks, no default language -->
@@ -364,6 +389,7 @@
 		<ATTRIBUTE name="CHA" value="8" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Bite Attack</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
@@ -379,6 +405,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Defense Bonus against Horrors</ABILITY>
 		<ABILITY>Need 12 hours sleep per day</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
@@ -394,6 +421,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>No wound penalties</ABILITY>
 		<ABILITY>Sensible for extreme temperatures</ABILITY>
 		<ABILITY>Leafer Pods</ABILITY>
@@ -410,6 +438,7 @@
 		<ATTRIBUTE name="CHA" value="8" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Gain Horror Powers</ABILITY>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Vasgothia</ORIGIN>
