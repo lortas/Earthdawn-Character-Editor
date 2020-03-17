@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<KNACKS lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
+	<KNACK name="Brother of Stone" attribute="na" action="na" blood="2" bookref="MP p.299">
+            <BASE type="talent" name="Thread Weaving" minrank="5"/>
+            <DISCIPLINE circle="5"/>
+            <TALENT name="Speak Language" minrank="1" prerequisite="requirement"/>
+            <TALENT name="Read and Write Language" minrank="1" prerequisite="requirement"/>
+            <SKILL name="Knowledge" limitation="Racial Lore" minrank="1" prerequisite="requirement" />
+        </KNACK>
+</KNACKS>
