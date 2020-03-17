@@ -9,6 +9,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION twohandmax="5"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -24,6 +25,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -39,6 +41,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -54,6 +57,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Astral Sight"/>
 		<TALENT name="Versatility"/>
 		<ABILITY>Low-Light Vision</ABILITY>
@@ -70,6 +74,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self" physicalarmor="3"/>
 		<WOUND threshold="3"/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Can only wear Living Armor</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -85,6 +90,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -101,6 +107,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -116,6 +123,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Tail Combat</ABILITY>
 		<ABILITY>Gills</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -132,6 +140,7 @@
 		<ATTRIBUTE name="CHA" value="12" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>
@@ -149,6 +158,7 @@
 		<ATTRIBUTE name="CHA" value="31" />
 		<ARMOR name="natural Armor" mysticarmor="4" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Flight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="skill" readwrite="skill"/>

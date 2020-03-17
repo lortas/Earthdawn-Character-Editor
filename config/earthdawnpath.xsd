@@ -28,7 +28,7 @@
 		<xs:complexType>
 			<xs:sequence maxOccurs="1" minOccurs="1">
 				<xs:element minOccurs="1" maxOccurs="1" name="PATHKNACK" type="PATHKNACK_type"/>
-				<xs:element minOccurs="1" maxOccurs="1" name="PATHTALENT" type="PATHKNACK_type"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="PATHTALENT" type="PATHTALENT_type"/>
 				<xs:element minOccurs="8" maxOccurs="15" name="PATHRANK" type="PATHRANK_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="KARMARITUAL" type="xs:string"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="HALFMAGIC" type="xs:string"/>
