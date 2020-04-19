@@ -9,7 +9,7 @@
 		<ATTRIBUTE name="CHA" value="8" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION twohandmax="5"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -173,7 +173,7 @@
 		<ATTRIBUTE name="CHA" value="9" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self" physicalarmor="3"/>
 		<WOUND threshold="3"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Can only wear Living Armor</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -206,7 +206,7 @@
 		<ATTRIBUTE name="CHA" value="10" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Heat Sight</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
@@ -297,7 +297,7 @@
 		<ATTRIBUTE name="CHA" value="12" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION onehandmax="1" twohandmin="2" twohandmax="2"/>
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astral Sight"/>
 		<ABILITY>Flight</ABILITY>

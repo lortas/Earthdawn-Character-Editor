@@ -39,7 +39,7 @@
 		<ATTRIBUTE name="CHA" value="9"/>
 		<ARMOR name="Natürliche Rüstung" weight="0" used="yes" location="selbst" physicalarmor="3"/>
 		<WOUND threshold="3"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Natürliche Rüstung</ABILITY>
 		<ABILITY>Erhöhte Wundschwelle</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -69,7 +69,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Wärmesicht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Trollisch" speak="skill"/>
@@ -98,7 +98,7 @@
 		<ATTRIBUTE name="CHA" value="12"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION onehandmax="1" twohandmin="2" twohandmax="2"/>
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astralsicht"/>
 		<ABILITY>Flugfähigkeit</ABILITY>
@@ -115,7 +115,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
-		<WEAPONSIZERESTRICTION/>
+		<WEAPONSIZERESTRICTION twohandmax="5"/>
 		<CARRY name="Starker Rücken" bonus="2"/>
 		<ABILITY>Wärmesicht</ABILITY>
 		<ABILITY>Starker Rücken</ABILITY>
