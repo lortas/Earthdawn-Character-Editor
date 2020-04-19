@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="simple"/&gt;
  *     &lt;enumeration value="free"/&gt;
  *     &lt;enumeration value="na"/&gt;
+ *     &lt;enumeration value="special"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
@@ -44,7 +45,9 @@ public enum ActionType {
     @XmlEnumValue("free")
     FREE("free"),
     @XmlEnumValue("na")
-    NA("na");
+    NA("na"),
+    @XmlEnumValue("special")
+    SPECIAL("special");
     private final String value;
 
     ActionType(String v) {

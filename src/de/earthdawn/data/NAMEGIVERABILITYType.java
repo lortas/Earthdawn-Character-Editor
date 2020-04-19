@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/namegiver}ATTRIBUTENAMEVALUE_type" maxOccurs="6" minOccurs="6"/&gt;
  *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type"/&gt;
  *         &lt;element name="WOUND" type="{http://earthdawn.com/datatypes}WOUND_type"/&gt;
+ *         &lt;element name="WEAPONSIZERESTRICTION" type="{http://earthdawn.com/namegiver}NAMEGIVERWEAPONSIZERESTRICTION_type"/&gt;
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="CARRY" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -57,6 +58,7 @@ import javax.xml.bind.annotation.XmlType;
     "attribute",
     "armor",
     "wound",
+    "weaponsizerestriction",
     "defense",
     "talent",
     "carry",
@@ -73,6 +75,8 @@ public class NAMEGIVERABILITYType {
     protected ARMORType armor;
     @XmlElement(name = "WOUND", required = true)
     protected WOUNDType wound;
+    @XmlElement(name = "WEAPONSIZERESTRICTION", required = true)
+    protected NAMEGIVERWEAPONSIZERESTRICTIONType weaponsizerestriction;
     @XmlElement(name = "DEFENSE")
     protected List<DEFENSEABILITYType> defense;
     @XmlElement(name = "TALENT")
@@ -177,6 +181,30 @@ public class NAMEGIVERABILITYType {
      */
     public void setWOUND(WOUNDType value) {
         this.wound = value;
+    }
+
+    /**
+     * Gets the value of the weaponsizerestriction property.
+     *
+     * @return
+     *     possible object is
+     *     {@link NAMEGIVERWEAPONSIZERESTRICTIONType }
+     *
+     */
+    public NAMEGIVERWEAPONSIZERESTRICTIONType getWEAPONSIZERESTRICTION() {
+        return weaponsizerestriction;
+    }
+
+    /**
+     * Sets the value of the weaponsizerestriction property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link NAMEGIVERWEAPONSIZERESTRICTIONType }
+     *
+     */
+    public void setWEAPONSIZERESTRICTION(NAMEGIVERWEAPONSIZERESTRICTIONType value) {
+        this.weaponsizerestriction = value;
     }
 
     /**

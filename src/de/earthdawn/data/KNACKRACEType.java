@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -37,6 +38,8 @@ public class KNACKRACEType {
 
     @XmlAttribute(name = "name", required = true)
     protected String name;
+    @XmlAttribute(name = "prerequisite")
+    protected PrerequisitekindType prerequisite;
 
     /**
      * Gets the value of the name property.
@@ -60,6 +63,34 @@ public class KNACKRACEType {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the prerequisite property.
+     *
+     * @return
+     *     possible object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public PrerequisitekindType getPrerequisite() {
+        if (prerequisite == null) {
+            return PrerequisitekindType.RESTRICTION;
+        } else {
+            return prerequisite;
+        }
+    }
+
+    /**
+     * Sets the value of the prerequisite property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public void setPrerequisite(PrerequisitekindType value) {
+        this.prerequisite = value;
     }
 
 }

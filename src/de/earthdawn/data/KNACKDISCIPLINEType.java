@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" default="*" /&gt;
  *       &lt;attribute name="circle" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" /&gt;
+ *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -40,6 +41,8 @@ public class KNACKDISCIPLINEType {
     protected String name;
     @XmlAttribute(name = "circle")
     protected Integer circle;
+    @XmlAttribute(name = "prerequisite")
+    protected PrerequisitekindType prerequisite;
 
     /**
      * Gets the value of the name property.
@@ -95,6 +98,34 @@ public class KNACKDISCIPLINEType {
      */
     public void setCircle(Integer value) {
         this.circle = value;
+    }
+
+    /**
+     * Gets the value of the prerequisite property.
+     *
+     * @return
+     *     possible object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public PrerequisitekindType getPrerequisite() {
+        if (prerequisite == null) {
+            return PrerequisitekindType.RESTRICTION;
+        } else {
+            return prerequisite;
+        }
+    }
+
+    /**
+     * Sets the value of the prerequisite property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public void setPrerequisite(PrerequisitekindType value) {
+        this.prerequisite = value;
     }
 
 }

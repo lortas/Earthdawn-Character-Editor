@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="KNACK" type="{http://earthdawn.com/knack}KNACKBASE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="KNACK" type="{http://earthdawn.com/knack}KNACKDEFINITION_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" /&gt;
  *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED3" /&gt;
@@ -47,7 +47,7 @@ import javax.xml.bind.annotation.XmlType;
 public class KNACKS {
 
     @XmlElement(name = "KNACK", namespace = "http://earthdawn.com/knack")
-    protected List<KNACKBASEType> knack;
+    protected List<KNACKDEFINITIONType> knack;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
     @XmlAttribute(name = "rulesetversion")
@@ -71,13 +71,13 @@ public class KNACKS {
      *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link KNACKBASEType }
+     * {@link KNACKDEFINITIONType }
      *
      *
      */
-    public List<KNACKBASEType> getKNACK() {
+    public List<KNACKDEFINITIONType> getKNACK() {
         if (knack == null) {
-            knack = new ArrayList<KNACKBASEType>();
+            knack = new ArrayList<KNACKDEFINITIONType>();
         }
         return this.knack;
     }

@@ -262,6 +262,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link KNACKBASEType }
+     *
+     */
+    public KNACKBASEType createKNACKBASEType() {
+        return new KNACKBASEType();
+    }
+
+    /**
      * Create an instance of {@link KNACKType }
      *
      */
@@ -774,11 +782,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link KNACKBASEType }
+     * Create an instance of {@link KNACKDEFINITIONType }
      *
      */
-    public KNACKBASEType createKNACKBASEType() {
-        return new KNACKBASEType();
+    public KNACKDEFINITIONType createKNACKDEFINITIONType() {
+        return new KNACKDEFINITIONType();
     }
 
     /**
@@ -859,6 +867,14 @@ public class ObjectFactory {
      */
     public NAMEGIVERMOVEMENTType createNAMEGIVERMOVEMENTType() {
         return new NAMEGIVERMOVEMENTType();
+    }
+
+    /**
+     * Create an instance of {@link NAMEGIVERWEAPONSIZERESTRICTIONType }
+     *
+     */
+    public NAMEGIVERWEAPONSIZERESTRICTIONType createNAMEGIVERWEAPONSIZERESTRICTIONType() {
+        return new NAMEGIVERWEAPONSIZERESTRICTIONType();
     }
 
     /**
@@ -955,6 +971,38 @@ public class ObjectFactory {
      */
     public OPTIONALRULESDEFAULTLANGUAGE createOPTIONALRULESDEFAULTLANGUAGE() {
         return new OPTIONALRULESDEFAULTLANGUAGE();
+    }
+
+    /**
+     * Create an instance of {@link PATH }
+     *
+     */
+    public PATH createPATH() {
+        return new PATH();
+    }
+
+    /**
+     * Create an instance of {@link PATHKNACKType }
+     *
+     */
+    public PATHKNACKType createPATHKNACKType() {
+        return new PATHKNACKType();
+    }
+
+    /**
+     * Create an instance of {@link PATHTALENTType }
+     *
+     */
+    public PATHTALENTType createPATHTALENTType() {
+        return new PATHTALENTType();
+    }
+
+    /**
+     * Create an instance of {@link PATHRANKType }
+     *
+     */
+    public PATHRANKType createPATHRANKType() {
+        return new PATHRANKType();
     }
 
     /**

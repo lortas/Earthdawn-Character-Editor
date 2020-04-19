@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="name" use="required" type="{http://earthdawn.com/datatypes}ATTRIBUTE_name_type" /&gt;
  *       &lt;attribute name="min" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" /&gt;
  *       &lt;attribute name="max" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
+ *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -43,6 +44,8 @@ public class KNACKATTRIBUTEType {
     protected Integer min;
     @XmlAttribute(name = "max")
     protected Integer max;
+    @XmlAttribute(name = "prerequisite")
+    protected PrerequisitekindType prerequisite;
 
     /**
      * Gets the value of the name property.
@@ -122,6 +125,34 @@ public class KNACKATTRIBUTEType {
      */
     public void setMax(Integer value) {
         this.max = value;
+    }
+
+    /**
+     * Gets the value of the prerequisite property.
+     *
+     * @return
+     *     possible object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public PrerequisitekindType getPrerequisite() {
+        if (prerequisite == null) {
+            return PrerequisitekindType.RESTRICTION;
+        } else {
+            return prerequisite;
+        }
+    }
+
+    /**
+     * Sets the value of the prerequisite property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public void setPrerequisite(PrerequisitekindType value) {
+        this.prerequisite = value;
     }
 
 }
