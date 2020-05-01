@@ -781,7 +781,7 @@ public class ECEWorker {
 		if( talent.getLIMITATION().size()>0 ) limitation = talent.getLIMITATION().get(0);
 		for( KNACKType knack : talent.getKNACK() ) {
 			boolean knackstatsupdated=false;
-			for( KNACKBASEType k : PROPERTIES.getKnacksByName(knack.getName()) ) {
+			for( KNACKDEFINITIONType k : PROPERTIES.getKnacksByName(knack.getName()) ) {
 				for( KNACKBASECAPABILITYType base : k.getBASE() ) {
 					String lim = base.getLimitation();
 					boolean nolim = lim.isEmpty();
@@ -790,7 +790,7 @@ public class ECEWorker {
 						knack.setAttribute(k.getAttribute());
 						knack.setBlood(k.getBlood());
 						knack.setBookref(k.getBookref());
-						knack.setMinrank(k.getMinrank());
+						knack.setMinrank(base.getMinrank());
 						knack.setStrain(k.getStrain());
 						knackstatsupdated=true;
 					}

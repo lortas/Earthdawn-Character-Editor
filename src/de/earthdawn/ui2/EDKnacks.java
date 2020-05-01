@@ -31,8 +31,11 @@ import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.RulesetversionType;
 import de.earthdawn.data.KNACKBASECAPABILITYType;
 import de.earthdawn.TalentsContainer;
+import de.earthdawn.data.ATTRIBUTENameType;
+import de.earthdawn.data.CapabilitytypeType;
 import de.earthdawn.data.KNACKATTRIBUTEType;
 import de.earthdawn.data.KNACKCAPABILITYType;
+import de.earthdawn.data.KNACKDEFINITIONType;
 import de.earthdawn.data.KNACKDISCIPLINEType;
 import de.earthdawn.data.KNACKOTHERKNACKType;
 import de.earthdawn.data.KNACKRACEType;
@@ -131,18 +134,35 @@ class KnacksTableModel extends AbstractTableModel {
 		public String talentname;
 		public int disciplinecircle;
 		public KNACKType knack;
-		public KnackTableEntry(String disciplinename, String talentname, int disciplinecircle, KNACKBASEType knack) {
-			this.disciplinename=disciplinename;
-			this.talentname=talentname;
-			this.disciplinecircle=disciplinecircle;
+		public KnackTableEntry(DISCIPLINEType discipline, TALENTType talent, KNACKDEFINITIONType knack) {
+			this.disciplinename=discipline.getName();
+			this.talentname=talent.getName();
+			this.disciplinecircle=discipline.getCircle();
 			this.knack=new KNACKType();
 			this.knack.setAction(knack.getAction());
 			this.knack.setAttribute(knack.getAttribute());
 			this.knack.setBlood(knack.getBlood());
 			this.knack.setBookref(knack.getBookref());
-			this.knack.setMinrank(knack.getMinrank());
+			this.knack.setLearnedbymincircle(disciplinecircle);
 			this.knack.setName(knack.getName());
 			this.knack.setStrain(knack.getStrain());
+			List<String> limitations=talent.getLIMITATION();
+			int talentrank=talent.getRANK().getRank();
+			for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+				if( ! base.getType().equals(CapabilitytypeType.TALENT) ) continue;
+				if( ! base.getName().equals(this.talentname) ) continue;
+				if( base.getMinrank() >= talentrank ) continue;
+				String baselimitation=base.getLimitation();
+				if( baselimitation.isEmpty() ) {
+					this.knack.setMinrank(base.getMinrank());
+				} else {
+					for( String limitation : limitations ) {
+						if( baselimitation.equals(limitation) ) {
+							this.knack.setMinrank(base.getMinrank());
+						}
+					}
+				}
+			}
 		}
 	}
 	List<KnackTableEntry> knacklist;
@@ -156,6 +176,7 @@ class KnacksTableModel extends AbstractTableModel {
 	private List<KnackTableEntry> getKnacksForTalents(List <TALENTType> talents, DISCIPLINEType discipline, boolean isdisciplinetalent) {
 		List<KnackTableEntry> result = new ArrayList<>();
 		for( TALENTType talent : talents ) {
+			String talentname=talent.getName();
 			int talentrank=talent.getRANK().getRank();
 			// In ED3 discipline talents get knacks 2 ranks earlier.
 			if( isdisciplinetalent && character.getRulesetversion().equals(RulesetversionType.ED_3) ) talentrank += 2;
@@ -164,8 +185,15 @@ class KnacksTableModel extends AbstractTableModel {
 				talentlimitations=new String[]{""};
 			}
 			for( String limitation : talentlimitations ) {
-				for( KNACKBASEType knack : PROPERTIES.getTalentKnacks(talent.getName(),limitation) ) {
-					boolean match=( knack.getMinrank() <= talentrank );
+				for( KNACKDEFINITIONType knack : PROPERTIES.getTalentKnacks(talentname,limitation) ) {
+					boolean match=false;
+					for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
+						if( ! base.getType().equals(CapabilitytypeType.TALENT) ) continue;
+						if( ! base.getName().equals(talentname) ) continue;
+						if( ! ( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) ) continue;
+						if( base.getMinrank() >= talentrank ) continue;
+						match=true;
+					}
 					if( ! match ) continue;
 					for( KNACKATTRIBUTEType attr : knack.getATTRIBUTE() ) {
 						int step=character.getAttributes().get(attr.getName()).getCurrentvalue();
@@ -200,7 +228,7 @@ class KnacksTableModel extends AbstractTableModel {
 						}
 					}
 					if( ! match ) continue;
-					result.add(new KnackTableEntry(discipline.getName(),talent.getName(),discipline.getCircle(),knack));
+					result.add(new KnackTableEntry(discipline,talent,knack));
 				}
 			}
 		}
