@@ -16,7 +16,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="7" type="Elf">
+	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -32,7 +32,23 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Blood Elf" karmamodifier="4" movement_ground="14" type="Elf">
+		<ATTRIBUTE name="DEX" value="11" />
+		<ATTRIBUTE name="STR" value="10" />
+		<ATTRIBUTE name="TOU" value="8" />
+		<ATTRIBUTE name="PER" value="11" />
+		<ATTRIBUTE name="WIL" value="12" />
+		<ATTRIBUTE name="CHA" value="11" />
+		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
+		<WOUND threshold="0"/>
+		<ABILITY>Low-Light Vision</ABILITY>
+		<ABILITY>Longing</ABILITY>
+		<ABILITY>Pain Resistance</ABILITY>
+		<ABILITY>Ritual of Thorns</ABILITY>
+		<ORIGIN>Barsaive</ORIGIN>
+		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="skill"/>
+	</NAMEGIVER>
+	<NAMEGIVER lang="en" name="Human" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -46,9 +62,9 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
 		<ORIGIN>Cathay</ORIGIN>
-		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
+		<DEFAULTLANGUAGE language="Human" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="6" type="Human">
+	<NAMEGIVER lang="en" name="Denairastas" karmamodifier="5" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -65,7 +81,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="5" enduringarmorfactor="0.8" type="Obsidiman">
+	<NAMEGIVER lang="en" name="Obsidiman" karmamodifier="3" movement_ground="10" enduringarmorfactor="0.8" type="Obsidiman">
 		<ATTRIBUTE name="DEX" value="8" />
 		<ATTRIBUTE name="STR" value="18" />
 		<ATTRIBUTE name="TOU" value="13" />
@@ -81,7 +97,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Obsidiman" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="6" type="Ork">
+	<NAMEGIVER lang="en" name="Ork" karmamodifier="5" movement_ground="12" type="Ork">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="13" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -98,7 +114,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="7" enduringarmorfactor="0.8" type="Troll">
+	<NAMEGIVER lang="en" name="Troll" karmamodifier="3" movement_ground="14" enduringarmorfactor="0.8" type="Troll">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="14" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -114,7 +130,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Troll" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="6" type="T'skrang">
+	<NAMEGIVER lang="en" name="T'skrang" karmamodifier="4" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -131,7 +147,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="3" movement_flight="8" enduringarmorfactor="1.5" type="Windling">
+	<NAMEGIVER lang="en" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="4" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -149,7 +165,7 @@
 		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="7" movement_flight="10" type="Dragon">
+	<NAMEGIVER lang="en" name="Drake" karmamodifier="5" movement_ground="14" movement_flight="20" type="Dragon">
 		<ATTRIBUTE name="DEX" value="28" />
 		<ATTRIBUTE name="STR" value="37" />
 		<ATTRIBUTE name="TOU" value="28" />
