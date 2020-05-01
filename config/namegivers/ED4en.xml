@@ -41,6 +41,7 @@
 		<ATTRIBUTE name="CHA" value="11" />
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
 		<ABILITY>Longing</ABILITY>
 		<ABILITY>Pain Resistance</ABILITY>
