@@ -79,7 +79,7 @@
 	<RANDOMNAME_RACE race="Human">
 		<COMMENT>
 			"Humans receive their Names from their parents, keeping them for the rest of their lives." (NG p.136)
-			- first given Name (given by parents)	A Surname ist uncommon, if talking about the heritage say "Son/ Daughter of ..." 
+			- first given Name (given by parents)	A Surname ist uncommon, if talking about the heritage say "Son/ Daughter of ..."
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">
 		Aar-de-lea;Ae-thee-la;Am-ba-ra;Am-mie;Au-dra;Celi-na;Chan-trel;Cha-rell;Ci-mo-na;Dan-deer;De-la;Del-mo-na;Del-phi-na;Del-tea;De-qua-ria;
@@ -119,7 +119,7 @@
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Obsidimen">
 		<COMMENT>
-			"Obsidimen receive their Names during the Awakening, given to them by their Liferock. Over the course of two decades, the Awakened 
+			"Obsidimen receive their Names during the Awakening, given to them by their Liferock. Over the course of two decades, the Awakened
 			learns about the world from fellow brothers, and during this time he discovers the Name that was given to him." (NG p.138)
 			The Name in not mal or female because Obsidimen are not male nor female.
 			- first Name (learned from the Liferock)
@@ -135,7 +135,7 @@
 	<RANDOMNAME_RACE race="Ork">
 		<COMMENT>
 			"Before an ork is born, his mother dreams the vravraka, where she sees the child demanding the Name it desires. Tribal orks usually add descriptive Names hinting at their deeds, ideals, or virtues to this Name over the course of their lives." (NG p.138)
-			- first Name (demand by child in dream) 
+			- first Name (demand by child in dream)
 			- second Name (usually added by self)
 		</COMMENT>
 		<RANDOMNAME_NAMEPART part="0" gender="female" delimiter=";">
@@ -188,12 +188,12 @@
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="Troll">
 		<COMMENT>
-			"Highland trolls have three Names. A troll’s first Name, like a human’s or dwarf ’s “given" Name, is associated more or less 
-			uniquely with that individual and often has some meaning in the language from which it derives. The derivation of the second Name 
-			varies from from clan to clan and moot to moot. In some clans it indicates the trolls family or clan; in others, it merely serves 
-			as a second personal identifier. 
+			"Highland trolls have three Names. A troll’s first Name, like a human’s or dwarf ’s “given" Name, is associated more or less
+			uniquely with that individual and often has some meaning in the language from which it derives. The derivation of the second Name
+			varies from from clan to clan and moot to moot. In some clans it indicates the trolls family or clan; in others, it merely serves
+			as a second personal identifier.
 			The third Name identifies the troll’s clan or moot. The major trollmoots are located in the Twilight Peaks:
-			the Stoneclaws and the Swiftwinds to the East, the Blood Lores and Blackfangs to the West, and the Ironmongers and Thundersky 
+			the Stoneclaws and the Swiftwinds to the East, the Blood Lores and Blackfangs to the West, and the Ironmongers and Thundersky
 			trollmoots in the central peaks.
 			Lowland trolls are known to follow human Naming rituals and pay court in the manner of their human neighbors." (NG p. 138)
 			Highland trolls
@@ -229,11 +229,11 @@
 	</RANDOMNAME_RACE>
 	<RANDOMNAME_RACE race="T´skrang">
 		<COMMENT>
-			"A t’skrang begins life with two Names, one chosen by its egg parent before the hatchling breaks its shell, and the second the 
-			Name of the foundation into which it is born. At kaissa , when the hatchling becomes an adult, it chooses its third Name, 
-			sometimes a descriptive Name or self-styled title. A t’skrang who earns the honor of entering an aropagoi gains a fourth Name, 
+			"A t’skrang begins life with two Names, one chosen by its egg parent before the hatchling breaks its shell, and the second the
+			Name of the foundation into which it is born. At kaissa , when the hatchling becomes an adult, it chooses its third Name,
+			sometimes a descriptive Name or self-styled title. A t’skrang who earns the honor of entering an aropagoi gains a fourth Name,
 			although it often replaces the foundation Name where the foundation is a recognized and known part of the aropagoi any way. An honored
-			t’skrang who undergoes k ’soto  ensherenk and becomes a lahala accepts her foundation’s Name as her only Name. 
+			t’skrang who undergoes k ’soto  ensherenk and becomes a lahala accepts her foundation’s Name as her only Name.
 			T’skrang Names are often difficult to pronounce for outsiders." (NG p.139-140) T+skrang Names never male or female because nobody knows
 			if a t´skrang will be a man or a woman after his kaissa.
 			- first  Name (chosen by its egg parent; if becomes lahala accepts her foundation’s Name as her only Name)

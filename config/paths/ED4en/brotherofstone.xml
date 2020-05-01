@@ -3,7 +3,7 @@
 
 	<PATHKNACK name="Brother of Stone"/><!-- Prerequisit -->
 	<PATHTALENT name="Brother of Stone" tier="master" maxrank="10"/><!-- learned talent with knack on Rank1 -->
- 
+
 	<PATHRANK tier="journeyman"><!-- 1 -->
 		<OPTIONALTALENT name="Astral Sight"/>
 		<OPTIONALTALENT name="Danger Sense"/>
@@ -16,7 +16,7 @@
 		<OPTIONALTALENT name="Wilderness Survival"/>
 		<OPTIONALTALENT name="Wound Balance"/>
 		<TALENTABILITY/>
-	</PATHRANK> 
+	</PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 2 -->
 	<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
