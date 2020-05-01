@@ -22,7 +22,7 @@
 		<KARMA spend="on Perception tests, rely on sight only"/>
 	</CIRCLE>
 	<CIRCLE><!-- 2 -->
-		<DISCIPLINETALENT name="Direction Arrow"/>
+		<DISCIPLINETALENT name="Mystic Pursuit"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
