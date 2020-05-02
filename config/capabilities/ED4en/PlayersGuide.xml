@@ -100,7 +100,7 @@
 	<TALENT name="Etiquette" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Hold Thread" attribute="WIL" action="simple" strain="1 (s. Text)"/>
 	<TALENT name="Thread Weaving" attribute="PER" action="standard"/>
-	<TALENT name="Disarm Trap" attribute="DEX" action="standard" strain="1" skilluse="1"/> 
+	<TALENT name="Disarm Trap" attribute="DEX" action="standard" strain="1" skilluse="1"/>
 	<TALENT name="Haggle" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Fireblood" attribute="TOU" action="standard"/>
 	<TALENT name="Fast Hand" attribute="DEX" action="standard" strain="1" skilluse="5"/>
@@ -132,7 +132,7 @@
 	<TALENT name="Climbing" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Blade Juggle" attribute="DEX" action="standard" strain="1 (s. Text)" skilluse="5"/>
 	<TALENT name="Cobra Strike" attribute="DEX" action="free" strain="2"/>
-	<TALENT name="Direction Arrow" attribute="PER" action="standard" strain="2"/>
+	<TALENT name="Mystic Pursuit" attribute="PER" action="standard" strain="2"/>
 	<TALENT name="Conversation" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Claw Shape" attribute="STR" bonus="3" action="simple"/>
 	<TALENT name="Orbiting Spy" attribute="PER" action="standard"/>

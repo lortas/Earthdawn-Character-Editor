@@ -27,7 +27,7 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
-		<DISCIPLINETALENT name="Direction Arrow"/>
+		<DISCIPLINETALENT name="Mystic Pursuit"/>
 		<TALENTABILITY/>
 		<KARMA spend="on Initiative tests"/>
 	</CIRCLE>

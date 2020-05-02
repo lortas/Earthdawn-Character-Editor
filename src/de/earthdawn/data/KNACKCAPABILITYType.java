@@ -24,8 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" /&gt;
  *       &lt;attribute name="maxrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
+ *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -39,10 +41,14 @@ public class KNACKCAPABILITYType {
 
     @XmlAttribute(name = "name", required = true)
     protected String name;
+    @XmlAttribute(name = "limitation")
+    protected String limitation;
     @XmlAttribute(name = "minrank")
     protected Integer minrank;
     @XmlAttribute(name = "maxrank")
     protected Integer maxrank;
+    @XmlAttribute(name = "prerequisite")
+    protected PrerequisitekindType prerequisite;
 
     /**
      * Gets the value of the name property.
@@ -66,6 +72,34 @@ public class KNACKCAPABILITYType {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the limitation property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getLimitation() {
+        if (limitation == null) {
+            return "";
+        } else {
+            return limitation;
+        }
+    }
+
+    /**
+     * Sets the value of the limitation property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setLimitation(String value) {
+        this.limitation = value;
     }
 
     /**
@@ -122,6 +156,34 @@ public class KNACKCAPABILITYType {
      */
     public void setMaxrank(Integer value) {
         this.maxrank = value;
+    }
+
+    /**
+     * Gets the value of the prerequisite property.
+     *
+     * @return
+     *     possible object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public PrerequisitekindType getPrerequisite() {
+        if (prerequisite == null) {
+            return PrerequisitekindType.RESTRICTION;
+        } else {
+            return prerequisite;
+        }
+    }
+
+    /**
+     * Sets the value of the prerequisite property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PrerequisitekindType }
+     *
+     */
+    public void setPrerequisite(PrerequisitekindType value) {
+        this.prerequisite = value;
     }
 
 }

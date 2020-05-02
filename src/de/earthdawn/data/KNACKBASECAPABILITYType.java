@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/datatypes}capabilitytype_type" /&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="limitation" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
+ *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -43,6 +44,8 @@ public class KNACKBASECAPABILITYType {
     protected String name;
     @XmlAttribute(name = "limitation")
     protected String limitation;
+    @XmlAttribute(name = "minrank")
+    protected Integer minrank;
 
     /**
      * Gets the value of the type property.
@@ -118,6 +121,34 @@ public class KNACKBASECAPABILITYType {
      */
     public void setLimitation(String value) {
         this.limitation = value;
+    }
+
+    /**
+     * Gets the value of the minrank property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public int getMinrank() {
+        if (minrank == null) {
+            return  0;
+        } else {
+            return minrank;
+        }
+    }
+
+    /**
+     * Sets the value of the minrank property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     */
+    public void setMinrank(Integer value) {
+        this.minrank = value;
     }
 
 }

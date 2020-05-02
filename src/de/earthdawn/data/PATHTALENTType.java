@@ -15,16 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for KNACKRACE_type complex type.
+ * <p>Java class for PATHTALENT_type complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  * <pre>
- * &lt;complexType name="KNACKRACE_type"&gt;
+ * &lt;complexType name="PATHTALENT_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
+ *       &lt;attribute name="tier" use="required" type="{http://earthdawn.com/datatypes}tierkind_type" /&gt;
+ *       &lt;attribute name="maxrank" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -33,13 +34,15 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "KNACKRACE_type", namespace = "http://earthdawn.com/knack")
-public class KNACKRACEType {
+@XmlType(name = "PATHTALENT_type", namespace = "http://earthdawn.com/path")
+public class PATHTALENTType {
 
     @XmlAttribute(name = "name", required = true)
     protected String name;
-    @XmlAttribute(name = "prerequisite")
-    protected PrerequisitekindType prerequisite;
+    @XmlAttribute(name = "tier", required = true)
+    protected TierkindType tier;
+    @XmlAttribute(name = "maxrank", required = true)
+    protected int maxrank;
 
     /**
      * Gets the value of the name property.
@@ -66,31 +69,43 @@ public class KNACKRACEType {
     }
 
     /**
-     * Gets the value of the prerequisite property.
+     * Gets the value of the tier property.
      *
      * @return
      *     possible object is
-     *     {@link PrerequisitekindType }
+     *     {@link TierkindType }
      *
      */
-    public PrerequisitekindType getPrerequisite() {
-        if (prerequisite == null) {
-            return PrerequisitekindType.RESTRICTION;
-        } else {
-            return prerequisite;
-        }
+    public TierkindType getTier() {
+        return tier;
     }
 
     /**
-     * Sets the value of the prerequisite property.
+     * Sets the value of the tier property.
      *
      * @param value
      *     allowed object is
-     *     {@link PrerequisitekindType }
+     *     {@link TierkindType }
      *
      */
-    public void setPrerequisite(PrerequisitekindType value) {
-        this.prerequisite = value;
+    public void setTier(TierkindType value) {
+        this.tier = value;
+    }
+
+    /**
+     * Gets the value of the maxrank property.
+     *
+     */
+    public int getMaxrank() {
+        return maxrank;
+    }
+
+    /**
+     * Sets the value of the maxrank property.
+     *
+     */
+    public void setMaxrank(int value) {
+        this.maxrank = value;
     }
 
 }

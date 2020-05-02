@@ -29,6 +29,7 @@ import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.DEVOTIONCAPABILITYType;
 import de.earthdawn.data.KNACKBASEType;
+import de.earthdawn.data.KNACKDEFINITIONType;
 import de.earthdawn.data.YesnoType;
 
 public class ECECapabilities {
@@ -44,7 +45,7 @@ public class ECECapabilities {
 	
 	public ECECapabilities(){}
 
-	public ECECapabilities(List<JAXBElement<?>> capabilities,List<KNACKBASEType> knacks) {
+	public ECECapabilities(List<JAXBElement<?>> capabilities,List<KNACKDEFINITIONType> knacks) {
 		for (JAXBElement<?> element : capabilities) {
 			if (element.getName().getLocalPart().equals("TALENT")) {
 				CAPABILITYType talent = (CAPABILITYType)element.getValue();
@@ -66,7 +67,7 @@ public class ECECapabilities {
 			} else {
 				System.err.println( "Unknown capabilities type: "+element.getName().getLocalPart() );
 			}
-			if( knacks != null ) for( KNACKBASEType knack : knacks ) {
+			if( knacks != null ) for( KNACKDEFINITIONType knack : knacks ) {
 				if( knack.getSkilluse()>0 ) {
 					CAPABILITYType skill = new CAPABILITYType();
 					skill.setAction(knack.getAction());

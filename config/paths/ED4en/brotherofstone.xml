@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PATH name="Brother of Stone" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	
-        <PATHKNACK name="Brother of Stone"/><!-- Prerequisit -->
-        <PATHTALENT name="Brother of Stone" tier="master" maxrank="10"/><!-- learned talent with knack on Rank1 -->
-         
-        <PATHRANK tier="journeyman"><!-- 1 -->
+
+	<PATHKNACK name="Brother of Stone"/><!-- Prerequisit -->
+	<PATHTALENT name="Brother of Stone" tier="master" maxrank="10"/><!-- learned talent with knack on Rank1 -->
+
+	<PATHRANK tier="journeyman"><!-- 1 -->
 		<OPTIONALTALENT name="Astral Sight"/>
 		<OPTIONALTALENT name="Danger Sense"/>
 		<OPTIONALTALENT name="Deliberate Assault"/>
@@ -16,9 +16,9 @@
 		<OPTIONALTALENT name="Wilderness Survival"/>
 		<OPTIONALTALENT name="Wound Balance"/>
 		<TALENTABILITY/>
-	</PATHRANK> 
+	</PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 2 -->
-                <TALENTABILITY/>
+	<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 	</PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 3 -->
@@ -42,22 +42,22 @@
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 7 -->
 		<TALENTABILITY/>
-                <DEFENSE kind="spell"/>
+	<DEFENSE kind="spell"/>
 		
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 8 -->
 		<TALENTABILITY/>
 		<RECOVERYTESTPERDAY/>
 	</PATHRANK>
-        <PATHRANK tier="master"><!-- 9 -->
-                <OPTIONALTALENT name="Relentless Recovery"/>
+	<PATHRANK tier="master"><!-- 9 -->
+	<OPTIONALTALENT name="Relentless Recovery"/>
 		<OPTIONALTALENT name="Resist Pain"/>
 		<OPTIONALTALENT name="Unflinching Fortitude"/>
 		<OPTIONALTALENT name="Wisdom of Ages"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</PATHRANK>
-        <PATHRANK tier="master"><!-- 10 -->
+	<PATHRANK tier="master"><!-- 10 -->
 		<TALENTABILITY/>
 		<RECOVERYTESTPERDAY/>
 	</PATHRANK>

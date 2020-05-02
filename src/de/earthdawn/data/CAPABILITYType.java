@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *       &lt;attribute name="realigned" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="isinitiative" type="{http://earthdawn.com/datatypes}yesno_type" default="no" /&gt;
+ *       &lt;attribute name="hasonehandlimitbonus" type="{http://earthdawn.com/datatypes}yesno_type" default="no" /&gt;
  *       &lt;attribute name="notbyversatility" type="{http://earthdawn.com/datatypes}yesno_type" default="no" /&gt;
  *       &lt;attribute name="skilluse" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="canimprovised" type="{http://earthdawn.com/datatypes}yesno_type" default="no" /&gt;
@@ -81,6 +82,8 @@ public class CAPABILITYType {
     protected Integer realigned;
     @XmlAttribute(name = "isinitiative")
     protected YesnoType isinitiative;
+    @XmlAttribute(name = "hasonehandlimitbonus")
+    protected YesnoType hasonehandlimitbonus;
     @XmlAttribute(name = "notbyversatility")
     protected YesnoType notbyversatility;
     @XmlAttribute(name = "skilluse")
@@ -387,6 +390,34 @@ public class CAPABILITYType {
      */
     public void setIsinitiative(YesnoType value) {
         this.isinitiative = value;
+    }
+
+    /**
+     * Gets the value of the hasonehandlimitbonus property.
+     *
+     * @return
+     *     possible object is
+     *     {@link YesnoType }
+     *
+     */
+    public YesnoType getHasonehandlimitbonus() {
+        if (hasonehandlimitbonus == null) {
+            return YesnoType.NO;
+        } else {
+            return hasonehandlimitbonus;
+        }
+    }
+
+    /**
+     * Sets the value of the hasonehandlimitbonus property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link YesnoType }
+     *
+     */
+    public void setHasonehandlimitbonus(YesnoType value) {
+        this.hasonehandlimitbonus = value;
     }
 
     /**

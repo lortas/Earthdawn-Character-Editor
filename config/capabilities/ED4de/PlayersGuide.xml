@@ -98,7 +98,7 @@
 	<TALENT name="Etikette" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Faden Halten" attribute="WIL" action="simple" strain="1 (s. Text)"/>
 	<TALENT name="Fadenweben" attribute="PER" action="standard"/>
-	<TALENT name="Fallen Entschärfen" attribute="DEX" action="standard" strain="1" skilluse="1"/> 
+	<TALENT name="Fallen Entschärfen" attribute="DEX" action="standard" strain="1" skilluse="1"/>
 	<TALENT name="Feilschen" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
 	<TALENT name="Feuerblut" attribute="TOU" action="standard"/>
 	<TALENT name="Flinke Hand" attribute="DEX" action="standard" strain="1" skilluse="5"/>

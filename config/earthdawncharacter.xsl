@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xsl:stylesheet 
+<xsl:stylesheet
 	version = "1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:edc="http://earthdawn.com/character"
@@ -201,7 +201,7 @@
 		<td class="edMidCell"><xsl:value-of select="@lpincrease"/></td>
 		<td class="edMidCell"><xsl:value-of select="@currentvalue"/></td>
 		<td class="edMidCell"><xsl:value-of select="@step"/></td>
-		<td class="edMidCell"><xsl:value-of select="@dice"/></td>   
+		<td class="edMidCell"><xsl:value-of select="@dice"/></td>
 	</tr>
 </xsl:template>
 
@@ -870,7 +870,7 @@
 				<td class="edHeaderCell" width="8%"><xsl:value-of select="$translations/tra:TEXT[@name='used']/tra:LABEL[@lang=$lang]"/></td>
 				<td class="edHeaderCell" width="8%"><xsl:value-of select="$translations/tra:TEXT[@name='bookref']/tra:LABEL[@lang=$lang]"/></td>
 			</tr>
-			<xsl:apply-templates select="//edc:ITEM"> 
+			<xsl:apply-templates select="//edc:ITEM">
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
 		</table>
@@ -899,7 +899,7 @@
 		<div class="edSubHeader">Bloodcharm Items</div>
 		<table width="100%">
 			<xsl:call-template name="magicItemsTableHeader"/>
-			<xsl:apply-templates select="//edc:BLOODCHARMITEM"> 
+			<xsl:apply-templates select="//edc:BLOODCHARMITEM">
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
 		</table>
@@ -910,7 +910,7 @@
 		<div class="edSubHeader">Magic Items</div>
 		<table width="100%">
 			<xsl:call-template name="magicItemsTableHeader"/>
-			<xsl:apply-templates select="//edc:MAGICITEM"> 
+			<xsl:apply-templates select="//edc:MAGICITEM">
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
 		</table>
@@ -977,7 +977,7 @@
 				<td class="edHeaderCell" width="5%">Used</td>
 				<td class="edHeaderCell" width="5%">Book Ref</td>
 			</tr></thead>
-			<xsl:apply-templates select="//edc:PATTERNITEM"> 
+			<xsl:apply-templates select="//edc:PATTERNITEM">
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
 		</table>
@@ -1155,21 +1155,21 @@
 			<xsl:if test="@effect"><tr>
 				<td class="edCell">Effect: <xsl:value-of select="@effect"/></td>
 			</tr></xsl:if>
-			<xsl:if test="./edt:ARMOR"><td class="edCell">Armor: 
-				phy:<xsl:value-of select="./edt:ARMOR/@physicalarmor"/>, 
-				mys:<xsl:value-of select="./edt:ARMOR/@mysticarmor"/>, 
+			<xsl:if test="./edt:ARMOR"><td class="edCell">Armor:
+				phy:<xsl:value-of select="./edt:ARMOR/@physicalarmor"/>,
+				mys:<xsl:value-of select="./edt:ARMOR/@mysticarmor"/>,
 				ini:<xsl:value-of select="./edt:ARMOR/@penalty"/>
 			</td></xsl:if>
-			<xsl:if test="./edt:SHIELD"><td class="edCell">Shield: 
-				phy:<xsl:value-of select="./edt:SHIELD/@physicalarmor"/>, 
-				mys:<xsl:value-of select="./edt:SHIELD/@mysticarmor"/>, 
+			<xsl:if test="./edt:SHIELD"><td class="edCell">Shield:
+				phy:<xsl:value-of select="./edt:SHIELD/@physicalarmor"/>,
+				mys:<xsl:value-of select="./edt:SHIELD/@mysticarmor"/>,
 				ini:<xsl:value-of select="./edt:SHIELD/@penalty"/>
 			</td></xsl:if>
 			<xsl:if test="./edt:WEAPON"><td class="edCell">Weapon: damage step:<xsl:value-of select="./edt:WEAPON/@damagestep"/></td></xsl:if>
-			<xsl:if test="./edt:WOUND"><td class="edCell">Cause Wound: 
-				threshold:<xsl:value-of select="./edt:WOUND/@threshold"/>, 
-				normal:<xsl:value-of select="./edt:WOUND/@normal"/>, 
-				blood:<xsl:value-of select="./edt:WOUND/@blood"/>, 
+			<xsl:if test="./edt:WOUND"><td class="edCell">Cause Wound:
+				threshold:<xsl:value-of select="./edt:WOUND/@threshold"/>,
+				normal:<xsl:value-of select="./edt:WOUND/@normal"/>,
+				blood:<xsl:value-of select="./edt:WOUND/@blood"/>,
 				penalties:<xsl:value-of select="./edt:WOUND/@penalties"/>
 			</td></xsl:if>
 			<xsl:for-each select="./edt:SPELL"><tr>
@@ -1179,7 +1179,7 @@
 				<td class="edCell">Ability: <xsl:value-of select="."/></td>
 			</tr></xsl:for-each>
 			<tr><td class="edCell">
-				<xsl:for-each select="./edt:DEFENSE"> Defense: 
+				<xsl:for-each select="./edt:DEFENSE"> Defense:
 					<xsl:choose>
 						<xsl:when test="@kind=''"> physical</xsl:when>
 						<xsl:when test="not(@kind)"> physical</xsl:when>

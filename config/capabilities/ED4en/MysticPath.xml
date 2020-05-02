@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CAPABILITIES lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
 	<TALENT name="Ancient Bonds" attribute="PER" action="special" strain="1"/>
-        <TALENT name="Applied Knowledge" attribute="CHA" action="simple" strain="1"/>
-        <TALENT name="Bane Strike" attribute="na" action="free" strain="2"/>
-        <TALENT name="Bear Mark" attribute="WIL" action="free" strain="2"/>
-        <TALENT name="Body Control" attribute="STR" hasonehandlimitbonus="yes" action="simple" strain="0"/>
-        <TALENT name="Brother of Stone" attribute="na" action="na" strain="0"/>
-        <TALENT name="Call of Harrow" attribute="PER" action="simple" strain="1"/>
-        <TALENT name="Call of Harrow" attribute="PER" action="simple" strain="1"/>
-        <TALENT name="Ch’tard Pierce" attribute="DEX" action="simple" strain="2"/>
-        <TALENT name="Dance Partner" attribute="PER" action="simple" strain="1"/>
-        <TALENT name="Deliberate Assault" attribute="na" action="free" strain="1"/>
-        <TALENT name="Dive Attack" attribute="na" action="free" strain="1" skilluse="5"/>
-        <TALENT name="Earth Bond" attribute="WIL" action="standard" strain="0"/>
-        <TALENT name="Earth Speak" attribute="CHA" action="standard" strain="1"/>
-        <TALENT name="Earth Walk" attribute="na" action="sustained" strain="1"/>
-        <TALENT name="Edo Dance" attribute="DEX" action="free" strain="1"/>
-        <TALENT name="Edo Sweep" attribute="DEX" action="free" strain="2"/>
-        <TALENT name="Engaging Dance" attribute="DEX" action="free" strain="1"/>
-        <TALENT name="Expansive Expertise" attribute="na" action="na" strain="0"/>
-        <TALENT name="Fire Eater" attribute="na" action="na" strain="0"/>
-        <TALENT name="Fires of Gahad" attribute="WIL" action="free" strain="1"/>
-        <TALENT name="Focused Strike" attribute="WIL" action="free" strain="1"/>
-        <TALENT name="Forest Sense" attribute="PER" action="sustained" strain="2"/>
-        <TALENT name="Gaze into the Abyss" attribute="na" action="free" strain="1"/>
-        <TALENT name="Guardian’s Service" attribute="na" action="simple" strain="1"/>
-        <TALENT name="Horror Stalker" attribute="na" action="na" strain="0"/>
-        <TALENT name="Journeyman" attribute="na" action="na" strain="0"/>
-        <TALENT name="Liberation" attribute="CHA" action="simple" strain="2"/>
-        <TALENT name="Liberator" attribute="na" action="na" strain="0"/>
-        <TALENT name="Messenger" attribute="na" action="na" strain="0"/>
-        <TALENT name="Morphism" attribute="WIL" action="standard" strain="2"/>
-        <TALENT name="Outcast" attribute="na" action="na" strain="0"/>
-        <TALENT name="Patient Resilience" attribute="na" action="free" strain="2"/>
-        <TALENT name="Pilot Boat" attribute="PER" action="sustained" skilluse="1"/>
-        <TALENT name="Purge Karma" attribute="WIL" action="simple" strain="2"/>
-        <TALENT name="Purification" attribute="WIL" action="standard" strain="1"/>
-        <TALENT name="Purifier" attribute="na" action="na" strain="0"/>
-        <TALENT name="Read River" attribute="PER" action="sustained" strain="0" skilluse="1"/>
-        <TALENT name="Rite of Kho’pesh" attribute="na" action="sustained" strain="2"/>
-        <TALENT name="Sailing" attribute="DEX" action="sustained" skilluse="1"/>
-        <TALENT name="Scholar" attribute="na" action="na" strain="0"/>
-        <TALENT name="Sense Captive" attribute="PER" action="standard" strain="1"/>
-        <TALENT name="Sense Horrorspawn" attribute="PER" action="standard" strain="1"/>
-        <TALENT name="Shatter Will" attribute="WIL" action="free" strain="2"/>
-        <TALENT name="Shivoavara Dance" attribute="DEX" action="free" strain="1"/>
-        <TALENT name="Shivoavara Escalation" attribute="DEX" action="simple" strain="1"/>
-        <TALENT name="Shout of Justice" attribute="CHA" action="simple" strain="1"/>
-        <TALENT name="Skora Dance" attribute="DEX" action="free" strain="1"/>
-        <TALENT name="Skora Slam" attribute="DEX" action="free" strain="2"/>
-        <TALENT name="Spirit Covenant" attribute="CHA" action="standard" strain="2"/>
-        <TALENT name="Studied Counter" attribute="PER" action="simple" strain="1" skilluse="5"/>
-        <TALENT name="Swimming" attribute="STR" action="standard" skilluse="1" canimprovised="yes"/>
-        <TALENT name="Tail Dance" attribute="DEX" action="free" strain="1" skilluse="9"/>
-        <TALENT name="Tail Dancer" attribute="na" action="na" strain="0"/>
-        <TALENT name="Tail Spike" attribute="STR" bonus="3" action="simple" strain="0"/>
-        <TALENT name="Tyranny’s Ruin" attribute="WIL" action="free" strain="1"/>
-        <TALENT name="Windmaster" attribute="na" action="na" strain="0"/>
-        <TALENT name="Wing Blitz" attribute="na" action="free" strain="1"/>
-        <TALENT name="Wisdom of Ages" attribute="WIL" action="sustained" strain="2"/>
-        <TALENT name="Wood Speak" attribute="CHA" action="standard" strain="1"/>
-        <TALENT name="Wood Walk" attribute="na" action="simple" strain="1"/>
-        <TALENT name="Woodsman" attribute="na" action="na" strain="0"/>
+	<TALENT name="Applied Knowledge" attribute="CHA" action="simple" strain="1"/>
+	<TALENT name="Bane Strike" attribute="na" action="free" strain="2"/>
+	<TALENT name="Bear Mark" attribute="WIL" action="free" strain="2"/>
+	<TALENT name="Body Control" attribute="STR" hasonehandlimitbonus="yes" action="simple" strain="0"/>
+	<TALENT name="Brother of Stone" attribute="na" action="na" strain="0"/>
+	<TALENT name="Call of Harrow" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Call of Harrow" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Ch’tard Pierce" attribute="DEX" action="simple" strain="2"/>
+	<TALENT name="Dance Partner" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Deliberate Assault" attribute="na" action="free" strain="1"/>
+	<TALENT name="Dive Attack" attribute="na" action="free" strain="1" skilluse="5"/>
+	<TALENT name="Earth Bond" attribute="WIL" action="standard" strain="0"/>
+	<TALENT name="Earth Speak" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Earth Walk" attribute="na" action="sustained" strain="1"/>
+	<TALENT name="Edo Dance" attribute="DEX" action="free" strain="1"/>
+	<TALENT name="Edo Sweep" attribute="DEX" action="free" strain="2"/>
+	<TALENT name="Engaging Dance" attribute="DEX" action="free" strain="1"/>
+	<TALENT name="Expansive Expertise" attribute="na" action="na" strain="0"/>
+	<TALENT name="Fire Eater" attribute="na" action="na" strain="0"/>
+	<TALENT name="Fires of Gahad" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Focused Strike" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Forest Sense" attribute="PER" action="sustained" strain="2"/>
+	<TALENT name="Gaze into the Abyss" attribute="na" action="free" strain="1"/>
+	<TALENT name="Guardian’s Service" attribute="na" action="simple" strain="1"/>
+	<TALENT name="Horror Stalker" attribute="na" action="na" strain="0"/>
+	<TALENT name="Journeyman" attribute="na" action="na" strain="0"/>
+	<TALENT name="Liberation" attribute="CHA" action="simple" strain="2"/>
+	<TALENT name="Liberator" attribute="na" action="na" strain="0"/>
+	<TALENT name="Messenger" attribute="na" action="na" strain="0"/>
+	<TALENT name="Morphism" attribute="WIL" action="standard" strain="2"/>
+	<TALENT name="Outcast" attribute="na" action="na" strain="0"/>
+	<TALENT name="Patient Resilience" attribute="na" action="free" strain="2"/>
+	<TALENT name="Pilot Boat" attribute="PER" action="sustained" skilluse="1"/>
+	<TALENT name="Purge Karma" attribute="WIL" action="simple" strain="2"/>
+	<TALENT name="Purification" attribute="WIL" action="standard" strain="1"/>
+	<TALENT name="Purifier" attribute="na" action="na" strain="0"/>
+	<TALENT name="Read River" attribute="PER" action="sustained" strain="0" skilluse="1"/>
+	<TALENT name="Rite of Kho’pesh" attribute="na" action="sustained" strain="2"/>
+	<TALENT name="Sailing" attribute="DEX" action="sustained" skilluse="1"/>
+	<TALENT name="Scholar" attribute="na" action="na" strain="0"/>
+	<TALENT name="Sense Captive" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Sense Horrorspawn" attribute="PER" action="standard" strain="1"/>
+	<TALENT name="Shatter Will" attribute="WIL" action="free" strain="2"/>
+	<TALENT name="Shivoavara Dance" attribute="DEX" action="free" strain="1"/>
+	<TALENT name="Shivoavara Escalation" attribute="DEX" action="simple" strain="1"/>
+	<TALENT name="Shout of Justice" attribute="CHA" action="simple" strain="1"/>
+	<TALENT name="Skora Dance" attribute="DEX" action="free" strain="1"/>
+	<TALENT name="Skora Slam" attribute="DEX" action="free" strain="2"/>
+	<TALENT name="Spirit Covenant" attribute="CHA" action="standard" strain="2"/>
+	<TALENT name="Studied Counter" attribute="PER" action="simple" strain="1" skilluse="5"/>
+	<TALENT name="Swimming" attribute="STR" action="standard" skilluse="1" canimprovised="yes"/>
+	<TALENT name="Tail Dance" attribute="DEX" action="free" strain="1" skilluse="9"/>
+	<TALENT name="Tail Dancer" attribute="na" action="na" strain="0"/>
+	<TALENT name="Tail Spike" attribute="STR" bonus="3" action="simple" strain="0"/>
+	<TALENT name="Tyranny’s Ruin" attribute="WIL" action="free" strain="1"/>
+	<TALENT name="Windmaster" attribute="na" action="na" strain="0"/>
+	<TALENT name="Wing Blitz" attribute="na" action="free" strain="1"/>
+	<TALENT name="Wisdom of Ages" attribute="WIL" action="sustained" strain="2"/>
+	<TALENT name="Wood Speak" attribute="CHA" action="standard" strain="1"/>
+	<TALENT name="Wood Walk" attribute="na" action="simple" strain="1"/>
+	<TALENT name="Woodsman" attribute="na" action="na" strain="0"/>
 </CAPABILITIES>

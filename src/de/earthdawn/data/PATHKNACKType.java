@@ -15,16 +15,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for KNACKRACE_type complex type.
+ * <p>Java class for PATHKNACK_type complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  * <pre>
- * &lt;complexType name="KNACKRACE_type"&gt;
+ * &lt;complexType name="PATHKNACK_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -33,13 +32,11 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "KNACKRACE_type", namespace = "http://earthdawn.com/knack")
-public class KNACKRACEType {
+@XmlType(name = "PATHKNACK_type", namespace = "http://earthdawn.com/path")
+public class PATHKNACKType {
 
     @XmlAttribute(name = "name", required = true)
     protected String name;
-    @XmlAttribute(name = "prerequisite")
-    protected PrerequisitekindType prerequisite;
 
     /**
      * Gets the value of the name property.
@@ -63,34 +60,6 @@ public class KNACKRACEType {
      */
     public void setName(String value) {
         this.name = value;
-    }
-
-    /**
-     * Gets the value of the prerequisite property.
-     *
-     * @return
-     *     possible object is
-     *     {@link PrerequisitekindType }
-     *
-     */
-    public PrerequisitekindType getPrerequisite() {
-        if (prerequisite == null) {
-            return PrerequisitekindType.RESTRICTION;
-        } else {
-            return prerequisite;
-        }
-    }
-
-    /**
-     * Sets the value of the prerequisite property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link PrerequisitekindType }
-     *
-     */
-    public void setPrerequisite(PrerequisitekindType value) {
-        this.prerequisite = value;
     }
 
 }

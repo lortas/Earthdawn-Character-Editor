@@ -305,7 +305,7 @@ public class ApplicationProperties {
 		return result;
 	}
 
-	public List<KNACKBASEType> getKnacks() {
+	public List<KNACKDEFINITIONType> getKnacks() {
 		KNACKS knacks = KNACKS.get(RULESETLANGUAGE);
 		if( knacks == null ) {
 			knacks = new KNACKS();
@@ -313,17 +313,17 @@ public class ApplicationProperties {
 		return knacks.getKNACK();
 	}
 
-	public List<KNACKBASEType> getKnacksByName(String name) {
-		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
-		for( KNACKBASEType knack : getKnacks() ) {
+	public List<KNACKDEFINITIONType> getKnacksByName(String name) {
+		List<KNACKDEFINITIONType> knacks = new ArrayList<>();
+		for( KNACKDEFINITIONType knack : getKnacks() ) {
 			if( knack.getName().equals(name) ) knacks.add(knack);
 		}
 		return knacks;
 	}
 
-	public List<KNACKBASEType> getKnacks(CapabilitytypeType type, String name, String limitation) {
-		List<KNACKBASEType> knacks = new ArrayList<KNACKBASEType>();
-		for( KNACKBASEType knack : getKnacks() ) {
+	public List<KNACKDEFINITIONType> getKnacks(CapabilitytypeType type, String name, String limitation) {
+		List<KNACKDEFINITIONType> knacks = new ArrayList<>();
+		for( KNACKDEFINITIONType knack : getKnacks() ) {
 			for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
 				if( ! base.getType().equals(type) ) continue;
 				if( ! base.getName().equals(name) ) continue;
@@ -335,7 +335,7 @@ public class ApplicationProperties {
 		return knacks;
 	}
 
-	public List<KNACKBASEType> getTalentKnacks(String talent,String limitation) {
+	public List<KNACKDEFINITIONType> getTalentKnacks(String talent,String limitation) {
 		return getKnacks(CapabilitytypeType.TALENT,talent,limitation);
 	}
 

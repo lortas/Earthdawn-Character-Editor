@@ -15,11 +15,18 @@
 		<xs:attribute name="type" type="namegivermovmenttype_type" use="required"/>
 		<xs:attribute name="value" type="edt:unsigned_int" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="NAMEGIVERWEAPONSIZERESTRICTION_type">
+		<xs:attribute name="onehandmin" type="edt:unsigned_int" default="1"/>
+		<xs:attribute name="onehandmax" type="edt:unsigned_int" default="3"/>
+		<xs:attribute name="twohandmin" type="edt:unsigned_int" default="4"/>
+		<xs:attribute name="twohandmax" type="edt:unsigned_int" default="6"/>
+	</xs:complexType>
 	<xs:complexType name="NAMEGIVERABILITY_type">
 		<xs:sequence>
 			<xs:element maxOccurs="6" minOccurs="6" name="ATTRIBUTE" type="ATTRIBUTENAMEVALUE_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="ARMOR" type="edt:ARMOR_type"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="WOUND" type="edt:WOUND_type"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="WEAPONSIZERESTRICTION" type="NAMEGIVERWEAPONSIZERESTRICTION_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="TALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="CARRY" type="edt:TALENTABILITY_type"/>
@@ -35,11 +42,7 @@
 		<xs:attribute name="enduringarmorfactor" type="xs:float" default="1.0"/>
 		<xs:attribute name="lang" type="edt:language_type" use="required"/>
 		<xs:attribute name="type" type="xs:string" default=""/>
-                <xs:attribute name="onehandlimitmin" type="edt:unsigned_int" default="1"/>
-                <xs:attribute name="twohandlimitmin" type="edt:unsigned_int" default="4"/>
-                <xs:attribute name="onehandlimitmax" type="edt:unsigned_int" default="3"/>
-                <xs:attribute name="twohandlimitmax" type="edt:unsigned_int" default="6"/>
-        </xs:complexType>
+	</xs:complexType>
 	<xs:element name="NAMEGIVERS">
 		<xs:complexType>
 			<xs:sequence>

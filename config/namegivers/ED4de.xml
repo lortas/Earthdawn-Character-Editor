@@ -9,6 +9,7 @@
 		<ATTRIBUTE name="CHA" value="11"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Nachtsicht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elfisch)" speak="skill"/>
@@ -22,13 +23,14 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<TALENT name="Vielseitigkeit"/>
 		<ABILITY>Vielseitigkeit</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<ORIGIN>Thera</ORIGIN>
 		<DEFAULTLANGUAGE language="Menschlich" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Obsidianer" karmamodifier="3" movement_ground="10" enduringarmorfactor="0.8" type="Obsidianer" onehandlimitmin="2" onehandlimitmax="4" twohandlimitmin="5" twohandlimitmax="7">
+	<NAMEGIVER lang="de" name="Obsidianer" karmamodifier="3" movement_ground="10" enduringarmorfactor="0.8" type="Obsidianer">
 		<ATTRIBUTE name="DEX" value="8"/>
 		<ATTRIBUTE name="STR" value="18"/>
 		<ATTRIBUTE name="TOU" value="13"/>
@@ -37,6 +39,7 @@
 		<ATTRIBUTE name="CHA" value="9"/>
 		<ARMOR name="Natürliche Rüstung" weight="0" used="yes" location="selbst" physicalarmor="3"/>
 		<WOUND threshold="3"/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Natürliche Rüstung</ABILITY>
 		<ABILITY>Erhöhte Wundschwelle</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
@@ -51,12 +54,13 @@
 		<ATTRIBUTE name="CHA" value="9"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Gahad</ABILITY>
 		<ABILITY>Nachticht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Orkisch)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Troll" karmamodifier="3" movement_ground="14" enduringarmorfactor="0.8" type="Troll" onehandlimitmin="2" onehandlimitmax="4" twohandlimitmin="5" twohandlimitmax="7">
+	<NAMEGIVER lang="de" name="Troll" karmamodifier="3" movement_ground="14" enduringarmorfactor="0.8" type="Troll">
 		<ATTRIBUTE name="DEX" value="10"/>
 		<ATTRIBUTE name="STR" value="14"/>
 		<ATTRIBUTE name="TOU" value="12"/>
@@ -65,6 +69,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION onehandmin="2" onehandmax="4" twohandmin="5" twohandmax="7"/>
 		<ABILITY>Wärmesicht</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Trollisch" speak="skill"/>
@@ -78,12 +83,13 @@
 		<ATTRIBUTE name="CHA" value="11"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Schwanzkampf</ABILITY>
 		<ABILITY>Kiemen</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling" onehandlimitmin="1" onehandlimitmax="1" twohandlimitmin="2" twohandlimitmax="2">
+	<NAMEGIVER lang="de" name="Windling" karmamodifier="6" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
 		<ATTRIBUTE name="DEX" value="11"/>
 		<ATTRIBUTE name="STR" value="4"/>
 		<ATTRIBUTE name="TOU" value="8"/>
@@ -92,6 +98,7 @@
 		<ATTRIBUTE name="CHA" value="12"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION onehandmax="1" twohandmin="2" twohandmax="2"/>
 		<DEFENSE kind="physical" bonus="2"/>
 		<TALENT name="Astralsicht"/>
 		<ABILITY>Flugfähigkeit</ABILITY>
@@ -99,7 +106,7 @@
 		<NOTDEFAULTSKILL>Schwimmen</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="de" name="Zwerg" karmamodifier="4" movement_ground="10" type="Zwerg" twohandlimitmax="5">
+	<NAMEGIVER lang="de" name="Zwerg" karmamodifier="4" movement_ground="10" type="Zwerg">
 		<ATTRIBUTE name="DEX" value="9"/>
 		<ATTRIBUTE name="STR" value="10"/>
 		<ATTRIBUTE name="TOU" value="12"/>
@@ -108,6 +115,7 @@
 		<ATTRIBUTE name="CHA" value="10"/>
 		<ARMOR name="natürliche Rüstung" weight="0" used="yes" location="selbst"/>
 		<WOUND threshold="0"/>
+		<WEAPONSIZERESTRICTION twohandmax="5"/>
 		<CARRY name="Starker Rücken" bonus="2"/>
 		<ABILITY>Wärmesicht</ABILITY>
 		<ABILITY>Starker Rücken</ABILITY>

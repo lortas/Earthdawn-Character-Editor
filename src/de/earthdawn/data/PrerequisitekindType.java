@@ -14,43 +14,31 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for action_type.
+ * <p>Java class for prerequisitekind_type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="action_type"&gt;
+ * &lt;simpleType name="prerequisitekind_type"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="sustained"/&gt;
- *     &lt;enumeration value="standard"/&gt;
- *     &lt;enumeration value="simple"/&gt;
- *     &lt;enumeration value="free"/&gt;
- *     &lt;enumeration value="na"/&gt;
- *     &lt;enumeration value="special"/&gt;
+ *     &lt;enumeration value="requirement"/&gt;
+ *     &lt;enumeration value="restriction"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  *
  */
-@XmlType(name = "action_type")
+@XmlType(name = "prerequisitekind_type")
 @XmlEnum
-public enum ActionType {
+public enum PrerequisitekindType {
 
-    @XmlEnumValue("sustained")
-    SUSTAINED("sustained"),
-    @XmlEnumValue("standard")
-    STANDARD("standard"),
-    @XmlEnumValue("simple")
-    SIMPLE("simple"),
-    @XmlEnumValue("free")
-    FREE("free"),
-    @XmlEnumValue("na")
-    NA("na"),
-    @XmlEnumValue("special")
-    SPECIAL("special");
+    @XmlEnumValue("requirement")
+    REQUIREMENT("requirement"),
+    @XmlEnumValue("restriction")
+    RESTRICTION("restriction");
     private final String value;
 
-    ActionType(String v) {
+    PrerequisitekindType(String v) {
         value = v;
     }
 
@@ -58,8 +46,8 @@ public enum ActionType {
         return value;
     }
 
-    public static ActionType fromValue(String v) {
-        for (ActionType c: ActionType.values()) {
+    public static PrerequisitekindType fromValue(String v) {
+        for (PrerequisitekindType c: PrerequisitekindType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
