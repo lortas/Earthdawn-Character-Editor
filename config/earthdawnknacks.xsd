@@ -28,7 +28,7 @@
 				<xs:attribute name="minrank" type="edt:unsigned_int" default="1"/>
 				<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
 				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
-                                <xs:attribute name="prerequisiteoption" type="edt:prerequisiteoptionpairkind_type" default="na"/>
+				<xs:attribute name="prerequisiteoption" type="edt:prerequisiteoptionpairkind_type" default="na"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKOTHERKNACK_type">
 				<xs:attribute name="name" type="xs:string" default="*"/>

@@ -16,7 +16,7 @@
 		<OPTIONALTALENT name="Tiger Spring"/>
 		<OPTIONALTALENT name="Wound Balance"/>
 		<TALENTABILITY/>
-         </PATHRANK>
+	 </PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 2 -->
 	<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
@@ -39,7 +39,7 @@
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 6 -->
 		<TALENTABILITY/>
-                <DEFENSE kind="physical"/>
+		<DEFENSE kind="physical"/>
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 7 -->
 		<TALENTABILITY/>
@@ -53,7 +53,7 @@
 		<OPTIONALTALENT name="Critical Hit"/>
 		<OPTIONALTALENT name="Defensive Posture"/>
 		<OPTIONALTALENT name="Unflinching Fortitude"/>
-                <OPTIONALTALENT name="Wing Blitz"/>
+		<OPTIONALTALENT name="Wing Blitz"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</PATHRANK>
