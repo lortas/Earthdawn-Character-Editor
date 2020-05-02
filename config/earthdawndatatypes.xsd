@@ -220,6 +220,16 @@
 			<xs:enumeration value="restriction"/><!-- One of all elements marked with 'restriction' must be fullfilled. -->
 		</xs:restriction>
 	</xs:simpleType>
+        <xs:simpleType name="prerequisiteoptionpairkind_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="na"/><!-- No pairs for requirement fullfillment -->
+                        <xs:enumeration value="Opt1"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
+			<xs:enumeration value="Opt2"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
+                        <xs:enumeration value="Opt3"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
+                        <xs:enumeration value="Opt4"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
+                        <xs:enumeration value="Opt5"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="stringlist_type">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">

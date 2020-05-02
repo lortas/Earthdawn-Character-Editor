@@ -1,18 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <KNACKS lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
-	<KNACK name="Brother of Stone" attribute="na" action="na" blood="2" bookref="MP p.299" cost="500" freetalent="Brother of Stone">
+	
+    
+    <!--PathKnacks-->
+        <KNACK name="Brother of Stone" attribute="na" action="na" blood="2" bookref="MP p.299" cost="500" freetalent="Brother of Stone">
 		<BASE type="talent" name="Thread Weaving" minrank="5"/>
 		<DISCIPLINE circle="5"/>
-		<TALENT name="Speak Language" minrank="1" prerequisite="requirement"/>
-		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement"/>
-                <SKILL name="Speak Language" minrank="1" prerequisite="requirement"/>
-		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement"/>
-		<SKILL name="Knowledge" limitation="Racial Lore" minrank="1" prerequisite="requirement" />
+		<TALENT name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
+		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
+                <SKILL name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
+		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
+		<SKILL name="Knowledge" limitation="Racial Lore" minrank="5" prerequisite="requirement" />
 	</KNACK>
         <KNACK name="Windmaster" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500" freetalent="Windmaster">
 		<BASE type="talent" name="Thread Weaving" minrank="5"/>
 		<DISCIPLINE circle="5"/>
 		<TALENT name="Melee Weapons" minrank="5" prerequisite="requirement"/>
 	</KNACK>
+        <KNACK name="Fire Eater" attribute="na" action="na" blood="2" bookref="MP p.299" cost="200" freetalent="Fire Eater">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+                <RACE name="Orc" prerequisite="requirement"/>
+        </KNACK>
+        <KNACK name="Horror Stalker" attribute="na" action="na" blood="2" bookref="MP p.299f" cost="500" freetalent="Horror Stalker">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+	</KNACK>
+        <KNACK name="Journeyman" attribute="na" action="na" blood="2" bookref="MP p.300" cost="500" freetalent="Journeyman">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+                <DISCIPLINE circle="5"/>
+                <TALENT name="Versatility" minrank="5" prerequisite="requirement"/>
+                <RACE name="Human" prerequisite="requirement"/>
+	</KNACK>
+         <KNACK name="Liberator" attribute="na" action="na" blood="2" bookref="MP p.300" cost="500" freetalent="Liberator">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+	</KNACK>
+         <KNACK name="Messenger" attribute="na" action="na" blood="2" bookref="MP p.300" cost="500" freetalent="Messenger">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>		
+	</KNACK>       
+        <KNACK name="Outcast" attribute="na" action="na" blood="2" bookref="MP p.300" cost="200" freetalent="Outcast">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+	</KNACK>
+        <KNACK name="Purifier" attribute="na" action="na" blood="2" bookref="MP p.300" cost="200" freetalent="Purifier">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+	</KNACK>
+        <KNACK name="Scholar" attribute="na" action="na" blood="2" bookref="MP p.300f" cost="200" freetalent="Scholar">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+		<SKILL name="Knowledge" minrank="5" prerequisite="requirement" />
+	</KNACK>
+        <KNACK name="Tail Dancer" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500" freetalent="Tail Dancer">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+                <TALENT name="Melee Weapons" minrank="5" prerequisite="requirement"/>
+                <SKILL name="Artisan" limitation="Dancing" minrank="5" prerequisite="requirement" />
+                <RACE name="T'skrang" prerequisite="requirement"/>
+        </KNACK>
+        <KNACK name="Woodsman" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500" freetalent="Woodsman">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+                <TALENT name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
+		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
+                <SKILL name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
+		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
+		<SKILL name="Knowledge" limitation="Racial Lore" minrank="5" prerequisite="requirement" />
+	</KNACK>
+      
         
 </KNACKS>
