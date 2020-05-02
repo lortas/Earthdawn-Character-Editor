@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PATH name="Windmaster" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+
+	<PATHKNACK name="Windmaster"/><!-- Prerequisit -->
+	<PATHTALENT name="Windmaster" tier="master" maxrank="10"/><!-- learned talent with knack on Rank1 -->
+
+	<PATHRANK tier="journeyman"><!-- 1 -->
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Distract"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Sprint"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<OPTIONALTALENT name="Tactics"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<TALENTABILITY/>
+         </PATHRANK>
+	<PATHRANK tier="journeyman"><!-- 2 -->
+	<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</PATHRANK>
+	<PATHRANK tier="journeyman"><!-- 3 -->
+		<TALENTABILITY/>
+	</PATHRANK>
+	<PATHRANK tier="journeyman"><!-- 4 -->
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</PATHRANK>
+	<PATHRANK tier="warden"><!-- 5 -->
+		<OPTIONALTALENT name="Air Dance"/>
+		<OPTIONALTALENT name="Dive Attack"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Temper Flesh"/>
+		<TALENTABILITY/>
+	</PATHRANK>
+	<PATHRANK tier="warden"><!-- 6 -->
+		<TALENTABILITY/>
+                <DEFENSE kind="physical"/>
+	</PATHRANK>
+	<PATHRANK tier="warden"><!-- 7 -->
+		<TALENTABILITY/>
+	</PATHRANK>
+	<PATHRANK tier="warden"><!-- 8 -->
+		<TALENTABILITY/>
+		<RECOVERYTESTPERDAY/>
+	</PATHRANK>
+	<PATHRANK tier="master"><!-- 9 -->
+	<OPTIONALTALENT name="Relentless Recovery"/>
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Defensive Posture"/>
+		<OPTIONALTALENT name="Unflinching Fortitude"/>
+                <OPTIONALTALENT name="Wing Blitz"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</PATHRANK>
+	<PATHRANK tier="master"><!-- 10 -->
+		<TALENTABILITY/>
+		<INITIATIVE/>
+	</PATHRANK>
+	<KARMARITUAL>Windmasters’ Karma Rituals incorporate often dizzying displays of flight and speed; the Karma Ritual’s magic enables the adept to fly without test or cost for the duration. The air attack is accompanied by a gust of wind focused to a knife-like blade that strikes a distant target.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Windmasters and know the history of Windmasters. Additionally, the adept  can use Half-Magic for knowledge of guerilla and ambush warfare, history of windling battles and tactics, and traditional windling equipment and fightingstyles.</HALFMAGIC>
+</PATH>
