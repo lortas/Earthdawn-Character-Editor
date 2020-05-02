@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Gauntlet" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="7" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Battle Shout"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Mystic Pursuit"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<OPTIONALTALENT name="Wood Skin"/>
+		<DISCIPLINETALENT name="Avoid Bow"/>
+		<DISCIPLINETALENT name="Body Control"/>
+		<DISCIPLINETALENT name="Unarmed Combat"/>
+		<DISCIPLINETALENT name="Wound Balance"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="Gauntlet Weaving"/>
+		<TALENTABILITY/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Deliberate Assault"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Steel Thought"/>
+		<TALENTABILITY/>
+		<KARMA spend="on a Recovery test"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Studied Counter"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Fire Heal"/>
+		<OPTIONALTALENT name="Iron Constitution"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Steely Stare"/>
+		<OPTIONALTALENT name="Waterfall Slam"/>
+		<DISCIPLINETALENT name="Earth Skin"/>
+		<TALENTABILITY/>
+		<KARMA spend="on any unarmed Damage test"/>
+                <ABILITY>Elemental Stance</ABILITY>
+        </CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Temper Flesh"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Crushing Blow"/>
+		<TALENTABILITY/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Focused Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+	</CIRCLE>
+        <CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Burning Vigor"/>
+		<OPTIONALTALENT name="Defensive Posture"/>
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Lion Spirit"/>
+		<OPTIONALTALENT name="Matrix Sight"/>
+		<OPTIONALTALENT name="Relentless Recovery"/>
+		<OPTIONALTALENT name="Resist Pain"/>
+		<OPTIONALTALENT name="Vine Armor"/>
+		<OPTIONALTALENT name="Vital Strike"/>
+		<DISCIPLINETALENT name="Critical Hit"/>
+		<TALENTABILITY/>
+                <KARMA spend="on any active defense test"/>
+		<ABILITY>Pattern Infusion</ABILITY>
+	</CIRCLE>
+        <CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Unflinching Fortitude"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+                <ARMOR kind="mystic"/>
+	</CIRCLE>
+        <CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Spirit Strike"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+                <KARMA spend="on any unarmed Attack test once per round"/>
+        </CIRCLE>
+        <CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Patient Resilience"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+                <RECOVERYTESTPERDAY/>
+	</CIRCLE>
+        <CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Aura Armor"/>
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Chilling Strike"/>
+		<OPTIONALTALENT name="Elemental Walk"/>
+		<OPTIONALTALENT name="Ethereal Weapon"/>
+		<OPTIONALTALENT name="Second Chance"/>
+		<OPTIONALTALENT name="Soul Aegis"/>
+		<OPTIONALTALENT name="Vital Ward"/>
+                <DISCIPLINETALENT name="Stone Skin"/>
+		<TALENTABILITY/>
+                <DEFENSE kind="physical"/>
+                <INITIATIVE/>
+                <KARMA spend="increase Karma +1 Step to a d8"/>
+                <ABILITY>Pattern Manifestation</ABILITY>
+	</CIRCLE>
+        <CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Vicious Wound"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="spell"/>
+                <ARMOR kind="mystic"/>
+	</CIRCLE>
+        <CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Shatter Will"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+                <RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<KARMARITUAL>The adept kneels or sits with skin directly in contact with the earth or stone. They extend their senses, feeling the world around them. Feeling the earth, fire, water, and wood around them. The adept narrows their focus over the next 30 minutes to a single point, a single moment. When the time is up, a shard of the ground leaps into the air and the Guantlet rises, strikes, and destroys it with a single fluid motion.</KARMARITUAL>
+	<HALFMAGIC>Gauntlets use Half-Magic for knowledge of the elements, different unarmed fighting techniques, and which prominent unarmed combatants shaped someone’s fighting style. They also use it to resist fatigue, distractions, and similar expressions of willpower and endurance.</HALFMAGIC>
+</DISCIPLINE>

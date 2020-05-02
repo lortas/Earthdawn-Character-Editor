@@ -123,6 +123,7 @@
 			<xs:enumeration value="physical"/>
 			<xs:enumeration value="spell"/>
 			<xs:enumeration value="social"/>
+                        <xs:enumeration value="mystic"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="elementkind_type">
