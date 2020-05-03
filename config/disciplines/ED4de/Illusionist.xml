@@ -143,7 +143,7 @@
 		<DISCIPLINETALENT name="Gedächtnis Durchdringen"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<ARMOR kind="spell"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Wahrheit Durch Lügen"/>
@@ -177,7 +177,7 @@
 		<DISCIPLINETALENT name="Geistessonde"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<ARMOR kind="spell"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Gespleißtes Gewebe"/>

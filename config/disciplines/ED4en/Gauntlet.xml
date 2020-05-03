@@ -85,7 +85,7 @@
 		<DISCIPLINETALENT name="Unflinching Fortitude"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<ARMOR kind="spell"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Spirit Strike"/>
@@ -119,7 +119,7 @@
 		<DISCIPLINETALENT name="Vicious Wound"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-		<ARMOR kind="spell"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Shatter Will"/>
