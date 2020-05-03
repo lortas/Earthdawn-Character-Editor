@@ -119,39 +119,39 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 12; +1 Rank to Riposte talent">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="12" weight="7.0" name="Elemental Long-Spear"/>
-			<edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Riposte" bonus="1"/>
 			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 13; It becomes extremely resilient (strength of dragon cannot harm spear); +1 Rank to Wound Balance talent" keyknowledge="type of wood spear haft is constructed from and where it was grown">
 			<edt:WEAPON size="5" strengthmin="13" damagestep="13" weight="7.0" name="Elemental Long-Spear"/>
-			<edt:TALENT name="Wound Balance" limitation="" bonus="1" pool=""/>
-			<edt:TALENT name="Riposte" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Wound Balance" bonus="1"/>
+			<edt:TALENT name="Riposte" bonus="1"/>
 			<edt:INITIATIVE count="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Espagra Boots" lpcostgrowth="5" spelldefense="17" maxthreads="2" weight="0.0" kind="cloth" bookref="GM p.134">
 		<edt:DESCRIPTION>Boots made from hides of espagra are usually bright blue, interwoven with brown leather. Espagra scales give boots brilliant luster, trademark of espagra-skin products.</edt:DESCRIPTION>
 		<edt:THREADRANK keyknowledge="boots’ Name" lpcost="200" deed="" effect="+1 Rank to Avoid Blow">
-			<edt:TALENT name="Avoid Blow" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Avoid Blow" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Avoid Blow">
-			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
+			<edt:TALENT name="Avoid Blow" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK keyknowledge=" Name of the person  who created the boots" lpcost="300" deed="" effect="+1 Rank to Silent Walk">
-			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
-			<edt:TALENT name="Silent Walk" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Avoid Blow" bonus="2"/>
+			<edt:TALENT name="Silent Walk" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK keyknowledge="" lpcost="300" deed="" effect="+2 Rank to Silent Walk">
-			<edt:TALENT name="Avoid Blow" limitation="" bonus="2" pool=""/>
-			<edt:TALENT name="Silent Walk" limitation="" bonus="2" pool=""/>
+			<edt:TALENT name="Avoid Blow" bonus="2"/>
+			<edt:TALENT name="Silent Walk" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK keyknowledge="number of espagra hides used to create boots" lpcost="300" deed="" effect="+3 Rank to Avoid Blow and Silent Walk">
-			<edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
-			<edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Avoid Blow" bonus="3"/>
+			<edt:TALENT name="Silent Walk" bonus="3"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK keyknowledge="Name of place where espagra whose hide was used for boots originally made its home" lpcost="300" deed="" effect="2 Strain: wearer gains ability to fly at Movement Rate of 5. adding +2 to Movement Rate for every 1 Strain. Ability cannot  be combined with talents or skills">
-			<edt:TALENT name="Avoid Blow" limitation="" bonus="3" pool=""/>
-			<edt:TALENT name="Silent Walk" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Avoid Blow" bonus="3"/>
+			<edt:TALENT name="Silent Walk" bonus="3"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Espagra Saddle" maxthreads="2" spelldefense="14" lpcostgrowth="5" weight="24.0" kind="tool" bookref="GM p.135">
@@ -168,32 +168,32 @@
 	<THREADITEM name="Forest Robes" lpcostgrowth="5" spelldefense="16" maxthreads="1" kind="cloth" weight="1.0" bookref="GM p.135">
 		<edt:DESCRIPTION>Forest robes take their name from woodland patterns they are decorated with. Individual robes were often Named after creator or owner.Typically, robe patterns appear three-dimensional, as if one might reach inside and touch branches and leaves. Each robe looks slightly different from every other; designs often depict the native forest of creator or wearer, or display a jewelers’ collage of branches, leaves, and vines. A forest robe can be worn over armor without any ill effects.</edt:DESCRIPTION>		
 		<edt:THREADRANK effect="+1 to Spellcasting" keyknowledge="robe’s Name">
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 1, +1 Spell Defense">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="1" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
 			<edt:DEFENSE kind="spell" bonus="1"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 2, +2 Spell Defense" keyknowledge="when and where robe was made">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="robe holds a spell matrix permanently attuned to Earth Blend spell">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
 			<edt:DEFENSE kind="spell" bonus="2"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 3, +3 Spell Defense." keyknowledge="Name of the robe’s creator">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="may hide objects (no greater 6 feet long, 3 feet wide) within robe. Robe wraps itself around hidden objects. To hide something within robe, wearer must make successful Thread Weaving Test against Diffculty equal number of objects hidden in robe +9. Robe can conceal max. four objects at one time. Wearer can remove object anytime; replacing object requires another successful Thread Weaving Test. Others than wearer can only remove hidden objects by achieving a Good Result with Willpower Test against robe’s Spell Defense. Robe’s Spell Defense is Detection Diffculty for objects hidden within folds" keyknowledge="types of plants depicted in robe’s pattern">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
 			<edt:DEFENSE kind="spell" bonus="3"/>
-			<edt:TALENT name="Spellcasting" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Frost Pouch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="tool" bookref="GM p.136">
@@ -251,11 +251,11 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Grants power similar to naga’s power of entrancement; +1 Hypnotize talent" deed="Must befriend a naga">
 			<edt:DEFENSE kind="social" bonus="1"/>
-			<edt:TALENT name="Hypnotize" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Hypnotize" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 to Hypnotize talent, +2 to Social Defense">
 			<edt:DEFENSE kind="social" bonus="2"/>		
-			<edt:TALENT name="Hypnotize" limitation="" bonus="2" pool=""/>
+			<edt:TALENT name="Hypnotize" bonus="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Orichalcum Shield" lpcostgrowth="13" spelldefense="18" maxthreads="1" weight="15.0" kind="shield" bookref="GM p.137">
@@ -319,22 +319,22 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+2 Taunt talent">
 			<edt:WEAPON size="1" strengthmin="0" damagestep="5" weight="1.0" kind="melee weapon" name="Rapier of Wit" bookref="GM p.139"/>
-			<edt:TALENT name="Taunt" limitation="" bonus="2" pool=""/>
+			<edt:TALENT name="Taunt" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 6; counts as Size 3 for purpose of determining its bonus to Parry Tests" keyknowledge="Name of weapon’s creator.">			
 			<edt:WEAPON size="1" strengthmin="0" damagestep="6" weight="1.0" kind="melee weapon" name="Rapier of Wit" bookref="GM p.139"/>
-			<edt:TALENT name="Taunt" limitation="" bonus="2" pool=""/>
-			<edt:TALENT name="Parry" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Taunt" bonus="2"/>
+			<edt:TALENT name="Parry" bonus="3"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 7">
 			<edt:WEAPON size="1" strengthmin="0" damagestep="7" weight="1.0" kind="melee weapon" name="Rapier of Wit" bookref="GM p.139"/>
-			<edt:TALENT name="Taunt" limitation="" bonus="2" pool=""/>
-			<edt:TALENT name="Parry" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Taunt" bonus="2"/>
+			<edt:TALENT name="Parry" bonus="3"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="result level required to achieve Armor-Defeating Hit is reduced by one" keyknowledge="learn skill that conveys knowledge of weapon design or construction">
 			<edt:WEAPON size="1" strengthmin="0" damagestep="7" weight="1.0" kind="melee weapon" name="Rapier of Wit" bookref="GM p.139"/>
-			<edt:TALENT name="Taunt" limitation="" bonus="2" pool=""/>
-			<edt:TALENT name="Parry" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Taunt" bonus="2"/>
+			<edt:TALENT name="Parry" bonus="3"/>
 		</edt:THREADRANK>
 	</THREADITEM>	
 	<THREADITEM name="Savage Hide" lpcostgrowth="13" spelldefense="16" maxthreads="2" kind="armor" weight="25.0" bookref="GM p.139">
@@ -357,20 +357,20 @@
 		<edt:THREADRANK effect=" +3 bonus to Hunting Tests; +2 bonus to Tracking Tests; +1 Surprise Strike; +1 Mystic Aim" keyknowledge="learn tale of hunt for animal that provided hide.">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="9" kind="armor" weight="25.0" name="Savage Hide"/>
 			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
-			<edt:TALENT name="Surprise Strike" limitation="" bonus="1" pool=""/>
-			<edt:TALENT name="Mystic Aim" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Surprise Strike" bonus="1"/>
+			<edt:TALENT name="Mystic Aim" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Physical Armor 10; Mystic Armor 4">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="4" physicalarmor="10" kind="armor" weight="25.0" name="Savage Hide"/>
 			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
-			<edt:TALENT name="Surprise Strike" limitation="" bonus="1" pool=""/>
-			<edt:TALENT name="Mystic Aim" limitation="" bonus="1" pool=""/>
+			<edt:TALENT name="Surprise Strike" bonus="1"/>
+			<edt:TALENT name="Mystic Aim" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="+3 Surprise Strike; +3 Mystic Aim" deed="single-handedly hunt and kill animal of type that provided hide for armor">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="4" physicalarmor="10" kind="armor" weight="25.0" name="Savage Hide"/>
 			<edt:WEAPON size="1" strengthmin="0" damagestep="3" weight="0.0" kind="armor" name="Savag Hide Paw Claws" bookref="GM p.139"/>
-			<edt:TALENT name="Surprise Strike" limitation="" bonus="3" pool=""/>
-			<edt:TALENT name="Mystic Aim" limitation="" bonus="3" pool=""/>
+			<edt:TALENT name="Surprise Strike" bonus="3"/>
+			<edt:TALENT name="Mystic Aim" bonus="3"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Silvered Shield" lpcostgrowth="5" spelldefense="18" maxthreads="4" weight="10.0" kind="shield" bookref="GM p.140">

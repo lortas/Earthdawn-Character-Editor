@@ -118,10 +118,10 @@
 			<xs:enumeration value="wizard"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="defensekind_type">
+	<xs:simpleType name="effectlayer_type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="physical"/>
-			<xs:enumeration value="spell"/>
+			<xs:enumeration value="mystic"/>
 			<xs:enumeration value="social"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -215,18 +215,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="prerequisitekind_type">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="requirement"/><!-- All elements marked with 'requirement' must be fullfilled. -->
-			<xs:enumeration value="restriction"/><!-- One of all elements marked with 'restriction' must be fullfilled. -->
-		</xs:restriction>
-	</xs:simpleType>
-        <xs:simpleType name="prerequisiteoptionpairkind_type">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="na"/><!-- No pairs for requirement fullfillment -->
-			<xs:enumeration value="Opt1"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
-			<xs:enumeration value="Opt2"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
-			<xs:enumeration value="Opt3"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
-			<xs:enumeration value="Opt4"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
-			<xs:enumeration value="Opt5"/><!-- From the Requirements paired by Option only one need to be fullfilled. -->
+			<xs:enumeration value="requirement"><xs:annotation><xs:documentation>All elements marked with 'requirement' must be fullfilled.</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="restriction"><xs:annotation><xs:documentation>One of all elements marked with 'restriction' must be fullfilled.</xs:documentation></xs:annotation></xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="stringlist_type">
@@ -516,7 +506,7 @@
 		<xs:complexContent>
 			<xs:extension base="ARMOR_type">
 				<xs:sequence minOccurs="1" maxOccurs="1">
-					<xs:element  minOccurs="0" maxOccurs="1" name="DEFENSE" type="DEFENSE_type"/>
+					<xs:element minOccurs="0" maxOccurs="3" name="DEFENSE" type="DEFENSE_type"><xs:annotation><xs:documentation>Each effect layer should appear maximal once.</xs:documentation></xs:annotation></xs:element>
 				</xs:sequence>
 				<xs:attribute name="shatterthreshold" type="unsigned_int" default="0"/>
 				<xs:attribute name="physicaldeflectionbonus" type="unsigned_int" default="0"/>
@@ -669,9 +659,8 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="DEFENSE_type">
-		<xs:attribute name="physical" type="unsigned_int" use="required"/>
-		<xs:attribute name="spell" type="unsigned_int" use="required"/>
-		<xs:attribute name="social" type="unsigned_int" use="required"/>
+		<xs:attribute name="effectlayer" type="effectlayer_type" use="required"/>
+		<xs:attribute name="value" type="unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="SPELLDEF_type">
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -737,7 +726,7 @@
 		<xs:annotation>
 			<xs:documentation>Indicates which defense type will be increased by one.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="kind" type="defensekind_type" default="physical"/>
+		<xs:attribute name="kind" type="effectlayer_type" default="physical"/>
 		<xs:attribute name="bonus" type="unsigned_int" default="1"/>
 	</xs:complexType>
 	<xs:complexType name="USEDSTARTRANKS_type">
@@ -756,7 +745,7 @@
 				<xs:sequence>
 					<xs:element minOccurs="1" maxOccurs="1" name="APPEARANCE" type="APPEARANCE_type"/>
 					<xs:element minOccurs="6" maxOccurs="6" name="ATTRIBUTE" type="ATTRIBUTE_type"/>
-					<xs:element minOccurs="0" maxOccurs="1" name="DEFENSE" type="DEFENSE_type"/>
+					<xs:element minOccurs="0" maxOccurs="3" name="DEFENSE" type="DEFENSE_type"><xs:annotation><xs:documentation>Each effect layer should appear maximal once.</xs:documentation></xs:annotation></xs:element>
 					<xs:element minOccurs="0" maxOccurs="1" name="PROTECTION" type="PROTECTION_type"/>
 					<xs:element minOccurs="0" maxOccurs="1" name="HEALTH" type="HEALTH_type"/>
 					<xs:element minOccurs="0" maxOccurs="1" name="MOVEMENT" type="MOVEMENT_type"/>
