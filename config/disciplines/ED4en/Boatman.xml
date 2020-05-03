@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DISCIPLINE name="Boatman" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
+	<DURABILITY value="5" circle="1"/>
+	<CIRCLE><!-- 1 -->
+		<OPTIONALTALENT name="Acrobatic Defense"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<OPTIONALTALENT name="First Impression"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Haggle"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Read River"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Taunt"/>
+		<OPTIONALTALENT name="Throwing Weapons"/>
+		<FREETALENT name="Pilot Boat"/>
+		<DISCIPLINETALENT name="Avoid Blow"/>
+		<DISCIPLINETALENT name="Climbing"/>
+		<DISCIPLINETALENT name="Melee Weapons"/>
+		<DISCIPLINETALENT name="Thread Weaving" limitation="River Weaving"/>
+		<DISCIPLINETALENT name="Swimming"/>
+		<TALENTABILITY/>
+		<KARMA spend="once per round on any action taken while on board a riverboat"/>
+	</CIRCLE>
+	<CIRCLE><!-- 2 -->
+		<DISCIPLINETALENT name="Awareness"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 3 -->
+		<DISCIPLINETALENT name="Empathic Sense"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Initiative tests"/>
+	</CIRCLE>
+	<CIRCLE><!-- 4 -->
+		<DISCIPLINETALENT name="Wound Balance"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+	</CIRCLE>
+	<CIRCLE><!-- 5 -->
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Battle Bellow"/>
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Engaging Banter"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Second Weapon"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+		<DISCIPLINETALENT name="Heartening Laugh"/>
+		<TALENTABILITY/>
+		<KARMA spend="on Interaction Tests"/>
+		<ABILITY>Collaborate</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 6 -->
+		<DISCIPLINETALENT name="Disarm"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<CIRCLE><!-- 7 -->
+		<DISCIPLINETALENT name="Inspire Others"/>
+		<TALENTABILITY/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 8 -->
+		<DISCIPLINETALENT name="Lion Heart"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+	</CIRCLE>
+	<KARMARITUAL>The Boatman sits alone in silent meditation preferably near a river or other body of water for several minutes, picturing in their mind’s eye their riverboat cruising through the current at the start of a long journey. The adept envisions a journey they hope to make one day, imagining scenes of this journey, including the risks and perils, and how their training and skills might help make the journey a safe one. The ritual is complete when, half an hour later, the imagined journey ends safely.</KARMARITUAL>
+	<HALFMAGIC>The Boatman uses Half-Magic for knowledge of riverboat designs, recognition of different types of riverboats, commonly river trade routes, and riverboat crew complements. It may also cover the maintenance, repair, and construction of riverboats (this does not include fire engines).</HALFMAGIC>
+</DISCIPLINE>
