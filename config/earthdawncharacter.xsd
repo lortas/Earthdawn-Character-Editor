@@ -46,7 +46,7 @@
 			<xs:sequence>
 				<xs:element minOccurs="1" maxOccurs="1" name="APPEARANCE" type="edt:APPEARANCE_type"/>
 				<xs:element minOccurs="6" maxOccurs="6" name="ATTRIBUTE" type="edt:ATTRIBUTE_type"/>
-				<xs:element minOccurs="0" maxOccurs="1" name="DEFENSE" type="edt:DEFENSE_type"/>
+				<xs:element minOccurs="0" maxOccurs="3" name="DEFENSE" type="edt:DEFENSE_type"><xs:annotation><xs:documentation>Each effect layer should appear maximal once.</xs:documentation></xs:annotation></xs:element>
 				<xs:element minOccurs="0" maxOccurs="1" name="PROTECTION" type="edt:PROTECTION_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="HEALTH" type="edt:HEALTH_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="MOVEMENT" type="edt:MOVEMENT_type"/>
