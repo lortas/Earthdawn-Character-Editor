@@ -142,20 +142,20 @@
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Gedächtnis Durchdringen"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social" bonus="2"/>
-		<ARMOR kind="spell" bonus="1"/>
+		<DEFENSE kind="social"/>
+		<ARMOR kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Wahrheit Durch Lügen"/>
 		<TALENTABILITY/>
 		<KARMA spend="zusätzlichen Gegner"/>
-		<DEFENSE kind="physical" bonus="1"/>
+		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Zweiter Zauber"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell" bonus="4"/>
-		<INITIATIVE count="2"/>
+		<DEFENSE kind="spell"/>
+		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Bardenstimme"/>
@@ -168,7 +168,7 @@
 		<OPTIONALTALENT name="Zweite Chance"/>
 		<DISCIPLINETALENT name="Fesselnde Visionen"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="social" bonus="3"/>
+		<DEFENSE kind="social"/>
 		<KARMASTEP/>
 		<RECOVERYTESTPERDAY/>
 		<ABILITY>Realität Manipulieren</ABILITY>
@@ -176,14 +176,14 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Geistessonde"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell" bonus="5"/>
-		<ARMOR kind="spell" bonus="2"/>
+		<DEFENSE kind="spell"/>
+		<ARMOR kind="spell"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Gespleißtes Gewebe"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="physical" bonus="2"/>
-		<INITIATIVE count="3"/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Wissen: Erkennt den Gebrauch von Magie und im speziellen von Illusions-Magie; Wahrnehmungsprobe: erkennt die "Wahrheit" einer Situation</HALFMAGIC>
