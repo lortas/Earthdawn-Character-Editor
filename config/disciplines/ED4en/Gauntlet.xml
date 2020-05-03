@@ -48,8 +48,8 @@
 		<DISCIPLINETALENT name="Earth Skin"/>
 		<TALENTABILITY/>
 		<KARMA spend="on any unarmed Damage test"/>
-                <ABILITY>Elemental Stance</ABILITY>
-        </CIRCLE>
+		<ABILITY>Elemental Stance</ABILITY>
+	</CIRCLE>
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Temper Flesh"/>
 		<TALENTABILITY/>
@@ -65,7 +65,7 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
 	</CIRCLE>
-        <CIRCLE><!-- 9 -->
+	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Blood Share"/>
 		<OPTIONALTALENT name="Burning Vigor"/>
 		<OPTIONALTALENT name="Defensive Posture"/>
@@ -78,28 +78,28 @@
 		<OPTIONALTALENT name="Vital Strike"/>
 		<DISCIPLINETALENT name="Critical Hit"/>
 		<TALENTABILITY/>
-                <KARMA spend="on any active defense test"/>
+		<KARMA spend="on any active defense test"/>
 		<ABILITY>Pattern Infusion</ABILITY>
 	</CIRCLE>
-        <CIRCLE><!-- 10 -->
+	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Unflinching Fortitude"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-                <ARMOR kind="mystic"/>
+		<ARMOR kind="spell"/>
 	</CIRCLE>
-        <CIRCLE><!-- 11 -->
+	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Spirit Strike"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-                <KARMA spend="on any unarmed Attack test once per round"/>
-        </CIRCLE>
-        <CIRCLE><!-- 12 -->
+		<KARMA spend="on any unarmed Attack test once per round"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Patient Resilience"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-                <RECOVERYTESTPERDAY/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
-        <CIRCLE><!-- 13 -->
+	<CIRCLE><!-- 13 -->
 		<OPTIONALTALENT name="Aura Armor"/>
 		<OPTIONALTALENT name="Champion Challenge"/>
 		<OPTIONALTALENT name="Chilling Strike"/>
@@ -108,24 +108,24 @@
 		<OPTIONALTALENT name="Second Chance"/>
 		<OPTIONALTALENT name="Soul Aegis"/>
 		<OPTIONALTALENT name="Vital Ward"/>
-                <DISCIPLINETALENT name="Stone Skin"/>
+		<DISCIPLINETALENT name="Stone Skin"/>
 		<TALENTABILITY/>
-                <DEFENSE kind="physical"/>
-                <INITIATIVE/>
-                <KARMA spend="increase Karma +1 Step to a d8"/>
-                <ABILITY>Pattern Manifestation</ABILITY>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+		<KARMA spend="increase Karma +1 Step to a d8"/>
+		<ABILITY>Pattern Manifestation</ABILITY>
 	</CIRCLE>
-        <CIRCLE><!-- 14 -->
+	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Vicious Wound"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="spell"/>
-                <ARMOR kind="mystic"/>
+		<ARMOR kind="spell"/>
 	</CIRCLE>
-        <CIRCLE><!-- 15 -->
+	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Shatter Will"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-                <RECOVERYTESTPERDAY/>
+		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>The adept kneels or sits with skin directly in contact with the earth or stone. They extend their senses, feeling the world around them. Feeling the earth, fire, water, and wood around them. The adept narrows their focus over the next 30 minutes to a single point, a single moment. When the time is up, a shard of the ground leaps into the air and the Guantlet rises, strikes, and destroys it with a single fluid motion.</KARMARITUAL>
 	<HALFMAGIC>Gauntlets use Half-Magic for knowledge of the elements, different unarmed fighting techniques, and which prominent unarmed combatants shaped someone’s fighting style. They also use it to resist fatigue, distractions, and similar expressions of willpower and endurance.</HALFMAGIC>

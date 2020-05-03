@@ -14,7 +14,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elfisch)" speak="skill"/>
 	</NAMEGIVER>
-        <NAMEGIVER lang="de" name="Blutelf" karmamodifier="4" movement_ground="14" type="Blutelf">
+	<NAMEGIVER lang="de" name="Blutelf" karmamodifier="4" movement_ground="14" type="Blutelf">
 		<ATTRIBUTE name="DEX" value="11"/>
 		<ATTRIBUTE name="STR" value="10"/>
 		<ATTRIBUTE name="TOU" value="8"/>
@@ -25,10 +25,10 @@
 		<WOUND threshold="0"/>
 		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Dornig</ABILITY>
-                <ABILITY>Nachtsicht</ABILITY>
-                <ABILITY>Ritual der Dornen</ABILITY>
-                <ABILITY>Schmerzresistenz</ABILITY>
-                <ABILITY>Sehnsuchtsfluch (Krankheit)</ABILITY>
+		<ABILITY>Nachtsicht</ABILITY>
+		<ABILITY>Ritual der Dornen</ABILITY>
+		<ABILITY>Schmerzresistenz</ABILITY>
+		<ABILITY>Sehnsuchtsfluch (Krankheit)</ABILITY>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elfisch)" speak="skill"/>
 	</NAMEGIVER>
