@@ -51,7 +51,7 @@
                 <ABILITY>Elemental Stance</ABILITY>
         </CIRCLE>
 	<CIRCLE><!-- 6 -->
-		<DISCIPLINETALENT name="Temper Flesh"/>
+		<DISCIPLINETALENT name="Temper Self"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
