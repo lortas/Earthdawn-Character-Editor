@@ -358,6 +358,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PATHType }
+     *
+     */
+    public PATHType createPATHType() {
+        return new PATHType();
+    }
+
+    /**
      * Create an instance of {@link COINSType }
      *
      */

@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}INITIATIVE_type" minOccurs="0"/&gt;
  *         &lt;element name="CARRYING" type="{http://earthdawn.com/datatypes}CARRYING_type" minOccurs="0"/&gt;
  *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/datatypes}DISCIPLINE_type" maxOccurs="3" minOccurs="0"/&gt;
+ *         &lt;element name="PATH" type="{http://earthdawn.com/datatypes}PATH_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}SKILL_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="OPENSPELL" type="{http://earthdawn.com/datatypes}SPELL_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="LANGUAGE" type="{http://earthdawn.com/datatypes}CHARACTERLANGUAGE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -83,6 +84,7 @@ import javax.xml.bind.annotation.XmlType;
     "initiative",
     "carrying",
     "discipline",
+    "path",
     "skill",
     "openspell",
     "language",
@@ -125,6 +127,8 @@ public class EDCHARACTER {
     protected CARRYINGType carrying;
     @XmlElement(name = "DISCIPLINE", namespace = "http://earthdawn.com/character")
     protected List<DISCIPLINEType> discipline;
+    @XmlElement(name = "PATH", namespace = "http://earthdawn.com/character")
+    protected List<PATHType> path;
     @XmlElement(name = "SKILL", namespace = "http://earthdawn.com/character")
     protected List<SKILLType> skill;
     @XmlElement(name = "OPENSPELL", namespace = "http://earthdawn.com/character")
@@ -408,6 +412,35 @@ public class EDCHARACTER {
             discipline = new ArrayList<DISCIPLINEType>();
         }
         return this.discipline;
+    }
+
+    /**
+     * Gets the value of the path property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the path property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPATH().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link PATHType }
+     *
+     *
+     */
+    public List<PATHType> getPATH() {
+        if (path == null) {
+            path = new ArrayList<PATHType>();
+        }
+        return this.path;
     }
 
     /**
