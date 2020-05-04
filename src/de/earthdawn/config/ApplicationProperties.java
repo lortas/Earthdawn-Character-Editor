@@ -51,7 +51,7 @@ import de.earthdawn.ui2.EDMainWindow;
  */
 public class ApplicationProperties {
 
-    /** Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen. */
+	// Ein- und Ausgabe der Allgemeinen Konfigurationseinstellungen.
 	private static Map<ECERulesetLanguage,CAPABILITIES> CAPABILITIES;
 	private static Map<RulesetversionType,TRANSLATIONS> TRANSLATIONS;
 	private static Map<String,Map<ECERulesetLanguage,TranslationlabelType>> NAMES;
@@ -70,16 +70,18 @@ public class ApplicationProperties {
 	private static Map<RulesetversionType,ECECharacteristics> CHARACTERISTICS;
 	private static File CONFIGDIR = new File("./config");
 
-    /** Singleton-Instanz dieser Klasse. */
-    private static ApplicationProperties theProps = null;
-    /** Disziplinen (Name Label geordnet) */
-    private static final Map<ECERulesetLanguage,Map<String, DISCIPLINE>> DISCIPLINES = new TreeMap<ECERulesetLanguage,Map<String, DISCIPLINE>>();
-    /** RandomCharacterTemplates (Name Label geordnet) */
-    private static final RandomCharacterTemplates RANDOMCHARACTERTEMPLATES = new RandomCharacterTemplates();
+	// Singleton-Instanz dieser Klasse.
+	private static ApplicationProperties theProps = null;
+	// Disziplinen (Name Label geordnet)
+	private static final Map<ECERulesetLanguage,Map<String, DISCIPLINE>> DISCIPLINES = new TreeMap<ECERulesetLanguage,Map<String, DISCIPLINE>>();
+	// Pfade (Name Label geordnet)
+	private static final Map<ECERulesetLanguage,Map<String, PATH>> PATHS = new TreeMap();
+	// RandomCharacterTemplates (Name Label geordnet)
+	private static final RandomCharacterTemplates RANDOMCHARACTERTEMPLATES = new RandomCharacterTemplates();
 
-    private ApplicationProperties() {
-    	init();
-    }
+	private ApplicationProperties() {
+		init();
+	}
 
 	/**
 	 * Zugriff auf Applikations-Konstanten.
@@ -214,6 +216,20 @@ public class ApplicationProperties {
 
 	public Collection<DISCIPLINE> getAllDisziplines() {
 		return DISCIPLINES.get(RULESETLANGUAGE).values();
+	}
+
+	public Set<String> getAllPathNames() {
+		return PATHS.get(RULESETLANGUAGE).keySet();
+	}
+
+	public Map<String,Map<String,?>> getAllPathNamesAsTree() {
+		Map<String,Map<String,?>> result = new TreeMap();
+		for( String s : PATHS.get(RULESETLANGUAGE).keySet() ) result.put(s,new TreeMap());
+		return shrinkStringMap(result);
+	}
+
+	public Collection<PATH> getAllPaths() {
+		return PATHS.get(RULESETLANGUAGE).values();
 	}
 
 	public List<NAMEGIVERABILITYType> getNamegivers() {
@@ -805,6 +821,21 @@ public class ApplicationProperties {
 					DISCIPLINES.put(rl,dis2);
 				}
 				dis2.put(dis.getName(), dis);
+			}
+
+			// pathes laden
+			// --- Bestimmen aller Dateien im Unterordner 'paths'
+			// --- Einlesen der Dateien
+			for(Path disConfigFile : selectallxmlfiles(new File(CONFIGDIR,"paths").toPath())) {
+				System.out.println("Reading config file: " + disConfigFile.toString());
+				PATH path = (PATH) unmarshaller.unmarshal(disConfigFile.toFile());
+				ECERulesetLanguage rl = new ECERulesetLanguage(path.getRulesetversion(),path.getLang());
+				Map<String, PATH> path2 = PATHS.get(rl);
+				if( path2 == null ) {
+					path2 = new TreeMap();
+					PATHS.put(rl,path2);
+				}
+				path2.put(path.getName(), path);
 			}
 
 			// capabilities laden
