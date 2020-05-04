@@ -32,8 +32,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PrerequisitekindType {
 
+
+    /**
+     * All elements marked with 'requirement' must be fullfilled.
+     *
+     */
     @XmlEnumValue("requirement")
     REQUIREMENT("requirement"),
+
+    /**
+     * One of all elements marked with 'restriction' must be fullfilled.
+     *
+     */
     @XmlEnumValue("restriction")
     RESTRICTION("restriction");
     private final String value;

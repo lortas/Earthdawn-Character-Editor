@@ -1,7 +1,7 @@
 package de.earthdawn.ui2.tree;
 
 import de.earthdawn.data.DEFENSEABILITYType;
-import de.earthdawn.data.DefensekindType;
+import de.earthdawn.data.EffectlayerType;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SpinnerNumberModel;
@@ -14,7 +14,7 @@ import javax.swing.JSpinner;
 public class DefenseAbilityNodePanel extends AbstractNodePanel<DEFENSEABILITYType> {
 	private static final long serialVersionUID = 6601843917581431482L;
 	private JSpinner spinnerBonus;
-	private JComboBox<DefensekindType> comboBoxType;
+	private JComboBox<EffectlayerType> comboBoxType;
 
 	public DefenseAbilityNodePanel(DEFENSEABILITYType node) {
 		super(node);
@@ -22,7 +22,7 @@ public class DefenseAbilityNodePanel extends AbstractNodePanel<DEFENSEABILITYTyp
 		setLayout(new MigLayout("", "[90px][20px][90px][20]", "[20px:20px:20px]"));
 
 		add(new JLabel("Defense"), "cell 0 0,alignx right,aligny center");
-		comboBoxType = new JComboBox<DefensekindType>(DefensekindType.values());
+		comboBoxType = new JComboBox<EffectlayerType>(EffectlayerType.values());
 		comboBoxType.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		add(comboBoxType, "cell 1 0,alignx left,aligny center");
 		comboBoxType.setSelectedItem(nodeObject.getKind());
@@ -34,7 +34,7 @@ public class DefenseAbilityNodePanel extends AbstractNodePanel<DEFENSEABILITYTyp
 
 	@Override
 	public void updateObject() {
-		nodeObject.setKind((DefensekindType) comboBoxType.getSelectedItem());
+		nodeObject.setKind((EffectlayerType) comboBoxType.getSelectedItem());
 		nodeObject.setBonus((Integer)spinnerBonus.getValue());
 	}
 }

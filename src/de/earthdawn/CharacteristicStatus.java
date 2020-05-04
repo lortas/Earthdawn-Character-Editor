@@ -12,9 +12,9 @@ import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.ATTRIBUTEType;
 import de.earthdawn.data.CALCULATEDLEGENDPOINTSType;
 import de.earthdawn.data.DEATHType;
-import de.earthdawn.data.DEFENSEType;
 import de.earthdawn.data.DEVOTIONType;
 import de.earthdawn.data.EXPERIENCEType;
+import de.earthdawn.data.EffectlayerType;
 import de.earthdawn.data.INITIATIVEType;
 import de.earthdawn.data.KARMAType;
 import de.earthdawn.data.MOVEMENTType;
@@ -96,10 +96,10 @@ public class CharacteristicStatus {
 		root.put("APPEARANCE", node);
 
 		node = new TreeMap<String,Object>();
-		DEFENSEType defence = character.getDefence();
-		node.put( "physical", defence.getPhysical() );
-		node.put( "spell", defence.getSpell() );
-		node.put( "social", defence.getSocial() );
+		DefenseAbility defences = character.getDefence();
+		node.put( "physical", defences.get(EffectlayerType.PHYSICAL) );
+		node.put( "spell", defences.get(EffectlayerType.MYSTIC) );
+		node.put( "social", defences.get(EffectlayerType.SOCIAL) );
 		root.put("DEFENSE", node);
 
 		node = new TreeMap<String,Object>();

@@ -100,9 +100,9 @@ public class ECEPdfExporter {
 		acroFields.setField( "AttributeDice.3", attributes.get(ATTRIBUTENameType.PER).getDice() );
 		acroFields.setField( "AttributeDice.4", attributes.get(ATTRIBUTENameType.WIL).getDice() );
 		acroFields.setField( "AttributeDice.5", attributes.get(ATTRIBUTENameType.CHA).getDice() );
-		acroFields.setField( "DefensePhysical", String.valueOf(character.getDefence().getPhysical()) );
-		acroFields.setField( "DefenseSocial", String.valueOf(character.getDefence().getSocial()) );
-		acroFields.setField( "DefenseSpell", String.valueOf(character.getDefence().getSpell()) );
+		acroFields.setField( "DefensePhysical", String.valueOf(character.getDefence().get(EffectlayerType.PHYSICAL)) );
+		acroFields.setField( "DefenseSocial", String.valueOf(character.getDefence().get(EffectlayerType.SOCIAL)) );
+		acroFields.setField( "DefenseSpell", String.valueOf(character.getDefence().get(EffectlayerType.MYSTIC)) );
 		acroFields.setField( "DeathAdjustment", String.valueOf(character.getDeath().getAdjustment()) );
 		acroFields.setField( "DeathBase", String.valueOf(character.getDeath().getBase()) );
 		acroFields.setField( "DeathValue", String.valueOf(character.getDeath().getValue()) );
@@ -796,10 +796,10 @@ public class ECEPdfExporter {
 			setSkillOrTalent(charsheettemplate.getSkillEntryNext(), skill, attributes);
 		}
 
-		DEFENSEType defence = character.getDefence();
-		setAllPdfFields(charsheettemplate.getStringList("DefencePhysical"),String.valueOf(defence.getPhysical()));
-		setAllPdfFields(charsheettemplate.getStringList("DefenceSocial"),String.valueOf(defence.getSocial()));
-		setAllPdfFields(charsheettemplate.getStringList("DefenceMystic"),String.valueOf(defence.getSpell()));
+		DefenseAbility defences = character.getDefence();
+		setAllPdfFields(charsheettemplate.getStringList("DefencePhysical"),String.valueOf(defences.get(EffectlayerType.PHYSICAL)));
+		setAllPdfFields(charsheettemplate.getStringList("DefenceSocial"),String.valueOf(defences.get(EffectlayerType.SOCIAL)));
+		setAllPdfFields(charsheettemplate.getStringList("DefenceMystic"),String.valueOf(defences.get(EffectlayerType.MYSTIC)));
 
 		DEATHType death = character.getDeath();
 		setAllPdfFields(charsheettemplate.getStringList("DeathAdjustment"),String.valueOf(death.getAdjustment()));

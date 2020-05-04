@@ -333,13 +333,8 @@ public class CharacterContainer extends CharChangeRefresh {
 		return result;
 	}
 
-	public DEFENSEType getDefence() {
-		DEFENSEType defense = character.getDEFENSE();
-		if( defense == null ) {
-			defense = new DEFENSEType();
-			character.setDEFENSE(defense);
-		}
-		return defense;
+	public DefenseAbility getDefence() {
+	    return new DefenseAbility(character.getDEFENSE());
 	}
 
 	public CALCULATEDLEGENDPOINTSType getCalculatedLegendpoints() {
@@ -1559,13 +1554,11 @@ public class CharacterContainer extends CharChangeRefresh {
 			((SHIELDType)newarmor).setMysticdeflectionbonus(((SHIELDType)armor).getMysticdeflectionbonus());
 			((SHIELDType)newarmor).setPhysicaldeflectionbonus(((SHIELDType)armor).getPhysicaldeflectionbonus());
 			((SHIELDType)newarmor).setShatterthreshold(((SHIELDType)armor).getShatterthreshold());
-			DEFENSEType defense=((SHIELDType)armor).getDEFENSE();
-			if( defense != null ) {
+			for( DEFENSEType defense : ((SHIELDType)armor).getDEFENSE() ) {
 				DEFENSEType newdef=new DEFENSEType();
-				newdef.setPhysical(defense.getPhysical());
-				newdef.setSpell(defense.getSpell());
-				newdef.setSocial(defense.getSocial());
-				((SHIELDType)newarmor).setDEFENSE(newdef);
+				newdef.setKind(defense.getKind());
+				newdef.setValue(defense.getValue());
+				((SHIELDType)newarmor).getDEFENSE().add(newdef);
 			}
 		}
 		return newarmor;
