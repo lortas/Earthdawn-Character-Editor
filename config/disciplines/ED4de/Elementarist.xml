@@ -45,7 +45,7 @@
 		<SPELL type="elemental" name="Waffe Verlangsamen"/>
 		<SPELL type="elemental" name="Weidenschild"/>
 		<SPELL type="elemental" name="Windfinger"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Elementarsprachen"/>
@@ -105,7 +105,7 @@
 		<SPELL type="elemental" name="Metallflügel"/>
 		<SPELL type="elemental" name="Steinregen"/>
 		<SPELL type="elemental" name="Umhang des Feuerplünderers"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Erdhaut"/>
@@ -127,7 +127,7 @@
 		<SPELL type="elemental" name="Heilquelle"/>
 		<SPELL type="elemental" name="Im Würgegriff der Erdhand"/>
 		<SPELL type="elemental" name="Umhang der Gewittervorhut"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Wissen über: Natur, Elemente, Elementar Magie, Magische Rituale; Wahrnehmungsprobe bei: Elementargeister entdecken</HALFMAGIC>

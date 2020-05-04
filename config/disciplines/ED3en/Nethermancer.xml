@@ -49,7 +49,7 @@
 		<SPELL type="nether" name="Shadow's Whisper"/>
 		<SPELL type="nether" name="Shield Mist"/>
 		<SPELLABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Spirit Talk"/>
@@ -167,7 +167,7 @@
 		<SPELL type="nether" name="Visit Death"/>
 		<SPELL type="nether" name="Wall of Bones"/>
 		<SPELL type="nether" name="Wither Away"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Animate Object"/>
@@ -204,7 +204,7 @@
 		<SPELL type="nether" name="Spirit Tempest"/>
 		<SPELL type="nether" name="Strong Pattern"/>
 		<SPELL type="nether" name="Tap Horror Karma"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Action Tests made by a spirit or creature und his control"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -221,7 +221,7 @@
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Forge Falsemen"/>
 		<SPELL type="nether" name="Pervert Emotion"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -242,7 +242,7 @@
 		<DISCIPLINETALENT name="Multi-Weaving"/>
 		<TALENTABILITY/>
 		<SPELL type="nether" name="Call Forth the Army of Decay"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

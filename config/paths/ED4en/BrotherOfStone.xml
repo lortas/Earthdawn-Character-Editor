@@ -19,7 +19,7 @@
 	</PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 2 -->
 	<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 3 -->
 		<TALENTABILITY/>
@@ -42,7 +42,7 @@
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 7 -->
 		<TALENTABILITY/>
-	<DEFENSE kind="spell"/>
+	<DEFENSE kind="mystic"/>
 		
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 8 -->

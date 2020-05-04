@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ITEMS lang="en" xmlns="http://earthdawn.com/items" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/items ../earthdawnitems.xsd">
 	<THREADITEM name="Bracers of Aras" lpcostgrowth="5" spelldefense="14" maxthreads="3" kind="vambrace" weight="6.0" bookref="GM p.132">
-		<edt:DESCRIPTION>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:DESCRIPTION>		
+		<edt:DESCRIPTION>Made of flexible, silvery metal that wraps around wrists and forearms of wearer. Flexibility is a result of elemental water forged into bracers. Elemental water pieces used crafting resemble aquamarine gems, each piece approximately 1 inch in diameter. These arm bands are encrusted with pieces of elemental water. Color of elemental water gems constantly changes, oscillating with swirling effect across spectrum from deep aqua to bright blue.</edt:DESCRIPTION>
 		<edt:THREADRANK effect="Physical Defense +1" keyknowledge="Name of bracers">
 			<edt:DEFENSE kind="physical" bonus="1"/>
 		</edt:THREADRANK>
@@ -10,15 +10,15 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Spell Defense +1" keyknowledge="Name of mine from which the metals came used to create bracers">
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Spell Defense +2">
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Cast Gills Spell on himself for 2 Strain" keyknowledge="As mundane water contains oxygen, elemental water contains elemental air. Creators of Bracers of Aras formed gems from a mixture of elemental air and water. Ratio of water to air varies for each set of bracers. Wearer must learn ratio of water to air used for his bracers">
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 			<edt:SPELL>Gills"</edt:SPELL>
 		</edt:THREADRANK>
 	</THREADITEM>
@@ -26,31 +26,31 @@
 		<edt:DESCRIPTION>A quarterstaff, topped with a crystal carved into any of shapes or figures. Most commonly made of wood, usually mahogany. With no threads like characteristics as normal quarterstaff</edt:DESCRIPTION>
 			<edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="6" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Counterspell Staff" weight="4.0" size="5" kind="wand" bookref="GM p.132"/>
 		<edt:THREADRANK effect="+1 Spell Defense" keyknowledge="staffs name">
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 5; cast Counterspell spell up to thread Rank times each day" keyknowledge="where crystal atop staff came from">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Counterspell’s Effect improves to +3 per Result Level" keyknowledge="Name of artisan who carved crystal on staff">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="5" weight="4.0" name="Counterspell Staff"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 6; Counterspell’s Effect improves to +4 per Result Level" keyknowledge="" deed="Ritual (2 Blood Magic Damage) leaves a scar that occasionally oozes a drop of blood which is magically drawn to a notch in staff every 3 hours; Deed must be performed in jungle or forest where wood staff was created from was grown">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Counterspell’s Effect improves to +5 per Result Level" keyknowledge="Name of magician who created the staff">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="6" weight="4.0" name="Counterspell Staff"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 7; Counterspell’s Effect improves to +6 per Result Level">
 			<edt:WEAPON size="5" strengthmin="6" dexteritymin="7" damagestep="7" weight="4.0" name="Counterspell Staff"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 			<edt:SPELL>Counterspell</edt:SPELL>
 		</edt:THREADRANK>
 	</THREADITEM>
@@ -172,27 +172,27 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 1, +1 Spell Defense">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="1" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 2, +2 Spell Defense" keyknowledge="when and where robe was made">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="robe holds a spell matrix permanently attuned to Earth Blend spell">			
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="2" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Mystic Armor 3, +3 Spell Defense." keyknowledge="Name of the robe’s creator">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:DEFENSE kind="mystic" bonus="3"/>
 			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="may hide objects (no greater 6 feet long, 3 feet wide) within robe. Robe wraps itself around hidden objects. To hide something within robe, wearer must make successful Thread Weaving Test against Diffculty equal number of objects hidden in robe +9. Robe can conceal max. four objects at one time. Wearer can remove object anytime; replacing object requires another successful Thread Weaving Test. Others than wearer can only remove hidden objects by achieving a Good Result with Willpower Test against robe’s Spell Defense. Robe’s Spell Defense is Detection Diffculty for objects hidden within folds" keyknowledge="types of plants depicted in robe’s pattern">
 			<edt:ARMOR edn="0" penalty="0" mysticarmor="3" physicalarmor="0" kind="cloth" weight="1.0" name="Forest Cloak"/>
-			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:DEFENSE kind="mystic" bonus="3"/>
 			<edt:TALENT name="Spellcasting" bonus="1"/>
 		</edt:THREADRANK>
 	</THREADITEM>
@@ -226,17 +226,17 @@
 		<edt:THREADRANK effect="Mace produces flashes of lightning that deflect physical and magical attacks. Adds +1 to Physical and Spell Defense.">
 			<edt:WEAPON size="3" strengthmin="13" damagestep="8" weight="5.0" name="Lightning Mace"/>
 			<edt:DEFENSE kind="physical" bonus="1"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Damage Step 9" keyknowledge="Enchantment of lightning maces is always completed during severe storm. Must learn about storm during which mace was completed.">
 			<edt:WEAPON size="3" strengthmin="13" damagestep="9" weight="5.0" name="Lightning Mace"/>
 			<edt:DEFENSE kind="physical" bonus="1"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Flashes of lightning increase in intensity. Adds +2 to Physical and Spell Defense. Lightning bolt Effect Step is now Willpower+9" keyknowledge="Enchantment of lightning maces is always completed during severe storm. Must learn about storm during which mace was completed.">
 			<edt:WEAPON size="3" strengthmin="13" damagestep="9" weight="5.0" name="Lightning Mace"/>
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Naga-Scale Brooch" lpcostgrowth="5" spelldefense="15" maxthreads="2" weight="1.0" kind="brooch" bookref="GM p.137">
@@ -269,19 +269,19 @@
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Physical Armor 7; Mystic Armor 7; +1 to Spell Defense." keyknowledge="Names of Weaponsmith and Elementalist who created the shield">			
 			<edt:SHIELD name="Orichalcum Shield" physicalarmor="7" mysticarmor="7" penalty="2" weight="15.0" kind="shield"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Initiative Penalty 1; Deflection Bonus 7">
 			<edt:SHIELD name="Orichalcum Shield" physicalarmor="7" mysticarmor="7" penalty="1" weight="15.0" kind="shield"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>	
+			<edt:DEFENSE kind="mystic"/>	
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Physical Armor 8; Mystic Armor 8; +2 to Spell Defense." keyknowledge="Name of the place where the shield was created">
 			<edt:SHIELD name="Orichalcum Shield" physicalarmor="8" mysticarmor="8" penalty="1" weight="15.0" kind="shield"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Initiative Penalty 0; Deflection Bonus 9">
 			<edt:SHIELD name="Orichalcum Shield" physicalarmor="8" mysticarmor="8" penalty="0" weight="15.0" kind="shield"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Potion of Life" lpcostgrowth="5" spelldefense="14" maxthreads="2" weight="1.0" kind="potion" bookref="GM p.138">
@@ -382,7 +382,7 @@
 		<edt:THREADRANK effect="Mystic Armor 2">
 			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="2" penalty="1" weight="10.0" kind="shield"/>
 		</edt:THREADRANK>
-		<edt:THREADRANK effect="1 Strain; deflect visible combat spell directed at him (requires to Reserve action until spell is cast); Spellcasting Test against spell caster’s Spellcasting Test result; If test succeeds, spell is directed against its caster; use wielder’s Spellcasting Test result to determine if spell affects original caster" keyknowledge="Name of shield’s creator">	
+		<edt:THREADRANK effect="1 Strain; deflect visible combat spell directed at him (requires to Reserve action until spell is cast); Spellcasting Test against spell caster’s Spellcasting Test result; If test succeeds, spell is directed against its caster; use wielder’s Spellcasting Test result to determine if spell affects original caster" keyknowledge="Name of shield’s creator">
 			<edt:SHIELD name="Silvered Shield" physicalarmor="5" mysticarmor="3" penalty="1" weight="10.0" kind="shield"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="no Initiative Penalty">
@@ -419,14 +419,14 @@
         <edt:THREADRANK keyknowledge="" lpcost="3400" deed="must decide upon Deed using blade; then publicly declare intention of doing Deed;" effect="+1 to Physical and Spell Defense">
             <edt:WEAPON damagestep="7" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
             <edt:DEFENSE kind="physical" bonus="1"/>
-            <edt:DEFENSE kind="spell"/>
+            <edt:DEFENSE kind="mystic"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="must determine exact percentages of magical elements used to create sword" lpcost="3400" deed="" effect="Damage Step 8; holds 3 matrices; Rank of each matrix equals Thread Rank">
             <edt:WEAPON damagestep="8" dexteritymin="0" strengthmin="12" shortrange="0" longrange="0" timesforged="0" dateforged="" name="Spell Sword" weight="4.0" size="3" used="no" location="" kind="melee weapon" virtual="no" blooddamage="0" depatterningrate="0" bookref="GM p.140" price="0.0"/>
             <edt:DEFENSE kind="physical" bonus="1"/>
-            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:DEFENSE kind="mystic"/>
         </edt:THREADRANK>
-	</THREADITEM>		
+	</THREADITEM>
 	<THREADITEM name="Spike Bomb" maxthreads="2" spelldefense="14" lpcostgrowth="5" weight="1.0" blooddamage="0" depatterningrate="0" bookref="GM p.141">
         <edt:DESCRIPTION>four-inch-diameter, metal balls covered with magical symbols (arcane markings of no particular significance)</edt:DESCRIPTION>
         <edt:THREADRANK keyknowledge="bomb’s Name" effect="throwing weapon; Range short 2–10, long 11–20 yards; Attack Test successful: bomb explodes (Willpower+6); Mystic Armor protects; bomb temporarily destroyed; immediate Willpower (8) to recreate bomb; If unsuccessful, 1 Strain for each retry"/>
@@ -436,7 +436,7 @@
         <edt:THREADRANK keyknowledge="meaning of arcane symbols and if they have any significance" effect="Willpower+10"/>
         <edt:THREADRANK deed="Wound Horror or construct with spike bomb" effect="Range short 2–20, long 21–40 yards"/>
         <edt:THREADRANK effect="Willpower+12"/>
-	</THREADITEM>	
+	</THREADITEM>
  	<THREADITEM name="Spike Gauntlets" maxthreads="2" spelldefense="14" lpcostgrowth="5" kind="cloth" weight="4.0" blooddamage="0" depatterningrate="0" bookref="GM p.141">
         <edt:DESCRIPTION>metal gauntlets bristling with many small, slender, steel spikes usually highly polished and sharply pointed; made from metal mined in Caucavic Mountains, despite earth elemental objections to the mining activities; Gauntlets draw power from mountains</edt:DESCRIPTION>
         <edt:THREADRANK keyknowledge="gauntlets’ Name" effect="+1 Physical Defense">
@@ -444,34 +444,34 @@
 		</edt:THREADRANK>
         <edt:THREADRANK effect="+1 Spell Defense">
 			<edt:DEFENSE kind="physical" bonus="1"/>
-			<edt:DEFENSE kind="spell" bonus="1"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
         <edt:THREADRANK keyknowledge="Name of creator" effect="+2 Physical and Spell Defense">
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
-		</edt:THREADRANK>		
+			<edt:DEFENSE kind="mystic" bonus="2"/>
+		</edt:THREADRANK>
         <edt:THREADRANK effect="1 Strain: +4 Damage Test for one attack; each Strain: +1 to result of successful Attack Test (Armor-Defeating Hit); maximum amount of Strain each round is equal to Thread Rank">
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
-		</edt:THREADRANK>		
+			<edt:DEFENSE kind="mystic" bonus="2"/>
+		</edt:THREADRANK>
         <edt:THREADRANK keyknowledge="mountains Name where gauntlets metal was mined" effect="+3 Physical and Spell Defense">
 			<edt:DEFENSE kind="physical" bonus="3"/>
-			<edt:DEFENSE kind="spell" bonus="3"/>
+			<edt:DEFENSE kind="mystic" bonus="3"/>
 		</edt:THREADRANK>
         <edt:THREADRANK effect="1 Strain: +6 Damage Test for one attack">
 			<edt:DEFENSE kind="physical" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 		</edt:THREADRANK>
         <edt:THREADRANK deed="contact with earth elemental living near mountain metal came from; arguing why deeds he performed with gauntlets’ help justify metal’s mining." effect="+1 Social Defense; +4 Spell Defense">
 			<edt:DEFENSE kind="physical" bonus="3"/>
 			<edt:DEFENSE kind="social" bonus="1"/>
-			<edt:DEFENSE kind="spell" bonus="4"/>
+			<edt:DEFENSE kind="mystic" bonus="4"/>
 		</edt:THREADRANK>
         <edt:THREADRANK effect="+2 Social Defense, +4 Physical Defense">
 			<edt:DEFENSE kind="physical" bonus="4"/>
 			<edt:DEFENSE kind="social" bonus="2"/>
-			<edt:DEFENSE kind="spell" bonus="4"/>
-		</edt:THREADRANK>		
+			<edt:DEFENSE kind="mystic" bonus="4"/>
+		</edt:THREADRANK>
 	</THREADITEM>
 	<THREADITEM name="Talisman Statue" maxthreads="2" lpcostgrowth="5" spelldefense="15" effect="can enhance magical abilities of spellcasters; must wear statuette to benefit from its power;" weight="5.0" kind="artisan" bookref="GM p. 142">
         <edt:DESCRIPTION>usually 3 to 4 (rarely up to 7) inches stone, wood, or clay statue with intricate runes carved into it; sometimes small gems embedded into statuette’s eyes; must wear statuette to benefit from power;</edt:DESCRIPTION>
@@ -483,24 +483,24 @@
             <edt:TALENT name="Thread Weaving" bonus="1"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="Name of the statue’s creator" effect="+1 Spell Defense">
-            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:DEFENSE kind="mystic"/>
             <edt:TALENT name="Spellcasting" bonus="1"/>
             <edt:TALENT name="Thread Weaving" bonus="1"/>
         </edt:THREADRANK>
         <edt:THREADRANK effect="+2 Spell Defense">
-            <edt:DEFENSE kind="spell" bonus="2"/>
+            <edt:DEFENSE kind="mystic" bonus="2"/>
             <edt:TALENT name="Spellcasting" bonus="1" />
             <edt:TALENT name="Thread Weaving" bonus="1"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="Name of mountain, mine, forest from which material of statue originated" effect="+2 Mystic Armor">
 			<edt:ARMOR mysticarmor="2" kind="armor" weight="5.0" name="Talisman Statue"/>
-            <edt:DEFENSE kind="spell" bonus="2"/>
+            <edt:DEFENSE kind="mystic" bonus="2"/>
             <edt:TALENT name="Spellcasting" bonus="1"/>
             <edt:TALENT name="Thread Weaving" bonus="1"/>
         </edt:THREADRANK>
         <edt:THREADRANK deed="must bind (hour-long ritual Thread Weaving (22)) statue to part of his pattern holds spellcasting abilities; ritual causes 1 point Permanent Damage" effect="+1 Karma Step when enhance Spellcasting , Effect, or Thread Weaving">
             <edt:ARMOR mysticarmor="2" kind="armor" weight="5.0" name="Talisman Statue"/>
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
             <edt:TALENT name="Spellcasting" bonus="1"/>
             <edt:TALENT name="Thread Weaving" bonus="1"/>
         </edt:THREADRANK>
@@ -520,7 +520,7 @@
         <edt:THREADRANK effect="Damage Step 10; no longer damage from thorns protecting spear´shaft">
             <edt:WEAPON damagestep="10" strengthmin="9" shortrange="5" longrange="10" name="Thorn Man Spear" weight="3.0" size="3" kind="melee weapon" bookref="GM p. 142"/>
         </edt:THREADRANK>
-    </THREADITEM>	
+    </THREADITEM>
     <THREADITEM name="Three-Axe" maxthreads="2" lpcostgrowth="5" spelldefense="16" effect="like Battle-Axe; until thread is woven wielder is considered Harried (see PG p. 227)" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142">
         <edt:DESCRIPTION>Fearsome, triple-bladed weapon which are clumsy to use in combat: until thread is woven wielder is considered Harried (see PG p. 227); </edt:DESCRIPTION>
         <edt:WEAPON damagestep="7" strengthmin="13" name="Three-Axe (like Battle-Axe)" weight="6.0" size="5" kind="melee weapon" bookref="GM p. 142"/>
@@ -555,13 +555,13 @@
         <edt:THREADRANK keyknowledge="what military unit was under the command of helmet’s original owner" effect="+1 Spell Defense">
             <edt:ARMOR physicalarmor="1" name="War Helm of Landis" weight="2.5" kind="armor" bookref="GM p. 142"/>
             <edt:DEFENSE kind="social" bonus="2"/>
-            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:DEFENSE kind="mystic"/>
             <edt:ABILITY>Charisma only Tests +2</edt:ABILITY>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="" effect="+2 Physical Armor, no Perception Test penalty any more">
             <edt:ARMOR physicalarmor="2" name="War Helm of Landis" weight="2.5" kind="armor" bookref="GM p. 142"/>
             <edt:DEFENSE kind="social" bonus="2"/>
-            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:DEFENSE kind="mystic"/>
             <edt:ABILITY>Charisma only Tests +2</edt:ABILITY>
         </edt:THREADRANK>
     </THREADITEM>
@@ -579,22 +579,22 @@
         <edt:THREADRANK keyknowledge="Name of the whip´s creator" effect="+1 Spell Defense">
             <edt:WEAPON damagestep="4" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
             <edt:DEFENSE kind="physical" bonus="2"/>
-            <edt:DEFENSE kind="spell"/>
+            <edt:DEFENSE kind="mystic"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="" effect="+3 Physical Defense against 3 attacks per combat round; Damage Step 5">
             <edt:WEAPON damagestep="5" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
             <edt:DEFENSE kind="physical" bonus="3"/>
-            <edt:DEFENSE kind="spell" bonus="1"/>
+            <edt:DEFENSE kind="mystic"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="Which types of skins used to make the whip" effect="+4 Physical Defense against 4 attacks per combat round; +2 Spell Defense.">
             <edt:WEAPON damagestep="5" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
             <edt:DEFENSE kind="physical" bonus="4"/>
-            <edt:DEFENSE kind="spell" bonus="2"/>
+            <edt:DEFENSE kind="mystic" bonus="2"/>
         </edt:THREADRANK>
         <edt:THREADRANK keyknowledge="" effect="+5 Physical  Defense against 5 attacks per combat round; +3 Spell Defense">
             <edt:WEAPON damagestep="5" dexteritymin="7" strengthmin="7" name="Whip of Defense" weight="2.0" size="3" kind="melee weapon" bookref="GM p.143"/>
             <edt:DEFENSE kind="physical" bonus="5"/>
-            <edt:DEFENSE kind="spell" bonus="3"/>
+            <edt:DEFENSE kind="mystic" bonus="3"/>
         </edt:THREADRANK>
     </THREADITEM>
 	<THREADITEM name="Windling Cup of Friendship" maxthreads="5" lpcostgrowth="5" spelldefense="16" weight="1.0" kind="artisan" bookref="GM p. 143">

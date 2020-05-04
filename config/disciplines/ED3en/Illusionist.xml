@@ -53,7 +53,7 @@
 		<SPELL type="illusion" name="True Ephemeral Bolt"/>
 		<SPELL type="illusion" name="Weather Cloak"/>
 		<SPELL type="illusion" name="You Got Me"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Dead Fall"/>
@@ -162,7 +162,7 @@
 		<SPELL type="illusion" name="Massive Missiles"/>
 		<SPELL type="illusion" name="Other Place"/>
 		<SPELL type="illusion" name="Shadow Spell"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Matrix" limitation="I7"/>
@@ -192,7 +192,7 @@
 		<SPELL type="illusion" name="Eclipse"/>
 		<SPELL type="illusion" name="Eternal Day"/>
 		<SPELL type="illusion" name="Haunted House"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Charisma-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -205,7 +205,7 @@
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Bone Compass"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -226,7 +226,7 @@
 		<DISCIPLINETALENT name="Second Chance"/>
 		<TALENTABILITY/>
 		<SPELL type="illusion" name="Shadow Palace"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 		<INITIATIVE/>
 	</CIRCLE>

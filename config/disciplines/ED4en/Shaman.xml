@@ -39,7 +39,7 @@
 		<SPELL type="shaman" name="Mark of the Boar"/>
 		<SPELL type="shaman" name="Mountain Goat Leap"/>
 		<SPELL type="shaman" name="Soothe the Savage Beast"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Spirit Talk"/>
@@ -91,7 +91,7 @@
 		<SPELL type="shaman" name="Pangolin Armor"/>
 		<SPELL type="shaman" name="Predator Senses"/>
 		<SPELL type="shaman" name="Storm Wolf Call"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Lifesight"/>
@@ -111,7 +111,7 @@
 		<SPELL type="shaman" name="Mark of the Eagle"/>
 		<SPELL type="shaman" name="Salamander Regeneration"/>
 		<SPELL type="shaman" name="War Party"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>Recognize different animals, animal tracks, and abnormal behavior among animals and creatures. Detect the presence of beast spirits wihtin 30 yards.</HALFMAGIC>

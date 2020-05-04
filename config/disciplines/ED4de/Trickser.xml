@@ -58,7 +58,7 @@
 		<SPELL type="trickster" name="Phantomblitzschlag"/>
 		<SPELL type="trickster" name="Suggestive Stimme"/>
 		<SPELL type="trickster" name="Unauffälligkeit"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Bleibender Eindruck"/>

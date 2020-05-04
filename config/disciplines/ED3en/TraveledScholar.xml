@@ -107,7 +107,7 @@
 		<OPTIONALTALENT name="Plant Shelter"/>
 		<DISCIPLINETALENT name="Second Chance"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Wisdom of the Ages</ABILITY>
 	</CIRCLE>
@@ -120,7 +120,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Earth Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>

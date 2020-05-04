@@ -24,7 +24,7 @@
 	<CIRCLE><!-- 2 -->
 		<DISCIPLINETALENT name="Conversation"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Suppress Curse"/>
@@ -55,7 +55,7 @@
 	<CIRCLE><!-- 6 -->
 		<DISCIPLINETALENT name="Temper Flesh"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Spot Armor Flaw"/>

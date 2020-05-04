@@ -41,7 +41,7 @@
 		<SPELL type="wizard" name="Interferenzausgleich"/>
 		<SPELL type="wizard" name="Strickleiter"/>
 		<SPELL type="wizard" name="Vernichtender Wille"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Hartnäckiges Gewebe"/>
@@ -96,7 +96,7 @@
 		<SPELL type="wizard" name="Verwüstung"/>
 		<SPELL type="wizard" name="Zauber Verleihen"/>
 		<SPELL type="wizard" name="Zerschmettern"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Faden Halten"/>
@@ -118,7 +118,7 @@
 		<SPELL type="wizard" name="Zauberdiebstahl"/>
 		<SPELL type="wizard" name="Zauberkäfig"/>
 		<SPELL type="wizard" name="Zerquetschen"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Erkennt verschiedene Arten von Magie, erkennt spezielle Anwendung von Magier-Magie; Wissen über magische Rituale </HALFMAGIC>

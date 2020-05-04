@@ -42,7 +42,7 @@
 		<SPELL type="illusion" name="Harmloses Treiben"/>
 		<SPELL type="illusion" name="Phantomflamme"/>
 		<SPELL type="illusion" name="Sehen von Verborgenem"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Konversation"/>
@@ -99,7 +99,7 @@
 		<SPELL type="illusion" name="Illusionäre Geschosse"/>
 		<SPELL type="illusion" name="Positionstausch"/>
 		<SPELL type="illusion" name="Vorgezeichneter Weg"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Hypnotisieren"/>
@@ -121,7 +121,7 @@
 		<SPELL type="illusion" name="Gestank"/>
 		<SPELL type="illusion" name="Rebellisches Körperteil"/>
 		<SPELL type="illusion" name="Zauber Überschatten"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Astraltasche"/>
@@ -148,13 +148,13 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Wahrheit Durch Lügen"/>
 		<TALENTABILITY/>
-		<KARMA spend="zusätzlichen Gegner"/>
 		<DEFENSE kind="physical"/>
+		<KARMA spend="zusätzlichen Gegner"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Zweiter Zauber"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -169,14 +169,14 @@
 		<DISCIPLINETALENT name="Fesselnde Visionen"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<KARMASTEP/>
 		<RECOVERYTESTPERDAY/>
+		<KARMASTEP/>
 		<ABILITY>Realität Manipulieren</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Geistessonde"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

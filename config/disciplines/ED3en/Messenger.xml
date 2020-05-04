@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="True Sight"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -105,7 +105,7 @@
 		<OPTIONALTALENT name="Truth Skit"/>
 		<DISCIPLINETALENT name="Elemental Walk"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>One with the Message</ABILITY>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Echo Location"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>

@@ -88,7 +88,7 @@
 		<DISCIPLINETALENT name="Vitality"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Weapon Breaker"/>
@@ -119,7 +119,7 @@
 		<DISCIPLINETALENT name="Mind Armor"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>upkeep, repair, building of drakkar-sized airships; knowledge: airship designs, airship types, commonly flight paths, crew complements according types of airships; Skill: Climbing, Navigation while aboard airship;(PG p.50)</HALFMAGIC>

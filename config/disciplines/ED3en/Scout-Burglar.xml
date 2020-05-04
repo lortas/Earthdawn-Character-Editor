@@ -88,7 +88,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Defense"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<KARMA spend="Charisma-only Test"/>
 	</CIRCLE>
@@ -107,7 +107,7 @@
 		<OPTIONALTALENT name="Vital Strike"/>
 		<DISCIPLINETALENT name="Echo Location"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>One with the World</ABILITY>
 	</CIRCLE>
@@ -120,7 +120,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Second Chance"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>

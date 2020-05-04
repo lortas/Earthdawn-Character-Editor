@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Astral Pocket"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -105,7 +105,7 @@
 		<OPTIONALTALENT name="Sense Magic Item"/>
 		<DISCIPLINETALENT name="Gain Surprise"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Shadow Heal</ABILITY>
 	</CIRCLE>
@@ -118,7 +118,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>

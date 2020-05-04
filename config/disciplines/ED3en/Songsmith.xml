@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Thought Link"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>
@@ -106,7 +106,7 @@
 		<OPTIONALTALENT name="Second Chance"/>
 		<DISCIPLINETALENT name="First Ring of Perfection"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Masterpiece</ABILITY>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>

@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Sense Magic Item"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -105,7 +105,7 @@
 		<OPTIONALTALENT name="Soften Blade"/>
 		<DISCIPLINETALENT name="Chameleon"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Evaluate Customer</ABILITY>
 	</CIRCLE>
@@ -118,7 +118,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Company of One"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<RECOVERYTESTPERDAY/>
 		<RECOVERYTESTPERDAY/>

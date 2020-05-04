@@ -32,7 +32,7 @@
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Studied Counter"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Astral Sight"/>
@@ -63,7 +63,7 @@
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Focused Strike"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Blood Share"/>
@@ -96,7 +96,7 @@
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Patient Resilience"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -118,7 +118,7 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Vicious Wound"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

@@ -25,7 +25,7 @@
 		<OPTIONALTALENT name="Wound Balance"/>
 		<DISCIPLINETALENT name="Item History"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Abate Curse"/>
@@ -62,7 +62,7 @@
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="Forge Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 		<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Critical Hit"/>
@@ -81,7 +81,7 @@
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Weapon Ward"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Strength-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -94,7 +94,7 @@
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Mind Blade"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -113,7 +113,7 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Toughness-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
