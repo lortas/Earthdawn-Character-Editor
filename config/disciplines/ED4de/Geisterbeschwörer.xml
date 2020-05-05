@@ -42,7 +42,7 @@
 		<SPELL type="nether" name="Schädel des Todes"/>
 		<SPELL type="nether" name="Schattengeflüster"/>
 		<SPELL type="nether" name="Schneide der Nacht"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Geistersprache"/>
@@ -99,7 +99,7 @@
 		<SPELL type="nether" name="Freundliche Finsternis"/>
 		<SPELL type="nether" name="Knochenbrecher"/>
 		<SPELL type="nether" name="Schwächende Düsternis"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Kreisender Spion"/>
@@ -121,7 +121,7 @@
 		<SPELL type="nether" name="Dämonenruf"/>
 		<SPELL type="nether" name="Geisterportal"/>
 		<SPELL type="nether" name="Schattenfessel"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
 	<HALFMAGIC>Wissen: Erkenne Geisterbeschwörer Magie und Untoten/Geister, Verstehe Blutmagie Rituale und die Wirkung von Blutamuletten; Wahrnehmungsprobe: Präsenz von Geistern spüren</HALFMAGIC>

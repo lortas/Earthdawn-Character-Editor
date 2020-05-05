@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Vitality"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -104,7 +104,7 @@
 		<OPTIONALTALENT name="Weapon Breaker"/>
 		<DISCIPLINETALENT name="Stone Skin"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Resurrect Self</ABILITY>
 	</CIRCLE>
@@ -117,7 +117,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>

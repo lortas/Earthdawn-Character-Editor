@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Life Check"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>
@@ -120,7 +120,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Second Chance"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>

@@ -8,6 +8,8 @@
 
 package de.earthdawn.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -25,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{http://earthdawn.com/datatypes}ARMOR_type"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSE_type" minOccurs="0"/&gt;
+ *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSE_type" maxOccurs="3" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="shatterthreshold" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="physicaldeflectionbonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
@@ -46,7 +48,7 @@ public class SHIELDType
 {
 
     @XmlElement(name = "DEFENSE")
-    protected DEFENSEType defense;
+    protected List<DEFENSEType> defense;
     @XmlAttribute(name = "shatterthreshold")
     protected Integer shatterthreshold;
     @XmlAttribute(name = "physicaldeflectionbonus")
@@ -57,25 +59,30 @@ public class SHIELDType
     /**
      * Gets the value of the defense property.
      *
-     * @return
-     *     possible object is
-     *     {@link DEFENSEType }
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the defense property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEFENSE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link DEFENSEType }
+     *
      *
      */
-    public DEFENSEType getDEFENSE() {
-        return defense;
-    }
-
-    /**
-     * Sets the value of the defense property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link DEFENSEType }
-     *
-     */
-    public void setDEFENSE(DEFENSEType value) {
-        this.defense = value;
+    public List<DEFENSEType> getDEFENSE() {
+        if (defense == null) {
+            defense = new ArrayList<DEFENSEType>();
+        }
+        return this.defense;
     }
 
     /**

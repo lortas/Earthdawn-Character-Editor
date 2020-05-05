@@ -431,6 +431,17 @@
 		<xs:attribute name="primelement" type="elementkind_type" default="undefined"/>
 		<xs:attribute name="durability" type="xs:int" default="0"/>
 	</xs:complexType>
+	<xs:complexType name="PATH_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="PATHBONUS" type="DISCIPLINEBONUS_type"/>
+			<xs:element minOccurs="0" maxOccurs="1" name="KARMARITUAL" type="xs:string"/>
+			<xs:element minOccurs="0" maxOccurs="1" name="HALFMAGIC" type="xs:string"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="TALENT" type="TALENT_type"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="rank" type="circle_type" use="required"/>
+		<xs:attribute name="knack" type="xs:string" use="required"/>
+	</xs:complexType>
 	<xs:complexType name="COINS_type">
 		<xs:complexContent>
 			<xs:extension base="ITEM_type">
@@ -659,7 +670,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="DEFENSE_type">
-		<xs:attribute name="effectlayer" type="effectlayer_type" use="required"/>
+		<xs:attribute name="kind" type="effectlayer_type" use="required"/>
 		<xs:attribute name="value" type="unsigned_int" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="SPELLDEF_type">

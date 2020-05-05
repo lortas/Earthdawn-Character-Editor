@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Woodspeak"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -105,7 +105,7 @@
 		<OPTIONALTALENT name="Resist Pain"/>
 		<DISCIPLINETALENT name="Rushing Attack"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Forest Sense</ABILITY>
 	</CIRCLE>
@@ -118,7 +118,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Second Chance"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>

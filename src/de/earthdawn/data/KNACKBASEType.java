@@ -30,6 +30,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="blood" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="action" type="{http://earthdawn.com/datatypes}action_type" /&gt;
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
+ *       &lt;attribute name="cost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
+ *       &lt;attribute name="freetalent" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -57,6 +59,10 @@ public class KNACKBASEType {
     protected ActionType action;
     @XmlAttribute(name = "bookref")
     protected String bookref;
+    @XmlAttribute(name = "cost")
+    protected Integer cost;
+    @XmlAttribute(name = "freetalent")
+    protected String freetalent;
 
     /**
      * Gets the value of the name property.
@@ -212,6 +218,62 @@ public class KNACKBASEType {
      */
     public void setBookref(String value) {
         this.bookref = value;
+    }
+
+    /**
+     * Gets the value of the cost property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *
+     */
+    public int getCost() {
+        if (cost == null) {
+            return  0;
+        } else {
+            return cost;
+        }
+    }
+
+    /**
+     * Sets the value of the cost property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *
+     */
+    public void setCost(Integer value) {
+        this.cost = value;
+    }
+
+    /**
+     * Gets the value of the freetalent property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getFreetalent() {
+        if (freetalent == null) {
+            return "";
+        } else {
+            return freetalent;
+        }
+    }
+
+    /**
+     * Sets the value of the freetalent property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setFreetalent(String value) {
+        this.freetalent = value;
     }
 
 }

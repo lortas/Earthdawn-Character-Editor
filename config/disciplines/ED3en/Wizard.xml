@@ -47,7 +47,7 @@
 		<SPELL type="wizard" name="Vines"/>
 		<SPELL type="wizard" name="Wake-Up Call"/>
 		<SPELLABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Book Memory"/>
@@ -159,7 +159,7 @@
 		<SPELL type="wizard" name="Safe Opening"/>
 		<SPELL type="wizard" name="Spell Snatcher"/>
 		<SPELL type="wizard" name="Wound Mask"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 		<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Matrix" limitation="W7"/>
@@ -178,7 +178,7 @@
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="True Sight"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Charisma-only Test"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -190,7 +190,7 @@
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Wound Transfer"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -209,7 +209,7 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Detect Influence"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE count="2"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

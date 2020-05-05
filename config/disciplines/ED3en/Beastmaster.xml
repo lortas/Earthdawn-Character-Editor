@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Develop Animal Sense"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<KARMA spend="Toughness-only Test"/>
 	</CIRCLE>
@@ -120,7 +120,7 @@
 		<DISCIPLINETALENT name="Astral Web"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>dealing with/caring for animals beyond described by talents (including animal breeding, first aid, husbandry); recognizing different animals, animal tracks, abnormal behavior among animals/creatures; Skill: Wilderness Survival;(PG p.44)</HALFMAGIC>

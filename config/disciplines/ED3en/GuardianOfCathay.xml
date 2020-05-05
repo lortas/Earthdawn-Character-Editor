@@ -86,7 +86,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Fiery Blade"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -117,7 +117,7 @@
 		<DISCIPLINETALENT name="Multi-Strike"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>knowledge: military strategy/ tactics, his kingdom and its laws; taking care arms/ armor; Skill: Tactics; (CPG p.36)</HALFMAGIC>

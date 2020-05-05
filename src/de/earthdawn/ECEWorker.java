@@ -148,22 +148,22 @@ public class ECEWorker {
 		}
 
 		// **DEFENSE**
-		DEFENSEType defense = character.getDefence();
-		defense.setPhysical(berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()));
-		defense.setSpell(berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.PER).getCurrentvalue()));
-		defense.setSocial(berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()));
+		DefenseAbility defenses = character.getDefence();
+		defenses.set(EffectlayerType.PHYSICAL,berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.DEX).getCurrentvalue()));
+		defenses.set(EffectlayerType.MYSTIC,berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.PER).getCurrentvalue()));
+		defenses.set(EffectlayerType.SOCIAL,berechneWiederstandskraft(characterAttributes.get(ATTRIBUTENameType.CHA).getCurrentvalue()));
 		for(DEFENSEABILITYType racedefense : namegiver.getDEFENSE() ) {
 			switch (racedefense.getKind()) {
 			case PHYSICAL:
-				defense.setPhysical(defense.getPhysical()+racedefense.getBonus());
+				defenses.add(EffectlayerType.PHYSICAL,racedefense.getBonus());
 				namegiverAbilities.add("physical defense +"+racedefense.getBonus()+" *");
 				break;
-			case SPELL:
-				defense.setSpell(defense.getSpell()+racedefense.getBonus());
+			case MYSTIC:
+				defenses.add(EffectlayerType.MYSTIC,racedefense.getBonus());
 				namegiverAbilities.add("spell defense +"+racedefense.getBonus()+" *");
 				break;
 			case SOCIAL:
-				defense.setSocial(defense.getSocial()+racedefense.getBonus());
+				defenses.add(EffectlayerType.SOCIAL,racedefense.getBonus());
 				namegiverAbilities.add("social defense +"+racedefense.getBonus()+" *");
 				break;
 			}
@@ -425,17 +425,15 @@ public class ECEWorker {
 				}
 				if( armor instanceof SHIELDType ) {
 					SHIELDType shield = (SHIELDType) armor;
-					DEFENSEType d = shield.getDEFENSE();
-					if( d != null ) {
-						physicaldefense+=d.getPhysical();
-						mysticdefense+=d.getSpell();
-					}
+					DefenseAbility d = new DefenseAbility(shield.getDEFENSE());
+					physicaldefense+=d.get(EffectlayerType.PHYSICAL);
+					mysticdefense+=d.get(EffectlayerType.MYSTIC);
 				}
 			}
 			if(armor.getKind().equals(ItemkindType.UNDEFINED)) armor.setKind(ItemkindType.ARMOR);
 		}
-		defense.setPhysical(defense.getPhysical()+physicaldefense);
-		defense.setSpell(defense.getSpell()+mysticdefense);
+		defenses.add(EffectlayerType.PHYSICAL,physicaldefense);
+		defenses.add(EffectlayerType.MYSTIC,mysticdefense);
 		PROTECTIONType protection = character.getProtection();
 		protection.setMysticarmor(mysticarmor);
 		protection.setPenalty(protectionpenalty);
@@ -447,10 +445,7 @@ public class ECEWorker {
 		karma.setStep(4 + maxKarmaStepBonus); // mindestens d6
 		karma.setDice(PROPERTIES.step2Dice(karma.getStep()));
 
-		DEFENSEType disciplineDefense = getDisciplineDefense(diciplineCircle);
-		defense.setPhysical(defense.getPhysical()+disciplineDefense.getPhysical());
-		defense.setSocial(defense.getSocial()+disciplineDefense.getSocial());
-		defense.setSpell(defense.getSpell()+disciplineDefense.getSpell());
+		defenses.add(getDisciplineDefense(diciplineCircle));
 
 		int[] recoverytestbonus = getDisciplineRecoveryTestBonus(diciplineCircle);
 		recovery.setTestsperday(recovery.getTestsperday()+recoverytestbonus[0]);
@@ -520,13 +515,7 @@ public class ECEWorker {
 				errorout.println("No Threadranks for "+item.getName()+" for rank "+item.getWeaventhreadrank()+" or less at all." );
 				continue;
 			}
-			for(DEFENSEABILITYType itemdefense : threadrank.getDEFENSE() ) {
-				switch (itemdefense.getKind()) {
-				case PHYSICAL: defense.setPhysical(defense.getPhysical()+itemdefense.getBonus()); break;
-				case SPELL: defense.setSpell(defense.getSpell()+itemdefense.getBonus()); break;
-				case SOCIAL: defense.setSocial(defense.getSocial()+itemdefense.getBonus()); break;
-				}
-			}
+			defenses.add(threadrank.getDEFENSE());
 			if( ! allDisciplines.isEmpty() ) for(TALENTABILITYType itemtalent : threadrank.getTALENT() ) {
 				String limitation = itemtalent.getLimitation();
 				String talentname = itemtalent.getName();
@@ -1074,33 +1063,24 @@ public class ECEWorker {
 
 	// Der Defense Bonus wird nicht über Alle Disziplinen addiert, sondern
 	// der Character erhält von des Disziplinen nur den jeweils höchsten DefenseBonus
-	private static DEFENSEType getDisciplineDefense(Map<String,Integer> diciplineCircle) {
-		DEFENSEType result = new DEFENSEType();
-		result.setPhysical(0);
-		result.setSocial(0);
-		result.setSpell(0);
+	private static DefenseAbility getDisciplineDefense(Map<String,Integer> diciplineCircle) {
+		DefenseAbility result = new DefenseAbility();
 		for( String discipline : diciplineCircle.keySet() ) {
 			DISCIPLINE d = ApplicationProperties.create().getDisziplin(discipline);
 			if( d == null ) continue;
-			DEFENSEType tmp = new DEFENSEType();
-			tmp.setPhysical(0);
-			tmp.setSocial(0);
-			tmp.setSpell(0);
+			DefenseAbility tmp = new DefenseAbility();
 			int circlenr = 0;
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
 				circlenr++;
 				if( circlenr > diciplineCircle.get(discipline) ) break;
 				for( DEFENSEABILITYType defense : circle.getDEFENSE() ) {
-					switch( defense.getKind() ) {
-					case PHYSICAL: tmp.setPhysical(tmp.getPhysical()+defense.getBonus()); break;
-					case SOCIAL:   tmp.setSocial(tmp.getSocial()+defense.getBonus()); break;
-					case SPELL:    tmp.setSpell(tmp.getSpell()+defense.getBonus()); break;
-					}
+					tmp.add(defense.getKind(),defense.getBonus());
 				}
 			}
-			if( tmp.getPhysical() > result.getPhysical() ) result.setPhysical(tmp.getPhysical());
-			if( tmp.getSocial()   > result.getSocial()   ) result.setSocial(tmp.getSocial());
-			if( tmp.getSpell()    > result.getSpell()    ) result.setSpell(tmp.getSpell());
+			for( EffectlayerType kind : EffectlayerType.values() ) {
+				int diff=tmp.get(kind)-result.get(kind);
+				if(diff>0) result.add(kind, diff);
+			}
 		}
 		return result;
 	}
@@ -1124,11 +1104,9 @@ public class ECEWorker {
 			for( DISCIPLINECIRCLEType circle : d.getCIRCLE() ) {
 				circlenr++;
 				if( circlenr > diciplineCircle.get(discipline) ) break;
-				for( DEFENSEABILITYType armor : circle.getARMOR() ) {
-					switch( armor.getKind() ) {
-					case PHYSICAL: tmp.setPhysicalarmor(tmp.getPhysicalarmor()+armor.getBonus()); break;
-					case SPELL:    tmp.setMysticarmor(tmp.getMysticarmor()+armor.getBonus()); break;
-					}
+				for( ARMORType armor : circle.getARMOR() ) {
+					tmp.setPhysicalarmor(tmp.getPhysicalarmor()+armor.getPhysicalarmor());
+					tmp.setMysticarmor(tmp.getMysticarmor()+armor.getMysticarmor());
 				}
 			}
 			if( tmp.getPhysicalarmor() > result.getPhysicalarmor() ) {

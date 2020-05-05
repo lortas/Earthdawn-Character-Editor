@@ -42,7 +42,7 @@
 		<SPELL type="illusion" name="Mind Fog"/>
 		<SPELL type="illusion" name="Phantom Flame"/>
 		<SPELL type="illusion" name="See the Unseen"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Conversation"/>
@@ -99,7 +99,7 @@
 		<SPELL type="illusion" name="Memory Scribe"/>
 		<SPELL type="illusion" name="True Missiles"/>
 		<SPELL type="illusion" name="True Switch"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Hypnotize"/>
@@ -121,7 +121,7 @@
 		<SPELL type="illusion" name="Rebel Limb"/>
 		<SPELL type="illusion" name="Shadow Spell"/>
 		<SPELL type="illusion" name="Stench"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>Recognize different types of magic use, illusion magic as well and when attempting to perceive the “truth” of a given situation</HALFMAGIC>

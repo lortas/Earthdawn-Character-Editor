@@ -467,29 +467,30 @@ public class EDInventory extends JPanel {
 				public void actionPerformed(ActionEvent arg0) {
 					THREADRANKType rank = (THREADRANKType) currentNode;
 					List<DEFENSEABILITYType> currentdefenses = rank.getDEFENSE();
-					List<DefensekindType> freedefinsekinds = new ArrayList<DefensekindType>();
-					for( DefensekindType definsekind : DefensekindType.values() ) {
+					List<EffectlayerType> freeDefensekinds = new ArrayList<EffectlayerType>();
+					for( EffectlayerType defensekind : EffectlayerType.values() ) {
 						boolean notfound=true;
 						for( DEFENSEABILITYType currentdefense : currentdefenses ) {
-							if( currentdefense.getKind().equals(definsekind) ) notfound=false;
+							if( currentdefense.getKind().equals(defensekind) ) notfound=false;
 						}
-						if( notfound ) freedefinsekinds.add(definsekind);
+						if( notfound ) freeDefensekinds.add(defensekind);
 					}
-					DEFENSEABILITYType defense = null;
-					if( freedefinsekinds.isEmpty() ) {
+					DEFENSEABILITYType defense = new DEFENSEABILITYType();
+					if( freeDefensekinds.isEmpty() ) {
 						for( DEFENSEABILITYType d : currentdefenses ) {
-							if( defense == null ) defense=d;
-							else if( defense.getBonus() > d.getBonus()) defense=d;
+							if( defense.getBonus() > d.getBonus()) {
+								defense.setKind(d.getKind());
+								defense.setBonus(d.getBonus());
+							}
 						}
 						defense.setBonus(defense.getBonus()+1);
 					} else {
-						defense = new DEFENSEABILITYType();
-						defense.setKind(freedefinsekinds.get(0));
-						currentdefenses.add(defense);
-						int idx=ItemTreeModel.getEffectIndex(rank, 3);
-						idx += currentdefenses.indexOf(defense);
-						((ItemTreeModel) tree.getModel()).fireAdd(currentPath,defense,idx);
+						defense.setKind(freeDefensekinds.get(0));
 					}
+					currentdefenses.add(defense);
+					int idx=ItemTreeModel.getEffectIndex(rank, 3);
+					idx += currentdefenses.indexOf(defense);
+					((ItemTreeModel) tree.getModel()).fireAdd(currentPath,defense,idx);
 					tree.scrollPathToVisible(currentPath.pathByAddingChild(defense));
 				}
 			});

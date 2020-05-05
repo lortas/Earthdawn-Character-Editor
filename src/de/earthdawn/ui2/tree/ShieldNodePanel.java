@@ -1,6 +1,7 @@
 package de.earthdawn.ui2.tree;
 
-import de.earthdawn.data.DEFENSEType;
+import de.earthdawn.DefenseAbility;
+import de.earthdawn.data.EffectlayerType;
 import de.earthdawn.data.SHIELDType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.data.ItemkindType;
@@ -35,11 +36,7 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 
 	public ShieldNodePanel(SHIELDType node) {
 		super(node);
-		DEFENSEType defense = node.getDEFENSE();
-		if( defense == null ) {
-			defense = new DEFENSEType();
-			node.setDEFENSE(defense);
-		}
+		DefenseAbility defenses = new DefenseAbility(node.getDEFENSE());
 
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setLayout(new MigLayout("", "[24px][128px][27px][86px][34px][47px,grow][40px][86px]", "[][][]"));
@@ -71,10 +68,10 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 		add(spinnerMysticArmor, "cell 3 0");
 
 		add(new JLabel("Defense (physical/mystic)"), "cell 2 1");
-		spinnerPhysicalDefense = new JSpinner(new SpinnerNumberModel(defense.getPhysical(), 0, 100, 1));
+		spinnerPhysicalDefense = new JSpinner(new SpinnerNumberModel(defenses.get(EffectlayerType.PHYSICAL), 0, 100, 1));
 		add(spinnerPhysicalDefense, "cell 3 1");
 		add(new JLabel("/"), "cell 3 1");
-		spinnerMysticDefense = new JSpinner(new SpinnerNumberModel(defense.getSpell(), 0, 100, 1));
+		spinnerMysticDefense = new JSpinner(new SpinnerNumberModel(defenses.get(EffectlayerType.MYSTIC), 0, 100, 1));
 		add(spinnerMysticDefense, "cell 3 1");
 
 		add(new JLabel("Forged (physical/mystic)"), "cell 2 2");
@@ -118,8 +115,9 @@ public class ShieldNodePanel extends AbstractNodePanel<SHIELDType> {
 		
 		nodeObject.setPhysicalarmor((Integer) spinnerPhysicalArmor.getValue());
 		nodeObject.setMysticarmor((Integer) spinnerMysticArmor.getValue());
-		nodeObject.getDEFENSE().setPhysical((Integer) spinnerPhysicalDefense.getValue());
-		nodeObject.getDEFENSE().setSpell((Integer) spinnerMysticDefense.getValue());
+		DefenseAbility defenses = new DefenseAbility(nodeObject.getDEFENSE());
+		defenses.set(EffectlayerType.PHYSICAL, (Integer) spinnerPhysicalDefense.getValue());
+		defenses.set(EffectlayerType.MYSTIC, (Integer) spinnerMysticDefense.getValue());
 		nodeObject.setPenalty((Integer) spinnerPenalty.getValue());
 		nodeObject.setEdn((Integer) spinnerEnchanting.getValue());
 		

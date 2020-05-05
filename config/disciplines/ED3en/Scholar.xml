@@ -25,7 +25,7 @@
 		<OPTIONALTALENT name="Throwing Weapons"/>
 		<DISCIPLINETALENT name="Rhetoric"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Evidence Analysis"/>
@@ -62,7 +62,7 @@
 	<CIRCLE><!-- 8 -->
 		<DISCIPLINETALENT name="True Sight"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Astral Pocket"/>
@@ -81,19 +81,19 @@
 	<CIRCLE><!-- 10 -->
 		<DISCIPLINETALENT name="Safe Thought"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Detect Falsehood"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Create Moon Staff"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 		<INITIATIVE/>
 	</CIRCLE>
@@ -113,7 +113,7 @@
 	<CIRCLE><!-- 14 -->
 		<DISCIPLINETALENT name="Impossible Hide"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

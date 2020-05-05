@@ -54,7 +54,7 @@
 		<SPELL type="elemental" name="Sterilize Object"/>
 		<SPELL type="elemental" name="Stick Together"/>
 		<SPELLABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Elemental Tongues"/>
@@ -178,7 +178,7 @@
 		<SPELL type="elemental" name="Silence Metal"/>
 		<SPELL type="elemental" name="Silver Shadow"/>
 		<SPELL type="elemental" name="Waterspout"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Matrix" limitation="E7"/>
@@ -211,7 +211,7 @@
 		<SPELL type="elemental" name="Frozen Harbor"/>
 		<SPELL type="elemental" name="Petrify"/>
 		<SPELL type="elemental" name="Weather Change"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Action Tests made by a spirit or creature under his control"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -225,7 +225,7 @@
 		<DISCIPLINETALENT name="Summoning Circle"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Crop Blight"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -245,7 +245,7 @@
 		<DISCIPLINETALENT name="Elemental Walk"/>
 		<TALENTABILITY/>
 		<SPELL type="elemental" name="Council of the Forest"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY count="2"/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

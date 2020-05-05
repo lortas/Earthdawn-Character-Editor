@@ -88,7 +88,7 @@
 		<DISCIPLINETALENT name="Tame Mount"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Life Check"/>
@@ -119,7 +119,7 @@
 		<DISCIPLINETALENT name="Multi-Charge"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>knowledge: types of mounts, animal breeding, first aid, significant cavalry units in Barsaive; upkeep of riding gear; (PG p.45)</HALFMAGIC>

@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="minrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" /&gt;
  *       &lt;attribute name="maxrank" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *       &lt;attribute name="prerequisite" type="{http://earthdawn.com/datatypes}prerequisitekind_type" default="restriction" /&gt;
+ *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -49,6 +50,8 @@ public class KNACKCAPABILITYType {
     protected Integer maxrank;
     @XmlAttribute(name = "prerequisite")
     protected PrerequisitekindType prerequisite;
+    @XmlAttribute(name = "pool")
+    protected String pool;
 
     /**
      * Gets the value of the name property.
@@ -184,6 +187,34 @@ public class KNACKCAPABILITYType {
      */
     public void setPrerequisite(PrerequisitekindType value) {
         this.prerequisite = value;
+    }
+
+    /**
+     * Gets the value of the pool property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getPool() {
+        if (pool == null) {
+            return "";
+        } else {
+            return pool;
+        }
+    }
+
+    /**
+     * Sets the value of the pool property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setPool(String value) {
+        this.pool = value;
     }
 
 }

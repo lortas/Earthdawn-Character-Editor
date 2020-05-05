@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Mind Wave"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>
@@ -106,7 +106,7 @@
 		<OPTIONALTALENT name="Truth Skit"/>
 		<DISCIPLINETALENT name="Aura Armor"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Ghost Song</ABILITY>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Confront Horror"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>

@@ -45,7 +45,7 @@
 		<SPELL type="elemental" name="Mantle of the Woodland Hunter"/>
 		<SPELL type="elemental" name="Shield Willow"/>
 		<SPELL type="elemental" name="Slow Weapon"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Elemental Tongues"/>
@@ -105,7 +105,7 @@
 		<SPELL type="elemental" name="Metal Wings"/>
 		<SPELL type="elemental" name="Stone Rain"/>
 		<SPELL type="elemental" name="Tossing Earth"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Earth Skin"/>
@@ -127,7 +127,7 @@
 		<SPELL type="elemental" name="Mantle of the Lightning Vanguard"/>
 		<SPELL type="elemental" name="Venomous Fury"/>
 		<SPELL type="elemental" name="Vital Springs"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>For knowledge of nature, the elements, uses of elemental magic/rituals. Detect elemental spirits</HALFMAGIC>

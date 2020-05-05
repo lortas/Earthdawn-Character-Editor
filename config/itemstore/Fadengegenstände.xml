@@ -87,13 +87,13 @@
 			<edt:DEFENSE kind="social"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Magische Widerstandskraft +1">
-			<edt:DEFENSE kind="spell"/>
+			<edt:DEFENSE kind="mystic"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Soziale Widerstandskraft +1">
 			<edt:DEFENSE kind="social" bonus="2"/>
 		</edt:THREADRANK>
 		<edt:THREADRANK effect="Magische Widerstandskraft +1">
-			<edt:DEFENSE kind="spell" bonus="2"/>
+			<edt:DEFENSE kind="mystic" bonus="2"/>
 		</edt:THREADRANK>
 	</THREADITEM>
 </ITEMS>

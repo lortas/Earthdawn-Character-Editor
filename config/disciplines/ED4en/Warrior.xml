@@ -32,7 +32,7 @@
 	<CIRCLE><!-- 4 -->
 		<DISCIPLINETALENT name="Waterfall Slam"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 5 -->
 		<OPTIONALTALENT name="Disarm"/>

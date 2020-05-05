@@ -41,7 +41,7 @@
 		<SPELL type="wizard" name="Dodge Boost"/>
 		<SPELL type="wizard" name="Rope Ladder"/>
 		<SPELL type="wizard" name="Seeking Sight"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Tenacious Weave"/>
@@ -97,7 +97,7 @@
 		<SPELL type="wizard" name="Rampage"/>
 		<SPELL type="wizard" name="Razor Orb"/>
 		<SPELL type="wizard" name="Sleep"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Hold Thread"/>
@@ -119,7 +119,7 @@
 		<SPELL type="wizard" name="Karma Cancel"/>
 		<SPELL type="wizard" name="Spell Cage"/>
 		<SPELL type="wizard" name="Spell Snatcher"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>Recognize types of magic use, identify specific uses of Wizardry, and for knowledge of magical rituals</HALFMAGIC>

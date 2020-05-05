@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="DEFENSEABILITY_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}defensekind_type" default="physical" /&gt;
+ *       &lt;attribute name="kind" type="{http://earthdawn.com/datatypes}effectlayer_type" default="physical" /&gt;
  *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 public class DEFENSEABILITYType {
 
     @XmlAttribute(name = "kind")
-    protected DefensekindType kind;
+    protected EffectlayerType kind;
     @XmlAttribute(name = "bonus")
     protected Integer bonus;
 
@@ -48,12 +48,12 @@ public class DEFENSEABILITYType {
      *
      * @return
      *     possible object is
-     *     {@link DefensekindType }
+     *     {@link EffectlayerType }
      *
      */
-    public DefensekindType getKind() {
+    public EffectlayerType getKind() {
         if (kind == null) {
-            return DefensekindType.PHYSICAL;
+            return EffectlayerType.PHYSICAL;
         } else {
             return kind;
         }
@@ -64,10 +64,10 @@ public class DEFENSEABILITYType {
      *
      * @param value
      *     allowed object is
-     *     {@link DefensekindType }
+     *     {@link EffectlayerType }
      *
      */
-    public void setKind(DefensekindType value) {
+    public void setKind(EffectlayerType value) {
         this.kind = value;
     }
 

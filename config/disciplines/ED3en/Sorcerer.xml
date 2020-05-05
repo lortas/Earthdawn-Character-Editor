@@ -46,7 +46,7 @@
 		<SPELL type="sorcery" name="Ignite"/>
 		<SPELL type="sorcery" name="Sterilize Object"/>
 		<SPELL type="sorcery" name="The Thousand Faces of Cheung"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Arcane Mutterings"/>
@@ -143,7 +143,7 @@
 		<SPELL type="sorcery" name="Silence Metal"/>
 		<SPELL type="sorcery" name="Teacup Finds New Friends"/>
 		<SPELL type="sorcery" name="Waterspout"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Matrix" limitation="S6"/>
@@ -173,7 +173,7 @@
 		<SPELL type="sorcery" name="Petrify"/>
 		<SPELL type="sorcery" name="Warp Astral Space"/>
 		<SPELL type="sorcery" name="Warrior Raises His Shield"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -191,7 +191,7 @@
 		<DISCIPLINETALENT name="Casting Pattern"/>
 		<TALENTABILITY/>
 		<SPELL type="sorcery" name="Alter Form"/>		
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -212,7 +212,7 @@
 		<DISCIPLINETALENT name="Astral Web"/>
 		<TALENTABILITY/>
 		<SPELL type="sorcery" name="Lao Curses the Emperor"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 		<INITIATIVE/>
 	</CIRCLE>

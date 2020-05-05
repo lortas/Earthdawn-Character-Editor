@@ -42,7 +42,7 @@
 		<SPELL type="nether" name="Shadow’s Whisper"/>
 		<SPELL type="nether" name="Shield Mist"/>
 		<SPELL type="nether" name="Summon Fog Ghost"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Spirit Talk"/>
@@ -99,7 +99,7 @@
 		<SPELL type="nether" name="Friendly Darkness"/>
 		<SPELL type="nether" name="Recovery"/>
 		<SPELL type="nether" name="Step Through Shadow"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
 		<DISCIPLINETALENT name="Orbiting Spy"/>
@@ -121,7 +121,7 @@
 		<SPELL type="nether" name="Shadow Tether"/>
 		<SPELL type="nether" name="Spirit Portal"/>
 		<SPELL type="nether" name="Wither Away"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>
 	<HALFMAGIC>Recognize uses of nethermantic magic, different types of undead/spirits, magical rituals/blood magic/blood chnarms. Sense presence of spirits</HALFMAGIC>

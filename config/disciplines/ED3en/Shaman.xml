@@ -48,7 +48,7 @@
 		<SPELL type="shaman" name="Small Slayer"/>
 		<SPELL type="shaman" name="Weather Cloak"/>
 		<SPELL type="shaman" name="Vines"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 3 -->
 		<DISCIPLINETALENT name="Spirit Talk"/>
@@ -154,7 +154,7 @@
 		<SPELL type="shaman" name="Waterspout"/>
 		<SPELL type="shaman" name="Wither Away"/>
 		<SPELL type="shaman" name="Wound Mask"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 9 -->
 		<OPTIONALTALENT name="Armored Fetish"/>
@@ -186,7 +186,7 @@
 		<SPELL type="shaman" name="Journey to Life"/>
 		<SPELL type="shaman" name="Onion Blood"/>
 		<SPELL type="shaman" name="Weather Change"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMA spend="Action Test by a spirit or creature under control"/>
 	</CIRCLE>
 	<CIRCLE><!-- 11 -->
@@ -202,7 +202,7 @@
 		<TALENTABILITY/>
 		<SPELL type="shaman" name="Alter Form"/>
 		<SPELL type="shaman" name="Crop Blight"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 13 -->
@@ -222,7 +222,7 @@
 		<DISCIPLINETALENT name="Netherwalk"/>
 		<TALENTABILITY/>
 		<SPELL type="shaman" name="Council of the Forest"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->

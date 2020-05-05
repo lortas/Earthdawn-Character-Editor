@@ -88,7 +88,7 @@
 		<DISCIPLINETALENT name="Pin"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Feather Light"/>
@@ -105,7 +105,7 @@
 		<OPTIONALTALENT name="Spirit Strike"/>
 		<DISCIPLINETALENT name="Wind Slash"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Dancer’s Tale</ABILITY>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 		<DISCIPLINETALENT name="Vital Strike"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>

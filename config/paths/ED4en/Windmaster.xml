@@ -26,7 +26,7 @@
 	</PATHRANK>
 	<PATHRANK tier="journeyman"><!-- 4 -->
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</PATHRANK>
 	<PATHRANK tier="warden"><!-- 5 -->
 		<OPTIONALTALENT name="Air Dance"/>

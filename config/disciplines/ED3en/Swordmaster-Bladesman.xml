@@ -88,7 +88,7 @@
 		<DISCIPLINETALENT name="Spot Armor Flaw"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Defense"/>
@@ -119,7 +119,7 @@
 		<DISCIPLINETALENT name="Ethereal Weapon"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>

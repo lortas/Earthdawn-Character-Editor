@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="TALENTABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/&gt;
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="RECOVERYTESTPERDAY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="RECOVERYTESTSTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -68,7 +68,7 @@ public class PATHRANKType {
     @XmlElement(name = "DEFENSE")
     protected List<DEFENSEABILITYType> defense;
     @XmlElement(name = "ARMOR")
-    protected List<DEFENSEABILITYType> armor;
+    protected List<ARMORType> armor;
     @XmlElement(name = "INITIATIVE")
     protected List<DISZIPINABILITYType> initiative;
     @XmlElement(name = "RECOVERYTESTPERDAY")
@@ -184,13 +184,13 @@ public class PATHRANKType {
      *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link DEFENSEABILITYType }
+     * {@link ARMORType }
      *
      *
      */
-    public List<DEFENSEABILITYType> getARMOR() {
+    public List<ARMORType> getARMOR() {
         if (armor == null) {
-            armor = new ArrayList<DEFENSEABILITYType>();
+            armor = new ArrayList<ARMORType>();
         }
         return this.armor;
     }

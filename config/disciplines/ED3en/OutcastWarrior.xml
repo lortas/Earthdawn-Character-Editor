@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Body Blade"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -104,7 +104,7 @@
 		<OPTIONALTALENT name="Stone Skin"/>
 		<DISCIPLINETALENT name="Storm Shield"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Honorable Reputation</ABILITY>
 	</CIRCLE>
@@ -117,7 +117,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Multi-Strike"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
 	<KARMARITUAL>Please insert a short description of your Karma Ritual. It have to last for 30 minutes</KARMARITUAL>

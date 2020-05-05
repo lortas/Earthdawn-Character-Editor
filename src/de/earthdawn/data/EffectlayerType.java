@@ -14,34 +14,34 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for defensekind_type.
+ * <p>Java class for effectlayer_type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="defensekind_type"&gt;
+ * &lt;simpleType name="effectlayer_type"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="physical"/&gt;
- *     &lt;enumeration value="spell"/&gt;
+ *     &lt;enumeration value="mystic"/&gt;
  *     &lt;enumeration value="social"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  *
  */
-@XmlType(name = "defensekind_type")
+@XmlType(name = "effectlayer_type")
 @XmlEnum
-public enum DefensekindType {
+public enum EffectlayerType {
 
     @XmlEnumValue("physical")
     PHYSICAL("physical"),
-    @XmlEnumValue("spell")
-    SPELL("spell"),
+    @XmlEnumValue("mystic")
+    MYSTIC("mystic"),
     @XmlEnumValue("social")
     SOCIAL("social");
     private final String value;
 
-    DefensekindType(String v) {
+    EffectlayerType(String v) {
         value = v;
     }
 
@@ -49,8 +49,8 @@ public enum DefensekindType {
         return value;
     }
 
-    public static DefensekindType fromValue(String v) {
-        for (DefensekindType c: DefensekindType.values()) {
+    public static EffectlayerType fromValue(String v) {
+        for (EffectlayerType c: EffectlayerType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

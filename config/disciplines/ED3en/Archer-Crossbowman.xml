@@ -88,7 +88,7 @@
 		<DISCIPLINETALENT name="Dominate Arrow"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
@@ -106,7 +106,7 @@
 		<OPTIONALTALENT name="True Sight"/>
 		<DISCIPLINETALENT name="Multi-Shot"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>Hail of Arrows</ABILITY>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Wind Bow"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>

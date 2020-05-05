@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Howl"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
@@ -106,7 +106,7 @@
 		<OPTIONALTALENT name="True Sight"/>
 		<DISCIPLINETALENT name="Bardic Voice"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<KARMASTEP/>
 		<ABILITY>True Strength</ABILITY>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Spirit Blend"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="physical"/>
 		<INITIATIVE/>
 	</CIRCLE>

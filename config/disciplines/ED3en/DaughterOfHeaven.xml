@@ -87,7 +87,7 @@
 	<CIRCLE><!-- 11 -->
 		<DISCIPLINETALENT name="Cyclone"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<KARMA spend="reduce Current Damage of adjacent target by result (once per round)"/>
 	</CIRCLE>
@@ -119,7 +119,7 @@
 	<CIRCLE><!-- 15 -->
 		<DISCIPLINETALENT name="Purge Pattern"/>
 		<TALENTABILITY/>
-		<DEFENSE kind="spell"/>
+		<DEFENSE kind="mystic"/>
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>
 	</CIRCLE>

@@ -23,9 +23,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="DEFENSE_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="physical" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" /&gt;
- *       &lt;attribute name="spell" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" /&gt;
- *       &lt;attribute name="social" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" /&gt;
+ *       &lt;attribute name="kind" use="required" type="{http://earthdawn.com/datatypes}effectlayer_type" /&gt;
+ *       &lt;attribute name="value" use="required" type="{http://earthdawn.com/datatypes}unsigned_int" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -37,59 +36,49 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DEFENSE_type")
 public class DEFENSEType {
 
-    @XmlAttribute(name = "physical", required = true)
-    protected int physical;
-    @XmlAttribute(name = "spell", required = true)
-    protected int spell;
-    @XmlAttribute(name = "social", required = true)
-    protected int social;
+    @XmlAttribute(name = "kind", required = true)
+    protected EffectlayerType kind;
+    @XmlAttribute(name = "value", required = true)
+    protected int value;
 
     /**
-     * Gets the value of the physical property.
+     * Gets the value of the kind property.
+     *
+     * @return
+     *     possible object is
+     *     {@link EffectlayerType }
      *
      */
-    public int getPhysical() {
-        return physical;
+    public EffectlayerType getKind() {
+        return kind;
     }
 
     /**
-     * Sets the value of the physical property.
+     * Sets the value of the kind property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link EffectlayerType }
      *
      */
-    public void setPhysical(int value) {
-        this.physical = value;
+    public void setKind(EffectlayerType value) {
+        this.kind = value;
     }
 
     /**
-     * Gets the value of the spell property.
+     * Gets the value of the value property.
      *
      */
-    public int getSpell() {
-        return spell;
+    public int getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the spell property.
+     * Sets the value of the value property.
      *
      */
-    public void setSpell(int value) {
-        this.spell = value;
-    }
-
-    /**
-     * Gets the value of the social property.
-     *
-     */
-    public int getSocial() {
-        return social;
-    }
-
-    /**
-     * Sets the value of the social property.
-     *
-     */
-    public void setSocial(int value) {
-        this.social = value;
+    public void setValue(int value) {
+        this.value = value;
     }
 
 }
