@@ -5,10 +5,10 @@
 	<KNACK name="Brother of Stone" attribute="na" action="na" blood="2" bookref="MP p.299" cost="500" freetalent="Brother of Stone">
 		<BASE type="talent" name="Thread Weaving" minrank="5"/>
 		<DISCIPLINE circle="5"/>
-		<TALENT name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
-		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
-		<SKILL name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
-		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
+		<TALENT name="Speak Language" minrank="1" prerequisite="requirement" pool="1"/>
+		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement" pool="2"/>
+		<SKILL name="Speak Language" minrank="1" prerequisite="requirement" pool="1"/>
+		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement" pool="2"/>
 		<SKILL name="Knowledge" limitation="Racial Lore" minrank="5" prerequisite="requirement" />
 	</KNACK>
 	<KNACK name="Windmaster" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500" freetalent="Windmaster">
@@ -31,7 +31,7 @@
 		<TALENT name="Versatility" minrank="5" prerequisite="requirement"/>
 		<RACE name="Human" prerequisite="requirement"/>
 	</KNACK>
-	 <KNACK name="Liberator" attribute="na" action="na" blood="2" bookref="MP p.300" cost="500" freetalent="Liberator">
+	<KNACK name="Liberator" attribute="na" action="na" blood="2" bookref="MP p.300" cost="500" freetalent="Liberator">
 		<BASE type="talent" name="Thread Weaving" minrank="5"/>
 		<DISCIPLINE circle="5"/>
 	</KNACK>
@@ -62,10 +62,409 @@
 	<KNACK name="Woodsman" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500" freetalent="Woodsman">
 		<BASE type="talent" name="Thread Weaving" minrank="5"/>
 		<DISCIPLINE circle="5"/>
-		<TALENT name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
-		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
-		<SKILL name="Speak Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt1"/>
-		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement" prerequisiteoption="Opt2"/>
+		<TALENT name="Speak Language" minrank="1" prerequisite="requirement" pool="1"/>
+		<TALENT name="Read and Write Language" minrank="1" prerequisite="requirement" pool="2"/>
+		<SKILL name="Speak Language" minrank="1" prerequisite="requirement" pool="1"/>
+		<SKILL name="Read and Write Language" minrank="1" prerequisite="requirement" pool="2"/>
 		<SKILL name="Knowledge" limitation="Racial Lore" minrank="5" prerequisite="requirement" />
 	</KNACK>
+
+
+<!--SpecialManeuverKnacks-->    
+        <KNACK name="Can’t Catch Me" attribute="na" action="special" bookref="MP p.214">
+		<BASE type="talent" name="Air Dance" minrank="10"/>
+		<TALENT name="Windmaster" minrank="7" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Initiative) -->
+        </KNACK>
+        <KNACK name="I’m Not Done with You Yet" attribute="DEX" action="free" strain="3" bookref="MP p.214">
+		<BASE type="talent" name="Air Dance" minrank="5"/>
+		<DISCIPLINE circle="8" prerequisite="restriction"/>
+                <TALENT name="Windmaster" minrank="2" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Speed Freak" attribute="na" action="special" bookref="MP p.214">
+		<BASE type="talent" name="Air Dance" minrank="8"/>
+		<TALENT name="Windmaster" minrank="5" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Initiative) -->
+        </KNACK>
+        <KNACK name="Speed Kills" attribute="na" action="special" bookref="MP p.214">
+		<BASE type="talent" name="Air Dance" minrank="9"/>
+		<TALENT name="Windmaster" minrank="6" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Initiative) -->
+        </KNACK>
+        <KNACK name="Lector" attribute="na" action="special" bookref="MP p.215">
+		<BASE type="talent" name="Applied Knowledge" minrank="6"/>
+                <TALENT name="Scholar" minrank="5" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Knowledge) -->
+        </KNACK>
+
+
+        <!--Air Sailing Knacks-->
+        <KNACK name="Sweeping Current" attribute="DEX" action="simple" strain="2" bookref="MP p.214">
+		<BASE type="talent" name="Air Sailing" minrank="7"/>
+                <BASE type="talent" name="Pilot Boat" minrank="7"/>
+                <BASE type="talent" name="Sailing" minrank="7"/>
+                <DISCIPLINE name ="Air Sailor" circle="7" prerequisite="restriction"/>
+                <DISCIPLINE name ="Boatman" circle="7" prerequisite="restriction"/>
+                <DISCIPLINE name ="Sailor" circle="7" prerequisite="restriction"/>
+        </KNACK>
+        <!--Air Speaking Knacks-->
+        <KNACK name="Wind Dance" attribute="PER" action="special" strain="1" skilluse="1" bookref="MP p.215">
+		<BASE type="talent" name="Air Speaking" minrank="4"/>
+	</KNACK>
+        <!--AnticipateBlow Knack-->
+        <KNACK name="Aerial Ace" attribute="na" action="free" strain="1" bookref="MP p.215">
+		<BASE type="talent" name="Anticipate Blow" minrank="10"/>
+		<TALENT name="Windmaster" minrank="7" prerequisite="restriction"/>
+                <TALENT name="Air Dance" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <!--Awareness Knacks-->
+        <KNACK name="Clear View" attribute="PER" action="standard" strain="2" bookref="MP p.216">
+		<BASE type="talent" name="Awareness" minrank="9"/>
+		<DISCIPLINE name ="Scout" circle="9" prerequisite="restriction"/>
+                <DISCIPLINE name ="Thief" circle="9" prerequisite="restriction"/>
+                <TALENT name="Messenger" minrank="7" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Eavesdrop" attribute="PER" action="standard" strain="1" bookref="MP p.216">
+		<BASE type="talent" name="Awareness" minrank="6"/>
+		<DISCIPLINE name ="Scout" circle="6" prerequisite="restriction"/>
+                <DISCIPLINE name ="Thief" circle="6" prerequisite="restriction"/>
+                <TALENT name="Messenger" minrank="3" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Voices Carry" attribute="PER" action="standard" strain="1" bookref="MP p.216">
+		<BASE type="talent" name="Awareness" minrank="8"/>
+		<DISCIPLINE name ="Scout" circle="6" prerequisite="restriction"/>
+                <DISCIPLINE name ="Thief" circle="6" prerequisite="restriction"/>
+                <TALENT name="Messenger" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <!--Banish Knacks-->
+        <KNACK name="Expel Horror" attribute="WIL" action="standard" strain="4" bookref="MP p.216">
+		<BASE type="talent" name="Banish" minrank="9"/>
+		<DISCIPLINE name ="Nethermancer" circle="12" prerequisite="restriction"/>
+                <TALENT name="Horror Stalker" minrank="9" prerequisite="restriction"/>
+        </KNACK>
+        <!--Battleshout Knacks-->
+        <KNACK name="Flames of Battle" attribute="CHA" action="simple" strain="1" bookref="MP p.217">
+		<BASE type="talent" name="Battle Shout" minrank="6"/>
+                <TALENT name="Fires of Gahad" minrank="4" prerequisite="requirement"/>
+                <TALENT name="Fire Eater" minrank="2" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Ka’tosh’s Challenge" attribute="CHA" action="simple" strain="1" bookref="MP p.217">
+		<BASE type="talent" name="Battle Shout" minrank="5"/>
+                <TALENT name="Rite of Kho’pesh" minrank="5" prerequisite="requirement"/>
+                <TALENT name="Outcast" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Scorching Breath" attribute="CHA" action="simple" strain="3" bookref="MP p.217">
+		<BASE type="talent" name="Battle Shout" minrank="9"/>
+                <TALENT name="Fires of Gahad" minrank="7" prerequisite="requirement"/>
+                <TALENT name="Fire Eater" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Bear Mark Knacks -->
+        <KNACK name="Bear Corruption" attribute="na" action="free" strain="5" bookref="MP p.218">
+		<BASE type="talent" name="Bear Mark" minrank="3"/>
+		<TALENT name="Horror Stalker" minrank="3" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Bitter Taste" attribute="na" action="free" strain="1" bookref="MP p.218">
+		<BASE type="talent" name="Bear Mark" minrank="4"/>
+                <TALENT name="Horror Stalker" minrank="4" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Debilitating Harvest" attribute="WIL" action="free" strain="2" bookref="MP p.218">
+		<BASE type="talent" name="Bear Mark" minrank="7"/>
+		<TALENT name="Bitter Taste" minrank="7" prerequisite="requirement"/>
+                <TALENT name="Horror Stalker" minrank="7" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Poisoned Harvest" attribute="na" action="free" strain="2" bookref="MP p.219">
+		<BASE type="talent" name="Bear Mark" minrank="9"/>
+                <KNACK name="Bitter Taste" prerequisite="requirement"/>
+                <KNACK name="Debilitating Harvest" prerequisite="requirement"/>
+		<TALENT name="Horror Stalker" minrank="9" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Trace Horror" attribute="PER" action="standard" strain="2" bookref="MP p.219">
+		<BASE type="talent" name="Bear Mark" minrank="5"/>
+		<TALENT name="Horror Stalker" minrank="9" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Book Memory Knacks -->
+        <KNACK name="Font of Knowledge" attribute="na" action="na" strain="0" bookref="MP p.219">
+		<BASE type="talent" name="Book Memory" minrank="5"/>
+                <TALENT name="Expansive Expertise" minrank="3" prerequisite="requirement"/>
+                <TALENT name="Scholar" minrank="2" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Transcribe Document" attribute="DEX" action="sustained" strain="2" bookref="MP p.220">
+		<BASE type="talent" name="Book Memory" minrank="5"/>
+                <TALENT name="Messenger" minrank="1" prerequisite="restriction"/>
+        </KNACK>
+        <!--Brother of Stone Knacks-->
+        <KNACK name="Earth Brother" attribute="na" action="na" strain="1" bookref="MP p.220">
+		<BASE type="talent" name="Brother of Stone" minrank="5"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Earth Cloak" attribute="na" action="na" strain="0" bookref="MP p.220">
+		<BASE type="talent" name="Brother of Stone" minrank="2"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Earth Elemental Affinity" attribute="na" action="na" strain="0" bookref="MP p.220">
+		<BASE type="talent" name="Brother of Stone" minrank="7"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Earth Sense" attribute="na" action="na" strain="1" bookref="MP p.220">
+		<BASE type="talent" name="Brother of Stone" minrank="3"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Force of Stone" attribute="na" action="na" strain="0" bookref="MP p.221">
+		<BASE type="talent" name="Brother of Stone" minrank="6"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Resilience of Stone" attribute="na" action="na" strain="0" bookref="MP p.221">
+		<BASE type="talent" name="Brother of Stone" minrank="4"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Stability of Stone" attribute="na" action="na" strain="0" bookref="MP p.221">
+		<BASE type="talent" name="Brother of Stone" minrank="1"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <KNACK name="Stone Flesh" attribute="na" action="na" strain="1" bookref="MP p.221">
+		<BASE type="talent" name="Brother of Stone" minrank="9"/>
+                <!-- Karma Knack -->
+        </KNACK>
+        <!--Burning Vigor Knacks-->
+        <KNACK name="Burning Strength" attribute="STR" action="free" strain="0" bookref="MP p.221">
+		<BASE type="talent" name="Burning Vigor" minrank="5"/>
+                <TALENT name="Fires of Gahad" minrank="3" prerequisite="requirement"/>
+                <TALENT name="Fire Eater" minrank="1" prerequisite="restriction"/>
+                <SKILL name="" limitation="" minrank="5" prerequisite="requirement" />
+        </KNACK>
+        <!--Call of Harrow Knacks-->
+        <KNACK name="All Tied Up" attribute="na" action="na" strain="0" bookref="MP p.222">
+		<BASE type="talent" name="Call of Harrow" minrank="6"/>
+                <BASE type="talent" name="Horror Stalker" minrank="6"/>
+                <!-- [Special Maneuver] (Adept, Close Combat) -->
+        </KNACK>
+        <KNACK name="Assault" attribute="na" action="na" strain="0" bookref="MP p.222">
+		<BASE type="talent" name="Call of Harrow" minrank="5"/>
+                <BASE type="talent" name="Horror Stalker" minrank="5"/>
+                <!-- [Special Maneuver] (Adept, Close Combat) -->
+        </KNACK>
+        <KNACK name="Dispersing Strike" attribute="na" action="na" strain="0" bookref="MP p.222">
+		<BASE type="talent" name="Call of Harrow" minrank="4"/>
+                <BASE type="talent" name="Horror Stalker" minrank="4"/>
+                <!-- [Special Maneuver] (Adept, Close Combat) -->
+        </KNACK>
+        <KNACK name="Exploit Corruption" attribute="na" action="free" strain="1" bookref="MP p.223">
+		<BASE type="talent" name="Call of Harrow" minrank="5"/>
+                <TALENT name="Horror Stalker" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Lance Bloatform" attribute="na" action="na" strain="0" bookref="MP p.223">
+		<BASE type="talent" name="Call of Harrow" minrank="6"/>
+                <BASE type="talent" name="Horror Stalker" minrank="6"/>
+                <!-- [Special Maneuver] (Adept, Strike the Darkness) -->
+        </KNACK>
+        <KNACK name="Mold Baggi" attribute="na" action="na" strain="0" bookref="MP p.223">
+		<BASE type="talent" name="Call of Harrow" minrank="3"/>
+                <BASE type="talent" name="Horror Stalker" minrank="3"/>
+                <!-- [Special Maneuver] (Adept, Strike the Darkness) -->
+        </KNACK>
+        <KNACK name="Never Deceived" attribute="na" action="na" strain="0" bookref="MP p.224">
+		<BASE type="talent" name="Call of Harrow" minrank="3"/>
+                <BASE type="talent" name="Horror Stalker" minrank="3"/>
+                <!-- [Special Maneuver] (Adept, Attack) -->
+        </KNACK>
+        <KNACK name="Pattern Recognition" attribute="na" action="na" strain="0" bookref="MP p.224">
+		<BASE type="talent" name="Call of Harrow" minrank="4"/>
+                <BASE type="talent" name="Horror Stalker" minrank="4"/>
+                <!-- [Special Maneuver] (Adept, Attack or Spellcasting) -->
+        </KNACK>
+        <KNACK name="Trap Horror" attribute="WIL" action="standard" strain="2" bookref="MP p.224">
+		<BASE type="talent" name="Call of Harrow" minrank="7"/>
+                <TALENT name="Horror Stalker" minrank="7" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Ch’tard Dance Knacks -->
+        <KNACK name="Ch’tard Heel Turn" attribute="na" action="na" strain="0"  bookref="MP p.224">
+		<BASE type="talent" name="Ch’tard Dance" minrank="5"/>
+                <TALENT name="Unarmed Combat" minrank="5" prerequisite="requirement"/>
+                <!-- [Special Maneuver] (Adept, Ch’tard Dance) -->
+        </KNACK>
+        <KNACK name="Ch’tard Sting" attribute="DEX" action="free" strain="special" bookref="MP p.225">
+		<BASE type="talent" name="Ch’tard Dance" minrank="7"/>
+        </KNACK>
+        <KNACK name="Ch’tard Strike" attribute="na" action="na" strain="0"  bookref="MP p.225">
+		<BASE type="talent" name="Ch’tard Dance" minrank="1"/>
+                <TALENT name="Unarmed Combat" minrank="5" prerequisite="requirement"/>
+                <!-- [Special Maneuver] (Adept, Ch’tard Dance) -->
+        </KNACK>
+        <KNACK name="Double Cut" attribute="na" action="na" strain="0"  bookref="MP p.225">
+		<BASE type="talent" name="Ch’tard Dance" minrank="9"/>
+                <TALENT name="Unarmed Combat" minrank="9" prerequisite="requirement"/>
+                <TALENT name="Tail Dancer" minrank="9" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Ch’tard Dance) -->
+        </KNACK>
+        <!-- Climbing Knacks -->
+        <KNACK name="Race Through the Canopy" attribute="na" action="free" strain="1" bookref="MP p.226">
+		<BASE type="talent" name="Climbing" minrank="7"/>
+                <BASE type="talent" name="Wood Walk" minrank="7"/>
+                <DISCIPLINE circle="9" prerequisite="restriction"/>
+                <TALENT name="Woodsman" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Light as a Leaf" attribute="na" action="free" strain="1" bookref="MP p.225">
+		<BASE type="talent" name="Climbing" minrank="8"/>
+                <BASE type="talent" name="Wood Walk" minrank="8"/>
+                <KNACK name="Race Through the Canopy" prerequisite="requirement"/>
+                <DISCIPLINE circle="10" prerequisite="restriction"/>
+                <TALENT name="Woodsman" minrank="6" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Cold Purify Knacks -->
+        <KNACK name="Cleansing Chill" attribute="na" action="sustained" strain="1" bookref="MP p.226">
+		<BASE type="talent" name="Cold Purify" minrank="5"/>
+                <DISCIPLINE circle="8" prerequisite="restriction"/>
+                <TALENT name="Purifier" minrank="2" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Mending Frost" attribute="WIL" action="sustained" strain="3" bookref="MP p.226">
+		<BASE type="talent" name="Cold Purify" minrank="9"/>
+                <TALENT name="Purifier" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <!--Conceal Object Knacks-->
+        <KNACK name="One with the Message" attribute="na" action="sustained" strain="2" bookref="MP p.227">
+		<BASE type="talent" name="Conceal Object" minrank="10"/>
+                <TALENT name="Messenger" minrank="9" prerequisite="restriction"/>
+        </KNACK>
+        <!--Deliberate Assault Knacks-->
+        <KNACK name="Deliberate Spellcasting" attribute="na" action="free" strain="1" bookref="MP p.227">
+		<BASE type="talent" name="Deliberate Assault" minrank="5"/>
+                <TALENT name="Brother of Stone" minrank="1" prerequisite="restriction"/>
+        </KNACK>
+        <!--Dispel Magic Knacks-->
+        <KNACK name="Disrupt Horror Power" attribute="WIL" action="standard" strain="2" bookref="MP p.227">
+		<BASE type="talent" name="Dispel Magic" minrank="7"/>
+                <DISCIPLINE name="Nethermancer" circle="9" prerequisite="restriction"/>
+                <TALENT name="Horror Stalker" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <!--Distract Knacks-->
+        <KNACK name="Aggravating Assault" attribute="DEX" action="simple" strain="1" bookref="MP p.228">
+		<BASE type="talent" name="Distract" minrank="10"/>
+                <TALENT name="Windmaster" minrank="7" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Buzz" attribute="DEX" action="simple" strain="2" bookref="MP p.228">
+		<BASE type="talent" name="Distract" minrank="6"/>
+                <TALENT name="Windmaster" minrank="3" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Incite" attribute="na" action="na" strain="0" bookref="MP p.228">
+		<BASE type="talent" name="Distract" minrank="6"/>
+                <BASE type="talent" name="Taunt" minrank="6"/>
+                <TALENT name="Windmaster" minrank="3" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Close Combat) -->
+        </KNACK>
+        <KNACK name="Infuriate" attribute="na" action="na" strain="0" bookref="MP p.228">
+		<BASE type="talent" name="Distract" minrank="5"/>
+                <BASE type="talent" name="Taunt" minrank="5"/>
+                <TALENT name="Windmaster" minrank="2" prerequisite="restriction"/>
+                <!-- [Special Maneuver] (Adept, Attack) -->
+        </KNACK>
+        <KNACK name="Mosquito Bite" attribute="DEX" action="simple" strain="1" bookref="MP p.229">
+		<BASE type="talent" name="Distract" minrank="9"/>
+                <TALENT name="Windmaster" minrank="6" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Dive Attack Knacks -->
+        <KNACK name="Bluffing Dive" attribute="CHA" action="standard" strain="1" bookref="MP p.229">
+		<BASE type="talent" name="Dive Attack" minrank="5"/>
+        </KNACK>
+        <KNACK name="Fearsome Dive" attribute="CHA" action="simple" strain="2" bookref="MP p.229">
+		<BASE type="talent" name="Dive Attack" minrank="8"/>
+                <TALENT name="Windmaster" minrank="8" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Earth Bond Knacks -->
+        <KNACK name="Connect with Earth’s Pattern" attribute="WIL" action="sustained" strain="3" bookref="MP p.229">
+		<BASE type="talent" name="Earth Bond" minrank="9"/>
+                <TALENT name="Purifier" minrank="5" prerequisite="restriction"/>
+                <TALENT name="Brother of Stone" minrank="5" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Earth Mending" attribute="na" action="free" strain="0" bookref="MP p.230">
+		<BASE type="talent" name="Earth Bond" minrank="6"/>
+                <KNACK name="Earth Slumber" prerequisite="requirement"/>
+                <TALENT name="Brother of Stone" minrank="3" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Earth Slumber" attribute="na" action="standard" strain="2" bookref="MP p.230">
+		<BASE type="talent" name="Earth Bond" minrank="5"/>
+                <TALENT name="Brother of Stone" minrank="2" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Earth’s Avenger" attribute="na" action="free" strain="1" bookref="MP p.231">
+		<BASE type="talent" name="Earth Bond" minrank="8"/>
+                <TALENT name="Purifier" minrank="5" prerequisite="restriction"/>
+                <TALENT name="Brother of Stone" minrank="6" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Earth’s Bounty" attribute="WIL" action="standard" strain="0" bookref="MP p.231">
+		<BASE type="talent" name="Earth Bond" minrank="6"/>
+                <KNACK name="Wild Growth" prerequisite="requirement"/>
+                <TALENT name="Purifier" minrank="3" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Empower Purify" attribute="na" action="free" strain="1" bookref="MP p.231">
+		<BASE type="talent" name="Earth Bond" minrank="5"/>
+                <TALENT name="Patterncraft" minrank="5" prerequisite="requirement"/>
+        </KNACK>
+        <KNACK name="Shared Bond, Shared Blood" attribute="WIL" action="standard" strain="0" bookref="MP p.231">
+		<BASE type="talent" name="Earth Bond" minrank="7"/>
+                <TALENT name="Brother of Stone" minrank="4" prerequisite="restriction"/>
+                <TALENT name="Purifier" minrank="4" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Wild Growth" attribute="WIL" action="standard" strain="0" bookref="MP p.231">
+		<BASE type="talent" name="Earth Bond" minrank="5"/>
+                <TALENT name="Purifier" minrank="2" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Earth Skin Knacks -->
+        <KNACK name="Earth Armor" attribute="TOU" action="standard" strain="2" bookref="MP p.232">
+		<BASE type="talent" name="Earth Skin" minrank="7"/>
+                <TALENT name="Brother of Stone" minrank="4" prerequisite="restriction"/>
+        </KNACK>
+        <KNACK name="Stillness of Stone" attribute="na" action="standard" strain="2" bookref="MP p.233">
+		<BASE type="talent" name="Earth Skin" minrank="5"/>
+                <TALENT name="Brother of Stone" minrank="1" prerequisite="restriction"/>
+        </KNACK>
+        <!-- Earth Walk Knacks -->
+
+
+<!--
+Earth Awareness
+Talent: Earth Walk Requirements: Rank 6
+Restrictions: Brother of Stone rank 6
+Step: Rank+PER Action: Simple
+Strain: 1 Skill Use: No
+
+Earth Dash
+Talent: Earth Walk Requirements: Rank 7
+Restrictions: Brother of Stone rank 7
+Step: NA Action: Simple
+Strain: 1 Skill Use: No
+
+Earth Excursion
+Talent: Earth Walk Requirements: Rank 9
+Restrictions: Brother of Stone rank 9
+Step: Rank Action: Fee
+Strain: 2+ Skill Use: No
+
+Stone Walk
+Talent: Earth Walk Requirements: Rank 8
+Restrictions: Brother of Stone rank 8
+Step: Rank Action: Sustained
+Strain: 2 Skill Use: No
+
+Travel Through the Earth
+Talent: Earth Walk Requirements: Rank 10
+Restrictions: Brother of Stone rank 10
+Step: Rank Action: Sustained
+Strain: 2 Skill Use: No
+
+Tremorsense
+Talent: Earth Walk Requirements: Rank 9, Stone Walk
+Restrictions: Brother of Stone rank 9
+Step: Rank+PER Action: Standard
+Strain: 1 Skill Use: No
+-->
+
 </KNACKS>
+
+<!--
+        <KNACK name="" attribute="na" action="na" strain="0" bookref="MP p.232">
+		<BASE type="talent" name="" minrank="5"/>
+                <TALENT name="" minrank="5" prerequisite="requirement"/>
+                <TALENT name="" minrank="5" prerequisite="restriction"/>
+                <SKILL name="" limitation="" minrank="5" prerequisite="requirement" />
+        </KNACK>
+
+-->
