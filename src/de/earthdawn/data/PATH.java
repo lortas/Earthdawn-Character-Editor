@@ -28,9 +28,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="PATHKNACK" type="{http://earthdawn.com/path}PATHKNACK_type"/&gt;
- *         &lt;element name="PATHTALENT" type="{http://earthdawn.com/path}PATHTALENT_type"/&gt;
- *         &lt;element name="PATHRANK" type="{http://earthdawn.com/path}PATHRANK_type" maxOccurs="15" minOccurs="8"/&gt;
+ *         &lt;element name="NEEDEDKNACK" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type"/&gt;
+ *         &lt;element name="TIER" type="{http://earthdawn.com/path}PATHTIER_type" maxOccurs="4"/&gt;
  *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="HALFMAGIC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -47,21 +47,21 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "pathknack",
-    "pathtalent",
-    "pathrank",
+    "neededknack",
+    "talent",
+    "tier",
     "karmaritual",
     "halfmagic"
 })
 @XmlRootElement(name = "PATH", namespace = "http://earthdawn.com/path")
 public class PATH {
 
-    @XmlElement(name = "PATHKNACK", namespace = "http://earthdawn.com/path", required = true)
-    protected PATHKNACKType pathknack;
-    @XmlElement(name = "PATHTALENT", namespace = "http://earthdawn.com/path", required = true)
-    protected PATHTALENTType pathtalent;
-    @XmlElement(name = "PATHRANK", namespace = "http://earthdawn.com/path", required = true)
-    protected List<PATHRANKType> pathrank;
+    @XmlElement(name = "NEEDEDKNACK", namespace = "http://earthdawn.com/path", required = true)
+    protected String neededknack;
+    @XmlElement(name = "TALENT", namespace = "http://earthdawn.com/path", required = true)
+    protected TALENTABILITYType talent;
+    @XmlElement(name = "TIER", namespace = "http://earthdawn.com/path", required = true)
+    protected List<PATHTIERType> tier;
     @XmlElement(name = "KARMARITUAL", namespace = "http://earthdawn.com/path")
     protected String karmaritual;
     @XmlElement(name = "HALFMAGIC", namespace = "http://earthdawn.com/path")
@@ -76,80 +76,80 @@ public class PATH {
     protected RulesetversionType rulesetversion;
 
     /**
-     * Gets the value of the pathknack property.
+     * Gets the value of the neededknack property.
      *
      * @return
      *     possible object is
-     *     {@link PATHKNACKType }
+     *     {@link String }
      *
      */
-    public PATHKNACKType getPATHKNACK() {
-        return pathknack;
+    public String getNEEDEDKNACK() {
+        return neededknack;
     }
 
     /**
-     * Sets the value of the pathknack property.
+     * Sets the value of the neededknack property.
      *
      * @param value
      *     allowed object is
-     *     {@link PATHKNACKType }
+     *     {@link String }
      *
      */
-    public void setPATHKNACK(PATHKNACKType value) {
-        this.pathknack = value;
+    public void setNEEDEDKNACK(String value) {
+        this.neededknack = value;
     }
 
     /**
-     * Gets the value of the pathtalent property.
+     * Gets the value of the talent property.
      *
      * @return
      *     possible object is
-     *     {@link PATHTALENTType }
+     *     {@link TALENTABILITYType }
      *
      */
-    public PATHTALENTType getPATHTALENT() {
-        return pathtalent;
+    public TALENTABILITYType getTALENT() {
+        return talent;
     }
 
     /**
-     * Sets the value of the pathtalent property.
+     * Sets the value of the talent property.
      *
      * @param value
      *     allowed object is
-     *     {@link PATHTALENTType }
+     *     {@link TALENTABILITYType }
      *
      */
-    public void setPATHTALENT(PATHTALENTType value) {
-        this.pathtalent = value;
+    public void setTALENT(TALENTABILITYType value) {
+        this.talent = value;
     }
 
     /**
-     * Gets the value of the pathrank property.
+     * Gets the value of the tier property.
      *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pathrank property.
+     * This is why there is not a <CODE>set</CODE> method for the tier property.
      *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPATHRANK().add(newItem);
+     *    getTIER().add(newItem);
      * </pre>
      *
      *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link PATHRANKType }
+     * {@link PATHTIERType }
      *
      *
      */
-    public List<PATHRANKType> getPATHRANK() {
-        if (pathrank == null) {
-            pathrank = new ArrayList<PATHRANKType>();
+    public List<PATHTIERType> getTIER() {
+        if (tier == null) {
+            tier = new ArrayList<PATHTIERType>();
         }
-        return this.pathrank;
+        return this.tier;
     }
 
     /**

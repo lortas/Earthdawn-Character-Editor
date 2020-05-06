@@ -990,19 +990,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PATHKNACKType }
+     * Create an instance of {@link PATHTIERType }
      *
      */
-    public PATHKNACKType createPATHKNACKType() {
-        return new PATHKNACKType();
-    }
-
-    /**
-     * Create an instance of {@link PATHTALENTType }
-     *
-     */
-    public PATHTALENTType createPATHTALENTType() {
-        return new PATHTALENTType();
+    public PATHTIERType createPATHTIERType() {
+        return new PATHTIERType();
     }
 
     /**

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -27,7 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="TALENTABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/&gt;
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -38,7 +36,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *       &lt;attribute name="tier" use="required" type="{http://earthdawn.com/datatypes}tierkind_type" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -48,7 +45,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PATHRANK_type", namespace = "http://earthdawn.com/path", propOrder = {
-    "optionaltalent",
     "talentability",
     "defense",
     "armor",
@@ -61,8 +57,6 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class PATHRANKType {
 
-    @XmlElement(name = "OPTIONALTALENT")
-    protected List<TALENTABILITYType> optionaltalent;
     @XmlElement(name = "TALENTABILITY", required = true)
     protected DISZIPINABILITYType talentability;
     @XmlElement(name = "DEFENSE")
@@ -81,37 +75,6 @@ public class PATHRANKType {
     protected List<DISZIPINABILITYType> karmastep;
     @XmlElement(name = "ABILITY")
     protected List<String> ability;
-    @XmlAttribute(name = "tier", required = true)
-    protected TierkindType tier;
-
-    /**
-     * Gets the value of the optionaltalent property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optionaltalent property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOPTIONALTALENT().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TALENTABILITYType }
-     *
-     *
-     */
-    public List<TALENTABILITYType> getOPTIONALTALENT() {
-        if (optionaltalent == null) {
-            optionaltalent = new ArrayList<TALENTABILITYType>();
-        }
-        return this.optionaltalent;
-    }
 
     /**
      * Gets the value of the talentability property.
@@ -367,30 +330,6 @@ public class PATHRANKType {
             ability = new ArrayList<String>();
         }
         return this.ability;
-    }
-
-    /**
-     * Gets the value of the tier property.
-     *
-     * @return
-     *     possible object is
-     *     {@link TierkindType }
-     *
-     */
-    public TierkindType getTier() {
-        return tier;
-    }
-
-    /**
-     * Sets the value of the tier property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link TierkindType }
-     *
-     */
-    public void setTier(TierkindType value) {
-        this.tier = value;
     }
 
 }

@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="tierkind_type"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="auto"/&gt;
  *     &lt;enumeration value="novice"/&gt;
  *     &lt;enumeration value="journeyman"/&gt;
  *     &lt;enumeration value="warden"/&gt;
@@ -34,6 +35,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum TierkindType {
 
+    @XmlEnumValue("auto")
+    AUTO("auto"),
     @XmlEnumValue("novice")
     NOVICE("novice"),
     @XmlEnumValue("journeyman")
