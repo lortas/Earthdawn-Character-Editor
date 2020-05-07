@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/discipline" xmlns="http://earthdawn.com/discipline" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
+	<xs:complexType name="QUESTORRANK_type">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element minOccurs="1" maxOccurs="1" name="DEVOTIONABILITY" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ARMOR" type="edt:ARMOR_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTESTPERDAY" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTESTSTEP" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEVOTIONDICESTEP" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEVOTIONBENEFIT" type="edt:KARMAABILITY_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QUESTORTIER_type">
+		<xs:sequence maxOccurs="1" minOccurs="1">
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALDEVOTION" type="edt:TALENTABILITY_type"/>
+			<xs:element minOccurs="1" maxOccurs="15" name="RANK" type="QUESTORRANK_type"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="edt:tierkind_type" default="auto"/>
+	</xs:complexType>
+	<xs:element name="QUESTOR">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element minOccurs="1" maxOccurs="1" name="DEVOTION" type="edt:TALENTABILITY_type"/>
+				<xs:element minOccurs="2" maxOccurs="4" name="TIER" type="QUESTORTIER_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="IDEAL" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="lang" type="edt:language_type" use="required"/>
+			<xs:attribute name="passion" type="xs:string" use="required"/>
+			<xs:attribute name="bookref" type="xs:string" default=""/>
+			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED4"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
