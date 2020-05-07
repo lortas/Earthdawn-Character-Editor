@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}TALENTABILITY_type"/&gt;
  *         &lt;element name="TIER" type="{http://earthdawn.com/discipline}QUESTORTIER_type" maxOccurs="4"/&gt;
  *         &lt;element name="IDEAL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="DEVOTIONBENEFITEXAMPLE" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" /&gt;
  *       &lt;attribute name="passion" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
@@ -47,7 +48,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "devotion",
     "tier",
-    "ideal"
+    "ideal",
+    "devotionbenefitexample"
 })
 @XmlRootElement(name = "QUESTOR", namespace = "http://earthdawn.com/discipline")
 public class QUESTOR {
@@ -58,6 +60,8 @@ public class QUESTOR {
     protected List<QUESTORTIERType> tier;
     @XmlElement(name = "IDEAL", namespace = "http://earthdawn.com/discipline", required = true)
     protected List<String> ideal;
+    @XmlElement(name = "DEVOTIONBENEFITEXAMPLE", namespace = "http://earthdawn.com/discipline", required = true)
+    protected List<String> devotionbenefitexample;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
     @XmlAttribute(name = "passion", required = true)
@@ -147,6 +151,35 @@ public class QUESTOR {
             ideal = new ArrayList<String>();
         }
         return this.ideal;
+    }
+
+    /**
+     * Gets the value of the devotionbenefitexample property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the devotionbenefitexample property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEVOTIONBENEFITEXAMPLE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     *
+     *
+     */
+    public List<String> getDEVOTIONBENEFITEXAMPLE() {
+        if (devotionbenefitexample == null) {
+            devotionbenefitexample = new ArrayList<String>();
+        }
+        return this.devotionbenefitexample;
     }
 
     /**

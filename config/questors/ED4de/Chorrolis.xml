@@ -2,16 +2,16 @@
 <QUESTOR passion="Astendar" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
 	<DEVOTION name="Questor" limitation="Astendar"/>
 	<TIER>
-		<OPTIONALDEVOTION name="Beeindrucken"/>
-		<OPTIONALDEVOTION name="Bildende Kunst"/>
-		<OPTIONALDEVOTION name="Empathische Wahrnehmung"/>
+		<OPTIONALDEVOTION name="Bestechung"/>
 		<OPTIONALDEVOTION name="Erster Eindruck"/>
-		<OPTIONALDEVOTION name="Gefühlsmelodie"/>
-		<OPTIONALDEVOTION name="Gewinnendes Lächeln"/>
+		<OPTIONALDEVOTION name="Etikette"/>
+		<OPTIONALDEVOTION name="Feilschen"/>
+		<OPTIONALDEVOTION name="Gassenwissen"/>
 		<OPTIONALDEVOTION name="Konversation"/>
-		<OPTIONALDEVOTION name="Schauspielern"/>
+		<OPTIONALDEVOTION name="Lippenlesen"/>
+		<OPTIONALDEVOTION name="Pidginsprache"/>
+		<OPTIONALDEVOTION name="Schätzen"/>
 		<OPTIONALDEVOTION name="Stärkung der Passion"/>
-		<OPTIONALDEVOTION name="Unterhalten"/>
 		<RANK><!-- 1 -->
 			<DEVOTIONABILITY/>
 			<DEVOTIONDICESTEP count="3"/>
@@ -30,13 +30,13 @@
 	</TIER>
 	<TIER>
 		<OPTIONALDEVOTION name="Absichten Einschätzen"/>
-		<OPTIONALDEVOTION name="Astendars Muse"/>
-		<OPTIONALDEVOTION name="Astendars Stimme"/>
-		<OPTIONALDEVOTION name="Bleibender Eindruck"/>
+		<OPTIONALDEVOTION name="Besessenheit Wecken"/>
 		<OPTIONALDEVOTION name="Diplomatie"/>
-		<OPTIONALDEVOTION name="Einsicht der Passion"/>
+		<OPTIONALDEVOTION name="Herzenswunsch"/>
 		<OPTIONALDEVOTION name="Inspiration der Passion"/>
-		<OPTIONALDEVOTION name="Verzaubertes Geschenk"/>
+		<OPTIONALDEVOTION name="Psychometrie"/>
+		<OPTIONALDEVOTION name="Starrsinn"/>
+		<OPTIONALDEVOTION name="Untrüglicher Blick"/>
 		<RANK><!-- 5 -->
 			<DEVOTIONABILITY/>
 			<DEVOTIONDICESTEP/>
@@ -56,12 +56,12 @@
 		</RANK>	
 	</TIER>
 	<TIER>
-		<OPTIONALDEVOTION name="Bardenstimme"/>
-		<OPTIONALDEVOTION name="Einfluss Beenden"/>
-		<OPTIONALDEVOTION name="Entwaffnendes Lächeln"/>
-		<OPTIONALDEVOTION name="Erwachende Liebe"/>
-		<OPTIONALDEVOTION name="Fruchtbare Zeiten"/>
-		<OPTIONALDEVOTION name="Gedankenkette"/>
+		<OPTIONALDEVOTION name="Gedanken Verbergen"/>
+		<OPTIONALDEVOTION name="Griff von Chorrolis"/>
+		<OPTIONALDEVOTION name="Lass Uns Handeln"/>
+		<OPTIONALDEVOTION name="Untergraben"/>
+		<OPTIONALDEVOTION name="Vergangenheitsberührung"/>
+		<OPTIONALDEVOTION name="Verzaubertes Geschenk"/>
 		<RANK><!-- 9 -->
 			<DEVOTIONABILITY/>
 			<DEVOTIONDICESTEP/>
@@ -78,16 +78,17 @@
 		<RANK><!-- 12 -->
 			<DEVOTIONABILITY/>
 			<DEFENSE kind="mystic"/>
-			<ARMOR name="additional questor armor" mysticarmor="1" weight="0"/>
+			<INITIATIVE/>
 		</RANK>	
 	</TIER>
-	<IDEAL>Liebe</IDEAL>
-	<IDEAL>Kunst</IDEAL>
-	<IDEAL>Musik</IDEAL>
+	<IDEAL>Reichtum</IDEAL>
+	<IDEAL>Handel</IDEAL>
+	<IDEAL>Neid</IDEAL>
+	<IDEAL>Verlangen</IDEAL>
 	<!-- Der Questor kann einen Weihepunkt ausgeben für ... .-->
 	<DEVOTIONBENEFITEXAMPLE>eine Interaktionsprobe</DEVOTIONBENEFITEXAMPLE>
-	<DEVOTIONBENEFITEXAMPLE>eine Probe, um Kunst zu erschaffen, sei es bildende Kunst, eine Vorführung o.Ä.</DEVOTIONBENEFITEXAMPLE>
-	<DEVOTIONBENEFITEXAMPLE>eine Probe, wenn es darum geht, eine Romanze in Gang zu bringen oder zu fördern</DEVOTIONBENEFITEXAMPLE>
-	<DEVOTIONBENEFITEXAMPLE>eine Probe, um den romantischen Partner des handelnden Charakters zu schützen</DEVOTIONBENEFITEXAMPLE>
-	<DEVOTIONBENEFITEXAMPLE>eine Probe, um mehr über Kunst zu erfahren</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, bei der es um eine Transaktion geht</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, um Informationen über die Wirtschaft zu erhalten, einschließlich neuer Handelswege, Rohstoffquellen, Suche nach einem bestimmten Handwerker usw.</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, um etwas Wünschenswertes zu erwerben</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, die eine neue und riskante wirtschaftliche Unternehmung unterstützt</DEVOTIONBENEFITEXAMPLE>
 </QUESTOR>

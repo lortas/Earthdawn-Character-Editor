@@ -31,6 +31,7 @@
 				<xs:element minOccurs="1" maxOccurs="1" name="DEVOTION" type="edt:TALENTABILITY_type"/>
 				<xs:element minOccurs="1" maxOccurs="4" name="TIER" type="QUESTORTIER_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="IDEAL" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="DEVOTIONBENEFITEXAMPLE" type="xs:string"/>
 			</xs:sequence>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
 			<xs:attribute name="passion" type="xs:string" use="required"/>
