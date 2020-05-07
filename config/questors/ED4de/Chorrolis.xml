@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<QUESTOR passion="Astendar" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
-	<DEVOTION name="Questor" limitation="Astendar"/>
+<QUESTOR passion="Chorrolis" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
+	<DEVOTION name="Questor" limitation="Chorrolis"/>
 	<TIER>
 		<OPTIONALDEVOTION name="Bestechung"/>
 		<OPTIONALDEVOTION name="Erster Eindruck"/>
