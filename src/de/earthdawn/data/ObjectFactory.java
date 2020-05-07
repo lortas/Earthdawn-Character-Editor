@@ -750,6 +750,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link QUESTOR }
+     *
+     */
+    public QUESTOR createQUESTOR() {
+        return new QUESTOR();
+    }
+
+    /**
+     * Create an instance of {@link QUESTORTIERType }
+     *
+     */
+    public QUESTORTIERType createQUESTORTIERType() {
+        return new QUESTORTIERType();
+    }
+
+    /**
      * Create an instance of {@link DISCIPLINESPELLType }
      *
      */
@@ -763,6 +779,14 @@ public class ObjectFactory {
      */
     public FOREIGNTALENTSType createFOREIGNTALENTSType() {
         return new FOREIGNTALENTSType();
+    }
+
+    /**
+     * Create an instance of {@link QUESTORRANKType }
+     *
+     */
+    public QUESTORRANKType createQUESTORRANKType() {
+        return new QUESTORRANKType();
     }
 
     /**
@@ -1115,6 +1139,14 @@ public class ObjectFactory {
      */
     public TRANSLATIONType createTRANSLATIONType() {
         return new TRANSLATIONType();
+    }
+
+    /**
+     * Create an instance of {@link NAMETIERKINDType }
+     *
+     */
+    public NAMETIERKINDType createNAMETIERKINDType() {
+        return new NAMETIERKINDType();
     }
 
     /**
