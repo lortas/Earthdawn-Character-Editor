@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <QUESTOR passion="Astendar" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
 	<DEVOTION name="Questor" limitation="Astendar"/>
-	<TIER name="novice">
+	<TIER>
 		<OPTIONALDEVOTION name="Beeindrucken"/>
 		<OPTIONALDEVOTION name="Bildende Kunst"/>
 		<OPTIONALDEVOTION name="Empathische Wahrnehmung"/>
@@ -28,7 +28,7 @@
 			<DEVOTIONABILITY/>
 		</RANK>	
 	</TIER>
-	<TIER name="journeyman">
+	<TIER>
 		<OPTIONALDEVOTION name="Absichten Einschätzen"/>
 		<OPTIONALDEVOTION name="Astendars Muse"/>
 		<OPTIONALDEVOTION name="Astendars Stimme"/>
@@ -55,7 +55,7 @@
 			<DEFENSE kind="mystic"/>
 		</RANK>	
 	</TIER>
-	<TIER name="warden">
+	<TIER>
 		<OPTIONALDEVOTION name="Bardenstimme"/>
 		<OPTIONALDEVOTION name="Einfluss Beenden"/>
 		<OPTIONALDEVOTION name="Entwaffnendes Lächeln"/>

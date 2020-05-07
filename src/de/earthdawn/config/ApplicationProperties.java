@@ -74,6 +74,8 @@ public class ApplicationProperties {
 	private static ApplicationProperties theProps = null;
 	// Disziplinen (Name Label geordnet)
 	private static final Map<ECERulesetLanguage,Map<String, DISCIPLINE>> DISCIPLINES = new TreeMap<ECERulesetLanguage,Map<String, DISCIPLINE>>();
+	// Questoren (Name Label geordnet)
+	private static final Map<ECERulesetLanguage,Map<String, QUESTOR>> QUESTORS = new TreeMap();
 	// Pfade (Name Label geordnet)
 	private static final Map<ECERulesetLanguage,Map<String, PATH>> PATHS = new TreeMap();
 	// RandomCharacterTemplates (Name Label geordnet)
@@ -821,6 +823,21 @@ public class ApplicationProperties {
 					DISCIPLINES.put(rl,dis2);
 				}
 				dis2.put(dis.getName(), dis);
+			}
+
+			// querstors laden
+			// --- Bestimmen aller Dateien im Unterordner 'questors'
+			// --- Einlesen der Dateien
+			for(Path disConfigFile : selectallxmlfiles(new File(CONFIGDIR,"questors").toPath())) {
+				System.out.println("Reading config file: " + disConfigFile.toString());
+				QUESTOR questor = (QUESTOR) unmarshaller.unmarshal(disConfigFile.toFile());
+				ECERulesetLanguage rl = new ECERulesetLanguage(questor.getRulesetversion(),questor.getLang());
+				Map<String, QUESTOR> path2 = QUESTORS.get(rl);
+				if( path2 == null ) {
+					path2 = new TreeMap();
+					QUESTORS.put(rl,path2);
+				}
+				path2.put(questor.getPassion(), questor);
 			}
 
 			// pathes laden

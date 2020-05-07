@@ -15,11 +15,14 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="PATHTIER_type">
+		<xs:annotation><xs:documentation>The path ranks are grouped by tiers</xs:documentation></xs:annotation>
 		<xs:sequence maxOccurs="1" minOccurs="1">
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
 			<xs:element minOccurs="1" maxOccurs="15" name="RANK" type="PATHRANK_type"/>
 		</xs:sequence>
-		<xs:attribute name="name" type="edt:tierkind_type" default="auto"/>
+		<xs:attribute name="name" type="edt:tierkind_type" default="auto">
+			<xs:annotation><xs:documentation>By default the tier kind is determinate automatically, starting with novice. At any point, it is possible to skip one tier kind and have the following tier kinds automatically be determinate again. The tier kind order must never be mixed. You must never use a lower tier kind after a higher tier kind. The order is: novice, journeyman, warden, master. The tier kind “auto” is always possible.</xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:element name="PATH">
 		<xs:complexType>

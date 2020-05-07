@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}TALENTABILITY_type"/&gt;
- *         &lt;element name="TIER" type="{http://earthdawn.com/discipline}QUESTORTIER_type" maxOccurs="4" minOccurs="2"/&gt;
+ *         &lt;element name="TIER" type="{http://earthdawn.com/discipline}QUESTORTIER_type" maxOccurs="4"/&gt;
  *         &lt;element name="IDEAL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" /&gt;

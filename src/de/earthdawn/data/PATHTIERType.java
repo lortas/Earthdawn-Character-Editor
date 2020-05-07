@@ -18,6 +18,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * The path ranks are grouped by tiers
+ *
  * <p>Java class for PATHTIER_type complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
