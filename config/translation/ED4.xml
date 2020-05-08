@@ -95,8 +95,8 @@
 		<LABEL lang="de">Anhänger</LABEL>
 	</QUESTORTIER>
 	<QUESTORTIER type="master">
-		<LABEL lang="en">Legendary</LABEL>
-		<LABEL lang="de">Legendär</LABEL>
+		<LABEL lang="en">Legend</LABEL>
+		<LABEL lang="de">Legende</LABEL>
 	</QUESTORTIER>
 	<QUESTORTIER type="novice">
 		<LABEL lang="en">Follower</LABEL>
