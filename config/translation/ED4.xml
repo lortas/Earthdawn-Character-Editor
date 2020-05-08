@@ -91,19 +91,19 @@
 		<LABEL lang="de">auto</LABEL>
 	</QUESTORTIER>
 	<QUESTORTIER type="journeyman">
-		<LABEL lang="en">journeyman</LABEL>
+		<LABEL lang="en">Adherent</LABEL>
 		<LABEL lang="de">Anhänger</LABEL>
 	</QUESTORTIER>
 	<QUESTORTIER type="master">
-		<LABEL lang="en">master</LABEL>
-		<LABEL lang="de">master</LABEL>
+		<LABEL lang="en">Legendary</LABEL>
+		<LABEL lang="de">Legendär</LABEL>
 	</QUESTORTIER>
 	<QUESTORTIER type="novice">
-		<LABEL lang="en">novice</LABEL>
+		<LABEL lang="en">Follower</LABEL>
 		<LABEL lang="de">Jünger</LABEL>
 	</QUESTORTIER>
 	<QUESTORTIER type="warden">
-		<LABEL lang="en">warden</LABEL>
+		<LABEL lang="en">Exemplar</LABEL>
 		<LABEL lang="de">Vorbild</LABEL>
 	</QUESTORTIER>
 	<SPELLWEAVING lang="en">
