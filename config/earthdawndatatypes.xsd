@@ -207,6 +207,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="tierkind_type">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="auto"/>
 			<xs:enumeration value="novice"/>
 			<xs:enumeration value="journeyman"/>
 			<xs:enumeration value="warden"/>
@@ -729,6 +730,7 @@
 		<xs:attribute name="bonus" type="unsigned_int" default="1"/>
 		<xs:attribute name="pool" type="xs:string" default=""/>
 		<xs:attribute name="replace" type="xs:string" default=""/>
+		<xs:attribute name="tier" type="tierkind_type" default="auto"/>
 	</xs:complexType>
 	<xs:complexType name="KARMAABILITY_type">
 		<xs:attribute name="spend" type="xs:string" use="required"/>

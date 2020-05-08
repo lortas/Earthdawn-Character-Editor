@@ -66,6 +66,46 @@
 		<LABEL lang="en">Read/Write Language</LABEL>
 		<LABEL lang="de">Lesen/Schreiben</LABEL>
 	</LANGUAGESKILLREADWRITE>
+	<DISCIPLINETIER type="auto">
+		<LABEL lang="en">auto</LABEL>
+		<LABEL lang="de">auto</LABEL>
+	</DISCIPLINETIER>
+	<DISCIPLINETIER type="journeyman">
+		<LABEL lang="en">Journeyman</LABEL>
+		<LABEL lang="de">Geselle</LABEL>
+	</DISCIPLINETIER>
+	<DISCIPLINETIER type="master">
+		<LABEL lang="en">Master</LABEL>
+		<LABEL lang="de">Meister</LABEL>
+	</DISCIPLINETIER>
+	<DISCIPLINETIER type="novice">
+		<LABEL lang="en">Novice</LABEL>
+		<LABEL lang="de">Novize</LABEL>
+	</DISCIPLINETIER>
+	<DISCIPLINETIER type="warden">
+		<LABEL lang="en">Warden</LABEL>
+		<LABEL lang="de">Hüter</LABEL>
+	</DISCIPLINETIER>
+	<QUESTORTIER type="auto">
+		<LABEL lang="en">auto</LABEL>
+		<LABEL lang="de">auto</LABEL>
+	</QUESTORTIER>
+	<QUESTORTIER type="journeyman">
+		<LABEL lang="en">journeyman</LABEL>
+		<LABEL lang="de">Anhänger</LABEL>
+	</QUESTORTIER>
+	<QUESTORTIER type="master">
+		<LABEL lang="en">master</LABEL>
+		<LABEL lang="de">master</LABEL>
+	</QUESTORTIER>
+	<QUESTORTIER type="novice">
+		<LABEL lang="en">novice</LABEL>
+		<LABEL lang="de">Jünger</LABEL>
+	</QUESTORTIER>
+	<QUESTORTIER type="warden">
+		<LABEL lang="en">warden</LABEL>
+		<LABEL lang="de">Vorbild</LABEL>
+	</QUESTORTIER>
 	<SPELLWEAVING lang="en">
 		<SPELLKIND type="elemental" acronym="el" weaving="Elementalism"/>
 		<SPELLKIND type="illusion" acronym="il" weaving="Illusionism"/>

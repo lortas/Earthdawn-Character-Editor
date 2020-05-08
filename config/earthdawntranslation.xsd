@@ -14,6 +14,13 @@
 			<xs:element maxOccurs="unbounded" minOccurs="1" name="LABEL" type="translationlabel_type"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="NAME_TIERKIND_type">
+		<xs:complexContent>
+			<xs:extension base="TRANSLATION_type">
+				<xs:attribute name="type" type="edt:tierkind_type" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="NAMES_ATTRIBUTE_type">
 		<xs:attribute name="attribute" type="edt:ATTRIBUTE_name_type" use="required"/>
 		<xs:attribute name="name" type="xs:string" use="required"/>
@@ -74,6 +81,8 @@
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="THREADWEAVING" type="TRANSLATION_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGESKILLSPEAK" type="TRANSLATION_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="LANGUAGESKILLREADWRITE" type="TRANSLATION_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="DISCIPLINETIER" type="NAME_TIERKIND_type"/>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="QUESTORTIER" type="NAME_TIERKIND_type"/>
 				<xs:element minOccurs="1" maxOccurs="unbounded" name="SPELLWEAVING" type="NAME_SPELLWEAVING_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="CAPABILITY" type="TRANSLATION_type"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="TRANSLATION_type"/>

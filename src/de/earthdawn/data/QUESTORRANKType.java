@@ -17,24 +17,23 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PATHRANK_type complex type.
+ * <p>Java class for QUESTORRANK_type complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  * <pre>
- * &lt;complexType name="PATHRANK_type"&gt;
+ * &lt;complexType name="QUESTORRANK_type"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="TALENTABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/&gt;
+ *         &lt;element name="DEVOTIONABILITY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type"/&gt;
  *         &lt;element name="DEFENSE" type="{http://earthdawn.com/datatypes}DEFENSEABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="ARMOR" type="{http://earthdawn.com/datatypes}ARMOR_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="RECOVERYTESTPERDAY" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="RECOVERYTESTSTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="KARMA" type="{http://earthdawn.com/datatypes}KARMAABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="KARMASTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="ABILITY" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DEVOTIONDICESTEP" type="{http://earthdawn.com/datatypes}DISZIPINABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DEVOTIONBENEFIT" type="{http://earthdawn.com/datatypes}KARMAABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -44,21 +43,20 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PATHRANK_type", namespace = "http://earthdawn.com/path", propOrder = {
-    "talentability",
+@XmlType(name = "QUESTORRANK_type", namespace = "http://earthdawn.com/discipline", propOrder = {
+    "devotionability",
     "defense",
     "armor",
     "initiative",
     "recoverytestperday",
     "recoveryteststep",
-    "karma",
-    "karmastep",
-    "ability"
+    "devotiondicestep",
+    "devotionbenefit"
 })
-public class PATHRANKType {
+public class QUESTORRANKType {
 
-    @XmlElement(name = "TALENTABILITY", required = true)
-    protected DISZIPINABILITYType talentability;
+    @XmlElement(name = "DEVOTIONABILITY", required = true)
+    protected DISZIPINABILITYType devotionability;
     @XmlElement(name = "DEFENSE")
     protected List<DEFENSEABILITYType> defense;
     @XmlElement(name = "ARMOR")
@@ -69,35 +67,33 @@ public class PATHRANKType {
     protected List<DISZIPINABILITYType> recoverytestperday;
     @XmlElement(name = "RECOVERYTESTSTEP")
     protected List<DISZIPINABILITYType> recoveryteststep;
-    @XmlElement(name = "KARMA")
-    protected List<KARMAABILITYType> karma;
-    @XmlElement(name = "KARMASTEP")
-    protected List<DISZIPINABILITYType> karmastep;
-    @XmlElement(name = "ABILITY")
-    protected List<String> ability;
+    @XmlElement(name = "DEVOTIONDICESTEP")
+    protected List<DISZIPINABILITYType> devotiondicestep;
+    @XmlElement(name = "DEVOTIONBENEFIT")
+    protected List<KARMAABILITYType> devotionbenefit;
 
     /**
-     * Gets the value of the talentability property.
+     * Gets the value of the devotionability property.
      *
      * @return
      *     possible object is
      *     {@link DISZIPINABILITYType }
      *
      */
-    public DISZIPINABILITYType getTALENTABILITY() {
-        return talentability;
+    public DISZIPINABILITYType getDEVOTIONABILITY() {
+        return devotionability;
     }
 
     /**
-     * Sets the value of the talentability property.
+     * Sets the value of the devotionability property.
      *
      * @param value
      *     allowed object is
      *     {@link DISZIPINABILITYType }
      *
      */
-    public void setTALENTABILITY(DISZIPINABILITYType value) {
-        this.talentability = value;
+    public void setDEVOTIONABILITY(DISZIPINABILITYType value) {
+        this.devotionability = value;
     }
 
     /**
@@ -246,47 +242,18 @@ public class PATHRANKType {
     }
 
     /**
-     * Gets the value of the karma property.
+     * Gets the value of the devotiondicestep property.
      *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the karma property.
+     * This is why there is not a <CODE>set</CODE> method for the devotiondicestep property.
      *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getKARMA().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link KARMAABILITYType }
-     *
-     *
-     */
-    public List<KARMAABILITYType> getKARMA() {
-        if (karma == null) {
-            karma = new ArrayList<KARMAABILITYType>();
-        }
-        return this.karma;
-    }
-
-    /**
-     * Gets the value of the karmastep property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the karmastep property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getKARMASTEP().add(newItem);
+     *    getDEVOTIONDICESTEP().add(newItem);
      * </pre>
      *
      *
@@ -296,40 +263,40 @@ public class PATHRANKType {
      *
      *
      */
-    public List<DISZIPINABILITYType> getKARMASTEP() {
-        if (karmastep == null) {
-            karmastep = new ArrayList<DISZIPINABILITYType>();
+    public List<DISZIPINABILITYType> getDEVOTIONDICESTEP() {
+        if (devotiondicestep == null) {
+            devotiondicestep = new ArrayList<DISZIPINABILITYType>();
         }
-        return this.karmastep;
+        return this.devotiondicestep;
     }
 
     /**
-     * Gets the value of the ability property.
+     * Gets the value of the devotionbenefit property.
      *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ability property.
+     * This is why there is not a <CODE>set</CODE> method for the devotionbenefit property.
      *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getABILITY().add(newItem);
+     *    getDEVOTIONBENEFIT().add(newItem);
      * </pre>
      *
      *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link KARMAABILITYType }
      *
      *
      */
-    public List<String> getABILITY() {
-        if (ability == null) {
-            ability = new ArrayList<String>();
+    public List<KARMAABILITYType> getDEVOTIONBENEFIT() {
+        if (devotionbenefit == null) {
+            devotionbenefit = new ArrayList<KARMAABILITYType>();
         }
-        return this.ability;
+        return this.devotionbenefit;
     }
 
 }

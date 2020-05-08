@@ -39,6 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="THREADWEAVING" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded"/&gt;
  *         &lt;element name="LANGUAGESKILLSPEAK" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="LANGUAGESKILLREADWRITE" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DISCIPLINETIER" type="{http://earthdawn.com/translation}NAME_TIERKIND_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="QUESTORTIER" type="{http://earthdawn.com/translation}NAME_TIERKIND_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="SPELLWEAVING" type="{http://earthdawn.com/translation}NAME_SPELLWEAVING_type" maxOccurs="unbounded"/&gt;
  *         &lt;element name="CAPABILITY" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="SPELL" type="{http://earthdawn.com/translation}TRANSLATION_type" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -70,6 +72,8 @@ import javax.xml.bind.annotation.XmlType;
     "threadweaving",
     "languageskillspeak",
     "languageskillreadwrite",
+    "disciplinetier",
+    "questortier",
     "spellweaving",
     "capability",
     "spell",
@@ -105,6 +109,10 @@ public class TRANSLATIONS {
     protected List<TRANSLATIONType> languageskillspeak;
     @XmlElement(name = "LANGUAGESKILLREADWRITE", namespace = "http://earthdawn.com/translation")
     protected List<TRANSLATIONType> languageskillreadwrite;
+    @XmlElement(name = "DISCIPLINETIER", namespace = "http://earthdawn.com/translation")
+    protected List<NAMETIERKINDType> disciplinetier;
+    @XmlElement(name = "QUESTORTIER", namespace = "http://earthdawn.com/translation")
+    protected List<NAMETIERKINDType> questortier;
     @XmlElement(name = "SPELLWEAVING", namespace = "http://earthdawn.com/translation", required = true)
     protected List<NAMESPELLWEAVINGType> spellweaving;
     @XmlElement(name = "CAPABILITY", namespace = "http://earthdawn.com/translation")
@@ -443,6 +451,64 @@ public class TRANSLATIONS {
             languageskillreadwrite = new ArrayList<TRANSLATIONType>();
         }
         return this.languageskillreadwrite;
+    }
+
+    /**
+     * Gets the value of the disciplinetier property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the disciplinetier property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDISCIPLINETIER().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMETIERKINDType }
+     *
+     *
+     */
+    public List<NAMETIERKINDType> getDISCIPLINETIER() {
+        if (disciplinetier == null) {
+            disciplinetier = new ArrayList<NAMETIERKINDType>();
+        }
+        return this.disciplinetier;
+    }
+
+    /**
+     * Gets the value of the questortier property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the questortier property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getQUESTORTIER().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NAMETIERKINDType }
+     *
+     *
+     */
+    public List<NAMETIERKINDType> getQUESTORTIER() {
+        if (questortier == null) {
+            questortier = new ArrayList<NAMETIERKINDType>();
+        }
+        return this.questortier;
     }
 
     /**

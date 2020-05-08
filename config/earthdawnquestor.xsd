@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/path" xmlns="http://earthdawn.com/path" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
+<xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/discipline" xmlns="http://earthdawn.com/discipline" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
-	<xs:complexType name="PATHRANK_type">
+	<xs:complexType name="QUESTORRANK_type">
 		<xs:sequence maxOccurs="1" minOccurs="1">
-			<xs:element minOccurs="1" maxOccurs="1" name="TALENTABILITY" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="1" maxOccurs="1" name="DEVOTIONABILITY" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEFENSE" type="edt:DEFENSEABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="ARMOR" type="edt:ARMOR_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="INITIATIVE" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTESTPERDAY" type="edt:DISZIPINABILITY_type"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="RECOVERYTESTSTEP" type="edt:DISZIPINABILITY_type"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMA" type="edt:KARMAABILITY_type"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="KARMASTEP" type="edt:DISZIPINABILITY_type"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEVOTIONDICESTEP" type="edt:DISZIPINABILITY_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEVOTIONBENEFIT" type="edt:KARMAABILITY_type"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="PATHTIER_type">
-		<xs:annotation><xs:documentation>The path ranks are grouped by tiers</xs:documentation></xs:annotation>
+	<xs:complexType name="QUESTORTIER_type">
+		<xs:annotation><xs:documentation>The questor ranks are grouped by tiers</xs:documentation></xs:annotation>
 		<xs:sequence maxOccurs="1" minOccurs="1">
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
-			<xs:element minOccurs="1" maxOccurs="15" name="RANK" type="PATHRANK_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALDEVOTION" type="edt:TALENTABILITY_type">
+				<xs:annotation><xs:documentation>If a questor reach a rank within this tier, the questor gains access to learn one of the listed optional devotions.</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="1" maxOccurs="15" name="RANK" type="QUESTORRANK_type"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="edt:tierkind_type" default="auto">
 			<xs:annotation><xs:documentation>By default the tier kind is determinate automatically, starting with novice. At any point, it is possible to skip one tier kind and have the following tier kinds automatically be determinate again. The tier kind order must never be mixed. You must never use a lower tier kind after a higher tier kind. The order is: novice, journeyman, warden, master. The tier kind “auto” is always possible.</xs:documentation></xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:element name="PATH">
+	<xs:element name="QUESTOR">
 		<xs:complexType>
 			<xs:sequence maxOccurs="1" minOccurs="1">
-				<xs:element minOccurs="1" maxOccurs="1" name="NEEDEDKNACK" type="xs:string"><xs:annotation><xs:documentation>This knack must be learned to access this path.</xs:documentation></xs:annotation></xs:element>
-				<xs:element minOccurs="1" maxOccurs="1" name="TALENT" type="edt:TALENTABILITY_type"/>
-				<xs:element minOccurs="1" maxOccurs="4" name="TIER" type="PATHTIER_type"/>
-				<xs:element minOccurs="0" maxOccurs="1" name="KARMARITUAL" type="xs:string"/>
-				<xs:element minOccurs="0" maxOccurs="1" name="HALFMAGIC" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="1" name="DEVOTION" type="edt:TALENTABILITY_type"/>
+				<xs:element minOccurs="1" maxOccurs="4" name="TIER" type="QUESTORTIER_type"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="IDEAL" type="xs:string"/>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="DEVOTIONBENEFITEXAMPLE" type="xs:string"/>
 			</xs:sequence>
 			<xs:attribute name="lang" type="edt:language_type" use="required"/>
-			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="passion" type="xs:string" use="required"/>
 			<xs:attribute name="bookref" type="xs:string" default=""/>
 			<xs:attribute name="rulesetversion" type="edt:rulesetversion_type" default="ED4"/>
 		</xs:complexType>

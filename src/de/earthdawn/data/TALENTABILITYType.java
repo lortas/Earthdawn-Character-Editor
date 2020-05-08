@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="bonus" type="{http://earthdawn.com/datatypes}unsigned_int" default="1" /&gt;
  *       &lt;attribute name="pool" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *       &lt;attribute name="replace" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
+ *       &lt;attribute name="tier" type="{http://earthdawn.com/datatypes}tierkind_type" default="auto" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -49,6 +50,8 @@ public class TALENTABILITYType {
     protected String pool;
     @XmlAttribute(name = "replace")
     protected String replace;
+    @XmlAttribute(name = "tier")
+    protected TierkindType tier;
 
     /**
      * Gets the value of the name property.
@@ -184,6 +187,34 @@ public class TALENTABILITYType {
      */
     public void setReplace(String value) {
         this.replace = value;
+    }
+
+    /**
+     * Gets the value of the tier property.
+     *
+     * @return
+     *     possible object is
+     *     {@link TierkindType }
+     *
+     */
+    public TierkindType getTier() {
+        if (tier == null) {
+            return TierkindType.AUTO;
+        } else {
+            return tier;
+        }
+    }
+
+    /**
+     * Sets the value of the tier property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link TierkindType }
+     *
+     */
+    public void setTier(TierkindType value) {
+        this.tier = value;
     }
 
 }

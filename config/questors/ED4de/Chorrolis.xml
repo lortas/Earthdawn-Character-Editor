@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QUESTOR passion="Chorrolis" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
+	<DEVOTION name="Questor" limitation="Chorrolis"/>
+	<TIER>
+		<OPTIONALDEVOTION name="Bestechung"/>
+		<OPTIONALDEVOTION name="Erster Eindruck"/>
+		<OPTIONALDEVOTION name="Etikette"/>
+		<OPTIONALDEVOTION name="Feilschen"/>
+		<OPTIONALDEVOTION name="Gassenwissen"/>
+		<OPTIONALDEVOTION name="Konversation"/>
+		<OPTIONALDEVOTION name="Lippenlesen"/>
+		<OPTIONALDEVOTION name="Pidginsprache"/>
+		<OPTIONALDEVOTION name="Schätzen"/>
+		<OPTIONALDEVOTION name="Stärkung der Passion"/>
+		<RANK><!-- 1 -->
+			<DEVOTIONABILITY/>
+			<DEVOTIONDICESTEP count="3"/>
+			<DEVOTIONBENEFIT spend="tbd by questor"/>
+		</RANK>	
+		<RANK><!-- 2 -->
+			<DEVOTIONABILITY/>
+		</RANK>	
+		<RANK><!-- 3 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>	
+		<RANK><!-- 4 -->
+			<DEVOTIONABILITY/>
+		</RANK>	
+	</TIER>
+	<TIER>
+		<OPTIONALDEVOTION name="Absichten Einschätzen"/>
+		<OPTIONALDEVOTION name="Besessenheit Wecken"/>
+		<OPTIONALDEVOTION name="Diplomatie"/>
+		<OPTIONALDEVOTION name="Herzenswunsch"/>
+		<OPTIONALDEVOTION name="Inspiration der Passion"/>
+		<OPTIONALDEVOTION name="Psychometrie"/>
+		<OPTIONALDEVOTION name="Starrsinn"/>
+		<OPTIONALDEVOTION name="Untrüglicher Blick"/>
+		<RANK><!-- 5 -->
+			<DEVOTIONABILITY/>
+			<DEVOTIONDICESTEP/>
+			<DEVOTIONBENEFIT spend="tbd by player+gamemaster"/>
+		</RANK>	
+		<RANK><!-- 6 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>	
+		<RANK><!-- 7 -->
+			<DEVOTIONABILITY/>
+			<ARMOR name="additional questor armor" mysticarmor="1" weight="0"/>
+		</RANK>	
+		<RANK><!-- 8 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK>	
+	</TIER>
+	<TIER>
+		<OPTIONALDEVOTION name="Gedanken Verbergen"/>
+		<OPTIONALDEVOTION name="Griff von Chorrolis"/>
+		<OPTIONALDEVOTION name="Lass Uns Handeln"/>
+		<OPTIONALDEVOTION name="Untergraben"/>
+		<OPTIONALDEVOTION name="Vergangenheitsberührung"/>
+		<OPTIONALDEVOTION name="Verzaubertes Geschenk"/>
+		<RANK><!-- 9 -->
+			<DEVOTIONABILITY/>
+			<DEVOTIONDICESTEP/>
+			<DEVOTIONBENEFIT spend="tbd by player+gamemaster"/>
+		</RANK>	
+		<RANK><!-- 10 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>	
+		<RANK><!-- 11 -->
+			<DEVOTIONABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>	
+		<RANK><!-- 12 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="mystic"/>
+			<INITIATIVE/>
+		</RANK>	
+	</TIER>
+	<IDEAL>Reichtum</IDEAL>
+	<IDEAL>Handel</IDEAL>
+	<IDEAL>Neid</IDEAL>
+	<IDEAL>Verlangen</IDEAL>
+	<!-- Der Questor kann einen Weihepunkt ausgeben für ... .-->
+	<DEVOTIONBENEFITEXAMPLE>eine Interaktionsprobe</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, bei der es um eine Transaktion geht</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, um Informationen über die Wirtschaft zu erhalten, einschließlich neuer Handelswege, Rohstoffquellen, Suche nach einem bestimmten Handwerker usw.</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, um etwas Wünschenswertes zu erwerben</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, die eine neue und riskante wirtschaftliche Unternehmung unterstützt</DEVOTIONBENEFITEXAMPLE>
+</QUESTOR>

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PATH name="Brother of Stone" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-
-	<PATHKNACK name="Brother of Stone"/><!-- Prerequisit -->
-	<PATHTALENT name="Brother of Stone" tier="master" maxrank="10"/><!-- learned talent with knack on Rank1 -->
-
-	<PATHRANK tier="journeyman"><!-- 1 -->
+	<NEEDEDKNACK>Brother of Stone</NEEDEDKNACK>
+	<TALENT name="Brother of Stone" tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10 -->
+	<TIER name="journeyman">
 		<OPTIONALTALENT name="Astral Sight"/>
 		<OPTIONALTALENT name="Danger Sense"/>
 		<OPTIONALTALENT name="Deliberate Assault"/>
@@ -15,52 +13,57 @@
 		<OPTIONALTALENT name="True Sight"/>
 		<OPTIONALTALENT name="Wilderness Survival"/>
 		<OPTIONALTALENT name="Wound Balance"/>
-		<TALENTABILITY/>
-	</PATHRANK>
-	<PATHRANK tier="journeyman"><!-- 2 -->
-	<TALENTABILITY/>
-		<DEFENSE kind="mystic"/>
-	</PATHRANK>
-	<PATHRANK tier="journeyman"><!-- 3 -->
-		<TALENTABILITY/>
-	</PATHRANK>
-	<PATHRANK tier="journeyman"><!-- 4 -->
-		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
-	</PATHRANK>
-	<PATHRANK tier="warden"><!-- 5 -->
+		<RANK><!-- 1 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>
+	</TIER>
+	<TIER>
 		<OPTIONALTALENT name="Earth Skin"/>
 		<OPTIONALTALENT name="Earth Speak"/>
 		<OPTIONALTALENT name="Earth Walk"/>
 		<OPTIONALTALENT name="Iron Constitution"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
 		<OPTIONALTALENT name="Temper Self"/>
-		<TALENTABILITY/>
-	</PATHRANK>
-	<PATHRANK tier="warden"><!-- 6 -->
-		<TALENTABILITY/>
-	</PATHRANK>
-	<PATHRANK tier="warden"><!-- 7 -->
-		<TALENTABILITY/>
-	<DEFENSE kind="mystic"/>
-		
-	</PATHRANK>
-	<PATHRANK tier="warden"><!-- 8 -->
-		<TALENTABILITY/>
-		<RECOVERYTESTPERDAY/>
-	</PATHRANK>
-	<PATHRANK tier="master"><!-- 9 -->
-	<OPTIONALTALENT name="Relentless Recovery"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 6 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 7 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK>
+		<RANK><!-- 8 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
+	<TIER>
+		<OPTIONALTALENT name="Relentless Recovery"/>
 		<OPTIONALTALENT name="Resist Pain"/>
 		<OPTIONALTALENT name="Unflinching Fortitude"/>
 		<OPTIONALTALENT name="Wisdom of Ages"/>
-		<TALENTABILITY/>
-		<DEFENSE kind="physical"/>
-	</PATHRANK>
-	<PATHRANK tier="master"><!-- 10 -->
-		<TALENTABILITY/>
-		<RECOVERYTESTPERDAY/>
-	</PATHRANK>
+		<RANK><!-- 9 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 10 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
 	<KARMARITUAL>Brothers of Stone conduct their Karma Rituals while in contact with earth or stone and connect with their brotherhood while doing so.</KARMARITUAL>
-	<HALFMAGIC>The adept can also use their Half-Magic to find other Brothers of Stone and know the history of Brothers of Stone. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of earth elemental spirits within 30 yards. The Difficulty Number for sensing an earth elemental spirit is the spirit’s Mystic Defense. If the test succeeds, the adept can sense the presence of the earth elemental spirit and can use spells or talents to communicate and interact with it. The gamemaster may choose to make this Half-Magic test on behalf of a Brother of Stone at any time, as this innate sense is always active.</HALFMAGIC>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Brothers of Stone and know the history of Brothers of Stone. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of earth elemental spirits within 30 yards. The Difficulty Number for sensing an earth elemental spirit is the spirits Mystic Defense. If the test succeeds, the adept can sense the presence of the earth elemental spirit and can use spells or talents to communicate and interact with it. The gamemaster may choose to make this Half-Magic test on behalf of a Brother of Stone at any time, as this innate sense is always active.</HALFMAGIC>
 </PATH>

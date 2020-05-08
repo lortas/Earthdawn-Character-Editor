@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QUESTOR passion="Floranuus" lang="de" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
+	<DEVOTION name="Questor" limitation="Floranuus"/>
+	<TIER>
+		<OPTIONALDEVOTION name="Akrobatische Verteidigung"/>
+		<OPTIONALDEVOTION name="Erster Eindruck"/>
+		<OPTIONALDEVOTION name="Gewinnendes Lächeln"/>
+		<OPTIONALDEVOTION name="Herzliches Lachen"/>
+		<OPTIONALDEVOTION name="Hieb Ausweichen"/>
+		<OPTIONALDEVOTION name="Sprint"/>
+		<OPTIONALDEVOTION name="Stärkung der Passion"/>
+		<OPTIONALDEVOTION name="Unempfindlichkeit" limitation="5"/>
+		<OPTIONALDEVOTION name="Weitsprung"/>
+		<OPTIONALDEVOTION name="Windkissen"/>
+		<RANK><!-- 1 -->
+			<DEVOTIONABILITY/>
+			<DEVOTIONDICESTEP count="3"/>
+			<DEVOTIONBENEFIT spend="tbd by questor"/>
+		</RANK>	
+		<RANK><!-- 2 -->
+			<DEVOTIONABILITY/>
+		</RANK>	
+		<RANK><!-- 3 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>	
+		<RANK><!-- 4 -->
+			<DEVOTIONABILITY/>
+		</RANK>	
+	</TIER>
+	<TIER>
+		<OPTIONALDEVOTION name="Ermutigende Redekunst"/>
+		<OPTIONALDEVOTION name="Floranuus' Schritt"/>
+		<OPTIONALDEVOTION name="Führung"/>
+		<OPTIONALDEVOTION name="Geschichten Erzählen"/>
+		<OPTIONALDEVOTION name="Inspiration der Passion"/>
+		<OPTIONALDEVOTION name="Inspirierte Kraft"/>
+		<OPTIONALDEVOTION name="Löwenherz"/>
+		<OPTIONALDEVOTION name="Luftgleiten"/>
+		<RANK><!-- 5 -->
+			<DEVOTIONABILITY/>
+			<DEVOTIONDICESTEP/>
+			<DEVOTIONBENEFIT spend="tbd by player+gamemaster"/>
+		</RANK>	
+		<RANK><!-- 6 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>	
+		<RANK><!-- 7 -->
+			<DEVOTIONABILITY/>
+			<INITIATIVE/>
+		</RANK>	
+		<RANK><!-- 8 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>	
+	</TIER>
+	<TIER>
+		<OPTIONALDEVOTION name="Ansporn"/>
+		<OPTIONALDEVOTION name="Energie in Bewegung"/>
+		<OPTIONALDEVOTION name="Geschenk des Lebens"/>
+		<OPTIONALDEVOTION name="Inspirierte Ausdauer"/>
+		<OPTIONALDEVOTION name="Stärkung"/>
+		<OPTIONALDEVOTION name="Trost der Passion"/>
+		<RANK><!-- 9 -->
+			<DEVOTIONABILITY/>
+			<DEVOTIONDICESTEP/>
+			<DEVOTIONBENEFIT spend="tbd by player+gamemaster"/>
+		</RANK>	
+		<RANK><!-- 10 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>	
+		<RANK><!-- 11 -->
+			<DEVOTIONABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>	
+		<RANK><!-- 12 -->
+			<DEVOTIONABILITY/>
+			<DEFENSE kind="social"/>
+			<INITIATIVE/>
+		</RANK>	
+	</TIER>
+	<IDEAL>Festlichkeit</IDEAL>
+	<IDEAL>Energie</IDEAL>
+	<IDEAL>Sieg</IDEAL>
+	<IDEAL>Bewegung</IDEAL>
+	<!-- Der Questor kann einen Weihepunkt ausgeben für ... .-->
+	<DEVOTIONBENEFITEXAMPLE>die nächste Aktionsprobe eines Verbündeten nach einer erfolgreichen Aktionsprobe eines anderen Verbündeten</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Erholungsprobe</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Initiativeprobe</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Interaktionsprobe</DEVOTIONBENEFITEXAMPLE>
+	<DEVOTIONBENEFITEXAMPLE>eine Probe, bei der es um Athletik geht (gilt nicht für Angriffs- oder Schadensproben)</DEVOTIONBENEFITEXAMPLE>
+</QUESTOR>

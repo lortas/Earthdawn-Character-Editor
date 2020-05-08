@@ -28,14 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="NEEDEDKNACK" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="TALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type"/&gt;
- *         &lt;element name="TIER" type="{http://earthdawn.com/path}PATHTIER_type" maxOccurs="4"/&gt;
- *         &lt;element name="KARMARITUAL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="HALFMAGIC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DEVOTION" type="{http://earthdawn.com/datatypes}TALENTABILITY_type"/&gt;
+ *         &lt;element name="TIER" type="{http://earthdawn.com/discipline}QUESTORTIER_type" maxOccurs="4"/&gt;
+ *         &lt;element name="IDEAL" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="DEVOTIONBENEFITEXAMPLE" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="lang" use="required" type="{http://earthdawn.com/datatypes}language_type" /&gt;
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="passion" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *       &lt;attribute name="rulesetversion" type="{http://earthdawn.com/datatypes}rulesetversion_type" default="ED4" /&gt;
  *     &lt;/restriction&gt;
@@ -47,80 +46,53 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "neededknack",
-    "talent",
+    "devotion",
     "tier",
-    "karmaritual",
-    "halfmagic"
+    "ideal",
+    "devotionbenefitexample"
 })
-@XmlRootElement(name = "PATH", namespace = "http://earthdawn.com/path")
-public class PATH {
+@XmlRootElement(name = "QUESTOR", namespace = "http://earthdawn.com/discipline")
+public class QUESTOR {
 
-    @XmlElement(name = "NEEDEDKNACK", namespace = "http://earthdawn.com/path", required = true)
-    protected String neededknack;
-    @XmlElement(name = "TALENT", namespace = "http://earthdawn.com/path", required = true)
-    protected TALENTABILITYType talent;
-    @XmlElement(name = "TIER", namespace = "http://earthdawn.com/path", required = true)
-    protected List<PATHTIERType> tier;
-    @XmlElement(name = "KARMARITUAL", namespace = "http://earthdawn.com/path")
-    protected String karmaritual;
-    @XmlElement(name = "HALFMAGIC", namespace = "http://earthdawn.com/path")
-    protected String halfmagic;
+    @XmlElement(name = "DEVOTION", namespace = "http://earthdawn.com/discipline", required = true)
+    protected TALENTABILITYType devotion;
+    @XmlElement(name = "TIER", namespace = "http://earthdawn.com/discipline", required = true)
+    protected List<QUESTORTIERType> tier;
+    @XmlElement(name = "IDEAL", namespace = "http://earthdawn.com/discipline", required = true)
+    protected List<String> ideal;
+    @XmlElement(name = "DEVOTIONBENEFITEXAMPLE", namespace = "http://earthdawn.com/discipline", required = true)
+    protected List<String> devotionbenefitexample;
     @XmlAttribute(name = "lang", required = true)
     protected LanguageType lang;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+    @XmlAttribute(name = "passion", required = true)
+    protected String passion;
     @XmlAttribute(name = "bookref")
     protected String bookref;
     @XmlAttribute(name = "rulesetversion")
     protected RulesetversionType rulesetversion;
 
     /**
-     * Gets the value of the neededknack property.
-     *
-     * @return
-     *     possible object is
-     *     {@link String }
-     *
-     */
-    public String getNEEDEDKNACK() {
-        return neededknack;
-    }
-
-    /**
-     * Sets the value of the neededknack property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *
-     */
-    public void setNEEDEDKNACK(String value) {
-        this.neededknack = value;
-    }
-
-    /**
-     * Gets the value of the talent property.
+     * Gets the value of the devotion property.
      *
      * @return
      *     possible object is
      *     {@link TALENTABILITYType }
      *
      */
-    public TALENTABILITYType getTALENT() {
-        return talent;
+    public TALENTABILITYType getDEVOTION() {
+        return devotion;
     }
 
     /**
-     * Sets the value of the talent property.
+     * Sets the value of the devotion property.
      *
      * @param value
      *     allowed object is
      *     {@link TALENTABILITYType }
      *
      */
-    public void setTALENT(TALENTABILITYType value) {
-        this.talent = value;
+    public void setDEVOTION(TALENTABILITYType value) {
+        this.devotion = value;
     }
 
     /**
@@ -141,63 +113,73 @@ public class PATH {
      *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link PATHTIERType }
+     * {@link QUESTORTIERType }
      *
      *
      */
-    public List<PATHTIERType> getTIER() {
+    public List<QUESTORTIERType> getTIER() {
         if (tier == null) {
-            tier = new ArrayList<PATHTIERType>();
+            tier = new ArrayList<QUESTORTIERType>();
         }
         return this.tier;
     }
 
     /**
-     * Gets the value of the karmaritual property.
+     * Gets the value of the ideal property.
      *
-     * @return
-     *     possible object is
-     *     {@link String }
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ideal property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getIDEAL().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     *
      *
      */
-    public String getKARMARITUAL() {
-        return karmaritual;
+    public List<String> getIDEAL() {
+        if (ideal == null) {
+            ideal = new ArrayList<String>();
+        }
+        return this.ideal;
     }
 
     /**
-     * Sets the value of the karmaritual property.
+     * Gets the value of the devotionbenefitexample property.
      *
-     * @param value
-     *     allowed object is
-     *     {@link String }
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the devotionbenefitexample property.
      *
-     */
-    public void setKARMARITUAL(String value) {
-        this.karmaritual = value;
-    }
-
-    /**
-     * Gets the value of the halfmagic property.
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDEVOTIONBENEFITEXAMPLE().add(newItem);
+     * </pre>
      *
-     * @return
-     *     possible object is
-     *     {@link String }
      *
-     */
-    public String getHALFMAGIC() {
-        return halfmagic;
-    }
-
-    /**
-     * Sets the value of the halfmagic property.
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
      *
-     * @param value
-     *     allowed object is
-     *     {@link String }
      *
      */
-    public void setHALFMAGIC(String value) {
-        this.halfmagic = value;
+    public List<String> getDEVOTIONBENEFITEXAMPLE() {
+        if (devotionbenefitexample == null) {
+            devotionbenefitexample = new ArrayList<String>();
+        }
+        return this.devotionbenefitexample;
     }
 
     /**
@@ -225,27 +207,27 @@ public class PATH {
     }
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the passion property.
      *
      * @return
      *     possible object is
      *     {@link String }
      *
      */
-    public String getName() {
-        return name;
+    public String getPassion() {
+        return passion;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the passion property.
      *
      * @param value
      *     allowed object is
      *     {@link String }
      *
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setPassion(String value) {
+        this.passion = value;
     }
 
     /**

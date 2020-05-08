@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PATHKNACK_type complex type.
+ * <p>Java class for NAME_TIERKIND_type complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  * <pre>
- * &lt;complexType name="PATHKNACK_type"&gt;
+ * &lt;complexType name="NAME_TIERKIND_type"&gt;
  *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *     &lt;/restriction&gt;
+ *     &lt;extension base="{http://earthdawn.com/translation}TRANSLATION_type"&gt;
+ *       &lt;attribute name="type" use="required" type="{http://earthdawn.com/datatypes}tierkind_type" /&gt;
+ *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -32,34 +32,36 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PATHKNACK_type", namespace = "http://earthdawn.com/path")
-public class PATHKNACKType {
+@XmlType(name = "NAME_TIERKIND_type", namespace = "http://earthdawn.com/translation")
+public class NAMETIERKINDType
+    extends TRANSLATIONType
+{
 
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+    @XmlAttribute(name = "type", required = true)
+    protected TierkindType type;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the type property.
      *
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link TierkindType }
      *
      */
-    public String getName() {
-        return name;
+    public TierkindType getType() {
+        return type;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the type property.
      *
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link TierkindType }
      *
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setType(TierkindType value) {
+        this.type = value;
     }
 
 }

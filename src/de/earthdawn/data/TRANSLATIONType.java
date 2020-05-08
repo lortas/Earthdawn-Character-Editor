@@ -41,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
     "label"
 })
 @XmlSeeAlso({
+    NAMETIERKINDType.class,
     GENERALTEXTType.class
 })
 public class TRANSLATIONType {
