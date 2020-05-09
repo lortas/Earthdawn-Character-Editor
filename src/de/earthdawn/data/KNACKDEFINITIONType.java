@@ -34,6 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SKILL" type="{http://earthdawn.com/knack}KNACKCAPABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="RACE" type="{http://earthdawn.com/knack}KNACKRACE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="ATTRIBUTE" type="{http://earthdawn.com/knack}KNACKATTRIBUTE_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="SPELL" type="{http://earthdawn.com/knack}KNACKSPELL_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="OTHER" type="{http://earthdawn.com/knack}KNACKOTHER_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="skilluse" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *     &lt;/extension&gt;
@@ -51,7 +53,9 @@ import javax.xml.bind.annotation.XmlType;
     "talent",
     "skill",
     "race",
-    "attribute"
+    "attribute",
+    "spell",
+    "other"
 })
 public class KNACKDEFINITIONType
     extends KNACKBASEType
@@ -71,6 +75,10 @@ public class KNACKDEFINITIONType
     protected List<KNACKRACEType> race;
     @XmlElement(name = "ATTRIBUTE")
     protected List<KNACKATTRIBUTEType> attribute;
+    @XmlElement(name = "SPELL")
+    protected List<KNACKSPELLType> spell;
+    @XmlElement(name = "OTHER")
+    protected List<KNACKOTHERType> other;
     @XmlAttribute(name = "skilluse")
     protected Integer skilluse;
 
@@ -275,6 +283,64 @@ public class KNACKDEFINITIONType
             attribute = new ArrayList<KNACKATTRIBUTEType>();
         }
         return this.attribute;
+    }
+
+    /**
+     * Gets the value of the spell property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spell property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPELL().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKSPELLType }
+     *
+     *
+     */
+    public List<KNACKSPELLType> getSPELL() {
+        if (spell == null) {
+            spell = new ArrayList<KNACKSPELLType>();
+        }
+        return this.spell;
+    }
+
+    /**
+     * Gets the value of the other property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the other property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOTHER().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KNACKOTHERType }
+     *
+     *
+     */
+    public List<KNACKOTHERType> getOTHER() {
+        if (other == null) {
+            other = new ArrayList<KNACKOTHERType>();
+        }
+        return this.other;
     }
 
     /**

@@ -870,6 +870,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link KNACKSPELLType }
+     *
+     */
+    public KNACKSPELLType createKNACKSPELLType() {
+        return new KNACKSPELLType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKOTHERType }
+     *
+     */
+    public KNACKOTHERType createKNACKOTHERType() {
+        return new KNACKOTHERType();
+    }
+
+    /**
      * Create an instance of {@link NAMEGIVERS }
      *
      */
