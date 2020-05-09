@@ -305,6 +305,7 @@
 		<xs:attribute name="bookref" type="xs:string" default=""/>
 		<xs:attribute name="cost" type="unsigned_int" default="0"/>
 		<xs:attribute name="freetalent" type="xs:string" default=""/>
+                <xs:attribute name="circle" type="unsigned_int" default="0"/><!-- Specific Spell Knacks allow the Adept to learn a Knack as a Spell in a specific circle. -->
 	</xs:complexType>
 	<xs:complexType name="KNACK_type">
 		<xs:complexContent>

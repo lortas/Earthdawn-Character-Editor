@@ -29,9 +29,17 @@
 				<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
 				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 				<xs:attribute name="pool" type="xs:string" default=""><xs:annotation><xs:documentation>Different KNACKCAPABILITY can be grouped by 'pool' and prerequisite is fulfilled, if one of the pool matches. KNACKCAPABILITYs with undefined/empty a pool will not be grouped.</xs:documentation></xs:annotation></xs:attribute>
-	</xs:complexType>
+        </xs:complexType>
 	<xs:complexType name="KNACKOTHERKNACK_type">
 				<xs:attribute name="name" type="xs:string" default="*"/>
+				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+	</xs:complexType>
+        <xs:complexType name="KNACKSPELL_type">
+				<xs:attribute name="name" type="xs:string" default="*"/>
+                                <xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+	</xs:complexType>
+        <xs:complexType name="KNACKOTHER_type">
+				<xs:attribute name="text" type="xs:string" default="*"/><!-- Other requirment as text which can't be checked but is needed to learn a knack and should be an info for player when choosing the knack. -->
 				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKDEFINITION_type">
@@ -45,6 +53,8 @@
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILL" type="KNACKCAPABILITY_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="RACE" type="KNACKRACE_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ATTRIBUTE" type="KNACKATTRIBUTE_type"/>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="KNACKSPELL_type"/>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="OTHER" type="KNACKOTHER_type"/>
 				</xs:sequence>
 				<xs:attribute name="skilluse" type="edt:unsigned_int" default="0"/>
 			</xs:extension>
