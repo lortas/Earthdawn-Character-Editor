@@ -358,6 +358,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link QUESTORType }
+     *
+     */
+    public QUESTORType createQUESTORType() {
+        return new QUESTORType();
+    }
+
+    /**
      * Create an instance of {@link PATHType }
      *
      */

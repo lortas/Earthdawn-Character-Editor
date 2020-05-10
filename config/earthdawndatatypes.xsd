@@ -432,6 +432,16 @@
 		<xs:attribute name="primelement" type="elementkind_type" default="undefined"/>
 		<xs:attribute name="durability" type="xs:int" default="0"/>
 	</xs:complexType>
+	<xs:complexType name="QUESTOR_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DEVOTION" type="TALENT_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="BONUS" type="DISCIPLINEBONUS_type"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="IDEAL" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="passion" type="xs:string" use="required"/>
+		<xs:attribute name="devotionpoints" type="unsigned_int" default="0"/>
+		<xs:attribute name="bookref" type="xs:string" default=""/>
+	</xs:complexType>
 	<xs:complexType name="PATH_type">
 		<xs:sequence>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="PATHBONUS" type="DISCIPLINEBONUS_type"/>
