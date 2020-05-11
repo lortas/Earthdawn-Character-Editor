@@ -976,10 +976,10 @@ public class ECEWorker {
 			int rank = ( karmaritualTalent.getRANK() == null ) ? 0 : karmaritualTalent.getRANK().getRank();
 			karma.setMax( karmaMaxBonus + (karmaModifier * rank) );
 		}
-		List<Integer> k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
-		karma.setCurrent(karmaModifier+k.get(0)-k.get(1));
+		int[] k = CharacterContainer.calculateAccounting(karma.getKARMAPOINTS());
+		karma.setCurrent(karmaModifier+k[0]-k[1]);
 		if(PROPERTIES.getRulesetLanguage().getRulesetversion().equals(RulesetversionType.ED_3)) {
-			return 10*k.get(0); // KarmaLP
+			return 10*k[0]; // KarmaLP
 		} else {
 			// in ED4 sind Karma punkte kosten los. Damit benötigt man keine Buchhaltung der Karmapunkte.
 			karma.getKARMAPOINTS().clear();

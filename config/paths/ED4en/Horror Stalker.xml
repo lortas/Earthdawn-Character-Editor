@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PATH name="Horror Stalker " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Horror Stalker </NEEDEDKNACK>
+	<TALENT name="Horror Stalker " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
+	<TIER name="journeyman">
+		<RANK>
+			<TALENTABILITY/>
+		</RANK>
+	</TIER>	
+</PATH>

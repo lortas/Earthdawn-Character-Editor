@@ -19,11 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
@@ -39,13 +36,14 @@ import de.earthdawn.data.PlusminusType;
 public class EDDevotionPoints extends JPanel {
 	private static final long serialVersionUID = -9156447851725574501L;
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
+	public static final String[] QuestorNames = PROPERTIES.getAllQuestorNames().toArray(new String[0]);
 	private CharacterContainer character;
 	private JToolBar toolBar;
 	private JScrollPane scrollPane;
 	private JTable table;
 	private JButton btnAddDevotionPointsEntry;
 	private JButton btnRemoveDevotionPointsEntry;
-	private JTextField textFieldPassion;
+	private JComboBox FieldPassion;
 	private BufferedImage backgroundimage = null;
 
 	public CharacterContainer getCharacter() {
@@ -71,6 +69,12 @@ public class EDDevotionPoints extends JPanel {
 		} catch(IndexOutOfBoundsException e) {
 			System.err.println("layout spellselection : "+e.getLocalizedMessage());
 		}
+		String passion=character.getPassion();
+		int pos=QuestorNames.length-1;
+		while( !( pos<0 || QuestorNames[pos].equals(passion) ) ) pos--;
+		// The ComboBox Itemes are headed with an empty string, so the pos is +1
+		// In case of no match the pos ends with -1 and we chose the empty string.
+		FieldPassion.setSelectedIndex(pos+1);
 }
 
 	@Override
@@ -143,28 +147,20 @@ public class EDDevotionPoints extends JPanel {
 		southPanel.setOpaque(false);
 		add(southPanel,BorderLayout.SOUTH);
 		southPanel.add(new JLabel("Passion:"));
-		textFieldPassion = new JTextField();
-		textFieldPassion.setOpaque(false);
-		textFieldPassion.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent arg0) {
-				do_textFieldPassion_caretUpdate(arg0);
+		FieldPassion = new JComboBox<>(QuestorNames);
+		FieldPassion.insertItemAt("",0);
+		FieldPassion.setOpaque(false);
+		FieldPassion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				do_FieldPassion_actionPerformed(arg0);
 			}
 		});
-		textFieldPassion.setColumns(20);
-		southPanel.add(textFieldPassion);
+		southPanel.add(FieldPassion);
 	}
 
-	protected void do_textFieldPassion_caretUpdate(CaretEvent arg0) {
+	protected void do_FieldPassion_actionPerformed(ActionEvent arg0) {
 		if( character == null) return;
-		EDCHARACTER edcharacter = character.getEDCHARACTER();
-		if( edcharacter == null) return;
-		DEVOTIONType devotion = edcharacter.getDEVOTION();
-		if( devotion == null) {
-			devotion = new DEVOTIONType();
-			devotion.setValue(0);
-			edcharacter.setDEVOTION(devotion);
-		}
-		devotion.setPassion(textFieldPassion.getText());
+		character.setPassion((String) FieldPassion.getSelectedItem());
 		character.refesh();
 	}
 

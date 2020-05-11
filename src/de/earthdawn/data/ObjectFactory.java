@@ -358,6 +358,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link QUESTORType }
+     *
+     */
+    public QUESTORType createQUESTORType() {
+        return new QUESTORType();
+    }
+
+    /**
      * Create an instance of {@link PATHType }
      *
      */
@@ -867,6 +875,22 @@ public class ObjectFactory {
      */
     public KNACKOTHERKNACKType createKNACKOTHERKNACKType() {
         return new KNACKOTHERKNACKType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKSPELLType }
+     *
+     */
+    public KNACKSPELLType createKNACKSPELLType() {
+        return new KNACKSPELLType();
+    }
+
+    /**
+     * Create an instance of {@link KNACKOTHERType }
+     *
+     */
+    public KNACKOTHERType createKNACKOTHERType() {
+        return new KNACKOTHERType();
     }
 
     /**

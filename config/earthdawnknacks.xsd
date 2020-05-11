@@ -2,45 +2,45 @@
 <xs:schema elementFormDefault="qualified" targetNamespace="http://earthdawn.com/knack" xmlns="http://earthdawn.com/knack" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:edt="http://earthdawn.com/datatypes">
 	<xs:import namespace="http://earthdawn.com/datatypes" schemaLocation="earthdawndatatypes.xsd"/>
 	<xs:complexType name="KNACKRACE_type">
-				<xs:attribute name="name" type="xs:string" use="required"/>
-				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKBASECAPABILITY_type">
-				<xs:attribute name="type" type="edt:capabilitytype_type" use="required"/>
-				<xs:attribute name="name" type="xs:string" use="required"/>
-				<xs:attribute name="limitation" type="xs:string" default=""/>
-				<xs:attribute name="minrank" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="type" type="edt:capabilitytype_type" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
+		<xs:attribute name="minrank" type="edt:unsigned_int" default="0"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKDISCIPLINE_type">
-				<xs:attribute name="name" type="xs:string" default="*"/>
-				<xs:attribute name="circle" type="edt:unsigned_int" default="1"/>
-				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+		<xs:attribute name="name" type="xs:string" default="*"/>
+		<xs:attribute name="circle" type="edt:unsigned_int" default="1"/>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKATTRIBUTE_type">
-				<xs:attribute name="name" type="edt:ATTRIBUTE_name_type" use="required"/>
-				<xs:attribute name="min" type="edt:unsigned_int" default="1"/>
-				<xs:attribute name="max" type="edt:unsigned_int" default="0"/>
-				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+		<xs:attribute name="name" type="edt:ATTRIBUTE_name_type" use="required"/>
+		<xs:attribute name="min" type="edt:unsigned_int" default="1"/>
+		<xs:attribute name="max" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKCAPABILITY_type">
-				<xs:attribute name="name" type="xs:string" use="required"/>
-				<xs:attribute name="limitation" type="xs:string" default=""/>
-				<xs:attribute name="minrank" type="edt:unsigned_int" default="1"/>
-				<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
-				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
-				<xs:attribute name="pool" type="xs:string" default=""><xs:annotation><xs:documentation>Different KNACKCAPABILITY can be grouped by 'pool' and prerequisite is fulfilled, if one of the pool matches. KNACKCAPABILITYs with undefined/empty a pool will not be grouped.</xs:documentation></xs:annotation></xs:attribute>
-        </xs:complexType>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="limitation" type="xs:string" default=""/>
+		<xs:attribute name="minrank" type="edt:unsigned_int" default="1"/>
+		<xs:attribute name="maxrank" type="edt:unsigned_int" default="0"/>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+		<xs:attribute name="pool" type="xs:string" default=""><xs:annotation><xs:documentation>Different KNACKCAPABILITY can be grouped by 'pool' and prerequisite is fulfilled, if one of the pool matches. KNACKCAPABILITYs with undefined/empty a pool will not be grouped.</xs:documentation></xs:annotation></xs:attribute>
+	</xs:complexType>
 	<xs:complexType name="KNACKOTHERKNACK_type">
-				<xs:attribute name="name" type="xs:string" default="*"/>
-				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+		<xs:attribute name="name" type="xs:string" default="*"/>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
-        <xs:complexType name="KNACKSPELL_type">
-				<xs:attribute name="name" type="xs:string" default="*"/>
-                                <xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+	<xs:complexType name="KNACKSPELL_type">
+		<xs:attribute name="name" type="xs:string" default="*"/>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
-        <xs:complexType name="KNACKOTHER_type">
-				<xs:attribute name="text" type="xs:string" default="*"/><!-- Other requirment as text which can't be checked but is needed to learn a knack and should be an info for player when choosing the knack. -->
-				<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
+	<xs:complexType name="KNACKOTHER_type">
+		<xs:attribute name="text" type="xs:string" default="*"><xs:annotation><xs:documentation>Other requirment as text which can't be checked but is needed to learn a knack and should be an info for player when choosing the knack.</xs:documentation></xs:annotation></xs:attribute>
+		<xs:attribute name="prerequisite" type="edt:prerequisitekind_type" default="restriction"/>
 	</xs:complexType>
 	<xs:complexType name="KNACKDEFINITION_type">
 		<xs:complexContent>
@@ -53,8 +53,8 @@
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="SKILL" type="KNACKCAPABILITY_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="RACE" type="KNACKRACE_type"/>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ATTRIBUTE" type="KNACKATTRIBUTE_type"/>
-                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="KNACKSPELL_type"/>
-                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="OTHER" type="KNACKOTHER_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="SPELL" type="KNACKSPELL_type"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="OTHER" type="KNACKOTHER_type"/>
 				</xs:sequence>
 				<xs:attribute name="skilluse" type="edt:unsigned_int" default="0"/>
 			</xs:extension>

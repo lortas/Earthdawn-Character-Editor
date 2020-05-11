@@ -429,9 +429,9 @@ public class CharacterContainer extends CharChangeRefresh {
 
 	public void calculateLegendPointsAndStatus() {
 		EXPERIENCEType legendpoints = getLegendPoints();
-		List<Integer> lp = CharacterContainer.calculateAccounting(legendpoints.getLEGENDPOINTS());
-		legendpoints.setCurrentlegendpoints(lp.get(0)-lp.get(1));
-		legendpoints.setTotallegendpoints(lp.get(0));
+		int[] lp = CharacterContainer.calculateAccounting(legendpoints.getLEGENDPOINTS());
+		legendpoints.setCurrentlegendpoints(lp[0]-lp[1]);
+		legendpoints.setTotallegendpoints(lp[0]);
 		CHARACTERISTICSLEGENDARYSTATUS legendstatus = ApplicationProperties.create().getCharacteristics().getLegendaystatus(getDisciplineMaxCircle().getCircle());
 		legendpoints.setRenown(legendstatus.getReown());
 		legendpoints.setReputation(legendstatus.getReputation());
@@ -1696,19 +1696,26 @@ public class CharacterContainer extends CharChangeRefresh {
 		return magicWeapon;
 	}
 
-	public static List<Integer> calculateAccounting(List<ACCOUNTINGType> accountings) {
-		int plus = 0;
-		int minus = 0;
+	public static int[] calculateAccounting(List<ACCOUNTINGType> accountings) {
+		int[] account = new int[2];
+		account[0]=0; // plus
+		account[1]=0; // minus
 		for( ACCOUNTINGType lp : accountings ) {
 			switch( lp.getType() ) {
-			case PLUS:  plus  += lp.getValue(); break;
-			case MINUS: minus += lp.getValue(); break;
+			case PLUS:  account[0] += lp.getValue(); break;
+			case MINUS: account[1] += lp.getValue(); break;
 			}
 		}
-		List<Integer> account = new ArrayList<Integer>();
-		account.add(plus);  // 0
-		account.add(minus); // 1
 		return account;
+	}
+
+	public QUESTORType getQuestor() {
+		 QUESTORType questor = character.getQUESTOR();
+		 if( questor == null ) {
+			 questor = new QUESTORType();
+			 character.setQUESTOR(questor);
+		 }
+		 return questor;
 	}
 
 	public DEVOTIONType getDevotionPoints() {
@@ -1716,19 +1723,43 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public String getPassion() {
-		DEVOTIONType devotion = getDevotionPoints();
-		if( devotion == null ) return "";
-		String passion = devotion.getPassion();
-		if( passion == null ) return "";
-		return passion;
+		final QUESTORType questor = getQuestor();
+		final DEVOTIONType devotion = getDevotionPoints();
+		String result=questor.getPassion();
+		if( ! ( result == null || result.isEmpty() ) ) {
+			if( devotion != null && devotion.getPassion() != null ) devotion.setPassion(result);
+			return result;
+		}
+		if( devotion != null ) result=devotion.getPassion();
+		if( result == null ) result="";
+		if( ! result.isEmpty() ) {
+			questor.setPassion(result);
+		}
+		return result;
+	}
+
+	public void setPassion(String passion) {
+		getQuestor().setPassion(passion);
+		final DEVOTIONType devotion = getDevotionPoints();
+		if( devotion != null ) devotion.setPassion(passion);
 	}
 
 	public int calculateDevotionPoints() {
 		DEVOTIONType devotionpoints=getDevotionPoints();
-		if( devotionpoints == null ) return 0;
-		List<Integer> dp = calculateAccounting(devotionpoints.getDEVOTIONPOINTS());
-		int result = dp.get(0)-dp.get(1);
+		if( devotionpoints == null ) return getQuestor().getDevotionpoints();
+		List<ACCOUNTINGType> dplist = devotionpoints.getDEVOTIONPOINTS();
+		if( dplist.isEmpty() ) {
+			ACCOUNTINGType tmp = new ACCOUNTINGType();
+			tmp.setValue(getQuestor().getDevotionpoints());
+			tmp.setComment("latest current value");
+			tmp.setType(PlusminusType.PLUS);
+			tmp.setWhen(getCurrentDateTime());
+			dplist.add(tmp);
+		}
+		int[] dp = calculateAccounting(dplist);
+		int result = dp[0]-dp[1];
 		devotionpoints.setValue(result);
+		getQuestor().setDevotionpoints(result);
 		return result;
 	}
 

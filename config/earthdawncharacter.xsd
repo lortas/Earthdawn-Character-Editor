@@ -53,6 +53,7 @@
 				<xs:element minOccurs="0" maxOccurs="1" name="INITIATIVE" type="edt:INITIATIVE_type"/>
 				<xs:element minOccurs="0" maxOccurs="1" name="CARRYING" type="edt:CARRYING_type"/>
 				<xs:element minOccurs="0" maxOccurs="3" name="DISCIPLINE" type="edt:DISCIPLINE_type"/>
+				<xs:element minOccurs="0" maxOccurs="1" name="QUESTOR" type="edt:QUESTOR_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="PATH" type="edt:PATH_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="SKILL" type="edt:SKILL_type"/>
 				<xs:element minOccurs="0" maxOccurs="unbounded" name="OPENSPELL" type="edt:SPELL_type"/>

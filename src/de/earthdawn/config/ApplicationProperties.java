@@ -68,7 +68,7 @@ public class ApplicationProperties {
 	private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
 	private static Map<ECERulesetLanguage,SPELLDESCRIPTIONS> SPELLDESCRIPTIONS;
 	private static Map<RulesetversionType,ECECharacteristics> CHARACTERISTICS;
-	private static File CONFIGDIR = new File("./config");
+	private static final File CONFIGDIR = new File("./config");
 
 	// Singleton-Instanz dieser Klasse.
 	private static ApplicationProperties theProps = null;
@@ -134,7 +134,7 @@ public class ApplicationProperties {
 
 	public Map<String,Map<String,?>> getAllDisziplinNamesAsTree() {
 		Map<String,Map<String,?>> result = new TreeMap<String, Map<String,?>>();
-		for( String s : DISCIPLINES.get(RULESETLANGUAGE).keySet() ) result.put(s,new TreeMap<String, Map<String,?>>());
+		for( String s : getAllDisziplinNames() ) result.put(s,new TreeMap());
 		return shrinkStringMap(result);
 	}
 
@@ -226,12 +226,26 @@ public class ApplicationProperties {
 
 	public Map<String,Map<String,?>> getAllPathNamesAsTree() {
 		Map<String,Map<String,?>> result = new TreeMap();
-		for( String s : PATHS.get(RULESETLANGUAGE).keySet() ) result.put(s,new TreeMap());
+		for( String s : getAllPathNames() ) result.put(s,new TreeMap());
 		return shrinkStringMap(result);
 	}
 
 	public Collection<PATH> getAllPaths() {
 		return PATHS.get(RULESETLANGUAGE).values();
+	}
+
+	public Set<String> getAllQuestorNames() {
+		return QUESTORS.get(RULESETLANGUAGE).keySet();
+	}
+
+	public Map<String,Map<String,?>> getAllQuestorNamesAsTree() {
+		Map<String,Map<String,?>> result = new TreeMap();
+		for( String s : getAllQuestorNames() ) result.put(s,new TreeMap());
+		return shrinkStringMap(result);
+	}
+
+	public Collection<QUESTOR> getAllQuestors() {
+		return QUESTORS.get(RULESETLANGUAGE).values();
 	}
 
 	public List<NAMEGIVERABILITYType> getNamegivers() {

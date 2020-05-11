@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="INITIATIVE" type="{http://earthdawn.com/datatypes}INITIATIVE_type" minOccurs="0"/&gt;
  *         &lt;element name="CARRYING" type="{http://earthdawn.com/datatypes}CARRYING_type" minOccurs="0"/&gt;
  *         &lt;element name="DISCIPLINE" type="{http://earthdawn.com/datatypes}DISCIPLINE_type" maxOccurs="3" minOccurs="0"/&gt;
+ *         &lt;element name="QUESTOR" type="{http://earthdawn.com/datatypes}QUESTOR_type" minOccurs="0"/&gt;
  *         &lt;element name="PATH" type="{http://earthdawn.com/datatypes}PATH_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="SKILL" type="{http://earthdawn.com/datatypes}SKILL_type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="OPENSPELL" type="{http://earthdawn.com/datatypes}SPELL_type" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -84,6 +85,7 @@ import javax.xml.bind.annotation.XmlType;
     "initiative",
     "carrying",
     "discipline",
+    "questor",
     "path",
     "skill",
     "openspell",
@@ -127,6 +129,8 @@ public class EDCHARACTER {
     protected CARRYINGType carrying;
     @XmlElement(name = "DISCIPLINE", namespace = "http://earthdawn.com/character")
     protected List<DISCIPLINEType> discipline;
+    @XmlElement(name = "QUESTOR", namespace = "http://earthdawn.com/character")
+    protected QUESTORType questor;
     @XmlElement(name = "PATH", namespace = "http://earthdawn.com/character")
     protected List<PATHType> path;
     @XmlElement(name = "SKILL", namespace = "http://earthdawn.com/character")
@@ -412,6 +416,30 @@ public class EDCHARACTER {
             discipline = new ArrayList<DISCIPLINEType>();
         }
         return this.discipline;
+    }
+
+    /**
+     * Gets the value of the questor property.
+     *
+     * @return
+     *     possible object is
+     *     {@link QUESTORType }
+     *
+     */
+    public QUESTORType getQUESTOR() {
+        return questor;
+    }
+
+    /**
+     * Sets the value of the questor property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link QUESTORType }
+     *
+     */
+    public void setQUESTOR(QUESTORType value) {
+        this.questor = value;
     }
 
     /**

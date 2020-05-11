@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;attribute name="action" type="{http://earthdawn.com/datatypes}action_type" /&gt;
  *       &lt;attribute name="bookref" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
  *       &lt;attribute name="cost" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
- *       &lt;attribute name="freetalent" type="{http://www.w3.org/2001/XMLSchema}string" default="" /&gt;
+ *       &lt;attribute name="spellcircle" type="{http://earthdawn.com/datatypes}unsigned_int" default="0" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -61,8 +61,8 @@ public class KNACKBASEType {
     protected String bookref;
     @XmlAttribute(name = "cost")
     protected Integer cost;
-    @XmlAttribute(name = "freetalent")
-    protected String freetalent;
+    @XmlAttribute(name = "spellcircle")
+    protected Integer spellcircle;
 
     /**
      * Gets the value of the name property.
@@ -249,31 +249,31 @@ public class KNACKBASEType {
     }
 
     /**
-     * Gets the value of the freetalent property.
+     * Gets the value of the spellcircle property.
      *
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *
      */
-    public String getFreetalent() {
-        if (freetalent == null) {
-            return "";
+    public int getSpellcircle() {
+        if (spellcircle == null) {
+            return  0;
         } else {
-            return freetalent;
+            return spellcircle;
         }
     }
 
     /**
-     * Sets the value of the freetalent property.
+     * Sets the value of the spellcircle property.
      *
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *
      */
-    public void setFreetalent(String value) {
-        this.freetalent = value;
+    public void setSpellcircle(Integer value) {
+        this.spellcircle = value;
     }
 
 }
