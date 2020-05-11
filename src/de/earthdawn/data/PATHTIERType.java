@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="OPTIONALTALENT" type="{http://earthdawn.com/datatypes}TALENTABILITY_type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="PATHFOREIGNTALENTS" type="{http://earthdawn.com/path}PATHFOREIGNTALENTS_type" minOccurs="0"/&gt;
  *         &lt;element name="RANK" type="{http://earthdawn.com/path}PATHRANK_type" maxOccurs="15"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="name" type="{http://earthdawn.com/datatypes}tierkind_type" default="auto" /&gt;
@@ -43,12 +44,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PATHTIER_type", namespace = "http://earthdawn.com/path", propOrder = {
     "optionaltalent",
+    "pathforeigntalents",
     "rank"
 })
 public class PATHTIERType {
 
     @XmlElement(name = "OPTIONALTALENT")
     protected List<TALENTABILITYType> optionaltalent;
+    @XmlElement(name = "PATHFOREIGNTALENTS")
+    protected PATHFOREIGNTALENTSType pathforeigntalents;
     @XmlElement(name = "RANK", required = true)
     protected List<PATHRANKType> rank;
     @XmlAttribute(name = "name")
@@ -81,6 +85,30 @@ public class PATHTIERType {
             optionaltalent = new ArrayList<TALENTABILITYType>();
         }
         return this.optionaltalent;
+    }
+
+    /**
+     * Gets the value of the pathforeigntalents property.
+     *
+     * @return
+     *     possible object is
+     *     {@link PATHFOREIGNTALENTSType }
+     *
+     */
+    public PATHFOREIGNTALENTSType getPATHFOREIGNTALENTS() {
+        return pathforeigntalents;
+    }
+
+    /**
+     * Sets the value of the pathforeigntalents property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link PATHFOREIGNTALENTSType }
+     *
+     */
+    public void setPATHFOREIGNTALENTS(PATHFOREIGNTALENTSType value) {
+        this.pathforeigntalents = value;
     }
 
     /**
