@@ -85,6 +85,17 @@ public class ApplicationProperties {
 		init();
 	}
 
+	public final static double getJavaVersion() {
+		String javaversionstring = System.getProperty("java.specification.version");
+		if( javaversionstring == null ) return 0;
+		try {
+			return Double.parseDouble(javaversionstring);
+		} catch(NumberFormatException e) {
+			System.err.println("can not parse '"+javaversionstring+"' as floating point number.");
+		}
+		return 0;
+	}
+
 	/**
 	 * Zugriff auf Applikations-Konstanten.
 	 *

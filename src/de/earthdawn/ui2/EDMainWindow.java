@@ -175,6 +175,9 @@ public class EDMainWindow {
 		});
 		refreshTabs();
 		JOptionPane.showMessageDialog(frame, NLS.getString("EDMainWindow.startHint.text")); //$NON-NLS-1$
+		if( ApplicationProperties.getJavaVersion() < 10 ) {
+			JOptionPane.showMessageDialog(frame, NLS.getString("EDMainWindow.deprecatedJavaVersion.text")); //$NON-NLS-1$
+		}
 	}
 
 	public EDCHARACTER getEDCharacter() {
