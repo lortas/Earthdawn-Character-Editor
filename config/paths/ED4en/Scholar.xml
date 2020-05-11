@@ -24,15 +24,15 @@
 		<RANK><!-- 4 -->
 			<TALENTABILITY/>
 			<DEFENSE kind="mystic"/>
-		</RANK> 
+		</RANK>
 	</TIER>
-        <TIER name="warden">
+	<TIER>
 		<OPTIONALTALENT name="Applied Knowledge"/>
 		<OPTIONALTALENT name="Evidence Analysis"/>
 		<RANK><!-- 5 -->
 			<TALENTABILITY/>
-                </RANK>
+		</RANK>
 	</TIER>
 	<KARMARITUAL>The Scholar influences on the adept’s Karma Ritual are subtle and just as often internal as they are external.</KARMARITUAL>
-	<HALFMAGIC>The adept can also use their Half-Magic to find other Scholars and know the history of Scholars. Additionally, the adept can use Perceptionbased Half-Magic for information regarding libraries and other academic institutions, and Charisma-based Half-Magic when interacting with the bureaucracy of a library and other academic institutions.</HALFMAGIC>	
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Scholars and know the history of Scholars. Additionally, the adept can use Perceptionbased Half-Magic for information regarding libraries and other academic institutions, and Charisma-based Half-Magic when interacting with the bureaucracy of a library and other academic institutions.</HALFMAGIC>
 </PATH>

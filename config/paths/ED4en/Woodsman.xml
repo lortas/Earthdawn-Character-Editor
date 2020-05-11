@@ -26,21 +26,21 @@
 		<RANK><!-- 4 -->
 			<TALENTABILITY/>
 			<DEFENSE kind="mystic"/>
-		</RANK> 
+		</RANK>
 	</TIER>
-        <TIER name="warden">
+	<TIER>
 		<OPTIONALTALENT name="Mystic Pursuit"/>
 		<OPTIONALTALENT name="Evidence Analysis"/>
 		<OPTIONALTALENT name="Lifesight"/>
 		<OPTIONALTALENT name="Safe Path"/>
 		<OPTIONALTALENT name="Wood Speak"/>
 		<OPTIONALTALENT name="Wood Walk"/>
-                <RANK><!-- 5 -->
+		<RANK><!-- 5 -->
 			<TALENTABILITY/>
-                </RANK>
+		</RANK>
 		<RANK><!-- 6 -->
 			<TALENTABILITY/>
-                        <DEFENSE kind="physical"/>
+			<DEFENSE kind="physical"/>
 		</RANK>
 		<RANK><!-- 7 -->
 			<TALENTABILITY/>
@@ -50,7 +50,7 @@
 			<INITIATIVE/>
 		</RANK>
 	</TIER>
-	<TIER name="master">
+	<TIER>
 		<OPTIONALTALENT name="Chameleon"/>
 		<OPTIONALTALENT name="Forest Sense"/>
 		<OPTIONALTALENT name="Plant Talk"/>
@@ -65,5 +65,5 @@
 		</RANK>
 	</TIER>
 	<KARMARITUAL>Woodsmen’s Karma Rituals incorporate the forest, protection, or elf culture in some way.</KARMARITUAL>
-	<HALFMAGIC>The adept can also use their Half-Magic to find other Woodsmen and know the history of Woodsmen. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of wood elemental spirits within 30 yards.</HALFMAGIC>	
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Woodsmen and know the history of Woodsmen. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of wood elemental spirits within 30 yards.</HALFMAGIC>
 </PATH>

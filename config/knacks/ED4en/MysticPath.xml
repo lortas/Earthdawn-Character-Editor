@@ -52,7 +52,28 @@
 		<DISCIPLINE circle="5"/>
 		<SKILL name="Knowledge" minrank="5" prerequisite="requirement" />
 	</KNACK>
-	<KNACK name="Tail Dancer" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500">
+	<KNACK name="Tail Dancer Ch’tard School" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+		<TALENT name="Melee Weapons" minrank="5" prerequisite="requirement"/>
+		<SKILL name="Artisan" limitation="Dancing" minrank="5" prerequisite="requirement" />
+		<RACE name="T'skrang" prerequisite="requirement"/>
+	</KNACK>
+	<KNACK name="Tail Dancer Edo School" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+		<TALENT name="Melee Weapons" minrank="5" prerequisite="requirement"/>
+		<SKILL name="Artisan" limitation="Dancing" minrank="5" prerequisite="requirement" />
+		<RACE name="T'skrang" prerequisite="requirement"/>
+	</KNACK>
+	<KNACK name="Tail Dancer Shiovoavara School" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500">
+		<BASE type="talent" name="Thread Weaving" minrank="5"/>
+		<DISCIPLINE circle="5"/>
+		<TALENT name="Melee Weapons" minrank="5" prerequisite="requirement"/>
+		<SKILL name="Artisan" limitation="Dancing" minrank="5" prerequisite="requirement" />
+		<RACE name="T'skrang" prerequisite="requirement"/>
+	</KNACK>
+	<KNACK name="Tail Dancer Skora School" attribute="na" action="na" blood="2" bookref="MP p.301" cost="500">
 		<BASE type="talent" name="Thread Weaving" minrank="5"/>
 		<DISCIPLINE circle="5"/>
 		<TALENT name="Melee Weapons" minrank="5" prerequisite="requirement"/>

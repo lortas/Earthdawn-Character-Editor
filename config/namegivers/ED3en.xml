@@ -129,7 +129,7 @@
 		<ARMOR name="natural Armor" weight="0" used="yes" location="self"/>
 		<WOUND threshold="0"/>
 		<WEAPONSIZERESTRICTION/>
-		<TALENT name="Versatility"/>		
+		<TALENT name="Versatility"/>
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Human with accent" speak="skill"/>
 	</NAMEGIVER>
@@ -332,7 +332,7 @@
 		<WOUND threshold="0"/>
 		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Low-Light Vision</ABILITY>
-		<ORIGIN>Cathay</ORIGIN>		
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="skill" readwrite="skill"/>
 		<!-- get only one free Rang for speak language and read/write language (Cathayan respective dialect) -->
 	</NAMEGIVER>
@@ -347,7 +347,7 @@
 		<WOUND threshold="0"/>
 		<WEAPONSIZERESTRICTION/>
 		<ABILITY>Prehensile Tail</ABILITY>
-		<ORIGIN>Cathay</ORIGIN>		
+		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Cathayan respective dialect" speak="skill" readwrite="skill"/>
 		<!-- get only one free Rang for speak language and read/write language (Cathayan respective dialect) -->
 	</NAMEGIVER>
