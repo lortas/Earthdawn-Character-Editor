@@ -146,12 +146,16 @@ public class CharacteristicStatus {
 		root.put("EXPERIENCE", node);
 
 		node = new TreeMap<String,Object>();
+		String passion=character.getPassion();
+		if( passion==null || passion.isEmpty() ) {
+			node.put( "passion", "-" );
+		} else {
+			node.put( "passion", passion );
+		}
 		DEVOTIONType devotionPoints = character.getDevotionPoints();
 		if( devotionPoints == null ) {
-			node.put( "passion", "na" );
 			node.put( "value", "-" );
 		} else {
-			node.put( "passion", devotionPoints.getPassion() );
 			node.put( "value", devotionPoints.getValue() );
 		}
 		root.put("DEVOTION", node);

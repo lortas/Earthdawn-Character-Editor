@@ -71,7 +71,7 @@ public class EDDevotionPoints extends JPanel {
 		}
 		String passion=character.getPassion();
 		int pos=QuestorNames.length-1;
-		while( pos>0 && ! QuestorNames[pos].equals(passion) ) pos--;
+		while( !( pos<0 || QuestorNames[pos].equals(passion) ) ) pos--;
 		// The ComboBox Itemes are headed with an empty string, so the pos is +1
 		// In case of no match the pos ends with -1 and we chose the empty string.
 		FieldPassion.setSelectedIndex(pos+1);
