@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QUESTOR passion="Vestrial" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawnquestor.xsd">
+	<DEVOTION name="Questor" limitation="Vestrial"/>
+	<TIER>
+		<RANK>
+			<DEVOTIONABILITY/>
+		</RANK>
+	</TIER>
+	<IDEAL></IDEAL>
+	<DEVOTIONBENEFITEXAMPLE></DEVOTIONBENEFITEXAMPLE>
+</QUESTOR>
