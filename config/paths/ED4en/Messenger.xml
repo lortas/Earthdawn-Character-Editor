@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Messenger " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Messenger </NEEDEDKNACK>
+<PATH name="Messenger" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Messenger</NEEDEDKNACK>
 	<TALENT name="Messenger " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Book Memory"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Etiquette"/>
+		<OPTIONALTALENT name="Read and Write Language"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<RANK><!-- 1 -->
+			<TALENTABILITY/> 
+		</RANK>
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>
+		<RANK><!-- 3 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Orbiting Spy"/>
+		<OPTIONALTALENT name="Power Mask"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Spirit Mount"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+		<RANK><!-- 6 -->
+			<TALENTABILITY/>
+                        <DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 7 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 8 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
+	<TIER name="master">
+		<OPTIONALTALENT name="Astral Pocket"/>
+		<OPTIONALTALENT name="Netherwalk"/>
+		<OPTIONALTALENT name="Safe Thought"/>
+		<OPTIONALTALENT name="Thought Link"/>
+		<RANK><!-- 9 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>
+		<RANK><!-- 10 -->
+			<TALENTABILITY/>
+			<INITIATIVE/>
+		</RANK>
+	</TIER>
+	<KARMARITUAL>Messenger Karma Rituals are subtly changed, often only noticeable to those closest to the Messenger and other Messengers. Travel is the typical change, with anything else being entirely in how the adept perceives their Karma Ritual.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Messengers and know the history of Messengers. Additionally, the adept can use Perceptionbased Half-Magic for information regarding trade routes or travel perils through an area, and Charisma-based Half-Magic to find transportation.</HALFMAGIC>
 </PATH>

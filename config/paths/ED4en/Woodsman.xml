@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Woodsman " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Woodsman </NEEDEDKNACK>
-	<TALENT name="Woodsman " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
+<PATH name="Woodsman" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Woodsman</NEEDEDKNACK>
+	<TALENT name="Woodsman" tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Anticipate Blow"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Climbing"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Great Leap"/>
+		<OPTIONALTALENT name="Guardian’s Service"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Tracking"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<OPTIONALTALENT name="Wood Skin"/>
+		<RANK><!-- 1 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Mystic Pursuit"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<OPTIONALTALENT name="Lifesight"/>
+		<OPTIONALTALENT name="Safe Path"/>
+		<OPTIONALTALENT name="Wood Speak"/>
+		<OPTIONALTALENT name="Wood Walk"/>
+                <RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+		<RANK><!-- 6 -->
+			<TALENTABILITY/>
+                        <DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 7 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 8 -->
+			<TALENTABILITY/>
+			<INITIATIVE/>
+		</RANK>
+	</TIER>
+	<TIER name="master">
+		<OPTIONALTALENT name="Chameleon"/>
+		<OPTIONALTALENT name="Forest Sense"/>
+		<OPTIONALTALENT name="Plant Talk"/>
+		<OPTIONALTALENT name="Vine Armor"/>
+		<RANK><!-- 9 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK>
+		<RANK><!-- 10 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
+	<KARMARITUAL>Woodsmen’s Karma Rituals incorporate the forest, protection, or elf culture in some way.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Woodsmen and know the history of Woodsmen. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of wood elemental spirits within 30 yards.</HALFMAGIC>	
 </PATH>

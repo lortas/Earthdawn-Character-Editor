@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Outcast " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Outcast </NEEDEDKNACK>
-	<TALENT name="Outcast " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
+<PATH name="Outcast" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Outcast</NEEDEDKNACK>
+	<TALENT name="Outcast " tier="journeyman"/><!-- learned talent with knack on Rank1. The max rank is 5. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Battle Shout"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Fireblood"/>
+		<OPTIONALTALENT name="Iron Constitution"/>
+		<OPTIONALTALENT name="Rite of Kho’pesh"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<RANK><!-- 1 -->
+			<TALENTABILITY/>
+                </RANK>
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>
+		<RANK><!-- 3 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Temper Flesh"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+	</TIER>
+	<KARMARITUAL>Most Outcasts’ Karma Rituals do not change upon their Severing.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Outcasts and know the history of Outcasts. Additionally, the adept can use Half-Magic to maintain and repair damage to their equipment, such as patching clothes, repairing a fishing net, or damage caused to their armor and weapons.</HALFMAGIC>	
 </PATH>

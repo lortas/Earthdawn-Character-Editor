@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Scholar " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+<PATH name="Scholar" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
 	<NEEDEDKNACK>Scholar </NEEDEDKNACK>
-	<TALENT name="Scholar " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
+	<TALENT name="Scholar" tier="journeyman"/><!-- learned talent with knack on Rank1. The max rank is 5. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Arcane Mutterings"/>
+		<OPTIONALTALENT name="Expansive Expertise"/>
+		<OPTIONALTALENT name="Book Memory"/>
+		<OPTIONALTALENT name="Conversation"/>
+		<OPTIONALTALENT name="Item History"/>
+		<OPTIONALTALENT name="Read and Write Language"/>
+		<OPTIONALTALENT name="Research"/>
+		<OPTIONALTALENT name="Speak Language"/>
+		<RANK><!-- 1 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Applied Knowledge"/>
+		<OPTIONALTALENT name="Evidence Analysis"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+	</TIER>
+	<KARMARITUAL>The Scholar influences on the adept’s Karma Ritual are subtle and just as often internal as they are external.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Scholars and know the history of Scholars. Additionally, the adept can use Perceptionbased Half-Magic for information regarding libraries and other academic institutions, and Charisma-based Half-Magic when interacting with the bureaucracy of a library and other academic institutions.</HALFMAGIC>	
 </PATH>

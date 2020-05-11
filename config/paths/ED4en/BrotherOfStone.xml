@@ -28,7 +28,7 @@
 			<DEFENSE kind="physical"/>
 		</RANK>
 	</TIER>
-	<TIER>
+	<TIER name="warden">
 		<OPTIONALTALENT name="Earth Skin"/>
 		<OPTIONALTALENT name="Earth Speak"/>
 		<OPTIONALTALENT name="Earth Walk"/>
@@ -50,7 +50,7 @@
 			<RECOVERYTESTPERDAY/>
 		</RANK>
 	</TIER>
-	<TIER>
+	<TIER name="master">
 		<OPTIONALTALENT name="Relentless Recovery"/>
 		<OPTIONALTALENT name="Resist Pain"/>
 		<OPTIONALTALENT name="Unflinching Fortitude"/>
@@ -65,5 +65,5 @@
 		</RANK>
 	</TIER>
 	<KARMARITUAL>Brothers of Stone conduct their Karma Rituals while in contact with earth or stone and connect with their brotherhood while doing so.</KARMARITUAL>
-	<HALFMAGIC>The adept can also use their Half-Magic to find other Brothers of Stone and know the history of Brothers of Stone. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of earth elemental spirits within 30 yards. The Difficulty Number for sensing an earth elemental spirit is the spirits Mystic Defense. If the test succeeds, the adept can sense the presence of the earth elemental spirit and can use spells or talents to communicate and interact with it. The gamemaster may choose to make this Half-Magic test on behalf of a Brother of Stone at any time, as this innate sense is always active.</HALFMAGIC>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Brothers of Stone and know the history of Brothers of Stone. Additionally, the adept can make a Perception-based Half-Magic test to detect the presence of earth elemental spirits within 30 yards.</HALFMAGIC>
 </PATH>
