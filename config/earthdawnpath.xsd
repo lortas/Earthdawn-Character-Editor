@@ -14,10 +14,15 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="ABILITY" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
+        <xs:complexType name="PATHFOREIGNTALENTS_type">
+		<xs:attribute name="maxcircle" type="edt:circle_type" default="1"/>
+		<xs:attribute name="mincircle" type="edt:circle_type" default="1"/>
+	</xs:complexType>
 	<xs:complexType name="PATHTIER_type">
 		<xs:annotation><xs:documentation>The path ranks are grouped by tiers</xs:documentation></xs:annotation>
 		<xs:sequence maxOccurs="1" minOccurs="1">
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="OPTIONALTALENT" type="edt:TALENTABILITY_type"/>
+                        <xs:element minOccurs="0" maxOccurs="1" name="PATHFOREIGNTALENTS" type="PATHFOREIGNTALENTS_type"/>
 			<xs:element minOccurs="1" maxOccurs="15" name="RANK" type="PATHRANK_type"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="edt:tierkind_type" default="auto">
