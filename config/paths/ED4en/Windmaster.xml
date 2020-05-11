@@ -28,7 +28,7 @@
 			<DEFENSE kind="mystic"/>
 		</RANK>
 	</TIER>
-	<TIER>
+	<TIER name="warden">
 		<OPTIONALTALENT name="Air Dance"/>
 		<OPTIONALTALENT name="Dive Attack"/>
 		<OPTIONALTALENT name="Leadership"/>
@@ -50,7 +50,7 @@
 			<RECOVERYTESTPERDAY/>
 		</RANK>
 	</TIER>
-	<TIER>
+	<TIER name="master">
 		<OPTIONALTALENT name="Relentless Recovery"/>
 		<OPTIONALTALENT name="Critical Hit"/>
 		<OPTIONALTALENT name="Defensive Posture"/>

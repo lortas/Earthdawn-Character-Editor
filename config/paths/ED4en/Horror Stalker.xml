@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Horror Stalker " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Horror Stalker </NEEDEDKNACK>
+<PATH name="Horror Stalker" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Horror Stalker</NEEDEDKNACK>
 	<TALENT name="Horror Stalker " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Bear Mark"/>
+		<OPTIONALTALENT name="Call of Harrow"/>
+		<OPTIONALTALENT name="Danger Sense"/>
+		<OPTIONALTALENT name="Mystic Pursuit"/>
+		<OPTIONALTALENT name="Research"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Suppress Curse"/>
+		<OPTIONALTALENT name="Steel Thought"/>
+		<RANK><!-- 1 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Bane Strike"/>
+		<OPTIONALTALENT name="Gaze into the Abyss"/>
+		<OPTIONALTALENT name="Lion Heart"/>
+		<OPTIONALTALENT name="Purge Karma"/>
+		<OPTIONALTALENT name="Sense Horrorspawn"/>
+		<OPTIONALTALENT name="True Sight"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 6 -->
+			<TALENTABILITY/>
+                        <DEFENSE kind="mystic"/>
+		</RANK>
+		<RANK><!-- 7 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 8 -->
+			<TALENTABILITY/>
+			<ARMOR name="additional path bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		</RANK>
+	</TIER>
+	<TIER name="master">
+		<OPTIONALTALENT name="Life Check"/>
+		<OPTIONALTALENT name="Netherwalk"/>
+		<OPTIONALTALENT name="Relentless Recovery"/>
+		<OPTIONALTALENT name="Unflinching Fortitude"/>
+		<RANK><!-- 9 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 10 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
+	<KARMARITUAL>Horror Stalkers’ Karma Rituals incorporate their sworn hunt in some way, whether the search for information about them, memories of those lost to them, or their active quest to destroy them.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Horror Stalkers and know the history of Horror Stalkers. Additionally, the adept can use Perception-based Half-Magic in place of any Horror Lore tests.</HALFMAGIC>
 </PATH>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PATH name="Tail Dancer (Ch’tard School)" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Tail Dancer</NEEDEDKNACK>
+	<TALENT name="Tail Dancer" tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
+	<TIER name="journeyman">
+		<OPTIONALTALENT name="Acrobatic Defense"/>
+		<OPTIONALTALENT name="Dance Partner"/>
+		<OPTIONALTALENT name="Impressive Display"/>
+		<OPTIONALTALENT name="Maneuver"/>
+		<OPTIONALTALENT name="Tail Dance"/>
+		<OPTIONALTALENT name="Tail Spike"/>
+		<OPTIONALTALENT name="Tiger Spring"/>
+		<OPTIONALTALENT name="Unarmed Combat"/>
+		<OPTIONALTALENT name="Wound Balance"/>
+		<OPTIONALTALENT name="Surprise Strike"/>
+                <RANK><!-- 1 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Engaging Dance"/>
+		<OPTIONALTALENT name="Graceful Exit"/>
+		<OPTIONALTALENT name="Spot Armor Flaw"/>
+		<OPTIONALTALENT name="Swift Kick"/>
+		<OPTIONALTALENT name="Ch’tard Dance"/>
+		<OPTIONALTALENT name="Cobra Strike"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+		<RANK><!-- 6 -->
+			<TALENTABILITY/>
+                        <DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 7 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 8 -->
+			<TALENTABILITY/>
+			<INITIATIVE/>
+		</RANK>
+	</TIER>
+	<TIER name="master">
+		<OPTIONALTALENT name="Champion Challenge"/>
+		<OPTIONALTALENT name="Critical Hit"/>
+		<OPTIONALTALENT name="Ch’tard Pierce"/>
+		<OPTIONALTALENT name="Momentum Attack"/>
+		<RANK><!-- 9 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>
+		<RANK><!-- 10 -->
+			<TALENTABILITY/>
+			<INITIATIVE/>
+		</RANK>
+	</TIER>
+	<KARMARITUAL>Tail Dancers’ Karma Rituals incorporate dancing and a partner. Combat involving their tail is common, though not universal.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Tail Dancers and know the history of Tail Dancers. Additionally, the adept can use Dexterity-based Half-Magic in place of Dancing tests and Perception-based Half-Magic in place of any Dancing-related knowledge tests.</HALFMAGIC>	
+</PATH>

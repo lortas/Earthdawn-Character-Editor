@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Liberator " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Liberator </NEEDEDKNACK>
+<PATH name="Liberator" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Liberator</NEEDEDKNACK>
 	<TALENT name="Liberator " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Air Speaking"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Disguise Self"/>
+		<OPTIONALTALENT name="Empathic Sense"/>
+		<OPTIONALTALENT name="Heartening Laugh"/>
+		<OPTIONALTALENT name="Lock Picking"/>
+		<OPTIONALTALENT name="Picking Pockets"/>
+		<OPTIONALTALENT name="Sense Captive"/>
+		<OPTIONALTALENT name="Stealthy Stride"/>
+		<OPTIONALTALENT name="Tyranny’s Ruin"/>
+		<RANK><!-- 1 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Conceal Object"/>
+		<OPTIONALTALENT name="Inspire Others"/>
+		<OPTIONALTALENT name="Leadership"/>
+		<OPTIONALTALENT name="Power Masek"/>
+		<OPTIONALTALENT name="Resist Taunt"/>
+		<OPTIONALTALENT name="Shout of Justice"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+		<RANK><!-- 6 -->
+			<TALENTABILITY/>
+                        <DEFENSE kind="physical"/>
+		</RANK>
+		<RANK><!-- 7 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 8 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
+	<TIER name="master">
+		<OPTIONALTALENT name="Escape Plan"/>
+		<OPTIONALTALENT name="Liberation"/>
+		<OPTIONALTALENT name="Safe Thought"/>
+		<OPTIONALTALENT name="Thought Link"/>
+		<RANK><!-- 9 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="social"/>
+		</RANK>
+		<RANK><!-- 10 -->
+			<TALENTABILITY/>
+			<RECOVERYTESTPERDAY/>
+		</RANK>
+	</TIER>
+	<KARMARITUAL>Liberators’ Karma Rituals incorporate an expression of freedom, whether their own or giving it to another.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Liberators and know the history of Liberators. Additionally, the adept can use Perceptionbased Half-Magic for information regarding famous tyrants, oppressive regimes, slavers and slavery, common tactics and ploys of them, and resistance fighters.</HALFMAGIC>
 </PATH>

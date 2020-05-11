@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<PATH name="Purifier " lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Purifier </NEEDEDKNACK>
-	<TALENT name="Purifier " tier="master"/><!-- learned talent with knack on Rank1. The max rank is 10. -->
+<PATH name="Purifier" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
+	<NEEDEDKNACK>Purifier</NEEDEDKNACK>
+	<TALENT name="Purifier " tier="journeyman"/><!-- learned talent with knack on Rank1. The max rank is 5. -->
 	<TIER name="journeyman">
-		<RANK>
+		<OPTIONALTALENT name="Astral Sight"/>
+		<OPTIONALTALENT name="Awareness"/>
+		<OPTIONALTALENT name="Blood Share"/>
+		<OPTIONALTALENT name="Cold Purify"/>
+		<OPTIONALTALENT name="Earth Bond"/>
+		<OPTIONALTALENT name="Elemental Hold"/>
+		<OPTIONALTALENT name="Elemental Tongues"/>
+		<OPTIONALTALENT name="Wilderness Survival"/>
+		<RANK><!-- 1 -->
 			<TALENTABILITY/>
 		</RANK>
-	</TIER>	
+		<RANK><!-- 2 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+                </RANK>
+		<RANK><!-- 3 -->
+			<TALENTABILITY/>
+		</RANK>
+		<RANK><!-- 4 -->
+			<TALENTABILITY/>
+			<DEFENSE kind="mystic"/>
+		</RANK> 
+	</TIER>
+        <TIER name="warden">
+		<OPTIONALTALENT name="Lifesight"/>
+		<OPTIONALTALENT name="Purification"/>
+		<RANK><!-- 5 -->
+			<TALENTABILITY/>
+                </RANK>
+	</TIER>
+	<KARMARITUAL>Purifiers’ Karma Rituals incorporate themes of healing, purification, or retribution against harm caused to the world.</KARMARITUAL>
+	<HALFMAGIC>The adept can also use their Half-Magic to find other Purifiers and know the history of Purifiers. Additionally, the adept can use Half-Magic to recognize environmental destruction caused by Horrors, Namegivers, and other “unnatural” causes, know how to preserve and restore destruction, and perform mundane preservation and restoration activities.</HALFMAGIC>	
 </PATH>
