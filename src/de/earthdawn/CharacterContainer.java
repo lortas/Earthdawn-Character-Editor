@@ -1931,30 +1931,31 @@ public class CharacterContainer extends CharChangeRefresh {
 		Map<ATTRIBUTENameType, ATTRIBUTEType> attributes = getAttributes();
 		ATTRIBUTEType strength = attributes.get(ATTRIBUTENameType.STR);
 		ATTRIBUTEType dexterity = attributes.get(ATTRIBUTENameType.DEX);
-		int modStr=Math.round( (float)(strength.getCurrentvalue()-strength.getRacevalue()) / 3f );
-		int modDex=Math.round( (float)(dexterity.getCurrentvalue()-dexterity.getRacevalue()) / 3f );
+		// If you distribute the attributes buy points equal over all attributes you end with
+		// half of them +4 and half of the +3. So we reduce the difference of race value and
+		// current value by 3.5, that you end on average distrubution on a movement modifier of 0.
+		float modStr=((float)(strength.getCurrentvalue()-strength.getRacevalue())-3.5f) / 3f;
+		float modDex=((float)(dexterity.getCurrentvalue()-dexterity.getRacevalue())-3.5f) / 3f;
+		int movmod=0;
 		switch(OptionalRule_AttributeBasedMovement) {
 		case DEX:
-			movementGround+=modDex;
-			if(movementFlight>0) movementFlight+=modDex;
+			movmod=Math.round(modDex);
 			break;
 		case STR:
-			movementGround+=modStr;
-			if(movementFlight>0) movementFlight+=modStr;
+			movmod=Math.round(modStr);
 			break;
 		case STR_DEX:
-			int av=Math.round((modDex+modStr)/2f);
-			movementGround+=av;
-			if(movementFlight>0) movementFlight+=av;
+			movmod=Math.round((modDex+modStr)/2f);
 			break;
 		case MAX:
-			int max=(modDex>modStr)?modDex:modStr;
-			movementGround+=max;
-			if(movementFlight>0) movementFlight+=max;
+			movmod=Math.round((modDex>modStr)?modDex:modStr);
 			break;
 		case NA:
+			movmod=0;
 			break;
 		}
+		movementGround+=movmod;
+		if(movementFlight>0) movementFlight+=movmod;
 		MOVEMENTType movement = getMovement();
 		movement.setFlight(movementFlight);
 		movement.setGround(movementGround);
