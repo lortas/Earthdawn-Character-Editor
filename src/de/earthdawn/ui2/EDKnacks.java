@@ -1,10 +1,7 @@
 package de.earthdawn.ui2;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.List;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -25,13 +22,10 @@ import javax.imageio.ImageIO;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
-import de.earthdawn.data.KNACKBASEType;
 import de.earthdawn.data.LAYOUTSIZESType;
 import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.RulesetversionType;
 import de.earthdawn.data.KNACKBASECAPABILITYType;
-import de.earthdawn.TalentsContainer;
-import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.CapabilitytypeType;
 import de.earthdawn.data.KNACKATTRIBUTEType;
 import de.earthdawn.data.KNACKCAPABILITYType;
@@ -178,23 +172,16 @@ class KnacksTableModel extends AbstractTableModel {
 		for( TALENTType talent : talents ) {
 			String talentname=talent.getName();
 			int talentrank=talent.getRANK().getRank();
-			// In ED3 discipline talents get knacks 2 ranks earlier.
+			// In ED3 discipline talents get knacks 2 ranks earlier, so we treat the rank as it is a rank+2
 			if( isdisciplinetalent && character.getRulesetversion().equals(RulesetversionType.ED_3) ) talentrank += 2;
 			String[] talentlimitations = talent.getLIMITATION().toArray(new String[0]);
 			if( talentlimitations.length == 0 ) {
 				talentlimitations=new String[]{""};
 			}
 			for( String limitation : talentlimitations ) {
-				for( KNACKDEFINITIONType knack : PROPERTIES.getTalentKnacks(talentname,limitation) ) {
-					boolean match=false;
-					for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
-						if( ! base.getType().equals(CapabilitytypeType.TALENT) ) continue;
-						if( ! base.getName().equals(talentname) ) continue;
-						if( ! ( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) ) continue;
-						if( base.getMinrank() >= talentrank ) continue;
-						match=true;
-					}
-					if( ! match ) continue;
+				for( KNACKDEFINITIONType knack : PROPERTIES.getTalentKnacks(talentname,limitation,talentrank) ) {
+					boolean match=true;
+					if( knack.getATTRIBUTE().size() > 0  ) match=false;
 					for( KNACKATTRIBUTEType attr : knack.getATTRIBUTE() ) {
 						int step=character.getAttributes().get(attr.getName()).getCurrentvalue();
 						if( step < attr.getMin() ) match=false;

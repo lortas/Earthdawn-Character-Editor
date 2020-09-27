@@ -364,22 +364,22 @@ public class ApplicationProperties {
 		return knacks;
 	}
 
-	public List<KNACKDEFINITIONType> getKnacks(CapabilitytypeType type, String name, String limitation) {
+	public List<KNACKDEFINITIONType> getKnacks(CapabilitytypeType type, String name, String limitation, int rank) {
 		List<KNACKDEFINITIONType> knacks = new ArrayList<>();
 		for( KNACKDEFINITIONType knack : getKnacks() ) {
 			for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
 				if( ! base.getType().equals(type) ) continue;
 				if( ! base.getName().equals(name) ) continue;
-				if( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) {
-					knacks.add(knack);
-				}
+				if( ! ( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) ) continue;
+				if( rank < base.getMinrank() ) continue;
+				knacks.add(knack);
 			}
 		}
 		return knacks;
 	}
 
-	public List<KNACKDEFINITIONType> getTalentKnacks(String talent,String limitation) {
-		return getKnacks(CapabilitytypeType.TALENT,talent,limitation);
+	public List<KNACKDEFINITIONType> getTalentKnacks(String talent,String limitation, int rank) {
+		return getKnacks(CapabilitytypeType.TALENT,talent,limitation,rank);
 	}
 
 	// Liefert die Definition aller verfügbarer Zauber zurück.
