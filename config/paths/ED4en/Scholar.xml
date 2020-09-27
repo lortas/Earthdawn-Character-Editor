@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <PATH name="Scholar" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/path" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/path ../../earthdawnpath.xsd">
-	<NEEDEDKNACK>Scholar </NEEDEDKNACK>
+	<NEEDEDKNACK>Scholar</NEEDEDKNACK>
 	<TALENT name="Scholar" tier="journeyman"/><!-- learned talent with knack on Rank1. The max rank is 5. -->
 	<TIER name="journeyman">
 		<OPTIONALTALENT name="Arcane Mutterings"/>
