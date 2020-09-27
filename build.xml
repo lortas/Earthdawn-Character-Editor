@@ -123,12 +123,21 @@
 		</jar>
 	</target>
 
-	<target name="run" depends="jar" description="--> ECE starten">
+	<target name="run" depends="jar" description="--> ECE für ED4de starten">
 		<java jar="${jar.file}" fork="true">
 			<arg value="--rulesetversion"/>
 			<arg value="ED4"/>
 			<arg value="--language"/>
 			<arg value="de"/>
+		</java>
+	</target>
+
+	<target name="runED4en" depends="jar" description="--> ECE für ED4en starten">
+		<java jar="${jar.file}" fork="true">
+			<arg value="--rulesetversion"/>
+			<arg value="ED4"/>
+			<arg value="--language"/>
+			<arg value="en"/>
 		</java>
 	</target>
 
