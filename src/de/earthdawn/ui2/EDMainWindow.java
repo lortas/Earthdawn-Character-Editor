@@ -82,6 +82,8 @@ import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.event.CharChangeEventListener;
 import java.awt.event.InputEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.zip.DataFormatException;
 
 public class EDMainWindow {
@@ -948,10 +950,10 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException | DocumentException e) {
+			} catch (DataFormatException|IOException|DocumentException e) {
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -961,13 +963,10 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			try {
 				new ECEPdfExporter().exportSpellcards(character.getEDCHARACTER(), selFile, version);
-			} catch (DocumentException e) {
+			} catch (DataFormatException|IOException|DocumentException e) {
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -981,9 +980,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -997,9 +996,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1013,9 +1012,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1029,9 +1028,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1041,15 +1040,9 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			try {
 				writeToJson(selFile);
-			} catch (IOException e) {
+			} catch (JSONException|JAXBException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (JAXBException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (JSONException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1061,7 +1054,7 @@ public class EDMainWindow {
 				writeToGson(selFile);
 			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1077,7 +1070,7 @@ public class EDMainWindow {
 				}
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1134,12 +1127,9 @@ public class EDMainWindow {
 			copyCharacterAdditionalFiles(tmpfile.getParentFile());
 			Desktop desktop = Desktop.getDesktop();
 			desktop.browse(tmpfile.toURI());
-		} catch (IOException e) {
+		} catch (Exception e) {
 			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-			e.printStackTrace();
-		} catch(Exception e) {
-			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-			e.printStackTrace();
+			Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
 
