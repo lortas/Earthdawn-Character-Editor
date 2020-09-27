@@ -26,6 +26,7 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.LanguageType;
 import de.earthdawn.data.RulesetversionType;
 import de.earthdawn.ui2.EDMainWindow;
+import java.util.zip.DataFormatException;
 
 public class EarthdawnCharacterEditor {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
@@ -50,14 +51,9 @@ public class EarthdawnCharacterEditor {
 				System.out.println("Read character from "+infile.getCanonicalPath());
 				try {
 					ec=new CharacterContainer(infile);
-				} catch( RuntimeException e) {
-					if( e.getMessage().contains("has wrong Rulesetversion") ) {
-						ec=new CharacterContainer();
-					} else if( e.getMessage().contains("has wrong language") ) {
-						ec=new CharacterContainer();
-					} else {
-						throw(e);
-					}
+				} catch( DataFormatException e) {
+					System.out.println("Character was not compatible: "+e.getLocalizedMessage());
+					ec=new CharacterContainer();
 				}
 				String name=ec.getName();
 				if( name==null || name.isEmpty() ) {
