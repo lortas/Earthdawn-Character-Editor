@@ -82,6 +82,7 @@ import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.event.CharChangeEventListener;
 import java.awt.event.InputEvent;
+import java.util.zip.DataFormatException;
 
 public class EDMainWindow {
 
@@ -157,7 +158,7 @@ public class EDMainWindow {
 	/**
 	 * Create the application.
 	 */
-	public EDMainWindow(EDCHARACTER ec) {
+	public EDMainWindow(EDCHARACTER ec) throws DataFormatException {
 		this(new CharacterContainer(ec));
 	}
 
@@ -897,7 +898,7 @@ public class EDMainWindow {
 				character = new CharacterContainer(selFile);
 				//TODO: Besserer Umgang mit Fehlern
 			}
-			catch(IOException | JAXBException | ParserConfigurationException | SAXException | TransformerException e){
+			catch(IOException | JAXBException | ParserConfigurationException | SAXException | TransformerException | DataFormatException e){
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			}
 			new ECEWorker(character).verarbeiteCharakter();
@@ -947,11 +948,8 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (DocumentException e) {
+			} catch (IOException | DocumentException e) {
 				// TODO Auto-generated catch block
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 				e.printStackTrace();
 			}
@@ -1171,11 +1169,15 @@ public class EDMainWindow {
 				OptionDialog_YesNoOptions,
 				OptionDialog_YesNoOptions[0]);
 		if( a != 0 ) return;
+		try {
+			EDCHARACTER newedchar = new EDCHARACTER();
+			newedchar.setRulesetversion(PROPERTIES.getRulesetLanguage().getRulesetversion());
+			newedchar.setLang(PROPERTIES.getRulesetLanguage().getLanguage());
+			character = new CharacterContainer(newedchar);
+		} catch (DataFormatException ex) {
+			throw new RuntimeException(ex);
+		}
 		file = null;
-		EDCHARACTER newedchar = new EDCHARACTER();
-		newedchar.setRulesetversion(PROPERTIES.getRulesetLanguage().getRulesetversion());
-		newedchar.setLang(PROPERTIES.getRulesetLanguage().getLanguage());
-		character = new CharacterContainer(newedchar);
 		new ECEWorker(character).verarbeiteCharakter();
 		character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override

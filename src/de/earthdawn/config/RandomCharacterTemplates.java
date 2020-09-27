@@ -27,6 +27,7 @@ import java.util.TreeMap;
 import de.earthdawn.CharacterContainer;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.data.*;
+import java.util.zip.DataFormatException;
 
 public class RandomCharacterTemplates {
 
@@ -68,7 +69,12 @@ public class RandomCharacterTemplates {
 	public CharacterContainer generateRandomCharacter(String templateName) {
 		EDRANDOMCHARACTERTEMPLATE template = get(templateName);
 		if( template == null ) return null;
-		CharacterContainer character = new CharacterContainer(new EDCHARACTER());
+		CharacterContainer character;
+		try {
+			character = new CharacterContainer(new EDCHARACTER());
+		} catch (DataFormatException ex) {
+			throw new RuntimeException(ex);
+		}
 		new ECEWorker(character.getEDCHARACTER()).verarbeiteCharakter();
 		character.setRandomName();
 		APPEARANCEType appearance = character.getAppearance();

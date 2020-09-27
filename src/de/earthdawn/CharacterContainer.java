@@ -63,6 +63,7 @@ import de.earthdawn.event.CharChangeRefresh;
 import de.earthdawn.namegenerator.NameGenerator;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.zip.DataFormatException;
 
 public class CharacterContainer extends CharChangeRefresh {
 	private EDCHARACTER character = null;
@@ -88,17 +89,17 @@ public class CharacterContainer extends CharChangeRefresh {
 		character.setLang(PROPERTIES.getRulesetLanguage().getLanguage());
 	}
 
-	public CharacterContainer(EDCHARACTER c) {
+	public CharacterContainer(EDCHARACTER c) throws DataFormatException {
 		character = c;
 		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
-			throw new RuntimeException("The character '"+character.getName()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+			throw new DataFormatException("The character '"+character.getName()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
 		}
 		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
-			throw new RuntimeException("The character '"+character.getName()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+			throw new DataFormatException("The character '"+character.getName()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
 		}
 	}
 
-	public CharacterContainer(File xmlfile) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException {
+	public CharacterContainer(File xmlfile) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException, DataFormatException {
 		// XML-Daten einlesen
 		byte[] xmldata = new byte[(int) xmlfile.length()];
 		FileInputStream xmlInputStream = new FileInputStream(xmlfile);
@@ -106,20 +107,20 @@ public class CharacterContainer extends CharChangeRefresh {
 		xmlInputStream.close();
 		this.character=readCharacterFromXml(xmldata);
 		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
-			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+			throw new DataFormatException("The file '"+xmlfile.getCanonicalPath()+"' has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
 		}
 		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
-			throw new RuntimeException("The file '"+xmlfile.getCanonicalPath()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+			throw new DataFormatException("The file '"+xmlfile.getCanonicalPath()+"' has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
 		}
 	}
 
-	public CharacterContainer(byte[] xmldata) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException {
+	public CharacterContainer(byte[] xmldata) throws IOException, JAXBException, ParserConfigurationException, SAXException, TransformerException, DataFormatException {
 		this.character=readCharacterFromXml(xmldata);
 		if( ! PROPERTIES.getRulesetLanguage().getRulesetversion().equals(character.getRulesetversion()) ) {
-			throw new RuntimeException("The character xml has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
+			throw new DataFormatException("The character xml has wrong Rulesetversion: '"+character.getRulesetversion().value()+"' != '"+PROPERTIES.getRulesetLanguage().getRulesetversion()+"'");
 		}
 		if( ! PROPERTIES.getRulesetLanguage().getLanguage().equals(character.getLang()) ) {
-			throw new RuntimeException("The character xml has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
+			throw new DataFormatException("The character xml has wrong language: '"+character.getLang().value()+"' != '"+PROPERTIES.getRulesetLanguage().getLanguage()+"'");
 		}
 	}
 
