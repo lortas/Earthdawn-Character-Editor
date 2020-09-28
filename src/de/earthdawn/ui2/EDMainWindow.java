@@ -1121,7 +1121,7 @@ public class EDMainWindow {
 		}
 		try {
 			String name = character.getName();
-			if( name == null ) name = "noname";
+			if( name == null || name.isEmpty() ) name = "noname";
 			File tmpfile = File.createTempFile(name.replaceAll(" ", "_"), ".xml");
 			writeToXml(tmpfile);
 			copyCharacterAdditionalFiles(tmpfile.getParentFile());
