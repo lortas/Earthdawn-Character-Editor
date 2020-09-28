@@ -1,9 +1,17 @@
 #!/usr/bin/ruby
 
 require 'rexml/document'
+require 'csv'
 
 alltalents={}
 alldisciplines=[]
+Dir["capabilities/ED4de/*.xml"].each do |filename|
+  file = File.new(filename)
+  doc = REXML::Document.new(file)
+  doc.root.elements.each("./TALENT") do |talent|
+    alltalents[talent["name"]]={properties: {attribute: talent["attribute"], action: talent["action"], strain: talent["strain"]||0, skilluse: talent["skilluse"]||0}}
+  end
+end
 
 Dir["disciplines/ED4de/*.xml"].each do |filename|
   file = File.new(filename)
@@ -63,16 +71,24 @@ text-align: center;
 \t<thead>
 \t<tr>
 \t\t<td class="HeaderCell">Talent</td>
+\t\t<td class="HeaderCell">Properties<br/>attribute,action,strain,skilluse</td>
 EOH
 
 alldisciplines.each do |discipline|
   puts "\t\t<td class=\"HeaderCell\">"+discipline+"</td>"
 end
+
 puts "\t</tr>"
 puts "\t</thead>"
+
 alltalents.keys.sort.each do |talent|
   puts "\t<tr>"
   puts "\t\t<td class=\"HeaderCell\">"+talent+"</td>"
+  if alltalents[talent].has_key? :properties
+    puts "\t\t<td class=\"MidCell\">"+([:attribute,:action,:strain,:skilluse].map{|x| alltalents[talent][:properties][x]}.to_csv(row_sep: nil))+"</td>"
+  else
+    puts "\t\t<td class=\"MidCell\">-</td>"
+  end
   alldisciplines.each do |discipline|
     e=alltalents[talent][discipline]
     if e == nil
