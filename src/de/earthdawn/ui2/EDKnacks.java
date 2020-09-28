@@ -20,6 +20,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import de.earthdawn.CharacterContainer;
+import de.earthdawn.PrerequisiteChecker;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.DISCIPLINEType;
 import de.earthdawn.data.LAYOUTSIZESType;
@@ -32,8 +33,10 @@ import de.earthdawn.data.KNACKCAPABILITYType;
 import de.earthdawn.data.KNACKDEFINITIONType;
 import de.earthdawn.data.KNACKDISCIPLINEType;
 import de.earthdawn.data.KNACKOTHERKNACKType;
+import de.earthdawn.data.KNACKOTHERType;
 import de.earthdawn.data.KNACKRACEType;
 import de.earthdawn.data.KNACKType;
+import de.earthdawn.data.PrerequisitekindType;
 
 public class EDKnacks extends JPanel {
 	private static final long serialVersionUID = 3430848422226809963L;
@@ -180,41 +183,51 @@ class KnacksTableModel extends AbstractTableModel {
 			}
 			for( String limitation : talentlimitations ) {
 				for( KNACKDEFINITIONType knack : PROPERTIES.getTalentKnacks(talentname,limitation,talentrank) ) {
-					boolean match=true;
-					if( knack.getATTRIBUTE().size() > 0  ) match=false;
-					for( KNACKATTRIBUTEType attr : knack.getATTRIBUTE() ) {
+					PrerequisiteChecker checkAtttribute = new PrerequisiteChecker();
+					// If we have attribute requirements, they must match
+					knack.getATTRIBUTE().forEach((attr) -> {
 						int step=character.getAttributes().get(attr.getName()).getCurrentvalue();
-						if( step < attr.getMin() ) match=false;
-						if( step > attr.getMax() && attr.getMax() >= attr.getMin() ) match=false;
-					}
-					if( ! match ) continue;
+						int min=attr.getMin();
+						int max=attr.getMax();
+						checkAtttribute.add(attr.getPrerequisite(),"",step >= min && ( step < max || max < min));
+					});
+					if( ! checkAtttribute.testMatch() ) continue;
 					// If we have discipline limitations, they must match
-					if( knack.getDISCIPLINE().size()>0 ) match=false;
-					for( KNACKDISCIPLINEType dis : knack.getDISCIPLINE() ) {
-						if( (dis.getName().equals("*") || dis.getName().equals(discipline.getName())) && dis.getCircle() <= discipline.getCircle() ) match=true;
-					}
-					if( ! match ) continue;
-					// If we have other knacks requierd, they must match
-					if( knack.getKNACK().size()>0 ) match=false;
-					for( KNACKOTHERKNACKType k: knack.getKNACK() ) {
-						if( character.getKnacksByName(k.getName()).length>0 ) match=true;
-					}
-					if( ! match ) continue;
+					PrerequisiteChecker checkDiscipline = new PrerequisiteChecker();
+					knack.getDISCIPLINE().forEach((dis) -> {
+						String disname=dis.getName();
+						checkDiscipline.add(
+							dis.getPrerequisite(),"",
+							( disname.equals("*") || disname.equals(discipline.getName()) ) && ( dis.getCircle() <= discipline.getCircle() )
+						);
+					});
+					if( ! checkDiscipline.testMatch() ) continue;
 					// If we have race requierd, they must match
-					if( knack.getRACE().size()>0 ) match=false;
-					for( KNACKRACEType r : knack.getRACE() ) {
-						if( character.getRace().getName().equals(r.getName()) ) match=true;
-					}
-					if( ! match ) continue;
+					PrerequisiteChecker checkRace = new PrerequisiteChecker();
+					knack.getRACE().forEach((r) -> {
+						checkRace.add(r.getPrerequisite(),"",character.getRace().getName().equals(r.getName()));
+					});
+					if( ! checkRace.testMatch() ) continue;
 					// If we have additional talent requierd, they must match
-					if( knack.getTALENT().size()>0 ) match=false;
-					for( KNACKCAPABILITYType tal : knack.getTALENT() ) {
+					PrerequisiteChecker checkTalent = new PrerequisiteChecker();
+					knack.getTALENT().forEach((tal) -> {
+						boolean found=false;
 						for( TALENTType t : character.getTalentByName(tal.getName()) ) {
 							int r=t.getRANK().getRank();
-							match=( r >= tal.getMinrank() && ( r <= tal.getMaxrank() || tal.getMaxrank() < tal.getMinrank() ) );
+							int min=tal.getMinrank();
+							int max=tal.getMaxrank();
+							if( r >= min && ( r <= max || max < min ) ) found=true;
 						}
-					}
-					if( ! match ) continue;
+						checkTalent.add(tal.getPrerequisite(),tal.getPool(),found);
+					});
+					if( ! checkTalent.testMatch() ) continue;
+					// If we have other knacks requierd, they must match
+					PrerequisiteChecker checkKnack = new PrerequisiteChecker();
+					knack.getKNACK().forEach((knk) -> {
+						checkKnack.add(knk.getPrerequisite(), "", character.getKnacksByName(knack.getName()).length >0);
+					});
+					if( ! checkKnack.testMatch() ) continue;
+					// All check do match, so we can add the knack to our list
 					result.add(new KnackTableEntry(discipline,talent,knack));
 				}
 			}
