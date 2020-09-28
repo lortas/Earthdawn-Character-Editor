@@ -65,6 +65,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Ansporn"/>
+		<OPTIONALTALENT name="Brennende Kraft"/>
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Eiserner Wille"/>
+		<OPTIONALTALENT name="Kritischer Treffer"/>
+		<OPTIONALTALENT name="Löwenmut"/>
+		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Sturmschild"/>
+		<OPTIONALTALENT name="Tödlicher Schlag"/>
+		<OPTIONALTALENT name="Verteidigungshaltung"/>
+		<DISCIPLINETALENT name="Unaufhaltsame Erholung"/>
+		<TALENTABILITY/>
+		<KARMA spend="Jede Probe neben einem Verbündeten"/>
+		<ABILITY>Schlachtengespür</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Unvezagte Tapferkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Eisiger Schlag"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Angriffsprobe gegen einen Gegner der seit der letzten Runde den Krieger angegriffen hat."/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Rankenrüstung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Astralangriff"/>
+		<OPTIONALTALENT name="Ätherwaffe"/>
+		<OPTIONALTALENT name="Fließende Bewegung"/>
+		<OPTIONALTALENT name="Herausforderung der Besten"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Üble Wunde"/>
+		<OPTIONALTALENT name="Vitaler Schutz"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Aurarüstung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+		<ABILITY>Krieger der Elemente</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Steinhaut"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Mehrfacher Schlag"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
 	<HALFMAGIC>Pflege und Reparatur von  Waffen und Rüstung; Wissen über: Militär Strategien und Taktik, Ereignisse in Barsaive's Militär Geschichte, Wahrnehmung von: Kriegerorden, berühmte Krieger der Vergangenheit, altertümliche Waffen und Rüstungen</HALFMAGIC>
 </DISCIPLINE>

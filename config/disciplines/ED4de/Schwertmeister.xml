@@ -65,6 +65,67 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astralangriff"/>
+		<OPTIONALTALENT name="Ätherwaffe"/>
+		<OPTIONALTALENT name="Empathische Wahrnehmung"/>
+		<OPTIONALTALENT name="Herausforderung der Besten"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Löwenmut"/>
+		<OPTIONALTALENT name="Matrixsicht"/>
+		<OPTIONALTALENT name="Schlagfertige Erwiderung"/>
+		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
+		<OPTIONALTALENT name="Untergraben"/>
+		<DISCIPLINETALENT name="Kritischer Treffer"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Blutgebunde Waffen</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Schwungvoller Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Schwungvoller Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<KARMA spend="Angriff gegen verspottete Gegner"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Fließende Bewegung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Aurarüstung"/>
+		<OPTIONALTALENT name="Bardenstimme"/>
+		<OPTIONALTALENT name="Eisiger Schlag"/>
+		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Unverzagte Tapferkeit"/>
+		<OPTIONALTALENT name="Vitaler Schutz"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Schneidende Worte"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Üble Wunde"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Mehrfacher Schlag"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<INITIATIVE/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
 	<HALFMAGIC> Pflege ihrer Waffen; Wissen über: legendäre Waffen, Typen von Nahkampfwaffen; Erkennen von Schwertmeister Techniken und Kampfstile berühmter Schwertmeister</HALFMAGIC>
 </DISCIPLINE>

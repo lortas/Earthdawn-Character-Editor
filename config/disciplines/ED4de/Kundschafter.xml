@@ -67,6 +67,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Abrichten"/>
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Etikette"/>
+		<OPTIONALTALENT name="Holzhaut"/>
+		<OPTIONALTALENT name="Kritischer Treffer"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Mentale Tierkontrolle"/>
+		<OPTIONALTALENT name="Pflanzensprache"/>
+		<OPTIONALTALENT name="Tiersprache"/>
+		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
+		<DISCIPLINETALENT name="Adlerauge"/>
+		<TALENTABILITY/>
+		<KARMA spend="Proben die das Entdecktwerden erschweren"/>
+		<ABILITY>Überirdische Aufmerksamkeit</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Chamäleon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Echolot"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Angriffe gegen Gegner die den Kundschafter in dieser Begegnung noch nicht angegeriffe haben"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Gestalt des Bluthundes"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Astralangriff"/>
+		<OPTIONALTALENT name="Eidetisches Gedächtnis"/>
+		<OPTIONALTALENT name="Geistwandeln"/>
+		<OPTIONALTALENT name="Matrixsicht"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<OPTIONALTALENT name="Zweiter Angriff"/>
+		<OPTIONALTALENT name="Zweiter Schuss"/>
+		<DISCIPLINETALENT name="Wie Eine Streunende Katze"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+		<ABILITY>Eins mit der Welt</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Elementarwandeln"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Weltenpuls"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Erkennt Spuren und Fährten von Tieren und Namensgebern in der Stadt und auf dem Land; Wissen über Pflanzen, Kreaturen und Kulturen in Barsaive</HALFMAGIC>
 </DISCIPLINE>

@@ -67,6 +67,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Adlerauge"/>
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Beeindrucken"/>
+		<OPTIONALTALENT name="Luftgleiten"/>
+		<OPTIONALTALENT name="Reinigende Kälte"/>
+		<OPTIONALTALENT name="Schadensverteilung"/>
+		<OPTIONALTALENT name="Schmetterschlag"/>
+		<OPTIONALTALENT name="Schwachstelle Erkennen"/>
+		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
+		<OPTIONALTALENT name="Verteidigungshaltung"/>
+		<DISCIPLINETALENT name="Bleibender Eindruck"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Angriffe Koordinieren</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Gedankenkette"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Löwenmut"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<KARMA spend="Proben neben Verbündeten (1/R)"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Ansporn"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Entwaffnendes Lächeln"/>
+		<OPTIONALTALENT name="Fließende Bewegung"/>
+		<OPTIONALTALENT name="Herausforderung der Besten"/>
+		<OPTIONALTALENT name="Kritischer Treffer"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Untergraben"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Zweiter Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+		<ABILITY>Geschwindigkeit des Windes</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Lied der Schlachten"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Koordinierter Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Wartung, Reparatur, Bau von Luftschiffen; Wissen über: Luftschiffdesign und Typen, übliche Flugrouten und Besatzungen</HALFMAGIC>
 </DISCIPLINE>

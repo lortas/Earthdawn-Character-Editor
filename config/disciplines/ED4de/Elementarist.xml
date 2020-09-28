@@ -129,6 +129,68 @@
 		<SPELL type="elemental" name="Umhang der Gewittervorhut"/>
 		<DEFENSE kind="mystic"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Ätherhaut"/>
+		<OPTIONALTALENT name="Beschwörungskreis"/>
+		<OPTIONALTALENT name="Beweisanalyse"/>
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Fluch Unterdrücken"/>
+		<OPTIONALTALENT name="Gepanzerte Matrix"/>
+		<OPTIONALTALENT name="Perfekte Konzentration"/>
+		<OPTIONALTALENT name="Pflanzensprache"/>
+		<OPTIONALTALENT name="Wettstreit des Willens"/>
+		<OPTIONALTALENT name="Zauberreichweite"/>
+		<DISCIPLINETALENT name="Donnernde Entschlossenheit"/>
+		<TALENTABILITY/>
+		<KARMA spend="Entwurf oder Anfertigung eine Gegenstands"/>
+		<ABILITY>Erde und Wind</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Beherschung der Elemente"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Rankenrüstung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Der Adept kann einen Karmapunkt ausgeben, um einen Bonus aus einem Zauber, den er auf einen Verbündeten wirkt, um +2 zu erhöhen."/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Zweiter Zauber"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Brennende Kraft"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Schockbehandlung"/>
+		<OPTIONALTALENT name="Struktur Beeinflussen"/>
+		<OPTIONALTALENT name="Summenmatrix"/>
+		<OPTIONALTALENT name="Unverzagte Tapferkeit"/>
+		<OPTIONALTALENT name="Zauberstruktur"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Elementarwandeln"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+		<KARMASTEP />
+		<ABILITY>Elementargestalt</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Steinhaut"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Gespleißtes Gewebe"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Wissen über: Natur, Elemente, Elementar Magie, Magische Rituale; Wahrnehmungsprobe bei: Elementargeister entdecken</HALFMAGIC>
 </DISCIPLINE>

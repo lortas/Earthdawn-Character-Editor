@@ -67,6 +67,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Akrobatische Verteidigung"/>
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Echolot"/>
+		<OPTIONALTALENT name="Fluchtplan"/>
+		<OPTIONALTALENT name="Kampfsinn"/>
+		<OPTIONALTALENT name="Kreisender Spion"/>
+		<OPTIONALTALENT name="Perfekte Konzentration"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Tigersprung"/>
+		<OPTIONALTALENT name="Windkissen"/>
+		<DISCIPLINETALENT name="Machtmaskierung"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Schattensicht</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Astraltasche"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Chamäleon"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<KARMA spend="Schadensproben gegen Ziele mit Malus auf körperlicher Verteidigung"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Täuschende Klinge"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Astralangriff"/>
+		<OPTIONALTALENT name="Entwaffnendes Lächeln"/>
+		<OPTIONALTALENT name="Fließende Bewegung"/>
+		<OPTIONALTALENT name="Geistwandeln"/>
+		<OPTIONALTALENT name="Kritischer Treffer"/>
+		<OPTIONALTALENT name="Verteidigungshaltung"/>
+		<OPTIONALTALENT name="Wie Eine Streunende Katze"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Unmögliches Versteck"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+		<ABILITY>Eins mit dem Schatten</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Talentdiebstahl"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Traumdieb"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<INITIATIVE/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Diebe können Halbmagie einsetzen, um Sicherheitsmaßnahmen zu bauen oder zu umgehen, die Diebstähle verhindern sollen, und um verschiedene Arten von Schließmechanismen zu erkennen.</HALFMAGIC>
 </DISCIPLINE>

@@ -67,6 +67,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Ätherwaffe"/>
+		<OPTIONALTALENT name="Bleibender Eindruck"/>
+		<OPTIONALTALENT name="Chamäleon"/>
+		<OPTIONALTALENT name="Holzhaut"/>
+		<OPTIONALTALENT name="Kritischer Treffer"/>
+		<OPTIONALTALENT name="Lebensblick"/>
+		<OPTIONALTALENT name="Matrixsicht"/>
+		<OPTIONALTALENT name="Untrügerlicher Blick"/>
+		<OPTIONALTALENT name="Verteidigungshaltung"/>
+		<DISCIPLINETALENT name="Blindschießen"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Blutgebundener Bogen</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Astralangriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Adlerauge"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Wahrnehmung gegen Gegner denen der Schütze seit der letzten Runde Schaden zugefügt hat."/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Zielerfassung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Gift"/>
+		<OPTIONALTALENT name="Kreisender Spion"/>
+		<OPTIONALTALENT name="Löwenherz"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Tödlicher Schlag"/>
+		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
+		<OPTIONALTALENT name="Vitaler Schutz"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Projektil Beeinflussen"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+		<KARMASTEP />
+		<ABILITY>Perfekter Schuss</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Schnappschuss"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Dauerfeuer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Pflege von Fernkampfwaffen; Erkennen aller Arten von  Fernkampfwaffen, Munition oder Hersteller</HALFMAGIC>
 </DISCIPLINE>

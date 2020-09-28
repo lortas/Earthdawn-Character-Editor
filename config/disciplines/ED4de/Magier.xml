@@ -120,6 +120,68 @@
 		<SPELL type="wizard" name="Zerquetschen"/>
 		<DEFENSE kind="mystic"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astraltasche"/>
+		<OPTIONALTALENT name="Eleganter Abgang"/>
+		<OPTIONALTALENT name="Empathische Wahrnehmung"/>
+		<OPTIONALTALENT name="Erster Eindruck"/>
+		<OPTIONALTALENT name="Gedanken Verbergen"/>
+		<OPTIONALTALENT name="Gedankenkette"/>
+		<OPTIONALTALENT name="Gepanzerte Matrix"/>
+		<OPTIONALTALENT name="Matrixsicht"/>
+		<OPTIONALTALENT name="Perfekte Konzentration"/>
+		<OPTIONALTALENT name="Zauberreichweite"/>
+		<DISCIPLINETALENT name="Eifetisches Gedächtnis"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Matrixspaltung</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Glyphe der Entflechtung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Glyphe des Schutzes"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Augenblicklich einen zusätzlichen Faden auf einem Zauber erlauben, der gewirkt wird. Die normalen Anforderungen an zusätzliche Fäden gelten weiterhin und der zusätzliche Faden muss regulär gewoben werden."/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Zweiter Zauber"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Astrale Domäne"/>
+		<OPTIONALTALENT name="Geistessonde"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Struktur Beeinflussen"/>
+		<OPTIONALTALENT name="Summenmatrix"/>
+		<OPTIONALTALENT name="Untergraben"/>
+		<OPTIONALTALENT name="Zauberstruktur"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Glyphe der Neuabstimmung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTESTPERDAY/>
+		<KARMASTEP />
+		<ABILITY>Mystisches Dreieck</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Glyphe der Spiegelung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Gespleißtes Gewebe"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Erkennt verschiedene Arten von Magie, erkennt spezielle Anwendung von Magier-Magie; Wissen über magische Rituale</HALFMAGIC>
 </DISCIPLINE>

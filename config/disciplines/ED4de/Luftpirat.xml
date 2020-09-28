@@ -65,6 +65,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Beeindrucken"/>
+		<OPTIONALTALENT name="Bleibender Eindruck"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Löwenmut"/>
+		<OPTIONALTALENT name="Lufttanz"/>
+		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Sturmschild"/>
+		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
+		<OPTIONALTALENT name="Vitaler Schutz"/>
+		<DISCIPLINETALENT name="Brennende Kraft"/>
+		<TALENTABILITY/>
+		<KARMA spend="Einschüchtern und Verängstigen"/>
+		<ABILITY>Stärke des Himmels</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Unverzagte Tapferkeit"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Tödlicher Schlag"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<KARMA spend="Angriffe gegen furchtsame oder eingeschüchterte Gegner"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Zweiter Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Adlerauge"/>
+		<OPTIONALTALENT name="Ätherhaut"/>
+		<OPTIONALTALENT name="Aurarüstung"/>
+		<OPTIONALTALENT name="Herausforderung der Besten"/>
+		<OPTIONALTALENT name="Kritischer Treffer"/>
+		<OPTIONALTALENT name="Untergraben"/>
+		<OPTIONALTALENT name="Waffenbruch"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Vom Donner Gerührt"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+		<ABILITY>Sturmruf</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Üble Wunde"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Blut des Todesmeer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Instandhaltung, Reparatur, Bau von Drakkar Luftschiffen; Wissen über: Luftschiff Typen/Mannschaften und übliche Flugrouten</HALFMAGIC>
 </DISCIPLINE>

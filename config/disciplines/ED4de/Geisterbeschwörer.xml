@@ -123,6 +123,68 @@
 		<SPELL type="nether" name="Schattenfessel"/>
 		<DEFENSE kind="mystic"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Artefaktgeschichte"/>
+		<OPTIONALTALENT name="Astraltasche"/>
+		<OPTIONALTALENT name="Beschwörungskreis"/>
+		<OPTIONALTALENT name="Beweisanalyse"/>
+		<OPTIONALTALENT name="Gedanken Verbergen"/>
+		<OPTIONALTALENT name="Gepanzerte Matrix"/>
+		<OPTIONALTALENT name="Perfekte Konzentration"/>
+		<OPTIONALTALENT name="Seelenschutz"/>
+		<OPTIONALTALENT name="Wettstreit des Willens"/>
+		<OPTIONALTALENT name="Zauberreichweite"/>
+		<DISCIPLINETALENT name="Matrixsicht"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Jenseitige Willenskraft</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Blutiger Einblick"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Geistwandeln"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<KARMA spend="Beim Wirken eines Zaubers mit dem Schlüsselwort Herbeirufung oder Bindung; um einen Bonus oder eine Wirkungsstufe aus dem Zauber um +2 zu erhöhen oder einen Malus aus dem Zauber um -2 zu senken."/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Zweiter Zauber"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Dämonen Entgegentreten"/>
+		<OPTIONALTALENT name="Löwenmut"/>
+		<OPTIONALTALENT name="Mentale Tierkontrolle"/>
+		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Struktur Beeinflussen"/>
+		<OPTIONALTALENT name="Summenmatrix"/>
+		<OPTIONALTALENT name="Zauberstruktur"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Astrale Domäne"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+		<KARMASTEP />
+		<ABILITY>Astralgesicht</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Seele des Jenseits"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Gespleißtes Gewebe"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min. </KARMARITUAL>
 	<HALFMAGIC>Wissen: Erkenne Geisterbeschwörer Magie und Untoten/Geister, Verstehe Blutmagie Rituale und die Wirkung von Blutamuletten; Wahrnehmungsprobe: Präsenz von Geistern spüren</HALFMAGIC>
 </DISCIPLINE>
