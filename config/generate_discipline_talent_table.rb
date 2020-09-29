@@ -3,17 +3,19 @@
 require 'rexml/document'
 require 'csv'
 
+rulesetversion=ARGV[0]||"ED4de"
+
 alltalents={}
 alldisciplines=[]
-Dir["capabilities/ED4de/*.xml"].each do |filename|
+Dir["capabilities/"+rulesetversion+"/*.xml"].each do |filename|
   file = File.new(filename)
   doc = REXML::Document.new(file)
   doc.root.elements.each("./TALENT") do |talent|
-    alltalents[talent["name"]]={properties: {attribute: talent["attribute"], action: talent["action"], strain: talent["strain"]||0, skilluse: talent["skilluse"]||0}}
+    alltalents[talent["name"]]={properties: {attribute: talent["attribute"], action: talent["action"], strain: talent["strain"]||0, bookref: talent["bookref"]||"-"}}
   end
 end
 
-Dir["disciplines/ED4de/*.xml"].each do |filename|
+Dir["disciplines/"+rulesetversion+"/*.xml"].each do |filename|
   file = File.new(filename)
   doc = REXML::Document.new(file)
   disciplinename=doc.root.attributes["name"]
@@ -71,7 +73,7 @@ text-align: center;
 \t<thead>
 \t<tr>
 \t\t<td class="HeaderCell">Talent</td>
-\t\t<td class="HeaderCell">Properties<br/>attribute,action,strain,skilluse</td>
+\t\t<td class="HeaderCell">Properties<br/>attribute,action,strain,book</td>
 EOH
 
 alldisciplines.each do |discipline|
@@ -85,7 +87,7 @@ alltalents.keys.sort.each do |talent|
   puts "\t<tr>"
   puts "\t\t<td class=\"HeaderCell\">"+talent+"</td>"
   if alltalents[talent].has_key? :properties
-    puts "\t\t<td class=\"MidCell\">"+([:attribute,:action,:strain,:skilluse].map{|x| alltalents[talent][:properties][x]}.to_csv(row_sep: nil))+"</td>"
+    puts "\t\t<td class=\"MidCell\">"+([:attribute,:action,:strain,:bookref].map{|x| alltalents[talent][:properties][x]}.to_csv(row_sep: nil))+"</td>"
   else
     puts "\t\t<td class=\"MidCell\">-</td>"
   end
