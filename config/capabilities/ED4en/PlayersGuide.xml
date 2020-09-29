@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CAPABILITIES lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/capability" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/capability ../../earthdawncapabilities.xsd">
-	<SKILL name="Alchemy" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Physician" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Bribery" attribute="CHA" action="standard" skilluse="1" canimprovised="yes"/>
-	<SKILL name="Artist" attribute="CHA" action="sustained" skilluse="1"/>
-	<SKILL name="Pilot Boat" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Forgery" attribute="DEX" action="sustained" skilluse="1"/>
-	<SKILL name="Flirting" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
-	<SKILL name="Speak Language" attribute="PER" action="standard" skilluse="1"/>
-	<SKILL name="Streetwise" attribute="CHA" action="sustained" skilluse="1"/>
-	<SKILL name="Craftsman" attribute="DEX" action="sustained" skilluse="1"/>
-	<SKILL name="Mapmaking" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Artisan" attribute="CHA" action="sustained" skilluse="1">
+	<SKILL name="Acting" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.191"/>
+	<SKILL name="Alchemy" attribute="PER" action="sustained" skilluse="1" bookref="PG p.191"/>
+	<SKILL name="Animal Handling" attribute="WIL" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.192"/>
+	<SKILL name="Artisan" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.193">
 		<edt:LIMITATION>Artist</edt:LIMITATION>
 		<edt:LIMITATION>Acting</edt:LIMITATION>
 		<edt:LIMITATION>Baking</edt:LIMITATION>
@@ -36,17 +28,16 @@
 		<edt:LIMITATION>Tattooing</edt:LIMITATION>
 		<edt:LIMITATION>Wardrobe and Style</edt:LIMITATION>
 	</SKILL>
-	<SKILL name="Read/Write Language" attribute="PER" action="standard" skilluse="1"/>
-	<SKILL name="Craft Armor" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Acting" attribute="CHA" action="sustained" skilluse="1"/>
-	<SKILL name="Swimming" attribute="STR" action="standard" skilluse="1" canimprovised="yes"/>
-	<SKILL name="Sailing" attribute="DEX" action="sustained" skilluse="1"/>
-	<SKILL name="Animal Handling" attribute="WIL" action="standard" skilluse="1" canimprovised="yes"/>
-	<SKILL name="Entertainer" attribute="CHA" action="sustained" skilluse="1"/>
-	<SKILL name="Seduction" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
-	<SKILL name="Disguise" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Craft Weapon" attribute="PER" action="sustained" skilluse="1"/>
-	<SKILL name="Knowledge" attribute="PER" action="standard" skilluse="1">
+	<SKILL name="Artist" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.193"/>
+	<SKILL name="Bribery" attribute="CHA" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.194"/>
+	<SKILL name="Craft Armor" attribute="PER" action="sustained" skilluse="1" bookref="PG p.194"/>
+	<SKILL name="Craft Weapon" attribute="PER" action="sustained" skilluse="1" bookref="PG p.195"/>
+	<SKILL name="Craftsman" attribute="DEX" action="sustained" skilluse="1" bookref="PG p.195"/>
+	<SKILL name="Disguise" attribute="PER" action="sustained" skilluse="1" bookref="PG p.196"/>
+	<SKILL name="Entertainer" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.196"/>
+	<SKILL name="Flirting" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.196"/>
+	<SKILL name="Forgery" attribute="DEX" action="sustained" skilluse="1" bookref="PG p.197"/>
+	<SKILL name="Knowledge" attribute="PER" action="standard" skilluse="1" bookref="PG p.197">
 		<edt:LIMITATION>Alchemy and Potions</edt:LIMITATION>
 		<edt:LIMITATION>Ancient Weapons</edt:LIMITATION>
 		<edt:LIMITATION>Baking</edt:LIMITATION>
@@ -65,153 +56,162 @@
 		<edt:LIMITATION>Trade Routes</edt:LIMITATION>
 		<edt:LIMITATION>Wild Animals</edt:LIMITATION>
 	</SKILL>
-	<TALENT name="Distract" attribute="CHA" action="simple" strain="1" skilluse="1" canimprovised="yes" />
-	<TALENT name="Animal Training" attribute="CHA" action="sustained" skilluse="1"/>
-	<TALENT name="Wheeling Defense" attribute="DEX" action="simple" strain="1" skilluse="5"/>
-	<TALENT name="Acrobatic Defense" attribute="DEX" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Inspire Others" attribute="CHA" action="standard"/>
-	<TALENT name="Arcane Mutterings" attribute="CHA" action="standard" skilluse="1"/>
-	<TALENT name="Item History" attribute="PER" action="sustained"/>
-	<TALENT name="Astral Interference" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Astral Sight" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Temper Flesh" attribute="WIL" action="sustained"/>
-	<TALENT name="Awareness" attribute="PER" action="simple" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Stopping Aim" attribute="CHA" action="standard" strain="1"/>
-	<TALENT name="Impressive Display" attribute="na" action="simple" strain="1" skilluse="5"/>
-	<TALENT name="Summon" attribute="PER" action="sustained"/>
-	<TALENT name="Evidence Analysis" attribute="PER" action="sustained" strain="1" skilluse="5"/>
-	<TALENT name="True Shot" attribute="na" action="free" strain="2"/>
-	<TALENT name="Lasting Impression" attribute="CHA" action="standard"/>
-	<TALENT name="Claw Frenzy" attribute="DEX" action="standard" strain="1 (s. Text)"/>
-	<TALENT name="Flame Arrow" attribute="WIL" action="free" strain="1"/>
-	<TALENT name="Book Memory" attribute="WIL" action="standard"/>
-	<TALENT name="Diplomacy" attribute="CHA" action="sustained" skilluse="1"/>
-	<TALENT name="Double Charge" attribute="DEX" action="simple" strain="1"/>
-	<TALENT name="Iron Constitution" attribute="TOU" action="free"/>
-	<TALENT name="Steel Thought" attribute="WIL" action="free" strain="4"/>
-	<TALENT name="Graceful Exit" attribute="CHA" action="standard" skilluse="1"/>
-	<TALENT name="Elemental Hold" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Elemental Tongues" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Empathic Sense" attribute="CHA" action="standard" strain="1 (s. Text)"/>
-	<TALENT name="Disarm" attribute="DEX" action="standard" strain="1" skilluse="5"/>
-	<TALENT name="Earth Skin" attribute="TOU" action="standard"/>
-	<TALENT name="First Impression" attribute="CHA" action="standard" skilluse="1"/>
-	<TALENT name="Enhanced Matrix" attribute="na" action="na"/>
-	<TALENT name="Etiquette" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Hold Thread" attribute="WIL" action="simple" strain="1 (s. Text)"/>
-	<TALENT name="Thread Weaving" attribute="PER" action="standard"/>
-	<TALENT name="Disarm Trap" attribute="DEX" action="standard" strain="1" skilluse="1"/>
-	<TALENT name="Haggle" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Fireblood" attribute="TOU" action="standard"/>
-	<TALENT name="Fast Hand" attribute="DEX" action="standard" strain="1" skilluse="5"/>
-	<TALENT name="Suppress Curse" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Research" attribute="PER" action="sustained" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Speak Language" attribute="PER" action="standard" strain="1 (s. Text)"/>
-	<TALENT name="Leadership" attribute="CHA" action="sustained" skilluse="5"/>
-	<TALENT name="Fearsome Charge" attribute="CHA" action="simple" strain="2"/>
-	<TALENT name="Thought Link" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Danger Sense" attribute="DEX" action="free" strain="1" skilluse="1"/>
-	<TALENT name="Emotion Song" attribute="CHA" action="sustained" skilluse="1"/>
-	<TALENT name="Conceal Object" attribute="DEX" action="standard" strain="1" skilluse="5"/>
-	<TALENT name="Spirit Hold" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Spirit Mount" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Spirit Talk" attribute="PER" action="standard" strain="1"/>
-	<TALENT name="Winning Smile" attribute="CHA" action="standard"/>
-	<TALENT name="Bank Shot" attribute="DEX" action="simple" strain="1"/>
-	<TALENT name="Down Strike" attribute="STR" action="free" strain="1"/>
-	<TALENT name="Tenacious Weave" attribute="WIL" action="free" strain="1"/>
-	<TALENT name="Fire Heal" attribute="WIL" action="sustained"/>
-	<TALENT name="Stealthy Stride" attribute="DEX" action="simple" skilluse="1"/>
-	<TALENT name="Heartening Laugh" attribute="CHA" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Avoid Blow" attribute="DEX" action="free" strain="1" skilluse="1"/>
-	<TALENT name="Wood Skin" attribute="TOU" action="standard"/>
-	<TALENT name="Hypnotize" attribute="CHA" action="sustained" strain="1" skilluse="5"/>
-	<TALENT name="False Sight" attribute="WIL" action="free" strain="1"/>
-	<TALENT name="Battle Shout" attribute="CHA" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Anticipate Blow" attribute="PER" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Climbing" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Blade Juggle" attribute="DEX" action="standard" strain="1 (s. Text)" skilluse="5"/>
-	<TALENT name="Cobra Strike" attribute="DEX" action="free" strain="2"/>
-	<TALENT name="Mystic Pursuit" attribute="PER" action="standard" strain="2"/>
-	<TALENT name="Conversation" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Claw Shape" attribute="STR" bonus="3" action="simple"/>
-	<TALENT name="Orbiting Spy" attribute="PER" action="standard"/>
-	<TALENT name="Trick Riding" attribute="DEX" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Lifesight" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Read and Write Language" attribute="PER" action="sustained" strain="1 (s. Text)"/>
-	<TALENT name="Life Check" attribute="TOU" action="free"/>
-	<TALENT name="Lion Heart" attribute="WIL" action="free" strain="1"/>
-	<TALENT name="Gliding Stride" attribute="DEX" action="free" strain="1"/>
-	<TALENT name="Air Sailing" attribute="WIL" action="sustained" skilluse="1"/>
-	<TALENT name="Air Dance" attribute="DEX" action="free" strain="2" isinitiative="yes"/>
-	<TALENT name="Power Mask" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Dispel Magic" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Mystic Aim" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Disguise Self" attribute="PER" action="standard"/>
-	<TALENT name="Maneuver" attribute="DEX" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Animal Possession" attribute="WIL" action="standard" strain="2"/>
-	<TALENT name="Command Nightflyer" attribute="WIL" action="sustained" strain="1"/>
-	<TALENT name="Swift Kick" attribute="DEX" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Melee Weapons" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Navigation" attribute="PER" action="sustained" skilluse="1"/>
-	<TALENT name="Call Missile" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Missile Weapons" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Cold Purify" attribute="WIL" action="sustained"/>
-	<TALENT name="Armor Mount" attribute="WIL" action="simple" strain="1"/>
-	<TALENT name="Mount Attack" attribute="DEX" action="simple" strain="1" skilluse="5"/>
-	<TALENT name="Riposte" attribute="DEX" action="free" strain="2" skilluse="5"/>
-	<TALENT name="Forge Armor" attribute="PER" action="sustained"/>
-	<TALENT name="Blood Share" attribute="TOU" action="standard"/>
-	<TALENT name="Shield Bash" attribute="STR" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Battle Bellow" attribute="CHA" action="simple" strain="1" skilluse="5"/>
-	<TALENT name="Lock Picking" attribute="DEX" action="standard" skilluse="1"/>
-	<TALENT name="Crushing Blow" attribute="STR" action="free" strain="1" skilluse="5"/>
-	<TALENT name="Slough Blame" attribute="CHA" action="standard" strain="1" skilluse="5" canimprovised="yes"/>
-	<TALENT name="Spot Armor Flaw" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Wheeling Attack" attribute="DEX" action="standard" strain="1" skilluse="5"/>
-	<TALENT name="Momentum Attack" attribute="DEX" action="simple" strain="1"/>
-	<TALENT name="Safe Path" attribute="PER" action="standard"/>
-	<TALENT name="Sure Mount" attribute="STR" action="free" skilluse="1"/>
-	<TALENT name="Sprint" attribute="na" action="simple" strain="1"/>
-	<TALENT name="Spellcasting" attribute="PER" action="standard"/>
-	<TALENT name="Tracking" attribute="PER" action="standard" skilluse="1" canimprovised="yes"/>
+	<SKILL name="Mapmaking" attribute="PER" action="sustained" skilluse="1" bookref="PG p.197"/>
+	<SKILL name="Physician" attribute="PER" action="sustained" skilluse="1" bookref="PG p.198"/>
+	<SKILL name="Pilot Boat" attribute="PER" action="sustained" skilluse="1" bookref="PG p.199"/>
+	<SKILL name="Read/Write Language" attribute="PER" action="standard" skilluse="1" bookref="PG p.199"/>
+	<SKILL name="Sailing" attribute="DEX" action="sustained" skilluse="1" bookref="PG p.199"/>
+	<SKILL name="Seduction" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.200"/>
+	<SKILL name="Speak Language" attribute="PER" action="standard" skilluse="1" bookref="PG p.200"/>
+	<SKILL name="Streetwise" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.201"/>
+	<SKILL name="Swimming" attribute="STR" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.201"/>
+	<TALENT name="Acrobatic Defense" attribute="DEX" action="simple" strain="1" skilluse="1" bookref="PG p.124"/>
+	<TALENT name="Air Dance" attribute="DEX" action="free" strain="2" isinitiative="yes" bookref="PG p.124"/>
+	<TALENT name="Air Sailing" attribute="WIL" action="sustained" skilluse="1" bookref="PG p.125"/>
+	<TALENT name="Air Speaking" attribute="PER" action="simple" strain="1" bookref="PG p.125"/>
+	<TALENT name="Animal Bond" attribute="CHA" action="standard" skilluse="1" bookref="PG p.125"/>
+	<TALENT name="Animal Companion Durability" attribute="na" action="na" bookref="PG p.126"/>
+	<TALENT name="Animal Possession" attribute="WIL" action="standard" strain="2" bookref="PG p.126"/>
+	<TALENT name="Animal Talk" attribute="PER" action="standard" bookref="PG p.127"/>
+	<TALENT name="Animal Training" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.127"/>
+	<TALENT name="Anticipate Blow" attribute="PER" action="simple" strain="1" skilluse="1" bookref="PG p.128"/>
+	<TALENT name="Arcane Mutterings" attribute="CHA" action="standard" skilluse="1" bookref="PG p.128"/>
+	<TALENT name="Armor Mount" attribute="WIL" action="simple" strain="1" bookref="PG p.128"/>
+	<TALENT name="Astral Interference" attribute="WIL" action="standard" strain="1" bookref="PG p.129"/>
+	<TALENT name="Astral Sight" attribute="PER" action="simple" strain="1" bookref="PG p.129"/>
+	<TALENT name="Avoid Blow" attribute="DEX" action="free" strain="1" skilluse="1" bookref="PG p.129"/>
+	<TALENT name="Awareness" attribute="PER" action="simple" skilluse="1" canimprovised="yes" bookref="PG p.129"/>
+	<TALENT name="Banish" attribute="WIL" action="standard" strain="1" bookref="PG p.130"/>
+	<TALENT name="Bank Shot" attribute="DEX" action="simple" strain="1" bookref="PG p.130"/>
+	<TALENT name="Battle Bellow" attribute="CHA" action="simple" strain="1" skilluse="5" bookref="PG p.130"/>
+	<TALENT name="Battle Shout" attribute="CHA" action="simple" strain="1" skilluse="1" bookref="PG p.131"/>
+	<TALENT name="Blade Juggle" attribute="DEX" action="standard" strain="1 (s. Text)" skilluse="5" bookref="PG p.131"/>
+	<TALENT name="Blood Share" attribute="TOU" action="standard" bookref="PG p.131"/>
+	<TALENT name="Book Memory" attribute="WIL" action="standard" bookref="PG p.132"/>
+	<TALENT name="Borrow Sense" attribute="WIL" action="standard" bookref="PG p.132"/>
+	<TALENT name="Call Animal Companion" attribute="WIL" action="standard" strain="1" bookref="PG p.133"/>
+	<TALENT name="Call Missile" attribute="PER" action="simple" strain="1" bookref="PG p.133"/>
+	<TALENT name="Charge" attribute="STR" action="free" skilluse="1" bookref="PG p.133"/>
+	<TALENT name="Claw Frenzy" attribute="DEX" action="standard" strain="1 (s. Text)" bookref="PG p.134"/>
+	<TALENT name="Claw Shape" attribute="STR" bonus="3" action="simple" bookref="PG p.134"/>
+	<TALENT name="Climbing" attribute="DEX" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.134"/>
+	<TALENT name="Cobra Strike" attribute="DEX" action="free" strain="2" bookref="PG p.135"/>
+	<TALENT name="Cold Purify" attribute="WIL" action="sustained" bookref="PG p.135"/>
+	<TALENT name="Command Nightflyer" attribute="WIL" action="sustained" strain="1" bookref="PG p.135"/>
+	<TALENT name="Conceal Object" attribute="DEX" action="standard" strain="1" skilluse="5" bookref="PG p.135"/>
+	<TALENT name="Conversation" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.136"/>
+	<TALENT name="Creature Analysis" attribute="PER" action="simple" strain="1" bookref="PG p.136"/>
+	<TALENT name="Crushing Blow" attribute="STR" action="free" strain="1" skilluse="5" bookref="PG p.137"/>
+	<TALENT name="Danger Sense" attribute="DEX" action="free" strain="1" skilluse="1" bookref="PG p.137"/>
+	<TALENT name="Dead Fall" attribute="WIL" action="simple" strain="1" bookref="PG p.137"/>
+	<TALENT name="Diplomacy" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.138"/>
+	<TALENT name="Disarm Trap" attribute="DEX" action="standard" strain="1" skilluse="1" bookref="PG p.138"/>
+	<TALENT name="Disarm" attribute="DEX" action="standard" strain="1" skilluse="5" bookref="PG p.138"/>
+	<TALENT name="Disguise Self" attribute="PER" action="standard" bookref="PG p.138"/>
+	<TALENT name="Dispel Magic" attribute="WIL" action="standard" strain="1" bookref="PG p.139"/>
+	<TALENT name="Distract" attribute="CHA" action="simple" strain="1" skilluse="1" canimprovised="yes"  bookref="PG p.139"/>
+	<TALENT name="Dominate Beast" attribute="WIL" action="standard" strain="1" bookref="PG p.140"/>
+	<TALENT name="Double Charge" attribute="DEX" action="simple" strain="1" bookref="PG p.140"/>
+	<TALENT name="Down Strike" attribute="STR" action="free" strain="1" bookref="PG p.140"/>
+	<TALENT name="Earth Skin" attribute="TOU" action="standard" bookref="PG p.140"/>
+	<TALENT name="Elemental Hold" attribute="WIL" action="standard" strain="1" bookref="PG p.141"/>
+	<TALENT name="Elemental Tongues" attribute="PER" action="standard" strain="1" bookref="PG p.141"/>
+	<TALENT name="Emotion Song" attribute="CHA" action="sustained" skilluse="1" bookref="PG p.141"/>
+	<TALENT name="Empathic Sense" attribute="CHA" action="standard" strain="1 (s. Text)" bookref="PG p.142"/>
+	<TALENT name="Engaging Banter" attribute="CHA" action="standard" skilluse="1" bookref="PG p.143"/>
+	<TALENT name="Enhance Animal Companion" attribute="WIL" action="sustained" bookref="PG p.143"/>
+	<TALENT name="Enhanced Matrix" attribute="na" action="na" bookref="PG p.144"/>
+	<TALENT name="Etiquette" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.144"/>
+	<TALENT name="Evidence Analysis" attribute="PER" action="sustained" strain="1" skilluse="5" bookref="PG p.144"/>
+	<TALENT name="False Sight" attribute="WIL" action="free" strain="1" bookref="PG p.145"/>
+	<TALENT name="Fast Hand" attribute="DEX" action="standard" strain="1" skilluse="5" bookref="PG p.145"/>
+	<TALENT name="Fearsome Charge" attribute="CHA" action="simple" strain="2" bookref="PG p.146"/>
+	<TALENT name="Fireblood" attribute="TOU" action="standard" bookref="PG p.146"/>
+	<TALENT name="Fire Heal" attribute="WIL" action="sustained" bookref="PG p.147"/>
+	<TALENT name="First Impression" attribute="CHA" action="standard" skilluse="1" bookref="PG p.147"/>
+	<TALENT name="Flame Arrow" attribute="WIL" action="free" strain="1" bookref="PG p.147"/>
+	<TALENT name="Forge Armor" attribute="PER" action="sustained" bookref="PG p.148"/>
+	<TALENT name="Forge Weapon" attribute="PER" action="sustained" bookref="PG p.148"/>
+	<TALENT name="Frighten" attribute="WIL" action="standard" bookref="PG p.149"/>
+	<TALENT name="Gliding Stride" attribute="DEX" action="free" strain="1" bookref="PG p.149"/>
+	<TALENT name="Graceful Exit" attribute="CHA" action="standard" skilluse="1" bookref="PG p.151"/>
+	<TALENT name="Great Leap" attribute="DEX" action="free" strain="1" skilluse="1" bookref="PG p.151"/>
+	<TALENT name="Haggle" attribute="CHA" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.152"/>
+	<TALENT name="Heartening Laugh" attribute="CHA" action="simple" strain="1" skilluse="1" bookref="PG p.152"/>
+	<TALENT name="Hold Thread" attribute="WIL" action="simple" strain="1 (s. Text)" bookref="PG p.152"/>
+	<TALENT name="Hypnotize" attribute="CHA" action="sustained" strain="1" skilluse="5" bookref="PG p.153"/>
+	<TALENT name="Impressive Display" attribute="na" action="simple" strain="1" skilluse="5" bookref="PG p.154"/>
+	<TALENT name="Inspire Others" attribute="CHA" action="standard" bookref="PG p.154"/>
+	<TALENT name="Iron Constitution" attribute="TOU" action="free" bookref="PG p.154"/>
+	<TALENT name="Item History" attribute="PER" action="sustained" bookref="PG p.155"/>
+	<TALENT name="Lasting Impression" attribute="CHA" action="standard" bookref="PG p.155"/>
+	<TALENT name="Leadership" attribute="CHA" action="sustained" skilluse="5" bookref="PG p.156"/>
+	<TALENT name="Lifesight" attribute="PER" action="simple" strain="1" bookref="PG p.156"/>
+	<TALENT name="Life Check" attribute="TOU" action="free" bookref="PG p.156"/>
+	<TALENT name="Lion Heart" attribute="WIL" action="free" strain="1" bookref="PG p.157"/>
+	<TALENT name="Lock Picking" attribute="DEX" action="standard" skilluse="1" bookref="PG p.157"/>
+	<TALENT name="Long Shot" attribute="na" action="simple" strain="1" bookref="PG p.157"/>
+	<TALENT name="Maneuver" attribute="DEX" action="simple" strain="1" skilluse="1" bookref="PG p.158"/>
+	<TALENT name="Melee Weapons" attribute="DEX" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.158"/>
+	<TALENT name="Mimic Voice" attribute="CHA" action="simple" skilluse="1" bookref="PG p.158"/>
+	<TALENT name="Missile Weapons" attribute="DEX" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.158"/>
+	<TALENT name="Momentum Attack" attribute="DEX" action="simple" strain="1" bookref="PG p.158"/>
+	<TALENT name="Mount Attack" attribute="DEX" action="simple" strain="1" skilluse="5" bookref="PG p.159"/>
+	<TALENT name="Mystic Aim" attribute="PER" action="simple" strain="1" bookref="PG p.159"/>
+	<TALENT name="Mystic Pursuit" attribute="PER" action="standard" strain="2" bookref="PG p.159"/>
+	<TALENT name="Navigation" attribute="PER" action="sustained" skilluse="1" bookref="PG p.160"/>
+	<TALENT name="Orbiting Spy" attribute="PER" action="standard" bookref="PG p.160"/>
+	<TALENT name="Patterncraft" attribute="PER" action="standard" bookref="PG p.161"/>
+	<TALENT name="Picking Pockets" attribute="DEX" action="standard" skilluse="1" bookref="PG p.161"/>
+	<TALENT name="Power Mask" attribute="WIL" action="standard" strain="1" bookref="PG p.162"/>
+	<TALENT name="Read and Write Language" attribute="PER" action="sustained" strain="1 (s. Text)" bookref="PG p.162"/>
+	<TALENT name="Research" attribute="PER" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.163"/>
+	<TALENT name="Resist Taunt" attribute="WIL" action="free" strain="1" skilluse="5" canimprovised="yes" bookref="PG p.164"/>
+	<TALENT name="Riposte" attribute="DEX" action="free" strain="2" skilluse="5" bookref="PG p.165"/>
+	<TALENT name="Safe Path" attribute="PER" action="standard" bookref="PG p.165"/>
+	<TALENT name="Second Attack" attribute="DEX" action="simple" strain="2" skilluse="5" bookref="PG p.166"/>
+	<TALENT name="Second Shot" attribute="DEX" action="simple" strain="2" skilluse="5" bookref="PG p.166"/>
+	<TALENT name="Second Weapon" attribute="DEX" action="simple" strain="1" skilluse="5" bookref="PG p.166"/>
+	<TALENT name="Shield Bash" attribute="STR" action="simple" strain="1" skilluse="1" bookref="PG p.166"/>
+	<TALENT name="Slough Blame" attribute="CHA" action="standard" strain="1" skilluse="5" canimprovised="yes" bookref="PG p.167"/>
+	<TALENT name="Speak Language" attribute="PER" action="standard" strain="1 (s. Text)" bookref="PG p.167"/>
+	<TALENT name="Spellcasting" attribute="PER" action="standard" bookref="PG p.168"/>
+	<TALENT name="Spirit Hold" attribute="WIL" action="standard" strain="1" bookref="PG p.168"/>
+	<TALENT name="Spirit Mount" attribute="PER" action="standard" strain="1" bookref="PG p.168"/>
+	<TALENT name="Spirit Talk" attribute="PER" action="standard" strain="1" bookref="PG p.169"/>
+	<TALENT name="Spot Armor Flaw" attribute="PER" action="simple" strain="1" bookref="PG p.169"/>
+	<TALENT name="Sprint" attribute="na" action="simple" strain="1" bookref="PG p.170"/>
+	<TALENT name="Standard Matrix" attribute="na" action="na" bookref="PG p.170"/>
+	<TALENT name="Stealthy Stride" attribute="DEX" action="simple" skilluse="1" bookref="PG p.170"/>
+	<TALENT name="Steel Thought" attribute="WIL" action="free" strain="4" bookref="PG p.170"/>
 	<TALENT name="Steely Stare" attribute="CHA" action="standard" strain="1"/>
-	<TALENT name="Standard Matrix" attribute="na" action="na"/>
-	<TALENT name="Wound Balance" attribute="STR" action="free" skilluse="1"/>
-	<TALENT name="Resist Taunt" attribute="WIL" action="free" strain="1" skilluse="5" canimprovised="yes"/>
-	<TALENT name="Mimic Voice" attribute="CHA" action="simple" skilluse="1"/>
-	<TALENT name="Patterncraft" attribute="PER" action="standard"/>
-	<TALENT name="Charge" attribute="STR" action="free" skilluse="1"/>
-	<TALENT name="Tactics" attribute="PER" action="standard" skilluse="5"/>
-	<TALENT name="Picking Pockets" attribute="DEX" action="standard" skilluse="1"/>
-	<TALENT name="Creature Analysis" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Dominate Beast" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Animal Bond" attribute="CHA" action="standard" skilluse="1"/>
-	<TALENT name="Call Animal Companion" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Enhance Animal Companion" attribute="WIL" action="sustained"/>
-	<TALENT name="Borrow Sense" attribute="WIL" action="standard"/>
-	<TALENT name="Animal Talk" attribute="PER" action="standard"/>
-	<TALENT name="Tiger Spring" attribute="DEX" action="free" strain="1" isinitiative="yes"/>
-	<TALENT name="Dead Fall" attribute="WIL" action="simple" strain="1"/>
-	<TALENT name="Surprise Strike" attribute="STR" action="free" strain="1" skilluse="1"/>
-	<TALENT name="Animal Companion Durability" attribute="na" action="na"/>
-	<TALENT name="True Sight" attribute="na" action="na"/>
-	<TALENT name="Frighten" attribute="WIL" action="standard"/>
-	<TALENT name="Banish" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Taunt" attribute="CHA" action="simple" strain="1" skilluse="1"/>
-	<TALENT name="Versatility" attribute="na" action="na"/>
-	<TALENT name="Forge Weapon" attribute="PER" action="sustained"/>
-	<TALENT name="Unarmed Combat" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Waterfall Slam" attribute="na" action="free" strain="1"/>
-	<TALENT name="Long Shot" attribute="na" action="simple" strain="1"/>
-	<TALENT name="Great Leap" attribute="DEX" action="free" strain="1" skilluse="1"/>
-	<TALENT name="Wilderness Survival" attribute="PER" action="sustained" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Willforce" attribute="WIL" action="free" strain="1"/>
-	<TALENT name="Wind Catcher" attribute="WIL" action="standard" strain="1"/>
-	<TALENT name="Air Speaking" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Engaging Banter" attribute="CHA" action="standard" skilluse="1"/>
-	<TALENT name="Throwing Weapons" attribute="DEX" action="standard" skilluse="1" canimprovised="yes"/>
-	<TALENT name="Second Attack" attribute="DEX" action="simple" strain="2" skilluse="5"/>
-	<TALENT name="Second Shot" attribute="DEX" action="simple" strain="2" skilluse="5"/>
-	<TALENT name="Second Weapon" attribute="DEX" action="simple" strain="1" skilluse="5"/>
+	<TALENT name="Stopping Aim" attribute="CHA" action="standard" strain="1" bookref="PG p.171"/>
+	<TALENT name="Summon" attribute="PER" action="sustained" bookref="PG p.171"/>
+	<TALENT name="Suppress Curse" attribute="WIL" action="standard" strain="1" bookref="PG p.171"/>
+	<TALENT name="Sure Mount" attribute="STR" action="free" skilluse="1" bookref="PG p.172"/>
+	<TALENT name="Surprise Strike" attribute="STR" action="free" strain="1" skilluse="1" bookref="PG p.172"/>
+	<TALENT name="Swift Kick" attribute="DEX" action="simple" strain="1" skilluse="1" bookref="PG p.172"/>
+	<TALENT name="Tactics" attribute="PER" action="standard" skilluse="5" bookref="PG p.172"/>
+	<TALENT name="Taunt" attribute="CHA" action="simple" strain="1" skilluse="1" bookref="PG p.173"/>
+	<TALENT name="Temper Flesh" attribute="WIL" action="sustained" bookref="PG p.173"/>
+	<TALENT name="Tenacious Weave" attribute="WIL" action="free" strain="1" bookref="PG p.173"/>
+	<TALENT name="Thought Link" attribute="PER" action="standard" strain="1" bookref="PG p.173"/>
+	<TALENT name="Thread Weaving" attribute="PER" action="standard" bookref="PG p.174"/>
+	<TALENT name="Throwing Weapons" attribute="DEX" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.175"/>
+	<TALENT name="Tiger Spring" attribute="DEX" action="free" strain="1" isinitiative="yes" bookref="PG p.175"/>
+	<TALENT name="Tracking" attribute="PER" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.175"/>
+	<TALENT name="Trick Riding" attribute="DEX" action="simple" strain="1" skilluse="1" bookref="PG p.176"/>
+	<TALENT name="True Shot" attribute="na" action="free" strain="2" bookref="PG p.176"/>
+	<TALENT name="True Sight" attribute="na" action="na" bookref="PG p.176"/>
+	<TALENT name="Unarmed Combat" attribute="DEX" action="standard" skilluse="1" canimprovised="yes" bookref="PG p.177"/>
+	<TALENT name="Versatility" attribute="na" action="na" bookref="PG p.177"/>
+	<TALENT name="Waterfall Slam" attribute="na" action="free" strain="1" bookref="PG p.178"/>
+	<TALENT name="Wheeling Attack" attribute="DEX" action="standard" strain="1" skilluse="5" bookref="PG p.178"/>
+	<TALENT name="Wheeling Defense" attribute="DEX" action="simple" strain="1" skilluse="5" bookref="PG p.178"/>
+	<TALENT name="Wilderness Survival" attribute="PER" action="sustained" skilluse="1" canimprovised="yes" bookref="PG p.179"/>
+	<TALENT name="Willforce" attribute="WIL" action="free" strain="1" bookref="PG p.180"/>
+	<TALENT name="Wind Catcher" attribute="WIL" action="standard" strain="1" bookref="PG p.180"/>
+	<TALENT name="Winning Smile" attribute="CHA" action="standard" bookref="PG p.180"/>
+	<TALENT name="Wood Skin" attribute="TOU" action="standard" bookref="PG p.181"/>
+	<TALENT name="Wound Balance" attribute="STR" action="free" skilluse="1" bookref="PG p.181"/>
 </CAPABILITIES>
