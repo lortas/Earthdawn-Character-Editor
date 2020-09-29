@@ -61,7 +61,7 @@
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
-		<DISCIPLINETALENT name="Double-Charge"/>
+		<DISCIPLINETALENT name="Double Charge"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
