@@ -524,11 +524,9 @@ public class EDMainWindow {
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					try {
-						desktop.browse(new URI("https://sourceforge.net/p/ed-char-editor/wiki/FAQ/"));
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (URISyntaxException e) {
-						e.printStackTrace();
+						desktop.browse((new File("documentation/FAQ.html")).toURI());
+					} catch (Exception e) {
+						Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 					}
 				}
 			}
