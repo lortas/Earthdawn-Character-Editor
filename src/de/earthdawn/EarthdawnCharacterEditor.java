@@ -26,6 +26,8 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.LanguageType;
 import de.earthdawn.data.RulesetversionType;
 import de.earthdawn.ui2.EDMainWindow;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.zip.DataFormatException;
 
 public class EarthdawnCharacterEditor {
@@ -36,6 +38,7 @@ public class EarthdawnCharacterEditor {
 
 	public static void main(String[] args) {
 		commandlineargs = new ArrayList<String>(Arrays.asList(args));
+		getInterfaceLanguageFromArgs();
 		PROPERTIES.setRulesetLanguage(getRulesetversionFromArgs(), getLanguageFromArgs());
 		boolean newchar=getNewCharFromArgs();
 		try {
@@ -108,6 +111,20 @@ public class EarthdawnCharacterEditor {
 			}
 		}
 		return LanguageType.DE;
+	}
+
+	private static void getInterfaceLanguageFromArgs() {
+		int i = commandlineargs.indexOf("--interfacelanguage");
+		if( i >= 0 ) {
+			commandlineargs.remove(i); // --interfacelanguage
+			String s = commandlineargs.remove(i); // Parameter von --interfacelanguage
+			if( s != null ) {
+				switch(s.toLowerCase()) {
+				case "de": Locale.setDefault(Locale.GERMANY); break;
+				default  : Locale.setDefault(Locale.US); break;
+				}
+			}
+		}
 	}
 
 	private static boolean getNewCharFromArgs() {
