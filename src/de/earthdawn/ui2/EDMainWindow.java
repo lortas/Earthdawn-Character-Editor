@@ -98,7 +98,7 @@ public class EDMainWindow {
 	private JFrame frame;
 	private CharacterContainer character;
 	private JTabbedPane tabbedPane;
-	private EDGeneral panelERGeneral;
+	private EDGeneral panelEDGeneral;
 	private EDAttributes panelEDAttributes;
 	private EDDisciplines panelEDDisciplines;
 	private EDExperience panelEDExperience;
@@ -594,7 +594,7 @@ public class EDMainWindow {
 		}
 		splitPane.setLeftComponent(tabbedPane);
 
-		panelERGeneral = new EDGeneral();
+		panelEDGeneral = new EDGeneral();
 		panelEDDisciplines = new EDDisciplines();
 		panelEDAttributes = new EDAttributes();
 		panelEDKnacks = new EDKnacks(character);
@@ -632,7 +632,7 @@ public class EDMainWindow {
 		characteristicStatus = new CharacteristicStatus("characteristic_layout.html");
 		characteristicStatus.setCharacter(character);
 
-		tabbedPane.addTab(PROPERTIES.getTranslationText("general"), null, new JScrollPane(panelERGeneral), null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("general"), null, new JScrollPane(panelEDGeneral), null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("disciplines"), null, panelEDDisciplines, null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("attributes"), null, panelEDAttributes, null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("knacks"), null, panelEDKnacks, null);
