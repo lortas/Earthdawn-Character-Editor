@@ -155,7 +155,7 @@
 	<!--
 	target: dist
 	-->
-	<target name="dist" depends="jar,jar8" description="--> Distribution erzeugen">
+	<target name="dist" depends="jar,jar8,disciplinetalenttable" description="--> Distribution erzeugen">
 		<zip destfile="EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset file="${jar8.file}"/>
@@ -199,6 +199,15 @@
 			<zipfileset file="./readme.txt"/>
 			<zipfileset file="./changelog.txt"/>
 		</zip>
+	</target>
+
+	<!--
+	target: generate DisciplineTalentTable
+	-->
+	<target name="disciplinetalenttable" description="generate DisciplineTalentTable">
+		<exec dir="config" executable="./generate_discipline_talent_table.rb" output="documentation/ED3en_DisciplineTalentTable.html"><arg value="ED3en"/></exec>
+		<exec dir="config" executable="./generate_discipline_talent_table.rb" output="documentation/ED4en_DisciplineTalentTable.html"><arg value="ED4en"/></exec>
+		<exec dir="config" executable="./generate_discipline_talent_table.rb" output="documentation/ED4de_DisciplineTalentTable.html"><arg value="ED4de"/></exec>
 	</target>
 
 	<!--
