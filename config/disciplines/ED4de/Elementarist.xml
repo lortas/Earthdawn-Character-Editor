@@ -146,7 +146,7 @@
 		<ABILITY>Erde und Wind</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 10 -->
-		<DISCIPLINETALENT name="Beherschung der Elemente"/>
+		<DISCIPLINETALENT name="Beherrschung der Elemente"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>

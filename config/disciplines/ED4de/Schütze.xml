@@ -76,9 +76,9 @@
 		<OPTIONALTALENT name="Kritischer Treffer"/>
 		<OPTIONALTALENT name="Lebensblick"/>
 		<OPTIONALTALENT name="Matrixsicht"/>
-		<OPTIONALTALENT name="Untrügerlicher Blick"/>
+		<OPTIONALTALENT name="Untrüglicher Blick"/>
 		<OPTIONALTALENT name="Verteidigungshaltung"/>
-		<DISCIPLINETALENT name="Blindschießen"/>
+		<DISCIPLINETALENT name="Blind Schießen"/>
 		<TALENTABILITY/>
 		<KARMA spend="Erholungsproben"/>
 		<ABILITY>Blutgebundener Bogen</ABILITY>

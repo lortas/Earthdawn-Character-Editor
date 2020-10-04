@@ -71,7 +71,7 @@
 		<OPTIONALTALENT name="Letzte Rettung"/>
 		<OPTIONALTALENT name="Löwenmut"/>
 		<OPTIONALTALENT name="Lufttanz"/>
-		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Schmerzen Widerstehen"/>
 		<OPTIONALTALENT name="Starrsinn"/>
 		<OPTIONALTALENT name="Sturmschild"/>
 		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
@@ -122,7 +122,7 @@
 		<INITIATIVE/>
 	</CIRCLE>
 	<CIRCLE><!-- 15 -->
-		<DISCIPLINETALENT name="Blut des Todesmeer"/>
+		<DISCIPLINETALENT name="Blut des Todesmeers"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="mystic"/>
 		<RECOVERYTESTPERDAY/>

@@ -96,7 +96,7 @@
 		<KARMA spend="Proben neben Verbündeten (1/R)"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
-		<DISCIPLINETALENT name="Schlagfertige Erwiederung"/>
+		<DISCIPLINETALENT name="Schlagfertige Erwiderung"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
 		<INITIATIVE/>

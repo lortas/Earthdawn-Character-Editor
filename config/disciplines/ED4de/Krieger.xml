@@ -72,7 +72,7 @@
 		<OPTIONALTALENT name="Eiserner Wille"/>
 		<OPTIONALTALENT name="Kritischer Treffer"/>
 		<OPTIONALTALENT name="Löwenmut"/>
-		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Schmerzen Widerstehen"/>
 		<OPTIONALTALENT name="Sturmschild"/>
 		<OPTIONALTALENT name="Tödlicher Schlag"/>
 		<OPTIONALTALENT name="Verteidigungshaltung"/>
@@ -82,7 +82,7 @@
 		<ABILITY>Schlachtengespür</ABILITY>
 	</CIRCLE>
 	<CIRCLE><!-- 10 -->
-		<DISCIPLINETALENT name="Unvezagte Tapferkeit"/>
+		<DISCIPLINETALENT name="Unverzagte Tapferkeit"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="mystic"/>
 		<INITIATIVE/>

@@ -94,7 +94,7 @@
 		<DISCIPLINETALENT name="Lebendige Waffe"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="social"/>
-		<KARMA spend="Wiederstehen von Zaubern und Dämonenkräften"/>
+		<KARMA spend="Widerstehen von Zaubern und Dämonenkräften"/>
 	</CIRCLE>
 	<CIRCLE><!-- 12 -->
 		<DISCIPLINETALENT name="Fleisch Schmieden"/>
@@ -107,7 +107,7 @@
 		<OPTIONALTALENT name="Ätherwaffe"/>
 		<OPTIONALTALENT name="Brennende Kraft"/>
 		<OPTIONALTALENT name="Hammerschlag"/>
-		<OPTIONALTALENT name="Schmerzen Wiederstehen"/>
+		<OPTIONALTALENT name="Schmerzen Widerstehen"/>
 		<OPTIONALTALENT name="Tödlicher Schlag"/>
 		<OPTIONALTALENT name="Vitaler Schutz"/>
 		<OPTIONALTALENT name="Waffenbruch"/>
