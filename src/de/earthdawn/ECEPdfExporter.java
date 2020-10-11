@@ -726,8 +726,7 @@ public class ECEPdfExporter {
 		setPdfField(field.getAbility(),bonus.getBonus());
 	}
 
-	public void exportGeneric(EDCHARACTER edCharakter, File template, File outFile) throws DocumentException, IOException, DataFormatException {
-		CharsheettemplateContainer charsheettemplate = new CharsheettemplateContainer(template);
+	public void exportGeneric(EDCHARACTER edCharakter, CharsheettemplateContainer charsheettemplate, File outFile) throws DocumentException, IOException, DataFormatException {
 		File pdfinputfile = new File( new File("templates"), charsheettemplate.getPdfFilename() );
 		PdfReader reader = new PdfReader(new FileInputStream(pdfinputfile));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));

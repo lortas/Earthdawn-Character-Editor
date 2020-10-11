@@ -68,6 +68,7 @@ public class ApplicationProperties {
 	private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
 	private static Map<ECERulesetLanguage,SPELLDESCRIPTIONS> SPELLDESCRIPTIONS;
 	private static Map<RulesetversionType,ECECharacteristics> CHARACTERISTICS;
+	private static List<CharsheettemplateContainer> CHARSHEETTEMPLATES;
 	private static final File CONFIGDIR = new File("./config");
 
 	// Singleton-Instanz dieser Klasse.
@@ -713,6 +714,10 @@ public class ApplicationProperties {
 		return new ArrayList<LAYOUTSIZESType>();
 	}
 
+	public List<CharsheettemplateContainer> getAllCharsheettemplates() {
+		return CHARSHEETTEMPLATES;
+	}
+
 	private void init() {
 		Unmarshaller unmarshaller;
 		try {
@@ -1084,6 +1089,11 @@ public class ApplicationProperties {
 					ng.add(n);
 				}
 			}
+
+			CHARSHEETTEMPLATES=new LinkedList();
+			selectallxmlfiles(new File("templates").toPath()).forEach((configFile) -> {
+				CHARSHEETTEMPLATES.add(new CharsheettemplateContainer(configFile.toFile()) );
+			});
 
 			CHARACTERISTICS=new TreeMap<RulesetversionType,ECECharacteristics>();
 			for(Path configFile : selectallxmlfiles(new File(CONFIGDIR,"characteristics").toPath())) {
