@@ -126,10 +126,10 @@ alltalents.keys.sort.each do |talent|
       puts "\t\t<td class=\"MidCell\">"+alltalents[talent][:properties][x].to_s+"</td>"
     end
   else
-    puts "\t\t<td class=\"MidCell\">-</td>"
-    puts "\t\t<td class=\"MidCell\">-</td>"
-    puts "\t\t<td class=\"MidCell\">-</td>"
-    puts "\t\t<td class=\"MidCell\">-</td>"
+    puts "\t\t<td class=\"MidCell\">?</td>"
+    puts "\t\t<td class=\"MidCell\">?</td>"
+    puts "\t\t<td class=\"MidCell\">?</td>"
+    puts "\t\t<td class=\"MidCell\">?</td>"
   end
   (alldisciplines+allpaths).each do |dp_name|
     e=alltalents[talent][dp_name]
