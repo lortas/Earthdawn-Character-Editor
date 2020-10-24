@@ -16,7 +16,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="skill"/>
 	</NAMEGIVER>
-        <NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="14" type="Elf">
+	<NAMEGIVER lang="en" name="Elf" karmamodifier="4" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -180,8 +180,8 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Dwarf" speak="skill" readwrite="skill"/>
 	</NAMEGIVER>
-        <!-- Dragon-kin Namegivers Iopos Sourcebook -->
-        <NAMEGIVER lang="en" name="Dwarf Dragon-Kin" karmamodifier="3" movement_ground="10" type="Dwarf">
+	<!-- Dragon-kin Namegivers Iopos Sourcebook -->
+	<NAMEGIVER lang="en" name="Dwarf Dragon-Kin" karmamodifier="3" movement_ground="10" type="Dwarf">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -320,5 +320,5 @@
 		<ORIGIN>Thera</ORIGIN>
 		<NOTDEFAULTSKILL>Swimming</NOTDEFAULTSKILL>
 		<DEFAULTLANGUAGE language="Windling" speak="skill"/>
-	</NAMEGIVER>	
+	</NAMEGIVER>
 </NAMEGIVERS>
