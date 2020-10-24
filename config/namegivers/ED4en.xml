@@ -181,7 +181,7 @@
 		<DEFAULTLANGUAGE language="Dwarf" speak="skill" readwrite="skill"/>
 	</NAMEGIVER>
         <!-- Dragon-kin Namegivers Iopos Sourcebook -->
-        <NAMEGIVER lang="en" name="Dragon-kin Dwarf" karmamodifier="3" movement_ground="10" type="Dwarf">
+        <NAMEGIVER lang="en" name="Dwarf Dragon-Kin" karmamodifier="3" movement_ground="10" type="Dwarf">
 		<ATTRIBUTE name="DEX" value="9" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -198,7 +198,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="FREE CHOISE" speak="skill"/>
 	</NAMEGIVER>
-        <NAMEGIVER lang="en" name="Dragon-kin Elf" karmamodifier="3" movement_ground="14" type="Elf">
+        <NAMEGIVER lang="en" name="Elf Dragon-Kin" karmamodifier="3" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="12" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -215,7 +215,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dragon-kin Blood Elf" karmamodifier="3" movement_ground="14" type="Elf">
+	<NAMEGIVER lang="en" name="Blood Elf Dragon-Kin" karmamodifier="3" movement_ground="14" type="Elf">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="8" />
@@ -233,7 +233,7 @@
 		<ORIGIN>Barsaive</ORIGIN>
 		<DEFAULTLANGUAGE language="Sperethiel (Elf)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dragon-kin Human" karmamodifier="4" movement_ground="12" type="Human">
+	<NAMEGIVER lang="en" name="Human Dragon-Kin" karmamodifier="4" movement_ground="12" type="Human">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="10" />
@@ -250,7 +250,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Human" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dragon-kin Ork" karmamodifier="4" movement_ground="12" type="Ork">
+	<NAMEGIVER lang="en" name="Ork Dragon-Kin" karmamodifier="4" movement_ground="12" type="Ork">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="13" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -268,7 +268,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Or'zet (Ork)" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dragon-kin Troll" karmamodifier="2" movement_ground="14" enduringarmorfactor="0.8" type="Troll">
+	<NAMEGIVER lang="en" name="Troll Dragon-Kin" karmamodifier="2" movement_ground="14" enduringarmorfactor="0.8" type="Troll">
 		<ATTRIBUTE name="DEX" value="10" />
 		<ATTRIBUTE name="STR" value="14" />
 		<ATTRIBUTE name="TOU" value="12" />
@@ -285,7 +285,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="Troll" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dragon-kin T'skrang" karmamodifier="3" movement_ground="12" type="T'skrang">
+	<NAMEGIVER lang="en" name="T'skrang Dragon-Kin" karmamodifier="3" movement_ground="12" type="T'skrang">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="10" />
 		<ATTRIBUTE name="TOU" value="11" />
@@ -303,7 +303,7 @@
 		<ORIGIN>Cathay</ORIGIN>
 		<DEFAULTLANGUAGE language="T'Skrang with accent" speak="skill"/>
 	</NAMEGIVER>
-	<NAMEGIVER lang="en" name="Dragon-kin Windling" karmamodifier="5" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
+	<NAMEGIVER lang="en" name="Windling Dragon-Kin" karmamodifier="5" movement_ground="6" movement_flight="16" enduringarmorfactor="1.5" type="Windling">
 		<ATTRIBUTE name="DEX" value="11" />
 		<ATTRIBUTE name="STR" value="4" />
 		<ATTRIBUTE name="TOU" value="8" />
