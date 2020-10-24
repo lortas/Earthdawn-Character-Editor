@@ -7,7 +7,7 @@
 	<TALENT name="Body Control" attribute="STR" hasonehandlimitbonus="yes" action="simple" strain="0"/>
 	<TALENT name="Brother of Stone" attribute="na" action="na" strain="0"/>
 	<TALENT name="Call of Harrow" attribute="PER" action="simple" strain="1"/>
-	<TALENT name="Call of Harrow" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Ch’tard Dance" attribute="DEX" action="free" strain="1"/>
 	<TALENT name="Ch’tard Pierce" attribute="DEX" action="simple" strain="2"/>
 	<TALENT name="Dance Partner" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Deliberate Assault" attribute="na" action="free" strain="1"/>
