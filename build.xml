@@ -17,6 +17,8 @@
 	<property name="config" value="./config/"/>
 	<property name="jar.file" value="EarthdawnCharacterEditor.jar"/>
 	<property name="jar8.file" value="EarthdawnCharacterEditor_java8.jar"/>
+	<property name="title" value="Earthdawn Character Editor" />
+	<property name="version" value="0.51-pre" />
 	<property environment="env"/>
 	<property file="./config/application.properties"/>
 
@@ -94,8 +96,8 @@
 				<section name="common">
 					<attribute name="Build-By" value="lortas" />
 					<attribute name="Build-Date" value="${cur.date}" />
-					<attribute name="Implementation-Title" value="Earthdawn Character Editor" />
-					<attribute name="Implementation-Version" value="0.47" />
+					<attribute name="Implementation-Title" value="${title}" />
+					<attribute name="Implementation-Version" value="${version}" />
 				</section>
 			</manifest>
 		</jar>
@@ -116,19 +118,28 @@
 				<section name="common">
 					<attribute name="Build-By" value="lortas" />
 					<attribute name="Build-Date" value="${cur.date}" />
-					<attribute name="Implementation-Title" value="Earthdawn Character Editor" />
-					<attribute name="Implementation-Version" value="0.47" />
+					<attribute name="Implementation-Title" value="${title}" />
+					<attribute name="Implementation-Version" value="${version}" />
 				</section>
 			</manifest>
 		</jar>
 	</target>
 
-	<target name="run" depends="jar" description="--> ECE starten">
+	<target name="run" depends="jar" description="--> ECE für ED4de starten">
 		<java jar="${jar.file}" fork="true">
 			<arg value="--rulesetversion"/>
 			<arg value="ED4"/>
 			<arg value="--language"/>
 			<arg value="de"/>
+		</java>
+	</target>
+
+	<target name="runED4en" depends="jar" description="--> ECE für ED4en starten">
+		<java jar="${jar.file}" fork="true">
+			<arg value="--rulesetversion"/>
+			<arg value="ED4"/>
+			<arg value="--language"/>
+			<arg value="en"/>
 		</java>
 	</target>
 
@@ -144,7 +155,7 @@
 	<!--
 	target: dist
 	-->
-	<target name="dist" depends="jar,jar8" description="--> Distribution erzeugen">
+	<target name="dist" depends="jar,jar8,disciplinetalenttable" description="--> Distribution erzeugen">
 		<zip destfile="EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
 			<zipfileset file="${jar8.file}"/>
@@ -188,6 +199,15 @@
 			<zipfileset file="./readme.txt"/>
 			<zipfileset file="./changelog.txt"/>
 		</zip>
+	</target>
+
+	<!--
+	target: generate DisciplineTalentTable
+	-->
+	<target name="disciplinetalenttable" description="generate DisciplineTalentTable">
+		<exec dir="config" executable="./generate_discipline_talent_table.rb" output="documentation/ED3en_DisciplineTalentTable.html"><arg value="ED3en"/></exec>
+		<exec dir="config" executable="./generate_discipline_talent_table.rb" output="documentation/ED4en_DisciplineTalentTable.html"><arg value="ED4en"/></exec>
+		<exec dir="config" executable="./generate_discipline_talent_table.rb" output="documentation/ED4de_DisciplineTalentTable.html"><arg value="ED4de"/></exec>
 	</target>
 
 	<!--

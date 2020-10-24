@@ -65,6 +65,7 @@ import de.earthdawn.ECECsvExporter;
 import de.earthdawn.ECEPdfExporter;
 import de.earthdawn.ECEWorker;
 import de.earthdawn.config.ApplicationProperties;
+import de.earthdawn.config.CharsheettemplateContainer;
 import de.earthdawn.data.ARMORType;
 import de.earthdawn.data.ATTRIBUTENameType;
 import de.earthdawn.data.DISCIPLINEType;
@@ -82,6 +83,9 @@ import de.earthdawn.data.TALENTType;
 import de.earthdawn.data.YesnoType;
 import de.earthdawn.event.CharChangeEventListener;
 import java.awt.event.InputEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.zip.DataFormatException;
 
 public class EDMainWindow {
 
@@ -95,7 +99,7 @@ public class EDMainWindow {
 	private JFrame frame;
 	private CharacterContainer character;
 	private JTabbedPane tabbedPane;
-	private EDGeneral panelERGeneral;
+	private EDGeneral panelEDGeneral;
 	private EDAttributes panelEDAttributes;
 	private EDDisciplines panelEDDisciplines;
 	private EDExperience panelEDExperience;
@@ -157,7 +161,7 @@ public class EDMainWindow {
 	/**
 	 * Create the application.
 	 */
-	public EDMainWindow(EDCHARACTER ec) {
+	public EDMainWindow(EDCHARACTER ec) throws DataFormatException {
 		this(new CharacterContainer(ec));
 	}
 
@@ -175,6 +179,9 @@ public class EDMainWindow {
 		});
 		refreshTabs();
 		JOptionPane.showMessageDialog(frame, NLS.getString("EDMainWindow.startHint.text")); //$NON-NLS-1$
+		if( ApplicationProperties.getJavaVersion() < 10 ) {
+			JOptionPane.showMessageDialog(frame, NLS.getString("EDMainWindow.deprecatedJavaVersion.text")); //$NON-NLS-1$
+		}
 	}
 
 	public EDCHARACTER getEDCharacter() {
@@ -287,45 +294,15 @@ public class EDMainWindow {
 		});
 		mntmPdfExport.add(mntmExportAjfelmordomPl);
 
-		JMenuItem mntmExportGeneric = new JMenuItem(NLS.getString("EDMainWindow.mntmExportGeneric.text")); //$NON-NLS-1$
-		mntmExportGeneric.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0,4);
-			}
-		});
-		mntmPdfExport.add(mntmExportGeneric);
-
-		mntmExportGeneric = new JMenuItem("ED4 FasaGames Novize Char"); //$NON-NLS-1$
-		mntmExportGeneric.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0,5);
-			}
-		});
-		mntmPdfExport.add(mntmExportGeneric);
-
-		mntmExportGeneric = new JMenuItem("ED4 Ulisses Novize Char"); //$NON-NLS-1$
-		mntmExportGeneric.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0,6);
-			}
-		});
-		mntmPdfExport.add(mntmExportGeneric);
-
-		mntmExportGeneric = new JMenuItem("ED4 Ulisses Char"); //$NON-NLS-1$
-		mntmExportGeneric.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0,8);
-			}
-		});
-		mntmPdfExport.add(mntmExportGeneric);
-
-		mntmExportGeneric = new JMenuItem("ED4en"); //$NON-NLS-1$
-		mntmExportGeneric.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				do_mntmExport_actionPerformed(arg0,7);
-			}
-		});
-		mntmPdfExport.add(mntmExportGeneric);
+		for( CharsheettemplateContainer charsheettemplate : PROPERTIES.getAllCharsheettemplates() ) {
+			JMenuItem mntmExportGeneric = new JMenuItem(charsheettemplate.getMenuentryname());
+			mntmExportGeneric.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					do_mntmExport_actionPerformed(arg0,charsheettemplate);
+				}
+			});
+			mntmPdfExport.add(mntmExportGeneric);
+		}
 
 		JMenuItem mntmExportSpellcards0 = new JMenuItem(NLS.getString("EDMainWindow.mntmExportSpellcards0.text")); //$NON-NLS-1$
 		mntmExportSpellcards0.addActionListener(new ActionListener() {
@@ -518,11 +495,9 @@ public class EDMainWindow {
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					try {
-						desktop.browse(new URI("https://sourceforge.net/p/ed-char-editor/wiki/FAQ/"));
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (URISyntaxException e) {
-						e.printStackTrace();
+						desktop.browse((new File("documentation/FAQ.html")).toURI());
+					} catch (Exception e) {
+						Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 					}
 				}
 			}
@@ -590,7 +565,7 @@ public class EDMainWindow {
 		}
 		splitPane.setLeftComponent(tabbedPane);
 
-		panelERGeneral = new EDGeneral();
+		panelEDGeneral = new EDGeneral();
 		panelEDDisciplines = new EDDisciplines();
 		panelEDAttributes = new EDAttributes();
 		panelEDKnacks = new EDKnacks(character);
@@ -628,7 +603,7 @@ public class EDMainWindow {
 		characteristicStatus = new CharacteristicStatus("characteristic_layout.html");
 		characteristicStatus.setCharacter(character);
 
-		tabbedPane.addTab(PROPERTIES.getTranslationText("general"), null, new JScrollPane(panelERGeneral), null);
+		tabbedPane.addTab(PROPERTIES.getTranslationText("general"), null, new JScrollPane(panelEDGeneral), null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("disciplines"), null, panelEDDisciplines, null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("attributes"), null, panelEDAttributes, null);
 		tabbedPane.addTab(PROPERTIES.getTranslationText("knacks"), null, panelEDKnacks, null);
@@ -894,7 +869,7 @@ public class EDMainWindow {
 				character = new CharacterContainer(selFile);
 				//TODO: Besserer Umgang mit Fehlern
 			}
-			catch(IOException | JAXBException | ParserConfigurationException | SAXException | TransformerException e){
+			catch(IOException | JAXBException | ParserConfigurationException | SAXException | TransformerException | DataFormatException e){
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
 			}
 			new ECEWorker(character).verarbeiteCharakter();
@@ -933,24 +908,32 @@ public class EDMainWindow {
 				case 1 : new ECEPdfExporter().exportRedbrickSimple(character.getEDCHARACTER(), selFile); break;
 				case 2 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 0, selFile); break;
 				case 3 : new ECEPdfExporter().exportAjfelMordom(character.getEDCHARACTER(), 1, selFile); break;
-				case 4 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ED4_de.xml"), selFile); break;
-				case 5 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_fasagames.xml"), selFile); break;
-				case 6 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_ulisses.xml"), selFile); break;
-				case 7 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_Ajfel+Mordom_en.xml"), selFile); break;
-				case 8 : new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), new File("templates/ed4_character_sheet_ulisses_ext.xml"), selFile); break;
 				default: new ECEPdfExporter().exportRedbrickExtended(character.getEDCHARACTER(), selFile); break;
 				}
 				if( Desktop.isDesktopSupported() ) {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (DocumentException e) {
+			} catch (DataFormatException|IOException|DocumentException e) {
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
+			}
+		}
+	}
+
+	protected void do_mntmExport_actionPerformed(ActionEvent arg0, CharsheettemplateContainer charsheettemplate) {
+		File selFile = selectFileName(".pdf");
+		if( selFile != null ) {
+			try {
+				new ECEPdfExporter().exportGeneric(character.getEDCHARACTER(), charsheettemplate, selFile);
+				if( Desktop.isDesktopSupported() ) {
+					Desktop desktop = Desktop.getDesktop();
+					desktop.open(selFile);
+				}
+			} catch (IOException|DataFormatException|DocumentException ex) {
+				JOptionPane.showMessageDialog(frame, ex.getLocalizedMessage());
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		}
 	}
@@ -960,13 +943,10 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			try {
 				new ECEPdfExporter().exportSpellcards(character.getEDCHARACTER(), selFile, version);
-			} catch (DocumentException e) {
+			} catch (DataFormatException|IOException|DocumentException e) {
 				// TODO Auto-generated catch block
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -980,9 +960,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -996,9 +976,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1012,9 +992,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1028,9 +1008,9 @@ public class EDMainWindow {
 					Desktop desktop = Desktop.getDesktop();
 					desktop.open(selFile);
 				}
-			} catch (IOException e) {
+			} catch (DataFormatException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1040,15 +1020,9 @@ public class EDMainWindow {
 		if( selFile != null ) {
 			try {
 				writeToJson(selFile);
-			} catch (IOException e) {
+			} catch (JSONException|JAXBException|IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (JAXBException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
-			} catch (JSONException e) {
-				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1060,7 +1034,7 @@ public class EDMainWindow {
 				writeToGson(selFile);
 			} catch (IOException e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1076,7 +1050,7 @@ public class EDMainWindow {
 				}
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-				e.printStackTrace();
+				Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 			}
 		}
 	}
@@ -1127,18 +1101,15 @@ public class EDMainWindow {
 		}
 		try {
 			String name = character.getName();
-			if( name == null ) name = "noname";
+			if( name == null || name.isEmpty() ) name = "noname";
 			File tmpfile = File.createTempFile(name.replaceAll(" ", "_"), ".xml");
 			writeToXml(tmpfile);
 			copyCharacterAdditionalFiles(tmpfile.getParentFile());
 			Desktop desktop = Desktop.getDesktop();
 			desktop.browse(tmpfile.toURI());
-		} catch (IOException e) {
+		} catch (Exception e) {
 			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-			e.printStackTrace();
-		} catch(Exception e) {
-			JOptionPane.showMessageDialog(frame, e.getLocalizedMessage());
-			e.printStackTrace();
+			Logger.getLogger(EDMainWindow.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
 
@@ -1168,11 +1139,15 @@ public class EDMainWindow {
 				OptionDialog_YesNoOptions,
 				OptionDialog_YesNoOptions[0]);
 		if( a != 0 ) return;
+		try {
+			EDCHARACTER newedchar = new EDCHARACTER();
+			newedchar.setRulesetversion(PROPERTIES.getRulesetLanguage().getRulesetversion());
+			newedchar.setLang(PROPERTIES.getRulesetLanguage().getLanguage());
+			character = new CharacterContainer(newedchar);
+		} catch (DataFormatException ex) {
+			throw new RuntimeException(ex);
+		}
 		file = null;
-		EDCHARACTER newedchar = new EDCHARACTER();
-		newedchar.setRulesetversion(PROPERTIES.getRulesetLanguage().getRulesetversion());
-		newedchar.setLang(PROPERTIES.getRulesetLanguage().getLanguage());
-		character = new CharacterContainer(newedchar);
 		new ECEWorker(character).verarbeiteCharakter();
 		character.addCharChangeEventListener(new CharChangeEventListener() {
 			@Override

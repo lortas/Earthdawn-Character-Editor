@@ -2,7 +2,7 @@
 <DISCIPLINE name="Scout" lang="en" rulesetversion="ED4" xmlns="http://earthdawn.com/discipline" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edt="http://earthdawn.com/datatypes" xsi:schemaLocation="http://earthdawn.com/discipline ../../earthdawndiscipline.xsd">
 	<DURABILITY value="5" circle="1"/>
 	<CIRCLE><!-- 1 -->
-		<OPTIONALTALENT name="Anticipate Blow,"/>
+		<OPTIONALTALENT name="Anticipate Blow"/>
 		<OPTIONALTALENT name="Avoid Blow"/>
 		<OPTIONALTALENT name="Creature Analysis"/>
 		<OPTIONALTALENT name="Disarm Trap"/>

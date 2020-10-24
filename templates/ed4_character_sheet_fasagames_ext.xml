@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CHARSHEETTEMPLATE menuentryname="ED4 FasaGames Char" filename="ed4_character_sheet_fasagames_ext.pdf" xmlns="http://earthdawn.com/charsheettemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/charsheettemplate ../config/charsheettemplate.xsd">
+	<CurrentDateTime></CurrentDateTime>
+	<Name>Imię</Name>
+	<Race>rasa</Race>
+	<Age>wiek</Age>
+	<Eyes>oczy</Eyes>
+	<Gender>płeć</Gender>
+	<Hair>włosy</Hair>
+	<Height>wzrost</Height>
+	<Skin>skóra</Skin>
+	<Weight>waga</Weight>
+	<Passion></Passion>
+	<Player>zdolności2</Player>
+	<DisciplineName>dyscyplina</DisciplineName>
+	<DisciplineCircle>krąg</DisciplineCircle>
+	<AttributeBaseDex>awp1</AttributeBaseDex>
+	<AttributeBaseStr>awp2</AttributeBaseStr>
+	<AttributeBaseTou>awp3</AttributeBaseTou>
+	<AttributeBasePer>awp4</AttributeBasePer>
+	<AttributeBaseWil>awp5</AttributeBaseWil>
+	<AttributeBaseCha>awp6</AttributeBaseCha>
+	<AttributeCurrentDex>awa 1</AttributeCurrentDex>
+	<AttributeCurrentStr>awa 2</AttributeCurrentStr>
+	<AttributeCurrentTou>awa 3</AttributeCurrentTou>
+	<AttributeCurrentPer>awa 4</AttributeCurrentPer>
+	<AttributeCurrentWil>awa5</AttributeCurrentWil>
+	<AttributeCurrentCha>awa6</AttributeCurrentCha>
+	<AttributeStepDex>as1</AttributeStepDex>
+	<AttributeStepStr>as2</AttributeStepStr>
+	<AttributeStepTou>as3</AttributeStepTou>
+	<AttributeStepPer>as4</AttributeStepPer>
+	<AttributeStepWil>as5</AttributeStepWil>
+	<AttributeStepCha>as6</AttributeStepCha>
+	<AttributeDiceDex>aka1</AttributeDiceDex>
+	<AttributeDiceStr>aka2</AttributeDiceStr>
+	<AttributeDiceTou>aka3</AttributeDiceTou>
+	<AttributeDicePer>aka4</AttributeDicePer>
+	<AttributeDiceWil>aka5</AttributeDiceWil>
+	<AttributeDiceCha>aka6</AttributeDiceCha>
+	<LpincreaseDexValue>alr1</LpincreaseDexValue>
+	<LpincreaseStrValue>alr2</LpincreaseStrValue>
+	<LpincreaseTouValue>alr3</LpincreaseTouValue>
+	<LpincreasePerValue>alr4</LpincreasePerValue>
+	<LpincreaseWilValue>alr5</LpincreaseWilValue>
+	<LpincreaseChaValue>alr6</LpincreaseChaValue>
+	<DefencePhysical>OF1</DefencePhysical>
+	<DefenceMystic>OM1</DefenceMystic>
+	<DefenceSocial>OS</DefenceSocial>
+	<DeathAdjustment>OPŻI</DeathAdjustment>
+	<DeathBase>OPŻBW</DeathBase>
+	<DeathValue>OPŻWA</DeathValue>
+	<UnconsciousnessAdjustment>OPŻI</UnconsciousnessAdjustment>
+	<UnconsciousnessBase>OPPBW</UnconsciousnessBase>
+	<UnconsciousnessValue>OPPWA</UnconsciousnessValue>
+	<RecoveryStep></RecoveryStep>
+	<RecoveryDice>OKZ</RecoveryDice>
+	<RecoveryTestsperday>OTZ</RecoveryTestsperday>
+	<WoundThreshold>OPR</WoundThreshold>
+	<BloodWound></BloodWound>
+	<BloodDamage>OPPMK</BloodDamage>
+	<BloodDamage>OPŻMK</BloodDamage>
+	<LegendPointsTotal>PLc</LegendPointsTotal>
+	<LegendPointsCurrent>PLa</LegendPointsCurrent>
+	<LegendPointsRenown>PLs</LegendPointsRenown>
+	<LegendPointsReputation>PLr</LegendPointsReputation>
+	<InitiativeBase>isz</InitiativeBase>
+	<InitiativeDice>ika</InitiativeDice>
+	<InitiativeStep>is</InitiativeStep>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td1</Name><Action>ta1</Action><Strain>Tdw1</Strain><Attribute>Text4.0.1</Attribute><AttributeStep>Text4.0.2</AttributeStep><Rank>Text4.0.0</Rank><Step>Text4.0.2</Step><Dice>Text4.0.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td2</Name><Action>ta2</Action><Strain>Text5.1.1</Strain><Attribute>Text4.1.1</Attribute><AttributeStep>Text4.1.2</AttributeStep><Rank>Text4.1.0</Rank><Step>Text4.1.2</Step><Dice>Text4.1.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td3</Name><Action>Text5.2.0</Action><Strain>Text5.2.1</Strain><Attribute>Text4.2.1</Attribute><AttributeStep>Text4.2.2</AttributeStep><Rank>Text4.2.0</Rank><Step>Text4.2.2</Step><Dice>Text4.2.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td4</Name><Action>Text5.3.0</Action><Strain>Text5.3.1</Strain><Attribute>Text4.3.1</Attribute><AttributeStep>Text4.3.2</AttributeStep><Rank>Text4.3.0</Rank><Step>Text4.3.2</Step><Dice>Text4.3.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td5</Name><Action>Text5.4.0</Action><Strain>Text5.4.1</Strain><Attribute>Text4.4.1</Attribute><AttributeStep>Text4.4.2</AttributeStep><Rank>Text4.4.0</Rank><Step>Text4.4.2</Step><Dice>Text4.4.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td6</Name><Action>Text5.5.0</Action><Strain>Text5.5.1</Strain><Attribute>Text4.5.1</Attribute><AttributeStep>Text4.5.2</AttributeStep><Rank>Text4.5.0</Rank><Step>Text4.5.2</Step><Dice>Text4.5.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td7</Name><Action>Text5.6.0</Action><Strain>Text5.6.1</Strain><Attribute>Text4.6.1</Attribute><AttributeStep>Text4.6.2</AttributeStep><Rank>Text4.6.0</Rank><Step>Text4.6.2</Step><Dice>Text4.6.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td8</Name><Action>Text5.7.0</Action><Strain>Text5.7.1</Strain><Attribute>Text4.7.1</Attribute><AttributeStep>Text4.7.2</AttributeStep><Rank>Text4.7.0</Rank><Step>Text4.7.2</Step><Dice>Text4.7.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td9</Name><Action>Text5.8.0</Action><Strain>Text5.8.1</Strain><Attribute>Text4.8.1</Attribute><AttributeStep>Text4.8.2</AttributeStep><Rank>Text4.8.0</Rank><Step>Text4.8.2</Step><Dice>Text4.8.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td10</Name><Action>Text5.9.0</Action><Strain>Text5.9.1</Strain><Attribute>Text4.9.1</Attribute><AttributeStep>Text4.9.2</AttributeStep><Rank>Text4.9.0</Rank><Step>Text4.9.2</Step><Dice>Text4.9.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td11</Name><Action>Text5.10.0</Action><Strain>Text5.10.1</Strain><Attribute>Text4.10.1</Attribute><AttributeStep>Text4.10.2</AttributeStep><Rank>Text4.10.0</Rank><Step>Text4.10.2</Step><Dice>Text4.10.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td12</Name><Action>Text5.11.0</Action><Strain>Text5.11.1</Strain><Attribute>Text4.11.1</Attribute><AttributeStep>Text4.11.2</AttributeStep><Rank>Text4.11.0</Rank><Step>Text4.11.2</Step><Dice>Text4.11.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td13</Name><Action>Text5.12.0</Action><Strain>Text5.12.1</Strain><Attribute>Text4.12.1</Attribute><AttributeStep>Text4.12.2</AttributeStep><Rank>Text4.12.0</Rank><Step>Text4.12.2</Step><Dice>Text4.12.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td14</Name><Action>Text5.13.0</Action><Strain>Text5.13.1</Strain><Attribute>Text4.13.1</Attribute><AttributeStep>Text4.13.2</AttributeStep><Rank>Text4.13.0</Rank><Step>Text4.13.2</Step><Dice>Text4.13.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td15</Name><Action>Text5.14.0</Action><Strain>Text5.14.1</Strain><Attribute>Text4.14.1</Attribute><AttributeStep>Text4.14.2</AttributeStep><Rank>Text4.14.0</Rank><Step>Text4.14.2</Step><Dice>Text4.14.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td16</Name><Action>Text5.15.0</Action><Strain>Text5.15.1</Strain><Attribute>Text4.15.1</Attribute><AttributeStep>Text4.15.2</AttributeStep><Rank>Text4.15.0</Rank><Step>Text4.15.2</Step><Dice>Text4.15.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td17</Name><Action>Text5.16.0</Action><Strain>Text5.16.1</Strain><Attribute>Text4.16.1</Attribute><AttributeStep>Text4.16.2</AttributeStep><Rank>Text4.16.0</Rank><Step>Text4.16.2</Step><Dice>Text4.16.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td18</Name><Action>Text5.17.0</Action><Strain>Text5.17.1</Strain><Attribute>Text4.17.1</Attribute><AttributeStep>Text4.17.2</AttributeStep><Rank>Text4.17.0</Rank><Step>Text4.17.2</Step><Dice>Text4.17.3</Dice><Page></Page></Talent>
+	<Talent discipline="1" free="0" other="0" versatility="0"><Name>td19</Name><Action>Text5.18.0</Action><Strain>Text5.18.1</Strain><Attribute>Text4.18.1</Attribute><AttributeStep>Text4.18.2</AttributeStep><Rank>Text4.18.0</Rank><Step>Text4.18.2</Step><Dice>Text4.18.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to1</Name><Action>Text9.0</Action><Strain>Text10.0</Strain><Attribute>Text7.0.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.0.0</Rank><Step>Text7.0.2</Step><Dice>Text7.0.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to2</Name><Action>Text9.1</Action><Strain>Text10.1</Strain><Attribute>Text7.1.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.1.0</Rank><Step>Text7.1.2</Step><Dice>Text7.1.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to3</Name><Action>Text9.2</Action><Strain>Text10.2</Strain><Attribute>Text7.2.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.2.0</Rank><Step>Text7.2.2</Step><Dice>Text7.2.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to4</Name><Action>Text9.3</Action><Strain>Text10.3</Strain><Attribute>Text7.3.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.3.0</Rank><Step>Text7.3.2</Step><Dice>Text7.3.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to5</Name><Action>Text9.4</Action><Strain>Text10.4</Strain><Attribute>Text7.4.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.4.0</Rank><Step>Text7.4.2</Step><Dice>Text7.4.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to6</Name><Action>Text9.5</Action><Strain>Text10.5</Strain><Attribute>Text7.5.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.5.0</Rank><Step>Text7.5.2</Step><Dice>Text7.5.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to7</Name><Action>Text9.6</Action><Strain>Text10.6</Strain><Attribute>Text7.6.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.6.0</Rank><Step>Text7.6.2</Step><Dice>Text7.6.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to8</Name><Action>Text9.7</Action><Strain>Text10.7</Strain><Attribute>Text7.7.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.7.0</Rank><Step>Text7.7.2</Step><Dice>Text7.7.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to9</Name><Action>Text9.8</Action><Strain>Text10.8</Strain><Attribute>Text7.8.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.8.0</Rank><Step>Text7.8.2</Step><Dice>Text7.8.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to10</Name><Action>Text9.9</Action><Strain>Text10.9</Strain><Attribute>Text7.9.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.9.0</Rank><Step>Text7.9.2</Step><Dice>Text7.9.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to11</Name><Action>Text9.10</Action><Strain>Text10.10</Strain><Attribute>Text7.10.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.10.0</Rank><Step>Text7.10.2</Step><Dice>Text7.10.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to12</Name><Action>Text9.11</Action><Strain>Text10.11</Strain><Attribute>Text7.11.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.11.0</Rank><Step>Text7.11.2</Step><Dice>Text7.11.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to13</Name><Action>Text9.12</Action><Strain>Text10.12</Strain><Attribute>Text7.12.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.12.0</Rank><Step>Text7.12.2</Step><Dice>Text7.12.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to14</Name><Action>Text9.13</Action><Strain>Text10.13</Strain><Attribute>Text7.13.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.13.0</Rank><Step>Text7.13.2</Step><Dice>Text7.13.3</Dice><Page></Page></Talent>
+	<Talent discipline="0" free="1" other="1" versatility="1"><Name>to15</Name><Action>Text9.14</Action><Strain>Text10.14</Strain><Attribute>Text7.14.1</Attribute><AttributeStep></AttributeStep><Rank>Text7.14.0</Rank><Step>Text7.14.2</Step><Dice>Text7.14.3</Dice><Page></Page></Talent>
+	<Skill><Name>Un</Name><Action>Uak</Action><Strain>aNStReNguNg 1</Strain><AttributeStep>attRibut 1_2</AttributeStep><Rank>RaNg 1_2</Rank><Step>Stufe 1_3</Step><Dice>W Rfel 1_2</Dice></Skill>
+	<Skill><Name>Un1</Name><Action>Uak1</Action><Strain>aNStReNguNg 2</Strain><AttributeStep>attRibut 2_2</AttributeStep><Rank>RaNg 2_2</Rank><Step>Stufe 2_3</Step><Dice>W Rfel 2_2</Dice></Skill>
+	<Skill><Name>Un2</Name><Action>aktioN 3</Action><Strain>aNStReNguNg 3</Strain><AttributeStep>attRibut 3</AttributeStep><Rank>RaNg 3</Rank><Step>Stufe 3_2</Step><Dice>W Rfel 3</Dice></Skill>
+	<Skill><Name>Un3</Name><Action>aktioN 4</Action><Strain>aNStReNguNg 4</Strain><AttributeStep>attRibut 4</AttributeStep><Rank>RaNg 4</Rank><Step>Stufe 4_2</Step><Dice>W Rfel 4</Dice></Skill>
+	<Skill><Name>Un4</Name><Action>aktioN 5</Action><Strain>aNStReNguNg 5</Strain><AttributeStep>attRibut 5</AttributeStep><Rank>RaNg 5</Rank><Step>Stufe 5_2</Step><Dice>W Rfel 5</Dice></Skill>
+	<Skill><Name>Un5</Name><Action>aktioN 6</Action><Strain>aNStReNguNg 6</Strain><AttributeStep>attRibut 6</AttributeStep><Rank>RaNg 6</Rank><Step>Stufe 6_2</Step><Dice>W Rfel 6</Dice></Skill>
+	<Skill><Name>Un6</Name><Action>aktioN 7</Action><Strain>aNStReNguNg 7</Strain><AttributeStep>attRibut 7</AttributeStep><Rank>RaNg 7</Rank><Step>Stufe 7</Step><Dice>W Rfel 7</Dice></Skill>
+	<Skill><Name>Un7</Name><Action>aktioN 8</Action><Strain>aNStReNguNg 8</Strain><AttributeStep>attRibut 8</AttributeStep><Rank>RaNg 8</Rank><Step>Stufe 8</Step><Dice>W Rfel 8</Dice></Skill>
+	<Skill><Name>Un8</Name><Action>aktioN 9</Action><Strain>aNStReNguNg 9</Strain><AttributeStep>attRibut 9</AttributeStep><Rank>RaNg 9</Rank><Step>Stufe 9</Step><Dice>W Rfel 9</Dice></Skill>
+	<Skill><Name>Un9</Name><Action>aktioN 10</Action><Strain>aNStReNguNg 10</Strain><AttributeStep>attRibut 10</AttributeStep><Rank>RaNg 10</Rank><Step>Stufe 10</Step><Dice>W Rfel 10</Dice></Skill>
+	<HealthDamage>OAO</HealthDamage>
+	<KarmaCurrent>Ka</KarmaCurrent>
+	<KarmaMax>Km</KarmaMax>
+	<KarmaModifier></KarmaModifier>
+	<Movement>SZY</Movement>
+	<Carrying>UDG</Carrying>
+	<ArmorMystic>PD</ArmorMystic>
+	<ArmorPhysical>PF</ArmorPhysical>
+	<ArmorPenalty>ikp</ArmorPenalty>
+	<ShieldMystic></ShieldMystic>
+	<ShieldPhysical></ShieldPhysical>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo1</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo2</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo3</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo4</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo5</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo6</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo7</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo8</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo9</Ability></DisciplineBonus>
+	<DisciplineBonus><Circle></Circle><Ability>ZDo10</Ability></DisciplineBonus>
+	<WeaponName>Broń1</WeaponName>
+	<WeaponName>Broń2</WeaponName>
+	<WeaponName>Broń3</WeaponName>
+	<WeaponName>Broń4</WeaponName>
+	<WeaponName>Broń5</WeaponName>
+	<WeaponAttackstep>St 1</WeaponAttackstep>
+	<WeaponAttackstep>St 2</WeaponAttackstep>
+	<WeaponAttackstep>St 3</WeaponAttackstep>
+	<WeaponAttackstep>St 4</WeaponAttackstep>
+	<WeaponAttackstep>St 5</WeaponAttackstep>
+	<WeaponAttackstep>St 6</WeaponAttackstep>
+	<WeaponAttackstep>St 7</WeaponAttackstep>
+	<WeaponAttackstep>St 8</WeaponAttackstep>
+	<WeaponAttackstep>St 9</WeaponAttackstep>
+	<WeaponSize></WeaponSize>
+	<WeaponTimesforged>Bpp1</WeaponTimesforged>
+	<WeaponTimesforged>Bpp2</WeaponTimesforged>
+	<WeaponTimesforged>Bpp3</WeaponTimesforged>
+	<WeaponTimesforged>Bpp4</WeaponTimesforged>
+	<WeaponTimesforged>Bpp5</WeaponTimesforged>
+	<WeaponRange>Bz1</WeaponRange>
+	<WeaponRange>Bz2</WeaponRange>
+	<WeaponRange>Bz3</WeaponRange>
+	<WeaponRange>Bz4</WeaponRange>
+	<WeaponRange>Bz5</WeaponRange>
+	<WeaponLongrange></WeaponLongrange>
+	<WeaponAttribute></WeaponAttribute>
+	<WeaponDamagestep>Bso1</WeaponDamagestep>
+	<WeaponDamagestep>Bso2</WeaponDamagestep>
+	<WeaponDamagestep>Bso3</WeaponDamagestep>
+	<WeaponDamagestep>Bso4</WeaponDamagestep>
+	<WeaponDamagestep>Bso5</WeaponDamagestep>
+	<WeaponStep></WeaponStep>
+	<WeaponDice>Bko1</WeaponDice>
+	<WeaponDice>Bko2</WeaponDice>
+	<WeaponDice>Bko3</WeaponDice>
+	<WeaponDice>Bko4</WeaponDice>
+	<WeaponDice>Bko5</WeaponDice>
+	<InventoryDescription>Eprz</InventoryDescription>
+	<InventoryDescription>Eprz1</InventoryDescription>
+	<InventoryDescription>Eprz2</InventoryDescription>
+	<InventoryDescription>Eprz3</InventoryDescription>
+	<InventoryDescription>Eprz4</InventoryDescription>
+	<InventoryDescription>Eprz5</InventoryDescription>
+	<InventoryDescription>Eprz6</InventoryDescription>
+	<InventoryDescription>Eprz7</InventoryDescription>
+	<InventoryDescription>Eprz8</InventoryDescription>
+	<InventoryDescription>Eprz9</InventoryDescription>
+	<InventoryDescription>Eprz10</InventoryDescription>
+	<InventoryDescription>Eprz12</InventoryDescription>
+	<InventoryDescription>Eprz13</InventoryDescription>
+	<InventoryDescription>Eprz14</InventoryDescription>
+	<InventoryDescription>Eprz15</InventoryDescription>
+	<InventoryDescription>Eprz16</InventoryDescription>
+	<InventoryDescription>Eprz17</InventoryDescription>
+	<InventoryDescription>Eprz18</InventoryDescription>
+	<InventoryDescription>Eprz19</InventoryDescription>
+	<InventoryDescription>Eprz20</InventoryDescription>
+	<InventoryDescription>Eprz21</InventoryDescription>
+	<InventoryDescription>Eprz22</InventoryDescription>
+	<InventoryDescription>Eprz23</InventoryDescription>
+	<InventoryDescription>Eprz24</InventoryDescription>
+	<InventoryDescription>Eprz25</InventoryDescription>
+	<InventoryDescription>Eprz26</InventoryDescription>
+	<InventoryDescription>Eprz27</InventoryDescription>
+	<InventoryDescription>Eprz28</InventoryDescription>
+	<InventoryDescription>Eprz30</InventoryDescription>
+	<InventoryWeight>Ew</InventoryWeight>
+	<InventoryWeight>Ew1</InventoryWeight>
+	<InventoryWeight>Ew2</InventoryWeight>
+	<InventoryWeight>Ew3</InventoryWeight>
+	<InventoryWeight>Ew4</InventoryWeight>
+	<InventoryWeight>Ew5</InventoryWeight>
+	<InventoryWeight>Ew6</InventoryWeight>
+	<InventoryWeight>Ew7</InventoryWeight>
+	<InventoryWeight>Ew8</InventoryWeight>
+	<InventoryWeight>Ew9</InventoryWeight>
+	<InventoryWeight>Ew10</InventoryWeight>
+	<InventoryWeight>Ew11</InventoryWeight>
+	<InventoryWeight>Ew12</InventoryWeight>
+	<InventoryWeight>Ew13</InventoryWeight>
+	<InventoryWeight>Ew14</InventoryWeight>
+	<InventoryWeight>Ew15</InventoryWeight>
+	<InventoryWeight>Ew16</InventoryWeight>
+	<InventoryWeight>Ew17</InventoryWeight>
+	<InventoryWeight>Ew18</InventoryWeight>
+	<InventoryWeight>Ew19</InventoryWeight>
+	<InventoryWeight>Ew20</InventoryWeight>
+	<InventoryWeight>Ew21</InventoryWeight>
+	<InventoryWeight>Ew22</InventoryWeight>
+	<InventoryWeight>Ew23</InventoryWeight>
+	<InventoryWeight>Ew24</InventoryWeight>
+	<InventoryWeight>Ew25</InventoryWeight>
+	<InventoryWeight>Ew26</InventoryWeight>
+	<InventoryWeight>Ew27</InventoryWeight>
+	<InventoryWeight>Ew28</InventoryWeight>
+	<InventoryWeight>Ew29</InventoryWeight>
+	<MoneyCopper>Sm</MoneyCopper>
+	<MoneySilver>Ss</MoneySilver>
+	<MoneyGold>Sz</MoneyGold>
+	<MoneyOther>So1</MoneyOther>
+	<ThreadItemName>MWo</ThreadItemName>
+	<ThreadItemName>MWo1</ThreadItemName>
+	<ThreadItemName>MWo2</ThreadItemName>
+	<ThreadItemName>MWo3</ThreadItemName>
+	<ThreadItemName>MWo4</ThreadItemName>
+	<ThreadItemName>MWo5</ThreadItemName>
+	<ThreadItemName>MWo6</ThreadItemName>
+	<ThreadItemName>MWo7</ThreadItemName>
+	<ThreadItemName>MWo8</ThreadItemName>
+	<ThreadItemName>MWo9</ThreadItemName>
+	<ThreadItemName>MWo10</ThreadItemName>
+	<ThreadItemName>MWo11</ThreadItemName>
+	<ThreadItemName>MWo12</ThreadItemName>
+	<ThreadItemName>MWo13</ThreadItemName>
+	<ThreadItemName>MWo14</ThreadItemName>
+	<ThreadItemThreadRank>MWpd</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd1</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd2</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd3</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd4</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd5</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd6</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd7</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd8</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd9</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd10</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd11</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd12</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd13</ThreadItemThreadRank>
+	<ThreadItemThreadRank>MWpd14</ThreadItemThreadRank>
+	<ThreadItemThreadEffect>MWef</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef1</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef2</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef3</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef4</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef5</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef6</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef7</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef8</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef9</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef10</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef11</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef12</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef13</ThreadItemThreadEffect>
+	<ThreadItemThreadEffect>MWef14</ThreadItemThreadEffect>
+	<Spell><Name>ZAKzak</Name><Circle>ZAKkr</Circle><Threads>ZAKlw</Threads><Weavingdifficulty>ZAKtu</Weavingdifficulty><Reattuningdifficulty>ZAKtp</Reattuningdifficulty><Castingdifficulty>ZAKtr</Castingdifficulty><Range>ZAKz</Range><Duration>ZAKct</Duration><Effect>ZAKef</Effect></Spell>
+	<Spell><Name>ZAKzak1</Name><Circle>ZAKkr1</Circle><Threads>ZAKlw1</Threads><Weavingdifficulty>ZAKtu1</Weavingdifficulty><Reattuningdifficulty>ZAKtp1</Reattuningdifficulty><Castingdifficulty>ZAKtr1</Castingdifficulty><Range>ZAKz1</Range><Duration>ZAKct1</Duration><Effect>ZAKef1</Effect></Spell>
+	<Spell><Name>ZAKzak2</Name><Circle>ZAKkr2</Circle><Threads>ZAKlw2</Threads><Weavingdifficulty>ZAKtu2</Weavingdifficulty><Reattuningdifficulty>ZAKtp2</Reattuningdifficulty><Castingdifficulty>ZAKtr2</Castingdifficulty><Range>ZAKz2</Range><Duration>ZAKct2</Duration><Effect>ZAKef2</Effect></Spell>
+	<Spell><Name>ZAKzak3</Name><Circle>ZAKkr3</Circle><Threads>ZAKlw3</Threads><Weavingdifficulty>ZAKtu3</Weavingdifficulty><Reattuningdifficulty>ZAKtp3</Reattuningdifficulty><Castingdifficulty>ZAKtr3</Castingdifficulty><Range>ZAKz3</Range><Duration>ZAKct3</Duration><Effect>ZAKef3</Effect></Spell>
+	<Spell><Name>ZAKzak4</Name><Circle>ZAKkr4</Circle><Threads>ZAKlw4</Threads><Weavingdifficulty>ZAKtu4</Weavingdifficulty><Reattuningdifficulty>ZAKtp4</Reattuningdifficulty><Castingdifficulty>ZAKtr4</Castingdifficulty><Range>ZAKz4</Range><Duration>ZAKct4</Duration><Effect>ZAKef4</Effect></Spell>
+	<Spell><Name>ZAKzak5</Name><Circle>ZAKkr5</Circle><Threads>ZAKlw5</Threads><Weavingdifficulty>ZAKtu5</Weavingdifficulty><Reattuningdifficulty>ZAKtp5</Reattuningdifficulty><Castingdifficulty>ZAKtr5</Castingdifficulty><Range>ZAKz5</Range><Duration>ZAKct5</Duration><Effect>ZAKef5</Effect></Spell>
+	<Spell><Name>ZAKzak6</Name><Circle>ZAKkr6</Circle><Threads>ZAKlw6</Threads><Weavingdifficulty>ZAKtu6</Weavingdifficulty><Reattuningdifficulty>ZAKtp6</Reattuningdifficulty><Castingdifficulty>ZAKtr6</Castingdifficulty><Range>ZAKz6</Range><Duration>ZAKct6</Duration><Effect>ZAKef6</Effect></Spell>
+	<Spell><Name>ZAKzak7</Name><Circle>ZAKkr7</Circle><Threads>ZAKlw7</Threads><Weavingdifficulty>ZAKtu7</Weavingdifficulty><Reattuningdifficulty>ZAKtp7</Reattuningdifficulty><Castingdifficulty>ZAKtr7</Castingdifficulty><Range>ZAKz7</Range><Duration>ZAKct7</Duration><Effect>ZAKef7</Effect></Spell>
+	<Spell><Name>ZAKzak8</Name><Circle>ZAKkr8</Circle><Threads>ZAKlw8</Threads><Weavingdifficulty>ZAKtu8</Weavingdifficulty><Reattuningdifficulty>ZAKtp8</Reattuningdifficulty><Castingdifficulty>ZAKtr8</Castingdifficulty><Range>ZAKz8</Range><Duration>ZAKct8</Duration><Effect>ZAKef8</Effect></Spell>
+	<Spell><Name>ZAKzak9</Name><Circle>ZAKkr9</Circle><Threads>ZAKlw9</Threads><Weavingdifficulty>ZAKtu9</Weavingdifficulty><Reattuningdifficulty>ZAKtp9</Reattuningdifficulty><Castingdifficulty>ZAKtr9</Castingdifficulty><Range>ZAKz9</Range><Duration>ZAKct9</Duration><Effect>ZAKef9</Effect></Spell>
+	<Spell><Name>ZAKzak10</Name><Circle>ZAKkr10</Circle><Threads>ZAKlw10</Threads><Weavingdifficulty>ZAKtu10</Weavingdifficulty><Reattuningdifficulty>ZAKtp10</Reattuningdifficulty><Castingdifficulty>ZAKtr10</Castingdifficulty><Range>ZAKz10</Range><Duration>ZAKct10</Duration><Effect>ZAKef10</Effect></Spell>
+	<Spell><Name>ZAKzak11</Name><Circle>ZAKkr11</Circle><Threads>ZAKlw11</Threads><Weavingdifficulty>ZAKtu11</Weavingdifficulty><Reattuningdifficulty>ZAKtp11</Reattuningdifficulty><Castingdifficulty>ZAKtr11</Castingdifficulty><Range>ZAKz11</Range><Duration>ZAKct11</Duration><Effect>ZAKef11</Effect></Spell>
+	<Spell><Name>ZAKzak12</Name><Circle>ZAKkr12</Circle><Threads>ZAKlw12</Threads><Weavingdifficulty>ZAKtu12</Weavingdifficulty><Reattuningdifficulty>ZAKtp12</Reattuningdifficulty><Castingdifficulty>ZAKtr12</Castingdifficulty><Range>ZAKz12</Range><Duration>ZAKct12</Duration><Effect>ZAKef12</Effect></Spell>
+	<Spell><Name>ZAKzak13</Name><Circle>ZAKkr13</Circle><Threads>ZAKlw13</Threads><Weavingdifficulty>ZAKtu13</Weavingdifficulty><Reattuningdifficulty>ZAKtp13</Reattuningdifficulty><Castingdifficulty>ZAKtr13</Castingdifficulty><Range>ZAKz13</Range><Duration>ZAKct13</Duration><Effect>ZAKef13</Effect></Spell>
+	<Spell><Name>ZAKzak14</Name><Circle>ZAKkr14</Circle><Threads>ZAKlw14</Threads><Weavingdifficulty>ZAKtu14</Weavingdifficulty><Reattuningdifficulty>ZAKtp14</Reattuningdifficulty><Castingdifficulty>ZAKtr14</Castingdifficulty><Range>ZAKz14</Range><Duration>ZAKct14</Duration><Effect>ZAKef14</Effect></Spell>
+	<Spell><Name>ZAKzak15</Name><Circle>ZAKkr15</Circle><Threads>ZAKlw15</Threads><Weavingdifficulty>ZAKtu15</Weavingdifficulty><Reattuningdifficulty>ZAKtp15</Reattuningdifficulty><Castingdifficulty>ZAKtr15</Castingdifficulty><Range>ZAKz15</Range><Duration>ZAKct15</Duration><Effect>ZAKef15</Effect></Spell>
+	<Spell><Name>ZAKzak16</Name><Circle>ZAKkr16</Circle><Threads>ZAKlw16</Threads><Weavingdifficulty>ZAKtu16</Weavingdifficulty><Reattuningdifficulty>ZAKtp16</Reattuningdifficulty><Castingdifficulty>ZAKtr16</Castingdifficulty><Range>ZAKz16</Range><Duration>ZAKct16</Duration><Effect>ZAKef16</Effect></Spell>
+	<Spell><Name>ZAKzak17</Name><Circle>ZAKkr17</Circle><Threads>ZAKlw17</Threads><Weavingdifficulty>ZAKtu17</Weavingdifficulty><Reattuningdifficulty>ZAKtp17</Reattuningdifficulty><Castingdifficulty>ZAKtr17</Castingdifficulty><Range>ZAKz17</Range><Duration>ZAKct17</Duration><Effect>ZAKef17</Effect></Spell>
+	<Spell><Name>ZAKzak18</Name><Circle>ZAKkr18</Circle><Threads>ZAKlw18</Threads><Weavingdifficulty>ZAKtu18</Weavingdifficulty><Reattuningdifficulty>ZAKtp18</Reattuningdifficulty><Castingdifficulty>ZAKtr18</Castingdifficulty><Range>ZAKz18</Range><Duration>ZAKct18</Duration><Effect>ZAKef18</Effect></Spell>
+	<Spell><Name>ZAKzak19</Name><Circle>ZAKkr19</Circle><Threads>ZAKlw19</Threads><Weavingdifficulty>ZAKtu19</Weavingdifficulty><Reattuningdifficulty>ZAKtp19</Reattuningdifficulty><Castingdifficulty>ZAKtr19</Castingdifficulty><Range>ZAKz19</Range><Duration>ZAKct19</Duration><Effect>ZAKef19</Effect></Spell>
+	<Spell><Name>ZAKzak20</Name><Circle>ZAKkr20</Circle><Threads>ZAKlw20</Threads><Weavingdifficulty>ZAKtu20</Weavingdifficulty><Reattuningdifficulty>ZAKtp20</Reattuningdifficulty><Castingdifficulty>ZAKtr20</Castingdifficulty><Range>ZAKz20</Range><Duration>ZAKct20</Duration><Effect>ZAKef20</Effect></Spell>
+	<Spell><Name>ZAKzak21</Name><Circle>ZAKkr21</Circle><Threads>ZAKlw21</Threads><Weavingdifficulty>ZAKtu21</Weavingdifficulty><Reattuningdifficulty>ZAKtp21</Reattuningdifficulty><Castingdifficulty>ZAKtr21</Castingdifficulty><Range>ZAKz21</Range><Duration>ZAKct21</Duration><Effect>ZAKef21</Effect></Spell>
+	<Spell><Name>ZAKzak22</Name><Circle>ZAKkr22</Circle><Threads>ZAKlw22</Threads><Weavingdifficulty>ZAKtu22</Weavingdifficulty><Reattuningdifficulty>ZAKtp22</Reattuningdifficulty><Castingdifficulty>ZAKtr22</Castingdifficulty><Range>ZAKz22</Range><Duration>ZAKct22</Duration><Effect>ZAKef22</Effect></Spell>
+	<Spell><Name>ZAKzak23</Name><Circle>ZAKkr23</Circle><Threads>ZAKlw23</Threads><Weavingdifficulty>ZAKtu23</Weavingdifficulty><Reattuningdifficulty>ZAKtp23</Reattuningdifficulty><Castingdifficulty>ZAKtr23</Castingdifficulty><Range>ZAKz23</Range><Duration>ZAKct23</Duration><Effect>ZAKef23</Effect></Spell>
+	<Spell><Name>ZAKzak24</Name><Circle>ZAKkr24</Circle><Threads>ZAKlw24</Threads><Weavingdifficulty>ZAKtu24</Weavingdifficulty><Reattuningdifficulty>ZAKtp24</Reattuningdifficulty><Castingdifficulty>ZAKtr24</Castingdifficulty><Range>ZAKz24</Range><Duration>ZAKct24</Duration><Effect>ZAKef24</Effect></Spell>
+	<Spell><Name>ZAKzak25</Name><Circle>ZAKkr25</Circle><Threads>ZAKlw25</Threads><Weavingdifficulty>ZAKtu25</Weavingdifficulty><Reattuningdifficulty>ZAKtp25</Reattuningdifficulty><Castingdifficulty>ZAKtr25</Castingdifficulty><Range>ZAKz25</Range><Duration>ZAKct25</Duration><Effect>ZAKef25</Effect></Spell>
+	<Spell><Name>ZAKzak26</Name><Circle>ZAKkr26</Circle><Threads>ZAKlw26</Threads><Weavingdifficulty>ZAKtu26</Weavingdifficulty><Reattuningdifficulty>ZAKtp26</Reattuningdifficulty><Castingdifficulty>ZAKtr26</Castingdifficulty><Range>ZAKz26</Range><Duration>ZAKct26</Duration><Effect>ZAKef26</Effect></Spell>
+	<Spell><Name>ZAKzak27</Name><Circle>ZAKkr27</Circle><Threads>ZAKlw27</Threads><Weavingdifficulty>ZAKtu27</Weavingdifficulty><Reattuningdifficulty>ZAKtp27</Reattuningdifficulty><Castingdifficulty>ZAKtr27</Castingdifficulty><Range>ZAKz27</Range><Duration>ZAKct27</Duration><Effect>ZAKef27</Effect></Spell>
+	<Spell><Name>ZAKzak28</Name><Circle>ZAKkr28</Circle><Threads>ZAKlw28</Threads><Weavingdifficulty>ZAKtu28</Weavingdifficulty><Reattuningdifficulty>ZAKtp28</Reattuningdifficulty><Castingdifficulty>ZAKtr28</Castingdifficulty><Range>ZAKz28</Range><Duration>ZAKct28</Duration><Effect>ZAKef28</Effect></Spell>
+	<Spell><Name>ZAKzak29</Name><Circle>ZAKkr29</Circle><Threads>ZAKlw29</Threads><Weavingdifficulty>ZAKtu29</Weavingdifficulty><Reattuningdifficulty>ZAKtp29</Reattuningdifficulty><Castingdifficulty>ZAKtr29</Castingdifficulty><Range>ZAKz29</Range><Duration>ZAKct29</Duration><Effect>ZAKef29</Effect></Spell>
+	<Spell><Name>ZAKzak30</Name><Circle>ZAKkr30</Circle><Threads>ZAKlw30</Threads><Weavingdifficulty>ZAKtu30</Weavingdifficulty><Reattuningdifficulty>ZAKtp30</Reattuningdifficulty><Castingdifficulty>ZAKtr30</Castingdifficulty><Range>ZAKz30</Range><Duration>ZAKct30</Duration><Effect>ZAKef30</Effect></Spell>
+	<Spell><Name>ZAKzak31</Name><Circle>ZAKkr31</Circle><Threads>ZAKlw31</Threads><Weavingdifficulty>ZAKtu31</Weavingdifficulty><Reattuningdifficulty>ZAKtp31</Reattuningdifficulty><Castingdifficulty>ZAKtr31</Castingdifficulty><Range>ZAKz31</Range><Duration>ZAKct31</Duration><Effect>ZAKef31</Effect></Spell>
+	<Spell><Name>ZAKzak32</Name><Circle>ZAKkr32</Circle><Threads>ZAKlw32</Threads><Weavingdifficulty>ZAKtu32</Weavingdifficulty><Reattuningdifficulty>ZAKtp32</Reattuningdifficulty><Castingdifficulty>ZAKtr32</Castingdifficulty><Range>ZAKz32</Range><Duration>ZAKct32</Duration><Effect>ZAKef32</Effect></Spell>
+	<Spell><Name>ZAKzak33</Name><Circle>ZAKkr34</Circle><Threads>ZAKlw34</Threads><Weavingdifficulty>ZAKtu34</Weavingdifficulty><Reattuningdifficulty>ZAKtp34</Reattuningdifficulty><Castingdifficulty>ZAKtr34</Castingdifficulty><Range>ZAKz34</Range><Duration>ZAKct34</Duration><Effect>ZAKef34</Effect></Spell>
+	<Spell><Name>ZAKzak34</Name><Circle>ZAKkr34</Circle><Threads>ZAKlw34</Threads><Weavingdifficulty>ZAKtu34</Weavingdifficulty><Reattuningdifficulty>ZAKtp34</Reattuningdifficulty><Castingdifficulty>ZAKtr34</Castingdifficulty><Range>ZAKz34</Range><Duration>ZAKct34</Duration><Effect>ZAKef34</Effect></Spell>
+	<Spell><Name>ZAKzak35</Name><Circle>ZAKkr35</Circle><Threads>ZAKlw35</Threads><Weavingdifficulty>ZAKtu35</Weavingdifficulty><Reattuningdifficulty>ZAKtp35</Reattuningdifficulty><Castingdifficulty>ZAKtr35</Castingdifficulty><Range>ZAKz35</Range><Duration>ZAKct35</Duration><Effect>ZAKef35</Effect></Spell>
+	<Spell><Name>ZAKzak36</Name><Circle>ZAKkr36</Circle><Threads>ZAKlw36</Threads><Weavingdifficulty>ZAKtu36</Weavingdifficulty><Reattuningdifficulty>ZAKtp36</Reattuningdifficulty><Castingdifficulty>ZAKtr36</Castingdifficulty><Range>ZAKz36</Range><Duration>ZAKct36</Duration><Effect>ZAKef36</Effect></Spell>
+	<Spell><Name>ZAKzak37</Name><Circle>ZAKkr37</Circle><Threads>ZAKlw37</Threads><Weavingdifficulty>ZAKtu37</Weavingdifficulty><Reattuningdifficulty>ZAKtp37</Reattuningdifficulty><Castingdifficulty>ZAKtr37</Castingdifficulty><Range>ZAKz37</Range><Duration>ZAKct37</Duration><Effect>ZAKef37</Effect></Spell>
+	<Spell><Name>ZAKzak38</Name><Circle>ZAKkr38</Circle><Threads>ZAKlw38</Threads><Weavingdifficulty>ZAKtu38</Weavingdifficulty><Reattuningdifficulty>ZAKtp38</Reattuningdifficulty><Castingdifficulty>ZAKtr38</Castingdifficulty><Range>ZAKz38</Range><Duration>ZAKct38</Duration><Effect>ZAKef38</Effect></Spell>
+	<Spell><Name>ZAKzak39</Name><Circle>ZAKkr39</Circle><Threads>ZAKlw39</Threads><Weavingdifficulty>ZAKtu39</Weavingdifficulty><Reattuningdifficulty>ZAKtp39</Reattuningdifficulty><Castingdifficulty>ZAKtr39</Castingdifficulty><Range>ZAKz39</Range><Duration>ZAKct39</Duration><Effect>ZAKef39</Effect></Spell>
+</CHARSHEETTEMPLATE>

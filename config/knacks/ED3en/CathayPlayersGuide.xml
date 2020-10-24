@@ -31,7 +31,7 @@
 	<KNACK name="Spider-walk Mount"          strain="4"  bookref="CPG p.97"><BASE type="talent" minrank="13" name="Trick Riding"/>                            </KNACK>
 	<KNACK name="Stash Object"               strain="2"  bookref="CPG p.97"><BASE type="talent" minrank="9"  name="Conceal Object"/>                          </KNACK>
 	<KNACK name="Storms Roar"                strain="6"  bookref="CPG p.98"><BASE type="talent" minrank="8"  name="Lightning Born"/>                          </KNACK>
-	<KNACK name="Storm Visits Your Home"     strain="6"  bookref="CPG p.98"><BASE type="talent" minrank="10" name="Lightning Born"/>                          </KNACK>	
+	<KNACK name="Storm Visits Your Home"     strain="6"  bookref="CPG p.98"><BASE type="talent" minrank="10" name="Lightning Born"/>                          </KNACK>
 	<KNACK name="Summon Blade"               strain="3"  bookref="CPG p.97"><BASE type="talent" minrank="8"  name="Fiery Blade"/>                             </KNACK>
 	<KNACK name="Traceless Wagon"            strain="1+" bookref="CPG p.97"><BASE type="talent" minrank="9"  name="Conceal Caravan"/>                         </KNACK>
 	<KNACK name="Unequal Fight"              strain="2"  bookref="CPG p.97"><BASE type="talent" minrank="10" name="Absorb Blow"/>                             </KNACK>

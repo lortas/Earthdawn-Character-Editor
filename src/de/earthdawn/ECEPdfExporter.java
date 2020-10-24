@@ -39,6 +39,7 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.CharsheettemplateContainer;
 import de.earthdawn.config.CharsheettemplatetalentStack;
 import de.earthdawn.data.*;
+import java.util.zip.DataFormatException;
 
 public class ECEPdfExporter {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
@@ -213,7 +214,7 @@ public class ECEPdfExporter {
 		return initiativeStep;
 	}
 
-	public void exportRedbrickSimple(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
+	public void exportRedbrickSimple(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException, DataFormatException {
 		PdfReader reader = new PdfReader(new FileInputStream(new File("./templates/ed3_character_sheet.pdf")));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
 		acroFields = stamper.getAcroFields();
@@ -418,7 +419,7 @@ public class ECEPdfExporter {
 		return fieldnames;
 	}
 
-	public void exportRedbrickExtended(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException {
+	public void exportRedbrickExtended(EDCHARACTER edCharakter, File outFile) throws DocumentException, IOException, DataFormatException {
 		PdfReader reader = new PdfReader(new FileInputStream(new File("./templates/ed3_extended_character_sheet.pdf")));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
 		acroFields = stamper.getAcroFields();
@@ -725,8 +726,7 @@ public class ECEPdfExporter {
 		setPdfField(field.getAbility(),bonus.getBonus());
 	}
 
-	public void exportGeneric(EDCHARACTER edCharakter, File template, File outFile) throws DocumentException, IOException {
-		CharsheettemplateContainer charsheettemplate = new CharsheettemplateContainer(template);
+	public void exportGeneric(EDCHARACTER edCharakter, CharsheettemplateContainer charsheettemplate, File outFile) throws DocumentException, IOException, DataFormatException {
 		File pdfinputfile = new File( new File("templates"), charsheettemplate.getPdfFilename() );
 		PdfReader reader = new PdfReader(new FileInputStream(pdfinputfile));
 		PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outFile));
@@ -956,7 +956,7 @@ public class ECEPdfExporter {
 		stamper.close();
 	}
 
-	public void exportAjfelMordom(EDCHARACTER edCharakter, int pdftype, File outFile) throws DocumentException, IOException {
+	public void exportAjfelMordom(EDCHARACTER edCharakter, int pdftype, File outFile) throws DocumentException, IOException, DataFormatException {
 		File pdfinputfile;
 		if( pdftype == 1 ) pdfinputfile = new File("templates/ed3_character_sheet_Ajfel+Mordom_pl.pdf");
 		else pdfinputfile = new File("templates/ed3_character_sheet_Ajfel+Mordom.pdf");
@@ -1351,7 +1351,7 @@ public class ECEPdfExporter {
 		return result;
 	}
 
-	public void exportSpellcards(EDCHARACTER edCharakter, File outFile, int version) throws DocumentException, IOException {
+	public void exportSpellcards(EDCHARACTER edCharakter, File outFile, int version) throws DocumentException, IOException, DataFormatException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		File template=null; 
 		int maxSpellPerPage=1;

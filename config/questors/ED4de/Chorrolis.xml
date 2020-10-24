@@ -16,17 +16,17 @@
 			<DEVOTIONABILITY/>
 			<DEVOTIONDICESTEP count="3"/>
 			<DEVOTIONBENEFIT spend="tbd by questor"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 2 -->
 			<DEVOTIONABILITY/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 3 -->
 			<DEVOTIONABILITY/>
 			<DEFENSE kind="social"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 4 -->
 			<DEVOTIONABILITY/>
-		</RANK>	
+		</RANK>
 	</TIER>
 	<TIER>
 		<OPTIONALDEVOTION name="Absichten Einschätzen"/>
@@ -41,19 +41,19 @@
 			<DEVOTIONABILITY/>
 			<DEVOTIONDICESTEP/>
 			<DEVOTIONBENEFIT spend="tbd by player+gamemaster"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 6 -->
 			<DEVOTIONABILITY/>
 			<DEFENSE kind="social"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 7 -->
 			<DEVOTIONABILITY/>
 			<ARMOR name="additional questor armor" mysticarmor="1" weight="0"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 8 -->
 			<DEVOTIONABILITY/>
 			<DEFENSE kind="mystic"/>
-		</RANK>	
+		</RANK>
 	</TIER>
 	<TIER>
 		<OPTIONALDEVOTION name="Gedanken Verbergen"/>
@@ -66,20 +66,20 @@
 			<DEVOTIONABILITY/>
 			<DEVOTIONDICESTEP/>
 			<DEVOTIONBENEFIT spend="tbd by player+gamemaster"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 10 -->
 			<DEVOTIONABILITY/>
 			<DEFENSE kind="social"/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 11 -->
 			<DEVOTIONABILITY/>
 			<RECOVERYTESTPERDAY/>
-		</RANK>	
+		</RANK>
 		<RANK><!-- 12 -->
 			<DEVOTIONABILITY/>
 			<DEFENSE kind="mystic"/>
 			<INITIATIVE/>
-		</RANK>	
+		</RANK>
 	</TIER>
 	<IDEAL>Reichtum</IDEAL>
 	<IDEAL>Handel</IDEAL>

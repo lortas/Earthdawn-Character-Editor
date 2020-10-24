@@ -65,6 +65,68 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Beeindrucken"/>
+		<OPTIONALTALENT name="Bleibender Eindruck"/>
+		<OPTIONALTALENT name="Eiserne Konstitution"/>
+		<OPTIONALTALENT name="Eiserner Wille"/>
+		<OPTIONALTALENT name="Feuerblut"/>
+		<OPTIONALTALENT name="Letzte Rettung"/>
+		<OPTIONALTALENT name="Schlachtruf"/>
+		<OPTIONALTALENT name="Schmetterschlag"/>
+		<OPTIONALTALENT name="Starrsinn"/>
+		<OPTIONALTALENT name="Verteidigungshaltung"/>
+		<DISCIPLINETALENT name="Durchbohrender Angriff"/>
+		<TALENTABILITY/>
+		<KARMA spend="Erholungsproben"/>
+		<ABILITY>Geteilte Stärke</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Unaufhaltsame Erholung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Schwungvoller Angriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<KARMA spend="Schadensproben des Reittiers"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Tiersprache"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Ansporn"/>
+		<OPTIONALTALENT name="Gedankenkette"/>
+		<OPTIONALTALENT name="Herausforderung der Besten"/>
+		<OPTIONALTALENT name="Löwenmut"/>
+		<OPTIONALTALENT name="Schmerzen Widerstehen"/>
+		<OPTIONALTALENT name="Üble Wunde"/>
+		<OPTIONALTALENT name="Unverzagte Tapferkeit"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Kritischer Treffer"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<KARMASTEP />
+		<ABILITY>Eins im Geist</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Vom Donner Gerührt"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Mehrfacher Sturmangriff"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Wissen über: Reittiere von Namensgebern, Aufzucht und erste Hilfe bei Tieren, bekannte Kavallerieeinheiten; Pflege des Reitzeugs</HALFMAGIC>
 </DISCIPLINE>

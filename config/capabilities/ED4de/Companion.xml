@@ -10,7 +10,7 @@
 	<TALENT name="Bardenstimme" attribute="na" action="free" strain="1"/>
 	<TALENT name="Beherrschung der Elemente" attribute="na" action="free" strain="2"/>
 	<TALENT name="Beschwörungskreis" attribute="na" action="sustained" strain="1+"/>
-	<TALENT name="Blind Schiessen" attribute="PER" action="simple" strain="1"/>
+	<TALENT name="Blind Schießen" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Blut des Todesmeers" attribute="na" action="free"/>
 	<TALENT name="Blutiger Einblick" attribute="PER" action="sustained" strain="1"/>
 	<TALENT name="Brennende Kraft" attribute="STR" action="free"/>
@@ -26,7 +26,7 @@
 	<TALENT name="Entwaffnendes Lächeln" attribute="CHA" action="standard" strain="1"/>
 	<TALENT name="Fesselnde Visionen" attribute="WIL" action="free" strain="1"/>
 	<TALENT name="Fleisch Schmieden" attribute="WIL" action="free" strain="2"/>
-	<TALENT name="Fliessende Bewegung" attribute="na" action="simple" strain="1+"/>
+	<TALENT name="Fließende Bewegung" attribute="na" action="simple" strain="1+"/>
 	<TALENT name="Fluchtplan" attribute="PER" action="sustained" strain="1"/>
 	<TALENT name="Gedächtnis Durchdringen" attribute="na" action="free"/>
 	<TALENT name="Gedanken Verbergen" attribute="na" action="free"/>
@@ -78,12 +78,12 @@
 	<TALENT name="Unverzagte Tapferkeit" attribute="na" action="na"/>
 	<TALENT name="Verteidigungshaltung" attribute="na" action="free" strain="1" skilluse="9"/>
 	<TALENT name="Vitaler Schutz" attribute="na" action="free" strain="1"/>
-	<TALENT name="Vom Donner gerührt" attribute="STR" action="free" strain="1"/>
+	<TALENT name="Vom Donner Gerührt" attribute="STR" action="free" strain="1"/>
 	<TALENT name="Waffenbruch" attribute="na" action="free" skilluse="9"/>
 	<TALENT name="Wahrheit Durch Lügen" attribute="CHA" action="standard" strain="2"/>
 	<TALENT name="Weltenpuls" attribute="PER" action="sustained" strain="3"/>
 	<TALENT name="Wettstreit des Willens" attribute="WIL" action="free" strain="1"/>
-	<TALENT name="Wie eine streunende Katze" attribute="PER" action="standard"/>
+	<TALENT name="Wie Eine Streunende Katze" attribute="PER" action="standard"/>
 	<TALENT name="Zauberreichweite" attribute="PER" action="simple" strain="1"/>
 	<TALENT name="Zauberstruktur" attribute="PER" action="simple" strain="2"/>
 	<TALENT name="Zielerfassung" attribute="PER" action="simple" strain="1"/>

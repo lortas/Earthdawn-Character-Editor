@@ -68,6 +68,7 @@ public class ApplicationProperties {
 	private static EDRANDOMNAME RANDOMNAMES = new EDRANDOMNAME();
 	private static Map<ECERulesetLanguage,SPELLDESCRIPTIONS> SPELLDESCRIPTIONS;
 	private static Map<RulesetversionType,ECECharacteristics> CHARACTERISTICS;
+	private static List<CharsheettemplateContainer> CHARSHEETTEMPLATES;
 	private static final File CONFIGDIR = new File("./config");
 
 	// Singleton-Instanz dieser Klasse.
@@ -83,6 +84,17 @@ public class ApplicationProperties {
 
 	private ApplicationProperties() {
 		init();
+	}
+
+	public final static double getJavaVersion() {
+		String javaversionstring = System.getProperty("java.specification.version");
+		if( javaversionstring == null ) return 0;
+		try {
+			return Double.parseDouble(javaversionstring);
+		} catch(NumberFormatException e) {
+			System.err.println("can not parse '"+javaversionstring+"' as floating point number.");
+		}
+		return 0;
 	}
 
 	/**
@@ -353,22 +365,22 @@ public class ApplicationProperties {
 		return knacks;
 	}
 
-	public List<KNACKDEFINITIONType> getKnacks(CapabilitytypeType type, String name, String limitation) {
+	public List<KNACKDEFINITIONType> getKnacks(CapabilitytypeType type, String name, String limitation, int rank) {
 		List<KNACKDEFINITIONType> knacks = new ArrayList<>();
 		for( KNACKDEFINITIONType knack : getKnacks() ) {
 			for( KNACKBASECAPABILITYType base : knack.getBASE() ) {
 				if( ! base.getType().equals(type) ) continue;
 				if( ! base.getName().equals(name) ) continue;
-				if( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) {
-					knacks.add(knack);
-				}
+				if( ! ( limitation.isEmpty() || base.getLimitation().isEmpty() || base.getLimitation().equals(limitation) ) ) continue;
+				if( rank < base.getMinrank() ) continue;
+				knacks.add(knack);
 			}
 		}
 		return knacks;
 	}
 
-	public List<KNACKDEFINITIONType> getTalentKnacks(String talent,String limitation) {
-		return getKnacks(CapabilitytypeType.TALENT,talent,limitation);
+	public List<KNACKDEFINITIONType> getTalentKnacks(String talent,String limitation, int rank) {
+		return getKnacks(CapabilitytypeType.TALENT,talent,limitation,rank);
 	}
 
 	// Liefert die Definition aller verfügbarer Zauber zurück.
@@ -700,6 +712,10 @@ public class ApplicationProperties {
 			if( table.getName().equals(name) ) return table.getCOLUMN();
 		}
 		return new ArrayList<LAYOUTSIZESType>();
+	}
+
+	public List<CharsheettemplateContainer> getAllCharsheettemplates() {
+		return CHARSHEETTEMPLATES;
 	}
 
 	private void init() {
@@ -1073,6 +1089,11 @@ public class ApplicationProperties {
 					ng.add(n);
 				}
 			}
+
+			CHARSHEETTEMPLATES=new LinkedList();
+			selectallxmlfiles(new File("templates").toPath()).forEach((configFile) -> {
+				CHARSHEETTEMPLATES.add(new CharsheettemplateContainer(configFile.toFile()) );
+			});
 
 			CHARACTERISTICS=new TreeMap<RulesetversionType,ECECharacteristics>();
 			for(Path configFile : selectallxmlfiles(new File(CONFIGDIR,"characteristics").toPath())) {

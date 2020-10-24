@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <KNACKS lang="en" xmlns="http://earthdawn.com/knack" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earthdawn.com/knack ../../earthdawnknacks.xsd">
 	<KNACK name="Adept's Best Friend"           strain="3"     bookref="PC p.120"><BASE type="talent" minrank="6"  name="Tracking"/>                                   </KNACK>
-	<KNACK name="Air Conditioning"              strain="2"     bookref="PC p.120"><BASE type="talent" minrank="6"  name="Temperature"/>                                </KNACK>	
+	<KNACK name="Air Conditioning"              strain="2"     bookref="PC p.120"><BASE type="talent" minrank="6"  name="Temperature"/>                                </KNACK>
 	<KNACK name="Air Legs"                      strain="2"     bookref="PC p.121"><BASE type="talent" minrank="4"  name="Air Sailing"/>                                </KNACK>
 	<KNACK name="Air Mount"                     strain="6"     bookref="PC p.121"><BASE type="talent" minrank="13" name="Spirit Mount"/>                               </KNACK>
 	<KNACK name="Anchored Spell"                blood="1"      bookref="PC p.121"><BASE type="talent" minrank="8"  name="Spellcasting"/>                               </KNACK>

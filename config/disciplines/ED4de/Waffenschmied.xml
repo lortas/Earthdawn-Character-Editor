@@ -68,6 +68,69 @@
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
+	<CIRCLE><!-- 9 -->
+		<OPTIONALTALENT name="Astralangriff"/>
+		<OPTIONALTALENT name="Astralsicht"/>
+		<OPTIONALTALENT name="Beweisanalyse"/>
+		<OPTIONALTALENT name="Löwenmut"/>
+		<OPTIONALTALENT name="Matrixsicht"/>
+		<OPTIONALTALENT name="Schwungvoller Angriff"/>
+		<OPTIONALTALENT name="Stählerner Blick"/>
+		<OPTIONALTALENT name="Unaufhaltsame Erholung"/>
+		<OPTIONALTALENT name="Unverzagte Tapferkeit"/>
+		<OPTIONALTALENT name="Untrüglicher Blick"/>
+		<DISCIPLINETALENT name="Perfekte Konzentration"/>
+		<TALENTABILITY/>
+		<KARMA spend="Proben von Verbündeten neben dem Waffenschmied (1/R)"/>
+		<ABILITY>Blutgebundene Esse</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 10 -->
+		<DISCIPLINETALENT name="Magie Neutralisieren"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 11 -->
+		<DISCIPLINETALENT name="Lebendige Waffe"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<KARMA spend="Widerstehen von Zaubern und Dämonenkräften"/>
+	</CIRCLE>
+	<CIRCLE><!-- 12 -->
+		<DISCIPLINETALENT name="Fleisch Schmieden"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+		<INITIATIVE/>
+	</CIRCLE>
+	<CIRCLE><!-- 13 -->
+		<OPTIONALTALENT name="Ätherwaffe"/>
+		<OPTIONALTALENT name="Brennende Kraft"/>
+		<OPTIONALTALENT name="Hammerschlag"/>
+		<OPTIONALTALENT name="Schmerzen Widerstehen"/>
+		<OPTIONALTALENT name="Tödlicher Schlag"/>
+		<OPTIONALTALENT name="Vitaler Schutz"/>
+		<OPTIONALTALENT name="Waffenbruch"/>
+		<OPTIONALTALENT name="Zweite Chance"/>
+		<DISCIPLINETALENT name="Aurarüstung"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="physical"/>
+		<INITIATIVE/>
+		<KARMASTEP />
+		<ABILITY>Mystische Erdung</ABILITY>
+	</CIRCLE>
+	<CIRCLE><!-- 14 -->
+		<DISCIPLINETALENT name="Seelenschutz"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="mystic"/>
+		<RECOVERYTESTPERDAY/>
+	</CIRCLE>
+	<CIRCLE><!-- 15 -->
+		<DISCIPLINETALENT name="Dämonen Entgegentreten"/>
+		<TALENTABILITY/>
+		<DEFENSE kind="social"/>
+		<ARMOR name="additional discipline bonus" weight="0" used="yes" location="self" mysticarmor="1"/>
+	</CIRCLE>
 	<KARMARITUAL>Bitte füge eine Kurzbeschreibung für ein Karmaritual ein, die Dauer beträgt 30 Min.</KARMARITUAL>
 	<HALFMAGIC>Pflege von Waffen und Rüstungen; Erkennen von Waffen und Rüstungen und ihre Hersteller</HALFMAGIC>
 </DISCIPLINE>

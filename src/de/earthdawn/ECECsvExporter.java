@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.List;
 
 import de.earthdawn.data.*;
+import java.util.zip.DataFormatException;
 
 public class ECECsvExporter {
 	private String encoding="UTF-8";
@@ -42,7 +43,7 @@ public class ECECsvExporter {
 		return encoding;
 	}
 
-	public void exportSpells(EDCHARACTER edCharakter, File outFile) throws IOException {
+	public void exportSpells(EDCHARACTER edCharakter, File outFile) throws IOException, DataFormatException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
 		String[] header = {"In Matrix","Spell Name","Type","Circle","Threads","Weaving Difficulty","Reattuning Difficulty",
@@ -71,7 +72,7 @@ public class ECECsvExporter {
 		out.close();
 	}
 
-	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws IOException {
+	public void exportTalents(EDCHARACTER edCharakter, File outFile) throws IOException, DataFormatException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
 		String[] header = {"Type","Circle","Talent Name","Limitation","Attribute","Rank","Realigned Rank","Start Rank","Rank Bonus","Step",
@@ -84,7 +85,7 @@ public class ECECsvExporter {
 		}
 	}
 
-	public void exportSkills(EDCHARACTER edCharakter, File outFile) throws IOException {
+	public void exportSkills(EDCHARACTER edCharakter, File outFile) throws IOException, DataFormatException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
 		String[] header = {"Skill Name","Limitation","Attribute","Rank","Realigned Rank","Start Rank","Rank Bonus","Step","Dice","LP cost",
@@ -132,7 +133,7 @@ public class ECECsvExporter {
 		out.close();
 	}
 
-	public void exportItems(EDCHARACTER edCharakter, File outFile) throws IOException {
+	public void exportItems(EDCHARACTER edCharakter, File outFile) throws IOException, DataFormatException {
 		CharacterContainer character = new CharacterContainer(edCharakter);
 		PrintStream out = new PrintStream(new FileOutputStream(outFile), false, encoding);
 		int pursecounter=0;

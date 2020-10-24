@@ -1,9 +1,18 @@
 Here comes the list of abbreviations used in the editor for bookreferences.
 
-PG = Player's Guide—Earthdawn Third Edition
-PC = Player's Companion—Earthdawn Third Edition
-GM = Gamemaster's Guide—Earthdawn Third Edition
-GC = Gamemaster's Companion—Earthdawn Third Edition
+PG : (context depended)
+  - Player's Guidei — Earthdawn Third Edition
+  - Player's Guide — Earthdawn Forth Edition
+  - Spielerhandbuch — Earthdawn Vierte Edition
+GM : (context depended)
+  - Gamemaster's Guide — Earthdawn Third Edition
+  - Gamemaster's Guide — Earthdawn Forth Edition
+  - Spielleiterhandbuch — Earthdawn Vierte Edition
+C : (context depended)
+  - Companion — Earthdawn Forth Edition (2019 edtion)
+  - Kompendium — Earthdawn Vierte Edition
+PC = Player's Companion — Earthdawn Third Edition
+GC = Gamemaster's Companion — Earthdawn Third Edition
 NG = Namegivers of Barsaive
 CPG = Cathay: The Five Kingdoms Player's Guide
 CGG = Cathay: The Five Kingdoms Gamemaster's Guide
@@ -17,5 +26,4 @@ SC1 = Shards Collection Volume One
 SC2 = Shards Collection Volume Two
 KA = Kratas Adventures
 BD = Burning Desires
-
-
+MP = Mystic Paths

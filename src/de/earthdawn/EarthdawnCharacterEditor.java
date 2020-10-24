@@ -26,6 +26,9 @@ import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.data.LanguageType;
 import de.earthdawn.data.RulesetversionType;
 import de.earthdawn.ui2.EDMainWindow;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.zip.DataFormatException;
 
 public class EarthdawnCharacterEditor {
 	public static final ApplicationProperties PROPERTIES=ApplicationProperties.create();
@@ -35,6 +38,7 @@ public class EarthdawnCharacterEditor {
 
 	public static void main(String[] args) {
 		commandlineargs = new ArrayList<String>(Arrays.asList(args));
+		getInterfaceLanguageFromArgs();
 		PROPERTIES.setRulesetLanguage(getRulesetversionFromArgs(), getLanguageFromArgs());
 		boolean newchar=getNewCharFromArgs();
 		try {
@@ -50,14 +54,9 @@ public class EarthdawnCharacterEditor {
 				System.out.println("Read character from "+infile.getCanonicalPath());
 				try {
 					ec=new CharacterContainer(infile);
-				} catch( RuntimeException e) {
-					if( e.getMessage().contains("has wrong Rulesetversion") ) {
-						ec=new CharacterContainer();
-					} else if( e.getMessage().contains("has wrong language") ) {
-						ec=new CharacterContainer();
-					} else {
-						throw(e);
-					}
+				} catch( DataFormatException e) {
+					System.out.println("Character was not compatible: "+e.getLocalizedMessage());
+					ec=new CharacterContainer();
 				}
 				String name=ec.getName();
 				if( name==null || name.isEmpty() ) {
@@ -112,6 +111,20 @@ public class EarthdawnCharacterEditor {
 			}
 		}
 		return LanguageType.DE;
+	}
+
+	private static void getInterfaceLanguageFromArgs() {
+		int i = commandlineargs.indexOf("--interfacelanguage");
+		if( i >= 0 ) {
+			commandlineargs.remove(i); // --interfacelanguage
+			String s = commandlineargs.remove(i); // Parameter von --interfacelanguage
+			if( s != null ) {
+				switch(s.toLowerCase()) {
+				case "de": Locale.setDefault(Locale.GERMANY); break;
+				default  : Locale.setDefault(Locale.US); break;
+				}
+			}
+		}
 	}
 
 	private static boolean getNewCharFromArgs() {

@@ -1054,6 +1054,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PATHFOREIGNTALENTSType }
+     *
+     */
+    public PATHFOREIGNTALENTSType createPATHFOREIGNTALENTSType() {
+        return new PATHFOREIGNTALENTSType();
+    }
+
+    /**
      * Create an instance of {@link EDRANDOMCHARACTERTEMPLATE }
      *
      */

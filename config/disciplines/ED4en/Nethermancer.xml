@@ -7,8 +7,8 @@
 		<OPTIONALTALENT name="Awareness"/>
 		<OPTIONALTALENT name="Command Nightflyer"/>
 		<OPTIONALTALENT name="Dispel Magic"/>
-		<OPTIONALTALENT name="Read and Write Languages"/>
-		<OPTIONALTALENT name="Speak Language,"/>
+		<OPTIONALTALENT name="Read and Write Language"/>
+		<OPTIONALTALENT name="Speak Language"/>
 		<OPTIONALTALENT name="Standard Matrix" limitation="N1"/>
 		<OPTIONALTALENT name="Stealthy Stride"/>
 		<OPTIONALTALENT name="Suppress Curse"/>

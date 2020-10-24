@@ -3,7 +3,7 @@
 	<NEEDEDKNACK>Fire Eater</NEEDEDKNACK>
 	<TALENT name="Fire Eater" tier="journeyman"/><!-- learned talent with knack on Rank1. The max rank is 5. -->
 	<TIER name="journeyman">
-                <OPTIONALTALENT name="Battle Shout"/>
+		<OPTIONALTALENT name="Battle Shout"/>
 		<OPTIONALTALENT name="Emotion Song"/>
 		<OPTIONALTALENT name="Fireblood"/>
 		<OPTIONALTALENT name="Fires of Gahad"/>
@@ -14,7 +14,7 @@
 		<RANK><!-- 1 -->
 			<TALENTABILITY/>
 		</RANK>
-                <RANK><!-- 2 -->
+		<RANK><!-- 2 -->
 			<TALENTABILITY/>
 			<DEFENSE kind="social"/>
 		</RANK>
@@ -25,14 +25,14 @@
 			<TALENTABILITY/>
 			<DEFENSE kind="physical"/>
 		</RANK>
-        </TIER>
-        <TIER name="warden">
-                <OPTIONALTALENT name="Fire Heal"/>
+	</TIER>
+	<TIER>
+		<OPTIONALTALENT name="Fire Heal"/>
 		<OPTIONALTALENT name="Resist Taunt"/>
 		<RANK><!-- 5 -->
 			<TALENTABILITY/>
 		</RANK>
-        </TIER>
-        <KARMARITUAL>Fire Eaters’ Karma Rituals incorporate their gahad in some fashion, controlling, expressing, and even minor pyrotechnics in some cases.</KARMARITUAL>
+	</TIER>
+	<KARMARITUAL>Fire Eaters’ Karma Rituals incorporate their gahad in some fashion, controlling, expressing, and even minor pyrotechnics in some cases.</KARMARITUAL>
 	<HALFMAGIC>The adept can also use their Half-Magic to find other Fire Eaters and know the history of Fire Eaters. Additionally, the adept can use Perception-based Half-Magic against an ork’s Social Defense to learn about their gahad.</HALFMAGIC>
 </PATH>

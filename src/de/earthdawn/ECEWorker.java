@@ -26,6 +26,7 @@ import java.util.TreeMap;
 import de.earthdawn.config.ApplicationProperties;
 import de.earthdawn.config.ECECapabilities;
 import de.earthdawn.data.*;
+import java.util.zip.DataFormatException;
 
 /**
  * Hilfsklasse zur Verarbeitung eines Earthdawn-Charakters. 
@@ -72,7 +73,7 @@ public class ECEWorker {
 		super();
 		this.character = character;
 	}
-	public ECEWorker(EDCHARACTER charakter) {
+	public ECEWorker(EDCHARACTER charakter) throws DataFormatException {
 		this(new CharacterContainer(charakter));
 	}
 

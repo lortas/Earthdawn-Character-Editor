@@ -56,12 +56,12 @@
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
 	<CIRCLE><!-- 7 -->
-		<DISCIPLINETALENT name="Down Stride"/>
+		<DISCIPLINETALENT name="Down Strike"/>
 		<TALENTABILITY/>
 		<RECOVERYTESTPERDAY/>
 	</CIRCLE>
 	<CIRCLE><!-- 8 -->
-		<DISCIPLINETALENT name="Claw Frency"/>
+		<DISCIPLINETALENT name="Claw Frenzy"/>
 		<TALENTABILITY/>
 		<DEFENSE kind="physical"/>
 	</CIRCLE>
