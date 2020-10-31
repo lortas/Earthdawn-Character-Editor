@@ -22,7 +22,8 @@ IF "%JV1%" == "" (
 SET /a "JV1=%JV1%"
 SET JAR=EarthdawnCharacterEditor.jar
 IF %JV1% LSS 11 (
-	SET JAR=EarthdawnCharacterEditor_java8.jar
+	msg * "Please use a Java version of at least 11."
+	goto :end
 )
 java -jar %JAR% --rulesetversion ED4 --language de
 

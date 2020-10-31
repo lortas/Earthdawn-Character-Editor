@@ -20,4 +20,4 @@ if( $JV -lt 11 ) {
     exit 3
 }
 
-java -jar $JAR --rulesetversion ED4 --language en
+java -jar $JAR --rulesetversion ED4 --language de

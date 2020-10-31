@@ -11,12 +11,10 @@
 	-->
 	<property name="source" value="./src/"/>
 	<property name="build" value="./bin/"/>
-	<property name="build8" value="./bin8/"/>
 	<property name="lib" value="./lib/"/>
 	<property name="doc" value="./doc/"/>
 	<property name="config" value="./config/"/>
 	<property name="jar.file" value="EarthdawnCharacterEditor.jar"/>
-	<property name="jar8.file" value="EarthdawnCharacterEditor_java8.jar"/>
 	<property name="title" value="Earthdawn Character Editor" />
 	<property name="version" value="0.51-pre" />
 	<property environment="env"/>
@@ -37,7 +35,6 @@
 	-->
 	<target name="init" description="--> Projekt aufsetzen">
 		<mkdir dir="${build}" />
-		<mkdir dir="${build8}" />
 		<mkdir dir="${doc}" />
 	</target>
 
@@ -46,20 +43,9 @@
 	-->
 	<target name="clean" description="--> Aufräumen">
 		<delete dir="${build}" />
-		<delete dir="${build8}" />
 		<delete dir="${doc}" />
 	</target>
 
-	<!--
-	target: compile java8
-	-->
-	<target name="compile8" depends="init" description="--> Projekt übersetzen">
-		<copy file="${source}de/earthdawn/ui2/NLS_de.properties" todir="${build8}/de/earthdawn/ui2/"/>
-		<copy file="${source}de/earthdawn/ui2/NLS.properties" todir="${build8}/de/earthdawn/ui2/"/>
-		<javac srcdir="${source}" destdir="${build8}" debug="on" includeantruntime="false" deprecation="on" release="8">
-			<classpath refid="classpath.compile" />
-		</javac>
-	</target>
 	<!--
 	target: compile
 	-->
@@ -89,28 +75,6 @@
 		</tstamp>
 		<jar destfile="${jar.file}">
 			<fileset dir="${build}" includes="**" />
-			<manifest>
-				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
-				<!-- sed "s/\(attribute name=\"Class-Path\" value=\"\)[^\"]*/\1$(echo lib/*.jar | sed -e "s/\blib\//\${lib}/g")/" -i build.xml -->
-				<attribute name="Class-Path" value="${lib}freemarker.jar ${lib}gson-2.2.1.jar ${lib}istack-commons-runtime-2.3.1.jar ${lib}itextpdf-5.2.1.jar ${lib}itext-xtra-5.2.1.jar ${lib}javax.activation-api-2.3.1.jar ${lib}jaxb-api-2.3.1.jar ${lib}jaxb-core-2.3.0.1.jar ${lib}jaxb-jxc-2.3.1.jar ${lib}jaxb-runtime-2.3.0.1.jar ${lib}jaxb-runtime-2.3.1.jar ${lib}jaxb-xjc-2.3.1.jar ${lib}json-20180813.jar ${lib}miglayout-4.0-swing.jar"/>
-				<section name="common">
-					<attribute name="Build-By" value="lortas" />
-					<attribute name="Build-Date" value="${cur.date}" />
-					<attribute name="Implementation-Title" value="${title}" />
-					<attribute name="Implementation-Version" value="${version}" />
-				</section>
-			</manifest>
-		</jar>
-	</target>
-	<!--
-	target: jar8
-	-->
-	<target name="jar8" depends="compile8" description="--> jar8 erzeugen">
-		<tstamp>
-			<format property="cur.date" pattern="yyyy-MM-dd hh:mm:ss" locale="de,DE" />
-		</tstamp>
-		<jar destfile="${jar8.file}">
-			<fileset dir="${build8}"/> <!-- <mappedresources> <globmapper from="*" to="bin/*"/> </mappedresources> -->
 			<manifest>
 				<attribute name="Main-Class" value="de.earthdawn.EarthdawnCharacterEditor" />
 				<!-- sed "s/\(attribute name=\"Class-Path\" value=\"\)[^\"]*/\1$(echo lib/*.jar | sed -e "s/\blib\//\${lib}/g")/" -i build.xml -->
@@ -155,10 +119,9 @@
 	<!--
 	target: dist
 	-->
-	<target name="dist" depends="jar,jar8,disciplinetalenttable" description="--> Distribution erzeugen">
+	<target name="dist" depends="jar,disciplinetalenttable" description="--> Distribution erzeugen">
 		<zip destfile="EarthdawnCharacterEditor.zip" update="false">
 			<zipfileset file="${jar.file}"/>
-			<zipfileset file="${jar8.file}"/>
 			<zipfileset dir="./config" prefix="config">
 				<exclude name="spelldescriptions/**"/>
 			</zipfileset>

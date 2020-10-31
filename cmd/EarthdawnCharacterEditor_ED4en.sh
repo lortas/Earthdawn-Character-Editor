@@ -18,7 +18,8 @@ fi
 
 if test "$JV" -lt 11
 then
-	JAR=EarthdawnCharacterEditor_java8.jar
+	notify-send "Please use a Java version of at least 11."
+	exit 3
 fi
 
 java -jar "${JAR}" --rulesetversion ED4 --language en
