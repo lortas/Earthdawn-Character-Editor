@@ -171,14 +171,7 @@ public class EDDevotionPoints extends JPanel {
 		ac.setComment(new String(""));
 		ac.setValue(0);
 
-		DEVOTIONType devotion = character.getEDCHARACTER().getDEVOTION();
-		if( devotion == null) {
-			devotion = new DEVOTIONType();
-			devotion.setValue(0);
-			devotion.setPassion("--");
-			character.getEDCHARACTER().setDEVOTION(devotion);
-		}
-		List<ACCOUNTINGType> devotionpoints = devotion.getDEVOTIONPOINTS();
+		List<ACCOUNTINGType> devotionpoints = character.getDevotionPoints().getDEVOTIONPOINTS();
 		devotionpoints.add(ac);
 		character.refesh();
 	}

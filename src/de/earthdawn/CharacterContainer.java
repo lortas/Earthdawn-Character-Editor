@@ -1720,7 +1720,14 @@ public class CharacterContainer extends CharChangeRefresh {
 	}
 
 	public DEVOTIONType getDevotionPoints() {
-		return character.getDEVOTION();
+		DEVOTIONType devotion = character.getDEVOTION();
+		if( devotion == null) {
+			devotion = new DEVOTIONType();
+			devotion.setValue(0);
+			devotion.setPassion("--");
+			character.setDEVOTION(devotion);
+		}
+		return devotion;
 	}
 
 	public String getPassion() {
