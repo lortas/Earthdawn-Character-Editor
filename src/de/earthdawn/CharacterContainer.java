@@ -26,7 +26,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -184,7 +184,7 @@ public class CharacterContainer extends CharChangeRefresh {
 		}
 	}
 
-	public void writeXml(OutputStream out,String encoding) throws JAXBException, UnsupportedEncodingException {
+	public void writeXml(OutputStream out,Charset encoding) throws JAXBException {
 		PrintStream fileio = new PrintStream(out, false, encoding);
 		fileio.println("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>");
 		fileio.println("<?xml-stylesheet type=\"text/xsl\" href=\"earthdawncharacter.xsl\"?>");
@@ -196,11 +196,11 @@ public class CharacterContainer extends CharChangeRefresh {
 		fileio.close();
 	}
 
-	public void writeHtml(OutputStream out,String encoding) {
+	public void writeHtml(OutputStream out,Charset encoding) {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try {
 			writeXml(baos, encoding);
-		} catch (UnsupportedEncodingException | JAXBException e) {
+		} catch (JAXBException e) {
 			System.err.println(e.getLocalizedMessage());
 			return;
 		}
@@ -213,7 +213,7 @@ public class CharacterContainer extends CharChangeRefresh {
 			ByteArrayOutputStream html = new ByteArrayOutputStream();
 			transformer.transform(new javax.xml.transform.stream.StreamSource(new ByteArrayInputStream(baos.toByteArray())),new javax.xml.transform.stream.StreamResult(html));
 			htmlstring=html.toString(encoding);
-		} catch (TransformerException | UnsupportedEncodingException e) {
+		} catch (TransformerException e) {
 			System.err.println(e.getLocalizedMessage());
 			return;
 		}
@@ -242,20 +242,16 @@ public class CharacterContainer extends CharChangeRefresh {
 			}
 		}
 		//Schreibe Ergebnis weg
-		try {
-			PrintStream fileio = new PrintStream(out, false, encoding);
+		try( PrintStream fileio = new PrintStream(out, false, encoding) ) {
 			fileio.print(htmlstring);
-			fileio.close();
-		} catch (UnsupportedEncodingException e) {
-			System.err.println(e.getMessage());
 		}
 	}
 
-	public Marshaller toXml(String encoding) throws JAXBException {
+	public Marshaller toXml(Charset encoding) throws JAXBException {
 		character.setEditorpath((new File("")).toURI().getRawPath());
 		JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 		Marshaller m = jc.createMarshaller();
-		m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+		m.setProperty(Marshaller.JAXB_ENCODING, encoding.toString());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/character earthdawncharacter.xsd");
 		m.setProperty(Marshaller.JAXB_FRAGMENT, true);

@@ -17,6 +17,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URI;
@@ -93,7 +95,7 @@ public class EDMainWindow {
 	public static final OPTIONALRULES OPTIONALRULES = PROPERTIES.getOptionalRules();
 	public static final List<Method> optionalrulesMethods = Arrays.asList(OPTIONALRULES.class.getMethods());
 	public static final ResourceBundle NLS = ResourceBundle.getBundle("de.earthdawn.ui2.NLS");
-	public static final String encoding="UTF-8";
+	public static final Charset encoding=StandardCharsets.UTF_8;
 	public static final String[] OptionDialog_YesNoOptions = {NLS.getString("Button.Yes.text"),NLS.getString("Button.No.text")};
 
 	private JFrame frame;

@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
@@ -232,7 +233,7 @@ public class EDItemStore extends JFrame {
 				if( a != 0 ) return;
 			}
 			try {
-				final String encoding = EDMainWindow.encoding;
+				final Charset encoding = EDMainWindow.encoding;
 				JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 				Marshaller m = jc.createMarshaller();
 				FileOutputStream out = new FileOutputStream(file);

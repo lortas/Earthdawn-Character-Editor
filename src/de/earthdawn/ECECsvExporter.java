@@ -21,6 +21,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,17 +31,17 @@ import de.earthdawn.data.*;
 import java.util.zip.DataFormatException;
 
 public class ECECsvExporter {
-	private String encoding="UTF-8";
+	private Charset encoding=StandardCharsets.UTF_8;
 
-	public ECECsvExporter(String encoding) {
+	public ECECsvExporter(Charset encoding) {
 		setEncoding(encoding);
 	}
 
-	public void setEncoding(String encoding) {
+	public void setEncoding(Charset encoding) {
 		this.encoding=encoding;
 	}
 
-	public String getEncoding() {
+	public Charset getEncoding() {
 		return encoding;
 	}
 

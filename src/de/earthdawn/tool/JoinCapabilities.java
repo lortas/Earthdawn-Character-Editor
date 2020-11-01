@@ -18,15 +18,17 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 \******************************************************************************/
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -41,7 +43,7 @@ import de.earthdawn.data.CAPABILITYType;
 import de.earthdawn.data.LanguageType;
 
 public class JoinCapabilities {
-	private static final String encoding="UTF-8";
+	private static final Charset encoding=StandardCharsets.UTF_8;
 
 	public static void main(String[] args) {
 		if( args.length < 2 ) {
@@ -100,24 +102,17 @@ public class JoinCapabilities {
 			Marshaller m = jc.createMarshaller();
 			// Das letzte Element ist die Zieldatei, in der die Ausgabe hinein geschrieben wird.
 			System.out.println("Writing Capabilities to "+args[countInFiles]);
-			FileOutputStream out = new FileOutputStream(args[countInFiles]);
-			PrintStream fileio = new PrintStream(out, false, encoding);
-			m.setProperty(Marshaller.JAXB_ENCODING, encoding);
-			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/capability earthdawncapabilities.xsd");
-			m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-			fileio.print("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"no\"?>");
-			m.marshal(outCapabilities,fileio);
-			fileio.close();
-			out.close();
-		} catch (JAXBException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			try( PrintStream fileio = new PrintStream(new FileOutputStream(args[countInFiles]),false, encoding) ) {
+				m.setProperty(Marshaller.JAXB_ENCODING, encoding.toString());
+				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+				m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/capability earthdawncapabilities.xsd");
+				m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+				fileio.println("<?xml version=\"1.0\" encoding=\""+encoding.toString()+"\" standalone=\"no\"?>");
+				m.marshal(outCapabilities,fileio);
+				fileio.close();
+			}
+		} catch (JAXBException|IOException e) {
+			Logger.getLogger(JoinCapabilities.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
 }
