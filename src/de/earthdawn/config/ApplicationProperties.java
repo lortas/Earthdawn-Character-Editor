@@ -938,23 +938,32 @@ public class ApplicationProperties {
 				SPELLDESCRIPTIONS spelldescriptions;
 				if( spelldescriptionsfile.canRead() ) {
 					System.out.println("Reading config file: " + spelldescriptionsfile.toString());
-					spelldescriptions = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
-					ECERulesetLanguage rsl_sd=new ECERulesetLanguage(spelldescriptions.getRulesetversion(),spelldescriptions.getLang());
-					if( !rsl.equals(rsl_sd) ) {
-						System.err.println("config file has diffrent rulesetversion or language ("+rsl+"!="+rsl_sd+")");
-					}
-					if( fillSpellDescription(spelldescriptions,s) ) {
-						// Nicht zu allen Spells eine SpellDescriptions gefunden.
+					try {
+						spelldescriptions = (SPELLDESCRIPTIONS) unmarshaller.unmarshal(spelldescriptionsfile);
+						ECERulesetLanguage rsl_sd=new ECERulesetLanguage(spelldescriptions.getRulesetversion(),spelldescriptions.getLang());
+						if( !rsl.equals(rsl_sd) ) {
+							System.err.println("config file has diffrent rulesetversion or language ("+rsl+"!="+rsl_sd+")");
+						}
+						if( fillSpellDescription(spelldescriptions,s) ) {
+							// Nicht zu allen Spells eine SpellDescriptions gefunden.
+							neworchanged=true;
+						}
+						SPELLDESCRIPTIONS sd = SPELLDESCRIPTIONS.get(rsl);
+						if( sd == null ) {
+							sd=new SPELLDESCRIPTIONS();
+							sd.setLang(rsl.getLanguage());
+							sd.setRulesetversion(rsl.getRulesetversion());
+							SPELLS.put(rsl, s2);
+						}
+						sd.getSPELL().addAll(spelldescriptions.getSPELL());
+					} catch(JAXBException e) {
+						System.err.println("config file can not be parsed: "+e.getLocalizedMessage());
+						spelldescriptions = new SPELLDESCRIPTIONS();
+						spelldescriptions.setLang(rsl.getLanguage());
+						spelldescriptions.setRulesetversion(rsl.getRulesetversion());
+						fillSpellDescription(spelldescriptions,s);
 						neworchanged=true;
 					}
-					SPELLDESCRIPTIONS sd = SPELLDESCRIPTIONS.get(rsl);
-					if( sd == null ) {
-						sd=new SPELLDESCRIPTIONS();
-						sd.setLang(rsl.getLanguage());
-						sd.setRulesetversion(rsl.getRulesetversion());
-						SPELLS.put(rsl, s2);
-					}
-					sd.getSPELL().addAll(spelldescriptions.getSPELL());
 				} else {
 					System.out.println("Überspringe Konfigurationsdatei: '" + spelldescriptionsfile.getCanonicalPath() + "' da nicht vorhanden oder nicht lesbar.");
 					spelldescriptions = new SPELLDESCRIPTIONS();
@@ -967,16 +976,19 @@ public class ApplicationProperties {
 					System.out.println("Scheibe Konfigurationsdatei: " + spelldescriptionsfile.toString());
 					JAXBContext jc = JAXBContext.newInstance("de.earthdawn.data");
 					Marshaller m = jc.createMarshaller();
-					FileOutputStream out = new FileOutputStream(spelldescriptionsfile);
-					PrintStream fileio = new PrintStream(out, false, EDMainWindow.encoding);
-					m.setProperty(Marshaller.JAXB_ENCODING, EDMainWindow.encoding);
-					m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-					m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/spelldescription spelldescription.xsd");
-					m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-					fileio.print("<?xml version=\"1.0\" encoding=\""+EDMainWindow.encoding+"\" standalone=\"no\"?>");
-					m.marshal(spelldescriptions,fileio);
-					fileio.close();
-					out.close();
+					try(FileOutputStream out = new FileOutputStream(spelldescriptionsfile)) {
+						PrintStream fileio = new PrintStream(out, false, EDMainWindow.encoding);
+						m.setProperty(Marshaller.JAXB_ENCODING, EDMainWindow.encoding.toString());
+						m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+						m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION,"http://earthdawn.com/spelldescription spelldescription.xsd");
+						m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+						fileio.print("<?xml version=\"1.0\" encoding=\""+EDMainWindow.encoding+"\" standalone=\"no\"?>");
+						m.marshal(spelldescriptions,fileio);
+						fileio.close();
+						out.close();
+					} catch(Exception e) {
+						System.err.println("config file can not be writen: "+e.getLocalizedMessage());
+					}
 				}
 			}
 
@@ -1179,13 +1191,13 @@ public class ApplicationProperties {
 			ECERulesetLanguage rl = c.getKey();
 			Map<String,List<TranslationlabelType>> translation = new TreeMap<String,List<TranslationlabelType>>();
 			Map<String,Integer> count = new TreeMap<String,Integer>();
-					for( TRANSLATIONType i : TRANSLATIONS.get(rl.getRulesetversion()).getCAPABILITY() ) {
-						for( TranslationlabelType j : i.getLABEL() ) {
-							if( j.getLang().equals(rl.getLanguage()) ) {
-								translation.put(j.getValue(), i.getLABEL());
-								count.put(j.getValue(), 0);
-							}
-						}
+			for( TRANSLATIONType i : TRANSLATIONS.get(rl.getRulesetversion()).getCAPABILITY() ) {
+				for( TranslationlabelType j : i.getLABEL() ) {
+					if( j.getLang().equals(rl.getLanguage()) ) {
+						translation.put(j.getValue(), i.getLABEL());
+						count.put(j.getValue(), 0);
+					}
+				}
 			}
 			for( JAXBElement<?> t : c.getValue().getSKILLOrTALENTOrDEVOTION() ) {
 				String name;
