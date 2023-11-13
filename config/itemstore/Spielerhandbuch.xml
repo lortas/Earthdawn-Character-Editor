@@ -17,19 +17,59 @@
 	<ARMOR kind="armor" name="Ringrüstung"               physicalarmor="6" mysticarmor="0" penalty="2" price="110"   weight="30" bookref="SH S.261"/>
 	<ARMOR kind="armor" name="Wyvernhaut"                physicalarmor="8" mysticarmor="1" penalty="3" price="2000"  weight="50" bookref="SH S.261"/>
 
-	<WEAPON kind="throwing weapon" name="Bola"           damagestep="3" strengthmin="6" size="2" shortrange="12" longrange="24" price="10"  weight="2"     dexteritymin="9" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Dolch"          damagestep="2" strengthmin="4" size="1" shortrange="10" longrange="20" price="0.8" weight="1"     bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Falkenklaue"    damagestep="4" strengthmin="8" size="3" shortrange="24" longrange="48" price="75"  weight="2"     bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Flugdolch"      damagestep="2" strengthmin="4" size="1" shortrange="20" longrange="40" price="25"  weight="0.75"  bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Messer"         damagestep="1" strengthmin="3" size="1" shortrange="8"  longrange="16" price="0.3" weight="0.625" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Netz (leicht)"  damagestep="0" strengthmin="4" size="3" shortrange="6"  longrange="12" price="15"  weight="5"     bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Netz (mittel)"  damagestep="0" strengthmin="5" size="4" shortrange="6"  longrange="12" price="20"  weight="7"     bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Netz (groß)"    damagestep="0" strengthmin="7" size="5" shortrange="6"  longrange="12" price="25"  weight="10"    bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Netz (rießig)"  damagestep="0" strengthmin="8" size="6" shortrange="6"  longrange="12" price="40"  weight="12"    bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Speer"          damagestep="4" strengthmin="9" size="3" shortrange="10" longrange="20" price="9"   weight="3"     bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Windling Netz"  damagestep="0" strengthmin="3" size="2" shortrange="6"  longrange="12" price="15"  weight="0.75"  dexteritymin="9" bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Windling Speer" damagestep="2" strengthmin="4" size="1" shortrange="8"  longrange="16" price="25"  weight="0.5"   bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Wurfaxe"        damagestep="3" strengthmin="7" size="3" shortrange="12" longrange="24" price="25"  weight="2"     bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Wurfdolch"      damagestep="2" strengthmin="4" size="1" shortrange="16" longrange="32" price="2"   weight="0.75"  bookref="PG p.252"/>
-	<WEAPON kind="throwing weapon" name="Wurfbeil"       damagestep="1" strengthmin="4" size="1" shortrange="18" longrange="36" price="0.3" weight="0.5"   bookref="PG p.252"/>
+	<WEAPON kind="melee weapon"    name="Breitschwert"          damagestep="5" strengthmin="12" size="3"                                price="25"  weight="4"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Dolch"                 damagestep="2" strengthmin="4"  size="1"                                price="0.8" weight="1"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Dreizack"              damagestep="5" strengthmin="11" size="4"                                price="25"  weight="4"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Dreschflegel"          damagestep="5" strengthmin="10" size="3"                                price="35"  weight="5"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Handaxt"               damagestep="4" strengthmin="8"  size="2"                                price="15"  weight="3"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Hellebarde"            damagestep="8" strengthmin="16" size="6"                                price="150" weight="10"    bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Kampfstab"             damagestep="4" strengthmin="6"  size="5"                                price="5"   weight="4"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Keule"                 damagestep="3" strengthmin="7"  size="2"                                price="2"   weight="3"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Kriegshammer"          damagestep="7" strengthmin="15" size="5"                                price="95"  weight="8"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Kurzschwert"           damagestep="4" strengthmin="8"  size="2"                                price="16"  weight="3"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Lanze"                 damagestep="6" strengthmin="14" size="6"                                price="150" weight="10"    bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Messer"                damagestep="1" strengthmin="3"  size="1"                                price="0.3" weight="1"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Morgenstern"           damagestep="6" strengthmin="13" size="4"                                price="40"  weight="7"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Peitsche"              damagestep="3" strengthmin="7"  size="3"                                price="10"  weight="2"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Scythische Axt"        damagestep="5" strengthmin="12" size="3"                                price="20"  weight="4"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Speer"                 damagestep="4" strengthmin="9"  size="3"                                price="9"   weight="3"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Stangenwaffe"          damagestep="7" strengthmin="14" size="5"                                price="150" weight="9"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Stoßspeer"             damagestep="5" strengthmin="13" size="5"                                price="15"  weight="7"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Streitaxt"             damagestep="7" strengthmin="13" size="5"                                price="35"  weight="6"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Streitkolben"          damagestep="4" strengthmin="13" size="3"                                price="20"  weight="5"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Totschläger"           damagestep="1" strengthmin="3"  size="1"                                price="3"   weight="2"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Trollaxt"              damagestep="8" strengthmin="17" size="6"                                price="45"  weight="8"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Trollschwert"          damagestep="6" strengthmin="13" size="4"                                price="50"  weight="6"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Windlingsschwert"      damagestep="3" strengthmin="6"  size="1"                                price="45"  weight="1"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Windlingsspeer"        damagestep="2" strengthmin="4"  size="1"                                price="25"  weight="1"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Windlingsstangenwaffe" damagestep="4" strengthmin="7"  size="2"                                price="55"  weight="2"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Zweihänder"            damagestep="8" strengthmin="15" size="6"                                price="125" weight="7"     bookref="SH S.259"/>
+	<WEAPON kind="melee weapon"    name="Zwergenschwert"        damagestep="4" strengthmin="12" size="2"                                price="6"   weight="2"     bookref="SH S.259"/>
+
+	<WEAPON kind="throwing weapon" name="Bola"                  damagestep="3" strengthmin="6"  size="2" shortrange="12" longrange="24" price="10"  weight="2"     bookref="SH S.252" dexteritymin="9"/>
+	<WEAPON kind="throwing weapon" name="Dolch"                 damagestep="2" strengthmin="4"  size="1" shortrange="10" longrange="20" price="0.8" weight="1"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Falkenklaue"           damagestep="4" strengthmin="8"  size="3" shortrange="24" longrange="48" price="75"  weight="2"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Flugdolch"             damagestep="2" strengthmin="4"  size="1" shortrange="20" longrange="40" price="25"  weight="0.75"  bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Messer"                damagestep="1" strengthmin="3"  size="1" shortrange="8"  longrange="16" price="0.3" weight="0.625" bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Netz, winzig"          damagestep="0" strengthmin="4"  size="3" shortrange="6"  longrange="12" price="15"  weight="4"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Netz, klein"           damagestep="0" strengthmin="5"  size="4" shortrange="6"  longrange="12" price="15"  weight="5"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Netz, mittel"          damagestep="0" strengthmin="6"  size="5" shortrange="6"  longrange="12" price="20"  weight="7"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Netz, groß"            damagestep="0" strengthmin="7"  size="6" shortrange="6"  longrange="12" price="25"  weight="10"    bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Netz, rießig"          damagestep="0" strengthmin="8"  size="7" shortrange="6"  longrange="12" price="40"  weight="12"    bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Speer"                 damagestep="4" strengthmin="9"  size="3" shortrange="10" longrange="20" price="9"   weight="3"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Windling Netz"         damagestep="0" strengthmin="3"  size="2" shortrange="6"  longrange="12" price="15"  weight="0.75"  bookref="SH S.252" dexteritymin="9"/>
+	<WEAPON kind="throwing weapon" name="Windling Speer"        damagestep="2" strengthmin="4"  size="1" shortrange="8"  longrange="16" price="25"  weight="0.5"   bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Wurfaxe"               damagestep="3" strengthmin="7"  size="3" shortrange="12" longrange="24" price="25"  weight="2"     bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Wurfdolch"             damagestep="2" strengthmin="4"  size="1" shortrange="16" longrange="32" price="2"   weight="0.75"  bookref="SH S.252"/>
+	<WEAPON kind="throwing weapon" name="Wurfbeil"              damagestep="1" strengthmin="4"  size="1" shortrange="18" longrange="36" price="0.3" weight="0.5"   bookref="SH S.252"/>
+
+	<WEAPON kind="missile weapon" name="Blasrohr"               damagestep="1" strengthmin="3"  size="1" shortrange="8"  longrange="16" price="2"   weight="1"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Elfischer Kriegsbogen"  damagestep="5" strengthmin="12" size="5" shortrange="48" longrange="96" price="200" weight="4"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Kurzbogen"              damagestep="3" strengthmin="8"  size="3" shortrange="30" longrange="60" price="15"  weight="3"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Langbogen"              damagestep="4" strengthmin="11" size="5" shortrange="40" longrange="80" price="60"  weight="4"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Leichte Armbrust"       damagestep="4" strengthmin="9"  size="3" shortrange="32" longrange="64" price="50"  weight="5"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Mittlere Armbrust"      damagestep="5" strengthmin="12" size="4" shortrange="40" longrange="80" price="100" weight="7"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Schleuder"              damagestep="2" strengthmin="5"  size="2" shortrange="20" longrange="40" price="3"   weight="1"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Trollschleuder"         damagestep="4" strengthmin="10" size="4" shortrange="30" longrange="60" price="15"  weight="4"     bookref="SH S.260"/>
+	<WEAPON kind="missile weapon" name="Windlingsbogen"         damagestep="3" strengthmin="5"  size="2" shortrange="24" longrange="48" price="25"  weight="1"     bookref="SH S.260"/>
 </ITEMS>
