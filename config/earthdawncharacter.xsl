@@ -211,28 +211,33 @@
 		<table width="100%">
 			<tr>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='physical defense']/tra:LABEL[@lang=$lang]"/>:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@physical"/></td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE[@kind='physical']/@value"/></td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='spell defense']/tra:LABEL[@lang=$lang]"/>:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@spell"/></td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE[@kind='mystic']/@value"/></td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='social defense']/tra:LABEL[@lang=$lang]"/>:</td>
-				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE/@social"/></td>
+				<td class="edValueCell"><xsl:value-of select="//edc:DEFENSE[@kind='social']/@value"/></td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='movement']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:MOVEMENT/@ground"/><xsl:if test="//edc:MOVEMENT/@flight>0"><xsl:text> / </xsl:text><xsl:value-of select="//edc:MOVEMENT/@flight"/></xsl:if></td>
 			</tr>
 			<tr>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='physical armor']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell">
-					<xsl:value-of select="//edc:PROTECTION/@physicalarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@physicalarmor!=0] | //edc:PROTECTION/edt:SHIELD[@physicalarmor!=0]">
-						<xsl:value-of select="@physicalarmor"/>
-						<xsl:if test="position()!=last()">+</xsl:if>
-					</xsl:for-each>)
+					<xsl:value-of select="//edc:PROTECTION/@physicalarmor"/>
+					<xsl:if test="(count(//edc:PROTECTION/edt:ARMOR[@physicalarmor!=0])+count(//edc:PROTECTION/edt:SHIELD[@physicalarmor!=0])) >1">
+						(<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@physicalarmor!=0] | //edc:PROTECTION/edt:SHIELD[@physicalarmor!=0]">
+							<xsl:if test="@used!='yes'">[</xsl:if><xsl:value-of select="@physicalarmor"/><xsl:if test="@used!='yes'">]</xsl:if>
+							<xsl:if test="position()!=last()">+</xsl:if>
+						</xsl:for-each>)
+					</xsl:if>
 				</td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='mystic armor']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell">
-					<xsl:value-of select="//edc:PROTECTION/@mysticarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@mysticarmor!=0] | //edc:PROTECTION/edt:SHIELD[@mysticarmor!=0]">
-						<xsl:value-of select="@mysticarmor"/>
-						<xsl:if test="position()!=last()">+</xsl:if>
-					</xsl:for-each>)
+					<xsl:if test="(count(//edc:PROTECTION/edt:ARMOR[@mysticarmor!=0])+count(//edc:PROTECTION/edt:SHIELD[@mysticarmor!=0])) >1">
+						<xsl:value-of select="//edc:PROTECTION/@mysticarmor"/> (<xsl:for-each select="//edc:PROTECTION/edt:ARMOR[@mysticarmor!=0] | //edc:PROTECTION/edt:SHIELD[@mysticarmor!=0]">
+							<xsl:if test="@used!='yes'">[</xsl:if><xsl:value-of select="@mysticarmor"/><xsl:if test="@used!='yes'">]</xsl:if>
+							<xsl:if test="position()!=last()">+</xsl:if>
+						</xsl:for-each>)
+					</xsl:if>
 				</td>
 				<td class="edKeyCell"><xsl:value-of select="$translations/tra:TEXT[@name='penalty']/tra:LABEL[@lang=$lang]"/>:</td>
 				<td class="edValueCell"><xsl:value-of select="//edc:PROTECTION/@penalty"/></td>
