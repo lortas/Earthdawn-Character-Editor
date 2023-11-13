@@ -164,6 +164,7 @@
 			<xs:enumeration value="book"/>
 			<xs:enumeration value="boot"/>
 			<xs:enumeration value="brooch"/>
+			<xs:enumeration value="camping"/>
 			<xs:enumeration value="cloth"/>
 			<xs:enumeration value="coins"/>
 			<xs:enumeration value="drink"/>

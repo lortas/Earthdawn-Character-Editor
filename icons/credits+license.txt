@@ -33,6 +33,12 @@ BOOK.png
 BROOCH.png
 	Pixel Art Icon for RPG by Ails
 
+CAMPING.png
+	Icons provided under the Creative Commons 3.0 BY license.
+	Camping tent icon designed by Delapouite
+	Sleeping bag icon designed by Delapouite
+	More info and icons available at game-icons.net
+
 CHEST_CLOSED.png
 	Pixel Art Icon for RPG by Ails
 
