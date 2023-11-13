@@ -858,9 +858,12 @@ public class EDMainWindow {
 	}
 
 	protected  void do_mntmOpen_actionPerformed(ActionEvent arg0) {
-		String filename = "."; 
-		JFileChooser fc = new JFileChooser(new File(filename)); 
-
+		JFileChooser fc;
+		try {
+			fc = new JFileChooser(new File(file.getPath()));
+		} catch(Exception e) {
+			fc = new JFileChooser(new File("."));
+		}
 		// Show open dialog; this method does not return until the dialog is closed
 		if( fc.showOpenDialog(frame) != JFileChooser.APPROVE_OPTION ) return;
 		// Only Open file if OK/Yes was pressed
