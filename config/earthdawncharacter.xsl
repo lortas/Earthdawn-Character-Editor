@@ -66,19 +66,6 @@
 		<xsl:call-template name="knacks"/>
 		<!-- Skills -->
 		<xsl:call-template name="skills"/>
-		<!-- LPs -->
-		<table class="invisible" width="100%">
-			<tr class="invisible">
-				<td class="invisible">
-					<!-- Experience -->
-					<xsl:call-template name="experience" />
-				</td>
-				<td class="invisible">
-					<!-- Calculated Legend Points -->
-					<xsl:call-template name="calculatedLegendPoints" />
-				</td>
-			</tr>
-		</table>
 		<div class="edLanguages"><xsl:call-template name="languages"/></div>
 		<div class="edCoins"><xsl:call-template name="coins"/></div>
 		<div class="edWeapons"><xsl:call-template name="weapons"/></div>
@@ -105,6 +92,19 @@
 		</table>
 		<xsl:call-template name="openspells"/>
 		<xsl:call-template name="disciplinespells"/>
+		<!-- LPs -->
+		<table class="invisible" width="100%" style="page-break-inside:avoid;">
+			<tr class="invisible">
+				<td class="invisible">
+					<!-- Experience -->
+					<xsl:call-template name="experience" />
+				</td>
+				<td class="invisible">
+					<!-- Calculated Legend Points -->
+					<xsl:call-template name="calculatedLegendPoints" />
+				</td>
+			</tr>
+		</table>
 		<xsl:call-template name="legendpointsreceived"/>
 	</body>
 </html>
