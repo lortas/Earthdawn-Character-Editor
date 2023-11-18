@@ -324,7 +324,11 @@ public class ECEWorker {
 				capabilities.enforceCapabilityParams(talent);
 				talent.setTEACHER(new TALENTTEACHERType());
 				RANKType rank = new RANKType();
-				calculateCapabilityRank(rank,characterAttributes.get(talent.getAttribute()));
+				ATTRIBUTENameType talentAttribute = talent.getAttribute();
+				if( talentAttribute != null ) {
+					ATTRIBUTEType characterAttribute = characterAttributes.get(talentAttribute);
+					calculateCapabilityRank(rank,characterAttribute);
+				}
 				talent.setRANK(rank);
 				currentTalents.getOptionaltalents().add(talent);
 			}
