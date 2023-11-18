@@ -1278,6 +1278,10 @@
 		<LABEL lang="de">Blutschaden</LABEL>
 		<LABEL lang="en">Blood Damage</LABEL>
 	</TEXT>
+	<TEXT name="bloodcharmitems">
+		<LABEL lang="de">Blutamulette</LABEL>
+		<LABEL lang="en">Bloodcharm Items</LABEL>
+	</TEXT>
 	<TEXT name="depatterning">
 		<LABEL lang="de">Zerfall</LABEL>
 		<LABEL lang="en">Depatterning</LABEL>
