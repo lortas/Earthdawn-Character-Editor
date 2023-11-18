@@ -901,9 +901,11 @@
 
 <xsl:template name="bloodcharmItems">
 	<xsl:if test="//edc:BLOODCHARMITEM">
-		<div class="edSubHeader">Bloodcharm Items</div>
 		<table width="100%">
-			<xsl:call-template name="magicItemsTableHeader"/>
+			<thead style="display:table-header-group;page-break-inside:avoid">
+				<tr><th class="edSubHeader" colspan="10"><xsl:value-of select="$translations/tra:TEXT[@name='bloodcharmitems']/tra:LABEL[@lang=$lang]"/></th></tr>
+				<xsl:call-template name="magicItemsTableHeader"/>
+			</thead>
 			<xsl:apply-templates select="//edc:BLOODCHARMITEM">
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
@@ -912,9 +914,11 @@
 </xsl:template>
 <xsl:template name="magicItems">
 	<xsl:if test="//edc:MAGICITEM">
-		<div class="edSubHeader">Magic Items</div>
 		<table width="100%">
-			<xsl:call-template name="magicItemsTableHeader"/>
+			<thead style="display:table-header-group;page-break-inside:avoid">
+				<tr><th class="edSubHeader" colspan="10"><xsl:value-of select="$translations/tra:TEXT[@name='magicitems']/tra:LABEL[@lang=$lang]"/></th></tr>
+				<xsl:call-template name="magicItemsTableHeader"/>
+			</thead>
 			<xsl:apply-templates select="//edc:MAGICITEM">
 				<xsl:sort select="@name"/>
 			</xsl:apply-templates>
@@ -922,18 +926,18 @@
 	</xsl:if>
 </xsl:template>
 <xsl:template name="magicItemsTableHeader">
-	<thead><tr>
-		<td class="edHeaderCell" width="50%">Name</td>
-		<td class="edHeaderCell" width="5%">Weight</td>
-		<td class="edHeaderCell" width="5%">Size</td>
-		<td class="edHeaderCell" width="5%">Blood Damage</td>
-		<td class="edHeaderCell" width="5%">Depatt Rate</td>
-		<td class="edHeaderCell" width="5%">Spell Def</td>
-		<td class="edHeaderCell" width="5%">EDN</td>
-		<td class="edHeaderCell" width="5%">Location</td>
-		<td class="edHeaderCell" width="5%">Used</td>
-		<td class="edHeaderCell" width="5%">Book Ref</td>
-	</tr></thead>
+	<tr>
+		<th class="edHeaderCell" width="50%">Name</th>
+		<th class="edHeaderCell" width="5%">Weight</th>
+		<th class="edHeaderCell" width="5%">Size</th>
+		<th class="edHeaderCell" width="5%">Blood Damage</th>
+		<th class="edHeaderCell" width="5%">Depatt Rate</th>
+		<th class="edHeaderCell" width="5%">Spell Def</th>
+		<th class="edHeaderCell" width="5%">EDN</th>
+		<th class="edHeaderCell" width="5%">Location</th>
+		<th class="edHeaderCell" width="5%">Used</th>
+		<th class="edHeaderCell" width="5%">Book Ref</th>
+	</tr>
 </xsl:template>
 <xsl:template match="//edc:MAGICITEM | //edc:BLOODCHARMITEM">
 	<tr>
