@@ -3,7 +3,7 @@
 @page {
 	size: auto;
 	/* this affects the margin in the printer settings */
-	margin: 0mm 0mm 0mm 0mm;
+	margin: 0.1pt 0pt 0.1pt 0pt;
 }
 
 .sup {
